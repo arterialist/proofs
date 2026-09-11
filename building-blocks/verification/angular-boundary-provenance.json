@@ -1,0 +1,71 @@
+{
+  "category": "building-blocks",
+  "verification_kind": "written proof with exact finite computational checks",
+  "formalization": null,
+  "novelty_claim": false,
+  "motivation_attribution": "The repository author proposed studying additive cutoff growth against multiplicative cyclotomic structure. This attribution concerns the motivating question, not a claim that intuition establishes the proofs.",
+  "license": "Repository MIT license; no third-party source text or software copied into the public package. Primary works remain under their own terms.",
+  "proof_sources": [
+    {
+      "document": "accepted-gap-proof",
+      "sha256": "d0426e0f7d0651927041e61fcfb00d050530411a30d2f281c753760c2dc87568"
+    },
+    {
+      "document": "accepted-insertion-proof",
+      "sha256": "c7078b78e5504b1dc37d97cb189b6e187e3c3260ad7c7940c9e7e4050a575324"
+    },
+    {
+      "document": "accepted-boundary-proof",
+      "sha256": "c081cd9154d1dceff77b200cb15893cb5f2ebe0e458eca11a369493607f8b00f"
+    }
+  ],
+  "checker_provenance": {
+    "method": "Exact geometry adapted from the following two independent finite checkers. Cyclotomic factors and cleared identities reconstructed with a new integer-polynomial implementation. Python standard library only.",
+    "sources": [
+      {
+        "document": "accepted-consumer-check",
+        "sha256": "37cb0b26d0debdea59505fb92b9a2a21e0304ec2bbe2e30990fc81147ef9b981"
+      },
+      {
+        "document": "accepted-boundary-check",
+        "sha256": "d456263d4697c2bb815836ec219ca7fc9e6d89eb82121bba104f1a60706fd847"
+      }
+    ]
+  },
+  "primary_sources": [
+    {
+      "author": "F. Amoroso",
+      "title": "On the heights of a product of cyclotomic polynomials",
+      "year": 1995,
+      "location": "Corollary 1 and Theorem 4, printed pp. 185–186",
+      "url": "https://seminariomatematico.polito.it/rendiconti/cartaceo/53-3/183.pdf",
+      "local_published_pdf_sha256": "a0675e7442a2a8ef0a30a4ffef7f2e8d7233a0818ef23f557f3d8fedee223c34",
+      "access": "Existing published PDF/text inspected; fresh publisher fetch failed."
+    },
+    {
+      "authors": "F. P. Boca, R. N. Gologan, A. Zaharescu",
+      "title": "On the index of Farey sequences",
+      "location": "Section 1, first-page neighbor characterization",
+      "url": "https://arxiv.org/pdf/math/0201044"
+    },
+    {
+      "authors": "B. Bzdęga, A. Herrera-Poyatos, P. Moree",
+      "title": "Cyclotomic polynomials at roots of unity",
+      "location": "Section 2.2, equation (4)",
+      "url": "https://archive.mpim-bonn.mpg.de/1705/1/preprint_2016_45.pdf"
+    },
+    {
+      "authors": "T. Erdélyi, D. P. Hardin, E. B. Saff",
+      "title": "Inverse Bernstein inequalities and min-max-min problems on the unit circle",
+      "location": "Section 2, related logarithmic chord geometry",
+      "url": "https://arxiv.org/pdf/1307.4056"
+    }
+  ],
+  "limits": [
+    "No bound for the signed remaining interior.",
+    "No Lean formalization or axiom audit.",
+    "Finite checks do not prove logarithmic or integral inequalities.",
+    "Birth estimate bounds the positive defects only.",
+    "No minimum-derivative or rootwise sign bound is assumed."
+  ]
+}

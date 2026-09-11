@@ -18,6 +18,6 @@ lake build
 lake env lean building-blocks/verification/Audit.lean
 ```
 
-Requires Lean 4.24.0. Dependencies are pinned in [lake-manifest.json](lake-manifest.json). The current proofs use only the standard axioms `Classical.choice`, `Quot.sound`, and `propext`.
+Requires Lean 4.24.0. Dependencies are pinned in [lake-manifest.json](lake-manifest.json). The Lean proofs use only the standard axioms `Classical.choice`, `Quot.sound`, and `propext`.
 
 [MIT license](LICENSE). Dependencies retain their own licenses.

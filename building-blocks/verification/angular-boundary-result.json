@@ -1,0 +1,112 @@
+{
+  "all_passed": true,
+  "python": "3.11.7",
+  "arithmetic": "integer and Fraction; no floating point",
+  "checker_sha256": "71edb5e5ce4447f72098777be4dcae7cb3e402de2da33ce4a7e470985e33a777",
+  "geometry_cutoffs": [
+    2,
+    60
+  ],
+  "counts": {
+    "meshes": 59,
+    "sector_masses": 1829,
+    "insertion_basis_coefficients": 21888,
+    "births": 1100,
+    "small_conductor_masses": 1827,
+    "recent_band_masses": 58
+  },
+  "regularized_old_factor_fixtures": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      12
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      12
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      12
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      12
+    ],
+    [
+      5,
+      10
+    ],
+    [
+      6,
+      12
+    ],
+    [
+      6,
+      18
+    ],
+    [
+      8,
+      24
+    ],
+    [
+      9,
+      18
+    ],
+    [
+      10,
+      30
+    ],
+    [
+      12,
+      24
+    ],
+    [
+      15,
+      30
+    ],
+    [
+      4,
+      15
+    ],
+    [
+      6,
+      15
+    ],
+    [
+      8,
+      15
+    ],
+    [
+      12,
+      30
+    ],
+    [
+      19,
+      33
+    ]
+  ],
+  "birth_derivative_fixtures": [
+    3,
+    8,
+    15,
+    30,
+    42
+  ],
+  "scope": "Finite exact geometry and polynomial checks; no Lean audit, logarithmic inequality test, or unbounded arithmetic estimate."
+}

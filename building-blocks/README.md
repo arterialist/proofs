@@ -128,3 +128,9 @@ Here $`\Omega`$ counts prime factors with multiplicity. The original inclusive d
 [MertensPrimeTransfer.lean](BuildingBlocks/MertensPrimeTransfer.lean) converts a bound on the actual Mertens function at every quotient $`\lfloor N/k\rfloor`$, $`1\le k\le K`$, into an explicit bound for $`|\psi(N)-N+2\gamma|`$. The finite hyperbola and partial-summation proof retains its boundary term and all prime powers. The Mertens premise remains to be proved by a consumer.
 
 [Statement, proof and attribution](mertens-prime-transfer.md) · [Verification](verification/mertens-transfer-result.json).
+
+## Angular height and two boundary ranges
+
+The [written theorem](angular-height-boundary.md) bounds the angular height of a cyclotomic prefix by a signed sum of old-root derivative-deficit updates. Exact Farey insertion gives a polylogarithmic positive-birth allowance. Conductors at most $`\sqrt X`$ and ages at most $`\sqrt N`$ have total absolute cost $`O(\sqrt X\log^3X)`$.
+
+The remaining interior interaction is unbounded. The proof uses classical chord concavity, Farey geometry and divisor sums; it has no Lean formalization or originality claim. [Exact finite checks](verification/angular-boundary-result.json) · [Provenance](verification/angular-boundary-provenance.json).
