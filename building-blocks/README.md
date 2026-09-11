@@ -216,3 +216,11 @@ The [written proof](integrated-divisor-history.md) keeps exact fractional endpoi
 ## Integrated prime-channel triangle
 
 The [written proof](integrated-prime-channel-triangle.md) gives an elementary $cX^{5/2}$ lower bound for the sum of the integrated largest-prime-channel norms, while retaining the exact density-inclusive finite Gram formula for the signed aggregate. It excludes that triangle majorant alone.
+
+## Integer histories and finite determinants
+
+The [prime-clique cutoff](prime-clique-cutoff.md) has exact arithmetic births and a trace-monoid interpretation, but its real critical-strip limit differs from zeta. The [divisor-conjugated successor](divisor-successor-overlap.md) has an explicit primewise signed Gram kernel and local counterexamples; its full coherent norm is a classical RH-equivalent Mertens quantity. [Literal renewal and phase memory](integer-renewal-and-phase-memory.md) retain path order and negative interference, while [face feedback](integer-face-feedback-obstruction.md) gives an exact obstruction to one proposed positive-resolvent repair.
+
+## Theta and cyclotomic finite tests
+
+The [radial arithmetic sign theorem](theta-radial-arithmetic-sign.md) proves strict cutoff-weight monotonicity and negativity at some actual frequencies for the arithmetic coefficient alone, with the frequency-dependent mixture retained. [Cyclotomic orbit examples](cyclotomic-weighted-orbit-obstructions.md) disprove specified weighted and unweighted contraction claims. A [quartic Jensen region](quartic-reciprocal-defect-region.md), with an exact symbolic certificate, gives four distinct negative roots under explicit reciprocal-defect bounds. None is an all-degree real-zero theorem for xi.
