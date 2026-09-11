@@ -168,3 +168,7 @@ The [written proof](cosh-universal-factor-closure.md) excludes even local positi
 ## An eventual-sign criterion from distinct-prime convolution
 
 The [written proof](distinct-prime-sign-criterion.md) shows that RH is equivalent to eventual negativity of a centered triangular multiplicative convolution after subtracting the contributions from powers of the same prime. A weighted Mellin boundary estimate retains arbitrary zero multiplicities and proves that the negative prime-square bias dominates under RH. The unconditional sign remains unproved, and no Lean formalization or originality claim is made.
+
+## A complete Bernstein obstruction for theta Mellin interpolation
+
+The [written proof](theta-mellin-bernstein-obstruction.md) and [Arb certificate](certificates/theta_mellin_laguerre.py) show that an auxiliary normalized Mellin transform of the complete theta kernel violates the Laguerre inequality and has a nonreal zero. Its entire continuation then excludes every complete Bernstein function matching the actual xi coefficient ratios, including the KPS one-separation subclass. General Bernstein, $B_J$, $D_P$ and RH remain unresolved; this is an Arb-assisted proof, not a Lean formalization.
