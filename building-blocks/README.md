@@ -244,3 +244,7 @@ The [full-divisor birth decoder](divisor-birth-decoder.md) has an exact gcd Gram
 ## High-frequency radial cutoff laws
 
 The [radial cutoff asymptotics](theta-radial-cutoff-asymptotics.md) prove the fixed-parameter uniform logarithmic law, its critical Beta transition and a quantitative transfer of the complete arithmetic sum. The transfer retains its moving frequency, prime powers and terminal mass; the sign of the resulting finite sum remains open.
+
+## Temporal covariance and coherent division markings
+
+The [actual floor-column covariance](temporal-floor-covariance.md) retains temporal means and exhibits a large positive terminal-prime subblock canceled to leading order by its full signed complement. The [coherent division marking](coherent-division-marking.md) reduces complete incidence histories to the prime-power indicator and shows exactly why adjacent-response cancellation fails to control the forcing selector. These identities preserve the actual signs without supplying the missing RH-scale residual estimate.
