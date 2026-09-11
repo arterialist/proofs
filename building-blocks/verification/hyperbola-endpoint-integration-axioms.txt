@@ -1,0 +1,453 @@
+BuildingBlocks.zeta_analytic_off_pole : AnalyticOnNhd ℂ riemannZeta {1}ᶜ
+'BuildingBlocks.zeta_analytic_off_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.zeta_not_locally_zero {s : ℂ} (hs : s ≠ 1) : ¬∀ᶠ (z : ℂ) in nhds s, riemannZeta z = 0
+'BuildingBlocks.zeta_not_locally_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.analytic_logDerivative_principal_part {f : ℂ → ℂ} {ρ : ℂ} (hf : AnalyticAt ℂ f ρ)
+  (hn : ¬∀ᶠ (z : ℂ) in nhds ρ, f z = 0) (hzero : f ρ = 0) :
+  ∃ m, 0 < m ∧ ∃ a, AnalyticAt ℂ a ρ ∧ ∀ᶠ (z : ℂ) in nhdsWithin ρ {ρ}ᶜ, deriv f z / f z = ↑m / (z - ρ) + a z
+'BuildingBlocks.analytic_logDerivative_principal_part' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.zeta_jointMellin_principal_part {ρ : ℂ} (hρ0 : ρ ≠ 0) (hρ1 : ρ ≠ 1) (hzero : riemannZeta ρ = 0) :
+  ∃ m,
+    0 < m ∧
+      ∃ a,
+        AnalyticAt ℂ a ρ ∧
+          (∀ᶠ (s : ℂ) in nhdsWithin ρ {ρ}ᶜ,
+              -deriv riemannZeta s / (s * riemannZeta s) - 1 / (s - 1) + 2 * ↑Real.eulerMascheroniConstant / s =
+                -↑m / ρ / (s - ρ) + a s) ∧
+            Filter.Tendsto
+                (fun s =>
+                  (s - ρ) *
+                    (-deriv riemannZeta s / (s * riemannZeta s) - 1 / (s - 1) + 2 * ↑Real.eulerMascheroniConstant / s))
+                (nhdsWithin ρ {ρ}ᶜ) (nhds (-↑m / ρ)) ∧
+              -↑m / ρ ≠ 0
+'BuildingBlocks.zeta_jointMellin_principal_part' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.logFactorial (N : ℕ) : ℝ
+'BuildingBlocks.FloorCorrection.logFactorial' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.logFactorial_eq_log (N : ℕ) :
+  BuildingBlocks.FloorCorrection.logFactorial N = Real.log ↑N.factorial
+'BuildingBlocks.FloorCorrection.logFactorial_eq_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.divisorSum (N : ℕ) : ℝ
+'BuildingBlocks.FloorCorrection.divisorSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.centeredDivisorForcing (N : ℕ) : ℝ
+'BuildingBlocks.FloorCorrection.centeredDivisorForcing' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.divisorMainTerm (x : ℝ) : ℝ
+'BuildingBlocks.FloorCorrection.divisorMainTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.realDivisorError (x : ℝ) : ℝ
+'BuildingBlocks.FloorCorrection.realDivisorError' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.factorialIntegralRemainder (q : ℕ) : ℝ
+'BuildingBlocks.FloorCorrection.factorialIntegralRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.log_stirlingSeq_upper {n : ℕ} (hn : n ≠ 0) :
+  Real.log (Stirling.stirlingSeq n) - Real.log √Real.pi ≤ 1 / (2 * ↑n)
+'BuildingBlocks.FloorCorrection.log_stirlingSeq_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.factorialIntegralRemainder_stirling_bounds {q : ℕ} (hq : 1 ≤ q) :
+  0 ≤ BuildingBlocks.FloorCorrection.factorialIntegralRemainder q - (Real.log ↑q + Real.log (2 * Real.pi)) / 2 ∧
+    BuildingBlocks.FloorCorrection.factorialIntegralRemainder q - (Real.log ↑q + Real.log (2 * Real.pi)) / 2 ≤
+      1 / (2 * ↑q)
+'BuildingBlocks.FloorCorrection.factorialIntegralRemainder_stirling_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.FloorCorrection.realFloorCorrection (x : ℝ) : ℝ
+'BuildingBlocks.FloorCorrection.realFloorCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.floorCorrectionMean : ℝ
+'BuildingBlocks.FloorCorrection.floorCorrectionMean' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder {x : ℝ} (hx : 1 ≤ x) :
+  |BuildingBlocks.FloorCorrection.realFloorCorrection x - BuildingBlocks.FloorCorrection.floorCorrectionMean +
+        (x - ↑⌊x⌋₊ - 1 / 2) * (Real.log x + 2 * Real.eulerMascheroniConstant)| ≤
+    2 / x
+'BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaProduct.sum_divisors_eq_sum_factor_pairs.{u_1} {R : Type u_1} [AddCommMonoid R] (N : ℕ)
+  (f : ℕ → ℕ → R) :
+  ∑ n ∈ Finset.Icc 1 N, ∑ d ∈ n.divisors, f d (n / d) = ∑ a ∈ Finset.Icc 1 N, ∑ b ∈ Finset.Icc 1 (N / a), f a b
+'BuildingBlocks.HyperbolaProduct.sum_divisors_eq_sum_factor_pairs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaProduct.moebius_divisor_sum (n : ℕ) :
+  ∑ d ∈ n.divisors, ArithmeticFunction.moebius d = if n = 1 then 1 else 0
+'BuildingBlocks.HyperbolaProduct.moebius_divisor_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient (N k : ℕ) : ℤ
+'BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_small {N k : ℕ} (hk : k * k ≤ N) :
+  BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient N k = if k = 1 then 1 else 0
+'BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_small' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_complement {N k : ℕ} (hk : k ≠ 1) :
+  BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient N k =
+    -∑ d ∈ k.divisors, if N * d < k * k then ArithmeticFunction.moebius d else 0
+'BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_complement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_weighted_sum (N : ℕ) (w : ℕ → ℝ) :
+  ∑ k ∈ Finset.Icc 1 N, ↑(BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient N k) * w k =
+    ∑ n ∈ Finset.Icc 1 N, ↑(ArithmeticFunction.moebius n) * ∑ m ∈ Finset.Icc 1 (N / n).sqrt, w (n * m)
+'BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_weighted_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.reciprocal_square_sum_Icc_bound (m : ℕ) : ∑ k ∈ Finset.Icc 2 m, 1 / ↑k ^ 2 ≤ 3 / 4
+'BuildingBlocks.RegularSource.reciprocal_square_sum_Icc_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.multiples_Ioc_card (M N q : ℕ) (hq : 0 < q) :
+  {n ∈ Finset.Ioc M N | q ∣ n}.card = N / q - M / q
+'BuildingBlocks.RegularSource.multiples_Ioc_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.natCast_div_lower (M q : ℕ) (hq : 0 < q) : ↑M / ↑q - 1 ≤ ↑(M / q)
+'BuildingBlocks.RegularSource.natCast_div_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.multiples_Ioc_card_bound {M N q : ℕ} (hMN : M ≤ N) (hq : 0 < q) :
+  ↑{n ∈ Finset.Ioc M N | q ∣ n}.card ≤ (↑N - ↑M) / ↑q + 1
+'BuildingBlocks.RegularSource.multiples_Ioc_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.squarefreeWindow (M N : ℕ) : Finset ℕ
+'BuildingBlocks.RegularSource.squarefreeWindow' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.squarefulWindow (M N : ℕ) : Finset ℕ
+'BuildingBlocks.RegularSource.squarefulWindow' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.squarefulWindow_subset_square_multiples (M N : ℕ) :
+  BuildingBlocks.RegularSource.squarefulWindow M N ⊆
+    (Finset.Icc 2 N.sqrt).biUnion fun k => {n ∈ Finset.Ioc M N | k * k ∣ n}
+'BuildingBlocks.RegularSource.squarefulWindow_subset_square_multiples' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.squarefulWindow_card_bound {M N : ℕ} (hMN : M ≤ N) :
+  ↑(BuildingBlocks.RegularSource.squarefulWindow M N).card ≤ 3 / 4 * (↑N - ↑M) + ↑N.sqrt
+'BuildingBlocks.RegularSource.squarefulWindow_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.squarefreeWindow_card_lower {M N : ℕ} (hMN : M ≤ N) :
+  (↑N - ↑M) / 4 - ↑N.sqrt ≤ ↑(BuildingBlocks.RegularSource.squarefreeWindow M N).card
+'BuildingBlocks.RegularSource.squarefreeWindow_card_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.squarefree_terminal_half_lower {N : ℕ} (hN : 256 ≤ N) :
+  ↑N / 16 ≤ ↑(BuildingBlocks.RegularSource.squarefreeWindow (N / 2) N).card
+'BuildingBlocks.RegularSource.squarefree_terminal_half_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.signedMobiusInverse (f : ℕ → ℝ) (N : ℕ) : ℝ
+'BuildingBlocks.RegularSource.signedMobiusInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.moebius_square_sum_ge_squarefree_half (m : ℕ) :
+  ↑(BuildingBlocks.RegularSource.squarefreeWindow (m / 2) m).card ≤
+    ∑ d ∈ Finset.Icc 1 m, ↑(ArithmeticFunction.moebius d) ^ 2
+'BuildingBlocks.RegularSource.moebius_square_sum_ge_squarefree_half' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.larger_power_not_eventually_bounded {a b : ℝ} (hab : a < b) :
+  ¬∃ C N₀, ∀ (N : ℕ), N₀ ≤ N → ↑N ^ b ≤ C * ↑N ^ a
+'BuildingBlocks.RegularSource.larger_power_not_eventually_bounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.normalizedMobiusFunctional (r : ℝ) (N : ℕ) : BoundedContinuousFunction ℕ ℝ →L[ℝ] ℝ
+'BuildingBlocks.RegularSource.normalizedMobiusFunctional' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.normalizedMobiusFunctional_apply (r : ℝ) (N : ℕ) (g : BoundedContinuousFunction ℕ ℝ) :
+  (BuildingBlocks.RegularSource.normalizedMobiusFunctional r N) g =
+    BuildingBlocks.RegularSource.signedMobiusInverse (fun q => √↑q * g q) N / ↑N ^ r
+'BuildingBlocks.RegularSource.normalizedMobiusFunctional_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.sqrt_normalized_source_bound {f : ℕ → ℝ} (hf : ∀ (q : ℕ), |f q| ≤ √↑q) (q : ℕ) :
+  ‖f q / √↑q‖ ≤ 1
+'BuildingBlocks.RegularSource.sqrt_normalized_source_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sqrtNormalizedSource (f : ℕ → ℝ) (hf : ∀ (q : ℕ), |f q| ≤ √↑q) :
+  BoundedContinuousFunction ℕ ℝ
+'BuildingBlocks.RegularSource.sqrtNormalizedSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sqrtNormalizedSource_norm_le (f : ℕ → ℝ) (hf : ∀ (q : ℕ), |f q| ≤ √↑q) :
+  ‖BuildingBlocks.RegularSource.sqrtNormalizedSource f hf‖ ≤ 1
+'BuildingBlocks.RegularSource.sqrtNormalizedSource_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sqrtNormalizedSource_recovery (f : ℕ → ℝ) (hf : ∀ (q : ℕ), |f q| ≤ √↑q) (q : ℕ) :
+  √↑q * (BuildingBlocks.RegularSource.sqrtNormalizedSource f hf) q = f q
+'BuildingBlocks.RegularSource.sqrtNormalizedSource_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sourceTent (A c x : ℝ) : ℝ
+'BuildingBlocks.RegularSource.sourceTent' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sourceTent_nonneg (A c x : ℝ) : 0 ≤ BuildingBlocks.RegularSource.sourceTent A c x
+'BuildingBlocks.RegularSource.sourceTent_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sourceTent_le {A : ℝ} (hA : 0 ≤ A) (c x : ℝ) :
+  BuildingBlocks.RegularSource.sourceTent A c x ≤ A
+'BuildingBlocks.RegularSource.sourceTent_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sourceTent_zero {A c x : ℝ} (h : A ≤ |x - c|) :
+  BuildingBlocks.RegularSource.sourceTent A c x = 0
+'BuildingBlocks.RegularSource.sourceTent_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sourceTent_center {A : ℝ} (hA : 0 ≤ A) (c : ℝ) :
+  BuildingBlocks.RegularSource.sourceTent A c c = A
+'BuildingBlocks.RegularSource.sourceTent_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sourceTent_abs_sub_le (A c x y : ℝ) :
+  |BuildingBlocks.RegularSource.sourceTent A c x - BuildingBlocks.RegularSource.sourceTent A c y| ≤ |x - y|
+'BuildingBlocks.RegularSource.sourceTent_abs_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.finite_sup_abs_sub_le.{u_1} {ι : Type u_1} {s : Finset ι} (hs : s.Nonempty) (u v : ι → ℝ)
+  (L : ℝ) (h : ∀ i ∈ s, |u i - v i| ≤ L) : |s.sup' hs u - s.sup' hs v| ≤ L
+'BuildingBlocks.RegularSource.finite_sup_abs_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.signedTentEnvelope (t : ℕ) (z : ℤ) (x : ℝ) : ℝ
+'BuildingBlocks.RegularSource.signedTentEnvelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.signedTentEnvelope_nonneg (t : ℕ) (z : ℤ) (x : ℝ) :
+  0 ≤ BuildingBlocks.RegularSource.signedTentEnvelope t z x
+'BuildingBlocks.RegularSource.signedTentEnvelope_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.signedTentEnvelope_le (t : ℕ) (z : ℤ) (x : ℝ) :
+  BuildingBlocks.RegularSource.signedTentEnvelope t z x ≤ ↑t / 2
+'BuildingBlocks.RegularSource.signedTentEnvelope_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.signedTentEnvelope_abs_sub_le (t : ℕ) (z : ℤ) (x y : ℝ) :
+  |BuildingBlocks.RegularSource.signedTentEnvelope t z x - BuildingBlocks.RegularSource.signedTentEnvelope t z y| ≤
+    |x - y|
+'BuildingBlocks.RegularSource.signedTentEnvelope_abs_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.smoothTestSource (t q : ℕ) : ℝ
+'BuildingBlocks.RegularSource.smoothTestSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.smoothTestSource_abs_le (t q : ℕ) :
+  |BuildingBlocks.RegularSource.smoothTestSource t q| ≤ ↑t / 4
+'BuildingBlocks.RegularSource.smoothTestSource_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.smoothTestSource_abs_sub_le (t q k : ℕ) :
+  |BuildingBlocks.RegularSource.smoothTestSource t q - BuildingBlocks.RegularSource.smoothTestSource t k| ≤ |↑q - ↑k|
+'BuildingBlocks.RegularSource.smoothTestSource_abs_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.smoothTestSource_increment_le (t q : ℕ) :
+  |BuildingBlocks.RegularSource.smoothTestSource t (q + 1) - BuildingBlocks.RegularSource.smoothTestSource t q| ≤ 1
+'BuildingBlocks.RegularSource.smoothTestSource_increment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.cubic_quotient_lower {t d : ℕ} (hd : d ∈ Finset.Icc 1 t) : t ^ 2 ≤ t ^ 3 / d
+'BuildingBlocks.RegularSource.cubic_quotient_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.cubic_quotient_gap {t d e : ℕ} (hd : 1 ≤ d) (hde : d < e) (he : e ≤ t) :
+  t ^ 3 / e + t ≤ t ^ 3 / d
+'BuildingBlocks.RegularSource.cubic_quotient_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.cubic_quotient_abs_gap {t d e : ℕ} (hd : d ∈ Finset.Icc 1 t) (he : e ∈ Finset.Icc 1 t)
+  (hne : d ≠ e) : ↑t ≤ |↑(t ^ 3 / d) - ↑(t ^ 3 / e)|
+'BuildingBlocks.RegularSource.cubic_quotient_abs_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.cubic_quotient_tail_gap {t d : ℕ} (hd : t < d) : t ^ 3 / d + t ≤ t ^ 2
+'BuildingBlocks.RegularSource.cubic_quotient_tail_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.signedTentEnvelope_at_quotient {t d : ℕ} (hd : d ∈ Finset.Icc 1 t) (z : ℤ) :
+  BuildingBlocks.RegularSource.signedTentEnvelope t z ↑(t ^ 3 / d) =
+    if ArithmeticFunction.moebius d = z then ↑t / 2 else 0
+'BuildingBlocks.RegularSource.signedTentEnvelope_at_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.smoothTestSource_at_small_divisor {t d : ℕ} (hd : d ∈ Finset.Icc 1 t) :
+  BuildingBlocks.RegularSource.smoothTestSource t (t ^ 3 / d) = ↑(ArithmeticFunction.moebius d) * ↑t / 4
+'BuildingBlocks.RegularSource.smoothTestSource_at_small_divisor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.signedTentEnvelope_zero_below {t : ℕ} {x : ℝ} (hx : x + ↑t / 2 ≤ ↑t ^ 2) (z : ℤ) :
+  BuildingBlocks.RegularSource.signedTentEnvelope t z x = 0
+'BuildingBlocks.RegularSource.signedTentEnvelope_zero_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.smoothTestSource_at_large_divisor {t d : ℕ} (hd : t < d) :
+  BuildingBlocks.RegularSource.smoothTestSource t (t ^ 3 / d) = 0
+'BuildingBlocks.RegularSource.smoothTestSource_at_large_divisor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.smoothTestSource_sq_le {t : ℕ} (ht : 1 ≤ t) (q : ℕ) :
+  BuildingBlocks.RegularSource.smoothTestSource t q ^ 2 ≤ ↑q
+'BuildingBlocks.RegularSource.smoothTestSource_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.smoothTestSource_abs_le_sqrt {t : ℕ} (ht : 1 ≤ t) (q : ℕ) :
+  |BuildingBlocks.RegularSource.smoothTestSource t q| ≤ √↑q
+'BuildingBlocks.RegularSource.smoothTestSource_abs_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.signedMobiusInverse_smoothTestSource {t : ℕ} (ht : 1 ≤ t) :
+  BuildingBlocks.RegularSource.signedMobiusInverse (BuildingBlocks.RegularSource.smoothTestSource t) (t ^ 3) =
+    ↑t / 4 * ∑ d ∈ Finset.Icc 1 t, ↑(ArithmeticFunction.moebius d) ^ 2
+'BuildingBlocks.RegularSource.signedMobiusInverse_smoothTestSource' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.signedMobiusInverse_smoothTestSource_lower {t : ℕ} (ht : 256 ≤ t) :
+  ↑t ^ 2 / 64 ≤
+    BuildingBlocks.RegularSource.signedMobiusInverse (BuildingBlocks.RegularSource.smoothTestSource t) (t ^ 3)
+'BuildingBlocks.RegularSource.signedMobiusInverse_smoothTestSource_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.signedMobiusInverse_no_uniform_regular_bound {r : ℝ} (hr : r < 2 / 3) :
+  ¬∃ C N₀,
+      ∀ (f : ℕ → ℝ),
+        (∀ (q : ℕ), |f q| ≤ √↑q) →
+          (∀ (q : ℕ), |f (q + 1) - f q| ≤ 1) →
+            ∀ (N : ℕ), max 1 N₀ ≤ N → |BuildingBlocks.RegularSource.signedMobiusInverse f N| ≤ C * ↑N ^ r
+'BuildingBlocks.RegularSource.signedMobiusInverse_no_uniform_regular_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.sourceDifferenceConstraint (q : ℕ) :
+  BoundedContinuousFunction ℕ ℝ × BoundedContinuousFunction ℕ ℝ →L[ℝ] ℝ
+'BuildingBlocks.RegularSource.sourceDifferenceConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sourceDifferenceConstraint_apply (q : ℕ)
+  (p : BoundedContinuousFunction ℕ ℝ × BoundedContinuousFunction ℕ ℝ) :
+  (BuildingBlocks.RegularSource.sourceDifferenceConstraint q) p = p.2 q - √↑(q + 1) * p.1 (q + 1) + √↑q * p.1 q
+'BuildingBlocks.RegularSource.sourceDifferenceConstraint_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.regularSourceSpace :
+  Submodule ℝ (BoundedContinuousFunction ℕ ℝ × BoundedContinuousFunction ℕ ℝ)
+'BuildingBlocks.RegularSource.regularSourceSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.regularSourceNormedSpace : NormedSpace ℝ ↥BuildingBlocks.RegularSource.regularSourceSpace
+'BuildingBlocks.RegularSource.regularSourceNormedSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.mem_regularSourceSpace
+  (p : BoundedContinuousFunction ℕ ℝ × BoundedContinuousFunction ℕ ℝ) :
+  p ∈ BuildingBlocks.RegularSource.regularSourceSpace ↔ ∀ (q : ℕ), √↑(q + 1) * p.1 (q + 1) - √↑q * p.1 q = p.2 q
+'BuildingBlocks.RegularSource.mem_regularSourceSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.regularSourceSpace_isClosed : IsClosed ↑BuildingBlocks.RegularSource.regularSourceSpace
+'BuildingBlocks.RegularSource.regularSourceSpace_isClosed' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.sourceDifferenceSequence (f : ℕ → ℝ) (hd : ∀ (q : ℕ), |f (q + 1) - f q| ≤ 1) :
+  BoundedContinuousFunction ℕ ℝ
+'BuildingBlocks.RegularSource.sourceDifferenceSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.liftRegularSource (f : ℕ → ℝ) (hf : ∀ (q : ℕ), |f q| ≤ √↑q)
+  (hd : ∀ (q : ℕ), |f (q + 1) - f q| ≤ 1) : ↥BuildingBlocks.RegularSource.regularSourceSpace
+'BuildingBlocks.RegularSource.liftRegularSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.liftRegularSource_norm_le (f : ℕ → ℝ) (hf : ∀ (q : ℕ), |f q| ≤ √↑q)
+  (hd : ∀ (q : ℕ), |f (q + 1) - f q| ≤ 1) : ‖BuildingBlocks.RegularSource.liftRegularSource f hf hd‖ ≤ 1
+'BuildingBlocks.RegularSource.liftRegularSource_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.regularMobiusFunctional (r : ℝ) (N : ℕ) :
+  ↥BuildingBlocks.RegularSource.regularSourceSpace →L[ℝ] ℝ
+'BuildingBlocks.RegularSource.regularMobiusFunctional' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.regularMobiusFunctional_apply (r : ℝ) (N : ℕ)
+  (p : ↥BuildingBlocks.RegularSource.regularSourceSpace) :
+  (BuildingBlocks.RegularSource.regularMobiusFunctional r N) p =
+    BuildingBlocks.RegularSource.signedMobiusInverse (fun q => √↑q * (↑p).1 q) N / ↑N ^ r
+'BuildingBlocks.RegularSource.regularMobiusFunctional_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.regularMobiusFunctional_lift (r : ℝ) (N : ℕ) (f : ℕ → ℝ) (hf : ∀ (q : ℕ), |f q| ≤ √↑q)
+  (hd : ∀ (q : ℕ), |f (q + 1) - f q| ≤ 1) :
+  (BuildingBlocks.RegularSource.regularMobiusFunctional r N) (BuildingBlocks.RegularSource.liftRegularSource f hf hd) =
+    BuildingBlocks.RegularSource.signedMobiusInverse f N / ↑N ^ r
+'BuildingBlocks.RegularSource.regularMobiusFunctional_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.regularMobiusFunctional_not_uniformly_bounded {r : ℝ} (hr : r < 2 / 3) :
+  ¬∃ C, ∀ (N : ℕ), ‖BuildingBlocks.RegularSource.regularMobiusFunctional r N‖ ≤ C
+'BuildingBlocks.RegularSource.regularMobiusFunctional_not_uniformly_bounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.regularSpaceSource (p : ↥BuildingBlocks.RegularSource.regularSourceSpace) (q : ℕ) : ℝ
+'BuildingBlocks.RegularSource.regularSpaceSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.regularSpaceSource_bounds (p : ↥BuildingBlocks.RegularSource.regularSourceSpace) :
+  (∀ (q : ℕ), |BuildingBlocks.RegularSource.regularSpaceSource p q| ≤ √↑q) ∧
+    ∀ (q : ℕ),
+      |BuildingBlocks.RegularSource.regularSpaceSource p (q + 1) -
+            BuildingBlocks.RegularSource.regularSpaceSource p q| ≤
+        1
+'BuildingBlocks.RegularSource.regularSpaceSource_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.RegularSource.regularMobiusFunctional_scaled_source (r : ℝ) (N : ℕ)
+  (p : ↥BuildingBlocks.RegularSource.regularSourceSpace) :
+  (BuildingBlocks.RegularSource.regularMobiusFunctional r N) p =
+    max 1 ‖p‖ * BuildingBlocks.RegularSource.signedMobiusInverse (BuildingBlocks.RegularSource.regularSpaceSource p) N /
+      ↑N ^ r
+'BuildingBlocks.RegularSource.regularMobiusFunctional_scaled_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.RegularSource.exists_fixed_regular_source_with_unbounded_inverse {r : ℝ} (hr : r < 2 / 3) :
+  ∃ f,
+    (∀ (q : ℕ), |f q| ≤ √↑q) ∧
+      (∀ (q : ℕ), |f (q + 1) - f q| ≤ 1) ∧
+        ¬∃ C N₀, ∀ (N : ℕ), max 1 N₀ ≤ N → |BuildingBlocks.RegularSource.signedMobiusInverse f N| ≤ C * ↑N ^ r
+'BuildingBlocks.RegularSource.exists_fixed_regular_source_with_unbounded_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.psi (N : ℕ) : ℝ
+'BuildingBlocks.CoarsePrimitive.psi' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.psi_mono {M N : ℕ} (h : M ≤ N) :
+  BuildingBlocks.CoarsePrimitive.psi M ≤ BuildingBlocks.CoarsePrimitive.psi N
+'BuildingBlocks.CoarsePrimitive.psi_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.primeErrorReal (x : ℝ) : ℝ
+'BuildingBlocks.CoarsePrimitive.primeErrorReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix (X t : ℝ) : ℝ
+'BuildingBlocks.CoarsePrimitive.coarsePrefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarseSuffix (X t : ℝ) : ℝ
+'BuildingBlocks.CoarsePrimitive.coarseSuffix' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare (X : ℝ) : ℝ
+'BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.primeErrorReal_intervalIntegrable (a b : ℝ) :
+  IntervalIntegrable BuildingBlocks.CoarsePrimitive.primeErrorReal MeasureTheory.volume a b
+'BuildingBlocks.CoarsePrimitive.primeErrorReal_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_add_suffix (X t : ℝ) :
+  BuildingBlocks.CoarsePrimitive.coarsePrefix X t + BuildingBlocks.CoarsePrimitive.coarseSuffix X t =
+    BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X)
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_add_suffix' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_continuous (X : ℝ) :
+  Continuous (BuildingBlocks.CoarsePrimitive.coarsePrefix X)
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarseSuffix_continuous (X : ℝ) :
+  Continuous (BuildingBlocks.CoarsePrimitive.coarseSuffix X)
+'BuildingBlocks.CoarsePrimitive.coarseSuffix_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare_nonneg {X : ℝ} (hX : 0 ≤ X) :
+  0 ≤ BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X
+'BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_sq_le {X : ℝ} (hX : 0 ≤ X) :
+  X * BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X) ^ 2 ≤
+    2 * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X
+'BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.primeErrorReal_measurable : Measurable BuildingBlocks.CoarsePrimitive.primeErrorReal
+'BuildingBlocks.CoarsePrimitive.primeErrorReal_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.primeErrorReal_continuousWithinAt_right (x : ℝ) :
+  ContinuousWithinAt BuildingBlocks.CoarsePrimitive.primeErrorReal (Set.Ici x) x
+'BuildingBlocks.CoarsePrimitive.primeErrorReal_continuousWithinAt_right' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_hasDerivWithinAt_right (X t : ℝ) :
+  HasDerivWithinAt (BuildingBlocks.CoarsePrimitive.coarsePrefix X) (BuildingBlocks.CoarsePrimitive.primeErrorReal t)
+    (Set.Ioi t) t
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_hasDerivWithinAt_right' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.interval_abs_integral_sq_le {f : ℝ → ℝ} (hf : Continuous f) {a b : ℝ} (hab : a ≤ b) :
+  (∫ (x : ℝ) in a..b, |f x|) ^ 2 ≤ (b - a) * ∫ (x : ℝ) in a..b, f x ^ 2
+'BuildingBlocks.CoarsePrimitive.interval_abs_integral_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_sq_le {X : ℝ} (hX : 0 ≤ X) :
+  (∫ (t : ℝ) in X..2 * X, |BuildingBlocks.CoarsePrimitive.coarsePrefix X t|) ^ 2 ≤
+    X * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_sq_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrime_summation_by_parts {X : ℝ} {w w' : ℝ → ℂ}
+  (hw : ContinuousOn w (Set.uIcc X (2 * X))) (hd : ∀ x ∈ Set.Ioo (min X (2 * X)) (max X (2 * X)), HasDerivAt w (w' x) x)
+  (hi : IntervalIntegrable w' MeasureTheory.volume X (2 * X)) :
+  ∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.primeErrorReal x) * w x =
+    ↑(BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X)) * w (2 * X) -
+      ∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.coarsePrefix X x) * w' x
+'BuildingBlocks.CoarsePrimitive.coarsePrime_summation_by_parts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrime_mellin_block {X : ℝ} (hX : 0 < X) (s : ℂ) :
+  ∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.primeErrorReal x) * ↑x ^ (-(s + 1)) =
+    ↑(BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X)) * (2 * ↑X) ^ (-(s + 1)) +
+      (s + 1) * ∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.coarsePrefix X x) * ↑x ^ (-(s + 2))
+'BuildingBlocks.CoarsePrimitive.coarsePrime_mellin_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_le_sqrt {X : ℝ} (hX : 0 < X) :
+  |BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X)| ≤
+    √(2 * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X / X)
+'BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_le_sqrt {X : ℝ} (hX : 0 ≤ X) :
+  ∫ (t : ℝ) in X..2 * X, |BuildingBlocks.CoarsePrimitive.coarsePrefix X t| ≤
+    √(X * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X)
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_le_sqrt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrime_test_bound {X K : ℝ} (hX : 0 < X) (hK : 0 ≤ K) {w w' : ℝ → ℂ}
+  (hw : ContinuousOn w (Set.uIcc X (2 * X))) (hd : ∀ x ∈ Set.Ioo (min X (2 * X)) (max X (2 * X)), HasDerivAt w (w' x) x)
+  (hi : IntervalIntegrable w' MeasureTheory.volume X (2 * X)) (hbound : ∀ x ∈ Set.Ioc X (2 * X), ‖w' x‖ ≤ K) :
+  ‖∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.primeErrorReal x) * w x‖ ≤
+    √(2 * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X / X) * ‖w (2 * X)‖ +
+      K * √(X * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X)
+'BuildingBlocks.CoarsePrimitive.coarsePrime_test_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Module constants audited, including generated declarations: 26
+Full transitive axiom union: [propext, Classical.choice, Quot.sound]
+COARSE PRIMITIVE AXIOM AUDIT PASSED
+BuildingBlocks.HyperbolaEndpoint.moebius_square_quotient_sum {N : ℕ} (hN : N ≠ 0) :
+  (∑ d ∈ N.divisors, ArithmeticFunction.moebius d * if IsSquare (N / d) then 1 else 0) =
+    (-1) ^ ArithmeticFunction.cardFactors N
+'BuildingBlocks.HyperbolaEndpoint.moebius_square_quotient_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.halfDivisorCount (N : ℕ) : ℕ
+'BuildingBlocks.HyperbolaEndpoint.halfDivisorCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.twice_halfDivisorCount {N : ℕ} (hN : N ≠ 0) :
+  2 * BuildingBlocks.HyperbolaEndpoint.halfDivisorCount N = N.divisors.card + if IsSquare N then 1 else 0
+'BuildingBlocks.HyperbolaEndpoint.twice_halfDivisorCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.moebius_divisorCard_sum {N : ℕ} (hN : N ≠ 0) :
+  ∑ d ∈ N.divisors, ArithmeticFunction.moebius d * ↑(N / d).divisors.card = 1
+'BuildingBlocks.HyperbolaEndpoint.moebius_divisorCard_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection (N : ℕ) : ℤ
+'BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.twice_hyperbolaEndpointCorrection {N : ℕ} (hN : N ≠ 0) :
+  2 * BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection N = 1 + (-1) ^ ArithmeticFunction.cardFactors N
+'BuildingBlocks.HyperbolaEndpoint.twice_hyperbolaEndpointCorrection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_zero_or_one {N : ℕ} (hN : N ≠ 0) :
+  BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection N = 0 ∨
+    BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection N = 1
+'BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_zero_or_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.halfDivisorCount_eq_sqrt_divisors (N : ℕ) :
+  BuildingBlocks.HyperbolaEndpoint.halfDivisorCount N = {m ∈ Finset.Icc 1 N.sqrt | m ∣ N}.card
+'BuildingBlocks.HyperbolaEndpoint.halfDivisorCount_eq_sqrt_divisors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_eq_jump_sum {N : ℕ} (hN : N ≠ 0) :
+  BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection N =
+    ∑ n ∈ Finset.Icc 1 N, ArithmeticFunction.moebius n * ∑ m ∈ Finset.Icc 1 (N / n).sqrt, if n * m ∣ N then 1 else 0
+'BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_eq_jump_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Module constants audited, including generated declarations: 19
+Full transitive axiom union: [propext, Quot.sound, Classical.choice]
+HYPERBOLA ENDPOINT AXIOM AUDIT PASSED

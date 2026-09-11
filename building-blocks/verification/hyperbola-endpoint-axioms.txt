@@ -1,0 +1,43 @@
+BuildingBlocks.HyperbolaEndpoint.moebius_square_quotient_sum {N : ℕ} (hN : N ≠ 0) :
+  (∑ d ∈ N.divisors, ArithmeticFunction.moebius d * if IsSquare (N / d) then 1 else 0) =
+    (-1) ^ ArithmeticFunction.cardFactors N
+'BuildingBlocks.HyperbolaEndpoint.moebius_square_quotient_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.halfDivisorCount (N : ℕ) : ℕ
+'BuildingBlocks.HyperbolaEndpoint.halfDivisorCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.twice_halfDivisorCount {N : ℕ} (hN : N ≠ 0) :
+  2 * BuildingBlocks.HyperbolaEndpoint.halfDivisorCount N = N.divisors.card + if IsSquare N then 1 else 0
+'BuildingBlocks.HyperbolaEndpoint.twice_halfDivisorCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.moebius_divisorCard_sum {N : ℕ} (hN : N ≠ 0) :
+  ∑ d ∈ N.divisors, ArithmeticFunction.moebius d * ↑(N / d).divisors.card = 1
+'BuildingBlocks.HyperbolaEndpoint.moebius_divisorCard_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection (N : ℕ) : ℤ
+'BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.twice_hyperbolaEndpointCorrection {N : ℕ} (hN : N ≠ 0) :
+  2 * BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection N = 1 + (-1) ^ ArithmeticFunction.cardFactors N
+'BuildingBlocks.HyperbolaEndpoint.twice_hyperbolaEndpointCorrection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_zero_or_one {N : ℕ} (hN : N ≠ 0) :
+  BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection N = 0 ∨
+    BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection N = 1
+'BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_zero_or_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.halfDivisorCount_eq_sqrt_divisors (N : ℕ) :
+  BuildingBlocks.HyperbolaEndpoint.halfDivisorCount N = {m ∈ Finset.Icc 1 N.sqrt | m ∣ N}.card
+'BuildingBlocks.HyperbolaEndpoint.halfDivisorCount_eq_sqrt_divisors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_eq_jump_sum {N : ℕ} (hN : N ≠ 0) :
+  BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection N =
+    ∑ n ∈ Finset.Icc 1 N, ArithmeticFunction.moebius n * ∑ m ∈ Finset.Icc 1 (N / n).sqrt, if n * m ∣ N then 1 else 0
+'BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_eq_jump_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Module constants audited, including generated declarations: 19
+Full transitive axiom union: [propext, Quot.sound, Classical.choice]
+HYPERBOLA ENDPOINT AXIOM AUDIT PASSED

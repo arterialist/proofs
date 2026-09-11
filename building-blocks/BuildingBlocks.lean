@@ -3,3 +3,4 @@ import BuildingBlocks.FloorCorrection
 import BuildingBlocks.HyperbolaProduct
 import BuildingBlocks.RegularSource
 import BuildingBlocks.CoarsePrimitive
+import BuildingBlocks.HyperbolaEndpoint

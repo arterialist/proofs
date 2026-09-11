@@ -1,0 +1,280 @@
+{
+  "category": "building-blocks",
+  "exposedDeclarations": [
+    "BuildingBlocks.HyperbolaEndpoint.moebius_square_quotient_sum",
+    "BuildingBlocks.HyperbolaEndpoint.halfDivisorCount",
+    "BuildingBlocks.HyperbolaEndpoint.twice_halfDivisorCount",
+    "BuildingBlocks.HyperbolaEndpoint.moebius_divisorCard_sum",
+    "BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection",
+    "BuildingBlocks.HyperbolaEndpoint.twice_hyperbolaEndpointCorrection",
+    "BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_zero_or_one",
+    "BuildingBlocks.HyperbolaEndpoint.halfDivisorCount_eq_sqrt_divisors",
+    "BuildingBlocks.HyperbolaEndpoint.hyperbolaEndpointCorrection_eq_jump_sum"
+  ],
+  "sourceSha256": "f46cdcdfba62a0aa99a6d374543521234d88b6c5c889fd398d36b385d8e56d13",
+  "verifiedAtUtc": "2026-09-11T13:02:36.597057+00:00",
+  "leanVersion": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "mathlibRevision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "verification": {
+    "commands": [
+      {
+        "command": [
+          "lean",
+          "--root=building-blocks",
+          "-o",
+          ".lake/build/lib/lean/BuildingBlocks/HyperbolaEndpoint.olean",
+          "building-blocks/BuildingBlocks/HyperbolaEndpoint.lean"
+        ],
+        "exitCode": 0,
+        "seconds": 1.9125218340195715,
+        "log": "hyperbola-endpoint-build.txt"
+      },
+      {
+        "command": [
+          "lean",
+          "--root=building-blocks",
+          "-o",
+          ".lake/build/lib/lean/BuildingBlocks.olean",
+          "building-blocks/BuildingBlocks.lean"
+        ],
+        "exitCode": 0,
+        "seconds": 1.198843875026796,
+        "log": "hyperbola-endpoint-index-build.txt"
+      },
+      {
+        "command": [
+          "lean",
+          "--root=building-blocks",
+          "building-blocks/verification/HyperbolaEndpointAudit.lean"
+        ],
+        "exitCode": 0,
+        "seconds": 9.048170541995205,
+        "log": "hyperbola-endpoint-axioms.txt"
+      }
+    ],
+    "axiomsByDeclaration": {
+      "moebius_square_quotient_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "halfDivisorCount": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "twice_halfDivisorCount": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "moebius_divisorCard_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hyperbolaEndpointCorrection": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "twice_hyperbolaEndpointCorrection": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hyperbolaEndpointCorrection_zero_or_one": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "halfDivisorCount_eq_sqrt_divisors": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "hyperbolaEndpointCorrection_eq_jump_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "fullModuleConstants": 19,
+    "dependencies": [
+      {
+        "name": "mathlib",
+        "revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+        "clean": true
+      },
+      {
+        "name": "plausible",
+        "revision": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+        "clean": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "revision": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+        "clean": true
+      },
+      {
+        "name": "importGraph",
+        "revision": "d768126816be17600904726ca7976b185786e6b9",
+        "clean": true
+      },
+      {
+        "name": "proofwidgets",
+        "revision": "556caed0eadb7901e068131d1be208dd907d07a2",
+        "clean": true
+      },
+      {
+        "name": "aesop",
+        "revision": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+        "clean": true
+      },
+      {
+        "name": "Qq",
+        "revision": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+        "clean": true
+      },
+      {
+        "name": "batteries",
+        "revision": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+        "clean": true
+      },
+      {
+        "name": "Cli",
+        "revision": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+        "clean": true
+      }
+    ],
+    "dependencyReuse": "Read-only cached artifacts from the nine clean dependency checkouts pinned by lake-manifest.json. Candidate module and standalone library index freshly compiled directly with Lean. No ArithmeticDynamics or PNT artifacts imported. No clean rebuild of all mathlib sources or full lake build performed.",
+    "warnings": 0
+  },
+  "verifiedFileSha256": {
+    "building-blocks/BuildingBlocks/HyperbolaEndpoint.lean": "f46cdcdfba62a0aa99a6d374543521234d88b6c5c889fd398d36b385d8e56d13",
+    "building-blocks/verification/HyperbolaEndpointAudit.lean": "3cd360c134a8e1f01a9aff62cd5a180c9a4bb0f6cb263a017ff5f1a6a3ec281e",
+    "lakefile.toml": "5e1d5c9e9dff61959bc2bdfd4e92a81ef415cb194149a607d551474fd589c216",
+    "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "building-blocks/hyperbola-endpoint.md": "822e816135d7df2713bf25c423551649e9bd50c9fa5966001b317993a23d2f30",
+    "LICENSE": "611d12e4d2e055644ae45f311599fb002f88ae61f70f30f3cb464993f361f5fc",
+    "building-blocks/verification/hyperbola-endpoint-axioms.txt": "f4e5723f26504d4aa5fb8bb6f4781ba93601b0e8a97e44b49f150b3e1d06c7ad",
+    "building-blocks/verification/hyperbola-endpoint-build.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "building-blocks/verification/hyperbola-endpoint-index-build.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "building-blocks/verification/hyperbola-endpoint-integration-build.txt": "4fbd8cd9315ede786460e069e6e1d44888f9be3ad7ea13a91301214ee4a5a014",
+    "building-blocks/verification/hyperbola-endpoint-integration-axioms.txt": "adccb0937feb806cc3a2a0704f478a7574178f142be4e8086e905ad1aedbf098"
+  },
+  "sourceSnapshots": [
+    {
+      "originalModule": "ArithmeticDynamics/HyperbolaEndpoint.lean",
+      "sha256": "5a3dcd79f31aabee4994bdf3ed1e45c0b31861080406df1c3d31472c0cc66ab3"
+    }
+  ],
+  "extraction": "All nine declaration statements and proof bodies retained byte-for-byte. Changed import header, module comment and namespace only. Direct mathlib imports replace the ArithmeticDynamics closure; no PNT module is copied or imported.",
+  "formalScope": "For natural N != 0, evaluates the full signed endpoint count E(N) by 2 E(N) = 1 + (-1)^cardFactors(N), proves E(N) is 0 or 1, and preserves the original inclusive double-sum equality. Includes divisor-pairing and convolution lemmas. The sqrt-cutoff count identity holds for all natural N.",
+  "writtenConsequence": {
+    "file": "building-blocks/hyperbola-endpoint.md",
+    "status": "Written real sawtooth conversion, not formalized in this module.",
+    "value": "For the complete outer sum 1 <= n <= N, ordinary sawtooth minus midpoint sawtooth is -(1+(-1)^Omega(N))/4, hence 0 or -1/2.",
+    "restriction": "Not valid for arbitrary restricted outer blocks. N=6 and only n=1 gives count 2 and correction -1."
+  },
+  "mathematicalNovelty": "Classical divisor pairing and Mobius inversion. No originality claim.",
+  "formalizationPriority": "No first-formalization claim.",
+  "attribution": {
+    "mathematics": [
+      {
+        "authors": [
+          "Andrew Granville",
+          "K. Soundararajan"
+        ],
+        "title": "Multiplicative number theory: The pretentious approach",
+        "version": "2014 draft",
+        "location": "Section 1.1.4, printed pages 7-8",
+        "url": "https://dms.umontreal.ca/~andrew/PDF/Book.To2.1.pdf",
+        "correspondence": "Complementary-divisor pairing with the square exception; inclusive count follows by retaining that diagonal."
+      },
+      {
+        "source": "NIST DLMF",
+        "location": "27.6.1",
+        "url": "https://dlmf.nist.gov/27.6.E1",
+        "correspondence": "Sum of Liouville over divisors equals the square indicator. Mobius inversion gives the square-quotient convolution. Section notes cite Apostol (1976), Chapter 2."
+      }
+    ],
+    "mathlib": [
+      {
+        "modules": [
+          "Mathlib.NumberTheory.ArithmeticFunction",
+          "Mathlib.Data.Nat.Squarefree",
+          "Mathlib.NumberTheory.Divisors"
+        ],
+        "authors": [
+          "Aaron Anderson"
+        ],
+        "copyright": "2020 Aaron Anderson",
+        "license": "Apache-2.0"
+      },
+      {
+        "modules": [
+          "Mathlib.Data.Nat.Sqrt"
+        ],
+        "authors": [
+          "Floris van Doorn",
+          "Leonardo de Moura",
+          "Jeremy Avigad",
+          "Mario Carneiro"
+        ],
+        "copyright": "2014 Floris van Doorn; 2016 Microsoft Corporation",
+        "license": "Apache-2.0"
+      },
+      {
+        "modules": [
+          "Mathlib.Order.Interval.Finset.Nat"
+        ],
+        "authors": [
+          "Yaël Dillies"
+        ],
+        "copyright": "2021 Yaël Dillies",
+        "license": "Apache-2.0"
+      }
+    ],
+    "codeLicense": "MIT for the repository proof code under the existing publication authorization. Imported mathlib retains Apache 2.0; other imported dependencies retain their own licenses. No third-party source code copied."
+  },
+  "sourceAccess": "Both cited primary sources and relevant pinned mathlib file headers directly inspected. No global priority search asserted.",
+  "standaloneCandidate": {
+    "indexSha256": "53dcef6872d70db98eabf032d48815a899f12b30a4b6914f4f139d0a31352000",
+    "readmeSha256": "cceb308f7e36448a01e7578a8aa33b7d698b8676b7861189a11683ecbf08da2a",
+    "note": "Standalone index and root README are not replacements for existing repository files."
+  },
+  "integratedVerification": {
+    "verifiedAtUtc": "2026-09-11T13:09:30.662416+00:00",
+    "build": {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 12.076371707982616,
+      "log": "hyperbola-endpoint-integration-build.txt"
+    },
+    "audit": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "building-blocks/verification/Audit.lean"
+      ],
+      "exitCode": 0,
+      "seconds": 100.27739041601308,
+      "log": "hyperbola-endpoint-integration-axioms.txt",
+      "exposedDeclarationsAcrossLibrary": 117,
+      "newModuleConstantsIncludingGenerated": 19,
+      "axiomUnion": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "freshNewModuleAndAggregateIndex": true,
+    "dependencies": "All nine dependency checkouts match lake-manifest.json and have no tracked changes. Pinned compiled dependency caches reused. All public Lean sources remained unchanged through the audit."
+  }
+}
