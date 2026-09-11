@@ -88,3 +88,18 @@ This excludes deriving the desired inverse bound from size and bounded increment
 The proof uses elementary squarefree counting and the classical uniform boundedness principle. Its formal dependencies include mathlib's [Banach–Steinhaus theorem](https://github.com/leanprover-community/mathlib4/blob/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/Mathlib/Analysis/Normed/Operator/BanachSteinhaus.lean), by Jireh Loreaux, and [bounded-function normed spaces](https://github.com/leanprover-community/mathlib4/blob/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/Mathlib/Topology/ContinuousMap/Bounded/Normed.lean), by Sébastien Gouëzel, Mario Carneiro, Yury Kudryashov, and Heather Macbeth. These dependencies retain their Apache 2.0 license. Priority of this exact counterexample and its formalization is unestablished; no originality claim is made.
 
 [Verification](verification/regular-source.json).
+
+## Finite primitive-energy bounds
+
+[CoarsePrimitive.lean](BuildingBlocks/CoarsePrimitive.lean) bounds weighted integrals of the actual prime error $e(x)=\psi(\lfloor x\rfloor_+)-x$. Put $P_X(t)=\int_X^t e(x)\,dx$, $R_X(t)=\int_t^{2X}e(x)\,dx$ and $S_X=\int_X^{2X}(P_X(t)^2+R_X(t)^2)\,dt$.
+
+For $X>0$, a continuous complex test function $w$ differentiable inside the block, with interval-integrable derivative satisfying $\lVert w'\rVert\le K$ for $K\ge0$, obeys
+
+$$
+\left\lVert\int_X^{2X}e(x)w(x)\,dx\right\rVert
+\le\sqrt{2S_X/X}\,\lVert w(2X)\rVert+K\sqrt{XS_X}.
+$$
+
+The module also proves the exact finite Mellin identity, retaining the terminal mass and integer jumps. It supplies no growth bound for $S_X$ or infinite-series continuation theorem. The mathematics uses classical Cauchy–Schwarz and one-sided integration by parts.
+
+[Assumptions, use and attribution](coarse-primitive.md) · [Written RH criterion](coarse-energy-rh-criterion.md) · [Verification](verification/coarse-primitive.json).

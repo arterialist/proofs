@@ -1,0 +1,352 @@
+{
+  "category": "building-blocks",
+  "exposedDeclarations": [
+    "BuildingBlocks.CoarsePrimitive.psi",
+    "BuildingBlocks.CoarsePrimitive.psi_mono",
+    "BuildingBlocks.CoarsePrimitive.primeErrorReal",
+    "BuildingBlocks.CoarsePrimitive.coarsePrefix",
+    "BuildingBlocks.CoarsePrimitive.coarseSuffix",
+    "BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare",
+    "BuildingBlocks.CoarsePrimitive.primeErrorReal_intervalIntegrable",
+    "BuildingBlocks.CoarsePrimitive.coarsePrefix_add_suffix",
+    "BuildingBlocks.CoarsePrimitive.coarsePrefix_continuous",
+    "BuildingBlocks.CoarsePrimitive.coarseSuffix_continuous",
+    "BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare_nonneg",
+    "BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_sq_le",
+    "BuildingBlocks.CoarsePrimitive.primeErrorReal_measurable",
+    "BuildingBlocks.CoarsePrimitive.primeErrorReal_continuousWithinAt_right",
+    "BuildingBlocks.CoarsePrimitive.coarsePrefix_hasDerivWithinAt_right",
+    "BuildingBlocks.CoarsePrimitive.interval_abs_integral_sq_le",
+    "BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_sq_le",
+    "BuildingBlocks.CoarsePrimitive.coarsePrime_summation_by_parts",
+    "BuildingBlocks.CoarsePrimitive.coarsePrime_mellin_block",
+    "BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_le_sqrt",
+    "BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_le_sqrt",
+    "BuildingBlocks.CoarsePrimitive.coarsePrime_test_bound"
+  ],
+  "sourceSha256": "ab4b9cc47d8727a39fb08b626b85441e3882f15ea365ae37ce0b063ace4269cb",
+  "verifiedAtUtc": "2026-09-11T12:31:18.025346+00:00",
+  "leanVersion": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "mathlibRevision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "verification": {
+    "commands": [
+      {
+        "command": [
+          "lean",
+          "--root=building-blocks",
+          "-o",
+          ".lake/build/lib/lean/BuildingBlocks/CoarsePrimitive.olean",
+          "building-blocks/BuildingBlocks/CoarsePrimitive.lean"
+        ],
+        "exitCode": 0,
+        "seconds": 2.359009915991919,
+        "log": "coarse-primitive-build.txt"
+      },
+      {
+        "command": [
+          "lean",
+          "--root=building-blocks",
+          "-o",
+          ".lake/build/lib/lean/BuildingBlocks.olean",
+          "building-blocks/BuildingBlocks.lean"
+        ],
+        "exitCode": 0,
+        "seconds": 1.5804915420012549,
+        "log": "coarse-primitive-index-build.txt"
+      },
+      {
+        "command": [
+          "lean",
+          "--root=building-blocks",
+          "building-blocks/verification/CoarsePrimitiveAudit.lean"
+        ],
+        "exitCode": 0,
+        "seconds": 32.731315667013405,
+        "log": "coarse-primitive-axioms.txt"
+      }
+    ],
+    "axiomsByDeclaration": {
+      "psi": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "psi_mono": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "primeErrorReal": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrefix": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarseSuffix": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrimitiveSquare": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "primeErrorReal_intervalIntegrable": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrefix_add_suffix": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrefix_continuous": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarseSuffix_continuous": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrimitiveSquare_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarse_terminal_mass_sq_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "primeErrorReal_measurable": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "primeErrorReal_continuousWithinAt_right": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrefix_hasDerivWithinAt_right": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "interval_abs_integral_sq_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrefix_abs_integral_sq_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrime_summation_by_parts": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrime_mellin_block": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarse_terminal_mass_le_sqrt": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrefix_abs_integral_le_sqrt": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "coarsePrime_test_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "fullModuleConstants": 26,
+    "dependencies": [
+      {
+        "name": "mathlib",
+        "revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+        "clean": true
+      },
+      {
+        "name": "plausible",
+        "revision": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+        "clean": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "revision": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+        "clean": true
+      },
+      {
+        "name": "importGraph",
+        "revision": "d768126816be17600904726ca7976b185786e6b9",
+        "clean": true
+      },
+      {
+        "name": "proofwidgets",
+        "revision": "556caed0eadb7901e068131d1be208dd907d07a2",
+        "clean": true
+      },
+      {
+        "name": "aesop",
+        "revision": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+        "clean": true
+      },
+      {
+        "name": "Qq",
+        "revision": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+        "clean": true
+      },
+      {
+        "name": "batteries",
+        "revision": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+        "clean": true
+      },
+      {
+        "name": "Cli",
+        "revision": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+        "clean": true
+      }
+    ],
+    "dependencyReuse": "Read-only cached artifacts from the nine clean dependency checkouts pinned by lake-manifest.json. Candidate module and standalone library index freshly compiled directly with Lean. No ArithmeticDynamics or PNT artifacts imported. No clean rebuild of all mathlib sources or full lake build performed.",
+    "warnings": 0
+  },
+  "verifiedFileSha256": {
+    "building-blocks/BuildingBlocks/CoarsePrimitive.lean": "ab4b9cc47d8727a39fb08b626b85441e3882f15ea365ae37ce0b063ace4269cb",
+    "building-blocks/verification/CoarsePrimitiveAudit.lean": "1e1bab815633b55d8ace07d8a12a9130f1e855038c3799f337d3860a8173f92c",
+    "lakefile.toml": "5e1d5c9e9dff61959bc2bdfd4e92a81ef415cb194149a607d551474fd589c216",
+    "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "building-blocks/verification/coarse-primitive-build.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "building-blocks/verification/coarse-primitive-index-build.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "building-blocks/verification/coarse-primitive-axioms.txt": "a457b72411af5b274c9905ce44a31c2ab1fce9f6c21dae9d533c9253ac6488d2",
+    "building-blocks/coarse-primitive.md": "2c8a202d838a5ecba2da5b1b9b76c8932acc67938442dcb9af96b7a932b7cc2d",
+    "LICENSE": "611d12e4d2e055644ae45f311599fb002f88ae61f70f30f3cb464993f361f5fc",
+    "building-blocks/BuildingBlocks/RegularSource.lean": "e12998f6450f9d2397db92f15adf909eb6444973d99351f41251b39fb6c9ecac",
+    "building-blocks/BuildingBlocks/HyperbolaProduct.lean": "4b0293a68ac2ba9d9aa441b3eb2e8843727fc7d5fd5c6da579ff471711a888f9",
+    "building-blocks/BuildingBlocks/FloorCorrection.lean": "fa02d7e69776673166f5f6dc60d6d46ae8db75b1bcbdbea7f82cdad816d312ab",
+    "building-blocks/BuildingBlocks/ZetaPole.lean": "097bd69901602515fbebabc12048d4dabb15ae09637a4daed03fe37abe1c0a3c",
+    "building-blocks/verification/Audit.lean": "11ea5855099126794ff67693a299c82c2e85dd752c4f9e519c71a95a44c05c3e",
+    "building-blocks/BuildingBlocks.lean": "769d17ae3dae7d1f1ae4dd63441f714121e120195aeb3ffba0c464410c5ad245",
+    "building-blocks/README.md": "22e81761b64aa54bc57b76e36e42f21fc60025029e80c9fb0b93565a1797fc78",
+    "building-blocks/coarse-energy-rh-criterion.md": "40e71a8be1f0d24c1a9e93d254062f21a083dbf7404aa1d978583282e5519b6f",
+    "building-blocks/verification/coarse-energy-criterion.json": "e841445548c1e021837d76b8434cd60a57ce3e9137d09e8513b7633e49341fa8",
+    "building-blocks/verification/coarse-primitive-integration-build.txt": "f736ba3e3bd6d9fb6acd40d4700d2929c48dc1963023d458bc49321891c649bc",
+    "building-blocks/verification/coarse-primitive-integration-axioms.txt": "185a36275f5d107424db53bc14eda14e51ad9e748bd97f51d661cc725254dba6"
+  },
+  "sourceSnapshots": [
+    {
+      "originalModule": "ArithmeticDynamics/CoarsePrimitive.lean",
+      "sha256": "f2bc58e32b33a1d4a6f7555e280501bba7623f7d73ae823f02ced0a69a320bc0",
+      "extraction": "Finite definitions and sixteen finite theorem proof bodies retained. Unused global CoarsePrimitiveBound definition omitted. Namespace and direct imports changed."
+    },
+    {
+      "originalModule": "ArithmeticDynamics/Bridge.lean",
+      "sha256": "ab28244869bb82a146b5b3c97e64d036c3b9f1d230c1a6647e1a082a72a8437c",
+      "extraction": "Exact psi definition using the von Mangoldt sum on range(N+1)."
+    },
+    {
+      "originalModule": "ArithmeticDynamics/ChebyshevBound.lean",
+      "sha256": "c70d9c440b2a004128b62bdc2c8aa22e4777aa397af78f13263ca133922de2ef",
+      "extraction": "psi_mono statement retained; new direct finite-range proof removes unrelated module dependencies."
+    }
+  ],
+  "formalScope": "Actual prime-error local integrability, right continuity and right FTC; exact adjacent primitive identity; terminal and L1 energy estimates; finite complex integration by parts; finite Mellin block identity for every complex parameter; test-function estimate with all derivative/integrability/domain hypotheses. No global growth bound or coarse-bound-to-RH implication.",
+  "mathematicalNovelty": "Applications of established integration theory. No novelty claim.",
+  "formalizationPriority": "Not claimed.",
+  "utility": "Transforms primitive-energy control into weighted prime-error integral control, retaining the terminal mass.",
+  "attribution": {
+    "mathematics": [
+      "Finite Cauchy-Schwarz inequality",
+      "One-sided fundamental theorem of calculus and integration by parts"
+    ],
+    "mathlibSources": [
+      {
+        "module": "Mathlib/MeasureTheory/Integral/IntervalIntegral/IntegrationByParts.lean",
+        "authors": [
+          "Yury Kudryashov",
+          "Patrick Massot",
+          "Sébastien Gouëzel"
+        ]
+      },
+      {
+        "module": "Mathlib/MeasureTheory/Integral/IntervalIntegral/FundThmCalculus.lean",
+        "authors": [
+          "Yury Kudryashov",
+          "Patrick Massot",
+          "Sébastien Gouëzel"
+        ]
+      },
+      {
+        "module": "Mathlib/NumberTheory/VonMangoldt.lean",
+        "authors": [
+          "Bhavik Mehta"
+        ]
+      },
+      {
+        "module": "Mathlib/Analysis/SpecialFunctions/Pow/Deriv.lean",
+        "authors": [
+          "Chris Hughes",
+          "Abhimanyu Pallavi Sudhir",
+          "Jean Lo",
+          "Calle Sönne",
+          "Sébastien Gouëzel",
+          "Rémy Degenne"
+        ]
+      },
+      {
+        "module": "Mathlib/Topology/Algebra/Order/Floor.lean",
+        "authors": [
+          "Anatole Dedecker"
+        ]
+      }
+    ],
+    "codeLicense": "MIT for repository proof code. Mathlib retains Apache 2.0; other dependencies retain their licenses. No dependency source copied."
+  },
+  "standaloneCandidate": {
+    "libraryIndexSha256": "b81bbaa5197ef776c26241e8094d3be2d9fd001f06c54b15924f664018b56734",
+    "readmeSha256": "36a5fc000ccc3858eb8d68e1df034284b917ae38eeba7696af2d421521808e02",
+    "integrationScope": "The standalone index imports only this module. Add its import to an existing BuildingBlocks index; do not replace that index. Repository-wide integration requires its own build."
+  },
+  "integratedVerification": {
+    "verifiedAtUtc": "2026-09-11T12:41:36.765113+00:00",
+    "build": {
+      "command": "lake build",
+      "exitCode": 0,
+      "seconds": 21.07213220797712,
+      "log": "coarse-primitive-integration-build.txt"
+    },
+    "axiomAudit": {
+      "command": "lake env lean building-blocks/verification/Audit.lean",
+      "exitCode": 0,
+      "seconds": 56.06412174997968,
+      "exposedDeclarationsAudited": 108,
+      "newModuleConstantsIncludingGenerated": 26,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "warnings": 0
+    },
+    "axiomLog": "coarse-primitive-integration-axioms.txt",
+    "dependencyReuse": "Nine clean pinned dependency checkouts reused. The new module and aggregate library were rebuilt in the publication repository; all108 exposed declarations were audited. No clean rebuild of mathlib."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "reviewed_at_utc": "2026-09-11T12:41:36.764305+00:00",
+  "status": "ready_for_publication_as_written_mathematical_companion",
+  "review_type": "independent written proof and primary-source statement review; not a Lean replay",
+  "proof_page": "coarse-energy-rh-criterion.md",
+  "proof_page_sha256": "40e71a8be1f0d24c1a9e93d254062f21a083dbf7404aa1d978583282e5519b6f",
+  "checks": {
+    "actual_chebyshev_function_includes_all_prime_powers": "pass",
+    "RH_implies_O_X4_via_conditional_mean_square": "pass; Brent-Platt-Trudgian printed p.741 equation (1) and Theorem 1 inspected",
+    "O_X4_implies_every_positive_epsilon": "pass",
+    "every_positive_epsilon_implies_RH": "pass; local uniform convergence, meromorphic uniqueness, multiplicity residue and reflection",
+    "uniformity_in_dyadic_index": "pass; constants may depend on epsilon but not k",
+    "eventual_bounds_and_initial_dyadic_range": "pass; finite entire initial blocks, finite initial energy maxima",
+    "F_Mellin_normalization": "F=-zeta_prime/(s*zeta)-1/(s-1)",
+    "G_equals_sF": "G=-zeta_prime/zeta-s/(s-1); alternative compensation equals 1+G",
+    "pole_at_one_cancels": "pass",
+    "zero_residue_all_multiplicities": "residue of F is -m/rho; residue of G is -m",
+    "finite_Lean_scope_separated": "pass; no assertion of global analytic continuation, zero exclusion or RH converse formalization",
+    "originality_claim": "none",
+    "new_unconditional_RH_bound": "none",
+    "matching_graph_appendix": "not included in this publication page; no graph-cost equivalence asserted"
+  },
+  "sources": [
+    {
+      "url": "https://maths-people.anu.edu.au/~brent/pd/rpb274-final.pdf",
+      "kind": "primary research paper",
+      "scope": "printed pp.740-742, especially p.741 equation (1), definition (2), Theorem 1; qualitative conditional mean-square input only; numerical bound not independently replayed"
+    },
+    {
+      "url": "https://dlmf.nist.gov/25.2",
+      "kind": "official reference",
+      "scope": "Euler product, analytic continuation and pole at 1"
+    },
+    {
+      "url": "https://dlmf.nist.gov/25.4",
+      "kind": "official reference",
+      "scope": "functional equation and xi reflection"
+    },
+    {
+      "url": "https://dlmf.nist.gov/25.10",
+      "kind": "official reference",
+      "scope": "nontrivial-zero location and symmetry"
+    }
+  ],
+  "category": "building-blocks",
+  "verification": "Written argument and cited primary mean-square theorem checked independently; global RH equivalence is not Lean-verified. Finite companion Lean module has separate verification."
+}

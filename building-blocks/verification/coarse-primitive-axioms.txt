@@ -1,0 +1,91 @@
+BuildingBlocks.CoarsePrimitive.psi (N : ℕ) : ℝ
+'BuildingBlocks.CoarsePrimitive.psi' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.psi_mono {M N : ℕ} (h : M ≤ N) :
+  BuildingBlocks.CoarsePrimitive.psi M ≤ BuildingBlocks.CoarsePrimitive.psi N
+'BuildingBlocks.CoarsePrimitive.psi_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.primeErrorReal (x : ℝ) : ℝ
+'BuildingBlocks.CoarsePrimitive.primeErrorReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix (X t : ℝ) : ℝ
+'BuildingBlocks.CoarsePrimitive.coarsePrefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarseSuffix (X t : ℝ) : ℝ
+'BuildingBlocks.CoarsePrimitive.coarseSuffix' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare (X : ℝ) : ℝ
+'BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.primeErrorReal_intervalIntegrable (a b : ℝ) :
+  IntervalIntegrable BuildingBlocks.CoarsePrimitive.primeErrorReal MeasureTheory.volume a b
+'BuildingBlocks.CoarsePrimitive.primeErrorReal_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_add_suffix (X t : ℝ) :
+  BuildingBlocks.CoarsePrimitive.coarsePrefix X t + BuildingBlocks.CoarsePrimitive.coarseSuffix X t =
+    BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X)
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_add_suffix' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_continuous (X : ℝ) :
+  Continuous (BuildingBlocks.CoarsePrimitive.coarsePrefix X)
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarseSuffix_continuous (X : ℝ) :
+  Continuous (BuildingBlocks.CoarsePrimitive.coarseSuffix X)
+'BuildingBlocks.CoarsePrimitive.coarseSuffix_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare_nonneg {X : ℝ} (hX : 0 ≤ X) :
+  0 ≤ BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X
+'BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_sq_le {X : ℝ} (hX : 0 ≤ X) :
+  X * BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X) ^ 2 ≤
+    2 * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X
+'BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.primeErrorReal_measurable : Measurable BuildingBlocks.CoarsePrimitive.primeErrorReal
+'BuildingBlocks.CoarsePrimitive.primeErrorReal_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.primeErrorReal_continuousWithinAt_right (x : ℝ) :
+  ContinuousWithinAt BuildingBlocks.CoarsePrimitive.primeErrorReal (Set.Ici x) x
+'BuildingBlocks.CoarsePrimitive.primeErrorReal_continuousWithinAt_right' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_hasDerivWithinAt_right (X t : ℝ) :
+  HasDerivWithinAt (BuildingBlocks.CoarsePrimitive.coarsePrefix X) (BuildingBlocks.CoarsePrimitive.primeErrorReal t)
+    (Set.Ioi t) t
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_hasDerivWithinAt_right' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.interval_abs_integral_sq_le {f : ℝ → ℝ} (hf : Continuous f) {a b : ℝ} (hab : a ≤ b) :
+  (∫ (x : ℝ) in a..b, |f x|) ^ 2 ≤ (b - a) * ∫ (x : ℝ) in a..b, f x ^ 2
+'BuildingBlocks.CoarsePrimitive.interval_abs_integral_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_sq_le {X : ℝ} (hX : 0 ≤ X) :
+  (∫ (t : ℝ) in X..2 * X, |BuildingBlocks.CoarsePrimitive.coarsePrefix X t|) ^ 2 ≤
+    X * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_sq_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrime_summation_by_parts {X : ℝ} {w w' : ℝ → ℂ}
+  (hw : ContinuousOn w (Set.uIcc X (2 * X))) (hd : ∀ x ∈ Set.Ioo (min X (2 * X)) (max X (2 * X)), HasDerivAt w (w' x) x)
+  (hi : IntervalIntegrable w' MeasureTheory.volume X (2 * X)) :
+  ∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.primeErrorReal x) * w x =
+    ↑(BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X)) * w (2 * X) -
+      ∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.coarsePrefix X x) * w' x
+'BuildingBlocks.CoarsePrimitive.coarsePrime_summation_by_parts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrime_mellin_block {X : ℝ} (hX : 0 < X) (s : ℂ) :
+  ∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.primeErrorReal x) * ↑x ^ (-(s + 1)) =
+    ↑(BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X)) * (2 * ↑X) ^ (-(s + 1)) +
+      (s + 1) * ∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.coarsePrefix X x) * ↑x ^ (-(s + 2))
+'BuildingBlocks.CoarsePrimitive.coarsePrime_mellin_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_le_sqrt {X : ℝ} (hX : 0 < X) :
+  |BuildingBlocks.CoarsePrimitive.coarsePrefix X (2 * X)| ≤
+    √(2 * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X / X)
+'BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_le_sqrt {X : ℝ} (hX : 0 ≤ X) :
+  ∫ (t : ℝ) in X..2 * X, |BuildingBlocks.CoarsePrimitive.coarsePrefix X t| ≤
+    √(X * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X)
+'BuildingBlocks.CoarsePrimitive.coarsePrefix_abs_integral_le_sqrt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.CoarsePrimitive.coarsePrime_test_bound {X K : ℝ} (hX : 0 < X) (hK : 0 ≤ K) {w w' : ℝ → ℂ}
+  (hw : ContinuousOn w (Set.uIcc X (2 * X))) (hd : ∀ x ∈ Set.Ioo (min X (2 * X)) (max X (2 * X)), HasDerivAt w (w' x) x)
+  (hi : IntervalIntegrable w' MeasureTheory.volume X (2 * X)) (hbound : ∀ x ∈ Set.Ioc X (2 * X), ‖w' x‖ ≤ K) :
+  ‖∫ (x : ℝ) in X..2 * X, ↑(BuildingBlocks.CoarsePrimitive.primeErrorReal x) * w x‖ ≤
+    √(2 * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X / X) * ‖w (2 * X)‖ +
+      K * √(X * BuildingBlocks.CoarsePrimitive.coarsePrimitiveSquare X)
+'BuildingBlocks.CoarsePrimitive.coarsePrime_test_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Module constants audited, including generated declarations: 26
+Full transitive axiom union: [propext, Classical.choice, Quot.sound]
+COARSE PRIMITIVE AXIOM AUDIT PASSED
