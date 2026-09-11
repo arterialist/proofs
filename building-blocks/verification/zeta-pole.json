@@ -1,0 +1,77 @@
+{
+  "extractedAtUtc": "2026-09-11T04:40:07.652401+00:00",
+  "category": "building-blocks",
+  "mathematicalNovelty": "classical; no originality claimed",
+  "formalizationPriority": "not established; no first-formalization claim",
+  "sourceTask": {
+    "title": "RH Proof",
+    "threadId": "01a08c67-5963-7540-88b1-d345723afc43"
+  },
+  "proofDevelopment": "Lean proof drafted by Codex in RH Proof under the repository owner's research direction; extracted and reviewed by the coordinating Codex task.",
+  "sourceSnapshots": [
+    {
+      "originalModule": "ArithmeticDynamics/LogDerivative.lean",
+      "sha256": "82d3428536f2252b0e15d1b4a04d1513aa1f66d8b3e7fa8a3f739a043c6fc078"
+    },
+    {
+      "originalModule": "ArithmeticDynamics/JointMellinPole.lean",
+      "sha256": "36da19df34707c82c46db4ea18c87fd670160708cc8e7244852e196b863dfa16"
+    }
+  ],
+  "changesDuringExtraction": [
+    "Retained exactly four relevant theorem declarations and their proof bodies.",
+    "Replaced project imports by direct mathlib dependencies.",
+    "Changed namespace from ArithmeticDynamics to BuildingBlocks.",
+    "Added attribution and isolated package build/audit files."
+  ],
+  "theorems": [
+    "BuildingBlocks.zeta_analytic_off_pole",
+    "BuildingBlocks.zeta_not_locally_zero",
+    "BuildingBlocks.analytic_logDerivative_principal_part",
+    "BuildingBlocks.zeta_jointMellin_principal_part"
+  ],
+  "leanVersion": "4.24.0",
+  "mathlibRevision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "verificationStatus": "passed independent package build and complete axiom audit of all four local theorems",
+  "verifiedAtUtc": "2026-09-11T04:43:30.743559+00:00",
+  "verification": {
+    "buildCommand": "lake build",
+    "auditCommand": "lake env lean building-blocks/verification/Audit.lean",
+    "buildExitCode": 0,
+    "auditExitCode": 0,
+    "axiomsByTheorem": {
+      "BuildingBlocks.zeta_analytic_off_pole": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.zeta_not_locally_zero": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.analytic_logDerivative_principal_part": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.zeta_jointMellin_principal_part": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "dependencyReuse": "Reused existing compiled mathlib/transitive dependency artifacts through a local ignored .lake/packages symlink. All nine dependency checkouts were clean and matched lake-manifest.json. The extracted BuildingBlocks modules were freshly compiled in this repository; the RH project modules were not imported. Standard clone builds resolve packages from the manifest.",
+    "claimLimit": "This checks the published four-theorem package, not the full RH workspace or a proof of RH."
+  },
+  "verifiedFileSha256": {
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "lakefile.toml": "5e1d5c9e9dff61959bc2bdfd4e92a81ef415cb194149a607d551474fd589c216",
+    "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+    "building-blocks/BuildingBlocks.lean": "11d44dd05f578c47b0cb08f1b0526074d61706c724092299fe644222572b1c98",
+    "building-blocks/BuildingBlocks/ZetaPole.lean": "fec53acea8f7c1a6d8af6f7ca179f40f3b0f8e6e3a8f9c29b7572da78a18e52e",
+    "building-blocks/verification/Audit.lean": "a8f17ac38bb236d2f0e8c68589e3daefad129ac8fca66b776b8a9c26bdd2cbdc",
+    "building-blocks/verification/axioms.txt": "ce54623029f56b4b60ac8888da304837cf710bbe222ffe9cc589e464ed80d50b",
+    "building-blocks/verification/build.txt": "1b958e93cdcd56c89189ea36507b6df5416e79589d0399e677270e8d2415bf52"
+  }
+}

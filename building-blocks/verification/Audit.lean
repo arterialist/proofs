@@ -1,0 +1,10 @@
+import BuildingBlocks
+
+#check BuildingBlocks.zeta_analytic_off_pole
+#print axioms BuildingBlocks.zeta_analytic_off_pole
+#check BuildingBlocks.zeta_not_locally_zero
+#print axioms BuildingBlocks.zeta_not_locally_zero
+#check BuildingBlocks.analytic_logDerivative_principal_part
+#print axioms BuildingBlocks.analytic_logDerivative_principal_part
+#check BuildingBlocks.zeta_jointMellin_principal_part
+#print axioms BuildingBlocks.zeta_jointMellin_principal_part

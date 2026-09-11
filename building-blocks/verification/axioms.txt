@@ -1,0 +1,23 @@
+BuildingBlocks.zeta_analytic_off_pole : AnalyticOnNhd ℂ riemannZeta {1}ᶜ
+'BuildingBlocks.zeta_analytic_off_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.zeta_not_locally_zero {s : ℂ} (hs : s ≠ 1) : ¬∀ᶠ (z : ℂ) in nhds s, riemannZeta z = 0
+'BuildingBlocks.zeta_not_locally_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.analytic_logDerivative_principal_part {f : ℂ → ℂ} {ρ : ℂ} (hf : AnalyticAt ℂ f ρ)
+  (hn : ¬∀ᶠ (z : ℂ) in nhds ρ, f z = 0) (hzero : f ρ = 0) :
+  ∃ m, 0 < m ∧ ∃ a, AnalyticAt ℂ a ρ ∧ ∀ᶠ (z : ℂ) in nhdsWithin ρ {ρ}ᶜ, deriv f z / f z = ↑m / (z - ρ) + a z
+'BuildingBlocks.analytic_logDerivative_principal_part' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.zeta_jointMellin_principal_part {ρ : ℂ} (hρ0 : ρ ≠ 0) (hρ1 : ρ ≠ 1) (hzero : riemannZeta ρ = 0) :
+  ∃ m,
+    0 < m ∧
+      ∃ a,
+        AnalyticAt ℂ a ρ ∧
+          (∀ᶠ (s : ℂ) in nhdsWithin ρ {ρ}ᶜ,
+              -deriv riemannZeta s / (s * riemannZeta s) - 1 / (s - 1) + 2 * ↑Real.eulerMascheroniConstant / s =
+                -↑m / ρ / (s - ρ) + a s) ∧
+            Filter.Tendsto
+                (fun s =>
+                  (s - ρ) *
+                    (-deriv riemannZeta s / (s * riemannZeta s) - 1 / (s - 1) + 2 * ↑Real.eulerMascheroniConstant / s))
+                (nhdsWithin ρ {ρ}ᶜ) (nhds (-↑m / ρ)) ∧
+              -↑m / ρ ≠ 0
+'BuildingBlocks.zeta_jointMellin_principal_part' depends on axioms: [propext, Classical.choice, Quot.sound]
