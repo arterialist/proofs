@@ -152,3 +152,7 @@ The [written proof](cyclotomic-eta-finite-parts.md) evaluates the rational-cusp 
 ## Theta cutoff completion obstruction
 
 The [written proof](theta-cutoff-completion.md) shows that every finite theta cutoff, and each specified positive even square-root completion, has infinitely many nonreal Fourier-transform zeros at every real heat time. It identifies the endpoint defect and its complex branch contribution despite rapid weighted kernel approximation. The result concerns these approximation families, not zeros of the full Riemann xi function. It uses classical contour asymptotics and Hadamard factorization; no originality or Lean formalization is claimed.
+
+## Shifted Fourier correlations
+
+The [written proof](shifted-fourier-density.md) distinguishes an analytic Wronskian from derivatives of the squared Fourier modulus. A positive analytic Bessel-convolution kernel disproves the general density assertion with the outside-hyperbolic-cosine kernel in Dimitrov–Xu arXiv:1606.05011v1, Theorem 3.2. The corrected kernel yields a density criterion allowing multiple real zeros. No conclusion about the truth of RH, originality, or Lean formalization is claimed.
