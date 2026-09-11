@@ -172,3 +172,15 @@ The [written proof](distinct-prime-sign-criterion.md) shows that RH is equivalen
 ## A complete Bernstein obstruction for theta Mellin interpolation
 
 The [written proof](theta-mellin-bernstein-obstruction.md) and [Arb certificate](certificates/theta_mellin_laguerre.py) show that an auxiliary normalized Mellin transform of the complete theta kernel violates the Laguerre inequality and has a nonreal zero. Its entire continuation then excludes every complete Bernstein function matching the actual xi coefficient ratios, including the KPS one-separation subclass. General Bernstein, $B_J$, $D_P$ and RH remain unresolved; this is an Arb-assisted proof, not a Lean formalization.
+
+## Square-root aggregation of the sign criterion
+
+The [written proof](sqrt-multiple-sign-criterion.md) proves that RH is equivalent to eventual negativity of the square-root-weighted sum over multiples of the distinct-prime convolution. Under RH its main term is $-x^{3/2}\log^2x/6$, with error $O(x^{3/2}\log x)$. The proof preserves arbitrary zero multiplicities and needs no finite simplicity verification. The unconditional sign remains open.
+
+## Undamped prime products in Nyman–Beurling approximation
+
+The [written proof](prime-product-nyman-test.md) shows that finite undamped prime-division products fail in the full Nyman–Beurling Hilbert norm even after optimal scalar normalization: the best squared error tends to one. Locally convergent scalar choices instead have divergent full error. This tests that family of approximants, not the criterion itself.
+
+## Local Möbius signs and dense history energy
+
+The [written proof](partial-mobius-dense-history.md) uses the classical truncated Möbius weights with the actual divisor forcing. They obey every division-sign rule up to a growing polylogarithmic prime cutoff, yet their complete prefix/suffix energy has order $X^5$ up to logarithmic factors. Removing all those small-prime edges leaves the same leading cross energy. These are auxiliary weights, not the actual Möbius function.
