@@ -224,3 +224,11 @@ The [prime-clique cutoff](prime-clique-cutoff.md) has exact arithmetic births an
 ## Theta and cyclotomic finite tests
 
 The [radial arithmetic sign theorem](theta-radial-arithmetic-sign.md) proves strict cutoff-weight monotonicity and negativity at some actual frequencies for the arithmetic coefficient alone, with the frequency-dependent mixture retained. [Cyclotomic orbit examples](cyclotomic-weighted-orbit-obstructions.md) disprove specified weighted and unweighted contraction claims. A [quartic Jensen region](quartic-reciprocal-defect-region.md), with an exact symbolic certificate, gives four distinct negative roots under explicit reciprocal-defect bounds. None is an all-degree real-zero theorem for xi.
+
+## Formal prime filters and signed convolution
+
+The [prime-filter and Selberg modules](prime-filter-selberg-identities.md) prove exact actual-prime-power primitives, the factor-nine inverse filter estimate, reflected convolution bounds, same-prime subtraction and continuous integer-cell dynamics. [Finite arithmetic tools](finite-arithmetic-energy-tools.md) cover CRT valuation realization, smooth-divisor stopping, shift energies, divisor overlap and scalar entropy loss. The [cyclotomic boundary interface](cyclotomic-boundary-formal-interface.md) keeps its unformalized Farey enumeration, regularized old-factor identity and angular-consumer premises explicit. These are useful formalizations of stated finite identities and conditional implications, without a first-formalization claim.
+
+## Restrictions on theta multiplier constructions
+
+The [Bessel heat and Hankel tests](theta-bessel-factorization-obstructions.md) exclude specified positive-heat mixtures and sufficient radial truncation criteria for the actual theta law. The [Euler–Gaussian factorization theorem](theta-operator-factorization-obstructions.md) excludes a specified sample-interpolation class and its coefficientwise closure, using Carlson uniqueness and the auxiliary Mellin obstruction. General multiplier preservation and RH remain open.
