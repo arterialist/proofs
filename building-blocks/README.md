@@ -134,3 +134,17 @@ Here $`\Omega`$ counts prime factors with multiplicity. The original inclusive d
 The [written theorem](angular-height-boundary.md) bounds the angular height of a cyclotomic prefix by a signed sum of old-root derivative-deficit updates. Exact Farey insertion gives a polylogarithmic positive-birth allowance. Conductors at most $`\sqrt X`$ and ages at most $`\sqrt N`$ have total absolute cost $`O(\sqrt X\log^3X)`$.
 
 The remaining interior interaction is unbounded. The proof uses classical chord concavity, Farey geometry and divisor sums; it has no Lean formalization or originality claim. [Exact finite checks](verification/angular-boundary-result.json) · [Provenance](verification/angular-boundary-provenance.json).
+
+## Local two-history forcing
+
+[TwoHistoryForcing.lean](BuildingBlocks/TwoHistoryForcing.lean) proves the exact mixed response of $h(n)=\log n-\tau(n)+2\gamma$ on coprime factors, its nonpositive sign, and finite Bonferroni bounds for higher interaction coefficients. These local identities do not bound the full signed prime-error energy.
+
+[Statements, proof and sources](two-history-forcing.md).
+
+## GCD threshold kernels
+
+The [written proof](gcd-threshold-kernels.md) gives the signed divisor-square decomposition of $\mathbf1_{\omega(\gcd(k,l))\ge2}$ and shows that fixed weights on its zero-, one-, and at-least-two-prime levels yield a universally positive semidefinite kernel only when all three weights are equal and nonnegative. It identifies why a pointwise nonnegative arithmetic kernel need not define a positive quadratic form. No Lean formalization is claimed.
+
+## Cyclotomic eta finite parts
+
+The [written proof](cyclotomic-eta-finite-parts.md) evaluates the rational-cusp normalization of an eta product with Mertens exponents and its exact tail correction. The correction retains the original cyclotomic derivative, so the modular transformation alone supplies no additional phase-dependent cancellation. No Lean formalization is claimed.

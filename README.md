@@ -8,7 +8,7 @@ Mathematical proofs and Lean 4 formalizations toward the Riemann hypothesis. The
 | [first-formalizations](first-formalizations/) | First formalizations of known mathematics, supported by a review of existing formal libraries. |
 | [building-blocks](building-blocks/) | Verified results with a concrete use in the argument, including established mathematics. |
 
-Each result includes its assumptions, mathematical use, sources, and verification records.
+Each result states its assumptions, mathematical use, sources and formalization scope.
 
 ## Build
 
