@@ -144,7 +144,8 @@
     "hyperbola-product.md": {
       "display": 11,
       "inline": 66,
-      "githubMarkdownApi": true
+      "githubMarkdownApi": true,
+      "distanceNotation": "Explicit lVert/rVert commands preserve double bars through Markdown parsing."
     }
   },
   "verifiedFileSha256": {
@@ -156,7 +157,7 @@
     "building-blocks/verification/Audit.lean": "f709c39dda9fcfa1f411e865eca3fa6887b6040ed19f1bdbda8be48a5a825872",
     "building-blocks/verification/hyperbola-product-build.txt": "820cf46aa93425e82d4e540cf73f652c28d1150d8709ddaaf9b8831ff68ffbb3",
     "building-blocks/verification/hyperbola-product-axioms.txt": "15fd05e1f21ae76cb7c5a2faccc8210283772daba048e410793bd42f105ef415",
-    "building-blocks/hyperbola-product.md": "c8faa91a86b1a49a7fda821aaf5c8281be0070496760c0d97fed1c3f8e67cbf4",
+    "building-blocks/hyperbola-product.md": "5327b90a2ba8cd4904fd18fec58a34b5e190d1711cfa79d165e0dbe6356153c7",
     "building-blocks/README.md": "3e59b272f29c1153e79d2e82770ac57dda973ac51a8e1ef6f257d2d54badc56f"
   }
 }

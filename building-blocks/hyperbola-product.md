@@ -82,9 +82,9 @@ For the Fourier step, let $\sigma_0$ equal $\sigma$ off the integers and zero at
 P_T(x)=-\sum_{h=1}^T\frac{\sin(2\pi h x)}{\pi h}
 ```
 
-by $O(\min(1,1/((T+1)\|x\|)))$ off integers; the remainder is zero at integers. The notation $\|x\|$ means distance to the nearest integer.
+by $O(\min(1,1/((T+1)\lVert x\rVert)))$ off integers; the remainder is zero at integers. The notation $\lVert x\rVert$ means distance to the nearest integer.
 
-For $k\nmid N$, let $r$ be the integer distance from $N$ to its nearest multiple of $k$. Then $1\le r\le k/2\le K$, $\|N/k\|=r/k$, and $k$ divides $N-r$ or $N+r$. Since $|a_N(k)|\le d(k)$ and $\sum_{k\mid q}d(k)=d_3(q)$, the weighted noninteger remainder is
+For $k\nmid N$, let $r$ be the integer distance from $N$ to its nearest multiple of $k$. Then $1\le r\le k/2\le K$, $\lVert N/k\rVert=r/k$, and $k$ divides $N-r$ or $N+r$. Since $|a_N(k)|\le d(k)$ and $\sum_{k\mid q}d(k)=d_3(q)$, the weighted noninteger remainder is
 
 ```math
 \ll\frac{K}{T+1}\sum_{r=1}^{K}
