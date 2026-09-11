@@ -260,3 +260,7 @@ The [complete-packet calculation](late-prime-packet-energy.md) proves $X^5/\log^
 ## Support flow and relative prime determinants
 
 The [pole-preserving support flow](signed-support-flow.md) gives a complete smooth parametrization, the exact divisor flux, a first-prime obstruction to scalar differential propagation and a sharp logarithmic finite-step modulus. The [relative determinant calculation](prime-density-relative-determinant.md) continues an independent density reference, identifies the exact trace cost of actual prime discrepancy and proves that unitary mixing cannot reduce that cost. Every regularization retains its required first-order restoration.
+
+## Finite-codimension local Weil extensions
+
+The [local-kernel theorem](local-weil-extension-obstruction.md) proves deficiency indices $(1,1)$ and an $O(T\sqrt{\log T})$ spectral count for every same-space or finite-codimension self-adjoint extension. The prescribed arithmetic kernel requires $\Omega(T\log T)$ surviving poles from classical simple critical-line zeros, so no such extension realizes it. Infinite-codimension realizations and global Weil positivity remain outside this exclusion.
