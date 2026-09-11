@@ -160,3 +160,7 @@ The [written proof](shifted-fourier-density.md) distinguishes an analytic Wronsk
 ## Theta radial-weight positivity
 
 The [written proof](theta-radial-positivity.md) shows that every complete radial weight in the actual folded theta expansion is strictly positive, for all real Fourier arguments and every positive vertical shift. An exact Abel/Bessel square identity retains the lower endpoint and all differential terms. The remaining divisor coefficients are signed; positivity of their full sum is unproved. No originality or Lean formalization claim is made.
+
+## Cosh-base universal-factor approximation obstruction
+
+The [written proof](cosh-universal-factor-closure.md) excludes even local positive-axis $L^1$ approximation of the actual theta kernel by $e^{-a_j\cosh(b_ju)}$ times positive even Pólya universal factors, including all parameter escape. Logarithmic curvature forces an entire limit, contradicting a theta boundary singularity. Arbitrary real-zero Fourier approximants remain outside the conclusion. No originality or Lean formalization claim is made.
