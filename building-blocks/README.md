@@ -204,3 +204,15 @@ The [written proof](theta-arcsine-law.md) recovers the unique positive arcsine s
 ## A noncomplete Bernstein function with real-zero output
 
 The [explicit Bessel example](noncomplete-bernstein-real-zero-example.md) belongs to $B_J$ but not the complete Bernstein class, while its associated entire characteristic function has only real zeros. The construction concerns an auxiliary function and supplies no class-membership theorem for the actual xi function.
+
+## Prime-division matching obstructions
+
+A [finite neighborhood argument](prime-division-unmatched.md), combined with Selberg’s squarefree-factor count, forces at least $(3/(\pi^2\sqrt{2\pi})+o(1))N/\sqrt{\log\log N}$ unmatched vertices in the one-prime division graph. A separate [time-dependent weighted dual](bounded-factor-matching.md) proves that the integrated cost of the three-prime graph and its three-step enlargement grows too quickly for the proposed all-epsilon energy target. Neither statement lower-bounds the actual signed error.
+
+## Integrated divisor histories
+
+The [written proof](integrated-divisor-history.md) keeps exact fractional endpoints, evaluates the common drift through integrated Voronoï theory, and proves that all labels up to $\sqrt X$ can be left unmatched within an $O(X^4)$ energy budget. It also gives sharp per-edge tests showing where uniform stronger savings fail.
+
+## Integrated prime-channel triangle
+
+The [written proof](integrated-prime-channel-triangle.md) gives an elementary $cX^{5/2}$ lower bound for the sum of the integrated largest-prime-channel norms, while retaining the exact density-inclusive finite Gram formula for the signed aggregate. It excludes that triangle majorant alone.

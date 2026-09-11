@@ -2,6 +2,13 @@
 
 For independent uniform integers A,B in $\{1,\ldots,H\}$, incomplete-box carry covariance reduces to two one-dimensional sawtooth correlations and an explicit endpoint correction. The correction is bounded by $(d+e)/(8H)$, with no lcm-period assumption. The two remaining correlations need not be close to their complete-period values. An exact finite Fourier formula identifies the frequencies responsible.
 
+Throughout $H\ge1$ is an integer and the actual carry is
+
+```math
+\kappa_d(a,b)=\left\lfloor\frac{a+b}{d}\right\rfloor
+-\left\lfloor\frac a d\right\rfloor-\left\lfloor\frac b d\right\rfloor.
+```
+
 ## 1. Bernoulli conventions and an exact discrete primitive
 
 For an integer $d\ge2$, put
