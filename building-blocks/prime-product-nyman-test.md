@@ -82,4 +82,4 @@ The distinction between local convergence and convergence in the full Hilbert no
 
 The failed step is now specific: over the growing interval before the next coprime arrival, the count in (2) remains one while the density term $\delta t$ accumulates excessive norm. A successful use of the criterion must control this behavior through a different approximation, with an unconditional argument for its full norm. Equations (6) and (7) do not provide that argument or prove RH.
 
-The asymptotic inputs are classical [Mertens product asymptotics](https://dlmf.nist.gov/27.12) and the prime number theorem. The finite lower bound (4) is a direct Hilbert-space projection calculation. This note is a building block for testing approximants, with exact priority unresolved and no Lean formalization.
+The asymptotic inputs are classical [Mertens product asymptotics, as stated by Yashiro in the introduction](https://arxiv.org/html/1311.0754) and the prime number theorem. The finite lower bound (4) is a direct Hilbert-space projection calculation. This note is a building block for testing approximants, with exact priority unresolved and no Lean formalization.

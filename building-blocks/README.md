@@ -184,3 +184,23 @@ The [written proof](prime-product-nyman-test.md) shows that finite undamped prim
 ## Local Möbius signs and dense history energy
 
 The [written proof](partial-mobius-dense-history.md) uses the classical truncated Möbius weights with the actual divisor forcing. They obey every division-sign rule up to a growing polylogarithmic prime cutoff, yet their complete prefix/suffix energy has order $X^5$ up to logarithmic factors. Removing all those small-prime edges leaves the same leading cross energy. These are auxiliary weights, not the actual Möbius function.
+
+## Cyclotomic activity, quadrature and boundary reductions
+
+The [written proof](cyclotomic-activity-quadrature.md) separates the clipped old-root update into its exact angular correlation, mesh flux and curvature subtraction. A uniform cyclic-cell estimate bounds the cumulative interior geometric remainder by $12\sqrt X\log((3\pi/4)X^2)$; reduced conductor and reduced age boundary sums are controlled absolutely. An [explicit activity-selection example](cyclotomic-activity-necessity.md) shows why bounded symmetric activities alone cannot control the remaining correlation. Actual derivative history remains essential.
+
+## Incomplete-box carry covariance
+
+The [written proof](incomplete-carry-covariance.md) reduces covariance of two modular carries to flat and triangular one-dimensional sawtooth correlations, with endpoint error at most $(d+e)/(8H)$. Its exact Fourier formula retains incomplete periods and all residue-zero corrections.
+
+## Entropy of the cyclic divisor observable
+
+The [written proof](divisor-observable-entropy.md) gives exact CRT entropy and cyclic shift-energy formulas for $\tau(\gcd(n,r))$. It proves an exponent-uniform anchored entropy comparison with $\log(\sigma(n)/n)$ and a primorial obstruction to a constant observable log-Sobolev bound.
+
+## The actual theta arcsine mixing law
+
+The [written proof](theta-arcsine-law.md) recovers the unique positive arcsine scale law of the actual theta density, its exact tail and its only possible Lévy exponent. Membership of that exponent in $B_J$ remains unproved. The mixing law is not additively infinitely divisible; this does not exclude an exponential-functional representation.
+
+## A noncomplete Bernstein function with real-zero output
+
+The [explicit Bessel example](noncomplete-bernstein-real-zero-example.md) belongs to $B_J$ but not the complete Bernstein class, while its associated entire characteristic function has only real zeros. The construction concerns an auxiliary function and supplies no class-membership theorem for the actual xi function.

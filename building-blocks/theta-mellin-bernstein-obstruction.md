@@ -351,3 +351,24 @@ Run normally, without Python's `-O` option, because the proof checks are asserti
 The logarithm callback passes the integrator's analytic flag, as required by the [python-flint integration interface](https://python-flint.readthedocs.io/en/latest/acb.html#flint.acb.integral). The [FLINT complex integration documentation](https://flintlib.org/doc/acb_calc.html) describes the enclosing-ball contract. The certificate relies on that implementation and the explicit analytic tail estimates, not on agreement between floating-point approximations.
 
 The mathematical ingredients are classical Mellin continuation, Cauchy estimates, Hadamard factorization and the Laguerre inequality, together with the Bernstein-gamma identity and complete Bernstein representation cited above. The proved obstruction concerns this actual auxiliary transform and all complete Bernstein coefficient interpolations; it leaves the Riemann hypothesis unresolved.
+
+## Relation to the classical theta Mellin question
+
+Csordas’s [1998 Problem 4, printed p. 49](https://web.math.pmf.unizg.hr/glasnik/33.1/33105.pdf) asks whether the meromorphic continuation of a theta square-root Mellin transform has only real negative zeros. In his normalization $\Phi_C(v)=\Phi(2v)/2$, write
+
+```math
+M_C(z)=\int_0^\infty t^{z-1}\Phi_C(\sqrt t)\,dt
+=2^{-2z-1}M(2z-1),\qquad\Re z>0.
+```
+
+The change of variables is exact. Meromorphic continuation and the definition of $F$ give
+
+```math
+F(z+\tfrac12)=\frac{4\sqrt\pi}{Z\Gamma(z)}M_C(z).
+```
+
+At a nonreal point the gamma function is finite and nonzero. The nonreal zero of $F$ proved above therefore supplies a nonreal zero of the continued $M_C$, giving a negative answer to the stated all-real-negative-zero question. This is a consequence for an auxiliary Mellin transform, not for the zeros of $\Xi$.
+
+There is a publicly accessible [numerical precursor](https://computoergosum.com/principia/run-2026-09.html) reporting $M_C$ zeros near $-7.9941822570\pm2.9377670686i$ and three further conjugate pairs. It explicitly describes double-precision calculations without interval certification. Those observations are not used in the proof here; the certificate establishes a Laguerre-inequality violation rather than enclosing one of the reported zeros. The page’s displayed date does not establish mathematical priority.
+
+Csordas’s [2003 chapter, *Complex Zero Decreasing Sequences and the Riemann Hypothesis II*, pp. 121–134](https://link.springer.com/chapter/10.1007/978-1-4757-3741-7_9), treats this Mellin problem in §3. Its available publisher preview mentions Proposition 1, multiplier/complex-zero-decreasing conditions and a numerical Example 1. The full text was unavailable for this comparison, so overlap with its precise conclusions remains unresolved. No first-proof or originality claim is made. The recurrence and zero-propagation methods also have direct predecessors in KPS §5.2.6 and Patie–Savov; they are not claimed as new methods.
