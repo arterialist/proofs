@@ -264,3 +264,7 @@ The [pole-preserving support flow](signed-support-flow.md) gives a complete smoo
 ## Finite-codimension local Weil extensions
 
 The [local-kernel theorem](local-weil-extension-obstruction.md) proves deficiency indices $(1,1)$ and an $O(T\sqrt{\log T})$ spectral count for every same-space or finite-codimension self-adjoint extension. The prescribed arithmetic kernel requires $\Omega(T\log T)$ surviving poles from classical simple critical-line zeros, so no such extension realizes it. Infinite-codimension realizations and global Weil positivity remain outside this exclusion.
+
+## Prime-support deletion and a central divisor block
+
+The [uniform prime-support theorem](prime-support-removal-asymptotics.md) keeps all prime powers and proves the sharp cost of omitting a fixed amount of lower-prime mass, while negative auxiliary upper-band deletions demonstrate why optimizing support is not the full-support sign criterion. The [central Möbius–divisor estimate](voronoi-mobius-central-block.md) proves $O(L^{19/16}\log^6(2L))$ for one block using classical Voronoï and finite shift estimates. The other divisor blocks and their signed total remain unbounded at the RH scale.
