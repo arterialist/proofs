@@ -248,3 +248,7 @@ The [radial cutoff asymptotics](theta-radial-cutoff-asymptotics.md) prove the fi
 ## Temporal covariance and coherent division markings
 
 The [actual floor-column covariance](temporal-floor-covariance.md) retains temporal means and exhibits a large positive terminal-prime subblock canceled to leading order by its full signed complement. The [coherent division marking](coherent-division-marking.md) reduces complete incidence histories to the prime-power indicator and shows exactly why adjacent-response cancellation fails to control the forcing selector. These identities preserve the actual signs without supplying the missing RH-scale residual estimate.
+
+## Haar completion and Weil damping
+
+The [Haar energy theorem](haar-prime-energy-completion.md) keeps every scale and endpoint atom, proves a single-scale Fourier charge obstruction and an exact cheaper multiscale completion, and identifies the lower forcing estimate still needed. The [Weil damping counterexample](weil-damping-obstruction.md) disproves downward positivity for the actual pole-subtracted family using admissible compact tests. Keeping the poles yields a different positive family only in the stated classical half-plane. Neither result establishes the undamped RH positivity condition.
