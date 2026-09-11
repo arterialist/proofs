@@ -1,0 +1,211 @@
+{
+  "baseline_public_commit": "e92f0f85303b1281fe0bd8485d094558d6b1fcd0",
+  "method": "Existing local proofs extracted without proof-body rewrites. Namespace/import changes; exact CoarsePrimitiveBound moved into CoarseDyadicBase. Published definitions reused.",
+  "input_declarations_and_modules": [
+    {
+      "input": "ArithmeticDynamics/Bridge.lean",
+      "sha256": "ab28244869bb82a146b5b3c97e64d036c3b9f1d230c1a6647e1a082a72a8437c",
+      "declaration": "psi_succ"
+    },
+    {
+      "input": "ArithmeticDynamics/Bridge.lean",
+      "sha256": "ab28244869bb82a146b5b3c97e64d036c3b9f1d230c1a6647e1a082a72a8437c",
+      "declaration": "prime_power_series"
+    },
+    {
+      "input": "ArithmeticDynamics/PrimeError.lean",
+      "sha256": "80d9981dd8b425551215661d4666d6b0839d86d95ff10edf5c747cc36657a137",
+      "declaration": "psi_eq_sum_Icc"
+    },
+    {
+      "input": "ArithmeticDynamics/FloorRecurrence.lean",
+      "sha256": "bd7cd9e53ea1589d508a8128a6506f6d705859cfc875090ae8916e2910919837",
+      "declaration": "logFactorial_eq_weighted_prime_sum"
+    },
+    {
+      "input": "ArithmeticDynamics/QuotientBlocks.lean",
+      "sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a",
+      "declaration": "logFactorial_le_mul_log"
+    },
+    {
+      "input": "ArithmeticDynamics/MeanSquareSufficiency.lean",
+      "sha256": "5d8f4a5b758843afa81cb123367c64e2a5e8debadaf001267ea0a36d6c8abe9b",
+      "declaration": "psi_nonneg"
+    },
+    {
+      "input": "ArithmeticDynamics/MeanSquareSufficiency.lean",
+      "sha256": "5d8f4a5b758843afa81cb123367c64e2a5e8debadaf001267ea0a36d6c8abe9b",
+      "declaration": "psi_le_mul_log"
+    },
+    {
+      "input": "ArithmeticDynamics/MeanSquareSufficiency.lean",
+      "sha256": "5d8f4a5b758843afa81cb123367c64e2a5e8debadaf001267ea0a36d6c8abe9b",
+      "declaration": "psi_bigO_rpow"
+    },
+    {
+      "input": "ArithmeticDynamics/MeanSquareSufficiency.lean",
+      "sha256": "5d8f4a5b758843afa81cb123367c64e2a5e8debadaf001267ea0a36d6c8abe9b",
+      "declaration": "zeta_logDerivative_eq_prime_integral_unconditional"
+    },
+    {
+      "input": "ArithmeticDynamics/ChebyshevBound.lean",
+      "sha256": "c70d9c440b2a004128b62bdc2c8aa22e4777aa397af78f13263ca133922de2ef",
+      "declaration": "logFactorial_eq_extended_prime_sum"
+    },
+    {
+      "input": "ArithmeticDynamics/ChebyshevBound.lean",
+      "sha256": "c70d9c440b2a004128b62bdc2c8aa22e4777aa397af78f13263ca133922de2ef",
+      "declaration": "psi_double_le_logFactorial"
+    },
+    {
+      "input": "ArithmeticDynamics/ChebyshevBound.lean",
+      "sha256": "c70d9c440b2a004128b62bdc2c8aa22e4777aa397af78f13263ca133922de2ef",
+      "declaration": "logFactorial_double_sub_le"
+    },
+    {
+      "input": "ArithmeticDynamics/ChebyshevBound.lean",
+      "sha256": "c70d9c440b2a004128b62bdc2c8aa22e4777aa397af78f13263ca133922de2ef",
+      "declaration": "psi_double_le"
+    },
+    {
+      "input": "ArithmeticDynamics/ChebyshevBound.lean",
+      "sha256": "c70d9c440b2a004128b62bdc2c8aa22e4777aa397af78f13263ca133922de2ef",
+      "declaration": "psi_le_linear"
+    },
+    {
+      "input": "ArithmeticDynamics/PrimeIntegral.lean",
+      "sha256": "c1cd71e00184bf569f800054492ae4c83278e8ed96df1ec5b76d4f1d6e748875",
+      "declaration": "linear_kernel_eq"
+    },
+    {
+      "input": "ArithmeticDynamics/Target.lean",
+      "sha256": "a9496c5915b8653f926ef2e59c2eb3f2581a2505665040f2662d7680337c1bbf",
+      "declaration": "Target"
+    },
+    {
+      "input": "ArithmeticDynamics/Scope.lean",
+      "sha256": "a91e38bc01c88415e8b6c7a03197317757da385adbe50dfd00234982f72d271a",
+      "declaration": "RightHalfZeroFree"
+    },
+    {
+      "input": "ArithmeticDynamics/Scope.lean",
+      "sha256": "a91e38bc01c88415e8b6c7a03197317757da385adbe50dfd00234982f72d271a",
+      "declaration": "zeta_zero_ne_origin"
+    },
+    {
+      "input": "ArithmeticDynamics/Scope.lean",
+      "sha256": "a91e38bc01c88415e8b6c7a03197317757da385adbe50dfd00234982f72d271a",
+      "declaration": "gamma_ne_zero_at_nontrivial_zero"
+    },
+    {
+      "input": "ArithmeticDynamics/Scope.lean",
+      "sha256": "a91e38bc01c88415e8b6c7a03197317757da385adbe50dfd00234982f72d271a",
+      "declaration": "reflect_nontrivial_zero"
+    },
+    {
+      "input": "ArithmeticDynamics/Scope.lean",
+      "sha256": "a91e38bc01c88415e8b6c7a03197317757da385adbe50dfd00234982f72d271a",
+      "declaration": "target_iff_rightHalfZeroFree"
+    },
+    {
+      "input": "ArithmeticDynamics/LocalAnalytic.lean",
+      "sha256": "3f365b885ac29f7d889c512afc2ed92721edfe01e968dcf84e8415f8c145bc42",
+      "declaration": "analytic_nonzero_of_deriv_eq_mul"
+    },
+    {
+      "input": "ArithmeticDynamics/LogDerivative.lean",
+      "sha256": "82d3428536f2252b0e15d1b4a04d1513aa1f66d8b3e7fa8a3f739a043c6fc078",
+      "declaration": "rightDomain"
+    },
+    {
+      "input": "ArithmeticDynamics/LogDerivative.lean",
+      "sha256": "82d3428536f2252b0e15d1b4a04d1513aa1f66d8b3e7fa8a3f739a043c6fc078",
+      "declaration": "rightDomain_isOpen"
+    },
+    {
+      "input": "ArithmeticDynamics/LogDerivative.lean",
+      "sha256": "82d3428536f2252b0e15d1b4a04d1513aa1f66d8b3e7fa8a3f739a043c6fc078",
+      "declaration": "HolomorphicZetaODE"
+    },
+    {
+      "input": "ArithmeticDynamics/LogDerivative.lean",
+      "sha256": "82d3428536f2252b0e15d1b4a04d1513aa1f66d8b3e7fa8a3f739a043c6fc078",
+      "declaration": "target_of_holomorphicZetaODE"
+    },
+    {
+      "input": "ArithmeticDynamics/Continuation.lean",
+      "sha256": "1360b69680fd2c63e8cf956309b3a0a40cd1b1d0d9357e4ac89b863ab07c2d15",
+      "declaration": "tiltedDomain"
+    },
+    {
+      "input": "ArithmeticDynamics/Continuation.lean",
+      "sha256": "1360b69680fd2c63e8cf956309b3a0a40cd1b1d0d9357e4ac89b863ab07c2d15",
+      "declaration": "tiltedDomain_convex"
+    },
+    {
+      "input": "ArithmeticDynamics/Continuation.lean",
+      "sha256": "1360b69680fd2c63e8cf956309b3a0a40cd1b1d0d9357e4ac89b863ab07c2d15",
+      "declaration": "tiltedDomain_subset"
+    },
+    {
+      "input": "ArithmeticDynamics/Continuation.lean",
+      "sha256": "1360b69680fd2c63e8cf956309b3a0a40cd1b1d0d9357e4ac89b863ab07c2d15",
+      "declaration": "eq_zero_on_tiltedDomain"
+    },
+    {
+      "input": "ArithmeticDynamics/Continuation.lean",
+      "sha256": "1360b69680fd2c63e8cf956309b3a0a40cd1b1d0d9357e4ac89b863ab07c2d15",
+      "declaration": "identity_on_rightDomain"
+    },
+    {
+      "input": "ArithmeticDynamics/Continuation.lean",
+      "sha256": "1360b69680fd2c63e8cf956309b3a0a40cd1b1d0d9357e4ac89b863ab07c2d15",
+      "declaration": "HolomorphicPrimeExtension"
+    },
+    {
+      "input": "ArithmeticDynamics/Continuation.lean",
+      "sha256": "1360b69680fd2c63e8cf956309b3a0a40cd1b1d0d9357e4ac89b863ab07c2d15",
+      "declaration": "target_of_holomorphicPrimeExtension"
+    },
+    {
+      "input": "ArithmeticDynamics/CoarsePrimitive.lean",
+      "sha256": "f2bc58e32b33a1d4a6f7555e280501bba7623f7d73ae823f02ced0a69a320bc0",
+      "declaration": "CoarsePrimitiveBound"
+    },
+    {
+      "input": "ArithmeticDynamics/CoarseDyadicBase.lean",
+      "sha256": "00c9ad67cebb8290557c7b5633946500481cc83037515345d0c07b6d34b8d7cb",
+      "extraction": "Whole module; namespace and import changes only. Exact CoarsePrimitiveBound definition moved here from CoarsePrimitive."
+    },
+    {
+      "input": "ArithmeticDynamics/CoarseDyadicBound.lean",
+      "sha256": "ee5e3dd6ab88787b510caa50dc5d553066e804f9d360488eba2a2c7b53215a45",
+      "extraction": "Whole module; namespace and import changes only."
+    },
+    {
+      "input": "ArithmeticDynamics/CoarseBlockAnalytic.lean",
+      "sha256": "fb19de54c9a3200782e676a9968180ed4ea3ff1855936cc5411e4b2c9e6af20f",
+      "extraction": "Whole module; namespace and import changes only."
+    },
+    {
+      "input": "ArithmeticDynamics/CoarseSummation.lean",
+      "sha256": "687ee512f72d55b889d7adcf9cb6d9fc7159eccaec31bbf2b3a841255ba937be",
+      "extraction": "Whole module; namespace and import changes only."
+    },
+    {
+      "input": "ArithmeticDynamics/CoarseContinuation.lean",
+      "sha256": "b7324f5c5652ed1b7d328e1ea07416180eee536fc2789bae71907ea62c00bbb6",
+      "extraction": "Whole module; namespace and import changes only."
+    },
+    {
+      "input": "ArithmeticDynamics/CoarseInitialIdentity.lean",
+      "sha256": "d4c8665b2995090fcbb91b34ec29566bde154783e8cd52cd61b05c5f39276a45",
+      "extraction": "Whole module; namespace and import changes only."
+    },
+    {
+      "input": "ArithmeticDynamics/CoarsePrimitiveCriterion.lean",
+      "sha256": "1e6457cb4e877da007f254a8661c4594f3036d8cd6207f1d374aaea8d93fc851",
+      "extraction": "Whole module; namespace and import changes only."
+    }
+  ]
+}

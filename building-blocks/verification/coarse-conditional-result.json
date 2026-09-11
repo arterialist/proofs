@@ -1,0 +1,160 @@
+{
+  "classification": "Conditional analytic enabling theorem; energy bound unproved",
+  "theorem": "BuildingBlocks.CoarsePrimitive.target_of_coarsePrimitiveBound",
+  "sole_hypothesis": "BuildingBlocks.CoarsePrimitive.CoarsePrimitiveBound",
+  "conclusion": "BuildingBlocks.Target, definitionally full mathlib RiemannHypothesis",
+  "lean_version": "4.24.0",
+  "lean_commit": "797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "clean_local_build_exit_code": 0,
+  "freshly_built_local_modules": [
+    "BuildingBlocks.ZetaPole",
+    "BuildingBlocks.RHContinuation",
+    "BuildingBlocks.CoarsePrimitive",
+    "BuildingBlocks.CoarseDyadicBase",
+    "BuildingBlocks.CoarseDyadicBound",
+    "BuildingBlocks.CoarseBlockAnalytic",
+    "BuildingBlocks.CoarseSummation",
+    "BuildingBlocks.CoarseContinuation",
+    "BuildingBlocks.FloorCorrection",
+    "BuildingBlocks.HyperbolaProduct",
+    "BuildingBlocks.CoarsePrimeBounds",
+    "BuildingBlocks.CoarseInitialIdentity",
+    "BuildingBlocks.CoarsePrimitiveCriterion"
+  ],
+  "new_modules": {
+    "CoarsePrimeBounds": {
+      "named_declarations": 15,
+      "lines": 182
+    },
+    "RHContinuation": {
+      "named_declarations": 18,
+      "lines": 224
+    },
+    "CoarseDyadicBase": {
+      "named_declarations": 3,
+      "lines": 19
+    },
+    "CoarseDyadicBound": {
+      "named_declarations": 6,
+      "lines": 122
+    },
+    "CoarseBlockAnalytic": {
+      "named_declarations": 2,
+      "lines": 76
+    },
+    "CoarseSummation": {
+      "named_declarations": 3,
+      "lines": 55
+    },
+    "CoarseContinuation": {
+      "named_declarations": 3,
+      "lines": 31
+    },
+    "CoarseInitialIdentity": {
+      "named_declarations": 6,
+      "lines": 115
+    },
+    "CoarsePrimitiveCriterion": {
+      "named_declarations": 2,
+      "lines": 23
+    }
+  },
+  "axiom_audit_exit_code": 0,
+  "audited_local_constants": 162,
+  "full_transitive_axiom_union": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "original_definition_compatibility_check": "Ten rfl equalities and two direct theorem-consumer examples passed",
+  "dependency_cache_objects_matched": 3426,
+  "reused_published_modules_unchanged": true,
+  "trust_scope": "Normal Lean kernel with pinned upstream compiled dependencies; not a fresh rebuild of every mathlib dependency or independent trust-level-zero check",
+  "verification_commands": [
+    "lake build BuildingBlocks.CoarsePrimitiveCriterion",
+    "lake env lean building-blocks/verification/CoarseConditionalAudit.lean"
+  ],
+  "proof_payload_sha256": "8d74548a88bcc97d2ccff99a7b8c7206ae6af7721888e2867b3d9af51ccc35b2",
+  "verification_audit_sha256": "612598dde09868628ca07777c40bd0e50a1589a3e1057eadbc8b55aad0fb9dfc",
+  "source_manifest_sha256": "4e492a8b967a649e7d613143e711fa3207173634b63b77483c57f7fd6d92fd81",
+  "independent_public_admission": {
+    "verified_at_utc": "2026-09-11T13:42:46.097461+00:00",
+    "baseline_commit": "3c61f7ef6aad5bc1e880afb3f29a99c3c2097010",
+    "new_lean_sources_unchanged_from_extraction": true,
+    "local_source_hashes_unchanged_during_rebuild": true,
+    "isolated_build": "All thirteen imported local modules freshly compiled without reusing local project artifacts. Pinned upstream compiled dependencies reused.",
+    "conditional_build_and_audit": [
+      {
+        "step": "build",
+        "exit_code": 0,
+        "seconds": 23.505693334009266
+      },
+      {
+        "step": "axioms",
+        "exit_code": 0,
+        "seconds": 31.570439167000586
+      }
+    ],
+    "integrated_library_and_existing_audit": [
+      {
+        "step": "integrated-build",
+        "exitCode": 0,
+        "seconds": 15.973294541996438
+      },
+      {
+        "step": "existing-audit",
+        "exitCode": 0,
+        "seconds": 88.45694679199369
+      }
+    ],
+    "clean_pinned_dependencies": [
+      {
+        "name": "mathlib",
+        "revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "plausible",
+        "revision": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "revision": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "importGraph",
+        "revision": "d768126816be17600904726ca7976b185786e6b9",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "proofwidgets",
+        "revision": "556caed0eadb7901e068131d1be208dd907d07a2",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "aesop",
+        "revision": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "Qq",
+        "revision": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "batteries",
+        "revision": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "Cli",
+        "revision": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+        "tracked_files_clean": true
+      }
+    ],
+    "github_markdown_check": "Nine display and eighteen inline expressions recognized in the new companion; no math-error markers. Live page rendering checked separately after publication."
+  }
+}
