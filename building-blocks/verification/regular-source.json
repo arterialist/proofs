@@ -1,0 +1,525 @@
+{
+  "result": "Fixed regular source with a large Mobius floor inverse",
+  "category": "building-blocks",
+  "verifiedAtUtc": "2026-09-11T08:16:23.340249+00:00",
+  "statement": "For each real r<2/3, there is f:N->R with |f(q)|<=sqrt(q) and |f(q+1)-f(q)|<=1 for every q, whose sum_(d=1)^N mu(d) f(floor(N/d)) is not eventually O(N^r). The sequence may depend on r.",
+  "utility": "Excludes deducing a universal inverse estimate from square-root magnitude and bounded first differences alone.",
+  "scope": "A counterexample for auxiliary sequences; no lower bound for the specific centered divisor source H or conclusion about RH.",
+  "priority": "Exact mathematical and formalization priority unestablished; no originality or first-formalization claim.",
+  "sourceProvenance": [
+    {
+      "module": "SquarefreeWindow.lean",
+      "sha256": "732cd5edeea36b37d5cdb4af336e653bb474f1ac7bee62f08ec12d201834de55"
+    },
+    {
+      "module": "SignedInverseAmplification.lean",
+      "sha256": "498e18f2c80c9af6bf8ea7c13a88443cfe201b98477e9923f6c7c6af45652367"
+    },
+    {
+      "module": "SelbergResidual.lean",
+      "sha256": "6d17c9f4fcee3316b01e0d570f85ce15c36b2634eb98c94d55b2b28e4aa03177"
+    },
+    {
+      "module": "FixedSourceAmplification.lean",
+      "sha256": "4801a3a65c05d79e19f9d5f054fb1d8a690806dbfbb6eb9603c06cc012e0f4b3"
+    },
+    {
+      "module": "SmoothSourceTents.lean",
+      "sha256": "35216f9accad995bdd696bcdab901d38f1ddf86b57251658bfe79a3d058826de"
+    },
+    {
+      "module": "SmoothInverseAmplification.lean",
+      "sha256": "528e80c5fec66e2778071491b6aa5e2061e3584ea6c4f8aeaee0c1c26b0f8c31"
+    },
+    {
+      "module": "FixedRegularSource.lean",
+      "sha256": "85598bc409ca78fa6e19d39e9a6e4eb612ece24597c0069d6e4a07eddd93ed72"
+    }
+  ],
+  "extraction": "Definitions and proof bodies retained; imports and namespace isolated, mathematical comments clarified.",
+  "lean": "4.24.0",
+  "mathlibRevision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "exposedDeclarations": [
+    "BuildingBlocks.RegularSource.reciprocal_square_sum_Icc_bound",
+    "BuildingBlocks.RegularSource.multiples_Ioc_card",
+    "BuildingBlocks.RegularSource.natCast_div_lower",
+    "BuildingBlocks.RegularSource.multiples_Ioc_card_bound",
+    "BuildingBlocks.RegularSource.squarefreeWindow",
+    "BuildingBlocks.RegularSource.squarefulWindow",
+    "BuildingBlocks.RegularSource.squarefulWindow_subset_square_multiples",
+    "BuildingBlocks.RegularSource.squarefulWindow_card_bound",
+    "BuildingBlocks.RegularSource.squarefreeWindow_card_lower",
+    "BuildingBlocks.RegularSource.squarefree_terminal_half_lower",
+    "BuildingBlocks.RegularSource.signedMobiusInverse",
+    "BuildingBlocks.RegularSource.moebius_square_sum_ge_squarefree_half",
+    "BuildingBlocks.RegularSource.larger_power_not_eventually_bounded",
+    "BuildingBlocks.RegularSource.normalizedMobiusFunctional",
+    "BuildingBlocks.RegularSource.normalizedMobiusFunctional_apply",
+    "BuildingBlocks.RegularSource.sqrt_normalized_source_bound",
+    "BuildingBlocks.RegularSource.sqrtNormalizedSource",
+    "BuildingBlocks.RegularSource.sqrtNormalizedSource_norm_le",
+    "BuildingBlocks.RegularSource.sqrtNormalizedSource_recovery",
+    "BuildingBlocks.RegularSource.sourceTent",
+    "BuildingBlocks.RegularSource.sourceTent_nonneg",
+    "BuildingBlocks.RegularSource.sourceTent_le",
+    "BuildingBlocks.RegularSource.sourceTent_zero",
+    "BuildingBlocks.RegularSource.sourceTent_center",
+    "BuildingBlocks.RegularSource.sourceTent_abs_sub_le",
+    "BuildingBlocks.RegularSource.finite_sup_abs_sub_le",
+    "BuildingBlocks.RegularSource.signedTentEnvelope",
+    "BuildingBlocks.RegularSource.signedTentEnvelope_nonneg",
+    "BuildingBlocks.RegularSource.signedTentEnvelope_le",
+    "BuildingBlocks.RegularSource.signedTentEnvelope_abs_sub_le",
+    "BuildingBlocks.RegularSource.smoothTestSource",
+    "BuildingBlocks.RegularSource.smoothTestSource_abs_le",
+    "BuildingBlocks.RegularSource.smoothTestSource_abs_sub_le",
+    "BuildingBlocks.RegularSource.smoothTestSource_increment_le",
+    "BuildingBlocks.RegularSource.cubic_quotient_lower",
+    "BuildingBlocks.RegularSource.cubic_quotient_gap",
+    "BuildingBlocks.RegularSource.cubic_quotient_abs_gap",
+    "BuildingBlocks.RegularSource.cubic_quotient_tail_gap",
+    "BuildingBlocks.RegularSource.signedTentEnvelope_at_quotient",
+    "BuildingBlocks.RegularSource.smoothTestSource_at_small_divisor",
+    "BuildingBlocks.RegularSource.signedTentEnvelope_zero_below",
+    "BuildingBlocks.RegularSource.smoothTestSource_at_large_divisor",
+    "BuildingBlocks.RegularSource.smoothTestSource_sq_le",
+    "BuildingBlocks.RegularSource.smoothTestSource_abs_le_sqrt",
+    "BuildingBlocks.RegularSource.signedMobiusInverse_smoothTestSource",
+    "BuildingBlocks.RegularSource.signedMobiusInverse_smoothTestSource_lower",
+    "BuildingBlocks.RegularSource.signedMobiusInverse_no_uniform_regular_bound",
+    "BuildingBlocks.RegularSource.sourceDifferenceConstraint",
+    "BuildingBlocks.RegularSource.sourceDifferenceConstraint_apply",
+    "BuildingBlocks.RegularSource.regularSourceSpace",
+    "BuildingBlocks.RegularSource.regularSourceNormedSpace",
+    "BuildingBlocks.RegularSource.mem_regularSourceSpace",
+    "BuildingBlocks.RegularSource.regularSourceSpace_isClosed",
+    "BuildingBlocks.RegularSource.sourceDifferenceSequence",
+    "BuildingBlocks.RegularSource.liftRegularSource",
+    "BuildingBlocks.RegularSource.liftRegularSource_norm_le",
+    "BuildingBlocks.RegularSource.regularMobiusFunctional",
+    "BuildingBlocks.RegularSource.regularMobiusFunctional_apply",
+    "BuildingBlocks.RegularSource.regularMobiusFunctional_lift",
+    "BuildingBlocks.RegularSource.regularMobiusFunctional_not_uniformly_bounded",
+    "BuildingBlocks.RegularSource.regularSpaceSource",
+    "BuildingBlocks.RegularSource.regularSpaceSource_bounds",
+    "BuildingBlocks.RegularSource.regularMobiusFunctional_scaled_source",
+    "BuildingBlocks.RegularSource.exists_fixed_regular_source_with_unbounded_inverse"
+  ],
+  "verification": {
+    "buildCommand": "lake build",
+    "buildExitCode": 0,
+    "auditCommand": "lake env lean building-blocks/verification/Audit.lean",
+    "auditExitCode": 0,
+    "auditedDeclarationsAcrossPackage": 86,
+    "axiomsByDeclaration": {
+      "BuildingBlocks.RegularSource.reciprocal_square_sum_Icc_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.multiples_Ioc_card": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.natCast_div_lower": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.multiples_Ioc_card_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.squarefreeWindow": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.squarefulWindow": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.squarefulWindow_subset_square_multiples": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.squarefulWindow_card_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.squarefreeWindow_card_lower": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.squarefree_terminal_half_lower": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedMobiusInverse": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.moebius_square_sum_ge_squarefree_half": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.larger_power_not_eventually_bounded": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.normalizedMobiusFunctional": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.normalizedMobiusFunctional_apply": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sqrt_normalized_source_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sqrtNormalizedSource": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sqrtNormalizedSource_norm_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sqrtNormalizedSource_recovery": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceTent": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceTent_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceTent_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceTent_zero": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceTent_center": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceTent_abs_sub_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.finite_sup_abs_sub_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedTentEnvelope": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedTentEnvelope_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedTentEnvelope_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedTentEnvelope_abs_sub_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.smoothTestSource": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.smoothTestSource_abs_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.smoothTestSource_abs_sub_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.smoothTestSource_increment_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.cubic_quotient_lower": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.cubic_quotient_gap": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.cubic_quotient_abs_gap": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.cubic_quotient_tail_gap": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedTentEnvelope_at_quotient": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.smoothTestSource_at_small_divisor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedTentEnvelope_zero_below": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.smoothTestSource_at_large_divisor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.smoothTestSource_sq_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.smoothTestSource_abs_le_sqrt": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedMobiusInverse_smoothTestSource": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedMobiusInverse_smoothTestSource_lower": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.signedMobiusInverse_no_uniform_regular_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceDifferenceConstraint": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceDifferenceConstraint_apply": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularSourceSpace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularSourceNormedSpace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.mem_regularSourceSpace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularSourceSpace_isClosed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.sourceDifferenceSequence": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.liftRegularSource": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.liftRegularSource_norm_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularMobiusFunctional": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularMobiusFunctional_apply": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularMobiusFunctional_lift": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularMobiusFunctional_not_uniformly_bounded": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularSpaceSource": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularSpaceSource_bounds": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.regularMobiusFunctional_scaled_source": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.RegularSource.exists_fixed_regular_source_with_unbounded_inverse": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "mathlib",
+        "revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+        "clean": true
+      },
+      {
+        "name": "plausible",
+        "revision": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+        "clean": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "revision": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+        "clean": true
+      },
+      {
+        "name": "importGraph",
+        "revision": "d768126816be17600904726ca7976b185786e6b9",
+        "clean": true
+      },
+      {
+        "name": "proofwidgets",
+        "revision": "556caed0eadb7901e068131d1be208dd907d07a2",
+        "clean": true
+      },
+      {
+        "name": "aesop",
+        "revision": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+        "clean": true
+      },
+      {
+        "name": "Qq",
+        "revision": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+        "clean": true
+      },
+      {
+        "name": "batteries",
+        "revision": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+        "clean": true
+      },
+      {
+        "name": "Cli",
+        "revision": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+        "clean": true
+      }
+    ],
+    "dependencyReuse": "Reused compiled artifacts from nine clean dependency checkouts pinned by lake-manifest.json. RegularSource and the updated library index were freshly compiled.",
+    "warnings": 0
+  },
+  "mathematicalSources": [
+    {
+      "method": "Banach–Steinhaus theorem",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/Mathlib/Analysis/Normed/Operator/BanachSteinhaus.lean",
+      "authors": [
+        "Jireh Loreaux"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "method": "Bounded-function normed spaces",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/Mathlib/Topology/ContinuousMap/Bounded/Normed.lean",
+      "authors": [
+        "Sébastien Gouëzel",
+        "Mario Carneiro",
+        "Yury Kudryashov",
+        "Heather Macbeth"
+      ],
+      "license": "Apache-2.0"
+    }
+  ],
+  "markdownRendering": {
+    "method": "GitHub Markdown API, gfm mode",
+    "file": "building-blocks/README.md",
+    "display": 7,
+    "inline": 26,
+    "limit": "Verified math recognition and preserved TeX through Markdown; not a browser screenshot."
+  },
+  "verifiedFileSha256": {
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "lakefile.toml": "5e1d5c9e9dff61959bc2bdfd4e92a81ef415cb194149a607d551474fd589c216",
+    "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+    "building-blocks/BuildingBlocks.lean": "ce30a0c0c7f8f0d870fd470d0ca8c4c441fde67a69d5889adb837101a1c71703",
+    "building-blocks/BuildingBlocks/RegularSource.lean": "e12998f6450f9d2397db92f15adf909eb6444973d99351f41251b39fb6c9ecac",
+    "building-blocks/verification/Audit.lean": "5751574dbdc0b000d134c556149a2bbd391420d7d5a79d32fa5b4b51ba9e7e52",
+    "building-blocks/verification/regular-source-build.txt": "4cdcf69adecb11ef36002be829e351773c93ee9579226c8e339c58edebf6b750",
+    "building-blocks/verification/regular-source-axioms.txt": "e4ea9818a355015cb9d359860e0c2618adcf7bab3124eddc7bc5d19020e806db",
+    "building-blocks/README.md": "f1a8e3f548852a5038b415ef5c418f11dc708b17f4edc6936c274866297e5924"
+  }
+}
