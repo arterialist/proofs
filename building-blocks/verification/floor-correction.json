@@ -36,16 +36,10 @@
     "BuildingBlocks.FloorCorrection.floorCorrectionMean",
     "BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder"
   ],
-  "sourceSha256": "450d1141e82ec282627b8b2b7b8d5e66e4a93dbd8923e221a458f6099c4c6e20",
-  "definitionAndProofBodyRetention": "Retained all five declarations from FloorCorrectionOscillation, six supporting definitions and logFactorial_eq_log, with namespace and direct imports changed.",
+  "sourceSha256": "fa02d7e69776673166f5f6dc60d6d46ae8db75b1bcbdbea7f82cdad816d312ab",
   "category": "building-blocks",
   "mathematicalNovelty": "Classical Stirling/floor decomposition; no originality claimed.",
   "formalizationPriority": "Not established; no first-formalization claim.",
-  "sourceTask": {
-    "title": "RH Proof",
-    "threadId": "01a08c67-5963-7540-88b1-d345723afc43"
-  },
-  "proofDevelopment": "Lean proofs drafted by Codex under the repository owner’s research direction; independently extracted, reviewed, built and audited by the coordinating task.",
   "scope": "For every real x>=1, explicit floor-correction expansion has absolute remainder <=2/x, including integer arguments. Definitions use actual finite floor and logarithm sums; no prime-error or exponential-sum estimate is assumed.",
   "utility": "Separates the constant mean and weighted sawtooth so established reciprocal-phase estimates can be applied; pointwise residual sums to <=4D^2/N on the documented divisor blocks. The block summation and external exponential-sum consequences are written mathematics, not extra formal theorems in this snapshot.",
   "attribution": {
@@ -60,7 +54,7 @@
   },
   "leanVersion": "4.24.0",
   "mathlibRevision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
-  "verifiedAtUtc": "2026-09-11T05:55:28.471762+00:00",
+  "verifiedAtUtc": "2026-09-11T06:46:16Z",
   "verificationStatus": "Passed independent package build and complete axiom closure audit of all 16 exposed declarations across both blocks.",
   "verification": {
     "buildCommand": "lake build",
@@ -196,19 +190,19 @@
         "clean": true
       }
     ],
-    "dependencyReuse": "Reused cached compiled dependencies via the existing ignored .lake/packages symlink. All nine dependency checkouts were clean and pinned. Newly extracted module was freshly compiled in this repository; no ArithmeticDynamics project module is imported.",
-    "claimLimit": "Verifies this extracted finite module and existing zeta block, not the entire research workspace, written exponential-sum analysis, or RH."
+    "dependencyReuse": "Reused cached artifacts from nine clean dependency checkouts pinned by lake-manifest.json. Both local modules were recompiled.",
+    "claimLimit": "Checks the published finite theorems. Fourier and exponential-sum estimates are outside this package."
   },
   "verifiedFileSha256": {
     "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
     "lakefile.toml": "5e1d5c9e9dff61959bc2bdfd4e92a81ef415cb194149a607d551474fd589c216",
     "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
     "building-blocks/BuildingBlocks.lean": "b174ad292ca00b8246db65eca64ac94e61c178d2679fcc692b65e68d3ca4f6d2",
-    "building-blocks/BuildingBlocks/FloorCorrection.lean": "450d1141e82ec282627b8b2b7b8d5e66e4a93dbd8923e221a458f6099c4c6e20",
-    "building-blocks/BuildingBlocks/ZetaPole.lean": "fec53acea8f7c1a6d8af6f7ca179f40f3b0f8e6e3a8f9c29b7572da78a18e52e",
+    "building-blocks/BuildingBlocks/FloorCorrection.lean": "fa02d7e69776673166f5f6dc60d6d46ae8db75b1bcbdbea7f82cdad816d312ab",
+    "building-blocks/BuildingBlocks/ZetaPole.lean": "097bd69901602515fbebabc12048d4dabb15ae09637a4daed03fe37abe1c0a3c",
     "building-blocks/verification/Audit.lean": "018aa048195a985bb1dd19cc388c3f178e6229b0fa3d747d79256c10b1242cab",
-    "building-blocks/verification/floor-correction-build.txt": "1c5f5286a62e44d1f4ceccd41d051c2356587ac3ca705847bfe7bdb7ed358fc6",
+    "building-blocks/verification/floor-correction-build.txt": "103ea7ddcf3b1581f18cf81757feec7fac34e0087edae4e679a7ed0089f52182",
     "building-blocks/verification/floor-correction-axioms.txt": "a300d7ac1586d055084d908a1028fd5111013451c3ebef2b6319ac93c244d663",
-    "building-blocks/README.md": "0d5a06ac4841d65ea80a650accc704cc95589f1f9f14d8c3f9d34b9990a7cfa3"
+    "building-blocks/README.md": "e8a845a8f0edc0c79bf044ba5fff2e0147ca5f3378ca1b189566a41a51a4fddf"
   }
 }

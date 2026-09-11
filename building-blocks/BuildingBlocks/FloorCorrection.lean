@@ -4,12 +4,7 @@ import Mathlib.NumberTheory.Harmonic.EulerMascheroni
 /-!
 An explicit floor-correction expansion derived from classical Stirling bounds.
 
-Proofs drafted in the RH Proof task under the repository owner's direction,
-then extracted by the coordinating task. Definitions and proof bodies are
-retained; only imports and namespace change. This is a useful building block,
-with no mathematical novelty or first-formalization priority claim.
-See ../README.md and ../verification/floor-correction.json for attribution,
-scope and verification.
+See building-blocks/README.md for mathematical sources and verification.
 -/
 
 open Filter Finset Set

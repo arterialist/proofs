@@ -1,7 +1,7 @@
 /-
 Copyright (c) 2026 Andrew. Released under the MIT license in LICENSE.
-Extracted from the Codex RH Proof task; see building-blocks/README.md for
-mathematical attribution, proof provenance, scope, and research use.
+Local logarithmic-derivative poles at zeros of the Riemann zeta function.
+See building-blocks/README.md for mathematical sources and verification.
 -/
 import Mathlib.Analysis.Analytic.IsolatedZeros
 import Mathlib.Analysis.Calculus.LogDeriv
