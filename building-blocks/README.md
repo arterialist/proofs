@@ -122,3 +122,9 @@ Here $`\Omega`$ counts prime factors with multiplicity. The original inclusive d
 [CoarsePrimitiveCriterion.lean](BuildingBlocks/CoarsePrimitiveCriterion.lean) proves that the actual primitive energy bound $`S_{2^k}\le C_\epsilon2^{k(4+\epsilon)}`$, for every $`\epsilon>0`$ and every $`k\ge0`$, implies mathlib's full Riemann hypothesis. The energy bound remains unproved. The formal proof includes local uniform convergence, the zeta identity and exclusion of all nontrivial zeros off the critical line under that hypothesis.
 
 [Statement, proof and attribution](coarse-conditional-rh.md) · [Verification](verification/coarse-conditional-result.json).
+
+## Finite Mertens-to-prime transfer
+
+[MertensPrimeTransfer.lean](BuildingBlocks/MertensPrimeTransfer.lean) converts a bound on the actual Mertens function at every quotient $`\lfloor N/k\rfloor`$, $`1\le k\le K`$, into an explicit bound for $`|\psi(N)-N+2\gamma|`$. The finite hyperbola and partial-summation proof retains its boundary term and all prime powers. The Mertens premise remains to be proved by a consumer.
+
+[Statement, proof and attribution](mertens-prime-transfer.md) · [Verification](verification/mertens-transfer-result.json).

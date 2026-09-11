@@ -1,0 +1,141 @@
+{
+  "classification": "Finite classical conditional transfer; actual Mertens quotient bounds assumed, not proved",
+  "theorem": "BuildingBlocks.MertensTransfer.primeError_bound_of_Mertens_quotients",
+  "hypotheses": [
+    "N,K natural",
+    "1 <= N",
+    "1 <= K",
+    "K <= N",
+    "eta real and nonnegative",
+    "For all 1 <= k <= K, abs(M(N / k)) <= eta * ((N : real) / k), with natural quotient inside M"
+  ],
+  "conclusion": "abs(psi(N)-N+2 gamma) <= 4 eta N (1+log K)^2 + 39 N / sqrt(K+1)",
+  "proper_prime_powers_retained": true,
+  "boundary_term_retained": "H(K) * M(N / (K+1))",
+  "lean_version": "4.24.0",
+  "lean_commit": "797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "build_exit_code": 0,
+  "freshly_built_local_modules": [
+    "BuildingBlocks.FloorCorrection",
+    "BuildingBlocks.HyperbolaProduct",
+    "BuildingBlocks.DivisorForcingBound",
+    "BuildingBlocks.CoarsePrimitive",
+    "BuildingBlocks.CoarsePrimeBounds",
+    "BuildingBlocks.MertensArithmetic",
+    "BuildingBlocks.MertensCutoff",
+    "BuildingBlocks.HyperbolaMertens",
+    "BuildingBlocks.MertensPrimeTransfer"
+  ],
+  "new_modules": {
+    "DivisorForcingBound": {
+      "lines": 263,
+      "named_declarations": 15
+    },
+    "MertensArithmetic": {
+      "lines": 180,
+      "named_declarations": 20
+    },
+    "MertensCutoff": {
+      "lines": 125,
+      "named_declarations": 8
+    },
+    "HyperbolaMertens": {
+      "lines": 110,
+      "named_declarations": 8
+    },
+    "MertensPrimeTransfer": {
+      "lines": 112,
+      "named_declarations": 3
+    }
+  },
+  "audit_exit_code": 0,
+  "audited_local_constants": 209,
+  "full_transitive_axiom_union": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "compatibility_check": "Twelve rfl equalities and a direct application with the original hypotheses and conclusion passed",
+  "upstream_cache_objects_matched": 3426,
+  "trust_scope": "Ordinary Lean kernel with pinned compiled upstream dependencies; not a fresh full mathlib rebuild or a separate proof checker",
+  "required_CoarsePrimeBounds_sha256": "3636c6563d5c43aabdd249734871094921179964741024418010d71cdf242065",
+  "original_final_module_sha256": "eee4e1f04ebe0fabe8de8cfa10533fa24d882bd7c2d8c841e8353c07516782b2",
+  "extracted_final_module_sha256": "944cf50f27bc33e33f16552d5f5235076bc9b04498ec1cf1c4e351d53bad40bd",
+  "source_manifest_sha256": "634f543365a06fd1030fbd6ae134370d992724e292eea96325b2a2a6b0dabfa0",
+  "verification_commands": [
+    "lake build BuildingBlocks.MertensPrimeTransfer",
+    "lake env lean building-blocks/verification/MertensTransferAudit.lean"
+  ],
+  "independent_public_admission": {
+    "verified_at_utc": "2026-09-11T13:53:03.300999+00:00",
+    "baseline_commit": "4f83d44ee98cc36438ee4677f9eb1c914c5b7463",
+    "new_lean_sources_unchanged_from_extraction": true,
+    "all_source_hashes_unchanged_during_rebuild": true,
+    "isolated_build": "All nine imported local modules freshly compiled; pinned upstream compiled dependencies reused.",
+    "final_build_and_full_axiom_audit": [
+      {
+        "step": "build",
+        "exit_code": 0,
+        "seconds": 32.39005133300088
+      },
+      {
+        "step": "axioms",
+        "exit_code": 0,
+        "seconds": 33.22265187499579
+      }
+    ],
+    "integrated_library_build": {
+      "exitCode": 0,
+      "seconds": 26.334252375003416
+    },
+    "clean_pinned_dependencies": [
+      {
+        "name": "mathlib",
+        "revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "plausible",
+        "revision": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "revision": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "importGraph",
+        "revision": "d768126816be17600904726ca7976b185786e6b9",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "proofwidgets",
+        "revision": "556caed0eadb7901e068131d1be208dd907d07a2",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "aesop",
+        "revision": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "Qq",
+        "revision": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "batteries",
+        "revision": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+        "tracked_files_clean": true
+      },
+      {
+        "name": "Cli",
+        "revision": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+        "tracked_files_clean": true
+      }
+    ],
+    "github_markdown_check": "All seven display and fourteen inline expressions recognized; no math-error markers. Live page inspected separately after publication."
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "original_main_module": "ArithmeticDynamics/MertensPrimeTransfer.lean",
+  "original_main_sha256": "eee4e1f04ebe0fabe8de8cfa10533fa24d882bd7c2d8c841e8353c07516782b2",
+  "method": "Selected declarations preserve source proof bodies; imports and namespace changed. Public arithmetic definitions are reused.",
+  "declarations": [
+    {
+      "source": "ArithmeticDynamics/DivisorHyperbola.lean",
+      "source_sha256": "a05a7cb28a635ab17d41c2bb4c249bc7651b3f10c1ec1d8043741f8d27bb5708",
+      "declaration": "factorRectangle"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorHyperbola.lean",
+      "source_sha256": "a05a7cb28a635ab17d41c2bb4c249bc7651b3f10c1ec1d8043741f8d27bb5708",
+      "declaration": "mem_factorRectangle"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorHyperbola.lean",
+      "source_sha256": "a05a7cb28a635ab17d41c2bb4c249bc7651b3f10c1ec1d8043741f8d27bb5708",
+      "declaration": "factorRectangle_card"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorHyperbola.lean",
+      "source_sha256": "a05a7cb28a635ab17d41c2bb4c249bc7651b3f10c1ec1d8043741f8d27bb5708",
+      "declaration": "factorRectangle_card_swap"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorHyperbola.lean",
+      "source_sha256": "a05a7cb28a635ab17d41c2bb4c249bc7651b3f10c1ec1d8043741f8d27bb5708",
+      "declaration": "floor_sum_hyperbola"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorHyperbola.lean",
+      "source_sha256": "a05a7cb28a635ab17d41c2bb4c249bc7651b3f10c1ec1d8043741f8d27bb5708",
+      "declaration": "floor_sum_hyperbola_sqrt"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorError.lean",
+      "source_sha256": "0697a2fbc81eb2d2a10608a75b4514daf0fe64181707f0d07f5048c1df31722d",
+      "declaration": "log_successor_gap_le"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorError.lean",
+      "source_sha256": "0697a2fbc81eb2d2a10608a75b4514daf0fe64181707f0d07f5048c1df31722d",
+      "declaration": "harmonic_euler_error_bounds"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorError.lean",
+      "source_sha256": "0697a2fbc81eb2d2a10608a75b4514daf0fe64181707f0d07f5048c1df31722d",
+      "declaration": "floor_sum_harmonic_bounds"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorError.lean",
+      "source_sha256": "0697a2fbc81eb2d2a10608a75b4514daf0fe64181707f0d07f5048c1df31722d",
+      "declaration": "divisorSum_hyperbola"
+    },
+    {
+      "source": "ArithmeticDynamics/DivisorError.lean",
+      "source_sha256": "0697a2fbc81eb2d2a10608a75b4514daf0fe64181707f0d07f5048c1df31722d",
+      "declaration": "divisorSum_error_le"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorForcing.lean",
+      "source_sha256": "6f52c41183c7faafaf26394407510fde44f2d412307d244470837ee2d8e3351b",
+      "declaration": "logFactorial_integral_bounds"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorForcing.lean",
+      "source_sha256": "6f52c41183c7faafaf26394407510fde44f2d412307d244470837ee2d8e3351b",
+      "declaration": "logFactorial_error_le"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorForcing.lean",
+      "source_sha256": "6f52c41183c7faafaf26394407510fde44f2d412307d244470837ee2d8e3351b",
+      "declaration": "centeredDivisorForcing_error_le"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorForcing.lean",
+      "source_sha256": "6f52c41183c7faafaf26394407510fde44f2d412307d244470837ee2d8e3351b",
+      "declaration": "centeredDivisorForcing_sqrt_bound"
+    },
+    {
+      "source": "ArithmeticDynamics/FloorRecurrence.lean",
+      "source_sha256": "bd7cd9e53ea1589d508a8128a6506f6d705859cfc875090ae8916e2910919837",
+      "declaration": "logFactorial_eq_sum_psi"
+    },
+    {
+      "source": "ArithmeticDynamics/FloorRecurrence.lean",
+      "source_sha256": "bd7cd9e53ea1589d508a8128a6506f6d705859cfc875090ae8916e2910919837",
+      "declaration": "integerError"
+    },
+    {
+      "source": "ArithmeticDynamics/FloorRecurrence.lean",
+      "source_sha256": "bd7cd9e53ea1589d508a8128a6506f6d705859cfc875090ae8916e2910919837",
+      "declaration": "recurrenceForcing"
+    },
+    {
+      "source": "ArithmeticDynamics/FloorRecurrence.lean",
+      "source_sha256": "bd7cd9e53ea1589d508a8128a6506f6d705859cfc875090ae8916e2910919837",
+      "declaration": "sum_integerError_eq_forcing"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorForcing.lean",
+      "source_sha256": "6f52c41183c7faafaf26394407510fde44f2d412307d244470837ee2d8e3351b",
+      "declaration": "centeredDivisorForcing_eq_recurrence"
+    },
+    {
+      "source": "ArithmeticDynamics/QuotientBlocks.lean",
+      "source_sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a",
+      "declaration": "quotientBlock"
+    },
+    {
+      "source": "ArithmeticDynamics/QuotientBlocks.lean",
+      "source_sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a",
+      "declaration": "quotientBlock_eq_Ioc"
+    },
+    {
+      "source": "ArithmeticDynamics/QuotientBlocks.lean",
+      "source_sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a",
+      "declaration": "sum_grouped_by_quotient"
+    },
+    {
+      "source": "ArithmeticDynamics/QuotientBlocks.lean",
+      "source_sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a",
+      "declaration": "mertens"
+    },
+    {
+      "source": "ArithmeticDynamics/QuotientBlocks.lean",
+      "source_sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a",
+      "declaration": "quotientCoefficient"
+    },
+    {
+      "source": "ArithmeticDynamics/QuotientBlocks.lean",
+      "source_sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a",
+      "declaration": "quotientCoefficient_eq_mertens"
+    },
+    {
+      "source": "ArithmeticDynamics/QuotientBlocks.lean",
+      "source_sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a",
+      "declaration": "moebius_floor_mass"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorInverse.lean",
+      "source_sha256": "9347af4d3cbf44ebd29e17b5978998ce9448e26c917ab0b31420bfdf6b0b1319",
+      "declaration": "moebius_floor_inversion"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorInverse.lean",
+      "source_sha256": "9347af4d3cbf44ebd29e17b5978998ce9448e26c917ab0b31420bfdf6b0b1319",
+      "declaration": "integerError_eq_moebius_recurrenceForcing"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorInverse.lean",
+      "source_sha256": "9347af4d3cbf44ebd29e17b5978998ce9448e26c917ab0b31420bfdf6b0b1319",
+      "declaration": "centeredDivisorForcing_inverse"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorSeries.lean",
+      "source_sha256": "06d01540ae35af1c8299dcb965ed7a71c8e4c58cb93a61cab961cd300159a6c5",
+      "declaration": "centeredDivisorCoefficient"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorSeries.lean",
+      "source_sha256": "06d01540ae35af1c8299dcb965ed7a71c8e4c58cb93a61cab961cd300159a6c5",
+      "declaration": "divisorSum_eq_sum_divisor_card"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredDivisorSeries.lean",
+      "source_sha256": "06d01540ae35af1c8299dcb965ed7a71c8e4c58cb93a61cab961cd300159a6c5",
+      "declaration": "centeredDivisorForcing_eq_sum_coefficients"
+    },
+    {
+      "source": "ArithmeticDynamics/FiniteCenteredCorrection.lean",
+      "source_sha256": "7c7d606acb533b421aaddd0917f27415cf52676514d2fd152ff95675ae736532",
+      "declaration": "centeredDivisorForcing_succ"
+    },
+    {
+      "source": "ArithmeticDynamics/CenteredMertens.lean",
+      "source_sha256": "22d6ded7c08dac3bacfc350068de9abf524909137068be63085a69cc7482ae34",
+      "declaration": "mertens_eq_sum_Icc"
+    },
+    {
+      "source": "ArithmeticDynamics/GrowingCutoff.lean",
+      "source_sha256": "e74dd1460ca2399bb25d71272a164eda71df67f19ebc2eb4d7256767e94927b3",
+      "declaration": "reciprocal_sqrt_sum_bound"
+    },
+    {
+      "source": "ArithmeticDynamics/GrowingCutoff.lean",
+      "source_sha256": "e74dd1460ca2399bb25d71272a164eda71df67f19ebc2eb4d7256767e94927b3",
+      "declaration": "floor_sqrt_sum_bound"
+    },
+    {
+      "source": "ArithmeticDynamics/GrowingCutoff.lean",
+      "source_sha256": "e74dd1460ca2399bb25d71272a164eda71df67f19ebc2eb4d7256767e94927b3",
+      "declaration": "largeQuotientAbsolute"
+    },
+    {
+      "source": "ArithmeticDynamics/GrowingCutoff.lean",
+      "source_sha256": "e74dd1460ca2399bb25d71272a164eda71df67f19ebc2eb4d7256767e94927b3",
+      "declaration": "largeQuotientAbsolute_bound"
+    },
+    {
+      "source": "ArithmeticDynamics/GrowingCutoff.lean",
+      "source_sha256": "e74dd1460ca2399bb25d71272a164eda71df67f19ebc2eb4d7256767e94927b3",
+      "declaration": "smallQuotientSigned"
+    },
+    {
+      "source": "ArithmeticDynamics/GrowingCutoff.lean",
+      "source_sha256": "e74dd1460ca2399bb25d71272a164eda71df67f19ebc2eb4d7256767e94927b3",
+      "declaration": "centered_inverse_cutoff_decomposition"
+    },
+    {
+      "source": "ArithmeticDynamics/GrowingCutoff.lean",
+      "source_sha256": "e74dd1460ca2399bb25d71272a164eda71df67f19ebc2eb4d7256767e94927b3",
+      "declaration": "primeError_cutoff_remainder_bound"
+    },
+    {
+      "source": "ArithmeticDynamics/GrowingCutoff.lean",
+      "source_sha256": "e74dd1460ca2399bb25d71272a164eda71df67f19ebc2eb4d7256767e94927b3",
+      "declaration": "smallQuotient_indices_iff"
+    },
+    {
+      "source": "ArithmeticDynamics/HyperbolaMertens.lean",
+      "source_sha256": "997b63f37f57b40e562bbbbc881cd3104925745148558ec1f89addc99403b649",
+      "declaration": "mertens_abs_le"
+    },
+    {
+      "source": "ArithmeticDynamics/HyperbolaMertens.lean",
+      "source_sha256": "997b63f37f57b40e562bbbbc881cd3104925745148558ec1f89addc99403b649",
+      "declaration": "centeredDivisorForcing_sqrt_bound_all"
+    },
+    {
+      "source": "ArithmeticDynamics/HyperbolaMertens.lean",
+      "source_sha256": "997b63f37f57b40e562bbbbc881cd3104925745148558ec1f89addc99403b649",
+      "declaration": "centered_partial_summation"
+    },
+    {
+      "source": "ArithmeticDynamics/HyperbolaMertens.lean",
+      "source_sha256": "997b63f37f57b40e562bbbbc881cd3104925745148558ec1f89addc99403b649",
+      "declaration": "centeredMertensPrefix"
+    },
+    {
+      "source": "ArithmeticDynamics/HyperbolaMertens.lean",
+      "source_sha256": "997b63f37f57b40e562bbbbc881cd3104925745148558ec1f89addc99403b649",
+      "declaration": "smallQuotientSigned_grouped"
+    },
+    {
+      "source": "ArithmeticDynamics/HyperbolaMertens.lean",
+      "source_sha256": "997b63f37f57b40e562bbbbc881cd3104925745148558ec1f89addc99403b649",
+      "declaration": "smallQuotientSigned_partial_summation"
+    },
+    {
+      "source": "ArithmeticDynamics/HyperbolaMertens.lean",
+      "source_sha256": "997b63f37f57b40e562bbbbc881cd3104925745148558ec1f89addc99403b649",
+      "declaration": "centeredMertens_boundary_bound"
+    },
+    {
+      "source": "ArithmeticDynamics/HyperbolaMertens.lean",
+      "source_sha256": "997b63f37f57b40e562bbbbc881cd3104925745148558ec1f89addc99403b649",
+      "declaration": "primeError_Mertens_prefix_remainder"
+    },
+    {
+      "source": "ArithmeticDynamics/MertensPrimeTransfer.lean",
+      "source_sha256": "eee4e1f04ebe0fabe8de8cfa10533fa24d882bd7c2d8c841e8353c07516782b2",
+      "declaration": "divisorCard_harmonic_bound"
+    },
+    {
+      "source": "ArithmeticDynamics/MertensPrimeTransfer.lean",
+      "source_sha256": "eee4e1f04ebe0fabe8de8cfa10533fa24d882bd7c2d8c841e8353c07516782b2",
+      "declaration": "centeredDivisorCoefficient_harmonic_bound"
+    },
+    {
+      "source": "ArithmeticDynamics/MertensPrimeTransfer.lean",
+      "source_sha256": "eee4e1f04ebe0fabe8de8cfa10533fa24d882bd7c2d8c841e8353c07516782b2",
+      "declaration": "primeError_bound_of_Mertens_quotients"
+    }
+  ],
+  "required_CoarsePrimeBounds_sha256": "3636c6563d5c43aabdd249734871094921179964741024418010d71cdf242065",
+  "primary_source": {
+    "authors": [
+      "Andrew Granville",
+      "K. Soundararajan"
+    ],
+    "year": 2014,
+    "url": "https://dms.umontreal.ca/~andrew/PDF/Book.To2.1.pdf",
+    "printed_pages": [
+      8,
+      9
+    ],
+    "pdf_sha256": "5658d0d4984cd83ad9d54df1b92cd2c5a08fe2355cacf5097a26817e7a2085ad"
+  }
+}
