@@ -232,3 +232,15 @@ The [prime-filter and Selberg modules](prime-filter-selberg-identities.md) prove
 ## Restrictions on theta multiplier constructions
 
 The [Bessel heat and Hankel tests](theta-bessel-factorization-obstructions.md) exclude specified positive-heat mixtures and sufficient radial truncation criteria for the actual theta law. The [Euler–Gaussian factorization theorem](theta-operator-factorization-obstructions.md) excludes a specified sample-interpolation class and its coefficientwise closure, using Carlson uniqueness and the auxiliary Mellin obstruction. General multiplier preservation and RH remain open.
+
+## Signed divisor packets
+
+The [divisor-cube construction](signed-divisor-packets.md) partitions actual Möbius labels by coprime cores and retains all prefix, suffix and mean terms. For a growing primorial, the interior and packet diagonal have energy $X^{4+o(1)}$; a classical Mertens estimate gives a strict saving over packet magnitudes for the whole signed boundary. Its remaining RH-scale covariance upper bound is unproved.
+
+## Arithmetic feature and stability tests
+
+The [full-divisor birth decoder](divisor-birth-decoder.md) has an exact gcd Gram matrix, minimum-norm density coordinate and orthogonal surplus formula for the actual centered prime input. The [squarefree cutoff examples](squarefree-cutoff-stability-obstructions.md) rule out specified stability and graph-Laplacian mechanisms, including every positive coefficient tilt on two fixed supports. Neither a large auxiliary norm nor failed finite stability implies an RH counterexample.
+
+## High-frequency radial cutoff laws
+
+The [radial cutoff asymptotics](theta-radial-cutoff-asymptotics.md) prove the fixed-parameter uniform logarithmic law, its critical Beta transition and a quantitative transfer of the complete arithmetic sum. The transfer retains its moving frequency, prime powers and terminal mass; the sign of the resulting finite sum remains open.
