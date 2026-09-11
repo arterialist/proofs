@@ -1,0 +1,59 @@
+BuildingBlocks.zeta_analytic_off_pole : AnalyticOnNhd ℂ riemannZeta {1}ᶜ
+'BuildingBlocks.zeta_analytic_off_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.zeta_not_locally_zero {s : ℂ} (hs : s ≠ 1) : ¬∀ᶠ (z : ℂ) in nhds s, riemannZeta z = 0
+'BuildingBlocks.zeta_not_locally_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.analytic_logDerivative_principal_part {f : ℂ → ℂ} {ρ : ℂ} (hf : AnalyticAt ℂ f ρ)
+  (hn : ¬∀ᶠ (z : ℂ) in nhds ρ, f z = 0) (hzero : f ρ = 0) :
+  ∃ m, 0 < m ∧ ∃ a, AnalyticAt ℂ a ρ ∧ ∀ᶠ (z : ℂ) in nhdsWithin ρ {ρ}ᶜ, deriv f z / f z = ↑m / (z - ρ) + a z
+'BuildingBlocks.analytic_logDerivative_principal_part' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.zeta_jointMellin_principal_part {ρ : ℂ} (hρ0 : ρ ≠ 0) (hρ1 : ρ ≠ 1) (hzero : riemannZeta ρ = 0) :
+  ∃ m,
+    0 < m ∧
+      ∃ a,
+        AnalyticAt ℂ a ρ ∧
+          (∀ᶠ (s : ℂ) in nhdsWithin ρ {ρ}ᶜ,
+              -deriv riemannZeta s / (s * riemannZeta s) - 1 / (s - 1) + 2 * ↑Real.eulerMascheroniConstant / s =
+                -↑m / ρ / (s - ρ) + a s) ∧
+            Filter.Tendsto
+                (fun s =>
+                  (s - ρ) *
+                    (-deriv riemannZeta s / (s * riemannZeta s) - 1 / (s - 1) + 2 * ↑Real.eulerMascheroniConstant / s))
+                (nhdsWithin ρ {ρ}ᶜ) (nhds (-↑m / ρ)) ∧
+              -↑m / ρ ≠ 0
+'BuildingBlocks.zeta_jointMellin_principal_part' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.logFactorial (N : ℕ) : ℝ
+'BuildingBlocks.FloorCorrection.logFactorial' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.logFactorial_eq_log (N : ℕ) :
+  BuildingBlocks.FloorCorrection.logFactorial N = Real.log ↑N.factorial
+'BuildingBlocks.FloorCorrection.logFactorial_eq_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.divisorSum (N : ℕ) : ℝ
+'BuildingBlocks.FloorCorrection.divisorSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.centeredDivisorForcing (N : ℕ) : ℝ
+'BuildingBlocks.FloorCorrection.centeredDivisorForcing' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.divisorMainTerm (x : ℝ) : ℝ
+'BuildingBlocks.FloorCorrection.divisorMainTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.realDivisorError (x : ℝ) : ℝ
+'BuildingBlocks.FloorCorrection.realDivisorError' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.factorialIntegralRemainder (q : ℕ) : ℝ
+'BuildingBlocks.FloorCorrection.factorialIntegralRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.log_stirlingSeq_upper {n : ℕ} (hn : n ≠ 0) :
+  Real.log (Stirling.stirlingSeq n) - Real.log √Real.pi ≤ 1 / (2 * ↑n)
+'BuildingBlocks.FloorCorrection.log_stirlingSeq_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.factorialIntegralRemainder_stirling_bounds {q : ℕ} (hq : 1 ≤ q) :
+  0 ≤ BuildingBlocks.FloorCorrection.factorialIntegralRemainder q - (Real.log ↑q + Real.log (2 * Real.pi)) / 2 ∧
+    BuildingBlocks.FloorCorrection.factorialIntegralRemainder q - (Real.log ↑q + Real.log (2 * Real.pi)) / 2 ≤
+      1 / (2 * ↑q)
+'BuildingBlocks.FloorCorrection.factorialIntegralRemainder_stirling_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.FloorCorrection.realFloorCorrection (x : ℝ) : ℝ
+'BuildingBlocks.FloorCorrection.realFloorCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.floorCorrectionMean : ℝ
+'BuildingBlocks.FloorCorrection.floorCorrectionMean' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder {x : ℝ} (hx : 1 ≤ x) :
+  |BuildingBlocks.FloorCorrection.realFloorCorrection x - BuildingBlocks.FloorCorrection.floorCorrectionMean +
+        (x - ↑⌊x⌋₊ - 1 / 2) * (Real.log x + 2 * Real.eulerMascheroniConstant)| ≤
+    2 / x
+'BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

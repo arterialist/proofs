@@ -1,0 +1,214 @@
+{
+  "extractedAtUtc": "2026-09-11T05:52:03.114989+00:00",
+  "sourceSnapshots": [
+    {
+      "originalModule": "ArithmeticDynamics/FloorRecurrence.lean",
+      "sha256": "bd7cd9e53ea1589d508a8128a6506f6d705859cfc875090ae8916e2910919837"
+    },
+    {
+      "originalModule": "ArithmeticDynamics/DivisorError.lean",
+      "sha256": "0697a2fbc81eb2d2a10608a75b4514daf0fe64181707f0d07f5048c1df31722d"
+    },
+    {
+      "originalModule": "ArithmeticDynamics/CenteredDivisorForcing.lean",
+      "sha256": "6f52c41183c7faafaf26394407510fde44f2d412307d244470837ee2d8e3351b"
+    },
+    {
+      "originalModule": "ArithmeticDynamics/DivisorFloorTransfer.lean",
+      "sha256": "a2b8905ce91d43ac89932ac9731e1df42cbcca3841f190de7fa628af0eec710a"
+    },
+    {
+      "originalModule": "ArithmeticDynamics/FloorCorrectionOscillation.lean",
+      "sha256": "5fea8b8d76ff52169517284bfa762a91da254fa409a0ba3cab1a3ad86b742dbe"
+    }
+  ],
+  "exposedDeclarations": [
+    "BuildingBlocks.FloorCorrection.logFactorial",
+    "BuildingBlocks.FloorCorrection.logFactorial_eq_log",
+    "BuildingBlocks.FloorCorrection.divisorSum",
+    "BuildingBlocks.FloorCorrection.centeredDivisorForcing",
+    "BuildingBlocks.FloorCorrection.divisorMainTerm",
+    "BuildingBlocks.FloorCorrection.realDivisorError",
+    "BuildingBlocks.FloorCorrection.factorialIntegralRemainder",
+    "BuildingBlocks.FloorCorrection.log_stirlingSeq_upper",
+    "BuildingBlocks.FloorCorrection.factorialIntegralRemainder_stirling_bounds",
+    "BuildingBlocks.FloorCorrection.realFloorCorrection",
+    "BuildingBlocks.FloorCorrection.floorCorrectionMean",
+    "BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder"
+  ],
+  "sourceSha256": "450d1141e82ec282627b8b2b7b8d5e66e4a93dbd8923e221a458f6099c4c6e20",
+  "definitionAndProofBodyRetention": "Retained all five declarations from FloorCorrectionOscillation, six supporting definitions and logFactorial_eq_log, with namespace and direct imports changed.",
+  "category": "building-blocks",
+  "mathematicalNovelty": "Classical Stirling/floor decomposition; no originality claimed.",
+  "formalizationPriority": "Not established; no first-formalization claim.",
+  "sourceTask": {
+    "title": "RH Proof",
+    "threadId": "01a08c67-5963-7540-88b1-d345723afc43"
+  },
+  "proofDevelopment": "Lean proofs drafted by Codex under the repository owner’s research direction; independently extracted, reviewed, built and audited by the coordinating task.",
+  "scope": "For every real x>=1, explicit floor-correction expansion has absolute remainder <=2/x, including integer arguments. Definitions use actual finite floor and logarithm sums; no prime-error or exponential-sum estimate is assumed.",
+  "utility": "Separates the constant mean and weighted sawtooth so established reciprocal-phase estimates can be applied; pointwise residual sums to <=4D^2/N on the documented divisor blocks. The block summation and external exponential-sum consequences are written mathematics, not extra formal theorems in this snapshot.",
+  "attribution": {
+    "mathematics": "Classical Stirling expansion and remainder estimates; https://dlmf.nist.gov/5.11 .",
+    "mathlibStirlingAuthors": [
+      "Moritz Firsching",
+      "Fabian Kruse",
+      "Nikolas Kuhn"
+    ],
+    "mathlibEulerMascheroniAuthor": "David Loeffler",
+    "codeLicense": "Repository-owned extracted proof code under MIT; imported mathlib and other dependencies keep their own licenses. No mathlib source is copied."
+  },
+  "leanVersion": "4.24.0",
+  "mathlibRevision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "verifiedAtUtc": "2026-09-11T05:55:28.471762+00:00",
+  "verificationStatus": "Passed independent package build and complete axiom closure audit of all 16 exposed declarations across both blocks.",
+  "verification": {
+    "buildCommand": "lake build",
+    "buildExitCode": 0,
+    "auditCommand": "lake env lean building-blocks/verification/Audit.lean",
+    "auditExitCode": 0,
+    "axiomsByDeclaration": {
+      "BuildingBlocks.zeta_analytic_off_pole": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.zeta_not_locally_zero": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.analytic_logDerivative_principal_part": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.zeta_jointMellin_principal_part": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.logFactorial": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.logFactorial_eq_log": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.divisorSum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.centeredDivisorForcing": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.divisorMainTerm": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.realDivisorError": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.factorialIntegralRemainder": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.log_stirlingSeq_upper": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.factorialIntegralRemainder_stirling_bounds": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.realFloorCorrection": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.floorCorrectionMean": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "mathlib",
+        "revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+        "clean": true
+      },
+      {
+        "name": "plausible",
+        "revision": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+        "clean": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "revision": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+        "clean": true
+      },
+      {
+        "name": "importGraph",
+        "revision": "d768126816be17600904726ca7976b185786e6b9",
+        "clean": true
+      },
+      {
+        "name": "proofwidgets",
+        "revision": "556caed0eadb7901e068131d1be208dd907d07a2",
+        "clean": true
+      },
+      {
+        "name": "aesop",
+        "revision": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+        "clean": true
+      },
+      {
+        "name": "Qq",
+        "revision": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+        "clean": true
+      },
+      {
+        "name": "batteries",
+        "revision": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+        "clean": true
+      },
+      {
+        "name": "Cli",
+        "revision": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+        "clean": true
+      }
+    ],
+    "dependencyReuse": "Reused cached compiled dependencies via the existing ignored .lake/packages symlink. All nine dependency checkouts were clean and pinned. Newly extracted module was freshly compiled in this repository; no ArithmeticDynamics project module is imported.",
+    "claimLimit": "Verifies this extracted finite module and existing zeta block, not the entire research workspace, written exponential-sum analysis, or RH."
+  },
+  "verifiedFileSha256": {
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "lakefile.toml": "5e1d5c9e9dff61959bc2bdfd4e92a81ef415cb194149a607d551474fd589c216",
+    "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+    "building-blocks/BuildingBlocks.lean": "b174ad292ca00b8246db65eca64ac94e61c178d2679fcc692b65e68d3ca4f6d2",
+    "building-blocks/BuildingBlocks/FloorCorrection.lean": "450d1141e82ec282627b8b2b7b8d5e66e4a93dbd8923e221a458f6099c4c6e20",
+    "building-blocks/BuildingBlocks/ZetaPole.lean": "fec53acea8f7c1a6d8af6f7ca179f40f3b0f8e6e3a8f9c29b7572da78a18e52e",
+    "building-blocks/verification/Audit.lean": "018aa048195a985bb1dd19cc388c3f178e6229b0fa3d747d79256c10b1242cab",
+    "building-blocks/verification/floor-correction-build.txt": "1c5f5286a62e44d1f4ceccd41d051c2356587ac3ca705847bfe7bdb7ed358fc6",
+    "building-blocks/verification/floor-correction-axioms.txt": "a300d7ac1586d055084d908a1028fd5111013451c3ebef2b6319ac93c244d663",
+    "building-blocks/README.md": "0d5a06ac4841d65ea80a650accc704cc95589f1f9f14d8c3f9d34b9990a7cfa3"
+  }
+}

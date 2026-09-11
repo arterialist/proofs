@@ -8,3 +8,28 @@ import BuildingBlocks
 #print axioms BuildingBlocks.analytic_logDerivative_principal_part
 #check BuildingBlocks.zeta_jointMellin_principal_part
 #print axioms BuildingBlocks.zeta_jointMellin_principal_part
+
+#check BuildingBlocks.FloorCorrection.logFactorial
+#print axioms BuildingBlocks.FloorCorrection.logFactorial
+#check BuildingBlocks.FloorCorrection.logFactorial_eq_log
+#print axioms BuildingBlocks.FloorCorrection.logFactorial_eq_log
+#check BuildingBlocks.FloorCorrection.divisorSum
+#print axioms BuildingBlocks.FloorCorrection.divisorSum
+#check BuildingBlocks.FloorCorrection.centeredDivisorForcing
+#print axioms BuildingBlocks.FloorCorrection.centeredDivisorForcing
+#check BuildingBlocks.FloorCorrection.divisorMainTerm
+#print axioms BuildingBlocks.FloorCorrection.divisorMainTerm
+#check BuildingBlocks.FloorCorrection.realDivisorError
+#print axioms BuildingBlocks.FloorCorrection.realDivisorError
+#check BuildingBlocks.FloorCorrection.factorialIntegralRemainder
+#print axioms BuildingBlocks.FloorCorrection.factorialIntegralRemainder
+#check BuildingBlocks.FloorCorrection.log_stirlingSeq_upper
+#print axioms BuildingBlocks.FloorCorrection.log_stirlingSeq_upper
+#check BuildingBlocks.FloorCorrection.factorialIntegralRemainder_stirling_bounds
+#print axioms BuildingBlocks.FloorCorrection.factorialIntegralRemainder_stirling_bounds
+#check BuildingBlocks.FloorCorrection.realFloorCorrection
+#print axioms BuildingBlocks.FloorCorrection.realFloorCorrection
+#check BuildingBlocks.FloorCorrection.floorCorrectionMean
+#print axioms BuildingBlocks.FloorCorrection.floorCorrectionMean
+#check BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder
+#print axioms BuildingBlocks.FloorCorrection.floorCorrection_centered_remainder
