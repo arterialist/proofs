@@ -91,15 +91,15 @@ The proof uses elementary squarefree counting and the classical uniform boundedn
 
 ## Finite primitive-energy bounds
 
-[CoarsePrimitive.lean](BuildingBlocks/CoarsePrimitive.lean) bounds weighted integrals of the actual prime error $e(x)=\psi(\lfloor x\rfloor_+)-x$. Put $P_X(t)=\int_X^t e(x)\,dx$, $R_X(t)=\int_t^{2X}e(x)\,dx$ and $S_X=\int_X^{2X}(P_X(t)^2+R_X(t)^2)\,dt$.
+[CoarsePrimitive.lean](BuildingBlocks/CoarsePrimitive.lean) bounds weighted integrals of the actual prime error $`e(x)=\psi(\lfloor x\rfloor_+)-x`$. Put $`P_X(t)=\int_X^t e(x)\,dx`$, $`R_X(t)=\int_t^{2X}e(x)\,dx`$ and $`S_X=\int_X^{2X}(P_X(t)^2+R_X(t)^2)\,dt`$.
 
-For $X>0$, a continuous complex test function $w$ differentiable inside the block, with interval-integrable derivative satisfying $\lVert w'\rVert\le K$ for $K\ge0$, obeys
+For $`X>0`$, a continuous complex test function $`w`$ differentiable inside the block, with interval-integrable derivative satisfying $`\lVert w'\rVert\le K`$ for $`K\ge0`$, obeys
 
-$$
+```math
 \left\lVert\int_X^{2X}e(x)w(x)\,dx\right\rVert
 \le\sqrt{2S_X/X}\,\lVert w(2X)\rVert+K\sqrt{XS_X}.
-$$
+```
 
-The module also proves the exact finite Mellin identity, retaining the terminal mass and integer jumps. It supplies no growth bound for $S_X$ or infinite-series continuation theorem. The mathematics uses classical Cauchy–Schwarz and one-sided integration by parts.
+The module also proves the exact finite Mellin identity, retaining the terminal mass and integer jumps. It supplies no growth bound for $`S_X`$ or infinite-series continuation theorem. The mathematics uses classical Cauchy–Schwarz and one-sided integration by parts.
 
 [Assumptions, use and attribution](coarse-primitive.md) · [Written RH criterion](coarse-energy-rh-criterion.md) · [Verification](verification/coarse-primitive.json).

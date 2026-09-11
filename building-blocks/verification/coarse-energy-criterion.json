@@ -3,7 +3,7 @@
   "status": "ready_for_publication_as_written_mathematical_companion",
   "review_type": "independent written proof and primary-source statement review; not a Lean replay",
   "proof_page": "coarse-energy-rh-criterion.md",
-  "proof_page_sha256": "40e71a8be1f0d24c1a9e93d254062f21a083dbf7404aa1d978583282e5519b6f",
+  "proof_page_sha256": "30009fef2808958c8e43c6b57eac68a57ec61c12bec027c79dcdd14458c9647a",
   "checks": {
     "actual_chebyshev_function_includes_all_prime_powers": "pass",
     "RH_implies_O_X4_via_conditional_mean_square": "pass; Brent-Platt-Trudgian printed p.741 equation (1) and Theorem 1 inspected",
