@@ -1,0 +1,162 @@
+{
+  "category": "building-blocks",
+  "exposedDeclarations": [
+    "BuildingBlocks.HyperbolaProduct.sum_divisors_eq_sum_factor_pairs",
+    "BuildingBlocks.HyperbolaProduct.moebius_divisor_sum",
+    "BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient",
+    "BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_small",
+    "BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_complement",
+    "BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_weighted_sum"
+  ],
+  "sourceSnapshots": [
+    {
+      "originalModule": "ArithmeticDynamics/FloorRecurrence.lean",
+      "sha256": "bd7cd9e53ea1589d508a8128a6506f6d705859cfc875090ae8916e2910919837"
+    },
+    {
+      "originalModule": "ArithmeticDynamics/QuotientBlocks.lean",
+      "sha256": "0a87d1ffd4d378e2b898b2bf452b161335969a2653426fab78228d8b292ca20a"
+    },
+    {
+      "originalModule": "ArithmeticDynamics/HyperbolaProduct.lean",
+      "sha256": "5a8fc4200fb518c6aab3aa8bddb6c7fb254ec9d85066c84d732ab42ee4ec89d3"
+    }
+  ],
+  "sourceSha256": "4b0293a68ac2ba9d9aa441b3eb2e8843727fc7d5fd5c6da579ff471711a888f9",
+  "extraction": "Selected definition and proof bodies retained; imports and namespace changed. No ArithmeticDynamics imports.",
+  "sourceReportSha256": "1574e22220a29e0aa7b2c43e4aa07a6fb4e780677d81f2d2828e8ebb88761623",
+  "verifiedAtUtc": "2026-09-11T07:47:24.793391+00:00",
+  "leanVersion": "4.24.0",
+  "mathlibRevision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "formalScope": "Six finite declarations: factor-pair reindexing, complete Mobius divisor sum, product coefficient, small-product cancellation, strict complement, and weighted hyperbola grouping. No analytic bound is assumed or formalized.",
+  "writtenEstimate": {
+    "file": "building-blocks/hyperbola-product.md",
+    "statement": "For every delta>0, positive integer N, integer sqrt(N)<=K<=N/2 and real K<=y<=2K, |sum_(K<k<=y) a_N(k)({N/k}-1/2)| <<_delta N^delta K^(4/3)N^(-1/3). Summing product bands through N^(5/8) gives O_delta(N^(1/2+delta)).",
+    "status": "Written proof checked against the cited classical derivative and Fourier estimates; not Lean-verified.",
+    "limit": "No improved complete prime-error bound or zero-location theorem."
+  },
+  "mathematicalNovelty": "Specialized application of classical methods; exact publication priority unresolved, no originality claim.",
+  "formalizationPriority": "Not established; no first-formalization claim.",
+  "utility": "Converts a restricted product sum to unweighted inner intervals and controls its low-product contribution.",
+  "attribution": {
+    "mathematics": [
+      "Classical Mobius inversion: https://dlmf.nist.gov/27.5.E2",
+      "Van der Corput second-derivative estimate, as presented by Noam Elkies: https://people.math.harvard.edu/~elkies/M229.09/vdc.pdf",
+      "Hugh L. Montgomery and Robert C. Vaughan, Multiplicative Number Theory I, Appendix D, Lemma D.1"
+    ],
+    "mathlibArithmeticFunctionAuthor": "Aaron Anderson",
+    "codeLicense": "MIT for repository proof code. Imported mathlib retains Apache 2.0; other dependencies retain their own licenses. No mathlib source copied."
+  },
+  "verification": {
+    "buildCommand": "lake build",
+    "buildExitCode": 0,
+    "auditCommand": "lake env lean building-blocks/verification/Audit.lean",
+    "auditExitCode": 0,
+    "auditedDeclarationsAcrossPackage": 22,
+    "axiomsByDeclaration": {
+      "BuildingBlocks.HyperbolaProduct.sum_divisors_eq_sum_factor_pairs": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.HyperbolaProduct.moebius_divisor_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_small": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_complement": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "BuildingBlocks.HyperbolaProduct.hyperbolaProductCoefficient_weighted_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "mathlib",
+        "revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+        "clean": true
+      },
+      {
+        "name": "plausible",
+        "revision": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+        "clean": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "revision": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+        "clean": true
+      },
+      {
+        "name": "importGraph",
+        "revision": "d768126816be17600904726ca7976b185786e6b9",
+        "clean": true
+      },
+      {
+        "name": "proofwidgets",
+        "revision": "556caed0eadb7901e068131d1be208dd907d07a2",
+        "clean": true
+      },
+      {
+        "name": "aesop",
+        "revision": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+        "clean": true
+      },
+      {
+        "name": "Qq",
+        "revision": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+        "clean": true
+      },
+      {
+        "name": "batteries",
+        "revision": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+        "clean": true
+      },
+      {
+        "name": "Cli",
+        "revision": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+        "clean": true
+      }
+    ],
+    "dependencyReuse": "Reused cached artifacts from nine clean dependency checkouts pinned by lake-manifest.json. The extracted HyperbolaProduct module and updated library index were freshly compiled.",
+    "warnings": 0
+  },
+  "markdownRendering": {
+    "README.md": {
+      "display": 5,
+      "inline": 17,
+      "githubMarkdownApi": true
+    },
+    "hyperbola-product.md": {
+      "display": 11,
+      "inline": 66,
+      "githubMarkdownApi": true
+    }
+  },
+  "verifiedFileSha256": {
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "lakefile.toml": "5e1d5c9e9dff61959bc2bdfd4e92a81ef415cb194149a607d551474fd589c216",
+    "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+    "building-blocks/BuildingBlocks.lean": "c3a1641883594d5555b386281e33dada5ef2a21eeaae7970e1e965cd98aa9809",
+    "building-blocks/BuildingBlocks/HyperbolaProduct.lean": "4b0293a68ac2ba9d9aa441b3eb2e8843727fc7d5fd5c6da579ff471711a888f9",
+    "building-blocks/verification/Audit.lean": "f709c39dda9fcfa1f411e865eca3fa6887b6040ed19f1bdbda8be48a5a825872",
+    "building-blocks/verification/hyperbola-product-build.txt": "820cf46aa93425e82d4e540cf73f652c28d1150d8709ddaaf9b8831ff68ffbb3",
+    "building-blocks/verification/hyperbola-product-axioms.txt": "15fd05e1f21ae76cb7c5a2faccc8210283772daba048e410793bd42f105ef415",
+    "building-blocks/hyperbola-product.md": "c8faa91a86b1a49a7fda821aaf5c8281be0070496760c0d97fed1c3f8e67cbf4",
+    "building-blocks/README.md": "3e59b272f29c1153e79d2e82770ac57dda973ac51a8e1ef6f257d2d54badc56f"
+  }
+}

@@ -1,6 +1,6 @@
 # Building blocks
 
-Verified results used in the study of prime-counting errors. The results below are classical; no originality or first-formalization claim is made. Throughout, $\gamma$ is the Euler–Mascheroni constant.
+Results used in the study of prime-counting errors, with their formal verification scope stated individually. No originality or first-formalization claim is made. Throughout, $\gamma$ is the Euler–Mascheroni constant.
 
 ## Local poles at zeta zeros
 
@@ -43,3 +43,23 @@ The bound includes integers, where $`\{x\}=0`$. It separates a constant mean fro
 The mathematics follows from the [Stirling expansion and remainder estimates](https://dlmf.nist.gov/5.11). The imported mathlib [Stirling module](https://github.com/leanprover-community/mathlib4/blob/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/Mathlib/Analysis/SpecialFunctions/Stirling.lean) credits Moritz Firsching, Fabian Kruse, and Nikolas Kuhn; the [Euler–Mascheroni module](https://github.com/leanprover-community/mathlib4/blob/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/Mathlib/NumberTheory/Harmonic/EulerMascheroni.lean) credits David Loeffler. Mathlib dependencies retain their Apache 2.0 license.
 
 [Verification](verification/floor-correction.json).
+
+## Möbius hyperbola product estimate
+
+[HyperbolaProduct.lean](BuildingBlocks/HyperbolaProduct.lean) proves the finite product-grouping and complementary-divisor identities for
+
+```math
+a_N(k)=\sum_{\substack{d\mid k\\k^2\le Nd}}\mu(d).
+```
+
+The [written proof](hyperbola-product.md) applies classical Fourier and derivative estimates to obtain, for every $\delta>0$ and integer $\sqrt N\le A\le N/2$,
+
+```math
+\left|\sum_{\sqrt N<k\le A}a_N(k)
+\left(\{N/k\}-\tfrac12\right)\right|
+\ll_\delta N^\delta A^{4/3}N^{-1/3}.
+```
+
+Thus products through $N^{5/8}$ contribute $O_\delta(N^{1/2+\delta})$. The analytic estimate is not formalized in Lean. Larger products and the other terms in the prime-error formula remain unresolved. Exact publication priority is unestablished; this entry records a useful application of classical methods.
+
+[Sources and proof](hyperbola-product.md) · [Verification](verification/hyperbola-product.json).
