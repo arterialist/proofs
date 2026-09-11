@@ -164,3 +164,7 @@ The [written proof](theta-radial-positivity.md) shows that every complete radial
 ## Cosh-base universal-factor approximation obstruction
 
 The [written proof](cosh-universal-factor-closure.md) excludes even local positive-axis $L^1$ approximation of the actual theta kernel by $e^{-a_j\cosh(b_ju)}$ times positive even Pólya universal factors, including all parameter escape. Logarithmic curvature forces an entire limit, contradicting a theta boundary singularity. Arbitrary real-zero Fourier approximants remain outside the conclusion. No originality or Lean formalization claim is made.
+
+## An eventual-sign criterion from distinct-prime convolution
+
+The [written proof](distinct-prime-sign-criterion.md) shows that RH is equivalent to eventual negativity of a centered triangular multiplicative convolution after subtracting the contributions from powers of the same prime. A weighted Mellin boundary estimate retains arbitrary zero multiplicities and proves that the negative prime-square bias dominates under RH. The unconditional sign remains unproved, and no Lean formalization or originality claim is made.
