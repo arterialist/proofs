@@ -252,3 +252,11 @@ The [actual floor-column covariance](temporal-floor-covariance.md) retains tempo
 ## Haar completion and Weil damping
 
 The [Haar energy theorem](haar-prime-energy-completion.md) keeps every scale and endpoint atom, proves a single-scale Fourier charge obstruction and an exact cheaper multiscale completion, and identifies the lower forcing estimate still needed. The [Weil damping counterexample](weil-damping-obstruction.md) disproves downward positivity for the actual pole-subtracted family using admissible compact tests. Keeping the poles yields a different positive family only in the stated classical half-plane. Neither result establishes the undamped RH positivity condition.
+
+## Coherent late-prime packets
+
+The [complete-packet calculation](late-prime-packet-energy.md) proves $X^5/\log^2X$ energy at every fixed fractional prime cutoff, with an explicit constant at cutoff $X$. The full packet energy exceeds the sum of its diagonals by order $X/\log X$, while the actual signed readout cancels its leading term. This excludes a scale-independent independent-packet estimate, not the actual RH bound.
+
+## Support flow and relative prime determinants
+
+The [pole-preserving support flow](signed-support-flow.md) gives a complete smooth parametrization, the exact divisor flux, a first-prime obstruction to scalar differential propagation and a sharp logarithmic finite-step modulus. The [relative determinant calculation](prime-density-relative-determinant.md) continues an independent density reference, identifies the exact trace cost of actual prime discrepancy and proves that unitary mixing cannot reduce that cost. Every regularization retains its required first-order restoration.
