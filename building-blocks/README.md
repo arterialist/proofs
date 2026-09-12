@@ -368,3 +368,7 @@ The [written grouping theorem](small-prime-grouping.md) preserves all cancellati
 ## Local cutoff versus complete-period covariance
 
 The [sawtooth cutoff theorem](cutoff-period-gcd-obstruction.md) gives consecutive integer labels below $X$ whose actual local energy exceeds their exact common-period gcd form by a factor at least $X/5940$. Its elementary proof retains all gcd multiplicities and attributes the covariance identity to Franel–Landau. It refutes an arbitrary-coefficient subpower comparison, without bounding the actual Möbius-weighted form.
+
+## Variable-length Möbius–divisor blocks
+
+The [global divisor-block chapter](global-divisor-blocks.md) preserves both the elementary correlation estimate and the stronger joint-frequency Robert–Sargos application, uniformly for $\sqrt N\le D\le N/2$ and arbitrary initial subintervals. It gives $O_\delta(N^\delta(N^{1/4}D^{11/16}+D))$, with every floor and truncation cost stated. This extends the range of the central-block method; it supplies no bound for the required full signed total.
