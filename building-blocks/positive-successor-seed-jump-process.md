@@ -624,3 +624,50 @@ $$
 $$
 
 The declaration is `seed_derivative_variation_budget`. It records those absolute masses; this module does not yet identify the expression with the BV variation or construct the distributional derivative measure. Setting $L=\log p$ retains the literal prime birth and all proper powers. The module and changed aggregate compile, and the checked limits, jump and budget targets use only the three standard axioms listed above. The [maximal-translation theorem](successor-seed-maximal-translation.md) uses the further written variation/translation argument.
+
+
+## Formalized weak derivative and exact Jordan variation
+
+The [weak derivative](BuildingBlocks/PrimeSeedWeakDerivative.lean), [derivative measures](BuildingBlocks/PrimeSeedDerivativeMeasure.lean) and [Jordan variation](BuildingBlocks/PrimeSeedDerivativeVariation.lean) now identify the preceding literal clock budget with the total variation of the measure representing the weak derivative. For every real $L>0$, define
+
+$$
+\eta_L^+=\tfrac12 B_L(v)dv+e^{-3L/2}\delta_L,
+\qquad
+\eta_L^-=\sum_{j\ge0}(1-e^{-L})e^{-(j+2)L/2}\delta_{(j+2)L}.
+$$
+
+For $\varphi\in C^1(\mathbb R)$ with bounded $\varphi$ and bounded continuous derivative, `seed_weak_derivative` and `seedDerivative_represents_weak_derivative` prove
+
+$$
+\int B_L\varphi'=\int\varphi\,d\eta_L^- -\int\varphi\,d\eta_L^+.
+$$
+
+The atomic support of $\eta_L^-$ is countable and excludes $L$, so it is disjoint from both the absolutely continuous positive part and the birth atom. Their masses are both $e^{-L}+e^{-3L/2}$. The signed measure $\eta_L^+-\eta_L^-$ therefore has mass zero, and `seedDerivative_totalVariation_mass` gives exactly
+
+$$
+|\eta_L^+-\eta_L^-|(\mathbb R)=2e^{-L}+2e^{-3L/2}.
+$$
+
+This uses the classical weak derivative and Jordan decomposition. It is an equality of measures and their variation; no identification with mathlib's function `eVariationOn` is asserted.
+
+The [finite-prime extension](BuildingBlocks/PrimeSeedFiniteDerivative.lean) proves `prime_birth_ne_proper_power`: a prime birth $\log p$ never equals $(j+2)\log q$ for primes $p,q$. Thus positive and negative components remain mutually singular across distinct primes, not only within each profile. For every finite prime set $S$, `finiteSeedDerivative_totalVariation_mass` and `finiteSeedDerivative_represents_weak_derivative` prove the literal aggregate's weak derivative and exact variation
+
+$$
+\sum_{p\in S}(2p^{-1}+2p^{-3/2}).
+$$
+
+The [all-prime extension](BuildingBlocks/PrimeSeedAllPrimeDerivative.lean) constructs the separate measures $\eta^\pm=\sum_p\eta_{\log p}^\pm$. They are mutually singular and finite on each $(-\infty,A]$. The declarations `allPrimeDerivativePositive_restrict_Iic` and `allPrimeDerivativeNegative_restrict_Iic` retain exactly
+
+$$
+p<\lfloor e^A\rfloor+1
+$$
+
+on that closed age region, including every possible endpoint birth. Both global masses are infinite, by divergence of $\sum_p1/p$. Consequently they are not packaged as a globally finite signed measure.
+
+For bounded $C^1$ tests and bounded continuous derivatives that both vanish above a finite age $A$, `allPrimeSeed_weak_derivative` proves all three integrability assertions and
+
+$$
+\int B\varphi'=\int\varphi\,d\eta^- -\int\varphi\,d\eta^+.
+$$
+
+Its proof reduces to the exact finite-prime restriction, preserving all proper-power atoms. The five target builds and changed aggregate pass with the pinned versions; checked primary declarations use only `propext`, `Classical.choice` and `Quot.sound`. The stronger completed memory estimates still have their separate domains in the [compensated response chapter](charge-compensated-successor-memory.md).

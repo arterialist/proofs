@@ -114,3 +114,8 @@ import BuildingBlocks.PrimeMemoryChargeDecay
 import BuildingBlocks.MemoryChargeEnergy
 import BuildingBlocks.MemoryChargeCutoff
 import BuildingBlocks.PrimeSeedJumps
+import BuildingBlocks.PrimeSeedWeakDerivative
+import BuildingBlocks.PrimeSeedDerivativeMeasure
+import BuildingBlocks.PrimeSeedDerivativeVariation
+import BuildingBlocks.PrimeSeedFiniteDerivative
+import BuildingBlocks.PrimeSeedAllPrimeDerivative

@@ -588,3 +588,6 @@ The [growing-time source cocycle](growing-time-actual-source-cocycle.md) retains
 
 
 The [presieved prime-pair completion](presieved-prime-pair-completion.md) derives exact Ramanujan/CRT masked spectra and a scalar-charge obstruction for primorial $W\ge30$, $h\ge4W$. A distinct full nonuniform completion on the actual interval $(64,128]$ gives a certified lower bound above $16.90$, where the optimal scalar bound is below $-61.02$. The rational/Arb certificate passes with every allowed coordinate and prime-power exception retained. Cheap weighted completion at growing scales, the cyclic density cost and signed endpoint contributions remain unresolved.
+
+
+The [formal derivative chain](positive-successor-seed-jump-process.md#formalized-weak-derivative-and-exact-jordan-variation) now proves the actual full-clock weak derivative and exact finite-prime Jordan variation. Prime births cannot cancel proper-power decay atoms. The all-prime positive and negative components are locally finite with an exact closed-age cutoff, but each has infinite total mass. The formal full-prime test identity retains that distinction; it does not assert a globally finite signed derivative.
