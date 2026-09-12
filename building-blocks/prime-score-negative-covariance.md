@@ -68,6 +68,25 @@ $$
 
 This explicit coupling is the entire proof of the needed power-sum ratio. No asymptotic estimate for the sums is involved.
 
+## A direct increment-ratio proof of the same comparison
+
+There is also an elementary proof of (2) that uses neither a probabilistic coupling nor majorization. Set $D_N=(N+1)A_N$, $D_0=C_0=0$, and
+
+$$
+\frac{C_N-C_{N-1}}{D_N-D_{N-1}}=\frac1{1+h_N},\qquad
+h_N=\frac{A_{N-1}}{\sqrt N}+\frac1N.
+$$
+
+For $n\ge2$, monotonicity of $x^{-1/2}$ and integration give
+
+$$
+A_{n-1}\le2\sqrt{n-1}-1
+<\frac{2(n-1)}{\sqrt n}
+<(\sqrt n+\sqrt{n+1})\left(1-\frac1{\sqrt{n(n+1)}}\right).
+$$
+
+The last comparison follows by increasing both factors from $2\sqrt n$ and $1-1/n$. The needed bound by the final expression also holds at $n=1$, where $A_0=0$. Multiplying by $1/\sqrt n-1/\sqrt{n+1}$ proves $h_{n+1}>h_n$. Thus the positive increment ratios strictly decrease. Since $C_N/D_N$ is their weighted average with weights $D_j-D_{j-1}>0$, the next ratio is strictly below that average, and $C_{N+1}/D_{N+1}<C_N/D_N$. This is exactly (2), with every finite endpoint included.
+
 ## Every integer dilation ratio increases
 
 For an integer $a\ge 2$, set
