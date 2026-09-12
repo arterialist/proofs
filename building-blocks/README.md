@@ -1,5 +1,7 @@
 # Building blocks
 
+The [arithmetic subject index](arithmetic-subject-index.md) links the cutoff probability, successor/division and phase results to their analytic consumers, with proved and refuted scopes kept explicit.
+
 Results used in the study of prime-counting errors, with their formal verification scope stated individually. No originality or first-formalization claim is made. Throughout, $\gamma$ is the Euler–Mascheroni constant.
 
 ## An actual arithmetic sign sufficient for RH
