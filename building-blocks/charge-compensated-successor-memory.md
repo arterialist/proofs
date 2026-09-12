@@ -350,4 +350,34 @@ $$
 
 exists without assuming that $K_Ff$ has a finite total integral. The theorem `finitePrimeSeed_compensated_memory_commutator` specializes this identity to every finite set of complete prime profiles. Both rank corrections remain present.
 
-All four module targets built successfully. Their checked primary theorems depend only on `propext`, `Classical.choice` and `Quot.sound`. The absolute Fubini identification of the transposed charge column, all-prime $B\in L^2$, the mixed-source-to-$L^1$ extension, and its quantitative joint limit remain outside this formal batch. In particular, the formal $L^2$ domain is not an assertion that the uncut actual critical source lies in unweighted $L^2$.
+All four module targets built successfully. Their checked primary theorems depend only on `propext`, `Classical.choice` and `Quot.sound`. The all-prime $B\in L^2$ bound, the mixed-source-to-$L^1$ extension, and its quantitative joint limit remain outside this formal batch. The transposed charge column is formalized below. In particular, the formal $L^2$ domain is not an assertion that the uncut actual critical source lies in unweighted $L^2$.
+
+
+## Formalized transposed charge and complete corrected kernel
+
+[MemoryChargeFubini](BuildingBlocks/MemoryChargeFubini.lean) proves absolute product integrability before interchanging the actual charge and memory integrals. For measurable real $F\in L^2(\mathbb R)$ and $f\in L^2(0,\infty)$, `defect_causalMemory` gives
+
+$$
+d_F(u)=\frac12\int_0^\infty k(v)F(v-u)dv,
+\qquad
+\delta(K_Ff)=\int_0^\infty d_F(u)f(u)du.
+$$
+
+The product on the right is proved integrable. If $F$ is zero almost everywhere on negative ages, `memoryDefectKernel_causal` proves, for every $u\ge0$,
+
+$$
+d_F(u)=\frac12\int_0^\infty k(u+w)F(w)dw.
+$$
+
+The theorem `corrected_memory_kernel_identity` retains the complete column
+
+$$
+\widetilde M_F(v,u)
+=M_F(v,u)+\frac{(K_Fa_0)(v)}2k(u)-a_0(v)d_F(u),
+\qquad
+[C,K_F]f(v)=\int_0^\infty\widetilde M_F(v,u)f(u)du.
+$$
+
+Its actual specialization `finitePrimeSeed_corrected_kernel_identity` assumes only a finite prime set, measurable real $f$, and its half-line $L^2$ membership. The complete prime profiles satisfy every kernel premise by the already formal exact square integrals. The original exponential reference, predecessor initial interval and both rank terms remain in the formula.
+
+The affected target and aggregate build passed. The checked primary theorems use only `propext`, `Classical.choice` and `Quot.sound`. This finite-prime $L^2$ Fubini theorem does not establish the all-prime bound or the quantitative mixed-source completion above.

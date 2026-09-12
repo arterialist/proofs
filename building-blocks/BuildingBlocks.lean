@@ -105,3 +105,4 @@ import BuildingBlocks.SuccessorMemoryKernel
 import BuildingBlocks.PrimeSeedMemory
 import BuildingBlocks.SuccessorCompensatedL2
 import BuildingBlocks.CompensatedMemoryKernel
+import BuildingBlocks.MemoryChargeFubini
