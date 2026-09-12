@@ -133,3 +133,8 @@ The [literal natural cutoffs](natural-arrival-cutoff-completion.md) converge in 
 
 
 The [all-prime activity and probability construction](positive-successor-seed-jump-process.md#formalized-all-prime-finite-activity-and-probability-semigroup) now has a formal Chebyshev dependency and exact pointwise seed-density identification. Its probability-semigroup theorem is unconditional. Finite-prime law convergence, the quantitative activity-tail rate and the analytic/operator consumers retain their separate written scope.
+
+
+## Uniform compensated-memory kernels and spatial consequences
+
+[Maximal translation control](successor-seed-maximal-translation.md) is the variable-shift input for the [complete charge-compensated kernel](charge-compensated-successor-memory.md). Its bounded $\mathcal E_c\to L^1$ extension retains the initial strip and admits joint natural-source/prime limits. The distinct [reference-decomposition proof](compensated-memory-integral-conservation.md) establishes exact zero integral. Combining this with the [local arithmetic calibration](successor-clock-arithmetic-calibration.md) yields the [calibrated logarithmic mean and finite exceptional logarithmic measure](actual-memory-spatial-sign.md); it supplies no signs on the countable birth set. The [derivative theorem](charge-compensated-clock-response.md) keeps $Ha_0=a_0-\delta_0$, its weak test pairing and the separate zero-endpoint-reference repair. The complete differentiated response is controlled in $W^{-1,1}$, not asserted to be in $L^1$. All six analytic chapters are written proofs; their all-prime probability dependency has the separate Lean coverage described above.
