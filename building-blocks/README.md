@@ -22,7 +22,7 @@ The [written proofs](harmonic-convolution.md) give a general cancellation mechan
 
 ## Harmonic prime Laplacian and infinite flow
 
-The [phase and flow theorem](harmonic-prime-laplacian-flow.md) proves a physical $1/p$ Laplacian lower bound on every fixed exponential frequency band. It constructs an unconditional infinite-prime divergence for the actual mean-zero line-one error, with finite edge energy, absolute weighted flux and admission error $O(\log P/\sqrt P)$. The complete prime-factorization inequality, its exact normalized harmonic average and the lcm formula for its prime weights are formalized in the [three linked Lean modules](harmonic-prime-laplacian-flow.md#formalized-factorization-and-scope). The frequency lower bound and infinite-flow statements are written proofs.
+The [phase and flow theorem](harmonic-prime-laplacian-flow.md) proves a physical $1/p$ Laplacian lower bound on every fixed exponential frequency band. It constructs an unconditional infinite-prime divergence for the actual mean-zero line-one error, with finite edge energy, absolute weighted flux and admission error $O(\log P/\sqrt P)$. The complete prime-factorization inequality, its exact normalized harmonic average, the lcm formula and the closed bound for its prime weights are formalized in the [four linked Lean modules](harmonic-prime-laplacian-flow.md#formalized-factorization-and-scope). The frequency lower bound and infinite-flow statements are written proofs.
 
 ## Local poles at zeta zeros
 
@@ -103,7 +103,7 @@ whose Möbius floor inverse has no eventual bound of order $N^r$:
 \le C N^r.
 ```
 
-The sequence may depend on $r$. At $N=t^3$, separated tent functions first give a sequence with inverse at least $t^2/64$ for $t\ge256$. The Banach–Steinhaus theorem then yields a fixed sequence for each exponent.
+The [complete written proof](regular-source-mobius-obstruction.md) retains both the finite construction and the fixed-source argument. The sequence may depend on $r$. At $N=t^3$, separated tent functions first give a sequence with inverse at least $t^2/64$ for $t\ge256$. The Banach–Steinhaus theorem then yields a fixed sequence for each exponent.
 
 This excludes deriving the desired inverse bound from size and bounded increments alone. It does not give a lower bound for the particular arithmetic source $H$, or settle RH.
 

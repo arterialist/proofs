@@ -41,7 +41,7 @@ Related constructions retain different information:
 | [Prime-clique cutoff](prime-clique-cutoff.md) | Exact arithmetic births; the stated critical-strip limit is not zeta. |
 | [Face-feedback obstruction](integer-face-feedback-obstruction.md) | A counterexample to the specified positive-resolvent repair. |
 
-The [harmonic prime Laplacian and flow](harmonic-prime-laplacian-flow.md) turn complete integer phase resolution into a quantitative lower bound with the physical prime weights $1/p$. The resulting actual line-one periodization has an infinite prime divergence with finite edge energy and absolutely summable weighted flux. Its full-multiplicity integer phase inequality, exact harmonic average and lcm coefficient formula are formalized; the analytic flow and its $O(\log P/\sqrt P)$ admission error are written proofs.
+The [harmonic prime Laplacian and flow](harmonic-prime-laplacian-flow.md) turn complete integer phase resolution into a quantitative lower bound with the physical prime weights $1/p$. The resulting actual line-one periodization has an infinite prime divergence with finite edge energy and absolutely summable weighted flux. Its full-multiplicity integer phase inequality, exact harmonic average, lcm coefficient formula and closed finite coefficient bound are formalized; the analytic flow and its $O(\log P/\sqrt P)$ admission error are written proofs.
 
 ## From finite arithmetic identities to an analytic consumer
 
@@ -98,3 +98,7 @@ The [actual-prefix refinement theorem](actual-prefix-refinement.md) gives the ex
 The [prime-support removal theorem](prime-support-removal-asymptotics.md) preserves the actual marginal history, proves both response signs before each sufficiently large prime square, and computes a macroscopic deficit for every independent reservoir. Its exact fractional-allocation criterion is a finite max-flow/min-cut application. The full-set cut still requires the unproved full-support sign; fractional allocation alone does not supply it.
 
 The [small-prime grouping theorem](small-prime-grouping.md) proves a uniform $N/\log N$ lower bound for the full grouped absolute majorant, including growing smoothness cutoffs. Its exact logarithmic-integral centering retains the original error with coefficient one and a weighted history correction. The centered source has the same power bound as the prime error for each fixed exponent above $1/2$; that bound is not proved.
+
+## Source regularity and signed inversion
+
+The [fixed regular-source obstruction](regular-source-mobius-obstruction.md) constructs separated tents on exact floor quotients, then applies Banach–Steinhaus to obtain one source for each exponent below $2/3$. Its size and first-difference bounds hold everywhere, while its signed Möbius inverse exceeds every eventual bound of that power. This formalized auxiliary counterexample does not satisfy the exact arithmetic increment identity for the centered divisor forcing.

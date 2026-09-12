@@ -74,3 +74,4 @@ import BuildingBlocks.DivisionDyadicPrimeAverage
 import BuildingBlocks.PrimePhaseFactorization
 import BuildingBlocks.HarmonicPrimePhase
 import BuildingBlocks.HarmonicPrimeWeights
+import BuildingBlocks.HarmonicPrimeWeightBound
