@@ -144,3 +144,10 @@ The [complete prime-heat theorem](fixed-observation-prime-heat.md) identifies th
 The [actual-window Sobolev theorem](real-window-phase-sobolev-orders.md) combines the Montgomery–Vaughan mean-value theorem with full geometric derivatives and Bell coefficients. It retains a separate elementary frequency-separation proof and gives explicit order bounds, arbitrary moving-threshold control and a canonical high-height remainder estimate. The [Haar moment identity](haar-profile-all-order-moments.md) instead computes the exact weighted profile energy from the full geometric law, including the finite-cutoff exponential-moment boundary and its high-order obstruction. Haar moments do not replace actual-window moments.
 
 The [signed divisor-band theorem](signed-divisor-band-correlations.md) sums complete common-divisor histories at each reduced ratio before estimating them. It proves exact finite-difference cancellation and opposite signed sharp-boundary examples, while retaining the unresolved collective off-diagonal band sum. These are written methods with classical attribution, not fixed-observation RH estimates.
+
+
+## Coupled prime-square admissions and centered source domains
+
+The [coupled prime-square balance](coupled-prime-square-birth-balance.md) retains both prime generators and all admitted powers. Its generator cutoff $Q=\lambda xP^2$ has the uniform normalized law $2\sqrt\lambda-\lambda$, while $Q=P$ has a separately proved retained mass $4\sqrt P/(\sqrt x\log P)$. The [proper-power refinement](prime-square-proper-power-constant.md) preserves the logarithmic square contribution, all higher powers and the literal diagonal in a convergent constant; the old-generator loss has an explicit $1/\log P$ coefficient.
+
+The [finite-source graph](centered-prime-natural-source-graph.md) and [sharp centered cutoff theorem](fixed-source-centered-cutoff-law.md) keep the innovation mass $M_N=1+\sum_{n\le N}\Lambda(n)/\sqrt n-2\sqrt N$ and its cross terms. Their fixed-source conclusions cannot be substituted for a uniform infinite-source bound; a precise [domain counterexample](centered-prime-domain-counterexample.md) illustrates that distinction.
