@@ -101,3 +101,88 @@ $$
 \tag{10}
 $$
 Under RH, the proved upper theorem gives $\mathcal N_{f_0}(X)=O((\log X)^{9/2})$. The norm in (8) retains the full operator and growing actual prime history; it is not the absolute value of the constant scalar readout in (9). In particular (10) does not assert that the sign of the single number $Q(f_0)$ decides RH. This is a constructive domain refinement of the norm criterion, with no new unconditional positivity assertion.
+
+## A tilted real test that retains every zero in the critical strip
+
+There is a different useful construction from the same classical bump. It gives a real compact test whose bilateral pole filter has no zero in the open critical strip except the required zero at the origin. Its consumer is the actual translation kernel, rather than the trace norm (8).
+
+Fix $0<2\epsilon<\log2$, shrinking it further if the local-positivity support bound in the [translation-kernel theorem](local-weil-extension-obstruction.md) is also required. Put $a_n=\epsilon2^{-n}$ and let $u_n=(2a_n)^{-1}\mathbf1_{[-a_n,a_n]}$. The finite convolutions $b_N=u_1*\cdots*u_N$ have Fourier transforms
+
+$$
+F_N(t)=\prod_{n=1}^N\frac{\sin(a_nt)}{a_nt}.
+$$
+
+An analytic construction of their smooth limit avoids a probabilistic limit theorem. For fixed $M$, retaining the first $M$ factors gives $|F_N(t)|\le C_M(1+|t|)^{-M}$ on the real axis, uniformly for $N\ge M$. The products converge on complex compact sets because each factor is $1+O_R(a_n^2)$ there. For $M\ge k+2$, Fourier inversion and dominated convergence therefore give
+
+$$
+\sup_u|b_N^{(k)}(u)-b_0^{(k)}(u)|
+\le\frac1{2\pi}\int_{\mathbb R}|t|^k|F_N(t)-F(t)|dt\longrightarrow0.
+$$
+
+Only the sufficiently long finite convolutions need $C^k$ representatives. The common support is contained in $[-\epsilon,\epsilon]$. Uniform convergence gives $b_0\ge0$, $\int b_0=1$, and $b_0\in C_c^\infty$. Its derivatives vanish at the support endpoints. This retains a Fourier-inversion proof of the smooth limit distinct from the probability construction above.
+
+Its bilateral transform is
+
+$$
+B_0(z)=\int b_0(u)e^{-zu}du
+=\prod_{n\ge1}\frac{\sinh(a_nz)}{a_nz}.
+\tag{11}
+$$
+
+The identity follows by passing from finite convolutions on the common support. Around any fixed point, the tail factors admit analytic logarithms with absolutely and locally uniformly convergent sum. Thus the tail is nonvanishing, and zero multiplicity is the sum of the finitely many vanishing initial factors. The zeros are exactly $2\pi im/\epsilon$, $m\ne0$, with multiplicity $1+v_2(|m|)$. These are the rescaled product and multiplicities of [Arias de Reyna, equations (4) and (9)](https://arxiv.org/pdf/1702.05442); the tilt and kernel application below are elementary consequences.
+
+Set $b(u)=e^u b_0(u)$ and $\phi=b'''-b'/4$. The real function $\phi$ is smooth and compactly supported. Integration by parts gives
+
+$$
+\Phi_\phi(z)=\int\phi(u)e^{-zu}du
+=z(z^2-\tfrac14)B_0(z-1).
+\tag{12}
+$$
+
+Its mean and both pole moments vanish. It is nonzero because $\Phi_\phi(1)=3/4$; also $\Phi_\phi(-1)=-3B_0(-2)/4<0$. The tilt is not even and need not have unit mass. The real-test correlation identities require neither property.
+
+The complete pole filter is
+
+$$
+E_\phi(z)=\Phi_\phi(z)\Phi_\phi(-z)
+=-z^2(z^2-\tfrac14)^2B_0(z-1)B_0(-z-1).
+\tag{13}
+$$
+
+Its zero set consists of $0,\pm1/2$, each of order two, and $\pm1+2\pi im/\epsilon$, $m\ne0$, each of order $1+v_2(|m|)$. In particular
+
+$$
+E_\phi(z)\ne0\quad\text{for }0<|\Re z|<1/2,
+\qquad E_\phi(it)=|\widehat\phi(t)|^2>0\quad(t\ne0).
+\tag{14}
+$$
+
+Positivity of the untilted bump alone would not give the off-axis statement. Here it follows from the exact displaced zero sets.
+
+Let $C_\phi(L)=\int\phi(u)\phi(u+L)du$ and retain the full [translation kernel](local-weil-extension-obstruction.md), with its digamma multiplier $h$:
+
+$$
+\begin{aligned}
+a_\phi(L)&=\frac1{2\pi}\int h(t)|\widehat\phi(t)|^2e^{itL}dt,\\
+k_\phi(L)&=a_\phi(L)-\sum_{m\ge2}\frac{\Lambda(m)}{\sqrt m}
+ [C_\phi(L-\log m)+C_\phi(L+\log m)].
+\end{aligned}
+\tag{15}
+$$
+
+Every prime power remains. Short support places each positively shifted arithmetic correlation wholly in $L>0$. The digamma contour proof in that chapter gives $a_\phi(L)=O_{\phi,\delta}(e^{-\delta|L|})$ for every $0<\delta<1/2$, and the exact one-sided transform is
+
+$$
+\int_0^\infty e^{-zL}k_\phi(L)dL
+=\mathcal A_\phi(z)+E_\phi(z)
+ \frac{\zeta'(z+1/2)}{\zeta(z+1/2)},\qquad \Re z>1/2.
+\tag{16}
+$$
+
+Here $\mathcal A_\phi$ is holomorphic on $\Re z>-\delta$. The order-two filter zero at $z=1/2$ removes the logarithmic-derivative pole at one.
+
+Suppose, as an unproved arithmetic hypothesis, that for every $\eta>0$ there is $C_\eta$ with $|k_\phi(L)|\le C_\eta e^{\eta L}$ for all $L\ge0$. The left side of (16) is then holomorphic on $\Re z>0$, by locally dominated differentiation. If $\rho$ is any nontrivial zero with $1/2<\Re\rho<1$, of multiplicity $m$, the right side has nonzero residue $mE_\phi(\rho-1/2)$ there by (14). Meromorphic continuation contradicts holomorphy. Known nonvanishing on $\Re\rho\ge1$ and functional-equation reflection then give RH, without simplicity, a height cutoff or a density argument for translates of the test.
+
+More generally, a bound $|k_\phi(L)|\le Ce^{\alpha L}$ with $0\le\alpha<1/2$ excludes zeros with $\Re\rho>1/2+\alpha$. The filter nonvanishing used here is only required for $1/2+\alpha<\Re\rho<1$; it is not a claim that (13) has no zeros on the entire right half-plane.
+
+Global positive definiteness of this actual $k_\phi$ would supply a bounded envelope by its $2\times2$ Gram matrices. A positive extension that agrees only near zero would be a different global kernel and does not suffice. The compact construction and pole coverage above prove neither that global positive definiteness nor the required arithmetic growth bound. These are written conditional implications, not new Lean theorems.
