@@ -165,3 +165,5 @@ The [complete birth energy](infinite-centered-birth-energy.md) gives $\mathcal E
 
 
 The [coprime-interior history theorem](cyclotomic-coprime-interior-history.md) gives a distinct exact gcd-layer correction retaining nonunit divisors. Two actual interior phases have opposite cyclotomic updates before the first reduced common-multiple scale, while both full clipped updates vanish. Its shifted CRT count explains why disjoint unshifted divisor sectors can already communicate through successor paths. An exact symbolic checker preserves the full prefix derivatives and clipping scope.
+
+The [common-scale relative norm](cyclotomic-common-scale-norm.md) preserves a distinct norm-transitivity proof alongside the gcd-layer factorization. Its positive permutation average controls fibre means only. The exact algebraic trace, weight correction and clipping identities identify the remaining information, and a complete-prefix fixture shows why a nonzero weighted unit contribution cannot be read as a clipped deficit.

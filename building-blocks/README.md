@@ -442,3 +442,7 @@ The [exact gcd-layer theorem](cyclotomic-coprime-interior-history.md) expresses 
 
 
 The [finite-prime probability construction](positive-successor-seed-jump-process.md#formalized-finite-prime-jump-measure-and-probability-law) is also formalized. `PrimeSeedLevy` proves finite activity for the exact density $B_S(v)/v$, and `PrimeSeedCompoundPoisson` proves probability normalization, time zero and equality with the complete original convolution series, including zero intensity. The time-semigroup and uniform all-prime completion are separate dependencies.
+
+## Common cyclotomic scales and exact clipping defects
+
+The [relative-norm proof](cyclotomic-common-scale-norm.md) reduces the actual upper cyclotomic unit through a nonnegative group-ring exponent, including repeated/shared primes and the degree-one step at 2. It gives the exact algebraic trace, logarithmic averaging operator and character zeros. The full Farey-weighted observable retains explicit fibre covariances and clipping defects. Exact symbolic certificates include a nonzero weighted factor sum whose full clipped increment is zero. This written proof uses classical circular-distribution methods; no Lean formalization is claimed.
