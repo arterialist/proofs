@@ -342,3 +342,5 @@ The [largest-prime sector theorem](macroscopic-sector-sign.md) preserves an unco
 The older [dyadic harmonic identities](actual-harmonic-doubling.md) and [arithmetic quadrature correction](harmonic-quadrature-correction.md) retain their exact initial atoms, newly admitted scales, and unconditional PNT-size estimates as companions to the general harmonic-convolution theorem.
 
 The [revelation martingale](prime-revelation-martingale.md) retains the full conditional density budget and its proved one-prime obstruction. The [full-$W$ excursion theorem](full-w-off-critical-excursions.md) records the precise two-sided power-scale consequence of any hypothetical off-critical zero.
+
+The historical [adjacent cyclotomic histories](cyclotomic-adjacent-history-correction.md), [finite fusion response](cyclotomic-fusion-response.md), and [selected recovery](cyclotomic-selected-recovery.md) preserve the exact arithmetic construction, classical matrix input and fixed rational counterexamples. Their proof scope includes the actual scalar factors, phases, clipping and circular Farey weights.

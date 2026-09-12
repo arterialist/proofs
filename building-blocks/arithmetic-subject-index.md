@@ -78,3 +78,9 @@ The [dyadic harmonic identity](actual-harmonic-doubling.md) retains the next-int
 The [prime-revelation martingale](prime-revelation-martingale.md) gives the exact finite-Euler conditional law and full Doob variance decomposition. A fixed one-prime branch has a positive conditional defect of order $y\log y$, so the full square budget cannot be proved separately on every history. The unconditional comparison must allow compensation between histories.
 
 The [power-sized excursion theorem](full-w-off-critical-excursions.md) is a classical Landau consequence of the exact full-$W$ transform. Any zero $\beta+i\gamma$ with $\beta>1/2$ forces both unbounded positive and negative values of $W(x)/x^{3/2+\eta}$ for every $0<\eta<\beta-1/2$, with no dominant-zero or phase-alignment assumption. It is a conditional diagnostic, not evidence that such a zero exists.
+
+## Cyclotomic counting and division geometry
+
+The [adjacent-history construction](cyclotomic-adjacent-history-correction.md) places the exact two Farey-parent histories in a common cyclotomic field and computes the correction to reciprocal transport. A fixed actual pair has a positive clipped response, so the proposed reciprocal conservation and universal nonpositive response both fail.
+
+The [finite fusion construction](cyclotomic-fusion-response.md) identifies selected one- and two-prime updates with eigenvalue moduli of classical SU(2) fusion matrices after a stochastic normalization. Its sign permits deficit growth, and all selected contributions already have a polylogarithmic absolute bound. A three-prime factor exceeds one, and the [selected recovery certificate](cyclotomic-selected-recovery.md) proves an actual decrease of clipped deficit below the threshold at cutoff 1533. Full-phase ratios and the partial-history transport explain why the finite stochastic bound does not extend to the full observable.
