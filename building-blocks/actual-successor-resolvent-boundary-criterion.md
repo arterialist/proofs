@@ -315,10 +315,8 @@ holomorphy of the actual integral. The functional equation then
 excludes nontrivial zeros to the left as well, proving RH under (20).
 
 Thus (20) is an exact sufficient arithmetic sign condition for this
-specific completed successor family. Its proof for parameters
-approaching one remains open. The proved small-parameter positivity
-is a starting interval, not a proof of (20), and no converse is
-asserted here. The
+specific completed successor family. Its unconditional proof for parameters
+approaching one remains open. The [uniform conditional converse](successor-resolvent-common-halfline-RH-converse.md) proves (20) under RH on the fixed final interval $v\ge\log10000$. The [all-positive-age extension](successor-resolvent-all-ages-RH-converse.md) then proves positivity for every $v>0$ once $r$ is sufficiently close to one. Together these give an RH equivalence; the proved small-parameter positivity does not establish the near-one premise unconditionally. The
 [fixed-cutoff averaged profile](successor-averaging-retained-charge-profile.md)
 retains the signed charge on an expanding physical scale; that theorem
 has different quantifiers and supplies no missing sign in (20).
