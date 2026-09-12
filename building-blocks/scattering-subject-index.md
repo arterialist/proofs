@@ -57,3 +57,9 @@ The [inverse-boundary constraints](inverse-boundary-division-constraints.md) ret
 The [fixed-prime product cutoff](one-prime-boundary-product-cutoff.md) extends quarter-power approximation to the separately projected bilinear histories. The proof pays for every rational product location, causal-projection atom and terminal taper. Its constants depend on the fixed prime; it is not a growing-prime estimate or a ratio-location norm estimate.
 
 The [unilateral Laplace transfer](two-history-storage-laplace-transfer.md) uses the actual inverse boundary to cancel artificial prime-filter resonances. True off-line zeta zeros retain their original double-pole coefficients in the causal storage; the exterior boundary has at most a simple pole there. This identifies the remaining arithmetic content and supplies no bound that excludes those poles.
+
+## Additive discretization and the centered divisor score
+
+The [successor-clock counterphase](successor-counterphase-trace-norm.md) replaces continuum density by the exact integer clock with uniformly bounded localized trace cost and a vanishing corrected tail. It retains the origin coefficient $c(1)=1$ in the exact divisor average of $1-\Lambda$. Its kernel proof separately controls distant input columns.
+
+The [centered divisor storage theorem](coarse-divisor-scattering-storage.md) gives unconditional convergence in that same trace topology for $\tau(n)-\log n-2\gamma$. The elementary divisor bound gives a polynomial logarithmic norm bound; the classical exponent below $1/2$ gives a limiting phase with error $O_\chi(X^{-1/6}(\log X)^{3/2})$. Its entire Dirichlet score has canceled the logarithmic-derivative denominator. No bounded inverse for the divisor average or prime-score estimate follows.

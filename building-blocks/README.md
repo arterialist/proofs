@@ -320,3 +320,5 @@ The scattering collection also proves the [exact observed growth exponent](zero-
 ## Two-history storage and inverse division
 
 The [two-history collection](scattering-subject-index.md#opposite-histories-and-their-signed-boundary) gives finite-strip conservation, exact inverse-boundary constraints, a projected quarter-power cutoff, and unilateral Laplace formulas. Artificial filter poles cancel; hypothetical off-line zeta zeros retain their double poles. These are written identities and estimates, with the full signed storage bound still open.
+
+The [additive-clock and divisor-score pair](scattering-subject-index.md#additive-discretization-and-the-centered-divisor-score) gives exact successor discretization and unconditional convergence for the centered divisor score in the same localized trace topology. The classical divisor bound is sufficient for that convergence; inversion back to the prime score remains uncontrolled.
