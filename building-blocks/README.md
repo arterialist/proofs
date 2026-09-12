@@ -243,6 +243,8 @@ The [derivative-kernel theorem](theta-derivative-kernel-logconcavity.md) proves 
 
 The [natural-exponent concavity theorem](theta-natural-exponent-concavity.md) proves $\phi_{\mathrm{nat}}'(s)>0$ and $\phi_{\mathrm{nat}}''(s)<0$ for every real $s>-3/2$. Its global reciprocal-score inequality uses complete-theta interval enclosures and an explicit analytic tail. The accompanying [two-crossing lemma](BuildingBlocks/TwoCrossingMoment.lean) formalizes only the abstract non-strict integral comparison. Full Bernstein membership and RH remain open.
 
+The [third-derivative theorem](theta-natural-exponent-third-derivative.md) further proves $\phi_{\mathrm{nat}}'''(s)>0$ on the same entire real interval. A complete-theta interval certificate, analytic tail, and three-crossing moment argument establish the result. The proof is computer-assisted and has no Lean formalization; it does not establish all derivative signs or a positive Lévy representation.
+
 ## Signed divisor packets
 
 The [divisor-cube construction](signed-divisor-packets.md) partitions actual Möbius labels by coprime cores and retains all prefix, suffix and mean terms. For a growing primorial, the interior and packet diagonal have energy $X^{4+o(1)}$; a classical Mertens estimate gives a strict saving over packet magnitudes for the whole signed boundary. Its remaining RH-scale covariance upper bound is unproved.
