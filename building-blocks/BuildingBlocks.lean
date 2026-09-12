@@ -145,3 +145,11 @@ import BuildingBlocks.SuccessorFeedbackPowerDifference
 import BuildingBlocks.SuccessorFeedbackIndexCorrection
 
 import BuildingBlocks.SuccessorFeedbackClock
+
+import BuildingBlocks.PrimeSourceVEvaluation
+
+import BuildingBlocks.PrimeHistoryCoefficientIdentification
+
+import BuildingBlocks.PrimeHistoryFullW
+
+import BuildingBlocks.OriginalWIdentification

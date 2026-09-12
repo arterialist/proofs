@@ -669,3 +669,31 @@ $$L_0(d*d)(s)=e^{-3s/2}\left(\frac12s e^{2s}+\frac14e^{2s}-\frac14\right).$$
 The first two formulas include equality at their cutoffs, where the coefficient vanishes. Both mixed orders are evaluated before combining them. These are exact identities from finite prime-power counting, causal convolution and elementary exponential integration. They provide no sign estimate for their total.
 
 The five adapted modules compile with only the standard three axioms in their displayed main checks. The final finite-$V$ assembly and subsequent harmonic aggregation are separate formal consumers. The full analytic $W$ criterion and its eventual sign have not been proved by these finite identities.
+
+
+## Formal identification with the original V and W
+
+The complete arithmetic identification is now proved, including the causal convention at every real $x\le1$. The following modules retain the original source, full prime-power histories, ordered distinct-prime pairs, both birth-density orders and density square.
+
+[PrimeSourceVEvaluation](BuildingBlocks/PrimeSourceVEvaluation.lean) evaluates the local filtered convolution. Its `actual_source_eq_normalized_V` gives
+$$
+L_0(a*a)(s)-\tau(s)=e^{-3s/2}V(e^s),\qquad s\ge0,
+$$
+with the complete same-prime subtraction $\tau$ from [the calibration module](BuildingBlocks/SamePrimeBlockCalibration.lean). The mixed arithmetic term is exactly $\sum_{n\le x}\Lambda(n)(x^2-n^2)/n$; the density term is $x^2\log x/2+x^2/4-1/4$. All finite integrability and integral exchanges are derived from the preceding local $L^2$ results.
+
+[PrimeHistoryCoefficientIdentification](BuildingBlocks/PrimeHistoryCoefficientIdentification.lean) proves the weighted prime-power bijection and identifies the ordered coprime histories with the repository's existing `distinctPrimePairWeight`. It reuses `distinctPrimePairWeight_weighted_sum` from [DistinctPrimeTent](BuildingBlocks/DistinctPrimeTent.lean). Theorem `actual_source_eq_coefficientV` therefore retains the original coefficient, rather than assuming an arithmetic identification.
+
+[PrimeHistoryFullW](BuildingBlocks/PrimeHistoryFullW.lean) retains every harmonic multiple:
+$$
+W(x)=\sum_{1\le d\le\lfloor x\rfloor}\sqrt d\,V(x/d),\qquad
+\mathcal H F(s)=\sum_{1\le d\le\lfloor e^s\rfloor}\frac{F(s-\log d)}d.
+$$
+Every retained age $s-\log d$ is nonnegative, including the activation endpoint. `normalized_W_eq_source_sum` proves the exact normalization of this finite sum.
+
+Finally, [OriginalWIdentification](BuildingBlocks/OriginalWIdentification.lean) proves `coefficientV_eq_original` and `W_eq_original` for every real $x$. These identify the real history constructions, after scalar embedding, with the existing `ActualCenteredMellin.V` and `ActualCriticalMellin.W`. The theorem `normalized_original_W` is consequently
+$$
+e^{-3s/2}W(e^s)=\mathcal H\big[L_0(a*a)-\tau\big](s),\qquad s\ge0,
+$$
+for that original $W$. No arithmetic identification hypothesis remains.
+
+The adapted target build and its main axiom checks pass with only `propext`, `Classical.choice` and `Quot.sound`. These equalities establish no sign or asymptotic bound for $W$.
