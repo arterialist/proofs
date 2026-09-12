@@ -29,6 +29,8 @@ It also gives unconditional bounds and the leading compensation between these te
 
 The [half-neighbor rigidity theorem](half-neighbor-phase-rigidity.md) recovers every adjacent difference from the observed odd/even half by the identity $m^2-1=(m-1)(m+1)$. Wirsing–Zagier rigidity then classifies unimodular completely multiplicative functions of finite defect as $n^{it}$. It also proves divergence for every nontrivial prime-proportional angle. The complex-power calculation in the same note shows precisely why this classification imposes no midpoint condition in the critical strip.
 
+The [unitary phase lift](unitary-prime-phase-lift.md) applies the scalar theorem to the joint spectral measure of commuting prime unitaries. Finite defect on a cyclic subspace forces a self-adjoint scale generator $T$. Its exact defect multiplier satisfies $\psi(t)\sim\pi|t|/2$, and its form domain is $\operatorname{Dom}|T|^{1/2}$. This is a statement about unitary representations; the unilateral counting maps and nonunitary off-line zero phases require additional arguments.
+
 Related constructions retain different information:
 
 | Construction | Proved content and remaining limitation |

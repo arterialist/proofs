@@ -302,3 +302,7 @@ The [uniform prime-support theorem](prime-support-removal-asymptotics.md) keeps 
 ## Reciprocal approximation and elementary prime energy
 
 The [reciprocal quotient-window modules](reciprocal-quotient-windows.md) prove an exact Gram isometry, local coefficient recovery and the failure of any fixed finite coefficient repair under an explicit Mertens oscillation premise. The [prime-energy identities](prime-energy-first-moment.md) retain the terminal square and prove an unconditional bounded signed first moment; the signed drift still needs an upper bound. The [ordered division-rod inequalities](ordered-division-rods.md) bound products by endpoints and total gap, with the strictness and empty-family hypotheses explicit. These are formalized finite tools, not proofs of the missing RH estimates.
+
+## Unitary prime phases
+
+[Unitary prime-phase lift](unitary-prime-phase-lift.md) gives a written joint-spectral extension of half-neighbor rigidity. Finite defect yields a self-adjoint scale generator, an exact spectral energy, and the form domain $\operatorname{Dom}|T|^{1/2}$. The proof allows arbitrary spectral multiplicity and distinguishes concentration on a Borel character set from a topological support assertion. It does not identify the counting isometries or the Weil form with this unitary model.
