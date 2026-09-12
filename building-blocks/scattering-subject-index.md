@@ -84,3 +84,5 @@ The [theta jump chapter](theta-weil-jump-form.md) supplies the complete physical
 ## Earlier relative-determinant constructions
 
 The [prime-density determinant chapter](prime-density-relative-determinant.md) retains the full first-prime trace, exact cutoff boundary and the unconditional line-one limit. An actual prime-cell reference gives a holomorphic relative determinant for $\Re s>0$, with arithmetic retained in its reference factor. For the independent logarithmic-integral reference, ordered matching is optimal over all unitaries and the trace distance diverges for every real $0<\sigma\le1/2$, even after finite-rank repairs. These are different comparisons; neither controls the canonical compensated prime multiplier.
+
+The [fixed-support signed complement theorem](signed-prime-bath.md) gives a distinct form-level estimate: the actual unrepresented space has a certified positive margin, and its interaction with the retained space is an explicit finite Gram term. It does not follow from an absolute trace-distance bound, and the unevaluated Gram term remains essential.
