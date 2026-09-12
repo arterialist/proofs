@@ -290,3 +290,5 @@ $$
 The optimizer correction must not be omitted or assigned the wrong sign. The mean source, the odd source, the ground-state normalization, and the complete conductance all remain in (19)–(23).
 
 Equations (12) and (22) close the loss caused by discarding the continuous remainder in the prime-only comparison. They do not show that the positive complete gain pays the possible negative value of $F_{\rm rank}$. The resulting signed core comparison, and hence the actual theta sharp gap and RH objective, remain unproved.
+
+The [full cross-profile comparison](theta-full-cross-arrival-covariance-repair.md) retains the actual sign action and its orthogonal residual. The [separate component ranks](theta-prime-component-cross-profile-bound.md) keep an additional positive rank and exact affine gain; their explicit trial limitation does not refute the stronger comparison.

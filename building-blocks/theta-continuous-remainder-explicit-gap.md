@@ -147,3 +147,5 @@ Indeed complete the square after Cauchy–Schwarz and (12). For an even source t
 The constant is strictly positive for every specified finite core and strip. No positive lower bound uniform as the core varies is asserted. Nor has this bound been shown to pay the full signed core deficit in the [constrained Schur comparison](theta-constrained-schur-across-ground-pole.md). The actual affine scalar term and both pole constraints remain part of that comparison.
 
 The [actual radius-two comparison](theta-full-continuous-comparison-failure.md) proves that even the entire continuous-only covariance fails to pay the affine score deficit on that test. This is consistent with the strictly positive centered gap above; it does not sign the full prime-retained form.
+
+The [full cross-profile comparison](theta-full-cross-arrival-covariance-repair.md) retains the actual sign action and its orthogonal residual. The [separate component ranks](theta-prime-component-cross-profile-bound.md) keep an additional positive rank and exact affine gain; their explicit trial limitation does not refute the stronger comparison.
