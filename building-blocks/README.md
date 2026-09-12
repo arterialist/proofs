@@ -338,3 +338,5 @@ The independent [theta synthesis route](theta-jump-subject-index.md) is now coll
 The [prime-power square comparison](prime-power-gram-correction.md), [composite counterexample](composite-gram-obstruction.md), [Jordan density correction](jordan-mixed-correction.md), and [exact counting births](counting-birth-full-generator.md) preserve the older arithmetic overlap and transport arguments, including their precise failed extensions.
 
 The [largest-prime sector theorem](macroscopic-sector-sign.md) preserves an unconditional collective arithmetic sign. The [positive-routing theorem](theta-positive-routing-obstruction.md) gives a separate impossibility result for the specified finite-path comparison class, with its equality mechanism explicit.
+
+The older [dyadic harmonic identities](actual-harmonic-doubling.md) and [arithmetic quadrature correction](harmonic-quadrature-correction.md) retain their exact initial atoms, newly admitted scales, and unconditional PNT-size estimates as companions to the general harmonic-convolution theorem.
