@@ -67,3 +67,4 @@ import BuildingBlocks.FixedCoefficient
 import BuildingBlocks.PrimeEnergy
 import BuildingBlocks.PrimeSignedAverage
 import BuildingBlocks.DivisionRod
+import BuildingBlocks.ActualCriticalSignCriterion

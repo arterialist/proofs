@@ -2,6 +2,10 @@
 
 Results used in the study of prime-counting errors, with their formal verification scope stated individually. No originality or first-formalization claim is made. Throughout, $\gamma$ is the Euler–Mascheroni constant.
 
+## An actual arithmetic sign sufficient for RH
+
+The [eventual-sign criterion](actual-critical-sign-criterion.md) proves in Lean that eventual nonpositivity of the explicitly defined, complete arithmetic sum $W(x)$ implies full mathlib RiemannHypothesis. Its Mellin identity, Landau theorem, continuation and pole exclusion are proved, including multiple zeros. The eventual sign itself remains unproved.
+
 ## Local poles at zeta zeros
 
 [ZetaPole.lean](BuildingBlocks/ZetaPole.lean) proves that if $\zeta(\rho)=0$ and $\rho\ne0,1$, there are a positive integer $m$ and a function $a$ analytic at $\rho$ such that, on a punctured neighborhood,
@@ -232,6 +236,10 @@ The [prime-filter and Selberg modules](prime-filter-selberg-identities.md) prove
 ## Restrictions on theta multiplier constructions
 
 The [Bessel heat and Hankel tests](theta-bessel-factorization-obstructions.md) exclude specified positive-heat mixtures and sufficient radial truncation criteria for the actual theta law. The [Euler–Gaussian factorization theorem](theta-operator-factorization-obstructions.md) excludes a specified sample-interpolation class and its coefficientwise closure, using Carlson uniqueness and the auxiliary Mellin obstruction. General multiplier preservation and RH remain open.
+
+A [certified complete-theta Mellin zero](theta-mellin-parabola-obstruction.md) refutes a proposed sufficient region for every individual conjugate pair. The [grouped multiplier theorem](grouped-quadratic-multipliers.md) proves that suitable genuine real factors can compensate a failing pair; their required occurrence for the actual function remains unproved. The [quantum speed bound](theta-mellin-quantum-speed-bound.md) proves an auxiliary right-opening zero-free region using actual theta variance and projective Hilbert-space geometry.
+
+The [derivative-kernel theorem](theta-derivative-kernel-logconcavity.md) proves strict log-concavity of $-d\Phi(\sqrt v)/dv$ for the complete theta kernel, with an Arb compact proof and an analytic infinite tail. Its shifted Mellin representation extends the quantum-speed region one unit to the left. These auxiliary constraints do not prove RH or Bernstein-function membership.
 
 ## Signed divisor packets
 
