@@ -84,3 +84,4 @@ import BuildingBlocks.PrimeSeedCompoundPoisson
 import BuildingBlocks.PrimeSeedSemigroup
 import BuildingBlocks.PrimeSeedActivityBound
 import BuildingBlocks.PrimeSeedAllPrimeLevy
+import BuildingBlocks.PrimeSeedActivityTail

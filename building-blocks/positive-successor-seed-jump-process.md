@@ -440,4 +440,36 @@ $$
  \qquad \mu_u(\mathbb R)=1.
 $$
 
-These are applications of the classical finite-activity compound-Poisson framework cited above to the unconditional arithmetic measure. Both new modules and the changed aggregate compile with the pinned Lean/mathlib versions. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. This formalized construction does not yet prove convergence of the finite-prime laws to $\mu_u$, the quantitative $O(1/\log P)$ activity tail, Laplace-exponent formulas or bounded operator action. Those results retain their separate written proofs and hypotheses.
+These are applications of the classical finite-activity compound-Poisson framework cited above to the unconditional arithmetic measure. Both new modules and the changed aggregate compile with the pinned Lean/mathlib versions. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. This formalized construction does not yet prove convergence of the finite-prime laws to $\mu_u$, Laplace-exponent formulas or bounded operator action. Those results retain their separate written proofs and hypotheses.
+
+
+## Formalized quantitative activity tail
+
+[PrimeSeedActivityTail.lean](BuildingBlocks/PrimeSeedActivityTail.lean) retains complete histories on both sides of the integer cutoff. Its `primeTailLevyMeasure` is
+
+$$
+ \nu_{\ge P}=\sum_{p\ge P}\nu_{\{p\}},\qquad
+ \nu_\infty=\nu_{<P}+\nu_{\ge P},
+ \qquad \nu_{<P}=\sum_{p<P}\nu_{\{p\}}.
+$$
+
+The exact measure identity is `allPrimeLevyMeasure_cutoff_split`. If $P$ is prime, its entire history belongs to the omitted measure in this convention. The earlier notation $B_P=\sum_{p\le P}B_p$ instead corresponds, for natural $P$, to the retained measure $\nu_{<P+1}$.
+
+For $K\ge2$, `prime_activity_tail_le` and `primeTailLevyMeasure_mass_le` prove
+
+$$
+ \sum_{p\ge2^K}\frac1{p\log p}
+ \le\frac8{(\log2)(K-1)},\qquad
+ \nu_{\ge2^K}(\mathbb R)
+ \le\frac{16}{(\log2)(K-1)}.
+$$
+
+The proof sums the complete dyadic fibres from the preceding module. The elementary estimate $\sum_{j\ge0}(j+K)^{-2}\le(K-1)^{-1}$ follows by comparison with the telescoping differences $(j+K-1)^{-1}-(j+K)^{-1}$. The equivalence `primeTailEquiv` identifies the union of those fibres with all primes at least $2^K$, so the estimate omits no prime or proper-power history.
+
+For every natural $P\ge8$, `primeTailLevyMeasure_mass_le_log` then gives
+
+$$
+ \boxed{\nu_{\ge P}(\mathbb R)\le\frac{32}{\log P}.}
+$$
+
+Indeed take $K=\lfloor\log_2P\rfloor\ge3$, use $2^K\le P<2^{K+1}$ and monotonicity of the omitted mass, and compare $(K+1)/(K-1)\le2$. These are unconditional consequences of the already formalized Chebyshev estimate, with no PNT or RH premise. The target and changed aggregate compile; the checked tail and splitting declarations use only `propext`, `Classical.choice` and `Quot.sound`. This module formalizes the activity-tail estimate. Convergence of probability laws and operator actions remains a separate theorem.
