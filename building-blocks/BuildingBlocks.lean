@@ -126,3 +126,11 @@ import BuildingBlocks.SuccessorFeedbackDecay
 import BuildingBlocks.SuccessorFeedbackDirichlet
 import BuildingBlocks.ReflectionEnergy
 import BuildingBlocks.ReflectionFilter
+import BuildingBlocks.ChronologicalPowerRatio
+import BuildingBlocks.ChronologicalDivisibility
+import BuildingBlocks.SamePrimeAggregationKernel
+import BuildingBlocks.SamePrimeAggregationMonotone
+import BuildingBlocks.SamePrimeHistoryResidual
+import BuildingBlocks.SamePrimeHistoryProbability
+import BuildingBlocks.SamePrimeFirstSquare
+import BuildingBlocks.SamePrimeStrictDelay
