@@ -330,3 +330,5 @@ The [local-factor and composition collection](scattering-subject-index.md#exact-
 ## The actual theta jump operator
 
 The [theta jump subject index](theta-jump-subject-index.md) connects the exact Weil ground-state identity, score projection, sharp Poincare target, unconditional essential threshold, and negative-index theorem with its compact zero-isolation proof. Distinct conjugate zero pairs are counted correctly at repeated zeros. The lower gap remains unproved; the chapter also retains specific failed path, curvature and finite-observation comparisons. These are written analytic results.
+
+The [theta eigenfunction regularity chapter](theta-jump-eigenfunction-regularity.md) retains the stronger domain, complete zero sum, threshold-accumulation and multiplicity-sensitive isolator arguments. The [finite-time renewal chapter](theta-jump-tail-renewal.md) proves the actual tail evolution and the two distinct stochastic-order and Euclidean-contraction obstructions.
