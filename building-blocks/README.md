@@ -293,7 +293,7 @@ The [complete-packet calculation](late-prime-packet-energy.md) proves $X^5/\log^
 
 ## Support flow and relative prime determinants
 
-The [pole-preserving support flow](signed-support-flow.md) gives a complete smooth parametrization, the exact divisor flux, a first-prime obstruction to scalar differential propagation and a sharp logarithmic finite-step modulus. The [relative determinant calculation](prime-density-relative-determinant.md) continues an independent density reference, identifies the exact trace cost of actual prime discrepancy and proves that unitary mixing cannot reduce that cost. Every regularization retains its required first-order restoration.
+The [pole-preserving support flow](signed-support-flow.md) gives a complete smooth parametrization, the exact divisor flux, a first-prime obstruction to scalar differential propagation and a sharp logarithmic finite-step modulus. The [relative determinant calculation](prime-density-relative-determinant.md) continues an independent density reference, identifies the exact trace cost of actual prime discrepancy and proves that unitary mixing cannot reduce that cost. Its exact local prime-cell comparison converges below the critical line, while the independent density trace cost diverges at and below the critical boundary. The full cutoff and derivative corrections distinguish these references. Every regularization retains its required first-order restoration.
 
 ## Finite-codimension local Weil extensions
 
