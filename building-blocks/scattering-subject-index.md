@@ -41,3 +41,9 @@ Consequently RH is equivalent to the subpower bound for that one observation. Th
 ## A particular positive finite-band input
 
 The [dyadic innovation flux](prime-innovation-finite-band-flux.md) keeps both projection commutators and the exact initial seed. Orthogonal Fourier bands reduce the error to a seed-tail overlap and a quadratic tail term. The resulting flux tends to $1/2$ without a mean-energy assumption. This one-prime probe does not imply a sign on arbitrary tests or on the complete all-place form. Its arithmetic Fourier estimate is indexed in the [actual cutoff collection](arithmetic-subject-index.md#actual-finite-frequency-readouts).
+
+## Exact growth and one actual test
+
+The [zero-abscissa calibration](zero-abscissa-scattering-growth.md) proves $\limsup\log(1+N_\chi(\widehat U_X))/\log X=\Theta-1/2$, without requiring the supremum $\Theta$ to be attained. It supplies the full half-integer explicit-formula proof of $\psi(x)-x=O(x^\Theta\log^2x)$, citing Dudek's theorem with its exact hypotheses.
+
+The [compact positive observation](compact-positive-scattering-observation.md) uses the classical Arias de Reyna bump and an irrational dilation with relative phase $i$. Its one compact smooth complex even test has both pole moments zero and strictly positive squared Fourier modulus on the entire real line. Thus the norm-growth criterion can use an actual compact test, while the sign of that test's single scalar Weil value still does not decide RH.

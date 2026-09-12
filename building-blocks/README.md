@@ -314,3 +314,5 @@ The [scattering subject index](scattering-subject-index.md) connects compact neg
 ## Actual successor and product-location cutoffs
 
 The [finite-frequency collection](arithmetic-subject-index.md#actual-finite-frequency-readouts) preserves three distinct full-$W$ approximation methods, with square-root, $3/8$, cube-root and quarter-power frequency scales. It also includes the proof that the actual integrand has both signs and the particular positive dyadic flux. The full arithmetic readout, its density terms, all proper powers and its endpoints are retained; no bound for the remaining signed integral is proved.
+
+The scattering collection also proves the [exact observed growth exponent](zero-abscissa-scattering-growth.md) and constructs [one actual compact pole-null observation](compact-positive-scattering-observation.md) with squared Fourier modulus positive everywhere. The common growth exponent is the unknown zero abscissa minus $1/2$; the theorem does not establish that it vanishes.

@@ -140,3 +140,5 @@ $$
 Only one fixed everywhere-positive Schwartz observation is required. The proof retains the actual finite-place multiplier, both cosine frequencies, the zeta pole correction, and the complete proper-power tail.
 
 The missing unconditional assertion is the subpower bound in (13). The proved $o(\sqrt X)$ theorem is weaker. This criterion gives an operator growth target for the collective signed history energy; it does not turn the available PNT remainder into RH, and it is not yet a Lean theorem.
+
+The [zero-abscissa theorem](zero-abscissa-scattering-growth.md) identifies the exact power-growth exponent of this norm. An [explicit compact pole-null test](compact-positive-scattering-observation.md) supplies an everywhere-positive observation within the actual test class.
