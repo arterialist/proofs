@@ -21,7 +21,7 @@ At $x=27$, take the following integer coefficients, with all unlisted coefficien
 $$
 \begin{array}{c|rrrrrrrrrr}
 d&2&3&4&5&6&7&8&9&10&11\\\hline
-c_d&-180&-221&-24&-172&254&-121&110&157&300&-40\$$2pt]
+c_d&-180&-221&-24&-172&254&-121&110&157&300&-40\\[2pt]
 d&12&14&15&16&18&20&21&22&24&25\\\hline
 c_d&146&301&393&94&-10&76&342&220&-85&10
 \end{array}

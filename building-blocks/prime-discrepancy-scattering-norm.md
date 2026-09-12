@@ -38,7 +38,7 @@ $$
 N_\chi(\widehat U_X)=
 \begin{cases}
 O_{\chi,C,\beta,m}\bigl(X^{\beta-1/2}(\log X)^{m+3/2}+\log X+1\bigr),
- &\beta>1/2,\$$2mm]
+ &\beta>1/2,\\[2mm]
 O_{\chi,C,m}\bigl((\log X)^{m+5/2}+\log X+1\bigr),
  &\beta=1/2.
 \end{cases}}
