@@ -1,6 +1,6 @@
 # Actual successor creates a finite positive resonance port
 
-These are written proofs for the [exact causal successor](fixed-observation-prime-heat.md#10-the-exact-successor-does-not-preserve-the-improved-heat-domain), with the initial removed interval and every prime-power birth retained. The [positive seed process](positive-successor-seed-jump-process.md) gives a compatible comparison evolution. The relative-charge and memory assertions here are not formalized in Lean; they do not imply a sign for the full Weil readout.
+These are written proofs for the [exact causal successor](fixed-observation-prime-heat.md#10-the-exact-successor-does-not-preserve-the-improved-heat-domain), with the initial removed interval and every prime-power birth retained. The [positive seed process](positive-successor-seed-jump-process.md) gives a compatible comparison evolution. The integrable half-line charge and compensation identities are formalized below. The mixed-energy extension, actual arithmetic charge and memory assertions remain written proofs; they imply no sign for the full Weil readout.
 
 ## 1. The literal charge and its change at every birth
 
@@ -248,3 +248,36 @@ $$
 $$
 
 The first term uses the primitive 2 log(sqrt x+sqrt(x-1)); the logarithmic upper limits cancel against the second term. The [collective square-response theorem](collective-successor-charge-square-response.md) consequently gives a nonzero collective leading term, despite (17). Its coefficient is 2 log((1+sqrt2)/2)/(sqrt t log t) at birth scale t. Its proof passes the complete kernel asymptotic through the observation, with a separate bound for the unbounded tail. The per-prime zero mean at s=1 must not be substituted for cancellation at the collective s=1/2 singularity.
+
+
+## Formalized integrable successor charge
+
+[SuccessorCharge.lean](BuildingBlocks/SuccessorCharge.lean) uses the literal physical-coordinate formulas
+$$
+\sigma(v)=\log(1+e^v),\qquad j(v)=\frac{e^v}{1+e^v},
+\qquad Sf(v)=\sqrt{j(v)}f(\sigma(v)),
+$$
+$$
+k(u)=\begin{cases}-1,&u<\log2,\\
+(1-e^{-u})^{-1/2}-1,&u\ge\log2.
+\end{cases}
+$$
+For a real $f\in L^1(0,\infty)$, it proves integrability of $Sf$ and the exact identity
+$$
+\int_0^\infty Sf(v)\,dv-\int_0^\infty f(u)\,du
+=\int_0^\infty k(u)f(u)\,du.
+$$
+Thus $\delta(f)=\tfrac12\int kf$ equals $Q(Sf)-Q(f)$. The nonzero initial interval is included in $k$. The reference $a_0(v)=e^{-v/2}$ on this half-line has integral $2$, and the module proves that $Cf=Sf-a_0\delta(f)$ is integrable and satisfies $Q(Cf)=Q(f)$.
+
+All theorem names below are in `BuildingBlocks.SuccessorCharge`.
+
+| Exact statement | Formal theorem |
+| --- | --- |
+| Successor Jacobian and image $(\log2,\infty)$ | `sigma_hasDerivAt`, `sigma_image_positive` |
+| Change of variables and retained initial-interval defect | `integral_successor`, `integral_successor_sub` |
+| $Sf\in L^1(0,\infty)$ | `integrable_successor` |
+| $\delta(f)=Q(Sf)-Q(f)$ | `defect_eq_charge_difference` |
+| Reference integrability and mass $2$ | `reference_integrable`, `reference_integral` |
+| $Cf\in L^1$ and exact charge conservation | `integrable_compensated`, `integral_compensated`, `charge_compensated` |
+
+The module and changed aggregate compile with Lean 4.24.0; the checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. These operators are used on the positive half-line. No distributional derivative at the origin is asserted. The extension of $\delta$ to finite mixed energy, the nonintegrable actual source and its positive arithmetic limit require the separate written arguments above.

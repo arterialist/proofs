@@ -91,3 +91,4 @@ import BuildingBlocks.PrimeSeedInfiniteMean
 import BuildingBlocks.PrimeSeedCausalSupport
 import BuildingBlocks.PrimeSeedLaplaceExponent
 import BuildingBlocks.MixedEnergyAnchoring
+import BuildingBlocks.SuccessorCharge
