@@ -456,4 +456,3 @@ without its stated arithmetic hypothesis. Equations (15)–(17)
 continue to give the exact product, cutoff increment, and preserved
 compact pole-null readout. No positive-form conclusion or
 unweighted trace-class claim follows from (18).
-

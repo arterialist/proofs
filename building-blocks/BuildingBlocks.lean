@@ -153,3 +153,9 @@ import BuildingBlocks.PrimeHistoryCoefficientIdentification
 import BuildingBlocks.PrimeHistoryFullW
 
 import BuildingBlocks.OriginalWIdentification
+
+import BuildingBlocks.SuccessorFeedbackGamma
+
+import BuildingBlocks.SuccessorFeedbackMellinTail
+
+import BuildingBlocks.SuccessorFeedbackAbelClock

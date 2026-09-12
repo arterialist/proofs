@@ -281,3 +281,34 @@ $$
 is absolutely convergent and holomorphic for $\Re s>0$, as proved by `clockMellinError_convergent`, `clockMellinError_analyticOnNhd` and `clockMellinError_eq_integral`. The open endpoints match the literal integral.
 
 These modules use the existing arithmetic source and Chebyshev bound. Their target builds and main axiom checks pass with only `propext`, `Classical.choice` and `Quot.sound`. The sharper written clock error, the remaining floor-kernel analytic continuation and the eventual-sign RH consumer are not asserted by these modules.
+
+
+## Formal Gamma conversion and complete Abel-clock remainder
+
+[SuccessorFeedbackGamma](BuildingBlocks/SuccessorFeedbackGamma.lean) proves the actual whole-axis identity
+$$
+\int_0^\infty t^{z-1}[E(e^{-t})-e_0],dt
+=\Gamma(z)\sum_{j\ge1}\frac{e_j}{j^z}
+=\Gamma(z)[D_e(z)-I(z)],\qquad\Re z>1/2.
+$$
+Theorems `gammaDriver_integrable`, `gammaDriver_integral` and `gammaDriver_integral_eq_shifted` derive absolute convergence and the signed interchange from the integrals of coefficient norms. The initial driver is subtracted before integration at infinity. This uses the classical Gamma integral already in mathlib.
+
+[SuccessorFeedbackMellinTail](BuildingBlocks/SuccessorFeedbackMellinTail.lean) proves the explicit exponential estimate for $E(e^{-t})-e_0$ on $t\ge1$. Its exact tail
+$$
+T_\infty(z)=\int_1^\infty t^{z-1}[E(e^{-t})-e_0],dt
+$$
+is absolutely convergent for every complex $z$ and entire, as formalized by `exponentialMellinTail_convergent` and `exponentialMellinTail_differentiable`.
+
+[SuccessorFeedbackAbelClock](BuildingBlocks/SuccessorFeedbackAbelClock.lean) then proves
+$$
+\mathcal E(z)=\int_0^1t^{z-1}E(1-t),dt
+=\Gamma(z)D_e(z)+R_{\rm clock}(z),\qquad\Re z>1/2,
+$$
+where the literal remainder is
+$$
+R_{\rm clock}(z)=-\Gamma(z)I(z)-T_\infty(z)+\frac{e_0}{z}
+-\int_0^1t^{z-1}[E(e^{-t})-E(1-t)],dt.
+$$
+`abelTransform_integrable` proves absolute convergence in the stated half-plane; `abelTransform_eq_dirichlet` proves the identity; `abelClockRemainder_analyticOnNhd` proves the remainder holomorphic on $\Re z>0$. Every endpoint, index shift and signed driver is retained. The interval is represented as $(0,1]$ in Lean, with the endpoint difference explicitly harmless for the earlier open-interval clock integral.
+
+The frozen target builds and primary axiom checks pass with only `propext`, `Classical.choice` and `Quot.sound`. This closes the Gamma/index/clock conversion. The arithmetic floor-kernel continuation and the zeta-pole/sign implication remain separate written results.
