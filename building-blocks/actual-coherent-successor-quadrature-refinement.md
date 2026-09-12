@@ -150,3 +150,5 @@ $$
 on an entire interval 0<t<t0. The exact sufficient comparison retains epsilon with its sign. The theorem reduces the required error margin; it does not furnish the main constant-scale lower bound on Q. No universal sign of R, epsilon, or their individual birth contributions is asserted.
 
 This chapter contains written analysis, with no Lean claim for the quadrature, dual series or arithmetic comparison. No priority claim is made.
+
+The [integer-birth interpolation refinement](actual-integer-birth-positive-quadrature.md) changes the exact normalization to $b_t=t/(1-e^{-t})$ and proves a strictly positive defect of order $t\log(1/t)$. This does not give a sign to the error with the earlier normalization.
