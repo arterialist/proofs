@@ -125,3 +125,19 @@ The last pair has squared Gaussian norm, after removing $x^3$, equal to $(1+\cos
 ## Attribution and limits
 
 The determinant argument is the elementary cycle expansion used in directed graph generating functions; incidence-chain cancellation is classical, as illustrated by [Wilf](https://arxiv.org/html/math/0408263). The Heisenberg action and Gaussian kernel are standard; see [Abreu–Gröchenig–Romero](https://arxiv.org/abs/1704.03042). The specific integer-history identities and witnesses are recorded as reusable applications. These finite unitary sums require no unbounded generators or infinite-dimensional trace. Their Gram positivity supplies neither a zeta determinant correspondence nor an RH bound.
+
+
+## Lowest-clock extraction and its logarithmic defect
+
+For disjoint ordered rods with total additive degree a and integer product r of division ratios,
+
+$$
+ r\le a+1. \tag{A15}
+$$
+
+For a single rod [m,n], r=1+(n-m)/m<=a+1, with equality exactly when m=1. For an additional rod starting at m, the previous product is at most the previous additive degree plus one, at most the previous right endpoint, and therefore strictly less than m. Multiplying by 1+(n-m)/m then gives a strict version of A15 for two or more rods. Apart from the empty configuration, equality occurs only for the single rod [1,r].
+
+Thus the lowest-clock coefficient of the rod partition at energy r is canonically 1: [x^(r-1)]A_(infinity,r)=1. Extracting those coefficients produces the ordinary unit-coefficient Dirichlet series. This is a diagonal extraction, not an inherited positivity or logarithmic-trace identity. It does not commute with taking the logarithm. The exact N=6 polynomial gives diagonal-of-log coefficient 0 at energy 4 and -1 at energy 6, whereas log-of-diagonal has coefficients 1/2 and 0. The [exact certificate](certificates/integer-affine-cells.py) verifies these finite discrepancies and the equality cases.
+
+
+The [affine-class minimum clock](prime-clique-cutoff.md#the-minimum-successor-clock-in-each-directed-class) is a different optimization over equivalent directed histories. Both preserve exact arithmetic costs, but neither supplies the missing signed analytic correspondence.
