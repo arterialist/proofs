@@ -154,6 +154,79 @@ If $x>\max(p,q)$, the sum is nonempty and each bracket is strictly positive. Ind
 The same proof applies to divisibility indicators: for coprime integers $a,b\ge 2$, their covariance is strictly negative when both are active, since
 $P_x(a\mid n)=F_a(x)/\sqrt a$ and conditioning on $a\mid n$ rescales the cutoff to $x/a$. Positive combinations of such indicators with disjoint prime supports inherit a nonpositive pair covariance. This is a pairwise statement, not full negative association.
 
+## Upper-orthant products and exponential moments
+
+Write $D_a(x)=P_x(a\mid n)=F_a(x)/\sqrt a$ for integers $a\ge2$, and $D_1(x)=1$. Exact conditioning on $a\mid n$ rescales the full cutoff to $x/a$. Iteration therefore gives, for any finite family of positive integers $a_i$,
+
+$$
+D_{\prod_i a_i}(x)\le\prod_i D_{a_i}(x).
+\tag{7}
+$$
+
+If $x\le\prod_i a_i$, the left side is zero. Otherwise its exact product expression is $\prod_iD_{a_i}(x/\prod_{j<i}a_j)$, and cutoff monotonicity bounds each factor. The empty product is one. When the $a_i$ are pairwise coprime, the left side is their joint divisibility probability.
+
+Let $S$ be a finite set of distinct primes and let $f_p:\mathbb N_0\to[0,\infty)$ be increasing. On the finite support of the actual law,
+
+$$
+f_p(v_p(n))=f_p(0)+\sum_{k\ge1}[f_p(k)-f_p(k-1)]\mathbf1_{p^k\mid n}.
+$$
+
+Every coefficient is nonnegative. Expanding the finite product and applying (7) to each term proves
+
+$$
+\boxed{E_x\prod_{p\in S} f_p(v_p(n))\le\prod_{p\in S}E_x f_p(v_p(n)).}
+\tag{8}
+$$
+
+In particular, for nonnegative $t_p$,
+
+$$
+E_x\exp\!\left(\sum_{p\in S}t_pm_p(n)\right)
+\le\prod_{p\in S}E_xe^{t_pm_p(n)}.
+\tag{9}
+$$
+
+This gives the usual exponential-moment upper comparison with independent variables having the same one-prime marginals. It is a bound for functions of individual coordinates; grouping several coordinates into one increasing function requires a stronger assertion, which fails below.
+
+## Negative association fails in the full law
+
+
+Take $x=570$, $P=2\cdot3\cdot5\cdot7\cdot11\cdot13\cdot17$, and the increasing functions
+$$
+f(n)=\mathbf1_{\gcd(n,P)>1},\qquad
+g(n)=\mathbf1_{19\mid n}.
+$$
+These depend on disjoint prime sets. Put
+$$
+U(t)=\sum_{1\le n<t}\frac{t-n}{\sqrt n}\,f(n).
+$$
+With $w_t(n)=(t-n)/\sqrt n$, one has $f(19m)=f(m)$ and $w_{570}(19m)=\sqrt{19}\,w_{30}(m)$. Therefore
+$$
+\operatorname{Cov}_{570}(f,g)
+=D_{19}(570)\left(\frac{U(30)}{Z_{30}}-\frac{U(570)}{Z_{570}}\right)>0.
+$$
+Here the sign is certified by the rational bounds
+$$
+\frac{U(30)}{Z_{30}}>\frac{810972}{10^6},\qquad
+\frac{U(570)}{Z_{570}}<\frac{809445}{10^6}.
+$$
+The following finite enclosures supply an exact arithmetic verification. Each table entry encloses $10^6$ times the indicated sum.
+
+| Sum | Lower bound | Upper bound |
+|---|---:|---:|
+| $Z_{30}$ | 175471059 | 175471061 |
+| $U(30)$ | 142302190 | 142302191 |
+| $Z_{570}$ | 17312553610 | 17312553645 |
+| $U(570)$ | 14013546815 | 14013546841 |
+
+For completeness, these bounds require only integer square roots and rational addition. Let $K=10^8$ and $r_n=\lfloor\sqrt{nK^2}\rfloor$. Then
+$$
+\frac{K}{r_n+1}<\frac1{\sqrt n}\le\frac K{r_n}.
+$$
+Sum the resulting rational lower and upper bounds for $(t-n)/\sqrt n$, with or without the condition $\gcd(n,P)>1$. The table follows by outward rounding to multiples of $10^{-6}$. The [standalone rational certificate](certificates/triangular_negative_association.py) verifies every enclosure and both strict comparisons. The probability comparisons follow by integer cross multiplication. It is rigorous finite arithmetic evidence, not a Lean theorem.
+
+The increasing union event $f$ contains negative coefficients when expanded by inclusion-exclusion into divisibility indicators. The prime-power covariance theorem therefore does not extend to negative association. This is a counterexample in the full law, before any conditioning on revealed primes. It differs from the [conditioned cross-prime counterexample](conditional-prime-dependence.md). Neither counterexample determines the sign of the arithmetic $W$.
+
 ## Attribution and conditional scope
 
 The power-sum comparison belongs to the classical theory of majorization. In [Gao, *Sums of Powers and Majorization*, Corollary 2.3](https://rgmia.org/papers/v10n2/Powersums.pdf), writing $S_r(N)=\sum_{n=1}^N n^r$, the quantity
