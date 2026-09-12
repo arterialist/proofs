@@ -414,3 +414,34 @@ $$
 The theorem `cutoff_memory_uniform_unit_ball` has the full uniform quantifiers over every output age and every input in that unit ball. It gives qualitative convergence, without an asserted numerical rate. This is convergence of the original memory output, not a theorem about the stronger mixed-energy input domain or the derivative distribution.
 
 The module targets and changed aggregate compile with the pinned versions. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. The $\mathcal E_c\to L^1$ extension, its arithmetic source membership and joint quantitative estimate (22) remain written proofs.
+
+## Formalized decaying charge on the finite-energy domain
+
+[PrimeMemoryChargeDecay](BuildingBlocks/PrimeMemoryChargeDecay.lean) proves that the actual seed vanishes below $\log2$, where the relative-charge kernel can be negative. Since $k(u+w)\ge0$ for $u\ge0$ and $w\ge\log2$, the transposed charge is nonnegative. Its exponential estimate is
+
+$$
+0\le d_B(u)\le e^{-u}J_B\quad(u\ge0),\qquad
+J_B=\int_0^\infty e^{-w}B(w)dw<\infty.
+$$
+
+The declaration `allPrimeSeed_defectKernel_nonneg_decay` uses the literal activation threshold and $|k(v)|\le2e^{-v}$, with the factor $1/2$ in $d_B$ retained. The finite constant follows from $B\in L^2$ and the exponential weight.
+
+[MemoryChargeEnergy](BuildingBlocks/MemoryChargeEnergy.lean) proves directly that the product $d_Bf$ is integrable whenever $f$ is measurable and $e^{-u/2}f(u)\in L^2(0,\infty)$, with
+
+$$
+\left|\int_0^\infty d_B(u)f(u)du\right|
+\le J_B\left(\int_0^\infty e^{-u}|f(u)|^2du\right)^{1/2}.
+$$
+
+For measurable real $H$ vanishing almost everywhere below $1$, put $f(u)=e^{u/2}H(e^u)$. If $\mathcal E(H)<\infty$, the formal [causal energy anchor](actual-source-mixed-dirichlet-completion.md#formalized-causal-energy-anchor) supplies the weighted integral. Thus `allPrimeSeed_memory_charge_bound_energy` and `allPrimeSeed_memory_charge_rank_bound` give
+
+$$
+\left|\int_0^\infty d_B(u)f(u)du\right|\le J_B\sqrt{\mathcal E(H)},
+\qquad
+\left\|a_0\int_0^\infty d_Bf\right\|_{L^1(0,\infty)}
+\le2J_B\sqrt{\mathcal E(H)}.
+$$
+
+These are direct relative-kernel functionals. They do not assume $f\in L^1$ or unweighted $L^2$, or identify an undefined absolute source charge. The earlier equality with $\delta(K_Bf)$ retains its separate $L^2$ hypotheses. The theorem formalizes this full-prime rank-one part of the energy-to-$L^1$ response; the complete commutator extension and endpoint derivative remain outside these modules.
+
+Both targets and the changed aggregate compile with the pinned versions. Their checked primary declarations use only `propext`, `Classical.choice` and `Quot.sound`.

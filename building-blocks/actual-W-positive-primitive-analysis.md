@@ -163,13 +163,13 @@ $63/100$ on every cell $n=2,\ldots,22$. Consequently
 $$
 \frac{x^{3/2}F(x)}{x-1}<0.63\quad(2\le x\le23).
 $$
-For the first cell $0\le v\le\log2$, (9) gives
+For the first cell $0\le v<\log2$, including the right derivative at zero and the left derivative limit at $\log2$, (9) gives
 $$
 P'(v)\le\frac{\log2}{2}-\frac{\kappa_{\rm lo}}{\sqrt2}<0.15,
  \qquad
  e^{-v/2}(1-e^{-v})\ge\frac{v}{2\sqrt2}.
 $$
-The envelope ratio there is below $0.3\sqrt2<0.43$.
+The envelope ratio there is below $0.3\sqrt2<0.43$. Continuity of the primitive extends this integrated bound to $v=\log2$. The right derivative at that endpoint includes the shifted birth at $3$ and is not bounded by the first-cell derivative estimate.
 
 For $x\ge23$, the already proved equal-mass error-kernel estimate is
 $$
