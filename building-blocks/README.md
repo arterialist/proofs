@@ -424,3 +424,6 @@ For each finite arithmetic source, the [ground graph](centered-prime-natural-sou
 ## Arithmetic carry arrivals and exact boundary signs
 
 The [carry covariance chapter](incomplete-carry-covariance.md#5-the-arithmetic-carry-cocycle-and-positive-box-arrivals) also proves a positive exact arrival law for the actual von Mangoldt-weighted box, a distinct CRT proof of complete-period covariance, and a family of incomplete-box positive covariances tending to $1/4$. Its prime-level example $\operatorname{Cov}(\kappa_{11},\kappa_{13})=128/2197$ at cutoff $13$ rules out transferring period orthogonality by a nonpositive boundary assumption. The classical binomial carry interpretation is attributed; no prime-error bound follows from these identities alone.
+
+
+The [delay and prime-sum formalizations](positive-successor-seed-jump-process.md#formalized-delay-history-and-prime-sum-distinctions) retain the seed's initial interval and terminal history, prove causal uniqueness, and apply Euler's theorem to distinguish divergent total component mass from summable component square mass. Their exact finite-aggregate and no-integrable-majorant theorems preserve the cross-prime limitation.

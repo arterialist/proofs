@@ -307,4 +307,38 @@ All names in the table have namespace `BuildingBlocks.PrimeSeedMass`.
 
 The integrability declarations are stated for every real clock length $L>0$; their displayed prime formulas specialize to $L=\log p$. `integral_of_clock_cells` is the reusable nonnegative countable-partition lemma underlying the three whole-line integrals. The proof uses mathlib's Lebesgue integration, elementary exponential integrals and geometric-series theorems. Both modules compile with Lean 4.24.0 and the repository's pinned mathlib; the checked prime integral targets and `seed_log_eq` depend only on `propext`, `Classical.choice`, and `Quot.sound`.
 
-These modules do not formalize the prime-sum convergence, finite measure $B(v)\,dv/v$, probability semigroup, bounded mixed-space evolution, Hardy factors or response-domain assertions above. Those remain written mathematical dependencies. The square-mass identity also supplies the individual-profile normalization in the [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md).
+These modules do not formalize collective prime-sum convergence with its cross terms, the finite measure $B(v)\,dv/v$, probability semigroup, bounded mixed-space evolution, Hardy factors or response-domain assertions above. Those remain written mathematical dependencies. The square-mass identity also supplies the individual-profile normalization in the [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md).
+
+
+## Formalized delay history and prime-sum distinctions
+
+For $L>0$, let $b_L(v)=\operatorname{seed}(L,v)$ and
+
+$$
+i_L(v)=e^{v/2-2L}\mathbf1_{[L,2L)}(v),\qquad r=e^{-L/2}.
+$$
+
+[PrimeSeedDelay.lean](BuildingBlocks/PrimeSeedDelay.lean) proves the literal delay equation
+
+$$
+b_L(v)=i_L(v)+r b_L(v-L).
+$$
+
+Its `seed_delay_equation` includes the nonzero first interval and its half-open endpoints. The general `iterate_delay` theorem gives, for every integer $N\ge0$,
+
+$$
+f(v)=\sum_{j=0}^{N-1}r^j g(v-jL)+r^N f(v-NL)
+$$
+
+from the sole hypothesis $f(v)=g(v)+rf(v-L)$. The terminal history vanishes for the actual seed only under the stated condition $v<(N+1)L$ in `seed_finite_history`. Finally, `seed_unique` proves uniqueness from causality below $L$ and the delay equation, without an integrability or boundedness hypothesis. These are the elementary causal-recursion dependencies of the complete prime response.
+
+[PrimeSeedPrimeSums.lean](BuildingBlocks/PrimeSeedPrimeSums.lean) then uses the proved masses and mathlib's classical Euler divergence theorem. Its exact distinctions are:
+
+| Statement | Declaration in `BuildingBlocks.PrimeSeedMass` |
+| --- | --- |
+| $\sum_p\int B_p$ is not summable | `not_summable_prime_seed_integrals` |
+| $\sum_p\int B_p^2$ is summable | `summable_prime_seed_square_integrals` |
+| $\int\sum_{p\in S}B_p=\sum_{p\in S}2/p$ for every finite prime set $S$ | `integral_finset_prime_seed` |
+| No integrable real function pointwise dominates every finite aggregate $\sum_{p\in S}B_p$ | `no_integrable_majorant_prime_seeds` |
+
+The second statement concerns component squares; it does not replace the mixed terms in the square of the collective seed. The no-majorant theorem is stated for pointwise domination and does not silently change that quantifier to an almost-everywhere condition depending on $S$. Both modules compile with the pinned Lean/mathlib versions. The checked delay, uniqueness, component-square and no-majorant targets use only `propext`, `Classical.choice` and `Quot.sound`. No claim of priority is attached to these elementary recursion or classical summability results.

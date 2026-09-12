@@ -77,3 +77,5 @@ import BuildingBlocks.HarmonicPrimeWeights
 import BuildingBlocks.HarmonicPrimeWeightBound
 import BuildingBlocks.PrimeSeedMass
 import BuildingBlocks.PrimeSeedSquare
+import BuildingBlocks.PrimeSeedDelay
+import BuildingBlocks.PrimeSeedPrimeSums

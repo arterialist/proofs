@@ -114,3 +114,6 @@ The [domain counterexample](centered-prime-domain-counterexample.md) lies in the
 
 
 The [single-clock formalization](positive-successor-seed-jump-process.md#formalized-single-clock-dependencies) now proves the actual seed's complete unweighted, half-weighted and squared integrals in Lean. This validates a common dependency of the fixed-Cauchy graph and positive-process constructions; it does not formalize their collective convergence or operator assertions.
+
+
+The [formalized delay chain](positive-successor-seed-jump-process.md#formalized-delay-history-and-prime-sum-distinctions) retains both the nonzero first interval and every finite terminal history. The accompanying prime-sum module formalizes Euler divergence of aggregate mass, summability of component squares and absence of an integrable majorant, without dropping collective cross terms.
