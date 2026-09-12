@@ -101,3 +101,7 @@ import BuildingBlocks.SuccessorCriticalLift
 import BuildingBlocks.CriticalCoordinatePairing
 import BuildingBlocks.TiltedPrimeCumulative
 import BuildingBlocks.TiltedPrimeIntegral
+import BuildingBlocks.SuccessorMemoryKernel
+import BuildingBlocks.PrimeSeedMemory
+import BuildingBlocks.SuccessorCompensatedL2
+import BuildingBlocks.CompensatedMemoryKernel

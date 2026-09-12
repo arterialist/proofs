@@ -1,6 +1,6 @@
 # The charge-compensated successor memory maps the actual source space to L¹
 
-This written proof constructs the full compensated response on the actual mixed source completion. It preserves both initial-strip terms and every prime power. The maximal-shift input is proved in the [seed translation theorem](successor-seed-maximal-translation.md); no analytic assertion in this chapter is formalized in Lean.
+This written proof constructs the full compensated response on the actual mixed source completion. It preserves both initial-strip terms and every prime power. The maximal-shift input is proved in the [seed translation theorem](successor-seed-maximal-translation.md); the completed-source estimates remain written proofs. The finite-prime $L^2$ column identity and its original-reference correction have the formal scope recorded below.
 
 Let $\mathcal H_+=L^2([0,\infty),du)$, let $\mathcal Wf(x)=x^{-1/2}f(\log x)$, and use the actual causal successor
 $$
@@ -300,3 +300,54 @@ This is a joint prime/source-cutoff limit with no order restriction.
 The [finite-source conservation proof](compensated-memory-integral-conservation.md) shows that the integral of the full compensated commutator is exactly zero on the core. The bounded extension (19) therefore preserves that zero integral on every $\mathcal E_c$ source, including $g$; integration is continuous on the physical $L^1$ output. This transfers the already proved conservation identity rather than assuming it from passivity.
 
 The theorem does not differentiate $B$, estimate the original anticausal response, or produce a sign for a Weil form. It proves a bounded charge-compensated successor response on the actual completed source space, retaining the initial correction and the full memory.
+
+
+## Formalized finite-prime memory domains
+
+[SuccessorMemoryKernel](BuildingBlocks/SuccessorMemoryKernel.lean) defines the literal causal memory
+
+$$
+K_Ff(v)=\int_0^\infty F(v-u)f(u)du
+$$
+
+and the column
+
+$$
+M_F(v,u)=j(v)F(\sigma(v)-u)
+-\mathbf1_{u>\log2}(1-e^{-u})^{-1/2}
+ F\bigl(v-\log(e^u-1)\bigr).
+$$
+
+For measurable real $F\in L^2(\mathbb R)$ and real $f\in L^2(0,\infty)$, `successor_memory_commutator` proves pointwise
+
+$$
+SK_Ff(v)-K_FSf(v)=\int_0^\infty M_F(v,u)f(u)du.
+$$
+
+Both column pairings are proved absolutely integrable. The predecessor term is zero on the complete initial interval $u\le\log2$; no delay of $F$ is cut off.
+
+[PrimeSeedMemory](BuildingBlocks/PrimeSeedMemory.lean) proves `finitePrimeSeed_memLp_two` from the existing exact integral $\int B_p^2=p^{-2}$. The theorem `finitePrimeSeed_memory_commutator` therefore applies to the actual $F=\sum_{p\in S}B_p$ for every finite set of primes, retaining all powers of each prime. No analytic assumption on this finite seed is left as a premise. There is no uniform-in-$S$ norm estimate in this module.
+
+[SuccessorCompensatedL2](BuildingBlocks/SuccessorCompensatedL2.lean) proves $a_0,k\in L^2(0,\infty)$, absolute existence of $\delta(f)$ for $L^2$ inputs, and preservation of measurable half-line $L^2$ by $C$. Its `compensated_adjoint` identifies the literal adjoint
+
+$$
+C^*f=P f-\frac12\left(\int_0^\infty a_0(v)f(v)dv\right)k,
+$$
+
+where $P$ is the predecessor with its zero initial interval. The original exponential reference is retained; no distributional endpoint derivative is asserted here.
+
+[CompensatedMemoryKernel](BuildingBlocks/CompensatedMemoryKernel.lean) proves
+
+$$
+|K_Ff(v)|\le\|F\|_2\|f\|_{L^2(0,\infty)}
+$$
+
+and absolute integrability of $k(v)K_Ff(v)$ for measurable such inputs. Thus the last relative charge in the exact formula
+
+$$
+[C,K_F]f=[S,K_F]f+(K_Fa_0)\delta(f)-a_0\delta(K_Ff)
+$$
+
+exists without assuming that $K_Ff$ has a finite total integral. The theorem `finitePrimeSeed_compensated_memory_commutator` specializes this identity to every finite set of complete prime profiles. Both rank corrections remain present.
+
+All four module targets built successfully. Their checked primary theorems depend only on `propext`, `Classical.choice` and `Quot.sound`. The absolute Fubini identification of the transposed charge column, all-prime $B\in L^2$, the mixed-source-to-$L^1$ extension, and its quantitative joint limit remain outside this formal batch. In particular, the formal $L^2$ domain is not an assertion that the uncut actual critical source lies in unweighted $L^2$.

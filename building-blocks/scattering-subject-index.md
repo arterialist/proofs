@@ -158,3 +158,6 @@ The [causal energy anchor](actual-source-mixed-dirichlet-completion.md#formalize
 The [literal successor charge](actual-successor-resonance-charge-cocycle.md#formalized-integrable-successor-charge) is formalized for real $L^1(0,\infty)$ inputs, including the initial interval, successor integrability and exact compensated charge conservation. The extension to the actual nonintegrable source remains separate.
 
 The [finite-energy relative-charge bound](actual-successor-resonance-charge-cocycle.md#formalized-relative-charge-at-finite-mixed-energy) is also formalized: the literal kernel product is integrable and its half-integral is bounded by $\sqrt{\mathcal E(H)}$, without an absolute-charge or unweighted-integrability premise. Actual PNT membership and arithmetic positivity remain written.
+
+
+The [formal finite-prime memory construction](charge-compensated-successor-memory.md#formalized-finite-prime-memory-domains) proves the original successor commutator with both absolutely integrable columns, then substitutes every finite set of literal full prime profiles. It also proves the compensated $L^2$ adjoint, bounded memory output, existence of its relative charge and both original-reference rank terms. The uncut source and uniform mixed-energy-to-$L^1$ completion retain their separate written scope.
