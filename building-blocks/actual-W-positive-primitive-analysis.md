@@ -608,3 +608,5 @@ $$
 Theorems `prime_error_integral_neg` and `prime_error_integral_le_neg_log_two_half` transfer both signed consequences to this actual integral. The integrated modules and their primary axiom checks passed, with only `propext`, `Classical.choice` and `Quot.sound`.
 
 This formalizes a concrete arithmetic dependency of the written cumulative W proof. The $0.93$ primitive envelope, the full convolution comparison, its oscillation certificate and its analytic continuation remain written or computer-assisted results. The modules prove no eventual W sign.
+
+The [second-successor extension](second-successor-tilted-order.md) gives a strict three-source cumulative chain. The [complete geometric average](actual-successor-resolvent-primitive-order.md) gives a further small-parameter cumulative comparison. Neither establishes pointwise W order; arbitrary-iterate primitive positivity is refuted by the [fifth-stage certificate](actual-successor-fifth-primitive-failure.md).
