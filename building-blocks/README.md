@@ -434,3 +434,8 @@ The [delay and prime-sum formalizations](positive-successor-seed-jump-process.md
 The [large-birth theorem](infinite-centered-birth-energy.md) proves the actual kernel's translation modulus $8/\log(1/h)$ and centered birth energy $16/(t\log t)$, with every inverse prime-power jump retained. The [arithmetic loading theorem](transformed-actual-arrival-loading.md) gives total increment energy asymptotic to $16\log N$, separate density-cell loading $16\log\log N$ and finite proper-power loading; all ramp squares and mixed corrections sum absolutely.
 
 Every fixed nonnegative-age probability law [preserves this leading loading](positive-age-preserves-arithmetic-loading.md), including the complete positive successor process and infinite-mean laws. The exact finite-history balance retains the signed cross work. Its required $-8\log N$ leading cancellation would follow from a separate uniform bound on transformed source energy, which is not proved here. These analytic results remain written proofs.
+
+
+## Coprime interior histories with nonunit divisor layers
+
+The [exact gcd-layer theorem](cyclotomic-coprime-interior-history.md) expresses an interior cyclotomic update as a signed sum over surviving squarefree gcd layers. Its two checked examples reverse the selected phase sign before the first product scale, but their actual full clipped changes are both zero. The finite incidence proof and exact shifted CRT count preserve the correction that a no-common-multiple argument cannot discard. This is a written proof with a symbolic certificate, not an aggregate cancellation estimate.
