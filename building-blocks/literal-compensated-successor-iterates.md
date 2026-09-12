@@ -256,3 +256,6 @@ Even the contraction estimate on the displayed ordinary-shift sum is only $Ck/(1
 Equations (9)--(19) give an alternative to that loss: the exact feedback has a positive bounded seed orbit and an explicit signed arithmetic driver. This mechanism does not require positivity of arbitrary $C$-iterates. What remains at $k$ comparable to $N$ is the terminal/source feedback and its evolved Gram, explicitly determined by (5), (12)--(13), and (17)--(18). The single-step $O(1/\log N)$ transfer neither evaluates that Gram nor proves the proposed subpower target. No completed uncut source is placed in global $L^2$, and no RH estimate is asserted.
 
 The [birth-Gram calculation](original-l2-evolved-source-gram-work.md) supplies a separate complete-history formulation of the original source norm. Neither its diagonal loading nor the positive reference renewal above evaluates the signed terminal-source Gram.
+
+
+The [uniform driver-square theorem](uniform-successor-driver-square-bound.md) strengthens the actual driver's constraint to a cutoff-uniform $\ell^2$ bound and proves the matching $\sqrt k$ norm of the reference synthesis. Both conclusions retain the signed Gram above.

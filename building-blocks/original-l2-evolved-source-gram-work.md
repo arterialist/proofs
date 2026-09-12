@@ -211,3 +211,6 @@ $$
 The time-dependent seed square $k_t$ is essential. These identities do not bound the signed work, because the terminal evolved norm remains. If an independent argument established $\|T_{t_N}Ug_N\|_2^2=o(k_{t_N}\log^2N)$, then (14) would give $W_N(t_N)=-\tfrac14k_{t_N}\log^2N[1+o(1)]$. That premise is not proved here.
 
 The [source-correlation theorem](actual-short-time-psi-correlation.md) gives another exact expression for the same original norm. The present cell Gram is not an anticausal energy or a restored-age expectation, and it supplies no RH bound.
+
+
+The [long-time expansion](long-time-signed-source-rank-one.md) gives an absolute approximation of the terminal norm by $k_tM_N^2$, including its signed $t^{-3}$ curvature and the precise prefix-absorption cost. Its two certified actual curvature signs prevent treating the leading term as a universal upper or lower bound.

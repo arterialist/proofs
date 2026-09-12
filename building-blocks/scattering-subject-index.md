@@ -197,3 +197,8 @@ The [literal compensated iterates](literal-compensated-successor-iterates.md) ha
 
 
 The [formal collective square proof](positive-successor-seed-jump-process.md#formalized-all-prime-square-integrability) now establishes the literal all-prime $B\in L^2$ from the existing unconditional Chebyshev theorem and finite activity, including every cross term. Its [memory consumer](charge-compensated-successor-memory.md#formalized-all-prime-memory-and-cutoff-convergence) proves the full corrected all-prime kernel on half-line $L^2$ inputs and cutoff convergence uniformly over all output ages and the input unit ball. The cutoff retains exactly $p<P$; no numerical square-convergence rate or formal mixed-energy-to-$L^1$ extension is asserted.
+
+
+The [long-time signed-source expansion](long-time-signed-source-rank-one.md) retains the exact charge-square term and a source-curvature correction of order $t^{-3}$. Actual cutoffs two and six have opposite correction signs, certified by bounded Arb arithmetic. Its direct absorption proof needs subpolynomial times with $t/\log^{3/2}N\to\infty$; the variable-Laplace method applies to every subpolynomial schedule. Neither supplies the required source bound.
+
+The [uniform successor-driver theorem](uniform-successor-driver-square-bound.md) proves an actual $\ell^2$ constraint by full-line $H^1$ control and integer sampling, with a completed difference-integral consumer. The same exact reference renewal has synthesis norm of order $\sqrt k$. This identifies the loss from using the square-sum estimate without further signed arithmetic information, while retaining the complete driver Gram.
