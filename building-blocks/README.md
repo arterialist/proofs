@@ -456,3 +456,8 @@ The [natural-arrival cutoff theorem](natural-arrival-cutoff-completion.md) prove
 ## All-prime finite activity and the exact probability law
 
 [PrimeSeedActivityBound](BuildingBlocks/PrimeSeedActivityBound.lean) derives actual prime reciprocal-log summability from the existing formal Chebyshev bound by complete dyadic fibres. [PrimeSeedAllPrimeLevy](BuildingBlocks/PrimeSeedAllPrimeLevy.lean) then proves finite activity of the literal $B(v)/v$ measure, identifies the pointwise finite all-prime seed, and constructs its exact probability semigroup and original convolution series. It also proves $B\notin L^1$. The [precise theorem mapping](positive-successor-seed-jump-process.md#formalized-all-prime-finite-activity-and-probability-semigroup) separates this unconditional construction from the written quantitative cutoff convergence and operator-domain results. No PNT or RH premise enters these modules.
+
+
+## Even-character separation and its conditional arithmetic consumer
+
+The [even-character family proof](even-character-zero-separation.md) combines finite orthogonality with a paired Hurwitz expansion. Its normalized sum tends locally uniformly to one on $\Re s>0$, away from $1$, and it gives an explicit conductor threshold at a possible zeta zero. The exact Abel consumer retains the conductor prime, the endpoint and arbitrary zero multiplicity. Holomorphic continuation of every quotient in the specified unbounded-conductor family is RH-equivalent; the required arithmetic bound remains unproved. A passing symbolic certificate checks the finite normalization, not the analytic premise. No Lean claim is made.
