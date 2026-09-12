@@ -11,11 +11,19 @@ P_x(n)=\frac{x-n}{\sqrt n\,Z_x}\mathbf1_{n<x},
 \qquad Z_x=\sum_{n<x}\frac{x-n}{\sqrt n}.
 $$
 
+The [allocation identity](prime-allocation-critical-identity.md) first derives this law from two negative-binomial Euler histories. It retains their literal same-prime allocation diagonal, the endpoint atom and both continuous density terms in the exact formula for $W$.
+
 The [prime-score covariance theorem](prime-score-negative-covariance.md) proves strict negative covariance for distinct active primes. Its proof proceeds through a finite-grid martingale, a strict power-sum ratio, monotonicity of every integer dilation ratio, and an exact prime-power size-bias identity. Gao's majorization theorem supplies a second route to the nonstrict power-sum comparison.
 
 The [conditional counterexample and corrected costs](conditional-prime-dependence.md) use the same law after revealing prime exponents. Excluding all primes below $101$ at $x=20806$ makes the $101$- and $103$-scores positively correlated. A rational certificate verifies the finite counts used in the proof. Thus full-law pairwise negative covariance cannot be substituted for negative dependence on every revealed-history branch. The note gives the exact positive regression costs and the conditional variance identity that must replace that substitution.
 
-The same-prime diagonal variances, density terms and correlations between conditional means remain part of the full arithmetic balance. Neither of these covariance notes proves its eventual sign.
+The [density-prime covariance theorem](density-prime-covariance.md) proves strict increase of the density mean and an exact negative covariance, which contributes positively to $W$. The [combined balance](combined-prime-density-covariance.md) then proves, at every real cutoff,
+
+$$
+\frac{W}{Z}=E R-T-\mathcal D-1-2e.
+$$
+
+It also gives unconditional bounds and the leading compensation between these terms. The difference $E R-T$ remains unsigned. Same-prime diagonal terms and correlations between conditional means remain part of any further argument.
 
 ## Succession and multiplicative phases
 

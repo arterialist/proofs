@@ -22,7 +22,7 @@ $$
 \tag{1}
 $$
 
-If one prime is at least $x$, its score vanishes and this covariance is zero. The theorem concerns the full cutoff law on all integers below $x$; it does not assert negative association after arbitrary additional conditioning on prime exponents. Its application to the [actual arithmetic sign criterion](actual-critical-sign-criterion.md) supplies only pairwise signs. The full signed balance remains open. The proof below is a finite-sum argument and is not formalized in Lean.
+If one prime is at least $x$, its score vanishes and this covariance is zero. The theorem concerns the full cutoff law on all integers below $x$; it does not assert negative association after arbitrary additional conditioning on prime exponents. Its application to the [actual arithmetic sign criterion](actual-critical-sign-criterion.md) supplies only pairwise signs. The [complete signed balance](combined-prime-density-covariance.md) remains open. The proof below is a finite-sum argument and is not formalized in Lean.
 
 ## A finite-grid martingale
 

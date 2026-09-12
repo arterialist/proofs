@@ -4,6 +4,10 @@ The [arithmetic subject index](arithmetic-subject-index.md) links the cutoff pro
 
 Results used in the study of prime-counting errors, with their formal verification scope stated individually. No originality or first-formalization claim is made. Throughout, $\gamma$ is the Euler–Mascheroni constant.
 
+## Full cutoff probability and conditional dependence
+
+The [two-history allocation identity](prime-allocation-critical-identity.md) derives the complete arithmetic $W$ from a positive Euler prior with its exact endpoint and continuous density terms. The [prime-score](prime-score-negative-covariance.md) and [density-prime](density-prime-covariance.md) covariance theorems have opposing contributions. Their [combined balance](combined-prime-density-covariance.md) proves leading compensation but leaves the decisive remainder unsigned. An [exact conditioned counterexample](conditional-prime-dependence.md) shows why full-law negative pair covariance does not persist on every prime-revelation branch. These are written proofs, with rational certificates for the stated finite checks, and no Lean formalization claim.
+
 ## An actual arithmetic sign sufficient for RH
 
 The [eventual-sign criterion](actual-critical-sign-criterion.md) proves in Lean that eventual nonpositivity of the explicitly defined, complete arithmetic sum $W(x)$ implies full mathlib RiemannHypothesis. Its Mellin identity, Landau theorem, continuation and pole exclusion are proved, including multiple zeros. The eventual sign itself remains unproved.
