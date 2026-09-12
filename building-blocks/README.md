@@ -488,3 +488,5 @@ The [causal energy anchor](actual-source-mixed-dirichlet-completion.md#formalize
 The [three-step matching extension](bounded-factor-matching.md#6-a-finite-example-with-genuinely-cheap-head-edges) retains an exact finite example with cheap head edges, a good-time dual, and the conditional extension to other fixed ratios. Its full positive-cost majorant has logarithmic growth exponent $5$; the signed coarse energy remains outside that lower bound.
 
 The [literal successor charge](actual-successor-resonance-charge-cocycle.md#formalized-integrable-successor-charge) is formalized for real $L^1(0,\infty)$ inputs, including the initial interval, successor integrability and exact compensated charge conservation. The extension to the actual nonintegrable source remains separate.
+
+The [original-graph coherent matching proof](coherent-large-label-matching.md) preserves the exact observable-distance identity, an actual three-edge cancellation repair, and complete fixed-matching energy and primal–dual certificates. Its whole-interval dual gives exponent $5-4/k$ for the positive majorant; the ratio-eight proof uses a different good-time argument.
