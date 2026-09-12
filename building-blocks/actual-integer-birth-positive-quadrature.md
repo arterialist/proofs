@@ -224,3 +224,5 @@ D(t)\asymp t\log(1/t).
 $$
 
 This uses only Chebyshev for the upper estimate and the exact factorial identity for the lower estimate. It quantifies the positive complete-birth interpolation defect. Its vanishing size cannot supply the unproved constant-scale lower bound on the coherent finite core.
+
+The [complete cusp asymptotic](successor-quadrature-cusp-asymptotic.md) sharpens the correction to $D(t)=\zeta(3/2)t\log(1/t)/(4\pi)+O(t)$ and gives the same leading term for the mean-removed error $\epsilon(t)$. The proof controls every distance cell behind each integer birth uniformly before summing all prime powers. Chebyshev and the factorial identity suffice; the finite-core sign remains open.
