@@ -181,3 +181,6 @@ All names below belong to `BuildingBlocks.MixedEnergy`.
 | For $f(u)=e^{u/2}H(e^u)$, $\int_0^\infty|e^{-u/2}f(u)|^2du\le\mathcal E(H)$ | `weighted_physical_square_le_energy` |
 
 The module and the changed aggregate import compile with Lean 4.24.0. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. This formalization supplies the weighted input used in the [compensated-memory theorem](charge-compensated-successor-memory.md). It does not formalize completion of the energy space, the PNT estimate proving actual-source membership, or the subsequent operator response.
+
+
+The subsequent [formal energy/contact construction](all-prime-fixed-source-drift-curvature.md#formalized-energy-and-contact-forms) proves the exact unit-step bound, lag-gradient realization and bilinear contact estimate on this finite-energy domain. The symmetric physical kernel expansion has the separately stated unweighted-$L^2$ hypotheses.

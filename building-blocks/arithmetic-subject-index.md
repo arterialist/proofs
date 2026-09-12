@@ -178,3 +178,10 @@ The [original-graph coherent matching proof](coherent-large-label-matching.md) p
 ## Positive successor primitive and the complete W comparison
 
 The [actual primitive theorem](actual-source-successor-primitive.md) proves positivity at every positive age by exact arithmetic-cell extrema and a classical explicit PNT tail. The [complete W comparison](actual-W-positive-primitive-analysis.md) gives strict cumulative ordering, while a certified actual zero and a Laplace singularity argument prove that the unsmoothed difference has both signs arbitrarily far out. It retains the identical same-prime subtraction, density cancellation and unchanged off-critical double-pole coefficient. These are written and computer-assisted proofs, not the missing eventual W sign.
+
+
+## Positive potentials and original-energy curvature
+
+The [natural-cutoff primitive theorem](natural-cutoff-successor-primitive.md) proves strict positivity at every positive age for every $N\ge2$, including the frozen terminal tail. Its bounded Arb certificate complements the full-source proof. The [two-port construction](positive-primitive-two-port-drift-curvature.md) retains the complete midpoint terms and exact successor contact. A [short finite-measure proof](all-prime-fixed-source-drift-curvature.md) gives the all-prime limit at fixed $N$; a distinct [block-variation proof](full-prime-successor-potential-midpoint.md) gives uniform $H^2$ potentials and joint original-$L^2$ convergence of the successor correction. Individual columns and the full midpoint sign remain outside that conclusion.
+
+The [actual cutoff-2, prime-2 computation](actual-finite-history-curvature-domains.md) exhibits a nonzero derivative of a Dirac mass, refuting the proposed nonnegative-curvature-measure hypothesis while retaining a valid Sobolev pairing. The [formal theorem mapping](all-prime-fixed-source-drift-curvature.md#formalized-energy-and-contact-forms) records the compiled unit-step estimate, lag-gradient form, contact bound $9$ and physical kernel expansion. The prime-column and logarithmic-commutator identities remain written proofs.

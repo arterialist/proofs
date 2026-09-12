@@ -93,3 +93,7 @@ import BuildingBlocks.PrimeSeedLaplaceExponent
 import BuildingBlocks.MixedEnergyAnchoring
 import BuildingBlocks.SuccessorCharge
 import BuildingBlocks.SuccessorChargeEnergy
+
+import BuildingBlocks.MixedEnergySuccessorStep
+import BuildingBlocks.MixedEnergyBilinear
+import BuildingBlocks.MixedEnergyKernel
