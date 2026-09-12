@@ -142,6 +142,6 @@ $$
 \tag{13}
 $$
 
-Indeed complete the square after Cauchy–Schwarz and (12). For an even source the denominator improves to $a+hA$; the even and odd sectors may also be bounded separately. Identifying a particular killed-resolvent covariance with this variational problem requires its own ground-state domain and source mapping.
+Indeed complete the square after Cauchy–Schwarz and (12). For an even source the denominator improves to $a+hA$; the even and odd sectors may also be bounded separately. The [complete covariance clock](theta-complete-ground-covariance-clock.md) proves the required maximal-domain equivalence and source mapping for the actual killed-resolvent covariance. Thus (13) applies to every actual centered core crossing source, with $S=f/\rho$. In its notation, $\mathcal C(f,f)\le\|f/\rho\|_\gamma^2/(a+\eta)$ and $D_{\rm all}(f)\ge\eta Q(f,f)/(a+\eta)$. The even-source improvement follows with the same domain justification.
 
 The constant is strictly positive for every specified finite core and strip. No positive lower bound uniform as the core varies is asserted. Nor has this bound been shown to pay the full signed core deficit in the [constrained Schur comparison](theta-constrained-schur-across-ground-pole.md). The actual affine scalar term and both pole constraints remain part of that comparison.

@@ -570,3 +570,8 @@ The [distinguished-return repair](integer-renewal-and-phase-memory.md#distinguis
 
 
 The [formal cutoff charge estimate](charge-compensated-successor-memory.md#formalized-quantitative-cutoff-for-the-rank-charge) bounds the original-reference rank error by $2(64\log2+30)\sqrt{\mathcal E}/(P\log P)$ for $P\ge8$, retaining exactly $p<P$. The [literal clock-jump module](positive-successor-seed-jump-process.md#formalized-literal-clock-jumps-and-their-complete-mass-budget) proves every one-sided prime-power limit, the cell derivative and the complete geometric mass budget. Identifying that budget with the distributional derivative variation remains a separate step.
+
+
+The [ground-state Green covariance](theta-groundstate-green-covariance.md) identifies the maximal transformed jump domain and its conservative semigroup, retaining infinite continuous activity. The [signed-flow comparison](theta-groundstate-covariance-comparison-literature.md) gives an explicit full-conductance current and a weighted conditional bound, with a strict calibration loss. The [weighted crossing theorem](theta-groundstate-bounded-weighted-crossing.md) proves boundedness of the ground state and source map on all core $L^2$ inputs.
+
+The [complete residual clock](theta-complete-ground-covariance-clock.md) changes reference measure with a proved equality of potential domains. It represents the exact covariance and complete gain through every continuous and prime-power history. Its affine formula retains the nonnegative optimizer correction. The continuous gap now applies to this actual covariance, but has not been shown to pay the signed core deficit. These are written proofs with classical ground-state and flow attribution.

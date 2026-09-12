@@ -22,3 +22,8 @@ The [positive finite-path routing obstruction](theta-positive-routing-obstructio
 
 
 The [full continuous remainder gap](theta-continuous-remainder-explicit-gap.md) retains a positive same-half-line minorant and an actual two-strip bridge. An exact Hermitian two-cell matrix gives an explicit positive gap for every centered source at fixed core, and adding every internal prime-power edge preserves it. The theorem distinguishes this full continuous remainder from a prime-only comparison. Its positive fraction has not been shown to overcome the complete affine core deficit.
+
+
+The [ground-state Green covariance](theta-groundstate-green-covariance.md) identifies the maximal transformed jump domain and its conservative semigroup, retaining infinite continuous activity. The [signed-flow comparison](theta-groundstate-covariance-comparison-literature.md) gives an explicit full-conductance current and a weighted conditional bound, with a strict calibration loss. The [weighted crossing theorem](theta-groundstate-bounded-weighted-crossing.md) proves boundedness of the ground state and source map on all core $L^2$ inputs.
+
+The [complete residual clock](theta-complete-ground-covariance-clock.md) changes reference measure with a proved equality of potential domains. It represents the exact covariance and complete gain through every continuous and prime-power history. Its affine formula retains the nonnegative optimizer correction. The continuous gap now applies to this actual covariance, but has not been shown to pay the signed core deficit. These are written proofs with classical ground-state and flow attribution.
