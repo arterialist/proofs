@@ -420,3 +420,7 @@ For each finite arithmetic source, the [ground graph](centered-prime-natural-sou
 ## Formalized complete successor-seed integrals
 
 [PrimeSeedMass.lean](BuildingBlocks/PrimeSeedMass.lean) and [PrimeSeedSquare.lean](BuildingBlocks/PrimeSeedSquare.lean) prove positivity, literal floor-profile identification, integrability and the complete masses $2/p$, $\log p/[p(p-1)]$ and $p^{-2}$ for every real $p>1$. The [theorem-to-source table](positive-successor-seed-jump-process.md#formalized-single-clock-dependencies) records the exact declarations. The proofs sum every prime-clock interval and use no arithmetic or RH premise. The all-prime probability process and its operator response remain written proofs.
+
+## Arithmetic carry arrivals and exact boundary signs
+
+The [carry covariance chapter](incomplete-carry-covariance.md#5-the-arithmetic-carry-cocycle-and-positive-box-arrivals) also proves a positive exact arrival law for the actual von Mangoldt-weighted box, a distinct CRT proof of complete-period covariance, and a family of incomplete-box positive covariances tending to $1/4$. Its prime-level example $\operatorname{Cov}(\kappa_{11},\kappa_{13})=128/2197$ at cutoff $13$ rules out transferring period orthogonality by a nonpositive boundary assumption. The classical binomial carry interpretation is attributed; no prime-error bound follows from these identities alone.

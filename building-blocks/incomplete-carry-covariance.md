@@ -190,3 +190,154 @@ $-2/45-1/54+1/135=-1/18$. The endpoint corrections have opposite signs in these 
 The useful next input for the prime-power calculation is therefore the actual weighted sum of the nonresonant terms in (11), or equivalently the two one-dimensional correlations in (5), with (6) retained. Fixed-base Markov carry results do not estimate these cross-modulus frequency interactions. No prime-error estimate is supplied by this reduction alone.
 
 These are written mathematical deductions using the cited classical identities, with exact priority unresolved. No Lean formalization or RH conclusion is claimed.
+
+## 5. The arithmetic carry cocycle and positive box arrivals
+
+The following exact identities retain the von Mangoldt weights at every level. Define, for nonnegative integers $a,b$,
+
+$$
+C_H(a,b)=\sum_{d\le H}\Lambda(d)\kappa_d(a,b),\qquad
+J_H=\sum_{1\le a,b\le H}C_H(a,b).
+\tag{13}
+$$
+
+Writing $a=dq+r$ and $b=ds+t$, with $0\le r,t<d$, gives $\kappa_d(a,b)=\mathbf1_{r+t\ge d}$. In particular each carry is zero or one. Cancellation of the intermediate floors also proves, for every modulus separately,
+
+$$
+\kappa_d(a,b)+\kappa_d(a+b,c)
+=\kappa_d(b,c)+\kappa_d(a,b+c).
+\tag{14}
+$$
+
+The same cocycle identity holds for $C_H$. The connection to binomial valuations is classical: Kummer's carry theorem is recalled in Granville's [*Arithmetic Properties of Binomial Coefficients I*, introduction](https://www.cecm.sfu.ca/organics/papers/granville/paper/binomial/html/node2.html). In the present normalization it can also be checked directly. Prime factorization gives $\sum_{d\mid m}\Lambda(d)=\log m$, hence
+
+$$
+\sum_{d\le n}\Lambda(d)\lfloor n/d\rfloor=\log(n!).
+$$
+
+Subtracting three such identities proves
+$\sum_{d\le a+b}\Lambda(d)\kappa_d(a,b)=\log\binom{a+b}{a}$.
+The cutoff in (13) remains $H$; replacing it by $a+b$ would change its arithmetic arrival law.
+
+For every integer $H\ge2$, the exact increment is
+
+$$
+J_H-J_{H-1}
+=\frac{H(H-1)}2\Lambda(H)
+ +\sum_{d<H}\Lambda(d)B_d(H),
+\tag{15}
+$$
+
+where, with $r=H\bmod d$ and $k=\lfloor(H-1)/d\rfloor$,
+
+$$
+B_d(H)=
+\begin{cases}
+2kr+2(2r-d)_++\mathbf1_{2r\ge d},&r>0,\\
+0,&r=0.
+\end{cases}
+\tag{16}
+$$
+
+Here $x_+=\max(x,0)$. To prove (15), first admit the new modulus $d=H$. On the full square its number of carries is $H(H-1)/2$: the residue zero contributes none, and the remaining residues give $1+2+\cdots+(H-1)$. Each old modulus gains the row $(H,b)$ for $1\le b<H$, its transposed column, and the corner $(H,H)$. If $r=0$, all these carries vanish. If $r>0$, the row has $k$ full blocks of residues, each contributing $r$ carries, followed by residues $1,\ldots,r-1$. The latter contribute $(2r-d)_+$. The corner contributes $\mathbf1_{2r\ge d}$. This proves (16), including every boundary and the once-counted corner.
+
+All terms in (15) are nonnegative. Nevertheless, composite arrivals can have a nonzero response with no new von Mangoldt mass. At $H=6$, $\Lambda(6)=0$, the old levels $d=4,5$ have $B_4(6)=5$, $B_5(6)=2$, and the other old prime-power levels have zero increment. Thus
+
+$$
+J_6-J_5=5\log2+2\log5.
+\tag{17}
+$$
+
+This is a positive law for the growing carry box. Its old-level boundary contribution is essential.
+
+## 6. A distinct CRT proof of the complete-period covariance
+
+Suppose $d,e\ge1$ divide an integer $L$, and let $A,B$ be independent uniform integers in $\{1,\ldots,L\}$. Then
+
+$$
+\operatorname{Cov}(\kappa_d(A,B),\kappa_e(A,B))
+=\frac{\gcd(d,e)^2-1}{4de}.
+\tag{18}
+$$
+
+This proof uses residue conditioning rather than the Fourier inversion of section 3. Put $h=\gcd(d,e)$, $d=hu$, $e=hv$, with $(u,v)=1$. Condition on the residues of $A,B$ modulo $h$, and let $\epsilon=\kappa_h(A,B)\in\{0,1\}$. Since $L$ is a multiple of $\operatorname{lcm}(d,e)=huv$, CRT makes the higher residues modulo $u$ and $v$ independent and uniform under this conditioning. Consequently the two carries are conditionally independent. Their conditional means are
+
+$$
+\mathbb E(\kappa_d\mid A\bmod h,B\bmod h)
+=\frac{u-1+2\epsilon}{2u},\qquad
+\mathbb E(\kappa_e\mid A\bmod h,B\bmod h)
+=\frac{v-1+2\epsilon}{2v}.
+\tag{19}
+$$
+
+Indeed, the higher residues $i,j\in\{0,\ldots,u-1\}$ must satisfy $i+j\ge u$ if $\epsilon=0$, and $i+j\ge u-1$ if $\epsilon=1$. These possibilities have respectively $u(u-1)/2$ and $u(u+1)/2$ pairs. The same count applies to $v$.
+
+The law of total covariance now gives $\operatorname{Cov}(\kappa_d,\kappa_e)=\operatorname{Var}(\epsilon)/(uv)$. Its Bernoulli mean is $(h-1)/(2h)$, so its variance is $(h^2-1)/(4h^2)$. This proves (18), also when a modulus is one. The agreement with the Fourier proof is exact; neither argument transfers to an incomplete period without additional terms.
+
+If $L$ is a common multiple of all moduli through $H$, the weighted field (13) therefore obeys
+
+$$
+\mathbb E C_H=\frac12\left(\psi(H)-\sum_{d\le H}\frac{\Lambda(d)}d\right),
+\qquad
+\operatorname{Var}C_H\le\frac34\psi(H)\log H.
+\tag{20}
+$$
+
+For the variance bound, distinct prime bases have covariance zero by (18). For powers of one prime,
+
+$$
+0\le\operatorname{Cov}(\kappa_{p^i},\kappa_{p^j})
+\le\frac14p^{-|i-j|}.
+$$
+
+With $a_p=\lfloor\log H/\log p\rfloor$, summing the complete same-prime square gives
+
+$$
+\begin{aligned}
+\operatorname{Var}C_H
+&\le\frac14\sum_{p\le H}(\log p)^2
+ \left[a_p+2\sum_{j=1}^{a_p-1}(a_p-j)p^{-j}\right]\\
+&\le\frac34\sum_{p\le H}a_p(\log p)^2
+\le\frac34\psi(H)\log H.
+\end{aligned}
+$$
+
+The bound is around the actual mean in (20). It does not estimate $\psi(H)-H$.
+
+## 7. Positive boundary covariance for actual prime levels
+
+In contrast to (18), for independent $A,B$ uniform on $\{1,\ldots,H\}$ and $H\ge7$,
+
+$$
+\operatorname{Cov}(\kappa_{H-2},\kappa_H)
+=\frac{(H-9)(H^2-3H-2)}{4H^3}.
+\tag{21}
+$$
+
+Here is a complete finite count. Put $d=H-2\ge5$. Modulo $d$, the sampling list contains each residue once and the residues $1,2$ one additional time. The base carry count is $d(d-1)/2$. The two added residues give $2(1+2)=6$ additional carries; pairs involving two added residues give none because $d\ge5$. Thus
+
+$$
+\sum_{a,b\le H}\kappa_d(a,b)=\frac{H^2-5H+18}{2},\qquad
+\sum_{a,b\le H}\kappa_H(a,b)=\frac{H(H-1)}2.
+\tag{22}
+$$
+
+For the joint count, first restrict to $1\le a,b\le d-1$. Both carries occur precisely when $a+b\ge d+2$, giving $(d-3)(d-2)/2$ pairs. A coordinate equal to $d$ cannot carry modulo $d$; a coordinate equal to $H=d+2$ cannot carry modulo $H$. The remaining extra coordinate $d+1$ contributes only the pair with $d-1$, in either order. Therefore
+
+$$
+\sum_{a,b\le H}\kappa_d(a,b)\kappa_H(a,b)
+=\frac{(H-5)(H-4)}2+2
+=\frac{H^2-9H+24}{2}.
+\tag{23}
+$$
+
+Divide (22)–(23) by $H^2$ and subtract the product of means to obtain (21). It is positive for every $H\ge10$ and tends to $1/4$. In particular, the actual distinct prime levels $11,13$ at $H=13$ give
+
+$$
+\operatorname{Cov}(\kappa_{11},\kappa_{13})
+=\frac{38}{169}-\frac{61\cdot78}{169^2}
+=\frac{128}{2197}>0.
+\tag{24}
+$$
+
+Thus distinct-prime orthogonality over a complete period cannot be transferred to the growing integer box by assuming nonpositive boundary correlations. Together with the negative examples in section 4, this establishes both signs for actual incomplete-box carry covariance. It is a refutation of that proposed boundary-sign repair, not a sign result for the full weighted arithmetic error or a restriction on every possible use of the complete carry family. The proofs in sections 5–7 are written; `CarryWindowVariance.lean` formalizes a separate general finite-variance lemma, not these carry identities.
