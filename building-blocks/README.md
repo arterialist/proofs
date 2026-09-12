@@ -334,3 +334,5 @@ The [theta jump subject index](theta-jump-subject-index.md) connects the exact W
 The [theta eigenfunction regularity chapter](theta-jump-eigenfunction-regularity.md) retains the stronger domain, complete zero sum, threshold-accumulation and multiplicity-sensitive isolator arguments. The [finite-time renewal chapter](theta-jump-tail-renewal.md) proves the actual tail evolution and the two distinct stochastic-order and Euclidean-contraction obstructions.
 
 The independent [theta synthesis route](theta-jump-subject-index.md) is now collected from its exact equality-space description through quotient indicator bounds, Borel contours, weighted duality and smoothing in the actual jump-form norm. It retains the unresolved boundary case and the odd rank-one correction.
+
+The [prime-power square comparison](prime-power-gram-correction.md), [composite counterexample](composite-gram-obstruction.md), [Jordan density correction](jordan-mixed-correction.md), and [exact counting births](counting-birth-full-generator.md) preserve the older arithmetic overlap and transport arguments, including their precise failed extensions.

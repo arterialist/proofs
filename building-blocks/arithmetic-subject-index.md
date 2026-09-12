@@ -62,3 +62,11 @@ The [causal rectangle decomposition](causal-rectangle-frequency-cutoff.md) gives
 The [finite-band dyadic flux](prime-innovation-finite-band-flux.md) is a distinct consumer of the successor-tail estimate. Its particular causal innovation has full flux $1/2$, and the finite-band flux converges to that value unconditionally. It gives no positivity statement for all Weil tests.
 
 The [opposite-history storage collection](scattering-subject-index.md#opposite-histories-and-their-signed-boundary) connects the actual inverse division strip to its Fourier modes, finite seam, folded storage cancellation and unilateral meromorphic transfer. It retains the initial zero bilinear response and the true off-line double poles, while controlling the projected product cutoff for each fixed prime.
+
+## Prime-power overlap and the exact counting process
+
+The [prime-power Gram theorem](prime-power-gram-correction.md) gives a positive discrete square decomposition for arbitrary signed coefficients on every prime chain. The [composite counterexample](composite-gram-obstruction.md) proves that this comparison fails for arbitrary divisor coefficients at cutoff $27$, with an executable rational certificate. It does not refute the comparison on a particular density vector.
+
+The [mixed Jordan correction](jordan-mixed-correction.md) computes that particular prime–density cross term exactly and proves its adverse sign. Its pure density correction and the residual after scalar density cancellation retain genuine reciprocal-zeta poles; the stated eventual sign conditions imply RH. The full $W$ comparison is not proved.
+
+The [counting-birth chapter](counting-birth-full-generator.md) constructs the unique successor-only pure-birth transport of the triangular law, including integer activation. Its full time-dependent arithmetic generator has both signs arbitrarily far out. The exact distributional birth forcing has a complete arithmetic sign classification. A divisibility-upset counterexample on $100<x<101$ rules out a coupling whose paths only increase by divisibility, while leaving the proved counting transport intact.
