@@ -120,3 +120,6 @@ The [formalized delay chain](positive-successor-seed-jump-process.md#formalized-
 
 
 The centered domain has an exact [large-birth energy asymptotic](infinite-centered-birth-energy.md) obtained from its full arithmetic jump variation. Its [actual source loading](transformed-actual-arrival-loading.md) and [fixed positive-age invariance](positive-age-preserves-arithmetic-loading.md) retain the signed finite-history balance. These theorems concern actual centered arrivals on their established domain, not a bounded all-source centered operator or a sign for the Weil form.
+
+
+The [formalized finite-prime measure and law](positive-successor-seed-jump-process.md#formalized-finite-prime-jump-measure-and-probability-law) retain the literal age-divided seed and all convolution powers. Their proved probability normalization and original-series identity do not assert the later all-prime limit or operator response.

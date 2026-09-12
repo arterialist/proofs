@@ -79,3 +79,5 @@ import BuildingBlocks.PrimeSeedMass
 import BuildingBlocks.PrimeSeedSquare
 import BuildingBlocks.PrimeSeedDelay
 import BuildingBlocks.PrimeSeedPrimeSums
+import BuildingBlocks.PrimeSeedLevy
+import BuildingBlocks.PrimeSeedCompoundPoisson

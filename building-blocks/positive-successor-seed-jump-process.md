@@ -1,6 +1,6 @@
 # A positive finite-activity process from the complete successor seed
 
-The process and domain-qualified response in (26)–(28) are written proofs. The complete single-clock mass identities are formalized in Lean as described below. This consumes the exact seed and fixed-Cauchy covariance in [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md). It constructs a positive process from the actual complete prime profiles. It does not identify that process with the natural theta exponent or assert a sign for the Weil readout. The Bernstein and compound Poisson framework is classical; see Schilling, Song and Vondraček, [*Bernstein Functions: Theory and Applications*, second edition, chapters 3, 5 and 13](https://motapa.de/bernstein_functions/index.shtml). The Hardy, Poisson and Blaschke tools below are also classical; the full arithmetic seed and its response are the stated specialization.
+The all-prime completion and domain-qualified response in (26)–(28) are written proofs. The complete single-clock identities and the finite-prime probability construction are formalized in Lean as described below. This consumes the exact seed and fixed-Cauchy covariance in [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md). It constructs a positive process from the actual complete prime profiles. It does not identify that process with the natural theta exponent or assert a sign for the Weil readout. The Bernstein and compound Poisson framework is classical; see Schilling, Song and Vondraček, [*Bernstein Functions: Theory and Applications*, second edition, chapters 3, 5 and 13](https://motapa.de/bernstein_functions/index.shtml). The Hardy, Poisson and Blaschke tools below are also classical; the full arithmetic seed and its response are the stated specialization.
 
 For every prime p let
 
@@ -307,7 +307,7 @@ All names in the table have namespace `BuildingBlocks.PrimeSeedMass`.
 
 The integrability declarations are stated for every real clock length $L>0$; their displayed prime formulas specialize to $L=\log p$. `integral_of_clock_cells` is the reusable nonnegative countable-partition lemma underlying the three whole-line integrals. The proof uses mathlib's Lebesgue integration, elementary exponential integrals and geometric-series theorems. Both modules compile with Lean 4.24.0 and the repository's pinned mathlib; the checked prime integral targets and `seed_log_eq` depend only on `propext`, `Classical.choice`, and `Quot.sound`.
 
-These modules do not formalize collective prime-sum convergence with its cross terms, the finite measure $B(v)\,dv/v$, probability semigroup, bounded mixed-space evolution, Hardy factors or response-domain assertions above. Those remain written mathematical dependencies. The square-mass identity also supplies the individual-profile normalization in the [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md).
+The single-clock modules do not formalize collective prime-sum convergence with its cross terms, the all-prime measure $B(v)\,dv/v$, the time-semigroup law, bounded mixed-space evolution, Hardy factors or response-domain assertions above. The later finite-prime measure and probability construction are recorded separately below; the excluded collective and operator assertions remain written dependencies. The square-mass identity also supplies the individual-profile normalization in the [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md).
 
 
 ## Formalized delay history and prime-sum distinctions
@@ -342,3 +342,39 @@ from the sole hypothesis $f(v)=g(v)+rf(v-L)$. The terminal history vanishes for 
 | No integrable real function pointwise dominates every finite aggregate $\sum_{p\in S}B_p$ | `no_integrable_majorant_prime_seeds` |
 
 The second statement concerns component squares; it does not replace the mixed terms in the square of the collective seed. The no-majorant theorem is stated for pointwise domination and does not silently change that quantifier to an almost-everywhere condition depending on $S$. Both modules compile with the pinned Lean/mathlib versions. The checked delay, uniqueness, component-square and no-majorant targets use only `propext`, `Classical.choice` and `Quot.sound`. No claim of priority is attached to these elementary recursion or classical summability results.
+
+
+## Formalized finite-prime jump measure and probability law
+
+[PrimeSeedLevy.lean](BuildingBlocks/PrimeSeedLevy.lean) defines, for every finite set $S$ of actual primes,
+
+$$
+\lambda_S(v)=\sum_{p\in S}\frac{B_p(v)}v,
+\qquad \nu_S(dv)=\lambda_S(v)\,dv.
+$$
+
+At $v=0$ the Lean real quotient is zero, consistently with the seed's vanishing there. The measure is implemented as `volume.withDensity (ENNReal.ofReal ∘ levyDensity S)`. The proved nonnegativity makes this the actual density, without changing any negative value by truncation. The full prime-power history stays inside each $B_p$.
+
+The declarations `integrable_seed_div_age` and `integral_seed_div_age_le` prove, for $L>0$, integrability of $b_L(v)/v$ and the bound $2e^{-L}/L$. The finite-sum declarations then establish:
+
+| Exact statement | Declaration in `BuildingBlocks.PrimeSeedMass` |
+| --- | --- |
+| $\lambda_S\ge0$ and $\lambda_S\in L^1$ | `levyDensity_nonneg`, `integrable_levyDensity` |
+| $\nu_S(\mathbb R)<\infty$ | `levyMeasure_isFiniteMeasure` |
+| $v\lambda_S(v)=\sum_{p\in S}B_p(v)$, including $v=0$ | `age_mul_levyDensity` |
+| $\int v\lambda_S(v)\,dv=\sum_{p\in S}2/p$ | `integral_age_mul_levyDensity` |
+
+The last theorem is stated as an age-weighted Lebesgue density integral. This module alone gives no uniform all-prime mass bound.
+
+[PrimeSeedCompoundPoisson.lean](BuildingBlocks/PrimeSeedCompoundPoisson.lean) uses mathlib's Poisson probability mass function and convolution of measures to construct the actual finite-prime law. For $u\ge0$, its `seedProcess_original_series` proves the equality of measures
+
+$$
+\operatorname{seedProcess}(S,u)
+ =\sum_{n=0}^{\infty}e^{-u\nu_S(\mathbb R)}
+       \frac{u^n}{n!}\,\nu_S^{*n},
+\qquad \nu_S^{*0}=\delta_0.
+$$
+
+The series retains every jump count. `seedProcess_isProbability` proves total mass one, and `seedProcess_zero` proves its time-zero value is $\delta_0$. More generally, `poissonLaw_original_series` proves this identity for every finite positive measure on $\mathbb R$. Its construction first normalizes the jump measure and then proves `normalizedJump_reconstruct` and `jumpPower_normalized_reconstruct`, so the final law is exactly the unnormalized convolution series above. If the intensity is zero, the selected normalized jump law is $\delta_0$ and the Poisson count has only its zero-jump term; no division by a nonzero intensity is imposed as a hypothesis.
+
+These are formalizations of the classical finite-activity compound-Poisson construction specialized to the complete prime density. The primary mathematical framework is Schilling, Song and Vondraček, [*Bernstein Functions*, chapters 3 and 5](https://motapa.de/bernstein_functions/index.shtml). Both modules compile with the pinned Lean/mathlib versions; the checked probability, original-series, time-zero and finite-measure targets use only `propext`, `Classical.choice` and `Quot.sound`. The time-semigroup identity, the uniform all-prime completion and its bounded operator action are separate written dependencies, not conclusions of these modules.
