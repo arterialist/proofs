@@ -247,6 +247,8 @@ The [third-derivative theorem](theta-natural-exponent-third-derivative.md) furth
 
 The [small-jump construction](theta-small-jump-levy-density.md) proves that the candidate Lévy density is positive and strictly decreasing near zero, using a uniform complex theta saddle and Bromwich inversion. The [global sign and positive-mixture criterion](theta-positive-jump-mixture.md) characterizes its extension to a nonincreasing Lévy density by one unproved global sign, equivalently an exact positive integral equation. These are written analytic results without Lean formalizations. The global sign remains open, and ordinary Bernstein or $B_J$ membership does not itself imply RH.
 
+A [meromorphic complete Bernstein family](bernstein-theta-growth-nonreal-zeros.md) has the same leading exponent growth and double-logarithmic mixing-tail rate as theta, but its associated entire functions have nonreal zeros. The proof retains these asymptotics under a perturbation that preserves a nonreal Mittag–Leffler zero. It excludes that general real-zero mechanism without identifying the family with the actual theta law.
+
 ## Signed divisor packets
 
 The [divisor-cube construction](signed-divisor-packets.md) partitions actual Möbius labels by coprime cores and retains all prefix, suffix and mean terms. For a growing primorial, the interior and packet diagonal have energy $X^{4+o(1)}$; a classical Mertens estimate gives a strict saving over packet magnitudes for the whole signed boundary. Its remaining RH-scale covariance upper bound is unproved.
