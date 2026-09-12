@@ -356,3 +356,24 @@ The last term vanishes for $h\le X$. The two signed endpoint interactions do not
 The [rational/Arb certificate](certificates/presieved_prime_pair.py) uses fixed rational data, without a floating optimizer or eigensolver. Exact fractions verify (S12); an exact eigenvector and reconstructed semidefinite LDL factorization prove the scalar optimum (S19). Another reconstructed LDL factorization proves the active lower bound, and (S21) completes all allowed coordinates. The certificate also checks every actual interval pair for wrapping and encloses the logarithms at 80 decimal digits. It passed with Python 3 and python-flint 0.9.0, giving scalar upper bound below $-61.02$ and nonuniform lower bound above $16.90$.
 
 These are separate conclusions: the scalar obstruction holds uniformly only in (S11), the fixed-scale formulas (S12) allow arbitrary primorials, and the nonuniform repair is one complete finite actual example. A growing-scale construction must retain the interval density, independently bound the actual weighted charge in (S23), and keep (S24)–(S25) and the squared mean. Those uniform estimates remain unproved.
+
+## 9. An independent cyclotomic and Sturm proof of the finite example
+
+The [independent certificate](certificates/presieved_prime_pair_sturm.py) proves the same finite scalar optimum by characteristic polynomials and Sturm root counts, rather than the semidefinite LDL decomposition above. It reconstructs the kernel from the distinct truncated-power formula
+$$
+r(t)=\frac1{48}\sum_{j=0}^4(-1)^j\binom4j(2|t|+2-j)_+^3,
+\qquad R_h(d)=\frac h2[r(d/h)-r(2d/h)].
+$$
+Exact integration of its three polynomial pieces gives $\int R_1=1/64$ and $\int|t|R_1(t)dt=7/1280$, agreeing with the full density moments used above.
+
+For the five fixtures $(h,W,q)=(8,2,16),(8,6,24),(16,6,96),(16,30,240),(32,30,480)$, write every phase as a polynomial in a primitive $q$th root. Reduction modulo the exact cyclotomic polynomial proves that the masked phase has zero mean and that its direct quadratic form equals both the CRT displacement sum and the complete Ramanujan-alias expression. The script computes Ramanujan sums by the divisor–Möbius identity. These are finite exact checks of the formulas in Section 2; their general proof remains there.
+
+At $(h,W,q)=(16,6,96)$ let $\mathsf B$ be the full $32\times32$ allowed-coordinate matrix of Section 6. Form
+$$
+p(t)=\det(tI-\mathsf B),\qquad q(t)=p(t-105/128).
+$$
+The exact rational polynomial $q$ has a zero of multiplicity one at zero. After removing that factor, its Sturm count on $(-\infty,0)$ is zero. Since $\mathsf B$ is real symmetric, every root is real, so this proves $\mathsf B+(105/128)I\ge0$ and that its minimum eigenvalue is exactly zero. Hence the optimal scalar correction is $105/128$, independently of the earlier LDL argument.
+
+The certificate also factors every integer of the actual interval $(64,128]$ to recover the complete prime-power support, checks every pair for absence of cyclic wrapping, and verifies the active matrix by rational elimination in increasing integer order. It recovers the cross-block squared Frobenius norm $241987/147456$ and the full inactive charge $151260307/4608$. With all actual logarithms enclosed by Arb, the scalar bound is below $-61.02$ and the nonuniform bound exceeds $16.90$. No optimizer or floating eigenvalue calculation enters this second proof.
+
+Run `python -B certificates/presieved_prime_pair_sturm.py` from this directory with `sympy==1.14.0` and `python-flint==0.9.0`. The exact polynomial/root-count tests and all interval inequalities passed. This is a second finite proof mechanism for the same example, not a new uniform weighted-prime estimate or Lean formalization.

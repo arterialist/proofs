@@ -238,4 +238,12 @@ g(x+j+1)-g(x+j)
 $$
 `physicalDifference_abs_le` bounds its modulus by $[\log(x+j+1)+4\log2]/(x+j+1)$. `physicalDifference_power_bound` provides an explicit $x^{-5/4}$ majorant after multiplication by $x^{-1/2}$ on $x\ge1$. `innovation_integrable` and `innovation_integral` prove the actual ordinary increment lies in causal $L^1$ and give its physical integral.
 
-These two modules do not yet identify the kernel-defined charge with half the integral of that increment; the vanishing terminal-strip step remains a separate dependency. They also do not prove the sharper large-$j$ decay, analytic floor-kernel remainder, Abel pole identity or RH sign criterion above. Their affected target builds and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`.
+These two modules do not yet identify the kernel-defined charge with half the integral of that increment; the separate boundary module below now supplies the vanishing terminal-strip step. They also do not prove the sharper large-$j$ decay, analytic floor-kernel remainder, Abel pole identity or RH sign criterion above. Their affected target builds and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`.
+
+### The retained terminal strip
+
+[SuccessorFeedbackBoundary.lean](BuildingBlocks/SuccessorFeedbackBoundary.lean) closes that exact charge conversion. For a measurable bounded physical profile $H$, `profile_finite_charge_identity` retains the full strip $R<u\le\sigma(R)$ in the difference between the truncated successor integral and its kernel charge. `terminal_strip_bound` bounds this strip by $4M e^{-R/2}$ when $|H|\le M$, uniformly in the ordinary successor index. `profile_relative_charge` passes to the infinite interval using only the integrable difference and kernel product.
+
+For the literal arithmetic source, `driver_eq_innovation_integral` and `driver_eq_difference_integral` now prove
+$$e_j=\frac12\int_{v>0}(S^{j+1}a-S^ja)(v)\,dv=\frac12\int_{x>1}[g(x+j+1)-g(x+j)]\frac{dx}{\sqrt x}.$$
+The initial cell is already in the exact kernel; both unweighted source integrals remain unseparated. The module build and main axiom checks passed with the normal three axioms. The sharper coefficient decay and analytic Abel remainder are still outside this source-to-driver chain.
