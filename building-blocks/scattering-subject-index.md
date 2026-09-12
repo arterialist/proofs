@@ -208,3 +208,6 @@ The [formal decaying memory charge](charge-compensated-successor-memory.md#forma
 
 
 The [cutoff-centered Gram estimate](weighted-prefix-centered-source-gram.md) replaces logarithmic moment losses by an explicit finite weighted-prefix supremum. Finite Abel absorption then works for every diverging subpolynomial schedule, conditional on the actual evolved subpower estimate. This sharpens the older direct rank-one consumer while preserving its proof as a distinct method; the variable-Laplace theorem also covers bounded schedules. The unknown prefix supremum is retained until it is absorbed, never assumed bounded.
+
+
+The [full continuous remainder gap](theta-continuous-remainder-explicit-gap.md) retains a positive same-half-line minorant and an actual two-strip bridge. An exact Hermitian two-cell matrix gives an explicit positive gap for every centered source at fixed core, and adding every internal prime-power edge preserves it. The theorem distinguishes this full continuous remainder from a prime-only comparison. Its positive fraction has not been shown to overcome the complete affine core deficit.

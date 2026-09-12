@@ -19,3 +19,6 @@ The [odd theorem](theta-odd-zero-mode-synthesis.md) retains the pole functional 
 All theta jump and spectral results indexed here are written analysis. Historical recovery continues; this index does not assert that the entire corpus has been integrated.
 
 The [positive finite-path routing obstruction](theta-positive-routing-obstruction.md) strengthens the earlier single-path failure. Equality in every derivative score forces any capacity-one weighted-Cauchy routing to use one edge almost everywhere, but the actual pole conductance is not dominated by the jump conductance. Random or endpoint-dependent routes and unbounded finite path lengths are included. Signed methods, quotient comparisons and infinite-path limits are outside its stated scope.
+
+
+The [full continuous remainder gap](theta-continuous-remainder-explicit-gap.md) retains a positive same-half-line minorant and an actual two-strip bridge. An exact Hermitian two-cell matrix gives an explicit positive gap for every centered source at fixed core, and adding every internal prime-power edge preserves it. The theorem distinguishes this full continuous remainder from a prime-only comparison. Its positive fraction has not been shown to overcome the complete affine core deficit.
