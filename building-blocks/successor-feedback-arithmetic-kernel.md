@@ -233,3 +233,5 @@ the remaining RH consumer, is still unproved.
 The notation $W_r(n)$ in this chapter is the birth coefficient $d_r(n)$ of [the factorial-division expansion](actual-Abel-factorial-division-positivity.md); it is not the quadratic W readout. The potential $F$ and the signed adjoint measure provide a separate endpoint-versus-cell formulation of the same feedback.
 
 This chapter contains written proofs and applications of the stated classical inputs. No Lean formalization of its scaling, moment or signed-core conclusion is asserted, and no unconditional boundary sign for the actual feedback is claimed.
+
+The [factorial-potential interpolation](factorial-potential-integer-interpolation.md) is a separate exact decomposition with a negative nonvanishing correction. The [positive common-inner observation](coherent-core-positive-observation-inner-history.md) and its [signed original-source cutoff port](positive-history-observation-original-cutoff-port.md) retain the complete scalar core question.
