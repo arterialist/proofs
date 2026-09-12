@@ -245,6 +245,8 @@ The [natural-exponent concavity theorem](theta-natural-exponent-concavity.md) pr
 
 The [third-derivative theorem](theta-natural-exponent-third-derivative.md) further proves $\phi_{\mathrm{nat}}'''(s)>0$ on the same entire real interval. A complete-theta interval certificate, analytic tail, and three-crossing moment argument establish the result. The proof is computer-assisted and has no Lean formalization; it does not establish all derivative signs or a positive Lévy representation.
 
+The [small-jump construction](theta-small-jump-levy-density.md) proves that the candidate Lévy density is positive and strictly decreasing near zero, using a uniform complex theta saddle and Bromwich inversion. The [global sign and positive-mixture criterion](theta-positive-jump-mixture.md) characterizes its extension to a nonincreasing Lévy density by one unproved global sign, equivalently an exact positive integral equation. These are written analytic results without Lean formalizations. The global sign remains open, and ordinary Bernstein or $B_J$ membership does not itself imply RH.
+
 ## Signed divisor packets
 
 The [divisor-cube construction](signed-divisor-packets.md) partitions actual Möbius labels by coprime cores and retains all prefix, suffix and mean terms. For a growing primorial, the interior and packet diagonal have energy $X^{4+o(1)}$; a classical Mertens estimate gives a strict saving over packet magnitudes for the whole signed boundary. Its remaining RH-scale covariance upper bound is unproved.
