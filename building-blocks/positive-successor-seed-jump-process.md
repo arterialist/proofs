@@ -1,6 +1,6 @@
 # A positive finite-activity process from the complete successor seed
 
-The all-prime completion and domain-qualified response in (26)–(28) are written proofs. The complete single-clock identities and the finite-prime probability construction are formalized in Lean as described below. This consumes the exact seed and fixed-Cauchy covariance in [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md). It constructs a positive process from the actual complete prime profiles. It does not identify that process with the natural theta exponent or assert a sign for the Weil readout. The Bernstein and compound Poisson framework is classical; see Schilling, Song and Vondraček, [*Bernstein Functions: Theory and Applications*, second edition, chapters 3, 5 and 13](https://motapa.de/bernstein_functions/index.shtml). The Hardy, Poisson and Blaschke tools below are also classical; the full arithmetic seed and its response are the stated specialization.
+The cutoff-law convergence and domain-qualified operator response in (26)–(28) are written proofs. The complete single-clock identities and the finite- and all-prime probability semigroups are formalized in Lean as described below. This consumes the exact seed and fixed-Cauchy covariance in [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md). It constructs a positive process from the actual complete prime profiles. It does not identify that process with the natural theta exponent or assert a sign for the Weil readout. The Bernstein and compound Poisson framework is classical; see Schilling, Song and Vondraček, [*Bernstein Functions: Theory and Applications*, second edition, chapters 3, 5 and 13](https://motapa.de/bernstein_functions/index.shtml). The Hardy, Poisson and Blaschke tools below are also classical; the full arithmetic seed and its response are the stated specialization.
 
 For every prime p let
 
@@ -377,7 +377,7 @@ $$
 
 The series retains every jump count. `seedProcess_isProbability` proves total mass one, and `seedProcess_zero` proves its time-zero value is $\delta_0$. More generally, `poissonLaw_original_series` proves this identity for every finite positive measure on $\mathbb R$. Its construction first normalizes the jump measure and then proves `normalizedJump_reconstruct` and `jumpPower_normalized_reconstruct`, so the final law is exactly the unnormalized convolution series above. If the intensity is zero, the selected normalized jump law is $\delta_0$ and the Poisson count has only its zero-jump term; no division by a nonzero intensity is imposed as a hypothesis.
 
-These are formalizations of the classical finite-activity compound-Poisson construction specialized to the complete prime density. The primary mathematical framework is Schilling, Song and Vondraček, [*Bernstein Functions*, chapters 3 and 5](https://motapa.de/bernstein_functions/index.shtml). Both modules compile with the pinned Lean/mathlib versions; the checked probability, original-series, time-zero and finite-measure targets use only `propext`, `Classical.choice` and `Quot.sound`. The uniform all-prime completion and its bounded operator action remain separate written dependencies.
+These are formalizations of the classical finite-activity compound-Poisson construction specialized to the complete prime density. The primary mathematical framework is Schilling, Song and Vondraček, [*Bernstein Functions*, chapters 3 and 5](https://motapa.de/bernstein_functions/index.shtml). Both modules compile with the pinned Lean/mathlib versions; the checked probability, original-series, time-zero and finite-measure targets use only `propext`, `Classical.choice` and `Quot.sound`. The cutoff-law convergence and bounded operator action remain separate written dependencies; the all-prime measure and probability law are formalized below.
 
 
 ## Formalized finite-prime time semigroup
@@ -394,3 +394,50 @@ The exact declaration is `BuildingBlocks.PrimeSeedProcess.seedProcess_add`. Toge
 The proof retains all paired histories. `jumpPower_add` combines an $m$-jump and an $n$-jump measure into the $(m+n)$-jump measure. The binomial coefficient identity gives `poissonPMFReal_add` and its `poissonPMF_add_antidiagonal` version. Convolution of countable positive measure mixtures and regrouping the pairs by total count then prove `poissonLaw_add` for every probability jump measure on $\mathbb R$. Substitution of the actual normalized prime jump law gives the displayed result, including zero intensity.
 
 This is the classical compound-Poisson semigroup argument, with the primary framework cited above. The module and changed aggregate compile with the pinned Lean/mathlib versions. The checked `poissonLaw_add` and `seedProcess_add` targets use only `propext`, `Classical.choice` and `Quot.sound`. No analytic exponent formula, uniform all-prime limit or operator-domain claim is added to the formal scope by this module.
+
+
+## Formalized all-prime finite activity and probability semigroup
+
+The new arithmetic input in [PrimeSeedActivityBound.lean](BuildingBlocks/PrimeSeedActivityBound.lean) is entirely supplied by the existing unconditional theorem `BuildingBlocks.CoarsePrimitive.psi_le_linear` in [CoarsePrimeBounds.lean](BuildingBlocks/CoarsePrimeBounds.lean):
+
+$$
+ \psi(N)\le 4(\log2)N\qquad(N\in\mathbb N).
+$$
+
+No PNT or RH assumption is added. For any finite set of primes $S\subseteq[N,2N]$, $N\ge2$, `prime_shell_activity_le` proves
+
+$$
+ \sum_{p\in S}\frac1{p\log p}\le\frac{8\log2}{\log^2N}.
+$$
+
+Indeed $1/(p\log p)\le\log p/[N\log^2N]$, and the prime logarithms are bounded by the full von Mangoldt sum through $2N$. The exact dyadic fibres $\{p:\lfloor\log_2p\rfloor=k\}$ are finite. `logFiber_weight_le` bounds their sums by $8/[k^2\log2]$ for $k\ge1$. Partitioning all actual primes into these fibres proves `summable_prime_reciprocal_mul_log`.
+
+[PrimeSeedAllPrimeLevy.lean](BuildingBlocks/PrimeSeedAllPrimeLevy.lean) combines this classical Chebyshev argument with the literal seed estimate
+
+$$
+ \int_{\mathbb R}\frac{B_p(v)}v\,dv\le\frac2{p\log p}.
+$$
+
+It defines $B(v)=\sum_p B_p(v)$ as `allPrimeSeed`. The theorem `seed_prime_finite_support` proves that the sum has finite support in the prime index at each fixed age, since an activated prime satisfies $p\le e^v$. Thus this is the actual floor-seed sum, including its endpoints. The real quotient at $v=0$ is zero, where every seed vanishes.
+
+| Exact statement | Declaration in `BuildingBlocks.PrimeSeedMass` |
+| --- | --- |
+| The complete seed activity masses are summable | `summable_prime_levy_masses` |
+| $\nu_\infty=\sum_p\nu_{\{p\}}$ has its exact summed total mass | `allPrimeLevyMeasure_mass` |
+| $\nu_\infty$ is a finite measure | `allPrimeLevyMeasure_isFiniteMeasure` |
+| $\nu_\infty(dv)=B(v)\,dv/v$ | `allPrimeLevyMeasure_eq_withDensity` |
+| The collective seed $B$ itself is not integrable | `not_integrable_allPrimeSeed` |
+
+The density identity uses nonnegative measure sums and the pointwise finite seed sum. The last statement uses the already formalized no-integrable-majorant theorem and classical divergence of $\sum_p1/p$. It concerns $B$ rather than $B/v$; the denominator is essential for finite activity. The module does not separately export an infinite-first-moment expectation identity.
+
+In namespace `BuildingBlocks.PrimeSeedProcess`, `allPrimeProcess` is the compound-Poisson law of this exact all-prime measure. The declarations `allPrimeProcess_isProbability`, `allPrimeProcess_zero`, `allPrimeProcess_add` and `allPrimeProcess_original_series` prove, for $u,v\ge0$,
+
+$$
+ \mu_u=e^{-u\nu_\infty(\mathbb R)}
+       \sum_{n\ge0}\frac{u^n}{n!}\nu_\infty^{*n},
+ \qquad \mu_0=\delta_0,
+ \qquad \mu_u*\mu_v=\mu_{u+v},
+ \qquad \mu_u(\mathbb R)=1.
+$$
+
+These are applications of the classical finite-activity compound-Poisson framework cited above to the unconditional arithmetic measure. Both new modules and the changed aggregate compile with the pinned Lean/mathlib versions. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. This formalized construction does not yet prove convergence of the finite-prime laws to $\mu_u$, the quantitative $O(1/\log P)$ activity tail, Laplace-exponent formulas or bounded operator action. Those results retain their separate written proofs and hypotheses.

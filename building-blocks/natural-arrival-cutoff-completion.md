@@ -216,4 +216,3 @@ The first term is bounded by a constant times the second. This proves (3)--(4) w
 The global modulus (15) also proves uniformly bounded mixed energies of $g_N$ and finite increment energy for $g$. The $L^2$ functions $g_N$ are Cauchy in the mixed norm by (3). Their limit has exactly the actual representative $g$: each fixed compact interval agrees with that source once $N$ passes it, and the common zero extension below one pins the constant-distribution ambiguity. This is the same representative identified by the earlier smooth logarithmic cutoffs.
 
 The result includes the exact seed, every admitted $\Lambda(n)$, and the full density and tail $E(N)/x$. It proves neither $g\in L^2$ nor positivity of a subsequent signed readout, and makes no RH claim. The convergence in the mixed completion is the written theorem proved above.
-
