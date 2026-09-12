@@ -134,3 +134,8 @@ import BuildingBlocks.SamePrimeHistoryResidual
 import BuildingBlocks.SamePrimeHistoryProbability
 import BuildingBlocks.SamePrimeFirstSquare
 import BuildingBlocks.SamePrimeStrictDelay
+import BuildingBlocks.SamePrimeBirthConvolution
+import BuildingBlocks.SamePrimeBlockCalibration
+import BuildingBlocks.PrimeBlockSource
+import BuildingBlocks.PrimeSourceDistinctFilter
+import BuildingBlocks.PrimeDensityFilter

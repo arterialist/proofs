@@ -628,3 +628,44 @@ where the convolution uses the causal interval. The triangular Fubini theorem, l
 The adapted modules compile under the repository pin. The displayed main theorem axiom checks contain only `propext`, `Classical.choice` and `Quot.sound`. Literal same-prime and ordered-distinct-prime consumers are separate dependencies; the later analytic conclusions in this chapter are not claimed as formalized by these modules.
 
 The [complete same-prime history theorem](full-history-same-prime-residual.md) retains every proper power and proves $-s(v)\le\int s(v-r)d\mu-s(v)\le0$ for every causal probability law. The residual is strictly negative after $\log4$ when positive delays have positive mass. Its finite-sum, measurability and integral proof is formalized; PNT constants and full $W$ consumers remain written. The same dependency chain proves actual chronological divisibility monotonicity and the product-event Turán bound.
+
+
+## Formal prime-block calibration, distinct pairs and density terms
+
+Write $b_\beta(v)=1_{v\ge\beta}e^{-v/2}$ and $\vartheta(v)=1_{v\ge0}(e^{-v/2}-e^{-3v/2})$. [SamePrimeBirthConvolution.lean](BuildingBlocks/SamePrimeBirthConvolution.lean), `filtered_birth_convolution`, proves for $\beta,\gamma,s\ge0$
+$$L_0(b_\beta*b_\gamma)(s)=e^{-(\beta+\gamma)/2}\vartheta(s-\beta-\gamma).$$
+It derives the actual overlap interval $[\beta,s-\gamma]$, including an empty interval and the zero-length birth endpoint, and proves every needed integral exists. The unfiltered convolution is $e^{-s/2}(s-\beta-\gamma)_+$.
+
+For a prime $p$, let
+$$a_p(v)=\log p\sum_{j\ge1}b_{j\log p}(v).$$
+Only finitely many histories are active at each age. [SamePrimeBlockCalibration.lean](BuildingBlocks/SamePrimeBlockCalibration.lean) freezes a complete oversized cutoff on $[0,s]$, proves all omitted births vanish, and regroups every positive ordered exponent pair by $m=j+k$. Its `actual_tau_calibration` proves
+$$\sum_{p\le e^s}L_0(a_p*a_p)(s)=\tau(s),$$
+with the exact multiplicity $m-1$, all proper powers and the initial zero term retained. Local continuity and filtered integrability are proved before the finite rearrangement.
+
+[PrimeBlockSource.lean](BuildingBlocks/PrimeBlockSource.lean), `primeBlockSum_eq_psi`, identifies the actual sum
+$$\sum_{p\le e^v}a_p(v)=e^{-v/2}\psi(\lfloor e^v\rfloor).$$
+The adapted module reuses `CoarsePrimitive.psi` and its existing exact Mangoldt sum; it introduces no new prime-counting convention. The finite prime-power bijection is proved using unique prime-power parametrization. `source_eq_primeBlocks` gives $a=\sum_pa_p-d$ on nonnegative ages, with $d(v)=e^{v/2}$ and $a(0)=-1$.
+
+[PrimeSourceDistinctFilter.lean](BuildingBlocks/PrimeSourceDistinctFilter.lean), `source_memLp` and `filtered_source_distinct`, derives local $L^2$ membership of this actual source and proves
+$$
+L_0(a*a)(s)-\tau(s)
+=L_0\!\left(\sum_{p\ne q}a_p*a_q\right)(s)
+-L_0\!\left(\sum_pa_p*d\right)(s)
+-L_0\!\left(\sum_pd*a_p\right)(s)
++L_0(d*d)(s).
+$$
+The primes in each sum are frozen at the external cutoff, with every earlier active prime covered. The distinct-prime sum is ordered. All triangular integrability and filter exchanges follow from the proved local $L^2$ data; they are not added as hypotheses.
+
+[PrimeDensityFilter.lean](BuildingBlocks/PrimeDensityFilter.lean) evaluates the remaining elementary pieces. Its `prime_power_pair_evaluation`, `prime_power_mixed_evaluation` and `density_square_normalized` prove, at $s\ge0$, the literal coefficients
+$$
+(\log p\log q)L_0(b_{j\log p}*b_{k\log q})(s)
+=1_{p^jq^k\le e^s}\,e^{-3s/2}(e^s-p^jq^k)\log p\log q,
+$$
+$$
+\log p\,[L_0(b_{j\log p}*d)+L_0(d*b_{j\log p})](s)
+=1_{p^j\le e^s}\,e^{-3s/2}\log p\,\frac{e^{2s}-p^{2j}}{p^j},
+$$
+$$L_0(d*d)(s)=e^{-3s/2}\left(\frac12s e^{2s}+\frac14e^{2s}-\frac14\right).$$
+The first two formulas include equality at their cutoffs, where the coefficient vanishes. Both mixed orders are evaluated before combining them. These are exact identities from finite prime-power counting, causal convolution and elementary exponential integration. They provide no sign estimate for their total.
+
+The five adapted modules compile with only the standard three axioms in their displayed main checks. The final finite-$V$ assembly and subsequent harmonic aggregation are separate formal consumers. The full analytic $W$ criterion and its eventual sign have not been proved by these finite identities.
