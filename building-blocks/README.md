@@ -336,3 +336,5 @@ The [theta eigenfunction regularity chapter](theta-jump-eigenfunction-regularity
 The independent [theta synthesis route](theta-jump-subject-index.md) is now collected from its exact equality-space description through quotient indicator bounds, Borel contours, weighted duality and smoothing in the actual jump-form norm. It retains the unresolved boundary case and the odd rank-one correction.
 
 The [prime-power square comparison](prime-power-gram-correction.md), [composite counterexample](composite-gram-obstruction.md), [Jordan density correction](jordan-mixed-correction.md), and [exact counting births](counting-birth-full-generator.md) preserve the older arithmetic overlap and transport arguments, including their precise failed extensions.
+
+The [largest-prime sector theorem](macroscopic-sector-sign.md) preserves an unconditional collective arithmetic sign. The [positive-routing theorem](theta-positive-routing-obstruction.md) gives a separate impossibility result for the specified finite-path comparison class, with its equality mechanism explicit.
