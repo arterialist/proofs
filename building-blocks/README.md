@@ -356,3 +356,7 @@ The historical [adjacent cyclotomic histories](cyclotomic-adjacent-history-corre
 The [restricted-range refinements](cyclotomic-restricted-range-refinements.md) retain temporal mass, endpoint deficit, arbitrary age bands, polylogarithmic proper-divisor costs and exact gcd moments. The [valuation reduction](cyclotomic-valuation-update.md) gives classical neutral-update filters with full conductor bookkeeping. The [delayed-inverse construction](cyclotomic-old-inverse-pairs.md) proves the exact threshold-potential remainder and certifies why inverse factors do not imply clipped dissipation.
 
 The [actual-prefix refinement theorem](actual-prefix-refinement.md) gives the exact two-row carry law, empirical bias and logarithmic information saturation. The [finite-prime Möbius consumer](finite-prime-mobius-consumer.md) retains every induced quotient cutoff and density correction, then proves a linear lower bound for the absolute prime-increment sum. These preserve the initial counting/division construction and its precise unresolved signed estimate.
+
+## Prime-division Feynman–Kac paths
+
+The [written construction](prime-division-feynman-kac.md) gives the exact tilted division chain, completed path budget, same-prime drift and full-$W$ adjoint. Its first moment is finite, its one-prime completed second moment can be infinite, and a fixed Chebyshev slack does not cover the baseline. The positive finite semigroup is retained as a proved object; the needed signed arithmetic bound remains open.
