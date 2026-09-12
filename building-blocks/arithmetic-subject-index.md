@@ -52,3 +52,11 @@ The [harmonic-convolution theorem](harmonic-convolution.md) proves general time-
 The [actual arithmetic sign criterion](actual-critical-sign-criterion.md) is the formal downstream implication: a stated eventual sign of the complete arithmetic sum implies RH. It does not prove that sign. The local identities, covariance results and phase classifications above are possible inputs to this consumer, not substitutes for its missing global estimate.
 
 The [scattering subject index](scattering-subject-index.md) follows a second analytic route from full prime-power discrepancy to a relative trace norm. It includes an unconditional density-cancellation estimate and the exact single-observation RH criterion, with its subpower premise still open.
+
+## Actual finite-frequency readouts
+
+The [successor cutoff theorem](actual-successor-frequency-cutoff.md) controls clustered integer jumps and retains the causal endpoint multiplier and literal same-prime cost in the full $W$. It gives square-root and $x^{3/8}$ frequency scales by different support arguments, and proves that the actual integrand takes both signs.
+
+The [causal rectangle decomposition](causal-rectangle-frequency-cutoff.md) gives a cube-root cutoff by localizing both histories. The [integer-product argument](product-location-frequency-cutoff.md) then uses local divisor counts and a smooth Fourier kernel to recover normalized $W$ from frequencies at most $2x^{1/4}(1+\log x)^2$, with error $O(1/\log x)$. These estimates control discarded frequencies. The retained signed integral remains unbounded.
+
+The [finite-band dyadic flux](prime-innovation-finite-band-flux.md) is a distinct consumer of the successor-tail estimate. Its particular causal innovation has full flux $1/2$, and the finite-band flux converges to that value unconditionally. It gives no positivity statement for all Weil tests.

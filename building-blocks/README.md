@@ -310,3 +310,7 @@ The [reciprocal quotient-window modules](reciprocal-quotient-windows.md) prove a
 ## Semilocal scattering and signed arithmetic phases
 
 The [scattering subject index](scattering-subject-index.md) connects compact negative parts, exact weighted traces, continuum and rational pole corrections, Brownian signed-tail energy, and the two distinct arithmetic norm estimates. A separate single-observation theorem characterizes RH by a subpower norm bound; that unconditional bound remains open. All results in this group are written analytic proofs.
+
+## Actual successor and product-location cutoffs
+
+The [finite-frequency collection](arithmetic-subject-index.md#actual-finite-frequency-readouts) preserves three distinct full-$W$ approximation methods, with square-root, $3/8$, cube-root and quarter-power frequency scales. It also includes the proof that the actual integrand has both signs and the particular positive dyadic flux. The full arithmetic readout, its density terms, all proper powers and its endpoints are retained; no bound for the remaining signed integral is proved.

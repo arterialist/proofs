@@ -37,3 +37,7 @@ for $eta>1/2$. Its stated boundary estimate at $eta=1/2$ has one extra logarit
 The [single-observation theorem](single-observation-scattering-criterion.md) proves that one fixed everywhere-positive Schwartz observation satisfying $N_chi(widehat U_X)=O_epsilon(X^{sigma+epsilon})$ for every $epsilon>0$ excludes all zeros with real part greater than $1/2+sigma$. The proof uses local $L^1$-valued continuation and the positive residue of a zero of any multiplicity. It needs no globally rightmost zero.
 
 Consequently RH is equivalent to the subpower bound for that one observation. The available unconditional $o(sqrt X)$ estimate is weaker, and no sign of the full Weil form follows from the finiteness of these auxiliary norms. The [arithmetic subject index](arithmetic-subject-index.md) records the counting, division and covariance identities that may supply further input.
+
+## A particular positive finite-band input
+
+The [dyadic innovation flux](prime-innovation-finite-band-flux.md) keeps both projection commutators and the exact initial seed. Orthogonal Fourier bands reduce the error to a seed-tail overlap and a quadratic tail term. The resulting flux tends to $1/2$ without a mean-energy assumption. This one-prime probe does not imply a sign on arbitrary tests or on the complete all-place form. Its arithmetic Fourier estimate is indexed in the [actual cutoff collection](arithmetic-subject-index.md#actual-finite-frequency-readouts).
