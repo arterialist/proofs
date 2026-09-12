@@ -135,3 +135,5 @@ while the cancelled affine logarithm and its finer arithmetic
 remainder remain separate.
 
 The [two-order cancellation theorem](successor-division-two-order-cancellation.md) retains the affine logarithmic readout separately. These are written proofs; the discrete weighted limits and divisor comparison are not Lean formalized. The beta/gamma identities and Möbius inversion have classical attribution through the linked dependencies.
+
+The [quadratic logarithmic endpoint](successor-division-quadratic-log-readout.md) has unconditional normalized limit $\pi^{3/2}$, using the classical full Selberg weight. The distinct [coherent lattice identity](actual-coherent-division-lattice-remainder.md), [mean-removal refinement](actual-coherent-successor-quadrature-refinement.md) and [dual cosine/centered ODE proof](actual-division-lattice-dual-cosine.md) retain the entire physical correction, fractional cell and periodic curvature. The signed first-logarithm comparison remains unproved.
