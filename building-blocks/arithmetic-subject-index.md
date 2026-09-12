@@ -174,3 +174,7 @@ The [even-character separation theorem](even-character-zero-separation.md) remov
 The [three-step matching extension](bounded-factor-matching.md#6-a-finite-example-with-genuinely-cheap-head-edges) retains an exact finite example with cheap head edges, a good-time dual, and the conditional extension to other fixed ratios. Its full positive-cost majorant has logarithmic growth exponent $5$; the signed coarse energy remains outside that lower bound.
 
 The [original-graph coherent matching proof](coherent-large-label-matching.md) preserves the exact observable-distance identity, an actual three-edge cancellation repair, and complete fixed-matching energy and primal–dual certificates. Its whole-interval dual gives exponent $5-4/k$ for the positive majorant; the ratio-eight proof uses a different good-time argument.
+
+## Positive successor primitive and the complete W comparison
+
+The [actual primitive theorem](actual-source-successor-primitive.md) proves positivity at every positive age by exact arithmetic-cell extrema and a classical explicit PNT tail. The [complete W comparison](actual-W-positive-primitive-analysis.md) gives strict cumulative ordering, while a certified actual zero and a Laplace singularity argument prove that the unsmoothed difference has both signs arbitrarily far out. It retains the identical same-prime subtraction, density cancellation and unchanged off-critical double-pole coefficient. These are written and computer-assisted proofs, not the missing eventual W sign.
