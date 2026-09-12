@@ -1,6 +1,6 @@
 # An additive-clock completion for the actual history
 
-The [actual cutoff-uniform increment theorem](successor-collective-prime-compatibility.md), equations (27)–(32), puts the complete prime-error history in an additive Hilbert space. The proof below gives its exact energy, source-conditioned dilation domain and continuous fixed-window readouts. No bound on the critical unweighted source norm is assumed. These are written proofs, not Lean theorems.
+The [actual cutoff-uniform increment theorem](successor-collective-prime-compatibility.md), equations (27)–(32), puts the complete prime-error history in an additive Hilbert space. The proof below gives its exact energy, source-conditioned dilation domain and continuous fixed-window readouts. No bound on the critical unweighted source norm is assumed. The completion and actual-source membership proofs are written. The causal energy anchor and its exact logarithmic normalization are formalized below.
 
 Let
 $$
@@ -155,3 +155,29 @@ The norm of the completed test kernel is not asserted uniform as its physical wi
 The positive increment form and its Fourier multiplier use the classical translation/Plancherel construction. Its PNT input and attribution are given in the linked successor theorem. The tensor marginal correction retains the original causal pairing because the anchor function vanishes on the source support. Neither positive energy nor source membership proves positivity of the old prime operator.
 
 The [natural-arrival cutoff proof](natural-arrival-cutoff-completion.md) gives a distinct quantitative construction for the literal frozen-tail approximants, including their full derivative measures and inclusive joins. It identifies the same completed causal source as the smooth logarithmic cutoffs used above.
+
+
+## Formalized causal energy anchor
+
+[MixedEnergyAnchoring.lean](BuildingBlocks/MixedEnergyAnchoring.lean) defines the same energy as (2) by extended nonnegative integrals. For every measurable real $H$ that vanishes almost everywhere below $1$, it proves
+$$
+\int_1^\infty \frac{|H(x)|^2}{\max(1,x-1)}\,dx
+\le \mathcal E(H),
+\qquad
+\int_1^\infty \frac{|H(x)|^2}{x}\,dx
+\le \mathcal E(H).
+$$
+No unweighted $L^2$ or finite-energy assumption enters these statements. The first inequality retains the entire tail of increments crossing the causal zero region: for fixed $x$, integration over $h>\max(1,x-1)$ gives exactly $1/\max(1,x-1)$.
+
+All names below belong to `BuildingBlocks.MixedEnergy`.
+
+| Written identity or bound | Formal theorem |
+| --- | --- |
+| Equality of the backward and forward increment conventions | `increment_eq_forward` |
+| Long-increment part of (2), with the factor $h^{-2}$ outside the spatial integral | `longEnergy_eq` |
+| Exact causal reciprocal-max anchor | `causal_anchor` |
+| The weaker physical weight $1/x$ | `causal_anchor_one_div` |
+| $\int_0^\infty |H(e^u)|^2du=\int_1^\infty |H(x)|^2dx/x$ | `logarithmic_anchor_identity` |
+| For $f(u)=e^{u/2}H(e^u)$, $\int_0^\infty|e^{-u/2}f(u)|^2du\le\mathcal E(H)$ | `weighted_physical_square_le_energy` |
+
+The module and the changed aggregate import compile with Lean 4.24.0. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. This formalization supplies the weighted input used in the [compensated-memory theorem](charge-compensated-successor-memory.md). It does not formalize completion of the energy space, the PNT estimate proving actual-source membership, or the subsequent operator response.
