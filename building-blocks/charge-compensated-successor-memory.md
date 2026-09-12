@@ -350,7 +350,7 @@ $$
 
 exists without assuming that $K_Ff$ has a finite total integral. The theorem `finitePrimeSeed_compensated_memory_commutator` specializes this identity to every finite set of complete prime profiles. Both rank corrections remain present.
 
-All four module targets built successfully. Their checked primary theorems depend only on `propext`, `Classical.choice` and `Quot.sound`. The all-prime $B\in L^2$ bound, the mixed-source-to-$L^1$ extension, and its quantitative joint limit remain outside this formal batch. The transposed charge column is formalized below. In particular, the formal $L^2$ domain is not an assertion that the uncut actual critical source lies in unweighted $L^2$.
+All four module targets built successfully. Their checked primary theorems depend only on `propext`, `Classical.choice` and `Quot.sound`. The later sections formalize the transposed charge column and all-prime $L^2$ kernel. The mixed-source-to-$L^1$ extension and its quantitative joint limit remain written. In particular, the formal $L^2$ input domain does not assert that the uncut actual critical source lies in unweighted $L^2$.
 
 
 ## Formalized transposed charge and complete corrected kernel
@@ -380,4 +380,37 @@ $$
 
 Its actual specialization `finitePrimeSeed_corrected_kernel_identity` assumes only a finite prime set, measurable real $f$, and its half-line $L^2$ membership. The complete prime profiles satisfy every kernel premise by the already formal exact square integrals. The original exponential reference, predecessor initial interval and both rank terms remain in the formula.
 
-The affected target and aggregate build passed. The checked primary theorems use only `propext`, `Classical.choice` and `Quot.sound`. This finite-prime $L^2$ Fubini theorem does not establish the all-prime bound or the quantitative mixed-source completion above.
+The affected target and aggregate build passed. The checked primary theorems use only `propext`, `Classical.choice` and `Quot.sound`. The following all-prime specialization extends this $L^2$ Fubini theorem; the quantitative mixed-source completion above remains a separate written result.
+
+## Formalized all-prime memory and cutoff convergence
+
+The [all-prime square bound](positive-successor-seed-jump-process.md#formalized-all-prime-square-integrability) proves $B\in L^2(\mathbb R)$ from unconditional Chebyshev bounds and actual finite activity. [AllPrimeMemoryKernel](BuildingBlocks/AllPrimeMemoryKernel.lean) then substitutes the literal complete seed in the earlier absolute Fubini and corrected-column theorem. For measurable real $f\in L^2(0,\infty)$ it proves absolute existence of $\delta(K_Bf)$, the transposed identity and the full pointwise formula
+
+$$
+\delta(K_Bf)=\int_0^\infty d_B(u)f(u)du,
+\qquad
+d_B(u)=\frac12\int_0^\infty k(u+w)B(w)dw\quad(u\ge0),
+$$
+$$
+[C,K_B]f(v)=\int_0^\infty\left[M_B(v,u)
++\frac{(K_Ba_0)(v)}2k(u)-a_0(v)d_B(u)\right]f(u)du.
+$$
+
+The declarations are `allPrimeSeed_memory_defect_integrable`, `allPrimeSeed_defect_causalMemory`, `allPrimeSeed_defectKernel_causal` and `allPrimeSeed_corrected_kernel_identity`, in namespace `BuildingBlocks.PrimeSeedMass`. No analytic premise on $B$ is assumed. The original exponential reference, initial predecessor interval and both rank corrections remain.
+
+[PrimeSeedSquareConvergence](BuildingBlocks/PrimeSeedSquareConvergence.lean) uses the strict cutoff $B_{<P}=\sum_{p<P}B_p$. At each age this equals $B$ for every sufficiently large cutoff. Positivity gives $(B-B_{<P})^2\le B^2$, so dominated convergence proves `cutoff_seed_square_error_tendsto`:
+
+$$
+\int_{\mathbb R}(B-B_{<P})^2\longrightarrow0.
+$$
+
+For every half-line $L^2$ input, the same module proves
+
+$$
+\sup_{v\in\mathbb R}|K_Bf(v)-K_{B_{<P}}f(v)|
+\le\|B-B_{<P}\|_2\|f\|_{L^2(0,\infty)}.
+$$
+
+The theorem `cutoff_memory_uniform_unit_ball` has the full uniform quantifiers over every output age and every input in that unit ball. It gives qualitative convergence, without an asserted numerical rate. This is convergence of the original memory output, not a theorem about the stronger mixed-energy input domain or the derivative distribution.
+
+The module targets and changed aggregate compile with the pinned versions. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. The $\mathcal E_c\to L^1$ extension, its arithmetic source membership and joint quantitative estimate (22) remain written proofs.

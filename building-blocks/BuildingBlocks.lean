@@ -106,3 +106,7 @@ import BuildingBlocks.PrimeSeedMemory
 import BuildingBlocks.SuccessorCompensatedL2
 import BuildingBlocks.CompensatedMemoryKernel
 import BuildingBlocks.MemoryChargeFubini
+import BuildingBlocks.PrimeSeedPointwise
+import BuildingBlocks.PrimeSeedAllPrimeSquare
+import BuildingBlocks.AllPrimeMemoryKernel
+import BuildingBlocks.PrimeSeedSquareConvergence

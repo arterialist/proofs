@@ -565,3 +565,31 @@ $$
 $$
 
 This uses the complete omitted histories and the existing Chebyshev tail bound. The module and changed aggregate compile with the pinned versions, with the checked targets using only the three standard axioms listed above. Holomorphy, all Bernstein derivatives and the probability-law identity $\int e^{-sv}\mu_u(dv)=e^{-u\Phi(s)}$ are not formalized by this module; their written proofs remain distinct from the displayed bounded-integral result.
+
+## Formalized all-prime square integrability
+
+[PrimeSeedPointwise](BuildingBlocks/PrimeSeedPointwise.lean) and [PrimeSeedAllPrimeSquare](BuildingBlocks/PrimeSeedAllPrimeSquare.lean) prove a collective estimate for the literal sum $B=\sum_pB_p$, including all cross terms when squared. The arithmetic input is the already formal unconditional Chebyshev bound `BuildingBlocks.CoarsePrimitive.psi_le_linear`; neither PNT nor RH is assumed.
+
+Complete dyadic prime shells first give, for any finite prime set $S$ above $Y\ge2$,
+
+$$
+\sum_{p\in S}\frac1{p^2}\le\frac{32\log2}{Y\log Y}.
+$$
+
+This is `finite_prime_square_tail`. For $v\ge3\log2$, split the active primes into $p\le e^{v/3}$, $e^{v/3}<p\le e^{v/2}$ and $p>e^{v/2}$. The exact floor cells give, respectively, seed envelopes $e^{-v/2}$, $e^{v/2}/p^3$ and $e^{v/2}/p^2$. Integer counting, a reciprocal-cube tail and the displayed prime-square tail prove
+
+$$
+B(v)\le\frac{64\log2}{v}+5e^{-v/6},\qquad
+\boxed{vB(v)\le64\log2+30.}
+$$
+
+The declarations `finite_seed_three_region_bound` and `allPrimeSeed_age_bound` retain the equality endpoints in those three regions. Since $B\ge0$, the latter implies
+
+$$
+B(v)^2\le(64\log2+30)\frac{B(v)}v
+\qquad(v\ge3\log2).
+$$
+
+The majorant is integrable by the proved finite all-prime activity. On the remaining range only the fixed finite set of primes active at $3\log2$ occurs, and the exact single-prime square integrals give an integrable bound. Thus `integrable_allPrimeSeed_square` and `allPrimeSeed_memLp_two` prove the actual $B\in L^2(\mathbb R)$, while the earlier $B\notin L^1$ theorem remains valid.
+
+Both targets and the changed aggregate compile. Their checked primary theorems use only `propext`, `Classical.choice` and `Quot.sound`. This formalizes an elementary Chebyshev/finite-activity proof, without a priority claim. The [all-prime memory specialization and cutoff convergence](charge-compensated-successor-memory.md#formalized-all-prime-memory-and-cutoff-convergence) use this result on the actual half-line $L^2$ input domain; the stronger mixed-source completion retains its written proof.
