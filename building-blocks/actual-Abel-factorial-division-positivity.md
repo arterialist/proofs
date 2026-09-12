@@ -156,3 +156,7 @@ If even one fixed nonterminal weight $\varphi_r(m)$ has an eventual weak sign on
 This is a conditional implication. It does not assert simplicity, nor that the fixed-$m$ sign fails. It also explains a distinction between individual inverse weights and their exact logarithmic readout. In the initial absolute half-plane, summing (20) against $\log m$ multiplies it by $-\zeta'(s)$, giving
 $$-M_k(s)\frac{\zeta'(s)}{\zeta(s)}.$$
 This combination has a simple pole at every zero, with its multiplicity in the residue. The full signed logarithmic budget therefore retains the RH-level pole structure while canceling the extra inverse-zeta pole orders. Taking absolute inverse weights would discard that cancellation.
+
+## Sharper boundary consequences
+
+The [linear exterior theorem](successor-feedback-linear-inverse-core.md) replaces the earlier logarithmic cutoff by controlled $T/(1-r)$ and proves that the signed moving core is necessarily negative near one. Thus the positive nonterminal cone of (11) cannot persist throughout a final parameter interval. This is a moving-state obstruction, not a refutation of the fixed-$m$ conditional sign discussed above. The [two cancelled kernel moments](successor-division-kernel-moments.md) further force ordered $+,-,+$ signs on that moving scale. These refinements leave the complete logarithmic budget and its RH-equivalent eventual sign open.
