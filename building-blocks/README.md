@@ -380,3 +380,7 @@ The [sawtooth cutoff theorem](cutoff-period-gcd-obstruction.md) gives consecutiv
 ## Variable-length Möbius–divisor blocks
 
 The [global divisor-block chapter](global-divisor-blocks.md) preserves both the elementary correlation estimate and the stronger joint-frequency Robert–Sargos application, uniformly for $\sqrt N\le D\le N/2$ and arbitrary initial subintervals. It gives $O_\delta(N^\delta(N^{1/4}D^{11/16}+D))$, with every floor and truncation cost stated. This extends the range of the central-block method; it supplies no bound for the required full signed total.
+
+## Positive-kernel transfer of the signed divisor correction
+
+The [Balazard–Daval kernel transfer](signed-divisor-positive-kernel-transfer.md) retains the exact direct Mertens term and both smoothing kernels. A logarithmic-time dominated-convergence proof transfers any profile with vanishing logarithmic derivative, with explicit mass constant $(\gamma-1/4)(7/4-\gamma)$. The argument preserves the full signed correction, and does not establish a critical-power Mertens estimate.
