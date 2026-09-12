@@ -217,3 +217,8 @@ The [distinguished-return repair](integer-renewal-and-phase-memory.md#distinguis
 
 
 The [formal cutoff charge estimate](charge-compensated-successor-memory.md#formalized-quantitative-cutoff-for-the-rank-charge) bounds the original-reference rank error by $2(64\log2+30)\sqrt{\mathcal E}/(P\log P)$ for $P\ge8$, retaining exactly $p<P$. The [literal clock-jump module](positive-successor-seed-jump-process.md#formalized-literal-clock-jumps-and-their-complete-mass-budget) proves every one-sided prime-power limit, the cell derivative and the complete geometric mass budget. Identifying that budget with the distributional derivative variation remains a separate step.
+
+
+The [exact seed renewal](exact-seed-renewal-asymptotic.md) has a strictly decreasing renewal sequence with $r_n\sim2/(\pi^2\sqrt n)$. The chapter verifies Caravenna–Doney’s boundary-index theorem and retains an independent moment/monotonicity proof using Kaluza’s sign mechanism. The [signed-source stabilization](signed-source-successor-stabilization.md) gives a strong dilated profile at each fixed cutoff, with limiting squared norm $28\zeta(3)M_N^2/\pi^4$. Its explicit uniform remainder requires $k\ge\max(4,(N-1)^2)$.
+
+The [growing-time source cocycle](growing-time-actual-source-cocycle.md) retains both signed birth orders and exact process dissipation. Complete dyadic diagonal loading tends to $2\log2/(\pi^2c)$, and actual PNT makes the time-linearization errors absolutely summable. The whole successor budget transfers with an explicit error involving the still unknown terminal norm. A positive first admission and a small-time increasing first norm refute universal stepwise sign shortcuts.

@@ -259,3 +259,5 @@ The [birth-Gram calculation](original-l2-evolved-source-gram-work.md) supplies a
 
 
 The [uniform driver-square theorem](uniform-successor-driver-square-bound.md) strengthens the actual driver's constraint to a cutoff-uniform $\ell^2$ bound and proves the matching $\sqrt k$ norm of the reference synthesis. Both conclusions retain the signed Gram above.
+
+The [exact renewal asymptotic](exact-seed-renewal-asymptotic.md) now gives strict decay and its constant. The [fixed-source dilation theorem](signed-source-successor-stabilization.md) evaluates the retained profile and norm at fixed $N$, while preserving a separate uniform-remainder range. It does not evaluate the growing-source Gram discussed above.
