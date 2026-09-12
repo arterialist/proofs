@@ -227,3 +227,5 @@ logarithmic cancellations give the displayed positive pairing with $t^\eta-1-\et
 Here $L(t)$ equals $J(t)$ in [the linear exterior proof](successor-feedback-linear-inverse-core.md), rather than that chapter's separate endpoint sum. The weighted-$L^1$ limit above is the step that permits the logarithmic cancellations at the Euler-product boundary.
 
 This chapter contains written proofs and applications of the stated classical inputs. No Lean formalization of its scaling, moment or signed-core conclusion is asserted, and no unconditional boundary sign for the actual feedback is claimed.
+
+The [complete discrete comparison](successor-division-curved-log-comparison.md) proves the actual weighted integer limit from this beta integral, with fixed-exponent scope. The [two-order cancellation proof](successor-division-two-order-cancellation.md) computes the separate endpoint kernel moments and the exact logarithmic seed defect.
