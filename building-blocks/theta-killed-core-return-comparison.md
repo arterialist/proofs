@@ -317,3 +317,5 @@ This bound does not reach the sharp threshold. As $R\to\infty$,
 $\kappa_R\sim e^{-2R}$, since $\nu(C)\to1$, $r(2R)\sim e^{-R}$, and $4\cosh^2(R/2)\sim e^R$. Even when the return-metric error $K_z-1$ is made small, this direct-kernel minorization loses the required constant. A stronger use of the actual return measure, rather than this uniform minimum of the direct core kernel, is needed near $z=1/2$.
 
 Equations (11), (13), (19), (22), and (24)–(30) give the complete return history, its excursion metric, the two-moment correction, threshold calibration, and a valid weighted comparison with an explicit loss. No uniform comparison proving the sharp theta gap has been obtained.
+
+The [compact infinite-rank sequel](theta-killed-return-compact-infinite-rank.md) identifies the exact resolvent smoothing and the fixed-core threshold obstruction. The [constrained Schur sequel](theta-constrained-schur-across-ground-pole.md) uses both affine pole moments to pass through the visible exterior ground pole without extending the positive clock representation beyond its convergence range.
