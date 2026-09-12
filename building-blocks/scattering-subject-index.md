@@ -123,3 +123,5 @@ The centered domain has an exact [large-birth energy asymptotic](infinite-center
 
 
 The [formalized finite-prime measure and law](positive-successor-seed-jump-process.md#formalized-finite-prime-jump-measure-and-probability-law) retain the literal age-divided seed and all convolution powers. Their proved probability normalization and original-series identity do not assert the later all-prime limit or operator response.
+
+The [finite-prime time-semigroup theorem](positive-successor-seed-jump-process.md#formalized-finite-prime-time-semigroup) is formalized as `seedProcess_add`, extending the exact probability construction by convolution of all paired jump histories. Its finite-set scope leaves the written all-prime completion and operator-domain theorems separate.

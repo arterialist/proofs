@@ -377,4 +377,20 @@ $$
 
 The series retains every jump count. `seedProcess_isProbability` proves total mass one, and `seedProcess_zero` proves its time-zero value is $\delta_0$. More generally, `poissonLaw_original_series` proves this identity for every finite positive measure on $\mathbb R$. Its construction first normalizes the jump measure and then proves `normalizedJump_reconstruct` and `jumpPower_normalized_reconstruct`, so the final law is exactly the unnormalized convolution series above. If the intensity is zero, the selected normalized jump law is $\delta_0$ and the Poisson count has only its zero-jump term; no division by a nonzero intensity is imposed as a hypothesis.
 
-These are formalizations of the classical finite-activity compound-Poisson construction specialized to the complete prime density. The primary mathematical framework is Schilling, Song and Vondraček, [*Bernstein Functions*, chapters 3 and 5](https://motapa.de/bernstein_functions/index.shtml). Both modules compile with the pinned Lean/mathlib versions; the checked probability, original-series, time-zero and finite-measure targets use only `propext`, `Classical.choice` and `Quot.sound`. The time-semigroup identity, the uniform all-prime completion and its bounded operator action are separate written dependencies, not conclusions of these modules.
+These are formalizations of the classical finite-activity compound-Poisson construction specialized to the complete prime density. The primary mathematical framework is Schilling, Song and Vondraček, [*Bernstein Functions*, chapters 3 and 5](https://motapa.de/bernstein_functions/index.shtml). Both modules compile with the pinned Lean/mathlib versions; the checked probability, original-series, time-zero and finite-measure targets use only `propext`, `Classical.choice` and `Quot.sound`. The uniform all-prime completion and its bounded operator action remain separate written dependencies.
+
+
+## Formalized finite-prime time semigroup
+
+[PrimeSeedSemigroup.lean](BuildingBlocks/PrimeSeedSemigroup.lean) proves, for every finite prime set $S$ and all $u,v\ge0$,
+
+$$
+\operatorname{seedProcess}(S,u)*\operatorname{seedProcess}(S,v)
+ =\operatorname{seedProcess}(S,u+v).
+$$
+
+The exact declaration is `BuildingBlocks.PrimeSeedProcess.seedProcess_add`. Together with the probability, original-series and time-zero declarations above, it formalizes the finite-cutoff probability-semigroup part of (4).
+
+The proof retains all paired histories. `jumpPower_add` combines an $m$-jump and an $n$-jump measure into the $(m+n)$-jump measure. The binomial coefficient identity gives `poissonPMFReal_add` and its `poissonPMF_add_antidiagonal` version. Convolution of countable positive measure mixtures and regrouping the pairs by total count then prove `poissonLaw_add` for every probability jump measure on $\mathbb R$. Substitution of the actual normalized prime jump law gives the displayed result, including zero intensity.
+
+This is the classical compound-Poisson semigroup argument, with the primary framework cited above. The module and changed aggregate compile with the pinned Lean/mathlib versions. The checked `poissonLaw_add` and `seedProcess_add` targets use only `propext`, `Classical.choice` and `Quot.sound`. No analytic exponent formula, uniform all-prime limit or operator-domain claim is added to the formal scope by this module.

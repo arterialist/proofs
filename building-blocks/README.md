@@ -441,7 +441,7 @@ Every fixed nonnegative-age probability law [preserves this leading loading](pos
 The [exact gcd-layer theorem](cyclotomic-coprime-interior-history.md) expresses an interior cyclotomic update as a signed sum over surviving squarefree gcd layers. Its two checked examples reverse the selected phase sign before the first product scale, but their actual full clipped changes are both zero. The finite incidence proof and exact shifted CRT count preserve the correction that a no-common-multiple argument cannot discard. This is a written proof with a symbolic certificate, not an aggregate cancellation estimate.
 
 
-The [finite-prime probability construction](positive-successor-seed-jump-process.md#formalized-finite-prime-jump-measure-and-probability-law) is also formalized. `PrimeSeedLevy` proves finite activity for the exact density $B_S(v)/v$, and `PrimeSeedCompoundPoisson` proves probability normalization, time zero and equality with the complete original convolution series, including zero intensity. The time-semigroup and uniform all-prime completion are separate dependencies.
+The [finite-prime probability construction](positive-successor-seed-jump-process.md#formalized-finite-prime-jump-measure-and-probability-law) is also formalized. `PrimeSeedLevy` proves finite activity for the exact density $B_S(v)/v$, and `PrimeSeedCompoundPoisson` proves probability normalization, time zero and equality with the complete original convolution series, including zero intensity. [PrimeSeedSemigroup](BuildingBlocks/PrimeSeedSemigroup.lean) also proves the exact time-addition law by regrouping all paired jump histories. The uniform all-prime completion and operator claims remain written dependencies.
 
 ## Common cyclotomic scales and exact clipping defects
 
