@@ -47,3 +47,13 @@ The [dyadic innovation flux](prime-innovation-finite-band-flux.md) keeps both pr
 The [zero-abscissa calibration](zero-abscissa-scattering-growth.md) proves $\limsup\log(1+N_\chi(\widehat U_X))/\log X=\Theta-1/2$, without requiring the supremum $\Theta$ to be attained. It supplies the full half-integer explicit-formula proof of $\psi(x)-x=O(x^\Theta\log^2x)$, citing Dudek's theorem with its exact hypotheses.
 
 The [compact positive observation](compact-positive-scattering-observation.md) uses the classical Arias de Reyna bump and an irrational dilation with relative phase $i$. Its one compact smooth complex even test has both pole moments zero and strictly positive squared Fourier modulus on the entire real line. Thus the norm-growth criterion can use an actual compact test, while the sign of that test's single scalar Weil value still does not decide RH.
+
+## Opposite histories and their signed boundary
+
+The [two-history storage identity](two-history-bilinear-storage.md) transports the two copies by a prime factor and its inverse, preserving the complex Fourier square. Its discrete current gives an exact finite-strip conservation law and the full $W$ consumer. The initial bilinear response is zero because its two boundary contributions cancel. The one-history seed norm $1/2$ cannot replace it.
+
+The [inverse-boundary constraints](inverse-boundary-division-constraints.md) retain the nonconstant division-error modes, the positive finite seam, and the exact arithmetic rotation operator. They prove a positive first-prime-window pairing with its mixed correction controlled. A separate folding identity annihilates every nonzero dyadic mode of causal storage and transfers those modes to the combined exterior boundary. Neither result signs the complete readout.
+
+The [fixed-prime product cutoff](one-prime-boundary-product-cutoff.md) extends quarter-power approximation to the separately projected bilinear histories. The proof pays for every rational product location, causal-projection atom and terminal taper. Its constants depend on the fixed prime; it is not a growing-prime estimate or a ratio-location norm estimate.
+
+The [unilateral Laplace transfer](two-history-storage-laplace-transfer.md) uses the actual inverse boundary to cancel artificial prime-filter resonances. True off-line zeta zeros retain their original double-pole coefficients in the causal storage; the exterior boundary has at most a simple pole there. This identifies the remaining arithmetic content and supplies no bound that excludes those poles.

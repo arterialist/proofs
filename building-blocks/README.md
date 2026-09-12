@@ -316,3 +316,7 @@ The [scattering subject index](scattering-subject-index.md) connects compact neg
 The [finite-frequency collection](arithmetic-subject-index.md#actual-finite-frequency-readouts) preserves three distinct full-$W$ approximation methods, with square-root, $3/8$, cube-root and quarter-power frequency scales. It also includes the proof that the actual integrand has both signs and the particular positive dyadic flux. The full arithmetic readout, its density terms, all proper powers and its endpoints are retained; no bound for the remaining signed integral is proved.
 
 The scattering collection also proves the [exact observed growth exponent](zero-abscissa-scattering-growth.md) and constructs [one actual compact pole-null observation](compact-positive-scattering-observation.md) with squared Fourier modulus positive everywhere. The common growth exponent is the unknown zero abscissa minus $1/2$; the theorem does not establish that it vanishes.
+
+## Two-history storage and inverse division
+
+The [two-history collection](scattering-subject-index.md#opposite-histories-and-their-signed-boundary) gives finite-strip conservation, exact inverse-boundary constraints, a projected quarter-power cutoff, and unilateral Laplace formulas. Artificial filter poles cancel; hypothetical off-line zeta zeros retain their double poles. These are written identities and estimates, with the full signed storage bound still open.
