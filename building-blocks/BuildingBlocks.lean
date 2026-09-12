@@ -161,3 +161,5 @@ import BuildingBlocks.SuccessorFeedbackMellinTail
 import BuildingBlocks.SuccessorFeedbackAbelClock
 
 import BuildingBlocks.SuccessorFeedbackAbelLaplace
+
+import BuildingBlocks.SuccessorFeedbackFloorKernel

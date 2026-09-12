@@ -322,3 +322,13 @@ $$
 =\mathcal E(s)=\Gamma(s)D_e(s)+R_{\rm clock}(s),\qquad\Re s>1/2,
 $$
 with absolute convergence derived from the preceding Abel integral. The change-of-variables equality is `abelTransform_eq_laplace`. The frozen target build and primary axiom checks pass with the three standard axioms. The eventual-sign and zeta-pole conclusions remain separate from this coordinate identity.
+
+## Formal literal floor kernel
+
+[SuccessorFeedbackFloorKernel.lean](BuildingBlocks/SuccessorFeedbackFloorKernel.lean) defines, for $y\ge1$,
+$$
+K_z(y)=\int_0^{y-1}(\lfloor t\rfloor+1)^{-z}(y-t)^{-1/2}dt.
+$$
+`floorAbelIntegrand_integrable` proves absolute finite-interval integrability for $\Re z\ge0$; the literal upper endpoint keeps $y-t\ge1$. `floorAbelKernel_initial` gives $K_z(1)=0$, and `floorAbelKernel_analyticOnNhd` proves parameter analyticity for $\Re z>0$. The proof derives a local derivative majorant on the complete interval.
+
+`floorAbelKernel_sub_smooth` identifies the exact difference from the continuous $(t+1)^{-z}$ kernel as the integral of the previously formalized floor-weight error. No spatial derivative, arithmetic integration or zeta continuation is assumed by these statements. The affected target compiled, and its main axiom checks use only `propext`, `Classical.choice` and `Quot.sound`.
