@@ -635,3 +635,5 @@ The [local charge square mean](critical-charge-local-square-mean.md) is proved u
 The [formal Gamma and Abel-clock conversion](successor-feedback-tail-Abel-poles.md#formal-gamma-conversion-and-complete-abel-clock-remainder) now proves the actual integral equals $\Gamma(z)D_e(z)$ plus the complete endpoint/index/clock remainder. That remainder is holomorphic on $\Re z>0$; the floor-kernel zeta continuation remains separate.
 
 The [complete cusp asymptotic](successor-quadrature-cusp-asymptotic.md) sharpens the correction to $D(t)=\zeta(3/2)t\log(1/t)/(4\pi)+O(t)$ and gives the same leading term for the mean-removed error $\epsilon(t)$. The proof controls every distance cell behind each integer birth uniformly before summing all prime powers. Chebyshev and the factorial identity suffice; the finite-core sign remains open.
+
+The [literal positive-age Laplace profile](successor-feedback-tail-Abel-poles.md#formal-positive-age-laplace-profile) is now formalized: $H(h)=E(1-e^{-h})$, its initial value and Jacobian are exact, and its absolutely convergent transform agrees with the complete Gamma/index/clock formula for $\Re s>1/2$.

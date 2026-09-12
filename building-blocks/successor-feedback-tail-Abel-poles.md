@@ -312,3 +312,13 @@ $$
 `abelTransform_integrable` proves absolute convergence in the stated half-plane; `abelTransform_eq_dirichlet` proves the identity; `abelClockRemainder_analyticOnNhd` proves the remainder holomorphic on $\Re z>0$. Every endpoint, index shift and signed driver is retained. The interval is represented as $(0,1]$ in Lean, with the endpoint difference explicitly harmless for the earlier open-interval clock integral.
 
 The frozen target builds and primary axiom checks pass with only `propext`, `Classical.choice` and `Quot.sound`. This closes the Gamma/index/clock conversion. The arithmetic floor-kernel continuation and the zeta-pole/sign implication remain separate written results.
+
+
+## Formal positive-age Laplace profile
+
+[SuccessorFeedbackAbelLaplace](BuildingBlocks/SuccessorFeedbackAbelLaplace.lean) defines the literal profile $H(h)=E(1-e^{-h})$ and proves $H(0)=e_0$. The exponential change of variables retains the Jacobian and the exact image $(0,1)$ of positive ages. `abelProfile_laplace_integrable` and `abelProfile_laplace_eq_dirichlet` give
+$$
+\int_0^\infty e^{-sh}H(h)\,dh
+=\mathcal E(s)=\Gamma(s)D_e(s)+R_{\rm clock}(s),\qquad\Re s>1/2,
+$$
+with absolute convergence derived from the preceding Abel integral. The change-of-variables equality is `abelTransform_eq_laplace`. The frozen target build and primary axiom checks pass with the three standard axioms. The eventual-sign and zeta-pole conclusions remain separate from this coordinate identity.

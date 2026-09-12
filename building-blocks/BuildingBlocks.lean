@@ -159,3 +159,5 @@ import BuildingBlocks.SuccessorFeedbackGamma
 import BuildingBlocks.SuccessorFeedbackMellinTail
 
 import BuildingBlocks.SuccessorFeedbackAbelClock
+
+import BuildingBlocks.SuccessorFeedbackAbelLaplace
