@@ -68,3 +68,4 @@ import BuildingBlocks.PrimeEnergy
 import BuildingBlocks.PrimeSignedAverage
 import BuildingBlocks.DivisionRod
 import BuildingBlocks.ActualCriticalSignCriterion
+import BuildingBlocks.TwoCrossingMoment

@@ -241,6 +241,8 @@ A [certified complete-theta Mellin zero](theta-mellin-parabola-obstruction.md) r
 
 The [derivative-kernel theorem](theta-derivative-kernel-logconcavity.md) proves strict log-concavity of $-d\Phi(\sqrt v)/dv$ for the complete theta kernel, with an Arb compact proof and an analytic infinite tail. Its shifted Mellin representation extends the quantum-speed region one unit to the left. These auxiliary constraints do not prove RH or Bernstein-function membership.
 
+The [natural-exponent concavity theorem](theta-natural-exponent-concavity.md) proves $\phi_{\mathrm{nat}}'(s)>0$ and $\phi_{\mathrm{nat}}''(s)<0$ for every real $s>-3/2$. Its global reciprocal-score inequality uses complete-theta interval enclosures and an explicit analytic tail. The accompanying [two-crossing lemma](BuildingBlocks/TwoCrossingMoment.lean) formalizes only the abstract non-strict integral comparison. Full Bernstein membership and RH remain open.
+
 ## Signed divisor packets
 
 The [divisor-cube construction](signed-divisor-packets.md) partitions actual Möbius labels by coprime cores and retains all prefix, suffix and mean terms. For a growing primorial, the interior and packet diagonal have energy $X^{4+o(1)}$; a classical Mertens estimate gives a strict saving over packet magnitudes for the whole signed boundary. Its remaining RH-scale covariance upper bound is unproved.
