@@ -39,7 +39,7 @@ Its occupation and traffic estimates require the stated nonnegativity, drift and
 
 ## Exact divisibility tools
 
-[ExactPrimePowerCRT](BuildingBlocks/ExactPrimePowerCRT.lean) handles a finite set of distinct primes, arbitrary integral shifts and prescribed nonnegative valuations. A residue class modulo $Q=\prod_p p^{e_p+1}$ realizes $v_p(n+h_p)=e_p$ for every selected prime. Its first representative above a real threshold $X$ lies below $X+Q$; the positivity hypotheses on $X$ and $X+h_p$ are retained. This specializes the Chinese remainder theorem already formalized in mathlib.
+[ExactPrimePowerCRT](BuildingBlocks/ExactPrimePowerCRT.lean) handles a finite set of distinct primes, arbitrary integral shifts and prescribed nonnegative valuations. A residue class modulo $Q=\prod_p p^{e_p+1}$ realizes $v_p(n+h_p)=e_p$ for every selected prime. Its first representative above a real threshold $X$ lies below $X+Q$; the positivity hypotheses on $X$ and $X+h_p$ are retained. This specializes the Chinese remainder theorem already formalized in mathlib. The [fixed-prime successor-depth theorem](fixed-prime-successor-depth.md) uses this construction to attain a complete cluster set and sharp growing horizons; its smooth-part upper bound remains a written classical input.
 
 [SmoothDivisorStopping](BuildingBlocks/SmoothDivisorStopping.lean) proves that if $Q>0$ has every prime factor at most $Y\ge2$ and $1\le T\le Q$, then some $d\mid Q$ satisfies $T\le d\le YT$. For $T>1$, taking the least such divisor gives $d<YT$ and $d/p<T$ for every prime $p\mid d$. This is the usual least-divisor stopping argument.
 
