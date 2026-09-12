@@ -312,3 +312,6 @@ For the upper bound use $E(x)=O(x^\Theta\log^2x)$, obtained from
 The unconditional estimate proved here is (17). The actual signed arithmetic quantities a stronger method must control are (7) and (10). The short-interval result examined above does not provide that cancellation, and (27)--(28) do not evaluate the unknown exponent. The one-fixed-$c$ equivalence here concerns the entire original source norm. It is not transferred to a diagonal $W$ observation: the latter's separate criterion retains its small-time-coefficient quantifier. No short-time target or RH proof is asserted.
 
 The [successor-transfer theorem](short-time-source-and-W-successor-transfer.md) changes the actual source norm by $O(1/(1+t))$ uniformly over natural cutoffs. The [diagonal $W$ theorem](diagonal-process-time-W-transform.md) has a different hypothesis: bounds at arbitrarily small fixed time ratios for a scalar observation. The one-fixed-$c$ result here uses the entire original frozen-source $L^2$ norm.
+
+
+The [variable-time extension](variable-time-source-exponent.md) retains this finite-source normalization and replaces the fixed logarithmic schedule by arbitrary schedules. It proves the exact nonnegative growth exponent $\max(\kappa_0-\delta,0)$ when the time exponent converges to $\delta$, using a moving low-Laplace parameter and an exact real-cell Abel absorption.
