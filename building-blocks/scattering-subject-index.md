@@ -69,3 +69,13 @@ The [centered divisor storage theorem](coarse-divisor-scattering-storage.md) giv
 The [successor-clock energy](successor-clock-scattering-energy.md) identifies the localized Hilbert–Schmidt norm with a sum of first-increment $L^2$ energies of the actual unitary phase. The gamma factor, complete prime-power measure and continuum subtraction enter the ratio before its modulus.
 
 The [second-increment criterion](successor-second-increment-trace-criterion.md) uses Peller's real-line theorem and a proved dyadic inverse-multiplier argument to recover the localized trace norm from the literal steps $\log(1+1/(2n))$. Its $L^1$ second differences retain both phase increment and phase curvature. A subpower bound for this sum would meet the RH norm criterion; that arithmetic estimate remains open.
+
+## Exact local factors and composition obstructions
+
+The [one-prime fiber calculation](exact-prime-scattering-fibers.md) gives the exact eigenvalues $\pm p^{-1/2}$, continuous multiplicity and positive/negative trace densities of the pure local factor. The gamma factor is absent in this calculation.
+
+The [actual two-prime interaction](two-prime-mixed-scattering.md) changes sign for $p=2,q=3$, even on compact pole-null theta tests. It retains every power and supplies a physical crossing-interval Gram formula and resolvent bound. This is an auxiliary second moment, not a negative Weil witness.
+
+The [weighted composition theorem and counterexample](weighted-scattering-composition.md) distinguish the subadditive localized trace norm from the weighted absolute trace. An explicit scalar example refutes the latter's uncorrected triangle inequality. The repaired bound includes a nonlocal commutator cost, which is smaller for an actual prime and remains finite at real zeros of the test transform by a proved modulus-measure estimate and Peller's theorem.
+
+The [two-prime compact-filter theorem](two-prime-compact-filter-generation.md) generates every compact smooth pole-null test with fixed support enlargement and finite derivative loss. Matveev's two-log bound supplies the quantitative separation needed by the Sasane–Sasane/Hörmander division theorem. Generating the test space does not control the mixed quadratic term or establish positivity.
