@@ -113,3 +113,73 @@ no sequence obtained by changing only a fixed finite initial set of the coeffici
 The relevant classical context is the Nyman–Beurling approximation problem and the failure of several natural approximation sequences, treated by [Báez-Duarte, *Arithmetical aspects of Beurling's real variable reformulation*](https://arxiv.org/abs/math/0011254) and [*A strengthening of the Nyman–Beurling criterion*](https://arxiv.org/abs/math/0202141). Mertens oscillation belongs to the classical analytic literature, including [Ingham, *On two conjectures in the theory of numbers*](https://personal.math.ubc.ca/~gerg/teaching/592-Fall2018/papers/1942.Ingham.pdf); the formal implications above deliberately retain the exact input (6). These results exclude the specified approximants and finite repairs, not other ways of using the Nyman–Beurling criterion.
 
 All linked new modules compile with Lean 4.24.0 against the existing pinned dependencies. The mathematical tools are finite Möbius grouping, a reciprocal change of variables, interval integration, triangular recovery and geometric contraction. Their complete transitive axiom dependencies are the standard Lean axioms only.
+
+## Direct first-window proof and exact tail enclosures
+
+There is a separate direct proof for the original approximation $d_N$, before the mean correction or reciprocal Gram isometry. Let
+$$
+P_N(y)=1+\sum_{q=1}^N c_N(q)\rho(qy)-\rho(y),\qquad
+T_N=\int_0^1(1+d_N(x))^2\,dx.
+$$
+For $N\ge1$, the two finite coefficient sums at the start of this note give
+$$
+1+d_N(1/(Ny))=P_N(y),\qquad
+P_N(y)=1-\sum_{q=1}^N c_N(q)\lfloor qy\rfloor+\lfloor y\rfloor.
+\tag{A1}
+$$
+The second identity follows because the linear terms cancel exactly. Thus $P_N$ is a one-periodic step function. It is bounded by $2+\sum_q|c_N(q)|$; this is used only for finite-cutoff integrability.
+
+For a positive integer $q$, substitution followed by periodicity gives $\int_0^1\rho(qy)dy=1/2$. Hence
+$$
+\int_1^2P_N(y)dy=\frac{M(N)+1}{2}.
+$$
+Nonnegativity of the integral of the square after subtracting this mean, and the lower bound $y^{-2}\ge1/4$ on $[1,2]$, yield
+$$
+\int_1^2\frac{P_N(y)^2}{y^2}dy\ge\frac{(M(N)+1)^2}{16}.
+$$
+The smooth injective substitution $x=1/(Ny)$ on $[1,2]$ is valid for these bounded measurable functions, despite their finitely many jumps. Therefore
+$$
+\boxed{T_N\ge\int_{1/(2N)}^{1/N}(1+d_N(x))^2dx
+=\frac1N\int_1^2\frac{P_N(y)^2}{y^2}dy
+\ge\frac{(M(N)+1)^2}{16N}.}                         \tag{A2}
+$$
+The endpoints have measure zero and the smaller interval is contained in $[0,1]$. Since $M(N)^2\le2(M(N)+1)^2+2$,
+$$
+\frac{M(N)^2}{N}\le32T_N+\frac2N.                  \tag{A3}
+$$
+This again excludes convergence of the full sequence $T_N$ to zero under the explicit oscillation premise (6). It does not exclude every subsequence, and gives the zero lower bound at a cutoff where $M(N)=-1$.
+
+These statements are already formalized in [FractionalApproximation.lean](BuildingBlocks/FractionalApproximation.lean): `dualWindowEnergy_eq_weighted`, `dualWindowEnergy_lower`, `mertens_sq_le_dual_error`, `mertens_sq_normalized_tendsto_of_dual_error`, and `dual_error_not_tendsto_of_mertens_oscillation`. The implication is unconditional except where the named nonconvergence theorem explicitly assumes the oscillation premise. The same dual approximation is defined in [Báez-Duarte, equation (1.19)](https://arxiv.org/html/math/0011254); Proposition 4.6 proves its full $L^2$ nonconvergence by the paper's unitary-operator method. The mean-window argument above is a different proof of the necessary arithmetic obstruction.
+
+There is also an exact enclosure method for the full integral, rather than only its first reciprocal window. Write
+$$
+A_N=\int_0^1P_N(y)^2dy.
+$$
+For every integer $K\ge2$ and $j\ge K$, periodicity and positivity give
+$$
+\frac{A_N}{(j+1)^2}
+\le\int_j^{j+1}\frac{P_N(y)^2}{y^2}dy
+\le\frac{A_N}{j^2}.
+$$
+Summing the nonnegative integrals and comparing the two series with integrals of $t^{-2}$ proves
+$$
+\boxed{\frac{A_N}{N(K+1)}
+\le\frac1N\int_K^\infty\frac{P_N(y)^2}{y^2}dy
+\le\frac{A_N}{N(K-1)}.}                            \tag{A4}
+$$
+In particular the tail is integrable. Substitution on finite intervals and monotone convergence give
+$$
+T_N=\frac1N\int_{1/N}^{K}\frac{P_N(y)^2}{y^2}dy
++\frac1N\int_K^\infty\frac{P_N(y)^2}{y^2}dy.         \tag{A5}
+$$
+All jumps of $P_N$ occur at rational points $j/q$, $1\le q\le N$. Its constant value $v$ on a rational interval $[a,b)$ contributes the exact rational quantity $v^2(b-a)$ to its unweighted square integral. On the translated interval $[j+a,j+b)$, with positive endpoints, its weighted contribution is exactly
+$$
+v^2\left(\frac1{j+a}-\frac1{j+b}\right).
+$$
+Thus the finite part of (A5), together with (A4), gives rigorous rational enclosures without evaluating a discontinuous integrand numerically. For the fixed cutoff $N$ their width tends to zero as $K\to\infty$. The same method applies to the mean-corrected periodic error, retaining its extra rational half-period jump. Equations (A4)–(A5) are written integral arguments, not additional Lean theorems.
+
+The smallest cutoffs check the normalization. At $N=1$, $d_1=0$, hence $T_1=1$. At $N=2$, $P_2$ is one on the first half of each period and zero on the second; the starting reciprocal half-period contributes zero. Therefore
+$$
+T_2=\frac12\sum_{j=1}^\infty\left(\frac1j-\frac1{j+1/2}\right)=1-\log2.
+$$
+Indeed its first $J$ terms equal $1+H_J-H_{2J+1}$ and converge to $1-\log2$. The corrected periodic error at $N=2$ is $+1$ on the first half and $-1$ on the second, so its squared error is exactly one. Zero reciprocal mean and small squared error are different requirements; the second-window proof above is what excludes the full corrected sequence.
