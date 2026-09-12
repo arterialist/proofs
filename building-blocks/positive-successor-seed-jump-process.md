@@ -307,7 +307,7 @@ All names in the table have namespace `BuildingBlocks.PrimeSeedMass`.
 
 The integrability declarations are stated for every real clock length $L>0$; their displayed prime formulas specialize to $L=\log p$. `integral_of_clock_cells` is the reusable nonnegative countable-partition lemma underlying the three whole-line integrals. The proof uses mathlib's Lebesgue integration, elementary exponential integrals and geometric-series theorems. Both modules compile with Lean 4.24.0 and the repository's pinned mathlib; the checked prime integral targets and `seed_log_eq` depend only on `propext`, `Classical.choice`, and `Quot.sound`.
 
-The single-clock modules do not formalize collective prime-sum convergence with its cross terms, the all-prime measure $B(v)\,dv/v$, the time-semigroup law, bounded mixed-space evolution, Hardy factors or response-domain assertions above. The later finite-prime measure and probability construction are recorded separately below; the excluded collective and operator assertions remain written dependencies. The square-mass identity also supplies the individual-profile normalization in the [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md).
+The single-clock modules do not formalize collective prime-sum convergence with its cross terms, the all-prime measure $B(v)\,dv/v$, the time-semigroup law, bounded mixed-space evolution, Hardy factors or response-domain assertions above. The later sections record the finite and all-prime measure, probability, convergence and moment theorems separately; the operator assertions remain written dependencies. The square-mass identity also supplies the individual-profile normalization in the [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md).
 
 
 ## Formalized delay history and prime-sum distinctions
@@ -377,7 +377,7 @@ $$
 
 The series retains every jump count. `seedProcess_isProbability` proves total mass one, and `seedProcess_zero` proves its time-zero value is $\delta_0$. More generally, `poissonLaw_original_series` proves this identity for every finite positive measure on $\mathbb R$. Its construction first normalizes the jump measure and then proves `normalizedJump_reconstruct` and `jumpPower_normalized_reconstruct`, so the final law is exactly the unnormalized convolution series above. If the intensity is zero, the selected normalized jump law is $\delta_0$ and the Poisson count has only its zero-jump term; no division by a nonzero intensity is imposed as a hypothesis.
 
-These are formalizations of the classical finite-activity compound-Poisson construction specialized to the complete prime density. The primary mathematical framework is Schilling, Song and Vondraček, [*Bernstein Functions*, chapters 3 and 5](https://motapa.de/bernstein_functions/index.shtml). Both modules compile with the pinned Lean/mathlib versions; the checked probability, original-series, time-zero and finite-measure targets use only `propext`, `Classical.choice` and `Quot.sound`. The cutoff-law convergence and bounded operator action remain separate written dependencies; the all-prime measure and probability law are formalized below.
+These are formalizations of the classical finite-activity compound-Poisson construction specialized to the complete prime density. The primary mathematical framework is Schilling, Song and Vondraček, [*Bernstein Functions*, chapters 3 and 5](https://motapa.de/bernstein_functions/index.shtml). Both modules compile with the pinned Lean/mathlib versions; the checked probability, original-series, time-zero and finite-measure targets use only `propext`, `Classical.choice` and `Quot.sound`. The all-prime measure, cutoff-law convergence and probability law are formalized below; bounded operator action remains a separate written dependency.
 
 
 ## Formalized finite-prime time semigroup
@@ -428,7 +428,7 @@ It defines $B(v)=\sum_p B_p(v)$ as `allPrimeSeed`. The theorem `seed_prime_finit
 | $\nu_\infty(dv)=B(v)\,dv/v$ | `allPrimeLevyMeasure_eq_withDensity` |
 | The collective seed $B$ itself is not integrable | `not_integrable_allPrimeSeed` |
 
-The density identity uses nonnegative measure sums and the pointwise finite seed sum. The last statement uses the already formalized no-integrable-majorant theorem and classical divergence of $\sum_p1/p$. It concerns $B$ rather than $B/v$; the denominator is essential for finite activity. The module does not separately export an infinite-first-moment expectation identity.
+The density identity uses nonnegative measure sums and the pointwise finite seed sum. The last statement uses the already formalized no-integrable-majorant theorem and classical divergence of $\sum_p1/p$. It concerns $B$ rather than $B/v$; the denominator is essential for finite activity. The separate infinite-mean module below supplies the first-moment statement.
 
 In namespace `BuildingBlocks.PrimeSeedProcess`, `allPrimeProcess` is the compound-Poisson law of this exact all-prime measure. The declarations `allPrimeProcess_isProbability`, `allPrimeProcess_zero`, `allPrimeProcess_add` and `allPrimeProcess_original_series` prove, for $u,v\ge0$,
 
@@ -440,7 +440,7 @@ $$
  \qquad \mu_u(\mathbb R)=1.
 $$
 
-These are applications of the classical finite-activity compound-Poisson framework cited above to the unconditional arithmetic measure. Both new modules and the changed aggregate compile with the pinned Lean/mathlib versions. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. This formalized construction does not yet prove convergence of the finite-prime laws to $\mu_u$, Laplace-exponent formulas or bounded operator action. Those results retain their separate written proofs and hypotheses.
+These are applications of the classical finite-activity compound-Poisson framework cited above to the unconditional arithmetic measure. Both new modules and the changed aggregate compile with the pinned Lean/mathlib versions. The checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. Convergence of the finite-prime laws is formalized below. The bounded closed-half-plane exponent is formalized below. Its further analytic identities and bounded operator action retain their separate written proofs and hypotheses.
 
 
 ## Formalized quantitative activity tail
@@ -472,4 +472,96 @@ $$
  \boxed{\nu_{\ge P}(\mathbb R)\le\frac{32}{\log P}.}
 $$
 
-Indeed take $K=\lfloor\log_2P\rfloor\ge3$, use $2^K\le P<2^{K+1}$ and monotonicity of the omitted mass, and compare $(K+1)/(K-1)\le2$. These are unconditional consequences of the already formalized Chebyshev estimate, with no PNT or RH premise. The target and changed aggregate compile; the checked tail and splitting declarations use only `propext`, `Classical.choice` and `Quot.sound`. This module formalizes the activity-tail estimate. Convergence of probability laws and operator actions remains a separate theorem.
+Indeed take $K=\lfloor\log_2P\rfloor\ge3$, use $2^K\le P<2^{K+1}$ and monotonicity of the omitted mass, and compare $(K+1)/(K-1)\le2$. These are unconditional consequences of the already formalized Chebyshev estimate, with no PNT or RH premise. The target and changed aggregate compile; the checked tail and splitting declarations use only `propext`, `Classical.choice` and `Quot.sound`. This module formalizes the activity-tail estimate. Probability-law convergence is formalized below; operator actions remain a separate theorem.
+
+
+## Formalized cutoff-law convergence and its normalization
+
+[PrimeSeedLawComparison.lean](BuildingBlocks/PrimeSeedLawComparison.lean) proves a classical positive-series comparison for arbitrary finite measures $0\le\nu_0\le\nu_1$. Write $\mathsf P_u(\nu)$ for the complete compound-Poisson law and $d=\nu_1(\mathbb R)-\nu_0(\mathbb R)$. Then
+
+$$
+ e^{-ud}\mathsf P_u(\nu_0)\le\mathsf P_u(\nu_1),\qquad
+ \sup_{A\text{ measurable}}|\mathsf P_u(\nu_0)(A)-\mathsf P_u(\nu_1)(A)|
+ \le1-e^{-ud}\le ud.
+$$
+
+`finiteJumpLaw_domination` proves the first inequality term by term in the original convolution series, using $\nu_0^{*n}\le\nu_1^{*n}$ and the exact exponential factor. `probability_event_bound_of_domination` applies the domination to both an event and its complement. `finiteJumpLaw_event_bound` gives the last bound. These arguments retain the zero-jump contribution, including zero intensity.
+
+[PrimeSeedCutoffConvergence.lean](BuildingBlocks/PrimeSeedCutoffConvergence.lean) identifies `primesBelow P` with the literal finite set $\{p:p<P\}$ and proves `levyMeasure_primesBelow_add_tail`. For every natural $P\ge8$, every $u\ge0$ and every measurable event $A$, its actual arithmetic theorem is
+
+$$
+ \left|\operatorname{seedProcess}(\operatorname{primesBelow}P,u)(A)
+       -\operatorname{allPrimeProcess}(u)(A)\right|
+ \le\frac{32u}{\log P}.
+$$
+
+The declaration is `BuildingBlocks.PrimeSeedProcess.seedProcess_cutoff_event_bound`. The theorem `seedProcess_cutoff_uniform` states the full uniform quantifiers: for every $U\ge0$ and $\varepsilon>0$, some $P_0$ makes the difference less than $\varepsilon$ for every $P\ge P_0$, every $0\le u\le U$, and every measurable $A$. This is the event-distance convention $\sup_A|\mu(A)-\nu(A)|$, without an additional factor two. The sum of positive and negative variation masses of the signed difference uses a different normalization.
+
+This is an application of classical finite-activity compound-Poisson comparison to the exact arithmetic tail. It adds no PNT or RH premise. It does not assert convergence of unbounded age moments.
+
+## Formalized infinite mean and the zero-jump atom
+
+[PrimeSeedInfiniteMean.lean](BuildingBlocks/PrimeSeedInfiniteMean.lean) identifies the single-prime first moment with the whole seed mass:
+
+$$
+ \int v\,\nu_{\{p\}}(dv)=\int B_p(v)\,dv=\frac2p.
+$$
+
+The declaration `singleton_levyMeasure_firstMoment` uses the nonnegative extended integral of $\max(v,0)$, so it needs no preliminary first-moment integrability assumption. Summing these identities and applying the formal divergence of $\sum_p1/p$ gives `allPrimeLevyMeasure_firstMoment`:
+
+$$
+ \int v\,\nu_\infty(dv)=\infty.
+$$
+
+At every $u>0$, the original one-jump term gives
+
+$$
+ \mu_u\ge u e^{-u\nu_\infty(\mathbb R)}\nu_\infty,
+ \qquad \int v\,\mu_u(dv)=\infty.
+$$
+
+These are `allPrimeProcess_firstMoment` and its consequence `not_integrable_allPrimeProcess_age`. Thus finite activity and event-distance convergence coexist with an infinite mean age; no moment convergence is inferred.
+
+[PrimeSeedCausalSupport.lean](BuildingBlocks/PrimeSeedCausalSupport.lean) proves that the literal seed measure gives zero mass to $(-\infty,\log2)$. More generally, `jumpPower_initial_gap` shows that a measure supported on $[L,\infty)$ has its $n$-fold convolution supported on $[nL,\infty)$. For $L>0$, `finiteJumpLaw_initial_region` proves, for every measurable $A\subset(-\infty,L)$,
+
+$$
+ \mathsf P_u(\nu)(A)=e^{-u\nu(\mathbb R)}\delta_0(A).
+$$
+
+Applied to the actual all-prime measure, this gives the exact zero-jump atom and absence of negative ages:
+
+$$
+ \mu_u(\{0\})=e^{-u\nu_\infty(\mathbb R)},\qquad
+ \mu_u((-\infty,0))=0.
+$$
+
+The declarations are `allPrimeProcess_zero_atom` and `allPrimeProcess_no_negative_age`. The initial-region endpoint is strict: the support argument alone concerns ages below $\log2$, not a claim deleting the first admissible prime history.
+
+All four modules and the changed aggregate compile with the pinned Lean/mathlib versions. The checked comparison, uniform-cutoff, first-moment and causal-support targets use only `propext`, `Classical.choice` and `Quot.sound`. The classical probability framework is Schilling–Song–Vondraček, cited above. Actual successor response, source-domain and signed-energy consumers remain separate written theorems.
+
+
+## Formalized closed-half-plane exponent and complete tail
+
+[PrimeSeedLaplaceExponent.lean](BuildingBlocks/PrimeSeedLaplaceExponent.lean) defines the literal finite-activity integral
+
+$$
+ \Phi(s)=\int_{\mathbb R}(1-e^{-sv})\,\nu_\infty(dv),\qquad \Re s\ge0.
+$$
+
+The causal support theorem gives $v\ge0$ almost everywhere. Thus $|1-e^{-sv}|\le2$, proving Bochner integrability even on the boundary. The declarations `allPrimeExponent_zero`, `allPrimeExponent_re_nonneg` and `allPrimeExponent_norm_le` prove
+
+$$
+ \Phi(0)=0,\qquad \Re\Phi(s)\ge0,\qquad
+ |\Phi(s)|\le2\nu_\infty(\mathbb R).
+$$
+
+Writing $\Phi_{<P}$ for the same integral over the retained prime measure, `allPrimeExponent_sub_cutoff` and `allPrimeExponent_cutoff_bound` give the exact error and its uniform bound:
+
+$$
+ \Phi(s)-\Phi_{<P}(s)
+ =\int(1-e^{-sv})\,\nu_{\ge P}(dv),\qquad
+ \sup_{\Re s\ge0}|\Phi(s)-\Phi_{<P}(s)|\le\frac{64}{\log P}
+ \quad(P\in\mathbb N,\ P\ge8).
+$$
+
+This uses the complete omitted histories and the existing Chebyshev tail bound. The module and changed aggregate compile with the pinned versions, with the checked targets using only the three standard axioms listed above. Holomorphy, all Bernstein derivatives and the probability-law identity $\int e^{-sv}\mu_u(dv)=e^{-u\Phi(s)}$ are not formalized by this module; their written proofs remain distinct from the displayed bounded-integral result.
