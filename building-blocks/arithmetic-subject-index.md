@@ -43,6 +43,8 @@ Related constructions retain different information:
 
 The [prime-filter and Selberg identities](prime-filter-selberg-identities.md) and [finite arithmetic energy tools](finite-arithmetic-energy-tools.md) supply formalized finite identities and conditional estimates. Their individual notes identify the Lean declarations and the unformalized analytic inputs.
 
+The [division renewal and dyadic average](division-renewal-dyadic-average.md) give an exact signed renewal law and a uniform negative bound for the actual integer dyadic divisor sum. Both the factorial inequality and its identification with the full prime-power average are formalized. The written boundary-cancellation and signed-transfer identities explain why that one-history sign does not yet control the critical two-history convolution.
+
 The [harmonic-convolution theorem](harmonic-convolution.md) proves general time-domain, spectral and bounded-variation cancellation mechanisms for exact integer dilations. Its arithmetic application retains every prime power and gives an RH-conditional leading term. The required mean-energy estimate for the actual prime error is not established unconditionally.
 
 The [actual arithmetic sign criterion](actual-critical-sign-criterion.md) is the formal downstream implication: a stated eventual sign of the complete arithmetic sum implies RH. It does not prove that sign. The local identities, covariance results and phase classifications above are possible inputs to this consumer, not substitutes for its missing global estimate.

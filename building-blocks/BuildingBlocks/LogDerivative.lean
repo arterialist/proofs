@@ -1,4 +1,5 @@
 import BuildingBlocks.LocalAnalytic
+import BuildingBlocks.ZetaPole
 import Mathlib.Analysis.Complex.CauchyIntegral
 import Mathlib.Analysis.NormedSpace.Connected
 
@@ -6,22 +7,6 @@ open Filter Set
 open scoped Topology
 
 namespace BuildingBlocks
-
-theorem zeta_analytic_off_pole :
-    AnalyticOnNhd ℂ riemannZeta ({1}ᶜ : Set ℂ) :=
-  (show DifferentiableOn ℂ riemannZeta ({1}ᶜ : Set ℂ) from
-    fun _ hs => (differentiableAt_riemannZeta hs).differentiableWithinAt).analyticOnNhd
-      isOpen_compl_singleton
-
-theorem zeta_not_locally_zero {s : ℂ} (hs : s ≠ 1) :
-    ¬ ∀ᶠ z in 𝓝 s, riemannZeta z = 0 := by
-  intro hz
-  have hc : IsPreconnected ({1}ᶜ : Set ℂ) :=
-    (isConnected_compl_singleton_of_one_lt_rank
-      (Complex.rank_real_complex ▸ Nat.one_lt_ofNat) (1 : ℂ)).isPreconnected
-  have hall := zeta_analytic_off_pole.eqOn_zero_of_preconnected_of_eventuallyEq_zero hc hs hz
-  exact riemannZeta_ne_zero_of_one_lt_re (s := 2) (by norm_num)
-    (hall (show (2 : ℂ) ∈ ({1}ᶜ : Set ℂ) by norm_num))
 
 def rightDomain : Set ℂ := {s | (1 : ℝ) / 2 < s.re ∧ s ≠ 1}
 

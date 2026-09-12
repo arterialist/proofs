@@ -8,6 +8,10 @@ Results used in the study of prime-counting errors, with their formal verificati
 
 The [two-history allocation identity](prime-allocation-critical-identity.md) derives the complete arithmetic $W$ from a positive Euler prior with its exact endpoint and continuous density terms. The [prime-score](prime-score-negative-covariance.md) and [density-prime](density-prime-covariance.md) covariance theorems have opposing contributions. Their [combined balance](combined-prime-density-covariance.md) proves leading compensation but leaves the decisive remainder unsigned. An [exact conditioned counterexample](conditional-prime-dependence.md) shows why full-law negative pair covariance does not persist on every prime-revelation branch. These are written proofs, with rational certificates for the stated finite checks, and no Lean formalization claim.
 
+## A formal negative dyadic divisor average
+
+The [renewal and dyadic-average note](division-renewal-dyadic-average.md) proves $\sum_{d=1}^N[\psi(2N/d)-\psi(N/d)-N/d]<-N(3/2-\log4)$ for every integer $N\ge1$. The actual prime-power sum, its factorial identification and the strict margin are formalized in Lean. Distinct written proofs retain the causal renewal, exact dyadic boundary cancellation and signed transfer; none supplies the missing critical two-history sign.
+
 ## An actual arithmetic sign sufficient for RH
 
 The [eventual-sign criterion](actual-critical-sign-criterion.md) proves in Lean that eventual nonpositivity of the explicitly defined, complete arithmetic sum $W(x)$ implies full mathlib RiemannHypothesis. Its Mellin identity, Landau theorem, continuation and pole exclusion are proved, including multiple zeros. The eventual sign itself remains unproved.

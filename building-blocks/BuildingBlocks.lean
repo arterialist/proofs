@@ -69,3 +69,5 @@ import BuildingBlocks.PrimeSignedAverage
 import BuildingBlocks.DivisionRod
 import BuildingBlocks.ActualCriticalSignCriterion
 import BuildingBlocks.TwoCrossingMoment
+import BuildingBlocks.DivisionDyadicFactorial
+import BuildingBlocks.DivisionDyadicPrimeAverage
