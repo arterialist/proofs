@@ -326,3 +326,7 @@ The [additive-clock and divisor-score pair](scattering-subject-index.md#additive
 The [nonlinear successor-increment pair](scattering-subject-index.md#nonlinear-successor-increments) separates the exact Hilbert–Schmidt first-increment energy from Peller's trace-norm second-increment criterion. Both keep the complete arithmetic phase before taking a modulus. Their sampling theorems establish no growth estimate for that phase.
 
 The [local-factor and composition collection](scattering-subject-index.md#exact-local-factors-and-composition-obstructions) preserves exact prime fibers, both signs of the actual two-prime second moment, the weighted-triangle counterexample and its modulus/Peller repair. It also contains the full compact pole-null test generation theorem for two prime filters, with classical attribution and its remaining mixed-term obligation.
+
+## The actual theta jump operator
+
+The [theta jump subject index](theta-jump-subject-index.md) connects the exact Weil ground-state identity, score projection, sharp Poincare target, unconditional essential threshold, and negative-index theorem with its compact zero-isolation proof. Distinct conjugate zero pairs are counted correctly at repeated zeros. The lower gap remains unproved; the chapter also retains specific failed path, curvature and finite-observation comparisons. These are written analytic results.

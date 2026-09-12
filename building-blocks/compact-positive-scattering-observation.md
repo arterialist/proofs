@@ -81,10 +81,10 @@ $$
 \|M_{|F_0|^2}\Delta(U_X R V_{\log X}^+)\|_1.
 \tag{8}
 $$
-For every $X\ge\exp(2\sqrt2)$, its signed readout is exactly
+For every $X\ge\exp(2\sqrt2)$, the [theta ground-state identity](theta-weil-jump-form.md) gives the exact signed readout
 $$
 \operatorname{Tr}(M_{|F_0|^2}\Delta(U_X R V_{\log X}^+))
- =Q(f_0).
+ =Q(f_0)=E_{\rm jump}(q_0)-\tfrac12\|q_0\|_{L^2(\nu)}^2.
 \tag{9}
 $$
 The sufficient support threshold uses the full diameter $2\sqrt2$. The same weight is locally bounded below on every finite height interval by (6), so every step of the norm-to-zero-free implication applies to (8).

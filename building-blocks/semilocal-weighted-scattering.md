@@ -228,3 +228,12 @@ $$
 while their difference is eventually constant. This holds in particular for nonzero pole-free compact tests.
 
 The [continuum counterphase](continuum-scattering-counterphase.md) restores the exact pole form while preserving the signed cancellation. The growing positive and negative traces above do not determine the sign of their finite difference.
+
+For the [actual theta jump form](theta-weil-jump-form.md), an even compact smooth $h$ with $\nu h=0$ gives $f=\Phi h$, both pole moments zero, and the exact identification
+
+$$
+E_{\rm jump}(h)-\tfrac12\|h\|_{L^2(\nu)}^2
+=Q(\Phi h)=\operatorname{Tr}(M_{|\widehat{\Phi h}|^2}\Delta_S)
+$$
+
+whenever $S$ includes every prime up to the exponential of the support diameter. This is an equality of a form value and an ordinary weighted trace. It asserts no unitary equivalence between the theta jump generator and the semilocal defect.
