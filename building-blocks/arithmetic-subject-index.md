@@ -214,3 +214,5 @@ The [distinguished-return repair](integer-renewal-and-phase-memory.md#distinguis
 
 
 The [presieved prime-pair completion](presieved-prime-pair-completion.md) derives exact Ramanujan/CRT masked spectra and a scalar-charge obstruction for primorial $W\ge30$, $h\ge4W$. A distinct full nonuniform completion on the actual interval $(64,128]$ gives a certified lower bound above $16.90$, where the optimal scalar bound is below $-61.02$. The rational/Arb certificate passes with every allowed coordinate and prime-power exception retained. Cheap weighted completion at growing scales, the cyclic density cost and signed endpoint contributions remain unresolved.
+
+The [local reflection and filter identities](actual-W-positive-primitive-analysis.md#formal-local-reflection-and-the-literal-exponential-filter) are formalized in [ReflectionEnergy](BuildingBlocks/ReflectionEnergy.lean) and [ReflectionFilter](BuildingBlocks/ReflectionFilter.lean). Actual local $L^2$ data suffice for the exact reflected convolution, mixed defect and positive filtered-square kernel; Fubini and integrability are derived. These identities leave the full $W$ sign open.

@@ -124,3 +124,5 @@ import BuildingBlocks.SuccessorFeedbackDifference
 import BuildingBlocks.SuccessorFeedbackBoundary
 import BuildingBlocks.SuccessorFeedbackDecay
 import BuildingBlocks.SuccessorFeedbackDirichlet
+import BuildingBlocks.ReflectionEnergy
+import BuildingBlocks.ReflectionFilter

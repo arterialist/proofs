@@ -15,8 +15,7 @@ $$
 $$
 where $W_b$ is the precisely specified compensated-successor comparison
 below. Nevertheless $W_b-W$ takes both signs at arbitrarily large
-arguments. All results here are written mathematical proofs; they have
-not yet been translated into Lean. The two finite interval computations
+arguments. The cumulative-order and oscillation conclusions are written proofs. The local reflection/filter foundations formalized below cover only their stated integral identities. The two finite interval computations
 are rigorous Arb/Acb certificates, with their infinite tails bounded
 analytically.
 
@@ -610,3 +609,20 @@ Theorems `prime_error_integral_neg` and `prime_error_integral_le_neg_log_two_hal
 This formalizes a concrete arithmetic dependency of the written cumulative W proof. The $0.93$ primitive envelope, the full convolution comparison, its oscillation certificate and its analytic continuation remain written or computer-assisted results. The modules prove no eventual W sign.
 
 The [second-successor extension](second-successor-tilted-order.md) gives a strict three-source cumulative chain. The [complete geometric average](actual-successor-resolvent-primitive-order.md) gives a further small-parameter cumulative comparison. Neither establishes pointwise W order; arbitrary-iterate primitive positivity is refuted by the [fifth-stage certificate](actual-successor-fifth-primitive-failure.md).
+
+
+## Formal local reflection and the literal exponential filter
+
+For a real source $f\in L^2([0,s])$, $s\ge0$, define
+$$E_f(s)=\int_0^s f(u)^2du,\qquad D_f(s)=\frac12\int_0^s[f(u)-f(s-u)]^2du.$$
+[ReflectionEnergy.lean](BuildingBlocks/ReflectionEnergy.lean), in namespace `BuildingBlocks.ReflectionEnergy`, proves local square-integrability of the reflected source and
+$$\int_0^s f(u)f(s-u)du=E_f(s)-D_f(s),\qquad0\le D_f(s)\le2E_f(s).$$
+The theorem `defect_add_sub` retains the exact mixed reflection term under addition of a second local $L^2$ source. No smoothness or global $L^2$ assumption is imposed.
+
+[ReflectionFilter.lean](BuildingBlocks/ReflectionFilter.lean) uses the same literal filter $L_0$ as (3). Its `filtered_energy_identity` proves
+$$L_0E_f(s)=\int_0^s\left[\frac13+\frac23e^{-3(s-u)/2}\right]f(u)^2du.$$
+`filtered_reflection_identity` therefore gives
+$$L_0(f*f)(s)=\int_0^s\left[\frac13+\frac23e^{-3(s-u)/2}\right]f(u)^2du-L_0D_f(s),$$
+where the convolution uses the causal interval. The triangular Fubini theorem, local integrability of the convolution and defect, and the exponential integral are all derived from the local $L^2$ hypothesis. These are classical reflection, polarization and Fubini identities applied to this exact filter. They do not sign the filtered defect or the full arithmetic $W$ expression.
+
+The adapted modules compile under the repository pin. The displayed main theorem axiom checks contain only `propext`, `Classical.choice` and `Quot.sound`. Literal same-prime and ordered-distinct-prime consumers are separate dependencies; the later analytic conclusions in this chapter are not claimed as formalized by these modules.
