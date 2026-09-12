@@ -50,3 +50,5 @@ The [division renewal and dyadic average](division-renewal-dyadic-average.md) gi
 The [harmonic-convolution theorem](harmonic-convolution.md) proves general time-domain, spectral and bounded-variation cancellation mechanisms for exact integer dilations. Its arithmetic application retains every prime power and gives an RH-conditional leading term. The required mean-energy estimate for the actual prime error is not established unconditionally.
 
 The [actual arithmetic sign criterion](actual-critical-sign-criterion.md) is the formal downstream implication: a stated eventual sign of the complete arithmetic sum implies RH. It does not prove that sign. The local identities, covariance results and phase classifications above are possible inputs to this consumer, not substitutes for its missing global estimate.
+
+The [scattering subject index](scattering-subject-index.md) follows a second analytic route from full prime-power discrepancy to a relative trace norm. It includes an unconditional density-cancellation estimate and the exact single-observation RH criterion, with its subpower premise still open.

@@ -306,3 +306,7 @@ The [reciprocal quotient-window modules](reciprocal-quotient-windows.md) prove a
 ## Unitary prime phases
 
 [Unitary prime-phase lift](unitary-prime-phase-lift.md) gives a written joint-spectral extension of half-neighbor rigidity. Finite defect yields a self-adjoint scale generator, an exact spectral energy, and the form domain $\operatorname{Dom}|T|^{1/2}$. The proof allows arbitrary spectral multiplicity and distinguishes concentration on a Borel character set from a topological support assertion. It does not identify the counting isometries or the Weil form with this unitary model.
+
+## Semilocal scattering and signed arithmetic phases
+
+The [scattering subject index](scattering-subject-index.md) connects compact negative parts, exact weighted traces, continuum and rational pole corrections, Brownian signed-tail energy, and the two distinct arithmetic norm estimates. A separate single-observation theorem characterizes RH by a subpower norm bound; that unconditional bound remains open. All results in this group are written analytic proofs.
