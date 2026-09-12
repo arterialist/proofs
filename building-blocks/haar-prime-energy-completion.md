@@ -149,3 +149,126 @@ Here the endpoint atom sees half the density integral; $\int r=1/16$ and $\int|u
 This is an upper bound for a signed aggregate. Rearranging gives $\mathcal B_h=h\mathcal B_1-2\mathcal A_h$, so bounding the coarse energy above requires a **lower** bound for $\mathcal A_h$. The positive completion has not supplied it. Applying the identity to $\widetilde\nu$ also retains its signed endpoint interactions and squared error atoms.
 
 The underlying method is classical Fourier positive-kernel comparison, of the kind used in [Cohn–Elkies](https://arxiv.org/abs/math/0110009), together with Haar/Plancherel identities. The exact spline potential and prime-error substitutions above give reusable limitations on this particular proposal, not an RH estimate.
+
+
+## The exact refinement forcing before Fourier completion
+
+The conditional expectation on each dyadic interval $I=[a,a+h)$ has mean
+
+$$
+m_I=e(a)-\frac h2+\frac1h\sum_{a<n<a+h}(a+h-n)\Lambda(n).
+$$
+
+With $Z_I=\sum_n\Lambda(n)\tau_I(n)$ and $\delta_I=h/4-Z_I/h$, its children have means $m_I+\delta_I$ and $m_I-\delta_I$. Thus the projection energy increases by exactly $A_h$. The divisor identity enters without a change of arithmetic source:
+
+$$
+Z_I=\sum_{d<a+h}\mu(d)
+ \sum_{k:\ a<dk<a+h}\log k\,\tau_I(dk).
+$$
+
+Squaring still retains the coupled products $\mu(d)\mu(e)$. At the final two nontrivial scales, set
+
+$$
+S_1=\sum_{X<n<2X}\Lambda(n),\quad
+S_2=\sum_{X<n<2X}\Lambda(n)^2,\quad
+T=\sum_{a=X,X+4,\ldots,2X-4}\Lambda(a+1)\Lambda(a+3).
+$$
+
+Direct expansion of the two child coefficients and the parent coefficient gives
+
+$$
+A_2=\tfrac12S_2-S_1+X/4,
+\qquad A_4=\tfrac14S_2+\tfrac12T-2S_1+X,
+\qquad A_2=2A_4-T+3S_1-7X/4.
+$$
+
+This retains the actual distance-two correlation and its congruence class. At $X=4$ the rational logarithm enclosures below prove $A_4<529/10000$ and $A_2>3109/5000$.
+
+For the uncorrected compact signed prime measure $\nu$ defined above, use $W_h=-R_h$. The translated detail obeys the exact recursion
+
+$$
+\mathcal B_{h/2}(\nu)=\tfrac12\mathcal B_h(\nu)+\mathcal F_h,
+\qquad \mathcal F_h=\iint W_h(s-t)d\nu(s)d\nu(t).
+$$
+
+The kernel has $W_h(0)=0$, $W_h\le0$, support $[-h,h]$ and integral $-h^2/64$. Therefore
+
+$$
+\begin{aligned}
+\mathcal F_h={}&\sum_{\substack{X<n,m\le2X\\n\ne m}}
+ \Lambda(n)\Lambda(m)W_h(n-m)\\
+&-2\sum_{X<n\le2X}\Lambda(n)\int_X^{2X}W_h(n-t)dt
+ +\int_X^{2X}\int_X^{2X}W_h(s-t)dsdt.
+\end{aligned}
+$$
+
+The first and last terms are nonpositive, and the mixed term is nonnegative. Its complete majorant proves the unconditional bound
+
+$$
+\mathcal F_h\le\frac{h^2}{32}\,[\psi(2X)-\psi(X)].
+$$
+
+Thus translation averaging supplies a refinement recursion with independent forcing $O(Xh^2)$. It does not supply pure one-half contraction. At $X=h=4$, retain atoms $5,7,8$ with weights $\log5,\log7,\log2$. Exact polynomial integration gives
+
+$$
+\begin{aligned}
+\mathcal F_4={}&\frac{61}{192}(\log5+\log7)+\frac14\log2
+-\frac1{12}\log5\log7\\
+&-\frac1{96}\log5\log2-\frac5{32}\log7\log2-\frac{13}{20}
+>\frac{3853}{24000}>0.
+\end{aligned}
+$$
+
+The [exact rational certificate](certificates/haar_prime_refinement.py) proves this bound. On $d\ge0$, it integrates the three pieces of $W_4$:
+
+$$
+W_4(d)=\begin{cases}
+-3d^2/16+7d^3/64,&0\le d\le1,\\
+1/6-d/2+5d^2/16-11d^3/192,&1\le d\le2,\\
+-(4-d)^3/192,&2\le d\le4,\\
+0,&d\ge4.
+\end{cases}
+$$
+
+Its logarithm enclosures follow from $t=(n-1)/(n+1)$ and
+
+$$
+0<\log n-2\sum_{k=0}^{M-1}\frac{t^{2k+1}}{2k+1}
+\le\frac{2t^{2M+1}}{(2M+1)(1-t^2)},\qquad M=24.
+$$
+
+In particular $0.69<\log2<0.70$, $1.60<\log5<1.61$ and $1.94<\log7<1.95$. No decimal diagnostic is used in the proof, and the endpoint power $8$ is essential to the stated forcing.
+
+For $0<h\le X$, put
+
+$$
+\mathcal T_h=\sum_{\substack{X<n,m\le2X\\n\ne m}}
+ \Lambda(n)\Lambda(m)[-W_h(n-m)].
+$$
+
+Retaining the two endpoint corrections gives
+
+$$
+\mathcal F_h=-\mathcal T_h+\frac{h^2}{32}[\psi(2X)-\psi(X)]
+ -\frac{Xh^2}{64}+\mathcal E_h,
+$$
+
+where
+
+$$
+\mathcal E_h=-2\sum_{X<n\le2X}\Lambda(n)
+ \left[\int_X^{2X}W_h(n-t)dt-\int_{\mathbb R}W_h(t)dt\right]
+ -\int_{-h}^h|t|W_h(t)dt.
+$$
+
+The bracket is nonnegative and vanishes for atoms at distance at least $h$ from both endpoints. Improving the independent forcing bound requires a lower estimate on this weighted distinct-prime-power sum with enough accuracy to cancel the continuous main term. The multiscale positive completion above controls the opposite direction of a changed aggregate.
+
+There is also no free zero starting condition at arbitrarily large scales. For $Q=\int d\nu$ and $M_j=\int(t-X)^j d\nu(t)$, the central polynomial piece of $r$ gives, whenever $h\ge2X$,
+
+$$
+\mathcal B_h(\nu)=\frac h{12}Q^2
+ -\frac{QM_2-M_1^2}{h}
+ +\frac1{2h^2}\iint|s-t|^3d\nu(s)d\nu(t).
+$$
+
+Here $Q=\psi(2X)-\psi(X)-X$. The completed measure $\widetilde\nu$ removes this mass by the actual boundary atoms and retains the squared mean through $M_1$, as shown earlier. Neither the raw translation average nor orthogonality alone controls the complete error.

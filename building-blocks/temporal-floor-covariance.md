@@ -67,7 +67,8 @@ $h^2X^{-1}\sum_{X<n<2X}\mu(n)^2(n-X)(2X-n)$. The weights have been evaluated; th
 Restrict both terminal indices to primes, whose Möbius signs are all $-1$. Let
 
 ```math
-\mathcal P_X^c=\sum_{\substack{X<p,q<2X\\p,q\ {m prime},\ p\ne q}}K^c_{pq},
+\mathcal P_X^c=\sum_{\substack{X<p,q<2X\\p,q\ {
+m prime},\ p\ne q}}K^c_{pq},
 \qquad P(x)=\pi(\lfloor x\rfloor)-\pi(X).
 ```
 
@@ -102,3 +103,31 @@ For an explicit primary input see [Johnston–Yang, Theorem 1.4](https://arxiv.o
 ```
 
 Thus actual cross terms already cancel at this coarse accuracy. Neither large subblock is a lower bound for the full signed form. An $I_X\ll_\varepsilon X^{2+\varepsilon}$ conclusion would still require both an upper bound on $\mathcal P_X^c+\mathcal R_X^c$ at that scale and a bound on $X(\bar F-2\gamma-1/2)^2$. The diagonal is already affordable. These concern the unintegrated error energy $I_X$; they are not estimates for the two-sided primitive energy with its different $X^{4+\varepsilon}$ normalization.
+
+
+## The uncentered overlap formula
+
+For positive integers $a,b$, the exact intersection length is
+
+$$
+\ell_{nm}(a,b)=
+[\min(2X,n(a+1),m(b+1))-\max(X,na,mb)]_+.
+$$
+
+Consequently the same full kernel also has the finite geometric expression
+
+$$
+K_{nm}=\sum_{a=1}^{\lfloor2X/n\rfloor}
+ \sum_{b=1}^{\lfloor2X/m\rfloor}H(a)H(b)\ell_{nm}(a,b).
+$$
+
+Upper-endpoint values contribute intervals of zero length. This proof by intersection lengths is distinct from summing unit cells; both show exactly why integration produces an overlap kernel rather than a Kronecker delta.
+
+For $B_X=\sum_n\mu(n)L_n$ and $C_X=\sum_{n\ne m}\mu(n)\mu(m)K_{nm}$, direct expansion before temporal centering gives
+
+$$
+I_X=D_X+C_X-(4\gamma+1)B_X
+ +X(4\gamma^2+2\gamma+1/3).
+$$
+
+Indeed every $f_n$ is constant on unit cells and the mean of $2\gamma+\{x\}$ on each is $2\gamma+1/2$. The centered decomposition above is its exact orthogonal regrouping, with the squared mean retained. This finite calculation adds no RH-scale cancellation estimate.
