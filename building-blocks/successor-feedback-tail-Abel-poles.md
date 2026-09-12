@@ -247,3 +247,7 @@ These two modules do not yet identify the kernel-defined charge with half the in
 For the literal arithmetic source, `driver_eq_innovation_integral` and `driver_eq_difference_integral` now prove
 $$e_j=\frac12\int_{v>0}(S^{j+1}a-S^ja)(v)\,dv=\frac12\int_{x>1}[g(x+j+1)-g(x+j)]\frac{dx}{\sqrt x}.$$
 The initial cell is already in the exact kernel; both unweighted source integrals remain unseparated. The module build and main axiom checks passed with the normal three axioms. The sharper coefficient decay and analytic Abel remainder are still outside this source-to-driver chain.
+
+[SuccessorFeedbackDecay.lean](BuildingBlocks/SuccessorFeedbackDecay.lean), `driver_decay_bound`, now proves the explicit unconditional estimate
+$$|e_j|\le3[\log(j+1)+4\log2+4](j+1)^{-1/2}\qquad(j\ge0).$$
+It uses the exact retained-boundary charge identity, the full $\Lambda/\psi$ increment and Chebyshev's bound. [SuccessorFeedbackDirichlet.lean](BuildingBlocks/SuccessorFeedbackDirichlet.lean), `driver_LSeriesSummable`, `dirichletTransform_analyticOnNhd` and `dirichletTransform_eq_series`, derives absolute convergence and holomorphy of $\sum_{j\ge0}e_j/(j+1)^z$ for $\Re z>1/2$ through mathlib's classical Dirichlet-series theory. The exact series retains $e_0/1^z$. Its strip continuation, Abel-clock remainder and eventual-sign implication remain written mathematics. Both modules compile with only the standard `propext`, `Classical.choice` and `Quot.sound` axioms in the checked main targets.
