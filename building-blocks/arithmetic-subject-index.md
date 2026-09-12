@@ -208,3 +208,6 @@ The [uniform successor-driver theorem](uniform-successor-driver-square-bound.md)
 
 
 The [cutoff-centered Gram estimate](weighted-prefix-centered-source-gram.md) replaces logarithmic moment losses by an explicit finite weighted-prefix supremum. Finite Abel absorption then works for every diverging subpolynomial schedule, conditional on the actual evolved subpower estimate. This sharpens the older direct rank-one consumer while preserving its proof as a distinct method; the variable-Laplace theorem also covers bounded schedules. The unknown prefix supremum is retained until it is absorbed, never assumed bounded.
+
+
+The [distinguished-return repair](integer-renewal-and-phase-memory.md#distinguished-return-after-incidence-inversion) recovers the literal state-one renewal after incidence inversion, where an uncorrected resolvent loses the return event. Its marked full-division histories derive both von Mangoldt kernels and a positive real dressed trace, with exact finite energy/variance bounds. The complete trace still has a persistent mixed-prime coefficient. A passing exact symbolic certificate retains primitive-word counts, boundary matrices and finite complex-clock counterexamples; the classical Bowen–Lanford, Rota and Redheffer precedents are explicit.
