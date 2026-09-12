@@ -24,6 +24,14 @@ The [written proofs](harmonic-convolution.md) give a general cancellation mechan
 
 The [phase and flow theorem](harmonic-prime-laplacian-flow.md) proves a physical $1/p$ Laplacian lower bound on every fixed exponential frequency band. It constructs an unconditional infinite-prime divergence for the actual mean-zero line-one error, with finite edge energy, absolute weighted flux and admission error $O(\log P/\sqrt P)$. The complete prime-factorization inequality, its exact normalized harmonic average, the lcm formula and the closed bound for its prime weights are formalized in the [four linked Lean modules](harmonic-prime-laplacian-flow.md#formalized-factorization-and-scope). The frequency lower bound and infinite-flow statements are written proofs.
 
+## Retained ages, prime histories and source completion
+
+The [age-resolved lift](age-resolved-prime-history-lift.md) keeps the complete cell profile, exact successor wraps, prime-power seams and finite initial-age terms. Its analytic-radius equivalence restates the classical RH error criterion in these coordinates. The [two-prime unilateral theorem](two-prime-unilateral-boundary.md) proves both compact boundary identities, including the common-resonance value and derivative constraints and the actual positive forward normalization.
+
+The [causal-history construction](causal-history-overflow.md) gives exact finite-band overflow with coherent interference, both physical ports and the unitary age-cell dictionary. Its [geometric entropy theorem](complete-prime-history-entropy.md) quantifies the omitted averaged history tail. The independent [gamma-freezing proof](uniform-full-product-arch-freezing.md) controls the full-product clipping error uniformly in the prime set, while retaining its unsigned arithmetic boundary.
+
+For the actual prime-error source, [late-age transfer](late-age-prime-boundary-transfer.md) proves deterministic operator estimates and a PNT-weighted completion of both boundary ports. The [Vinogradov–Korobov refinement](late-age-vk-history-entropy.md) extends completion to all admitted primes through $P=o(R^{3/5}/(\log R)^{1/5})$ and proves trace-norm stability of the associated two-port Gram operator. The [successor compatibility theorem](successor-collective-prime-compatibility.md) gives an exact compressed affine relation, the complete collective boundary seed and cutoff-uniform actual-source commutator estimates. These are written proofs. Separate positive port energies do not establish the signed two-history readout or the fixed-observation RH norm bound.
+
 ## Local poles at zeta zeros
 
 [ZetaPole.lean](BuildingBlocks/ZetaPole.lean) proves that if $\zeta(\rho)=0$ and $\rho\ne0,1$, there are a positive integer $m$ and a function $a$ analytic at $\rho$ such that, on a punctured neighborhood,

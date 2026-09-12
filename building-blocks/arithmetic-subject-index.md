@@ -106,3 +106,11 @@ The [fixed regular-source obstruction](regular-source-mobius-obstruction.md) con
 The [cutoff-versus-period example](cutoff-period-gcd-obstruction.md) separates local sawtooth energy from the classical complete-period gcd form by a linear factor. It complements the exact incomplete carry formulas and the signed divisor-history covariance; none permits replacing the full actual arithmetic vector by an arbitrary-coefficient bound without an additional argument.
 
 The [variable-length divisor-block proof](global-divisor-blocks.md) keeps the transform frequency inside a three-dimensional classical exponential-sum estimate and preserves a separate elementary correlation proof. Its terminal constant-quotient identity explains the arithmetic information left outside those block bounds.
+
+## Age cells and completed prime boundaries
+
+The [retained-age representation](age-resolved-prime-history-lift.md) leads to the [two-prime unilateral identity](two-prime-unilateral-boundary.md), with the actual source and both boundary terms preserved. The [causal-history port model](causal-history-overflow.md) identifies these as discarded line outputs under a unitary direct-integral map; the source energy is retained in that map.
+
+Two distinct completion mechanisms follow. The [absolute coefficient tilt](late-age-prime-boundary-transfer.md) gives deterministic operator tails, while the same note's actual-source PNT estimate pays for every smooth history. The [entropy-count refinement](late-age-vk-history-entropy.md) uses the classical Vinogradov–Korobov remainder to allow $P=o(R^{3/5}/(\log R)^{1/5})$. This history count differs from the [geometric probability entropy](complete-prime-history-entropy.md), which controls averaged overflow. Their positive Gram and overflow quantities do not remove coherent cross terms.
+
+The [full-product gamma-freezing theorem](uniform-full-product-arch-freezing.md) preserves the signed clipping term uniformly in the admitted prime set. The [successor/source compatibility theorem](successor-collective-prime-compatibility.md) supplies a complete prime-power commutator and an unconditional initial-boundary limit. Its PNT translation modulus does not presume finite global energy of the actual critical source. These statements provide inputs to further estimates; none supplies the missing RH-scale bound.
