@@ -225,3 +225,5 @@ The [growing-time source cocycle](growing-time-actual-source-cocycle.md) retains
 
 
 The [formal derivative chain](positive-successor-seed-jump-process.md#formalized-weak-derivative-and-exact-jordan-variation) now proves the actual full-clock weak derivative and exact finite-prime Jordan variation. Prime births cannot cancel proper-power decay atoms. The all-prime positive and negative components are locally finite with an exact closed-age cutoff, but each has infinite total mass. The formal full-prime test identity retains that distinction; it does not assert a globally finite signed derivative.
+
+The [complete all-prime cutoff-two energy certificate](full-prime-two-energy-certificate.md) proves an original-energy decrease greater than $1/200$ for the actual unit-coefficient coherent prime sum. Its [joint-tail proof](full-prime-two-relative-energy-tail.md) retains the positive $H^{-2}$ leading term and all mixed errors. The passing Arb certificate encloses every omitted prime and both age tails; no general-source or arbitrary-prime-coefficient comparison follows.

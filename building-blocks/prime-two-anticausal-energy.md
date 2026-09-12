@@ -188,3 +188,5 @@ The example has a strict original-energy decrease even though its drift curvatur
 
 
 This is a written proof with a bounded Arb certificate, using geometric summation, monotone quadrature bounds and the classical translation-kernel energy identity. It makes no priority claim. The general finite-energy and kernel identities have the separate [Lean mapping](all-prime-fixed-source-drift-curvature.md#formalized-energy-and-contact-forms); this particular numerical energy decrease is not formalized in Lean.
+
+The [full-prime companion](full-prime-two-energy-certificate.md) now proves the same direction for the unit-coefficient sum over every prime at this fixed source, with a separate coherent certificate. This does not extend the prime-two estimate by termwise positivity.
