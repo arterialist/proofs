@@ -20,6 +20,10 @@ The [eventual-sign criterion](actual-critical-sign-criterion.md) proves in Lean 
 
 The [written proofs](harmonic-convolution.md) give a general cancellation mechanism for the exact integer harmonic operator. Mean-square translation continuity yields a bilinear mean theorem, with spectral conditions allowing continuous and mixed spectra. A separate exponential-variation theorem permits escaping frequencies, while an exact counterexample shows that bounded mean energy and a vanishing primitive alone do not suffice. The arithmetic application retains every dilation and prime power and gives an alternative proof of the known RH-conditional leading term of $W$. Its general lemmas are unconditional; the arithmetic mean-energy input remains unproved. These results are not formalized in Lean.
 
+## Harmonic prime Laplacian and infinite flow
+
+The [phase and flow theorem](harmonic-prime-laplacian-flow.md) proves a physical $1/p$ Laplacian lower bound on every fixed exponential frequency band. It constructs an unconditional infinite-prime divergence for the actual mean-zero line-one error, with finite edge energy, absolute weighted flux and admission error $O(\log P/\sqrt P)$. The complete prime-factorization inequality is formalized in [PrimePhaseFactorization.lean](BuildingBlocks/PrimePhaseFactorization.lean); the harmonic and infinite-flow statements are written proofs.
+
 ## Local poles at zeta zeros
 
 [ZetaPole.lean](BuildingBlocks/ZetaPole.lean) proves that if $\zeta(\rho)=0$ and $\rho\ne0,1$, there are a positive integer $m$ and a function $a$ analytic at $\rho$ such that, on a punctured neighborhood,
@@ -297,7 +301,7 @@ The [local-kernel theorem](local-weil-extension-obstruction.md) proves deficienc
 
 ## Prime-support deletion and a central divisor block
 
-The [uniform prime-support theorem](prime-support-removal-asymptotics.md) keeps all prime powers and proves the sharp cost of omitting a fixed amount of lower-prime mass, while negative auxiliary upper-band deletions demonstrate why optimizing support is not the full-support sign criterion. The [central Möbius–divisor estimate](voronoi-mobius-central-block.md) proves $O(L^{19/16}\log^6(2L))$ for one block using classical Voronoï and finite shift estimates. The other divisor blocks and their signed total remain unbounded at the RH scale.
+The [uniform prime-support theorem](prime-support-removal-asymptotics.md) keeps all prime powers and proves the sharp cost of omitting a fixed amount of lower-prime mass, while negative auxiliary upper-band deletions demonstrate why optimizing support is not the full-support sign criterion. It also gives both marginal signs before each sufficiently large prime square and an exact classical max-flow/min-cut criterion for fractional interaction allocation. The [central Möbius–divisor estimate](voronoi-mobius-central-block.md) proves $O(L^{19/16}\log^6(2L))$ for one block using classical Voronoï and finite shift estimates. The other divisor blocks and their signed total remain unbounded at the RH scale.
 
 ## Reciprocal approximation and elementary prime energy
 

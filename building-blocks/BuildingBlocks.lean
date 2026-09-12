@@ -71,3 +71,4 @@ import BuildingBlocks.ActualCriticalSignCriterion
 import BuildingBlocks.TwoCrossingMoment
 import BuildingBlocks.DivisionDyadicFactorial
 import BuildingBlocks.DivisionDyadicPrimeAverage
+import BuildingBlocks.PrimePhaseFactorization

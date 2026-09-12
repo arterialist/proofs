@@ -41,6 +41,8 @@ Related constructions retain different information:
 | [Prime-clique cutoff](prime-clique-cutoff.md) | Exact arithmetic births; the stated critical-strip limit is not zeta. |
 | [Face-feedback obstruction](integer-face-feedback-obstruction.md) | A counterexample to the specified positive-resolvent repair. |
 
+The [harmonic prime Laplacian and flow](harmonic-prime-laplacian-flow.md) turn complete integer phase resolution into a quantitative lower bound with the physical prime weights $1/p$. The resulting actual line-one periodization has an infinite prime divergence with finite edge energy and absolutely summable weighted flux. Its full-multiplicity integer phase inequality is formalized; the analytic flow and its $O(\log P/\sqrt P)$ admission error are written proofs.
+
 ## From finite arithmetic identities to an analytic consumer
 
 The [prime-filter and Selberg identities](prime-filter-selberg-identities.md) and [finite arithmetic energy tools](finite-arithmetic-energy-tools.md) supply formalized finite identities and conditional estimates. Their individual notes identify the Lean declarations and the unformalized analytic inputs.
@@ -88,3 +90,7 @@ The [finite fusion construction](cyclotomic-fusion-response.md) identifies selec
 The [restricted-range refinements](cyclotomic-restricted-range-refinements.md) sharpen individual boundary costs while linking to the existing final reduced-coordinate region. [Exact valuation reduction](cyclotomic-valuation-update.md) removes neutral events using classical root-of-unity identities; neither valuation gaps nor norm-one resultants force favorable phase signs. [Delayed inverse pairs](cyclotomic-old-inverse-pairs.md) retain the entire intervening history and a threshold potential. Their positive corrected remainder is certified on three actual pairs, and the unresolved overlapping-charge problem is stated separately.
 
 The [actual-prefix refinement theorem](actual-prefix-refinement.md) gives the exact two-row carry law, empirical bias and logarithmic information saturation. The [finite-prime Möbius consumer](finite-prime-mobius-consumer.md) retains every induced quotient cutoff and density correction, then proves a linear lower bound for the absolute prime-increment sum. These preserve the initial counting/division construction and its precise unresolved signed estimate.
+
+## Full-support allocation and sign changes
+
+The [prime-support removal theorem](prime-support-removal-asymptotics.md) preserves the actual marginal history, proves both response signs before each sufficiently large prime square, and computes a macroscopic deficit for every independent reservoir. Its exact fractional-allocation criterion is a finite max-flow/min-cut application. The full-set cut still requires the unproved full-support sign; fractional allocation alone does not supply it.

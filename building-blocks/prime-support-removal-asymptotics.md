@@ -149,6 +149,8 @@ For completeness, its Mellin transform is
 
 The continued expression is regular near every positive real $s$, including $1$, but has residue $-m_\rho/[\rho(\rho+1)]\ne0$ at a nontrivial zeta zero $\rho$ of multiplicity $m_\rho$. If $J$ had either eventual sign, Landau's theorem for a nonnegative Mellin tail would force a singularity at its real abscissa of convergence. That abscissa is at most $1$, by $J(u)=O(u^2)$, and at least $\Re\rho>0$, since convergence to the left of $\rho$ would contradict its pole. This is impossible. See the continuous-integral statement in [Lay, Theorem 3](https://personal.math.ubc.ca/~gerg/teaching/592-Fall2018/papers/arXiv.Lay.pdf). No assertion about zeros off the critical line is required.
 
+Every sufficiently large prime has both signs of marginal response at integer cutoffs before its square. The cutoff $x=p+1$ gives a negative response by (7). Choose a fixed interval $1<a<b$ with $J>0$. For every sufficiently large prime $p$, there is an integer $ap<n<bp<p^2$, and its response is positive by (7). This retains the actual smaller-scale prime history in $J$; increasing the number of admitted prime generators does not imply monotone response.
+
 Choose $1<a<b$ with $J>0$ throughout $[a,b]$, and remove
 
 ```math
@@ -196,5 +198,34 @@ All $c_p,w_{pq}$ are nonnegative, and $w_{pq}>0$ exactly when $pq<x$. Call a pri
 Indeed, $H=\{\sqrt x<p\le x\}$ is independent. Quantitative PNT gives $\sum_{p\le t}\log p/p=\log t+C+o(1)$ and $\sum_{p\le t}p\log p=t^2/2+o(t^2)$, proving (10) for $H$. Any independent set contains at most one $p_0\le\sqrt x$. If $p_0\ge x^{1/4}$, its capacity is at most $x^2\log p_0/(p_0-1)=o(x^2)$ and all other primes lie in $H$. If $p_0<x^{1/4}$, all other primes exceed $x^{3/4}$; their total capacity is at most $(\tfrac14\log x+o(1))x^2$, while $c_{p_0}\le x^2\log2$. This proves the uniform upper bound.
 
 In particular, $B_0-\sum_{p\in R}c_p\ge(3/4+o(1))x^2$ for every independent $R$. Any scheme that places the whole baseline on such an $R$, charges nonnegative interaction loads to prime endpoints and limits each endpoint load by $c_p$ therefore fails even before charging interactions. Interacting reservoirs retaining all primes above $\sqrt x$ must, by (2), omit only $o(\sqrt x)$ logarithmic prime mass below that boundary if their value is nonpositive.
+
+## Exact fractional allocation criterion
+
+At a fixed $x\ge1$, take a finite prime set $P$ and a designated subset $R\subseteq P$. Allocate each interaction demand $w_{pq}$ fractionally to its two endpoints. Allocate the entire baseline $B_0\ge0$ only to vertices in $R$. Require the total load at each prime $p$ to be at most $c_p$. With
+
+$$
+c(S)=\sum_{p\in S}c_p,\qquad
+W(S)=\sum_{p<q,\ p,q\in S}w_{pq},
+$$
+
+such an allocation exists if and only if
+
+$$
+W(S)\le c(S)\quad(S\subseteq P),\qquad
+B_0+W(S)\le c(S)\quad(R\subseteq S\subseteq P).
+\tag{11}
+$$
+
+This is an application of the classical [Ford–Fulkerson max-flow/min-cut theorem](https://www.cs.yale.edu/homes/lans/readings/routing/ford-max_flow-1956.pdf). Here is the complete reduction. Make one demand vertex for each pair and one for the baseline. Join the source to each demand vertex with its demand as capacity, and join each prime vertex to the sink with capacity $c_p$. A pair-demand vertex can send flow to its two endpoints, while the baseline vertex can send flow exactly to $R$. Give these intermediate arcs capacity greater than the sum $D=B_0+\sum_{p<q}w_{pq}$.
+
+A minimum cut has capacity at most $D$, so it cannot cut an intermediate arc. If $S$ is its set of prime vertices on the source side, every demand vertex there must have all its allowed endpoints in $S$. For the cheapest cut with this $S$, put all such demand vertices on the source side. Its capacity is
+
+$$
+D-W(S)-B_0\mathbf1_{R\subseteq S}+c(S).
+$$
+
+Thus every cut has capacity at least $D$ exactly when (11) holds. A flow of value $D$ saturates all source-demand arcs and is the desired allocation. The same formula includes $R=\varnothing$: if $B_0>0$, the cut $S=\varnothing$ correctly prohibits an allocation.
+
+The full-set cut implies $B_0+W(P)\le c(P)$, equivalently $V_P(x)\le0$. When $R=P$, this already appears as a required premise, so the criterion supplies no independent proof of the full-support sign. When $R$ is independent, the cut $S=R$ requires $B_0\le c(R)$ and fails by the preceding $3x^2/4$ deficit for all sufficiently large $x$. Adaptive choice of $R$ and arbitrary fractional splitting of every positive interaction cannot repair that specific failure. Interacting reservoirs remain subject to all the cuts in (11), not just their total capacity.
 
 These are applications of classical PNT, Landau oscillation, finite convolution and weighted rearrangement. They do not give a new prime-error estimate, establish the full-support sign, or claim priority or Lean formalization of the analytic asymptotics.
