@@ -1,6 +1,6 @@
 # A positive finite-activity process from the complete successor seed
 
-These are written proofs, including the domain-qualified response in (26)–(28). No Lean formalization or publication-priority claim is made. This consumes the exact seed and fixed-Cauchy covariance in [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md). It constructs a positive process from the actual complete prime profiles. It does not identify that process with the natural theta exponent or assert a sign for the Weil readout. The Bernstein and compound Poisson framework is classical; see Schilling, Song and Vondraček, [*Bernstein Functions: Theory and Applications*, second edition, chapters 3, 5 and 13](https://motapa.de/bernstein_functions/index.shtml). The Hardy, Poisson and Blaschke tools below are also classical; the full arithmetic seed and its response are the stated specialization.
+The process and domain-qualified response in (26)–(28) are written proofs. The complete single-clock mass identities are formalized in Lean as described below. This consumes the exact seed and fixed-Cauchy covariance in [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md). It constructs a positive process from the actual complete prime profiles. It does not identify that process with the natural theta exponent or assert a sign for the Weil readout. The Bernstein and compound Poisson framework is classical; see Schilling, Song and Vondraček, [*Bernstein Functions: Theory and Applications*, second edition, chapters 3, 5 and 13](https://motapa.de/bernstein_functions/index.shtml). The Hardy, Poisson and Blaschke tools below are also classical; the full arithmetic seed and its response are the stated specialization.
 
 For every prime p let
 
@@ -281,3 +281,30 @@ $$
 The two orientations in (27) have the same $L^2$ kernel bound. Thus the original centered response has a genuine completed $L^2$ action on this $L^1$/BV class, with tail $O((\log P)^{-1/2})$ times the displayed source norm. This response extension is not automatically the literal unbounded X commutator: that identification additionally requires $Xf$ and $X\mathcal Gf$ to be defined in $L^2$, as proved above on the compact smooth core. The estimate does not control a growing arithmetic cutoff for which its source norm is large. The fixed-Cauchy theorem gives the compatible ground-profile completion; extending it to the full actual arithmetic source requires its signed arrival or successor-flux estimates.
 
 The positive history evolution is uniformly bounded in the actual source space. The original response differentiates its age memory through a first-moment clock commutator that is not bounded on all of $L^2$. Probability-law positivity and (24) do not provide a cancellation estimate for that response.
+
+
+## Formalized single-clock dependencies
+
+For every real $p>1$, the Lean definition `BuildingBlocks.PrimeSeedMass.seed (Real.log p)` is exactly
+
+$$
+B_p(v)=\begin{cases}
+ e^{v/2}/p^{\lfloor v/\log p\rfloor+1},&v\ge\log p,\\
+ 0,&v<\log p.
+\end{cases}
+$$
+
+On the nonzero branch the quotient is positive, so the natural-number floor used in Lean agrees with the ordinary floor in this formula. `seed_log_eq` proves the literal exponential/power identification, including the threshold. The modules prove integrability, not merely equalities of totalized integrals. They partition the entire support into the half-open cells $[(j+1)\log p,(j+2)\log p)$ and sum every cell by a convergent geometric series. Primality is unnecessary for these individual-clock identities.
+
+All names in the table have namespace `BuildingBlocks.PrimeSeedMass`.
+
+| Exact theorem | Lean declaration and source |
+| --- | --- |
+| $B_p\ge0$ and $B_p=0$ below $\log p$ | `seed_nonneg`, `seed_eq_zero` in [PrimeSeedMass.lean](BuildingBlocks/PrimeSeedMass.lean) |
+| $B_p\in L^1$ and $\int_{\mathbb R}B_p(v)\,dv=2/p$ | `integrable_seed_and_integral`, `integral_prime_seed` in [PrimeSeedMass.lean](BuildingBlocks/PrimeSeedMass.lean) |
+| $e^{-v/2}B_p\in L^1$ and $\int_{\mathbb R}e^{-v/2}B_p(v)\,dv=\log p/[p(p-1)]$ | `integrable_weighted_seed_and_integral`, `integral_prime_weighted_seed` in [PrimeSeedMass.lean](BuildingBlocks/PrimeSeedMass.lean) |
+| $B_p^2\in L^1$ and $\int_{\mathbb R}B_p(v)^2\,dv=p^{-2}$ | `integrable_seed_square_and_integral`, `integral_prime_seed_square` in [PrimeSeedSquare.lean](BuildingBlocks/PrimeSeedSquare.lean) |
+
+The integrability declarations are stated for every real clock length $L>0$; their displayed prime formulas specialize to $L=\log p$. `integral_of_clock_cells` is the reusable nonnegative countable-partition lemma underlying the three whole-line integrals. The proof uses mathlib's Lebesgue integration, elementary exponential integrals and geometric-series theorems. Both modules compile with Lean 4.24.0 and the repository's pinned mathlib; the checked prime integral targets and `seed_log_eq` depend only on `propext`, `Classical.choice`, and `Quot.sound`.
+
+These modules do not formalize the prime-sum convergence, finite measure $B(v)\,dv/v$, probability semigroup, bounded mixed-space evolution, Hardy factors or response-domain assertions above. Those remain written mathematical dependencies. The square-mass identity also supplies the individual-profile normalization in the [fixed-Cauchy covariance theorem](fixed-cauchy-prime-covariance-seed.md).
