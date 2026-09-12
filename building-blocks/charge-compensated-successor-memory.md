@@ -221,7 +221,7 @@ $$
 \int_1^\infty\frac{|H(x)|^2}{x}\,dx\le\|H\|_{\mathcal E}^2.
 \tag{18}
 $$
-Indeed the exact weight furnished by this integration is $1/\max(1,x-1)$, which is at least $1/x$. This extends to the causal completion. Equivalently, for the physical representative $f=\mathcal W^{-1}H$,
+Indeed the exact weight furnished by this integration is $1/\max(1,x-1)$, which is at least $1/x$. An energy-Cauchy sequence is therefore Cauchy in $L^2(dx/x)$ and has a unique local $L^2$ function limit. Its translation differences converge in the product $L^2$ space defining the energy, and agree locally with the differences of that function limit. Thus the causal completion has the same anchored representative and the bound extends to it, without an unidentified constant mode. Equivalently, for the physical representative $f=\mathcal W^{-1}H$,
 $$
 \|e^{-u/2}f(u)\|_2\le\|H\|_{\mathcal E}.
 $$
