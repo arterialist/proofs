@@ -96,3 +96,5 @@ The [actual-prefix refinement theorem](actual-prefix-refinement.md) gives the ex
 ## Full-support allocation and sign changes
 
 The [prime-support removal theorem](prime-support-removal-asymptotics.md) preserves the actual marginal history, proves both response signs before each sufficiently large prime square, and computes a macroscopic deficit for every independent reservoir. Its exact fractional-allocation criterion is a finite max-flow/min-cut application. The full-set cut still requires the unproved full-support sign; fractional allocation alone does not supply it.
+
+The [small-prime grouping theorem](small-prime-grouping.md) proves a uniform $N/\log N$ lower bound for the full grouped absolute majorant, including growing smoothness cutoffs. Its exact logarithmic-integral centering retains the original error with coefficient one and a weighted history correction. The centered source has the same power bound as the prime error for each fixed exponent above $1/2$; that bound is not proved.

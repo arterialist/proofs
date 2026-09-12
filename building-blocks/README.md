@@ -360,3 +360,7 @@ The [actual-prefix refinement theorem](actual-prefix-refinement.md) gives the ex
 ## Prime-division Feynman–Kac paths
 
 The [written construction](prime-division-feynman-kac.md) gives the exact tilted division chain, completed path budget, same-prime drift and full-$W$ adjoint. Its first moment is finite, its one-prime completed second moment can be infinite, and a fixed Chebyshev slack does not cover the baseline. The positive finite semigroup is retained as a proved object; the needed signed arithmetic bound remains open.
+
+## Small-prime grouping and centered reconstruction
+
+The [written grouping theorem](small-prime-grouping.md) preserves all cancellation within each smooth/rough group, yet proves the outer absolute total is at least $(2\gamma-1)N/(4\log N)$ eventually, uniformly for cutoffs through $N/2$. The exact centered identity keeps both endpoints and every proper prime power. Its same-power reconstruction theorem identifies the remaining arithmetic estimate without claiming it.
