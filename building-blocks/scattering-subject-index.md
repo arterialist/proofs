@@ -63,3 +63,9 @@ The [unilateral Laplace transfer](two-history-storage-laplace-transfer.md) uses 
 The [successor-clock counterphase](successor-counterphase-trace-norm.md) replaces continuum density by the exact integer clock with uniformly bounded localized trace cost and a vanishing corrected tail. It retains the origin coefficient $c(1)=1$ in the exact divisor average of $1-\Lambda$. Its kernel proof separately controls distant input columns.
 
 The [centered divisor storage theorem](coarse-divisor-scattering-storage.md) gives unconditional convergence in that same trace topology for $\tau(n)-\log n-2\gamma$. The elementary divisor bound gives a polynomial logarithmic norm bound; the classical exponent below $1/2$ gives a limiting phase with error $O_\chi(X^{-1/6}(\log X)^{3/2})$. Its entire Dirichlet score has canceled the logarithmic-derivative denominator. No bounded inverse for the divisor average or prime-score estimate follows.
+
+## Nonlinear successor increments
+
+The [successor-clock energy](successor-clock-scattering-energy.md) identifies the localized Hilbert–Schmidt norm with a sum of first-increment $L^2$ energies of the actual unitary phase. The gamma factor, complete prime-power measure and continuum subtraction enter the ratio before its modulus.
+
+The [second-increment criterion](successor-second-increment-trace-criterion.md) uses Peller's real-line theorem and a proved dyadic inverse-multiplier argument to recover the localized trace norm from the literal steps $\log(1+1/(2n))$. Its $L^1$ second differences retain both phase increment and phase curvature. A subpower bound for this sum would meet the RH norm criterion; that arithmetic estimate remains open.
