@@ -134,3 +134,6 @@ with the cutoff and remainder terms retained. Positivity of $r_-$ fixes neither 
 The bounded contact terms $2T_1z$, $-Gz$ and $Jz$ are in $L^2$ and cannot cancel the derivatives of atoms in (9). This refutes the nonnegative-curvature-measure hypothesis for this actual finite history. The full signed Sobolev pairing, the complete two-port comparison and the RH sign question remain distinct.
 
 The argument uses classical distributional differentiation, Young's inequality and one-dimensional Sobolev embedding. It claims no literature priority. These domain and counterexample statements are written proofs; the [formal energy and contact estimates](all-prime-fixed-source-drift-curvature.md#formalized-energy-and-contact-forms) cover a separate part of the construction.
+
+
+The subsequent [complete prime-two energy calculation](prime-two-anticausal-energy.md) proves that this same actual example nevertheless has energy change strictly less than $-1/10$. It sums every negative-age interval and bounds the entire positive physical tail. Thus the failed measure hypothesis does not obstruct the integrated sign in this example, and the example gives no sign for larger prime sets or the complete W readout.

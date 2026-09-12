@@ -97,3 +97,7 @@ import BuildingBlocks.SuccessorChargeEnergy
 import BuildingBlocks.MixedEnergySuccessorStep
 import BuildingBlocks.MixedEnergyBilinear
 import BuildingBlocks.MixedEnergyKernel
+import BuildingBlocks.SuccessorCriticalLift
+import BuildingBlocks.CriticalCoordinatePairing
+import BuildingBlocks.TiltedPrimeCumulative
+import BuildingBlocks.TiltedPrimeIntegral

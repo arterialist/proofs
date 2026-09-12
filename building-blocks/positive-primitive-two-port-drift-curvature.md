@@ -143,3 +143,6 @@ A complete original W comparison would additionally retain its reflected bilinea
 The [fixed-source companion](all-prime-fixed-source-drift-curvature.md) proves the exact contact identity and its continuous original-energy extension. The [uniform correction proof](full-prime-successor-potential-midpoint.md) retains the maximal original multiplier domains and joint source/prime convergence. The [finite-history curvature calculation](actual-finite-history-curvature-domains.md) proves that the literal prime-2, cutoff-2 force contains a nonzero derivative of a Dirac mass. Its integrated pairing is defined, but that curvature is not a positive measure.
 
 The construction uses classical distributional convolution, Young's inequality and midpoint polarization. The explicit common-scale metric derivative supplies the ordinary successor contact. These are written operator identities; no literature-priority claim or full Weil sign is asserted.
+
+
+For the actual $N=2$, prime-$2$ history, a [direct integrated calculation](prime-two-anticausal-energy.md) proves strict original-energy decrease despite the derivative-of-atom obstruction. Its proof uses the whole power sum and a positive new output, not a positive curvature measure.

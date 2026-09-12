@@ -583,3 +583,28 @@ proved cumulative comparison supplies that final estimate.
 
 
 The source product and same-prime subtraction use the [complete arithmetic W identity](prime-allocation-critical-identity.md). The finite-window proof uses the exact factorial divisor count and causal integration. The oscillation proof is the classical nonnegative-tail Laplace singularity argument, written out above, applied to a certified actual zeta pole. These methods and the explicit PNT input are retained without a priority claim. The comparison does not establish the eventual W sign.
+
+
+## Formalized actual tilted first moment
+
+[TiltedPrimeCumulative](BuildingBlocks/TiltedPrimeCumulative.lean) and [TiltedPrimeIntegral](BuildingBlocks/TiltedPrimeIntegral.lean) formalize the actual first-moment input to the cumulative comparison. They reuse the repository's exact `psi`, `logFactorial` and `logarithmicPrimeMass` definitions, the formal factorial/prime-power double count, and mathlib's classical Abel summation. No PNT or RH hypothesis is present.
+
+In namespace `BuildingBlocks.TiltedPrimeCumulative`, `cumulative_factorial_identity` proves for every real $x>0$ the exact formula
+
+$$
+-xC(x)=x\log x-\log(\lfloor x\rfloor!)
+ +\sum_{1\le n\le\lfloor x\rfloor}\Lambda(n)
+ \left[1-\left(\frac xn-\left\lfloor\frac{\lfloor x\rfloor}{n}\right\rfloor\right)\right],
+$$
+
+where $C(x)=\sum_{n\le\lfloor x\rfloor}\Lambda(n)/n-\psi(\lfloor x\rfloor)/x-\log x$. Every remainder term is nonnegative. Theorems `cumulative_neg` and `cumulative_le_neg_log_two_half` prove $C(x)<0$ for $x>1$ and $C(x)\le-\log2/2$ for $x\ge2$, including noninteger cutoffs.
+
+In namespace `BuildingBlocks.TiltedPrimeIntegral`, `prime_error_intervalIntegrable` and `prime_error_integral_eq` prove the literal finite-interval integrability and identity
+
+$$
+\int_1^x\frac{\psi(\lfloor t\rfloor)-t}{t^2}\,dt=C(x),\qquad x\ge1.
+$$
+
+Theorems `prime_error_integral_neg` and `prime_error_integral_le_neg_log_two_half` transfer both signed consequences to this actual integral. The integrated modules and their primary axiom checks passed, with only `propext`, `Classical.choice` and `Quot.sound`.
+
+This formalizes a concrete arithmetic dependency of the written cumulative W proof. The $0.93$ primitive envelope, the full convolution comparison, its oscillation certificate and its analytic continuation remain written or computer-assisted results. The modules prove no eventual W sign.

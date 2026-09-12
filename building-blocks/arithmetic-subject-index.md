@@ -188,3 +188,8 @@ The [actual cutoff-2, prime-2 computation](actual-finite-history-curvature-domai
 
 
 The [Haar refinement calculation](haar-prime-energy-completion.md#the-exact-refinement-forcing-before-fourier-completion) now includes the full divisor-coefficient update, independent translated forcing bound, a positive actual forcing certificate including the endpoint power, and its explicit pair/boundary obligation. The [uncentered overlap proof](temporal-floor-covariance.md#the-uncentered-overlap-formula) retains a separate geometric derivation of the same signed kernel and its exact fractional-part correction.
+
+
+The [actual tilted first moment](actual-W-positive-primitive-analysis.md#formalized-actual-tilted-first-moment) now has Lean proofs at every real cutoff: exact factorial remainder, Abel integral, strict negativity after $1$ and the uniform bound $-\log2/2$ after $2$. The [critical-coordinate port modules](all-prime-fixed-source-drift-curvature.md#formal-critical-coordinate-ports) separately prove the causal successor/predecessor ranges and contact pairing under their stated $L^2$ and support hypotheses. These do not formalize the full W comparison or unrestricted anticausal curvature.
+
+The [actual prime-two energy theorem](prime-two-anticausal-energy.md) proves the full-power, cutoff-two energy change is less than $-1/10$, with a passing bounded Arb certificate and all negative ages and unbounded tails retained. This complements the derivative-of-atom obstruction in the same example, without asserting a uniform sign for larger sources or prime sets.

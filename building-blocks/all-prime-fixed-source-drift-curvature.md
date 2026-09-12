@@ -304,4 +304,13 @@ and proves `energy_eq_gradient` for the literal gradient $H(x)-H(x-h)$ on $d\lam
 
 [MixedEnergyKernel](BuildingBlocks/MixedEnergyKernel.lean) proves `bilinear_eq_symmetricKernelPair` and `contactForm_eq_kernel` for real unweighted $L^2$ inputs. The symmetric lag pairing is the literal integral of $H(x)[G(x-h)+G(x+h)]$ against $d\lambda(h)dx$. Thus the factor $4$ and the successor/predecessor kernel expansion are proved, including all integrability prerequisites. `energy_lt_top_of_memLp` gives finite mixed energy for measurable $L^2$ inputs.
 
-The logarithmic conjugation, its distributional commutators, the actual prime-column limits and the identification of this kernel form with $J_2$ remain the written operator proofs above. The modules do not formalize a signed curvature inequality or an RH conclusion.
+The full-line logarithmic conjugation of the convolution kernel and its distributional commutators, the actual prime-column limits and the identification of this kernel form with $J_2$ remain the written operator proofs above. The modules do not formalize a signed curvature inequality or an RH conclusion.
+
+
+### Formal critical-coordinate ports
+
+[SuccessorCriticalLift](BuildingBlocks/SuccessorCriticalLift.lean), in namespace `BuildingBlocks.SuccessorCharge`, proves the literal coordinate factors for $\sigma(v)=\log(1+e^v)$. Its `successor_predecessor_adjoint` retains the causal predecessor's zero initial interval $u\le\log2$. The two compositions are exactly $SP=I$ on positive ages and $PS=\mathbf1_{(\log2,\infty)}$. The square-integral identities allow infinite nonnegative totals; the two `MemLp` preservation theorems have measurable half-line $L^2$ hypotheses.
+
+[CriticalCoordinatePairing](BuildingBlocks/CriticalCoordinatePairing.lean) proves the pairing and square change of variables from $v>a$ to $x>e^a$. Its successor pairing uses $x>1$ and its predecessor pairing uses $x>2$. The theorem `critical_contact_identity` identifies the physical contact form with the two logarithmic port pairings when the two physical inputs are $L^2$ and separately vanish almost everywhere below $1$. `critical_contact_bound` then gives the constant $9$ for measurable such inputs.
+
+These causal-support assumptions are material. Actual anticausal force columns can have negative ages, so the causal contact theorem does not itself formalize their unrestricted full-line contact identity. That identity and the distributional curvature remain written above. Both new targets built successfully, and their checked primary theorems use only `propext`, `Classical.choice` and `Quot.sound`.
