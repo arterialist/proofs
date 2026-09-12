@@ -132,3 +132,8 @@ The [positive jump process](positive-successor-seed-jump-process.md) uses the fi
 ## Fixed-prime depth geometry
 
 The [successor-depth theorem](fixed-prime-successor-depth.md) classifies all limiting normalized division depths at fixed offsets. Its classical smooth-part upper bound and effective CRT attainment have different strengths: the upper threshold is non-effective, while every admissible simplex-face vector has an explicit congruence construction. The infinite-offset extension proves the sharp subpolynomial scale for uniform observation horizons. The finite CRT and lcm inputs are already formalized; the analytic classification is a written proof.
+
+
+## Fixed-observation heat and exact source thresholds
+
+The [complete prime-heat theorem](fixed-observation-prime-heat.md) identifies the centered generator with a line-one zeta logarithm and its full proper-power correction. Two global domination methods support complex subcritical convergence, a meromorphic scalar continuation, the critical-window uniform law and an explicit large-age profile. The scalar integrability threshold is $1/2$; the ground seed's squared-norm threshold is $1/4$. Exact finite-source cancellation shifts the threshold, while an actual two-birth example proves that the successor need not preserve it. The [partial-cosine companion](uniform-partial-prime-cosines.md) retains every cutoff endpoint in the PNT proof. These are fixed-observation and finite-source theorems; no joint completion of the unrestricted arithmetic source or RH bound follows.

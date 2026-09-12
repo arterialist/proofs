@@ -175,7 +175,7 @@ where $L_p$ on the left denotes the convolution operator with symbol $\ell_p$. I
 
 This construction gives an exact fixed-observation covariance and a deterministic $L^2$ limit. The observation scale 1/2 in (4) matches the retained geometric amplitudes in (3); it was not inferred from an RH statement. The full infinite generator itself has divergent mean $2\sum_p1/p$, which remains explicit.
 
-The independent next test is the normalized heat $e^{-zZ_P}$, including its possible concentration at frequency zero. The coefficient decomposition singles out the prime-square oscillation $-2\sum_{p\le P}\cos(2t\log p)/p$ plus an absolutely convergent correction. Identifying its limit with the line-one zeta logarithm and proving uniform integrability of heat moments require further estimates. They are not consequences of (13) alone, and no assertion about the sign of the Weil readout or RH follows here.
+The independent next test is the normalized heat $e^{-zZ_P}$, including its possible concentration at frequency zero. The coefficient decomposition singles out the prime-square oscillation $-2\sum_{p\le P}\cos(2t\log p)/p$ plus an absolutely convergent correction. The [fixed-observation heat theorem](fixed-observation-prime-heat.md) identifies its line-one zeta limit and proves uniform integrability in the exact subcritical range. Those results use estimates beyond (13), and no assertion about the sign of the Weil readout or RH follows here.
 
 ## 7. The complete rational-history functional survives nonlinear heat composition
 
