@@ -514,3 +514,10 @@ The [actual prime-two energy theorem](prime-two-anticausal-energy.md) proves the
 
 
 The [formal finite-prime memory construction](charge-compensated-successor-memory.md#formalized-finite-prime-memory-domains) proves the original successor commutator with both absolutely integrable columns, then substitutes every finite set of literal full prime profiles. It also proves the compensated $L^2$ adjoint, bounded memory output, existence of its relative charge and both original-reference rank terms. The uncut source and uniform mixed-energy-to-$L^1$ completion retain their separate written scope.
+
+
+## Density smoothing and literal diagonal-time arithmetic readouts
+
+The [fixed-component proof](compensated-successor-total-variation-relaxation.md) extracts a uniform interval from the actual prime-two density, proves a cutoff-uniform $t^{-1/2}$ variation bound, and retains the complete two-history packet comparison. The [dyadic proof](dyadic-prime-process-variation.md) uses the full arithmetic tail to obtain the sharp all-prime order $t^{-1}$ and the finite-cutoff crossover. Fixed finite cutoffs cannot retain that full rate at all times.
+
+The [short-time source transfer](short-time-source-and-W-successor-transfer.md) controls the actual compensated correction uniformly over natural cutoffs and the completed potential, including both mixed orders in the complete $W$ readout. The [diagonal-time transform](diagonal-process-time-W-transform.md) gives a direct complex-contour proof of a classical Lévy resolvent formula and tracks every off-critical arithmetic double pole. Bounds for arbitrarily small fixed time ratios imply RH; the required bounds remain open, while sufficiently large time ratios already satisfy them unconditionally. These are written analytic results, distinct from the formal probability dependencies.
