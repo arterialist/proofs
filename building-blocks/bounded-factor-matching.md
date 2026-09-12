@@ -210,3 +210,57 @@ The dual bounds C=C0+Gamma. It need not be feasible for the complete relaxation.
 
 
 The dual argument is finite weak matching duality; the only prime-distribution input is the classical prime number theorem on a fixed-ratio interval. The finite source estimates are supported by the [published actual-H bounds](BuildingBlocks/DivisorForcingBound.lean). This is a useful arithmetic application, with exact priority unresolved. It does not bound the signed coarse energy from below and has no Lean formalization.
+
+
+## 6. A finite example with genuinely cheap head edges
+
+The [complete three-step certificate](certificates/matching_three_step.py) constructs the actual graph at $X=128$. It has 5,244 edges. Every edge satisfies the ratio-eight and six-deleted-factor bounds in both orientations. The even-parity vertex $210$ has 69 neighbors, including 30 below $X$. This vertex is a separate finite test, not a member of the asymptotic thirteen-prime family.
+
+Set $Y=1/10$ and restrict time to $[240,256]$. The checker encloses every bad time $|v_m(t)-v_{210}(t)|<Y$ for every incident edge. Only $m=37,53,83$ have nonempty enclosing intervals. For each of these neighbors, an exact rational time also satisfies the strict upper bound on the true gap, so the cheap edges are not artifacts of interval enclosure.
+
+On each integer cell the midpoint observable difference is affine. If $e$ bounds its perturbation from the true observable, the exact sublevel interval at height $Y+e$ contains every true bad time, including displaced roots. Sorting and merging all rational intervals gives two enclosing intervals. Their complement has measure greater than $14.2460930279$. The unmatched cost of vertex $210$ exceeds $Y$ throughout this time range. The dual supported at this one vertex on the complement therefore gives
+$$
+\int_{240}^{256} C(v(t))^2\,dt>0.142460930279.
+\tag{B18}
+$$
+The check uses only integers and rational arithmetic. It evaluates the same actual $H$, with the logarithm series and digamma remainder described above, and retains every edge. Run `python3 certificates/matching_three_step.py`; no third-party packages are required. The finite inequality illustrates the good-time argument and does not establish its separate asymptotic prime count.
+
+## 7. Other fixed ratios and the exact cost exponent
+
+Consider the same squarefree vertices and opposite-parity matching costs, but permit any edges with endpoint ratio at most a fixed $R\ge1$ and at most a fixed $r\ge1$ deleted source prime factors in either orientation. Keep $\alpha,\beta,t_0$ as above and put $Q=\lfloor2R/\alpha\rfloor$. When $Q\ge2$, assume the finite arithmetic condition
+$$
+\delta_R=\min_{2\le q\le Q}|H(q)-H(1)|>0.
+\tag{B19}
+$$
+For a fixed integer $k>2r$, set
+$$
+L=(\alpha X)^{1-r/k},\qquad
+D=\sum_{j=0}^r\binom{k}{j},\qquad Y=cL,
+$$
+where $c>0$ is no larger than
+$$
+h_1,\qquad
+\frac{h_1\min(t_0-\beta,\alpha-1)}{2\alpha},\qquad
+\frac{\delta_R(2-t_0)}{8(Q-1)D}.
+$$
+The degree bound remains $2DX/L$. Each head neighbor has at most $Q-1$ nonconstant pieces, each with bad-time measure at most $2Y/\delta_R$. Their union has measure at most $(2-t_0)X/2$. The constant $q=1$ piece and all terminal neighbors satisfy the earlier intercept and separation bounds. The same time-dependent dual, followed by Cauchy–Schwarz and the fixed-ratio prime count, proves
+$$
+\mathcal K_X\gg_{k,r,R,\delta_R}
+\frac{X^{5-2r/k}}{(\log X)^{2k}}.
+\tag{B20}
+$$
+For $Q\le1$, omit the nonresonance condition and the final restriction on $c$: the head pieces are all constant. Only the range through $Q=9$ is certified here. A zero slope at a larger quotient would require further control of its intercept; (B19) is not asserted for arbitrary $Q$.
+
+A fixed path length $\ell$ gives $r=2\ell$ and $R=2^\ell$. Thus the extension is conditional on its associated finite nonresonance range. The full three-step case already satisfies this condition. Neither unbounded path lengths nor unbounded factor deletion is covered.
+
+For the three-step cost, the elementary [divisor-source bound](coarse-divisor-scattering-storage.md), obtained by the hyperbola identity and the factorial integral estimate, gives $|H(q)|=O(\sqrt q)$. Consequently, uniformly for $t\in[X,2X]$,
+$$
+|v_n(t)|+|u_n(t)|
+\le \int_X^{2X}|H(\lfloor y/n\rfloor)|\,dy
+\ll X^{3/2}n^{-1/2}.
+$$
+Leaving every vertex unmatched gives a cost $O(X^2)$ after summing over $n\le2X$. The retained density corrections are $O(X)$, so $\mathcal K_X=O(X^5)$. On the other hand, (B1) permits arbitrarily large fixed $k$: for every $\eta>0$, it gives $\mathcal K_X\gg_\eta X^{5-\eta}$ eventually. Therefore
+$$
+\lim_{X\to\infty}\frac{\log\mathcal K_X}{\log X}=5.
+$$
+This is the logarithmic exponent of the positive cost majorant, not an exponent for the signed prime-error energy. The extension and finite certificate are written and computer-assisted mathematics; neither is formalized in Lean.

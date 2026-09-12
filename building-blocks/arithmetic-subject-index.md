@@ -170,3 +170,5 @@ The [common-scale relative norm](cyclotomic-common-scale-norm.md) preserves a di
 
 
 The [even-character separation theorem](even-character-zero-separation.md) removes a common-numerator-zero ambiguity in twisted Möbius/cyclotomic consumers. It preserves the full family quantifier over an unbounded set of prime conductors, allows the nonvanishing character to depend on the point, and supplies an exact height-dependent conductor threshold. Its continuation criterion is RH-equivalent; the all-epsilon summatory estimate for $\mu*\chi$ is an explicitly unproved sufficient premise, with no conductor-uniform constant required for the implication.
+
+The [three-step matching extension](bounded-factor-matching.md#6-a-finite-example-with-genuinely-cheap-head-edges) retains an exact finite example with cheap head edges, a good-time dual, and the conditional extension to other fixed ratios. Its full positive-cost majorant has logarithmic growth exponent $5$; the signed coarse energy remains outside that lower bound.
