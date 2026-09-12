@@ -139,3 +139,9 @@ import BuildingBlocks.SamePrimeBlockCalibration
 import BuildingBlocks.PrimeBlockSource
 import BuildingBlocks.PrimeSourceDistinctFilter
 import BuildingBlocks.PrimeDensityFilter
+
+import BuildingBlocks.SuccessorFeedbackPowerDifference
+
+import BuildingBlocks.SuccessorFeedbackIndexCorrection
+
+import BuildingBlocks.SuccessorFeedbackClock

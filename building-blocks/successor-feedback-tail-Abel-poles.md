@@ -251,3 +251,33 @@ The initial cell is already in the exact kernel; both unweighted source integral
 [SuccessorFeedbackDecay.lean](BuildingBlocks/SuccessorFeedbackDecay.lean), `driver_decay_bound`, now proves the explicit unconditional estimate
 $$|e_j|\le3[\log(j+1)+4\log2+4](j+1)^{-1/2}\qquad(j\ge0).$$
 It uses the exact retained-boundary charge identity, the full $\Lambda/\psi$ increment and Chebyshev's bound. [SuccessorFeedbackDirichlet.lean](BuildingBlocks/SuccessorFeedbackDirichlet.lean), `driver_LSeriesSummable`, `dirichletTransform_analyticOnNhd` and `dirichletTransform_eq_series`, derives absolute convergence and holomorphy of $\sum_{j\ge0}e_j/(j+1)^z$ for $\Re z>1/2$ through mathlib's classical Dirichlet-series theory. The exact series retains $e_0/1^z$. Its strip continuation, Abel-clock remainder and eventual-sign implication remain written mathematics. Both modules compile with only the standard `propext`, `Classical.choice` and `Quot.sound` axioms in the checked main targets.
+
+
+## Formal floor, index and clock corrections
+
+The literal discretization and initial driver are retained in three further modules, in namespace `BuildingBlocks.SuccessorFeedback`.
+
+[SuccessorFeedbackPowerDifference](BuildingBlocks/SuccessorFeedbackPowerDifference.lean) proves the complex mean-value estimate and the actual floor discrepancy
+$$
+\delta_z(t)=(\lfloor t\rfloor+1)^{-z}-(t+1)^{-z},\qquad
+|\delta_z(t)|\le\|z\|2^{\Re z+1}(t+1)^{-\Re z-1}
+$$
+for $t\ge0$ and $\Re z\ge-1$. Theorems `floorWeightError_integrable` and `floorWeightError_uniform_bound` give integrability on the positive half-line and a common integrable majorant on bounded parameter sets with real part bounded below by a positive constant.
+
+[SuccessorFeedbackIndexCorrection](BuildingBlocks/SuccessorFeedbackIndexCorrection.lean) defines
+$$
+I(z)=e_0+\sum_{j\ge1}e_j\big[(j+1)^{-z}-j^{-z}\big].
+$$
+`indexCorrection_analyticOnNhd` proves holomorphy on $\Re z>-1/2$, using the actual driver decay. `indexCorrection_eq_difference` identifies it with the difference of the two absolutely convergent Dirichlet series on $\Re z>1/2$. The initial constant $e_0$ is included.
+
+[SuccessorFeedbackClock](BuildingBlocks/SuccessorFeedbackClock.lean) gives a distinct bounded-error proof for the two literal clocks:
+$$
+|E(e^{-t})-E(1-t)|\le2(4\log2+1),\qquad0<t\le1.
+$$
+The theorem is `clockError_bound`. The exact signed integral
+$$
+\int_0^1 t^{s-1}\big[E(e^{-t})-E(1-t)\big]\,dt
+$$
+is absolutely convergent and holomorphic for $\Re s>0$, as proved by `clockMellinError_convergent`, `clockMellinError_analyticOnNhd` and `clockMellinError_eq_integral`. The open endpoints match the literal integral.
+
+These modules use the existing arithmetic source and Chebyshev bound. Their target builds and main axiom checks pass with only `propext`, `Classical.choice` and `Quot.sound`. The sharper written clock error, the remaining floor-kernel analytic continuation and the eventual-sign RH consumer are not asserted by these modules.
