@@ -156,3 +156,5 @@ The [compact-memory theorem](compact-compensated-causal-response.md) proves comp
 The [causal energy anchor](actual-source-mixed-dirichlet-completion.md#formalized-causal-energy-anchor) is formalized for measurable real sources vanishing almost everywhere below $1$, with possibly infinite energy. It retains the exact reciprocal-max weight and the logarithmic change of coordinates. Completion and actual PNT source membership remain written proofs.
 
 The [literal successor charge](actual-successor-resonance-charge-cocycle.md#formalized-integrable-successor-charge) is formalized for real $L^1(0,\infty)$ inputs, including the initial interval, successor integrability and exact compensated charge conservation. The extension to the actual nonintegrable source remains separate.
+
+The [finite-energy relative-charge bound](actual-successor-resonance-charge-cocycle.md#formalized-relative-charge-at-finite-mixed-energy) is also formalized: the literal kernel product is integrable and its half-integral is bounded by $\sqrt{\mathcal E(H)}$, without an absolute-charge or unweighted-integrability premise. Actual PNT membership and arithmetic positivity remain written.

@@ -490,3 +490,5 @@ The [three-step matching extension](bounded-factor-matching.md#6-a-finite-exampl
 The [literal successor charge](actual-successor-resonance-charge-cocycle.md#formalized-integrable-successor-charge) is formalized for real $L^1(0,\infty)$ inputs, including the initial interval, successor integrability and exact compensated charge conservation. The extension to the actual nonintegrable source remains separate.
 
 The [original-graph coherent matching proof](coherent-large-label-matching.md) preserves the exact observable-distance identity, an actual three-edge cancellation repair, and complete fixed-matching energy and primal–dual certificates. Its whole-interval dual gives exponent $5-4/k$ for the positive majorant; the ratio-eight proof uses a different good-time argument.
+
+The [finite-energy relative-charge bound](actual-successor-resonance-charge-cocycle.md#formalized-relative-charge-at-finite-mixed-energy) is also formalized: the literal kernel product is integrable and its half-integral is bounded by $\sqrt{\mathcal E(H)}$, without an absolute-charge or unweighted-integrability premise. Actual PNT membership and arithmetic positivity remain written.

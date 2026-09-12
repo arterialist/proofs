@@ -1,6 +1,6 @@
 # Actual successor creates a finite positive resonance port
 
-These are written proofs for the [exact causal successor](fixed-observation-prime-heat.md#10-the-exact-successor-does-not-preserve-the-improved-heat-domain), with the initial removed interval and every prime-power birth retained. The [positive seed process](positive-successor-seed-jump-process.md) gives a compatible comparison evolution. The integrable half-line charge and compensation identities are formalized below. The mixed-energy extension, actual arithmetic charge and memory assertions remain written proofs; they imply no sign for the full Weil readout.
+These are written proofs for the [exact causal successor](fixed-observation-prime-heat.md#10-the-exact-successor-does-not-preserve-the-improved-heat-domain), with the initial removed interval and every prime-power birth retained. The [positive seed process](positive-successor-seed-jump-process.md) gives a compatible comparison evolution. The integrable half-line charge and compensation identities are formalized below. The finite mixed-energy relative-charge bound is also formalized. Actual-source membership, arithmetic positivity and memory assertions remain written proofs; they imply no sign for the full Weil readout.
 
 ## 1. The literal charge and its change at every birth
 
@@ -280,4 +280,27 @@ All theorem names below are in `BuildingBlocks.SuccessorCharge`.
 | Reference integrability and mass $2$ | `reference_integrable`, `reference_integral` |
 | $Cf\in L^1$ and exact charge conservation | `integrable_compensated`, `integral_compensated`, `charge_compensated` |
 
-The module and changed aggregate compile with Lean 4.24.0; the checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. These operators are used on the positive half-line. No distributional derivative at the origin is asserted. The extension of $\delta$ to finite mixed energy, the nonintegrable actual source and its positive arithmetic limit require the separate written arguments above.
+The module and changed aggregate compile with Lean 4.24.0; the checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. These operators are used on the positive half-line. No distributional derivative at the origin is asserted. The finite mixed-energy bound is formalized next. Actual-source membership, completion of the source space and the positive arithmetic limit require the separate written arguments above.
+
+
+## Formalized relative charge at finite mixed energy
+
+[SuccessorChargeEnergy.lean](BuildingBlocks/SuccessorChargeEnergy.lean) proves the actual kernel estimate
+$$
+|k(u)|\le2e^{-u},\qquad
+\int_0^\infty |e^{u/2}k(u)|^2du\le4.
+$$
+For every real $f$ with $e^{-u/2}f(u)\in L^2(0,\infty)$, the theorem `defect_bound_weighted` in `BuildingBlocks.SuccessorCharge` proves $kf\in L^1$ and
+$$
+|\delta(f)|\le
+\left(\int_0^\infty |e^{-u/2}f(u)|^2du\right)^{1/2}.
+$$
+Combining this with the [formal causal anchor](actual-source-mixed-dirichlet-completion.md#formalized-causal-energy-anchor), `defect_bound_causal_energy` proves, for measurable real $H$ vanishing almost everywhere below $1$ and satisfying $\mathcal E(H)<\infty$,
+$$
+k(u)e^{u/2}H(e^u)\in L^1(0,\infty),\qquad
+\left|\delta\bigl(e^{u/2}H(e^u)\bigr)\right|
+\le\sqrt{\mathcal E(H)}.
+$$
+The kernel formula defines this relative charge directly. Neither theorem assumes $f\in L^1$ or concludes that the absolute charge $Q(f)$ exists. `causal_source_square` provides the intermediate finite weighted square integral. The other primary targets are `kernel_abs_le_exp` and `weightedKernel_square_integral_le`.
+
+The module and changed aggregate compile with Lean 4.24.0, and the checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. The actual prime-error source satisfies the finite-energy premise by the separately proved PNT input; that membership theorem and the strict arithmetic sign of its relative charge remain written mathematics.
