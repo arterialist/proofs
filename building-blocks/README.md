@@ -364,3 +364,7 @@ The [written construction](prime-division-feynman-kac.md) gives the exact tilted
 ## Small-prime grouping and centered reconstruction
 
 The [written grouping theorem](small-prime-grouping.md) preserves all cancellation within each smooth/rough group, yet proves the outer absolute total is at least $(2\gamma-1)N/(4\log N)$ eventually, uniformly for cutoffs through $N/2$. The exact centered identity keeps both endpoints and every proper prime power. Its same-power reconstruction theorem identifies the remaining arithmetic estimate without claiming it.
+
+## Local cutoff versus complete-period covariance
+
+The [sawtooth cutoff theorem](cutoff-period-gcd-obstruction.md) gives consecutive integer labels below $X$ whose actual local energy exceeds their exact common-period gcd form by a factor at least $X/5940$. Its elementary proof retains all gcd multiplicities and attributes the covariance identity to Franel–Landau. It refutes an arbitrary-coefficient subpower comparison, without bounding the actual Möbius-weighted form.

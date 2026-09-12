@@ -102,3 +102,5 @@ The [small-prime grouping theorem](small-prime-grouping.md) proves a uniform $N/
 ## Source regularity and signed inversion
 
 The [fixed regular-source obstruction](regular-source-mobius-obstruction.md) constructs separated tents on exact floor quotients, then applies Banach–Steinhaus to obtain one source for each exponent below $2/3$. Its size and first-difference bounds hold everywhere, while its signed Möbius inverse exceeds every eventual bound of that power. This formalized auxiliary counterexample does not satisfy the exact arithmetic increment identity for the centered divisor forcing.
+
+The [cutoff-versus-period example](cutoff-period-gcd-obstruction.md) separates local sawtooth energy from the classical complete-period gcd form by a linear factor. It complements the exact incomplete carry formulas and the signed divisor-history covariance; none permits replacing the full actual arithmetic vector by an arbitrary-coefficient bound without an additional argument.
