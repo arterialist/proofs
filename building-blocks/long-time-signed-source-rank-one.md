@@ -263,7 +263,9 @@ This is a source-moment expansion within the established original norm, not a ne
 
 The long-time rank-one term is governed by the actual signed mass $M_N=D_N(1/2)$; its first shape correction is the equally actual scalar (16). Their relation to $Q_N(0)$ remains arithmetic information, rather than a consequence of the positive process. In particular (15) or (18) cannot be substituted for the unresolved logarithmic-time source target at small masses or at times where their displayed errors are not controlled.
 
-## 6. What can actually be absorbed at logarithmic and subpolynomial times
+## 6. Absorption using the uncentered moment bound
+
+The [cutoff-centered prefix estimate](weighted-prefix-centered-source-gram.md) sharpens this method and removes its logarithmic restriction for every diverging subpolynomial schedule. This section retains the different uncentered-moment proof and its precise cost.
 
 The absolute error in (2), divided by the original square, is at most $C(L_N/t)^3$. Thus at $t=A L_N$ it is as small as desired if the fixed constant $A$ is large enough. This observation alone is not an absorption argument for $Q_N(0)$: that quantity does not appear on the left of (2), and no reverse contraction estimate has been proved.
 

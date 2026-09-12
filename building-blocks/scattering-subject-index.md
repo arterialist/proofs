@@ -205,3 +205,6 @@ The [uniform successor-driver theorem](uniform-successor-driver-square-bound.md)
 
 
 The [formal decaying memory charge](charge-compensated-successor-memory.md#formalized-decaying-charge-on-the-finite-energy-domain) now extends the actual transposed kernel directly to causal finite mixed energy, with norm at most $J_B$ and original-reference rank-output norm at most $2J_B$. It retains the real activation threshold and proves positivity of $d_B$, without assuming absolute source charge or unweighted source $L^2$. The rest of the completed commutator and its endpoint derivative remain written.
+
+
+The [cutoff-centered Gram estimate](weighted-prefix-centered-source-gram.md) replaces logarithmic moment losses by an explicit finite weighted-prefix supremum. Finite Abel absorption then works for every diverging subpolynomial schedule, conditional on the actual evolved subpower estimate. This sharpens the older direct rank-one consumer while preserving its proof as a distinct method; the variable-Laplace theorem also covers bounded schedules. The unknown prefix supremum is retained until it is absorbed, never assumed bounded.
