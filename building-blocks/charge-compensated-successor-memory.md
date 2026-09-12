@@ -445,3 +445,25 @@ $$
 These are direct relative-kernel functionals. They do not assume $f\in L^1$ or unweighted $L^2$, or identify an undefined absolute source charge. The earlier equality with $\delta(K_Bf)$ retains its separate $L^2$ hypotheses. The theorem formalizes this full-prime rank-one part of the energy-to-$L^1$ response; the complete commutator extension and endpoint derivative remain outside these modules.
 
 Both targets and the changed aggregate compile with the pinned versions. Their checked primary declarations use only `propext`, `Classical.choice` and `Quot.sound`.
+
+## Formalized quantitative cutoff for the rank charge
+
+[MemoryChargeCutoff](BuildingBlocks/MemoryChargeCutoff.lean) retains the literal remainder $R_P=B-B_{<P}\ge0$, with $B_{<P}=\sum_{p<P}B_p$. It vanishes for $v<\log P$. For natural $P\ge8$, the earlier Chebyshev bound $vB(v)\le C_0:=64\log2+30$ therefore gives
+
+$$
+\int_0^\infty e^{-w}R_P(w)dw\le\frac{C_0}{P\log P},
+\qquad
+0\le d_B(u)-d_{B_{<P}}(u)\le\frac{C_0e^{-u}}{P\log P}
+\quad(u\ge0).
+$$
+
+These are `exponential_remainder_mass_bound` and `remainder_defectKernel_bound`, together with the proved linearity `remainder_defectKernel_identity`. The age endpoint $\log P$ is omitted only as a Lebesgue-null singleton in an integral; every power of every admitted prime remains.
+
+For measurable causal $H$ of finite mixed energy, let $f(u)=e^{u/2}H(e^u)$. The direct difference functional is absolutely convergent, and `cutoff_memory_charge_rank_error` proves
+
+$$
+\left\|a_0\int_0^\infty[d_B(u)-d_{B_{<P}}(u)]f(u)du\right\|_{L^1(0,\infty)}
+\le\frac{2C_0}{P\log P}\sqrt{\mathcal E(H)}.
+$$
+
+The module and changed aggregate compile; the checked primary targets use only `propext`, `Classical.choice` and `Quot.sound`. This quantitative rate concerns the rank charge term. It uses no PNT or RH assumption, and does not give the same rate for the complete compensated commutator.

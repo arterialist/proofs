@@ -214,3 +214,6 @@ The [full continuous remainder gap](theta-continuous-remainder-explicit-gap.md) 
 
 
 The [distinguished-return repair](integer-renewal-and-phase-memory.md#distinguished-return-after-incidence-inversion) recovers the literal state-one renewal after incidence inversion, where an uncorrected resolvent loses the return event. Its marked full-division histories derive both von Mangoldt kernels and a positive real dressed trace, with exact finite energy/variance bounds. The complete trace still has a persistent mixed-prime coefficient. A passing exact symbolic certificate retains primitive-word counts, boundary matrices and finite complex-clock counterexamples; the classical Bowen–Lanford, Rota and Redheffer precedents are explicit.
+
+
+The [formal cutoff charge estimate](charge-compensated-successor-memory.md#formalized-quantitative-cutoff-for-the-rank-charge) bounds the original-reference rank error by $2(64\log2+30)\sqrt{\mathcal E}/(P\log P)$ for $P\ge8$, retaining exactly $p<P$. The [literal clock-jump module](positive-successor-seed-jump-process.md#formalized-literal-clock-jumps-and-their-complete-mass-budget) proves every one-sided prime-power limit, the cell derivative and the complete geometric mass budget. Identifying that budget with the distributional derivative variation remains a separate step.

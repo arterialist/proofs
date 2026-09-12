@@ -112,3 +112,5 @@ import BuildingBlocks.AllPrimeMemoryKernel
 import BuildingBlocks.PrimeSeedSquareConvergence
 import BuildingBlocks.PrimeMemoryChargeDecay
 import BuildingBlocks.MemoryChargeEnergy
+import BuildingBlocks.MemoryChargeCutoff
+import BuildingBlocks.PrimeSeedJumps

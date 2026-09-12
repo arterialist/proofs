@@ -593,3 +593,34 @@ $$
 The majorant is integrable by the proved finite all-prime activity. On the remaining range only the fixed finite set of primes active at $3\log2$ occurs, and the exact single-prime square integrals give an integrable bound. Thus `integrable_allPrimeSeed_square` and `allPrimeSeed_memLp_two` prove the actual $B\in L^2(\mathbb R)$, while the earlier $B\notin L^1$ theorem remains valid.
 
 Both targets and the changed aggregate compile. Their checked primary theorems use only `propext`, `Classical.choice` and `Quot.sound`. This formalizes an elementary Chebyshev/finite-activity proof, without a priority claim. The [all-prime memory specialization and cutoff convergence](charge-compensated-successor-memory.md#formalized-all-prime-memory-and-cutoff-convergence) use this result on the actual half-line $L^2$ input domain; the stronger mixed-source completion retains its written proof.
+
+## Formalized literal clock jumps and their complete mass budget
+
+[PrimeSeedJumps](BuildingBlocks/PrimeSeedJumps.lean) proves one-sided limits of the floor-defined seed for every real clock length $L>0$. For $j\ge0$, `seed_clock_value` and `seed_clock_right_limit` identify
+
+$$
+B_L((j+1)L)=B_L((j+1)L+)=e^{-(j+3)L/2}.
+$$
+
+The left limit at the first birth $L$ is zero. At every later clock $(j+2)L$, `seed_power_left_limit` and `seed_power_jump` give
+
+$$
+B_L((j+2)L-)=e^{-(j+2)L/2},\qquad
+\Delta B_L((j+2)L)=-(1-e^{-L})e^{-(j+2)L/2}<0.
+$$
+
+Inside each open clock cell, `seed_hasDerivAt_in_cell` proves $B_L'=B_L/2$. The entire downward-jump sum is geometric:
+
+$$
+\sum_{j\ge0}(1-e^{-L})e^{-(j+2)L/2}=e^{-L}+e^{-3L/2}.
+$$
+
+Thus `seed_derivative_mass_balance` proves that the continuous mass $\tfrac12\int B_L$, the initial positive jump and every later negative jump sum to zero. The separate positive budget is exactly
+
+$$
+\tfrac12\int B_L+e^{-3L/2}
++\sum_{j\ge0}(1-e^{-L})e^{-(j+2)L/2}
+=2e^{-L}+2e^{-3L/2}.
+$$
+
+The declaration is `seed_derivative_variation_budget`. It records those absolute masses; this module does not yet identify the expression with the BV variation or construct the distributional derivative measure. Setting $L=\log p$ retains the literal prime birth and all proper powers. The module and changed aggregate compile, and the checked limits, jump and budget targets use only the three standard axioms listed above. The [maximal-translation theorem](successor-seed-maximal-translation.md) uses the further written variation/translation argument.
