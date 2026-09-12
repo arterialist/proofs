@@ -119,3 +119,5 @@ import BuildingBlocks.PrimeSeedDerivativeMeasure
 import BuildingBlocks.PrimeSeedDerivativeVariation
 import BuildingBlocks.PrimeSeedFiniteDerivative
 import BuildingBlocks.PrimeSeedAllPrimeDerivative
+import BuildingBlocks.SuccessorFeedbackSource
+import BuildingBlocks.SuccessorFeedbackDifference

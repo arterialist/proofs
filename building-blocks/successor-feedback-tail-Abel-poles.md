@@ -223,3 +223,19 @@ The positive-Laplace abscissa principle is classical. [Suzuki, Proposition 1, Se
 This chapter preserves a written mathematical proof. The actual resolvent, its arithmetic sign or profile consumer, and its stated limiting quantifiers are not asserted to be Lean formalized.
 
 The [continuous-shift proof](actual-Abel-feedback-Mellin-kernel.md) derives the same pole multiplier through complete integer quadrature and a bounded collective lower-boundary correction. The [factorial-division expansion](actual-Abel-factorial-division-positivity.md) supplies a separate constructive positive region and locates the returned histories that can contribute negative logarithmic mass.
+
+## Formalized actual source and ordinary increments
+
+[SuccessorFeedbackSource.lean](BuildingBlocks/SuccessorFeedbackSource.lean) defines the literal causal source with $a(0)=-1$ and the actual $\psi(\lfloor e^v\rfloor)$ cutoff. In namespace `BuildingBlocks.SuccessorFeedback`, `source_iterate` identifies every ordinary iterate on $v\ge0$ with $e^{v/2}g(e^v+j)$. `driver_integrable` and `driver_physical_integral` prove that the relative-kernel charge is absolutely defined and equals
+$$\frac12\int_{x>1}k(\log x)g(x+j)\,\frac{dx}{\sqrt x}.$$
+The exact initial-cell part of $k$ is retained. `driver_abs_le` gives $|e_j|\le2(4\log2+1)$ using the already formal unconditional Chebyshev bound, and `driver_series_summable` gives absolute convergence for $|r|<1$. No integrability of the unweighted source is assumed.
+
+[SuccessorFeedbackDifference.lean](BuildingBlocks/SuccessorFeedbackDifference.lean) proves `physicalDifference_eq`, retaining the exact new birth and continuous density:
+$$
+g(x+j+1)-g(x+j)
+=\frac{\Lambda(\lfloor x\rfloor+j+1)}{x+j+1}
+-\frac{\psi(\lfloor x\rfloor+j)}{(x+j)(x+j+1)}\quad(x>0).
+$$
+`physicalDifference_abs_le` bounds its modulus by $[\log(x+j+1)+4\log2]/(x+j+1)$. `physicalDifference_power_bound` provides an explicit $x^{-5/4}$ majorant after multiplication by $x^{-1/2}$ on $x\ge1$. `innovation_integrable` and `innovation_integral` prove the actual ordinary increment lies in causal $L^1$ and give its physical integral.
+
+These two modules do not yet identify the kernel-defined charge with half the integral of that increment; the vanishing terminal-strip step remains a separate dependency. They also do not prove the sharper large-$j$ decay, analytic floor-kernel remainder, Abel pole identity or RH sign criterion above. Their affected target builds and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`.
