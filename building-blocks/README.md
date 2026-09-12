@@ -446,3 +446,8 @@ The [finite-prime probability construction](positive-successor-seed-jump-process
 ## Common cyclotomic scales and exact clipping defects
 
 The [relative-norm proof](cyclotomic-common-scale-norm.md) reduces the actual upper cyclotomic unit through a nonnegative group-ring exponent, including repeated/shared primes and the degree-one step at 2. It gives the exact algebraic trace, logarithmic averaging operator and character zeros. The full Farey-weighted observable retains explicit fibre covariances and clipping defects. Exact symbolic certificates include a nonzero weighted factor sum whose full clipped increment is zero. This written proof uses classical circular-distribution methods; no Lean formalization is claimed.
+
+
+## Natural cutoff, relative charge and retained heat memory
+
+The [natural-arrival cutoff theorem](natural-arrival-cutoff-completion.md) proves quantitative convergence of the literal frozen-tail source in the additive mixed energy, with all jumps and the endpoint retained. The [relative successor charge](actual-successor-resonance-charge-cocycle.md) is a bounded functional there and has a strictly positive arithmetic limit, expressed by an absolutely convergent arcsine–zeta series. Its exact memory block retains the scalar feedback. The [finite-memory heat repair](successor-heat-finite-memory-repair.md) gives a bounded compensated successor on a causal BV graph space for $0<\sigma<(2m+1)/4$, with explicit memory packets and no uniform growing-$m$ claim. The [collective square-response proof](collective-successor-charge-square-response.md) explains why zero mean on each prime clock does not remove the positive collective half-moment response. These are written proofs; no full signed Weil or anticausal bound follows.

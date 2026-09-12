@@ -153,3 +153,5 @@ The symmetric estimate covers small $\eta$. These bounds are integrable after di
 The norm of the completed test kernel is not asserted uniform as its physical window grows. Its marginal corrections explicitly record the causal boundary information. Neither the sign of this bilinear pairing nor a bound for the unsmoothed complete harmonic readout follows from Hilbert-space membership alone.
 
 The positive increment form and its Fourier multiplier use the classical translation/Plancherel construction. Its PNT input and attribution are given in the linked successor theorem. The tensor marginal correction retains the original causal pairing because the anchor function vanishes on the source support. Neither positive energy nor source membership proves positivity of the old prime operator.
+
+The [natural-arrival cutoff proof](natural-arrival-cutoff-completion.md) gives a distinct quantitative construction for the literal frozen-tail approximants, including their full derivative measures and inclusive joins. It identifies the same completed causal source as the smooth logarithmic cutoffs used above.
