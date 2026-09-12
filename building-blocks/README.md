@@ -22,7 +22,7 @@ The [written proofs](harmonic-convolution.md) give a general cancellation mechan
 
 ## Harmonic prime Laplacian and infinite flow
 
-The [phase and flow theorem](harmonic-prime-laplacian-flow.md) proves a physical $1/p$ Laplacian lower bound on every fixed exponential frequency band. It constructs an unconditional infinite-prime divergence for the actual mean-zero line-one error, with finite edge energy, absolute weighted flux and admission error $O(\log P/\sqrt P)$. The complete prime-factorization inequality is formalized in [PrimePhaseFactorization.lean](BuildingBlocks/PrimePhaseFactorization.lean); the harmonic and infinite-flow statements are written proofs.
+The [phase and flow theorem](harmonic-prime-laplacian-flow.md) proves a physical $1/p$ Laplacian lower bound on every fixed exponential frequency band. It constructs an unconditional infinite-prime divergence for the actual mean-zero line-one error, with finite edge energy, absolute weighted flux and admission error $O(\log P/\sqrt P)$. The complete prime-factorization inequality, its exact normalized harmonic average and the lcm formula for its prime weights are formalized in the [three linked Lean modules](harmonic-prime-laplacian-flow.md#formalized-factorization-and-scope). The frequency lower bound and infinite-flow statements are written proofs.
 
 ## Local poles at zeta zeros
 

@@ -41,7 +41,7 @@ Related constructions retain different information:
 | [Prime-clique cutoff](prime-clique-cutoff.md) | Exact arithmetic births; the stated critical-strip limit is not zeta. |
 | [Face-feedback obstruction](integer-face-feedback-obstruction.md) | A counterexample to the specified positive-resolvent repair. |
 
-The [harmonic prime Laplacian and flow](harmonic-prime-laplacian-flow.md) turn complete integer phase resolution into a quantitative lower bound with the physical prime weights $1/p$. The resulting actual line-one periodization has an infinite prime divergence with finite edge energy and absolutely summable weighted flux. Its full-multiplicity integer phase inequality is formalized; the analytic flow and its $O(\log P/\sqrt P)$ admission error are written proofs.
+The [harmonic prime Laplacian and flow](harmonic-prime-laplacian-flow.md) turn complete integer phase resolution into a quantitative lower bound with the physical prime weights $1/p$. The resulting actual line-one periodization has an infinite prime divergence with finite edge energy and absolutely summable weighted flux. Its full-multiplicity integer phase inequality, exact harmonic average and lcm coefficient formula are formalized; the analytic flow and its $O(\log P/\sqrt P)$ admission error are written proofs.
 
 ## From finite arithmetic identities to an analytic consumer
 

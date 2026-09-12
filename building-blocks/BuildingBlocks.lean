@@ -72,3 +72,5 @@ import BuildingBlocks.TwoCrossingMoment
 import BuildingBlocks.DivisionDyadicFactorial
 import BuildingBlocks.DivisionDyadicPrimeAverage
 import BuildingBlocks.PrimePhaseFactorization
+import BuildingBlocks.HarmonicPrimePhase
+import BuildingBlocks.HarmonicPrimeWeights
