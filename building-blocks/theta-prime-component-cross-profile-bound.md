@@ -327,3 +327,5 @@ The mixed score and the affine scalar are retained. Nonzero component separation
 ## Attribution and formal scope
 
 The closed-form variational inverse, nonnegative-form Cauchy–Schwarz, finite-rank inverse identities and affine completion of squares used here are classical. The actual theta ground state, full continuous kernel, every prime power and stated fixed-core domains remain part of the theorem. These are written proofs; no Lean formalization of this profile comparison or evaluation of the required arithmetic smallness is asserted.
+
+The [score-action match](theta-ground-score-action-covariance-repair.md) adds the actual score quotient while preserving the sign action. The [full-form theorem](theta-prime-profile-full-form-domain.md) establishes the domain of the resulting affine trial, so the [complete conditional edge estimator](theta-affine-comparison-conditional-edge-energy.md) applies to the actual source. Its numerical or arithmetic smallness is not proved.
