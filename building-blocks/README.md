@@ -427,3 +427,10 @@ The [carry covariance chapter](incomplete-carry-covariance.md#5-the-arithmetic-c
 
 
 The [delay and prime-sum formalizations](positive-successor-seed-jump-process.md#formalized-delay-history-and-prime-sum-distinctions) retain the seed's initial interval and terminal history, prove causal uniqueness, and apply Euler's theorem to distinguish divergent total component mass from summable component square mass. Their exact finite-aggregate and no-integrable-majorant theorems preserve the cross-prime limitation.
+
+
+## Complete centered arrival energy and positive-age evolution
+
+The [large-birth theorem](infinite-centered-birth-energy.md) proves the actual kernel's translation modulus $8/\log(1/h)$ and centered birth energy $16/(t\log t)$, with every inverse prime-power jump retained. The [arithmetic loading theorem](transformed-actual-arrival-loading.md) gives total increment energy asymptotic to $16\log N$, separate density-cell loading $16\log\log N$ and finite proper-power loading; all ramp squares and mixed corrections sum absolutely.
+
+Every fixed nonnegative-age probability law [preserves this leading loading](positive-age-preserves-arithmetic-loading.md), including the complete positive successor process and infinite-mean laws. The exact finite-history balance retains the signed cross work. Its required $-8\log N$ leading cancellation would follow from a separate uniform bound on transformed source energy, which is not proved here. These analytic results remain written proofs.

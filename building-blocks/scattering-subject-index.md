@@ -117,3 +117,6 @@ The [single-clock formalization](positive-successor-seed-jump-process.md#formali
 
 
 The [formalized delay chain](positive-successor-seed-jump-process.md#formalized-delay-history-and-prime-sum-distinctions) retains both the nonzero first interval and every finite terminal history. The accompanying prime-sum module formalizes Euler divergence of aggregate mass, summability of component squares and absence of an integrable majorant, without dropping collective cross terms.
+
+
+The centered domain has an exact [large-birth energy asymptotic](infinite-centered-birth-energy.md) obtained from its full arithmetic jump variation. Its [actual source loading](transformed-actual-arrival-loading.md) and [fixed positive-age invariance](positive-age-preserves-arithmetic-loading.md) retain the signed finite-history balance. These theorems concern actual centered arrivals on their established domain, not a bounded all-source centered operator or a sign for the Weil form.

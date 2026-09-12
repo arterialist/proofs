@@ -155,3 +155,10 @@ The [finite-source graph](centered-prime-natural-source-graph.md) and [sharp cen
 ## Carry arrivals and period-sensitive covariance
 
 The [carry chapter](incomplete-carry-covariance.md) preserves distinct finite-Fourier and CRT proofs. It gives the exact positive growing-box arrival law, including old prime-power boundary rows, and complete-period covariance $(\gcd(d,e)^2-1)/(4de)$. Its explicit incomplete-box formula has positive covariance for the actual prime levels $11,13$ at cutoff $13$, as well as the earlier negative examples. Complete-period orthogonality therefore supplies no boundary-sign repair. These carry statements remain written proofs; the similarly named Lean module proves a separate finite-variance inequality.
+
+
+## Actual centered loading at the integer clock
+
+The [complete birth energy](infinite-centered-birth-energy.md) gives $\mathcal E(C_\infty h_t)\sim16/(t\log t)$. The [actual increment theorem](transformed-actual-arrival-loading.md) retains $v_n=(\Lambda(n)-1)h_n-b_n$, its unit-cell ramp and all cross corrections, proving total loading $16\log N$. Prime arrivals provide this leading order; density-only cells separately contribute $16\log\log N$, and proper-power loading is finite. The first error term is not small enough to combine these into a two-term expansion.
+
+[Fixed positive-age evolution](positive-age-preserves-arithmetic-loading.md) preserves the same leading constants, even for infinite mean age. Neither bounded evolution in the original mixed source space nor summable ramp errors supplies the missing cumulative signed cross-work estimate for its centered image.
