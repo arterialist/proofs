@@ -249,3 +249,23 @@ $$
 The initial node vanishes by the proved $U_n(0)=0$. `actual_all_birth_defect_identity` retains the full integral of $IU_n-U_n$; `actual_discrete_laplace_order` proves its nonnegative sign.
 
 These modules formalize the classical convex-interpolation mechanism on the actual birth kernel, including every required convergence step. The adapted target and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`. The final identification with the original $E+C$, strict positivity and the sharp cusp asymptotic remain separate written results.
+
+## Formal discrete return and complete geometric correction
+
+[IntegerBirthDiscreteCorrection](BuildingBlocks/IntegerBirthDiscreteCorrection.lean) retains the literal physical lower endpoint in the integer-age birth mass
+$$
+d_{n,0}=n^{-1/2},\qquad
+d_{n,j}=\frac1{\sqrt j}\arctan\sqrt{\frac{j}{\max(1,n-j)}}\quad(j>0).
+$$
+For every integer $n\ge2$ and $j\ge0$, it proves
+$$
+d_{n,j}=q_n(j)-\mathbf1_{n\le j}\frac{\arctan(1/\sqrt j)}{\sqrt j}.
+$$
+The formal endpoint at $j=0$ is zero. With $b_j=\arctan(1/\sqrt j)/\sqrt j$, `actual_fixed_age_identity` gives the absolutely convergent full-power identity
+$$
+\sum_{n\ge2}\Lambda(n)\bigl[d_{n,j}-n^{-1/2}\bigr]+b_j\psi(j)
+=\sum_{n\ge2}\Lambda(n)U_n(j).
+$$
+The $\psi$ here is the existing central `CoarsePrimitive.psi`, including the integer endpoint, rather than a new arithmetic definition.
+
+[IntegerBirthDiscreteAbel](BuildingBlocks/IntegerBirthDiscreteAbel.lean) proves absolute convergence over both birth and clock indices for $0\le r<1$. Its `geometric_actual_source_identity` multiplies the last identity by $r^j$, sums every $j\ge0$, and justifies exchanging the full prime-power and clock sums. The correction remains $\sum_j r^jb_j\psi(j)$. These modules formalize the complete discrete endpoint correction and its Abel sum; identification with the original feedback $E$, strict positivity of its interpolation defect and the sharp cusp asymptotic remain separate. The adapted targets and aggregate compile, with only the three standard axioms in the principal theorem reports.

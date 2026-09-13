@@ -376,3 +376,13 @@ g(y)\bigl[K_z(y)-K_z^{\rm cont}(y)\bigr]\longrightarrow0
 \quad(y\to\infty),\qquad \Re z>0.
 $$
 The proof applies dominated convergence to the literal finite-cell indicator; it assumes no limit for $g$ itself. The complete driver-to-zeta transform, continuous beta kernel and eventual-sign RH consumer remain outside these modules. The three modules compile against the repository pin; their principal theorem axiom reports contain only `propext`, `Classical.choice` and `Quot.sound`.
+
+## Formal causal root translation
+
+[SuccessorFeedbackRootTranslation](BuildingBlocks/SuccessorFeedbackRootTranslation.lean) proves the exact translation cancellation for the literal causal kernel $c(x)=\mathbf1_{x>1}/\sqrt x$. Although $c$ is not integrable, for every $t\ge0$ its difference is integrable and
+$$
+\int_{\mathbb R}\bigl[c(x)-c(x-t)\bigr]dx=0,
+\qquad
+\int_{\mathbb R}|c(x)-c(x-t)|dx=4\bigl(\sqrt{t+1}-1\bigr).
+$$
+The proof retains the positive initial strip $(1,t+1]$ and the complete negative tail $(t+1,\infty)$, each of mass $2(\sqrt{t+1}-1)$. This elementary translation identity is a prerequisite for the continuous-kernel cancellation; it does not by itself assert the analytic continuation across $z=1$ or the complete zeta transform. Its target and aggregate compile, and the principal axiom reports contain only `propext`, `Classical.choice` and `Quot.sound`.
