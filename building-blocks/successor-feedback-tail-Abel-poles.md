@@ -354,3 +354,25 @@ R_z\in L^1(\mathbb R),\qquad
 \|R_z\|_1\le2\|\delta_z\|_{L^1(0,\infty)}.
 $$
 The cancellation uses the proved kernel mass $\int k'=-1$ and $\|k'\|_1=1$. The module identifies $R_z$ with the actual derivative almost everywhere. These are unconditional analytic identities, derived from the literal discretization error. The arithmetic pairing and zeta continuation remain outside this batch. The affected targets and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`.
+
+## Formal arithmetic pairing, holomorphic floor remainder and age endpoints
+
+[SuccessorFeedbackFloorPairing](BuildingBlocks/SuccessorFeedbackFloorPairing.lean) transposes the complete integrable age derivative against any bounded measurable complex source $g$:
+$$
+\int_{\mathbb R}g(y)R_z(y)\,dy
+=\int_0^\infty\delta_z(t)
+\left[g(t+1)-\frac12\int_1^\infty\frac{g(t+x)}{x^{3/2}}\,dx\right]dt,
+\qquad \Re z>0.
+$$
+Here $R_z$ is the whole-line floor-error derivative defined in the preceding section. The bracket keeps the endpoint and the entire tail together, with norm at most $2\|g\|_\infty$. `actual_floorAgeError_pairing` specializes this identity to the literal $g(x)=\psi(\lfloor x\rfloor)/x-1$, using its existing definition at zero and below the causal threshold. The global bound $|g|\le4\log2+1$ and both absolute integrability claims are proved from the existing Chebyshev dependency.
+
+[SuccessorFeedbackFloorHolomorphic](BuildingBlocks/SuccessorFeedbackFloorHolomorphic.lean) proves `actualFloorRemainder_analyticOnNhd`: this actual integral is holomorphic on $\Re z>0$. It uses the classical Cauchy estimate on a local parameter disk to turn the already proved uniform $L^1$ floor discrepancy into an integrable parameter-derivative bound. This is a complete alternate proof of the remainder's holomorphy; the arithmetic source is unchanged.
+
+[SuccessorFeedbackFloorBoundary](BuildingBlocks/SuccessorFeedbackFloorBoundary.lean) proves that $K_z(1)-K_z^{\rm cont}(1)=0$ and
+$$
+K_z(y)-K_z^{\rm cont}(y)\longrightarrow0,
+\qquad
+g(y)\bigl[K_z(y)-K_z^{\rm cont}(y)\bigr]\longrightarrow0
+\quad(y\to\infty),\qquad \Re z>0.
+$$
+The proof applies dominated convergence to the literal finite-cell indicator; it assumes no limit for $g$ itself. The complete driver-to-zeta transform, continuous beta kernel and eventual-sign RH consumer remain outside these modules. The three modules compile against the repository pin; their principal theorem axiom reports contain only `propext`, `Classical.choice` and `Quot.sound`.
