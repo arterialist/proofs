@@ -287,7 +287,7 @@ These modules use the existing arithmetic source and Chebyshev bound. Their targ
 
 [SuccessorFeedbackGamma](BuildingBlocks/SuccessorFeedbackGamma.lean) proves the actual whole-axis identity
 $$
-\int_0^\infty t^{z-1}[E(e^{-t})-e_0],dt
+\int_0^\infty t^{z-1}[E(e^{-t})-e_0]\,dt
 =\Gamma(z)\sum_{j\ge1}\frac{e_j}{j^z}
 =\Gamma(z)[D_e(z)-I(z)],\qquad\Re z>1/2.
 $$
@@ -295,19 +295,19 @@ Theorems `gammaDriver_integrable`, `gammaDriver_integral` and `gammaDriver_integ
 
 [SuccessorFeedbackMellinTail](BuildingBlocks/SuccessorFeedbackMellinTail.lean) proves the explicit exponential estimate for $E(e^{-t})-e_0$ on $t\ge1$. Its exact tail
 $$
-T_\infty(z)=\int_1^\infty t^{z-1}[E(e^{-t})-e_0],dt
+T_\infty(z)=\int_1^\infty t^{z-1}[E(e^{-t})-e_0]\,dt
 $$
 is absolutely convergent for every complex $z$ and entire, as formalized by `exponentialMellinTail_convergent` and `exponentialMellinTail_differentiable`.
 
 [SuccessorFeedbackAbelClock](BuildingBlocks/SuccessorFeedbackAbelClock.lean) then proves
 $$
-\mathcal E(z)=\int_0^1t^{z-1}E(1-t),dt
+\mathcal E(z)=\int_0^1t^{z-1}E(1-t)\,dt
 =\Gamma(z)D_e(z)+R_{\rm clock}(z),\qquad\Re z>1/2,
 $$
 where the literal remainder is
 $$
 R_{\rm clock}(z)=-\Gamma(z)I(z)-T_\infty(z)+\frac{e_0}{z}
--\int_0^1t^{z-1}[E(e^{-t})-E(1-t)],dt.
+-\int_0^1t^{z-1}[E(e^{-t})-E(1-t)]\,dt.
 $$
 `abelTransform_integrable` proves absolute convergence in the stated half-plane; `abelTransform_eq_dirichlet` proves the identity; `abelClockRemainder_analyticOnNhd` proves the remainder holomorphic on $\Re z>0$. Every endpoint, index shift and signed driver is retained. The interval is represented as $(0,1]$ in Lean, with the endpoint difference explicitly harmless for the earlier open-interval clock integral.
 
@@ -332,3 +332,25 @@ $$
 `floorAbelIntegrand_integrable` proves absolute finite-interval integrability for $\Re z\ge0$; the literal upper endpoint keeps $y-t\ge1$. `floorAbelKernel_initial` gives $K_z(1)=0$, and `floorAbelKernel_analyticOnNhd` proves parameter analyticity for $\Re z>0$. The proof derives a local derivative majorant on the complete interval.
 
 `floorAbelKernel_sub_smooth` identifies the exact difference from the continuous $(t+1)^{-z}$ kernel as the integral of the previously formalized floor-weight error. No spatial derivative, arithmetic integration or zeta continuation is assumed by these statements. The affected target compiled, and its main axiom checks use only `propext`, `Classical.choice` and `Quot.sound`.
+
+
+## Formal spatial derivative and its complete zero-mass error
+
+[SuccessorFeedbackClippedKernel.lean](BuildingBlocks/SuccessorFeedbackClippedKernel.lean) separates the moving endpoint using the bounded Lipschitz function $k(x)=(\max(1,x))^{-1/2}-1$. For every $L^1$ input its convolution is differentiable, with derivative obtained by the complete kernel $k'(x)=-\tfrac12x^{-3/2}\mathbf1_{x>1}$. The proof does not differentiate the floor function.
+
+[SuccessorFeedbackFloorAgeDerivative.lean](BuildingBlocks/SuccessorFeedbackFloorAgeDerivative.lean), theorem `floorAbelError_hasDerivAt`, proves for $\Re z>0$, $y>1$ and $y-1$ nonintegral,
+$$
+(K_z-K_{z,\rm cont})'(y)
+=\delta_z(y-1)-\frac12\int_0^{y-1}\delta_z(t)(y-t)^{-3/2}dt,
+\qquad
+\delta_z(t)=(\lfloor t\rfloor+1)^{-z}-(t+1)^{-z}.
+$$
+The full endpoint value is retained. `floorAbelError_hasDerivAt_ae` proves the corresponding almost-everywhere statement on $y>1$.
+
+[SuccessorFeedbackFloorL1.lean](BuildingBlocks/SuccessorFeedbackFloorL1.lean) extends $\delta_z$ by zero to negative ages and defines the literal whole-line error $R_z(y)=\delta_z(y-1)+(\delta_z*k')(y)$. `floorAgeError_integrable`, `floorAgeError_integral` and `floorAgeError_norm_bound` prove
+$$
+R_z\in L^1(\mathbb R),\qquad
+\int_{\mathbb R}R_z=0,\qquad
+\|R_z\|_1\le2\|\delta_z\|_{L^1(0,\infty)}.
+$$
+The cancellation uses the proved kernel mass $\int k'=-1$ and $\|k'\|_1=1$. The module identifies $R_z$ with the actual derivative almost everywhere. These are unconditional analytic identities, derived from the literal discretization error. The arithmetic pairing and zeta continuation remain outside this batch. The affected targets and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`.

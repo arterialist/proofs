@@ -171,3 +171,9 @@ import BuildingBlocks.IntegerBirthSourceBound
 import BuildingBlocks.IntegerBirthLaplaceOrder
 
 import BuildingBlocks.IntegerBirthExponentialHats
+
+import BuildingBlocks.SuccessorFeedbackClippedKernel
+
+import BuildingBlocks.SuccessorFeedbackFloorAgeDerivative
+
+import BuildingBlocks.SuccessorFeedbackFloorL1
