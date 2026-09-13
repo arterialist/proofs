@@ -163,3 +163,11 @@ import BuildingBlocks.SuccessorFeedbackAbelClock
 import BuildingBlocks.SuccessorFeedbackAbelLaplace
 
 import BuildingBlocks.SuccessorFeedbackFloorKernel
+
+import BuildingBlocks.IntegerBirthKernel
+
+import BuildingBlocks.IntegerBirthSourceBound
+
+import BuildingBlocks.IntegerBirthLaplaceOrder
+
+import BuildingBlocks.IntegerBirthExponentialHats

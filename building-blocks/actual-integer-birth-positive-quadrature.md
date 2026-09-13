@@ -228,3 +228,24 @@ This uses only Chebyshev for the upper estimate and the exact factorial identity
 The [complete cusp asymptotic](successor-quadrature-cusp-asymptotic.md) sharpens the correction to $D(t)=\zeta(3/2)t\log(1/t)/(4\pi)+O(t)$ and gives the same leading term for the mean-removed error $\epsilon(t)$. The proof controls every distance cell behind each integer birth uniformly before summing all prime powers. Chebyshev and the factorial identity suffice; the finite-core sign remains open.
 
 The [factorial-potential interpolation](factorial-potential-integer-interpolation.md) is a separate exact decomposition with a negative nonvanishing correction. The [positive common-inner observation](coherent-core-positive-observation-inner-history.md) and its [signed original-source cutoff port](positive-history-observation-original-cutoff-port.md) retain the complete scalar core question.
+
+## Formal complete birth interpolation and exponential hats
+
+The formal chain starts with the literal arcsine birth kernel $q_n$ and its centered value $U_n=q_n-n^{-1/2}$. [IntegerBirthKernel.lean](BuildingBlocks/IntegerBirthKernel.lean) proves the positive integral representation through the birth endpoint, convexity on every integer cell, $U_n(0)=0$, and the nonnegative ordinary interpolation defect. The cusp lies on a cell boundary; global convexity across it is not assumed.
+
+[IntegerBirthSourceBound.lean](BuildingBlocks/IntegerBirthSourceBound.lean) proves
+$$
+|U_n(u)|,\ |IU_n(u)|\le(\pi+1)\frac{u}{n\sqrt n}
+\qquad(n\ge2,\ u\ge0).
+$$
+It derives convergence of the literal $\Lambda(n)/(n\sqrt n)$ sum from mathlib's Mangoldt Dirichlet-series theorem, then proves absolute complete birth/clock sums. The internal index $n+2$ includes every integer birth from $2$ onward and all proper prime powers.
+
+[IntegerBirthLaplaceOrder.lean](BuildingBlocks/IntegerBirthLaplaceOrder.lean) derives both countable sum/integral exchanges, the full $\Lambda$-weighted Laplace interpolation inequality and its nonnegative defect for every $t>0$. [IntegerBirthExponentialHats.lean](BuildingBlocks/IntegerBirthExponentialHats.lean), theorem `actual_all_birth_hat_identity`, evaluates the half-open cell partition exactly:
+$$
+\sum_{n\ge2}\Lambda(n)\int_0^\infty e^{-tu}IU_n(u)du
+=\frac{(1-e^{-t})^2}{e^{-t}t^2}
+\sum_{n\ge2}\Lambda(n)\sum_{j\ge0}e^{-tj}U_n(j).
+$$
+The initial node vanishes by the proved $U_n(0)=0$. `actual_all_birth_defect_identity` retains the full integral of $IU_n-U_n$; `actual_discrete_laplace_order` proves its nonnegative sign.
+
+These modules formalize the classical convex-interpolation mechanism on the actual birth kernel, including every required convergence step. The adapted target and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`. The final identification with the original $E+C$, strict positivity and the sharp cusp asymptotic remain separate written results.
