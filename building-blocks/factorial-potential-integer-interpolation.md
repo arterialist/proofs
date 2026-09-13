@@ -248,3 +248,5 @@ $N_r\ge-H_r$, with the actual positive threshold $-H_r$ tending to $-H_\infty>1/
 ## Relation to the other interpolation and formal scope
 
 The [integer-birth interpolation](actual-integer-birth-positive-quadrature.md) has a positive vanishing defect, with its [exact cusp asymptotic](successor-quadrature-cusp-asymptotic.md). The interpolation above acts on the factorial potential instead and has a negative nonvanishing correction. Both retain their initial cells and complete arithmetic tails. The unit-interval Green representation and binomial Chebyshev argument are classical; the complete source-specific pairing and comparison failure above are written proofs, not Lean theorems.
+
+The same actual potential has a [closed original-$L^2$ ground-state realization](factorial-ground-state-original-l2-domain.md). Its positive pulled-back form retains the complete prime and density observations; this domain result does not change the signed interpolation correction proved here.

@@ -151,3 +151,5 @@ The [correlated ground identity](coherent-core-theta-domain-and-cutoff.md) acts 
 ## Attribution and formal scope
 
 Fourier correlation factorization and polarization are classical. The source-specific zero and logarithmic moments used here are proved in the [complete kernel moment theorem](successor-division-kernel-moments.md). The full archimedean and pole normalization is the [actual theta Weil form](theta-weil-jump-form.md). This chapter preserves a written construction and its exact obstruction to a single positive square; it makes no Lean or arithmetic sign claim.
+
+The [exact radical projection](actual-core-Weil-arch-row-radical-projection.md) removes both source pole moments while preserving the full physical Weil pairing. Its prime-port constant is exactly compensated by the archimedean row. This supplies a pole-null pair but does not remove the theta-domain obstruction or prove its cross-row sign.

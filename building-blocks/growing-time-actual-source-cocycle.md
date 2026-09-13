@@ -245,3 +245,5 @@ Q_2(0)=1+\frac{(2-\log2)^2}{2}>1=J_1,
 $$
 
 Thus $J_2>J_1$ for $0<c<\log Q_2(0)/(4\lambda\log2)$. This is an actual-source example. The open task is to control the full signed product (5), or its birth-minus-action sum (15), together with the terminal norm. The successor transfer (18) does not supply that bound.
+
+The [factorial-ground loading decomposition](factorial-source-clock-loading.md) resolves these same births into three bounded observation forms. Prime and density loadings have the same leading coefficient and an absolutely summable diagonal difference. Their mixed work and component dissipation retain their signs; the original terminal and action targets are unchanged.
