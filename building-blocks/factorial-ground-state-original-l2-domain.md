@@ -321,3 +321,5 @@ The separate finite-source and birth-polarization formulas are supplied by [the 
 The [growing-clock loading theorem](factorial-source-clock-loading.md) applies these bounded forms to every actual evolved birth. It keeps the full observing prime sum even beyond each source cutoff. Hardy inequalities, graph closure and the local ground-state transformation are classical tools; this chapter supplies the explicit arithmetic domain and inverse. This is a written proof, with no Lean formalization or identification of this positive operator with the theta/Weil form.
 
 The [additive successor transport](goldbach-literal-successor-counting-transport.md) identifies this same $F$ with the classical $H_1$ explicit formula and retains the causal derivative atom. Its counting kernel gives a separate additive constraint on the source; the original-$L^2$ operator here is unchanged.
+
+The [finite screw-configuration pullback](factorial-ground-screw-increment-consumer.md) turns each zero-mass configuration into an explicit original-$L^2$ source. The screw form is twice this ground square plus a complete residual, whose origin contact is essential.

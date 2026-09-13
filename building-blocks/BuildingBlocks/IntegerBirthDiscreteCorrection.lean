@@ -54,7 +54,7 @@ theorem discreteBirth_eq_postbirth {n j : ℕ} (hn : 2 ≤ n) (hj : n ≤ j) :
   have ha := Real.arctan_inv_of_pos hs
   rw [discreteBirth, if_neg hj0, max_eq_left (by linarith : (n : ℝ)-j ≤ 1), div_one,
     q_eq_postbirth hn0 hnj, endpoint]
-  rw [one_div] 
+  rw [one_div]
   rw [ha]
   ring
 

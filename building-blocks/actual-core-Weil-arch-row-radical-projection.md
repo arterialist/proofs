@@ -292,3 +292,5 @@ The projected row is still a cross term of two distinct sources. The constructio
 ## Dependencies and formal scope
 
 The [explicit two-source factorization](actual-core-explicit-weil-cross-family.md), [correlated theta cutoff](coherent-core-theta-domain-and-cutoff.md), [complete scaling kernel](successor-feedback-kernel-scaling.md) and [actual theta Weil normalization](theta-weil-jump-form.md) fix every term. The digamma integral and recurrence are classical; the displayed calculation keeps their complete prime, gamma and pole compensation. The extension of the radical to this exponential/BV source pair and its constant-scale correction are written proofs. No Lean formalization, finite theta norm for the uncut pair, or arithmetic gain from the projection is asserted.
+
+The [signed screw-increment readout](actual-core-screw-increment-readout.md) expresses this full row through the classical actual $H_1$ kernel, with the origin atom and both signs of the full observation weight retained. The radical projection leaves that exact signed budget unchanged.

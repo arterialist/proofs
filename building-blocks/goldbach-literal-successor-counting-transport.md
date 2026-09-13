@@ -192,3 +192,5 @@ The source-action calculation (3)–(10) supplies a coupled additive constraint 
 ## Dependencies and formal scope
 
 The [actual successor charge](actual-successor-resonance-charge-cocycle.md) fixes $\kappa$ and its convergent half-moment difference. The [factorial potential](factorial-ground-state-original-l2-domain.md) fixes the source in (11)–(12). The positive transport, additive convolution and Stieltjes integration use classical measure and summation tools; Matsumoto–Suzuki supply the attributed explicit formula and its separate conditional consumers. Every complete prime-power tail and both compensation terms are retained. The transport, escape bound and weighted comparison in this chapter are written proofs and are not formalized in Lean.
+
+The [centered circle-majorant consumer](goldbach-additive-source-consumer.md) gives a separate quantitative route to the original source norm and clock action. Its positive majorant cannot be replaced by the signed additive remainder.
