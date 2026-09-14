@@ -16,6 +16,14 @@ The [renewal and dyadic-average note](division-renewal-dyadic-average.md) proves
 
 The [eventual-sign criterion](actual-critical-sign-criterion.md) proves in Lean that eventual nonpositivity of the explicitly defined, complete arithmetic sum $W(x)$ implies full mathlib RiemannHypothesis. Its Mellin identity, Landau theorem, continuation and pole exclusion are proved, including multiple zeros. The eventual sign itself remains unproved.
 
+## Centered Goldbach pairs as a multiplicative spectral norm
+
+The [spectral bridge](goldbach-multiplicative-spectral-bridge.md) uses the Mellin--Barnes beta identity to express the Dirichlet series of centered additive pairs as a positive gamma-weighted vertical-line norm of $-\zeta'/\zeta-\zeta$. The identity is unconditional in the absolutely convergent range $\sigma>2$; finiteness of the positive spectral norm for every $1<\sigma<2$ is equivalent to RH. This isolates the exact additive-to-multiplicative estimate that ordinary Goldbach existence or a signed continuation does not provide.
+
+## Prime-state hard wall and causal renewal criterion
+
+The [prime-state hard wall](prime-state-hard-wall.md) gives an exact primality separator with sharp composite gap $(2+\sqrt2)/4$, while the [projector boundary analysis](prime-state-projector-boundary.md) proves that the macroscopic prime and composite sectors must be centered before taking the projector limit. The [critical heat criterion](critical-heat-lyapunov-exponent.md) identifies RH with a zero Lyapunov exponent for the centered prime heat source. The [causal renewal development](prime-division-renewal-lyapunov.md) gives zeta as the scale-shift symbol, extracts an integrable Euler remainder with positive primitive, and derives a damped second-order memory equation. Its final phase/coercivity estimate remains unproved.
+
 ## Discrete harmonic convolution, regularity and aliasing
 
 The [written proofs](harmonic-convolution.md) give a general cancellation mechanism for the exact integer harmonic operator. Mean-square translation continuity yields a bilinear mean theorem, with spectral conditions allowing continuous and mixed spectra. A separate exponential-variation theorem permits escaping frequencies, while an exact counterexample shows that bounded mean energy and a vanishing primitive alone do not suffice. The arithmetic application retains every dilation and prime power and gives an alternative proof of the known RH-conditional leading term of $W$. Its general lemmas are unconditional; the arithmetic mean-energy input remains unproved. These results are not formalized in Lean.
