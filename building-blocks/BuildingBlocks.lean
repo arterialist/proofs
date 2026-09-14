@@ -189,3 +189,7 @@ import BuildingBlocks.IntegerBirthDiscreteCorrection
 import BuildingBlocks.IntegerBirthDiscreteAbel
 
 import BuildingBlocks.SuccessorFeedbackRootTranslation
+
+import BuildingBlocks.GoldbachSuccessorTransfer
+
+import BuildingBlocks.PrimeStateAndRenewalArch

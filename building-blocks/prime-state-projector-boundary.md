@@ -54,7 +54,7 @@ $$
 \boxed{
 \begin{aligned}
 B_{\mathbb P}(x)={}&x^2\left[
- \frac12P_{3/2}(x)\log x+rac14P_{3/2}(x)
+ \frac12P_{3/2}(x)\log x+\frac14P_{3/2}(x)
  -\frac12L_{3/2}(x)-H_1(x)\right]\\
 &+\sum_{p<x}p\log p-\frac14\sum_{p<x}\sqrt p.
 \end{aligned}}
@@ -73,7 +73,7 @@ gives
 
 $$
 \frac{x-p}{\sqrt p}R(x/p-1)
-=\frac{x^2}{p^{3/2}}left(\frac12\log\frac xp-\frac34\right)
+=\frac{x^2}{p^{3/2}}\left(\frac12\log\frac xp-\frac34\right)
  +\frac{x}{\sqrt p}-\frac{\sqrt p}{4}.
 \tag{5}
 $$
@@ -179,7 +179,7 @@ obeys
 
 $$
 \left|Z_x\mathbb E_x[q_k\mathcal D_x]-B_{\mathbb P}(x)\right|
-\le c_*^k\sum_{\substack{n<x\\n\ {m composite}}}
+\le c_*^k\sum_{\substack{n<x\\n\ {\rm composite}}}
 \frac{x-n}{\sqrt n}|\mathcal D_x(n)|.
 \tag{12}
 $$
