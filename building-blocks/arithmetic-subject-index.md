@@ -404,3 +404,7 @@ The [simultaneous-horizon factorial estimate](factorial-cross-size-mobius-energy
 [Formal uncentered prime-power convolution](centered-goldbach-heat-lyapunov.md#formal-uncentered-prime-power-additive-convolution) adds three compiled Lean theorems proving absolute positive-time convergence and the direct identity primeHeat(t)^2=sum R_Lambda(k+2)exp(-(k+2)t). It uses the existing complete von Mangoldt coefficients and both positive indices. Ordinary Goldbach existence and the critical quantitative estimate remain open.
 
 [Compact bare prime-action exclusion](compact-bare-prime-action-finite-lp-exclusion.md) combines the finite-Lp zero-annihilation necessity with Jensen's O(T) zero bound for a nonzero compact seed transform and an existing unconditional positive density of simple critical-line zeros. Every nonzero compact smooth seed fails every finite Lp bare-action tail, without parity or pole-null assumptions. The density input is explicit; this is reviewed written mathematics awaiting Lean, with no bounded-action or weighted compensated-form exclusion and no RH bound.
+
+## Formal complete quotient constraints
+
+[FactorialQuotientConstraints](BuildingBlocks/FactorialQuotientConstraints.lean) proves the complete integer-quotient mass family for actual Möbius coefficients, its real version, zero mass above the cutoff and exact grouping by quotient fibers. Five compiled unconditional theorems; the factorial energy upper bound remains open. See [the renewal chapter](factorial-mobius-quotient-renewal.md).

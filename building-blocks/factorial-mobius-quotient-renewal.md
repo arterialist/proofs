@@ -30,6 +30,8 @@ Indeed floor(floor(N/n)/k)=floor(N/(nk)), so the left side equals sum_(n<=floor(
 
 Moreover these constraints uniquely determine the grouped vector on S_N. Order S_N from largest to smallest and use k equal to each successive quotient. The coefficient of A_k is 1, all smaller quotients contribute zero, and every larger coefficient is already determined. The resulting system is triangular. Therefore a counterexample using arbitrary signed coefficients with only the first moment does not test this full arithmetic system. Uniqueness does not prove the proposed energy bound: it identifies the actual vector whose bound remains to be established.
 
+[FactorialQuotientConstraints](BuildingBlocks/FactorialQuotientConstraints.lean) now proves five unconditional theorems. Nested natural quotients commute, and the actual Möbius sum is exactly 1 for every 1<=k<=N, in both integer and real coefficient fields. It is zero for k>N. The final theorem proves (1) for the literal grouped coefficients A_q, summing over exactly the quotient image S_N. Grouping uses finite fibers and retains every coefficient. The triangular uniqueness argument, Abel polynomial, finite renewal and energy upper estimate are not formalized by this module. These are standard integer-division and Möbius divisor identities, with no priority claim.
+
 ## Exact Abel polynomial and finite renewal
 
 For z=e^{-t}, t>0, finite geometric expansion gives
