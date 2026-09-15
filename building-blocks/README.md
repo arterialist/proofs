@@ -711,3 +711,12 @@ The [factorial terminal comparison](factorial-terminal-neutrality.md) proves asy
 
 
 The [formal additive Goldbach readout](centered-goldbach-heat-lyapunov.md#formal-complete-additive-readout) now identifies the complete actual centered coefficient with $R_\Lambda(k)-2\psi(k-1)+(k-1)$ and proves its absolutely convergent heat expansion for every positive time. The signed coefficients and both initial totals are retained.
+
+## Complete histories and weighted signs
+
+- [binary forcing weighted sign and zero divisor](binary-forcing-weighted-sign-and-zero-divisor.md). Written mathematics; proof status is stated in the note.
+- [endpoint smooth kappa frame actual explicit formula](endpoint-smooth-kappa-frame-actual-explicit-formula.md). Written mathematics; proof status is stated in the note.
+- [stable binary prime filter mixed work cocycle](stable-binary-prime-filter-mixed-work-cocycle.md). Written mathematics; proof status is stated in the note.
+- [finite future forcing full cocycle work transfer](finite-future-forcing-full-cocycle-work-transfer.md). Written mathematics; proof status is stated in the note.
+- [critical cofactor memory covariance](critical-cofactor-memory-covariance.md). Written mathematics; proof status is stated in the note.
+- [Weighted primitive sign formalization](WeightedPrimitiveSign.lean). Compiled integration-by-parts and affine two-cell certificates; literal factorial endpoint estimates remain hypotheses.
