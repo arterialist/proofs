@@ -284,3 +284,5 @@ import BuildingBlocks.PhysicalThetaMoments
 import BuildingBlocks.GrowingPrimeScatteringBounds
 import BuildingBlocks.ThetaExteriorPrimeIntegrability
 import BuildingBlocks.MeanZeroKernelGauge
+
+import BuildingBlocks.PhysicalGroundPrimeArrival
