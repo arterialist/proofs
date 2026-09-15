@@ -190,7 +190,7 @@ compact pole-null test attenuates and another amplifies, with no
 asymptotic test limit, Fourier decay, or Plancherel prerequisite.
 The output shifts range from -(M-1)L to JL. A common sufficiently
 large translation makes all supports causal and preserves the norms
-and pole nulls. This exact construction is written mathematics. [CompactScatteringPackets.lean](BuildingBlocks/CompactScatteringPackets.lean) compiles the literal interval nonoverlap, pointwise disjoint-square identity, translation-invariant physical squared norm, and integrated weighted finite norm identity under integrability of the bump square. It also proves the isolated coefficient-energy identity and existence of a finite bulk-gain integer. The operator-coefficient assembly and existence of a smooth compact pole-null bump remain unformalized. It retains only the local history operator and
+and pole nulls. This exact construction is written mathematics. [CompactScatteringPackets.lean](BuildingBlocks/CompactScatteringPackets.lean) compiles the literal interval nonoverlap, pointwise disjoint-square identity, translation-invariant physical squared norm, and integrated weighted finite norm identity under integrability of the bump square. It also proves the isolated coefficient-energy identity and existence of a finite bulk-gain integer. The operator-coefficient assembly is now compiled below. The full smooth compact pole-null witness identification remains separate. It retains only the local history operator and
 does not replace the gamma/full-prime-power Weil consumer.
 
 
@@ -205,4 +205,19 @@ The seven printed finite-packet declarations supplied by Agent3 and independentl
 
 It proves that every input index is inside the box when 1 ≤ k ≤ J-M, and derives the exact displayed interior coefficient. The phase specialization proves its squared norm equals the actual finite multiplier squared norm. For every prime and M ≥ 1 it therefore proves strict amplification of every interior coefficient at theta=pi/M. All seven printed declarations use only the standard logical axioms. Agent3 independently supplied an alternate coefficient-indexing proof; the central library retains one implementation.
 
-These declarations certify the literal coefficient stencil and its gain. Regrouping the physical translated operator into this coefficient expansion remains unformalized, as does smooth compact pole-null existence. The integrated disjoint norm prerequisites are already compiled. No actual-source work bound or RH conclusion follows.
+These declarations certify the literal coefficient stencil and its gain. Regrouping the physical translated operator into this coefficient expansion is now compiled below. Full smooth compact pole-null witness identification remains separate. The integrated disjoint norm prerequisites are already compiled. No actual-source work bound or RH conclusion follows.
+
+
+## Compiled complete physical finite operator and gain
+
+[CompactScatteringOperator.lean](BuildingBlocks/CompactScatteringOperator.lean), formalized by RH Proof, now proves the actual physical regrouping. For arbitrary finitely supported integer coefficients c, its packet is the literal finite sum of c_j eta(v-jL). The translated coefficient map is proved to represent translation by dL. The complete physical operator is defined by
+
+    V f(v) = -r f(v-L) + (1-r²) sum_(m=0)^(M-1) r^m f(v+mL).
+
+Lean proves V(packet c)=packet(history c), where history c has exactly the previously certified coefficient stencil. No physical operator identity is assumed. Under the literal interval support condition and integrability of normSq eta, it proves the complete input and output physical squares as the sums of all their coefficient squares times the bump mass.
+
+The finite phase box is constructed as an actual finitely supported vector. Its squared coefficient mass is exactly J. On the J-M interior indices, the complete history has coefficient squared norm G=normSq(compactPhase r theta M). Lean proves their indices are in the complete output support when G>0; all other squared coefficients are nonnegative. Thus the complete output coefficient mass is at least (J-M)G. The previously proved finite J threshold gives strict physical norm amplification when G>1 and the bump has positive mass.
+
+`exists_prime_amplifying_packet` specializes this assembly to every actual prime p, every depth M ≥ 1, L=log p, r=1/sqrt p and theta=pi/M. Its explicit premises are interval support of width at most log p, integrability of the actual bump square, and strictly positive bump mass. It proves existence of a finite J whose complete physical output square strictly exceeds its input square. All fourteen printed declarations use only `propext`, `Classical.choice`, and `Quot.sound`.
+
+This closes finite physical regrouping and conditional norm-gain assembly. It does not assume or prove a sign for the actual arithmetic source. Smooth pole-null witness construction, its complex lift and positive mass must still be identified for a complete unconditional compact pole-null operator counterexample. Agent3 has supplied a separate real witness candidate for independent review. No gamma/full-prime Weil positivity or RH conclusion is asserted.
