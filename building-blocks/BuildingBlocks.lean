@@ -236,6 +236,8 @@ import BuildingBlocks.ChargeFrozenFourier
 import BuildingBlocks.ChargeFrozenSpectralBound
 import BuildingBlocks.ChargeFrozenLogMoment
 import BuildingBlocks.ChargeFrozenFourierNorm
+import BuildingBlocks.AngularFourierConvolution
+import BuildingBlocks.ChargeFrozenPlancherel
 import BuildingBlocks.ChargeFrozenBirthMetric
 import BuildingBlocks.ChargeFrozenBirthWork
 import BuildingBlocks.ChargeFrozenBirthGram

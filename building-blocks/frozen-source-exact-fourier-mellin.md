@@ -47,7 +47,7 @@ This is a formalization of the exact finite-source identity used in the
 [growing-product admission bound](compact-euler-growing-product-admission-bound.md).
 It supplies its source-identification obligation. The [uniform spectral
 majorant and actual logarithmic moment](frozen-source-spectral-logarithmic-bound.md)
-are now formalized separately. Physical Plancherel identification and the
-actual PNT estimate have further formalization obligations.
+are now formalized separately. [Physical Plancherel identification](frozen-source-exact-plancherel.md)
+is also compiled. The actual PNT estimate has further formalization obligations.
 The identity itself does not prove the original subpower energy bound,
 the signed successor-work bound, or RH.

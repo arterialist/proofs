@@ -48,8 +48,9 @@ that a nonnegative integrable density of zero mass vanishes almost
 everywhere. It does not use a positive-denominator argument at zero.
 
 This H_N is the actual spectral integral with angular-frequency measure
-dξ. The modules do not prove its Plancherel identification with 2π times
-the physical dv norm. That identification, the quantitative PNT source
+dξ. The [separate Plancherel module](frozen-source-exact-plancherel.md) now
+proves its identification with 2π times the physical dv norm and the
+logarithmic-moment bound with that physical mass. The quantitative PNT source
 estimate and the complete operator admission conclusion remain further
 formalization obligations in the
 [growing-product argument](compact-euler-growing-product-admission-bound.md).

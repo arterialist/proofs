@@ -47,8 +47,8 @@ majorant (ψ(N)+N)|a_N(v)| for the autocorrelation integrand.
 All eight printed declarations compile with only propext, Classical.choice
 and Quot.sound. The pinned mathlib version supplies real-line Fourier
 inversion, rather than a ready-made real-line Plancherel theorem. The
-remaining proof needs the Fourier transform of this autocorrelation,
-its identification with the actual spectral density, and inversion at
-zero with the frequency Jacobian. Those steps have not been certified
-by this module. Quantitative PNT, the complete admission conclusion and
+subsequent [ChargeFrozenPlancherel proof](frozen-source-exact-plancherel.md)
+now certifies the Fourier transform of this autocorrelation, its actual
+spectral-density identification, and inversion at zero with the frequency
+Jacobian. Those steps are in the separate module. Quantitative PNT, the complete admission conclusion and
 the original RH energy/sign bounds also remain unfinished.

@@ -243,7 +243,14 @@ actual spectral mass. All eleven printed declarations use only the
 standard logical axioms. Zero mass is covered by the separate zero-density
 argument. No frequency cutoff or prime-power deletion is made.
 
-These certificates do not yet formalize the Plancherel identification
-of spectral mass with the original dv norm, the quantitative PNT source
+The [actual Plancherel identity](frozen-source-exact-plancherel.md) is now
+compiled in `ChargeFrozenPlancherel`, using the full L1 convolution theorem
+in `AngularFourierConvolution`, actual autocorrelation and Fourier inversion
+at zero. Angular spectral mass is 2pi times this note's physical dv norm;
+the exact terminal square is retained. The logarithmic-moment theorem is
+also certified with that physical mass. All ten printed declarations in
+the two new modules use only the standard logical axioms.
+
+These certificates do not yet formalize the quantitative PNT source
 estimate, or the complete operator admission conclusion. The original
 arithmetic source and the RH-strength subpower bound remain unchanged.
