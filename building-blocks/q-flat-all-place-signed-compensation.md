@@ -279,7 +279,21 @@ the complete form therefore has the exact finite-source readout
 \tag{10}
 \]
 
-This identifies the actual consumer without redefining the source or assuming a globally square-integrable infinite source. V_J is signed; neither nonnegativity of eta nor the finite-source identification proves a sign for the last integral. The needed uniform arithmetic comparison in (10) remains open. Formalization of the Stieltjes integration-by-parts bridge and of the full window calculation remains an additional Lean obligation.
+This identifies the actual consumer without redefining the source or assuming a globally square-integrable infinite source. V_J is signed; neither nonnegativity of eta nor the finite-source identification proves a sign for the last integral. The needed uniform arithmetic comparison in (10) remains open. The finite arithmetic integration-by-parts step is now formalized below; its logarithmic-window specialization and the full window calculation remain additional Lean obligations.
+
+### Formalized finite original-source integration by parts
+
+[FinitePrimeSourceIntegration.lean](BuildingBlocks/FinitePrimeSourceIntegration.lean) now formalizes the finite arithmetic integration-by-parts step. For every integer N>=1, globally continuous D, and F with HasDerivAt F (D x) x at every real x, its original-source theorem proves
+
+\[
+\sum_{n=2}^N\Lambda(n)F(n)-\int_1^NF(x)\,dx
+=-\int_1^N[\psi(\lfloor x\rfloor)-x]D(x)\,dx
++[\psi(N)-N]F(N)+F(1).
+\]
+
+The zero-endpoint specialization removes only the displayed boundary values. The module proves integrability of the literal finite counting prefix, the open/closed birth-atom FTC identities, and identification with CoarsePrimitive.primeErrorReal on the full covered interval. Every prime power remains through the actual von Mangoldt function. All ten theorems compile without new warnings and depend only on propext, Classical.choice and Quot.sound.
+
+The nine finite-atom and source-identification theorems were contributed by RH Agent3; the original-source theorem retaining arbitrary endpoint values was added during independent root review. These use standard FTC and integration by parts, with no novelty claim. The actual logarithmic-window derivative specialization, density-window evaluation, change of variables x=exp(v), and frozen-source readout (9)-(10) remain further formalization obligations. No arithmetic sign is proved here.
 
 ## Finite Green identity after density cancellation
 
@@ -379,4 +393,4 @@ This is a response calculation, not an assumption that the actual arithmetic err
 
 [FiniteTriangularGeometric.lean](BuildingBlocks/FiniteTriangularGeometric.lean) contains six theorems supplied and independently checked by RH Proof. It proves the recurrence for the literal finite reversed weighted sum, its polynomial identity for every complex q and every natural length, and equality to the forward weighted sum by exact index reflection. Removing its k=0 term gives precisely the positive-lag triangular sum. Its rational closed form requires only q!=1. The exact finite mode-residual theorem retains both endpoint powers and the first-window correction and proves (13) for q!=0,1, h!=0 and positive length.
 
-The mode residual is defined from the actual finite weighted sum; no infinite geometric convergence, prime-error estimate, spectral expansion or RH premise appears. All six assumption checks report only propext, Classical.choice and Quot.sound, without new warnings or admitted proofs. These are formalizations of standard finite-sum algebra and its application to the published signed residual, with no novelty claim for the geometric identities. The limit, pole-root specialization, actual arithmetic integration bridge, full Green identity and signed bound remain additional Lean obligations.
+The mode residual is defined from the actual finite weighted sum; no infinite geometric convergence, prime-error estimate, spectral expansion or RH premise appears. All six assumption checks report only propext, Classical.choice and Quot.sound, without new warnings or admitted proofs. These are formalizations of standard finite-sum algebra and its application to the published signed residual, with no novelty claim for the geometric identities. The limit, pole-root specialization, logarithmic-window specialization of the finite arithmetic integration bridge, full Green identity and signed bound remain additional Lean obligations.
