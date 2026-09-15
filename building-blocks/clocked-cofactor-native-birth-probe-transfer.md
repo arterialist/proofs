@@ -146,7 +146,7 @@ Full RH and its complete Lean formalization remain unproved.
 ## The original native physical probe and its nonzero pole moments
 
 The independent metric consequence in
-g-2/outputs/clocked-native-probe-terminal-metric.md evaluates the
+clocked-native-probe-terminal-metric.md evaluates the
 literal original-\(dv\) birth synthesis, not a charge-atom lift.
 Write \(\lambda_k=H_{k+1}-H_k\), \(0\le k\le b\), and
 \[
