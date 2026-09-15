@@ -232,6 +232,7 @@ import BuildingBlocks.ChargeDensityEvaluation
 import BuildingBlocks.ChargeFrozenSource
 import BuildingBlocks.ChargeFrozenMetric
 import BuildingBlocks.ChargeFrozenIntegrability
+import BuildingBlocks.ChargeFrozenFourier
 import BuildingBlocks.ChargeFrozenBirthMetric
 import BuildingBlocks.ChargeFrozenBirthWork
 import BuildingBlocks.ChargeFrozenBirthGram

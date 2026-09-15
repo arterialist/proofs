@@ -18,8 +18,9 @@ for cutoffs 0 and 1.
 
 For every real angular frequency ξ, the module also proves integrability
 of e⁻ⁱξᵛ a_N(v), because its complex exponential has norm one. Thus the
-ordinary Fourier integral is absolutely convergent. This is a prerequisite
-for the explicit finite Mellin formula, not a formalization of that formula.
+ordinary Fourier integral is absolutely convergent. This module supplies a
+prerequisite for the [explicit finite Mellin formula](frozen-source-exact-fourier-mellin.md),
+which is now formalized separately in `ChargeFrozenFourier`.
 The density and origin contributions and the full frozen terminal tail
 are retained through the literal source definition.
 

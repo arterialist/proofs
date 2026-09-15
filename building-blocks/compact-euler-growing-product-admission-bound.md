@@ -187,8 +187,8 @@ Lean 4.24.0. It proves the exact derivative, strict positivity,
 strict monotonicity on h>0 for A>=0, and the upper substitution rule.
 All four printed declarations use only propext, Classical.choice and
 Quot.sound. This certificate covers the scalar envelope only. The
-layer-cake moment estimate is now certified below. Fourier
-identification, source PNT input and the complete depth-four admission
+layer-cake moment estimate and literal Fourier identification are now
+certified below. Source PNT input and the complete depth-four admission
 conclusion remain written results.
 
 
@@ -224,7 +224,16 @@ All thirteen printed declarations use only propext, Classical.choice
 and Quot.sound. No mathematical axiom or admitted proof was added.
 
 This resolves the general analytic logarithmic-moment formalization.
-It does not formalize the actual source Fourier identity, its uniform
+The actual source Fourier identity is now compiled in
+[ChargeFrozenFourier](BuildingBlocks/ChargeFrozenFourier.lean), with
+[its exact scope and proof](frozen-source-exact-fourier-mellin.md).
+For w=1/2+i xi it proves the literal source transform equals
+[-1+sum_(n=2)^N Lambda(n)n^(-w)-integral_1^N x^(-w)dx]/w.
+All ten printed declarations use only the standard logical axioms.
+It also certifies the whole-line pointwise decomposition and absolute
+integrability of every atom and the clipped centering contribution.
+
+The general moment proof and source identity do not yet formalize the uniform
 reciprocal-square bound from Chebyshev, the quantitative PNT source
 estimate, or the complete operator admission conclusion. The original
 arithmetic source and the RH-strength subpower bound remain unchanged.
