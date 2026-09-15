@@ -274,3 +274,4 @@ import BuildingBlocks.CompactScatteringPackets
 import BuildingBlocks.CompactScatteringCoefficients
 import BuildingBlocks.PhysicalThetaSeed
 import BuildingBlocks.CompactScatteringOperator
+import BuildingBlocks.PhysicalThetaUniform

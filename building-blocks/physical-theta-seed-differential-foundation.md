@@ -32,3 +32,5 @@ The proposed parity mechanism uses the full integer Gaussian theta series
 This batch formalizes per-summand derivatives, actual pointwise seed/curvature summability, and scalar sum reconstruction. Local uniform derivative bounds, twice differentiating the infinite series, the integer/Jacobi dictionary, true parity, exponential moments and the killed-ground construction remain outstanding. No arithmetic covariance smallness or RH conclusion follows.
 
 Agent2 supplied these proofs. RH Proof independently reviewed the exact normalization, derivative coefficients, zero-index cancellation and scalar sum hypotheses. The eleven printed declarations compile with only `propext`, `Classical.choice`, and `Quot.sound`.
+
+The separate [local-interchange sequel](physical-theta-local-derivative-interchange.md) now proves the needed summable neighborhood bounds, both actual infinite-series differentiations and full theta continuity. It upgrades the scalar reconstruction above to a genuine derivative identity. Poisson modular identification, parity and moment integrability remain unfinished.
