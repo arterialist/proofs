@@ -281,3 +281,4 @@ import BuildingBlocks.PhysicalThetaParity
 import BuildingBlocks.CompactScatteringRegularity
 
 import BuildingBlocks.PhysicalThetaMoments
+import BuildingBlocks.GrowingPrimeScatteringBounds
