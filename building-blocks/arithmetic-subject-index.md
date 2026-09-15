@@ -305,7 +305,7 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 ## Actual physical theta series
 
-[Literal series foundation](physical-theta-series-lean-foundation.md), compiled in [PhysicalThetaSeries.lean](BuildingBlocks/PhysicalThetaSeries.lean): exact positive-index normalization, all-real absolute convergence and measurability, positive half-line. No even surrogate replaces the actual series; parity and the actual ground moments remain unfinished.
+[Literal series foundation](physical-theta-series-lean-foundation.md), compiled in [PhysicalThetaSeries.lean](BuildingBlocks/PhysicalThetaSeries.lean): exact positive-index normalization, all-real absolute convergence and measurability, positive half-line. No even surrogate replaces the actual series; parity is proved in the subsequent Poisson module; actual ground moments remain unfinished.
 
 [Finite scattering packets](BuildingBlocks/CompactScatteringPackets.lean) compiles seven prerequisites for the direct physical proof: literal interval support separation, disjoint finite norm squares, integrated translation-invariant norms, isolated coefficient energy, and a finite amplification length. The complete operator assembly remains written.
 
@@ -313,4 +313,6 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 [Literal theta seed derivatives](physical-theta-seed-differential-foundation.md), compiled in [PhysicalThetaSeed.lean](BuildingBlocks/PhysicalThetaSeed.lean): actual first/second derivatives and exact term identity, including n=0; scalar sum reconstruction with proved summability. This does not yet identify the derivative of the infinite sum.
 
-[Actual theta infinite differentiation and continuity](physical-theta-local-derivative-interchange.md), compiled in [PhysicalThetaUniform.lean](BuildingBlocks/PhysicalThetaUniform.lean): fixed-interval summable envelopes justify both differentiations and full-series continuity. The scalar reconstruction is now identified with the derivative of the actual sum; parity and moment integrability remain separate.
+[Actual theta infinite differentiation and continuity](physical-theta-local-derivative-interchange.md), compiled in [PhysicalThetaUniform.lean](BuildingBlocks/PhysicalThetaUniform.lean): fixed-interval summable envelopes justify both differentiations and full-series continuity. The scalar reconstruction is now identified with the derivative of the actual sum; the subsequent Poisson module proves parity; moment integrability remains separate.
+
+[True theta parity via Gaussian Poisson summation](physical-theta-true-poisson-parity.md), compiled in [PhysicalThetaParity.lean](BuildingBlocks/PhysicalThetaParity.lean), proves the exact integer Gaussian dictionary, actual derivative parity, literal Phi evenness and strict positivity on the full real line. Exponential moments, the xi transform, the actual killed-ground equation and arithmetic residual smallness remain unfinished.
