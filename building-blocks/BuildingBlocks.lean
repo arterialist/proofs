@@ -269,3 +269,4 @@ import BuildingBlocks.DigammaBinaryScalarBounds
 import BuildingBlocks.WeakGroundPrimeTail
 import BuildingBlocks.WeakGroundPrimeCutoff
 import BuildingBlocks.CompactLocalScatteringSigns
+import BuildingBlocks.PhysicalThetaSeries

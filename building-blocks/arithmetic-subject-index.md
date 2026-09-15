@@ -302,3 +302,7 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 ## Local finite-history scattering signs
 
 [Local compact scattering](compact-local-scattering-no-contraction.md) and [compiled Lean](BuildingBlocks/CompactLocalScatteringSigns.lean): exact original complex-power multiplier dictionary, finite geometric histories, attenuation at zero and amplification at pi/(M log p), for every prime and M ≥ 1. Physical compact pole-null test realization remains written; no actual-source or dyadic-product sign follows.
+
+## Actual physical theta series
+
+[Literal series foundation](physical-theta-series-lean-foundation.md), compiled in [PhysicalThetaSeries.lean](BuildingBlocks/PhysicalThetaSeries.lean): exact positive-index normalization, all-real absolute convergence and measurability, positive half-line. No even surrogate replaces the actual series; parity and the actual ground moments remain unfinished.
