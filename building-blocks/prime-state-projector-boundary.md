@@ -114,7 +114,7 @@ $$
 The prime number theorem and partial summation give
 
 $$
-\sum_{p<x}p\log p=\frac{x^2}{2}+o(x^2),qquad
+\sum_{p<x}p\log p=\frac{x^2}{2}+o(x^2),\qquad
 \sum_{p<x}\sqrt p=o(x^2),
 $$
 
@@ -148,26 +148,33 @@ so $P(3/2)/2-1<0$.
 ## Forced composite compensation
 
 Let $B_{\mathbb C}(x)$ be the same unnormalized sum over composite
-states $n<x$.  The state projector proves that (3) and its composite
-counterpart are exact spectral pieces of the allocation law, and
+states $n<x$. The state $n=1$ is neither prime nor composite. Since
+$S(1)=m_p(1)=0$, its contribution is
 
 $$
-W(x)=B_{\mathbb P}(x)+B_{\mathbb C}(x).
+B_{\{1\}}(x)=(x-1)[x+R(x-1)]
+=\frac{x^2}{2}\log x+\frac{x^2}{4}-\frac14.
+$$
+
+The three disjoint state sectors therefore give the exact decomposition
+
+$$
+W(x)=B_{\{1\}}(x)+B_{\mathbb P}(x)+B_{\mathbb C}(x).
 \tag{10}
 $$
 
-Since the complete centered readout satisfies $W(x)=o(x^2)$, (8) forces
+The [effective-PNT argument](centered-W-subquadratic-pnt.md) proves $W(x)=o(x^2)$ for the complete centered readout, with all harmonic multiples and same-prime terms retained. Therefore (8) forces
 
 $$
 \boxed{
 B_{\mathbb C}(x)
-=\left(1-\frac12P(3/2)\right)x^2\log x
--C_{\mathbb P}x^2+o(x^2).
+=\left(\frac12-\frac12P(3/2)\right)x^2\log x
+-\left(C_{\mathbb P}+\frac14\right)x^2+o(x^2).
 }
 \tag{11}
 $$
 
-Thus the isolated prime boundary and uniformly gapped composite interior
+Thus the isolated prime boundary, composite interior, and state $1$
 cancel not only at order $x^2$, but first at the larger order
 $x^2\log x$.  The hard-wall projector is therefore useful only after
 orthogonalization against these two explicit cutoff modes.  A direct
