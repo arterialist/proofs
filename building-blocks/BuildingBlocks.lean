@@ -282,3 +282,4 @@ import BuildingBlocks.CompactScatteringRegularity
 
 import BuildingBlocks.PhysicalThetaMoments
 import BuildingBlocks.GrowingPrimeScatteringBounds
+import BuildingBlocks.ThetaExteriorPrimeIntegrability
