@@ -702,3 +702,6 @@ The [formal infinite Goldbach heat identity](centered-goldbach-heat-lyapunov.md#
 
 
 The [actual heat-to-scaling derivative](actual-heat-scaling-derivative-bridge.md) has two-sided band-energy bounds, exact complex-square convolution errors and a signed whole-line Hermitian pairing. Its source-cutoff and ground-normalization costs remain explicit. The [killed-ground range obstruction](heat-to-killed-ground-range-obstruction.md) proves that the same heat filter cannot reconstruct the actual nonzero killed ground, its odd history or either pole-corrected target with bounded $L^2$ input cost. Finite-total-cost signed Gram factorizations are excluded as well; finite scalar observations and other arithmetic maps are not covered.
+
+
+The [cross-age relative-work theorem](cross-age-common-clock-relative-work.md) keeps both dilation histories and their terminal mismatch. An executed rational certificate for the actual frozen source $N=14$, successor age $j=12$, proves negative uncharged work at time zero and positive work for every sufficiently large time of the complete prime process. The theorem refutes a universal uncharged sign, without a uniform growing-cutoff threshold or a charge-compensated conclusion.

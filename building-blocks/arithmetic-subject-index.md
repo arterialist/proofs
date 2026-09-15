@@ -248,3 +248,6 @@ The [formal signed Goldbach heat chain](centered-goldbach-heat-lyapunov.md#forma
 
 
 The [infinite heat and density-cost formalization](centered-goldbach-heat-lyapunov.md#formal-density-cost-and-the-infinite-identity) maps `centeredEnergy_eq_heat_integral` and `finiteEnergy_centered_tendsto` to the complete actual ordered-pair series for real $s>2`. `mixed_energy_le_centered` and its reverse prove the finite-horizon comparison with no caller-supplied source integrability assumption.
+
+
+The [actual common-clock counterexample](cross-age-common-clock-relative-work.md) derives the exact two-history birth Gram and certifies both a positive symmetric history port and a positive zero-frequency mass difference at $N=14$, $j=12$. A complete-process spectral argument proves eventual positive uncharged relative work, while the initial work is negative. The same-history negative square cannot be substituted for this full average.

@@ -299,3 +299,6 @@ The [formal continuous Abel kernel](successor-feedback-tail-Abel-poles.md#formal
 
 
 The [heat/scaling derivative bridge](actual-heat-scaling-derivative-bridge.md) retains the deterministic density correction, source-terminal atom and primitive anchor. Equations (15)–(19) distinguish band energies, complex-square convolution readouts and whole-line Hermitian coercivity. None is a finite-horizon heat-energy estimate. The [range proof](heat-to-killed-ground-range-obstruction.md) gives the divergent inverse-gamma cost for every fixed killed ground and its full signed Gram representations.
+
+
+The [cross-age work calculation](cross-age-common-clock-relative-work.md) uses the actual complete-law multiplier and original physical metric. The fixed-source sign change has a source-dependent onset; it does not apply automatically at $s=c\log N$. All seed terms remain separate from the uncharged counterexample.
