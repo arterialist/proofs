@@ -467,20 +467,16 @@ d\nu-d\kappa=c\,\delta_0+dH.
 \tag{36}
 $$
 
-Consequently, for every causal locally absolutely continuous response
-for which the convolutions exist,
+Consequently, for every causal response whose distributional convolutions exist,
 
 $$
 \boxed{
-\mathcal Rh=c h+H*h'.
+\mathcal Rh=c h+H*Dh.
 }
 \tag{37}
 $$
 
-This is stronger than merely subtracting the continuous volume: all of
-the remaining infinitely many integer jumps have been compressed into
-an integrable Euler kernel acting on one derivative.  Young's inequality
-now gives the rigorous graph-norm estimates
+Here $Dh$ is the derivative of the zero extension. For a locally absolutely continuous half-line function with right trace $h_0$, it equals $h'_{\rm cl}+h_0\delta_0$, so (37) includes $h_0H$. The [Euler-discrepancy proof](prime-division-euler-discrepancy.md) retains this term explicitly. For zero trace, Young's inequality gives the graph-norm estimates
 
 $$
 \|\mathcal Rh-c h\|_{L^\infty}
@@ -496,15 +492,16 @@ $$
 \tag{39}
 $$
 
-The bounded-forcing renewal equation (21) therefore has the exact
-integro-differential form
+After retaining the known negative-time history in the forcing, the causal renewal equation has the distributional form
 
 $$
 \boxed{
-\mathcal Kh+c h+H*h'=g.
+\mathcal Kh+c h+H*Dh=g_{\rm causal}.
 }
 \tag{40}
 $$
+
+Here $g_{\rm causal}(v)=g(v)-\sum_{\log m>v}m^{-1/2}b(v-\log m)$ for $v\ge0$. This is a specified history correction, not a general bounded-input stability assertion. The original full-history equation still has forcing $g$.
 
 In Laplace variables, (36) is the identity
 
