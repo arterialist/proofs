@@ -708,3 +708,6 @@ The [cross-age relative-work theorem](cross-age-common-clock-relative-work.md) k
 
 
 The [factorial terminal comparison](factorial-terminal-neutrality.md) proves asymptotic preservation of the actual evolved-source energy at every fixed clock $c\log N$, with a relative effective-PNT error and a decaying absolute error. Its complete clock correction retains the signed dilation drift and the exact factorial commutator. Terminal smallness does not give an accumulated-work bound.
+
+
+The [formal additive Goldbach readout](centered-goldbach-heat-lyapunov.md#formal-complete-additive-readout) now identifies the complete actual centered coefficient with $R_\Lambda(k)-2\psi(k-1)+(k-1)$ and proves its absolutely convergent heat expansion for every positive time. The signed coefficients and both initial totals are retained.

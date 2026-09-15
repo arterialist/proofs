@@ -254,3 +254,6 @@ The [actual common-clock counterexample](cross-age-common-clock-relative-work.md
 
 
 The [actual factorial terminal theorem](factorial-terminal-neutrality.md) combines a negative-Laplace lower-tail estimate with the PNT-small late factorial coefficient. It proves asymptotic isometry on $T_{c\log N}g_N$ for fixed $c>0$ and the same nonnegative source exponent. The bounded Hermitian correction remains signed, including both clock cross orders and all observing prime powers.
+
+
+[GoldbachHeatConvolution.lean](BuildingBlocks/GoldbachHeatConvolution.lean) proves `shiftedGoldbach_eq_prime_psi` and `centeredHeat_square_eq_goldbach`. The shifted index $j$ denotes additive total $j+2$, retaining $n=1$ and both complete Mangoldt marginals. The [source mapping](centered-goldbach-heat-lyapunov.md#formal-complete-additive-readout) distinguishes positive heat energy from signed additive coefficients.

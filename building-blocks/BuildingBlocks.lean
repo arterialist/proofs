@@ -217,3 +217,5 @@ import BuildingBlocks.GoldbachHeatLocalEnergy
 import BuildingBlocks.GoldbachAbsoluteEnergy
 
 import BuildingBlocks.GoldbachHeatIntegral
+
+import BuildingBlocks.GoldbachHeatConvolution

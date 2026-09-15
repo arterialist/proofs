@@ -222,3 +222,18 @@ $$
 =\int_0^\infty t^{s-1}D(t)^2dt\ge0,\qquad s>2.
 $$
 `finiteEnergy_centered_tendsto` identifies this energy with the literal square-cutoff limit $1\le m,n\le N$. Every ordered cross term and the $n=1$ sector remain present. This establishes the infinite identity in its proved absolute range, without a vertical Mellin-norm identity or an estimate at the critical boundary. All four modules compile, with only the standard three axioms in their principal theorem reports.
+
+
+## Formal complete additive readout
+
+[GoldbachHeatConvolution.lean](BuildingBlocks/GoldbachHeatConvolution.lean) identifies the actual centered antidiagonal coefficient with both prime-power marginals:
+$$
+R_a(k)=R_\Lambda(k)-2\psi(k-1)+(k-1),\qquad k\ge2.
+$$
+The theorem `shiftedGoldbach_eq_prime_psi` uses index $j=k-2$ so that both source indices begin at $1$. In particular, the total-two coefficient is $1$, and the total-three coefficient is $2(1-\log2)$. No initial density term is omitted.
+
+`shiftedGoldbach_heat_abs_summable` proves absolute convergence at every $t>0$. The exact Cauchy product `centeredHeat_square_eq_goldbach` then gives
+$$
+D(t)^2=\sum_{k\ge2}R_a(k)e^{-kt}.
+$$
+This is the full signed additive convolution, not coefficientwise positivity. Its proof uses the already formalized actual heat-series bounds and the classical absolutely convergent Cauchy product. The module compiles with only the standard three axioms; it proves no critical-horizon growth estimate.
