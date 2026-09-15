@@ -187,8 +187,9 @@ Lean 4.24.0. It proves the exact derivative, strict positivity,
 strict monotonicity on h>0 for A>=0, and the upper substitution rule.
 All four printed declarations use only propext, Classical.choice and
 Quot.sound. This certificate covers the scalar envelope only. The
-layer-cake moment estimate, Fourier identification, source PNT input
-and complete depth-four admission conclusion remain written results.
+layer-cake moment estimate is now certified below. Fourier
+identification, source PNT input and the complete depth-four admission
+conclusion remain written results.
 
 
 [SpectralTailMass](BuildingBlocks/SpectralTailMass.lean) now certifies
@@ -198,6 +199,32 @@ its complete tail integral on |xi|>t is at most
 min(integral r,2A/t), for every t>0. The proof includes the exact
 reciprocal-square integral 1/t, reflection of the negative-frequency
 half-line, and the measure-zero endpoint conversion. Six declarations
-compile with only the standard logical axioms. This does not yet
-formalize the subsequent logarithmic layer-cake integration or apply
-the bound to the actual source Fourier transform.
+compile with only the standard logical axioms. This certificate covers
+the spectral tails. The subsequent logarithmic
+layer-cake integration is now certified below. Application to the
+actual source Fourier transform remains a separate obligation.
+
+
+[LogarithmicLayercake](BuildingBlocks/LogarithmicLayercake.lean) now
+compiles the complete general logarithmic-moment lemma. For measurable,
+integrable, nonnegative r with r(xi)<=A/(1+xi^2), A>0, and
+H=integral r, it proves logarithmic integrability. For H>0 it gives
+
+    integral r(xi)log(2+|xi|)dxi
+      <= H[log2+log(1+A/H)+1].
+
+For H=0 the proof separately establishes r=0 almost everywhere and a
+zero weighted integral; it does not invoke a positive-denominator
+argument at zero. For H>0, the split uses R=2A/H. The compiled proof
+includes the exact reciprocal logarithmic primitive, an extended
+nonnegative layer-cake identity for arbitrary measures, the finite
+majorant before any integrability assumption, the optimized real
+bound, and conversion to the actual density measure r(xi)dxi.
+All thirteen printed declarations use only propext, Classical.choice
+and Quot.sound. No mathematical axiom or admitted proof was added.
+
+This resolves the general analytic logarithmic-moment formalization.
+It does not formalize the actual source Fourier identity, its uniform
+reciprocal-square bound from Chebyshev, the quantitative PNT source
+estimate, or the complete operator admission conclusion. The original
+arithmetic source and the RH-strength subpower bound remain unchanged.
