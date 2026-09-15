@@ -144,6 +144,65 @@ Q_N\ll_\epsilon N^{1+\epsilon}\ \text{for every }\epsilon>0.
 
 This equivalence does not establish any unconditional upper control. The exact convolution and this converse implication were contributed by the research coordinator during the RH Proof branch calculation, using classical finite hyperbola grouping and the classical RH–Mertens estimate.
 
+## Simultaneous-horizon coercivity without a logarithmic loss
+
+A bound supplied at every horizon has a stronger Mertens consumer than the single-horizon tail estimate (8). For a>=0 and N>=1 put
+
+\[
+R_a(N)=\max_{1\le n\le N}\frac{|M(n)|^2}{n^{2a}},\qquad
+S_a(N)=\max_{1\le n\le N}\frac{Q_n}{n^{2a}},\qquad
+c=\frac{(1-2e^{-2})^2}{4}>0.
+\]
+
+Then the actual complete responses satisfy
+
+\[
+\boxed{cR_a(N)\le S_a(N)}.
+\tag{13}
+\]
+
+Choose k attaining the finite maximum R_a(N). For every integer m between 1 and k,
+
+\[
+|M(m)|\le\sqrt{R_a(N)}m^a
+\le\sqrt{R_a(N)}k^a=|M(k)|.
+\]
+
+Thus the normalized maximizing horizon is also an absolute Mertens record through k. With z=e^{-t}, the exact full hyperbola identity (10) gives
+
+\[
+g_k(t)-M(k)=-zM(k)
++(1-z)\sum_{j=2}^kz^{j-1}M(\lfloor k/j\rfloor).
+\]
+
+The finite sum retains every quotient boundary. Each Mertens value on its right is bounded by |M(k)|; geometric summation therefore yields
+
+\[
+|g_k(t)-M(k)|\le2e^{-t}|M(k)|\qquad(t>0).
+\]
+
+For t>=2, this proves |g_k(t)|>=(1-2e^{-2})|M(k)|. The actual factorial kernel obeys w(t)>=1/(2t^2) there. Integrating the full tail gives Q_k>=c|M(k)|^2, and dividing by k^{2a} proves (13). No sign condition on other horizons is needed. A sign-changing actual response is allowed; the estimate uses a horizon chosen from the whole prefix, not an arbitrary fixed horizon.
+
+For a>0 the retained Jensen bound in the [renewal companion](factorial-mobius-quotient-renewal.md), with c_j<=1/j, also gives
+
+\[
+Q_n\le\sum_{j=1}^n\frac{|M(\lfloor n/j\rfloor)|^2}{j}
+\le R_a(N)n^{2a}\sum_{j=1}^\infty j^{-1-2a}.
+\]
+
+Consequently
+
+\[
+\boxed{cR_a(N)\le S_a(N)\le\zeta(1+2a)R_a(N)}\qquad(a>0).
+\tag{14}
+\]
+
+In particular, the uniform bound Q_N=O(N) is equivalent to the uniform bound M(N)=O(sqrt(N)), without the logarithmic loss in (8). This is a stronger consequence of the candidate diagonal hypothesis than the earlier single-horizon consumer: (H) implies this uniform Mertens bound.
+
+Such a bound also forces every nontrivial zeta zero to be simple. It first implies RH. For Re(s)>1/2 the classical identity 1/zeta(s)=s integral_1^infinity M(x)x^{-s-1}dx then gives |1/zeta(s)|<=C|s|/(Re(s)-1/2). A zero of order r>=2 on the critical line would make the left side grow as u^{-r} at s=rho+u, contradicting the u^{-1} upper bound as u decreases to zero. This implication and the Mellin identity are classical; see Section 2 of [Odlyzko–te Riele](https://ir.cwi.nl/pub/1823/1823D.pdf). Necessity of (H) under RH is not asserted.
+
+The simultaneous-horizon inequality (13) was derived by RH Proof during the arithmetic energy attempt. It controls the consequence of an upper bound and supplies no unconditional upper bound itself. The residue-loading recurrence did not produce the missing signed estimate, and this record argument does not repair that failure. Further equivalent norm comparisons will not be treated as an energy-bound mechanism. These statements are written proofs; their Lean formalization remains unfinished.
+
 ## A specific cross-base arithmetic hypothesis
 
 Consider the precise statement
@@ -170,7 +229,7 @@ D_N\le\sum_{n\le N}\log(1+2N/n)
 \tag{9}
 \]
 
-Together, (H), (8), and (9) would give M(N)=O(√(N log N)), hence RH. We have not proved (H), and do not claim it is equivalent to RH or necessary for RH.
+Together, (H), (8), and (9) give the single-horizon consumer M(N)=O(√(N log N)); the simultaneous-horizon estimate (13) strengthens this to M(N)=O(√N), hence RH and simplicity of every nontrivial zero. We have not proved (H), and do not claim it is equivalent to RH or necessary for RH.
 
 Floating-point finite tests through N=5000 found no violation of (H); the largest observed ratio Q_N/D_N was approximately 0.7802966926 at N=13. These tests grouped identical quotient sizes and evaluated the exact kernel through log gamma. They are exploratory numerics, not certified assertions.
 
