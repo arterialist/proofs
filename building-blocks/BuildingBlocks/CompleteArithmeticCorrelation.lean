@@ -217,4 +217,62 @@ theorem actual_history_common_arithmetic_cutoff {f g : ℝ → ℂ}
 #print axioms arithmetic_term_zero_outside
 #print axioms arithmetic_row_eq_cutoff
 #print axioms exists_arithmetic_cutoff
+noncomputable def primePowerCutoff (N : ℕ) (f g : ℝ → ℂ) : ℂ :=
+  ∑ p ∈ Finset.Icc 2 N, if p.Prime then
+    ∑ j ∈ Finset.Icc 1 N, if p ^ j ≤ N then
+      (Real.log (p : ℝ) : ℂ) * ((1 / Real.sqrt ((p ^ j : ℕ) : ℝ) : ℝ) : ℂ) *
+        (correlation f g (Real.log ((p ^ j : ℕ) : ℝ)) +
+          (starRingEnd ℂ) (correlation g f (Real.log ((p ^ j : ℕ) : ℝ))))
+    else 0 else 0
+
+theorem arithmetic_cutoff_eq_prime_powers (N : ℕ) (f g : ℝ → ℂ) :
+    arithmeticCutoff N f g = primePowerCutoff N f g := by
+  let w : ℕ → ℂ := fun n => ((1 / Real.sqrt (n : ℝ) : ℝ) : ℂ) *
+    (correlation f g (Real.log (n : ℝ)) + (starRingEnd ℂ) (correlation g f (Real.log (n : ℝ))))
+  have hs : (∑ n ∈ Finset.Icc 2 N, (ArithmeticFunction.vonMangoldt n : ℂ) * w n) =
+      ∑ n ∈ Finset.Icc 1 N, (ArithmeticFunction.vonMangoldt n : ℂ) * w n := by
+    apply Finset.sum_subset
+    · intro n hn
+      rcases Finset.mem_Icc.mp hn with ⟨hl, hu⟩
+      exact Finset.mem_Icc.mpr ⟨by omega, hu⟩
+    · intro n hn hn2
+      have he : n = 1 := by
+        simp only [Finset.mem_Icc] at hn hn2
+        omega
+      simp [he]
+  have hw : arithmeticCutoff N f g =
+      ∑ n ∈ Finset.Icc 2 N, (ArithmeticFunction.vonMangoldt n : ℂ) * w n := by
+    unfold arithmeticCutoff
+    apply Finset.sum_congr rfl
+    intro n _
+    dsimp [w]
+    push_cast
+    ring
+  rw [hw, hs, weighted_von_mangoldt_prime_powers N w]
+  unfold primePowerCutoff
+  simp only [w, mul_assoc]
+
+theorem complete_arithmetic_row_prime_powers {f g : ℝ → ℂ}
+    (hf : HasCompactSupport f) (hg : HasCompactSupport g) :
+    ∃ N0 : ℕ, ∀ N : ℕ, N0 ≤ N → arithmeticRow f g = primePowerCutoff N f g := by
+  obtain ⟨N0, hN0⟩ := exists_arithmetic_cutoff hf hg
+  refine ⟨N0, fun N hN => ?_⟩
+  rw [hN0 N hN, arithmetic_cutoff_eq_prime_powers]
+
+theorem actual_history_common_prime_power_cutoff {f g : ℝ → ℂ}
+    (hf : Continuous f) (hg : Continuous g) (hfc : HasCompactSupport f)
+    (hgc : HasCompactSupport g) (ps : List ℕ) (M : ℕ) :
+    ∃ N0 : ℕ, ∀ N : ℕ, N0 ≤ N →
+      arithmeticRow f g = primePowerCutoff N f g ∧
+      arithmeticRow (blockPhysical ps M f) (blockPhysical ps M g) =
+        primePowerCutoff N (blockPhysical ps M f) (blockPhysical ps M g) := by
+  obtain ⟨N0, hN0⟩ := actual_history_common_arithmetic_cutoff hf hg hfc hgc ps M
+  refine ⟨N0, fun N hN => ?_⟩
+  obtain ⟨ha, hb⟩ := hN0 N hN
+  exact ⟨ha.trans (arithmetic_cutoff_eq_prime_powers N f g),
+    hb.trans (arithmetic_cutoff_eq_prime_powers N _ _)⟩
+
+#print axioms arithmetic_cutoff_eq_prime_powers
+#print axioms complete_arithmetic_row_prime_powers
+#print axioms actual_history_common_prime_power_cutoff
 end BuildingBlocks.CompleteArithmeticCorrelation

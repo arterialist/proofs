@@ -21,3 +21,18 @@ The signed scattering research branch supplied nine declarations for support, co
 
 All eleven printed declarations compile with only `propext`, `Classical.choice` and `Quot.sound`, with no warnings in this module.
 The combined `BuildingBlocks` library also builds successfully.
+
+## Complete prime-power row export
+
+The finite row now has an explicit prime-power export
+\[
+A_N(f,g)=\sum_{\substack{2\le p\le N\\p\ \mathrm{prime}}}
+ \sum_{\substack{1\le j\le N\\p^j\le N}}
+ \frac{\log p}{\sqrt{p^j}}
+ \left[R(f,g)(\log(p^j))+\overline{R(g,f)(\log(p^j))}\right].
+\]
+The equality is proved for every natural N and arbitrary functions f,g using the weighted reindexing theorem. The n=1 term is zero because Lambda(1)=0, not because a source or boundary term was discarded. For compact sources, the complete row equals this prime-power cutoff for every N above the derived support cutoff. A further root consumer proves that one common cutoff works simultaneously for the original source pair and its literal complete physical history composition. No convergence or cutoff premise is supplied by the caller.
+
+The signed scattering branch supplied the two export identities. Root independently reviewed the n=1 correction, real-to-complex weight conversion and all exponent filters, and supplied the common physical-history consumer. These three new declarations compile with only `propext`, `Classical.choice` and `Quot.sound`. They identify the arithmetic indexing and do not establish the full zero/Gamma/pole explicit formula or a signed estimate.
+
+The updated module and combined `BuildingBlocks` library build successfully, with no warnings in the updated module.

@@ -795,3 +795,5 @@ The [finite centered additive heat formalization](finite-centered-additive-heat-
 [Complete arithmetic correlation support](complete-arithmetic-correlation-support.md) compiles automatic absolute convergence and a stable cutoff for the full prime-power correlation row from literal compact supports. It includes the full joint finite-translate row and common-cutoff consumers for actual physical histories. The complete explicit formula and signed arithmetic estimate remain unfinished.
 
 [Continuous arrival measurability and squared boundary](physical-arrival-boundary-measurability-lean-foundation.md) compiles source and parameter-integral measurability, squared-logarithm integrability at both core boundaries and the full logarithmic squared majorant. Absolute convergence and the majorant inequality for the actual arrival remain separate consumers.
+
+The [complete arithmetic correlation](complete-arithmetic-correlation-support.md) now exports the full row as the exact prime-power sum and derives a shared prime-power cutoff for original and transformed physical sources. Every exponent and both observing orientations remain.
