@@ -241,3 +241,10 @@ import BuildingBlocks.PairedScatteringDefect
 import BuildingBlocks.IntegerBirthHistory
 
 import BuildingBlocks.IntegerBirthGram
+
+import BuildingBlocks.AdditivePairBalance
+import BuildingBlocks.AdditiveHeatWeight
+import BuildingBlocks.AdditiveHeatGamma
+import BuildingBlocks.AdditiveHeatPairing
+import BuildingBlocks.ActualFiniteHeatSource
+import BuildingBlocks.ActualHeatDensityPairing
