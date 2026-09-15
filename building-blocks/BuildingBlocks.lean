@@ -248,3 +248,5 @@ import BuildingBlocks.AdditiveHeatGamma
 import BuildingBlocks.AdditiveHeatPairing
 import BuildingBlocks.ActualFiniteHeatSource
 import BuildingBlocks.ActualHeatDensityPairing
+
+import BuildingBlocks.LogarithmicMassEnvelope

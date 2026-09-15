@@ -179,3 +179,13 @@ It supplies no finite arithmetic-row cutoff for noncompact actual
 states, no full signed arithmetic-row estimate, and no bound on
 source-successor work. Its original-source upper exponent is still
 at most one. The subpower bound required for RH remains open.
+
+
+The scalar substitution step is now compiled in
+[LogarithmicMassEnvelope](BuildingBlocks/LogarithmicMassEnvelope.lean),
+Lean 4.24.0. It proves the exact derivative, strict positivity,
+strict monotonicity on h>0 for A>=0, and the upper substitution rule.
+All four printed declarations use only propext, Classical.choice and
+Quot.sound. This certificate covers the scalar envelope only. The
+layer-cake moment estimate, Fourier identification, source PNT input
+and complete depth-four admission conclusion remain written results.
