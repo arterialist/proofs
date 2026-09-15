@@ -219,3 +219,7 @@ import BuildingBlocks.GoldbachAbsoluteEnergy
 import BuildingBlocks.GoldbachHeatIntegral
 
 import BuildingBlocks.GoldbachHeatConvolution
+
+import BuildingBlocks.GoldbachOddCentering
+import BuildingBlocks.GoldbachOddPairs
+import BuildingBlocks.GoldbachWeightedOddPairs
