@@ -319,3 +319,5 @@ import BuildingBlocks.FrullaniIntegral
 import BuildingBlocks.FactorialDensityIntegral
 import BuildingBlocks.FactorialEntropyIntegral
 import BuildingBlocks.FactorialKernelDictionary
+
+import BuildingBlocks.FiniteWeilPrimeCertificate
