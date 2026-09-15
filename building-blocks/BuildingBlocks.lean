@@ -291,3 +291,4 @@ import BuildingBlocks.PhysicalScatteringCorrelation
 import BuildingBlocks.PhysicalContinuousArrival
 import BuildingBlocks.CompleteArithmeticCorrelation
 import BuildingBlocks.PhysicalArrivalBoundary
+import BuildingBlocks.PhysicalPrimeArrivalRegularity

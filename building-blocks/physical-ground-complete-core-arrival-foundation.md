@@ -87,3 +87,5 @@ The theta covariance research branch supplied this arrival construction and proo
 [Continuous arrival kernel foundation](physical-continuous-arrival-kernel-lean-foundation.md) compiles the literal kernel bounds, its logarithmic boundary primitive and far-tail integrability. The source parameter integral, full core L2 consumer and actual weak-ground equation remain further obligations.
 
 [Continuous arrival measurability and squared boundary](physical-arrival-boundary-measurability-lean-foundation.md) compiles source and parameter-integral measurability, squared-logarithm integrability at both core boundaries and the full logarithmic squared majorant. Absolute convergence and the majorant inequality for the actual arrival remain separate consumers.
+
+[Complete prime arrival core regularity](physical-prime-arrival-core-regularity.md) now compiles almost-everywhere strong measurability and actual core L2 membership from the literal bounded exterior source, retaining every prime power and both orientations. The full continuous arrival and weak-ground equation remain separate consumers.

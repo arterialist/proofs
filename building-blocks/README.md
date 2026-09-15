@@ -797,3 +797,5 @@ The [finite centered additive heat formalization](finite-centered-additive-heat-
 [Continuous arrival measurability and squared boundary](physical-arrival-boundary-measurability-lean-foundation.md) compiles source and parameter-integral measurability, squared-logarithm integrability at both core boundaries and the full logarithmic squared majorant. Absolute convergence and the majorant inequality for the actual arrival remain separate consumers.
 
 The [complete arithmetic correlation](complete-arithmetic-correlation-support.md) now exports the full row as the exact prime-power sum and derives a shared prime-power cutoff for original and transformed physical sources. Every exponent and both observing orientations remain.
+
+[Complete prime arrival core regularity](physical-prime-arrival-core-regularity.md) now compiles almost-everywhere strong measurability and actual core L2 membership from the literal bounded exterior source, retaining every prime power and both orientations. The full continuous arrival and weak-ground equation remain separate consumers.
