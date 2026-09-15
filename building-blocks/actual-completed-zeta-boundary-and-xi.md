@@ -42,4 +42,28 @@ For Re(s)>0 and s unequal to 1, its zeros are exactly the actual zeta zeros. The
 
 The signed scattering research branch supplied the fourteen declarations. Root independently reviewed normalization, positive-real-part hypotheses, the neighborhood derivative step, natural-index corrections and the xi pole values and zero equivalence. These are formalizations of classical identities using existing mathlib analytic results; no novelty claim is made. Weighted gamma growth and integrability, kernel inversion, contour limits, actual zero multiplicities and residue sums, the complete explicit formula and the original signed arithmetic estimate remain further obligations. No RH conclusion follows.
 
-All fourteen printed declarations independently compile with only `propext`, `Classical.choice` and `Quot.sound`, with no warnings in this module. The combined `BuildingBlocks` library also builds successfully.
+The original fourteen printed declarations independently compile with only `propext`, `Classical.choice` and `Quot.sound`, with no warnings in this module. The combined `BuildingBlocks` library also builds successfully.
+
+## Actual zero multiplicities and local logarithmic derivative
+
+The extension proves gamma-factor analyticity on Re(s)>0, zeta analyticity away from 1, and equality of the actual xi and zeta analytic orders for Re(s)>0 and s unequal to 1. The neighborhood factor is s(s-1)Gamma_R(s)/2, analytic and nonzero there. Finite xi order at every complex point follows from entire analyticity, connectedness of the complex plane and xi(0)=1/2. It is proved, rather than assumed as a multiplicity premise. Actual zeta order is consequently finite on the stated domain.
+
+For Re(s)>1, the pole-cleared boundary identity is
+\[
+\frac{\xi'}{\xi}(s)=\frac1s+\frac1{s-1}-\frac{\log\pi}{2}
+ +\frac12\frac{\Gamma'}{\Gamma}(s/2)
+ -\sum_{n\ge0}\frac{\Lambda(n)}{n^s}.
+\]
+Both rational corrections remain. The entire pole values do not justify dropping these corrections in the right-boundary formula.
+
+For any analytic function f with proved finite order m at s, a local factorization f(w)=(w-s)^m g(w), with analytic nonzero g(s), gives
+\[
+\lim_{w\to s,\ w\ne s}(w-s)\frac{f'(w)}{f(w)}=m.
+\]
+The formal proof supplies local nonvanishing and differentiability of g before using the product logarithmic derivative. It applies to actual xi everywhere and proves isolated xi zeros. It includes m=0 at nonzeros; no assumption that s is a zero is needed. This establishes the local multiplicity coefficient, without a global residue theorem, contour shift, zero-count estimate or infinite zero-sum convergence.
+
+The signed scattering branch supplied these nine additional declarations; root independently reviewed the local factorization, finite-order argument and complete boundary corrections. The direct actual-zeta limit is a root consumer of those proofs. Contour limits, weighted gamma estimates, the complete explicit formula and the signed arithmetic estimate remain unfinished.
+
+The direct actual-zeta consumer proves the same punctured logarithmic-derivative limit with coefficient analyticOrderNatAt xi s, for Re(s)>0 and s unequal to 1. Thus the coefficient is identified with the finite multiplicity of actual zeta, rather than an arbitrary zero label.
+
+All twenty-four central declarations compile with only propext, Classical.choice and Quot.sound. The changed module has no warnings or unproved mathematical axioms.
