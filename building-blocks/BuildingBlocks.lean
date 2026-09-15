@@ -252,3 +252,5 @@ import BuildingBlocks.ActualHeatDensityPairing
 import BuildingBlocks.LogarithmicMassEnvelope
 
 import BuildingBlocks.SpectralTailMass
+
+import BuildingBlocks.ThreeWindowIncidenceBudget
