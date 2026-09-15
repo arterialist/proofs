@@ -302,3 +302,6 @@ The [heat/scaling derivative bridge](actual-heat-scaling-derivative-bridge.md) r
 
 
 The [cross-age work calculation](cross-age-common-clock-relative-work.md) uses the actual complete-law multiplier and original physical metric. The fixed-source sign change has a source-dependent onset; it does not apply automatically at $s=c\log N$. All seed terms remain separate from the uncharged counterexample.
+
+
+The [factorial clock correction](factorial-terminal-neutrality.md#4-the-actual-clock-correction-retains-a-signed-transport-drift) keeps $R_FD_v-D_vR_F=[b_F(e^{-v}x)-b_F(x)]D_vH$ in the original $L^2$ domain. The exact paired-history drift contains a mixed term and a square; positive history weights give no sign for their sum.

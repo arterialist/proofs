@@ -705,3 +705,6 @@ The [actual heat-to-scaling derivative](actual-heat-scaling-derivative-bridge.md
 
 
 The [cross-age relative-work theorem](cross-age-common-clock-relative-work.md) keeps both dilation histories and their terminal mismatch. An executed rational certificate for the actual frozen source $N=14$, successor age $j=12$, proves negative uncharged work at time zero and positive work for every sufficiently large time of the complete prime process. The theorem refutes a universal uncharged sign, without a uniform growing-cutoff threshold or a charge-compensated conclusion.
+
+
+The [factorial terminal comparison](factorial-terminal-neutrality.md) proves asymptotic preservation of the actual evolved-source energy at every fixed clock $c\log N$, with a relative effective-PNT error and a decaying absolute error. Its complete clock correction retains the signed dilation drift and the exact factorial commutator. Terminal smallness does not give an accumulated-work bound.

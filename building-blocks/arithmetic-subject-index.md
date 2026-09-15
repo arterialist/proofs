@@ -251,3 +251,6 @@ The [infinite heat and density-cost formalization](centered-goldbach-heat-lyapun
 
 
 The [actual common-clock counterexample](cross-age-common-clock-relative-work.md) derives the exact two-history birth Gram and certifies both a positive symmetric history port and a positive zero-frequency mass difference at $N=14$, $j=12$. A complete-process spectral argument proves eventual positive uncharged relative work, while the initial work is negative. The same-history negative square cannot be substituted for this full average.
+
+
+The [actual factorial terminal theorem](factorial-terminal-neutrality.md) combines a negative-Laplace lower-tail estimate with the PNT-small late factorial coefficient. It proves asymptotic isometry on $T_{c\log N}g_N$ for fixed $c>0$ and the same nonnegative source exponent. The bounded Hermitian correction remains signed, including both clock cross orders and all observing prime powers.
