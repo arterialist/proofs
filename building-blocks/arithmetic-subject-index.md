@@ -407,4 +407,4 @@ The [simultaneous-horizon factorial estimate](factorial-cross-size-mobius-energy
 
 ## Formal complete quotient constraints
 
-[FactorialQuotientConstraints](BuildingBlocks/FactorialQuotientConstraints.lean) proves the complete integer-quotient mass family for actual Möbius coefficients, its real version, zero mass above the cutoff and exact grouping by quotient fibers. Five compiled unconditional theorems; the factorial energy upper bound remains open. See [the renewal chapter](factorial-mobius-quotient-renewal.md).
+[FactorialQuotientConstraints](BuildingBlocks/FactorialQuotientConstraints.lean) proves the complete integer-quotient mass family for actual Möbius coefficients, its real version, zero mass above the cutoff, exact grouping by quotient fibers and uniqueness of the actual grouped vector among real vectors satisfying every row. Eight compiled unconditional theorems; the factorial energy upper bound remains open. See [the renewal chapter](factorial-mobius-quotient-renewal.md).
