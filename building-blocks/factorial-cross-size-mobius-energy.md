@@ -269,6 +269,25 @@ For the actual μ coefficients, the unresolved input is precisely the cross-size
 
 ## What multiplicative regrouping does and does not cancel
 
+A successor-by-successor proof of (H) would follow if C_N=Q_N-D_N were nonincreasing, since C_1=0. This stronger compensation mechanism is false for the actual sequence. At N=4 the nonzero Möbius coefficients have quotient sizes 4,2,1 and signs +,-,-. At N=5 their quotient sizes are 5,2,1,1 with signs +,-,-,-. Thus the complete ordered cross terms are
+
+\[
+C_4=-2B(4,2)-2B(4,1)+2B(2,1)
+=20\log2-6\log3-6\log5,
+\]
+\[
+C_5=-2B(5,2)-4B(5,1)+4B(2,1)+2B(1,1)
+=-22\log2-10\log3+30\log5-12\log7.
+\]
+
+The last term retains the two ordered histories from distinct indices 3 and 5 sharing quotient size one; the diagonal still counts their two individual squares. Consequently
+
+\[
+\boxed{C_5-C_4=\log\frac{5^{36}}{2^{42}3^4 7^{12}}>0}.
+\]
+
+The exact numerator is 14551915228366851806640625 and the denominator is 4930844615567266465972224. Direct integer comparison proves the sign. Both C_4 and C_5 remain negative, as respectively 2^{20}<3^6 5^6 and 5^{30}<2^{22}3^{10}7^{12}. Thus the actual prime birth at 5 disproves monotonic offdiagonal compensation, not (H). Any successful successor energy argument must retain a reserve across horizons or prove a different total bound. RH Proof derived and independently checked these complete expressions by exact integer arithmetic; Lean formalization remains unfinished.
+
 Write every contributing squarefree pair as \(n=da,m=db\), with \(d=\gcd(n,m)\). Then \(d,a,b\) are pairwise coprime and squarefree, and \(\mu(n)\mu(m)=\mu(a)\mu(b)\). Consequently the exact offdiagonal expression is
 
 \[

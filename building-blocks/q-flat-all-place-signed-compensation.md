@@ -279,7 +279,7 @@ the complete form therefore has the exact finite-source readout
 \tag{10}
 \]
 
-This identifies the actual consumer without redefining the source or assuming a globally square-integrable infinite source. V_J is signed; neither nonnegativity of eta nor the finite-source identification proves a sign for the last integral. The needed uniform arithmetic comparison in (10) remains open. The finite arithmetic integration-by-parts step is now formalized below; its logarithmic-window specialization and the full window calculation remain additional Lean obligations.
+This identifies the actual consumer without redefining the source or assuming a globally square-integrable infinite source. V_J is signed; neither nonnegativity of eta nor the finite-source identification proves a sign for the last integral. The needed uniform arithmetic comparison in (10) remains open. The finite arithmetic integration-by-parts step and single-window frozen-source pairing are now formalized below under their explicit calculus hypotheses; the full correlation, density evaluation and packet combination remain additional Lean obligations.
 
 ### Formalized finite original-source integration by parts
 
@@ -293,7 +293,29 @@ This identifies the actual consumer without redefining the source or assuming a 
 
 The zero-endpoint specialization removes only the displayed boundary values. The module proves integrability of the literal finite counting prefix, the open/closed birth-atom FTC identities, and identification with CoarsePrimitive.primeErrorReal on the full covered interval. Every prime power remains through the actual von Mangoldt function. All ten theorems compile without new warnings and depend only on propext, Classical.choice and Quot.sound.
 
-The nine finite-atom and source-identification theorems were contributed by RH Agent3; the original-source theorem retaining arbitrary endpoint values was added during independent root review. These use standard FTC and integration by parts, with no novelty claim. The actual logarithmic-window derivative specialization, density-window evaluation, change of variables x=exp(v), and frozen-source readout (9)-(10) remain further formalization obligations. No arithmetic sign is proved here.
+The nine finite-atom and source-identification theorems were contributed by RH Agent3; the original-source theorem retaining arbitrary endpoint values was added during independent root review. These use standard FTC and integration by parts, with no novelty claim. The logarithmic-window specialization, exponential change of variables and single-window frozen-source pairing are now formalized below under their explicit calculus hypotheses. Density-window evaluation, full correlation instantiation and the combined packet readout (10) remain further formalization obligations. No arithmetic sign is proved here.
+
+### Formalized logarithmic-window calculus and original-source pairing
+
+[LogarithmicPrimeWindow.lean](BuildingBlocks/LogarithmicPrimeWindow.lean) specializes that identity to the literal window F(x)=x^(-1/2)R(log(x)-s). For continuous R,D with D the derivative of R at every real point, both zero when |y|>=d, and 0<=d<=s, it proves
+
+\[
+F'(x)=x^{-3/2}\bigl[D(\log x-s)-R(\log x-s)/2\bigr]\quad(x>0).
+\]
+
+The module proves the endpoint weights vanish once N>=1 and log(N)>=s+d, and proves integrability of the derivative on positive cutoff intervals. To apply the existing global FTC theorem, it extends the window by zero on x<=0 and proves this extension globally differentiable, with globally continuous extended derivative. Support above one makes the extension locally zero near the added boundary; no boundary charge is assumed away. The final theorem identifies the unextended positive-window prime-minus-density sum with minus its derivative paired against the ORIGINAL CoarsePrimitive.primeErrorReal on 1..N. It retains every von Mangoldt atom and proves both endpoint zeros.
+
+Six further theorems prove the exact exponential image of the half-open interval, the change of variables for arbitrary integrands (allowing the step-function prime error), and the normalized logarithmic-source identity. They identify that source with the EXISTING ChargeFrozenSource.causalSource on the covered interval, retaining its original min(exp(v),C) and causal branch. For integers 1<=N<=C with log(N)>=s+d, the final theorem proves
+
+\[
+\sum_{n=2}^N\Lambda(n)n^{-1/2}R(\log n-s)
+-\int_1^N x^{-1/2}R(\log x-s)\,dx
+=-\int_{\mathbb R}a_C(v)\bigl[D(v-s)-R(v-s)/2\bigr]\,dv.
+\]
+
+The kernel is proved zero outside the covered interval, including the endpoint weights. The full source is retained; its uncovered tail contributes zero through this compact test. No global integrability of an unfrozen source is assumed.
+
+All sixteen theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. They were contributed by RH Agent3 and independently reviewed by RH Proof, using standard calculus with no novelty claim. Instantiating R,D with the full packet correlation, evaluating the density window and combining every packet window remain further obligations. This is a source-identification result; the signed arithmetic estimate remains open.
 
 ## Finite Green identity after density cancellation
 
@@ -393,4 +415,4 @@ This is a response calculation, not an assumption that the actual arithmetic err
 
 [FiniteTriangularGeometric.lean](BuildingBlocks/FiniteTriangularGeometric.lean) contains six theorems supplied and independently checked by RH Proof. It proves the recurrence for the literal finite reversed weighted sum, its polynomial identity for every complex q and every natural length, and equality to the forward weighted sum by exact index reflection. Removing its k=0 term gives precisely the positive-lag triangular sum. Its rational closed form requires only q!=1. The exact finite mode-residual theorem retains both endpoint powers and the first-window correction and proves (13) for q!=0,1, h!=0 and positive length.
 
-The mode residual is defined from the actual finite weighted sum; no infinite geometric convergence, prime-error estimate, spectral expansion or RH premise appears. All six assumption checks report only propext, Classical.choice and Quot.sound, without new warnings or admitted proofs. These are formalizations of standard finite-sum algebra and its application to the published signed residual, with no novelty claim for the geometric identities. The limit, pole-root specialization, logarithmic-window specialization of the finite arithmetic integration bridge, full Green identity and signed bound remain additional Lean obligations.
+The mode residual is defined from the actual finite weighted sum; no infinite geometric convergence, prime-error estimate, spectral expansion or RH premise appears. All six assumption checks report only propext, Classical.choice and Quot.sound, without new warnings or admitted proofs. These are formalizations of standard finite-sum algebra and its application to the published signed residual, with no novelty claim for the geometric identities. The limit, pole-root specialization, full correlation and frozen-source specialization of the logarithmic-window bridge, full Green identity and signed bound remain additional Lean obligations.

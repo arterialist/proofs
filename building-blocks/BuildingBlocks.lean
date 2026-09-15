@@ -311,3 +311,4 @@ import BuildingBlocks.OddTriangleConductance
 import BuildingBlocks.FiniteTriangularGeometric
 import BuildingBlocks.FinitePrimeSourceIntegration
 import BuildingBlocks.ResidueLoadingSuccessor
+import BuildingBlocks.LogarithmicPrimeWindow
