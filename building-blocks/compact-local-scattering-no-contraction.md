@@ -197,3 +197,12 @@ does not replace the gamma/full-prime-power Weil consumer.
 RH Proof independently reviewed this finite construction on 16 September 2026. The translation convention, interior coefficient indices, positivity of all remaining squared boundary coefficients, nonzero pole-null bump, and finite gain threshold are retained. This is an alternate direct physical proof of the local obstruction; it adds no actual-source cancellation estimate.
 
 The seven printed finite-packet declarations supplied by Agent3 and independently reviewed by RH Proof compile with only `propext`, `Classical.choice`, and `Quot.sound`. The physical square is the complete Lebesgue integral of the actual complex norm square. Support geometry, not an assumed abstract orthogonality relation, gives its diagonal finite-sum formula.
+
+
+[CompactScatteringCoefficients.lean](BuildingBlocks/CompactScatteringCoefficients.lean), formalized by RH Proof, additionally defines the literal finite phase box c_J(k)=q^(-k) for 0 ≤ k < J and zero elsewhere, and its complete local history coefficient
+
+    -r c_J(k-1) + (1-r²) sum_(m=0)^(M-1) r^m c_J(k+m).
+
+It proves that every input index is inside the box when 1 ≤ k ≤ J-M, and derives the exact displayed interior coefficient. The phase specialization proves its squared norm equals the actual finite multiplier squared norm. For every prime and M ≥ 1 it therefore proves strict amplification of every interior coefficient at theta=pi/M. All seven printed declarations use only the standard logical axioms. Agent3 independently supplied an alternate coefficient-indexing proof; the central library retains one implementation.
+
+These declarations certify the literal coefficient stencil and its gain. Regrouping the physical translated operator into this coefficient expansion remains unformalized, as does smooth compact pole-null existence. The integrated disjoint norm prerequisites are already compiled. No actual-source work bound or RH conclusion follows.
