@@ -328,3 +328,5 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 [Physical correlation Mellin and arithmetic cutoff](physical-correlation-mellin-arithmetic-cutoff.md) formalizes the exact reflected-conjugate correlation transform, weighted integrability, full physical-history multiplier and joint finite-translate prime-power cutoff. The infinite arithmetic and explicit-formula consumers and signed estimate remain unfinished.
 
 [Continuous arrival kernel foundation](physical-continuous-arrival-kernel-lean-foundation.md) compiles the literal kernel bounds, its logarithmic boundary primitive and far-tail integrability. The source parameter integral, full core L2 consumer and actual weak-ground equation remain further obligations.
+
+[Complete arithmetic correlation support](complete-arithmetic-correlation-support.md) compiles automatic absolute convergence and a stable cutoff for the full prime-power correlation row from literal compact supports. It includes the full joint finite-translate row and common-cutoff consumers for actual physical histories. The complete explicit formula and signed arithmetic estimate remain unfinished.

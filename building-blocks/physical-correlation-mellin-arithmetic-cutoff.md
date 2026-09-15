@@ -40,3 +40,5 @@ The module proves its exact joint finite-translate expansion in both orientation
 The signed scattering research branch supplied five declarations for correlations, the arithmetic cutoff and prime-power weights. Root independently reviewed them and supplied five further declarations for reflected conjugation, the weighted convolution, weighted integrability, the complex Mellin transform and its finite-history consumer. The methods are classical translation and convolution identities; no novelty claim is made.
 
 All ten printed declarations compile with only `propext`, `Classical.choice` and `Quot.sound`, with no warnings in this module. The combined `BuildingBlocks` library also builds successfully.
+
+[Complete arithmetic correlation support](complete-arithmetic-correlation-support.md) compiles automatic absolute convergence and a stable cutoff for the full prime-power correlation row from literal compact supports. It includes the full joint finite-translate row and common-cutoff consumers for actual physical histories. The complete explicit formula and signed arithmetic estimate remain unfinished.
