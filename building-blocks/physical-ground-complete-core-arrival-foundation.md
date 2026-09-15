@@ -83,3 +83,5 @@ This supplies the literal arrival object and its local regularity. It does not c
 The continuous arrival cannot be omitted, and this equation cannot be made a definition of an arbitrary bounded \(\psi\). The full Weil row additionally retains both pole terms and the exact \(\Phi,\Phi'\) projection corrections. Arrival positivity alone does not sign the original coherent-core family or prove the covariance residual estimate. No RH conclusion follows from these bounds.
 
 The theta covariance research branch supplied this arrival construction and proof. Root independently reviewed the translated almost-everywhere hypotheses, complete prime-power series and the direct continuous boundary estimate. The methods are classical domination, translation invariance and logarithmic integrability; no novelty claim is made.
+
+[Continuous arrival kernel foundation](physical-continuous-arrival-kernel-lean-foundation.md) compiles the literal kernel bounds, its logarithmic boundary primitive and far-tail integrability. The source parameter integral, full core L2 consumer and actual weak-ground equation remain further obligations.

@@ -326,3 +326,5 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 [Full physical history Mellin weights](full-physical-history-mellin-weights.md) compiles the exact complex Mellin multiplier of the complete physical history, the reflected-conjugate cross weight and finite history compositions. Its infinite-sum consumers retain explicit summability and gap premises. Actual zeta-zero and explicit-formula consumers and the signed arithmetic estimate remain unfinished.
 
 [Physical correlation Mellin and arithmetic cutoff](physical-correlation-mellin-arithmetic-cutoff.md) formalizes the exact reflected-conjugate correlation transform, weighted integrability, full physical-history multiplier and joint finite-translate prime-power cutoff. The infinite arithmetic and explicit-formula consumers and signed estimate remain unfinished.
+
+[Continuous arrival kernel foundation](physical-continuous-arrival-kernel-lean-foundation.md) compiles the literal kernel bounds, its logarithmic boundary primitive and far-tail integrability. The source parameter integral, full core L2 consumer and actual weak-ground equation remain further obligations.
