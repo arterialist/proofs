@@ -233,6 +233,8 @@ import BuildingBlocks.ChargeFrozenSource
 import BuildingBlocks.ChargeFrozenMetric
 import BuildingBlocks.ChargeFrozenIntegrability
 import BuildingBlocks.ChargeFrozenFourier
+import BuildingBlocks.ChargeFrozenSpectralBound
+import BuildingBlocks.ChargeFrozenLogMoment
 import BuildingBlocks.ChargeFrozenBirthMetric
 import BuildingBlocks.ChargeFrozenBirthWork
 import BuildingBlocks.ChargeFrozenBirthGram

@@ -202,7 +202,7 @@ half-line, and the measure-zero endpoint conversion. Six declarations
 compile with only the standard logical axioms. This certificate covers
 the spectral tails. The subsequent logarithmic
 layer-cake integration is now certified below. Application to the
-actual source Fourier transform remains a separate obligation.
+actual source Fourier transform is now compiled below.
 
 
 [LogarithmicLayercake](BuildingBlocks/LogarithmicLayercake.lean) now
@@ -233,7 +233,17 @@ All ten printed declarations use only the standard logical axioms.
 It also certifies the whole-line pointwise decomposition and absolute
 integrability of every atom and the clipped centering contribution.
 
-The general moment proof and source identity do not yet formalize the uniform
-reciprocal-square bound from Chebyshev, the quantitative PNT source
+The [actual spectral consumer](frozen-source-spectral-logarithmic-bound.md)
+is now compiled in `ChargeFrozenSpectralBound` and `ChargeFrozenLogMoment`.
+It reuses `psi_le_linear` and `weighted_vonMangoldt_le`, without adding
+an arithmetic hypothesis. For every N>=2 and all real xi it proves
+|ahat_N(xi)|^2<=4(8log2+2)^2 N/(1+xi^2), measurability and integrability
+of the actual density, and its logarithmic-moment bound in terms of its
+actual spectral mass. All eleven printed declarations use only the
+standard logical axioms. Zero mass is covered by the separate zero-density
+argument. No frequency cutoff or prime-power deletion is made.
+
+These certificates do not yet formalize the Plancherel identification
+of spectral mass with the original dv norm, the quantitative PNT source
 estimate, or the complete operator admission conclusion. The original
 arithmetic source and the RH-strength subpower bound remain unchanged.
