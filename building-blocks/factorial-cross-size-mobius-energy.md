@@ -2,7 +2,7 @@
 
 This note constructs an exact positive quadratic kernel from factorial multinomial counts and their entropy density. It gives a quantitative Mertens consumer and one falsifiable arithmetic upper-bound hypothesis. It does not prove that hypothesis or RH. The kernel representation belongs to classical gamma-integral and positive-kernel methods; no priority claim is made.
 
-Publication scope: independently reviewed written mathematics, including exact integer verification of the N=13 common-divisor blocks below. The Frullani and log-binomial integral components now have compiled Lean proofs as specified below; the rest of the kernel and arithmetic consumers remain unformalized. The [quotient-renewal companion](factorial-mobius-quotient-renewal.md) records the complete renewal constraints and the exact Jensen upper bound with its retained variance. That upper bound leaves M(N)^2 with coefficient one; it supplies no unconditional RH-scale estimate.
+Publication scope: independently reviewed written mathematics, including exact integer verification of the N=13 common-divisor blocks below. The complete integer kernel, its finite signed quadratic dictionary and its identification with the actual Möbius energy now have compiled Lean proofs as specified below; the arithmetic upper bounds and RH consumers remain unformalized. The [quotient-renewal companion](factorial-mobius-quotient-renewal.md) records the complete renewal constraints and the exact Jensen upper bound with its retained variance. That upper bound leaves M(N)^2 with coefficient one; it supplies no unconditional RH-scale estimate.
 
 ## The full factorial kernel, with density retained
 
@@ -364,4 +364,19 @@ Integrability is proved, including zero sizes. The formal proof inducts on n usi
  =(n+m)\log(n+m)-n\log n-m\log m.
 \]
 
-Both derivative integrals are integrable by Frullani; thus the improper integration by parts has justified endpoints and convergent terms. Zero sizes are immediate. Subtracting the formally evaluated factorial term proves (3) for integer sizes by this classical alternative route. The entropy integral is compiled Lean mathematics; the subtraction identifying the full kernel remains to be formalized. The complete finite signed quadratic dictionary and actual arithmetic upper bound also remain obligations. The new compiled component does not sign or bound Q_N.
+Both derivative integrals are integrable by Frullani; thus the improper integration by parts has justified endpoints and convergent terms. Zero sizes are immediate. Subtracting the formally evaluated factorial term proves (3) for integer sizes by this classical alternative route. The subtraction and complete finite signed quadratic dictionary are now compiled as described next. The arithmetic upper bound remains unproved. These integral evaluations do not supply an upper bound on Q_N.
+
+## Formal complete finite kernel dictionary
+
+[FactorialKernelDictionary](BuildingBlocks/FactorialKernelDictionary.lean) proves seven unconditional theorems. It evaluates the complete positive-axis kernel integral as the literal entropy expression minus log choose(n+m,n), for every pair of natural sizes, including zero. Integrability follows from the two independently proved components.
+
+For any finite index set, arbitrary real coefficients c_i and natural sizes q_i, the module proves
+
+\[
+ \int_0^\infty\left(\sum_i c_i(1-e^{-q_i t})\right)^2 w(t)\,dt
+ =\sum_{i,j}c_i c_j B(q_i,q_j)\ge0.
+\]
+
+Every integral exchange uses proved integrability of the finite rows; no coefficient sign is assumed. The actual specialization uses c_n=mu(n), q_n=floor(N/n), and all n in [1,N]. It identifies the previously defined integratedEnergy N with the complete finite Möbius kernel sum Q_N, without changing either response or weight. Thus the formal binary infinite-energy identity applies to this literal Q_N.
+
+All seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied these proofs using classical finite-sum algebra and integration, with no priority claim. Positive semidefiniteness is a lower bound. Neither the diagonal upper hypothesis (H), the signed carry-work budget, nor their actual RH implication is proved by this dictionary.
