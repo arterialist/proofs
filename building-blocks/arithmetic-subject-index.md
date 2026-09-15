@@ -296,3 +296,5 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 ### Exponential weak ground prime tails
 
 [Prime-tail prerequisites](theta-exponential-weak-prime-tail-lean-prerequisites.md) and [compiled Lean](BuildingBlocks/WeakGroundPrimeTail.lean): literal all-integer Mangoldt coefficients, both shifts, integrable overlaps, and complete absolute convergence for exponential tests with decay exponent greater than one half. Actual ground moment identification and the remaining weak equation are written prerequisites.
+
+[Complete prime-cutoff convergence](theta-exponential-weak-prime-cutoff-limit.md), compiled in [WeakGroundPrimeCutoff.lean](BuildingBlocks/WeakGroundPrimeCutoff.lean), passes the translated test cutoff through both Bochner overlaps and the full prime-power series under these same moment and measurability premises.
