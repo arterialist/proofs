@@ -237,3 +237,16 @@ $$
 D(t)^2=\sum_{k\ge2}R_a(k)e^{-kt}.
 $$
 This is the full signed additive convolution, not coefficientwise positivity. Its proof uses the already formalized actual heat-series bounds and the classical absolutely convergent Cauchy product. The module compiles with only the standard three axioms; it proves no critical-horizon growth estimate.
+
+## Formal uncentered prime-power additive convolution
+
+[GoldbachPrimeHeatConvolution](BuildingBlocks/GoldbachPrimeHeatConvolution.lean) proves three unconditional theorems for the existing primeHeat and shiftedPrimeGoldbach definitions. For every t>0 it proves absolute convergence and
+
+\[
+ \left(\sum_{n\ge1}\Lambda(n)e^{-nt}\right)^2
+ =\sum_{k\ge0}R_\Lambda(k+2)e^{-(k+2)t}.
+\]
+
+The finite antidiagonal identity retains both positive indices n=a+1 and m=b+1. Their additive total is k+2; no multiplicative convolution or distinct-base restriction is introduced. Positive-time summability of the actual von Mangoldt heat series justifies its Cauchy product by the existing mathlib absolute-convergence theorem. All prime powers remain, and Lambda(1)=0 is handled by the literal existing definition.
+
+The three theorems compile without warnings and use only propext, Classical.choice and Quot.sound. RH Proof supplied this direct uncentered specialization of the classical Cauchy-product identity, with no priority claim. Together with the already compiled centered coefficient identity it distinguishes raw Goldbach prime-power counts from their signed centered readout. The proof neither establishes ordinary binary Goldbach nor supplies a quantitative error or critical heat-energy upper bound. The analytic RH consumer remains unfinished.

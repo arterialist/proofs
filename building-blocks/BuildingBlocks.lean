@@ -325,3 +325,5 @@ import BuildingBlocks.FiniteWeilPrimeCertificate
 import BuildingBlocks.AutocorrelationRegularity
 
 import BuildingBlocks.FiniteWeilEvenPowerCertificate
+
+import BuildingBlocks.GoldbachPrimeHeatConvolution
