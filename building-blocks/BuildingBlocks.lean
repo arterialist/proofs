@@ -297,3 +297,5 @@ import BuildingBlocks.ActualArchimedeanFactor
 import BuildingBlocks.PhysicalContinuousArrivalMass
 
 import BuildingBlocks.GroundRateCommutator
+import BuildingBlocks.PhysicalThetaMeasure
+import BuildingBlocks.PhysicalExteriorArrival
