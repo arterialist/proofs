@@ -96,3 +96,86 @@ The complete signed arithmetic row, both orientations, proper
 powers, density and seed remain uncontrolled at RH strength. A
 summable archimedean admission error and uniform transport do not
 establish Weil positivity, an arithmetic upper-work budget or RH.
+
+## Depth four from the unconditional prime number theorem
+
+RH Agent3 derived this refinement, independently reviewed by RH Proof
+on 16 September 2026. It is written mathematics. The PNT input and
+this source estimate have not been compiled in Lean.
+
+Let E(x)=psi(x)-x, including all proper prime powers. The unconditional
+input |E(x)|<=C x exp(-a sqrt(log x)), x>=2, follows from
+[Johnston and Yang, arXiv:2204.01980v2](https://arxiv.org/abs/2204.01980v2).
+Their explicit bound has a logarithmic prefactor, absorbed by choosing
+any smaller positive exponential constant. For the literal original
+frozen source, its complete physical norm is
+
+    H_N = integral_1^N E(x)^2/x^2 dx + E(N)^2/N.
+
+Splitting the integral at sqrt(N), Chebyshev pays its lower part by
+O(sqrt(N)); PNT pays the upper part by
+O(N exp(-sqrt(2)a sqrt(log N))). The frozen endpoint has the stronger
+bound O(N exp(-2a sqrt(log N))). Therefore some b>0 satisfies
+
+    H_N <= B N exp(-b sqrt(log N)),   N>=2.
+
+The literal Fourier formula retains density and seed:
+
+    ahat_N(xi)=D_N(1/2+i xi)/(1/2+i xi),
+    D_N(w)=-1+sum_(2<=n<=N)Lambda(n)n^(-w)-integral_1^N x^(-w)dx.
+
+Partial summation and Chebyshev give sum Lambda(n)/sqrt(n)=O(sqrt(N)).
+The absolute density integral is at most 2(sqrt(N)-1), uniformly in xi.
+Consequently |ahat_N(xi)|^2<=C N/(1+xi^2).
+
+Here is a direct logarithmic-moment estimate that preserves the PNT
+exponential constant. Let r>=0 be measurable, H=integral r, and suppose
+r(xi)<=A/(1+xi^2), A>0. For H>0, its tail mass is at most
+min(H,2A/t) for t>0. Tonelli and
+log(2+|xi|)=log 2+integral_0^|xi| dt/(2+t) give, with R=2A/H,
+
+    integral log(2+|xi|)r(xi)dxi
+      <= H log 2 + H log(1+R/2) + 2A/R
+      = H[log 2 + log(1+A/H) + 1].
+
+The tail integral used 1/[t(2+t)]<=1/t^2. This also proves logarithmic
+integrability without assuming it. If H=0, nonnegativity gives r=0
+almost everywhere and the weighted integral is zero.
+
+Apply this with r=|ahat_N|^2/(2pi), so H=H_N by Plancherel and A=O(N).
+The function h[1+log(1+A/h)] is increasing for h>0, since its derivative
+is 1+log(1+A/h)-A/(A+h)>0. Thus for every positive weight satisfying
+q(xi)<=C_q[1+log(2+|xi|)],
+
+    ||a_N||_q^2 <= C_q N[1+sqrt(log N)]exp(-b sqrt(log N)).
+
+A complete contractive clock, finite unitary Euler product and fixed
+convolution filter preserve this bound up to their uniform constants.
+The old depth-four compact head has the uniform bound proved above.
+For N_j<=K P_j, these give
+
+    ||G_j||_q^2 <= C_(q,K) P_j[1+sqrt(log P_j)]
+                    exp(-d sqrt(log P_j))
+
+for some d>0. Bounded small source cutoffs are absorbed separately;
+x[1+sqrt(log x)]exp(-b sqrt(log x)) is eventually increasing.
+The unchanged complete depth-four block defect is
+O(1/[P_j log P_j]). Therefore the same-state signed archimedean errors
+are bounded by
+
+    C_(q,K) [1+sqrt(log P_j)]exp(-d sqrt(log P_j))/log P_j.
+
+This is absolutely summable for P_j=2^j P_0. Integral comparison after
+u=sqrt(j) bounds its tail by O(exp(-d_1 sqrt(J))) for some d_1>0.
+Agent3's slightly weaker bound, after absorbing the square-root factor
+by reducing d, also yields a tail
+O(exp(-d_2 sqrt(J))/sqrt(J)). Both conclusions retain a fixed depth.
+Depth three's resulting majorant is not summable; this says nothing
+about divergence of its actual errors or optimality of depth four.
+
+The review certifies this archimedean approximation estimate using an
+external unconditional PNT theorem and the stated operator bounds.
+It supplies no finite arithmetic-row cutoff for noncompact actual
+states, no full signed arithmetic-row estimate, and no bound on
+source-successor work. Its original-source upper exponent is still
+at most one. The subpower bound required for RH remains open.
