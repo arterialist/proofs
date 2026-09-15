@@ -298,3 +298,7 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 [Prime-tail prerequisites](theta-exponential-weak-prime-tail-lean-prerequisites.md) and [compiled Lean](BuildingBlocks/WeakGroundPrimeTail.lean): literal all-integer Mangoldt coefficients, both shifts, integrable overlaps, and complete absolute convergence for exponential tests with decay exponent greater than one half. Actual ground moment identification and the remaining weak equation are written prerequisites.
 
 [Complete prime-cutoff convergence](theta-exponential-weak-prime-cutoff-limit.md), compiled in [WeakGroundPrimeCutoff.lean](BuildingBlocks/WeakGroundPrimeCutoff.lean), passes the translated test cutoff through both Bochner overlaps and the full prime-power series under these same moment and measurability premises.
+
+## Local finite-history scattering signs
+
+[Local compact scattering](compact-local-scattering-no-contraction.md) and [compiled Lean](BuildingBlocks/CompactLocalScatteringSigns.lean): exact original complex-power multiplier dictionary, finite geometric histories, attenuation at zero and amplification at pi/(M log p), for every prime and M ≥ 1. Physical compact pole-null test realization remains written; no actual-source or dyadic-product sign follows.

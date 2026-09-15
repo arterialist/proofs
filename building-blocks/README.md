@@ -763,3 +763,5 @@ The [finite centered additive heat formalization](finite-centered-additive-heat-
 - [Three narrow windows with global pole-moment carriers](three-window-global-pole-null-weil-bound.md): independently reviewed written Weil positivity on a restricted support family, retaining prime 2, power 4 and all inter-window pole moments; seven scalar budget declarations compiled. No growing-family or RH claim.
 
 - [Global pole constraints and complete binary histories](binary-global-pole-history-extremizer.md), with the [gamma-plus-binary partial-form counterexample](gamma-binary-partial-form-counterexample.md): independently reviewed written constrained extremizers and a failure of a single-place positive completion; all powers of 2 retained, five scalar inputs compiled, full other-place row unestimated.
+
+[Local compact scattering signs](compact-local-scattering-no-contraction.md) compiles both multiplier signs at the original complex-power frequencies for every prime and positive integer depth. The compact pole-null test realization remains written. Uniform local contraction fails; actual-source signed work and full arithmetic cancellation remain unproved.

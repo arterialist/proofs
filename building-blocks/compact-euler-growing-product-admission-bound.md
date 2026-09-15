@@ -254,3 +254,5 @@ the two new modules use only the standard logical axioms.
 These certificates do not yet formalize the quantitative PNT source
 estimate, or the complete operator admission conclusion. The original
 arithmetic source and the RH-strength subpower bound remain unchanged.
+
+The [local sign calculation](compact-local-scattering-no-contraction.md), compiled in [CompactLocalScatteringSigns](BuildingBlocks/CompactLocalScatteringSigns.lean), now proves both strict attenuation and amplification of the original finite multiplier at explicit frequencies for every prime and depth. Thus its small absolute transport error has no uniform contraction sign. The axis convention here is z=-i xi; the amplification frequency corresponds to xi=-pi/(M log p). This leaves the absolute admission estimates intact and supplies no sign on the particular actual source.
