@@ -235,3 +235,5 @@ import BuildingBlocks.ChargeFrozenBirthMetric
 import BuildingBlocks.ChargeFrozenBirthWork
 import BuildingBlocks.ChargeFrozenBirthGram
 import BuildingBlocks.ChargeFrozenBirthFiniteGram
+
+import BuildingBlocks.PairedScatteringDefect
