@@ -28,3 +28,5 @@ Root adds an existence consumer using the published narrow smooth pole-null carr
 The proof establishes continuity of the physical weights. Their entire analyticity, weighted gamma growth and inversion, horizontal contour limits, zero counting, infinite residue-sum convergence, the complete explicit formula and the arithmetic sign estimate remain further obligations. No RH conclusion follows from these local identities or pole cancellations.
 
 All fourteen printed declarations independently compile with only propext, Classical.choice and Quot.sound, without warnings in this module.
+
+[Entire compact physical Mellin weights](compact-physical-mellin-analyticity.md) proves the actual first-moment derivative, entire paired/centered/full-history weights and exact cancellation of both weighted rational pole terms on circles containing 0 and 1. This closes the compact-weight analyticity obligation; global zeta contours, infinite residue sums, gamma inversion and the arithmetic sign estimate remain unfinished.
