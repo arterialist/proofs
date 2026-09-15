@@ -334,3 +334,43 @@ Equation (11), or equivalently the already checked coefficient formula (5), yiel
 \]
 
 The exponential tail of P gives K_J=A-2 sum_(m>=1)P_m+O(1/J), by its finite first absolute moment. There is no corresponding proved estimate on R_J(E). Full positivity on this family requires R_J(E)<=K_J, retaining the signed triangular average and the final-window second difference together. Equations (9)-(10) express those same terms in the original frozen source. Density cancellation and the Green identity prove neither their required bound nor RH. Positivity on this fixed packet family is itself a restricted test, not asserted to be the full RH criterion.
+
+## Exact response to exponential modes
+
+RH Proof supplied the following bounded test of what the finite filter itself can remove. Extend the finite linear residual R_J to complex sequences. For X_m=q^m with q!=0,1, put d=q+q^(-1)-2. The exact response for every J>=3 is
+
+\[
+ \mathcal R_J(X)=\frac{2q}{1-q}
+ -\frac{2q}{J}\left(\frac1{(1-q)^2}+\frac2{h^2}\right)
+ +\frac{2q^J}{Jh^2}\frac{(d+h)^2}{d}.
+\tag{13}
+\]
+
+The finite triangular geometric sum is
+
+\[
+ \sum_{m=1}^{J-1}(J-m)q^m
+ =\frac{Jq}{1-q}-\frac{q(1-q^J)}{(1-q)^2}.
+\]
+
+Substitute this in the definition of R_J. The coefficient of q^J is h^2/d+d+2h=(d+h)^2/d, proving (13). The triangular sum follows by summing the geometric progressions for the J-m copies of each q^m, so no infinite convergence or analytic continuation is used. Exact symbolic checks at J=3,...,15 corroborate the algebra; the displayed finite proof applies to every J>=3.
+
+The denominator d=(q-1)^2/q is nonzero under the stated hypotheses. Since alpha=r+r^(-1)=2-h,
+
+\[
+ d+h=q+q^{-1}-\alpha
+     =\frac{(q-r)(q-r^{-1})}{q}.
+\]
+
+Thus the growing coefficient in (13) vanishes exactly for the two pole modes q=r,r^(-1). At the excluded constant mode q=1, direct finite summation instead gives R_J(1)=J-1+4(h-1)/(Jh^2).
+
+For L=log2 and q=exp(zL) with 0<Re z<1/2, one has 1<|q|<r^(-1), so neither pole root is possible. Equation (13) then gives the nonzero limit
+
+\[
+ \lim_{J\to\infty}\frac{J\mathcal R_J((q^m)_m)}{q^J}
+ =\frac2{h^2}\frac{(d+h)^2}{d}\ne0.
+\]
+
+Consequently the complex modal response has magnitude of order |q|^J/J. Removing the exact density and pole modes does not bound arbitrary growing modes inside the critical strip.
+
+This is a response calculation, not an assumption that the actual arithmetic error is a single exponential or has a convergent zero expansion. It supplies no actual error growth or sign. In particular the required comparison is an upper bound on a real residual: a surviving mode with a negative real coefficient can behave differently from one with a positive coefficient, and distinct modes can interfere. Sampling also retains phases modulo 2pi/L. A proof for this fixed carrier family cannot be promoted to RH without a further argument covering the full required test space. Formalization of (13) and its limit remains unfinished.
