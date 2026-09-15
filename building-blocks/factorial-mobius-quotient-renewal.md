@@ -192,4 +192,18 @@ Thus positive work also occurs across a dyadic horizon. This refutes the zero-bu
 
 [FactorialBinaryCarry](BuildingBlocks/FactorialBinaryCarry.lean) proves seven unconditional theorems. They establish the binary quotient bounds for every positive divisor and both b=0,1, the carry bound epsilon<=1, the exact quotient decomposition, extension of the actual finite response without changing its value, and the literal identity g_(2N+b)(t)=g_N(2t)+d_(N,b)(t) for every real t. The two final theorems extend the integer floor mass through the new cutoff and prove sum_(n<=2N+b)mu(n)epsilon=-1 for N>0. They use the existing actual Möbius floor-mass theorem; no coefficient vector or response is substituted.
 
-All seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using standard finite arithmetic and exponential algebra, with no priority claim. The density scaling integral, signed energy identity (11), exact logarithmic counterexample (12), and required correlation bound remain further Lean obligations. The module proves no upper energy estimate.
+All seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using standard finite arithmetic and exponential algebra, with no priority claim. The full infinite density scaling integral, signed energy identity (11), exact logarithmic counterexample (12), and required correlation bound remain further Lean obligations. The pointwise density scale and finite-interval work identity are now formalized below. The module proves no upper energy estimate.
+
+
+### Formal density scale and finite-interval signed energy
+
+[FactorialBinaryEnergy](BuildingBlocks/FactorialBinaryEnergy.lean) adds twelve unconditional theorems for the same literal finite Möbius response. It proves w(u/2)/2=2w(u)-1/[u(exp(u/2)+1)] for every u>0, positivity of both weights, continuity, and nonnegativity of the actual energy and density rows. It proves the complete binary square identity with the mixed innovation and its square retained. Integrability of all three rows on every interval 0<a<=c is proved from their actual continuity; no integrability premise is assumed. Consequently the module proves
+
+\[
+ \int_a^c\frac{g_{2N+b}(u/2)^2w(u/2)}2\,du
+ =2\int_a^c g_N(u)^2w(u)\,du
+ -\int_a^c\frac{g_N(u)^2}{u(e^{u/2}+1)}\,du
+ +\int_a^c\frac{[2g_N(u)d_{N,b}(u/2)+d_{N,b}(u/2)^2]w(u/2)}2\,du.
+\]
+
+All twelve theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using standard real exponential algebra and integration. This finite-interval theorem is part of the full identity's proof; it does not substitute a compact interval for the infinite energy requirement. Positive-endpoint exhaustion, infinite integrability and the full signed-work estimate remain unformalized and unproved where indicated above. The actual factorial-kernel identification is also still a written proof. No new unconditional RH estimate follows from these calculus identities.
