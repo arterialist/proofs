@@ -277,3 +277,5 @@ import BuildingBlocks.CompactScatteringOperator
 import BuildingBlocks.PhysicalThetaUniform
 
 import BuildingBlocks.PhysicalThetaParity
+
+import BuildingBlocks.CompactScatteringRegularity
