@@ -308,3 +308,4 @@ import BuildingBlocks.ActualZeroCircleResidues
 import BuildingBlocks.PhysicalThetaJumpAddition
 import BuildingBlocks.CompletedZetaPoleCorrections
 import BuildingBlocks.OddTriangleConductance
+import BuildingBlocks.FiniteTriangularGeometric
