@@ -237,3 +237,7 @@ import BuildingBlocks.ChargeFrozenBirthGram
 import BuildingBlocks.ChargeFrozenBirthFiniteGram
 
 import BuildingBlocks.PairedScatteringDefect
+
+import BuildingBlocks.IntegerBirthHistory
+
+import BuildingBlocks.IntegerBirthGram
