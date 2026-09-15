@@ -107,3 +107,7 @@ In particular the explicit even two-pole-zero seed f=g''-g/4 above has F(i gamma
 \]
 
 At p=infinity, Holder only gives an order 1/sigma bound; the residue argument alone yields no contradiction there. No bounded-action failure is claimed by (8). The weighted theta action and compensated mixed forms remain separate valid objects. This extension uses classical Holder bounds and the existing actual Euler identity, with no priority claim. It is written mathematics requiring Lean formalization; it supplies no arithmetic energy upper bound or RH proof.
+
+## Complete compact-core exclusion using simple-zero density
+
+The [compact-core sequel](compact-bare-prime-action-finite-lp-exclusion.md) strengthens (6) with an explicit existing simple-critical-zero density theorem. A nonzero compact smooth seed has an entire transform with only O_f(T) zeros up to height T, by Jensen's formula, whereas actual simple critical-line zeros number at least c T log T for all sufficiently large T. Thus no nonzero compact smooth seed has a complete bare action in any finite Lp tail. This further statement uses the cited unconditional simple-zero density input, not Hardy's infinitude alone. It is written mathematics, not Lean, and has no p=infinity or weighted compensated-action conclusion.
