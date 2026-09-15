@@ -52,6 +52,8 @@ There is also an exact finite renewal equation, valid for every real t:
 
 Expand the left side and group m=kn. The coefficient of 1-exp(-floor(N/m)t) is sum_(n|m)mu(n), which vanishes except at m=1. Nested integer quotients are equal to floor(N/(kn)), so no floor endpoint is changed. In particular g_N(t)=1-e^{-Nt}-sum_(k=2)^N g_floor(N/k)(t). The bounded positive forcing does not make every individual response positive.
 
+[FactorialFiniteRenewal](BuildingBlocks/FactorialFiniteRenewal.lean) now proves two unconditional theorems. A general finite division-history identity cancels the actual Möbius divisor coefficients for any real-valued function of the terminal quotient. Its specialization proves (3) for the existing response, every natural cutoff including zero and every real time. The proof groups all factor pairs and preserves nested natural division. The response is not redefined. This formalizes the classical finite renewal, without an energy upper bound or a nonnegative-response conclusion. The Abel polynomial remains written mathematics.
+
 ## An actual sign-changing response
 
 At N=13 the only nonzero grouped coefficients are A_13=1, A_6=-1, A_4=-1 and A_1=-2. Hence exactly
