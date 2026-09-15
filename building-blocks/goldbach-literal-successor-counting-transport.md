@@ -293,6 +293,23 @@ For the actual transported cumulative F=Psi_j, PNT gives delta_j=sup_{y>=j}|psi(
 
 This rules out a uniform O(X^{3/2}) bound on the uncentered leakage at j proportional to X for the actual arithmetic. It does not rule out cancellation after subtracting the explicit density loss 2jX+2j^2 and retaining all compensation ports. The remaining centered error has only the o(X^2) control proved here; the required RH-scale estimate remains open. RH Proof derived this PNT consequence during the growing-successor attempt. It is written mathematics, not Lean-formalized, and no priority claim is made.
 
+### A finite lower bound from both complete tails
+
+For every real X>=2 and integer j>=1, set s=X+2j. There is also an unconditional lower bound using only the exact probability laws and actual finite Mangoldt counts:
+
+\[
+\boxed{\left[1-\left(\frac{X-1}{X+j-1}\right)^2\right]
+\mathcal G(X+2j)
+\le\mathcal G(X+2j)-G_j(X).}
+\tag{16}
+\]
+
+To prove it, use the label coordinates U=x+j and V=y+j for an ordered birth pair m,n. Their independent laws have lower endpoints A=max(m,j+1), B=max(n,j+1), and cumulative probabilities 1-j/u above the respective endpoints. If A+B>s, their contribution to G_j(X) is zero. If A+B<=s, put q=j/(s-j-1), which lies strictly between zero and one. The events U>s-B and V>s-A each force U+V>s. Their probabilities are j/(s-B) and j/(s-A), both at least q, because A,B>=j+1. Independence makes the probability of their union at least 2q-q^2. Thus this pair's survival probability is at most (1-q)^2.
+
+Every contributing clamped pair has m+n<=s. Summing the survival bound with the original nonnegative weights Lambda(m)Lambda(n) gives G_j(X)<=(1-q)^2 G(s). Pairs removed by clamping contribute their full weight to the leakage, so they also satisfy the lower bound. Since 1-q=(X-1)/(X+j-1), this proves (16). Strict tail events preserve all contact atoms, including the initial pair atom at X=2. No tail truncation or prime-pair existence assumption is used.
+
+In particular, j>=X-1 forces at least three quarters of the shifted original weighted count to leak. More generally G(s)>=psi(s/2)^2, so the right side of (16) is bounded below by the displayed coefficient times psi(s/2)^2, using only pairs with both labels at most s/2. This is a finite arithmetic lower bound independent of PNT. It explains why an upper estimate of raw leakage cannot remove the density loss at growing shifts. It gives no sign or RH-scale bound after density centering, and it does not apply to the signed compensated iterate. RH Proof derived this bound from the complete birth laws. It remains written mathematics, with no priority claim and no Lean formalization yet.
+
 ## Dependencies and formal scope
 
 The [actual successor charge](actual-successor-resonance-charge-cocycle.md) fixes $\kappa$ and its convergent half-moment difference. The [factorial potential](factorial-ground-state-original-l2-domain.md) fixes the source in (11)–(12). The positive transport, additive convolution and Stieltjes integration use classical measure and summation tools; Matsumoto–Suzuki supply the attributed explicit formula and its separate conditional consumers. Every complete prime-power tail and both compensation terms are retained. The transport, escape bound and weighted comparison in this chapter are written proofs and are not formalized in Lean.
