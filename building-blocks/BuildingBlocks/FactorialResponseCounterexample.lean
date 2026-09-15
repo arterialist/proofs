@@ -1,5 +1,6 @@
 import BuildingBlocks.FactorialResponseDerivative
 import Mathlib.Tactic
+import Mathlib.Topology.Order.IntermediateValue
 
 open Finset
 open scoped BigOperators
@@ -77,10 +78,41 @@ theorem not_universal_response_nonneg :
   have hp := h 13 (by norm_num) (Real.log 2) (Real.log_pos (by norm_num))
   exact (not_le_of_gt response_thirteen_negative) hp
 
+/-- A rational exponential coordinate supplies a strictly positive interior point. -/
+theorem response_thirteen_positive_point :
+    0 < response 13 (Real.log (1000 / 999 : ℝ)) := by
+  have he : Real.exp (-Real.log (1000 / 999 : ℝ)) = (999 / 1000 : ℝ) := by
+    rw [Real.exp_neg, Real.exp_log (by norm_num : (0 : ℝ) < 1000 / 999)]
+    norm_num
+  rw [response_thirteen_polynomial, he]
+  norm_num
+
+/-- The literal response has a zero strictly between its positive and negative values. -/
+theorem response_thirteen_interior_zero :
+    ∃ t : ℝ, 0 < t ∧ t < Real.log 2 ∧ response 13 t = 0 := by
+  have ha : 0 < Real.log (1000 / 999 : ℝ) := Real.log_pos (by norm_num)
+  have hab : Real.log (1000 / 999 : ℝ) < Real.log 2 :=
+    Real.log_lt_log (by norm_num) (by norm_num)
+  have hc : Continuous (response 13) := by
+    exact continuous_iff_continuousAt.mpr (fun t =>
+      (BuildingBlocks.FactorialResponseDerivative.response_hasDerivAt 13 t).continuousAt)
+  obtain ⟨t, ht, hz⟩ := intermediate_value_Icc' hab.le hc.continuousOn
+    ⟨response_thirteen_negative.le, response_thirteen_positive_point.le⟩
+  refine ⟨t, ha.trans_le ht.1, ?_, hz⟩
+  have hne : t ≠ Real.log 2 := by
+    intro he
+    subst t
+    have hn := response_thirteen_negative
+    rw [hz] at hn
+    exact (lt_irrefl 0) hn
+  exact lt_of_le_of_ne ht.2 hne
+
 #print axioms response_thirteen_log_two
 #print axioms response_thirteen_negative
 #print axioms not_universal_response_nonneg
 #print axioms moebius_thirteen_table
 #print axioms response_thirteen_polynomial
+#print axioms response_thirteen_positive_point
+#print axioms response_thirteen_interior_zero
 
 end BuildingBlocks.FactorialResponseCounterexample
