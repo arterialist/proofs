@@ -304,3 +304,4 @@ import BuildingBlocks.PhysicalThetaJumpEnergy
 import BuildingBlocks.CompactPhysicalMellinAnalytic
 import BuildingBlocks.PhysicalThetaJumpHomogeneity
 import BuildingBlocks.PhysicalKillingPositivity
+import BuildingBlocks.ActualZeroCircleResidues
