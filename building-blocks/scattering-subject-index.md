@@ -296,3 +296,6 @@ The [integer-history low-band identity](integer-history-low-band-pairing.md) joi
 
 
 The [formal continuous Abel kernel](successor-feedback-tail-Abel-poles.md#formal-continuous-abel-derivative-and-cancellation) proves `smoothAbelKernel_hasDerivAt` for $\Re z>0$, $y>1$. Its derivative has integrable zero-mass cancellation and an absolutely convergent actual-source pairing for $\Re z>1/2$. The proof keeps the initial cell and uses the exact causal-root translation norm.
+
+
+The [heat/scaling derivative bridge](actual-heat-scaling-derivative-bridge.md) retains the deterministic density correction, source-terminal atom and primitive anchor. Equations (15)–(19) distinguish band energies, complex-square convolution readouts and whole-line Hermitian coercivity. None is a finite-horizon heat-energy estimate. The [range proof](heat-to-killed-ground-range-obstruction.md) gives the divergent inverse-gamma cost for every fixed killed ground and its full signed Gram representations.

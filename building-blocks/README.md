@@ -699,3 +699,6 @@ The [formal signed heat identity](centered-goldbach-heat-lyapunov.md#formal-sign
 
 
 The [formal infinite Goldbach heat identity](centered-goldbach-heat-lyapunov.md#formal-density-cost-and-the-infinite-identity) proves absolute ordered-pair convergence, the complete gamma-integral equality and literal square-cutoff convergence for real $s>2$. The actual discrete and mixed density conventions have mutually comparable finite-horizon energies, with factor $2$ and additive cost $1$. Neither result supplies the missing critical-scale bound.
+
+
+The [actual heat-to-scaling derivative](actual-heat-scaling-derivative-bridge.md) has two-sided band-energy bounds, exact complex-square convolution errors and a signed whole-line Hermitian pairing. Its source-cutoff and ground-normalization costs remain explicit. The [killed-ground range obstruction](heat-to-killed-ground-range-obstruction.md) proves that the same heat filter cannot reconstruct the actual nonzero killed ground, its odd history or either pole-corrected target with bounded $L^2$ input cost. Finite-total-cost signed Gram factorizations are excluded as well; finite scalar observations and other arithmetic maps are not covered.
