@@ -279,7 +279,7 @@ the complete form therefore has the exact finite-source readout
 \tag{10}
 \]
 
-This identifies the actual consumer without redefining the source or assuming a globally square-integrable infinite source. V_J is signed; neither nonnegativity of eta nor the finite-source identification proves a sign for the last integral. The needed uniform arithmetic comparison in (10) remains open. The finite arithmetic integration-by-parts step and single-window frozen-source pairing are now formalized below under their explicit calculus hypotheses; the full correlation, density evaluation and packet combination remain additional Lean obligations.
+This identifies the actual consumer without redefining the source or assuming a globally square-integrable infinite source. V_J is signed; neither nonnegativity of eta nor the finite-source identification proves a sign for the last integral. The needed uniform arithmetic comparison in (10) remains open. The finite arithmetic integration-by-parts step, signed finite-window frozen-source pairing and autocorrelation density moment are now formalized below under their explicit calculus hypotheses; the packet seed's derivative/support instantiation and complete gamma/form identification remain additional Lean obligations.
 
 ### Formalized finite original-source integration by parts
 
@@ -293,7 +293,7 @@ This identifies the actual consumer without redefining the source or assuming a 
 
 The zero-endpoint specialization removes only the displayed boundary values. The module proves integrability of the literal finite counting prefix, the open/closed birth-atom FTC identities, and identification with CoarsePrimitive.primeErrorReal on the full covered interval. Every prime power remains through the actual von Mangoldt function. All ten theorems compile without new warnings and depend only on propext, Classical.choice and Quot.sound.
 
-The nine finite-atom and source-identification theorems were contributed by RH Agent3; the original-source theorem retaining arbitrary endpoint values was added during independent root review. These use standard FTC and integration by parts, with no novelty claim. The logarithmic-window specialization, exponential change of variables and single-window frozen-source pairing are now formalized below under their explicit calculus hypotheses. Density-window evaluation, full correlation instantiation and the combined packet readout (10) remain further formalization obligations. No arithmetic sign is proved here.
+The nine finite-atom and source-identification theorems were contributed by RH Agent3; the original-source theorem retaining arbitrary endpoint values was added during independent root review. These use standard FTC and integration by parts, with no novelty claim. The logarithmic-window specialization, exponential change of variables, density moment and signed finite-window frozen-source pairing are now formalized below under their explicit calculus hypotheses. The packet seed's derivative/support instantiation and the full gamma/form identity (10) remain further formalization obligations. No arithmetic sign is proved here.
 
 ### Formalized logarithmic-window calculus and original-source pairing
 
@@ -315,7 +315,38 @@ Six further theorems prove the exact exponential image of the half-open interval
 
 The kernel is proved zero outside the covered interval, including the endpoint weights. The full source is retained; its uncovered tail contributes zero through this compact test. No global integrability of an unfrozen source is assumed.
 
-All sixteen theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. They were contributed by RH Agent3 and independently reviewed by RH Proof, using standard calculus with no novelty claim. Instantiating R,D with the full packet correlation, evaluating the density window and combining every packet window remain further obligations. This is a source-identification result; the signed arithmetic estimate remains open.
+Nine additional theorems evaluate the complete density window and identify its physical moments for the literal real autocorrelation
+
+\[
+R_f(y)=\int_{\mathbb R}f(v+y)f(v)\,dv,\qquad
+M_f(a)=\int_{\mathbb R}f(v)e^{av}\,dv.
+\]
+
+For continuous compactly supported real f, the existing compiled complex correlation Mellin theorem gives
+
+\[
+\int_{\mathbb R}e^{ay}R_f(y)\,dy=M_f(a)M_f(-a).
+\]
+
+The real/complex dictionary and conjugation are proved explicitly. In particular, the window density is exp(s/2)M_f(1/2)M_f(-1/2), retaining the opposite-sign moments. With the stated derivative and support hypotheses for R_f,D, the final theorem proves the full individual residual
+
+\[
+\sum_{n=2}^N\Lambda(n)n^{-1/2}R_f(\log n-s)
+-e^{s/2}M_f(1/2)M_f(-1/2)
+=-\int_{\mathbb R}a_C(v)\bigl[D(v-s)-R_f(v-s)/2\bigr]\,dv.
+\]
+
+Two further theorems prove integrability of every compact kernel against the existing frozen causal source and justify combining arbitrary finite real window coefficients at one common covered cutoff. They retain negative and endpoint coefficients, proving
+
+\[
+\sum_{i\in T}c_i\left[\sum_{n=2}^N\Lambda(n)F_{s_i}(n)
+-e^{s_i/2}\int_{\mathbb R}e^{y/2}R(y)\,dy\right]
+=-\int_{\mathbb R}a_C(v)\sum_{i\in T}c_i[D(v-s_i)-R(v-s_i)/2]\,dv.
+\]
+
+Integrability uses the already proved L1 membership of the ORIGINAL frozen source at each finite C and the bounded compact kernel. It supplies no uniform bound in C and assumes no L1 or L2 membership of the infinite unfrozen source.
+
+All twenty-seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. They were contributed by RH Agent3 and independently reviewed by RH Proof, using standard calculus with no novelty claim. The packet seed's actual derivative/support instantiation and the complete gamma/form identity remain further obligations. The signed arithmetic estimate remains open.
 
 ## Finite Green identity after density cancellation
 

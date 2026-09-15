@@ -269,6 +269,30 @@ Its total is at most 2C_psi^2j^2<=C_psi^2js, because s>=2j+2. Thus 0<=overline G
 
 This is an unconditional inequality for the complete weighted Goldbach counts, derived by RH Proof from the actual repeated successor. It extends the fixed-successor comparison while keeping every early history and continuous tail; no priority claim is made. It does not establish Goldbach existence, a screw sign, or an RH-scale error. In particular j comparable to X permits an O(X^2) loss, so the estimate cannot control the X^{3/2} secondary scale in that regime. A bound for C^j would also need its actual signed compensation ports. Lean formalization of this uniform-j result remains unfinished.
 
+### The critical-scale quadratic leakage is intrinsic
+
+The quadratic cost at growing j is not merely a loss from Chebyshev estimates. Fix theta>0 and let j=floor(theta X). PNT implies the unconditional actual asymptotic
+
+\[
+\boxed{\mathcal G(X+2j)-G_j(X)
+=2jX+2j^2+o(X^2)},\qquad
+\frac{\mathcal G(X+2j)-G_j(X)}{X^2}\longrightarrow2\theta(1+\theta)>0.
+\tag{15}
+\]
+
+To prove this without a Goldbach error assumption, use only the positive counting measures. If a positive locally finite measure on [0,infinity) has cumulative F and epsilon_X=sup_{0<=u<=X}|F(u)-u|, its additive pair count G_F obeys
+
+\[
+\left|G_F(X)-\frac{X^2}{2}\right|
+\le\epsilon_X(2X+\epsilon_X).
+\]
+
+Indeed, compare the convolution integral integral_[0,X] F(X-u)dmu(u) with integral_[0,X](X-u)dmu(u)=integral_0^X F(u)du. The first error is at most epsilon_X F(X), and the second at most X epsilon_X; also F(X)<=X+epsilon_X. All integrals are finite on the indicated interval, and every boundary atom remains.
+
+For the actual transported cumulative F=Psi_j, PNT gives delta_j=sup_{y>=j}|psi(y)/y-1| tending to zero. On 1<=u<=X, |Psi_j(u)-u|<=u delta_j, because u+j>=j; on 0<=u<1 the error is at most one. Thus epsilon_X<=1+X delta_j=o(X). The preceding estimate proves G_j(X)=X^2/2+o(X^2). PNT likewise gives the uniform cumulative approximation for the original psi on [0,s], hence G(s)=s^2/2+o(s^2), where s=X+2j is comparable to X. Their difference is (s^2-X^2)/2+o(X^2), exactly (15).
+
+This rules out a uniform O(X^{3/2}) bound on the uncentered leakage at j proportional to X for the actual arithmetic. It does not rule out cancellation after subtracting the explicit density loss 2jX+2j^2 and retaining all compensation ports. The remaining centered error has only the o(X^2) control proved here; the required RH-scale estimate remains open. RH Proof derived this PNT consequence during the growing-successor attempt. It is written mathematics, not Lean-formalized, and no priority claim is made.
+
 ## Dependencies and formal scope
 
 The [actual successor charge](actual-successor-resonance-charge-cocycle.md) fixes $\kappa$ and its convergent half-moment difference. The [factorial potential](factorial-ground-state-original-l2-domain.md) fixes the source in (11)–(12). The positive transport, additive convolution and Stieltjes integration use classical measure and summation tools; Matsumoto–Suzuki supply the attributed explicit formula and its separate conditional consumers. Every complete prime-power tail and both compensation terms are retained. The transport, escape bound and weighted comparison in this chapter are written proofs and are not formalized in Lean.

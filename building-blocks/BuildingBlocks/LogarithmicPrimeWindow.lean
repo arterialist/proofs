@@ -1,6 +1,9 @@
 import BuildingBlocks.FinitePrimeSourceIntegration
 import BuildingBlocks.ChargeFrozenSource
+import BuildingBlocks.ChargeFrozenIntegrability
+import BuildingBlocks.PhysicalScatteringCorrelation
 import Mathlib.MeasureTheory.Function.JacobianOneDim
+import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Tactic.Ring
@@ -312,6 +315,202 @@ theorem window_frozen_source_full {R D : ℝ → ℝ} {s d : ℝ} {N C : ℕ}
     · exact le_trans (by linarith : d ≤ -(v - s)) (neg_le_abs _)
   simp only [sourceKernel, hRs _ hy, hDs _ hy, zero_div, sub_self, mul_zero]
 
+noncomputable def densityMoment (R : ℝ → ℝ) : ℝ :=
+  ∫ y : ℝ, Real.exp (y / 2) * R y
+
+theorem density_translation (R : ℝ → ℝ) (s : ℝ) :
+    (∫ v : ℝ, Real.exp (v / 2) * R (v - s)) = Real.exp (s / 2) * densityMoment R := by
+  have he : (fun v => Real.exp (v / 2) * R (v - s)) =
+      (fun v => Real.exp (s / 2) * (Real.exp ((v - s) / 2) * R (v - s))) := by
+    funext v
+    rw [← mul_assoc, ← Real.exp_add]
+    congr 2
+    ring
+  rw [he, MeasureTheory.integral_const_mul]
+  unfold densityMoment
+  rw [MeasureTheory.integral_sub_right_eq_self (fun y : ℝ => Real.exp (y / 2) * R y) s]
+
+/-- The complete density window, evaluated before arithmetic comparison. -/
+theorem window_density_integral {R : ℝ → ℝ} {s d : ℝ} {N : ℕ}
+    (hN : 1 ≤ N) (hs : d ≤ s)
+    (hRs : ∀ y, d ≤ |y| → R y = 0) (hcut : s + d ≤ Real.log N) :
+    (∫ x in (1 : ℝ)..(N : ℝ), window R s x) = Real.exp (s / 2) * densityMoment R := by
+  have hNR : (1 : ℝ) ≤ N := by exact_mod_cast hN
+  have hNp : (0 : ℝ) < N := lt_of_lt_of_le (by norm_num) hNR
+  have h := exp_interval_substitution (Real.log_nonneg hNR) (window R s)
+  rw [Real.exp_log hNp] at h
+  rw [h]
+  have he : (fun v => Real.exp v * window R s (Real.exp v)) =
+      (fun v => Real.exp (v / 2) * R (v - s)) := by
+    funext v
+    unfold window
+    rw [Real.log_exp, ← mul_assoc, Real.rpow_def_of_pos (Real.exp_pos v), Real.log_exp,
+      ← Real.exp_add]
+    congr 2
+    ring
+  rw [he, intervalIntegral.integral_of_le (Real.log_nonneg hNR)]
+  have hi : (∫ v in Set.Ioc (0 : ℝ) (Real.log N), Real.exp (v / 2) * R (v - s)) =
+      ∫ v : ℝ, Real.exp (v / 2) * R (v - s) := by
+    apply MeasureTheory.setIntegral_eq_integral_of_forall_compl_eq_zero
+    intro v hv
+    have hnot : ¬(0 < v ∧ v ≤ Real.log N) := hv
+    have hy : d ≤ |v - s| := by
+      by_cases hv0 : 0 < v
+      · have hvN : Real.log N < v := lt_of_not_ge (fun h => hnot ⟨hv0, h⟩)
+        exact le_trans (by linarith : d ≤ v - s) (le_abs_self _)
+      · exact le_trans (by linarith : d ≤ -(v - s)) (neg_le_abs _)
+    rw [hRs _ hy, mul_zero]
+  rw [hi, density_translation]
+
+/-- Literal prime atoms minus the full density moment equal the frozen source pairing. -/
+theorem window_residual_frozen_source {R D : ℝ → ℝ} {s d : ℝ} {N C : ℕ}
+    (hN : 1 ≤ N) (hNC : N ≤ C) (hd : 0 ≤ d) (hs : d ≤ s)
+    (hR : Continuous R) (hD : Continuous D)
+    (hRs : ∀ y, d ≤ |y| → R y = 0) (hDs : ∀ y, d ≤ |y| → D y = 0)
+    (hderiv : ∀ y, HasDerivAt R (D y) y) (hcut : s + d ≤ Real.log N) :
+    (∑ n ∈ Finset.Icc 2 N, ArithmeticFunction.vonMangoldt n * window R s n) -
+        Real.exp (s / 2) * densityMoment R =
+      -(∫ v : ℝ, BuildingBlocks.ChargeFrozenSource.causalSource C v * sourceKernel R D (v - s)) := by
+  rw [← window_density_integral hN hs hRs hcut]
+  exact window_frozen_source_full hN hNC hd hs hR hD hRs hDs hderiv hcut
+
+noncomputable def physicalMoment (f : ℝ → ℝ) (a : ℝ) : ℝ :=
+  ∫ v : ℝ, f v * Real.exp (a * v)
+
+noncomputable def autocorrelation (f : ℝ → ℝ) (y : ℝ) : ℝ :=
+  ∫ v : ℝ, f (v + y) * f v
+
+theorem real_mellin_dictionary (f : ℝ → ℝ) (a : ℝ) :
+    BuildingBlocks.FullComplexHistoryMellin.mellin (fun v => (f v : ℂ)) (a : ℂ) =
+      (physicalMoment f a : ℂ) := by
+  unfold BuildingBlocks.FullComplexHistoryMellin.mellin physicalMoment
+  simp only [← Complex.ofReal_mul, ← Complex.ofReal_exp, integral_complex_ofReal]
+
+theorem autocorrelation_cast (f : ℝ → ℝ) (y : ℝ) :
+    BuildingBlocks.PhysicalScatteringCorrelation.correlation
+      (fun v => (f v : ℂ)) (fun v => (f v : ℂ)) y = (autocorrelation f y : ℂ) := by
+  unfold BuildingBlocks.PhysicalScatteringCorrelation.correlation autocorrelation
+  simp only [Complex.conj_ofReal, ← Complex.ofReal_mul, integral_complex_ofReal]
+
+/-- Actual autocorrelation moments have the opposite-sign physical Mellin factors. -/
+theorem autocorrelation_moment {f : ℝ → ℝ} (hf : Continuous f)
+    (hfc : HasCompactSupport f) (a : ℝ) :
+    physicalMoment (autocorrelation f) a = physicalMoment f a * physicalMoment f (-a) := by
+  have hc : Continuous (fun v => (f v : ℂ)) := Complex.continuous_ofReal.comp hf
+  have hcc : HasCompactSupport (fun v => (f v : ℂ)) := by
+    simpa only [Function.comp_def] using hfc.comp_left (g := Complex.ofReal) Complex.ofReal_zero
+  have h := BuildingBlocks.PhysicalScatteringCorrelation.correlation_mellin hc hc hcc hcc (a : ℂ)
+  have he : BuildingBlocks.PhysicalScatteringCorrelation.correlation
+      (fun v => (f v : ℂ)) (fun v => (f v : ℂ)) =
+      (fun y => (autocorrelation f y : ℂ)) := by
+    funext y
+    exact autocorrelation_cast f y
+  rw [he, real_mellin_dictionary] at h
+  unfold BuildingBlocks.FullComplexHistoryMellin.pairedWeight at h
+  simp only [Complex.conj_ofReal, ← Complex.ofReal_neg, real_mellin_dictionary,
+    Complex.conj_ofReal, ← Complex.ofReal_mul] at h
+  exact Complex.ofReal_injective h
+
+theorem densityMoment_physicalMoment (R : ℝ → ℝ) :
+    densityMoment R = physicalMoment R ((1 : ℝ) / 2) := by
+  unfold densityMoment physicalMoment
+  congr 1
+  funext y
+  have he : y / 2 = (1 : ℝ) / 2 * y := by ring
+  rw [he, mul_comm]
+
+theorem densityMoment_autocorrelation {f : ℝ → ℝ} (hf : Continuous f)
+    (hfc : HasCompactSupport f) :
+    densityMoment (autocorrelation f) =
+      physicalMoment f ((1 : ℝ) / 2) * physicalMoment f (-(1 : ℝ) / 2) := by
+  rw [densityMoment_physicalMoment, autocorrelation_moment hf hfc]
+  congr 1
+  norm_num
+
+/-- Full actual autocorrelation residual, with its two physical density moments retained. -/
+theorem autocorrelation_residual_frozen_source {f D : ℝ → ℝ} {s d : ℝ} {N C : ℕ}
+    (hN : 1 ≤ N) (hNC : N ≤ C) (hd : 0 ≤ d) (hs : d ≤ s)
+    (hf : Continuous f) (hfc : HasCompactSupport f) (hD : Continuous D)
+    (hRs : ∀ y, d ≤ |y| → autocorrelation f y = 0)
+    (hDs : ∀ y, d ≤ |y| → D y = 0)
+    (hderiv : ∀ y, HasDerivAt (autocorrelation f) (D y) y)
+    (hcut : s + d ≤ Real.log N) :
+    (∑ n ∈ Finset.Icc 2 N, ArithmeticFunction.vonMangoldt n *
+      window (autocorrelation f) s n) -
+        Real.exp (s / 2) *
+          (physicalMoment f ((1 : ℝ) / 2) * physicalMoment f (-(1 : ℝ) / 2)) =
+      -(∫ v : ℝ, BuildingBlocks.ChargeFrozenSource.causalSource C v *
+        sourceKernel (autocorrelation f) D (v - s)) := by
+  rw [← densityMoment_autocorrelation hf hfc]
+  have hR : Continuous (autocorrelation f) := continuous_iff_continuousAt.mpr
+    (fun y => (hderiv y).continuousAt)
+  exact window_residual_frozen_source hN hNC hd hs hR hD hRs hDs hderiv hcut
+
+theorem frozen_kernel_integrable {R D : ℝ → ℝ} {d : ℝ}
+    (hR : Continuous R) (hD : Continuous D)
+    (hRs : ∀ y, d ≤ |y| → R y = 0) (hDs : ∀ y, d ≤ |y| → D y = 0)
+    (C : ℕ) (s : ℝ) :
+    MeasureTheory.Integrable (fun v : ℝ => BuildingBlocks.ChargeFrozenSource.causalSource C v *
+      sourceKernel R D (v - s)) := by
+  have hk : Continuous (sourceKernel R D) := hD.sub (hR.div_const 2)
+  have hks : HasCompactSupport (sourceKernel R D) := by
+    apply HasCompactSupport.of_support_subset_isCompact (K := Set.Icc (-d) d) isCompact_Icc
+    intro y hy
+    have hyn : sourceKernel R D y ≠ 0 := hy
+    have hlt : |y| < d := by
+      apply lt_of_not_ge
+      intro h
+      apply hyn
+      simp only [sourceKernel, hRs y h, hDs y h, zero_div, sub_self]
+    exact abs_le.mp hlt.le
+  have hnc : HasCompactSupport (fun y => ‖sourceKernel R D y‖) := by
+    simpa only [Function.comp_def] using hks.comp_left (g := fun x : ℝ => ‖x‖) norm_zero
+  have hb := (hnc.isCompact_range hk.norm).bddAbove
+  obtain ⟨B, hB⟩ := hb
+  have hi := (BuildingBlocks.ChargeFrozenIntegrability.integrable_causalSource C).bdd_mul
+    (hk.comp (continuous_id.sub continuous_const)).aestronglyMeasurable
+    ⟨B, fun v => hB ⟨v - s, rfl⟩⟩
+  change MeasureTheory.Integrable (fun v : ℝ => sourceKernel R D (v - s) *
+    BuildingBlocks.ChargeFrozenSource.causalSource C v) at hi
+  exact hi.congr (Filter.Eventually.of_forall (fun v => mul_comm _ _))
+
+/-- All signed windows use one complete frozen source, with no coefficient discarded. -/
+theorem signed_windows_frozen_source {ι : Type*} (T : Finset ι) (c s : ι → ℝ)
+    {R D : ℝ → ℝ} {d : ℝ} {N C : ℕ}
+    (hN : 1 ≤ N) (hNC : N ≤ C) (hd : 0 ≤ d)
+    (hs : ∀ i ∈ T, d ≤ s i) (hR : Continuous R) (hD : Continuous D)
+    (hRs : ∀ y, d ≤ |y| → R y = 0) (hDs : ∀ y, d ≤ |y| → D y = 0)
+    (hderiv : ∀ y, HasDerivAt R (D y) y)
+    (hcut : ∀ i ∈ T, s i + d ≤ Real.log N) :
+    (∑ i ∈ T, c i * ((∑ n ∈ Finset.Icc 2 N, ArithmeticFunction.vonMangoldt n *
+      window R (s i) n) - Real.exp (s i / 2) * densityMoment R)) =
+      -(∫ v : ℝ, BuildingBlocks.ChargeFrozenSource.causalSource C v *
+        (∑ i ∈ T, c i * sourceKernel R D (v - s i))) := by
+  have hi : ∀ i ∈ T, MeasureTheory.Integrable (fun v : ℝ => c i *
+      (BuildingBlocks.ChargeFrozenSource.causalSource C v * sourceKernel R D (v - s i))) := by
+    intro i _
+    exact (frozen_kernel_integrable hR hD hRs hDs C (s i)).const_mul (c i)
+  calc
+    _ = -(∑ i ∈ T, c i * (∫ v : ℝ,
+        BuildingBlocks.ChargeFrozenSource.causalSource C v * sourceKernel R D (v - s i))) := by
+      rw [← Finset.sum_neg_distrib]
+      apply Finset.sum_congr rfl
+      intro i hiT
+      rw [window_residual_frozen_source hN hNC hd (hs i hiT) hR hD hRs hDs hderiv (hcut i hiT)]
+      ring
+    _ = -(∫ v : ℝ, ∑ i ∈ T, c i *
+        (BuildingBlocks.ChargeFrozenSource.causalSource C v * sourceKernel R D (v - s i))) := by
+      rw [MeasureTheory.integral_finset_sum T hi]
+      simp only [MeasureTheory.integral_const_mul]
+    _ = _ := by
+      congr 1
+      apply MeasureTheory.integral_congr_ae
+      filter_upwards [] with v
+      rw [Finset.mul_sum]
+      apply Finset.sum_congr rfl
+      intro i _
+      ring
+
 #print axioms window_hasDerivAt
 #print axioms window_one_eq_zero
 #print axioms window_endpoint_eq_zero
@@ -328,5 +527,16 @@ theorem window_frozen_source_full {R D : ℝ → ℝ} {s d : ℝ} {N C : ℕ}
 #print axioms frozenSource_eq_logarithmic
 #print axioms window_frozen_source
 #print axioms window_frozen_source_full
+#print axioms density_translation
+#print axioms window_density_integral
+#print axioms window_residual_frozen_source
+#print axioms real_mellin_dictionary
+#print axioms autocorrelation_cast
+#print axioms autocorrelation_moment
+#print axioms densityMoment_physicalMoment
+#print axioms densityMoment_autocorrelation
+#print axioms autocorrelation_residual_frozen_source
+#print axioms frozen_kernel_integrable
+#print axioms signed_windows_frozen_source
 
 end LogarithmicPrimeWindow
