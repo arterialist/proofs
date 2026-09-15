@@ -197,3 +197,28 @@ A_d(t)=D(t)+\frac1{e^t-1}-\left(1+\frac1t\right)e^{-t},
 A_d(t)=\sum_{n\ge1}\Lambda(n)e^{-nt}-\left(1+\frac1t\right)e^{-t}.
 $$
 These modules establish the finite quadratic comparison and literal positive-time series. An infinite Mellin identity or the critical-horizon arithmetic bound is not inferred from pointwise convergence. The proofs use the classical gamma integral, geometric series and quadratic-form Cauchy–Schwarz. The modules compile; their principal axiom checks contain only `propext`, `Classical.choice` and `Quot.sound`.
+
+
+## Formal density cost and the infinite identity
+
+[GoldbachHeatBaseline.lean](BuildingBlocks/GoldbachHeatBaseline.lean) proves that the exact correction $d=A_d-D$ satisfies
+$$
+-e^{-t}\le d(t)\le0\quad(t>0),\qquad \int_0^\infty d(t)^2dt\le\frac12.
+$$
+[GoldbachHeatLocalEnergy.lean](BuildingBlocks/GoldbachHeatLocalEnergy.lean) derives continuity of the actual series away from zero and square integrability on every $[\varepsilon,1]$, $\varepsilon>0$. With $H_\varepsilon(f)=\int_{[\varepsilon,1]}f(t)^2dt$, its two comparison theorems give
+$$
+H_\varepsilon(A_d)\le2H_\varepsilon(D)+1,
+\qquad H_\varepsilon(D)\le2H_\varepsilon(A_d)+1.
+$$
+The source integrability is proved within the module; it is not an extra hypothesis.
+
+[GoldbachAbsoluteEnergy.lean](BuildingBlocks/GoldbachAbsoluteEnergy.lean) proves absolute convergence of the complete ordered-pair series for real $s>2$. The proof uses the classical absolute Dirichlet convergence of $\Lambda$ already in mathlib and the product majorant
+$$
+\frac{|a_ma_n|}{(m+n)^{2c}}\le\frac{|a_m|}{m^c}\frac{|a_n|}{n^c},\qquad c>1.
+$$
+[GoldbachHeatIntegral.lean](BuildingBlocks/GoldbachHeatIntegral.lean) then derives weighted square integrability, the absolute sum-integral exchange and
+$$
+\Gamma(s)\sum_{m,n\ge1}\frac{(\Lambda(m)-1)(\Lambda(n)-1)}{(m+n)^s}
+=\int_0^\infty t^{s-1}D(t)^2dt\ge0,\qquad s>2.
+$$
+`finiteEnergy_centered_tendsto` identifies this energy with the literal square-cutoff limit $1\le m,n\le N$. Every ordered cross term and the $n=1$ sector remain present. This establishes the infinite identity in its proved absolute range, without a vertical Mellin-norm identity or an estimate at the critical boundary. All four modules compile, with only the standard three axioms in their principal theorem reports.

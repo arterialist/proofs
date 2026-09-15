@@ -209,3 +209,11 @@ import BuildingBlocks.SuccessorFeedbackSmoothCancellation
 import BuildingBlocks.SuccessorFeedbackRootPrimitive
 
 import BuildingBlocks.SuccessorFeedbackSmoothAgeDerivative
+
+import BuildingBlocks.GoldbachHeatBaseline
+
+import BuildingBlocks.GoldbachHeatLocalEnergy
+
+import BuildingBlocks.GoldbachAbsoluteEnergy
+
+import BuildingBlocks.GoldbachHeatIntegral

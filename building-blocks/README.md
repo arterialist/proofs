@@ -696,3 +696,6 @@ The [effective-PNT subquadratic proof](centered-W-subquadratic-pnt.md) establish
 
 
 The [formal signed heat identity](centered-goldbach-heat-lyapunov.md#formal-signed-heat-energy-and-the-actual-series) proves the finite gamma-integral quadratic form, its complete bilinear comparison and the actual positive-time series with $a_1=-1$. The [formal continuous Abel derivative](successor-feedback-tail-Abel-poles.md#formal-continuous-abel-derivative-and-cancellation) identifies the literal smooth kernel derivative and proves its zero-mass $L^1$ cancellation for $\Re z>1/2$. The critical arithmetic estimate and zeta continuation remain separate.
+
+
+The [formal infinite Goldbach heat identity](centered-goldbach-heat-lyapunov.md#formal-density-cost-and-the-infinite-identity) proves absolute ordered-pair convergence, the complete gamma-integral equality and literal square-cutoff convergence for real $s>2$. The actual discrete and mixed density conventions have mutually comparable finite-horizon energies, with factor $2$ and additive cost $1$. Neither result supplies the missing critical-scale bound.

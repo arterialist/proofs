@@ -245,3 +245,6 @@ The [effective-PNT subquadratic proof](centered-W-subquadratic-pnt.md) establish
 
 
 The [formal signed Goldbach heat chain](centered-goldbach-heat-lyapunov.md#formal-signed-heat-energy-and-the-actual-series) links `finiteEnergy_eq_heat_integral`, `finitePairing_sq_le` and `mixedCenteredHeat_eq` to the classical gamma integral, full signed finite energy and exact actual density baseline. Positive-time series convergence is proved; no infinite Mellin interchange or RH bound is assumed.
+
+
+The [infinite heat and density-cost formalization](centered-goldbach-heat-lyapunov.md#formal-density-cost-and-the-infinite-identity) maps `centeredEnergy_eq_heat_integral` and `finiteEnergy_centered_tendsto` to the complete actual ordered-pair series for real $s>2`. `mixed_energy_le_centered` and its reverse prove the finite-horizon comparison with no caller-supplied source integrability assumption.
