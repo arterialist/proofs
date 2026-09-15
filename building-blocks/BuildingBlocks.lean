@@ -250,3 +250,5 @@ import BuildingBlocks.ActualFiniteHeatSource
 import BuildingBlocks.ActualHeatDensityPairing
 
 import BuildingBlocks.LogarithmicMassEnvelope
+
+import BuildingBlocks.SpectralTailMass

@@ -189,3 +189,15 @@ All four printed declarations use only propext, Classical.choice and
 Quot.sound. This certificate covers the scalar envelope only. The
 layer-cake moment estimate, Fourier identification, source PNT input
 and complete depth-four admission conclusion remain written results.
+
+
+[SpectralTailMass](BuildingBlocks/SpectralTailMass.lean) now certifies
+the other elementary input to that moment argument: for an integrable
+nonnegative real spectral density r bounded by A/(1+xi^2), A>=0,
+its complete tail integral on |xi|>t is at most
+min(integral r,2A/t), for every t>0. The proof includes the exact
+reciprocal-square integral 1/t, reflection of the negative-frequency
+half-line, and the measure-zero endpoint conversion. Six declarations
+compile with only the standard logical axioms. This does not yet
+formalize the subsequent logarithmic layer-cake integration or apply
+the bound to the actual source Fourier transform.
