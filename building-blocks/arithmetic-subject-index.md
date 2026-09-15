@@ -306,3 +306,5 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 ## Actual physical theta series
 
 [Literal series foundation](physical-theta-series-lean-foundation.md), compiled in [PhysicalThetaSeries.lean](BuildingBlocks/PhysicalThetaSeries.lean): exact positive-index normalization, all-real absolute convergence and measurability, positive half-line. No even surrogate replaces the actual series; parity and the actual ground moments remain unfinished.
+
+[Finite scattering packets](BuildingBlocks/CompactScatteringPackets.lean) compiles seven prerequisites for the direct physical proof: literal interval support separation, disjoint finite norm squares, integrated translation-invariant norms, isolated coefficient energy, and a finite amplification length. The complete operator assembly remains written.
