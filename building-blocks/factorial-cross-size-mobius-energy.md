@@ -2,7 +2,7 @@
 
 This note constructs an exact positive quadratic kernel from factorial multinomial counts and their entropy density. It gives a quantitative Mertens consumer and one falsifiable arithmetic upper-bound hypothesis. It does not prove that hypothesis or RH. The kernel representation belongs to classical gamma-integral and positive-kernel methods; no priority claim is made.
 
-Publication scope: independently reviewed written mathematics, including exact integer verification of the N=13 common-divisor blocks below. Lean formalization remains unfinished. The [quotient-renewal companion](factorial-mobius-quotient-renewal.md) records the complete renewal constraints and the exact Jensen upper bound with its retained variance. That upper bound leaves M(N)^2 with coefficient one; it supplies no unconditional RH-scale estimate.
+Publication scope: independently reviewed written mathematics, including exact integer verification of the N=13 common-divisor blocks below. The Frullani and log-binomial integral components now have compiled Lean proofs as specified below; the rest of the kernel and arithmetic consumers remain unformalized. The [quotient-renewal companion](factorial-mobius-quotient-renewal.md) records the complete renewal constraints and the exact Jensen upper bound with its retained variance. That upper bound leaves M(N)^2 with coefficient one; it supplies no unconditional RH-scale estimate.
 
 ## The full factorial kernel, with density retained
 
@@ -333,3 +333,35 @@ This does not falsify the integrated hypothesis (H). It shows that any proof of 
 ## Classical context
 
 Gamma-integral and complete-monotonicity methods have an extensive literature; see [Berg, *Integral representation of some functions related to the Gamma function*](https://arxiv.org/abs/math/0411550). Möbius-weighted Hilbert-space criteria also have classical predecessors, including [Báez-Duarte, *New versions of the Nyman–Beurling criterion for the Riemann hypothesis*](https://www.kurims.kyoto-u.ac.jp/EMIS/journals/HOA/IJMMS/Volume31_7/242719.pdf). These references provide methodological context, not attribution of the exact candidate (H). No literature priority audit establishing novelty of (1)–(8) or (H) has been completed.
+
+
+## Formal log-binomial integral and a direct integer kernel proof
+
+The integer kernel admits a proof independent of digamma asymptotics. [FrullaniIntegral](BuildingBlocks/FrullaniIntegral.lean) proves six unconditional theorems, including integrability and the full positive-rate formula
+
+\[
+ \int_0^\infty\frac{e^{-at}-e^{-bt}}t\,dt=\log(b/a)\qquad(a,b>0).
+\]
+
+The proof establishes integrability of exp(-xt) on the parameter rectangle times the entire positive time axis, dominated by exp(-at) for x>=a>0, then uses Fubini and the actual exponential integral. Rates in either order are covered, including a=b. No integral exchange or continuation is assumed.
+
+[FactorialDensityIntegral](BuildingBlocks/FactorialDensityIntegral.lean) proves five more unconditional theorems, giving the complete factorial term
+
+\[
+ \boxed{\int_0^\infty
+ \frac{(1-e^{-nt})(1-e^{-mt})}{t(e^t-1)}\,dt
+ =\log\binom{n+m}{n}}\qquad(n,m\in\mathbb N).
+\]
+
+Integrability is proved, including zero sizes. The formal proof inducts on n using the exact exponential recurrence, applies Frullani to each new term, and telescopes factorial logarithms. The binomial coefficient is the actual natural-number choose function, with its factorial identity proved in mathlib. All eleven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using classical integration and finite factorial arithmetic, with no priority claim.
+
+For completeness, the other integer kernel component has a short written proof. Put phi(t)=(1-exp(-nt))(1-exp(-mt)), first with n,m>0. Then phi(t)<=nm t^2 near zero and phi(t)<=1 on the positive axis, so phi/t^2 is integrable and phi/t tends to zero at both ends. Integration by parts gives
+
+\[
+ \int_0^\infty\frac{\phi(t)}{t^2}\,dt
+ =n\int_0^\infty\frac{e^{-nt}-e^{-(n+m)t}}t\,dt
+ +m\int_0^\infty\frac{e^{-mt}-e^{-(n+m)t}}t\,dt
+ =(n+m)\log(n+m)-n\log n-m\log m.
+\]
+
+Both derivative integrals are integrable by Frullani; thus the improper integration by parts has justified endpoints and convergent terms. Zero sizes are immediate. Subtracting the formally evaluated factorial term proves (3) for integer sizes by this classical alternative route. The entropy integral and this subtraction are written mathematics, not yet Lean theorems. The complete finite signed quadratic dictionary and actual arithmetic upper bound also remain obligations. The new compiled component does not sign or bound Q_N.

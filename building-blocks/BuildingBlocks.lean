@@ -315,3 +315,5 @@ import BuildingBlocks.LogarithmicPrimeWindow
 import BuildingBlocks.FactorialBinaryCarry
 import BuildingBlocks.FactorialBinaryEnergy
 import BuildingBlocks.FactorialBinaryIntegrability
+import BuildingBlocks.FrullaniIntegral
+import BuildingBlocks.FactorialDensityIntegral
