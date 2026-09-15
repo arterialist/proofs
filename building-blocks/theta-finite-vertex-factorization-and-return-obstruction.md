@@ -1,0 +1,90 @@
+# Finite-vertex squares and sharp return domination for the actual theta form
+
+RH Agent2 supplied this argument; RH Proof independently reviewed the finite-rank proof, equality normalization, countable null sets and local semigroup compactness. This is reviewed written mathematics, not Lean or an RH proof. The existing [ground-form chapter, section 10](theta-weil-jump-form.md#10-scope-of-finite-observation-approaches) already proves a stronger finite-observation obstruction allowing pole moments. The parity-specific proof below provides a direct equality-tower mechanism and a separate finite-time return consequence. No priority claim is made.
+
+We test a global positive-square factorization of the sharp residual, using finite arithmetic/gamma cycles. Such a factorization would be a sufficient proof of the sharp bound if it existed. The actual equality modes rule out every nontrivial representation of this particular type. The proof uses their finite evaluation vectors, not an assumed spectral gap or a dimension count of division histories.
+
+Let m(u)=2cosh(u/2)Φ(u), dν=m(u)du, λ=1/2. Keep the full continuous gamma energy and every prime-power jump in E. On even mean-zero potentials and odd potentials respectively, the established actual equality modes are
+
+    f_j(u)=Φ^(2j)(u)/Φ(u)−4^(−j), j≥1,
+    g_j(u)=Φ^(2j+1)(u)/Φ(u)−4^(−j)Φ'(u)/Φ(u), j≥1.
+
+By the [actual ground-form chapter](theta-weil-jump-form.md) and [odd equality synthesis](theta-odd-zero-mode-synthesis.md), they have full-form finite energy and E[f_j]=λ||f_j||², E[g_j]=λ||g_j||². The odd g_j also have beta zero. These identities follow from the unconditional derivative radical identity for the actual Weil form; no zero-location premise is used. Its polarized version also gives E(f_j,h)=λ⟨f_j,h⟩ and E(g_j,h)=λ⟨g_j,h⟩ on the full form domain. Thus these are operator eigenvectors at λ, as needed for the semigroup argument below; their quadratic equality alone would not suffice.
+
+## Finite evaluations of the equality tower have full rank
+
+For every finite list of distinct v_i≥0, the vectors (f_j(v_i))_i, j≥1, span all of R^k. For the odd tower the same statement holds when all v_i>0.
+
+Here is a proof that keeps the literal theta function. Suppose first that real α_i satisfy Σ_i α_i f_j(v_i)=0 for every j≥1. Put d_i=α_i/Φ(v_i) and A=Σ_i α_i. Including j=0 (where the corresponding identity is automatic),
+
+    Σ_i d_i Φ^(2j)(v_i)=4^(−j)A, j≥0.
+
+The actual theta series is real analytic everywhere, with every derivative decaying at both real ends. On compact subsets of the strip |Im z|<pi/4, its series and differentiated series converge uniformly by the Gaussian factor and cos(2 Im z)>0. Real parity gives the two-sided derivative decay. The classical theta transform and parity are recorded in [Rodgers–Tao, equations (1)–(3)](https://arxiv.org/pdf/1801.05914v5); their variable and amplitude conventions differ from ours as explained in the ground-form chapter. Its Taylor series therefore gives near z=0
+
+    F(z):=(1/2)Σ_i d_i[Φ(v_i+z)+Φ(v_i−z)]
+         =A cosh(z/2).
+
+Real analytic uniqueness continues this identity along the full real z axis. As z→+∞, F(z)→0, so A=0 and F is identically zero. Fourier transformation gives
+
+    Xi(t) Σ_i d_i cos(v_i t)=0, t real,
+
+where Xi(t)=∫Φ(u)exp(itu)du. Positivity and integrability of Φ give Xi(0)>0, hence Xi is nonzero on a neighborhood of zero. The cosine polynomial vanishes there and thus everywhere. Its even derivatives at zero for orders 0,2,...,2(k−1) form the Vandermonde system in the distinct numbers v_i². Thus d_i=0 and α_i=0. This proves the even assertion.
+
+For the odd assertion assume Σ_i α_i g_j(v_i)=0 for all j≥1, and put B=Σ_i d_i Φ'(v_i). Then
+
+    Σ_i d_i Φ^(2j+1)(v_i)=4^(−j)B, j≥0.
+
+Apply the same Taylor/uniqueness/tail argument to
+
+    G(z)=(1/2)Σ_i d_i[Φ'(v_i+z)+Φ'(v_i−z)]
+        =B cosh(z/2).
+
+It yields B=0 and G=0. Since Φ' is odd, its Fourier transform in z is
+
+    −t Xi(t) Σ_i d_i sin(v_i t).
+
+Thus the sine polynomial vanishes near zero and everywhere. Its odd derivatives at zero form a Vandermonde system in v_i² after multiplication of each column by the nonzero v_i. Again all α_i vanish. Complex annihilator coefficients are handled by their real and imaginary parts. The exclusion of v_i=0 is necessary, because every odd potential vanishes there.
+
+The analyticity and derivative decay used here are established properties of the literal theta series. The Fourier argument only needs nonvanishing near t=0, which follows directly from positivity of Φ; it does not divide by Xi at any zeta zero.
+
+## Candidate global arithmetic factorization and its failure
+
+Consider the sufficient candidate identity on the complete even or odd form domain
+
+    E[h]−λ Var_ν(h)
+      =∫_Ω Σ_(r≥1) w_r(ω)
+                |Σ_(i=1)^(k_r(ω)) a_(r,i)(ω) h(v_(r,i)(ω))|² dμ(ω),   (1)
+
+with nonnegative measurable weights, finitely many vertices in each square, and coefficients independent of h. Vertices may be generated by prime-power logarithmic shifts, division-history cycles, continuous gamma edges, or a mixture. This candidate keeps the complete E on the left; it is not a comparison obtained by deleting prime powers or gamma energy. Global integration, infinitely many squares, arbitrary measurable routing, and overlapping cycles are permitted.
+
+Point evaluations are not automatically defined on arbitrary form equivalence classes. The candidate must supply a meaningful interpretation there; alternatively the following contradiction already applies if the identity holds for smooth full-form potentials, including the smooth equality modes. No unproved pointwise regularity of a generic form vector is used.
+
+For even h replace each vertex by its absolute value; for odd h replace it by its absolute value and absorb its sign into the coefficient. Merge repeated vertices, and remove zero odd vertices. Each resulting row has distinct nonnegative vertices in the even case and distinct positive vertices in the odd case.
+
+Apply (1) to every equality mode f_j or g_j. Each left side is zero, so every nonnegative square vanishes almost everywhere wherever its weight is positive. The countably many modes and rows have a common full-measure set. At every point in that set, the finite-evaluation result forces every merged coefficient to be zero. Consequently every row in (1) is identically zero on the chosen parity space. The right side is zero for every h, so (1) cannot be a nontrivial positive-square factorization of the sharp residual.
+
+The actual residual is not identically zero on either parity space. For the odd score q_1=Φ'/Φ, the established radical identity gives E[q_1]−λ||q_1||²=λ/4>0. For the even space take h_T(u)=χ(u)cos(Tu), with a fixed even smooth compact cutoff equal to one on [−2,2]. On u∈[−1,1] and 1/T<a<1/4, both cutoff factors equal one, Φ(u)Φ(u+a) has a fixed positive lower bound, and r(a)≥c/a. For T≥8,
+
+    ∫_(−1)^1 |cos(T(u+a))−cos(Tu)|² du
+       =4sin²(Ta/2)∫_(−1)^1 sin²(Tu+Ta/2)du
+       ≥2sin²(Ta/2).
+
+Thus E[h_T]≥c'∫_(1/T)^(1/4)sin²(Ta/2) da/a grows like a positive multiple of log T, while ||h_T||² stays bounded. Indeed after x=Ta the integral is one half of log(T/4) minus a uniformly bounded cosine integral, up to a fixed lower endpoint term. Integration by parts bounds integral_1^X cos(x)/x dx uniformly in X. Subtracting its ν mean gives an even mean-zero full-form potential with the same energy. The complete prime energy is nonnegative throughout this estimate. This explicitly contradicts the zero residual forced by (1).
+
+The same obstruction applies to proposed nonnegative squares bounded above by the residual: any such squares must vanish identically on the chosen parity space. A bound with a further uncontrolled signed remainder proves no positivity and is outside this conclusion.
+
+This excludes the specified global factorization class, including the triangle row and same-prime-square comparisons. It does not exclude a factorization whose rows genuinely depend on infinitely many vertex values, Fourier/entire-transform data, or another nonlocal operation. Nor does it establish a negative residual, the sharp bound, or RH. A successful positive factorization must preserve the entire equality tower through a mechanism more global than finite arithmetic/gamma vertex squares.
+
+## Review and formal scope
+
+The equality normalization was checked against the actual jump-form and odd-zero-mode chapters. Both Vandermonde arguments are finite, and the global null-set step is countable. A distinct mathematical agent independently checked the Taylor identities, Fourier signs, finite rank, and high-frequency test. This is written mathematics, not a Lean formalization; actual theta analyticity, derivative radical identities, Fourier transforms, and the complete factorization argument are not asserted to be compiled here.
+
+## Consequence for a global finite-time return comparison
+
+The two equality towers jointly separate every pair of distinct real points. Indeed equal values of every f_j at u,v force |u|=|v| by the even two-vertex result. If v=−u≠0, equal values of every g_j would force all g_j(|u|)=0, excluded by the odd one-vertex result.
+
+For the actual conservative reversible semigroup P_t, the sufficient Doeblin comparison P_t≥δΠ would give gap at least −log(1−δ)/t, where Πh=ν(h)1. The nonnegative residual (P_t−δΠ)/(1−δ) is a conservative symmetric Markov contraction on L²(ν). Hence ||P_t h||≤(1−δ)||h|| for centered h, and the spectral theorem for P_t=exp(−tL) gives the stated gap. At its candidate sharp coefficient δ=1−exp(−t/2), the residual Markov operator Q=[P_t−δΠ]/exp(−t/2) fixes every f_j and g_j. Each corresponding stationary residual increment-square integral is zero. Countability forces its stationary transition measure onto common equality levels, which by the separation result are precisely the diagonal. Thus Q=I and
+
+    P_t=exp(−t/2)I+[1−exp(−t/2)]Π.
+
+On any bounded interval of positive ν mass this has a nonzero identity compression plus rank one. The actual small-jump logarithmic local compactness and spectral smoothing P_t:L²→form domain make the same compression compact, a contradiction. For completeness, local compactness is the compact restriction of the full form domain, equipped with E+||·||², to L²(A,ν) for a bounded interval A. The small-jump logarithmic Fourier multiplier gives this property in [the ground-form chapter, section 8](theta-weil-jump-form.md#8-closed-form-and-the-essential-spectrum-threshold). The spectral theorem gives ||L^(1/2)P_t||²≤sup_(s≥0) s exp(−2ts)=1/(2et), so the local compression of P_t is compact. Since ν has a smooth positive density, L²(A,ν) is infinite dimensional for every nondegenerate interval A. A nonzero multiple of its identity plus rank one cannot be compact. This proves the endpoint failure globally, without needing unique far-tail levels. Here Πh=ν(h)1 and ν(ℝ)=1. The comparison means domination of positive kernels, not quadratic spectral order. It does not exclude sharp spectral decay, smaller Doeblin coefficients, limiting mechanisms, or signed return comparisons.
