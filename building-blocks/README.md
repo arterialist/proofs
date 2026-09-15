@@ -799,3 +799,5 @@ The [finite centered additive heat formalization](finite-centered-additive-heat-
 The [complete arithmetic correlation](complete-arithmetic-correlation-support.md) now exports the full row as the exact prime-power sum and derives a shared prime-power cutoff for original and transformed physical sources. Every exponent and both observing orientations remain.
 
 [Complete prime arrival core regularity](physical-prime-arrival-core-regularity.md) now compiles almost-everywhere strong measurability and actual core L2 membership from the literal bounded exterior source, retaining every prime power and both orientations. The full continuous arrival and weak-ground equation remain separate consumers.
+
+[Actual continuous source interior convergence](physical-continuous-source-interior-convergence.md) now compiles absolute integrability of the literal continuous arrival at every interior core point from a bounded measurable exterior multiplier. This resolves the total-integral convention there. Its quantitative boundary bound, full continuous core L2 consumer and weak-ground equation remain unfinished.
