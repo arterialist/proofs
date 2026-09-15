@@ -256,3 +256,5 @@ import BuildingBlocks.SpectralTailMass
 import BuildingBlocks.ThreeWindowIncidenceBudget
 
 import BuildingBlocks.LogarithmicLayercake
+
+import BuildingBlocks.DigammaBinaryScalarBounds
