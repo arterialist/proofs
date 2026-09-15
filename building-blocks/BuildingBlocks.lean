@@ -272,3 +272,4 @@ import BuildingBlocks.CompactLocalScatteringSigns
 import BuildingBlocks.PhysicalThetaSeries
 import BuildingBlocks.CompactScatteringPackets
 import BuildingBlocks.CompactScatteringCoefficients
+import BuildingBlocks.PhysicalThetaSeed
