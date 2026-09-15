@@ -187,7 +187,87 @@ $$
 
 For causal extension, the right-hand side also contains -S(0)delta_0, with S(0)=gamma+2-log(4pi). The logarithmic singularity is locally integrable; it cancels only in the full expression. These are classical explicit-formula specializations, not a priority claim.
 
-The source-action calculation (3)–(10) supplies a coupled additive constraint on precisely that source, including its compensation. It does not derive a global screw sign from Goldbach existence. A subsequent repeated-successor theorem would need uniform control of the evolving reference measure and its signed rank-one ports; one cannot iterate (8) after replacing the actual measure by an arbitrary positive measure and dropping compensation.
+The source-action calculation (3)–(10) supplies a coupled additive constraint on precisely that source, including its compensation. It does not derive a global screw sign from Goldbach existence. The repeated raw-successor bound below retains the evolving actual reference measure, but its growing-j cost is too large at the critical scale. Iterates of the compensated operator additionally retain their signed rank-one ports; one cannot replace the actual measure by an arbitrary positive measure and drop compensation.
+
+## Uniform actual pair leakage for repeated raw succession
+
+For an integer j>=1 the literal raw successor iterate is g_j(x)=g(x+j) on x>=1 and zero below one. Its completed counting function and positive measure are
+
+\[
+\Psi_j(x)=\frac{x}{x+j}\psi(x+j)\quad(x\ge1),\qquad
+\mu_j=\sum_{n\ge2}\Lambda(n)K_{n,j}.
+\]
+
+Put a_n=max(1,n-j) and A_n=a_n+j=max(j+1,n). The exact birth law is
+
+\[
+K_{n,j}=\left(1-\frac{j}{A_n}\right)\delta_{a_n}
++\mathbf1_{x\ge a_n}\frac{j\,dx}{(x+j)^2}.
+\]
+
+Its atom and full tail sum to one, and its cumulative is x/(x+j) for x>=a_n, zero otherwise. Thus every n<=j+1 contributes to the actual atom at one; these early histories are retained. This is the raw iterate S^j, not the compensated iterate C^j.
+
+Let G_j(X)=(mu_j*mu_j)([0,X]), with addition in physical coordinates, and assume X>=2. If psi(y)<=C_psi y for all y>=1, then
+
+\[
+\boxed{0\le\mathcal G(X+2j)-G_j(X)
+\le5C_\psi^2j(X+2j).}
+\tag{13}
+\]
+
+Here is a full proof with constants uniform in j. Set s=X+2j. First clamp each integer label n to A_n, retaining its original mass Lambda(n), and let nu_j denote this label measure. Its cumulative is zero below j+1 and is exactly psi(y) for y>=j+1. Its admitted pair count is
+
+\[
+\overline G_j(X)=\sum_{A_m+A_n\le s}\Lambda(m)\Lambda(n).
+\]
+
+Clamping can only remove pairs from G(s). Every removed pair contains an index at most j, since the label j+1 itself is unchanged. Therefore
+
+\[
+0\le\mathcal G(s)-\overline G_j(X)
+\le2\psi(j)\psi(s)\le2C_\psi^2js.
+\]
+
+Next transport each clamped birth through its complete probability law. In the coordinate u=x+j, a birth at A has atom 1-j/A and tail density j/u^2 on u>=A. For A+B<=s the exact pair escape probability is
+
+\[
+r_{A,B,j}(s)=\frac{j(s-j)}s
+\left(\frac1{s-A}+\frac1{s-B}\right)
++\frac{j^2}{s^2}\log\frac{(s-A)(s-B)}{AB}.
+\tag{14}
+\]
+
+Indeed its unsimplified expression, separating the first atom, is
+
+\[
+\frac{j}{s-B}+\frac{j(A-j)}{A(s-A)}
++j^2\int_A^{s-B}\frac{du}{u^2(s-u)}.
+\]
+
+Use the antiderivative s^{-2}log(u/(s-u))-(su)^{-1} and collect the two rational coefficients to obtain (14). At pair contact it is j/A+j/B-j^2/(AB), the full mass outside the initial pair atom. All denominators are positive and the logarithm is nonnegative, since (s-A)(s-B)-AB=s(s-A-B)>=0.
+
+Summing the first term of (14) against the actual clamped masses retains the complete cofactor psi(s-A)/(s-A). Its total is bounded by
+
+\[
+\frac{2j(s-j)}s\sum_A\nu_j(\{A\})
+\frac{\psi(s-A)}{s-A}
+\le2C_\psi j\psi(s)\le2C_\psi^2js,
+\]
+
+where the sum covers A<=s-(j+1). For the logarithmic term use
+
+\[
+\log\frac{(s-A)(s-B)}{AB}\le\log(s/A)+\log(s/B),
+\]
+\[
+\sum_A\nu_j(\{A\})\log(s/A)
+\le\sum_{n\le s}\Lambda(n)\log(s/n)
+=\int_1^s\frac{\psi(u)}u\,du\le C_\psi s.
+\]
+
+Its total is at most 2C_psi^2j^2<=C_psi^2js, because s>=2j+2. Thus 0<=overline G_j-G_j<=3C_psi^2js. Adding the clamping loss proves (13). For j=0 the raw transport is the original atomic measure and the leakage is zero.
+
+This is an unconditional inequality for the complete weighted Goldbach counts, derived by RH Proof from the actual repeated successor. It extends the fixed-successor comparison while keeping every early history and continuous tail; no priority claim is made. It does not establish Goldbach existence, a screw sign, or an RH-scale error. In particular j comparable to X permits an O(X^2) loss, so the estimate cannot control the X^{3/2} secondary scale in that regime. A bound for C^j would also need its actual signed compensation ports. Lean formalization of this uniform-j result remains unfinished.
 
 ## Dependencies and formal scope
 
