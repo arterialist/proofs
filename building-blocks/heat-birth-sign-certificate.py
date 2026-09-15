@@ -68,3 +68,17 @@ for n, lower, upper in [(2, F(174, 1000), F(175, 1000)),
     assert lower < result.lo <= result.hi < upper
     print(f"n={n}: {lower} < heat birth work < {upper}; rational certificate passes")
 
+
+l2 = log_interval(2)
+l3 = log_interval(3)
+p2 = (Interval(F(8011, 432)) - F(3221, 144) * l2
+      - F(455, 72) * l2 * l2)
+p3 = (Interval(F(98719, 1944)) - F(8249, 162) * l3
+      - F(1655, 108) * l3 * l3 - F(3563, 648) * l2 * l2
+      + F(1889, 162) * l2 * l3 + F(5429, 216) * l2)
+for n, result, lower, upper in [
+    (2, p2, F(3430, 1000000), F(3431, 1000000)),
+    (3, p3, F(4393, 1000000), F(4394, 1000000)),
+]:
+    assert lower < result.lo <= result.hi < upper
+    print(f"N={n}: {lower} < coupled Bernoulli energy < {upper}; rational certificate passes")
