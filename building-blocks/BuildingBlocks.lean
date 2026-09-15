@@ -294,3 +294,4 @@ import BuildingBlocks.PhysicalArrivalBoundary
 import BuildingBlocks.PhysicalPrimeArrivalRegularity
 import BuildingBlocks.PhysicalContinuousSourceConvergence
 import BuildingBlocks.ActualArchimedeanFactor
+import BuildingBlocks.PhysicalContinuousArrivalMass
