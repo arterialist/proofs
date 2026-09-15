@@ -129,3 +129,60 @@ For the proposed diagonal bound Q_N<=D_N, the exact compensation still required 
 \]
 
 It is not proved here. Dropping V_N erases the coherent difference-history terms that could pay this deficit. The attempt therefore gives an explicit unconditional upper inequality and locates its loss, without a new RH-scale estimate or a claim that every joint energy method fails. Equations (5)-(9) remain written mathematics requiring Lean formalization.
+
+
+## Binary-horizon signed work with exact density dissipation
+
+A different bounded energy attempt compares complete horizons, rather than demanding monotonic work at each birth. Let N>=1, b in {0,1}, r=2N+b, and extend q_n=floor(N/n) to n<=r, allowing q_n=0. Define the actual quotient-parity carries
+
+\[
+\epsilon_{n,N,b}=\left\lfloor\frac{2N+b}{n}\right\rfloor
+-2\left\lfloor\frac Nn\right\rfloor\in\{0,1\}.
+\]
+
+Indeed, writing N=nq+a with 0<=a<n gives epsilon=floor((2a+b)/n); the numerator is between zero and 2n-1. Thus every old and newly admitted divisor history remains in the finite innovation
+
+\[
+ d_{N,b}(t)=(1-e^{-t})\sum_{n=1}^{r}\mu(n)
+ \epsilon_{n,N,b}e^{-2q_nt},\qquad
+ \boxed{g_r(t)=g_N(2t)+d_{N,b}(t)}.
+\tag{10}
+\]
+
+This follows term by term from 1-exp(-(2q+epsilon)t). Since both r and N are positive, the complete floor identities give sum_(n<=r)mu(n)epsilon=1-2=-1. Therefore d_(N,b)(t)=-t+O_N(t^2) at zero. At infinity its limit is M(r)-M(N), from the newly admitted histories with q_n=0. No sign of this innovation is asserted.
+
+The factorial density weight has the exact scaling identity
+
+\[
+\frac12w(u/2)=2w(u)-\frac1{u(e^{u/2}+1)}.
+\]
+
+To check it, put a=exp(u/2) and use 1/(a-1)-2/(a^2-1)=1/(a+1). Consequently
+
+\[
+\begin{aligned}
+ R_N&=\int_0^\infty\frac{g_N(u)^2}{u(e^{u/2}+1)}\,du\ge0,\\
+ W_{N,b}&=\int_0^\infty
+ \bigl[2g_N(2t)d_{N,b}(t)+d_{N,b}(t)^2\bigr]w(t)\,dt,\\
+ \boxed{Q_{2N+b}-2Q_N&=W_{N,b}-R_N.}
+\end{aligned}
+\tag{11}
+\]
+
+All terms converge individually. At zero both finite responses are O(t), while w=O(1/t); at infinity both are bounded and w=O(1/t^2). R_N has an exponentially decaying tail. It is the exact positive density dissipation, not a remainder discarded from the factorial kernel. Expanding W retains every ordered pair of carry histories, the mixed history terms and their Möbius signs.
+
+The sufficient signed-work budget W_(N,b)<=R_N+CN, uniformly for both b and every N, would give Q_(2N+b)<=2Q_N+CN. Iterating along the full binary ancestry of any integer horizon yields Q_n=O(n log(2n)), hence the RH-sufficient energy bounds for every positive epsilon. This budget remains unproved. Merely renaming Q_(2N+b)-2Q_N as net work supplies no new arithmetic estimate; (10) isolates the actual carry correlations which an estimate must use.
+
+The strongest simple rule W_(N,b)<=R_N, or Q_(2N+b)<=2Q_N, is already false for actual arithmetic. For N=2 and b=0, keeping all ordered histories and the complete density gives
+
+\[
+ Q_2=8\log2-5\log3,\qquad
+ Q_4=31\log2-7\log3-7\log5-\log7,
+\]
+\[
+ \boxed{Q_4-2Q_2=\log\frac{2^{15}3^3}{5^7 7}>0},
+ \qquad 884736>546875.
+\tag{12}
+\]
+
+Thus positive work also occurs across a dyadic horizon. This refutes the zero-budget rule only; it leaves the linear budget and integrated diagonal hypothesis open. RH Proof derived the binary carry and density identities during the signed-energy attempt and independently recomputed (12) from the exact factorial kernel using integer prime exponents. The calculation produced no upper estimate for the full carry correlations. These are reviewed written results with no priority claim; Lean formalization remains unfinished.
