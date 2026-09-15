@@ -302,3 +302,4 @@ import BuildingBlocks.PhysicalExteriorArrival
 import BuildingBlocks.ActualPhysicalResidues
 import BuildingBlocks.PhysicalThetaJumpEnergy
 import BuildingBlocks.CompactPhysicalMellinAnalytic
+import BuildingBlocks.PhysicalThetaJumpHomogeneity
