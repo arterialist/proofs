@@ -386,3 +386,22 @@ $$
 \int_{\mathbb R}|c(x)-c(x-t)|dx=4\bigl(\sqrt{t+1}-1\bigr).
 $$
 The proof retains the positive initial strip $(1,t+1]$ and the complete negative tail $(t+1,\infty)$, each of mass $2(\sqrt{t+1}-1)$. This elementary translation identity is a prerequisite for the continuous-kernel cancellation; it does not by itself assert the analytic continuation across $z=1$ or the complete zeta transform. Its target and aggregate compile, and the principal axiom reports contain only `propext`, `Classical.choice` and `Quot.sound`.
+
+
+## Formal continuous Abel derivative and cancellation
+
+[SuccessorFeedbackSmoothCancellation.lean](BuildingBlocks/SuccessorFeedbackSmoothCancellation.lean) defines $q_z(t)=z(t+1)^{-z-1}$ on $t>0$ and proves its absolute integrability and mass $1$ for $\Re z>0$. For the literal causal root $c(y)=\mathbf1_{y>1}/\sqrt y$, it identifies
+$$
+D_z(y)=c(y)-\int_0^\infty q_z(t)c(y-t)dt
+=\int_0^\infty q_z(t)[c(y)-c(y-t)]dt.
+$$
+The exact translation norm from the preceding section proves $D_z\in L^1(\mathbb R)$ and $\int D_z=0$ for $\Re z>1/2$. `actual_smoothRootDerivative_pairing_integrable` derives absolute pairing with the actual bounded Chebyshev error in the same half-plane.
+
+[SuccessorFeedbackRootPrimitive.lean](BuildingBlocks/SuccessorFeedbackRootPrimitive.lean) uses the globally Lipschitz primitive $2(\sqrt{\max(1,y)}-1)$. Its corner at $y=1$ is retained; after convolution against an $L^1$ density the translated exceptional set is null, so the convolution derivative is proved at every $y$.
+
+[SuccessorFeedbackSmoothAgeDerivative.lean](BuildingBlocks/SuccessorFeedbackSmoothAgeDerivative.lean), theorem `smoothAbelKernel_hasDerivAt`, then proves
+$$
+\frac{d}{dy}\int_0^{y-1}(t+1)^{-z}(y-t)^{-1/2}dt=D_z(y),
+\qquad \Re z>0,\quad y>1.
+$$
+Finite-interval integration by parts retains the initial weight and the zero upper root value. Thus the cancellation above belongs to the actual continuous Abel kernel. The $L^1$ claim has the stricter domain $\Re z>1/2$; these modules do not extend it to the full positive half-plane or prove the driver-to-zeta continuation. All three modules compile with only the standard three axioms in their principal theorem reports.

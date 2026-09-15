@@ -197,3 +197,15 @@ import BuildingBlocks.PrimeStateAndRenewalArch
 import BuildingBlocks.IntegerBirthHalfDensity
 import BuildingBlocks.IntegerBirthDifferenceL1
 import BuildingBlocks.IntegerBirthOriginalDriver
+
+import BuildingBlocks.GoldbachHeatQuadratic
+
+import BuildingBlocks.GoldbachHeatComparison
+
+import BuildingBlocks.GoldbachHeatSeries
+
+import BuildingBlocks.SuccessorFeedbackSmoothCancellation
+
+import BuildingBlocks.SuccessorFeedbackRootPrimitive
+
+import BuildingBlocks.SuccessorFeedbackSmoothAgeDerivative

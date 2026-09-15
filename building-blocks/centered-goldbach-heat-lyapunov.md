@@ -177,3 +177,23 @@ $t\mapsto t^2$, but no such inequality is proved here.
 Status: equations (1) through (8) and (12) are unconditional. Equations
 (9) through (11) consume the written centered heat Lyapunov theorem. The
 scale comparison described after equation (12) remains open.
+
+
+## Formal signed heat energy and the actual series
+
+[GoldbachHeatQuadratic.lean](BuildingBlocks/GoldbachHeatQuadratic.lean) proves the classical gamma-integral identity for arbitrary real coefficients and every $s>0$:
+$$
+\Gamma(s)\sum_{1\le m,n\le N}\frac{a_ma_n}{(m+n)^s}
+=\int_0^\infty t^{s-1}\left(\sum_{n=1}^N a_ne^{-nt}\right)^2dt.
+$$
+`finiteHeat_square_integrable` derives integrability, and `finiteEnergy_nonneg` gives nonnegativity with all signed cross terms retained. For the actual coefficients $a_n=\Lambda(n)-1$, the module proves $a_1=-1$ and the discrete sum-three coefficient $2(1-\log2)$. This differs from the $-2\log2$ atom of the mixed continuous source in the [reverse-scale audit](centered-goldbach-reverse-scale-audit.md).
+
+[GoldbachHeatComparison.lean](BuildingBlocks/GoldbachHeatComparison.lean) formalizes the full bilinear expansion and Cauchy–Schwarz inequality. `vonMangoldt_energy_le_centered` applies them to the exact identity $\Lambda=(\Lambda-1)+1$, including $n=1$.
+
+[GoldbachHeatSeries.lean](BuildingBlocks/GoldbachHeatSeries.lean) derives absolute convergence of the actual prime and centered heat series for each $t>0$ from the elementary bound $\Lambda(n)\le\log n$. It proves finite-cutoff convergence and the complete centering identity
+$$
+A_d(t)=D(t)+\frac1{e^t-1}-\left(1+\frac1t\right)e^{-t},
+\qquad
+A_d(t)=\sum_{n\ge1}\Lambda(n)e^{-nt}-\left(1+\frac1t\right)e^{-t}.
+$$
+These modules establish the finite quadratic comparison and literal positive-time series. An infinite Mellin identity or the critical-horizon arithmetic bound is not inferred from pointwise convergence. The proofs use the classical gamma integral, geometric series and quadratic-form Cauchy–Schwarz. The modules compile; their principal axiom checks contain only `propext`, `Classical.choice` and `Quot.sound`.
