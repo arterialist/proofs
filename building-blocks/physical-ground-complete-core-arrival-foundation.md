@@ -85,3 +85,5 @@ The continuous arrival cannot be omitted, and this equation cannot be made a def
 The theta covariance research branch supplied this arrival construction and proof. Root independently reviewed the translated almost-everywhere hypotheses, complete prime-power series and the direct continuous boundary estimate. The methods are classical domination, translation invariance and logarithmic integrability; no novelty claim is made.
 
 [Continuous arrival kernel foundation](physical-continuous-arrival-kernel-lean-foundation.md) compiles the literal kernel bounds, its logarithmic boundary primitive and far-tail integrability. The source parameter integral, full core L2 consumer and actual weak-ground equation remain further obligations.
+
+[Continuous arrival measurability and squared boundary](physical-arrival-boundary-measurability-lean-foundation.md) compiles source and parameter-integral measurability, squared-logarithm integrability at both core boundaries and the full logarithmic squared majorant. Absolute convergence and the majorant inequality for the actual arrival remain separate consumers.

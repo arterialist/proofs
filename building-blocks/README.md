@@ -793,3 +793,5 @@ The [finite centered additive heat formalization](finite-centered-additive-heat-
 [Continuous arrival kernel foundation](physical-continuous-arrival-kernel-lean-foundation.md) compiles the literal kernel bounds, its logarithmic boundary primitive and far-tail integrability. The source parameter integral, full core L2 consumer and actual weak-ground equation remain further obligations.
 
 [Complete arithmetic correlation support](complete-arithmetic-correlation-support.md) compiles automatic absolute convergence and a stable cutoff for the full prime-power correlation row from literal compact supports. It includes the full joint finite-translate row and common-cutoff consumers for actual physical histories. The complete explicit formula and signed arithmetic estimate remain unfinished.
+
+[Continuous arrival measurability and squared boundary](physical-arrival-boundary-measurability-lean-foundation.md) compiles source and parameter-integral measurability, squared-logarithm integrability at both core boundaries and the full logarithmic squared majorant. Absolute convergence and the majorant inequality for the actual arrival remain separate consumers.
