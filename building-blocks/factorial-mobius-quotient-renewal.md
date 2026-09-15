@@ -1,6 +1,6 @@
 # Exact quotient renewal for the factorial Möbius response
 
-RH Proof supplied this finite arithmetic calculation while auditing the factorial cross-size energy candidate. It retains every integer quotient and all Möbius coefficients. The identities are written mathematics, not Lean theorems or an RH proof. The divisor identities and finite geometric summation are classical; no priority claim is made.
+RH Proof supplied this finite arithmetic calculation while auditing the factorial cross-size energy candidate. It retains every integer quotient and all Möbius coefficients. Most identities remain written mathematics. The binary carry and finite response identity now have Lean theorems as specified below; no RH proof is asserted. The divisor identities and finite geometric summation are classical; no priority claim is made.
 
 For an integer N>=1 put q_n=floor(N/n), M(x)=sum_(n<=x)mu(n), and
 
@@ -186,3 +186,10 @@ The strongest simple rule W_(N,b)<=R_N, or Q_(2N+b)<=2Q_N, is already false for 
 \]
 
 Thus positive work also occurs across a dyadic horizon. This refutes the zero-budget rule only; it leaves the linear budget and integrated diagonal hypothesis open. RH Proof derived the binary carry and density identities during the signed-energy attempt and independently recomputed (12) from the exact factorial kernel using integer prime exponents. The calculation produced no upper estimate for the full carry correlations. These are reviewed written results with no priority claim; Lean formalization remains unfinished.
+
+
+### Formal binary carry and complete response
+
+[FactorialBinaryCarry](BuildingBlocks/FactorialBinaryCarry.lean) proves seven unconditional theorems. They establish the binary quotient bounds for every positive divisor and both b=0,1, the carry bound epsilon<=1, the exact quotient decomposition, extension of the actual finite response without changing its value, and the literal identity g_(2N+b)(t)=g_N(2t)+d_(N,b)(t) for every real t. The two final theorems extend the integer floor mass through the new cutoff and prove sum_(n<=2N+b)mu(n)epsilon=-1 for N>0. They use the existing actual Möbius floor-mass theorem; no coefficient vector or response is substituted.
+
+All seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using standard finite arithmetic and exponential algebra, with no priority claim. The density scaling integral, signed energy identity (11), exact logarithmic counterexample (12), and required correlation bound remain further Lean obligations. The module proves no upper energy estimate.
