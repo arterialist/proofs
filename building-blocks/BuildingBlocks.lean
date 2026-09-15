@@ -310,3 +310,4 @@ import BuildingBlocks.CompletedZetaPoleCorrections
 import BuildingBlocks.OddTriangleConductance
 import BuildingBlocks.FiniteTriangularGeometric
 import BuildingBlocks.FinitePrimeSourceIntegration
+import BuildingBlocks.ResidueLoadingSuccessor
