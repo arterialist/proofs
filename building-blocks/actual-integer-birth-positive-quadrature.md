@@ -1,6 +1,6 @@
 # Positive quadrature from the actual integer birth cusps
 
-Written proof. The complete arithmetic histories and endpoint conventions are part of each statement. No Lean formalization or unconditional feedback-sign conclusion is asserted here.
+Written proof, with the exact formalized subset described below. The complete arithmetic histories and endpoint conventions are part of each statement. The original integer-birth feedback correspondence is formalized; the unconditional near-one feedback sign remains unproved.
 
 Convex interpolation and exponential hat-function integration are classical tools; the actual integer-cusp alignment and retained arithmetic endpoint are their specialization here. This is a source-specific refinement of `actual-coherent-successor-quadrature-refinement.md`. It uses the fact that every birth location is an integer, including every prime power. It does not prove the remaining coherent core lower bound.
 
@@ -248,7 +248,7 @@ $$
 $$
 The initial node vanishes by the proved $U_n(0)=0$. `actual_all_birth_defect_identity` retains the full integral of $IU_n-U_n$; `actual_discrete_laplace_order` proves its nonnegative sign.
 
-These modules formalize the classical convex-interpolation mechanism on the actual birth kernel, including every required convergence step. The adapted target and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`. The final identification with the original $E+C$, strict positivity and the sharp cusp asymptotic remain separate written results.
+These modules formalize the classical convex-interpolation mechanism on the actual birth kernel, including every required convergence step. The adapted target and main axiom checks passed with only `propext`, `Classical.choice` and `Quot.sound`. The original discrete feedback correspondence is now formalized below. The continuous Laplace identification, strict positivity and sharp cusp asymptotic remain separate written results.
 
 ## Formal discrete return and complete geometric correction
 
@@ -268,4 +268,26 @@ $$
 $$
 The $\psi$ here is the existing central `CoarsePrimitive.psi`, including the integer endpoint, rather than a new arithmetic definition.
 
-[IntegerBirthDiscreteAbel](BuildingBlocks/IntegerBirthDiscreteAbel.lean) proves absolute convergence over both birth and clock indices for $0\le r<1$. Its `geometric_actual_source_identity` multiplies the last identity by $r^j$, sums every $j\ge0$, and justifies exchanging the full prime-power and clock sums. The correction remains $\sum_j r^jb_j\psi(j)$. These modules formalize the complete discrete endpoint correction and its Abel sum; identification with the original feedback $E$, strict positivity of its interpolation defect and the sharp cusp asymptotic remain separate. The adapted targets and aggregate compile, with only the three standard axioms in the principal theorem reports.
+[IntegerBirthDiscreteAbel](BuildingBlocks/IntegerBirthDiscreteAbel.lean) proves absolute convergence over both birth and clock indices for $0\le r<1$. Its `geometric_actual_source_identity` multiplies the last identity by $r^j$, sums every $j\ge0$, and justifies exchanging the full prime-power and clock sums. The correction remains $\sum_j r^jb_j\psi(j)$. These modules formalize the complete discrete endpoint correction and its Abel sum; the original feedback identification is supplied by the next formal dependency. Strict positivity of the interpolation defect and the sharp cusp asymptotic remain written. The adapted targets and aggregate compile, with only the three standard axioms in the principal theorem reports.
+
+
+## Formal identification with the original feedback
+
+[IntegerBirthHalfDensity.lean](BuildingBlocks/IntegerBirthHalfDensity.lean) proves absolute integrability and the exact clipped arctangent evaluation
+$$
+\int_1^\infty\frac{\mathbf1_{n\le x+j}}{2(x+j)\sqrt x}\,dx=d_{n,j}
+\qquad(n\ge2,\ j\ge0).
+$$
+Both the zero clock and the physical endpoint $\max(1,n-j)$ are retained. [IntegerBirthDifferenceL1.lean](BuildingBlocks/IntegerBirthDifferenceL1.lean) bounds the absolute difference by its entering strip and common tail, then proves summability after multiplying by the full $\Lambda(n)$. Its countable Fubini theorem does not assume cancellation of divergent integrals.
+
+[IntegerBirthOriginalDriver.lean](BuildingBlocks/IntegerBirthOriginalDriver.lean) identifies this series with the existing `SuccessorFeedback.driver`:
+$$
+e_j=\sum_{n\ge2}\Lambda(n)(d_{n,j+1}-d_{n,j}).
+$$
+For the already defined $E(r)=\sum_j e_jr^j$, `original_feedback_complete_return_identity` proves
+$$
+rE(r)+(1-r)\sum_{j\ge0}r^j b_j\psi(j)
+=(1-r)\sum_{n\ge2}\sum_{j\ge0}r^j\Lambda(n)U_n(j),
+\qquad 0<r<1.
+$$
+The definition of $E$ is unchanged, and $b_0=0$. The proof uses the original relative-charge integral, the literal $\psi$ prefix, absolute birth-difference integrability and Abel summation. These are classical integral and summation methods applied to the actual arithmetic source. The adapted modules and aggregate compile; the principal theorem axiom reports contain only `propext`, `Classical.choice` and `Quot.sound`. This certifies the arithmetic correspondence, not an RH-strength positivity bound.
