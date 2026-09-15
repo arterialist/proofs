@@ -346,7 +346,15 @@ Two further theorems prove integrability of every compact kernel against the exi
 
 Integrability uses the already proved L1 membership of the ORIGINAL frozen source at each finite C and the bounded compact kernel. It supplies no uniform bound in C and assumes no L1 or L2 membership of the infinite unfrozen source.
 
-All twenty-seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. They were contributed by RH Agent3 and independently reviewed by RH Proof, using standard calculus with no novelty claim. The packet seed's actual derivative/support instantiation and the complete gamma/form identity remain further obligations. The signed arithmetic estimate remains open.
+All twenty-seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. They were contributed by RH Agent3 and independently reviewed by RH Proof, using standard calculus with no novelty claim. The packet seed's derivative/support instantiation is now formalized below. The complete gamma/form identity remains a further obligation. The signed arithmetic estimate remains open.
+
+### Formal smooth seed and literal autocorrelation regularity
+
+[AutocorrelationRegularity](BuildingBlocks/AutocorrelationRegularity.lean) proves eight additional unconditional theorems. For a smooth real seed f that vanishes whenever |v|>=r, it derives compact support directly from that radius condition. It identifies the literal R_f with reflected convolution and uses mathlib's smooth compact convolution theorem to prove R_f is smooth. It also proves R_f(y)=0 when |y|>=2r and that its closed support lies in [-2r,2r]. The derivative-support theorem then gives R_f'(y)=0 when |y|>=d for any buffer d>2r.
+
+The final theorem instantiates the entire signed finite-window identity above with R=R_f and D=deriv R_f. Its assumptions are smoothness of f, the explicit seed radius bound, 2r<d, and the existing ordinary window/cutoff geometry 1<=N<=C, 0<=d<=s_i, s_i+d<=log N. Continuity of R and D, the global derivative identity, their support bounds, and compact support of f are proved rather than assumed separately. The original frozen source a_C, every actual von Mangoldt atom, every real signed coefficient, and the density factor M_f(1/2)M_f(-1/2) remain unchanged.
+
+All eight theorems compile without warnings and use only propext, Classical.choice and Quot.sound. RH Agent3 contributed the seven-theorem convolution and support handoff; RH Proof independently reviewed the substitution, support geometry and literal source specialization, derived compact support from the radius bound, and integrated the resulting eight theorems. These are standard smooth convolution and finite-window calculus, with no priority claim. No gamma-form identification, uniform source bound, or signed arithmetic upper estimate follows from this regularity theorem.
 
 ## Finite Green identity after density cancellation
 

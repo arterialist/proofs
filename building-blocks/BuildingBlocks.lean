@@ -321,3 +321,5 @@ import BuildingBlocks.FactorialEntropyIntegral
 import BuildingBlocks.FactorialKernelDictionary
 
 import BuildingBlocks.FiniteWeilPrimeCertificate
+
+import BuildingBlocks.AutocorrelationRegularity
