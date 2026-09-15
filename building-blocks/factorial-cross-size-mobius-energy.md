@@ -355,7 +355,7 @@ The proof establishes integrability of exp(-xt) on the parameter rectangle times
 
 Integrability is proved, including zero sizes. The formal proof inducts on n using the exact exponential recurrence, applies Frullani to each new term, and telescopes factorial logarithms. The binomial coefficient is the actual natural-number choose function, with its factorial identity proved in mathlib. All eleven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using classical integration and finite factorial arithmetic, with no priority claim.
 
-For completeness, the other integer kernel component has a short written proof. Put phi(t)=(1-exp(-nt))(1-exp(-mt)), first with n,m>0. Then phi(t)<=nm t^2 near zero and phi(t)<=1 on the positive axis, so phi/t^2 is integrable and phi/t tends to zero at both ends. Integration by parts gives
+[FactorialEntropyIntegral](BuildingBlocks/FactorialEntropyIntegral.lean) now formalizes the other kernel component. Its ten unconditional theorems prove a global integrable majorant, both quotient boundary limits, the actual derivative identity, and the full entropy integral for positive real sizes and every natural size. The proof proceeds as follows. Put phi(t)=(1-exp(-nt))(1-exp(-mt)), first with n,m>0. Then phi(t)<=nm t^2 near zero and phi(t)<=1 on the positive axis, so phi/t^2 is integrable and phi/t tends to zero at both ends. Integration by parts gives
 
 \[
  \int_0^\infty\frac{\phi(t)}{t^2}\,dt
@@ -364,4 +364,4 @@ For completeness, the other integer kernel component has a short written proof. 
  =(n+m)\log(n+m)-n\log n-m\log m.
 \]
 
-Both derivative integrals are integrable by Frullani; thus the improper integration by parts has justified endpoints and convergent terms. Zero sizes are immediate. Subtracting the formally evaluated factorial term proves (3) for integer sizes by this classical alternative route. The entropy integral and this subtraction are written mathematics, not yet Lean theorems. The complete finite signed quadratic dictionary and actual arithmetic upper bound also remain obligations. The new compiled component does not sign or bound Q_N.
+Both derivative integrals are integrable by Frullani; thus the improper integration by parts has justified endpoints and convergent terms. Zero sizes are immediate. Subtracting the formally evaluated factorial term proves (3) for integer sizes by this classical alternative route. The entropy integral is compiled Lean mathematics; the subtraction identifying the full kernel remains to be formalized. The complete finite signed quadratic dictionary and actual arithmetic upper bound also remain obligations. The new compiled component does not sign or bound Q_N.
