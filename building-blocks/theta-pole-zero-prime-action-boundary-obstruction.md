@@ -72,3 +72,38 @@ The weighted ground-space incoming operator, compensated continuous form, comple
 Hardy's primary note, *Sur les zéros de la fonction ζ(s) de Riemann*, Comptes rendus 158 (1914), pp. 1012–1014, states and proves infinitely many critical-line zeros; [the opening original page](https://fr.wikisource.org/wiki/Page:Comptes_rendus_hebdomadaires_des_s%C3%A9ances_de_l%E2%80%99Acad%C3%A9mie_des_sciences,_tome_158,_1914.djvu/1014) was checked for the precise unconditional input. The Euler logarithmic-derivative identity in Re s>1, compact integration by parts, analytic continuation, and the elementary half-line L² Laplace bound yield the argument above. A distinct mathematical agent independently checked the finite endpoint correction, both transform signs, centered/pole-zero conditions, continuation without an RH premise, and the boundary growth contradiction. No priority claim is made. This is written mathematics, not Lean; Hardy's theorem, the actual Euler identity and the complex-analytic boundary argument are not formalized here. It supplies no RH proof or negative full-energy test.
 
 RH Agent2 supplied this argument; RH Proof independently checked the compact transform sign, finite endpoint correction, exact centered and pole-zero conditions, and the comparison between the nonzero simple logarithmic-derivative pole and the half-line L² bound. For each fixed compact support, the actual prime action is locally finite because an observing logarithm must lie in a bounded interval around u or -u. Absolute Laplace interchange for Re w>1/2 follows from the convergent actual series sum Lambda(n)n^(-1/2-Re w). Holomorphy under the hypothetical L² assumption follows by local domination with e^(-sigma u) times polynomial powers of u. Equality of the meromorphic and holomorphic functions on the right half-plane uses the identity theorem, so any interior poles are forced removable; no zero-free strip is assumed. These details preserve the full source and both endpoint conventions.
+
+## Every finite Lp action requires zero annihilation
+
+RH Proof derived a broader necessary condition from the same literal half-line identity. Let f be any compact smooth complex seed, supported in [-a,a], let R>a, and put F(w)=integral f(v)exp(-wv)dv. If the actual complete Sf belongs to Lp((R,infinity),du) for some real 1<=p<infinity, then
+
+\[
+ F(\rho-1/2)=0
+ \quad\text{for every nontrivial zeta zero }\rho
+ \text{ with }\Re\rho\ge1/2.
+\tag{6}
+\]
+
+No pole-null or parity assumption is needed for this necessity. For 1<p<infinity, let q=p/(p-1). Holder's inequality gives, with sigma=Re w>0,
+
+\[
+ |H(w)|\le\|Sf\|_p e^{-R\sigma}(q\sigma)^{-1/q}.
+\tag{7}
+\]
+
+For p=1 the corresponding bound is |H(w)|<=||Sf||_1 exp(-R sigma). In either case H is holomorphic on Re w>0. To justify derivatives locally, fix sigma_0>0 and use Holder with u^j exp(-sigma_0 u), for each nonnegative integer j; its conjugate norm is finite, including the supremum norm when p=1. The actual prime-series identity (2), with its entire finite endpoint correction, initially holds on Re w>1/2 and extends meromorphically to the right half-plane.
+
+If Re rho>1/2 and F(rho-1/2) is nonzero, the right side has an interior pole with residue -m_rho F(rho-1/2), contradicting holomorphy of H. If Re rho=1/2, write rho=1/2+i gamma. At w=sigma+i gamma the same residue gives H(w)=-m_rho F(i gamma)/sigma+O(1). For p>1, the exponent 1/q=1-1/p in (7) is strictly less than one, so multiplying by sigma makes its bound tend to zero. For p=1 the bounded estimate gives the same contradiction. This proves (6) for all finite p, with every prime power retained.
+
+The necessary zero of F has order at least one. This argument does not force F to vanish to the zeta zero's multiplicity: the logarithmic derivative has a simple pole whose residue is that multiplicity. Nor does (6) prove a sufficient Lp condition.
+
+For an even compact seed, F(-w)=F(w). The functional-equation reflection rho -> 1-rho carries a nontrivial zero to another nontrivial zero. Hence (6) also forces F(rho-1/2)=0 for zeros left of the critical line. Thus finite-Lp bare action for an even compact seed requires annihilation at every distinct nontrivial zeta zero, wherever it lies. This does not assume RH and does not assert that every compact seed fails this condition.
+
+In particular the explicit even two-pole-zero seed f=g''-g/4 above has F(i gamma) nonzero at the chosen unconditional critical zero. The same single f therefore satisfies
+
+\[
+ Sf\notin L^p((R,\infty),du)\qquad(1\le p<\infty).
+\tag{8}
+\]
+
+At p=infinity, Holder only gives an order 1/sigma bound; the residue argument alone yields no contradiction there. No bounded-action failure is claimed by (8). The weighted theta action and compensated mixed forms remain separate valid objects. This extension uses classical Holder bounds and the existing actual Euler identity, with no priority claim. It is written mathematics requiring Lean formalization; it supplies no arithmetic energy upper bound or RH proof.
