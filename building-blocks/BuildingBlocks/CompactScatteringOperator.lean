@@ -1,5 +1,7 @@
 import BuildingBlocks.CompactScatteringCoefficients
+import BuildingBlocks.NarrowPoleNullPacket
 import Mathlib.LinearAlgebra.Finsupp.LinearCombination
+open scoped ContDiff
 
 /-! Literal finite translation operator and its finitely supported coefficients.
 RH Proof formalization. No source-sign or RH assumption. -/
@@ -214,6 +216,24 @@ theorem exists_prime_amplifying_packet {eta : ℝ → ℂ} {a b : ℝ}
   apply exists_amplifying_phase_packet (Real.log_pos (by exact_mod_cast hp.one_lt)) hw hs heta hmass
   exact (BuildingBlocks.CompactLocalScatteringSigns.actual_prime_compact_signs p hp hM).2
 
+theorem exists_prime_amplifying_narrow_carrier (p : ℕ) (hp : p.Prime)
+    (M : ℕ) (hM : 1 ≤ M) :
+    ∃ eta : ℝ → ℂ, HasCompactSupport eta ∧ ContDiff ℝ ∞ eta ∧ eta 0 = 1 ∧
+      BuildingBlocks.NarrowPoleNullPacket.complexMoment eta (1 / 2) = 0 ∧
+      BuildingBlocks.NarrowPoleNullPacket.complexMoment eta (-(1 / 2)) = 0 ∧
+      ∃ J : ℕ, M < J ∧
+        physicalSquare (packet (Real.log (p : ℝ)) eta
+          (boxCoefficients (BuildingBlocks.CompactLocalScatteringSigns.phase (Real.pi / (M : ℝ))) J)) <
+        physicalSquare (historyPhysical (1 / Real.sqrt (p : ℝ)) M (Real.log (p : ℝ))
+          (packet (Real.log (p : ℝ)) eta
+            (boxCoefficients (BuildingBlocks.CompactLocalScatteringSigns.phase (Real.pi / (M : ℝ))) J))) := by
+  have hL : 0 < Real.log (p : ℝ) := Real.log_pos (by exact_mod_cast hp.one_lt)
+  obtain ⟨eta, hc, hd, h0, hs, hi, hm, hplus, hminus⟩ :=
+    BuildingBlocks.NarrowPoleNullPacket.exists_narrow_complex_pole_null hL
+  refine ⟨eta, hc, hd, h0, hplus, hminus, ?_⟩
+  exact exists_prime_amplifying_packet p hp (by linarith) hs hi hm M hM
+
+#print axioms exists_prime_amplifying_narrow_carrier
 #print axioms exists_prime_amplifying_packet
 #print axioms phase_box_history_normSq
 #print axioms phase_box_history_bulk_bound
