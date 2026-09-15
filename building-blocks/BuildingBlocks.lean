@@ -238,6 +238,7 @@ import BuildingBlocks.ChargeFrozenLogMoment
 import BuildingBlocks.ChargeFrozenFourierNorm
 import BuildingBlocks.AngularFourierConvolution
 import BuildingBlocks.ChargeFrozenPlancherel
+import BuildingBlocks.ConditionalScoreQuadratic
 import BuildingBlocks.ChargeFrozenBirthMetric
 import BuildingBlocks.ChargeFrozenBirthWork
 import BuildingBlocks.ChargeFrozenBirthGram
@@ -265,3 +266,4 @@ import BuildingBlocks.ThreeWindowIncidenceBudget
 import BuildingBlocks.LogarithmicLayercake
 
 import BuildingBlocks.DigammaBinaryScalarBounds
+import BuildingBlocks.WeakGroundPrimeTail

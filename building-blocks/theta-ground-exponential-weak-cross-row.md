@@ -166,4 +166,8 @@ This provides an actual ground-equation consumer for the exponential two-source 
 
 ## Attribution and formal scope
 
-The domain and ground-transform inputs are proved in the linked theta chapters. The weak equation, parity and form-resolvent operations are classical methods, applied here with the full prime-power arrival and both poles retained. These mixed-domain, Green and correction identities are written proofs. No Lean formalization or sign for the remaining arithmetic row is asserted.
+The domain and ground-transform inputs are proved in the linked theta chapters. The weak equation, parity and form-resolvent operations are classical methods, applied here with the full prime-power arrival and both poles retained. These mixed-domain, Green and correction identities are written proofs. The full mixed-domain identities are not yet formalized, and no sign for the remaining arithmetic row is asserted.
+
+## Compiled prime-tail prerequisites
+
+[WeakGroundPrimeTail.lean](BuildingBlocks/WeakGroundPrimeTail.lean) proves the exponential shift bounds, Bochner overlap integrability and domination, and absolute convergence of the complete prime row with both orientations and every integer n ≥ 2 retained. Its hypotheses include a nonnegative ground weight, the finite exponential moment, and measurable overlap integrands. Identifying these hypotheses for the killed ground, the logarithmic-form and archimedean cutoff limits, core arrivals, and the full weak ground equation remain written steps. See [the formalization source map](theta-exponential-weak-prime-tail-lean-prerequisites.md). These results do not prove covariance smallness or RH.

@@ -166,3 +166,5 @@ A usable new estimate would bound the complete conditional expression in (7), ev
 ## Attribution and formal scope
 
 The closed-form representation theorem, ground-state transform, Carleman bound, nonnegative-form Cauchy–Schwarz and affine variational identities used here are classical. The proofs retain the actual ground state and every continuous and prime-power edge. These are written mathematical results, with no Lean claim for the full-form comparison or the remaining arithmetic smallness.
+
+The exact common-score square completion, zero-score-energy pairing, positive bilinear score remainder and separate-optimization disagreement penalty are now compiled in [ConditionalScoreQuadratic](BuildingBlocks/ConditionalScoreQuadratic.lean), with [their precise scope and actual form map](theta-common-score-separate-optimization-penalty.md). This certifies the general form algebra behind (5). Identification of the actual closed edge forms, their complete domains and the upper estimator remains written mathematics; the quantitative residual smallness remains unproved.

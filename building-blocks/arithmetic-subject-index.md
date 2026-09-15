@@ -288,3 +288,11 @@ The [finite centered additive heat formalization](finite-centered-additive-heat-
 - [Three narrow windows with global pole-moment carriers](three-window-global-pole-null-weil-bound.md): independently reviewed written Weil positivity on a restricted support family, retaining prime 2, power 4 and all inter-window pole moments; seven scalar budget declarations compiled. No growing-family or RH claim.
 
 - [Global pole constraints and complete binary histories](binary-global-pole-history-extremizer.md), with the [gamma-plus-binary partial-form counterexample](gamma-binary-partial-form-counterexample.md): independently reviewed written constrained extremizers and a failure of a single-place positive completion; all powers of 2 retained, five scalar inputs compiled, full other-place row unestimated.
+
+## Common-score theta covariance form algebra
+
+The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy.md) retains one common score coefficient across the complete continuous and prime components. [ConditionalScoreQuadratic](BuildingBlocks/ConditionalScoreQuadratic.lean) proves its [general square completion, positive bilinear rank remainder and exact separate-optimization penalty](theta-common-score-separate-optimization-penalty.md), including zero-energy cases. The actual edge-domain identification remains written; a small separately optimized expression does not certify the required joint residual smallness.
+
+### Exponential weak ground prime tails
+
+[Prime-tail prerequisites](theta-exponential-weak-prime-tail-lean-prerequisites.md) and [compiled Lean](BuildingBlocks/WeakGroundPrimeTail.lean): literal all-integer Mangoldt coefficients, both shifts, integrable overlaps, and complete absolute convergence for exponential tests with decay exponent greater than one half. Actual ground moment identification and the remaining weak equation are written prerequisites.
