@@ -15,7 +15,7 @@ The associated compensated factorial kernel is
        -\log\binom{x+y}{x},
 \]
 
-on positive integer sizes, and the proposed energy is Q_N=sum_(n,m<=N)mu(n)mu(m)B(q_n,q_m). Its positive-kernel representation does not supply an upper bound on Q_N.
+on positive integer sizes, and the proposed energy is Q_N=sum_(n,m<=N)mu(n)mu(m)B(q_n,q_m). Its positive-kernel representation does not by itself supply the required RH-scale upper bound on Q_N.
 
 ## All quotient constraints, not just the first moment
 
@@ -71,3 +71,61 @@ A quotient-grouped floating-point search tested 241 selected horizons, including
 Separate exact integer checks confirmed sieve values at selected indices and all k in S_N, together with k=1,2,3,N, in (1) for N=13,24,5001,10007,99991,2000000. They corroborate the implementation; the finite divisor proof establishes (1) for every N and k. The analytic representation uses the classical digamma integral and its derivative, as in [DLMF 5.9.16](https://dlmf.nist.gov/5.9.E16).
 
 The open target is a quantitative upper bound on the coherent Q_N for the actual grouped vector, or a useful signed inequality from the entire constraint system (1). Equations (1)-(3), the sign change and finite passing tests prove no such upper bound. Their Lean formalization also remains unfinished.
+
+## A proved energy upper bound and the exact discarded variance
+
+This is a bounded attempt to estimate the coherent energy, rather than just solve the quotient constraints. Use the positive factorial representation
+
+\[
+ Q_N=\int_0^\infty g_N(t)^2w(t)\,dt,\qquad
+ w(t)=t^{-2}-[t(e^t-1)]^{-1}>0.
+\]
+
+At each t>0 put z=exp(-t), Y_k=M(floor(N/k)), p_k=(1-z)z^(k-1) for 1<=k<=N, and add p_0=z^N with Y_0=0. These nonnegative weights sum to one. Equation (2) is their exact mean g_N(t). The finite variance identity gives
+
+\[
+ g_N(t)^2=\sum_{k=1}^N p_kY_k^2
+ -\sum_{1\le k<l\le N}p_kp_l(Y_k-Y_l)^2
+ -p_0\sum_{k=1}^N p_kY_k^2.
+\tag{5}
+\]
+
+Every term is integrable against w. Near zero, w=O(1/t) and p_k=O(t); at infinity, w=O(1/t^2) and the finite Y values are bounded. The two variance terms are nonnegative and bounded by the first term. Thus
+
+\[
+ Q_N=U_N-V_N\le U_N,
+ \qquad U_N=\sum_{k=1}^N c_kM(\lfloor N/k\rfloor)^2,
+\tag{6}
+\]
+
+where V_N is the integral of the two variance terms in (5). This is an unconditional inequality for the actual Möbius response. It makes no independence assumption about distinct quotient histories.
+
+The weights have an exact closed form:
+
+\[
+ c_k=\int_0^\infty w(t)(1-e^{-t})e^{-(k-1)t}\,dt,
+ \qquad c_1=1,
+ \qquad c_k=1-(k-1)\log\frac{k}{k-1}\quad(k\ge2).
+\tag{7}
+\]
+
+Indeed B(1,y)=y log(1+1/y) for integer y>=1, and its limit as y tends to infinity is 1. The positive kernel representation and monotone convergence imply integral w(t)(1-exp(-t))dt=1. Subtracting B(1,k-1) from this integral gives c_k. At k=1 the subtracted term is zero, so no expression with log(1/0) is introduced.
+
+For k>=2, c_k=int_0^1 u/(k-1+u)du. Hence
+
+\[
+ \frac1{2k}\le c_k\le\frac1{2(k-1)}\le\frac1k.
+\tag{8}
+\]
+
+The inequality (6) is a genuine energy bound, but it does not have the required scale. The elementary |M(x)|<=x yields only U_N<=(sum_(k>=1)k^(-3))N^2. More decisively, U_N>=M(N)^2 because c_1=1. Proving U_N<=C_epsilon N^(1+epsilon) for every epsilon>0 would already prove the usual RH-sufficient Mertens bound. That arithmetic estimate is not supplied by averaging positivity.
+
+For the proposed diagonal bound Q_N<=D_N, the exact compensation still required is
+
+\[
+ V_N\ge U_N-D_N,\qquad
+ D_N=\sum_{n=1}^N\mu(n)^2B(q_n,q_n).
+\tag{9}
+\]
+
+It is not proved here. Dropping V_N erases the coherent difference-history terms that could pay this deficit. The attempt therefore gives an explicit unconditional upper inequality and locates its loss, without a new RH-scale estimate or a claim that every joint energy method fails. Equations (5)-(9) remain written mathematics requiring Lean formalization.
