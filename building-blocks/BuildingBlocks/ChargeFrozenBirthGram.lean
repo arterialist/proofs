@@ -1,0 +1,147 @@
+import BuildingBlocks.ChargeFrozenBirthWork
+
+open MeasureTheory Set
+
+namespace BuildingBlocks.ChargeFrozenBirthGram
+
+open ChargeFrozenSource ChargeFrozenMetric ChargeFrozenBirthMetric
+
+theorem birth_gram_integrable {m N : ℕ} (hm : 2 ≤ m) (hN : 2 ≤ N) :
+    IntegrableOn (fun v => increment m v * increment N v) (Ioi (0 : ℝ)) := by
+  apply ((increment_square_integrable hm).add (increment_square_integrable hN)).mono'
+  · have hi (n : ℕ) : Measurable (increment n) :=
+      (measurable_causalSource (n + 1)).sub (measurable_causalSource n)
+    exact ((hi m).mul (hi N)).aestronglyMeasurable
+  · filter_upwards [] with v
+    rw [Real.norm_eq_abs]
+    change |increment m v * increment N v| ≤ (increment m v)^2 + (increment N v)^2
+    apply abs_le.mpr
+    constructor
+    · nlinarith [sq_nonneg (increment m v + increment N v)]
+    · nlinarith [sq_nonneg (increment m v - increment N v)]
+
+theorem birth_gram_ramp {m N : ℕ} (_hm : 2 ≤ m) (hmN : m < N) (hN : 2 ≤ N) {v : ℝ}
+    (hv : Real.log (N : ℝ) < v) (hv1 : v < Real.log ((N + 1 : ℕ) : ℝ)) :
+    increment m v * increment N v =
+      -(ArithmeticFunction.vonMangoldt (m + 1) - 1) * (1 - (N : ℝ) * Real.exp (-v)) := by
+  have hNp : (0 : ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+  have hMp : (0 : ℝ) < ((N + 1 : ℕ) : ℝ) := by positivity
+  have hlog : 0 ≤ Real.log (N : ℝ) := Real.log_nonneg (by exact_mod_cast (show 1 ≤ N by omega))
+  have hx : (N : ℝ) < Real.exp v := by simpa only [Real.exp_log hNp] using Real.exp_lt_exp.mpr hv
+  have hx1 : Real.exp v < ((N + 1 : ℕ) : ℝ) := by simpa only [Real.exp_log hMp] using Real.exp_lt_exp.mpr hv1
+  have hxm : ((m + 1 : ℕ) : ℝ) ≤ Real.exp v := by
+    exact le_trans (by exact_mod_cast (show m + 1 ≤ N by omega)) hx.le
+  rw [increment_terminal (lt_of_le_of_lt hlog hv) hxm, increment_ramp (lt_of_le_of_lt hlog hv) hx hx1]
+  have hh : Real.exp (-v / 2) * Real.exp (-v / 2) = Real.exp (-v) := by
+    rw [← Real.exp_add]; congr 1; ring
+  have he : Real.exp v * Real.exp (-v) = 1 := by rw [← Real.exp_add]; simp
+  calc
+    _ = -(ArithmeticFunction.vonMangoldt (m + 1) - 1) * (Real.exp v - (N : ℝ)) *
+      (Real.exp (-v / 2) * Real.exp (-v / 2)) := by ring
+    _ = _ := by rw [hh, mul_assoc, sub_mul, he]
+
+theorem birth_gram_terminal {m N : ℕ} (_hm : 2 ≤ m) (hmN : m < N) (hN : 2 ≤ N) {v : ℝ}
+    (hv : Real.log ((N + 1 : ℕ) : ℝ) < v) :
+    increment m v * increment N v =
+      (ArithmeticFunction.vonMangoldt (m + 1) - 1) * (ArithmeticFunction.vonMangoldt (N + 1) - 1) * Real.exp (-v) := by
+  have hNp : (0 : ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+  have hMp : (0 : ℝ) < ((N + 1 : ℕ) : ℝ) := by positivity
+  have hab : Real.log (N : ℝ) < Real.log ((N + 1 : ℕ) : ℝ) := Real.log_lt_log hNp (by push_cast; linarith)
+  have hlog : 0 ≤ Real.log ((N + 1 : ℕ) : ℝ) := Real.log_nonneg (by exact_mod_cast (show 1 ≤ N + 1 by omega))
+  have hx : ((N + 1 : ℕ) : ℝ) ≤ Real.exp v := by simpa only [Real.exp_log hMp] using (Real.exp_lt_exp.mpr hv).le
+  have hxm : ((m + 1 : ℕ) : ℝ) ≤ Real.exp v := by
+    exact le_trans (by exact_mod_cast (show m + 1 ≤ N + 1 by omega)) hx
+  rw [increment_terminal (lt_of_le_of_lt hlog hv) hxm, increment_terminal (lt_of_le_of_lt hlog hv) hx]
+  have hh : Real.exp (-v / 2) * Real.exp (-v / 2) = Real.exp (-v) := by
+    rw [← Real.exp_add]; congr 1; ring
+  calc
+    _ = (ArithmeticFunction.vonMangoldt (m + 1) - 1) * (ArithmeticFunction.vonMangoldt (N + 1) - 1) *
+      (Real.exp (-v / 2) * Real.exp (-v / 2)) := by ring
+    _ = _ := by rw [hh]
+
+theorem birth_gram_integral {m N : ℕ} (hm : 2 ≤ m) (hmN : m < N) (hN : 2 ≤ N) :
+    (∫ v in Ioi (0 : ℝ), increment m v * increment N v) =
+      (ArithmeticFunction.vonMangoldt (m + 1) - 1) * (ArithmeticFunction.vonMangoldt (N + 1) /
+        ((N + 1 : ℕ) : ℝ) - Real.log (1 + 1 / (N : ℝ))) := by
+  let a := Real.log (N : ℝ)
+  let b := Real.log ((N + 1 : ℕ) : ℝ)
+  let E := ArithmeticFunction.vonMangoldt (m + 1) - 1
+  have hNp : (0 : ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+  have hMp : (0 : ℝ) < ((N + 1 : ℕ) : ℝ) := by positivity
+  have ha : 0 ≤ a := Real.log_nonneg (by exact_mod_cast (show 1 ≤ N by omega))
+  have hab : a < b := Real.log_lt_log hNp (by push_cast; linarith)
+  have hb : 0 ≤ b := ha.trans hab.le
+  have hi := birth_gram_integrable hm hN
+  have hp : IntegrableOn (fun v => increment m v * increment N v) (Ioc 0 b) := hi.mono_set (fun _ h => h.1)
+  have ht : IntegrableOn (fun v => increment m v * increment N v) (Ioi b) := hi.mono_set (fun _ h => lt_of_le_of_lt hb h)
+  have hpa : IntegrableOn (fun v => increment m v * increment N v) (Ioc 0 a) := hi.mono_set (fun _ h => h.1)
+  have hpr : IntegrableOn (fun v => increment m v * increment N v) (Ioc a b) := hi.mono_set (fun _ h => lt_of_le_of_lt ha h.1)
+  have hu : Ioc (0 : ℝ) b ∪ Ioi b = Ioi (0 : ℝ) := by
+    ext v
+    simp only [mem_union, mem_Ioc, mem_Ioi]
+    constructor
+    · rintro (h | h) <;> linarith
+    · intro h
+      by_cases hh : v ≤ b
+      · exact Or.inl ⟨h, hh⟩
+      · exact Or.inr (lt_of_not_ge hh)
+  have hd : Disjoint (Ioc (0 : ℝ) b) (Ioi b) := Set.disjoint_left.mpr (fun _ h k => not_lt_of_ge h.2 k)
+  rw [← hu, setIntegral_union hd measurableSet_Ioi hp ht]
+  have hd2 : Disjoint (Ioc (0 : ℝ) a) (Ioc a b) := Set.disjoint_left.mpr (fun _ h k => not_lt_of_ge h.2 k.1)
+  rw [← Ioc_union_Ioc_eq_Ioc ha hab.le, setIntegral_union hd2 measurableSet_Ioc hpa hpr]
+  have hz : (∫ v in Ioc (0 : ℝ) a, increment m v * increment N v) = 0 := by
+    apply integral_eq_zero_of_ae
+    filter_upwards [ae_restrict_mem measurableSet_Ioc] with v hv
+    have hx : Real.exp v ≤ (N : ℝ) := by simpa only [a, Real.exp_log hNp] using Real.exp_le_exp.mpr hv.2
+    rw [increment_before hv.1 hx, mul_zero]
+    rfl
+  rw [hz, zero_add, integral_Ioc_eq_integral_Ioo]
+  have hnexp : (∫ v in a..b, Real.exp (-v)) = Real.exp (-a) - Real.exp (-b) := by
+    have hd (v : ℝ) : HasDerivAt (fun v : ℝ => -Real.exp (-v)) (Real.exp (-v)) v := by
+      simpa using ((Real.hasDerivAt_exp (-v)).comp v (hasDerivAt_id v).neg).neg
+    have hi : IntervalIntegrable (fun v : ℝ => Real.exp (-v)) volume a b :=
+      (by fun_prop : Continuous (fun v : ℝ => Real.exp (-v))).intervalIntegrable _ _
+    rw [intervalIntegral.integral_eq_sub_of_hasDerivAt (fun v _ => hd v) hi]
+    ring
+  have hr : (∫ v in Ioo a b, increment m v * increment N v) =
+      -E * ((b - a) - (N : ℝ) * (Real.exp (-a) - Real.exp (-b))) := by
+    have he : (∫ v in Ioo a b, increment m v * increment N v) =
+        ∫ v in Ioo a b, -E * (1 - (N : ℝ) * Real.exp (-v)) := by
+      apply integral_congr_ae
+      filter_upwards [ae_restrict_mem measurableSet_Ioo] with v hv
+      exact birth_gram_ramp hm hmN hN hv.1 hv.2
+    rw [he, ← integral_Ioc_eq_integral_Ioo, ← intervalIntegral.integral_of_le hab.le,
+      intervalIntegral.integral_const_mul]
+    have hin : IntervalIntegrable (fun v : ℝ => (N : ℝ) * Real.exp (-v)) volume a b :=
+      (by fun_prop : Continuous (fun v : ℝ => (N : ℝ) * Real.exp (-v))).intervalIntegrable _ _
+    rw [intervalIntegral.integral_sub intervalIntegrable_const hin, intervalIntegral.integral_const,
+      intervalIntegral.integral_const_mul, hnexp]
+    simp
+  have htt : (∫ v in Ioi b, increment m v * increment N v) =
+      E * (ArithmeticFunction.vonMangoldt (N + 1) - 1) / ((N + 1 : ℕ) : ℝ) := by
+    have he : (∫ v in Ioi b, increment m v * increment N v) =
+        ∫ v in Ioi b, E * (ArithmeticFunction.vonMangoldt (N + 1) - 1) * Real.exp (-v) := by
+      apply integral_congr_ae
+      filter_upwards [ae_restrict_mem measurableSet_Ioi] with v hv
+      exact birth_gram_terminal hm hmN hN hv
+    rw [he, integral_const_mul]
+    have hex : (∫ v in Ioi b, Real.exp (-v)) = Real.exp (-b) := by
+      simpa using integral_exp_mul_Ioi (by norm_num : (-1 : ℝ) < 0) b
+    rw [hex, Real.exp_neg, Real.exp_log hMp, div_eq_mul_inv]
+  rw [hr, htt]
+  have hlog : b - a = Real.log (1 + 1 / (N : ℝ)) := by
+    rw [← Real.log_div hMp.ne' hNp.ne']
+    congr 1
+    push_cast
+    field_simp
+  rw [hlog]
+  simp only [a, b, E, Real.exp_neg, Real.exp_log hNp, Real.exp_log hMp]
+  push_cast
+  field_simp
+  ring
+
+
+#print axioms birth_gram_integrable
+#print axioms birth_gram_integral
+
+end BuildingBlocks.ChargeFrozenBirthGram
