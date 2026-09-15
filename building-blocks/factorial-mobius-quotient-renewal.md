@@ -192,7 +192,7 @@ Thus positive work also occurs across a dyadic horizon. This refutes the zero-bu
 
 [FactorialBinaryCarry](BuildingBlocks/FactorialBinaryCarry.lean) proves seven unconditional theorems. They establish the binary quotient bounds for every positive divisor and both b=0,1, the carry bound epsilon<=1, the exact quotient decomposition, extension of the actual finite response without changing its value, and the literal identity g_(2N+b)(t)=g_N(2t)+d_(N,b)(t) for every real t. The two final theorems extend the integer floor mass through the new cutoff and prove sum_(n<=2N+b)mu(n)epsilon=-1 for N>0. They use the existing actual Möbius floor-mass theorem; no coefficient vector or response is substituted.
 
-All seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using standard finite arithmetic and exponential algebra, with no priority claim. The full infinite density scaling integral, signed energy identity (11), exact logarithmic counterexample (12), and required correlation bound remain further Lean obligations. The pointwise density scale and finite-interval work identity are now formalized below. The module proves no upper energy estimate.
+All seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using standard finite arithmetic and exponential algebra, with no priority claim. The literal infinite-energy identity is now formalized below, as are its pointwise density scale and finite-interval work identity. Identification with the factorial kernel, the exact logarithmic counterexample (12), and the required correlation bound remain further Lean obligations. The module proves no upper energy estimate.
 
 
 ### Formal density scale and finite-interval signed energy
@@ -206,4 +206,25 @@ All seven theorems compile without warnings and depend only on propext, Classica
  +\int_a^c\frac{[2g_N(u)d_{N,b}(u/2)+d_{N,b}(u/2)^2]w(u/2)}2\,du.
 \]
 
-All twelve theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using standard real exponential algebra and integration. This finite-interval theorem is part of the full identity's proof; it does not substitute a compact interval for the infinite energy requirement. Positive-endpoint exhaustion, infinite integrability and the full signed-work estimate remain unformalized and unproved where indicated above. The actual factorial-kernel identification is also still a written proof. No new unconditional RH estimate follows from these calculus identities.
+All twelve theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. RH Proof supplied this formalization using standard real exponential algebra and integration. This finite-interval theorem is part of the full identity's proof; it does not substitute a compact interval for the infinite energy requirement. Infinite integrability and the literal full identity are now formalized below. The required signed-work estimate remains unproved. The actual factorial-kernel identification is also still a written proof. No new unconditional RH estimate follows from these calculus identities.
+
+
+### Formal integrability and the full infinite clock identity
+
+[FactorialBinaryIntegrability](BuildingBlocks/FactorialBinaryIntegrability.lean) proves fourteen further unconditional theorems. Its finite size budget is the actual sum K_N=sum_(n<=N)|mu(n)|(1+floor(N/n)). For every t>=0 the literal response obeys |g_N(t)|<=K_N t and |g_N(t)|<=K_N. Together with 0<w(t)<=1/t^2, these prove
+
+\[
+ 0\le g_N(t)^2w(t)\le\frac{2K_N^2}{1+t^2}\qquad(t>0).
+\]
+
+The standard integrable Cauchy envelope proves full positive-axis integrability at every finite horizon. The density row is bounded by twice the energy row. Positive dilation proves integrability of the scaled energy, and the complete square identity proves integrability of the signed work. Thus no undefined integral is introduced by the formal identity
+
+\[
+ \mathcal E_{2N+b}-2\mathcal E_N=\mathcal W_{N,b}-\mathcal R_N,
+ \quad \mathcal E_N=\int_0^\infty g_N(t)^2w(t)\,dt,
+ \quad \mathcal R_N=\int_0^\infty\frac{g_N(u)^2}{u(e^{u/2}+1)}\,du.
+\]
+
+A separate formal change-of-clock theorem identifies the complete work exactly with the original readout W_(N,b) in (11), including both mixed products and the innovation square. It retains the entire positive axis; no terminal cutoff or infinite-source norm premise is used. All fourteen theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound.
+
+RH Proof supplied these proofs using standard finite sums, real exponential estimates, Cauchy-envelope domination and positive-axis change of variables, with no priority claim. The budget K_N establishes finite-horizon integrability and supplies no RH-scale growth estimate. The written factorial-kernel theorem identifies E_N=Q_N; that finite-kernel integral dictionary remains a separate Lean obligation. The arithmetic bound on W_(N,b)-R_N and the actual RH implication remain unproved or unformalized as indicated in the companion chapter. This formal infinite identity does not establish the missing signed upper bound.

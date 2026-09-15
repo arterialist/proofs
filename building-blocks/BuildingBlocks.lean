@@ -314,3 +314,4 @@ import BuildingBlocks.ResidueLoadingSuccessor
 import BuildingBlocks.LogarithmicPrimeWindow
 import BuildingBlocks.FactorialBinaryCarry
 import BuildingBlocks.FactorialBinaryEnergy
+import BuildingBlocks.FactorialBinaryIntegrability
