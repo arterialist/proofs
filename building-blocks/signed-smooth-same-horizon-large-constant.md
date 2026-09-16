@@ -28,6 +28,8 @@ $$
 
 This threshold is sufficient for this proof; it is not claimed optimal. For **each fixed** $c>c_{\rm large}$, eventual nonpositivity of $T_N(c(\log N)^2)$ is equivalent to RH. The proof below identifies both directions. The sign itself is not proved unconditionally.
 
+The later [exact-horizon Fourier localization](signed-smooth-exact-horizon-energy.md) strengthens (1), removes its leading $4\pi$ localization loss, and establishes the sign equivalence for every fixed $c>e^{-2}/4$. The argument here remains a simpler positive-tail method with a weaker constant.
+
 ## Proof and the two localization costs
 
 Put $\eta=\ell^{-1/2}$, $D=(\pi+3\eta)L/\ell$, and $L_0=L-D$. Choose $\sigma$ from the *shifted* squarefree saddle equation, and write

@@ -114,6 +114,8 @@ $c=c_*$, (2) concerns unsigned labels. A proof at $c=1$ would need a bound
 on the actual signed smooth energy and the complete rough–smooth
 correlation; support estimates alone cannot supply either.
 
+The [signed smooth-energy theorem](signed-smooth-exact-horizon-energy.md) now supplies the first of those two ingredients at $c=1$ and, more generally, for every fixed $c>c_*$. The complete rough–smooth transport sign remains unproved.
+
 The squarefree saddle calculation is an application of standard friable
 counting methods, not a claim of a new general smooth-number theorem.
 The exponent $2$ itself was already central in
