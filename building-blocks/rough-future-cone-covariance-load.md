@@ -103,6 +103,117 @@ the size in (7), at every sufficiently large square horizon. This is
 an obstruction to blockwise orthogonality or independent-prime-phase
 arguments. It does not establish the transport sign or RH.
 
+The square case extends to a family of exact cutoffs without a
+uniform-in-$c$ input. Fix an integer $m\ge1$, let $A\to\infty$ through
+integers, and set $H=A^m$, $N=A^{m+1}=AH$. Then
+$y=(\log N)^2=((m+1)/m)^2(\log H)^2$. For primes
+$A/2<p\le A-1$ and every $u\le H$, the full block from $pu$
+to $p(u+1)-1$ lies below $N$, because
+$p(H+1)-1\le(A-1)(A^m+1)-1\le A^{m+1}=N$.
+Repeating (4) and using the prime
+number theorem gives
+
+$$
+B_N(y)\gg \frac{A}{\log A}\,Z_H(F_y).
+$$
+
+Applying the same signed smooth-energy theorem at $H$ with the fixed
+constant $c=((m+1)/m)^2$ yields
+
+$$
+\log\frac{B_N((\log N)^2)}N
+\ge(\beta_m+o(1))\frac{\log N}{\log\log N},
+\qquad
+\beta_m=\frac{m}{m+1}
+\left(1+\log2+\log\frac{m+1}{m}\right).
+\tag{8}
+$$
+
+The coefficients $\beta_m$ increase to $1+\log2$: for
+$q=1+1/m$, the function
+$(1+\log2+\log q)/q$ has derivative
+$-(\log2+\log q)/q^2<0$, while $q\downarrow1$. Therefore, for
+every fixed $\eta>0$, some fixed $m$ gives an infinite perfect-power
+subsequence with the exponent $1+\log2-\eta$. This still estimates
+the positive block load, not the sign of the complete transport.
+
+## Nearby rough primes reinforce the positive load
+
+The same square horizons show why a local prime-pair sign will not
+cancel the blocks. If $p,q\in(H/2,H-1]$ and
+$\Delta=|p-q|$, then for $x\le H^2$,
+
+$$
+\left|\left\lfloor\frac{x}{p}\right\rfloor-
+       \left\lfloor\frac{x}{q}\right\rfloor\right|
+\le \frac{H^2\Delta}{pq}+1\le4\Delta+1.
+$$
+
+Each jump of $F_y$ has absolute size at most $1$. Thus
+$|g_p(x)-g_q(x)|\le4\Delta+1$ and
+$Z_N(g_p-g_q)\le(4\Delta+1)^2$, since the Abel weights sum to
+less than $1$. For $\Delta\le3\log H$, polarization and (4) give
+
+$$
+\langle g_p,g_q\rangle_N
+=\tfrac12\bigl(Z_N(g_p)+Z_N(g_q)-Z_N(g_p-g_q)\bigr)
+\ge\left(\frac{e^{-2}}2+o(1)\right)Z_H(F_y)
+      -O((\log H)^2)>0.
+\tag{9}
+$$
+
+The final inequality uses (6), which makes $Z_H(F_y)\gg H$.
+There are $\asymp H/\log H$ primes in $(H/2,H-1]$ by the prime
+number theorem, and their consecutive gaps have average
+$(1+o(1))\log H$. At least a fixed positive fraction of these
+consecutive gaps are at most $3\log H$. Since
+$\mu(p)\mu(q)=+1$, their contribution to the off-diagonal
+covariance in (3) is positive and
+$\gg (H/\log H)Z_H(F_y)$. Thus a negative total covariance
+would have to overcome this positive near-prime contribution as well
+as $B_N(y)$. The estimate identifies a further local obstruction;
+it does not locate the compensating negative terms.
+
+## Local bilinear signs already vary
+
+At the actual cutoff $N=97$, $y=(\log97)^2\in(20,21)$, the two
+adjacent rough primes $23$ and $29$ give opposite signs. Put
+
+$$
+S_p(t)=\sum_{m=1}^{97}F_y(m)F_y(\lfloor m/p\rfloor)t^m,\qquad
+V_p(t)=\sum_{m=1}^{97}F_y(\lfloor m/p\rfloor)^2t^m.
+$$
+
+The elementary exponential bounds
+$1-x\le e^{-x}\le1-x+x^2/2$ give
+$979/1000<\rho_{97}<980/1000$. Compute $F_y$ by the finite
+Möbius sieve over the primes $2,3,5,7,11,13,17,19$.
+For each positive polynomial coefficient use the lower endpoint to
+bound below and the upper endpoint to bound above; reverse endpoints
+for negative coefficients. These rational calculations give
+
+$$
+-21<S_{23}(\rho_{97})<-17,\qquad
+16<S_{29}(\rho_{97})<20,
+$$
+
+$$
+16<V_{23}(\rho_{97})<18,\qquad
+13<V_{29}(\rho_{97})<15.
+$$
+
+The second pair alone is too coarse to certify the $p=29$
+increment, but the same rational endpoint calculation gives
+$V_{29}(\rho_{97})-2S_{29}(\rho_{97})<-19$.
+For $p=23$ it gives
+$V_{23}(\rho_{97})-2S_{23}(\rho_{97})>50$.
+Multiplication by $1-\rho_{97}>0$ yields
+$\langle F_y,g_{23}\rangle_{97}<0<
+\langle F_y,g_{29}\rangle_{97}$ and opposite signs for
+$Z_{97}(g_p)-2\langle F_y,g_p\rangle_{97}$.
+Thus neither a termwise bilinear sign nor a one-prime transport sign
+holds for the actual smooth source.
+
 ## No universal contractive metric
 
 There is also a finite-dimensional obstruction independent of the
@@ -113,7 +224,7 @@ $$
 (U_y f)(m)=
 \sum_{\substack{d\le m\\\mu(d)^2=1,\ P^-(d)>y}}
 \mu(d)f(\lfloor m/d\rfloor),\qquad 1\le m\le N.
-\tag{8}
+\tag{10}
 $$
 
 Equation (1) is $U_yF_y=M$. In the standard basis of prefix vectors,
