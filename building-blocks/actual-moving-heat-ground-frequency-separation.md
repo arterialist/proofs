@@ -139,11 +139,48 @@ localized packet has support width $7U_R/2<2R$ and its derivative
 ratio is $O(U_R)$. Hence (9) holds with this averaged packet in place
 of the translated packet too.
 
+## Cost of matching the full ground autocorrelation
+
+The distinction between a scalar norm and a quadratic form can be
+made quantitative. In the same unitary Fourier convention, let
+$f_j,h_j\in L^2(\mathbb R)$ be any finite or countable family with
+$\sum_j\|f_j\|_2\|h_j\|_2<\infty$. Suppose their signed heat-pair
+spectrum matches the normalized actual ground autocorrelation on the
+high band to $L^1$ error at most $1/4$:
+\[
+\int_{|\xi|>B_R}
+\left||\widehat g_R(\xi)|^2
+ -|m(\xi)|^2\sum_j\widehat f_j(\xi)
+                       \overline{\widehat h_j(\xi)}\right|d\xi
+\le\frac14.
+\tag{10}
+\]
+The common Fourier-convolution normalization cancels between a
+ground autocorrelation and each filtered heat pair. By (4), the
+ground spectrum has high-band integral at least $3/4$. The triangle
+inequality, (5), Cauchy--Schwarz and Tonelli therefore force
+\[
+\boxed{\quad
+\sum_j\|f_j\|_2\|h_j\|_2
+\ge c\frac{e^{\pi B_R}}{(1+B_R)^2}
+\ge\exp\!\left(c_d'\frac{e^R}{R}\right)
+\quad}
+\tag{11}
+\]
+for every fixed $0<c_d'<\pi^2/(32d)$ and large selected $R$.
+The same inequality with $h_j=f_j$ is the positive Gram-factor cost.
+It covers signed two-source decompositions as well: cancellation
+between pairs cannot reduce their total factor norm below (11) if
+the full high-band autocorrelation is retained. Since $g_R$ is real
+and even, its nonconjugated convolution has the same nonnegative
+Fourier target; replacing $|m|^2$ by $m^2$ in (10) gives (11) again
+because their moduli agree.
+
 This is a shape and normalization obstruction for the specified heat
 filter and positive ground average. It neither contradicts the exact
 finite Goldbach Gram measurement nor bounds that Gram. A signed
 complete-history operator linking the arithmetic heat response to
 the odd affine theta residual would need additional information; the
-scalar positive readout does not pay the cost in (6).
+scalar positive readout does not pay the costs in (6) or (11).
 The displayed moving-ground separation is written analysis, not a
 Lean formalization.
