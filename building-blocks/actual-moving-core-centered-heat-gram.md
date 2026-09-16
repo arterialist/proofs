@@ -79,6 +79,10 @@ Indeed the signed cell correction has cumulative mass $-\{x\}$ on $1\le x<N$ and
 \tag{7a}
 \]
 Equation (7a) keeps the density cells and frozen terminal charge separate. Neither term may be silently deleted when relating the moving-core identity to the ordered discrete Goldbach sum.
+At integer cutoffs, [ActualCompactHeatEndpoint.lean](BuildingBlocks/ActualCompactHeatEndpoint.lean)
+also compiles the exact comparison (C_{\log N}(t)=D_N(t)+R_N(t)-E(N)e^{-Nt}),
+with (R_N(t)) defined as the discrete-minus-continuous cell difference.
+The fractional-part integral and the (L^2) estimate in (7a) remain written results.
 
 ## Proof of the moving limit
 

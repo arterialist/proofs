@@ -1,5 +1,6 @@
 import BuildingBlocks.FinitePrimeSourceIntegration
 import BuildingBlocks.ActualFiniteHeatSource
+import BuildingBlocks.GoldbachHeatQuadratic
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 import Mathlib.Tactic
 
@@ -15,6 +16,41 @@ noncomputable def compactHeat (N : ℕ) (t : ℝ) : ℝ :=
       ArithmeticFunction.vonMangoldt n * exp (-(n : ℝ) * t)) -
     (∫ x in (1 : ℝ)..(N : ℝ), exp (-x * t)) - exp (-t) -
       BuildingBlocks.CoarsePrimitive.primeErrorReal N * exp (-(N : ℝ) * t)
+
+/-- The discrete-minus-continuous density-cell correction between the
+centered Goldbach packet and the compact cumulative-error source. -/
+noncomputable def densityCellCorrection (N : ℕ) (t : ℝ) : ℝ :=
+  (∑ n ∈ Finset.Icc 2 N, exp (-(n : ℝ) * t)) -
+    (∫ x in (1 : ℝ)..(N : ℝ), exp (-x * t))
+
+/-- Exact finite comparison with the actual discrete Goldbach heat packet.
+The density cells and the frozen terminal error remain separate. -/
+theorem compactHeat_eq_goldbach_packet (N : ℕ) (hN : 1 ≤ N) (t : ℝ) :
+    compactHeat N t =
+      GoldbachHeat.finiteHeat GoldbachHeat.centeredCoefficient N t +
+        densityCellCorrection N t -
+          BuildingBlocks.CoarsePrimitive.primeErrorReal N * exp (-(N : ℝ) * t) := by
+  have hIcc : Finset.Icc 1 N = insert 1 (Finset.Icc 2 N) := by
+    ext n
+    simp only [Finset.mem_Icc, Finset.mem_insert]
+    omega
+  have hone : (1 : ℕ) ∉ Finset.Icc 2 N := by simp
+  have hpacket :
+      GoldbachHeat.finiteHeat GoldbachHeat.centeredCoefficient N t =
+        -exp (-t) +
+          (∑ n ∈ Finset.Icc 2 N,
+            ArithmeticFunction.vonMangoldt n * exp (-(n : ℝ) * t)) -
+          (∑ n ∈ Finset.Icc 2 N, exp (-(n : ℝ) * t)) := by
+    unfold GoldbachHeat.finiteHeat GoldbachHeat.centeredCoefficient
+    rw [hIcc, Finset.sum_insert hone]
+    simp only [ArithmeticFunction.vonMangoldt_apply_one, zero_sub, Nat.cast_one, one_mul]
+    simp_rw [sub_mul]
+    rw [Finset.sum_sub_distrib]
+    simp only [one_mul]
+    ring
+  rw [hpacket]
+  unfold compactHeat densityCellCorrection
+  ring
 
 /-- The compact source is exactly the already-formalized finite source with
 its frozen terminal charge, not a replacement arithmetic sequence. -/
@@ -90,5 +126,6 @@ theorem compactHeat_at_zero (N : ℕ) (hN : 1 ≤ N) : compactHeat N 0 = 0 := by
 #print axioms compactHeat_eq_source_sub_terminal
 #print axioms compactHeat_eq_error_integral
 #print axioms compactHeat_at_zero
+#print axioms compactHeat_eq_goldbach_packet
 
 end BuildingBlocks.ActualCompactHeatEndpoint
