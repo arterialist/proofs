@@ -1,10 +1,11 @@
-# Negative reciprocal-ground covariance between prime-error zeros
+# Negative first-window mass between prime-error zeros
 
 2026-09-16. This is an unconditional signed identity for the actual
-von Mangoldt source and its factorial ground. It applies on intervals
-whose endpoints are continuous zeros of the prime error. Averaging
-literal first-window scores preserves the identity, but no pointwise
-bound for the complete first-window score follows.
+von Mangoldt source and its factorial ground. On intervals whose
+endpoints are continuous zeros of the prime error, the ordinary-base
+integral of the source-restricted first-window score is strictly
+negative. It does not give a pointwise bound for the unrestricted
+first-window score.
 
 Write
 $$
@@ -24,7 +25,9 @@ $$
 **Theorem.** If $1<a<b$ and $E(a^-)=E(a)=E(b^-)=E(b)=0$, then
 $$
 \boxed{\quad
-\sum_{a\le n<b}\Lambda(n)h(n)-\int_a^b h(x)\,dx
+\sum_{a\le n<b}\frac{\Lambda(n)}{F(n)}
+ -\int_a^b\frac{dx}{F(x)}
+=\sum_{a\le n<b}\Lambda(n)h(n)-\int_a^b h(x)\,dx
 =-\int_a^b\frac{E(x)^2}{x^2F(x)^2}\,dx<0.
 \quad}                                                       \tag{2}
 $$
@@ -46,7 +49,9 @@ $$
 \int_{[a,b)}h\,dE
 =h(b)E(b^-)-h(a)E(a^-)-\int_a^b E(x)h'(x)dx.
 $$
-The endpoint terms vanish, and (1) gives (2). The integral is
+The endpoint terms vanish, and (1) gives the second equality in (2).
+The first equality follows because
+$\int_{[a,b)}dE=E(b^-)-E(a^-)=0$. The integral is
 strictly positive before the minus sign: $E$ cannot vanish
 identically on a nonempty interval, since between prime-power atoms
 it has derivative $-1$.
@@ -109,10 +114,30 @@ $$
 =-p_s^2J_0\int_a^b\frac{E(x)^2}{x^2F(x)^2}dx<0.
 \quad}                                                       \tag{5}
 $$
+The frozen score in (5) has zero ordinary-base integral, since the
+same Fubini calculation gives
+$$
+\int_0^\infty B_0^{[a,b)}(Y)dY
+=p_s^2J_0\int_{[a,b)}dE
+=p_s^2J_0(E(b^-)-E(a^-))=0.
+$$
+Therefore the actual score itself satisfies
+$$
+\boxed{\quad
+\int_0^\infty B_s^{[a,b)}(Y)dY
+=-p_s^2J_0\int_a^b\frac{E(x)^2}{x^2F(x)^2}dx<0.
+\quad}                                                       \tag{6}
+$$
+For consecutive zero intervals, these identities telescope exactly:
+if $a=z_0<z_1<\cdots<z_N=b$ are continuous zeros, then the sum of
+their source-restricted scores is $B_s^{[a,b)}$ pointwise, and their
+negative entropy integrals add to the right side of (6).
 Only bases $Y\in(a/2,b)$ can contribute. Equation (5) compares the
-actual and frozen ground after source restriction and base averaging.
-It does not give a sign for $B_s(Y)$ itself or an RH-scale bound for
-the unrestricted score.
+actual and frozen ground after source restriction and base averaging;
+(6) is the stronger integrated sign for the actual score. Neither
+identity gives a sign for $B_s(Y)$ at each base or an RH-scale bound
+for the unrestricted score, whose windows can include source outside
+$[a,b)$.
 
 For the oscillation input, see Montgomery and Vaughan,
 [*Multiplicative Number Theory I*, Chapter 15, Theorem 15.11](https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/19.0_pp_463_485_Oscillations_of_error_terms.pdf).
