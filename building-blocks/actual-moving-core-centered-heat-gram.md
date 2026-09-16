@@ -272,4 +272,7 @@ At $R(U)=100\log^2(2+U)$, the same derivative estimate yields
 \tag{25}
 \]
 Both readouts retain the exact ordered Goldbach Gram. Neither is a
-prime-error upper bound or a sign for the full Weil row.
+prime-error upper bound or a sign for the full Weil row. The
+[moving frequency-separation theorem](actual-moving-heat-ground-frequency-separation.md)
+quantifies why this positive scalar readout does not approximate the
+actual killed ground in physical $L^2$ at an affordable heat-input cost.
