@@ -167,3 +167,13 @@ For the limit, \(\Theta_\omega(u)\to1\) for almost every real \(u\). The quotien
 \tag{20}
 \]
 In particular, under RH the set of \(c>0\) with \(F_\omega(c)\le1/2\) has measure \(o(\omega)\), by Chebyshev's inequality. Thus RH supplies a controlled \(L^2\) scaling limit equal to \(1\), including every compact fixed-\(c\) interval. Equation (20) alone gives no pointwise convergence or pointwise positivity. Suzuki's separate \(R_\omega(x)\to1\) theorem is for each fixed \(\omega\) under RH and is likewise not uniform at \(x=e^{c/\omega}\). Unconditionally, (2), (8), and (12) are the conclusions established here; the fixed-\(c\) sign and pointwise limit remain open.
+
+There is an exact converse at the level of **mean-square finiteness**:
+\[
+\boxed{\displaystyle
+\mathrm{RH}\quad\Longleftrightarrow\quad
+\exists\,\omega_0>0\ \forall\,0<\omega<\omega_0:
+\int_0^\infty|F_\omega(c)-1|^2dc<\infty.}
+\tag{21}
+\]
+Indeed, after \(c=\omega\log x\), finiteness is precisely [Suzuki's Theorem A.1(2)](https://arxiv.org/html/1204.1827v2) and makes \(\Theta_\omega\) inner. If RH fails at a zero \(\rho=\beta+i\gamma\) with \(\beta>1/2\), then for every sufficiently small \(0<\omega<\beta-1/2\), the denominator of \(\Theta_\omega\) vanishes at the upper-half-plane point \(z=i(\rho-1/2-\omega)\), while its numerator \(\xi(\rho-2\omega)\) is nonzero by isolation of zeros. Hence the integral in (21) is infinite. The forward implication follows from innerness under RH. The decay rate in (20) therefore describes an RH-strength family condition, not an unconditional estimate.
