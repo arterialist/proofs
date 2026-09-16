@@ -209,8 +209,9 @@ prime-two sign multiplicativity, exact-multiple cancellation, and the
 physical-value identity underlying the normalized carry in (10).
 It also proves the rigidity conclusion (13) from (12) and from
 operator conjugacy, and the existence of a nonzero carry coefficient
-for a nontrivial sign, with standard mathlib axioms. Equations (4)--(8),
-the weighted Hilbert realization and norm bounds (11), (14), the
-sharpness witness at \(N=8\), and the full analytic Weil comparison are written
-mathematics, not Lean formalized. These finite identities give no RH
-conclusion.
+for a nontrivial sign. The multiplicative \(\chi_2\chi_3\) witness,
+its exact conjugacy through eight cells, and its failure at nine are
+also formalized, all with standard mathlib axioms. Equations
+(4)--(8), the weighted Hilbert realization and norm bounds (11),
+(14), and the full analytic Weil comparison are written mathematics,
+not Lean formalized. These finite identities give no RH conclusion.

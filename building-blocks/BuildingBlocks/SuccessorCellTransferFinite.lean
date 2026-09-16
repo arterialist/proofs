@@ -228,6 +228,90 @@ theorem signGauge_transfer_conjugacy_rigid (N : ℕ) (χ : ℕ → ℝ)
   simp [z, hdiv] at hd
   linarith
 
+/-- A global multiplicative sign showing that the ninth-cell cutoff
+    in the rigidity theorem cannot be lowered to eight. -/
+def twoThreeGauge (n : ℕ) : ℝ :=
+  (-1) ^ (padicValNat 2 n + padicValNat 3 n)
+
+theorem twoThreeGauge_mul {a b : ℕ} (ha : a ≠ 0) (hb : b ≠ 0) :
+    twoThreeGauge (a * b) = twoThreeGauge a * twoThreeGauge b := by
+  haveI : Fact (Nat.Prime 2) := ⟨by norm_num⟩
+  haveI : Fact (Nat.Prime 3) := ⟨by norm_num⟩
+  simp [twoThreeGauge, padicValNat.mul ha hb, pow_add]
+  ring
+
+private theorem twoThreeGauge_one : twoThreeGauge 1 = 1 := by
+  simp [twoThreeGauge]
+
+private theorem twoThreeGauge_two : twoThreeGauge 2 = -1 := by
+  have h : padicValNat 3 2 = 0 :=
+    padicValNat.eq_zero_of_not_dvd (by norm_num)
+  simp [twoThreeGauge, h]
+
+private theorem twoThreeGauge_three : twoThreeGauge 3 = -1 := by
+  have h : padicValNat 2 3 = 0 :=
+    padicValNat.eq_zero_of_not_dvd (by norm_num)
+  simp [twoThreeGauge, h]
+
+private theorem twoThreeGauge_five : twoThreeGauge 5 = 1 := by
+  have h2 : padicValNat 2 5 = 0 :=
+    padicValNat.eq_zero_of_not_dvd (by norm_num)
+  have h3 : padicValNat 3 5 = 0 :=
+    padicValNat.eq_zero_of_not_dvd (by norm_num)
+  simp [twoThreeGauge, h2, h3]
+
+private theorem twoThreeGauge_seven : twoThreeGauge 7 = 1 := by
+  have h2 : padicValNat 2 7 = 0 :=
+    padicValNat.eq_zero_of_not_dvd (by norm_num)
+  have h3 : padicValNat 3 7 = 0 :=
+    padicValNat.eq_zero_of_not_dvd (by norm_num)
+  simp [twoThreeGauge, h2, h3]
+
+private theorem twoThreeGauge_four : twoThreeGauge 4 = 1 := by
+  simpa [twoThreeGauge_two] using
+    twoThreeGauge_mul (a := 2) (b := 2) (by norm_num) (by norm_num)
+
+private theorem twoThreeGauge_six : twoThreeGauge 6 = 1 := by
+  simpa [twoThreeGauge_two, twoThreeGauge_three] using
+    twoThreeGauge_mul (a := 2) (b := 3) (by norm_num) (by norm_num)
+
+private theorem twoThreeGauge_eight : twoThreeGauge 8 = -1 := by
+  simpa [twoThreeGauge_two, twoThreeGauge_four] using
+    twoThreeGauge_mul (a := 2) (b := 4) (by norm_num) (by norm_num)
+
+private theorem twoThreeGauge_nine : twoThreeGauge 9 = 1 := by
+  simpa [twoThreeGauge_three] using
+    twoThreeGauge_mul (a := 3) (b := 3) (by norm_num) (by norm_num)
+
+theorem twoThreeGauge_carry_through_eight (r : ℕ)
+    (hr2 : 2 ≤ r) (hr8 : r ≤ 8) :
+    twoThreeGauge r * twoThreeGauge (r / 2) = twoThreeGauge 2 := by
+  interval_cases r <;> norm_num [twoThreeGauge_one, twoThreeGauge_two,
+    twoThreeGauge_three, twoThreeGauge_four, twoThreeGauge_five,
+    twoThreeGauge_six, twoThreeGauge_seven, twoThreeGauge_eight]
+
+/-- The nontrivial sign really does conjugate the *whole* doubling
+    transfer through eight cells on vectors zero at index zero. -/
+theorem twoThreeGauge_transfer_conjugacy_eight (z : ℕ → ℝ)
+    (hz : z 0 = 0) :
+    signGauge twoThreeGauge (transfer 8 2 (signGauge twoThreeGauge z)) =
+      fun r => twoThreeGauge 2 * transfer 8 2 z r := by
+  funext r
+  by_cases hr : r ≤ 8
+  · have hd := signGauge_transfer_defect 8 2 r twoThreeGauge z hr
+    by_cases hr2 : 2 ≤ r
+    · rw [twoThreeGauge_carry_through_eight r hr2 hr,
+        sub_self, zero_mul] at hd
+      exact sub_eq_zero.mp hd
+    · have hdiv : r / 2 = 0 := by omega
+      rw [hdiv, hz, mul_zero] at hd
+      exact sub_eq_zero.mp hd
+  · simp [signGauge, transfer, hr]
+
+theorem twoThreeGauge_fails_at_nine :
+    twoThreeGauge 9 * twoThreeGauge (9 / 2) ≠ twoThreeGauge 2 := by
+  norm_num [twoThreeGauge_nine, twoThreeGauge_four, twoThreeGauge_two]
+
 #print axioms div_eq_iff_child
 #print axioms transfer_child
 #print axioms transfer_mul
@@ -240,5 +324,9 @@ theorem signGauge_transfer_conjugacy_rigid (N : ℕ) (χ : ℕ → ℝ)
 #print axioms multiplicative_sign_rigidity
 #print axioms multiplicative_sign_defect_exists
 #print axioms signGauge_transfer_conjugacy_rigid
+#print axioms twoThreeGauge_mul
+#print axioms twoThreeGauge_carry_through_eight
+#print axioms twoThreeGauge_transfer_conjugacy_eight
+#print axioms twoThreeGauge_fails_at_nine
 
 end BuildingBlocks.SuccessorCellTransferFinite
