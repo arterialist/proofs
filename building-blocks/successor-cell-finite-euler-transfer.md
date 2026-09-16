@@ -385,8 +385,10 @@ its exact conjugacy through eight cells, and its failure at nine are
 also formalized. The exact binary-tree phase for all \(2^k\) shifts,
 simultaneous 2-/3-shift sign rigidity (16), and its nonzero-complex
 phase extension compile as well. The two interior shell identities
-(17), exact three-child weight (18), and logarithmic carry bound
-(20) also compile, all with standard mathlib axioms. Equations
+(17), exact three-child weight (18), logarithmic carry bound (20),
+and the normalized estimate
+\(|e^{it\log(r/dn)}-1|\le|t|/n\) also compile, all
+with standard mathlib axioms. Equations
 (4)--(8), the weighted Hilbert realization and norm bounds (11),
 (14), (19), (21), (22), and the full analytic Weil comparison are
 written mathematics, not Lean formalized. These finite identities

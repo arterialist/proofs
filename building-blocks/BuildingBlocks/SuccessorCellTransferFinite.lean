@@ -1,6 +1,7 @@
 import Mathlib.Data.Nat.Init
 import Mathlib.Data.Nat.Log
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.NumberTheory.Padics.PadicVal.Basic
 import Mathlib.Tactic
 
@@ -154,6 +155,41 @@ theorem log_successor_carry_bound (d n j : ℕ) (hd : 0 < d)
   · have hlog := Real.log_le_sub_one_of_pos
         (by positivity : 0 < (1 : ℝ) + (j : ℝ) / ((d : ℝ) * n))
     nlinarith
+
+/-- The complex unit-circle exponential is one-Lipschitz along
+    the imaginary axis. -/
+theorem norm_exp_imag_sub_one_le (x : ℝ) :
+    ‖Complex.exp ((x : ℂ) * Complex.I) - 1‖ ≤ |x| := by
+  have hnormsq :
+      ‖Complex.exp ((x : ℂ) * Complex.I) - 1‖ ^ 2 =
+        2 - 2 * Real.cos x := by
+    rw [Complex.sq_norm, Complex.normSq_sub]
+    simp [Complex.normSq_eq_norm_sq, Complex.exp_mul_I,
+      Complex.cos_ofReal_re]; norm_num
+  have hcos := Real.one_sub_sq_div_two_le_cos (x := x)
+  nlinarith [norm_nonneg (Complex.exp ((x : ℂ) * Complex.I) - 1),
+    abs_nonneg x, sq_abs x]
+
+/-- A smooth arithmetic phase changes by at most `|t|/n` across
+    any successor carry from parent `n`, regardless of the dilation. -/
+theorem norm_exp_successor_carry_le (t : ℝ) (d n j : ℕ)
+    (hd : 0 < d) (hn : 0 < n) (hj : j < d) :
+    ‖Complex.exp
+        (((t * Real.log (((d * n + j : ℕ) : ℝ) /
+            ((d * n : ℕ) : ℝ)) : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+      |t| / (n : ℝ) := by
+  have hcarry := log_successor_carry_bound d n j hd hn hj
+  calc
+    ‖Complex.exp
+          (((t * Real.log (((d * n + j : ℕ) : ℝ) /
+              ((d * n : ℕ) : ℝ)) : ℝ) : ℂ) * Complex.I) - 1‖ ≤
+        |t * Real.log (((d * n + j : ℕ) : ℝ) /
+          ((d * n : ℕ) : ℝ))| := norm_exp_imag_sub_one_le _
+    _ = |t| * Real.log (((d * n + j : ℕ) : ℝ) /
+          ((d * n : ℕ) : ℝ)) := by rw [abs_mul, abs_of_nonneg hcarry.1]
+    _ ≤ |t| * (1 / (n : ℝ)) :=
+      mul_le_mul_of_nonneg_left hcarry.2.le (abs_nonneg t)
+    _ = |t| / (n : ℝ) := by ring
 
 /-- The exact cell-length weight in the two opposite log-2 collars. -/
 noncomputable def collarWeight (m d : ℕ) : ℝ :=
@@ -762,5 +798,7 @@ theorem treeTwoGauge_three_high_shell (k j : ℕ) (hk : 2 ≤ k)
 #print axioms treeTwoGauge_three_high_shell
 #print axioms sum_three_child_lengths
 #print axioms log_successor_carry_bound
+#print axioms norm_exp_imag_sub_one_le
+#print axioms norm_exp_successor_carry_le
 
 end BuildingBlocks.SuccessorCellTransferFinite
