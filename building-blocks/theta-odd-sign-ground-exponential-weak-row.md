@@ -177,3 +177,118 @@ that full residual, with same-half increments and separate cross
 variances, is still required. The weak-domain and far-tail identities
 are written analysis; they are not Lean formalizations of the actual
 killed ground or the theta affine bound.
+
+## A quantitative actual-prime bound for the odd row
+
+The qualitative limit (9) admits the same unconditional PNT-scale
+improvement as the [even weak row](theta-weak-ground-pnt-density-cancellation.md),
+despite the jump of $z_t^{\rm odd}$ at zero.
+
+**Theorem.** For every fixed core $R>0$ there are an absolute $c>0$
+and a finite $C_{R,\psi}$ such that, for all sufficiently small $t>0$,
+\[
+ \boxed{\quad
+ \sqrt t\,|Q_W(F,z_t^{\rm odd})|
+ \le C_{R,\psi}\exp[-c\sqrt{\log(1/t)}].
+ \quad} \tag{10}
+\]
+The estimate retains the complete Mangoldt source, the continuous
+density subtraction from $x=1$, the gamma multiplier, and both pole
+moments. It gives no sign or RH-scale bound.
+
+Here is a proof that keeps the jump rather than differentiating through
+it. The theta envelope gives $F\in L^1(e^{|u|/2}du)$, and for each
+fixed $t$ the scaling tail gives
+$z_t^{\rm odd}\in L^1(e^{|v|/2}dv)$; the complete prime pairing is
+absolutely convergent by the weak-row domain theorem above. Thus the
+following density and pole manipulations are legitimate. For any pair
+with this absolute convergence, the density
+translation and the two pole products satisfy the exact identity
+\[
+ P_{\rm pole}(F,z)-S_{\rm den}(F,z)
+ =\iint F(u)z(v)e^{-|u-v|/2}\,du\,dv.
+ \tag{11}
+\]
+Put $E(x)=\psi(x)-x$ for $x\ge1$, with $\psi$ the complete
+Chebyshev function, and let $\mathcal D(F,z)$ be the signed Stieltjes
+remainder defined in the linked even-row theorem. Thus
+\[
+ Q_W(F,z)=A(F,z)+
+ \iint F(u)z(v)e^{-|u-v|/2}\,du\,dv-\mathcal D(F,z).
+ \tag{12}
+\]
+The difference measure $dE=d\psi-dx$ includes the density interval
+$(1,2)$ and every prime power. Its convention $E(1)=-1$ retains the
+lower endpoint in integration by parts.
+
+Write $V=\log(1/t)$ and $X=e^{V/2}$. The scaling bounds
+$|f(x)|+|xf'(x)|\le C\min(1,x^{-1})$ give
+$\|h_t\|_{H^1}^2\le C(1+V)$ for
+$h_t(v)=f(te^{|v|})$. Multiplication by $\operatorname{sgn}$ is the
+difference of two bounded hard half-line projections on the physical
+logarithmic form space. Therefore
+$\|z_t^{\rm odd}\|_{\mathcal H}\le C\sqrt{1+V}$, with its contact
+jump included, and $|A(F,z_t^{\rm odd})|\le C_{R,\psi}\sqrt{1+V}$.
+The second term in (12) is $O_{R,\psi}(1)$ because
+$\|z_t^{\rm odd}\|_\infty$ is uniformly bounded and $F\in L^1$.
+
+For $|u|\le V/4$, the entire range $1<x\le X$ of the Stieltjes
+integral is bounded without integration by parts. Positivity of
+$d\psi$, the density $dx$, and the complete Chebyshev estimate give
+\[
+ \left|\int_{(1,X]}x^{-1/2}
+ [z_t^{\rm odd}(u+\log x)+z_t^{\rm odd}(u-\log x)]\,dE(x)\right|
+ \le C\sqrt X=C e^{V/4}.                         \tag{13}
+\]
+This range includes every sign crossing $x=e^{|u|}$ and its jump,
+because $e^{|u|}<X$. It also includes the atom at $X$ when $X$ is
+an integer prime power.
+
+For $x>X$ and $|u|\le V/4$, the two shifted arguments have fixed
+signs. With $\tau_+=te^u$, $\tau_-=te^{-u}$,
+\[
+z_t^{\rm odd}(u+\log x)=f(\tau_+x),\qquad
+z_t^{\rm odd}(u-\log x)=-f(\tau_-x).
+ \tag{14}
+\]
+Their transition points $Y_\pm=\tau_\pm^{-1}$ exceed
+$e^{3V/4}>X$. The derivative bound
+\[
+ \left|\frac d{dx}\{x^{-1/2}f(\tau_\pm x)\}\right|
+ \le Cx^{-3/2}\min(1,Y_\pm/x)
+ \tag{15}
+\]
+now applies with no jump. The unconditional full-prime estimate
+$|E(x)|\le Cx\exp[-a\sqrt{\log x}]$, available for example from
+[Fiori--Kadiri--Swidinsky](https://arxiv.org/abs/2204.02588),
+follows after absorbing its logarithmic prefactor into a smaller
+$a>0$. Stieltjes integration by parts on $(X,\infty)$ retains
+$-E(X)X^{-1/2}f(\tau_\pm X)$ and gives
+\[
+ \left|\int_{(X,\infty)}x^{-1/2}f(\tau_\pm x)\,dE(x)\right|
+ \le C\sqrt{Y_\pm}\,e^{-a\sqrt{V/2}}
+ \le Ct^{-1/2}e^{|u|/2}e^{-a\sqrt{V/2}}.
+ \tag{16}
+\]
+
+On $|u|>V/4$, use $|z_t^{\rm odd}|=|h_t|$ and the elementary
+Chebyshev bound directly, exactly as in the even-row proof. It yields
+$Ct^{-1/2}e^{|u|/2}$ for the inner prime-and-density variation.
+Since $|F|\le P_\infty\Phi$, its integral over this $u$-tail is
+$O_{R,\psi}(t^{-1/2}e^{-c_0e^{V/2}})$. Integrating (13) and (16)
+against $|F(u)|$ therefore gives
+\[
+ |\mathcal D(F,z_t^{\rm odd})|
+ \le C_{R,\psi}t^{-1/2}e^{-c_1\sqrt V}.
+ \tag{17}
+\]
+The low-range term $e^{V/4}$ and the gamma and kernel terms
+$O_{R,\psi}(\sqrt{1+V})$ are absorbed after multiplication by
+$\sqrt t=e^{-V/2}$. Equations (12) and (17) prove (10).
+
+The sign-weighted ground $F$ is an odd physical mode; no
+multiplicative prime phase or successor-cell conjugation is used, so
+the [nondivisor carry defect](successor-cell-finite-euler-transfer.md)
+does not enter this estimate. The bound improves the particular odd
+weak row, while the common-score residual still requires its own
+same-half and cross-variance estimate.
