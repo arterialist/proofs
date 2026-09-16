@@ -354,3 +354,4 @@ import BuildingBlocks.FactorialRealCellEnergySplit
 import BuildingBlocks.FactorialRealCellCrossKernel
 import BuildingBlocks.FactorialRealCellDiscrepancyBounds
 import BuildingBlocks.FactorialRealCellMixedFubini
+import BuildingBlocks.FactorialRealCellDoubleFubini
