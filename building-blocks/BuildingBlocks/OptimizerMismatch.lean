@@ -175,8 +175,33 @@ theorem observed_optimizer_mismatch_joint_null
   simp [affineOptimizer_eq_zero_of_joint_null zQ m dQ hnull] at hsq
   rw [hsq]
 
+/-- Cauchy--Schwarz in the nonnegative difference form compresses the whole
+joint-null loss to the single factor `Qqq / Cqq`.  The hypotheses are the
+scalar consequences of Hermitian positivity and `Qqq = Cqq + Dqq`. -/
+theorem jointNull_loss_le_covariance_ratio
+    {Dff Dqq Cqq Qqq mixedSq : ℝ}
+    (hCqq : 0 < Cqq)
+    (hQ : Qqq = Cqq + Dqq)
+    (hmixed : mixedSq ≤ Dff * Dqq) :
+    Dff + mixedSq / Cqq ≤ (Qqq / Cqq) * Dff := by
+  rw [div_mul_eq_mul_div]
+  apply (le_div_iff₀ hCqq).2
+  rw [hQ]
+  field_simp [hCqq.ne']
+  nlinarith
+
+/-- Scalar form of the one-vector Ritz lower bound for a positive inverse. -/
+theorem inverse_ritz_lower_bound
+    {Cqq normSq energy : ℝ}
+    (henergy : 0 < energy)
+    (hCS : normSq ^ 2 ≤ Cqq * energy) :
+    normSq ^ 2 / energy ≤ Cqq := by
+  exact (div_le_iff₀ henergy).2 (by simpa [mul_comm] using hCS)
+
 end BuildingBlocks.OptimizerMismatch
 
 #print axioms BuildingBlocks.OptimizerMismatch.affine_completion_of_square
 #print axioms BuildingBlocks.OptimizerMismatch.optimizer_mismatch_identity
 #print axioms BuildingBlocks.OptimizerMismatch.observed_optimizer_mismatch_joint_null
+#print axioms BuildingBlocks.OptimizerMismatch.jointNull_loss_le_covariance_ratio
+#print axioms BuildingBlocks.OptimizerMismatch.inverse_ritz_lower_bound
