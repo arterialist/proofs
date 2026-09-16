@@ -310,6 +310,96 @@ Every contributing clamped pair has m+n<=s. Summing the survival bound with the 
 
 In particular, j>=X-1 forces at least three quarters of the shifted original weighted count to leak. More generally G(s)>=psi(s/2)^2, so the right side of (16) is bounded below by the displayed coefficient times psi(s/2)^2, using only pairs with both labels at most s/2. This is a finite arithmetic lower bound independent of PNT. It explains why an upper estimate of raw leakage cannot remove the density loss at growing shifts. It gives no sign or RH-scale bound after density centering, and it does not apply to the signed compensated iterate. RH Proof derived this bound from the complete birth laws. It remains written mathematics, with no priority claim and no Lean formalization yet.
 
+### Mesoscopic successor leakage has a uniform first term
+
+The exact escape formula gives a sharper result when the number of raw
+successor steps is smaller than the Goldbach cutoff.  Let
+\(\Delta_X=\sup_{X/2\le y\le 2X}|\psi(y)-y|\) and
+\(\delta_Y=\sup_{y\ge Y}|\psi(y)/y-1|\).  For real \(X\ge16\) and
+integers \(1\le j\le X/4\), the Chebyshev constant in (13) also gives
+the **finite error estimate**
+\[
+\boxed{\quad
+\left|\mathcal G(X+2j)-G_j(X)-2jX\right|
+ \le Cj\left(j+\sqrt X+\Delta_X+X\delta_{\sqrt X}\right).
+\quad}                                                        \tag{17}
+\]
+Here \(C\) is absolute once a Chebyshev constant is fixed.  Consequently,
+uniformly over any range \(1\le j\le\eta(X)X\) with \(\eta(X)\to0\),
+\[
+\mathcal G(X+2j)-G_j(X)=2jX+o(jX).                       \tag{18}
+\]
+In particular \(j=\lfloor\sqrt X\rfloor\) has leakage
+\(2jX+o(X^{3/2})\).  This is an unconditional asymptotic for the
+**uncentered transport loss**.  It does not bound the centered original
+Goldbach error or the signed ports of the compensated iterate.
+
+To prove (17), write \(s=X+2j\), \(M=s-j-1=X+j-1\), and use the
+clamped label measure \(\nu_j\) from the proof of (13).  If a pair
+\((m,n)\) admitted by \(m+n\le s\) is removed by clamping, at least
+one label, say \(m\), is at most \(j\).  The other must satisfy
+\(n>M\): if \(n\le j+1\), both clamped labels add to \(2j+2\le s\),
+while if \(n>j+1\) its clamped value is \(n\).  Hence the complete
+ordered clamping loss is bounded by
+\[
+0\le\mathcal G(s)-\overline G_j(X)
+ \le2\psi(j)\{\psi(s)-\psi(M)\}
+ \le Cj(j+\Delta_X).                                      \tag{19}
+\]
+All endpoints here use the right-continuous \(\psi\); the inequality
+\(n>M\) keeps a possible atom at \(M\) on the admitted side.
+
+For the transport loss, split (14) into its rational and logarithmic
+terms.  The latter is \(O(j^2)\) by the logarithmic estimate already
+used in (13).  The rational term is exactly
+\[
+2j\frac{s-j}{s}Q,
+\qquad
+Q=\sum_{A\le M}\nu_j(\{A\})\frac{\psi(s-A)}{s-A}.
+\]
+The total clamped mass in this sum is \(\psi(M)\), since
+\(M\ge j+1\).  On \(s-A\ge\sqrt X\), the ratio in \(Q\) differs
+from one by at most \(\delta_{\sqrt X}\), costing at most
+\(C X\delta_{\sqrt X}\).  On \(s-A<\sqrt X\), the clamped mass is
+at most \(\psi(s)-\psi(s-\sqrt X)\le\sqrt X+2\Delta_X\), and
+both the ratio and one are bounded by a Chebyshev constant.  Thus
+\[
+|Q-\psi(M)|\le C\{X\delta_{\sqrt X}+\sqrt X+\Delta_X\},
+\qquad
+|Q-X|\le C\{j+X\delta_{\sqrt X}+\sqrt X+\Delta_X\}.
+\]
+Because \((s-j)/s=1+O(j/X)\), these bounds and (19) prove (17).
+The prime number theorem gives \(\Delta_X=o(X)\) and
+\(\delta_{\sqrt X}=o(1)\), yielding (18) uniformly.  Every
+prime-power label, early clamped atom and continuous tail of (14) is
+retained.  The finite estimate and its PNT corollary are written
+analysis, not Lean-formalized.
+
+The mesoscopic estimate also joins the macroscopic PNT argument into a
+single density law **uniform over every integer successor depth**:
+\[
+\boxed{\quad
+\lim_{X\to\infty}\sup_{j\ge1}
+\frac{|\mathcal G(X+2j)-G_j(X)-2j(X+j)|}{j(X+j)}=0.
+\quad}                                                        \tag{20}
+\]
+For completeness, fix \(0<\varepsilon\le1/4\).  When
+\(j\le\varepsilon X\), (17) and the additional \(2j^2\) in (20)
+bound the displayed quotient by \(C\varepsilon+o(1)\), uniformly in
+\(j\).  When \(j\ge\varepsilon X\), put \(s=X+2j\).  The positive-measure
+convolution estimate used to prove (15), together with PNT, gives
+\(\mathcal G(s)=s^2/2+o(s^2)\) uniformly for \(s\ge X\).
+The transported cumulative satisfies
+\(|\Psi_j(u)-u|\le u\delta_{\varepsilon X}\) for \(1\le u\le X\)
+and is zero below one, so the same estimate gives
+\(G_j(X)=X^2/2+o(X^2)\) uniformly for \(j\ge\varepsilon X\).
+As \((s^2-X^2)/2=2j(X+j)\) and both \(s^2/[j(X+j)]\) and
+\(X^2/[j(X+j)]\) are bounded in this range by constants depending
+only on \(\varepsilon\), the quotient tends uniformly to zero there.
+Letting \(\varepsilon\downarrow0\) proves (20).  This relative density
+law does not control the centered Goldbach fluctuation at the
+\(X^{3/2}\) scale.
+
 ## Dependencies and formal scope
 
 The [actual successor charge](actual-successor-resonance-charge-cocycle.md) fixes $\kappa$ and its convergent half-moment difference. The [factorial potential](factorial-ground-state-original-l2-domain.md) fixes the source in (11)–(12). The positive transport, additive convolution and Stieltjes integration use classical measure and summation tools; Matsumoto–Suzuki supply the attributed explicit formula and its separate conditional consumers. Every complete prime-power tail and both compensation terms are retained. The transport, escape bound and weighted comparison in this chapter are written proofs and are not formalized in Lean.
