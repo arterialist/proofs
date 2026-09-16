@@ -270,4 +270,4 @@ A useful next theorem would have to bound one of the three linked terms in
 again cannot supply that missing covariance estimate.
 
 
-The displayed finite algebraic identities remain Lean formalization obligations. No RH conclusion is asserted.
+[CenteredGoldbachFiniteAlgebra.lean](BuildingBlocks/CenteredGoldbachFiniteAlgebra.lean) formalizes the second-difference identity, prefix telescope, both finite Abel forms and the endpoint-retaining real energy summation by parts. No RH conclusion is asserted.
