@@ -351,3 +351,4 @@ import BuildingBlocks.FactorialRealCellSteps
 import BuildingBlocks.FactorialRealCellDiscrepancy
 import BuildingBlocks.FactorialRealCellMajorant
 import BuildingBlocks.FactorialRealCellEnergySplit
+import BuildingBlocks.FactorialRealCellCrossKernel
