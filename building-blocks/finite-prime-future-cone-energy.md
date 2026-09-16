@@ -67,5 +67,9 @@ observation horizon $N$. The theorem rules out a proposed *global*
 quadratic conservation principle. A useful damping law would have to
 control the actual truncated signed correlations.
 
-All statements here are elementary written proofs from the divisor
-identity. They are not Lean formalizations and make no RH claim.
+The subset-cube recurrence, energy bound, positivity, and strict increase
+for $p\ge5$ are formalized in
+[FinitePrimeFutureConeEnergy.lean](BuildingBlocks/FinitePrimeFutureConeEnergy.lean).
+The identification with the Möbius divisor sum, the sample values, density
+bound, multiplicative moments, and Abel limit remain written arguments.
+None of these statements makes an RH claim.
