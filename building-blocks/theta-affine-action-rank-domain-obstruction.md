@@ -34,6 +34,68 @@ Likewise, any bounded operator rank \(B\) claimed to match the action at \(v\), 
 \]
 already implies \(v\in D(K)\) by the operator representation theorem. Thus replacing (2) by a different bounded finite-rank formula cannot bypass the missing domain step. None of this rules out approximating \(v\) by resolvent-smoothed vectors in \(D(K)\); each such approximation still needs its own residual and affine-optimizer estimate.
 
+## Resolvent ranks and their exact constrained gain
+
+The last qualification has a sharp quantitative form. Put
+\[
+ v_\eta=(I+\eta K)^{-1}v,\quad
+ r_\eta=(K-M)v_\eta,\quad
+ d_\eta=n[v_\eta],\qquad \eta>0.
+\tag{5}
+\]
+The spectral theorem gives \(v_\eta\to v\) in \(V\). Thus \(d_\eta\to d>0\), and for all sufficiently small \(\eta\) the bounded positive rank
+\[
+ B_\eta=\frac{r_\eta\otimes r_\eta}{d_\eta}
+\]
+satisfies \(K\ge M+B_\eta\) in form order and \((M+B_\eta)v_\eta=Kv_\eta\). Its residual at the **old** optimizer does tend to zero:
+\[
+ n[v]-\langle B_\eta v,v\rangle
+ =d-\frac{|n(v_\eta,v)|^2}{d_\eta}\longrightarrow0.
+\tag{6}
+\]
+This does not measure the gain of the affine comparison, because the optimizer changes when the rank is added.
+
+Here is that gain exactly. Write \(q=S_q\ne0\), \(s=S_f\), and let \(v\) minimize \(\langle Mx,x\rangle-2\langle s,x\rangle\) under \(\langle x,q\rangle=-m\). Define the bounded positive constrained inverse
+\[
+ T=M^{-1}-\frac{(M^{-1}q)\otimes(M^{-1}q)}{\langle M^{-1}q,q\rangle},
+ \qquad Tq=0.
+\tag{7}
+\]
+If \(F_M\) and \(F_{M+B_\eta}\) are the two constrained minimum values, completing the square on the tangent space \(q^\perp\) gives
+\[
+ \boxed{\quad
+ F_{M+B_\eta}-F_M
+ =\frac{|\langle r_\eta,v\rangle|^2}
+ {d_\eta+\langle r_\eta,T r_\eta\rangle}
+ =\frac{|n(v_\eta,v)|^2}
+ {d_\eta+\langle r_\eta,T r_\eta\rangle}.
+ \quad}
+\tag{8}
+\]
+In detail, write a feasible vector as \(v+h\) with \(h\perp q\). The old quadratic increases by \(\langle Mh,h\rangle\), and the new rank adds \(|\langle r_\eta,v+h\rangle|^2/d_\eta\). Minimizing this one-dimensional perturbation of the tangent quadratic proves (8). It retains the actual affine score constraint; replacing \(T\) by \(M^{-1}\) would be wrong.
+
+There is a dichotomy. Since \(q\in V\),
+\(\langle r_\eta,q\rangle=n(v_\eta,q)\to n(v,q)\), so the component of \(r_\eta\) parallel to \(q\) remains bounded. The variational characterization of \(T\) gives
+\[
+ \langle r,T r\rangle
+ =\sup_{h\perp q}\{2\langle r,h\rangle-\langle Mh,h\rangle\}
+ \ge\frac{\|P_{q^\perp}r\|^2}{\|M\|}.
+\tag{9}
+\]
+If \(v\notin D(K)\), spectral monotone convergence shows \(\|Kv_\eta\|\to\infty\). Since \(M\) is bounded, \(\|r_\eta\|\to\infty\), hence (9) forces \(\langle r_\eta,T r_\eta\rangle\to\infty\). The numerator of (8) tends to \(d^2\). Therefore
+\[
+ \boxed{\quad v\notin D(K)
+ \quad\Longrightarrow\quad
+ F_{M+B_\eta}-F_M\longrightarrow0,\quad}
+\tag{10}
+\]
+even though (6) tends to zero. If \(v\in D(K)\), then \(r_\eta\to(K-M)v\) in \(H\), and (8) tends to the finite positive gain
+\[
+ \frac{d^2}{d+\langle(K-M)v,T(K-M)v\rangle}.
+\tag{11}
+\]
+Thus resolvent smoothing does produce legal comparisons, but a small residual at the old trial vector is not itself a payment certificate. In the unresolved domain case the regularized ranks become increasingly expensive in the constrained inverse denominator and yield no limiting improvement.
+
 ## What the actual theta regularity proves
 
 The [prime-profile full-form proof](theta-prime-profile-full-form-domain.md) establishes \(w_p\in V\) and \(v_U\in V\), which is exactly what the conditional-edge estimator needs. It does not establish \(w_p\in D(K)\) or \(v_U\in D(K)\). There is a useful exact test for the first upgrade. The actual sign action and the continuous-profile domain theorem give
@@ -45,10 +107,10 @@ Consequently
 \[
  \boxed{\quad w_p\in D(K)
  \quad\Longleftrightarrow\quad \varepsilon\in D(K^2).\quad}
-\tag{5}
+\tag{12}
 \]
-Neither side of (5) follows from the proved \(\varepsilon\in D(K^{3/2})\).
+Neither side of (12) follows from the proved \(\varepsilon\in D(K^{3/2})\).
 
-The physical form proof explains why simply repeating its estimates does not give (5). After conjugation, the original theta operator has the form \(\omega A\omega-K_p\), where \(\omega=\sqrt{\Phi/(2\cosh(u/2))}\), \(K_p\) is bounded, and \(A\) is the logarithmic Fourier multiplier. For \(g=\Phi\psi\), the original operator-domain equation controls \(\omega Ag\in L^2(du)\); the physical form theorem controls \(g\in D(A^{1/2})\). Neither statement alone controls \(Ag\in L^2(du)\), since \(\omega\) vanishes rapidly at infinity. Hard cutoffs and bounded smooth multipliers preserve the physical form domain, but do not supply a derivative of logarithmic order. The full-eigenvector smoothness theorem in [jump eigenfunction regularity](theta-jump-eigenfunction-regularity.md#16-weighted-translations-give-smoothness-and-strip-schwartz-decay) uses a homogeneous equation across the whole line. The killed ground has a hard boundary and a nonzero core-arrival source, so that theorem cannot be applied to it unchanged.
+The physical form proof explains why simply repeating its estimates does not give (12). After conjugation, the original theta operator has the form \(\omega A\omega-K_p\), where \(\omega=\sqrt{\Phi/(2\cosh(u/2))}\), \(K_p\) is bounded, and \(A\) is the logarithmic Fourier multiplier. For \(g=\Phi\psi\), the original operator-domain equation controls \(\omega Ag\in L^2(du)\); the physical form theorem controls \(g\in D(A^{1/2})\). Neither statement alone controls \(Ag\in L^2(du)\), since \(\omega\) vanishes rapidly at infinity. Hard cutoffs and bounded smooth multipliers preserve the physical form domain, but do not supply a derivative of logarithmic order. The full-eigenvector smoothness theorem in [jump eigenfunction regularity](theta-jump-eigenfunction-regularity.md#16-weighted-translations-give-smoothness-and-strip-schwartz-decay) uses a homogeneous equation across the whole line. The killed ground has a hard boundary and a nonzero core-arrival source, so that theorem cannot be applied to it unchanged.
 
 An action-matched affine rank therefore requires a new actual-theta theorem proving \(v_U\in D(K)\), or a different quantitative bound for \(n[v_U]\) that stays within the known form domain. Criterion (3) is a domain obstruction to the proposed rank, not a claim that the actual optimizer lies outside \(D(K)\). The remaining conditional variance and its arithmetic size are open.
