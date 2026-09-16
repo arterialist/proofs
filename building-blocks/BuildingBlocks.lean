@@ -431,6 +431,7 @@ import BuildingBlocks.CenteredGoldbachFiniteAlgebra
 import BuildingBlocks.ActualCenteredPoissonKernel
 
 import BuildingBlocks.OddDoublingFiniteMobius
+import BuildingBlocks.SuccessorCollarOddMobius
 import BuildingBlocks.ThetaMinimumMapConstant
 import BuildingBlocks.ThetaRadiusTwoRayleighCore
 import BuildingBlocks.ThetaRadiusTwoJ3RationalCore
