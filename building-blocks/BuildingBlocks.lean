@@ -384,3 +384,8 @@ import BuildingBlocks.FactorialBirthLcmGhost
 import BuildingBlocks.FactorialBirthLcmEnergy
 
 import BuildingBlocks.FactorialBirthInteriorBound
+
+import BuildingBlocks.FactorialCompensatedEnvelope
+import BuildingBlocks.FactorialReciprocalPrefix
+import BuildingBlocks.FactorialAbelEnvelope
+import BuildingBlocks.FactorialAbelClockEnergy

@@ -68,7 +68,7 @@ The requested whole dyadic work upper still needs the clock t>(2X)^(−1/2). On 
 
 The strong coefficient-one diagonal hypothesis remains refuted and is not invoked. This note gives an actual partial-clock signed upper bound, rather than a renamed doubling criterion or an assumed RH-scale reserve. No full Q_N upper estimate or actual RH proof follows yet.
 
-These are written proofs. Lean formalization of (1)–(7) has not been asserted. The exact floor mass, actual successor, positive-axis integrability and complete kernel are already represented in the published factorial modules, but that does not by itself formalize the new estimates.
+The exact compensated min-remainder response majorant (2) and logarithmic response estimate (3) now compile in FactorialCompensatedEnvelope.lean. The displayed logarithmic integral estimates (4)–(5) and block-work specialization (6)–(7) remain written in this notation. The exact floor mass, actual successor, positive-axis integrability and complete kernel are already represented in the published factorial modules, but that does not by itself formalize the new estimates.
 
 ## Consequence for the exact signed LCM boundary
 
@@ -92,4 +92,6 @@ For a single common dyadic clock T=(2X)^(−1/2), with X≥1, use N<2X in each s
 
 This is O(X²log²X) for the actual signed escaping boundary on that common intermediate clock. It does not bound absolute pairs or positive fibers. The full original compensated weight and every signed history are retained before the one-sided estimate. The omitted t>(2X)^(−1/2) is precisely the remaining clock, and no bound for it is proved here.
 
-Formal coverage: (8) is compiled in FactorialBirthInteriorBound.lean. The compensated harmonic/log response estimate (1)–(5), signed work identities and upper bound (6)–(7) in this notation, and combined boundary bounds (9)–(11) remain written mathematics. Exact birth and general pointwise work telescoping, full-clock integrability, and integrated LCM boundary identification are compiled prerequisites; they are not a formalization of these remaining logarithmic estimates.
+Formal coverage: (8) is compiled in FactorialBirthInteriorBound.lean. The compensated harmonic/log response majorant (2) and pointwise bound (3) now compile. The displayed logarithmic integral specializations (4)–(5), block-work identities and upper bound (6)–(7) in this notation, and combined boundary bounds (9)–(11) remain written mathematics. Exact birth and general pointwise work telescoping, full-clock integrability, and integrated LCM boundary identification are compiled prerequisites; they are not a formalization of these remaining logarithmic estimates.
+
+[The stronger reciprocal-prefix Abel bound](factorial-reciprocal-prefix-abel-clock-bound.md) now compiles |g_N(t)|≤3Nt and the log-free restricted energy and signed LCM boundary bounds. It supersedes the numerical logarithmic upper estimates for these restricted clocks, while preserving the old compensated envelope as a compiled alternate proof. The larger clock remains open.
