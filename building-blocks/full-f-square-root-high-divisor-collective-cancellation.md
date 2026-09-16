@@ -246,6 +246,62 @@ $$
 The complementary high-divisor histories therefore cancel the rough
 **far** density cross too, including its literal distance cutoff.
 
+The same mechanism controls the complete high/high pairing after a hard
+distance cutoff. Define
+$$
+K_H(n,m)=\mathbf1_{|n-m|>H}R_X(n,m),\qquad
+\mathcal Q_H(\tau,\sigma)
+=\iint K_H(n,m)\,d\tau(n)\,d\sigma(m).
+$$
+For every $H\ge0$,
+$$
+\boxed{\quad
+|\mathcal Q_H(\tau_D,\tau_D)|
+\ll_s e^{-c\sqrt{\log X}}.
+\quad}                                                     \tag{15}
+$$
+Indeed, with $m$ fixed, (4) and $\|w_Y\|_\infty\ll_s1/X$ give
+$\|R_X(\cdot,m)\|_\infty+
+\operatorname{Var}_{[X,4X]}R_X(\cdot,m)\ll_s X^{-2}$.
+Multiplication by $\mathbf1_{|\cdot-m|>H}$ adds at most two jumps, so
+the same bound holds for $K_H(\cdot,m)$ uniformly in $H,m$. Repeating
+the quotient grouping and Abel estimate (2)--(6) with this test gives
+$$
+\left|\sum_n t_D(n)K_H(n,m)\right|
+\ll_s \frac{\eta_X\log^2X}{X}.                              \tag{16}
+$$
+The exact divisor tail also supplies the elementary variation bound
+$$
+\sum_{X\le m<4X}|t_D(m)|
+\le\sum_{2\le q<4X/D}(\log q)
+         \#\{d>D:dq<4X\}
+\ll X\sum_{2\le q<4X/D}\frac{\log q}{q}
+\ll X\log^2X.                                         \tag{17}
+$$
+Summing (16) against $|t_D(m)|$ proves (15), after absorbing the fourth
+logarithmic power into a smaller decay constant.
+
+There is a genuine rough/rough far load inside (15). Use the first
+rough-semiprime rectangle of the linked note, with products in
+$[77X/50,667X/400)$, and a second rectangle with primes in
+$[7\sqrt X/5,29\sqrt X/20)$ and
+$[17\sqrt X/10,7\sqrt X/4)$. Its products lie in
+$[119X/50,203X/80)$. The two product intervals are separated by at
+least $57X/80>X/4$. For every $Y\in[13X/10,27X/20]$, products from
+both rectangles are strictly inside $[Y,2Y)$ with their ratios to $Y$
+bounded away from both endpoints. The prime number theorem gives
+total $[-t_D]$ mass $\asymp X/\log X$ in each rectangle, and the common
+$Y$ interval gives $R_X(n,m)\gg_s X^{-2}$ for every pair. Since all
+rough coefficients are nonpositive and $K_H\ge0$,
+$$
+\mathcal Q_H(\tau_R,\tau_R)\gg_s\frac1{\log^2X}
+\qquad(0\le H\le X/4).                                 \tag{18}
+$$
+Combining (15) and (18) shows that the sum of rough/complement crosses
+and complement self-pairing offsets an order-$1/\log^2X$ rough/rough
+far contribution. No sign is asserted for either compensating term
+separately; the hard-cutoff kernel need not be positive semidefinite.
+
 The theorem is a collective cancellation at the classical PNT/Mertens
 scale. Its error $e^{-c\sqrt{\log X}}$ is larger than $X^{-\delta}$ for
 every fixed $\delta>0$. It therefore does not pay the complete score at
