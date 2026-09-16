@@ -156,6 +156,12 @@ heat transform and this application of Landau are written analysis,
 not Lean theorems. The uncentered additive heat square itself is
 formalized in
 [GoldbachPrimeHeatConvolution.lean](BuildingBlocks/GoldbachPrimeHeatConvolution.lean).
+The finite ordered identity in (3), its exact discrete integral of
+$\psi$, and the match to the existing shifted heat coefficient are
+formalized in
+[GoldbachCumulativeFinite.lean](BuildingBlocks/GoldbachCumulativeFinite.lean).
+The real-variable limit, heat asymptotic and Landau application remain
+written mathematics.
 
 The same calculation proves (2a). If, for some $0<\eta<1/2$, either
 one-sided bound

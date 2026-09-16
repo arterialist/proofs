@@ -330,6 +330,7 @@ import BuildingBlocks.AutocorrelationRegularity
 import BuildingBlocks.FiniteWeilEvenPowerCertificate
 
 import BuildingBlocks.GoldbachPrimeHeatConvolution
+import BuildingBlocks.GoldbachCumulativeFinite
 import BuildingBlocks.FactorialQuotientConstraints
 import BuildingBlocks.FactorialFiniteRenewal
 import BuildingBlocks.FactorialPairedRenewal
