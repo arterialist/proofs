@@ -240,6 +240,22 @@ correlation between the actual finite Dirichlet polynomial and the
 critical-line phase of $\zeta$. Positivity of
 $\|d_N\|_2^2$ does not determine that correlation.
 
+The critical-line phase has an explicitly negative band. The
+[ball-arithmetic check](verification/renewal_critical_phase_interval.py)
+encloses the exact value at $\omega=12$ by
+\[
+\boxed{\quad -0.056<m(12)<-0.054.\quad}
+\tag{19}
+\]
+Continuity supplies symmetric open neighborhoods of $\omega=\pm12$
+where $m<0$. A nonzero real Schwartz function with smooth Fourier
+transform supported in those neighborhoods therefore has
+$\int_0^\infty H(s)C_f(s)ds<0$. This rules out nonnegative
+full-line renewal work for arbitrary smooth inputs, even though
+$m(0)=\ell>0$. It does **not** give a negative value for the
+distinguished prime packet $f_N$; its spectral weight in (18) is fixed
+by every $\Lambda(n)-1$ coefficient.
+
 The lag threshold depends on $N$. In particular this does not assert
 a negative test inside $0\le s\le\log N$, nor identify $f_N$ with
 the tuned causal derivative $h_\beta'$ of the uncut heat response.
