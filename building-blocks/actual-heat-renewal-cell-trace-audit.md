@@ -398,6 +398,33 @@ principle is formalized in Lean; its application to this actual heat
 transform remains a written proof. Thus eventual positivity of the
 causal forcing in (15c) cannot imply positivity of its response.
 
+The same argument yields a stronger one-sided criterion:
+
+\[
+\boxed{\mathrm{RH}
+\quad\Longleftrightarrow\quad
+b(v)\text{ is eventually bounded above}
+\quad\Longleftrightarrow\quad
+b(v)\text{ is eventually bounded below}.}
+\tag{15e}
+\]
+
+The criterion is unchanged with $h_\beta$ in place of $b$, since they
+agree for $v\ge2$. Under RH, both bounds follow from the bounded heat
+response in the renewal note's Eq. (24). Conversely, if RH fails,
+reflection gives a zero $\rho$ with $\Re\rho>1/2$. For any putative
+eventual upper bound $B$, the tail $B-b(v)$ is nonnegative. Its Laplace
+abscissa $\sigma$ lies in $(0,1/2]$: the PNT gives the upper endpoint,
+and the nonreal pole of (15d) at $\rho-1/2$ gives the strictly positive
+lower endpoint. Landau then requires a real singularity at $\sigma$.
+The tail transform differs from $B e^{-zV}/z-\widehat b(z)$ only by
+an entire function, and this expression is holomorphic at every real
+$z\in(0,1/2]$, a contradiction. An eventual lower bound uses the
+nonnegative tail $b(v)-B$ identically. Thus, if RH is false,
+$\limsup_{v\to\infty}b(v)=+\infty$ and
+$\liminf_{v\to\infty}b(v)=-\infty$. This sharpens the bounded-response
+criterion, but neither one-sided bound has been proved from arithmetic.
+
 The baseline also leaves every zero resonance intact. Its bilateral
 Laplace transform
 $\widehat\beta(z)=\int_{\mathbb R}e^{-zv}\beta(v)\,dv$ is entire:

@@ -36,8 +36,11 @@ a future tail. The finite second-order trapezoid bound is formalized in
 the Mellin moment and infinite-tail passage remain written proofs.
 Landau's positive-Laplace theorem and the actual zeta poles show that
 this response takes both signs arbitrarily late despite its eventually
-positive forcing. This rules out response positivity as the missing
-source-specific bound.
+positive forcing. More strongly, either eventual one-sided finite
+bound on the response is RH-equivalent: if RH fails, the response is
+unbounded in both directions. These written implications rule out
+response positivity as the missing source-specific mechanism while
+leaving a one-sided arithmetic bound as a precise target.
 
 ## Discrete harmonic convolution, regularity and aliasing
 
