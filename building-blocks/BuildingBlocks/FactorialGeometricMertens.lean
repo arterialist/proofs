@@ -61,6 +61,52 @@ theorem quotient_triangle (N : ℕ) (a : ℕ → ℝ) (q : ℝ) :
       intro n hn
       by_cases h : n ≤ N / (j + 1) <;> simp [h, mul_comm]
 
+/-- A quotient-floor history can repeat at most `j` times in one finite
+clock horizon. This is the precise squared-norm cost used by the hard-clock
+comparison. -/
+theorem quotient_floor_square_bound (X j : ℕ) (hj : 0 < j) (f : ℕ → ℝ) :
+    (∑ N ∈ Icc 1 X, f (N / j) ^ 2) ≤
+      (j : ℝ) * ∑ m ∈ range (X + 1), f m ^ 2 := by
+  have hmaps : ∀ N ∈ Icc 1 X, N / j ∈ range (X + 1) := by
+    intro N hN
+    simp only [mem_range]
+    have hNX : N ≤ X := (mem_Icc.mp hN).2
+    have hle := Nat.div_le_self N j
+    omega
+  have hgroup :
+      (∑ N ∈ Icc 1 X, f (N / j) ^ 2) =
+        ∑ m ∈ range (X + 1),
+          (((Icc 1 X).filter (fun N => N / j = m)).card : ℝ) * f m ^ 2 := by
+    rw [← sum_fiberwise_of_maps_to hmaps (fun N => f (N / j) ^ 2)]
+    apply sum_congr rfl
+    intro m hm
+    have he : ∀ N ∈ (Icc 1 X).filter (fun N => N / j = m),
+        f (N / j) ^ 2 = f m ^ 2 := by
+      intro N hN
+      rw [(mem_filter.mp hN).2]
+    rw [sum_congr rfl he]
+    simp only [sum_const, nsmul_eq_mul]
+  rw [hgroup, mul_sum]
+  apply sum_le_sum
+  intro m hm
+  have hsub : (Icc 1 X).filter (fun N => N / j = m) ⊆
+      Ico (m * j) ((m + 1) * j) := by
+    intro N hN
+    have hq : N / j = m := (mem_filter.mp hN).2
+    have hb := (Nat.div_eq_iff hj).mp hq
+    apply mem_Ico.mpr
+    constructor
+    · exact hb.1
+    · rw [show (m + 1) * j = m * j + j by ring]
+      omega
+  have hcard : ((Icc 1 X).filter (fun N => N / j = m)).card ≤ j := by
+    calc
+      _ ≤ (Ico (m * j) ((m + 1) * j)).card := card_le_card hsub
+      _ = j := by rw [Nat.card_Ico]; simp [Nat.add_mul]
+  have hnonneg : 0 ≤ f m ^ 2 := sq_nonneg _
+  exact mul_le_mul_of_nonneg_right (by exact_mod_cast hcard :
+    (((Icc 1 X).filter (fun N => N / j = m)).card : ℝ) ≤ j) hnonneg
+
 /-- The complete original factorial response is a geometric average of all
 Mertens quotient histories. No analytic limit or RH bound enters. -/
 theorem response_geometric (N : ℕ) (t : ℝ) :
@@ -100,6 +146,7 @@ theorem response_geometric (N : ℕ) (t : ℝ) :
       rw [BuildingBlocks.MertensTransfer.mertens_eq_sum_Icc]
 
 #print axioms quotient_triangle
+#print axioms quotient_floor_square_bound
 #print axioms response_geometric
 
 end BuildingBlocks.FactorialGeometricMertens
