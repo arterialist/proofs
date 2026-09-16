@@ -411,6 +411,7 @@ import BuildingBlocks.OddDoublingFiniteMobius
 import BuildingBlocks.ThetaMinimumMapConstant
 import BuildingBlocks.ThetaRadiusTwoRayleighCore
 import BuildingBlocks.ThetaRadiusTwoJ3RationalCore
+import BuildingBlocks.ThetaPrimeReturnOuterCore
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
