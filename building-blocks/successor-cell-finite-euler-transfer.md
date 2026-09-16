@@ -281,6 +281,42 @@ unit-circle phases as a special case. The Lean theorem proves the
 broader complex phase relation directly; the inverse-operator
 notation is its consequence when the gauge is everywhere nonzero.
 
+The 3-shift conflict persists arbitrarily far from the first four
+cells. Fix \(k\ge2\), write \(q=2^k\), and take the two parents
+\(n_-=q\) and \(n_+=2q-1\). For each \(j=0,1,2\), binary depth gives
+\[
+\begin{aligned}
+ \eta(3n_-+j)\eta(n_-)&=-1,\\
+ \eta(3n_++j)\eta(n_+)&=+1.
+\end{aligned}                                             \tag{17}
+\]
+Indeed the low parent's children lie in \([2q,4q)\), one level
+deeper, while the high parent's children lie in \([4q,8q)\), two
+levels deeper. If \(N\ge3(2q-1)+2=6q-1\), both complete child
+columns occur in the window. Their weights telescope exactly:
+\[
+ \sum_{r=3n}^{3n+2}\ell_r
+ =\log\frac{3n+3}{3n}=\ell_n,
+ \qquad \|R_3e_n\|_{C_N}=1.                         \tag{18}
+\]
+For any scalar \(s\in\mathbb C\), testing these two unit columns
+therefore yields
+\[
+\boxed{\quad
+ \|D_\eta R_3D_\eta-sR_3\|_{C_N\to C_N}
+ \ge\max\{|s+1|,|s-1|\}\ge1.
+\quad}                                                   \tag{19}
+\]
+When \(|s|=1\), the first lower bound is at least \(\sqrt2\), since
+\(|s+1|^2+|s-1|^2=4\). Both parents tend to infinity with \(k\).
+On the infinite weighted cell space, their unit vectors tend weakly
+to zero, so (19) also bounds the essential norm against any compact
+correction. A change confined to the first finitely many cells cannot
+remove the discrepancy. This is an operator-norm obstruction for the
+individual 3-shift. It does not bound a localized packet chosen to
+avoid these columns, or sign the full prime-power and archimedean
+Weil form.
+
 [SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean)
 formalizes the child-index equivalence, opposite-collar support,
 exact logarithmic overlap weights, cutoff semigroup law,
@@ -293,8 +329,9 @@ for a nontrivial sign. The multiplicative \(\chi_2\chi_3\) witness,
 its exact conjugacy through eight cells, and its failure at nine are
 also formalized. The exact binary-tree phase for all \(2^k\) shifts,
 simultaneous 2-/3-shift sign rigidity (16), and its nonzero-complex
-phase extension compile as well, all with standard mathlib
-axioms. Equations
-(4)--(8), the weighted Hilbert realization and norm bounds (11),
-(14), and the full analytic Weil comparison are written mathematics,
-not Lean formalized. These finite identities give no RH conclusion.
+phase extension compile as well. The two interior shell identities
+(17) and exact three-child weight (18) also compile, all with
+standard mathlib axioms. Equations (4)--(8), the weighted Hilbert
+realization and norm bounds (11), (14), (19), and the full analytic
+Weil comparison are written mathematics, not Lean formalized. These
+finite identities give no RH conclusion.

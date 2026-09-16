@@ -116,6 +116,18 @@ theorem sum_log_cell_length (a b : ℕ) (ha : 0 < a) (hab : a ≤ b) :
       rw [Real.log_div (by exact_mod_cast (Nat.ne_of_gt (lt_of_lt_of_le ha hab)))
         (by exact_mod_cast (Nat.ne_of_gt ha))]
 
+/-- The complete three-child column has exactly its parent's
+    logarithmic cell weight. -/
+theorem sum_three_child_lengths (n : ℕ) (hn : 0 < n) :
+    (∑ r ∈ Finset.Ico (3 * n) (3 * (n + 1)),
+      Real.log (((r + 1 : ℕ) : ℝ) / (r : ℝ))) =
+      Real.log (((n + 1 : ℕ) : ℝ) / (n : ℝ)) := by
+  rw [sum_log_cell_length (3 * n) (3 * (n + 1)) (by omega) (by omega)]
+  congr 1
+  have hnR : (n : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hn)
+  push_cast
+  field_simp
+
 /-- The exact cell-length weight in the two opposite log-2 collars. -/
 noncomputable def collarWeight (m d : ℕ) : ℝ :=
   ∑ r ∈ Finset.Ico (max m d) (min (2 * m) (2 * d)),
@@ -621,6 +633,73 @@ theorem two_three_complex_phase_rigidity (N : ℕ) (χ : ℕ → ℂ)
     have hk : χ (n / 2) = 1 := ih (n / 2) hklt hkpos hkN
     simpa [hs2one, hk] using h₂ n hn2 hnN
 
+/-- In every large dyadic shell, the three 3-shift children of its
+    lowest parent gain one binary level. -/
+theorem treeTwoGauge_three_low_shell (k j : ℕ) (hk : 2 ≤ k)
+    (hj : j < 3) :
+    treeTwoGauge (3 * 2 ^ k + j) * treeTwoGauge (2 ^ k) = -1 := by
+  have hq : 4 ≤ 2 ^ k := by
+    simpa using (Nat.pow_le_pow_right (by decide : 0 < (2 : ℕ)) hk)
+  have hp1 : 2 ^ (k + 1) = 2 * 2 ^ k := by
+    simp [pow_succ, mul_comm]
+  have hp2 : 2 ^ (k + 2) = 4 * 2 ^ k := by
+    rw [pow_add]
+    ring
+  have hlow : 2 ^ (k + 1) ≤ 3 * 2 ^ k + j := by rw [hp1]; omega
+  have hhigh : 3 * 2 ^ k + j < 2 ^ ((k + 1) + 1) := by
+    rw [show (k + 1) + 1 = k + 2 by omega, hp2]
+    omega
+  have hchild : Nat.log 2 (3 * 2 ^ k + j) = k + 1 :=
+    Nat.log_eq_of_pow_le_of_lt_pow hlow hhigh
+  have hparent : Nat.log 2 (2 ^ k) = k := Nat.log_pow Nat.one_lt_two k
+  rw [treeTwoGauge, treeTwoGauge, hchild, hparent, pow_succ]
+  have hsquare : (-1 : ℝ) ^ k * (-1) ^ k = 1 := by
+    calc
+      (-1 : ℝ) ^ k * (-1) ^ k = ((-1 : ℝ) * (-1)) ^ k :=
+        (mul_pow _ _ _).symm
+      _ = 1 := by norm_num
+  nlinarith [hsquare]
+
+/-- The three 3-shift children of the highest parent in the same
+    dyadic shell gain two binary levels. -/
+theorem treeTwoGauge_three_high_shell (k j : ℕ) (hk : 2 ≤ k)
+    (hj : j < 3) :
+    treeTwoGauge (3 * (2 ^ (k + 1) - 1) + j) *
+      treeTwoGauge (2 ^ (k + 1) - 1) = 1 := by
+  let q := 2 ^ (k + 1)
+  have hq : 4 ≤ q := by
+    dsimp [q]
+    have h : 2 ^ 2 ≤ 2 ^ (k + 1) :=
+      Nat.pow_le_pow_right (by decide : 0 < (2 : ℕ)) (by omega)
+    simpa using h
+  have hp1 : q = 2 * 2 ^ k := by dsimp [q]; simp [pow_succ, mul_comm]
+  have hp2 : 2 ^ (k + 2) = 2 * q := by
+    dsimp [q]
+    rw [pow_add]
+    ring
+  have hp3 : 2 ^ ((k + 2) + 1) = 4 * q := by
+    dsimp [q]
+    rw [show (k + 2) + 1 = (k + 1) + 2 by omega, pow_add]
+    ring
+  have hparent : Nat.log 2 (q - 1) = k := by
+    apply Nat.log_eq_of_pow_le_of_lt_pow
+    · rw [hp1]; omega
+    · change q - 1 < q
+      omega
+  have hchild : Nat.log 2 (3 * (q - 1) + j) = k + 2 := by
+    apply Nat.log_eq_of_pow_le_of_lt_pow
+    · rw [hp2]; omega
+    · rw [hp3]; omega
+  change treeTwoGauge (3 * (q - 1) + j) * treeTwoGauge (q - 1) = 1
+  rw [treeTwoGauge, treeTwoGauge, hchild, hparent]
+  have hsquare : (-1 : ℝ) ^ k * (-1) ^ k = 1 := by
+    calc
+      (-1 : ℝ) ^ k * (-1) ^ k = ((-1 : ℝ) * (-1)) ^ k :=
+        (mul_pow _ _ _).symm
+      _ = 1 := by norm_num
+  rw [show k + 2 = k + 1 + 1 by omega, pow_succ, pow_succ]
+  nlinarith [hsquare]
+
 #print axioms div_eq_iff_child
 #print axioms collar_child_iff
 #print axioms collar_child_exists_iff
@@ -652,5 +731,8 @@ theorem two_three_complex_phase_rigidity (N : ℕ) (χ : ℕ → ℂ)
 #print axioms phase_relation_of_transfer_conjugacy
 #print axioms two_three_operator_phase_rigidity
 #print axioms two_three_complex_phase_rigidity
+#print axioms treeTwoGauge_three_low_shell
+#print axioms treeTwoGauge_three_high_shell
+#print axioms sum_three_child_lengths
 
 end BuildingBlocks.SuccessorCellTransferFinite
