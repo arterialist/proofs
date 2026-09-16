@@ -88,3 +88,15 @@ The polynomial is integrable at zero. Integrating it through U and using the exa
 The neutralization and origin-band mechanism was developed in RH Agent2's dyadic mean-energy work and independently reviewed and formalized by root. This is an elementary arithmetic upper estimate for the specified band; no novelty claim is made.
 
 [FactorialOriginNeutralization.lean](BuildingBlocks/FactorialOriginNeutralization.lean) proves twelve public theorems covering the scalar remainder, inverse-square sum, exact actual neutralization, quotient square budget, unscaled and scaled response estimates, complete compensated density upper bound, scaled energy row, polynomial integral, scaled origin-band integral, original moving-endpoint integral, and entire dyadic origin-band payment. The full umbrella build passes. Printed assumptions are only propext, Classical.choice and Quot.sound. Fixed-band limiting profiles, Hilbert-valued Mellin consumers and the full RH-scale dyadic energy upper estimate are not established by this module.
+
+## Compiled actual fixed-scale profile
+
+[FactorialOriginProfile.lean](BuildingBlocks/FactorialOriginProfile.lean) adds seven compiled theorems. For each fixed u≥0 the actual response satisfies
+
+\[
+g_N(u/N)\longrightarrow F(u):=\sum_{n\ge1}\mu(n)(1-e^{-u/n}-u/n).
+\]
+
+The coefficient series is absolutely convergent. Its coefficient norm is bounded by (u²/2)n^{-2}. At each positive fixed n the normalized natural quotient floor(N/n)/N tends to 1/n: the exact integer remainder identity expresses the difference through (N mod n)/N, which tends to zero. Continuity of the scalar exponential remainder then gives coefficient convergence. The finite actual response is exactly u/N plus an infinite series with finite support in 1≤n≤N; every n>N coefficient vanishes because its actual quotient is zero. The n=0 term is explicitly zero by μ(0)=0. The majorant holds uniformly for all N≥1. Dominated convergence for the complete series and u/N→0 prove the stated original-response limit.
+
+The seven formal results are the normalized quotient limit, finite coefficient limit, uniform finite coefficient bound, limiting coefficient bound, absolute summability, original finite-support series identity, and actual profile limit. The full umbrella build passes with only propext, Classical.choice and Quot.sound. No model response is substituted for g_N. The limit is for fixed u; uniform approximation on expanding u intervals, the integral limit of the original origin-band energy, the entire zeta-coefficient expansion and large-u decay remain separate obligations. This convergence statement alone supplies no full-clock energy upper bound or RH conclusion.

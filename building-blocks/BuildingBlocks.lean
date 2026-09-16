@@ -367,3 +367,5 @@ import BuildingBlocks.FactorialDyadicPhase
 import BuildingBlocks.FactorialDyadicIntersections
 
 import BuildingBlocks.FactorialOriginNeutralization
+
+import BuildingBlocks.FactorialOriginProfile
