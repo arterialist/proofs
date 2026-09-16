@@ -180,7 +180,7 @@ below, and grouping the intervals where \(\lfloor Xy\rfloor=n\), gives
 \boxed{
  \mathfrak A_X^{\rm bulk}
  \ge \frac{c}{X\log X}
- \sum_{X\le n\le2X}
+ \sum_{X\le n<2X}
  \left(|M(n)-M(D)|-\frac4n\right)_+^2.}                \tag{14}
 \]
 
@@ -188,7 +188,7 @@ Using (12b) instead gives the stronger Orlicz-capacity constraint
 
 \[
  \mathfrak A_X^{\rm bulk}\ge\frac cX
- \sum_{X\le n\le2X}
+ \sum_{X\le n<2X}
  \frac{\bigl(|M(n)-M(D)|-n^{-1}\bigr)_+^2}
  {\log\!\left(en/(|M(n)-M(D)|+n^{-1})\right)}.          \tag{14a}
 \]
@@ -208,7 +208,7 @@ The target bulk estimate
 would force the dyadic mean-square reserve bound
 
 \[
- \sum_{X\le n\le2X}|M(n)-M(\lceil\sqrt X\rceil)|^2
+ \sum_{X\le n<2X}|M(n)-M(\lceil\sqrt X\rceil)|^2
  \ll_\varepsilon X^{2+\varepsilon}\log X,              \tag{16}
 \]
 
