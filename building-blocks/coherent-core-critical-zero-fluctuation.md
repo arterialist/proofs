@@ -30,9 +30,13 @@ The value \(a_0\) is finite and real. For any critical-line zero
 \]
 In addition, with \(E(T)=\int_0^T|q(v)-a_0|^2\,dv\),
 \[
- \boxed{\quad\limsup_{T\to\infty}\frac{E(T)}T\ge d_\rho^2.\quad}
+ \boxed{\quad\limsup_{T\to\infty}\frac{E(T)}T\ge
+ \sum_{\substack{\rho:\,\Re\rho=1/2}}m_\rho^2|M_K(\rho)|^2>0.\quad}
                                                                \tag{2}
 \]
+The sum runs over distinct critical-line zeros, includes both signs of
+each ordinate, and may be read in the extended-real sense. Its
+positivity needs only one critical-line zero.
 By [Hardy's critical-line theorem](https://fr.wikisource.org/wiki/Page:Comptes_rendus_hebdomadaires_des_s%C3%A9ances_de_l%E2%80%99Acad%C3%A9mie_des_sciences,_tome_158,_1914.djvu/1014),
 these are unconditional constraints on the actual \(Q\). The statements
 allow infinite limsup or liminf. The estimate does not place
@@ -89,13 +93,25 @@ use (4). The left limit is \(d_\rho\), while the right limit is
 For (2), suppose its left side is finite; otherwise there is nothing
 to prove. Then \(E(T)=O(T)\), so \(q-a_0\) has an absolutely convergent
 Laplace transform for every \(\Re z>0\) by Cauchy--Schwarz with an
-exponential weight. Its continuation from (3) has the nonzero pole in
-(4). For \(\varepsilon>0\), Cauchy--Schwarz gives
+exponential weight. Fix finitely many distinct critical ordinates
+\(\gamma_1,\ldots,\gamma_N\), with residues
+\(r_j=-m_jM_K(1/2+i\gamma_j)\). In the probability measure
+\(\varepsilon e^{-\varepsilon v}dv\), the functions
+\(\phi_j(v)=e^{i\gamma_jv}\) have Gram matrix
 \[
+ G_{jk}(\varepsilon)
+ =\frac{\varepsilon}{\varepsilon-i(\gamma_j-\gamma_k)}
+ \longrightarrow\delta_{jk}.
+\]
+Their inner products with \(q-a_0\) are
+\(c_j(\varepsilon)=\varepsilon\int_0^\infty
+(q(v)-a_0)e^{-(\varepsilon+i\gamma_j)v}dv\to r_j\)
+by (4). The finite-dimensional projection inequality, followed by
+\(G(\varepsilon)^{-1}\to I\), gives
+\[
+ \liminf_{\varepsilon\downarrow0}
  \varepsilon\int_0^\infty|q(v)-a_0|^2e^{-\varepsilon v}dv
- \ge\varepsilon^2
- \left|\int_0^\infty(q(v)-a_0)e^{-(\varepsilon+i\gamma)v}dv\right|^2
- \longrightarrow d_\rho^2\quad\text{in lower limit}.   \tag{6}
+ \ge\sum_{j=1}^N|r_j|^2.                            \tag{6}
 \]
 If \(L=\limsup E(T)/T<\infty\), Stieltjes integration by parts gives
 \[
@@ -103,7 +119,8 @@ If \(L=\limsup E(T)/T<\infty\), Stieltjes integration by parts gives
  =\varepsilon^2\int_0^\infty e^{-\varepsilon T}E(T)dT
  \le L+o(1).
 \]
-Equation (6) forces \(L\ge d_\rho^2\), proving (2). \(\square\)
+Equation (6) forces \(L\ge\sum_{j=1}^N|r_j|^2\). Taking the
+supremum over all finite subsets proves (2). \(\square\)
 
 The constant \(a_0\) is the real residue of the meromorphically continued
 core transform; an unconditional Abel mean at the boundary is not asserted.
