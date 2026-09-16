@@ -31,6 +31,8 @@ The [half-neighbor rigidity theorem](half-neighbor-phase-rigidity.md) recovers e
 
 The [unitary phase lift](unitary-prime-phase-lift.md) applies the scalar theorem to the joint spectral measure of commuting prime unitaries. Finite defect on a cyclic subspace forces a self-adjoint scale generator $T$. Its exact defect multiplier satisfies $\psi(t)\sim\pi|t|/2$, and its form domain is $\operatorname{Dom}|T|^{1/2}$. This is a statement about unitary representations; the unilateral counting maps and nonunitary off-line zero phases require additional arguments.
 
+The [xi-shift Euler phase obstruction](xi-shift-euler-phase-obstruction.md) retains every prime power and proves that, for each fixed positive shift $c$, the uncorrected ratio $\xi(s)/\xi(s+c)$ has negative real part on a positive-density set of heights at every real part sufficiently close to $1$ from above. This strengthens the scope of Conrey–Li's displayed $+1$-shift counterexample within absolute convergence. It rules out that direct positive-real shift test, not RH or an arithmetic compensator.
+
 Related constructions retain different information:
 
 | Construction | Proved content and remaining limitation |
