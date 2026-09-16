@@ -35,6 +35,30 @@ established **two-sided** RH/Goldbach average theorem recorded by
 [Bhowmik and Halupczok, Section 4](https://arxiv.org/pdf/1809.06920);
 priority of the one-sided formulation is not asserted.
 
+A single fixed exponent already gives a quantitative zero-free strip.
+For $0\le\delta<1/2$, either one-sided bound in (2) with the error
+$C X^{3/2+\delta}$ excludes zeros with
+$\Re\rho>1/2+\delta$. The proof below uses the comparison
+$A e^{\delta v}$, including the constant comparison when $\delta=0$.
+The statement at $\delta=0$ is a sufficient condition, not a claimed
+consequence of RH with this exact error exponent.
+
+There is also an **unconditional** two-sided oscillation consequence:
+for every $0<\eta<1/2$,
+
+\[
+\limsup_{X\to\infty}
+ \frac{S_\Lambda(X)-X^2/2}{X^{3/2-\eta}}=+\infty,
+\qquad
+\liminf_{X\to\infty}
+ \frac{S_\Lambda(X)-X^2/2}{X^{3/2-\eta}}=-\infty.
+\tag{2a}
+\]
+
+The same conclusion holds for $S_{\rm even}$. This does not assert an
+$\Omega_\pm(X^{3/2})$ estimate at the endpoint. The argument is given
+after the one-sided heat transfer below; no priority claim is made.
+
 ## RH gives both inequalities
 
 Let $\psi(x)=\sum_{n\le x}\Lambda(n)$ and
@@ -132,6 +156,21 @@ heat transform and this application of Landau are written analysis,
 not Lean theorems. The uncentered additive heat square itself is
 formalized in
 [GoldbachPrimeHeatConvolution.lean](BuildingBlocks/GoldbachPrimeHeatConvolution.lean).
+
+The same calculation proves (2a). If, for some $0<\eta<1/2$, either
+one-sided bound
+$S_\Lambda(X)-X^2/2\ge-CX^{3/2-\eta}$ or
+$S_\Lambda(X)-X^2/2\le CX^{3/2-\eta}$ held eventually, (5) and a
+positive square root would give the corresponding one-sided bound
+$b(v)=O(e^{-\eta v})$. Add or subtract $A e^{-\eta v}$ to make a
+nonnegative tail. A nontrivial zeta zero on the critical line exists
+([DLMF §25.10](https://dlmf.nist.gov/25.10)), so its nonreal pole in
+(8) forces the tail convergence
+abscissa $\sigma\ge0$. The PNT bound gives $\sigma\le1/2$. The
+exponential comparison has its real pole at $-\eta<\sigma$, while
+(8) is regular at every real point of $[0,1/2]$. Landau again gives
+a contradiction. Failure of each eventual one-sided bound for every
+constant $C$ is exactly the two unbounded ratios in (2a).
 
 ## Even totals and ordinary Goldbach existence
 
