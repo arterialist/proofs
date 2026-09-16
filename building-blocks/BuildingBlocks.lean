@@ -361,3 +361,5 @@ import BuildingBlocks.FactorialRealCellCrossKernel
 import BuildingBlocks.FactorialRealCellDiscrepancyBounds
 import BuildingBlocks.FactorialRealCellMixedFubini
 import BuildingBlocks.FactorialRealCellDoubleFubini
+
+import BuildingBlocks.FactorialDyadicPhase
