@@ -85,6 +85,59 @@ each sufficiently large packet with $E_N>0$, and eventually negative
 for each sufficiently large packet with $E_N<0$. In the latter case
 the weight $-C_{f_N}'(s)$ is eventually negative too.
 
+## The linked memory beyond the packet cutoff is small
+
+The adverse far-lag sign has a finite payment. Let $U=\log N$ and
+$\widetilde J(s)=J(s)-\ell$ be the actual centered renewal primitive.
+The [cell audit](causal-renewal-euler-discrepancy-audit.md) proves
+$|\widetilde J(s)|\le C_Je^{-3s/2}$ for all sufficiently large $s$.
+For $s\ge U$ and $n,m\le N$, the ratio
+$r=n e^{-s}/m$ lies in $[0,1]$. Each of the first three derivatives
+of the summand in (2) is bounded by $C_j e^{-s/2}/m$, because it is
+$m^{-1}e^{-s/2}(1+r)^{-1}$ and $r'=-r$. The elementary complete-prime
+prefix bounds give
+\[
+\sum_{n\le N}|a_n|\le\psi(N)+N\ll N,
+\qquad
+\sum_{m\le N}\frac{|a_m|}{m}
+\le\sum_{m\le N}\frac{\Lambda(m)+1}{m}
+\ll\log(2N).
+\tag{8}
+\]
+The second follows by partial summation from Chebyshev's
+$\psi(x)\ll x$. Thus, uniformly for $0\le j\le3$ and $s\ge U$,
+\[
+|C_N^{(j)}(s)|\le C N\log(2N)e^{-s/2}.
+\tag{9}
+\]
+Since $-C_{f_N}'=C_N'''$, the linked late-memory work satisfies
+\[
+\boxed{\quad
+\left|\int_U^\infty\widetilde J(s)
+          [-C_{f_N}'(s)]\,ds\right|
+\le C N\log(2N)\int_U^\infty e^{-2s}ds
+\le C\frac{\log(2N)}N.
+\quad}
+\tag{10}
+\]
+The endpoint is of the same order:
+$|\widetilde J(U)C_{f_N}(U)|\le C\log(2N)/N$.
+Because $H=J'$ on positive lags, integration by parts, with the
+infinite endpoint vanishing, gives the equally explicit full-line
+renewal-tail payment
+\[
+\boxed{\quad
+\int_U^\infty H(s)C_{f_N}(s)\,ds
+=-\widetilde J(U)C_{f_N}(U)
+ +\int_U^\infty\widetilde J(s)[-C_{f_N}'(s)]ds
+=O\!\left(\frac{\log(2N)}N\right).
+\quad}
+\tag{11}
+\]
+The improved decay comes from the linked primitive
+$J-\ell=O(e^{-3s/2})$ and its exact boundary term; an absolute
+estimate on the oscillating $H$ alone loses that cell cancellation.
+
 The lag threshold depends on $N$. In particular this does not assert
 a negative test inside $0\le s\le\log N$, nor identify $f_N$ with
 the tuned causal derivative $h_\beta'$ of the uncut heat response.
@@ -93,4 +146,7 @@ late-cell phase theorem cannot, by themselves, put even the actual
 centered finite-packet derivative autocorrelation in the required
 nonnegative-convex cone. The terminal value $E_N=D_N(0)$ is precisely
 the coefficient of $e^{-v/2}$ in the packet's right heat tail; it
-controls the far-lag phase instead of disappearing from it.
+controls the far-lag phase instead of disappearing from it. Equations
+(10)--(11) show that this far-lag phase costs only
+$O(\log(2N)/N)$ beyond the source cutoff. Any missing RH-scale
+estimate lies in the earlier lags and the uncut arithmetic history.
