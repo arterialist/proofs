@@ -364,7 +364,15 @@ $$
 \quad}
 \tag{22}
 $$
-This is a finite centered-source bound for the actual ground average, with no inverse ground-mass loss. It does not bound the undifferentiated readout: $q_a(+\infty)=-\sum_n a_n/\sqrt n$ is generally nonzero. Passing from the finite packet to the uncut prime source also requires the source-tail and deterministic-centering costs in (2), (10), and (14). In particular (21)--(22) do not establish the open critical Goldbach energy estimate or a sign for the full Weil row.
+This is a finite centered-source bound for the actual ground average, with no inverse ground-mass loss. It does not bound the undifferentiated readout: $q_a(+\infty)=-\sum_n a_n/\sqrt n$ is generally nonzero. In fact no universal constant $C$ can make
+$$
+\left|\sum_n\frac{a_n}{\sqrt n}\right|^2
+\le C\sum_{m,n}\frac{a_ma_n}{m+n}
+\tag{23}
+$$
+hold for all finite real packets. If it did, the functional on finite sums $D_a(t)=\sum a_ne^{-nt}$ would extend continuously to their $L^2(0,\infty)$ closure. Riesz representation would give a $g\in L^2(0,\infty)$ with $\int_0^\infty g(t)e^{-nt}dt=n^{-1/2}$ for every $n\ge1$. The locally integrable function $g_0(t)=t^{-1/2}/\sqrt\pi$ has exactly the same Laplace moments. After $x=e^{-t}$, both $g(-\log x)dx$ and $g_0(-\log x)dx$ are finite signed measures on $[0,1]$ with identical polynomial moments. Polynomial density forces them to agree, hence $g=g_0$ almost everywhere, contradicting $g_0\notin L^2(0,1)$. This no-go is for arbitrary finite packets; it does not exclude an arithmetic-specific charge estimate for $a_n=\Lambda(n)-1$.
+
+Passing from the finite packet to the uncut prime source also requires the source-tail and deterministic-centering costs in (2), (10), and (14). In particular (21)--(22) do not establish the open critical Goldbach energy estimate or a sign for the full Weil row.
 
 
 ## Dependencies and proof status
