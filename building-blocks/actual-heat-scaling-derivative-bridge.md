@@ -553,6 +553,42 @@ $$
 $$
 The signed pairing is nonnegative at each radius in each channel, by the same positive Fourier weight as in (26). Equations (36)--(37) restore the finite additive energy and its ratio-sensitive pairing without hiding it at a cosine zero. Passing to the uncut prime source, or paying the actual odd affine covariance residual, still requires an independent arithmetic estimate and a source-domain link.
 
+## Exact density-cell and terminal cost for the compact actual source
+
+The compact cumulative-error history $b_U=k*a_U$ from (3) is not the finite discrete packet $b_a$ from (21). Their difference can be paid explicitly at an integer cutoff $N\ge2$, $U=\log N$. Let
+$$
+\mu_N=\sum_{n=1}^N(\Lambda(n)-1)\delta_n,
+\qquad
+\rho_N=\sum_{n=2}^N\delta_n-\mathbf1_{[1,N]}(x)\,dx,
+\qquad E(N)=\psi(N)-N.
+$$
+The [literal source decomposition](goldbach-additive-source-consumer.md#preserve-continuous-density-cells-before-entering-the-source-norm) and the terminal compensation in (3) give
+$$
+\sigma_U=\mu_N+\rho_N-E(N)\delta_N.
+\tag{38}
+$$
+The prime-power arrival at $N$, when present, is included before the last atom. The cumulative function of $\rho_N$ is $-\{x\}$ on $1\le x<N$ and zero for $x\ge N$. Stieltjes integration by parts therefore yields its exact heat correction
+$$
+R_N(t):=\int e^{-tx}\rho_N(dx)
+=-t\int_1^N\{x\}e^{-tx}\,dx,
+\qquad |R_N(t)|\le e^{-t},
+\qquad\|R_N\|_{L^2(0,\infty)}\le\frac1{\sqrt2}.
+\tag{39}
+$$
+The compensated atom has the separate exact norm
+$\|E(N)e^{-Nt}\|_{L^2(0,\infty)}=|E(N)|/\sqrt{2N}$.
+
+Write $D_N^{\rm disc}(t)=\sum_{n\le N}(\Lambda(n)-1)e^{-nt}$ and $H_N^{\rm disc}=\sum_{m,n\le N}(\Lambda(m)-1)(\Lambda(n)-1)/(m+n)=\|D_N^{\rm disc}\|_2^2$. Since $b_U(v)=e^{-v/2}\int e^{-e^{-v}x}\sigma_U(dx)$, the change $t=e^{-v}$ identifies $\|b_U\|_{L^2(\mathbb R)}$ with the heat norm of $\sigma_U$. Equations (38)--(39) and the reverse triangle inequality give the unconditional comparison
+$$
+\boxed{\quad
+\left|\|b_{\log N}\|_{L^2(\mathbb R)}
+-\sqrt{H_N^{\rm disc}}\right|
+\le\frac1{\sqrt2}+\frac{|\psi(N)-N|}{\sqrt{2N}}.
+\quad}
+\tag{40}
+$$
+The bounded cell correction is harmless in an energy norm; the terminal term is not automatically small. In particular (40) does not turn a compact-source heat estimate into an RH-scale finite Goldbach bound unless that actual endpoint is controlled as well.
+
 ## Dependencies and proof status
 
 The arithmetic source and gamma multiplier come from the [centered heat source](centered-goldbach-heat-lyapunov.md). The scaling Mellin transform is proved in the [scaling-kernel audit](goldbach-scaling-kernel-hard-wall.md), and the full ground row uses the [exponential weak-ground extension](theta-ground-exponential-weak-cross-row.md). The growing-core moment in (14) uses [physical ground concentration](theta-ground-physical-mass-concentration.md). Gamma cancellation and its modulus use the classical [gamma recurrence and reflection formulas](https://dlmf.nist.gov/5.5); the band and convolution identities are applications of Plancherel. These are written actual-source identities and estimates, independently checked in their stated domains. The linked heat Lean modules do not yet formalize the derivative multiplier, ground row or finite-band transfer. The [heat-range obstruction](heat-to-killed-ground-range-obstruction.md) records why this bounded derivative map does not give a bounded-cost reconstruction of the killed ground.
