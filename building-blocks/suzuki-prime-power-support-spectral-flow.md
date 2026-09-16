@@ -14,14 +14,23 @@ Put
 \]
 and use the Fourier convention \(\widehat f(\xi)=\int f(x)e^{i\xi x}dx\).
 For \(\phi\in L^2([-1,1])\), extended by zero, set
-\(U_a\phi(x)=a^{-1/2}\phi(x/a)\). The common form domain is
+\(U_a\phi(x)=a^{-1/2}\phi(x/a)\). Let \(\mathcal D_{\log}\) be the closure of
+\(C_c^\infty(-1,1)\) in the norm \(\|\cdot\|_{\log}\), where
 \[
- \mathcal D_{\log}=\left\{\phi:\frac1{2\pi}\int
- \log(2+|\eta|)|\widehat\phi(\eta)|^2d\eta<\infty\right\}.
+ \|\phi\|_{\log}^2
+ =\|\phi\|_2^2+\frac1{2\pi}\int
+ \log(2+|\eta|)|\widehat\phi(\eta)|^2d\eta.
 \]
-Indeed, \(m(\xi)=\log|\xi|-\log(2\pi)+O(|\xi|^{-2})\) at infinity;
-the pole and the finitely many prime shifts are bounded on \(L^2\) for
-each fixed \(a\). The exact pullback of the Weil form is
+This is a common closed-form domain. Indeed,
+\(m(\xi)=\log|\xi|-\log(2\pi)+O(|\xi|^{-2})\) at infinity,
+so the gamma form norm is equivalent to this logarithmic norm on
+\(C_c^\infty(-1,1)\); the pole and finitely many prime shifts are
+bounded \(L^2\) forms at each fixed \(a\). This formulation does
+not require identifying the closure with every compactly supported
+finite-log-energy function. The fixed \(C^1\) trial profiles below
+belong to the closure by boundary trimming and mollification, whose
+log-energy error is \(O(\varepsilon\log(1/\varepsilon))\).
+The exact pullback of the Weil form is
 \[
 \begin{split}
  q_a(\phi):=Q_W(U_a\phi)
