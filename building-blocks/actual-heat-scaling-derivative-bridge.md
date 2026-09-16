@@ -424,6 +424,74 @@ $$
 The constant is the exact norm of the Fourier multiplier on the full $L^2$ heat space. The upper constant is also sharp across arbitrary finite packets, and no positive reverse constant holds there: their heat vectors are dense in $L^2(0,\infty)$, since a vector orthogonal to every $e^{-nt}$ gives, after $x=e^{-t}$, a finite signed measure with all polynomial moments zero and hence is zero. Density transfers both the near-zero-frequency supremum and the high-frequency decay of the multiplier in (26) to finite packets. The upper inequality still requires an arithmetic bound on its right side before it can control the actual uncut centered-prime source.
 
 
+## A radius-averaged actual-ground identity for finite Goldbach packets
+
+The physical concentration of the actual even killed ground gives a converse to the one-core upper bound (22) after averaging core radii. For $R$ admitting that ground, define the bounded two-shift operator on $L^2(\mathbb R)$ by
+$$
+(\mathcal A_Rf)(v)=\frac1{m_R}\int G_R(u)[f(v+u)+f(v-u)]\,du,
+\qquad
+W_R(\omega)=\frac2{m_R}\int G_R(u)\cos(\omega u)\,du.
+$$
+It has real Fourier multiplier $W_R$ and $|W_R|\le2$. The [actual physical-mass concentration theorem](theta-ground-physical-mass-concentration.md#weighted-physical-tail-and-shrinking-support) implies, for every fixed real $\omega$,
+$$
+W_R(\omega)-2\cos(\omega R)\longrightarrow0
+\qquad(R\to\infty).
+\tag{28}
+$$
+
+Fix any $R_0>0$ and $h>0$ such that the actual grounds exist at $R_j=R_0+jh$, $j\ge1$. For $\omega h\notin\pi\mathbb Z$, the elementary geometric average gives
+$$
+\frac1J\sum_{j=1}^J4\cos^2(\omega R_j)\longrightarrow2.
+$$
+The exceptional frequencies form a countable set. Equation (28), $|W_R|\le2$, and Cesàro convergence therefore give $J^{-1}\sum_{j\le J}|W_{R_j}(\omega)|^2\to2$ almost everywhere. Plancherel and dominated convergence, applied to $\widehat f\overline{\widehat g}\in L^1$, prove the actual-ground tight-frame limit
+$$
+\boxed{\quad
+\lim_{J\to\infty}\frac1J\sum_{j=1}^J
+\langle\mathcal A_{R_j}f,\mathcal A_{R_j}g\rangle_{L^2}
+=2\langle f,g\rangle_{L^2}
+\qquad(f,g\in L^2(\mathbb R)).
+\quad}
+\tag{29}
+$$
+The discrete average needs no regularity assertion for the ground as a function of $R$.
+
+Apply (29) to the finite packet $a=(a_n)$ from (21). Put $\mathcal B_{R,a}=\mathcal A_Rb_a$, so $\mathcal I'_{R,a}=\mathcal A_Rq_a'$ in the $L^2$ weak-derivative sense. Then the ordered centered-Goldbach heat form is recovered exactly:
+$$
+\boxed{\quad
+\lim_{J\to\infty}\frac1J\sum_{j=1}^J
+\|\mathcal B_{R_j,a}\|_2^2
+=2\sum_{m,n}\frac{a_ma_n}{m+n}.
+\quad}
+\tag{30}
+$$
+The derivative energy obeys the two-sided arithmetic comparison
+$$
+\frac2\pi\sum_{m,n}\frac{a_ma_n}{m+n}
+\le\lim_{J\to\infty}\frac1J\sum_{j=1}^J
+\|\mathcal I'_{R_j,a}\|_2^2
+\le\frac\pi2\sum_{m,n}\frac{a_ma_n}{m+n}.
+\tag{31}
+$$
+The inequalities follow from the sharp multiplier bounds (20)--(21); the middle limit is exactly $2\|q_a'\|_2^2$.
+
+The signed derivative--heat pairing survives the same ground mixing. For each radius, the real-packet Fourier identity is
+$$
+-\langle\mathcal I'_{R,a},\mathcal B_{R,a}\rangle
+=\int_{\mathbb R}|W_R(\omega)|^2
+\frac{\sqrt\pi\,\omega\coth(\pi\omega)}{1+4\omega^2}
+|\widehat b_a(\omega)|^2\,d\omega\ge0.
+$$
+Its radius average recovers twice the full arctangent pair form (25):
+$$
+\boxed{\quad
+\lim_{J\to\infty}\frac1J\sum_{j=1}^J
+-\langle\mathcal I'_{R_j,a},\mathcal B_{R_j,a}\rangle
+=2\sum_{m,n}a_ma_nJ(m,n)>0\quad(a\ne0).
+\quad}
+\tag{32}
+$$
+In particular these identities apply to $a_n=(\Lambda(n)-1)1_{n\le N}$, with $a_1=-1$ and all admitted prime powers. They preserve the signed additive cross terms. The limits are taken at fixed finite $N$ before $J\to\infty$; no uniformity in $N$, bound on the uncut heat form, optimizer edge-energy payment, or pointwise sign for the full mixed Weil row follows.
+
 ## Dependencies and proof status
 
 The arithmetic source and gamma multiplier come from the [centered heat source](centered-goldbach-heat-lyapunov.md). The scaling Mellin transform is proved in the [scaling-kernel audit](goldbach-scaling-kernel-hard-wall.md), and the full ground row uses the [exponential weak-ground extension](theta-ground-exponential-weak-cross-row.md). The growing-core moment in (14) uses [physical ground concentration](theta-ground-physical-mass-concentration.md). Gamma cancellation and its modulus use the classical [gamma recurrence and reflection formulas](https://dlmf.nist.gov/5.5); the band and convolution identities are applications of Plancherel. These are written actual-source identities and estimates, independently checked in their stated domains. The linked heat Lean modules do not yet formalize the derivative multiplier, ground row or finite-band transfer. The [heat-range obstruction](heat-to-killed-ground-range-obstruction.md) records why this bounded derivative map does not give a bounded-cost reconstruction of the killed ground.
