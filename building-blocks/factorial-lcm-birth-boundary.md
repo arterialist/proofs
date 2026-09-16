@@ -2,7 +2,7 @@
 
 ## Status and attribution
 
-The exact finite arithmetic chain below is compiled in Lean 4/mathlib, using the actual response and actual Möbius function. Full-clock absolute integrability and the exact integrated boundary decomposition are compiled too. The numerical integral comparison is independently reviewed written mathematics; its formalization remains pending. The final arithmetic upper bound is open. This does not prove RH.
+The exact finite arithmetic chain below is compiled in Lean 4/mathlib, using the actual response and actual Möbius function. Full-clock absolute integrability and the exact integrated boundary decomposition are compiled too. The numerical linear interior comparison, exact dyadic allowance, and both one-sided energy transfers are now compiled. The final arithmetic upper bound is open. This does not prove RH.
 
 The complete-LCM multiplication was proposed by the coordinator's isolated Astra investigation on 16 September 2026. Root independently proved the finite divisor-inversion argument and the linear interior comparison, and formalized the exact pointwise decomposition. The underlying multiplication is classical necklace algebra: Moree, *The formal series Witt transform*, Theorem 1(1), pp. 144–145, reports the Metropolis–Rota formula and its earlier history. [Published primary paper](https://pure.uva.nl/ws/files/4076156/164745_238164.pdf). No positivity of integer-alphabet necklace counts is transferred to real arguments between zero and one.
 
@@ -33,7 +33,7 @@ For 1≤k≤N, every pair in this class already belongs to the actual integer re
 
 No future arrival is added, no signed pair is discarded, and both ordered copies remain. The decomposition includes N=0. In Lean, positive births use `arrival n t`; `birth N t` denotes the arrival at N+1.
 
-## Full original clock: written comparison
+## Full original clock: compiled comparison
 
 Keep the full compensated weight
 
@@ -57,7 +57,7 @@ The exact remaining sufficient arithmetic estimate is the one-sided signed bound
 
     Σ_(X≤N<2X) B_N ≤ C_ε X^(2+ε),  for every ε>0.
 
-It would bound the full original dyadic energy at the required scale. It is unproved. Absolute-pair or positive-fiber bounds are different statements and cannot be substituted for it.
+It would bound the full original dyadic energy at the required scale. The numerical transfer from boundary to original energy, and its reverse with the same allowance, are compiled; this arithmetic estimate itself is unproved. Absolute-pair or positive-fiber bounds are different statements and cannot be substituted for it.
 
 ## Formal coverage
 
@@ -69,4 +69,8 @@ It would bound the full original dyadic energy at the required scale. It is unpr
 
 `FactorialBirthLcmEnergy.lean` adds the literal predecessor response identity, absolute integrability of every birth product and every selected finite pair sum, absolute integrability of the interior and boundary, and the exact integrated energy decomposition: six compiled theorems.
 
-All twenty-three added theorems use only the standard logical axioms `propext`, `Classical.choice`, and `Quot.sound`. The constant 5/4, the dyadic polynomial sum, and the RH consumer implication in this formulation remain written proof obligations. The signed arithmetic estimate is open, not an assumed mathematical axiom.
+`FactorialBirthInteriorBound.lean` adds fifteen compiled theorems: scalar factor bounds, constant and inverse-square row envelopes, the exact tail moment, the linear full-clock interior budget, real range and dyadic horizon sums, the exact dyadic allowance, both pointwise and dyadic one-sided transfers, and the finite-band interior allowance and signed boundary transfer.
+
+All thirty-eight added theorems use only the standard logical axioms `propext`, `Classical.choice`, and `Quot.sound`. The RH consumer implication in this formulation remains a written proof obligation. The signed arithmetic estimate is open, not an assumed mathematical axiom.
+
+The finite-band theorem supplies |∫_(0,T] interiorRow_N|≤NT/4 and hence ∫_(0,T] boundaryRow_N≤∫_(0,T] energyRow_N+NT/4 for every T≥0. Combined with the independently reviewed [intermediate-clock response estimate](factorial-intermediate-clock-signed-work-upper.md), this bounds the actual signed escaping boundary through T=N^(−1/2) by O(N log²N). The response estimate and this combined logarithmic bound remain written; only the exact finite-band transfer is compiled. The larger clock remains open.

@@ -988,4 +988,6 @@ The compiled `FactorialRealCellTest.lean` now proves continuity of the actual mo
 
 - Literal additive factorial birth: `building-blocks/BuildingBlocks/FactorialIntegerBirth.lean` proves three exact full-history identities, including every divisor arrival, for all real clocks. The signed work bound remains open.
 
-- [Complete divisor births and the signed LCM boundary](factorial-lcm-birth-boundary.md): twenty-three added compiled theorems give exact complete-class cancellation, absolute full-clock integrability, and the actual integrated boundary decomposition. The linear integrated interior comparison is written; the required signed boundary upper bound remains open.
+- [Complete divisor births and the signed LCM boundary](factorial-lcm-birth-boundary.md): thirty-eight added compiled theorems give exact complete-class cancellation, absolute full-clock integrability, and the actual integrated boundary decomposition. The linear integrated interior comparison and exact dyadic allowance are now compiled; the required signed boundary upper bound remains open.
+
+- [Intermediate-clock signed work and LCM boundary upper](factorial-intermediate-clock-signed-work-upper.md): independently reviewed compensated Taylor/harmonic estimates give an unconditional O(N log²N) signed upper through t=N^(−1/2), with the larger clock open. Fifteen new compiled theorems in `FactorialBirthInteriorBound.lean` establish the numerical full-clock interior budget and exact signed transfer allowances; the logarithmic response bounds remain written.

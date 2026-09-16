@@ -382,3 +382,5 @@ import BuildingBlocks.FactorialBirthDivisorGhost
 import BuildingBlocks.FactorialBirthLcmGhost
 
 import BuildingBlocks.FactorialBirthLcmEnergy
+
+import BuildingBlocks.FactorialBirthInteriorBound
