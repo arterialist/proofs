@@ -48,6 +48,18 @@ keeps exactly the cells with \(r\le N\), proving (2).
 The full-column norm is one because
 \(\sum_{r=dn}^{d(n+1)-1}\ell_r
  =\log((n+1)/n)=\ell_n\).
+Write \(R_{d,N}=M_LU_{-\log d}|_{S_N}\). Distinct columns have
+disjoint child sets, so
+\(R_{d,N}^{*}R_{d,N}\) is diagonal. Its \(n\)-th entry is zero
+when \(dn>N\), and otherwise equals
+\[
+ \frac{\log\!\left(\min\{d(n+1),N+1\}/(dn)\right)}
+      {\log((n+1)/n)}.                                  \tag{3a}
+\]
+The child interval rule is the exact successor relation
+\(d[n,n+1)=\bigcup_{j=0}^{d-1}[dn+j,dn+j+1)\), an interval
+realization of \(M_dS=S^dM_d\), where \(S(n)=n+1\) and
+\(M_d(n)=dn\).
 Adjointness follows from that of the two translations and the
 orthogonal compression \(P_{S_N}M_L(\cdot)M_LP_{S_N}\).
 
@@ -209,3 +221,16 @@ would imply RH. The exact refinement and moving-window form limit make
 this a faithful finite model, but proving that sign is the
 outstanding task. The positive sparse-packet results and the
 critical Hardy comparison do not supply it.
+
+Conversely, under RH the complete Weil form is nonnegative on each
+\(S_N\). A compact step function belongs to \(H^s(\mathbb R)\) for
+every \(0<s<1/2\); mollification converges in that norm and in
+\(L^2\). The gamma form is continuous in \(H^s\), while the finite
+prime sum and both pole moments are continuous in \(L^2\) on a
+slightly wider fixed compact interval. Passing the smooth-test
+Weil sign to the step function proves the converse. Thus RH is
+equivalent to nonnegativity of (8) on the \(S_N\) for any specified
+unbounded sequence of cutoffs. This equivalence locates the missing
+arithmetic sign; the refinement law does not prove it.
+The refinement, form-limit, and criterion equivalence are written
+proofs, not Lean formalizations.

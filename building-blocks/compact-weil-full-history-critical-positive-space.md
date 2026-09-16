@@ -149,7 +149,7 @@ No pole sign is assumed.
 
 Combine (6), (9), (11), the $(\log T)I$ gamma diagonal,
 and the bounded same-center profile matrix. Taking
-$c_0\ge8C_\Gamma$ gives
+$c_0\ge\max\{8,8C_\Gamma\}$ gives
 \[
  Q_{L_N}(f)\ge\frac12E+B+
  \left[\log c-C_{\rm loc}
