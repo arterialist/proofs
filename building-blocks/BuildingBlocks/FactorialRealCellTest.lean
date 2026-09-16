@@ -91,6 +91,38 @@ theorem finiteInverseTest_entry_match (N : ℕ) (t : ℝ) :
     have hp : (N : ℝ) + 1 ≠ 0 := by positivity
     simp only [Nat.cast_add, Nat.cast_one, div_self hp, centeredTest_one, mul_zero]
 
+theorem movingInverseTest_continuousAt_entry (N : ℕ) (t : ℝ) :
+    ContinuousAt (movingInverseTest t) (N + 1) := by
+  have hv : ∀ᶠ y in 𝓝[<] ((N : ℝ) + 1), ⌊y⌋₊ = N := by
+    filter_upwards [Ioo_mem_nhdsLT (show (N : ℝ) < N + 1 by linarith)] with y hy
+    exact Nat.floor_eq_on_Ico N y ⟨hy.1.le, hy.2⟩
+  have he : movingInverseTest t ((N : ℝ) + 1) = finiteInverseTest N t (N + 1) := by
+    have hc : (N : ℝ) + 1 = ((N + 1 : ℕ) : ℝ) := by simp
+    rw [hc]
+    unfold movingInverseTest
+    rw [Nat.floor_natCast]
+    simpa only [Nat.cast_add, Nat.cast_one] using finiteInverseTest_entry_match N t
+  apply continuousAt_iff_continuous_left'_right'.mpr
+  constructor
+  · apply (finiteInverseTest_hasDerivAt N t (N + 1)).continuousAt.continuousWithinAt.congr_of_eventuallyEq
+    · filter_upwards [hv] with y hy
+      simp only [movingInverseTest, hy]
+    · exact he
+  · exact (movingInverseTest_hasDerivWithinAt_right (by have := Nat.cast_nonneg (α := ℝ) N; linarith : (1 : ℝ) ≤ N + 1)).continuousWithinAt
+
+theorem movingInverseTest_continuousOn (t : ℝ) :
+    ContinuousOn (movingInverseTest t) (Set.Ici 1) := by
+  intro x hx
+  by_cases hn : x = (⌊x⌋₊ : ℝ)
+  · have hp : 1 ≤ ⌊x⌋₊ := (Nat.le_floor_iff (by linarith : 0 ≤ x)).mpr (by simpa using hx)
+    obtain ⟨N, hN⟩ := Nat.exists_eq_succ_of_ne_zero (by omega : ⌊x⌋₊ ≠ 0)
+    have he : x = (N : ℝ) + 1 := by simpa [hN] using hn
+    rw [he]
+    exact (movingInverseTest_continuousAt_entry N t).continuousWithinAt
+  · exact (movingInverseTest_continuousAt hx hn).continuousWithinAt
+
+#print axioms movingInverseTest_continuousOn
+#print axioms movingInverseTest_continuousAt_entry
 #print axioms finiteInverseTest_entry_match
 #print axioms movingInverseTest_hasDerivWithinAt_right
 #print axioms movingInverseTest_hasDerivAt
