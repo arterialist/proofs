@@ -377,3 +377,8 @@ import BuildingBlocks.FactorialAbsoluteEnvelope
 import BuildingBlocks.FactorialBirthCollisionKernel
 
 import BuildingBlocks.FactorialIntegerBirth
+
+import BuildingBlocks.FactorialBirthDivisorGhost
+import BuildingBlocks.FactorialBirthLcmGhost
+
+import BuildingBlocks.FactorialBirthLcmEnergy

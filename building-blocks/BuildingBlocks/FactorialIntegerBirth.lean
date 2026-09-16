@@ -56,7 +56,53 @@ theorem actual_birth (N : ℕ) (t : ℝ) :
     ring
   · simp [h]
 
+/-- The complete arrival support is exactly the positive divisors. -/
+theorem arrival_support (N : ℕ) :
+    (Icc 1 (N + 1)).filter (fun d => d ∣ N + 1) = (N + 1).divisors := by
+  ext d
+  simp only [mem_filter, mem_Icc, Nat.mem_divisors]
+  constructor
+  · intro h
+    exact ⟨h.2, by omega⟩
+  · intro h
+    exact ⟨⟨Nat.one_le_iff_ne_zero.mpr (by
+      intro hz
+      subst d
+      simpa using h.1), Nat.le_of_dvd (by omega) h.1⟩, h.1⟩
+
+/-- The actual birth as a divisor sum; the exponent keeps its literal old quotient. -/
+theorem actual_birth_divisors (N : ℕ) (t : ℝ) :
+    birth N t = (1 - Real.exp (-t)) *
+      ∑ d ∈ (N + 1).divisors,
+        (ArithmeticFunction.moebius d : ℝ) * Real.exp (-((N / d : ℕ) : ℝ) * t) := by
+  rw [actual_birth, ← arrival_support, sum_filter]
+
+/-- Accumulated additive births recover the original response without a remainder. -/
+theorem birth_telescoping (N : ℕ) (t : ℝ) :
+    (∑ n ∈ range N, birth n t) = FactorialBinaryCarry.response N t := by
+  induction N with
+  | zero => simp [FactorialBinaryCarry.response]
+  | succ N ih => rw [sum_range_succ, ih]; unfold birth; ring
+
+/-- Exact signed work identity before taking absolute values or integrating. -/
+theorem signed_work_telescoping (N : ℕ) (t : ℝ) :
+    2 * (∑ n ∈ range N, FactorialBinaryCarry.response n t * birth n t) =
+      (FactorialBinaryCarry.response N t) ^ 2 - ∑ n ∈ range N, (birth n t) ^ 2 := by
+  induction N with
+  | zero => simp [FactorialBinaryCarry.response]
+  | succ N ih =>
+    rw [sum_range_succ, sum_range_succ]
+    have he : FactorialBinaryCarry.response (N + 1) t =
+        FactorialBinaryCarry.response N t + birth N t := by unfold birth; ring
+    rw [he]
+    nlinarith
+
 end BuildingBlocks.FactorialIntegerBirth
 #print axioms BuildingBlocks.FactorialIntegerBirth.response_extended
 #print axioms BuildingBlocks.FactorialIntegerBirth.quotient_increment
 #print axioms BuildingBlocks.FactorialIntegerBirth.actual_birth
+
+#print axioms BuildingBlocks.FactorialIntegerBirth.arrival_support
+#print axioms BuildingBlocks.FactorialIntegerBirth.actual_birth_divisors
+#print axioms BuildingBlocks.FactorialIntegerBirth.birth_telescoping
+#print axioms BuildingBlocks.FactorialIntegerBirth.signed_work_telescoping

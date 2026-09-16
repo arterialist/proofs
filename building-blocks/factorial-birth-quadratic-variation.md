@@ -58,3 +58,5 @@ The literal additive birth is now formalized in `BuildingBlocks/FactorialInteger
 δ_(N+1)(t) = (1−exp(−t)) Σ_(1≤d≤N+1, d∣N+1) μ(d) exp(−⌊N/d⌋t).
 
 The formal statement uses an indicator on the complete common support, including d=N+1. Three compiled theorems establish support extension, the exact quotient increment, and the actual response identity. This identifies the arithmetic births underlying the collision kernels; divisor-pair parametrization, the integrated linear variation budget, and the required signed work upper bound remain further obligations.
+
+[Complete LCM cancellation](factorial-lcm-birth-boundary.md) now has a compiled exact finite arithmetic chain, including the full signed escaping-pair boundary identity. This retains the actual response and supplies a different consumer from estimating local birth signs. Its integrated linear interior bound is written and independently reviewed; the signed boundary upper bound remains open.
