@@ -70,6 +70,60 @@ theorem actual_double_integral_swap (N : ℕ) (hN : 0 < N) :
     actualDiscrepancy N p.1 * actualDiscrepancy N p.2 * inverseTestPhase p.1 t *
       inverseTestPhase p.2 t * FactorialBinaryEnergy.weight t) (actual_double_product_integrable N hN)
 
+/-- The complete signed kernel pairing equals the squared actual discrepancy work. -/
+theorem actual_double_spatial_pairing (N : ℕ) (hN : 0 < N) :
+    (∫ t in Ioi 0, (actualWork N t)^2 * FactorialBinaryEnergy.weight t) =
+    ∫ p : ℝ × ℝ, actualDiscrepancy N p.1 * actualDiscrepancy N p.2 * actualCrossKernel p.1 p.2
+      ∂((volume.restrict (Ioc 1 (N : ℝ))).prod (volume.restrict (Ioc 1 (N : ℝ)))) := by
+  have hNr : (1 : ℝ) ≤ N := by exact_mod_cast hN
+  have hs := actual_double_integral_swap N hN
+  have hl : (∫ p : ℝ × ℝ, (∫ t in Ioi 0, actualDiscrepancy N p.1 * actualDiscrepancy N p.2 *
+      inverseTestPhase p.1 t * inverseTestPhase p.2 t * FactorialBinaryEnergy.weight t)
+      ∂((volume.restrict (Ioc 1 (N : ℝ))).prod (volume.restrict (Ioc 1 (N : ℝ))))) =
+      ∫ p : ℝ × ℝ, actualDiscrepancy N p.1 * actualDiscrepancy N p.2 * actualCrossKernel p.1 p.2
+      ∂((volume.restrict (Ioc 1 (N : ℝ))).prod (volume.restrict (Ioc 1 (N : ℝ)))) := by
+    apply integral_congr_ae
+    rw [Measure.prod_restrict]
+    filter_upwards [ae_restrict_mem (measurableSet_Ioc.prod measurableSet_Ioc)] with p hp
+    rw [← inverseTestPhase_cross_integral hp.1.1.le hp.2.1.le, ← integral_const_mul]
+    apply integral_congr_ae
+    exact Eventually.of_forall (fun t => by ring)
+  have hr : ∀ t : ℝ, (∫ p : ℝ × ℝ, actualDiscrepancy N p.1 * actualDiscrepancy N p.2 *
+      inverseTestPhase p.1 t * inverseTestPhase p.2 t * FactorialBinaryEnergy.weight t
+      ∂((volume.restrict (Ioc 1 (N : ℝ))).prod (volume.restrict (Ioc 1 (N : ℝ))))) =
+      (actualWork N t)^2 * FactorialBinaryEnergy.weight t := by
+    intro t
+    have he : (∫ x in Ioc 1 (N : ℝ), actualDiscrepancy N x * inverseTestPhase x t) = -actualWork N t := by
+      unfold actualWork
+      rw [intervalIntegral.integral_of_le hNr]
+      have hn : (fun x : ℝ => actualDiscrepancy N x * (-inverseTestPhase x t)) =
+          fun x => -(actualDiscrepancy N x * inverseTestPhase x t) := by funext x; ring
+      rw [hn, integral_neg, neg_neg]
+    calc
+      _ = FactorialBinaryEnergy.weight t *
+          (∫ p : ℝ × ℝ, (actualDiscrepancy N p.1 * inverseTestPhase p.1 t) *
+            (actualDiscrepancy N p.2 * inverseTestPhase p.2 t)
+            ∂((volume.restrict (Ioc 1 (N : ℝ))).prod (volume.restrict (Ioc 1 (N : ℝ))))) := by
+        rw [← integral_const_mul]
+        apply integral_congr_ae
+        exact Eventually.of_forall (fun p => by ring)
+      _ = _ := by rw [integral_prod_mul (fun x : ℝ => actualDiscrepancy N x * inverseTestPhase x t)
+        (fun y : ℝ => actualDiscrepancy N y * inverseTestPhase y t), he]; ring
+  rw [hl] at hs
+  simp_rw [hr] at hs
+  exact hs.symm
+
+/-- Full original response energy reconstructed with retained baseline and signed spatial kernels. -/
+theorem actual_signed_spatial_energy (N : ℕ) (hN : 0 < N) :
+    (∫ t in Ioi 0, FactorialBinaryCarry.response N t ^ 2 * FactorialBinaryEnergy.weight t) =
+      (∫ t in Ioi 0, actualBaseline N t ^ 2 * FactorialBinaryEnergy.weight t) +
+      2 * (∫ x in (1 : ℝ)..N, actualDiscrepancy N x * actualMixedKernel N x) +
+      (∫ p : ℝ × ℝ, actualDiscrepancy N p.1 * actualDiscrepancy N p.2 * actualCrossKernel p.1 p.2
+        ∂((volume.restrict (Ioc 1 (N : ℝ))).prod (volume.restrict (Ioc 1 (N : ℝ))))) := by
+  rw [actualWork_energy_split N hN, actual_mixed_spatial_pairing N hN, actual_double_spatial_pairing N hN]
+
+#print axioms actual_signed_spatial_energy
+#print axioms actual_double_spatial_pairing
 #print axioms actual_double_integral_swap
 #print axioms actual_double_product_integrable
 end BuildingBlocks.FactorialRealCellPhase
