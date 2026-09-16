@@ -1,4 +1,5 @@
 import Mathlib.Data.Nat.Init
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.NumberTheory.Padics.PadicVal.Basic
 import Mathlib.Tactic
 
@@ -82,6 +83,79 @@ theorem collar_child_exists_iff (m d : ℕ) (hm : 0 < m) (hd : 0 < d) :
     · refine ⟨m, le_refl m, by omega, ?_⟩
       apply (div_eq_iff_child (d := d) (n := 1) (r := m) hd).mpr
       constructor <;> omega
+
+/-- Logarithmic successor-cell lengths telescope on every finite
+    integer interval, including the exact lower and upper endpoints. -/
+theorem sum_log_cell_length (a b : ℕ) (ha : 0 < a) (hab : a ≤ b) :
+    (∑ r ∈ Finset.Ico a b,
+      Real.log (((r + 1 : ℕ) : ℝ) / (r : ℝ))) =
+      Real.log ((b : ℝ) / (a : ℝ)) := by
+  have htel : ∀ b : ℕ, a ≤ b →
+      (∑ r ∈ Finset.Ico a b,
+        (Real.log ((r + 1 : ℕ) : ℝ) - Real.log (r : ℝ))) =
+        Real.log (b : ℝ) - Real.log (a : ℝ) := by
+    intro b hb
+    induction b, hb using Nat.le_induction with
+    | base => simp
+    | succ b hb ih =>
+      rw [Finset.sum_Ico_succ_top hb, ih]
+      push_cast
+      ring
+  calc
+    (∑ r ∈ Finset.Ico a b,
+        Real.log (((r + 1 : ℕ) : ℝ) / (r : ℝ))) =
+      ∑ r ∈ Finset.Ico a b,
+        (Real.log ((r + 1 : ℕ) : ℝ) - Real.log (r : ℝ)) := by
+        apply Finset.sum_congr rfl
+        intro r hr
+        have hrpos : 0 < r := lt_of_lt_of_le ha (Finset.mem_Ico.mp hr).1
+        rw [Real.log_div (by positivity) (by exact_mod_cast (Nat.ne_of_gt hrpos))]
+    _ = Real.log (b : ℝ) - Real.log (a : ℝ) := htel b hab
+    _ = Real.log ((b : ℝ) / (a : ℝ)) := by
+      rw [Real.log_div (by exact_mod_cast (Nat.ne_of_gt (lt_of_lt_of_le ha hab)))
+        (by exact_mod_cast (Nat.ne_of_gt ha))]
+
+/-- The exact cell-length weight in the two opposite log-2 collars. -/
+noncomputable def collarWeight (m d : ℕ) : ℝ :=
+  ∑ r ∈ Finset.Ico (max m d) (min (2 * m) (2 * d)),
+    Real.log (((r + 1 : ℕ) : ℝ) / (r : ℝ))
+
+/-- The geometric overlap weight is exactly the sum over successor
+    children of the first opposite collar cell. -/
+theorem collarWeight_eq_child_filter (m d : ℕ) (hd : 0 < d) :
+    collarWeight m d =
+      ∑ r ∈ (Finset.Ico m (2 * m)).filter (fun r => r / d = 1),
+        Real.log (((r + 1 : ℕ) : ℝ) / (r : ℝ)) := by
+  have hset : (Finset.Ico m (2 * m)).filter (fun r => r / d = 1) =
+      Finset.Ico (max m d) (min (2 * m) (2 * d)) := by
+    ext r
+    simpa only [Finset.mem_filter, Finset.mem_Ico, and_assoc] using
+      (collar_child_iff m d r hd)
+  simp only [collarWeight, hset]
+
+theorem collarWeight_lower_band (m d : ℕ) (hm : 0 < m)
+    (hdm : d < m) (hmd : m < 2 * d) :
+    collarWeight m d = Real.log (((2 * d : ℕ) : ℝ) / (m : ℝ)) := by
+  have hmax : max m d = m := max_eq_left (by omega)
+  have hmin : min (2 * m) (2 * d) = 2 * d := min_eq_right (by omega)
+  simp only [collarWeight, hmax, hmin]
+  exact sum_log_cell_length m (2 * d) hm (by omega)
+
+theorem collarWeight_upper_band (m d : ℕ) (hd : 0 < d)
+    (hmd : m ≤ d) (hdm : d < 2 * m) :
+    collarWeight m d = Real.log (((2 * m : ℕ) : ℝ) / (d : ℝ)) := by
+  have hmax : max m d = d := max_eq_right hmd
+  have hmin : min (2 * m) (2 * d) = 2 * m := min_eq_left (by omega)
+  simp only [collarWeight, hmax, hmin]
+  exact sum_log_cell_length d (2 * m) hd (by omega)
+
+theorem collarWeight_zero_outside (m d : ℕ)
+    (h : 2 * d ≤ m ∨ 2 * m ≤ d) : collarWeight m d = 0 := by
+  have hle : min (2 * m) (2 * d) ≤ max m d := by
+    rcases h with h | h <;> omega
+  unfold collarWeight
+  rw [Finset.Ico_eq_empty_of_le hle]
+  simp
 
 theorem transfer_child {R : Type*} [Zero R]
     {N d n r : ℕ} (z : ℕ → R) (hd : 0 < d) (hr : r ≤ N)
@@ -348,6 +422,11 @@ theorem twoThreeGauge_fails_at_nine :
 #print axioms div_eq_iff_child
 #print axioms collar_child_iff
 #print axioms collar_child_exists_iff
+#print axioms sum_log_cell_length
+#print axioms collarWeight_eq_child_filter
+#print axioms collarWeight_lower_band
+#print axioms collarWeight_upper_band
+#print axioms collarWeight_zero_outside
 #print axioms transfer_child
 #print axioms transfer_mul
 #print axioms transfer_comm

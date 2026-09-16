@@ -219,5 +219,8 @@ prime row in (9), even though its uncentered prime sum \(P_X\) is
 nonnegative. It does not say that \(Q_a(f_m)\) changes sign: the fixed
 archimedean and pole constant \(C_h\) remains. Any RH-strength lower
 comparison for this scalar row must pay the signed \(D_X\) rather than
-discarding it. The result is written mathematics, not a Lean
-formalization or an RH proof.
+discarding it. The child support and piecewise logarithmic overlap
+weights in (3) are formalized in
+[SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean).
+The full Weil row, analytic oscillation, and RH implications remain
+written mathematics, not Lean formalizations or an RH proof.

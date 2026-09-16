@@ -126,8 +126,11 @@ For a parent at label 1 and a child in \(m\le r<2m\),
 \]
 The overlap is nonempty exactly when \(m<2d\) and \(d<2m\),
 equivalently \(X/4<d<X\) for \(X=2m\). Both integer support
-statements are now Lean theorems; the logarithmic telescoping that
-turns the overlap into the triangular weight is still written.
+statements and the telescoping cell-length sum are now Lean theorems:
+the weight is \(\log(2d/m)\) for \(m/2<d<m\),
+\(\log(2m/d)\) for \(m\le d<2m\), and zero outside.
+Its equivalent expression as the triangular function
+\(W(\log(X/d))\) is written mathematics.
 
 ## A prime phase has an interior successor carry
 
@@ -217,7 +220,7 @@ and gauges that vary continuously rather than taking signs.
 
 [SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean)
 formalizes the child-index equivalence, opposite-collar support,
-cutoff semigroup law,
+exact logarithmic overlap weights, cutoff semigroup law,
 commutation, vanishing beyond the cutoff, the gauge defect (9),
 prime-two sign multiplicativity, exact-multiple cancellation, and the
 physical-value identity underlying the normalized carry in (10).

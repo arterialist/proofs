@@ -108,10 +108,11 @@ either collar with itself, except on a null endpoint. Its two
 cross-collar orientations give the triangular convolution in (2):
 in cell labels the contributing children have
 \(m\le r\le2m-1\) and \(\lfloor r/d\rfloor=1\), and their lengths
-sum to \(W(\log(X/d))\). The integer child support and its exact
-nonempty range \(X/4<d<X\) are formalized in
-[SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean);
-the logarithmic telescoping weight is written here. The gamma diagonal is the finite box value
+sum to \(W(\log(X/d))\). The integer child support, its exact
+nonempty range \(X/4<d<X\), and the piecewise logarithmic overlap
+weights are formalized in
+[SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean).
+Their expression as \(W(\log(X/d))\) is written here. The gamma diagonal is the finite box value
 \(A_h\) in (4). The cross-gamma kernel of the complete Weil form is
 \(-e^{-s/2}/(1-e^{-2s})\) at separation \(s>0\), giving \(-J_a\).
 These gamma entries are finite because box Fourier transforms decay
@@ -261,5 +262,5 @@ integer, so \(D_X-D_{2m}=O(X^{-1/2})\) at the nearest one. Equations
 This proves the claimed two one-row equivalences. They reduce the
 full-window positivity problem to explicit scalar bounds but do not
 prove either bound, the full matrix sign, or RH. All results in this
-note beyond the cited finite child-support lemmas are written
+note beyond the cited finite child-support and logarithmic-weight lemmas are written
 mathematics, not Lean formalizations.
