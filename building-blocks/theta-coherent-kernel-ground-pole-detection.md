@@ -195,7 +195,7 @@ $$
 $$
 If the left side is finite, its $O(T)$ cumulative square mass makes the literal Laplace transform of $\mathcal T_R$ converge for $\Re z>0$. In the probability measure $\varepsilon e^{-\varepsilon V}dV$, exponentials at distinct ordinates have Gram matrix tending to the identity, while their pairings with $\mathcal T_R$ tend to the residues (15). Finite-dimensional projection and integration by parts give (17), exactly as in the linked ground-tail theorem. If the left side is infinite, (17) is immediate.
 
-The physical-mass concentration cited above detects a fixed Hardy critical zero at all sufficiently large radii with $|\cos(\gamma R)|\ge1/2$, a set of density $2/3$. There $|M_R(i\gamma)|\ge m_R/4$, so $|r_{R,\rho}|\ge m_\rho m_R|\mathfrak m(i\gamma)|/2$. Thus (16) gives unconditional sign changes of the actual full mixed Weil row at arbitrarily late clock times for those radii. It does not control the affine covariance residual.
+The physical-mass concentration cited above detects a fixed Hardy critical zero at all sufficiently large radii with $|\cos(\gamma R)|\ge1/2$, a set of density $2/3$. There $|M_R(i\gamma)|\ge m_R/4$, so $|r_{R,\rho}|\ge m_\rho m_R|\mathfrak m(i\gamma)|/2$. In fact detection, without a fixed relative amplitude, holds for a set of radii of density **one**: from $M_R(i\gamma)/m_R-\cos(\gamma R)\to0$, for each $\eta>0$ all sufficiently late non-detecting radii lie in $\{|\cos(\gamma R)|\le\eta\}$, whose density is $2\arcsin(\eta)/\pi$; let $\eta\downarrow0$. Thus (16) gives unconditional sign changes of the actual full mixed Weil row at arbitrarily late clock times for a density-one set of cores. It does not control the affine covariance residual.
 
 ## The RH-conditional full zero series
 
