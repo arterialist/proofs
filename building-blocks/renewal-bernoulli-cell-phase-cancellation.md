@@ -286,7 +286,9 @@ $(J-\ell)(0)=-\ell$ give, by integration by parts,
 The weight of $J-\ell$ before that integration by parts is
 $-C_f'(u)$, not the convex future primitive $W_T$ in (16). No
 decreasing-convex shape has been established for the actual $C_f$ or
-its derivative. Similarly, the [compact heat/Goldbach comparison](actual-heat-scaling-derivative-bridge.md#exact-density-cell-and-terminal-cost-for-the-compact-actual-source)
+its derivative. The [actual finite Goldbach packet](actual-centered-packet-lag-autocorrelation.md)
+has derivative-autocorrelation weights of both signs at sufficiently
+late lags, depending on its terminal prime error. Similarly, the [compact heat/Goldbach comparison](actual-heat-scaling-derivative-bridge.md#exact-density-cell-and-terminal-cost-for-the-compact-actual-source)
 still carries its separate terminal payment
 $|\psi(N)-N|/\sqrt{2N}$. Thus (18) is unconditional and uniform in the
 horizon, but does not supply an RH-scale bound on the heat Gram or that
