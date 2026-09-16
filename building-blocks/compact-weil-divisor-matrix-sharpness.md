@@ -50,6 +50,11 @@ sum and using \(\sum_{d\mid m}\Lambda(d)=\log m\) gives the exact identity
  \end{aligned}
  \tag{4}
 \]
+[CompactWeilDivisorRayleighFinite.lean](BuildingBlocks/CompactWeilDivisorRayleighFinite.lean)
+compiles the exact finite factor-pair equality in (4), with every
+von Mangoldt prime-power weight retained. The matrix compression,
+asymptotic quotient and eigenvalue conclusion remain written
+mathematics.
 Integral comparison gives
 \(\sum_{m\le N}(\log m)/m=\tfrac12(\log N)^2+O(1)\).
 Since \(H_N=\log N+\gamma+o(1)\), (3) follows. The weighted
