@@ -119,8 +119,10 @@ $$
 Equation (1) is $U_yF_y=M$. In the standard basis of prefix vectors,
 $U_y$ is lower triangular with every diagonal entry equal to $1$:
 the $d=1$ term is $f(m)$, while every $d>1$ uses
-$\lfloor m/d\rfloor<m$. If a prime $p\in(y,N]$ exists, the
-coefficient of $f(1)$ in $(U_yf)(p)$ is $-1$, so $U_y\ne I$.
+$\lfloor m/d\rfloor<m$. If a prime in $(y,N]$ exists, let $p$
+be the least such prime. At $m=p$, the only rough squarefree
+indices are $d=1,p$, so the coefficient of $f(1)$ in
+$(U_yf)(p)$ is $-1$ and $U_y\ne I$.
 
 Suppose a positive-definite inner product made $U_y$ a contraction.
 All singular values in that metric would be at most $1$, but their

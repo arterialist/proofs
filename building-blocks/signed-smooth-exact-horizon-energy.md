@@ -160,7 +160,15 @@ e^{im\nu}\frac{P(\theta_0+\nu)}{P(\theta_0)}
 \tag{10}
 $$
 
-On $|\nu|\le t/\sqrt{Lt}$, the cubic remainder contributes $o(1)$ even after the $O(t)$ transform norm; replacing $V$ by $\operatorname{Re}V$ also costs $o(1)$. The resulting Gaussian integral equals $\mathbb E g(X)=1-o(1)$ for $X\sim N(0,\operatorname{Re}V)$, since $W^2/\operatorname{Re}V\asymp L/t^5\to\infty$. From this central window to $\eta/(2t)$, exact local curvature makes the integral $o(1)$.
+On $|\nu|\le t/\sqrt{Lt}$, the cubic remainder contributes $o(1)$ even after the $O(t)$ transform norm. Replacing $V$ by $A=\operatorname{Re}V$ in the Gaussian integral also costs $o(1)$: because $|\widehat g(\nu)|\le2/|\nu|$ and $\operatorname{Im}V$ is real,
+
+$$
+\int_{\mathbb R}|\widehat g(\nu)|e^{-A\nu^2/2}
+\left|e^{-i(\operatorname{Im}V)\nu^2/2}-1\right|d\nu
+\ll\frac{|\operatorname{Im}V|}{A}=o(1).
+$$
+
+This estimate does not multiply the variance error by $\|\widehat g\|_1$. The resulting Gaussian integral equals $\mathbb E g(X)=1-o(1)$ for $X\sim N(0,A)$, since $W^2/A\asymp L/t^5\to\infty$. From the central window to $\eta/(2t)$, exact local curvature makes the integral $o(1)$.
 
 For all other frequencies with $|\nu|\le100/t$, the fixed-index resonance estimate bounds the product by $|T|e^{-r}$, except near the conjugate phase $\nu=-2\theta_0$. There, $|h\nu|\in[1.5,1.6]$ eventually, so $|\operatorname{sinc}(h\nu)|\le2/3$ and (8) suppresses that entire contribution by $O((2/3)^k)$. Finally, for $|\nu|\ge100/t$,
 
