@@ -112,6 +112,18 @@ More explicitly, (8), (9) and (12) give the original process cross
 This is a sign for one actual birth pair. It does not sign the sum of
 all birth pairs in the process energy.
 
+The selected family has a signed logarithmic total. Quantitative PNT
+gives \(\sum_{p\le Y}(\log p)/p=\log Y+O(1)\), while
+\(\sum_{p\le Y}1/p=O(\log\log Y)\). Expanding the logarithm in (8) and
+using the absolute summability of \(Q_p\) proved below yields
+\[
+\sum_{\substack{p\le Y\\p\text{ odd prime}}}
+\langle R_Fv_p,R_Fv_{2p}\rangle
+=-\tfrac12\log Y+O(\log\log Y).\tag{12b}
+\]
+This is a complete signed estimate for the selected dyadic birth-pair
+family. Other birth pairs remain in the accumulated process energy.
+
 The separate observations are much larger and cancel at leading order. For \(p\ge5\), \(A_p(x)>0\) for \(x\ge2p-1\): indeed \(d_p\le1/(p-1)\le1/4\), while \((\log p-1)\log(2-1/p)\ge(\log5-1)\log(9/5)>1/4\). Hence \(W_p<0\) on \(x>a\), so both \(\mathcal C_F(w_p,w_{2p})\) and \(\mathcal P_F(w_p,w_{2p})\) are strictly negative. Scaling \(x=py\), using (3)--(5), \(F(py)\to F_\infty\), and dominated convergence gives
 \[
 \mathcal C_F(w_p,w_{2p})
