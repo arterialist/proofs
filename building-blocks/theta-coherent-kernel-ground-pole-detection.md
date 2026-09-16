@@ -161,6 +161,14 @@ a_R=-2\delta_RL_R(0)-\int_CA_R(u)du.
 $$
 Here $L_R(0)$ means its holomorphic continuation. Equivalently, $a_R$ is the value at zero of the continued exponential weak row $Q_W(G_R,e^{-z|\cdot|})$ from the ground-tail theorem; it is not an assertion that the unregularized constant test has finite pole moments.
 
+This real residue is **exactly zero**. In the exponential-row continuation, the finite-reflection correction to the prime sum vanishes at $z=0$, since both the actual and unreflected brackets equal $2$ there. The two-pole term $\mu_R[(z-1/2)^{-1}+(z+1/2)^{-1}]$ also vanishes at zero. With $m_R=\int G_R$ and $a_0=\zeta'(1/2)/\zeta(1/2)$, the prime continuation is $S_R(0)=-2a_0m_R$, while (12) gives $A(G_R,1)=c_Am_R$. The quarter-argument digamma identity and the zeta functional equation, also used in the [successor-feedback constant calculation](successor-feedback-RH-converse.md), give
+$$
+c_A=\psi_{\rm dig}(1/4)-\log\pi
+=-\gamma_E-\frac\pi2-3\log2-\log\pi
+=-2a_0.
+$$
+Since $Q_W=A-S+P$, equation (14) therefore reduces to $a_R=(c_A+2a_0)m_R=0$, independently of RH and of the core radius.
+
 Let $\rho=1/2+i\gamma$ be a detected critical-line zero, $\gamma\ne0$. Equation (9), continued to a neighborhood of $i\gamma$, has residue
 $$
 r_{R,\rho}=2m_\rho\mathfrak m(i\gamma)M_R(i\gamma)\ne0.
@@ -170,21 +178,60 @@ The gamma modulus identity gives $|\mathfrak m(i\gamma)|=\pi\coth(\pi|\gamma|)/(
 The same positive-Laplace argument used in the [ground-tail oscillation theorem](theta-ground-zero-forced-flat-tail-oscillation.md) gives
 $$
 \boxed{\quad
-\limsup_{V\to\infty}\mathcal T_R(V)\ge a_R+|r_{R,\rho}|,
+\limsup_{V\to\infty}\mathcal T_R(V)\ge |r_{R,\rho}|,
 \qquad
-\liminf_{V\to\infty}\mathcal T_R(V)\le a_R-|r_{R,\rho}|.
+\liminf_{V\to\infty}\mathcal T_R(V)\le-|r_{R,\rho}|.
 \quad}
 \tag{16}
 $$
-For clarity, an eventual upper bound $\mathcal T_R(V)\le C$ makes $(C-\mathcal T_R)1_{[V_0,\infty)}$ nonnegative. Its transform has a nonreal pole at $i\gamma$, but no positive-real singularity: the earlier ground-tail continuation is regular on the positive real axis, as are (5), $J_R$ and the compact core transform. Landau's positive-Laplace theorem forces its convergence abscissa to zero. Positivity then bounds the absolute value of its transform at $\varepsilon+i\gamma$ by its value at $\varepsilon>0$. Multiplying by $\varepsilon\downarrow0$ yields $|r_{R,\rho}|\le C-a_R$. Apply the same argument to $\mathcal T_R-C$ for the lower bound. Neither limit in (16) is assumed finite.
+For clarity, an eventual upper bound $\mathcal T_R(V)\le C$ makes $(C-\mathcal T_R)1_{[V_0,\infty)}$ nonnegative. Its transform has a nonreal pole at $i\gamma$, but no positive-real singularity: the earlier ground-tail continuation is regular on the positive real axis, as are (5), $J_R$ and the compact core transform. Landau's positive-Laplace theorem forces its convergence abscissa to zero. Positivity then bounds the absolute value of its transform at $\varepsilon+i\gamma$ by its value at $\varepsilon>0$. Multiplying by $\varepsilon\downarrow0$ yields $|r_{R,\rho}|\le C$, using $a_R=0$. Apply the same argument to $\mathcal T_R-C$ for the lower bound. Neither limit in (16) is assumed finite.
 
 For any finite set $\mathcal Z_R$ of distinct detected critical-line zeros, counting conjugates separately, the same Abel-weight projection gives
 $$
 \limsup_{T\to\infty}\frac1T\int_0^T
- |\mathcal T_R(V)-a_R|^2dV
+ |\mathcal T_R(V)|^2dV
 \ge\sum_{\rho\in\mathcal Z_R}|r_{R,\rho}|^2.
 \tag{17}
 $$
-If the left side is finite, its $O(T)$ cumulative square mass makes the literal Laplace transform of $\mathcal T_R-a_R$ converge for $\Re z>0$. In the probability measure $\varepsilon e^{-\varepsilon V}dV$, exponentials at distinct ordinates have Gram matrix tending to the identity, while their pairings with $\mathcal T_R-a_R$ tend to the residues (15). Finite-dimensional projection and integration by parts give (17), exactly as in the linked ground-tail theorem. If the left side is infinite, (17) is immediate.
+If the left side is finite, its $O(T)$ cumulative square mass makes the literal Laplace transform of $\mathcal T_R$ converge for $\Re z>0$. In the probability measure $\varepsilon e^{-\varepsilon V}dV$, exponentials at distinct ordinates have Gram matrix tending to the identity, while their pairings with $\mathcal T_R$ tend to the residues (15). Finite-dimensional projection and integration by parts give (17), exactly as in the linked ground-tail theorem. If the left side is infinite, (17) is immediate.
 
-The physical-mass concentration cited above detects a fixed Hardy critical zero at all sufficiently large radii with $|\cos(\gamma R)|\ge1/2$, a set of density $2/3$. Thus (16) is an unconditional two-sided oscillation of the actual full mixed Weil row about its continued real residue for those radii. It does not sign the row or control the affine covariance residual.
+The physical-mass concentration cited above detects a fixed Hardy critical zero at all sufficiently large radii with $|\cos(\gamma R)|\ge1/2$, a set of density $2/3$. There $|M_R(i\gamma)|\ge m_R/4$, so $|r_{R,\rho}|\ge m_\rho m_R|\mathfrak m(i\gamma)|/2$. Thus (16) gives unconditional sign changes of the actual full mixed Weil row at arbitrarily late clock times for those radii. It does not control the affine covariance residual.
+
+## The RH-conditional full zero series
+
+The exact prime identity also gives a direct asymptotic transfer from the arithmetic core. As $V\to\infty$, $h_{e^{-V}}(v)\to1$ pointwise. The uniform bounded/Lipschitz estimates used in (12) dominate its difference integral, so $A(G_R,h_{e^{-V}})\to c_Am_R$. The reflection correction in (10) tends to zero by (11) and dominated convergence, and the full two-pole row $\mu_RH_{e^{-V}}$ tends to zero. Therefore, **without assuming RH**,
+$$
+\mathcal T_R(V)=c_Am_R
+ +\int_{\mathbb R}G_R(u)
+ [Q_{\rm core}(e^{-V+u})+Q_{\rm core}(e^{-V-u})]du
+ +o_R(1).
+\tag{18}
+$$
+
+Under RH, the absolutely convergent zero expansion in the [successor-feedback converse](successor-feedback-RH-converse.md), together with the exact $E+C=b_sQ_{\rm core}+D$ relation, gives
+$$
+Q_{\rm core}(e^{-W})
+=a_0+\sum_\rho b_\rho e^{i\gamma W}+o(1),
+\qquad b_\rho=-m_\rho M_K(\rho),\quad
+\rho=\tfrac12+i\gamma.
+\tag{19}
+$$
+The sum includes distinct zeros with multiplicities in $b_\rho$ and converges absolutely and uniformly in $W$. For $|u|\le V/2$, both arguments of $Q_{\rm core}$ in (18) tend uniformly to zero, so the $o(1)$ in (19) integrates to $o_R(1)$. On $|u|>V/2$, the global RH bound on $Q_{\rm core}$ and the theta tail of $G_R$ make the integral vanish. Evenness gives $M_R(-i\gamma)=M_R(i\gamma)$, and the constant cancels because $c_A+2a_0=0$. Thus
+$$
+\boxed{\quad
+\mathcal T_R(V)=\sum_\rho r_{R,\rho}e^{i\gamma V}+o_R(1),
+\qquad
+r_{R,\rho}=2b_\rho M_R(i\gamma)
+=2m_\rho\mathfrak m(i\gamma)M_R(i\gamma).
+\quad}
+\tag{20}
+$$
+The coefficient sum is absolutely convergent because $|M_R(i\gamma)|\le m_R$ and $\sum_\rho|b_\rho|<\infty$. Conjugate zeros pair to make the row real. Its ordinary Cesàro mean and square mean therefore satisfy
+$$
+\lim_{T\to\infty}\frac1T\int_0^T\mathcal T_R(V)dV=0,
+\qquad
+\lim_{T\to\infty}\frac1T\int_0^T|\mathcal T_R(V)|^2dV
+=\sum_\rho|r_{R,\rho}|^2.
+\tag{21}
+$$
+For any radius detecting a critical zero, the right side is positive. These are RH-conditional calibrations of the actual mixed row, not unconditional sign or covariance estimates. The analytic statements in this chapter remain unformalized in Lean.
