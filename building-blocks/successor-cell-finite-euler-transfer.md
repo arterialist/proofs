@@ -116,6 +116,19 @@ integer-minus-continuum cancellation and the signed full Weil
 completion, rather than deducing positivity from finite
 invertibility.
 
+The same finite child law controls the exact [opposite-collar prime
+row](successor-cell-odd-collar-triangular-prime-oscillation.md).
+For a parent at label 1 and a child in \(m\le r<2m\),
+\[
+ \lfloor r/d\rfloor=1
+ \quad\Longleftrightarrow\quad
+ \max(m,d)\le r<\min(2m,2d).
+\]
+The overlap is nonempty exactly when \(m<2d\) and \(d<2m\),
+equivalently \(X/4<d<X\) for \(X=2m\). Both integer support
+statements are now Lean theorems; the logarithmic telescoping that
+turns the overlap into the triangular weight is still written.
+
 ## A prime phase has an interior successor carry
 
 The finite semigroup law does not make the dense successor-cell model
@@ -203,7 +216,8 @@ multiplicative sign gauge. It leaves open localized packet arguments
 and gauges that vary continuously rather than taking signs.
 
 [SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean)
-formalizes the child-index equivalence, cutoff semigroup law,
+formalizes the child-index equivalence, opposite-collar support,
+cutoff semigroup law,
 commutation, vanishing beyond the cutoff, the gauge defect (9),
 prime-two sign multiplicativity, exact-multiple cancellation, and the
 physical-value identity underlying the normalized carry in (10).

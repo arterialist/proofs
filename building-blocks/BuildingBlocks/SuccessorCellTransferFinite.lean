@@ -50,6 +50,39 @@ theorem div_eq_iff_child {d n r : ℕ} (hd : 0 < d) :
       (Nat.div_lt_iff_lt_mul hd).mpr (by simpa [mul_comm] using hhi)
     omega
 
+/-- For opposite log-2 collars, a right child `r` of left parent
+    `1` lies in the intersection of the two integer intervals. -/
+theorem collar_child_iff (m d r : ℕ) (hd : 0 < d) :
+    (m ≤ r ∧ r < 2 * m ∧ r / d = 1) ↔
+      max m d ≤ r ∧ r < min (2 * m) (2 * d) := by
+  constructor
+  · rintro ⟨hm, h2m, hdiv⟩
+    have hchild := (div_eq_iff_child (d := d) (n := 1) (r := r) hd).mp hdiv
+    constructor <;> omega
+  · rintro ⟨hlo, hhi⟩
+    have hdiv : r / d = 1 :=
+      (div_eq_iff_child (d := d) (n := 1) (r := r) hd).mpr (by
+        constructor <;> omega)
+    exact ⟨by omega, by omega, hdiv⟩
+
+/-- The triangular collar overlap is nonempty exactly for
+    `m/2 < d < 2*m`, written without division. -/
+theorem collar_child_exists_iff (m d : ℕ) (hm : 0 < m) (hd : 0 < d) :
+    (∃ r, m ≤ r ∧ r < 2 * m ∧ r / d = 1) ↔
+      m < 2 * d ∧ d < 2 * m := by
+  constructor
+  · rintro ⟨r, hmle, h2m, hdiv⟩
+    have hchild := (div_eq_iff_child (d := d) (n := 1) (r := r) hd).mp hdiv
+    omega
+  · rintro ⟨hmd, hdm⟩
+    rcases le_total m d with hle | hle
+    · refine ⟨d, hle, hdm, ?_⟩
+      apply (div_eq_iff_child (d := d) (n := 1) (r := d) hd).mpr
+      constructor <;> omega
+    · refine ⟨m, le_refl m, by omega, ?_⟩
+      apply (div_eq_iff_child (d := d) (n := 1) (r := m) hd).mpr
+      constructor <;> omega
+
 theorem transfer_child {R : Type*} [Zero R]
     {N d n r : ℕ} (z : ℕ → R) (hd : 0 < d) (hr : r ≤ N)
     (hlo : d * n ≤ r) (hhi : r < d * (n + 1)) :
@@ -313,6 +346,8 @@ theorem twoThreeGauge_fails_at_nine :
   norm_num [twoThreeGauge_nine, twoThreeGauge_four, twoThreeGauge_two]
 
 #print axioms div_eq_iff_child
+#print axioms collar_child_iff
+#print axioms collar_child_exists_iff
 #print axioms transfer_child
 #print axioms transfer_mul
 #print axioms transfer_comm
