@@ -79,6 +79,7 @@ $$
  \qquad |J_e|=\log(10/9)-e>0.
 \tag{9}
 $$
+At the endpoint $e=\log(10/9)$, the source step-$3$ labels fill $(d,c_2)$ and the target step-$1$ labels fill $(c_2,L)$, so $U=B$ apart from endpoints. Thus the support-outside-$U$ construction has reached its exact boundary; this does not rule out other null modes beyond it.
 The parity reflection reverses every $n=5$ edge: $Q(\theta+\beta)=e-\theta\pmod L\in A_5$ for $\theta\in A_5$. Hence the induced $q$ preserves $U$ and its complement. Choose a small interval $J\subset J_e$ on which $q$ is a reflected translation, $q(J)\cap J=\varnothing$, and both $J,q(J)$ avoid the finitely many breakpoints. This choice makes every $n=5$ graph difference zero because both endpoint labels lie in $U$, where the functions below vanish.
 
 In either case, divide $J$ into pairwise disjoint smaller intervals $J_j$. For each $j$, define
