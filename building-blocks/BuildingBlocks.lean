@@ -272,6 +272,7 @@ import BuildingBlocks.LogarithmicLayercake
 import BuildingBlocks.DigammaBinaryScalarBounds
 import BuildingBlocks.WeakGroundPrimeTail
 import BuildingBlocks.WeakGroundPrimeCutoff
+import BuildingBlocks.OddWeakGroundPrimeReflectionFinite
 import BuildingBlocks.CompactLocalScatteringSigns
 import BuildingBlocks.PhysicalThetaSeries
 import BuildingBlocks.CompactScatteringPackets

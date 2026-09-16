@@ -206,5 +206,10 @@ needed for Landau's theorem.
 This odd detector does not bound the common-score residual: the
 ground sign action is already matched in the positive covariance
 comparison. No unconditional row bound, affine sign, or RH proof is
-claimed. The weak-domain and transform passages are written
-mathematics, not Lean formalizations.
+claimed. [OddWeakGroundPrimeReflectionFinite.lean](BuildingBlocks/OddWeakGroundPrimeReflectionFinite.lean)
+compiles the odd parity, reflected-bracket, and finite actual
+von Mangoldt weighted identity behind (6), away from the null
+equality set \(u=\log n\). Its axioms are the standard
+`propext`, `Classical.choice`, and `Quot.sound`. The weak-domain,
+measure-zero passage, infinite prime summation, and Mellin
+continuation remain written mathematics, not Lean formalizations.
