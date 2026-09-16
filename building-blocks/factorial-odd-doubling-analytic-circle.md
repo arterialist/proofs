@@ -258,4 +258,4 @@ cancellation in the two-point overlap sum (12); dilation alone supplies
 none.
 
 
-This is written analysis. The odd Euler-factor identities and annular energy equivalence remain Lean formalization obligations.
+[OddDoublingFiniteMobius.lean](BuildingBlocks/OddDoublingFiniteMobius.lean) formalizes the actual Möbius odd-doubling law, the exact finite Mertens annulus identity and both division-free geometric-block forms. The infinite Parseval and RH equivalence remain written analysis.

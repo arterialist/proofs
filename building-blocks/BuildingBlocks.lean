@@ -405,3 +405,6 @@ import BuildingBlocks.ActualFiniteAbelMertens
 import BuildingBlocks.CenteredGoldbachFiniteAlgebra
 
 import BuildingBlocks.ActualCenteredPoissonKernel
+
+import BuildingBlocks.OddDoublingFiniteMobius
+import BuildingBlocks.ThetaMinimumMapConstant

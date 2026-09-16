@@ -313,4 +313,4 @@ For the named minimum-norm source-normalized candidate U_0, the Suzuki matrix an
 
 The certified Suzuki interval data do not supply those theta edge estimates. Absent an intertwiner, interval positivity cannot replace them.
 
-This is written analysis. The exact interval constants, matrix identities and theta edge estimates have not been formalized in Lean.
+[ThetaMinimumMapConstant.lean](BuildingBlocks/ThetaMinimumMapConstant.lean) proves the exact interval constant satisfies $0<k_0<1$ and both paid allowances are positive. The matrix identities and theta edge estimates remain written analysis.
