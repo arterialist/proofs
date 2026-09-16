@@ -59,7 +59,9 @@ The remainder in (5) depends on \(n\). It cannot be summed at the
 critical line without a separate uniform estimate.
 
 The repository's [original \(V/W\) coefficient](actual-W-positive-primitive-analysis.md)
-keeps only ordered histories with distinct prime-power bases. Write
+keeps only ordered histories with distinct prime-power bases. The
+[same-prime and distinct-prime split](BuildingBlocks/SelbergDistinctPrimes.lean)
+is already formalized. Write
 \(a_{\rm dist}(n)\) for it. Then
 \[
  a_{\rm dist}(n)=\frac14c''_0(n)-b_{\rm same}(n),
@@ -124,8 +126,11 @@ uniform Hankel inequality is still unproved.
 These identities give an exact source map, not RH or Goldbach.
 
 [SuzukiCoefficientVariation.lean](BuildingBlocks/SuzukiCoefficientVariation.lean)
-formalizes the divisor-sum coefficient and (2) using mathlib's
-actual Möbius and von Mangoldt functions, with standard axioms only.
-The finite-product identification in (1), second variation
-(4), and operator and completed analytic identities (7)--(9) are
-written mathematics, not Lean theorems yet.
+formalizes the divisor-sum coefficient, (2), and the second
+derivative as the literal finite sum
+\(\sum_{d\mid n}\mu(d)(\log(n/d)-\log d)^2\), using mathlib's
+actual Möbius and von Mangoldt functions with standard axioms only.
+The finite-product identification in (1), the equality of this
+second derivative with \(4\Lambda*\Lambda\) in (4), and operator
+and completed analytic identities (7)--(9) are written mathematics,
+not Lean theorems yet.

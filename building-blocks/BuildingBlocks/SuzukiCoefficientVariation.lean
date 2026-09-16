@@ -3,11 +3,12 @@ import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Tactic
 
 /-!
-# First variation of Suzuki's arithmetic coefficient
+# Finite variations of Suzuki's arithmetic coefficient
 
 The divisor-sum form of Suzuki's coefficient has an exact first
-variation at zero: twice the actual von Mangoldt function. This
-module proves the finite coefficient identity only. The product
+variation at zero: twice the actual von Mangoldt function. The
+second derivative is identified with a finite Möbius divisor sum.
+Its identification with the full `Λ * Λ` convolution, the product
 formula, completed gamma kernel, and analytic Hankel criterion are
 separate written statements.
 -/
@@ -72,6 +73,60 @@ theorem coefficient_hasDerivAt_zero (n : ℕ) :
       _ = 2 * ArithmeticFunction.vonMangoldt n := by rw [hfirst, hsecond]; ring
   simpa only [hcoeff] using hsum
 
+/-- The literal finite slope before taking the first variation. -/
+noncomputable def coefficientSlope (n : ℕ) (w : ℝ) : ℝ :=
+  ∑ d ∈ n.divisors, (ArithmeticFunction.moebius d : ℝ) *
+    ((Real.log (n / d : ℕ) - Real.log d) *
+      Real.exp (w * (Real.log (n / d : ℕ) - Real.log d)))
+
+/-- The finite second-variation coefficient, before its
+    identification with the full `Λ * Λ` convolution. -/
+noncomputable def coefficientCurvature (n : ℕ) : ℝ :=
+  ∑ d ∈ n.divisors, (ArithmeticFunction.moebius d : ℝ) *
+    (Real.log (n / d : ℕ) - Real.log d) ^ 2
+
+theorem coefficient_hasDerivAt (n : ℕ) (w : ℝ) :
+    HasDerivAt (coefficient n) (coefficientSlope n w) w := by
+  change HasDerivAt
+    (fun x : ℝ => ∑ d ∈ n.divisors,
+      (ArithmeticFunction.moebius d : ℝ) *
+        Real.exp (x * (Real.log (n / d : ℕ) - Real.log d)))
+    (∑ d ∈ n.divisors, (ArithmeticFunction.moebius d : ℝ) *
+      ((Real.log (n / d : ℕ) - Real.log d) *
+        Real.exp (w * (Real.log (n / d : ℕ) - Real.log d)))) w
+  apply HasDerivAt.fun_sum
+  intro d hd
+  convert (((hasDerivAt_id w).mul_const
+    (Real.log (n / d : ℕ) - Real.log d)).exp).const_mul
+      (ArithmeticFunction.moebius d : ℝ) using 1;
+    simp [mul_comm]
+
+theorem coefficientSlope_hasDerivAt_zero (n : ℕ) :
+    HasDerivAt (coefficientSlope n) (coefficientCurvature n) 0 := by
+  change HasDerivAt
+    (fun w : ℝ => ∑ d ∈ n.divisors,
+      (ArithmeticFunction.moebius d : ℝ) *
+        ((Real.log (n / d : ℕ) - Real.log d) *
+          Real.exp (w * (Real.log (n / d : ℕ) - Real.log d))))
+    (∑ d ∈ n.divisors, (ArithmeticFunction.moebius d : ℝ) *
+      (Real.log (n / d : ℕ) - Real.log d) ^ 2) 0
+  apply HasDerivAt.fun_sum
+  intro d hd
+  have h := (((hasDerivAt_id (0 : ℝ)).mul_const
+    (Real.log (n / d : ℕ) - Real.log d)).exp).const_mul
+      ((ArithmeticFunction.moebius d : ℝ) *
+        (Real.log (n / d : ℕ) - Real.log d))
+  simpa [pow_two, mul_comm, mul_left_comm, mul_assoc] using h
+
+theorem coefficient_second_deriv_zero (n : ℕ) :
+    deriv (deriv (coefficient n)) 0 = coefficientCurvature n := by
+  have hfirst : deriv (coefficient n) = coefficientSlope n := by
+    funext w
+    exact (coefficient_hasDerivAt n w).deriv
+  rw [hfirst]
+  exact (coefficientSlope_hasDerivAt_zero n).deriv
+
 #print axioms coefficient_hasDerivAt_zero
+#print axioms coefficient_second_deriv_zero
 
 end BuildingBlocks.SuzukiCoefficientVariation
