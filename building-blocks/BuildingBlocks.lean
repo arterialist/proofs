@@ -439,6 +439,7 @@ import BuildingBlocks.FiniteDivisorEnvelopeSplit
 import BuildingBlocks.FiniteSamplingErrorAlgebra
 import BuildingBlocks.SimultaneousAdmissionEndpointFinite
 import BuildingBlocks.MovingCeilingFiniteAlgebra
+import BuildingBlocks.SignFreeEndpointFrontierFinite
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
