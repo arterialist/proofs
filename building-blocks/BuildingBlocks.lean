@@ -433,6 +433,7 @@ import BuildingBlocks.CrossHorizonMobiusClockFinite
 import BuildingBlocks.FixedProfileGreenAdmissionFinite
 import BuildingBlocks.CrossHorizonHaarFinite
 import BuildingBlocks.FixedProfileGreenTwoParameter
+import BuildingBlocks.FiniteDivisorEnvelopeSplit
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
