@@ -447,6 +447,8 @@ import BuildingBlocks.FinitePNTErrorPropagation
 import BuildingBlocks.FriableEndpointStieltjesFinite
 import BuildingBlocks.NonendpointRemainderAssemblyFinite
 import BuildingBlocks.SimultaneousGreenAssemblyFinite
+import BuildingBlocks.HarmonicEndpointCrossFinite
+import BuildingBlocks.GrowingAdmissionSignTransferFinite
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
