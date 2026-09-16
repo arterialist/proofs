@@ -129,7 +129,7 @@ G(\rho)=\frac{F(\rho)}{1-\rho}. \tag{7}
 For any central arc, the exact mean-variance decomposition retains
 
 \[
-W_X|F(\rho)|^2 
+W_X|F(\rho)|^2
 \]
 
 when written in the birth normalization used by the central-arc notes, or
