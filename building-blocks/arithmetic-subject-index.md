@@ -319,6 +319,8 @@ The [finite theta-to-Suzuki map obstruction](theta-finite-translation-intertwine
 
 [Angular Poisson central-arc reduction](factorial-angular-poisson-central-arc-reduction.md) represents the complete original-clock horizon energy on a circle, pays the entire outer arc unconditionally, and isolates the exact radial reserve plus Green-weighted angular variance. Actual prime births rule out the generic full-derivative scale; the central source correlation remains the open RH-level input.
 
+[ActualCenteredPoissonKernel.lean](BuildingBlocks/ActualCenteredPoissonKernel.lean) proves that each finite centered radial kernel entry $q^{\max(n,m)}-q^{n+m}$ is exactly a positive geometric tail for $0\le q\le1$. This formalizes the finite covariance algebra; it supplies no signed Möbius cancellation.
+
 [Central low-clock and Lambert-dilation payment](factorial-central-arc-low-clock-short-block-bound.md) proves a complete Fejér-localized short-horizon estimate and [extends it](factorial-central-arc-lambert-dilation-extension.md) along every active divisor fiber. The corrected divided shell cost is `O(X² log²X)`, within the all-epsilon RH consumer; only the region above the curved clock boundary remains.
 
 The [hard-clock LCM class audit](factorial-hard-clock-lcm-class-audit.md) proves the complete squarefree class is nonpositive after its diagonal is removed, but soft radial truncation leaves positive semiprime rows of total size $\gg X^3/\log^2X$. The [odd doubling block](factorial-doubling-lcm-cancellation.md) identifies matching negative rows across adjacent LCM classes and reduces their terminal cancellation to a signed two-point Möbius correlation. Finite clocks retain quotient-history and proper-power reserves, so no $X^{2+\varepsilon}$ estimate follows.
