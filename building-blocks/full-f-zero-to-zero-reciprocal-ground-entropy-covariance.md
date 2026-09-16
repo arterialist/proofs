@@ -139,5 +139,83 @@ identity gives a sign for $B_s(Y)$ at each base or an RH-scale bound
 for the unrestricted score, whose windows can include source outside
 $[a,b)$.
 
+**Finite edge reversal for the actual prime source.** The source
+restriction in (6) cannot be removed even after averaging over exactly
+the bases that meet $[a,b)$. Define the unrestricted score
+$$
+B_s(Y)=\int_{[Y,2Y)}\frac{w_Y^0(x)}{F(x)}\,dE(x).
+$$
+Take
+$$
+a=\psi(103)
+ =6\log2+4\log3+2\log5+2\log7
+   +\sum_{\substack{11\le p\le103\\p\text{ prime}}}\log p,
+\qquad b=\psi(107)=a+\log107.                         \tag{7}
+$$
+Exact log enclosures give
+$103.2951607344<a<103.2951607345$ and
+$107.9679895688<b<107.9679895690$. The only prime power in
+$(103,107]$ is $107$, so $\psi$ is constant on $(103,107)$ and
+$(107,108)$. In particular $a\in(103,104)$ and $b\in(107,108)$
+are continuous zeros of $E$, and they are consecutive continuous
+zeros.
+
+Put $\Phi(t)=\int_0^t u^2e^{-2u}du$ and $J_0=\Phi(\log2)$.
+Interchanging the ordinary base integral with the finite-variation
+source measure gives
+$$
+\frac{1}{p_s^2}\int_{a/2}^{b}B_s(Y)dY
+=\sum_{52\le p^k\le215}\frac{(\log p)K(p^k)}{F(p^k)}
+  -\int_{51}^{216}\frac{K(x)}{F(x)}dx,                  \tag{8}
+$$
+where the 38 prime-power positions are
+$53,59,61,64,67,71,73,79,81,83,89,97,101,103,107,109,113,121,125,
+127,128,131,137,139,149,151,157,163,167,169,173,179,181,191,193,
+197,199,211$, and
+$$
+K(x)=
+\begin{cases}
+\Phi(\log(2x/a)),&a/2\le x<a,\\
+J_0,&a\le x<b,\\
+J_0-\Phi(\log(x/b)),&b\le x<2b,\\
+0,&\text{otherwise}.
+\end{cases}                                             \tag{9}
+$$
+The interval $[51,216]$ in (8) merely contains the support of $K$.
+The numerical-looking bounds below are **rational interval bounds**,
+verified by the self-contained integer-arithmetic
+[certificate](certificates/full_f_zero_interval_edge_counterexample.py):
+$$
+\sum_{52\le p^k\le215}\frac{(\log p)K(p^k)}{F(p^k)}
+   >2.43299,
+\qquad
+M_{.01}:=\frac1{100}\sum_{j=0}^{16499}
+  \frac{K(51+(j+1/2)/100)}{F(51+(j+1/2)/100)}
+   <2.40154.                                             \tag{10}
+$$
+For $51\le x<216$ the same finite prime-power computation verifies
+$F(x)>1$ and $|E(x)|<20$. Since $0\le K\le J_0<1/4$ and
+$|K'(x)|\le1/x$ on each smooth piece, (1) implies
+$$
+\left|\left(\frac K F\right)'(x)\right|
+ <\frac1{51}+\frac5{51^2}<\frac1{40}.
+$$
+The quotient $K/F$ is continuous across the prime-power atoms and the
+four kernel breakpoints, so it is globally $1/40$-Lipschitz on
+$[51,216]$. Composite midpoint quadrature therefore has error at
+most $165/(4\cdot40\cdot100)=0.0103125$. Equations (8)--(10) prove
+the strict opposite sign
+$$
+\boxed{\quad
+\int_{a/2}^{b}B_s(Y)dY
+>p_s^2(2.43299-2.40154-0.0103125)
+>0.02p_s^2.
+\quad}                                                    \tag{11}
+$$
+By (6), integrating $B_s^{[a,b)}$ over the same base interval gives
+exactly the negative quantity on the right of (6). Thus the two edge
+regions $[a/2,a)$ and $[b,2b)$ in source space can overturn the
+interior entropy sign in the actual, unrestricted first window.
+
 For the oscillation input, see Montgomery and Vaughan,
 [*Multiplicative Number Theory I*, Chapter 15, Theorem 15.11](https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/19.0_pp_463_485_Oscillations_of_error_terms.pdf).
