@@ -283,4 +283,4 @@ estimate for the incomplete rows, strong enough to cancel the positive
 semiprime reservoir (22). No unconditional estimate of that strength is
 proved here.
 
-This is written analysis. The class identities and soft-kernel estimates have not been formalized in Lean.
+[HardClockWeightedLcmClass.lean](BuildingBlocks/HardClockWeightedLcmClass.lean) formalizes the actual prime-local weighted class, finite factor bounds and conditional squarefree induction/off-diagonal conclusion. The general actual squarefree multiplicativity recurrence and the soft-kernel estimates remain written obligations.

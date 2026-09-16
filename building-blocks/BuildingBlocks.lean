@@ -408,3 +408,5 @@ import BuildingBlocks.ActualCenteredPoissonKernel
 
 import BuildingBlocks.OddDoublingFiniteMobius
 import BuildingBlocks.ThetaMinimumMapConstant
+
+import BuildingBlocks.HardClockWeightedLcmClass
