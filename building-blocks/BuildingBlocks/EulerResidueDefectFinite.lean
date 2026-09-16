@@ -110,4 +110,30 @@ theorem actual_eulerDefect_zero (N : ℕ) :
   intro m hm
   exact sub_eq_zero.mpr ArithmeticFunction.vonMangoldt_sum.symm
 
+/-- If the cumulative Euler defect vanishes at every horizon, then each
+individual complete-divisor equation holds. -/
+theorem divisor_history_of_zero_defect (w : ℕ → ℝ)
+    (hw : ∀ N, eulerDefect w N = 0) (n : ℕ) (hn : 0 < n) :
+    (∑ d ∈ n.divisors, w d) = Real.log (n : ℝ) := by
+  obtain ⟨k, rfl⟩ := Nat.exists_eq_succ_of_ne_zero hn.ne'
+  have hnext := hw (k + 1)
+  have hprev := hw k
+  rw [eulerDefect, Finset.sum_Ioc_succ_top (by omega), ← eulerDefect] at hnext
+  linarith
+
+/-- Complete Euler divisor histories uniquely determine the actual
+von Mangoldt weights on positive integers. -/
+theorem weight_eq_vonMangoldt_of_zero_defect (w : ℕ → ℝ)
+    (hw : ∀ N, eulerDefect w N = 0) (n : ℕ) (hn : 0 < n) :
+    w n = ArithmeticFunction.vonMangoldt n := by
+  have heuler : ∀ (m : ℕ), m > 0 →
+      (∑ d ∈ m.divisors, w d) = Real.log (m : ℝ) :=
+    fun m hm => divisor_history_of_zero_defect w hw m hm
+  have hactual : ∀ (m : ℕ), m > 0 →
+      (∑ d ∈ m.divisors, ArithmeticFunction.vonMangoldt d) = Real.log (m : ℝ) :=
+    fun m _ => ArithmeticFunction.vonMangoldt_sum
+  have hiw := ArithmeticFunction.sum_eq_iff_sum_smul_moebius_eq.mp heuler
+  have hiactual := ArithmeticFunction.sum_eq_iff_sum_smul_moebius_eq.mp hactual
+  exact (hiw n hn).symm.trans (hiactual n hn)
+
 end BuildingBlocks.EulerResidueDefectFinite

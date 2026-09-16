@@ -33,7 +33,9 @@ condition has an exact finite size. Define
  NF_w(N)=N\log N-\log N!+A_w(N)+E_w(N).             \tag{2a}
 \]
 For the actual von Mangoldt weights \(E_\Lambda(N)=0\) at every
-horizon. Positivity of reweighted prime coefficients or their Goldbach
+horizon; conversely, vanishing at every horizon forces
+\(w_d=\Lambda(d)\) for each positive \(d\), by finite differences and
+Möbius inversion. Positivity of reweighted prime coefficients or their Goldbach
 heat square does not preserve this Euler divisor relation. The complete
 finite identity and actual zero defect are proved in
 [EulerResidueDefectFinite.lean](BuildingBlocks/EulerResidueDefectFinite.lean).
