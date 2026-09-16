@@ -60,7 +60,9 @@ gives an endpoint $\Omega_\pm(X^{3/2})$ estimate with an explicit
 (small) positive constant, proved below. Stronger Goldbach oscillation
 bounds were established under RH by
 [Mossinghoff and Trudgian](https://jtnb.centre-mersenne.org/item/10.5802/jtnb.1202.pdf);
-no priority claim is made for the endpoint conclusion here.
+related Tauberian oscillation theorems for Goldbach sums were proved by
+[Bhowmik, Ramaré and Schlage-Puchta](https://www.numdam.org/item/JTNB_2016__28_2_291_0.pdf).
+No priority claim is made for the endpoint conclusion here.
 
 ## RH gives both inequalities
 
@@ -166,8 +168,10 @@ formalized in
 The infinite discrete Abel identity connecting that cumulative sum to
 the actual positive prime heat square is formalized in
 [GoldbachCumulativeAbel.lean](BuildingBlocks/GoldbachCumulativeAbel.lean).
-The continuous Stieltjes integral, heat asymptotic and Landau
-application remain written mathematics.
+The exact continuous Stieltjes-step identity (5), with the natural
+floor extension of the cumulative count, is formalized in
+[GoldbachCumulativeStieltjes.lean](BuildingBlocks/GoldbachCumulativeStieltjes.lean).
+The heat asymptotic and Landau application remain written mathematics.
 
 The same calculation proves (2a). If, for some $0<\eta<1/2$, either
 one-sided bound
@@ -255,6 +259,7 @@ The lower bound transfers identically. Therefore
 
 The odd-total correction is $O(X\log^2X)=o(X^{3/2})$,
 so (8d) also holds with $S_{\rm even}(X)-X^2/2$ in place of $D(X)$.
+In particular, neither $D(X)\ge0$ nor $D(X)\le0$ can hold eventually.
 The explicit constant here is a residue-transfer bound, not a claim
 that it improves the stronger conditional oscillation constants in
 the cited literature. The transform, Landau application, and limiting
