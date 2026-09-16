@@ -116,6 +116,16 @@ correlation; support estimates alone cannot supply either.
 
 The squarefree saddle calculation is an application of standard friable
 counting methods, not a claim of a new general smooth-number theorem.
+The exponent $2$ itself was already central in
+[Hildebrand's 1984 RH criterion for smooth-number asymptotics](https://doi.org/10.1112/S0025579300012481):
+his criterion uses the range $y\ge(\log x)^{2+\varepsilon}$.
+[Gorodetsky's later analysis](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/68FF9370894E1142B975BAC783DFF162/S0308210523001154a.pdf/smooth-integers-and-de-bruijns-approximation.pdf)
+describes a different asymptotic regime below
+$(\log x)^{2-\varepsilon}$. Those results concern the unsigned smooth
+count and its Dickman approximation. The transport statement here
+concerns the signed Möbius prefix and does not follow from an unsigned
+asymptotic alone. The constant $c_*$ is a threshold for this note's
+*support-only* energy ceiling, not a claimed universal transition.
 Closest sources are [Hildebrand and Tenenbaum's saddle method](https://tenenb.perso.math.cnrs.fr/PPP/Psi%2B.pdf)
 and [de la Bretèche and Tenenbaum's signed friable averages](https://arxiv.org/abs/2207.04777).
 The latter's published saving does not by itself settle $Z_N(F_y)$ for
