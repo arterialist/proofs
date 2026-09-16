@@ -389,3 +389,6 @@ import BuildingBlocks.FactorialCompensatedEnvelope
 import BuildingBlocks.FactorialReciprocalPrefix
 import BuildingBlocks.FactorialAbelEnvelope
 import BuildingBlocks.FactorialAbelClockEnergy
+
+import BuildingBlocks.ActualScatteringMomentSigns
+import BuildingBlocks.ActualScatteringMellinSignBridge
