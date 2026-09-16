@@ -201,7 +201,7 @@ The two exact allowances have rigorous enclosures
 
 Equation (17) is stronger and more concrete than an unspecified bounded-map constant. It keeps the actual affine coefficient and reduces the optimizer question to one complete conditional edge evaluation.
 
-No present theorem gives an upper enclosure for c^TNc below either threshold in (18). Full-form membership proves finiteness only. Therefore this candidate has neither a passing certificate nor a failure witness on the actual optimizer vector.
+No present theorem gives an upper enclosure for c^TNc below either threshold in (18). The [actual-source strictness theorem](theta-affine-comparison-conditional-edge-energy.md#the-exact-common-score-nullspace) proves $c^TNc=n[v_U]>0$, but gives no numerical lower bound above either threshold. Therefore this candidate has neither a passing certificate nor a quantitative failure witness on the actual optimizer vector.
 
 ## Full-span certificate and an exact failure direction
 

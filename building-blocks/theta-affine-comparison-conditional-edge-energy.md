@@ -193,7 +193,18 @@ n[ug_y-r_yg_q]>0
 ug_y-r_yg_q\notin\operatorname{span}\{\varepsilon,\varphi\}.
 \tag{12}
 $$
-The [actual-source boundary and tail proof](theta-minimal-source-normalized-optimizer-map.md#strict-full-span-failure-for-the-actual-theta-sources) decides this membership: the crossing source has a nonzero logarithmic boundary singularity, while the score source grows faster than the matched sign action at infinity. Thus (12) is strict for the actual sources. It excludes that rank-one full-span map but does not evaluate the distinguished affine optimizer or prove RH.
+The [actual-source boundary and tail proof](theta-minimal-source-normalized-optimizer-map.md#strict-full-span-failure-for-the-actual-theta-sources) gives a more general strictness statement. For any real $c_y,c_q$ with $c_y\ne0$, suppose $c_yg_y+c_qg_q$ lay in $\operatorname{span}\{\varepsilon,\varphi\}$. Applying the two matched $M$ actions would give
+$$
+c_yS_y+c_qS_q=A K\varepsilon
+ +B(S_f+\delta S_y-\tfrac14S_q)
+\tag{13}
+$$
+for some real $A,B$. The actual continuous crossing part of $S_f$ has a nonzero logarithmic singularity at $R+$, while the prime crossing and the other terms in (13) are locally bounded. Hence $B=0$. But $S_y(x)\sim-2\pi e^{3x}$, whereas $S_q(x)$ and $K\varepsilon(x)$ are $O_R(e^x)$, so $c_y\ne0$ makes (13) impossible at infinity. The exact nullspace theorem (11) therefore proves
+$$
+\boxed{\quad n[c_yg_y+c_qg_q]>0\qquad(c_y\ne0).\quad}
+\tag{14}
+$$
+In particular (12) is strict because $u=U(q,q)>0$. More importantly, the actual spectral distance $\delta=1/2-\alpha>0$ makes the affine optimizer direction $w=\delta g_y-t_{\rm score}g_q$ satisfy $n[v_U]=n[w]>0$ by (9)--(10). This is qualitative strictness, not an upper enclosure below either Suzuki allowance. It also does not prove RH.
 
 ## Attribution and formal scope
 

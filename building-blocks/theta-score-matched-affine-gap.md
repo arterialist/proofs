@@ -233,6 +233,8 @@ $$
 $$
 All vectors in the displayed forms are admissible. If the score residual energy is zero, the infimum over $s$ has no effect; otherwise ordinary completion of its positive quadratic proves (17). Thus (14) retains the complete continuous and prime energy after projecting out the actually matched sign and score directions. It does not replace their remaining interaction by independent error estimates. The [conditional edge-energy formula](theta-affine-comparison-conditional-edge-energy.md) evaluates (17) at the now form-admissible comparison optimizer. Its finiteness is proved; a quantitatively small value remains unproved.
 
+For the actual bounded component comparison followed by score matching, the [actual-source strictness theorem](theta-affine-comparison-conditional-edge-energy.md#the-exact-common-score-nullspace) strengthens this to $n[v_U]>0$. Equation (14) then gives $\mathcal G>0$: if its two nonnegative terms both vanished, coercivity of $M$ would give $v_C=v_U$ and hence $n[v_U]=0$, a contradiction. The strict comparison gap has no established numerical lower bound and does not decide whether the upper estimator in (16) fits a Suzuki allowance.
+
 ## Attribution and formal scope
 
 The closed-form representation theorem, ground-state transform, Carleman bound, nonnegative-form Cauchy–Schwarz and affine variational identities used here are classical. The proofs retain the actual ground state and every continuous and prime-power edge. These are written mathematical results, with no Lean claim for the full-form comparison or the remaining arithmetic smallness.
