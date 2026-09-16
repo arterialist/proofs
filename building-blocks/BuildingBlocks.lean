@@ -315,6 +315,7 @@ import BuildingBlocks.OddTriangleConductance
 import BuildingBlocks.FiniteTriangularGeometric
 import BuildingBlocks.FinitePrimeSourceIntegration
 import BuildingBlocks.ActualCompactHeatEndpoint
+import BuildingBlocks.ActualTerminalPrimeTraceFinite
 import BuildingBlocks.ResidueLoadingSuccessor
 import BuildingBlocks.LogarithmicPrimeWindow
 import BuildingBlocks.FactorialBinaryCarry

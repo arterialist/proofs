@@ -139,6 +139,13 @@ the sharper fixed-packet asymptotic
 This also proves (8) directly, since
 \(\sum_k\Lambda(k)/k^2<\infty\). The constants in (11) depend on
 \(N\); no uniform growing-cutoff estimate is claimed.
+[ActualTerminalPrimeTraceFinite.lean](BuildingBlocks/ActualTerminalPrimeTraceFinite.lean)
+formalizes the exact rational-kernel expansion before the analytic
+remainder estimate. It also identifies the discrete terminal atom with
+the actual \(\psi(N)-N\), retains the distinct arrival at \(N\), and
+specializes the identity to that complete finite prime-power packet.
+The continuum source \(\sigma_N\), the \(O_N(k^{-3})\) estimate and
+the prime-series limit in (11a) remain written analysis.
 At fixed \(N\), the prime number theorem and partial summation give
 \(\sum_{k>Y}\Lambda(k)/k^2\sim1/Y\), while the remainder in (11)
 contributes \(O_\nu(\log(2Y)/Y^2)\). Thus the *tail of the complete
@@ -351,5 +358,7 @@ pole *domain* and makes its full prime row convergent, while leaving
 a square-root-scale uniform pole estimate as an explicit RH-strength
 arithmetic obligation. The signed archimedean term and the entire
 prime row still have to be controlled together for Weil positivity.
-The finite identities and analytic oscillation argument above are
-written mathematics; no new Lean theorem or RH proof is asserted.
+The finite rational-kernel algebra and its actual discrete-packet
+specialization compile in Lean. The analytic prime trace, its
+oscillation, and the RH equivalences above remain written proofs;
+none supplies an RH proof.
