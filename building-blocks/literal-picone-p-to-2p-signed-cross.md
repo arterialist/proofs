@@ -103,6 +103,15 @@ Q_p\ll_A\frac{\log p}{p\log^A p}
 \]
 The implied constant may depend on \(A\). Thus the signed observation cross is smaller by arbitrarily many logarithms than the literal source cross (8); in particular (9) carries the latter's leading negative term. Equation (12) is an *absolute* bound. It supplies no eventual sign for \(Q_p\): the linear \(E W_p'\) term in (10) is not signed by PNT.
 
+More explicitly, (8), (9) and (12) give the original process cross
+\[
+\langle R_Fv_p,R_Fv_{2p}\rangle
+=-\frac{\log p}{2p}+o\!\left(\frac{\log p}{p}\right)<0
+\quad\text{for all sufficiently large odd primes }p.\tag{12a}
+\]
+This is a sign for one actual birth pair. It does not sign the sum of
+all birth pairs in the process energy.
+
 The separate observations are much larger and cancel at leading order. For \(p\ge5\), \(A_p(x)>0\) for \(x\ge2p-1\): indeed \(d_p\le1/(p-1)\le1/4\), while \((\log p-1)\log(2-1/p)\ge(\log5-1)\log(9/5)>1/4\). Hence \(W_p<0\) on \(x>a\), so both \(\mathcal C_F(w_p,w_{2p})\) and \(\mathcal P_F(w_p,w_{2p})\) are strictly negative. Scaling \(x=py\), using (3)--(5), \(F(py)\to F_\infty\), and dominated convergence gives
 \[
 \mathcal C_F(w_p,w_{2p})
@@ -114,4 +123,4 @@ The separate observations are much larger and cancel at leading order. For \(p\g
 \]
 The ramp contributes only a lower-order term. Combining (12) and (13) yields **the same leading asymptotic** for the full prime-power sum \(\mathcal P_F\). Thus neither separate negative observation is a signed dyadic reserve: its density counterpart cancels it at leading order.
 
-For primes \(p\in[cN,CN]\) with fixed \(0<c<C\), summing (12) gives \(\sum_p|Q_p|\ll_A\log^{-A}N\) after adjusting \(A\), whereas the [theta complete-cone](theta-killed-ground-compact-lower-barrier-dyadic-cone.md) \(q=2\) same-half contribution is \(\gg N/\log N\) on a fixed exterior strip. This compares scale only: \(Q_p\) is the actual factorial birth polarization, while the theta edge is a local square for Möbius coefficients \(c_p=-1,c_{2p}=+1\). No identity transfers its positive sign to (7), and the other cross pairs in the accumulated factorial work remain present. The exact obstruction is the all-prime-power minus density cancellation (10), reinforced by \(\Lambda(2p)=0\) in the literal second birth.
+For primes \(p\in[cN,CN]\) with fixed \(0<c<C\), summing (12) gives \(\sum_p|Q_p|\ll_A\log^{-A}N\) after adjusting \(A\). Indeed the whole dyadic-pair observation family is absolutely summable: choosing a stronger exponent in (12) and comparing with the integer series gives \(\sum_{p\ge N}|Q_p|\ll_A\log^{-A}N\) for every fixed \(A>0\). The [theta complete-cone](theta-killed-ground-compact-lower-barrier-dyadic-cone.md) \(q=2\) same-half contribution is instead \(\gg N/\log N\) on a fixed exterior strip. This compares scale only: \(Q_p\) is the actual factorial birth polarization, while the theta edge is a local square for Möbius coefficients \(c_p=-1,c_{2p}=+1\). No identity transfers its positive sign to (7), and the other cross pairs in the accumulated factorial work remain present. The exact obstruction is the all-prime-power minus density cancellation (10), reinforced by \(\Lambda(2p)=0\) in the literal second birth.
