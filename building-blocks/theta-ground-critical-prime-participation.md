@@ -174,4 +174,38 @@ The Fourier cap also gives a physical-mass consequence. Split at \(|\xi|=L=\exp(
 \]
 This is exponentially rather than superexponentially small in \(R\), but it remains far below the critical upper width \(O(R e^{-R})\) and does not furnish the missing PNT-compatible translation modulus.
 
+## A robust microscopic covering bound
+
+The substantial-overlap labels in (15) also rule out a ground history carried by only polynomially many prime-grid cells. Set
+\[
+ a_R=\frac1{8e^{2U}},\qquad
+ \tau_D=\frac1{16D},\qquad
+ \varepsilon_D=\frac1{4096D^2}.
+\]
+Suppose a measurable set \(E\subset(R,\infty)\) is a union of at most \(K\) intervals, each of length at most \(a_R\), and carries all but \(\varepsilon_D\) of the positive-half physical squared mass:
+\[
+ \|1_{E^c}g_R\|_2^2\le\varepsilon_D q_+.
+\tag{19}
+\]
+Put \(g_E=1_Eg_R\). Pointwise Cauchy–Schwarz for convolution gives
+\[
+ |(g_R*g_R)(t)-(g_E*g_E)(t)|
+ \le2\|g_R-g_E\|_2\|g_R\|_2
+ \le2\sqrt{\varepsilon_D}\,q_+
+ =\tfrac12\tau_Dq_+.
+\tag{20}
+\]
+Thus every label counted in (15) also has \((g_E*g_E)(\log n)>0\).
+
+For any ordered pair of the covering intervals, their sum has logarithmic width at most \(2a_R\). Its intersection with \((2R,2U]\) corresponds to an interval of integer labels of length at most
+\[
+ e^{2U}(e^{2a_R}-1)=\tfrac14+o(1)<1.
+\]
+So each ordered cell pair reaches at most one integer label in the window, regardless of whether that label is a prime power. At most \(K^2\) labels can have \((g_E*g_E)(\log n)>0\). Equation (15) forces
+\[
+ \boxed{\qquad K\ge\bigl(\tfrac12-o(1)\bigr)e^{R/2}.\qquad}
+\tag{21}
+\]
+This is a robust resolution-\(a_R\) covering constraint for the actual ground: even after discarding up to \(\varepsilon_D\) of its physical \(L^2\) mass, exponentially many microscopic cells are needed. It is stronger in this different sense than the all-radius cap on each single microscopic interval. It does not give a lower bound on the Lebesgue width inside each occupied cell or a modulus of continuity.
+
 The [many-cell anti-spike counterprofile](theta-antispike-grid-counterprofile.md) satisfies the available geometric and logarithmic-energy bounds but has only one active prime-power pair, and its physical form is positive. The present theorem identifies a property it lacks: the actual minimizing ground must realize a macroscopic total prime-overlap score on the critical additive scale along favorable radii. The overlap can still fluctuate sharply from label to label; (3) is not a prime-density quadrature theorem, a bound on the score-matched conditional covariance, or RH. This is written analysis, with no Lean formalization claimed.
