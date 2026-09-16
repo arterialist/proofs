@@ -148,10 +148,22 @@ The finite obstruction persists at arbitrarily large scales. Write
 $B(y)=\psi(y)-\Psi_1(y)$, with the same complete prime-power source and
 right-continuous cutoff as above.
 
-**Theorem (two-sided late signs of the actual prefix contrast).** For every
-$Y>1$ there are $y_+,y_->Y$ such that $B(y_+)>0$ and $B(y_-)<0$.
-Consequently $A(y)=\Psi_1(y)/y$ has intervals of increase and intervals of
-decrease arbitrarily far out.
+**Theorem (critical-scale oscillation of the actual prefix contrast).**
+For every critical-line zero $\rho=1/2+i\gamma$ of multiplicity
+$m_\rho$,
+
+$$
+\limsup_{y\to\infty}\frac{B(y)}{\sqrt y}\ge\frac{m_\rho}{|\rho|},
+\qquad
+\liminf_{y\to\infty}\frac{B(y)}{\sqrt y}\le-\frac{m_\rho}{|\rho|}.
+\tag{12b}
+$$
+
+Such zeros exist unconditionally by
+[Hardy's 1914 theorem](https://fr.wikisource.org/wiki/Page:Comptes_rendus_hebdomadaires_des_s%C3%A9ances_de_l%E2%80%99Acad%C3%A9mie_des_sciences,_tome_158,_1914.djvu/1014).
+Thus $B$ takes both signs arbitrarily far out, and
+$A(y)=\Psi_1(y)/y$ has intervals of increase and decrease arbitrarily far
+out.
 
 **Proof.** Absolute Fubini for $\Re s>1$ gives the exact Mellin transform
 
@@ -161,7 +173,7 @@ $$
 &=\left(\frac1s-\frac1{s^2}\right)
   \sum_{n\ge2}\frac{\Lambda(n)}{n^s}
 =\frac{s-1}{s^2}\left(-\frac{\zeta'(s)}{\zeta(s)}\right).
-\end{aligned} \tag{12b}
+\end{aligned} \tag{12c}
 $$
 
 Indeed, an atom at $n$ contributes $n^{-s}/s$ to the Mellin transform of
@@ -175,23 +187,39 @@ the nonzero residue
 
 $$
 \operatorname{Res}_{s=\rho}\mathcal B(s)
-=-m_\rho\frac{\rho-1}{\rho^2}. \tag{12c}
+=-m_\rho\frac{\rho-1}{\rho^2}. \tag{12d}
 $$
 
-Choose one zero on the critical line, whose existence is unconditional by
-[Hardy's 1914 theorem](https://fr.wikisource.org/wiki/Page:Comptes_rendus_hebdomadaires_des_s%C3%A9ances_de_l%E2%80%99Acad%C3%A9mie_des_sciences,_tome_158,_1914.djvu/1014). If $B$ were
-eventually nonnegative or eventually nonpositive, change its sign if
-needed and discard a bounded initial interval. The resulting nonnegative
-Mellin integrand has a convergence abscissa $\sigma_c\le1$, since
-$B(y)=O(y)$ by Chebyshev. Its transform differs from $\mathcal B$ or
-$-\mathcal B$ by an entire function. The genuine pole (12c) forces
-$\sigma_c\ge\Re\rho=1/2$: convergence to the left of $\rho$ would make
-the transform holomorphic at $\rho$. But
+Set $b(v)=e^{-v/2}B(e^v)$ for $v\ge0$. Its Laplace transform is
+$\widehat b(z)=\mathcal B(z+1/2)$ for $\Re z>1/2$.
+Suppose $b(v)\le C$ for all $v\ge V$, and put
+$q(v)=(C-b(v))\mathbf1_{[V,\infty)}(v)\ge0$. For $\Re z>1/2$,
+
+$$
+\widehat q(z)=\frac{Ce^{-Vz}}z-\mathcal B(z+1/2)
+   +\int_0^V e^{-zv}b(v)\,dv. \tag{12e}
+$$
+
+Chebyshev gives $b(v)=O(e^{v/2})$, so the convergence abscissa
+$\sigma_c$ of this positive Laplace integral is at most $1/2$. The
+pole (12d) at $z=i\gamma$ forces $\sigma_c\ge0$; otherwise the
+integral would be holomorphic at that point. If $\sigma_c>0$,
 [Landau's positive-Mellin theorem](https://arxiv.org/html/2411.07436#S2.SS4)
-forces a singularity at the real point $\sigma_c>0$, contradicting the
-real-axis regularity of (12b). Hence neither eventual sign is possible.
-Between prime-power arrivals, $B$ is continuous, so each late strict sign
-holds on a nonempty interval where $A'=B/y^2$ has the corresponding sign.
+forces a real singularity there. Equation (12e) has none on the positive
+real axis, including $z=1/2$ where the zeta pole was canceled.
+Therefore $\sigma_c=0$.
+
+For $\varepsilon>0$, positivity gives
+$|\widehat q(\varepsilon+i\gamma)|\le\widehat q(\varepsilon)$.
+Multiply by $\varepsilon$ and let it tend to zero. The left side tends
+to the absolute residue of $-\mathcal B$ at $\rho$,
+$m_\rho|\rho-1|/|\rho|^2=m_\rho/|\rho|$; the right side tends to $C$,
+because $\mathcal B(1/2)$ is finite. Hence every eventual upper bound
+on $b$ has $C\ge m_\rho/|\rho|$. Repeating the argument with
+$q(v)=(C+b(v))\mathbf1_{[V,\infty)}(v)$ gives the corresponding lower
+bound, proving (12b). Between prime-power arrivals, $B$ is continuous,
+so each late strict sign holds on a nonempty interval where
+$A'=B/y^2$ has the corresponding sign.
 $\square$
 
 The proof applies classical Landau theory to this retained prime-power
