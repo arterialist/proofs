@@ -134,4 +134,11 @@ Indeed the physical mass outside \(|u|\in(R,R+6e^{-\sqrt R/8})\) is negligible a
  \end{aligned}}\quad(k\text{ sufficiently large}).
 \tag{10}
 \]
-Thus \(\psi_{R_k}-c_{R_k}\) takes both signs arbitrarily far out, even while it tends to zero. The theorem does not transfer this tail oscillation to the near-core signed affine covariance, and it supplies no RH proof. All conclusions are written analysis, with no Lean formalization claimed.
+More generally, \(E_\gamma=\{R>0:|\cos(\gamma R)|\ge1/2\}\) has Lebesgue density \(2/3\). By (9), for every sufficiently large \(R\in E_\gamma\), \(|M_R(i\gamma)|\ge m_R/4\). The upper and lower amplitudes in (8) therefore have magnitude at least \(m_\rho m_R/(4\delta_R)\), while the conjugate pair in (8b) gives
+\[
+ \limsup_{T\to\infty}\frac1T\int_R^T
+       b(u)^2|\psi_R(u)-c_R|^2du
+ \ge\frac{m_\rho^2m_R^2}{8\delta_R^2}.
+\tag{11}
+\]
+Thus \(\psi_R-c_R\) takes both signs arbitrarily far out for a positive-density set of large core radii, even while it tends to zero. The theorem does not transfer this tail oscillation to the near-core signed affine covariance, and it supplies no RH proof. All conclusions are written analysis, with no Lean formalization claimed.
