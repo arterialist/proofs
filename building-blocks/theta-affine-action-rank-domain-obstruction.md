@@ -132,6 +132,8 @@ Take a nested sequence of these spans whose union is dense in the form domain of
 \]
 Hence a finite matrix (14) can certify a **lower** bound on the true-versus-comparison affine gap and may test failure of a proposed allowance. It does not upper-bound \(n[v_U]\), and (15) is not a shortcut to the signed arithmetic estimate needed for RH.
 
+The [Suzuki coefficient variation consumer](theta-suzuki-variation-full-clock-consumer.md) supplies one explicit family of actual prime-power test vectors in \(D(K)\), including a graph-norm limit over every prime power. Their Gram actions are valid inputs to (14); no favorable size or sign for its entries follows from coefficient positivity.
+
 ## What the actual theta regularity proves
 
 The [prime-profile full-form proof](theta-prime-profile-full-form-domain.md) establishes \(w_p\in V\) and \(v_U\in V\), which is exactly what the conditional-edge estimator needs. It does not establish \(w_p\in D(K)\) or \(v_U\in D(K)\). There is a useful exact test for the first upgrade. The actual sign action and the continuous-profile domain theorem give
