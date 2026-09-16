@@ -145,4 +145,33 @@ Every normalized overlap in (2) lies in \([0,1]\). Labels with overlap below \(1
 \]
 Thus many actual prime-power translations have individually substantial overlap with the actual minimizing ground history. The sieve input is an upper count, not an RH-sized prime theorem in every short interval. The favorable radii still come from the separate complete-PNT average in the critical-subsequence theorem.
 
+## A sharper logarithmic-energy budget on these radii
+
+The same finite count also bounds the complete prime return from above. By Cauchy–Schwarz, every convolution value in (2) is at most \(q_+\). Equations (12)–(14) therefore give
+\[
+ \frac{P_R}{q_+}
+ \le(2+o(1))R e^{-R}M_R+o(1)
+ \le(8D+o(1))R .
+\tag{16}
+\]
+Use (5) in the opposite direction, retaining its positive same-half and continuous corrections and subtracting the nonnegative \(\delta_R/2\). Their ratios to \(q_+\) are \(o(R)\) as above. Consequently
+\[
+ R-\log R-O_d(1)
+ \le \frac{A[g_R]}{q_+}
+ \le(8D+o(1))R,\qquad
+ \frac{\|g_R\|_{\mathcal H}^2}{q_+}\le C_D R.
+\tag{17}
+\]
+The last step uses the established equivalence of the positive logarithmic Fourier norm and \(A[g_R]+O(q_+)\). This improves the general \(Ce^R\) relative budget for these selected actual grounds.
+
+The Fourier cap also gives a physical-mass consequence. Split at \(|\xi|=L=\exp(4C_D R)\). The high-frequency mass is at most \(q_+/4\) by (17), while the low-frequency mass is at most \(L(\int g_R)^2/\pi\). Hence, after enlarging a constant,
+\[
+ \boxed{\qquad
+ \ell_R=\frac{(\int g_R)^2}{q_+}
+ \ge c_D e^{-C'_D R}.
+ \qquad}
+\tag{18}
+\]
+This is exponentially rather than superexponentially small in \(R\), but it remains far below the critical upper width \(O(R e^{-R})\) and does not furnish the missing PNT-compatible translation modulus.
+
 The [many-cell anti-spike counterprofile](theta-antispike-grid-counterprofile.md) satisfies the available geometric and logarithmic-energy bounds but has only one active prime-power pair, and its physical form is positive. The present theorem identifies a property it lacks: the actual minimizing ground must realize a macroscopic total prime-overlap score on the critical additive scale along favorable radii. The overlap can still fluctuate sharply from label to label; (3) is not a prime-density quadrature theorem, a bound on the score-matched conditional covariance, or RH. This is written analysis, with no Lean formalization claimed.
