@@ -62,7 +62,7 @@ C_v(6)&=2d_1d_5+2d_2d_4+d_3^2.
 \end{aligned} \tag{6a}
 \]
 
-The Binet moment bound in (2) gives \(0<v_j<1/(360j^3)\) for all \(j\), and \(v_1>1/504\). The elementary enclosures \(69/100<\log2<7/10\), \(1<\log3<6/5\), and \(\log5>3/2\) imply, by rational arithmetic,
+The Binet moment bound in (2) gives \(0<v_j<1/(360j^3)\) for all \(j\), and \(v_1>1/504\). The elementary enclosures \(2/3<\log2<1\), \(1<\log3<6/5\), and \(\log5>3/2\) imply, by rational arithmetic,
 
 \[
  |d_2|<\frac{13}{10000},\qquad
@@ -71,7 +71,7 @@ The Binet moment bound in (2) gives \(0<v_j<1/(360j^3)\) for all \(j\), and \(v_
  d_5>\frac9{10000}. \tag{6b}
 \]
 
-For example, \(|d_2|<(1/360)(31/100)+1/2880=29/24000\), and \(d_5>(1/504)(1/2)-1/45000=611/630000>9/10000\). The other two bounds follow from \(v_3<1/9720\) and \(v_4<1/23040\). Substitution in (6a) gives the explicit strict sign
+For example, \(|d_2|<(1/360)(1/3)+1/2880=11/8640<13/10000\), \(|d_4|<(1/320)(1/3)+1/23040=25/23040<11/10000\), and \(d_5>(1/504)(1/2)-1/45000=611/630000>9/10000\). The \(d_3\) bound follows from \(v_3<1/9720\): \(|d_3|<(1/360)(1/5)+1/9720<7/10000\). Substitution in (6a) gives the explicit strict sign
 
 \[
  \boxed{C_v(6)
@@ -81,7 +81,7 @@ For example, \(|d_2|<(1/360)(31/100)+1/2880=29/24000\), and \(d_5>(1/504)(1/2)-1
  =-\frac{31}{140000000}<0.} \tag{6c}
 \]
 
-The logarithm enclosures follow from short exponential-series bounds; for \(\log5>3/2\), one may instead use \(\log5=2\log2+\log(5/4)\) and \(\log(1+x)\ge x/(1+x)\) at \(x=1/4\). This sign uses the **actual** factorial residual, not a fictitious weight concentrated at \(m=1\). It rules out coefficientwise positivity of the Binet-centered Goldbach square while leaving the full positive heat energy and norm gap intact.
+For completeness, \(\log(1+x)>2x/(2+x)\) for \(x>0\): its difference is zero at zero and has derivative \(x^2/((1+x)(2+x)^2)>0\). At \(x=1\) this gives \(\log2>2/3\); the familiar strict \(\log(1+x)<x\) gives \(\log2<1\). The same lower bound at \(x=2\) gives \(\log3>1\). The positive exponential series gives \(e^{6/5}\ge1+6/5+18/25+36/125=401/125>3\), hence \(\log3<6/5\). Finally \(\log5=2\log2+\log(5/4)>4/3+2/9=14/9>3/2\). This sign uses the **actual** factorial residual, not a fictitious weight concentrated at \(m=1\). It rules out coefficientwise positivity of the Binet-centered Goldbach square while leaving the full positive heat energy and norm gap intact.
 
 ## A uniform energy gap at every heat horizon
 
