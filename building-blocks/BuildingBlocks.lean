@@ -513,3 +513,4 @@ import BuildingBlocks.CollectiveSourceGalerkinFinite
 import BuildingBlocks.RadiusTwoEdgeCellGeometry
 import BuildingBlocks.RadiusTwoEdgeReversalFinite
 import BuildingBlocks.UncutEdgeParityFinite
+import BuildingBlocks.MonotoneCofactorCovarianceFinite
