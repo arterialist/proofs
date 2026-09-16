@@ -76,6 +76,10 @@ c_\omega(n)=2\omega\Lambda(n)
 \]
 For a prime power this follows by expanding
 \(n^\omega(1-p^{-2\omega})\); for an integer with at least two distinct prime factors, two of the factors \(1-p^{-2\omega}\) already supply \(O(\omega^2(\log n)^2)\). The bound \(n^\omega=O(1)\) is uniform because \(\omega\log x\to0\).
+The [coefficient-variation note](suzuki-coefficient-prime-history-variation.md)
+identifies \(c'_0(n)=2\Lambda(n)\) exactly, with a compiled Lean proof.
+That pointwise derivative does not itself give the uniform remainder in
+(7); the prime-power and two-factor estimates above supply it.
 
 By (6), the contribution of the error in (7) to (1) is
 \[
@@ -140,3 +144,12 @@ The gamma summands therefore have both signs, so coefficient positivity cannot p
 For fixed \(\omega>0\), [Suzuki, Theorem A.1(5)](https://arxiv.org/html/1204.1827v2) gives \(R_\omega(x)=1+o(1)\) as \(x\to\infty\) **under RH**. That statement is not uniform as \(\omega\downarrow0\); (3) covers only \(x=O(\omega^{-2})\). At \(\omega=1/2\), innerness of \(\Theta_{1/2}\) is unconditional, but innerness alone is no pointwise lower bound for (12). The global half bound for all \(x\) and all \(0<\omega\le1/2\) remains unproved.
 
 The proof's scale restriction is substantive. The negative gamma component in (4) contains \(\omega t^{\omega-1}\); its integral over the sampled range \(1/x<t<1\) is \(1-x^{-\omega}\), which becomes order one when \(\omega\log x\) is of order one. On such exponential scales, the coefficient expansion (7) also loses its uniform small error. The present argument supplies no sign there.
+
+Even on polynomial scales \(x=\omega^{-a}\) with a fixed \(a>2\),
+the cancellation in (9)--(11) needs more than the qualitative limit
+(10): its error is multiplied by \(\omega\sqrt{x}=\omega^{1-a/2}\to\infty\).
+Thus (10) alone gives an \(o(\omega\sqrt{x})\) remainder, not the
+\(o(1)\) remainder used in (11). Extending this first-order argument
+requires a quantitative weighted prime-discrepancy bound at that scale
+or a different exact cancellation. This is a limitation of the stated
+proof, not a claim that the wider sign target is false.
