@@ -76,4 +76,57 @@ theorem not_universal_old_response_damping :
 #print axioms paired_three_old_correlation
 #print axioms paired_three_old_correlation_positive
 #print axioms not_universal_old_response_damping
+/-- Full actual N=5 correlation with the terminal admission response. -/
+theorem paired_five_terminal_correlation_linear :
+    (∫ t in Set.Ioi 0, pairedPort 5 1 t * response 1 t * FactorialBinaryEnergy.weight t) =
+      9 * Real.log 5 - 20 * Real.log 2 := by
+  have h1 := actual_response_product_integrable 10 1 1 1
+  have h2 := actual_response_product_integrable 5 1 2 1
+  simp only [Nat.cast_one, Nat.cast_ofNat, one_mul] at h1 h2
+  have he : (fun t => pairedPort 5 1 t * response 1 t * FactorialBinaryEnergy.weight t) =
+      fun t => response 10 t * response 1 t * FactorialBinaryEnergy.weight t -
+        response 5 (2 * t) * response 1 t * FactorialBinaryEnergy.weight t := by
+    funext t
+    norm_num only [pairedPort, Nat.div_one, Nat.reduceMul]
+    ring
+  rw [he, integral_sub h1 h2]
+  have h3 := actual_response_product_integral 10 1 1 1
+  have h4 := actual_response_product_integral 5 1 2 1
+  simp only [Nat.cast_one, Nat.cast_ofNat, one_mul] at h3 h4
+  rw [h3, h4]
+  have hm := FactorialResponseCounterexample.moebius_thirteen_table
+  norm_num [List.range_succ, List.map_cons] at hm
+  rcases hm with ⟨h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13⟩
+  norm_num [Finset.sum_Icc_succ_top, h2, h3, h4, h5, h6, h7, h8, h9, h10,
+    FactorialKernelDictionary.kernel, Nat.choose]
+  simp only [log_4, log_6, log_10]
+  ring
+
+theorem paired_five_terminal_correlation :
+    (∫ t in Set.Ioi 0, pairedPort 5 1 t * response 1 t * FactorialBinaryEnergy.weight t) =
+      Real.log (1953125 / 1048576 : ℝ) := by
+  rw [paired_five_terminal_correlation_linear, Real.log_div (by norm_num) (by norm_num)]
+  have hn : Real.log 1953125 = 9 * Real.log 5 := by
+    rw [show (1953125 : ℝ) = 5^9 by norm_num, Real.log_pow]
+    norm_num
+  have hd : Real.log 1048576 = 20 * Real.log 2 := by
+    rw [show (1048576 : ℝ) = 2^20 by norm_num, Real.log_pow]
+    norm_num
+  rw [hn, hd]
+
+theorem paired_five_terminal_correlation_positive :
+    0 < (∫ t in Set.Ioi 0, pairedPort 5 1 t * response 1 t * FactorialBinaryEnergy.weight t) := by
+  rw [paired_five_terminal_correlation]
+  exact Real.log_pos (by norm_num)
+
+theorem not_universal_terminal_admission_damping :
+    ¬ (∀ N : ℕ, 0 < N → (∫ t in Set.Ioi 0, pairedPort N 1 t * response 1 t *
+      FactorialBinaryEnergy.weight t) ≤ 0) := by
+  intro h
+  exact (not_le_of_gt paired_five_terminal_correlation_positive) (h 5 (by norm_num))
+
+#print axioms paired_five_terminal_correlation_linear
+#print axioms paired_five_terminal_correlation
+#print axioms paired_five_terminal_correlation_positive
+#print axioms not_universal_terminal_admission_damping
 end BuildingBlocks.FactorialBinaryCarry
