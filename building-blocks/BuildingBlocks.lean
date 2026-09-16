@@ -416,6 +416,9 @@ import BuildingBlocks.ThetaDirectEdgeFiniteAlgebra
 import BuildingBlocks.GalerkinPerturbationAlgebra
 import BuildingBlocks.ThetaCompactStripRationalCore
 import BuildingBlocks.ThetaSignedCoreFiniteBlock
+import BuildingBlocks.SignedCoreGramContraction
+
+import BuildingBlocks.LargestPrimeSquarefreePackets
 
 import BuildingBlocks.HardClockWeightedLcmClass
 

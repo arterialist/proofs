@@ -190,17 +190,73 @@ observation's nonvanishing on a compact energy shell also does not prove it:
 nonvanishing gives no lower constant large enough to dominate the complete
 negative Gram row.
 
+There is a sharper source-specific explanation.  Let \(\mathcal C\) be the
+actual centered exterior Green covariance and let
+
+\[
+ D_{\rm all}(r,s)=Q(r,s)-\mathcal C(r,s)
+\]
+
+be the complete history gain, polarized from the nonnegative diagonal form.
+For general \(x\), put
+
+\[
+ c_Q=\frac{k(x)}{d_Q},\qquad r_Q=Tx-c_Qq,
+\]
+
+and let \(c_C\) be the exact Green-covariance affine optimizer.  The exact
+complete-ground identity and the definition of \(J\) give
+
+\[
+ \boxed{
+ h[x]=F_\alpha[x]-
+ \left(D_{\rm all}(r_Q,r_Q)-\|\mathcal O r_Q\|^2
+ +\mathcal C(q,q)|c_Q-c_C|^2\right).}
+\tag{13}
+\]
+
+Both terms in parentheses are nonnegative: the observation is a lower readout
+of the complete gain, and the second term is the optimizer-mismatch square.
+Thus the signed lower operator fails precisely by the gain left invisible to
+the finite observation together with the use of the old \(Q\)-optimizer.
+
+On \(\mathcal K\), one has \(c_Q=0\), \(\mathcal OTx=0\), and
+\(m_\tau=-Q(Tx,q)\).  Hence
+
+\[
+ c_C=\frac{\mathcal C(Tx,q)+m_\tau}{\mathcal C(q,q)}
+ =-\frac{D_{\rm all}(Tx,q)}{\mathcal C(q,q)},
+\]
+
+so (13) specializes to the fully source-normalized identity
+
+\[
+ \boxed{
+ h[x]=F_\alpha[x]-D_{\rm all}(Tx,Tx)
+ -\frac{|D_{\rm all}(Tx,q)|^2}{\mathcal C(q,q)},
+ \qquad x\in\mathcal K.}
+\tag{14}
+\]
+
+This identifies the exact strengthening that would prove (12).  A known lower
+bound for the true constrained form \(F_\alpha\) must pay the complete
+unobserved history gain and its mixed odd-affine mismatch in (14).  The
+published small-core full-space gap does lower-bound \(F_\alpha\), but no
+proved estimate compares that margin with the two terms subtracted in (14),
+and its small-radius condition is not a radius-two certificate.  Therefore it
+does not currently settle the ratio on \(\mathcal K\).
+
 For a finite trial space, (10)--(12) have a completely algebraic replay.
 Let \(Z_N\) have columns spanning the joint nullspace of the rows
 \(m,b,k,J_N\).  A negative eigenvalue of
 
 \[
  Z_N^*\left(D_N-a^{-1}G_{S,N}\right)Z_N
-\tag{13}
+\tag{15}
 \]
 
 is an exact finite counterexample for the chosen observation.  A positive
-matrix in (13) is only a certificate on that nullspace; the remaining
+matrix in (15) is only a certificate on that nullspace; the remaining
 directions must still be checked by (7).
 
 ## 4. The complementary-spectrum loss in equation (18)
@@ -221,7 +277,7 @@ Optimizing its displayed parameter \(\epsilon>0\) gives
 \qquad
  c_{\rm opt}
  =\frac{h+g-\sqrt{(h-g)^2+4C^2}}2.
-\tag{14}
+\tag{16}
 \]
 
 Hence some \(\epsilon\) makes the source's coefficient nonnegative exactly
@@ -229,7 +285,7 @@ when
 
 \[
  \boxed{\quad h\ge0,\qquad g\ge0,\qquad hg\ge C_V^2.\quad}
-\tag{15}
+\tag{17}
 \]
 
 For strict positivity all three boundary equalities must be avoided.  This
@@ -241,11 +297,20 @@ complementary-spectrum budget.
 Equation (18) does not currently define one numerical \(c_*\): the source
 does not specify \(\mathcal O\), \(N\), \(\epsilon\), or validated entries
 of \(H_N\).  No existing theorem supplies (12), and no validated finite data
-currently evaluate (8) or (13).  Therefore neither \(c_*\ge0\) nor an actual
+currently evaluate (8) or (15).  Therefore neither \(c_*\ge0\) nor an actual
 negative theta witness is proved here.
 
 The first precise unevaluated signed quantity is \(\sigma_N\) in (8) after a
 concrete observation and a validated core/ground Galerkin block are fixed.
 It combines all requested cancellations.  If the computation is aimed first
-at an obstruction, (13) is smaller: it requires only the common-nullspace
+at an obstruction, (15) is smaller: it requires only the common-nullspace
 restriction and returns an explicit coefficient vector if it fails.
+
+The finite algebra is formalized in
+[`SignedCoreGramContraction.lean`](BuildingBlocks/SignedCoreGramContraction.lean).  Lean 4.24 checks the complex mean
+split, the Gram-difference and kernel implications, the contraction and
+abstract pseudoinverse-on-range criteria, and the optimized Young formula and
+product criterion.  The square-root factor, Moore--Penrose properties, and all
+theta operator estimates remain explicit hypotheses.  The module contains no
+`sorry` or project axiom; its axiom report lists only `propext`,
+`Classical.choice`, and `Quot.sound`.
