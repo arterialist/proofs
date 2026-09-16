@@ -52,7 +52,7 @@ It follows directly from $(1-e^{-mt})(1-e^{-nt})=(1-e^{-mt})+(1-e^{-nt})-(1-e^{-
            k(\lfloor N/j\rfloor+\lfloor N/l\rfloor). \tag{3c}
 \]
 
-At a horizon with $M(N)=0$, only the second term remains. [FactorialClockCofactorFinite.lean](BuildingBlocks/FactorialClockCofactorFinite.lean) now compiles (3c) from the previously compiled literal integrated Möbius response and a generic finite quadratic coboundary identity; its axiom report contains only Lean's three standard axioms. This rearrangement alone supplies no upper bound on the coherent quadratic energy; in particular the signed terminal loading in (3c) cannot be dropped at general horizons.
+At a horizon with $M(N)=0$, only the second term remains. The theorem `actual_moebius_energy_coboundary` in [FactorialClockCofactorFinite.lean](BuildingBlocks/FactorialClockCofactorFinite.lean) proves (3c) for the literal integrated Möbius response. It uses a generic finite quadratic coboundary, and its axiom report lists only Lean's three standard axioms. Equation (3c) supplies no upper bound on the coherent energy. The signed terminal loading remains at general horizons.
 
 For each fixed $m\ge1$, the positive integrand increases with $N$ and monotone convergence gives $B(m,N)\uparrow k(m)$. The same limit follows from
 $\binom{m+N}{m}=m!^{-1}\prod_{j=1}^m(N+j)$ and
@@ -123,15 +123,16 @@ is holomorphic for $\Re s>-2$. Its first coefficient dominates **uniformly on th
 
 \[
  \begin{aligned}
- |R(s)|
- &\ge -r(1)-\sum_{m\ge2}|r(m)|m^{-\Re s}\\
- &>\frac1{504}-\frac1{360}
- \left(\frac18+\int_2^\infty x^{-3}\,dx\right)
- =\boxed{\frac{13}{10080}}>0. \tag{11}
- \end{aligned}
+\Re R(s)
+&\le r(1)+\sum_{m\ge2}|r(m)|m^{-\Re s}\\
+&<-\frac1{504}+\frac1{360}
+\left(\frac18+\int_2^\infty x^{-3}\,dx\right)
+=\boxed{-\frac{13}{10080}}<0,\\
+|R(s)|&>\frac{13}{10080}. \tag{11}
+\end{aligned}
 \]
 
-No assertion about zeros of $\zeta$ is used in (11). This is an explicit nonannihilation bound for any zeta zero in the critical strip.
+No assertion about zeros of $\zeta$ is used in (11). The stronger real-part inequality pins every multiplier $R(\rho)$ at a zeta zero $\rho$ in the open left half-plane. It does not sign the resulting oscillatory zero contribution on the real $X$ axis.
 
 The Binet remainder has a stronger **positive-clock representation**. For $u>0$ define the twice-corrected original density
 
