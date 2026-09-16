@@ -333,6 +333,7 @@ import BuildingBlocks.FactorialPairedRenewal
 import BuildingBlocks.FactorialPairedFloorRows
 import BuildingBlocks.FactorialPairedCovariance
 import BuildingBlocks.FactorialPairedExamples
+import BuildingBlocks.FactorialResponseBilinear
 import BuildingBlocks.FactorialResponseDerivative
 import BuildingBlocks.FactorialResponseCounterexample
 import BuildingBlocks.FinitePacketSupportSeparation
