@@ -272,11 +272,13 @@ threshold amplification provided
  =e^{o(X)}.                                                    \tag{23}
 \]
 
-No such moving-radius estimate is currently proved.  The available
-positive lower bounds for $a_R$ and $\eta_R$ use a finite strip, an
-$L^\infty$ ground-state barrier, and bridge masses; they are explicitly
-fixed-core and become nonuniform when $R=\beta\log X$.  Conversely, the
-upper bound
+The later [moving-radius audit](theta-moving-radius-weighted-covariance-audit.md)
+proves the denominator estimate
+$(a_R+\eta_R)^{-1}\le\exp(Ce^{2R})$ directly from normalized-ground
+concentration and physical-mass conversion.  It avoids the fixed-strip
+$L^\infty$ barrier.  It does not prove (23), because the moving ground
+supremum in its numerator remains uncontrolled.  Conversely, the upper
+bound
 
 \[
  a_R\le\rho(R)\sqrt{\nu(O_R)}                                 \tag{24}
@@ -324,11 +326,13 @@ parity, finite observations, both orientations, and all prime powers.  It
 does not bound that proportionality constant uniformly over a moving source
 family.
 
-The moving-core central-arc application remains open because the proved
-weighted crossing norm, $a_R$, and the residual gap $\eta_R$ have no
-uniform estimates at $R=\beta\log X$.  The precise missing assertion is
-(9), or the sufficient subexponential condition (23) together with the
-weighted tail version of (22).  Establishing it would be a genuine
+The moving-core central-arc application remains open even though the
+moving denominator now has an $e^{o(X)}$ upper bound for
+$R=\beta\log X$, $\beta<1/2$.  The unresolved input is the weighted source
+numerator for the fully summed actual source.  The localized ground-tail
+argument proves (9) under a separately verified subexponential terminal
+carrier bound, while exact coefficientwise Lambert synthesis fails that
+condition.  Establishing a collective version of (9) would be a genuine
 source-specific covariance theorem; it cannot be replaced by
 $\|G_R\|$, a scalar square-root threshold heuristic, or an assumption
 that there are no excited subthreshold modes.

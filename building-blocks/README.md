@@ -553,6 +553,8 @@ The [ground-pole theorem](theta-killed-return-ground-pole.md) proves a unique po
 
 The [local spectral-mass bound](theta-exterior-threshold-local-measure-weighted-source-bound.md) uses the exact complete covariance clock to show, at fixed core, that spectral mass in a band $I$ is at most $\sup_{s\in I}(s-\alpha)$ times the actual weighted-source ratio.  Its source is $f/\rho$, and its covariance identity depends on the proved equality of the original and rank-one-subtracted maximal potential domains.  It removes a bare small-denominator estimate for fixed weighted sources, but supplies no moving-core bound for that ratio and no signed-core positivity conclusion.
 
+The [moving-radius weighted-covariance audit](theta-moving-radius-weighted-covariance-audit.md) supplies the part of that missing estimate justified by the published collar theorems. The normalized-ground tail and physical-mass conversion give $a_R^{-1}\le\exp(Ce^{2R})$, hence an $e^{o(X)}$ denominator at $R=\beta\log X$, $\beta<1/2$. A localized terminal carrier with $\log K_X=o(X)$ then has weighted ratio $\exp(-cX+o(X))$. This does not apply automatically to the actual Lambert field: the available source estimate is unweighted, and exact coefficientwise path synthesis has exponentially large carrier mass already on a prime hard-clock row. [MovingRadiusWeightedCovariance.lean](BuildingBlocks/MovingRadiusWeightedCovariance.lean) compiles only the valid denominator, finite-sum, and coefficient-matching order algebra. A fully collective signed kernel comparison remains open.
+
 
 ## Frozen-source loading, successor renewal and variable time
 

@@ -232,12 +232,14 @@ For `p=cL`, the right side has exponential scale `X^(2-2c)`.  At `c=1`
 it has only a negative power of `L` for the usual fixed-profile exponents.
 The current endpoint-level estimates are much larger and do not imply (18).
 
-Even a proof of (18) at and beyond `c=1` would leave
-`2<Delta Z,E>+2<Delta Z,W>`.  Their existing Cauchy bounds have ratio
-`exp(-3L/2+3p/2+o(L))` to the fixed-profile margin and cease to decay at
-`p=L`; moreover `pD=o(X)`, used in deriving those bounds, fails across the
-same transition.  A theorem beyond the wall therefore needs both (18) and a
-new direct estimate for these mixed admission/endpoint correlations.
+The subsequent
+[first-branch audit](mixed-endpoint-first-branch-abel-collapse.md) evaluates
+`2<Delta Z,E>+2<Delta Z,W>` before Cauchy.  As long as `D<=X`, those terms
+collapse to `2b_(X,p)(L/X){Z_D(q^p)-Z_D(q)}` and remain negligible at the
+crossover.  Once `D>X`, their explicit post-branch wedge is another weighted
+two-point divisor correlation.  A theorem beyond the wall therefore needs
+both (18) and control of that post-branch correlation; the former Cauchy
+estimate was not sharp on the complete first branch.
 
 Subtracting the whole quantity (5) would define another exact modified
 observable, but that operation removes the object whose arithmetic size is
