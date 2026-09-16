@@ -423,6 +423,7 @@ import BuildingBlocks.SharedReserveCancellation
 import BuildingBlocks.CorePortGeneralizedEigen
 import BuildingBlocks.PositiveKernelCauchy
 import BuildingBlocks.ConstrainedHardyObstruction
+import BuildingBlocks.CoherentPacketAlgebra
 
 import BuildingBlocks.LargestPrimeSquarefreePackets
 import BuildingBlocks.PrimeAdmissionEnergyFlux
