@@ -220,6 +220,24 @@ The additive-pair expansion also yields a one-sided local Goldbach criterion. Pu
 \]
 Indeed \(D_\phi(\tfrac12\log X)=(\mathcal G_\phi(X)-M_X^2)/(P_X+M_X)\). Since the denominator is at least \(M_X\), the lower or upper estimate gives, respectively, an eventual lower or upper constant bound on \(D_\phi\). The lower bound implies RH by (12); the upper bound does so by the identical positive-Laplace argument for \(-D_\phi\). Conversely RH gives \(D_\phi=O(1)\), so \(\mathcal G_\phi-M_X^2=2M_XD_\phi+D_\phi^2=O(\sqrt X)\). This local count keeps every ordered prime-power pair inside one fixed multiplicative window; ordinary Goldbach existence supplies no estimate at its required \(\sqrt X\) secondary scale.
 
+That secondary scale has an unconditional two-sided lower calibration. For any Hardy zero \(\rho=1/2+i\gamma\), put \(A_\gamma=m_\rho|F(2i\gamma)|^2>0\). The PNT bound (13) gives \(D_\phi(\tfrac12\log X)/\sqrt X\to0\), so
+\[
+ \frac{\mathcal G_\phi(X)-XF(1)^4}{\sqrt X}
+ =\left(2F(1)^2+\frac{D_\phi(\tfrac12\log X)}{\sqrt X}\right)
+       D_\phi(\tfrac12\log X).
+\]
+Combining this exact factorization with (12a) yields
+\[
+ \boxed{\quad
+ \limsup_{X\to\infty}\frac{\mathcal G_\phi(X)-XF(1)^4}{\sqrt X}
+ \ge2F(1)^2A_\gamma,
+ \qquad
+ \liminf_{X\to\infty}\frac{\mathcal G_\phi(X)-XF(1)^4}{\sqrt X}
+ \le-2F(1)^2A_\gamma.
+ \quad}                                                        \tag{12j}
+\]
+Thus neither one-sided estimate in (12i) can hold with \(C<2F(1)^2A_\gamma\). This is an actual ordered prime-power Goldbach fluctuation, not a bound sufficient for RH.
+
 ## Why the ordinary PNT does not pay this residual
 
 The complete unconditional bound \(|\Psi(X)-X|\le CXe^{-c\sqrt{\log X}}\), as in [Trudgian's Theorem 1](https://arxiv.org/pdf/1401.2689), and Stieltjes integration by parts in (8) yield only
