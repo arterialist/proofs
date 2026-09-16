@@ -317,6 +317,7 @@ import BuildingBlocks.FinitePrimeSourceIntegration
 import BuildingBlocks.ActualCompactHeatEndpoint
 import BuildingBlocks.ActualTerminalPrimeTraceFinite
 import BuildingBlocks.CompactWeilDivisorRayleighFinite
+import BuildingBlocks.CompactWeilDivisorEnergyFinite
 import BuildingBlocks.ResidueLoadingSuccessor
 import BuildingBlocks.LogarithmicPrimeWindow
 import BuildingBlocks.FactorialBinaryCarry
