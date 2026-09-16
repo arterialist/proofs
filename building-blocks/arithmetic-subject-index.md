@@ -241,6 +241,8 @@ RH Agent2's [complete early-divisor sieve](large-prime-additive-sieve-and-indefi
 
 The [divisor-length truncation barrier](sqrt-divisor-truncation-parity-barrier.md) identifies semiprime product histories missed by every fixed sublinear-power divisor cutoff and a selected spurious Goldbach cross of absolute size asymptotic to $X^2/(108\log X)$. It is a source-specific obstruction to absolute-error short-divisor replacement, not a lower bound for the total signed truncation error.
 
+RH Agent3's [centered Goldbach parity compensation](centered-goldbach-odd-parity-compensation.md) gives $R_a(k)=-k+o(k)$ on odd totals and exact leading odd/even heat contributions $\mp N/2+o(N)$, including fixed macroscopic bands. The arithmetic signed cancellation is unconditional at PNT scale; the RH-strength subpower bound remains open.
+
 The [amplitude-level successor heat transfer](successor-heat-lyapunov-transfer.md) retains every prime power and the full continuous successor tail in an exact Volterra identity. The transported and original critical profiles differ by finite energy, giving two-sided energy comparisons and the same RH-equivalent Lyapunov and doubling conditions. It does not prove the missing scale bound and has no Lean formalization.
 
 The [original integer-birth feedback bridge](actual-integer-birth-positive-quadrature.md#formal-identification-with-the-original-feedback) now identifies the existing relative driver with the complete $\Lambda$-weighted birth difference in Lean. The half-density integral and absolute countable Fubini prerequisites are proved, and the exact Abel identity retains $b_j\psi(j)$ at every clock. The original $E$ is unchanged; its near-one positivity remains open.
