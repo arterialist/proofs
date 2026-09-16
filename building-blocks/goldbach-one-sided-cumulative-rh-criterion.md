@@ -55,9 +55,12 @@ for every $0<\eta<1/2$,
 \tag{2a}
 \]
 
-The same conclusion holds for $S_{\rm even}$. This does not assert an
-$\Omega_\pm(X^{3/2})$ estimate at the endpoint. The argument is given
-after the one-sided heat transfer below; no priority claim is made.
+The same conclusion holds for $S_{\rm even}$. The heat transform also
+gives an endpoint $\Omega_\pm(X^{3/2})$ estimate with an explicit
+(small) positive constant, proved below. Stronger Goldbach oscillation
+bounds were established under RH by
+[Mossinghoff and Trudgian](https://jtnb.centre-mersenne.org/item/10.5802/jtnb.1202.pdf);
+no priority claim is made for the endpoint conclusion here.
 
 ## RH gives both inequalities
 
@@ -180,6 +183,82 @@ exponential comparison has its real pole at $-\eta<\sigma$, while
 (8) is regular at every real point of $[0,1/2]$. Landau again gives
 a contradiction. Failure of each eventual one-sided bound for every
 constant $C$ is exactly the two unbounded ratios in (2a).
+
+## Oscillation at the critical endpoint
+
+Choose any known critical-line zero $\rho=1/2+i\gamma$ of multiplicity
+$m_\rho$ and put $A_\rho=m_\rho|\Gamma(\rho)|>0$. Then the actual
+heat response satisfies
+
+\[
+\limsup_{v\to\infty}b(v)\ge A_\rho,
+\qquad
+\liminf_{v\to\infty}b(v)\le-A_\rho.
+\tag{8a}
+\]
+
+Here is a direct positive-Laplace proof. Suppose $b(v)\le C$ on a
+final half-line $v\ge V$. The nonnegative function $q(v)=C-b(v)$
+there has transform
+
+\[
+Q_V(z)=\frac{Ce^{-Vz}}{z}-\widehat b(z)+H_V(z),
+\tag{8b}
+\]
+
+where $H_V$ is entire: the negative-time heat response decays
+superexponentially, and the remaining omitted interval is bounded.
+The pole of (8) at $z=i\gamma$ has residue
+$-m_\rho\Gamma(\rho)$, so (8b) has residue
+$m_\rho\Gamma(\rho)$ there. The absolute convergence abscissa
+$\sigma$ of $Q_V$ is finite and lies in $[0,1/2]$: the pole gives
+$\sigma\ge0$, and the PNT bound gives $\sigma\le1/2$.
+If $\sigma>0$, Landau would force a real singularity at $\sigma$,
+but (8b) has none on $(0,1/2]$. Thus $\sigma=0$ and $Q_V(z)$ is
+the genuine positive Laplace integral whenever $\Re z>0$.
+Positivity gives $|Q_V(s+i\gamma)|\le Q_V(s)$ for $s>0$.
+Multiply by $s$ and let $s\downarrow0$; the two Laurent limits are
+$A_\rho$ and $C$, respectively, because $\widehat b$ is regular
+at real $z=0$. Hence $C\ge A_\rho$. Applying the same argument to
+$C+b(v)\ge0$ proves (8a). In particular the result is unconditional;
+if RH is false, the stronger unbounded two-sided response oscillation
+already follows from the one-sided criterion in the
+[actual-response audit](actual-heat-renewal-cell-trace-audit.md).
+
+The exact heat identity (5) transfers (8a) to the cumulative count.
+Writing $D(X)=S_\Lambda(X)-X^2/2$ and
+$H=\Gamma(5/2)=3\sqrt\pi/4$, an eventual bound
+$D(X)\le cX^{3/2}$ gives
+
+\[
+P(t)^2-t^{-2}
+=t\int_0^\infty e^{-tX}D(X)\,dX
+\le cH t^{-3/2}+O(t).
+\tag{8c}
+\]
+
+Since the unconditional PNT gives $tP(t)\to1$ and
+$P_0(t)=t^{-1}+O(t)$, divide (8c) by $P(t)+t^{-1}$ and multiply
+by $\sqrt t$ to obtain
+$\limsup_{v\to\infty}b(v)\le cH/2$.
+The lower bound transfers identically. Therefore
+
+\[
+\boxed{\displaystyle
+\limsup_{X\to\infty}\frac{D(X)}{X^{3/2}}
+\ge\frac{8A_\rho}{3\sqrt\pi}>0,
+\qquad
+\liminf_{X\to\infty}\frac{D(X)}{X^{3/2}}
+\le-\frac{8A_\rho}{3\sqrt\pi}<0.}
+\tag{8d}
+\]
+
+The odd-total correction is $O(X\log^2X)=o(X^{3/2})$,
+so (8d) also holds with $S_{\rm even}(X)-X^2/2$ in place of $D(X)$.
+The explicit constant here is a residue-transfer bound, not a claim
+that it improves the stronger conditional oscillation constants in
+the cited literature. The transform, Landau application, and limiting
+heat transfer in this section remain written analysis, not Lean theorems.
 
 ## Even totals and ordinary Goldbach existence
 
