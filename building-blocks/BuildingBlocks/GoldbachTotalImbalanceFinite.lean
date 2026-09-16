@@ -8,7 +8,7 @@ positive endpoints and every von Mangoldt prime power. -/
 
 namespace BuildingBlocks.GoldbachTotalImbalanceFinite
 
-open Finset BuildingBlocks.AdditivePairBalance BuildingBlocks.GoldbachHeat
+open Finset Function BuildingBlocks.AdditivePairBalance BuildingBlocks.GoldbachHeat
 
 noncomputable section
 
@@ -57,6 +57,36 @@ theorem row_additive_eq_mass_div (N k : ℕ) :
   have hsum : p.1 + p.2 = k := Finset.mem_antidiagonal.mp (Finset.mem_filter.mp hp).1
   simp [additive, ← Nat.cast_add, hsum, div_eq_mul_inv]
 
+/-- Once the source cutoff includes every positive pair at the total, its
+centered row is the complete coefficient of the existing heat square. -/
+theorem row_mass_eq_shifted (N k : ℕ) (hN : k + 1 ≤ N) :
+    rowMass N (k + 2) = shiftedGoldbach k := by
+  let e : ℕ × ℕ ↪ ℕ × ℕ :=
+    Embedding.prodMap ⟨Nat.succ, Nat.succ_injective⟩
+      ⟨Nat.succ, Nat.succ_injective⟩
+  have he (p : ℕ × ℕ) : e p = (p.1 + 1, p.2 + 1) := rfl
+  have hidx : rowIndices N (k + 2) = (antidiagonal k).map e := by
+    ext p
+    simp only [rowIndices, Finset.mem_filter, Finset.mem_antidiagonal,
+      Finset.mem_map]
+    constructor
+    · rintro ⟨hs, hp1, hpN1, hp2, hpN2⟩
+      refine ⟨(p.1 - 1, p.2 - 1), ?_, ?_⟩
+      · dsimp
+        omega
+      · rw [he]
+        apply Prod.ext <;> dsimp <;> omega
+    · rintro ⟨q, hq, hpq⟩
+      rw [he] at hpq
+      have hq1 : q.1 ≤ k := by omega
+      have hq2 : q.2 ≤ k := by omega
+      subst p
+      dsimp at *
+      constructor <;> omega
+  unfold rowMass shiftedGoldbach
+  rw [hidx, Finset.sum_map]
+  simp only [he]
+
 /-- The finite centered Goldbach row in the original metric splits into the
 additive total and an exact signed imbalance correction. -/
 theorem row_physical_eq_total_sub_imbalance (N k : ℕ) :
@@ -65,6 +95,7 @@ theorem row_physical_eq_total_sub_imbalance (N k : ℕ) :
   ring
 
 #print axioms row_physical_eq_total_sub_imbalance
+#print axioms row_mass_eq_shifted
 
 end
 end BuildingBlocks.GoldbachTotalImbalanceFinite
