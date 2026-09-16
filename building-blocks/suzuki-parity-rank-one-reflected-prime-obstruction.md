@@ -107,6 +107,40 @@ $$
 $$
 The preceding equivalence then gives RH, and (4) bounds every $\tau_a\le1$. Thus $\tau_a\uparrow1$. This explains why a uniform Birman–Schwinger margin below $1$ is impossible; it is a conditional saturation law, not a no-crossing estimate.
 
+## A quantitative lower bound on the return
+
+The saturation test gives a rate without assuming positivity at every scale. There are absolute constants $a_*,c,C>0$ such that, for each $a\ge a_*$ with $L_a^{\rm odd}>0$,
+$$
+ \boxed{\tau_a\ge 1-C\exp(-c e^{2a}).}
+$$
+In particular, whenever $\tau_a\le1$ as well, its margin obeys $0\le1-\tau_a\le C\exp(-c e^{2a})$. This is a lower bound on the return, not the missing upper bound.
+
+To prove it, choose a fixed smooth cutoff profile and, for $a>2$, let $\chi_a$ be even, equal to $1$ on $[-a+1,a-1]$, supported in $(-a,a)$, and have first derivative bounded independently of $a$. Put $h_a=\chi_a h_0$. The theta series for $\Phi$ and its derivatives gives, for each fixed $j$ and $B>0$,
+$$
+ \sup_{x\in\mathbb R}e^{B|x|}
+ \left|\partial_x^j(h_a-h_0)(x)\right|
+ +\|h_a-h_0\|_{H^1(\mathbb R)}
+ \le C_{j,B}\exp(-c_{j,B}e^{2a})
+$$
+for large $a$. Indeed the error is supported where $|x|\ge a-1$, while each theta derivative there is bounded by a fixed exponential polynomial in $|x|$ times $\exp(-\pi e^{2|x|})$. Decrease $c>0$ once to use the same rate in the following estimates.
+
+Take $B>1/2$. The score moment satisfies $\langle s,h_a\rangle=1/4+O(e^{-c e^{2a}})$ by the weighted bound. The archimedean multiplier in (1) has absolute value at most $C(1+t^2)$, so the $H^1$ bound gives an archimedean form error $O(e^{-c e^{2a}})$. For the complete prime form, the mixed correlation of $h_a-h_0$ with $h_0$ at $u=\log n$ is at most
+$$
+ C e^{-c e^{2a}}(1+u)e^{-Bu};
+$$
+the error self-correlation has the same bound after enlarging $C$. The resulting series converges because $\sum_{n\ge2}\Lambda(n)(1+\log n)n^{-B-1/2}<\infty$. Thus (8) yields
+$$
+ \mathcal L_a(h_a)=\mathcal L_\infty(h_a)
+     =\tfrac18+O(e^{-c e^{2a}})>0.
+$$
+Finally (5) permits $h_a$ as a test and gives
+$$
+ \tau_a\ge
+ \frac{2|\langle s,h_a\rangle|^2}{\mathcal L_a(h_a)}
+     =1+O(e^{-c e^{2a}}),
+$$
+where the equality is an estimate for this one test quotient, not for $\tau_a$. Its lower side is the displayed bound.
+
 ## A positive offdiagonal form value from the first prime
 
 Take $a=3/4$, $t_2=\log2$, and positive centers
