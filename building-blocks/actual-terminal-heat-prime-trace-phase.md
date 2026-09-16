@@ -157,6 +157,17 @@ The two first factors retain the exact density and endpoint difference:
  \mathcal A_{\tau_N}(N)=J(N)+\frac{N-1}{2}
                       =\sum_{n\le N}a_n(N-n).           \tag{12}
 \]
+Neither first factor vanishes at an integer cutoff \(N\ge2\).
+Indeed
+\(J(N)=\sum_{n\le N}\Lambda(n)(N-n)-(N^2-1)/2\), and the
+prime-power sum is \(\log A_N\) for a positive integer \(A_N\):
+each \(\Lambda(p^j)=\log p\) has the integer coefficient
+\(N-p^j\). If \(J(N)=0\), then
+\(A_N=e^{(N^2-1)/2}\), impossible by the transcendence of \(e\).
+Similarly \(\mathcal A_{\tau_N}(N)
+=\log A_N-N(N-1)/2\ne0\). This is the same elementary
+transcendence mechanism used for a different actual cutoff integral
+in the [heat cutoff-extrema proof](actual-centered-heat-cutoff-extrema.md#infinitely-many-actual-cutoff-extrema).
 The second factors have strictly negative limits:
 \[
  \begin{aligned}
@@ -169,13 +180,41 @@ The second factors have strictly negative limits:
  \end{aligned}
 \]
 Indeed \(E_N=O(N)\) by Chebyshev, so its terminal inverse-square
-contribution tends to zero. An elementary sign certificate avoids
+contribution tends to zero. An elementary uniform estimate avoids
 decimal approximations: \(\Lambda(n)\le\log n\), and
 \[
  \sum_{n\ge2}\frac{\log n}{n^2}
  \le\frac{\log2}{4}+\int_2^\infty\frac{\log x}{x^2}dx
- =\frac12+\frac34\log2<\frac54<\zeta(2).
+ =\frac12+\frac34\log2<\frac{17}{16}<\zeta(2),
 \]
+using \(\log2<3/4\). It also proves the *discrete* factor is
+negative at every cutoff. For \(N\ge4\), write
+\(v_n=n^{-2}-N^{-2}\ge0\); then
+\[
+ \mathcal T_{\tau_N}(N)
+ =-\sum_{n\le N}v_n+\sum_{n\le N}\Lambda(n)v_n
+ \le-\left(v_1+v_2+v_3\right)
+      +\sum_{n\ge2}\frac{\Lambda(n)}{n^2}
+ <-\frac{169}{144}+\frac{17}{16}<0.
+\]
+At \(N=2\), the factor is \(-3/4\); at \(N=3\), it is
+\(-8/9+(\log2-1)5/36<0\). Thus
+\(\mathcal T_{\tau_N}(N)<0\) for every integer \(N\ge2\).
+For the *literal* compact source, the same strict sign has an exact
+ground representation. The [actual positive factorial potential](factorial-ground-state-original-l2-domain.md)
+\(F(x)=\log x-\sum_{n\le x}\Lambda(n)/n+\psi(x)/x\) satisfies
+\(F(1)=0\), \(F(x)>0\) for \(x>1\), and
+\(F'(x)=-E(x)/x^2\) almost everywhere. Ordinary integration by parts
+therefore gives the exact all-cutoff identity
+\[
+ \boxed{\quad
+ \mathcal T_{\sigma_N}(N)
+   =-\frac{2F(N)}N-2\int_1^N\frac{F(x)}{x^2}dx<0
+   \qquad(N>1).\quad}                                 \tag{13a}
+\]
+The discrete packet differs by its positive fractional-cell moment;
+its strict sign follows from the separate finite-weight argument
+above, not by silently transferring (13a).
 
 The actual first factor changes sign at arbitrarily large integer
 cutoffs, with more than a linear margin. For every
@@ -216,12 +255,13 @@ contradiction. Apply the same argument to
 \(3/2-\delta>1\), both excursions pass to integer cutoffs.
 Equation (12) then proves (14).
 
-For every sufficiently large packet in either of the two sign
-subsequences from (14), (11)--(13) fix the sign of its sufficiently
-far-lag autocorrelation and (11a) fixes the opposite sign of the
-corresponding prime-row tail. Both signs occur for actual complete
-prime-power packets, even after terminal compensation makes the full
-prime series converge. The lag threshold may depend on the packet.
+For **both** terminal-compensated sources, (11)--(13a) show that every
+integer cutoff \(N\ge2\) has a nonzero sufficiently far-lag phase,
+opposite to its first moment \(\mathcal A_\nu(N)\); (11a) gives the
+opposite sign for its prime-row tail. The two sign subsequences in
+(14) show that both phases occur arbitrarily late. This remains true
+after terminal compensation makes the full prime series converge.
+The lag threshold may depend on the packet.
 
 ## The Goldbach \(M\)-function in the far-prime tail
 
@@ -238,11 +278,11 @@ integer-endpoint weight \(X-n=0\) at \(n=X\), gives the exact identity
 \[
  J(X)=-X^{3/2}H(X)-X\log(2\pi)-12\zeta'(-1)
        -X\sum_{m\ge1}\frac{X^{-2m}}{2m(2m-1)}+\frac12,
- \qquad X>1.                                           \tag{18}
+ \qquad X>1.                                           \tag{16}
 \]
 The last \(1/2\) restores our lower integration endpoint \(1\):
 the paper integrates \(\psi(x)-x\) from \(0\), where it equals \(-x\)
-on \([0,1)\). No prime-power half-weight enters (18), because its
+on \([0,1)\). No prime-power half-weight enters (16), because its
 coefficient \(X-n\) vanishes at the endpoint.
 
 For the literal compact source, define the completed late-prime
@@ -250,18 +290,18 @@ tail coefficient by taking the prime cutoff *after* fixing \(N\):
 \[
  L_N:=\lim_{Y\to\infty}Y
        \left[-2\sum_{k>Y}\Lambda(k)q_{\sigma_N}(k)\right]
-     =-2J(N)\mathcal T_{\sigma_N}(N).                \tag{19}
+     =-2J(N)\mathcal T_{\sigma_N}(N).                \tag{17}
 \]
 This is the exact limit in (11a), not a new sign hypothesis. Write
 \(T_\infty=-\zeta'(2)/\zeta(2)-2<0\). Chebyshev and partial
 summation give
 \(\mathcal T_{\sigma_N}(N)=T_\infty+O(N^{-1})\);
 absolute convergence of the zero series gives \(H(N)=O(\sqrt N)\)
-without RH. Equation (18) therefore yields the fixed normalization
+without RH. Equation (16) therefore yields the fixed normalization
 \[
  \boxed{\qquad
  \frac{L_N}{N^{3/2}}=2T_\infty H(N)+O(N^{-1/2}).
- \qquad}                                               \tag{20}
+ \qquad}                                               \tag{18}
 \]
 This identifies a physical full-prime-tail readout of the Goldbach
 \(M\)-function signal. It supplies no unconditional bound for it.
@@ -281,7 +321,7 @@ factorial potential. Its separate exact map to Matsumoto--Suzuki's
 [the actual core screw-increment readout](actual-core-screw-increment-readout.md)
 and the [rational screw matrices](goldbach-factorial-rational-screw-matrices.md).
 Their \(H_1\) screw criterion must not be assigned to the different
-\(H\) in (18)--(20).
+\(H\) in (16)--(18).
 
 ## The surviving uniform pole cost
 
@@ -290,17 +330,17 @@ The discrete positive pole moment in (5) is the first Riesz mean
 Absolute Fubini for \(\Re s>1\) gives
 \[
  \int_1^\infty R(X)X^{-s-1}dX
- =\frac{-\zeta'(s)/\zeta(s)-\zeta(s)}{s^2}.       \tag{16}
+ =\frac{-\zeta'(s)/\zeta(s)-\zeta(s)}{s^2}.       \tag{19}
 \]
 Consequently the family of bounds
 \[
  M_+(\tau_N)=O_\varepsilon(N^{1/2+\varepsilon})
- \quad\hbox{for every }\varepsilon>0                \tag{17}
+ \quad\hbox{for every }\varepsilon>0                \tag{20}
 \]
 is equivalent to RH. Under RH, the standard all-\(\varepsilon\)
-bound for \(\psi(x)-x\) and partial summation prove (17). Conversely,
+bound for \(\psi(x)-x\) and partial summation prove (20). Conversely,
 between consecutive integers \(R(X)-R(\lfloor X\rfloor)=O(1)\),
-because \(\sum_{n\le X}a_n=O(X)\). Thus (17) makes (16)
+because \(\sum_{n\le X}a_n=O(X)\). Thus (20) makes (19)
 holomorphic on \(\Re s>1/2\). A zero there would give an uncancelled
 pole of \(-\zeta'/\zeta-\zeta\); the functional equation completes
 RH. By (6), the same all-\(\varepsilon\) criterion holds for
