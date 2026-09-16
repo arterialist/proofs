@@ -344,3 +344,4 @@ import BuildingBlocks.GoldbachHeatCarryWork
 import BuildingBlocks.GoldbachHeatCarryCompensation
 import BuildingBlocks.FactorialRealCellPhase
 import BuildingBlocks.FactorialRealCellKernel
+import BuildingBlocks.FactorialRealCellQuadratic
