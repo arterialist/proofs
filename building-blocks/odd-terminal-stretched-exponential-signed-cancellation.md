@@ -272,6 +272,103 @@ argument is a standard oscillation method; no priority claim is made
 for it. The existence of critical zeros is classical and is also
 covered by rigorous [zero verification](https://arxiv.org/html/2004.09765).
 
+## Functional-equation pairing cannot cancel an off-line zero's power
+
+The functional equation pairs every hypothetical off-line zero
+\(\rho=\beta+i\gamma\), \(\beta>1/2\), with
+\(1-\rho\), and conjugation supplies \(\overline\rho\) and
+\(1-\overline\rho\).
+Set \(\delta=2\beta-1>0\), \(\tau=2\gamma\), and
+\[
+ A=F_v(\delta+i\tau)^2,\qquad
+ B=F_v(-\delta+i\tau)^2.
+ \tag{18}
+\]
+The contribution of this quartet to the zero sum (12), counting its
+common multiplicity \(m\), is exactly
+\[
+ Q_\rho(a)=-2m\operatorname{Re}\!\left(
+ A e^{(\delta+i\tau)a}+B e^{(-\delta+i\tau)a}\right).
+ \tag{19}
+\]
+Because \(F_v\) has no zero in \(\Re z>0\), \(A\ne0\). Therefore
+\[
+ \limsup_{a\to\infty}e^{-\delta a}|Q_\rho(a)|=2m|A|>0.
+ \tag{20}
+\]
+The reflected term is smaller by \(e^{-2\delta a}\) after this
+normalization. It cannot cancel the growing member of its own
+quartet. The elementary polynomial
+\(\bigl((s-\beta)^2+\gamma^2\bigr)
+\bigl((s-(1-\beta))^2+\gamma^2\bigr)\) has both real symmetry and
+\(s\mapsto1-s\) symmetry while retaining this off-line quartet. It is
+strictly positive for real \(s\) and on \(\Re s=1/2\); thus even these
+axis signs together with the symmetries cannot rule the quartet out.
+This polynomial is
+only a symmetry model, with no Euler product or arithmetic assertion.
+
+Other zero terms might cancel \(Q_\rho(a)\) at individual values of
+\(a\). They cannot erase its power from the entire signed score.
+Every actual off-line zero would force, with
+\(R_\rho^{\rm off}=m|F_v(\delta+i\tau)|^2>0\),
+\[
+ \boxed{\quad
+ \limsup_{a\to\infty}e^{-\delta a}K_v(a)
+ \ge R_\rho^{\rm off},\qquad
+ \liminf_{a\to\infty}e^{-\delta a}K_v(a)
+ \le-R_\rho^{\rm off}.\quad}
+ \tag{21}
+\]
+In particular, for every \(0\le\kappa<\delta\),
+\[
+ \limsup_{a\to\infty}e^{-\kappa a}|K_v(a)|=\infty.
+ \tag{22}
+\]
+Here is a proof of (21) that retains every other zero term. If its
+lower assertion failed, choose \(0<c<R_\rho^{\rm off}\) and \(A\) so
+that \(G(a)={\bf1}_{a\ge A}(K_v(a)+ce^{\delta a})\ge0\).
+Chebyshev's bound gives \(G(a)=O(e^a)\), hence its Laplace abscissa
+\(\sigma_G\le1\). The nonzero pole of (11) at
+\(z_\rho=\delta+i\tau\) forces \(\sigma_G\ge\delta\). If
+\(\sigma_G>\delta\), Landau's theorem for nonnegative Laplace
+transforms forces a singularity at the real point \(z=\sigma_G\).
+But the meromorphic continuation
+\[
+ \mathcal LG(z)=\mathcal LK_v(z)
+ +\frac{ce^{-(z-\delta)A}}{z-\delta}
+ -\int_0^A e^{-za}K_v(a)\,da
+ \tag{23}
+\]
+is analytic at every real \(z>\delta\): the pole at \(z=1\) is
+canceled, and \(\zeta(s)\) has no real zero for \(0<s<1\).
+Thus \(\sigma_G=\delta\). For \(\sigma>\delta\), positivity gives
+\(|\mathcal LG(\sigma+i\tau)|\le\mathcal LG(\sigma)\).
+After multiplication by \(\sigma-\delta\) and passage to
+\(\sigma\downarrow\delta\), the left side tends to
+\(R_\rho^{\rm off}\) while the right side tends to \(c\): (11)
+has residue \(-mF_v(z_\rho)^2\) at \(z_\rho\), and is analytic at
+real \(z=\delta\), where its zeta argument is
+\(\beta\in(1/2,1)\). This contradicts \(c<R_\rho^{\rm off}\).
+Applying the same argument to
+\({\bf1}_{a\ge A}(ce^{\delta a}-K_v(a))\) proves the upper assertion.
+This is a conditional obstruction to a proposed cancellation method,
+not evidence that an off-line zero exists. In particular, proving a
+fixed-power bound \(|K_v(a)|\ll e^{(1-\eta)a}\), \(0<\eta<1\),
+would already exclude
+zeros with \(\beta>1-\eta/2\); the functional equation supplies no
+such exclusion. The argument allows improvements within the present
+\(e^{a-o(a)}\) scale by methods that use more arithmetic information.
+[Han's smooth weighted-prime theorem](https://arxiv.org/html/2505.23795)
+likewise relates errors for the different exponential kernel
+\(e^{-n/x}\) to zeta zero-free regions, and its Goldbach theorem
+concerns the exponentially smoothed additive convolution
+\(\Lambda*\Lambda\). That additive count supplies no cancellation
+for the multiplicative terminal score (4) by itself. The general link
+between smooth error bounds and zero-free regions is established
+literature; the compact terminal packet, its exact pole nullity, and
+the fixed-family cancellation bound above are the specific features
+proved here.
+
 The cancellation in (5) is far from the \(O(1)\) one-sided bound that
 would settle RH for this profile. It uses the actual zeta zero-free
 region, which is absent from the [coherent prime-weight
