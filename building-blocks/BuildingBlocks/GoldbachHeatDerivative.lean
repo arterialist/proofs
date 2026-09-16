@@ -69,4 +69,31 @@ theorem primeHeat_hasDerivAt {t : ℝ} (ht : 0 < t) :
 #print axioms primeHeatDerivative_continuousOn_Ici
 #print axioms primeHeat_hasDerivAt
 
+noncomputable def mixedCenteredHeatDerivative (t : ℝ) : ℝ :=
+  primeHeatDerivative t + (1 / t ^ 2 + (1 + 1 / t)) * exp (-t)
+
+theorem mixedCenteredHeat_hasDerivAt {t : ℝ} (ht : 0 < t) :
+    HasDerivAt mixedCenteredHeat (mixedCenteredHeatDerivative t) t := by
+  have hi := (hasDerivAt_const t (1 : ℝ)).div (hasDerivAt_id t) (ne_of_gt ht)
+  have hb := ((hasDerivAt_const t (1 : ℝ)).add hi).mul (hasDerivAt_id t).neg.exp
+  convert (primeHeat_hasDerivAt ht).sub hb using 1
+  unfold mixedCenteredHeatDerivative
+  simp only [id_eq, Pi.add_apply, Pi.div_apply, Pi.neg_apply]
+  ring
+
+theorem mixedCenteredHeatDerivative_continuousOn_Ici {ε : ℝ} (hε : 0 < ε) :
+    ContinuousOn mixedCenteredHeatDerivative (Ici ε) := by
+  unfold mixedCenteredHeatDerivative
+  apply (primeHeatDerivative_continuousOn_Ici hε).add
+  apply ContinuousOn.mul
+  · apply ContinuousOn.add
+    · exact continuousOn_const.div (continuousOn_id.pow 2)
+        (fun t ht => pow_ne_zero 2 (ne_of_gt (hε.trans_le ht)))
+    · exact continuousOn_const.add (continuousOn_const.div continuousOn_id
+        (fun t ht => ne_of_gt (hε.trans_le ht)))
+  · fun_prop
+
+#print axioms mixedCenteredHeat_hasDerivAt
+#print axioms mixedCenteredHeatDerivative_continuousOn_Ici
+
 end BuildingBlocks.GoldbachHeat
