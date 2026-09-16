@@ -187,6 +187,53 @@ for some \(c_2>0\), again by (10) and zero counting. This proves
 (5), with (6) following from the prime number theorem for squares and
 absolute convergence for higher powers.
 
+## A finite space of coupled terminal histories
+
+The estimate is uniform on a fixed finite-dimensional family, including
+its cross terms. Fix distinct shifts
+\(0\le h_1<\cdots<h_d\le1/10\) and put
+\[
+ v_{\boldsymbol c}(s)=\sum_{j=1}^d c_jv(s-h_j),
+ \qquad \boldsymbol c\in\mathbb R^d.
+ \tag{15}
+\]
+Define \(K_{\boldsymbol c}\) by the full prime-power sum in (4) with
+\(v_{\boldsymbol c}\) in place of \(v\), and let
+\(T_{\boldsymbol c}\) be its ordinary-prime part, summed over the
+full support band \(Xe^{-17/10}<p<Xe^{-1/2}\). There are constants
+\(c_d,C_d>0\), depending on the chosen shifts, such that for every
+\(\boldsymbol c\) and all sufficiently large \(a\),
+\[
+ |K_{\boldsymbol c}(a)|+|T_{\boldsymbol c}(a)|
+ \le C_d\exp\!\left(a-c_d\frac{a}
+ {(\log a)^{2/3}(\log\log a)^{1/3}}\right)
+ \|v_{\boldsymbol c}\|_2^2.
+ \tag{16}
+\]
+Indeed,
+\(F_{v_{\boldsymbol c}}(z)=F_v(z)
+\sum_jc_je^{-zh_j/2}\); on \(-1\le\Re z\le2\) its decay in
+(10) is bounded uniformly by a constant times
+\(\sum_j|c_j|\). The contour and zero-free-region proof then bounds
+\(K_{\boldsymbol c}\) by the right side of (16) with
+\((\sum_j|c_j|)^2\) in place of \(\|v_{\boldsymbol c}\|_2^2\).
+Distinct translates of a nonzero compactly supported function are
+linearly independent, so norm equivalence on this fixed finite space
+gives (16). Its support diameter is at most \(3/5<\log2\), so the
+same-side prime shifts still vanish. The square-power term tends to
+\(\tfrac12(\sum_jc_j)^2\), with an
+\(o(\|\boldsymbol c\|^2)\) error uniform over nonzero coefficient
+vectors by homogeneity and compactness of the unit sphere.
+Thus (16) controls the actual signed prime quadratic form for all
+linear combinations in this finite family, including the interactions
+between different translated histories. It does not control a family
+whose dimension or shifts change with \(a\).
+The exact pole correction applies linearly to this family: its
+coefficient is \(O_d(e^{-a}\|v_{\boldsymbol c}\|_2)\), and the prime
+pairing changes by \(O_d(\|v_{\boldsymbol c}\|_2^2)\), which is absorbed
+in (16). The resulting odd tests have archimedean form
+\(O_d(\|v_{\boldsymbol c}\|_2^2)\).
+
 ## An unconditional oscillation floor
 
 The same score cannot settle to one sign. Choose any critical-line
@@ -197,7 +244,7 @@ half-Laplace factor in (3) does not vanish at them. Then
  \boxed{\quad
  \limsup_{a\to\infty}K_v(a)\ge R_\rho,
  \qquad \liminf_{a\to\infty}K_v(a)\le-R_\rho.\quad}
- \tag{15}
+\tag{17}
 \]
 By (6), the centered ordinary-prime score \(T_v(a)+1/2\) has the
 same two inequalities. Those ordinary-prime inequalities also hold with
@@ -207,7 +254,7 @@ Chebyshev's bound give
 \(|T_v(\tfrac12\log X)-T_v(\tfrac12\log N)|=O_v(N^{-1/2})\)
 for \(N\le X\le N+1\).
 
-Here is the residue argument for (15). If \(K_v\) were eventually
+Here is the residue argument for (17). If \(K_v\) were eventually
 bounded below, the linked one-sided Landau proof, using the zero-free
 factor (3), would force RH. Under RH, the odd Weil formula gives
 \(K_v=O_v(1)\), so (11) is the ordinary Laplace transform throughout
@@ -231,7 +278,11 @@ region, which is absent from the [coherent prime-weight
 countermodel](sparse-prime-weight-ground-positive-terminal-sign-countermodel.md):
 that model preserves integer successors, prime-power support, PNT,
 and a positive factorial ground while making the same kind of fixed
-signed score unbounded. The result is specific to this fixed filter;
+signed score unbounded. In that construction, taking this \(v\) as the
+fixed packet and choosing \(a_j\ge j^2\) gives perturbation size
+\(2^{-j}e^{a_j}\), which eventually exceeds the right side of (5).
+Thus the exact von Mangoldt amplitudes do essential work here. The
+result is specific to this fixed finite family;
 it gives no all-test coercive inequality. In particular, it does not
 extend [Zhu's certified fixed-window positivity](https://arxiv.org/html/2608.24827)
 or resolve the all-window problem in
