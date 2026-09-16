@@ -96,7 +96,41 @@ even though (6) tends to zero. If \(v\in D(K)\), then \(r_\eta\to(K-M)v\) in \(H
 \]
 The zero-gain conclusion is not specific to the resolvent. If \(u_j\in D(K)\) converges to \(v\) in \(V\), put \(r_j=(K-M)u_j\), \(d_j=n[u_j]\), and form the single rank \(r_j\otimes r_j/d_j\). The numerator in (8) again tends to \(d^2\). If \(v\notin D(K)\), the operator graph forces \(\|r_j\|\to\infty\): any bounded subsequence would have a weakly convergent action subsequence and would represent \(n(v,\cdot)\) in \(H\). As above, \(\langle r_j,q\rangle=n(u_j,q)\) remains bounded, so (9) makes the constrained denominator diverge. Every such single-rank form approximation has vanishing affine gain.
 
-Resolvent smoothing does produce legal comparisons, but a small residual at the old trial vector is not itself a payment certificate. In the unresolved domain case these approximating single ranks become increasingly expensive in the constrained inverse denominator and yield no limiting improvement. This says nothing about a coordinated family of several ranks, whose joint span and mixed Gram entries would need separate analysis.
+Resolvent smoothing does produce legal comparisons, but a small residual at the old trial vector is not itself a payment certificate. In the unresolved domain case these approximating single ranks become increasingly expensive in the constrained inverse denominator and yield no limiting improvement. Several ranks must instead be analyzed through their joint Gram matrix.
+
+## Several action ranks: an exact finite lower-gap certificate
+
+Here is the coordinated formula, which has the opposite inequality direction from the upper estimator \(n[v_U]\). Choose \(u_1,\ldots,u_N\in D(K)\) whose images under \(A^{1/2}\) are linearly independent. Put
+\[
+ G_{ij}=n(u_i,u_j),\qquad r_i=Au_i,\qquad
+ R c=\sum_{i=1}^N c_i r_i,\qquad
+ a_i=\langle r_i,v\rangle=n(u_i,v).
+\tag{12}
+\]
+Then \(G>0\), and the bounded rank \(B_N=RG^{-1}R^*\) satisfies
+\[
+ 0\le B_N[x]\le n[x]\quad(x\in V),
+ \qquad B_N[x]=\|P_{A^{1/2}\operatorname{span}\{u_i\}}A^{1/2}x\|^2.
+\tag{13}
+\]
+Thus \(M+B_N\le K\) in form order. The exact affine improvement is the finite positive scalar
+\[
+ \boxed{\quad
+ F_{M+B_N}-F_M
+ =a^T(G+R^*TR)^{-1}a.
+ \quad}
+\tag{14}
+\]
+The one-rank formula (8) is its \(N=1\) case. To derive (14), minimize
+\(\langle Mh,h\rangle+(a+R^*h)^TG^{-1}(a+R^*h)\)
+over \(h\perp q\), then use the constrained inverse \(T\) from (7). All mixed action entries \(\langle r_i,T r_j\rangle\) remain in the matrix. Dropping them would change the gain.
+
+Take a nested sequence of these spans whose union is a form core for \(A\). Then \(B_N[x]\uparrow n[x]\) on \(V\). Monotone convergence of closed forms gives \((M+B_N)^{-1}\to K^{-1}\) strongly; applying the exact affine minimum formula, whose score denominator stays positive, shows
+\[
+ F_{M+B_N}-F_M\uparrow F_K-F_M.
+\tag{15}
+\]
+Hence a finite matrix (14) can certify a **lower** bound on the true-versus-comparison affine gap and may test failure of a proposed allowance. It does not upper-bound \(n[v_U]\), and (15) is not a shortcut to the signed arithmetic estimate needed for RH.
 
 ## What the actual theta regularity proves
 
@@ -109,10 +143,10 @@ Consequently
 \[
  \boxed{\quad w_p\in D(K)
  \quad\Longleftrightarrow\quad \varepsilon\in D(K^2).\quad}
-\tag{12}
+\tag{16}
 \]
-Neither side of (12) follows from the proved \(\varepsilon\in D(K^{3/2})\).
+Neither side of (16) follows from the proved \(\varepsilon\in D(K^{3/2})\).
 
-The physical form proof explains why simply repeating its estimates does not give (12). After conjugation, the original theta operator has the form \(\omega A\omega-K_p\), where \(\omega=\sqrt{\Phi/(2\cosh(u/2))}\), \(K_p\) is bounded, and \(A\) is the logarithmic Fourier multiplier. For \(g=\Phi\psi\), the original operator-domain equation controls \(\omega Ag\in L^2(du)\); the physical form theorem controls \(g\in D(A^{1/2})\). Neither statement alone controls \(Ag\in L^2(du)\), since \(\omega\) vanishes rapidly at infinity. Hard cutoffs and bounded smooth multipliers preserve the physical form domain, but do not supply a derivative of logarithmic order. The full-eigenvector smoothness theorem in [jump eigenfunction regularity](theta-jump-eigenfunction-regularity.md#16-weighted-translations-give-smoothness-and-strip-schwartz-decay) uses a homogeneous equation across the whole line. The killed ground has a hard boundary and a nonzero core-arrival source, so that theorem cannot be applied to it unchanged.
+The physical form proof explains why simply repeating its estimates does not give (16). After conjugation, the original theta operator has the form \(\omega A\omega-K_p\), where \(\omega=\sqrt{\Phi/(2\cosh(u/2))}\), \(K_p\) is bounded, and \(A\) is the logarithmic Fourier multiplier. For \(g=\Phi\psi\), the original operator-domain equation controls \(\omega Ag\in L^2(du)\); the physical form theorem controls \(g\in D(A^{1/2})\). Neither statement alone controls \(Ag\in L^2(du)\), since \(\omega\) vanishes rapidly at infinity. Hard cutoffs and bounded smooth multipliers preserve the physical form domain, but do not supply a derivative of logarithmic order. The full-eigenvector smoothness theorem in [jump eigenfunction regularity](theta-jump-eigenfunction-regularity.md#16-weighted-translations-give-smoothness-and-strip-schwartz-decay) uses a homogeneous equation across the whole line. The killed ground has a hard boundary and a nonzero core-arrival source, so that theorem cannot be applied to it unchanged.
 
-An action-matched affine rank therefore requires a new actual-theta theorem proving \(v_U\in D(K)\), or a different quantitative bound for \(n[v_U]\) that stays within the known form domain. Criterion (3) is a domain obstruction to the proposed rank, not a claim that the actual optimizer lies outside \(D(K)\). The remaining conditional variance and its arithmetic size are open.
+An action-matched affine rank at \(v_U\) therefore requires a new actual-theta theorem proving \(v_U\in D(K)\), or a different quantitative bound for \(n[v_U]\) that stays within the known form domain. Criterion (3) is a domain obstruction to that proposed rank, not a claim that the actual optimizer lies outside \(D(K)\). The remaining conditional variance and its arithmetic size are open.
