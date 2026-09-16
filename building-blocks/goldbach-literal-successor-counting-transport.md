@@ -405,6 +405,23 @@ Letting \(\varepsilon\downarrow0\) proves (20).  This relative density
 law does not control the centered Goldbach fluctuation at the
 \(X^{3/2}\) scale.
 
+There is nevertheless a precise transfer at that scale.  Take
+\(j=\lfloor\sqrt X\rfloor\) and \(s=X+2j\).  Since
+\((s^2-X^2)/2=2j(X+j)\), estimate (17) and PNT give
+\[
+\boxed{\quad
+\left\{\mathcal G(s)-\frac{s^2}{2}\right\}
+ -\left\{G_j(X)-\frac{X^2}{2}\right\}
+ =o(X^{3/2}).
+\quad}                                                        \tag{21}
+\]
+Thus the raw-successor additive pair measure carries the original
+centered Goldbach summatory error to the critical scale with a
+smaller unconditional transport error.  Equation (21) transfers a
+future bound or oscillation between the two centered quantities; it
+does not supply either bound on its own.  It is not a statement about
+the signed compensated iterate.
+
 ## Dependencies and formal scope
 
 The [actual successor charge](actual-successor-resonance-charge-cocycle.md) fixes $\kappa$ and its convergent half-moment difference. The [factorial potential](factorial-ground-state-original-l2-domain.md) fixes the source in (11)–(12). The positive transport, additive convolution and Stieltjes integration use classical measure and summation tools; Matsumoto–Suzuki supply the attributed explicit formula and its separate conditional consumers. Every complete prime-power tail and both compensation terms are retained. The finite clamping product is compiled in Lean; the continuous transport, escape bound, PNT asymptotics and weighted comparison remain written proofs.
