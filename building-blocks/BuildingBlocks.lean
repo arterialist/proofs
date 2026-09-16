@@ -454,6 +454,8 @@ import BuildingBlocks.GrowingAdmissionSignTransferFinite
 import BuildingBlocks.FriableEndpointCancellationFinite
 import BuildingBlocks.AdmissionIncrementCancellationFinite
 import BuildingBlocks.FriableEndpointCrossoverFinite
+import BuildingBlocks.FullBoundaryEnergyFinite
+import BuildingBlocks.FirstDensityCorrectionCancellationFinite
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
