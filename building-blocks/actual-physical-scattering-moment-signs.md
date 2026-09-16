@@ -1,6 +1,6 @@
 # Actual physical scattering moment signs
 
-Eleven public theorems are compiled in `ActualScatteringMomentSigns.lean`, `ActualScatteringMellinSignBridge.lean`, and `ActualPrimeBlockMellinParity.lean`. RH Agent3 supplied the proofs in the original physical notation. The bounded translation worker changed namespace and import paths only; root reviewed the literal coefficients and physical Mellin correspondence. These are finite-history sign and dictionary results, not a sign theorem for the full Weil form or an RH proof. No novelty certificate is claimed.
+Sixteen public theorems are compiled in `ActualScatteringMomentSigns.lean`, `ActualScatteringMellinSignBridge.lean`, `ActualPrimeBlockMellinParity.lean`, and `ActualPrimeBlockWeilWeightParity.lean`. RH Agent3 supplied the proofs in the original physical notation. The bounded translation worker changed namespace and import paths only for the first three modules; root made the same namespace/import translation for the fourth and reviewed the literal coefficients and physical Mellin correspondence. These are finite-history sign and dictionary results, not a sign theorem for the full Weil form or an RH proof. No novelty certificate is claimed.
 
 For a real p≥2 and natural h,M≥1, define the literal multipliers at β=h+1/2 and −β by
 
@@ -24,4 +24,6 @@ This physical identity permits every natural h,M, including zero; the strict coe
 
 The list-valued `physicalBlock` iterates the complete physical history at every prime in order, with a separate depth at each prime. Its regularity, exact Mellin product, and preservation of every zero Mellin moment are compiled. For primes of positive depth and h≥1, its amplitude is strictly positive and its two-sided Mellin product is exactly `(−1)^|B|` times that amplitude and the original seed's two-sided product. Repeated list entries are permitted by the formal statement; no distinctness is needed for the multiplicative identity.
 
-All eleven public conclusions depend only on `propext`, `Classical.choice`, and `Quot.sound`. The infinite gamma-series passage, its seed-product sign, finite overlap rows, all signed prime-power contributions, and the actual arithmetic upper bound remain separate obligations. Finite coefficient parity alone does not discharge them.
+For an even seed, Mellin reflection converts the conjugate-polarized `pairedWeight` into the nonnegative squared norm of its Mellin value on the real line. The varying-depth physical block therefore has an exact real parity-signed paired weight. Multiplication by `(−1)^|B|` makes this one row nonnegative when every depth and h are positive. This proof does not assume the scattered block itself is even.
+
+All sixteen public conclusions depend only on `propext`, `Classical.choice`, and `Quot.sound`. The infinite gamma-series passage, finite overlap rows, all signed prime-power contributions, and the actual arithmetic upper bound remain separate obligations. A single parity-signed paired row does not discharge them.

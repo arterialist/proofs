@@ -301,7 +301,9 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 ## Local finite-history scattering signs
 
-[Actual physical scattering moment signs](actual-physical-scattering-moment-signs.md) compiles eleven exact coefficient-sign, finite-block-parity, varying-depth list-product and original physical Mellin dictionary conclusions. Positive depth and h≥1 are required for strict signs; the physical identities retain all natural depths. Full gamma and signed prime-power upper bounds remain open.
+[Actual physical scattering moment signs](actual-physical-scattering-moment-signs.md) compiles sixteen exact coefficient-sign, finite-block-parity, varying-depth list-product, conjugate-polarized weight and original physical Mellin dictionary conclusions. Positive depth and h≥1 are required for strict signs; the physical identities retain all natural depths. Full gamma and signed prime-power upper bounds remain open.
+
+[Large-clock factorial terminal reserve](factorial-large-clock-terminal-reserve.md) gives the exact incomplete LCM-weighted quotient correlation and the escaping terminal identities. Its energy lower bound shows that the desired linear large-clock upper bound would already force square-root-scale Mertens cancellation up to a logarithm. The middle-clock signed correlation and RH remain open.
 
 [Local compact scattering](compact-local-scattering-no-contraction.md) and [compiled Lean](BuildingBlocks/CompactLocalScatteringSigns.lean): exact original complex-power multiplier dictionary, finite geometric histories, attenuation at zero and amplification at pi/(M log p), for every prime and M ≥ 1. Physical compact pole-null test realization remains written; no actual-source or dyadic-product sign follows.
 
