@@ -223,3 +223,81 @@ $$
 \tag{15}
 $$
 The second bound holds because all cross supports are separated by at least $d$ for small $\varepsilon$, so the archimedean offdiagonal kernel is bounded there. Consequently $\mathcal L_a(F_\varepsilon,G_\varepsilon)>0$ for sufficiently small $\varepsilon$. Their positive-halfline restrictions are nonnegative with disjoint support. A positivity-preserving semigroup would require their cross form to be nonpositive, either by the form criterion or by differentiating their initially zero semigroup pairing at time zero. This proves the reverse implication in (12). The failure starts immediately when the first prime is admitted; it supplies no negative quadratic test for $L_a^{\rm odd}$.
+
+## The truncated theta derivative is not a supersolution
+
+The prime obstruction also affects the actual positive theta profile, not just specially chosen bumps. Let \(h=-\Phi'>0\) on \((0,\infty)\), fix \(a=1/2\), and put \(H=h\mathbf1_{(-a,a)}\), with the odd definition of \(h\) on the negative halfline. For every
+\[
+ x\in J:=\left[\frac16-\frac1{200},\frac16+\frac1{200}\right]
+      =\left[\frac{97}{600},\frac{103}{600}\right],
+\]
+the pointwise convolution representative of the pole-free operator satisfies the explicit strict bound
+\[
+ \boxed{(L_{1/2}^{\rm odd}H)(x)<-\frac{23}{1875}<0.}
+\tag{16}
+\]
+Thus restricting the positive full-line solution \(L_\infty h=s/2>0\) does not give a nonnegative supersolution on this window. Equation (16) does not give a negative quadratic test for \(L_{1/2}^{\rm odd}\).
+
+Here is a bound retaining every prime power. Write \(t_n=\log n\), \(w_n=\Lambda(n)/\sqrt n\), and \(D=-r'\). For \(0<x<a\), the omitted exterior action is exactly
+\[
+ E_a(x):=(L_\infty h)(x)-(L_aH)(x)
+ =-\int_a^\infty [r(y-x)-r(y+x)]h(y)\,dy
+ +\sum_{n\ge2}w_n
+  \left[\mathbf1_{t_n-x>a}h(t_n-x)
+       -\mathbf1_{t_n+x>a}h(t_n+x)\right].
+\tag{17}
+\]
+On \(J\), \(t_2-x>a\), so both indicators equal one for every prime power. The theta expansion gives
+\[
+ h(u)=\sum_{m\ge1}e^{u/2-y_m}y_mP(y_m),\qquad
+ y_m=\pi m^2e^{2u},\quad P(y)=8y^2-30y+15.
+\]
+For \(u\ge t_2-103/600\), one has \(y_m>8\). Each summand is positive and decreasing there: \(P(y)\ge(17/4)y^2\), and its logarithmic derivative is at most
+\[
+ \frac52-2y+\frac{2yP'(y)}{P(y)}
+ \le\frac52-2y+\frac{128}{17}<0\qquad(y\ge8).
+\]
+Consequently every summand in the prime series of (17) is nonnegative, and the \(n=2\) term alone gives
+\[
+ E_a(x)\ge w_2[h(t_2-x)-h(t_2+x)]
+                -2xD(a-x)\Phi(a).
+\tag{18}
+\]
+Indeed \(r(t)=\sum_{k\ge0}e^{-(2k+1/2)t}\) makes \(D\) positive and decreasing, so \(r(y-x)-r(y+x)\le2xD(a-x)\) for \(y\ge a\); also \(\int_a^\infty h(y)dy=\Phi(a)\).
+
+For clarity, the elementary enclosures used in (18) are
+\[
+ \begin{array}{c|c}
+ \text{quantity}&\text{strict bound}\h(t_2-97/600)&>1/2\\
+ h(t_2+97/600)&<1/50\\
+ \Phi(1/2)&<2/25\\
+ D(197/600)&<11/2\\
+ \tfrac12\sinh(103/1200)&<1/20
+ \end{array}
+\tag{19}
+\]
+These bounds can be checked with rational arithmetic. Use \(223/71<\pi<22/7\), \(56/81<\log2<7/10\), and, for \(0\le z\le1\), the lower and upper Taylor bounds
+\[
+ S_N(z):=\sum_{k=0}^N\frac{z^k}{k!}
+ \le e^z\le S_N(z)+\frac{z^{N+1}}{(N+1)!}
+                 \frac1{1-z/(N+2)},
+\]
+with the alternating partial sums for \(e^{-z}\). At \(z=97/300\), use the degree-five lower and degree-four upper alternating sums to get
+\(909/100<4\pi e^{-z}<91/10\) and
+\(173/10<4\pi e^z<18\). For the first row of (19), the \(m=1\) theta term is greater than \(3660e^{-177/20}>3660/7100>1/2\); all other terms are positive. For the second row, \(P(y)\le8y^2\), \(e^{9/20}<8/5\), and
+\(\sum_{m\ge1}m^6e^{-(173/10)m^2}<2e^{-173/10}\), while \(e^{173/10}>2\cdot10^7\), giving a bound below \(1/50\). The sum bound follows from \(m^6\le e^{6(m-1)}\) and \(m^2-1\ge3(m-1)\) for \(m\ge2\). The exponential inequalities here follow, for example, from \(e<2.72\), \(e^{3/20}>23/20\), and \(e>2.7\). For the third row, \(17/2<\pi e<9\); the first theta term is below \((13/10)238e^{-17/2}<.074\), since \(e^{17/2}>4200\). The tail over \(m\ge2\) is below \(10^{-6}\): its terms are bounded by \(4(13/10)9^2m^4e^{-(17/2)m^2}\), and the ratio of successive terms is below \(1/2\) for \(m\ge2\), so the sum is below \(4(13/10)9^2\cdot32e^{-34}<10^{-6}\). For the fourth row, at \(t=197/600\), \(e^{-2t}<53/100\) and \(e^{-t/2}<43/50\), whence
+\[
+ D(t)=\frac{e^{-t/2}}{1-e^{-2t}}
+       \left(\frac12+\frac{2e^{-2t}}{1-e^{-2t}}\right)
+ <\frac{11137}{2209}<\frac{11}{2}.
+\]
+The final row follows by the same Taylor bounds. These estimates leave a rational margin, so endpoint rounding plays no role.
+
+Since \(h\) decreases on the relevant range, (19) applies uniformly on \(J\). Also \(2x\le103/300\), \(a-x\ge197/600\), and \(w_2=(\log2)/\sqrt2>4/9\). Combining (6), (18), and (19) gives
+\[
+ (L_aH)(x)=\tfrac12\sinh(x/2)-E_a(x)
+ <\frac1{20}+\frac{103}{300}\frac{11}{2}\frac2{25}
+       -\frac49\left(\frac12-\frac1{50}\right)
+ =-\frac{23}{1875},
+\]
+which proves (16). The jump signs of the exterior defect are also fixed by (17): as \(a\) passes \(t_n-x\) within \(a>x\), its reflected contribution drops by \(w_nh(t_n-x)>0\); as \(a\) passes \(t_n+x\), its direct contribution rises by \(w_nh(t_n+x)>0\), provided no other threshold coincides. Thus this boundary defect has no general monotonicity in the window size.
