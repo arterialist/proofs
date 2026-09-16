@@ -173,10 +173,13 @@ floor extension of the cumulative count, is formalized in
 [GoldbachCumulativeStieltjes.lean](BuildingBlocks/GoldbachCumulativeStieltjes.lean).
 The upper bound in (6) and its positive-square-root transfer to an
 upper prime-heat estimate are formalized in
-[GoldbachOneSidedHeatTransfer.lean](BuildingBlocks/GoldbachOneSidedHeatTransfer.lean)
-under an explicit all-cutoff cumulative hypothesis. The eventual-to-
-all-cutoff adjustment, lower transfer, heat Mellin transform and Landau
-application remain written mathematics.
+[GoldbachOneSidedHeatTransfer.lean](BuildingBlocks/GoldbachOneSidedHeatTransfer.lean).
+The matching lower square and lower prime-heat transfer are formalized in
+[GoldbachOneSidedLowerHeatTransfer.lean](BuildingBlocks/GoldbachOneSidedLowerHeatTransfer.lean).
+Both use explicit all-cutoff cumulative hypotheses; the lower heat
+bound also states the small-$t$ condition needed for its square-root
+step. The eventual-to-all-cutoff adjustment, heat Mellin transform and
+Landau application remain written mathematics.
 
 The same calculation proves (2a). If, for some $0<\eta<1/2$, either
 one-sided bound
