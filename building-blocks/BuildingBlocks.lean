@@ -318,6 +318,7 @@ import BuildingBlocks.ResidueLoadingSuccessor
 import BuildingBlocks.LogarithmicPrimeWindow
 import BuildingBlocks.FactorialBinaryCarry
 import BuildingBlocks.FactorialGeometricMertens
+import BuildingBlocks.RenewalBernoulliCellMoments
 import BuildingBlocks.FactorialBinaryEnergy
 import BuildingBlocks.FactorialBinaryIntegrability
 import BuildingBlocks.FrullaniIntegral
