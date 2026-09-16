@@ -216,6 +216,81 @@ that cone or to have a separately bounded complement. No such shape
 property has been proved. The result does not sign the finitely many
 early cells or the complex-frequency prime-forcing response.
 
+## Finite-horizon phase payment for the complete forcing
+
+There is a quantitative way to pair the cell cone with the **actual**
+complete forcing, although it does not yet control the response. Use the
+all-time baseline and zero-trace forcing $g_\beta=\mathcal Z h_\beta$ in
+[the actual heat-response audit](actual-heat-renewal-cell-trace-audit.md). Its exact tail is
+$g_\beta(v)=\tfrac12\log(2\pi)e^{-v/2}+O(e^{-v})$; choose
+$n_0$ large enough for the cell cone and the eventual positive sign of
+$g_\beta$, and a fixed $C_g$ such that
+$|g_\beta(v)|\le C_g e^{-v/2}$ for $v\ge a:=\log n_0$.
+For an integer $N>n_0$, put $T=\log N$ and
+
+\[
+q(v)=g_\beta(v)^2,\qquad
+W_T(v)=\int_v^T(s-v)q(s)\,ds\quad(a\le v\le T),
+\qquad W_T(v)=0\quad(v\ge T).                       \tag{16}
+\]
+
+Here $W_T\ge0$, $W_T'=-\int_v^Tq\le0$, $W_T''=q\ge0$, and both
+$W_T(T)$ and $W_T'(T)$ vanish. On each full integer cell $n_0\le n<N$,
+the measure-weighted test is
+$w_n(r)=(n+r)^{-1}W_T(\log(n+r))$. With $x=n+r$,
+
+\[
+w_n'(r)=x^{-2}(W_T'-W_T)\le0,\qquad
+w_n''(r)=x^{-3}(W_T''-3W_T'+2W_T)\ge0.          \tag{17}
+\]
+
+The cone theorem therefore gives a strict finite-horizon sign:
+
+\[
+\boxed{
+-C C_g^2 n_0^{-9/2}
+\le \mathcal P_{n_0,N}
+:=\int_a^T(J(v)-\ell)W_T(v)\,dv
+=\int_a^Tg_\beta(s)^2D_a(s)\,ds<0,
+\quad D_a(s)=\int_a^s(s-v)(J(v)-\ell)\,dv .}       \tag{18}
+\]
+
+The constant $C$ is absolute once the uniform remainder in (8) is fixed;
+it is independent of $N$ and of the permitted baseline $\beta$. The
+identity is Fubini's theorem. The sign also holds for any nonnegative
+$q$ in (16), so approximation by concentrated $q$ gives the kernel
+statement $D_a(s)\le0$ for every $s\ge a$.
+
+For the bound, $0\le W_T,-W_T',W_T''\le C_g^2e^{-v}$, hence
+$|w_n|\le C_g^2n^{-2}$,
+$|w_n'|\le2C_g^2n^{-3}$ and
+$|w_n''|\le6C_g^2n^{-4}$. In (8), subtract the constant and linear
+Taylor terms of $w_n$ from the $f_0$ integral, and the constant term
+from the $f_1$ integral. Their moments vanish by (9). The three
+surviving profiles and the uniform remainder each contribute
+$O(C_g^2n^{-11/2})$ to a cell. Summing from $n_0$ to $N-1$ gives (18),
+including every endpoint cell and the exact power $n_0^{-9/2}$.
+
+This bounds a **forcing phase work**, not $\int_a^T|h_\beta|^2$.
+To see the mismatch exactly, let $f=h_\beta'$ on $[0,T]$ and
+$C_f(u)=\int_u^T f(s-u)f(s)\,ds$. The zero trace $f(0)=0$ and
+$(J-\ell)(0)=-\ell$ give, by integration by parts,
+
+\[
+\ell\int_0^T f(s)^2\,ds
++\int_0^T f(s)\bigl((J-\ell)*h_\beta''\bigr)(s)\,ds
+=\int_0^T H(u)C_f(u)\,du.                     \tag{19}
+\]
+
+The weight of $J-\ell$ before that integration by parts is
+$-C_f'(u)$, not the convex future primitive $W_T$ in (16). No
+decreasing-convex shape has been established for the actual $C_f$ or
+its derivative. Similarly, the [compact heat/Goldbach comparison](actual-heat-scaling-derivative-bridge.md#exact-density-cell-and-terminal-cost-for-the-compact-actual-source)
+still carries its separate terminal payment
+$|\psi(N)-N|/\sqrt{2N}$. Thus (18) is unconditional and uniform in the
+horizon, but does not supply an RH-scale bound on the heat Gram or that
+terminal payment.
+
 The grouped cell series \(\sum_{n\ge1}I_n(z)\) now converges locally
 absolutely for \(\Re z>-7/2\), although the ungrouped Laplace integral
 of \(J-\ell\) is absolutely convergent only for \(\Re z>-3/2\).
