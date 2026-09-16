@@ -224,7 +224,10 @@ For $X=e^v$,
 
 Indeed, compare $G(m/X)$ with $G(t)$ on each interval
 $[(m-1)/X,m/X]$; the sum of all rectangle errors is at most
-$\|G'\|_1/X$. By the renewal note's Eq. (17),
+$\|G'\|_1/X$. The [finite rectangle theorem](BuildingBlocks/ActualHeatRenewalRectangle.lean)
+formalizes this estimate on any finite grid for a $C^1$ function.
+Passage to the infinite grid and the special heat profile remains written
+analysis. By the renewal note's Eq. (17),
 
 \[
 \mathcal Z h_\beta=f-\mathcal Z\beta

@@ -195,6 +195,7 @@ import BuildingBlocks.GoldbachSuccessorTransfer
 
 import BuildingBlocks.PrimeStateAndRenewalArch
 import BuildingBlocks.CausalRenewalFiniteCells
+import BuildingBlocks.ActualHeatRenewalRectangle
 
 import BuildingBlocks.IntegerBirthHalfDensity
 import BuildingBlocks.IntegerBirthDifferenceL1
