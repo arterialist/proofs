@@ -315,6 +315,8 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 [Angular Poisson central-arc reduction](factorial-angular-poisson-central-arc-reduction.md) represents the complete original-clock horizon energy on a circle, pays the entire outer arc unconditionally, and isolates the exact radial reserve plus Green-weighted angular variance. Actual prime births rule out the generic full-derivative scale; the central source correlation remains the open RH-level input.
 
+[Centered Goldbach heat to Abel–Mertens](goldbach-centered-heat-to-abel-mertens.md) gives the exact additive coefficient square and proves its all-epsilon heat bound is RH-equivalent, then transfers it to the smoothed Mertens terminal source. The proved linear successor leakage leaves the centered quadratic fluctuation untouched, so no unconditional RH estimate follows.
+
 [Local compact scattering](compact-local-scattering-no-contraction.md) and [compiled Lean](BuildingBlocks/CompactLocalScatteringSigns.lean): exact original complex-power multiplier dictionary, finite geometric histories, attenuation at zero and amplification at pi/(M log p), for every prime and M ≥ 1. Physical compact pole-null test realization remains written; no actual-source or dyadic-product sign follows.
 
 ## Actual physical theta series
