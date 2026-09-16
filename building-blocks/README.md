@@ -1008,4 +1008,6 @@ The compiled `FactorialRealCellTest.lean` now proves continuity of the actual mo
 
 - [Angular Poisson central-arc reduction](factorial-angular-poisson-central-arc-reduction.md) gives the exact full-clock circle representation, pays the outer arc by `(27π²e/32)X²`, and splits the remainder into its radial mean and nonnegative Poisson variance. A full derivative estimate is provably too large on actual prime births; the source-specific central variance remains open.
 
+- [Low-clock central-arc bound](factorial-central-arc-low-clock-short-block-bound.md) proves an unconditional coherent short-horizon estimate by exact divisor-pair counting and Fejér localization. [Lambert dilation extension](factorial-central-arc-lambert-dilation-extension.md) extends it to the curved region `t≤sqrt(max(|theta|,X^−1))`; after the corrected pointwise shell weight, that region costs `O(X² log²X)=O_epsilon(X^(2+epsilon))`. The physical-clock complement remains open.
+
 - [Centered Goldbach heat to Abel–Mertens](goldbach-centered-heat-to-abel-mertens.md) retains every prime power and endpoint and proves that the all-epsilon square-root bound for the exact centered additive square is RH-equivalent, hence transfers to the Abel-smoothed Mertens criterion. The available unconditional successor leakage compares uncentered pair counts and does not prove this centered premise.
