@@ -214,6 +214,54 @@ $Z_{97}(g_p)-2\langle F_y,g_p\rangle_{97}$.
 Thus neither a termwise bilinear sign nor a one-prime transport sign
 holds for the actual smooth source.
 
+## The weaker RH-scale target
+
+The strict sign $C_N(y)\le-B_N(y)$ is one route to RH, but it is
+stronger than the energy bound needed for a proof. Let
+$P_y=\prod_{p\le y}(1+p^{-1/2})$. Rankin's finite inequality gives
+
+$$
+|F_y(u)|\le\sqrt u\sum_{P^+(n)\le y}\frac{\mu(n)^2}{\sqrt n}
+=P_y\sqrt u.
+$$
+
+At $y=(\log N)^2$, the prime number theorem gives
+$\log P_y=O(\log N/\log\log N)=o(\log N)$. Therefore
+
+$$
+Z_N(F_y)\ll NP_y^2=N^{1+o(1)},
+\qquad
+B_N(y)\ll NP_y^2\sum_{d\le N}\frac1d
+=N^{1+o(1)}.
+\tag{10}
+$$
+
+Indeed, $|g_d(m)|\le P_y\sqrt{m/d}$ and
+$(1-\rho_N)\sum_{m\le N}m\rho_N^m\ll N$. From (2), a **one-sided upper**
+bound
+
+$$
+C_N((\log N)^2)\le C_\varepsilon N^{1+\varepsilon}
+\quad\text{for every }\varepsilon>0
+\tag{11}
+$$
+
+already implies $Z_N(M)\ll_\varepsilon N^{1+\varepsilon}$ and thus RH.
+Conversely, RH implies (11): the classical bound
+$M(x)\ll_\varepsilon x^{1/2+\varepsilon}$ gives
+$Z_N(M)\le N^{1+o(1)}$, and (10) bounds the other terms in
+$C_N=Z_N(M)-Z_N(F_y)-B_N$. For completeness, the energy condition
+$Z_N(M)\le N^{1+o(1)}$ gives
+$\sum_{m\le N}M(m)^2\ll_\varepsilon N^{2+\varepsilon}$; dyadic
+Cauchy–Schwarz makes the partial-summation integral for $1/\zeta(s)$
+converge on $\Re s>1/2$, and the functional equation yields RH.
+
+Thus (11) is another RH-equivalent criterion, but it asks for no
+negative sign. The lower bounds for $B_N$ above quantify a cancellation
+that RH would force in this decomposition; proving RH through (11)
+would not require establishing that exact cancellation first. Neither
+(11) nor the stricter sign has been proved here.
+
 ## No universal contractive metric
 
 There is also a finite-dimensional obstruction independent of the
@@ -224,7 +272,7 @@ $$
 (U_y f)(m)=
 \sum_{\substack{d\le m\\\mu(d)^2=1,\ P^-(d)>y}}
 \mu(d)f(\lfloor m/d\rfloor),\qquad 1\le m\le N.
-\tag{10}
+\tag{12}
 $$
 
 Equation (1) is $U_yF_y=M$. In the standard basis of prefix vectors,

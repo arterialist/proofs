@@ -113,15 +113,14 @@ The diagonal sum in (6) is $O(N/\log N)$. Hence the positive pair
 plaquettes account for the leading $N^2/\log^2N$ term.
 
 There is a precise compensating covariance in the complete source.
-The classical unconditional bound
+The published unconditional bound
 
 $$
-M(x)\ll x\exp\!\left[-c(\log x)^{3/5}
-(\log\log x)^{-1/5}\right]
+|M(x)|\le \frac{2.91890x}{(\log x)^2}\qquad(x>1)
 \tag{7}
 $$
 
-for some $c>0$ implies $\max_{m\le N}|M(m)|=o(N/\log N)$, by using
+implies $\max_{m\le N}|M(m)|=o(N/\log N)$, by using
 the trivial bound for $m\le\sqrt N$. Thus
 $Z_N(M)=o(N^2/\log^2N)$. From $V_N=M-U_N$ and (5),
 
@@ -216,6 +215,4 @@ classical analytic bound. The plaquette (3) and the no-go theorem (11)
 show why cube topology or metric positivity alone cannot force the
 critical rough-smooth sign. No RH conclusion is drawn here.
 
-The outside arithmetic input in (7) follows, after reducing $c$ to
-absorb a factor of $\log x$, from
-[Lee and Leong's explicit Mertens bounds](https://arxiv.org/abs/2208.06141).
+Equation (7) is [Johnston--Leong--Tudzi, Theorem A.1](https://arxiv.org/html/2408.04143v3). The shell argument needs only the weaker $M(x)=o(x/\log x)$; it also follows independently from [El Marraki's 1995 effective logarithmic-power bounds](https://jtnb.centre-mersenne.org/articles/10.5802/jtnb.149/). No explicit Vinogradov--Korobov constant is used.
