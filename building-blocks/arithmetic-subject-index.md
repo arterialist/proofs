@@ -575,4 +575,6 @@ The [future-boundary Möbius--Stokes formula](mobius-stokes-future-boundary-and-
 
 [LargestPrimeFiniteWeightedStokes.lean](BuildingBlocks/LargestPrimeFiniteWeightedStokes.lean) formalizes the exact exponential tail, finite packet-prefix product, one-packet Stokes identity, and arbitrary finite weighted Gram sum. Signed coefficients and every mixed term are preserved; only the growing-horizon arithmetic estimate remains outside this finite analytic layer.
 
+The [capacity-weighted face reduction](prime-dilation-capacity-cross.md) gives the exact finite-prime-band correlation needed after squaring the upper and lower dilation faces. Its [exact checker](verification/prime_dilation_capacity_cross_check.py) certifies a near-transition case with positive signed cross, excluding any uniform pointwise negative-face theorem. The surviving possibility is an averaged arithmetic correlation or a mechanism coupling different horizons.
+
 [PrimeAdmissionX4Obstruction.lean](BuildingBlocks/PrimeAdmissionX4Obstruction.lean) formalizes the actual `X=4` bulk support, Möbius coefficients, quotient packets, and strictly positive first and second admission fluxes under the literal positive affine-kernel hypothesis. This is a finite counterexample to universal nonpositive admission, not an asymptotic estimate.
