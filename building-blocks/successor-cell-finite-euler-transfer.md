@@ -157,12 +157,60 @@ gauge. It does not settle the sign of the full Weil form. An argument
 using such a phase must control the carry entries together with the
 gamma and pole terms.
 
+**Rigidity at the ninth successor cell.** More generally, suppose
+\(\chi:\mathbb N_{>0}\to\{\pm1\}\) is completely multiplicative,
+\(N\ge9\), and an exact phase conjugacy
+\(D_\chi R_2D_\chi=\chi(2)R_2\) holds on every physical cell vector.
+Testing the parent of each cell gives
+\[
+ \chi(r)\chi(\lfloor r/2\rfloor)=\chi(2),
+ \qquad 2\le r\le N.                                  \tag{12}
+\]
+At \(r=9\), both \(9=3^2\) and \(\lfloor9/2\rfloor=4=2^2\)
+have sign one, so (12) forces \(\chi(2)=1\). For even
+\(r=2n\), multiplicativity then gives \(\chi(r)=\chi(n)\);
+for odd \(r=2n+1\), (12) gives the same relation. Strong induction
+from \(\chi(1)=1\) yields
+\[
+ \boxed{\quad \chi(r)=1\quad(1\le r\le N). \quad}     \tag{13}
+\]
+The cutoff nine is sharp for this statement: through \(N=8\),
+\(\chi(n)=(-1)^{v_2(n)+v_3(n)}\) satisfies (12), but at \(r=9\)
+its left side is \(+1\) while \(\chi(2)=-1\). The signs on labels
+\(1,\ldots,8\) are \((1,-1,-1,1,1,1,1,-1)\), so each preceding
+carry relation is checked directly. This is a precise
+constraint imposed by additive successor carry on multiplicative
+phase symmetry within the finite window.
+
+There is also an operator-norm gap for sign gauges. If
+\(\chi(r)\ne1\) for some \(1\le r\le N\), the contrapositive of
+(13) supplies a cell \(2\le r\le N\) where (12) fails. Both sides
+of (12) are signs, so their difference has magnitude two. With
+\(n=\lfloor r/2\rfloor\), testing the unit vector \(e_n\) gives
+\(\|D_\chi R_2D_\chi-\chi(2)R_2\|\ge
+2\sqrt{\ell_r/\ell_n}\). For \(n\ge1\), the integral bounds
+\(1/(r+1)<\ell_r\) and \(\ell_n<1/n\), together with
+\(r\le2n+1\), give \(\ell_r/\ell_n>1/4\). Hence
+\[
+ \boxed{\quad
+ \chi|_{\{1,\ldots,N\}}\not\equiv1, N\ge9
+ \quad\Longrightarrow\quad
+ \|D_\chi R_2D_\chi-\chi(2)R_2\|_{C_N\to C_N}>1.
+ \quad}                                                  \tag{14}
+\]
+This excludes an operator-norm-small approximation by a nontrivial
+multiplicative sign gauge. It leaves open localized packet arguments
+and gauges that vary continuously rather than taking signs.
+
 [SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean)
 formalizes the child-index equivalence, cutoff semigroup law,
 commutation, vanishing beyond the cutoff, the gauge defect (9),
 prime-two sign multiplicativity, exact-multiple cancellation, and the
-physical-value identity underlying the normalized carry in (10)
-with standard mathlib axioms. Equations (4)--(8), the weighted Hilbert
-realization and norm limit (11), and the full analytic Weil comparison
-are written mathematics, not Lean formalized. These finite identities
-give no RH conclusion.
+physical-value identity underlying the normalized carry in (10).
+It also proves the rigidity conclusion (13) from (12) and from
+operator conjugacy, and the existence of a nonzero carry coefficient
+for a nontrivial sign, with standard mathlib axioms. Equations (4)--(8),
+the weighted Hilbert realization and norm bounds (11), (14), the
+sharpness witness at \(N=8\), and the full analytic Weil comparison are written
+mathematics, not Lean formalized. These finite identities give no RH
+conclusion.

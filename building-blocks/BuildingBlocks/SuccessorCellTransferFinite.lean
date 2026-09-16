@@ -157,6 +157,77 @@ theorem primeTwoGauge_carry (N n : ℕ) (z : ℕ → ℝ)
   rw [htwo]
   ring
 
+/-- The additive carry relation for doubling forces a multiplicative
+    unit sign to be trivial once the ninth cell is present. -/
+theorem multiplicative_sign_rigidity (N : ℕ) (χ : ℕ → ℝ)
+    (hN : 9 ≤ N) (hone : χ 1 = 1)
+    (hsquare : ∀ n, 0 < n → χ n * χ n = 1)
+    (hmul : ∀ a b, 0 < a → 0 < b → χ (a * b) = χ a * χ b)
+    (hcarry : ∀ r, 2 ≤ r → r ≤ N → χ r * χ (r / 2) = χ 2) :
+    ∀ n, 0 < n → n ≤ N → χ n = 1 := by
+  have h9 : χ 9 * χ 4 = χ 2 := by
+    simpa using hcarry 9 (by omega) hN
+  have hχ9 : χ 9 = 1 := by
+    simpa [hmul 3 3 (by omega) (by omega)] using hsquare 3 (by omega)
+  have hχ4 : χ 4 = 1 := by
+    simpa [hmul 2 2 (by omega) (by omega)] using hsquare 2 (by omega)
+  have hχ2 : χ 2 = 1 := by simpa [hχ9, hχ4] using h9.symm
+  intro n
+  induction n using Nat.strong_induction_on with
+  | h n ih =>
+    intro hnpos hnN
+    by_cases hn1 : n = 1
+    · simpa [hn1] using hone
+    have hn2 : 2 ≤ n := by omega
+    have hkpos : 0 < n / 2 := by omega
+    have hklt : n / 2 < n := by omega
+    have hkN : n / 2 ≤ N := by omega
+    have hk : χ (n / 2) = 1 := ih (n / 2) hklt hkpos hkN
+    by_cases heven : n % 2 = 0
+    · have hrep : n = 2 * (n / 2) := by omega
+      rw [hrep, hmul 2 (n / 2) (by omega) hkpos, hχ2, hk]
+      ring
+    · have hc := hcarry n hn2 hnN
+      simpa [hk, hχ2] using hc
+
+/-- Any nontrivial multiplicative sign in the finite window must
+    have a nonzero successor carry coefficient. -/
+theorem multiplicative_sign_defect_exists (N : ℕ) (χ : ℕ → ℝ)
+    (hN : 9 ≤ N) (hone : χ 1 = 1)
+    (hsquare : ∀ n, 0 < n → χ n * χ n = 1)
+    (hmul : ∀ a b, 0 < a → 0 < b → χ (a * b) = χ a * χ b)
+    (hnontrivial : ∃ n, 0 < n ∧ n ≤ N ∧ χ n ≠ 1) :
+    ∃ r, 2 ≤ r ∧ r ≤ N ∧ χ r * χ (r / 2) ≠ χ 2 := by
+  by_contra hnot
+  have hcarry : ∀ r, 2 ≤ r → r ≤ N → χ r * χ (r / 2) = χ 2 := by
+    intro r hr2 hrN
+    by_contra hne
+    exact hnot ⟨r, hr2, hrN, hne⟩
+  obtain ⟨n, hnpos, hnN, hne⟩ := hnontrivial
+  exact hne (multiplicative_sign_rigidity N χ hN hone hsquare hmul hcarry
+    n hnpos hnN)
+
+/-- Hence an exact phase conjugacy of the dense doubling transfer,
+    tested on every physical vector, admits only the trivial sign. -/
+theorem signGauge_transfer_conjugacy_rigid (N : ℕ) (χ : ℕ → ℝ)
+    (hN : 9 ≤ N) (hone : χ 1 = 1)
+    (hsquare : ∀ n, 0 < n → χ n * χ n = 1)
+    (hmul : ∀ a b, 0 < a → 0 < b → χ (a * b) = χ a * χ b)
+    (hconj : ∀ z : ℕ → ℝ, z 0 = 0 → ∀ r, r ≤ N →
+      signGauge χ (transfer N 2 (signGauge χ z)) r =
+        χ 2 * transfer N 2 z r) :
+    ∀ n, 0 < n → n ≤ N → χ n = 1 := by
+  apply multiplicative_sign_rigidity N χ hN hone hsquare hmul
+  intro r hr2 hrN
+  let z : ℕ → ℝ := fun k => if k = 0 then 0 else 1
+  have hz : z 0 = 0 := by simp [z]
+  have hc := hconj z hz r hrN
+  have hd := signGauge_transfer_defect N 2 r χ z hrN
+  rw [hc, sub_self] at hd
+  have hdiv : r / 2 ≠ 0 := by omega
+  simp [z, hdiv] at hd
+  linarith
+
 #print axioms div_eq_iff_child
 #print axioms transfer_child
 #print axioms transfer_mul
@@ -166,5 +237,8 @@ theorem primeTwoGauge_carry (N n : ℕ) (z : ℕ → ℝ)
 #print axioms signGauge_transfer_exact_multiple
 #print axioms primeTwoGauge_mul
 #print axioms primeTwoGauge_carry
+#print axioms multiplicative_sign_rigidity
+#print axioms multiplicative_sign_defect_exists
+#print axioms signGauge_transfer_conjugacy_rigid
 
 end BuildingBlocks.SuccessorCellTransferFinite
