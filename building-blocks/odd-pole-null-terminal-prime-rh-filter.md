@@ -51,6 +51,37 @@ for some finite constant \(C\).  By (3), the analogous eventual upper or
 lower \(O(1)\) bound for the exact pole-null prime pairing is equivalent as
 well.
 
+The condition can be weakened: either one-sided estimate
+\[
+ T_v(a)\le C_\epsilon e^{\epsilon a}\quad\text{eventually for every }\epsilon>0,
+ \qquad\text{or}\qquad
+ T_v(a)\ge-C_\epsilon e^{\epsilon a}\quad\text{eventually for every }\epsilon>0
+ \tag{4a}
+\]
+is separately equivalent to RH. The threshold and constant may depend on
+\(\epsilon\); the same relaxation applies to the exact pole-null pairing.
+
+This can be sampled on the integer \(+1\) clock. Write
+\(\mathcal T_v(X)=T_v(\tfrac12\log X)\) for \(X>1\). Since
+\(w=v*v\) is Lipschitz and vanishes at the endpoints of its support,
+\(\mathcal T_v\) has no jumps when a prime enters or leaves the band.
+Chebyshev's bound gives, for every large integer \(N\) and
+\(N\le X\le N+1\),
+\[
+ |\mathcal T_v(X)-\mathcal T_v(N)|\ll_v N^{-1/2}.
+ \tag{4b}
+\]
+Indeed, its derivative almost everywhere has modulus at most
+\(\|w'\|_\infty X^{-1}
+\sum_{Xe^{-3/2}<p<Xe^{-1/2}}(\log p)/\sqrt p
+\ll_v X^{-1/2}\).
+Consequently either one-sided condition in (4a) is equivalent to its
+integer version, \(\mathcal T_v(N)\le C_\epsilon N^\epsilon\) for every
+\(\epsilon>0\), or separately
+\(\mathcal T_v(N)\ge-C_\epsilon N^\epsilon\), for all sufficiently
+large integers \(N\). The exponents are reparameterized by
+\(a=\tfrac12\log X\).
+
 ## The fixed filter and the exact pole correction
 
 For \(j\ge1\), put \(\ell_j=2^{-j-1}\) and
@@ -186,6 +217,26 @@ the reverse implications.  This positive-Laplace method follows the
 precedent of [Suzuki's weighted Chebyshev sign
 criteria](https://arxiv.org/html/2411.07436v3), Theorem 1.
 
+For the weaker condition (4a), suppose a zero gives a pole at
+\(z_\rho=\delta+2i\gamma\), where \(\delta=2\Re\rho-1>0\).
+Choose \(0<\epsilon<\delta\). After transferring (4a) from \(T_v\)
+to \(K_v\) and enlarging \(C_\epsilon\) on an initial compact interval,
+either \(G(a)=C_\epsilon e^{\epsilon a}-K_v(a)\) or
+\(G(a)=C_\epsilon e^{\epsilon a}+K_v(a)\) is nonnegative for all
+\(a\ge0\). Its Laplace transform is
+\(C_\epsilon/(z-\epsilon)\mp\tfrac12F_v(z)^2
+(-\zeta'/\zeta)((z+1)/2)\). The nonreal pole at \(z_\rho\) forces
+its convergence abscissa to be at least \(\delta>\epsilon\).
+Landau's theorem then requires a singularity at that positive real
+abscissa, but this continuation is analytic on every real
+\(z>\epsilon\). Thus (4a) excludes every off-critical zero. Under RH,
+the \(O(1)\) bound below implies (4a).
+
+More precisely, if a zero has \(\delta=2\Re\rho-1>0\), then for every
+\(0\le\epsilon<\delta\) the two separate Landau arguments give
+\(\limsup_{a\to\infty}e^{-\epsilon a}T_v(a)=+\infty\) and
+\(\liminf_{a\to\infty}e^{-\epsilon a}T_v(a)=-\infty\).
+
 Conversely, assume RH.  The [zero side of Weil's formula](https://arxiv.org/html/2606.09096v2)
 for the odd extension of \(u_a^0\) is uniformly \(O(1)\): its Fourier
 transform is a sum of two phase multiples of the fixed rapidly decaying
@@ -196,6 +247,91 @@ in \(a\).  Its archimedean form is \(O(1)\) and its pole form is
 \(K_v(a)=O(1)\) through (9).  Equation (11) gives \(T_v(a)=O(1)\),
 and (3) gives the same bound for the exact pole-null pairing.  This
 proves the forward implications.
+
+## A bounded-variation filter with quantitative zero nonblindness
+
+There is also a form-domain version of the theorem with an elementary
+finite convolution. It has slower Fourier decay, but its response to every
+hypothetical off-line zero has a polynomial lower bound. Set \(L=1/4\),
+\(q(s)=e^{-s}{\bf1}_{(0,L)}(s)/(1-e^{-L})\), and
+\[
+ \varphi_2(s)=(q*q)(s-1/4),\qquad v_2=2\varphi_2'-\varphi_2.
+ \tag{13}
+\]
+Explicitly, for \(0<u<2L\),
+\[
+ \varphi_2(1/4+u)
+ =\frac{e^{-u}}{(1-e^{-L})^2}\min(u,2L-u),
+ \tag{14}
+\]
+and it is zero elsewhere. Thus \(\varphi_2\) is continuous and absolutely
+continuous, while \(v_2\) is a bounded, compactly supported BV function
+with finitely many jumps. Both are supported in \([1/4,3/4]\). Their
+half-Laplace transforms satisfy
+\[
+ F_{v_2}(z)=(z-1)e^{-z/8}
+ \left[\frac{1-e^{-(1+z/2)L}}
+ {(1+z/2)(1-e^{-L})}\right]^2.
+ \tag{15}
+\]
+The quotient has its removable value at \(z=-2\). Its numerator cannot
+vanish when \(\Re z\ge0\), so \(F_{v_2}\) has just the zero \(z=1\)
+there. More quantitatively, uniformly for \(0\le\Re z\le1\) and
+\(|\Im z|\ge2\),
+\[
+ |F_{v_2}(z)|\asymp(1+|\Im z|)^{-1}.
+ \tag{16}
+\]
+Indeed, the modulus of the numerator in (15) is between
+\(1-e^{-L}\) and \(1+e^{-L}\); the other factors have the stated
+size. If an off-line zero \(\rho=\beta+i\gamma\), \(\beta>1/2\),
+has multiplicity \(m_\rho\), the residue of the right side of (12),
+with \(v_2\) in place of \(v\), at \(z_\rho=2\rho-1\) is
+\(-m_\rho F_{v_2}(z_\rho)^2\). For \(|\gamma|\ge1\), its modulus is
+\(\asymp m_\rho(1+|\gamma|)^{-2}\), uniformly in \(\beta\). This is
+a bound on each isolated pole residue, not a bound on the full signed
+statistic in which contributions from different zeros can interfere.
+
+Define \(T_{v_2}\), \(K_{v_2}\), and the translated odd packet by
+(1), (9), and (8), using \(\varphi_2,v_2\). The same support and pole
+calculation makes the packet exactly pole-null with correction
+\(c_a=O(e^{-a})\). Its logarithmic archimedean form is uniformly
+bounded: BV gives \(|\widehat v_2(t)|\ll(1+|t|)^{-1}\), and translation
+only changes Fourier phases. The ordinary-prime isolation and
+proper-power calculation remain valid, giving
+\[
+ K_{v_2}(a)=T_{v_2}(a)+\tfrac12+o(1),\qquad
+ \langle u_a,P_a^{\rm odd}u_a\rangle=-T_{v_2}(a)+O(1).
+ \tag{17}
+\]
+The Laplace identity (12) holds for \(v_2\) because its convolution is
+compactly supported and integrable. Its pole cancellation and the
+nonvanishing in (15) give the same Landau implication: either eventual
+one-sided \(O(1)\) bound on \(T_{v_2}\), separately, implies RH. The
+argument for (4a) applies to \(T_{v_2}\) as well.
+
+For the converse, under RH the zero-side terms are uniformly summable:
+the odd packet has Fourier envelope \(O((1+|t|)^{-1})\), and the
+standard zero count gives
+\(\sum_\gamma(1+|\gamma|)^{-2}<\infty\), with multiplicities. To
+justify Weil's identity for this BV packet, convolve \(\varphi_2\)
+with a smooth probability mollifier of width
+\(\epsilon<\min(1/4,(\log2-1/2)/2)\), set
+\(v_{2,\epsilon}=2\varphi_{2,\epsilon}'-
+\varphi_{2,\epsilon}\), and apply the exact pole correction to each
+translated smooth packet. This retains both positive support and
+support diameter below \(\log2\). Also
+\(F_{v_{2,\epsilon}}(1)=0\) exactly. Convolution multiplies the Fourier
+transforms of \(v_2\) and \(\varphi_2\) by the mollifier's
+characteristic function, whose modulus is at most one. At fixed \(a\), the
+prime pairing is continuous in \(L^2\); the logarithmic archimedean
+integral and critical-zero sum pass to the limit by domination. The
+pole moments and corrections converge as well. Hence the Weil
+identity extends to the BV packet, giving \(K_{v_2}(a)=O(1)\) and then
+\(T_{v_2}(a)=O(1)\), uniformly as \(a\to\infty\). Thus either
+eventual one-sided bound for this explicit BV score is again equivalent
+to RH. This variant is a form-domain result; the smooth theorem above
+remains the \(C_c^\infty\) statement.
 
 The terminal primes in (1) have no admitted products, yet their signed
 weighted count already carries an RH-equivalent one-sided condition.

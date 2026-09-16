@@ -272,3 +272,11 @@ terms, weak convergence of the terminal measure does not control its
 coefficient at a frequency \(t_a\to\infty\); the perturbation in
 (11) changes precisely that coefficient while leaving its total mass
 and weak limit unchanged.
+
+A complementary [sparse prime-weight countermodel](sparse-prime-weight-ground-positive-terminal-sign-countermodel.md)
+retains a positive factorial ground and coherent factors across all
+powers while making a fixed bounded-arch terminal score alternate with
+unbounded magnitude. The present construction instead tests the full
+formal odd quadratic expression on moderate carriers. Both modify the
+zeta coefficients; neither supplies a negative test for the actual Weil
+form.
