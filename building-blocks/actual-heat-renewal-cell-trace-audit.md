@@ -250,6 +250,22 @@ renewal measure satisfies the exact future-tail identity
 
 This cancels the continuum mode using the complete response history;
 it does not bound the remaining signed integer-cell discrepancy.
+Combining (13b) with the Euler-discrepancy decomposition
+$\nu-\kappa=c\delta_0+DH$ and the zero trace of $h_\beta$ gives the
+exact advanced-retarded balance
+
+\[
+g_\beta(v)=c h_\beta(v)+(H*h_\beta')(v)
+ -e^{v/2}\int_v^\infty e^{-u/2}h_\beta(u)\,du,
+\qquad v\ge0.
+\tag{13c}
+\]
+
+Here $H*h_\beta'$ uses only earlier logarithmic times, whereas the
+last term retains the full future response. The identity is
+unconditional and includes every integer delay through $H$; the
+eventual sign of $g_\beta$ below does not separately sign either
+term on the right.
 
 This response vanishes on the negative half-line and
 near zero, so its causal traces $h_\beta(0+)$ and $h_\beta'(0+)$
