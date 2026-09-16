@@ -200,6 +200,16 @@ The weight is supported on \(Xe^{-3/2}\le n\le Xe^{-1/2}\), so every sum below i
 \]
 Consequently, (12b) is equivalent to a bounded logarithmic average of the right side of (12g), namely \((\log Y)^{-1}\int_1^Y(\cdots)dX/X\). This retains all prime powers, ordered additive pairs, the linear compensation and the density square. Ordinary Goldbach existence does not bound this centered pair energy.
 
+There is also a direct fixed-source reading. Let \(E(x)=\Psi(x)-x\), \(H(u)=e^{-u/2}E(e^u)\), and \(L(v)=W'(v)+W(v)/2\). For \(a>3/2\), the support of \(W(2a-\log x)\) lies strictly above \(x=1\), so Stieltjes integration by parts has no lower endpoint:
+\[
+ \begin{aligned}
+ D_\phi(a)
+ &=\int_1^\infty x^{-1/2}W(2a-\log x)\,dE(x)\\
+ &=\int_{1/2}^{3/2}H(2a-v)L(v)\,dv.
+ \end{aligned}                                                   \tag{12h}
+\]
+The compact filter is genuinely signed. Since \(e^{v/2}L(v)=(e^{v/2}W(v))'\), its weighted integral is zero, while \(L\not\equiv0\); therefore it has both signs. For a formal error mode \(E(x)=c x^\rho\), (12h) gives exactly \(c\rho F(2\rho-1)^2e^{(2\rho-1)a}\). The zeta-zero coefficient \(c=-m_\rho/\rho\) thus becomes the residue amplitude \(-m_\rho F(2\rho-1)^2\) in (10), with no endpoint or prime power discarded. The RH-equivalent energy (12b) is a fixed signed-filter mean-square target for the actual critical-scale Chebyshev error \(H\), not a consequence of positivity of \(d\Psi\).
+
 ## Why the ordinary PNT does not pay this residual
 
 The complete unconditional bound \(|\Psi(X)-X|\le CXe^{-c\sqrt{\log X}}\), as in [Trudgian's Theorem 1](https://arxiv.org/pdf/1401.2689), and Stieltjes integration by parts in (8) yield only
