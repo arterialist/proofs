@@ -16,6 +16,14 @@ Define the nonnegative finite-horizon channel `B_z(n)=−(μ_late*log)(n)` and `
 
 `B_z(n)=Σ_{p>z,\,pm=n}Λ(m)≥0`, `A_z(n)≥0`, and `Λ=A_z−B_z` on `[1,X]`.      (1)
 
+This decomposition separates new large-prime arrivals from their
+composite histories exactly. At a prime $n=p>z$, $B_z(p)=\Lambda(1)=0$
+and $A_z(p)=\log p$. At a composite $n=pm\le X$ with $p>z$ and
+$m>1$, one has $\Lambda(n)=0$, so $A_z(n)=B_z(n)=\Lambda(m)$:
+the complete cofactor history cancels coefficientwise. This
+classification alone does not control how often the large primes
+arrive.
+
 The total negative correction is
 
 `B_z^Σ(X):=Σ_{n≤X}B_z(n)=Σ_{z<p≤X}ψ(X/p)`.
