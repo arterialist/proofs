@@ -351,6 +351,15 @@ $$
 
 Only this particular solution is asserted in (25), not bounded
 invertibility of $\mathcal Z$ on all bounded inputs.
+Here $h$ retains its nonzero negative-time heat history. Thus the
+bounded $g$ in (25) is the **full-history** forcing; restricting the
+same response to a causal half-line introduces an exponentially growing
+history correction. The [actual-response cell audit](actual-heat-renewal-cell-trace-audit.md)
+computes that correction and gives a smooth alternative baseline with
+zero negative history and zero initial traces. For that baseline the
+distinguished causal forcing is eventually positive and asymptotic to
+$\tfrac12\log(2\pi)e^{-v/2}$, while boundedness of its unique response
+remains equivalent to RH and unproved.
 
 ## 8. Removing the continuous volume before inversion
 

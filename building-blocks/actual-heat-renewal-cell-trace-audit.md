@@ -242,6 +242,43 @@ have these properties. Since $\beta$ vanishes for $v\ge2$,
 $h_\beta(v)=b(v)$ there. The change does not alter any late-time
 boundedness or energy-growth target.
 
+In fact the distinguished forcing has an eventual sign and a universal
+leading coefficient. Mellin inversion of
+$Q(t)=\sum_{n\ge1}(\log n)e^{-nt}$ starts from
+$-\Gamma(s)\zeta'(s)$. Moving the inverse contour from $\Re s>1$
+to $\Re s=-1/2$ crosses the double pole at $s=1$ and the simple
+gamma pole at $s=0$. Their residues, using
+[$\zeta'(0)=-\tfrac12\log(2\pi)$](https://dlmf.nist.gov/25.6.E11),
+give
+
+\[
+Q(t)=\frac{\log(1/t)-\gamma}{t}
+       +\frac12\log(2\pi)+O(t^{1/2}).
+\tag{15b}
+\]
+
+The shifted-contour integral is $O(t^{1/2})$: $\Gamma$ decays
+exponentially on vertical lines and $\zeta'$ has polynomial growth
+there. Taylor expansion gives
+$1/(e^t-1)-t^{-1}\log(1-e^{-t})=(1+\log(1/t))/t+O(t)$.
+For the same $G$ as in (14), $G(0)=0$, $G(t)\to0$ at infinity, and
+$G''\in L^1(0,\infty)$. On a cell $[a,a+\delta]$, integration by parts
+and subtraction of $G'(a+\delta/2)$ show that the trapezoid error is
+at most $\delta^2\int_a^{a+\delta}|G''|/4$. Summing cells, with both
+endpoint values zero in the limit, improves (14) to
+$\mathcal Z\beta(v)=M e^{v/2}+O(e^{-3v/2})$. Therefore
+
+\[
+\boxed{g_\beta(v)=\frac12\log(2\pi)e^{-v/2}+O(e^{-v})
+\quad(v\to\infty).}
+\tag{15c}
+\]
+
+The leading coefficient is positive and independent of the permitted
+cutoff and bump in (12). Hence $g_\beta$ is eventually positive.
+This sign does not bound the response of the signed inverse renewal
+operator; that remains the arithmetic task.
+
 More precisely, Eq. (24) of the renewal note gives
 
 \[
