@@ -307,15 +307,23 @@ The exact band separation in (16)--(18) is specific to convolution of two histor
 
 ## A sharp multiplier bound and a finite Goldbach energy consumer
 
-The upper multiplier constant in (6) can be sharpened without a new arithmetic estimate. For $x=|\omega|>0$,
+Both multiplier constants in (15) can be sharpened without a new arithmetic estimate. For $x=|\omega|>0$,
 $$
 |m(\omega)|^2
 =\frac{\pi}{4}\,
-  \frac{x^2+x^2/\sinh^2(\pi x)}{x^2+1/4}
-\le\frac\pi4,
+  \frac{x^2\coth^2(\pi x)}{x^2+1/4}.
 \tag{20}
 $$
-because $\sinh(\pi x)\ge\pi x\ge2x$. At zero the value is $1/\pi<\pi/4$, and the expression tends to $\pi/4$ as $x\to\infty$. Hence the $L^2$ multiplier norm is exactly $\sqrt\pi/2$; this value may replace $M_*$ in the upper bounds (9), (15), and (17).
+The ratio $g(x)=x\coth(\pi x)/\sqrt{x^2+1/4}$ is strictly increasing. Indeed
+$$
+\frac{g'(x)}{g(x)}
+=\frac1{4x(x^2+1/4)}-\frac{2\pi}{\sinh(2\pi x)}>0,
+$$
+since $\sinh(2\pi x)>2\pi x+(4/3)\pi^3x^3\ge2\pi x+8\pi x^3$; the last inequality uses $\pi^2>6$. Its endpoint values are $g(0+)=2/\pi$ and $g(+\infty)=1$. Thus
+$$
+\boxed{\quad\frac1\pi\le|m(\omega)|^2\le\frac\pi4\quad}
+$$
+with the lower value attained at zero and the upper value approached at high frequency. The $L^2$ multiplier norm is exactly $\sqrt\pi/2$, while its inverse on its range has norm exactly $\sqrt\pi$. These constants sharpen both sides of (15), and $\sqrt\pi/2$ may replace $M_*$ in (9) and (17).
 
 There is a direct finite centered-Goldbach version. For any finitely supported real coefficients $(a_n)$, define
 $$
@@ -329,12 +337,15 @@ q_a(v)=\sum_n\frac{a_n}{\sqrt n}\kappa(v-\log n),\qquad
 b_a(v)=\sum_n\frac{a_n}{\sqrt n}k_0(v-\log n),
 $$
 the same boundary-value Mellin calculation as in (6) gives
-$\widehat{q_a'}(\omega)=m(\omega)\widehat b_a(\omega)$, including the finite value $m(0)=-1/\sqrt\pi$. Plancherel and $t=e^{-v}$ now give the exact finite-arithmetic upper bound
+$\widehat{q_a'}(\omega)=m(\omega)\widehat b_a(\omega)$, including the finite value $m(0)=-1/\sqrt\pi$. Plancherel and $t=e^{-v}$ now give the two-sided finite-arithmetic bound
 $$
 \boxed{\quad
-\int_{\mathbb R}|q_a'(v)|^2dv
-\le\frac\pi4\int_0^\infty|D_a(t)|^2dt
-=\frac\pi4\sum_{m,n}\frac{a_ma_n}{m+n}.
+\frac1\pi\sum_{m,n}\frac{a_ma_n}{m+n}
+\le\int_{\mathbb R}|q_a'(v)|^2dv
+\le\frac\pi4\sum_{m,n}\frac{a_ma_n}{m+n},
+\qquad
+\int_0^\infty|D_a(t)|^2dt
+=\sum_{m,n}\frac{a_ma_n}{m+n}.
 \quad}
 \tag{21}
 $$
