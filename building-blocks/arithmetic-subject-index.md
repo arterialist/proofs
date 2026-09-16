@@ -313,6 +313,8 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 [Central-arc terminal obstruction](factorial-central-arc-terminal-obstruction.md) retains the full Möbius terminal polynomial and proves that the target central-arc upper bound controls its Abel-smoothed value at square-root scale. [The exact Abel–Mertens criterion](abel-mertens-rh-criterion.md) shows that these all-integer, all-epsilon bounds are equivalent to RH. The needed central-arc upper estimate remains open.
 
+[Angular Poisson central-arc reduction](factorial-angular-poisson-central-arc-reduction.md) represents the complete original-clock horizon energy on a circle, pays the entire outer arc unconditionally, and isolates the exact radial reserve plus Green-weighted angular variance. Actual prime births rule out the generic full-derivative scale; the central source correlation remains the open RH-level input.
+
 [Local compact scattering](compact-local-scattering-no-contraction.md) and [compiled Lean](BuildingBlocks/CompactLocalScatteringSigns.lean): exact original complex-power multiplier dictionary, finite geometric histories, attenuation at zero and amplification at pi/(M log p), for every prime and M ≥ 1. Physical compact pole-null test realization remains written; no actual-source or dyadic-product sign follows.
 
 ## Actual physical theta series
