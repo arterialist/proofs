@@ -178,7 +178,10 @@ The matching lower square and lower prime-heat transfer are formalized in
 [GoldbachOneSidedLowerHeatTransfer.lean](BuildingBlocks/GoldbachOneSidedLowerHeatTransfer.lean).
 Both use explicit all-cutoff cumulative hypotheses; the lower heat
 bound also states the small-$t$ condition needed for its square-root
-step. The eventual-to-all-cutoff adjustment, heat Mellin transform and
+step. [GoldbachEventualCutoffAdjustment.lean](BuildingBlocks/GoldbachEventualCutoffAdjustment.lean)
+and [GoldbachEventualUpperCutoffAdjustment.lean](BuildingBlocks/GoldbachEventualUpperCutoffAdjustment.lean)
+extend the respective eventual cumulative inequalities to all positive
+cutoffs with explicit enlarged constants. The heat Mellin transform and
 Landau application remain written mathematics.
 
 The same calculation proves (2a). If, for some $0<\eta<1/2$, either
