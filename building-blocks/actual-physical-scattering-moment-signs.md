@@ -1,6 +1,6 @@
 # Actual physical scattering moment signs
 
-Sixteen public theorems are compiled in `ActualScatteringMomentSigns.lean`, `ActualScatteringMellinSignBridge.lean`, `ActualPrimeBlockMellinParity.lean`, and `ActualPrimeBlockWeilWeightParity.lean`. RH Agent3 supplied the proofs in the original physical notation. The bounded translation worker changed namespace and import paths only for the first three modules; root made the same namespace/import translation for the fourth and reviewed the literal coefficients and physical Mellin correspondence. These are finite-history sign and dictionary results, not a sign theorem for the full Weil form or an RH proof. No novelty certificate is claimed.
+Eighteen public theorems are compiled in `ActualScatteringMomentSigns.lean`, `ActualScatteringMellinSignBridge.lean`, `ActualPrimeBlockMellinParity.lean`, `ActualPrimeBlockWeilWeightParity.lean`, and `ActualScatteringMomentMagnitude.lean`. RH Agent3 supplied the proofs in the original physical notation. The bounded translation worker changed namespace and import paths only for the first three modules; root made the same namespace/import translation for the last two and reviewed the literal coefficients and physical Mellin correspondence. These are finite-history sign and dictionary results, not a sign theorem for the full Weil form or an RH proof. No novelty certificate is claimed.
 
 For a real p≥2 and natural h,M≥1, define the literal multipliers at β=h+1/2 and −β by
 
@@ -26,4 +26,10 @@ The list-valued `physicalBlock` iterates the complete physical history at every 
 
 For an even seed, Mellin reflection converts the conjugate-polarized `pairedWeight` into the nonnegative squared norm of its Mellin value on the real line. The varying-depth physical block therefore has an exact real parity-signed paired weight. Multiplication by `(−1)^|B|` makes this one row nonnegative when every depth and h are positive. This proof does not assume the scattered block itself is even.
 
-All sixteen public conclusions depend only on `propext`, `Classical.choice`, and `Quot.sound`. The infinite gamma-series passage, finite overlap rows, all signed prime-power contributions, and the actual arithmetic upper bound remain separate obligations. A single parity-signed paired row does not discharge them.
+The literal one-prime magnitude is also quantitatively compiled. For p≥2 and h,M≥1,
+
+    p^(hM)/8 ≤ −A_+(p,h,M)A_−(p,h,M) ≤ 2p^(hM).
+
+The theorem is stated both for real p and for an actual natural prime. It retains the complete finite geometric histories and is uniform in depth. Products give the corresponding block bounds with constants 8^(−|B|) and 2^|B|, but that product specialization and the resulting far-gamma summation are not yet formalized here.
+
+All eighteen public conclusions depend only on `propext`, `Classical.choice`, and `Quot.sound`. The infinite gamma-series passage, finite overlap rows, all signed prime-power contributions, and the actual arithmetic upper bound remain separate obligations. A single parity-signed paired row does not discharge them.
