@@ -305,6 +305,8 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 [Large-clock factorial terminal reserve](factorial-large-clock-terminal-reserve.md) gives the exact incomplete LCM-weighted quotient correlation and the escaping terminal identities. Its energy lower bound shows that the desired linear large-clock upper bound would already force square-root-scale Mertens cancellation up to a logarithm. The middle-clock signed correlation and RH remain open.
 
+[Signed theta response and paid arrival](theta-signed-alternating-response-paid-arrival.md) bounds the finite parameter rectangle by the exact alternating continuous-minus-prime form-dual energy, with all edge data retained. [Suzuki original-metric compensation](suzuki-original-metric-arrival-pairing.md) shows algebraically that the arithmetic identity channel pays the full arrival defect. No form intertwiner currently transfers this compensation to the theta dual energy, and its required arithmetic smallness remains unproved.
+
 [Local compact scattering](compact-local-scattering-no-contraction.md) and [compiled Lean](BuildingBlocks/CompactLocalScatteringSigns.lean): exact original complex-power multiplier dictionary, finite geometric histories, attenuation at zero and amplification at pi/(M log p), for every prime and M ≥ 1. Physical compact pole-null test realization remains written; no actual-source or dyadic-product sign follows.
 
 ## Actual physical theta series
