@@ -94,10 +94,13 @@ cumulative raw coefficients after the source cutoff is complete through
 the stated horizon. It cannot discard the heat-shell transition or
 turn positivity into an RH-scale upper bound.
 
-The existing [adjacent-total Lean module](BuildingBlocks/CenteredGoldbachAdjacentTotalsFinite.lean)
-proves the odd coefficient is twice the bounded even-index row;
-[GoldbachOddCentering.lean](BuildingBlocks/GoldbachOddCentering.lean)
-proves the even von Mangoldt support is exactly powers of two. The
-explicit exponent reindex (1), logarithmic estimate (2), cumulative
-bound (3), and analytic equivalence (6) are written mathematics, not
-formalized Lean theorems.
+The [odd-power Lean module](BuildingBlocks/GoldbachOddPowerBoundFinite.lean)
+proves (1) with the equivalent cutoff condition `2^k≤N` and
+`N−2^k∈[1,Y]`, and proves (2) for the actual bounded von Mangoldt
+coefficient, uniformly in `Y`. The condition `N−2^k≥1` forces
+`2^k<N`, so the displayed form is identical. It builds on the
+[adjacent-total module](BuildingBlocks/CenteredGoldbachAdjacentTotalsFinite.lean)
+and [even-support theorem](BuildingBlocks/GoldbachOddCentering.lean).
+The cumulative estimate (3) and analytic equivalence (6) remain
+written deductions, not Lean theorems. Public theorem axiom reports
+contain only `propext`, `Classical.choice`, and `Quot.sound`.
