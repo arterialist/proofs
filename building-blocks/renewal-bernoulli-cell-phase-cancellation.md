@@ -30,8 +30,8 @@ I_n(z)=\int_{\log n}^{\log(n+1)}e^{-zv}(J(v)-\ell)\,dv.
 
 In particular, for each fixed real \(x\ge0\), every sufficiently late
 weighted cell has **negative signed area**, even though
-\(J-\ell\) changes sign inside each cell. The assertion is pointwise in
-\(x\); its cutoff is not uniform over the unbounded half-line.
+\(J-\ell\) changes sign inside each cell. The double-primitive argument
+below strengthens this to a cutoff uniform over all real \(x\ge0\).
 
 Here is the calculation, including the endpoint terms. Write
 \(v=\log(n+r)\), \(0\le r\le1\), and
@@ -141,6 +141,74 @@ the surviving coefficient are compiled in
 [RenewalBernoulliCellMoments.lean](BuildingBlocks/RenewalBernoulliCellMoments.lean).
 The Euler--Maclaurin expansion, complex uniform remainder and grouped
 analytic continuation in this note remain written mathematics.
+
+## A uniform real-frequency sign for every sufficiently late cell
+
+The two leading profiles imply a stronger conclusion than the fixed-$x$
+statement following (1):
+
+\[
+\boxed{\text{There is an integer }n_0\text{ such that }
+I_n(x)<0\quad\text{for every }n\ge n_0
+\text{ and every real }x\ge0.} \tag{11}
+\]
+
+In particular the cutoff $n_0$ is independent of the unbounded frequency
+$x$. To see this, put
+\[
+F_n(r)=J(\log(n+r))-\ell,\qquad
+G_n(r)=\int_0^r(r-t)F_n(t)\,dt,\qquad 0\le r\le1.
+\]
+Twice integrating the polynomials in (7) gives the exact identities
+\[
+\begin{aligned}
+\int_0^r(r-t)f_0(t)\,dt
+ &=-\frac{r^2(1-r)^2}{24},\\
+\int_0^r(r-t)f_1(t)\,dt
+ &=-\frac{r^3[1+3r(1-r)]}{144}.
+\end{aligned} \tag{12}
+\]
+Both are nonpositive throughout the cell, and the second is strictly
+negative for $r>0$. Integrating the uniform remainder in (8) twice gives
+\[
+G_n(r)=
+-\frac{r^2(1-r)^2}{24n^{3/2}}
+-\frac{r^3[1+3r(1-r)]}{144n^{5/2}}
++O(r^2n^{-7/2}) . \tag{13}
+\]
+The $O$ constant is uniform for $0\le r\le1$: the bounded $f_2$ and the
+uniform remainder in (8) each acquire at most a factor $r^2/2$ under the
+double integration. For $r\le1/2$, the first displayed negative term has
+magnitude at least $r^2/(96n^{3/2})$; for $r\ge1/2$, the second has
+magnitude at least $r^2/(288n^{5/2})$. Thus the two terms together are at
+most $-r^2/(288n^{5/2})$, and (13) proves $G_n(r)<0$ for every
+$0<r\le1$ once $n$ is sufficiently large.
+
+The boundary mean is negative as well. Equations (8)--(10) give
+\[
+G_n'(1)=\int_0^1 F_n(t)\,dt
+=-\frac7{576n^{7/2}}+O(n^{-9/2})<0
+\quad(n\ge n_0). \tag{14}
+\]
+Finally write the cell integral as
+\[
+I_n(x)=\int_0^1 w_{n,x}(r)F_n(r)\,dr,\qquad
+w_{n,x}(r)=(n+r)^{-x-1}.
+\]
+For every $x\ge0$, this weight is positive, decreasing, and convex.
+Two integrations by parts, with $G_n(0)=G_n'(0)=0$, give
+\[
+I_n(x)=w_{n,x}(1)G_n'(1)
+-w_{n,x}'(1)G_n(1)
++\int_0^1w_{n,x}''(r)G_n(r)\,dr<0. \tag{15}
+\]
+The signs use $G_n'(1)<0$, $G_n(1)<0$, $w_{n,x}'\le0$, and
+$w_{n,x}''\ge0$. The exact polynomial identities and nonpositive
+factors in (12) are compiled in
+[RenewalBernoulliCellMoments.lean](BuildingBlocks/RenewalBernoulliCellMoments.lean);
+the uniform analytic remainder and the all-$x$ conclusion remain written
+mathematics. This signs each late *individual* real cell, not the finitely
+many early cells or the complex-frequency prime-forcing response.
 
 The grouped cell series \(\sum_{n\ge1}I_n(z)\) now converges locally
 absolutely for \(\Re z>-7/2\), although the ungrouped Laplace integral
