@@ -61,6 +61,38 @@ theorem movingInverseTest_hasDerivAt {t x : ℝ} (hx : 1 ≤ x) (hn : x ≠ (⌊
 theorem movingInverseTest_continuousAt {t x : ℝ} (hx : 1 ≤ x) (hn : x ≠ (⌊x⌋₊ : ℝ)) :
     ContinuousAt (movingInverseTest t) x := (movingInverseTest_hasDerivAt hx hn).continuousAt
 
+theorem movingInverseTest_hasDerivWithinAt_right {t x : ℝ} (hx : 1 ≤ x) :
+    HasDerivWithinAt (movingInverseTest t) (-inverseTestPhase x t) (Ioi x) x := by
+  have hv : ∀ᶠ y in 𝓝[≥] x, ⌊y⌋₊ = ⌊x⌋₊ := by
+    filter_upwards [Ico_mem_nhdsGE (Nat.lt_floor_add_one x)] with y hy
+    exact Nat.floor_eq_on_Ico ⌊x⌋₊ y
+      ⟨(Nat.floor_le (by linarith : 0 ≤ x)).trans hy.1, hy.2⟩
+  apply (finiteInverseTest_floor_hasDerivAt t x).hasDerivWithinAt.congr_of_eventuallyEq
+  · filter_upwards [hv.filter_mono (nhdsWithin_mono x Ioi_subset_Ici_self)] with y hy
+    simp only [movingInverseTest, hy]
+  · rfl
+
+theorem finiteInverseTest_entry_match (N : ℕ) (t : ℝ) :
+    finiteInverseTest (N + 1) t (N + 1) = finiteInverseTest N t (N + 1) := by
+  unfold finiteInverseTest
+  symm
+  apply sum_subset
+  · intro j hj
+    have hh := Finset.mem_Icc.mp hj
+    exact Finset.mem_Icc.mpr ⟨hh.1, hh.2.trans (Nat.le_succ N)⟩
+  · intro j hj hn
+    have hh := Finset.mem_Icc.mp hj
+    have he : j = N + 1 := by
+      have hnot : ¬ j ≤ N := by
+        intro h
+        exact hn (Finset.mem_Icc.mpr ⟨hh.1, h⟩)
+      omega
+    subst j
+    have hp : (N : ℝ) + 1 ≠ 0 := by positivity
+    simp only [Nat.cast_add, Nat.cast_one, div_self hp, centeredTest_one, mul_zero]
+
+#print axioms finiteInverseTest_entry_match
+#print axioms movingInverseTest_hasDerivWithinAt_right
 #print axioms movingInverseTest_hasDerivAt
 #print axioms movingInverseTest_continuousAt
 #print axioms centeredTest_one
