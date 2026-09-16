@@ -39,6 +39,10 @@ def interval_mul(x, y):
     return min(values), max(values)
 
 
+def interval_sub(x, y):
+    return x[0] - y[1], x[1] - y[0]
+
+
 def polynomial_interval(poly, q_interval):
     low, high = Q(0), Q(0)
     q_low, q_high = q_interval
@@ -128,6 +132,14 @@ def kernel_interval(e, a, q_interval, log_interval):
                                      second_value))
 
 
+def mixed_difference_interval(u, v, q_interval, log_interval):
+    return interval_add(
+        interval_sub(kernel_interval(u, v, q_interval, log_interval),
+                     kernel_interval(u + 1, v, q_interval, log_interval)),
+        interval_sub(kernel_interval(u + 1, v + 1, q_interval, log_interval),
+                     kernel_interval(u, v + 1, q_interval, log_interval)))
+
+
 def decimal_interval(interval):
     return f"[{float(interval[0]):.15g}, {float(interval[1]):.15g}]"
 
@@ -146,6 +158,11 @@ def main():
     assert positive[0] > 0
     assert negative[1] < 0
 
+    active_diagonal = mixed_difference_interval(1, 1, q_interval, log_interval)
+    tail_diagonal = mixed_difference_interval(2, 2, q_interval, log_interval)
+    assert active_diagonal[0] > 0
+    assert tail_diagonal[0] > 0
+
     # The symmetric matrix is entrywise negative despite its indefinite
     # restriction to the zero-total subspace.
     for e, a in product(DIVISORS, repeat=2):
@@ -159,6 +176,10 @@ def main():
     print("L=log(2) in", decimal_interval(log_interval))
     print("Q(-1,1,0,0) in", decimal_interval(positive))
     print("Q(-1,0,-1,2) in", decimal_interval(negative))
+    print("DeltaDeltaK(1,1) in", decimal_interval(active_diagonal))
+    print("DeltaDeltaK(2,2) in", decimal_interval(tail_diagonal))
+    print("X*DeltaDeltaK(1,1) in",
+          decimal_interval((X * active_diagonal[0], X * active_diagonal[1])))
     print("All 16 symmetric matrix entries have certified negative upper bounds")
     print("PASS: the exact p=5, X=2 zero-total form is sign-indefinite")
 
