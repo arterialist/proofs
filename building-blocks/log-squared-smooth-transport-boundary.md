@@ -116,7 +116,7 @@ correlation; support estimates alone cannot supply either.
 
 The squarefree saddle calculation is an application of standard friable
 counting methods, not a claim of a new general smooth-number theorem.
-Closest sources are [Hildebrand and Tenenbaum's saddle method](https://dms.umontreal.ca/~andrew/PDF/Smooth1.pdf)
+Closest sources are [Hildebrand and Tenenbaum's saddle method](https://tenenb.perso.math.cnrs.fr/PPP/Psi%2B.pdf)
 and [de la Bretèche and Tenenbaum's signed friable averages](https://arxiv.org/abs/2207.04777).
 The latter's published saving does not by itself settle $Z_N(F_y)$ for
 $y\asymp(\log N)^2$ when $c\ge c_*$. The finite Rankin and powerset
