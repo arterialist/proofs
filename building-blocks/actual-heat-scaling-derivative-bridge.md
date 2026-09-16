@@ -424,9 +424,9 @@ $$
 The constant is the exact norm of the Fourier multiplier on the full $L^2$ heat space. The upper constant is also sharp across arbitrary finite packets, and no positive reverse constant holds there: their heat vectors are dense in $L^2(0,\infty)$, since a vector orthogonal to every $e^{-nt}$ gives, after $x=e^{-t}$, a finite signed measure with all polynomial moments zero and hence is zero. Density transfers both the near-zero-frequency supremum and the high-frequency decay of the multiplier in (26) to finite packets. The upper inequality still requires an arithmetic bound on its right side before it can control the actual uncut centered-prime source.
 
 
-## A radius-averaged actual-ground identity for finite Goldbach packets
+## A large-core actual-ground identity for finite Goldbach packets
 
-The physical concentration of the actual even killed ground gives a converse to the one-core upper bound (22) after averaging core radii. For $R$ admitting that ground, define the bounded two-shift operator on $L^2(\mathbb R)$ by
+The physical concentration of the actual even killed ground gives a limiting converse to the one-core upper bound (22). For $R$ admitting that ground, define the bounded two-shift operator on $L^2(\mathbb R)$ by
 $$
 (\mathcal A_Rf)(v)=\frac1{m_R}\int G_R(u)[f(v+u)+f(v-u)]\,du,
 \qquad
@@ -439,27 +439,22 @@ W_R(\omega)-2\cos(\omega R)\longrightarrow0
 \tag{28}
 $$
 
-Fix any $R_0>0$ and $h>0$ such that the actual grounds exist at $R_j=R_0+jh$, $j\ge1$. For $\omega h\notin\pi\mathbb Z$, the elementary geometric average gives
-$$
-\frac1J\sum_{j=1}^J4\cos^2(\omega R_j)\longrightarrow2.
-$$
-The exceptional frequencies form a countable set. Equation (28), $|W_R|\le2$, and Cesàro convergence therefore give $J^{-1}\sum_{j\le J}|W_{R_j}(\omega)|^2\to2$ almost everywhere. Plancherel and dominated convergence, applied to $\widehat f\overline{\widehat g}\in L^1$, prove the actual-ground tight-frame limit
+For $f,g\in L^2$, Plancherel writes the inner product of the two-shift outputs as the integral of $W_R(\omega)^2\widehat f(\omega)\overline{\widehat g(\omega)}$. By (28) and $|W_R|\le2$, dominated convergence makes the difference from the ideal multiplier $4\cos^2(\omega R)$ tend to zero. Now $4\cos^2(\omega R)=2+2\cos(2\omega R)$. The cross term tends to zero by the Riemann--Lebesgue lemma because $\widehat f\overline{\widehat g}\in L^1$. Thus the pointwise large-core limit is
 $$
 \boxed{\quad
-\lim_{J\to\infty}\frac1J\sum_{j=1}^J
-\langle\mathcal A_{R_j}f,\mathcal A_{R_j}g\rangle_{L^2}
+\lim_{R\to\infty}
+\langle\mathcal A_Rf,\mathcal A_Rg\rangle_{L^2}
 =2\langle f,g\rangle_{L^2}
 \qquad(f,g\in L^2(\mathbb R)).
 \quad}
 \tag{29}
 $$
-The discrete average needs no regularity assertion for the ground as a function of $R$.
+The limit holds along any admissible radii tending to infinity, with no averaging or regularity assertion for the ground as a function of $R$. In physical space the two distant translated copies become orthogonal.
 
 Apply (29) to the finite packet $a=(a_n)$ from (21). Put $\mathcal B_{R,a}=\mathcal A_Rb_a$, so $\mathcal I'_{R,a}=\mathcal A_Rq_a'$ in the $L^2$ weak-derivative sense. Then the ordered centered-Goldbach heat form is recovered exactly:
 $$
 \boxed{\quad
-\lim_{J\to\infty}\frac1J\sum_{j=1}^J
-\|\mathcal B_{R_j,a}\|_2^2
+\lim_{R\to\infty}\|\mathcal B_{R,a}\|_2^2
 =2\sum_{m,n}\frac{a_ma_n}{m+n}.
 \quad}
 \tag{30}
@@ -467,8 +462,7 @@ $$
 The derivative energy obeys the two-sided arithmetic comparison
 $$
 \frac2\pi\sum_{m,n}\frac{a_ma_n}{m+n}
-\le\lim_{J\to\infty}\frac1J\sum_{j=1}^J
-\|\mathcal I'_{R_j,a}\|_2^2
+\le\lim_{R\to\infty}\|\mathcal I'_{R,a}\|_2^2
 \le\frac\pi2\sum_{m,n}\frac{a_ma_n}{m+n}.
 \tag{31}
 $$
@@ -481,16 +475,83 @@ $$
 \frac{\sqrt\pi\,\omega\coth(\pi\omega)}{1+4\omega^2}
 |\widehat b_a(\omega)|^2\,d\omega\ge0.
 $$
-Its radius average recovers twice the full arctangent pair form (25):
+Its large-core limit recovers twice the full arctangent pair form (25):
 $$
 \boxed{\quad
-\lim_{J\to\infty}\frac1J\sum_{j=1}^J
--\langle\mathcal I'_{R_j,a},\mathcal B_{R_j,a}\rangle
+\lim_{R\to\infty}
+-\langle\mathcal I'_{R,a},\mathcal B_{R,a}\rangle
 =2\sum_{m,n}a_ma_nJ(m,n)>0\quad(a\ne0).
 \quad}
 \tag{32}
 $$
-In particular these identities apply to $a_n=(\Lambda(n)-1)1_{n\le N}$, with $a_1=-1$ and all admitted prime powers. They preserve the signed additive cross terms. The limits are taken at fixed finite $N$ before $J\to\infty$; no uniformity in $N$, bound on the uncut heat form, optimizer edge-energy payment, or pointwise sign for the full mixed Weil row follows.
+In particular these identities apply to $a_n=(\Lambda(n)-1)1_{n\le N}$, with $a_1=-1$ and all admitted prime powers. They preserve the signed additive cross terms. The limits are taken at fixed finite $N$ before $R\to\infty$; no uniformity in $N$, bound on the uncut heat form, optimizer edge-energy payment, or pointwise sign for the full mixed Weil row follows.
+
+## The odd companion recovers the phase at each large core
+
+The even two-shift readout has cosine notches at a single radius. The actual sign potential supplies a complementary odd channel without changing the ground or arithmetic packet. On the positive half-line let
+$$
+dp_R(u)=\frac{2G_R(u)}{m_R}\mathbf1_{\{u>R\}}du,
+\qquad
+F_R(\omega)=\int_{u>R}e^{i\omega u}dp_R(u).
+$$
+Evenness of $G_R$ makes $p_R$ a probability measure. Define, alongside $\mathcal A_R^+=\mathcal A_R$ from above,
+$$
+(\mathcal A_R^-f)(v)
+=\frac1{m_R}\int_{\mathbb R}\operatorname{sgn}(u)G_R(u)
+[f(v+u)-f(v-u)]\,du.
+\tag{33}
+$$
+The respective Fourier multipliers are $2\operatorname{Re}F_R(\omega)$ and $2i\operatorname{Im}F_R(\omega)$. Hence their combined squared multiplier is exactly $4|F_R(\omega)|^2$. The physical concentration theorem gives
+$e^{-i\omega R}F_R(\omega)\to1$ for each fixed $\omega$. Dominated convergence proves the fixed-radius two-channel identity
+$$
+\boxed{\quad
+\lim_{R\to\infty}
+\bigl(\|\mathcal A_R^+f\|_2^2
+      +\|\mathcal A_R^-f\|_2^2\bigr)
+=4\|f\|_2^2\qquad(f\in L^2(\mathbb R)).
+\quad}
+\tag{34}
+$$
+There is no frequency exception here: the sine channel fills the cosine notches. The sign-weighted kernel $\operatorname{sgn}(u)G_R(u)$ is the physical representative of the actual sign potential $\varepsilon\psi_R$ used in the matched theta action. Equation (33) only defines its translation observation; it does not identify that observation with the conditional edge residual.
+
+The convergence has an explicit fixed-radius loss for $f\in H^1(\mathbb R)$. Put
+$$
+\eta_R^2=\int_{u>R}(u-R)^2dp_R(u).
+$$
+The shell $R<u\le R+6w_R$, $w_R=e^{-\sqrt R/8}$, contributes at most $36w_R^2$. On its complement $(u-R)^2\le e^{u-R}$, so the weighted physical tail theorem gives $\eta_R^2\le36w_R^2+o(1)$, with its tail term bounded explicitly by (13) of the [concentration theorem](theta-ground-physical-mass-concentration.md#weighted-physical-tail-and-shrinking-support). If $U,U'$ are independent with law $p_R$, then
+$$
+1-|F_R(\omega)|^2
+=\mathbb E[1-\cos(\omega(U-U'))]
+\le\omega^2\operatorname{Var}(U)
+\le\omega^2\eta_R^2.
+$$
+Plancherel yields the nonnegative error bound
+$$
+\boxed{\quad
+0\le4\|f\|_2^2
+-\|\mathcal A_R^+f\|_2^2
+-\|\mathcal A_R^-f\|_2^2
+\le4\eta_R^2\|f'\|_2^2.
+\quad}
+\tag{35}
+$$
+
+For the finite centered-Goldbach packet in (21), $b_a,q_a'\in H^1$, so (34) applied to each and polarized between them gives
+$$
+\lim_{R\to\infty}
+\bigl(\|\mathcal A_R^+b_a\|_2^2+
+      \|\mathcal A_R^-b_a\|_2^2\bigr)
+=4\sum_{m,n}\frac{a_ma_n}{m+n},
+\tag{36}
+$$
+$$
+\lim_{R\to\infty}
+-\sum_{\epsilon\in\{+,-\}}
+ \langle\mathcal A_R^\epsilon q_a',\mathcal A_R^\epsilon b_a\rangle
+=4\sum_{m,n}a_ma_nJ(m,n)>0\quad(a\ne0).
+\tag{37}
+$$
+The signed pairing is nonnegative at each radius in each channel, by the same positive Fourier weight as in (26). Equations (36)--(37) restore the finite additive energy and its ratio-sensitive pairing without hiding it at a cosine zero. Passing to the uncut prime source, or paying the actual odd affine covariance residual, still requires an independent arithmetic estimate and a source-domain link.
 
 ## Dependencies and proof status
 
