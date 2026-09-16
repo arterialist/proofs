@@ -53,7 +53,7 @@ The full killed generator splits into its continuous and prime parts. Its ground
 \tag{4}
 \]
 
-where $h=0$ on $C$ and the difference makes the singular integral meaningful in the form/operator sense. The prime departure includes jumps into $C$, while $f_R$ vanishes at those destinations; no crossing term has been dropped.
+Here $r(s)=e^{-s/2}/(1-e^{-2s})$, $h=0$ on $C$, and the difference makes the singular integral meaningful in the form/operator sense. The prime departure includes jumps into $C$, while $f_R$ vanishes at those destinations; no crossing term has been dropped.
 
 The return law gives $p(u)\to\lambda$ at both ends. It also gives
 
@@ -145,6 +145,28 @@ $\delta_R\varepsilon_U/2=E_U$, while $B_R(p-\alpha_R)\theta_U\ge0$ and the possi
 
 The comparison first gives almost-everywhere bounds; continuity of the actual representative gives the displayed pointwise bounds. This proves (2). Formula (12) is a fixed-core modulus in terms of the complete actual prime-return discrepancy. It is not an effective $R$-uniform rate, since no quantitative modulus for the fixed ground profile was inserted into (5).
 
+## The far-tail cross rate matches the spectral defect
+
+Put $g_R(u)=\Phi(u)\psi_R(u)1_{u>R}$ and
+
+\[
+ G_- =\int_R^\infty e^{u/2}g_R(u)du,\qquad
+ G_+ =\int_R^\infty e^{-u/2}g_R(u)du.
+\]
+
+Evenness gives $\mu_R=2(G_-+G_+)$. The [complete cross-arrival theorem](theta-ground-normalized-cross-arrival.md#a-proved-relative-tail-limit-for-the-actual-profile) gives $K_\times\psi_R(u)\to G_-$ at either end, including its continuous crossing and all prime powers. Dividing by the positive limit (2) yields the exact far-tail rate
+
+\[
+ \boxed{\displaystyle
+ \lim_{|u|\to\infty}\frac{K_\times\psi_R(u)}{\psi_R(u)}
+ =\delta_R\frac{G_-}{G_-+G_+},\qquad
+ \frac{\delta_R}{1+e^{-R}}
+ \le\delta_R\frac{G_-}{G_-+G_+}<\delta_R.}
+\tag{13}
+\]
+
+The inequalities use $0<G_+<e^{-R}G_-$, directly from $u>R$. Thus the ground-transformed far-tail cross rate is within a relative $e^{-R}$ of the actual spectral defect. This does not estimate the cross profile near the hard core, where the covariance mass can concentrate.
+
 ## Exact far-tail pole balance in the weak mixed row
 
 The [exponential weak ground row](theta-ground-exponential-weak-cross-row.md#the-full-mixed-weil-row-and-its-exact-pole-compensation) has signed density
@@ -162,9 +184,9 @@ On the exterior, (2) says precisely
  \frac{d\widetilde\eta_R}{b_\theta\,du}(u)
  =\delta_R\psi_R(u)-\lambda\mu_R\longrightarrow0
  \qquad(|u|\to\infty).}
-\tag{13}
+\tag{14}
 \]
 
-Thus the actual ground source and both pole products cancel at leading density order in either far tail. The signed density itself is only $o(b_\theta(u))$; (13) does not assert finite total variation or a sign. The core term, near-core profile, complete prime discrepancy and moving-$R$ constants remain present. In particular this theorem does not establish the required constrained covariance estimate or RH.
+Thus the actual ground source and both pole products cancel at leading density order in either far tail. The signed density itself is only $o(b_\theta(u))$; (14) does not assert finite total variation or a sign. The core term, near-core profile, complete prime discrepancy and moving-$R$ constants remain present. In particular this theorem does not establish the required constrained covariance estimate or RH.
 
 All statements here are written analysis. No Lean formalization of the far-tail comparison is claimed.
