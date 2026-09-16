@@ -59,6 +59,8 @@ The [scattering subject index](scattering-subject-index.md) follows a second ana
 
 ## Actual finite-frequency readouts
 
+The [critical compact Weil packet crossover](compact-weil-critical-packet-crossover.md) computes the finite full-form residual of the normalized $n^{-1/2}$ divisor packet at $T=cN$, retaining all prime powers, both pole moments, and the signed gamma interaction. Its [two-profile extension](compact-weil-two-profile-perron-crossover.md) gives the exact mixed $2\times2$ limit and the strict negative mixed entry for separated nonnegative profiles. The matched-score projection in the exterior theta covariance is exact but leaves the full conditional edge energy unbounded by current estimates. These are written form limits on specified packet directions, not a full-window Weil sign or RH proof.
+
 The [successor cutoff theorem](actual-successor-frequency-cutoff.md) controls clustered integer jumps and retains the causal endpoint multiplier and literal same-prime cost in the full $W$. It gives square-root and $x^{3/8}$ frequency scales by different support arguments, and proves that the actual integrand takes both signs.
 
 The [causal rectangle decomposition](causal-rectangle-frequency-cutoff.md) gives a cube-root cutoff by localizing both histories. The [integer-product argument](product-location-frequency-cutoff.md) then uses local divisor counts and a smooth Fourier kernel to recover normalized $W$ from frequencies at most $2x^{1/4}(1+\log x)^2$, with error $O(1/\log x)$. These estimates control discarded frequencies. The retained signed integral remains unbounded.
