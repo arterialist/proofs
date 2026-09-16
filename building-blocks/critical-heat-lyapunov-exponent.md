@@ -94,6 +94,8 @@ $$
 
 This proves $\lambda_*=0$.
 
+The [critical mean-square law](centered-goldbach-heat-critical-mean-square-law.md) sharpens this conditional bound to an exact linear asymptotic for the same centered source, without assuming simplicity or linear independence of zero ordinates. Its proof uses the Gamma-smoothed zero expansion; the unconditional linear upper bound remains equivalent to RH.
+
 ### Zero exponential growth implies RH
 
 Assume $\lambda_*=0$.  For every $\epsilon>0$, the definition of the
