@@ -375,3 +375,5 @@ import BuildingBlocks.FactorialOriginEnergyLimit
 import BuildingBlocks.FactorialAbsoluteEnvelope
 
 import BuildingBlocks.FactorialBirthCollisionKernel
+
+import BuildingBlocks.FactorialIntegerBirth
