@@ -197,6 +197,49 @@ the packet's heat-frequency bound. This is a relative localization,
 not an upper bound on $\|f_N\|_2^2$ or a sign for the remaining
 early-lag integral.
 
+## Exact critical-line phase of the complete packet work
+
+The signed quantity can also be written without any cell truncation.
+For $\Re z>1/2$, termwise Laplace integration of the literal floor
+sum in $H(s)=S_{\lfloor e^s\rfloor}-\zeta(1/2)-2e^{s/2}$ gives
+\[
+\widehat H(z):=\int_0^\infty e^{-zs}H(s)\,ds
+=\frac{\zeta(1/2+z)-\zeta(1/2)}z
+ -\frac2{z-1/2}.
+\tag{16}
+\]
+The cell bound $|H(s)|\ll e^{-s/2}$ extends the integral to
+$\Re z>-1/2$, with removable values at $z=0,1/2$. Consequently its
+real boundary multiplier is the explicit continuous even function
+\[
+\boxed{\quad
+m(\omega):=\operatorname{Re}\widehat H(i\omega)
+=\frac{\operatorname{Im}\zeta(1/2+i\omega)}{\omega}
+ +\frac1{\omega^2+1/4}\quad(\omega\ne0),
+\qquad m(0)=\ell=4+\zeta'(1/2)>0.
+\quad}
+\tag{17}
+\]
+Put $S_N(\omega)=\sum_{n\le N}a_n n^{-1/2-i\omega}$.
+The exact heat Fourier transform and Plancherel then yield
+\[
+\boxed{\quad
+\int_0^\infty H(s)C_{f_N}(s)\,ds
+=\frac1{2\pi}\int_{\mathbb R}
+ m(\omega)\omega^2
+ |\Gamma(1/2+i\omega)|^2|S_N(\omega)|^2\,d\omega,
+\qquad f_N=d_N'.
+\quad}
+\tag{18}
+\]
+All integrals converge absolutely: $H\in L^1$, $S_N$ is a finite
+Dirichlet polynomial, and the gamma factor decays exponentially.
+The formula keeps every $\Lambda(n)-1$ cross term and the initial
+$a_1=-1$. It identifies the missing signed packet estimate as a
+correlation between the actual finite Dirichlet polynomial and the
+critical-line phase of $\zeta$. Positivity of
+$\|d_N\|_2^2$ does not determine that correlation.
+
 The lag threshold depends on $N$. In particular this does not assert
 a negative test inside $0\le s\le\log N$, nor identify $f_N$ with
 the tuned causal derivative $h_\beta'$ of the uncut heat response.
