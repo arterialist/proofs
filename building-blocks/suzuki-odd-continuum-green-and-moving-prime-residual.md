@@ -150,6 +150,34 @@ Even without assuming RH, each finite set \(\mathcal Z\) of distinct critical-li
 \]
 where conjugate ordinates are counted separately. If the left side is finite, the literal transform converges on \(\Re z>0\); in the Abel weight \(\epsilon e^{-\epsilon a}da\), the exponentials \(e^{2i\gamma a}\) have limiting identity Gram matrix, while their pairings with \(D_\phi\) tend to the residues \(-m_\rho F(2i\gamma)^2\). Finite-dimensional projection gives the right side as a lower Abel square mean, and integration by parts bounds that Abel mean by the Cesàro limsup. If the left side is infinite, (12c) is immediate.
 
+Under RH the lower bound has an exact limit. With the Fourier convention used in the zero-side formula, direct transformation of (4) gives
+\[
+ \widehat f_a(\gamma)=\frac{e^{i\gamma a}F(2i\gamma)
+             -e^{-i\gamma a}\overline{F(2i\gamma)}}{\sqrt2}.
+\]
+The decay \(F(2i\gamma)=O((1+|\gamma|)^{-4})\) makes the following zero sums absolutely and uniformly convergent in \(a\). Substituting this transform into the RH zero-side formula and comparing with (9) leaves a constant \(2\sum_{\gamma>0}m_\rho|F(2i\gamma)|^2-A_{\rm arch}[\phi]-2I_-I_+\). This constant vanishes: by (10), \(\widehat D_\phi\) is regular at \(z=0\), so its Abel mean \(\lim_{\epsilon\downarrow0}\epsilon\widehat D_\phi(\epsilon)\) is zero; the nonzero-frequency terms and \(J_a-e^{-a}I_+^2=O(e^{-a})\) also have zero Abel mean. Hence
+\[
+ A_{\rm arch}[\phi]+2I_-I_+
+   =2\sum_{\gamma>0}m_\rho|F(2i\gamma)|^2,
+\tag{12d}
+\]
+and, for \(a>3/2\),
+\[
+ D_\phi(a)=-2\sum_{\gamma>0}m_\rho
+       \Re\!\left(e^{2i\gamma a}F(2i\gamma)^2\right)
+       -J_a+e^{-a}I_+^2.
+\tag{12e}
+\]
+Orthogonality of distinct frequencies in long Cesàro averages, followed by uniform convergence, now proves the sharper conditional identity
+\[
+ \boxed{\quad
+ \lim_{A\to\infty}\frac1A\int_0^A|D_\phi(a)|^2da
+ =2\sum_{\gamma>0}m_\rho^2|F(2i\gamma)|^4<\infty
+ \qquad(\mathrm{RH}).
+ \quad}                                                        \tag{12f}
+\]
+The exponentially decaying term in (12e) contributes zero to the mean. No simplicity or spacing assumption on zeros is used.
+
 The energy in (12b) has an exact additive-pair reading. Set \(X=e^{2a}\), \(w_X(n)=n^{-1/2}W(\log(X/n))\), and define the complete ordered weighted Goldbach count
 \[
  R_X(N)=\sum_{n+m=N}\Lambda(n)\Lambda(m)w_X(n)w_X(m).
@@ -161,9 +189,9 @@ The weight is supported on \(Xe^{-3/2}\le n\le Xe^{-1/2}\), so every sum below i
  =\sum_N R_X(N)
   -2\sqrt X F(1)^2\sum_n\Lambda(n)w_X(n)
   +XF(1)^4.
- \quad}                                                        \tag{12d}
+ \quad}                                                        \tag{12g}
 \]
-Consequently, (12b) is equivalent to a bounded logarithmic average of the right side of (12d), namely \((\log Y)^{-1}\int_1^Y(\cdots)dX/X\). This retains all prime powers, ordered additive pairs, the linear compensation and the density square. Ordinary Goldbach existence does not bound this centered pair energy.
+Consequently, (12b) is equivalent to a bounded logarithmic average of the right side of (12g), namely \((\log Y)^{-1}\int_1^Y(\cdots)dX/X\). This retains all prime powers, ordered additive pairs, the linear compensation and the density square. Ordinary Goldbach existence does not bound this centered pair energy.
 
 ## Why the ordinary PNT does not pay this residual
 
