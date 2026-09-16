@@ -38,6 +38,22 @@ There is also a direct boundary interpretation in the **original two-body factor
  \tag{3a}
 \]
 
+The exact **two-body coboundary** is
+
+\[
+ \boxed{B(m,n)=k(m)+k(n)-k(m+n)\qquad(m,n\ge0).} \tag{3b}
+\]
+
+It follows directly from $(1-e^{-mt})(1-e^{-nt})=(1-e^{-mt})+(1-e^{-nt})-(1-e^{-(m+n)t})$. The new [finite cofactor module](BuildingBlocks/FactorialClockCofactorFinite.lean) now also proves (3b) for the existing, literal kernel in `FactorialKernelDictionary`, using its factorial and binomial formula; it does not redefine that kernel. Consequently the original actual Möbius quotient energy has the exact terminal-retaining identity
+
+\[
+ Q_N=2M(N)\sum_{j\le N}\mu(j)k(\lfloor N/j\rfloor)
+       -\sum_{j,l\le N}\mu(j)\mu(l)
+           k(\lfloor N/j\rfloor+\lfloor N/l\rfloor). \tag{3c}
+\]
+
+At a horizon with $M(N)=0$, only the second term remains. This rearrangement alone supplies no upper bound on the coherent quadratic energy; in particular the signed terminal loading in (3c) cannot be dropped at general horizons.
+
 For each fixed $m\ge1$, the positive integrand increases with $N$ and monotone convergence gives $B(m,N)\uparrow k(m)$. The same limit follows from
 $\binom{m+N}{m}=m!^{-1}\prod_{j=1}^m(N+j)$ and
 $(m+N)\log(1+m/N)\to m$. Thus $k$ is an infinite-size boundary column of the compiled [factorial kernel dictionary](BuildingBlocks/FactorialKernelDictionary.lean), not a separate clock choice. The boundary column is not a finite-energy vector: Stirling gives
@@ -45,10 +61,10 @@ $(m+N)\log(1+m/N)\to m$. Thus $k$ is an infinite-size boundary column of the com
 \[
  B(N,N)=2N\log2-\log\binom{2N}{N}
         =\tfrac12\log(\pi N)+o(1)\longrightarrow\infty.
- \tag{3b}
+ \tag{3d}
 \]
 
-Consequently Cauchy--Schwarz against that column does not directly bound the original finite Möbius quadratic energy. The boundary limit (3a)--(3b) is written analysis; the finite kernel identity in (3a) itself is compiled in the linked dictionary.
+Consequently Cauchy--Schwarz against that column does not directly bound the original finite Möbius quadratic energy. The boundary and diagonal limits in (3a), (3d) are written analysis; the finite kernel identity in (3a) itself is compiled in the linked dictionary.
 
 ## Removing the deterministic Stirling modes
 
@@ -268,4 +284,4 @@ The nonzero critical-line residue also yields a quantitative **unconditional low
 
 The $O(\log^2 X)$ variance error does not affect these limits. Hardy's critical-line zero theorem makes (23) unconditional. It is a lower oscillation result, not an upper estimate or a proof of RH.
 
-The full-clock identity (3), Binet's correction (5), positive residual density (11a), and zero-free bound (11) are the specific mechanism here. The finite telescoping in (3) and pointwise density positivity are compiled in the new modules. The finite covariance identity is an instance of [MonotoneCofactorCovarianceFinite.lean](BuildingBlocks/MonotoneCofactorCovarianceFinite.lean), whose geometric version is compiled; the improper-integral identification (2), Binet/Laplace formulas, analytic criterion, and oscillation (23) are not formalized. The cofactor covariance is an additional observable built from the original clock. It has not been identified with, or bounded by, the original factorial quadratic/angular energy or the Goldbach additive-pair norm.
+The full-clock identity (3), exact two-body coboundary (3b), Binet's correction (5), positive residual density (11a), and zero-free bound (11) are the specific mechanism here. The finite telescoping, literal kernel coboundary, and pointwise density positivity are compiled in the new modules. The finite covariance identity is an instance of [MonotoneCofactorCovarianceFinite.lean](BuildingBlocks/MonotoneCofactorCovarianceFinite.lean), whose geometric version is compiled; the improper-integral identification (2), Binet/Laplace formulas, analytic criterion, and oscillation (23) are not formalized. The cofactor covariance is an additional observable built from the original clock. Equation (3c) connects its cumulative cofactor exactly to the original quadratic kernel, but no bound transfers the positive cone's centered score to the original factorial quadratic/angular energy or Goldbach additive-pair norm.

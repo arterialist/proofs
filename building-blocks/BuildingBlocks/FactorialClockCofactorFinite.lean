@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import BuildingBlocks.FactorialKernelDictionary
 
 /-!
 # Finite cumulative factorial-clock cofactor
@@ -67,6 +68,25 @@ theorem cumulative_eq_admissions (n : ℕ) :
       rw [admission_succ n hnp, ← cumulative_succ_sub n hnp]
       ring
 
+/-- The original two-body factorial kernel is the coboundary of the
+cumulative full-clock cofactor, at every pair of natural sizes. -/
+theorem kernel_eq_cumulative_coboundary (n m : ℕ) :
+    FactorialKernelDictionary.kernel n m =
+      cumulative n + cumulative m - cumulative (n + m) := by
+  have hn : (n.factorial : ℝ) ≠ 0 := by exact_mod_cast Nat.factorial_ne_zero n
+  have hm : (m.factorial : ℝ) ≠ 0 := by exact_mod_cast Nat.factorial_ne_zero m
+  have hc : ((n + m).choose n : ℝ) ≠ 0 := by
+    exact_mod_cast (Nat.ne_of_gt (Nat.choose_pos (by omega : n ≤ n + m)))
+  have hnat : (n + m).choose n * m.factorial * n.factorial = (n + m).factorial := by
+    simpa only [Nat.add_comm] using Nat.add_choose_mul_factorial_mul_factorial m n
+  have he := congrArg (fun a : ℕ => (a : ℝ)) hnat
+  push_cast at he
+  have hl := congrArg Real.log he
+  rw [Real.log_mul (mul_ne_zero hc hm) hn, Real.log_mul hc hm] at hl
+  unfold FactorialKernelDictionary.kernel cumulative
+  push_cast
+  linarith
+
 end
 
 #print axioms cumulative_zero
@@ -74,4 +94,5 @@ end
 #print axioms cumulative_succ_sub
 #print axioms admission_succ
 #print axioms cumulative_eq_admissions
+#print axioms kernel_eq_cumulative_coboundary
 end BuildingBlocks.FactorialClockCofactorFinite
