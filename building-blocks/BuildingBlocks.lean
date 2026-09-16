@@ -328,6 +328,7 @@ import BuildingBlocks.FactorialKernelDictionary
 import BuildingBlocks.FactorialClockCofactorFinite
 import BuildingBlocks.FactorialBinetGoldbachFinite
 import BuildingBlocks.FactorialBinetGoldbachFilter
+import BuildingBlocks.FactorialBinetCenteredGoldbachFinite
 import BuildingBlocks.FactorialBinetResidualDensityPositive
 
 import BuildingBlocks.FiniteWeilPrimeCertificate
