@@ -29,6 +29,27 @@ Thus the full-clock cumulative admission is the Stirling entropy deficit, rather
 
 [FactorialClockCofactorFinite.lean](BuildingBlocks/FactorialClockCofactorFinite.lean) compiles (3) from the exact displayed admissions and proves their one-step factorial/logarithm recurrence, including $m=0,1$. Its connection to the improper integral (1) still rests on the written evaluation (2).
 
+There is also a direct boundary interpretation in the **original two-body factorial kernel**
+
+\[
+ B(m,N)=(m+N)\log(m+N)-m\log m-N\log N
+       -\log\binom{m+N}{m}
+       =\int_0^\infty w(t)(1-e^{-mt})(1-e^{-Nt})\,dt.
+ \tag{3a}
+\]
+
+For each fixed $m\ge1$, the positive integrand increases with $N$ and monotone convergence gives $B(m,N)\uparrow k(m)$. The same limit follows from
+$\binom{m+N}{m}=m!^{-1}\prod_{j=1}^m(N+j)$ and
+$(m+N)\log(1+m/N)\to m$. Thus $k$ is an infinite-size boundary column of the compiled [factorial kernel dictionary](BuildingBlocks/FactorialKernelDictionary.lean), not a separate clock choice. The boundary column is not a finite-energy vector: Stirling gives
+
+\[
+ B(N,N)=2N\log2-\log\binom{2N}{N}
+        =\tfrac12\log(\pi N)+o(1)\longrightarrow\infty.
+ \tag{3b}
+\]
+
+Consequently Cauchy--Schwarz against that column does not directly bound the original finite Möbius quadratic energy. The boundary limit (3a)--(3b) is written analysis; the finite kernel identity in (3a) itself is compiled in the linked dictionary.
+
 ## Removing the deterministic Stirling modes
 
 Define, for integers $m\ge1$,
@@ -95,6 +116,45 @@ is holomorphic for $\Re s>-2$. Its first coefficient dominates **uniformly on th
 \]
 
 No assertion about zeros of $\zeta$ is used in (11). This is an explicit nonannihilation bound for any zeta zero in the critical strip.
+
+The Binet remainder has a stronger **positive-clock representation**. For $u>0$ define the twice-corrected original density
+
+\[
+ \omega_B(u)=w(u)-\frac1{2u}+\frac1{12}
+ =\frac1{12}+\frac1{u^2}-\frac{\coth(u/2)}{2u}
+ =2\sum_{j\ge1}
+ \frac{u^2}{(2\pi j)^2((2\pi j)^2+u^2)}.
+ \tag{11a}
+\]
+
+The last equality is the classical [partial fraction for $\coth$, DLMF 4.36.3](https://dlmf.nist.gov/4.36.E3). It proves $0<\omega_B(u)<1/12$ pointwise, with $\omega_B(u)\sim u^2/720$ at zero and $\omega_B(u)\to1/12$ at infinity. The strict positivity of the **explicit corrected original density**, independently of the partial-fraction theorem, is compiled in [FactorialBinetResidualDensityPositive.lean](BuildingBlocks/FactorialBinetResidualDensityPositive.lean): after multiplying by $12u^2(e^u-1)>0$, its numerator $H(u)=(u^2-6u+12)(e^u-1)-12u$ has $H(0)=H'(0)=H''(0)=0$ and $H'''(u)=u^2e^u>0$ for $u>0$. The exact Laplace identity is
+
+\[
+ \boxed{-r(m)=\int_0^\infty e^{-mu}\omega_B(u)\,du\qquad(m\ge1).}
+ \tag{11b}
+\]
+
+To check it from (5), use
+$t/m-\arctan(t/m)=\int_0^\infty e^{-mu}[t-\sin(tu)/u]du$;
+the bracket is nonnegative, so Tonelli applies. Expand
+$(e^{2\pi t}-1)^{-1}=\sum_{j\ge1}e^{-2\pi jt}$ and integrate $t$ to obtain the positive partial-fraction series in (11a). Equation (11b) immediately yields the positive admission law
+
+\[
+ a_\epsilon(m)=\epsilon+
+ \int_0^\infty\omega_B(u)(e^{-u}-e^{-mu})du.
+ \tag{11c}
+\]
+
+It also gives a positive Hankel kernel on the literal integer quotient sizes:
+
+\[
+ \sum_{j,k}v_jv_k[-r(q_j+q_k)]
+ =\int_0^\infty\omega_B(u)
+       \left(\sum_jv_je^{-q_ju}\right)^2du\ge0
+ \quad(q_j\ge1). \tag{11d}
+\]
+
+For $q_j=\lfloor N/j\rfloor$ and $v_j=\mu(j)$, the integrand is the squared **terminal-compensated** literal factorial response $M(N)-g_N(u)$. This retains every Möbius quotient history and the terminal value. It is an exact additional positive quadratic form, not an estimate for the original $\int w(u)g_N(u)^2du$; its needed RH-scale upper bound has not been proved. The pointwise positivity of $\omega_B$ is Lean-formalized; the partial fraction, Laplace, and Hankel identities remain written analysis.
 
 ## A positive full-source cofactor cone
 
@@ -208,4 +268,4 @@ The nonzero critical-line residue also yields a quantitative **unconditional low
 
 The $O(\log^2 X)$ variance error does not affect these limits. Hardy's critical-line zero theorem makes (23) unconditional. It is a lower oscillation result, not an upper estimate or a proof of RH.
 
-The full-clock identity (3), Binet's correction (5), and the zero-free bound (11) are the specific mechanism here. The finite telescoping in (3) is compiled in the new module. The finite covariance identity is an instance of [MonotoneCofactorCovarianceFinite.lean](BuildingBlocks/MonotoneCofactorCovarianceFinite.lean), whose geometric version is compiled; the improper-integral identification (2), Binet bound, analytic criterion, and oscillation (23) are not formalized. The cofactor covariance is an additional observable built from the original clock. It has not been identified with, or bounded by, the original factorial quadratic/angular energy or the Goldbach additive-pair norm.
+The full-clock identity (3), Binet's correction (5), positive residual density (11a), and zero-free bound (11) are the specific mechanism here. The finite telescoping in (3) and pointwise density positivity are compiled in the new modules. The finite covariance identity is an instance of [MonotoneCofactorCovarianceFinite.lean](BuildingBlocks/MonotoneCofactorCovarianceFinite.lean), whose geometric version is compiled; the improper-integral identification (2), Binet/Laplace formulas, analytic criterion, and oscillation (23) are not formalized. The cofactor covariance is an additional observable built from the original clock. It has not been identified with, or bounded by, the original factorial quadratic/angular energy or the Goldbach additive-pair norm.
