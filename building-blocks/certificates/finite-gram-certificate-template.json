@@ -1,0 +1,42 @@
+{
+  "status": "actual-data template; null is never interpreted as zero",
+  "radius": "2",
+  "mesh": ["0", "1/2", "1", "3/2", "2"],
+  "raw_hat_dimension": 5,
+  "trial_dimension": 1,
+  "constraints": {
+    "row_names": ["mean", "a_c", "Re_J", "Im_J"],
+    "rows": null,
+    "exact_projection_provenance": null,
+    "comment": "The actual published observation is existential O_{M,J}; no scalar complex J, M, edge filters, or entries are specified."
+  },
+  "alpha_2": null,
+  "mass": null,
+  "killed": {
+    "continuous": null,
+    "prime_head": null,
+    "prime_tail": null,
+    "prime_head_ledger": null,
+    "prime_tail_bound_provenance": null,
+    "comment": "prime_head must enumerate q=p^k and both orientations; prime_tail is an outward all-power enclosure"
+  },
+  "port": {
+    "continuous_continuous": null,
+    "continuous_prime": null,
+    "prime_continuous": null,
+    "prime_prime": null,
+    "a_normalization": null,
+    "psi2_enclosure_provenance": null,
+    "prime_head_complete_through": null,
+    "prime_head_ledger": null,
+    "orientation_ledger": null,
+    "prime_tail_bound": null,
+    "exterior_tail_bound": null,
+    "comment": "The four matrices are summed interval-wise before a norm bound, preserving coherent mixed covariances."
+  },
+  "complement": {
+    "lambda_N_plus_1": null,
+    "P0": null,
+    "mixed_normalized_norm": null
+  }
+}

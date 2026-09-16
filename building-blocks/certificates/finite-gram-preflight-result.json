@@ -1,0 +1,30 @@
+{
+  "classification": "INCOMPLETE \u2014 no numerical evidence",
+  "trial_dimension": 1,
+  "missing": [
+    "alpha_2",
+    "complement.P0",
+    "complement.lambda_N_plus_1",
+    "complement.mixed_normalized_norm",
+    "constraints.exact_projection_provenance",
+    "constraints.rows (exact residuals on constrained basis)",
+    "killed.continuous",
+    "killed.prime_head",
+    "killed.prime_head_ledger",
+    "killed.prime_tail",
+    "killed.prime_tail_bound_provenance",
+    "mass",
+    "port.a_normalization",
+    "port.continuous_continuous",
+    "port.continuous_prime",
+    "port.exterior_tail_bound",
+    "port.orientation_ledger",
+    "port.prime_continuous",
+    "port.prime_head_complete_through",
+    "port.prime_head_ledger",
+    "port.prime_prime",
+    "port.prime_tail_bound",
+    "port.psi2_enclosure_provenance"
+  ],
+  "tests": {}
+}
