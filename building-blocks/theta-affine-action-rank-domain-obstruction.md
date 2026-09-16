@@ -94,7 +94,9 @@ even though (6) tends to zero. If \(v\in D(K)\), then \(r_\eta\to(K-M)v\) in \(H
  \frac{d^2}{d+\langle(K-M)v,T(K-M)v\rangle}.
 \tag{11}
 \]
-Thus resolvent smoothing does produce legal comparisons, but a small residual at the old trial vector is not itself a payment certificate. In the unresolved domain case the regularized ranks become increasingly expensive in the constrained inverse denominator and yield no limiting improvement.
+The zero-gain conclusion is not specific to the resolvent. If \(u_j\in D(K)\) converges to \(v\) in \(V\), put \(r_j=(K-M)u_j\), \(d_j=n[u_j]\), and form the single rank \(r_j\otimes r_j/d_j\). The numerator in (8) again tends to \(d^2\). If \(v\notin D(K)\), the operator graph forces \(\|r_j\|\to\infty\): any bounded subsequence would have a weakly convergent action subsequence and would represent \(n(v,\cdot)\) in \(H\). As above, \(\langle r_j,q\rangle=n(u_j,q)\) remains bounded, so (9) makes the constrained denominator diverge. Every such single-rank form approximation has vanishing affine gain.
+
+Resolvent smoothing does produce legal comparisons, but a small residual at the old trial vector is not itself a payment certificate. In the unresolved domain case these approximating single ranks become increasingly expensive in the constrained inverse denominator and yield no limiting improvement. This says nothing about a coordinated family of several ranks, whose joint span and mixed Gram entries would need separate analysis.
 
 ## What the actual theta regularity proves
 
