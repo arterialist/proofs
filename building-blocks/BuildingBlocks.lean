@@ -422,6 +422,7 @@ import BuildingBlocks.EvenSectorMargin
 import BuildingBlocks.SharedReserveCancellation
 import BuildingBlocks.CorePortGeneralizedEigen
 import BuildingBlocks.PositiveKernelCauchy
+import BuildingBlocks.ConstrainedHardyObstruction
 
 import BuildingBlocks.LargestPrimeSquarefreePackets
 import BuildingBlocks.PrimeAdmissionEnergyFlux
@@ -437,6 +438,7 @@ import BuildingBlocks.FixedProfileGreenTwoParameter
 import BuildingBlocks.FiniteDivisorEnvelopeSplit
 import BuildingBlocks.FiniteSamplingErrorAlgebra
 import BuildingBlocks.SimultaneousAdmissionEndpointFinite
+import BuildingBlocks.MovingCeilingFiniteAlgebra
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
