@@ -100,3 +100,15 @@ g_N(u/N)\longrightarrow F(u):=\sum_{n\ge1}\mu(n)(1-e^{-u/n}-u/n).
 The coefficient series is absolutely convergent. Its coefficient norm is bounded by (u²/2)n^{-2}. At each positive fixed n the normalized natural quotient floor(N/n)/N tends to 1/n: the exact integer remainder identity expresses the difference through (N mod n)/N, which tends to zero. Continuity of the scalar exponential remainder then gives coefficient convergence. The finite actual response is exactly u/N plus an infinite series with finite support in 1≤n≤N; every n>N coefficient vanishes because its actual quotient is zero. The n=0 term is explicitly zero by μ(0)=0. The majorant holds uniformly for all N≥1. Dominated convergence for the complete series and u/N→0 prove the stated original-response limit.
 
 The seven formal results are the normalized quotient limit, finite coefficient limit, uniform finite coefficient bound, limiting coefficient bound, absolute summability, original finite-support series identity, and actual profile limit. The full umbrella build passes with only propext, Classical.choice and Quot.sound. No model response is substituted for g_N. The limit is for fixed u; uniform approximation on expanding u intervals, the integral limit of the original origin-band energy, the entire zeta-coefficient expansion and large-u decay remain separate obligations. This convergence statement alone supplies no full-clock energy upper bound or RH conclusion.
+
+## Compiled origin-band energy limit
+
+[FactorialOriginEnergyLimit.lean](BuildingBlocks/FactorialOriginEnergyLimit.lean) adds nine compiled theorems. For every fixed U≥0 the original moving-endpoint band satisfies
+
+\[
+Q_{\rm origin}(N,U)\longrightarrow\int_{(0,U]}\frac{F(u)^2}{2u}\,du.
+\]
+
+The limiting profile energy is explicitly proved integrable on every fixed band. The proof first obtains (e^{u/N}−1)/(u/N)→1 and (e^{u/N}−1−u/N)/(u/N)²→1/2 from the full second-order exponential remainder. Their ratio gives w(u/N)/N→1/(2u) for u>0, preserving the cancellation between both original singular density terms. The actual profile limit then gives convergence of the complete scaled energy row. For all N≥1 that row has one common norm majorant u/2+u²+u³/2, integrable at the origin. Its measurable rows, the derived measurability of the limiting row and its norm bound justify limiting integrability and dominated convergence. Finally the exact substitution t=u/N retains the original finite-horizon endpoint U/N.
+
+The full umbrella build passes with only propext, Classical.choice and Quot.sound. This discharges the fixed-U origin-energy convergence obligation stated above. It provides no estimate uniform on expanding U intervals or for the omitted region t>U/N. Entire zeta-coefficient expansion, large-u decay, Hilbert-valued Mellin consumers and the RH-scale full arithmetic energy upper bound remain separate obligations. The original response and compensated density are retained throughout; no limiting model replaces them at finite N.

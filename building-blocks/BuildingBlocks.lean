@@ -369,3 +369,5 @@ import BuildingBlocks.FactorialDyadicIntersections
 import BuildingBlocks.FactorialOriginNeutralization
 
 import BuildingBlocks.FactorialOriginProfile
+
+import BuildingBlocks.FactorialOriginEnergyLimit
