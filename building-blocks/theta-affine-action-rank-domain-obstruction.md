@@ -125,7 +125,7 @@ The one-rank formula (8) is its \(N=1\) case. To derive (14), minimize
 \(\langle Mh,h\rangle+(a+R^*h)^TG^{-1}(a+R^*h)\)
 over \(h\perp q\), then use the constrained inverse \(T\) from (7). All mixed action entries \(\langle r_i,T r_j\rangle\) remain in the matrix. Dropping them would change the gain.
 
-Take a nested sequence of these spans whose union is a form core for \(A\). Then \(B_N[x]\uparrow n[x]\) on \(V\). Monotone convergence of closed forms gives \((M+B_N)^{-1}\to K^{-1}\) strongly; applying the exact affine minimum formula, whose score denominator stays positive, shows
+Take a nested sequence of these spans whose union is dense in the form domain of \(A^{1/2}\). Then \(B_N[x]\uparrow n[x]\) on \(V\). For \(x\notin V\), the supremum is infinite: a finite supremum would make \(u\mapsto\langle Au,x\rangle\) bounded in the \(A^{1/2}\)-energy norm on the core, placing \(x\) in \(D(A^{1/2})=V\) by the adjoint characterization. Hence the increasing closed forms \(m+B_N\) have supremum exactly \(k\), including its domain. Monotone convergence of closed forms gives \((M+B_N)^{-1}\to K^{-1}\) strongly; applying the exact affine minimum formula, whose score denominator stays positive, shows
 \[
  F_{M+B_N}-F_M\uparrow F_K-F_M.
 \tag{15}
