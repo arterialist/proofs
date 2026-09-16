@@ -134,4 +134,35 @@ C_h>2.82+0.9704-0.694(0.63+11/7+3\cdot0.694+1.146)>0.022.
 \]
 For \(\gamma<0.63\), for example, use \(\gamma<H_{10}-\log10\), \(H_{10}=7381/2520<2.93\), and \(\log10>2.30\). Therefore (13) makes the **complete two-dimensional collar block positive definite** on an unbounded sequence of actual odd successor cutoffs \(N_j=X_j-1\).
 
+The positivity persists through a mesoscopic set of exact cutoffs, but this does not cover all large cutoffs. The proof of (11) applies whenever \(X,Y\) are comparable and \(|X-Y|\le X/2\), with the same absolute constant \(C_{\rm Lip}\) in
+\(|D_X-D_Y|\le C_{\rm Lip}|X-Y|/\sqrt X\). Choose a fixed \(\delta>0\) with \(C_{\rm Lip}\delta<C_h/4\). Equations (12)--(13) and \(R_Y^\gamma\to0\) show that, for every sufficiently large center \(X_j\), **every even** \(Y\) with \(|Y-X_j|\le\delta\sqrt{X_j}\) has
+\[
+\lambda_{\min}(Q_Y|_{\{R,L\}})\ge\frac{C_h}{4h}>0.
+\]
+There are \(\gg\sqrt{X_j}\) such exact odd successor cutoffs \(Y-1\) per window. The known oscillation gives no bound on the gaps between these windows.
+
+There is also a genuine all-cutoff **relative-form** bound, with an explicit extra energy term. For all sufficiently large \(X\), \(F\le2\) on \([X/4,X]\), so (6) gives \(B_X^2<4(2h+h^3/6)<5.78\), while \(R_X^\gamma<C_h/2\). The elementary inequality \(B_X\sqrt{\mathcal E_X(0)}\le200\mathcal E_X(0)+B_X^2/800\), together with \(C_h>0.022\), implies
+\[
+\boxed{Q_X\big|_{\{R,L\}}+200\,\mathcal E_X(0)I\ \text{is positive definite for all sufficiently large even }X.} \tag{14}
+\]
+Indeed its least matrix eigenvalue is greater than
+\(C_h/2-5.78/800>0\). Equivalently, for every \(f\in\operatorname{span}\{R,L\}\), the normalization-invariant quadratic statement is
+\[
+Q_X(f)+\frac{200}{h}\mathcal E_X(0)\|f\|_2^2>0\quad(f\ne0)
+\]
+at all sufficiently large even \(X\). The added term is **not** part of the original Weil form. Although \(\mathcal E_X(0)=\mathfrak F_s/a_s\) algebraically, no normalization-preserving map from the clocked birth profile to these Weil collar vectors has been proved. A numerical comparison of \(200/a_s\) with a purported birth coefficient therefore has no invariant physical meaning; (14) is only a relative-form bound in the stated Weil normalization.
+
+The actual all-cutoff transport of the signed collar is a different object. At every \(X\) away from the discrete prime-power thresholds \(d,2d,4d\), differentiating the finite sum in (1) with respect to \(u=\log X\) gives
+\[
+\frac d{du}D_{e^u}
+=\sum_{X/2<d<X}\frac{\Lambda(d)}{\sqrt d}
+ -\sum_{X/4<d<X/2}\frac{\Lambda(d)}{\sqrt d}
+ -\frac{I_-^2}{2}\sqrt X.
+\]
+Equivalently, if \(A(y)=\sum_{d<y}\Lambda(d)/\sqrt d\) and \(B(y)=A(y)-2\sqrt y\), then
+\[
+\boxed{\frac d{du}D_{e^u}=B(X)-2B(X/2)+B(X/4)\quad\text{a.e.}} \tag{15}
+\]
+The continuous main term cancels *exactly* because \(2\sqrt X-4\sqrt{X/2}+2\sqrt{X/4}=I_-^2\sqrt X/2\). Each actual prime-power arrival contributes a \(+1,-2,+1\) pulse as the external cutoff passes \(d,2d,4d\). The full \(\Lambda\) source is still present, but these signed pulses give no monotone propagation from the positive windows to every later cutoff. An all-cutoff result needs cancellation in this second-difference forcing, not a larger lower bound for the positive flux.
+
 This selected-block positivity does not advance the all-cutoff Weil sign by itself. If RH were false, (10) would strengthen to unbounded excursions of both signs, yet those excursions would still have near-zero crossings and the sequence (12)--(13). An all-cutoff argument must control the signed correlation in (4), or provide an *upper* bound on its relevant centered energy strong enough to make \(|D_X+R_X^\gamma|\le C_h\) for every large even \(X\). The positive flux floor and Goldbach-pair expansion contain neither estimate.
