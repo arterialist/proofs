@@ -18,6 +18,8 @@ The [eventual-sign criterion](actual-critical-sign-criterion.md) proves in Lean 
 
 ## Centered Goldbach pairs as a multiplicative spectral norm
 
+The [Matsumoto-Suzuki centered Goldbach form](goldbach-matsumoto-suzuki-centered-form.md) rewrites the complete centered heat square as a rank-one functional of the reflected zero sum, gamma correction and exact endpoint. It also proves why ordinary Goldbach existence and representation lower bounds control the uncentered positive term rather than the cancellation needed to upper-bound the centered square.
+
 The [spectral bridge](goldbach-multiplicative-spectral-bridge.md) uses the Mellin--Barnes beta identity to express the Dirichlet series of centered additive pairs as a positive gamma-weighted vertical-line norm of $-\zeta'/\zeta-\zeta$. The identity is unconditional in the absolutely convergent range $\sigma>2$; finiteness of the positive spectral norm for every $1<\sigma<2$ is equivalent to RH. The [scaling-kernel and hard-wall audit](goldbach-scaling-kernel-hard-wall.md) composes this norm with the actual coherent-core Mellin kernel, retains every prime power through an exact root lift, and quantifies why the required projector degree grows with a subcritical cutoff. These results isolate the exact additive-to-multiplicative estimate that ordinary Goldbach existence or a signed continuation does not provide.
 
 ## Prime-state hard wall and causal renewal criterion
