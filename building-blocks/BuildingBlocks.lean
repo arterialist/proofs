@@ -327,6 +327,7 @@ import BuildingBlocks.FactorialEntropyIntegral
 import BuildingBlocks.FactorialKernelDictionary
 import BuildingBlocks.FactorialClockCofactorFinite
 import BuildingBlocks.FactorialBinetGoldbachFinite
+import BuildingBlocks.FactorialBinetGoldbachFilter
 import BuildingBlocks.FactorialBinetResidualDensityPositive
 
 import BuildingBlocks.FiniteWeilPrimeCertificate
