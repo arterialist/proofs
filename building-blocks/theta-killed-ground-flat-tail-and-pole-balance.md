@@ -145,6 +145,15 @@ $\delta_R\varepsilon_U/2=E_U$, while $B_R(p-\alpha_R)\theta_U\ge0$ and the possi
 
 The comparison first gives almost-everywhere bounds; continuity of the actual representative gives the displayed pointwise bounds. This proves (2). Formula (12) is a fixed-core modulus in terms of the complete actual prime-return discrepancy. It is not an effective $R$-uniform rate, since no quantitative modulus for the fixed ground profile was inserted into (5).
 
+The normalization also forces a useful consistency inequality. Since $\psi_R\le P_R$, its limit gives $c_R\le P_R$, while $1=\int\psi_R^2d\nu\le P_R\mu_R$. Substituting $\mu_R=2\delta_Rc_R$ yields
+
+\[
+ \boxed{\qquad \delta_R\ge\frac1{2P_R^2}.\qquad}
+\tag{12a}
+\]
+
+This lower bound is generally much weaker than the known trial-based gap estimates, but it ties any claimed ground supremum enclosure to the actual spectral defect.
+
 ## The far-tail cross rate matches the spectral defect
 
 Put $g_R(u)=\Phi(u)\psi_R(u)1_{u>R}$ and
