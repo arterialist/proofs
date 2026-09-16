@@ -85,6 +85,14 @@ The two vanishing moments and the weighted $L^1$ assumption imply $W(s)=O((s-1)^
 
 The integrability condition on $S_w$ is concrete. For example, it follows if $w$ is continuously differentiable on $(0,1]$, has zero integral, and for some finite $r$ obeys $|w(u)|+|u w'(u)|\le C(1+|\log u|^r)$: Euler summation gives $S_w(u)=O(1+|\log u|^{r+1})$. The displayed $w_2$ satisfies these hypotheses. The sign theorem is about the continuum-scale cofactor profile; it does not assert that every individual finite cone has both signs.
 
+The same argument gives a hierarchy. If the first $k$ log moments of a nonzero $w$ vanish, $\int_0^1w(u)(\log u)^j\,du=0$ for $0\le j<k$, and the absolute $k$th moment of $w$ and absolute $(k-2)$nd log moment of $S_w$ are finite, then
+
+$$\int_0^{1/2}S_w(u)(\log u)^j\,du=0\qquad(0\le j<k-1).$$
+
+Indeed $W(s)=O((s-1)^k)$ as $s\downarrow1$, whereas $\zeta(s)-1$ has a simple pole, so the Mellin transform of $S_w$ is $O((s-1)^{k-1})$ from the right. Mellin uniqueness again makes $S_w$ nonzero. Consequently its sign pattern cannot have fewer than $k-1$ changes along $(0,1/2)$: otherwise a polynomial of degree at most $k-2$ in $\log u$ can be chosen to have the same sign pattern, contradicting the displayed orthogonality. For $k=2$ this recovers the unavoidable positive and negative cones; every extra canceled log mode requires another cone sign change.
+
+The concrete profiles $w_k(u)=k!L_k(-\log u)$, with $L_k$ the ordinary Laguerre polynomial, realize this hierarchy: direct integration gives $W_k(s)=k!(s-1)^k/s^{k+1}$, nonzero at every nontrivial zeta zero. The first two are $w_1$ and $w_2$ above.
+
 ## The negative cones have macroscopic total mass
 
 Write $S(u)=\sum_{2\le m\le\lfloor1/u\rfloor}w_2(mu)$ for $0<u\le1/2$, and $S_+(u)=\max(S(u),0)$, $S_-(u)=\max(-S(u),0)$. This is the continuum-scale score of a proper cone at $d\sim uX$. The negative region is not confined to tiny divisors: the certified value $S(3/50)<0$ above gives an open negative neighborhood of $u=0.06$, whereas $S(u)>0$ for $0.4\le u\le0.45$.
@@ -145,6 +153,44 @@ Fix $1/2<\theta<1$. If the **one-sided** inequality $T_2(X)\ge-C_\theta X^\theta
 
 The displayed continuation has no real singularity for $s>\theta$. Therefore the nonnegative transform's convergence abscissa is at most $\theta$, and it is holomorphic throughout $\Re s>\theta$. No zeta zero can have real part greater than $\theta$. If such a one-sided estimate held for every $\theta=1/2+\varepsilon$, the functional equation would give RH. Conversely, RH gives the two-sided estimate $T_2(X)=O_\varepsilon(X^{1/2+\varepsilon})$ by partial summation of the standard $\psi$ bound and the deterministic $O(\log^3X)$ term. This is a precise target for joint-history cancellation, not a proved estimate.
 
+## An unconditional two-sided signed oscillation
+
+The same Mellin transform gives a genuine, though opposite-direction, signed estimate. If $\rho=\beta+i\gamma$ is any nonreal zeta zero in the critical strip, of multiplicity $m$, set
+
+$$R_\rho=\operatorname*{Res}_{s=\rho}\int_1^\infty T_2(X)X^{-s-1}\,dX
+=\frac{2m(\rho-1)^2}{\rho^3}.$$
+
+Then
+
+$$\limsup_{X\to\infty}\frac{T_2(X)}{X^\beta}\ge |R_\rho|,
+\qquad
+\liminf_{X\to\infty}\frac{T_2(X)}{X^\beta}\le-|R_\rho|.$$
+
+Here is the full positivity argument, including the possible presence of zeros farther to the right. Suppose, for a contradiction, that eventually $T_2(X)\le cX^\beta$ for some $0<c<|R_\rho|$. On $X\ge X_0$ put $g(X)=cX^\beta-T_2(X)\ge0$. Its Mellin transform, initially defined for $\Re s>1$, is the continuation of $cX_0^{\beta-s}/(s-\beta)$ minus the displayed transform of $T_2$, up to an entire finite-interval term. The transform has no real singularity on $(\beta,\infty)$: $\zeta(s)$ is positive for $s>1$ and negative for $0<s<1$ (the latter follows from its alternating-series representation), while the singularity at $s=1$ was canceled by the two wavelet moments. Landau's theorem for a nonnegative Mellin transform therefore puts its real convergence abscissa at most $\beta$. Thus the integral defining the transform is valid for every real $\sigma>\beta$, and positivity gives
+
+$$\left|\int_{X_0}^\infty g(X)X^{-\sigma-i\gamma-1}\,dX\right|
+\le\int_{X_0}^\infty g(X)X^{-\sigma-1}\,dX.$$
+
+Multiply by $\sigma-\beta$ and let $\sigma\downarrow\beta$. At the nonreal pole the left side tends to $|R_\rho|$; on the real axis the right side tends to $c$, because the transform of $T_2$ is analytic at the positive real point $\beta$. This contradicts $c<|R_\rho|$. Repeating the argument with $g(X)=cX^\beta+T_2(X)$ proves the lower liminf. In particular, the existence of a critical-line zero gives both $\Omega_+(\sqrt X)$ and $\Omega_-(\sqrt X)$ for this proper-cone signed score. On the critical line $|R_\rho|=2m/|\rho|$. This oscillation is a consequence of already-known zeta zeros, not a new upper bound on the prime error.
+
+## Localization trades cone budget for clock coverage
+
+There is no uniform lower bound on the extensive absolute cone mass in terms of the response at one zero. Fix a zero $\rho=\beta+i\gamma$ and, for $0<a\le1$, dilate the wavelet by
+
+$$w_a(u)=a^{-\beta}w_2(u/a)\mathbf 1_{u\le a}.$$
+
+It still has both vanishing log moments. Extend $S(v)$ by zero for $v>1/2$. With $W_a(s)=\int_0^1u^{s-1}w_a(u)\,du$ and $S_a(u)=\sum_{m\ge2,\,mu\le1}w_a(mu)$, direct substitution gives the exact identities
+
+$$W_a(s)=a^{s-\beta}W_2(s),\qquad
+S_a(u)=a^{-\beta}S(u/a),\qquad
+\|S_a\|_{L^1(0,1/2)}=a^{1-\beta}\|S\|_{L^1(0,1/2)}.$$
+
+Consequently $|W_a(\rho)|=|W_2(\rho)|$ even as the continuum absolute cone budget tends to zero with $a$. The finite score reveals the price: for $T_a(X)=\sum_{n\le X}(\log n-\Lambda(n))w_a(n/X)$,
+
+$$T_a(X)=a^{-\beta}T_2(aX).$$
+
+The wavelet only sees integers $n\le aX$. For fixed $a$, its signed square-root oscillation and hard upper-bound problem are exactly those of $T_2$ at the smaller horizon $aX$; choosing $a$ to shrink with $X$ removes the newest prime arrivals from the test. Thus reducing the absolute cone budget by localization does not by itself control the prime discrepancy at horizon $X$.
+
 ## Provenance and limits
 
-The finite proper-cone positivity and its large uniform slack are in the [proper-cone note](proper-prime-cone-zero-preserving-slack.md). The prime number theorem and the RH prime-error equivalence are recorded by the [NIST Digital Library of Mathematical Functions, §25.16(i)](https://dlmf.nist.gov/25.16.i). The divisor estimate is the elementary Dirichlet hyperbola method; the displayed finite counterexamples were enclosed with rational interval arithmetic as above. The signed equipartition is an exact restatement of the still-open square-root prime-error estimate, not an unconditional improvement.
+The finite proper-cone positivity and its large uniform slack are in the [proper-cone note](proper-prime-cone-zero-preserving-slack.md). The prime number theorem and the RH prime-error equivalence are recorded by the [NIST Digital Library of Mathematical Functions, §25.16(i)](https://dlmf.nist.gov/25.16.i); [§25.10](https://dlmf.nist.gov/25.10) records the known critical-line zeros used for the unconditional oscillation. The nonnegative-Mellin-transform principle used above is stated, for example, as Proposition 1 in [On variants of Chebyshev's conjecture](https://link.springer.com/article/10.1007/s11139-025-01238-9); the residue comparison is shown directly here. The divisor estimate is the elementary Dirichlet hyperbola method; the displayed finite counterexamples were enclosed with rational interval arithmetic as above. The signed equipartition is an exact restatement of the still-open square-root prime-error estimate, not an unconditional improvement.
