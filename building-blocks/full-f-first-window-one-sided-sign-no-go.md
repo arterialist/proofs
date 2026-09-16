@@ -110,10 +110,34 @@ The sign argument is one-sided. If $B_s\le0$, the $r^2$ term in (2)
 can support a positive $r$; the same comparison does not give a
 positive-side bound for $E$.
 
+The comparison also measures the cost of a weaker lower bound. If,
+for some $0<\delta<1$, one had
+$B_s(Y)\ge-CY^{-\delta}$ on a tail, (3) would have an added forcing
+$O(e^{-\delta v})$. Equation (4) would then give
+$E(x)^-=O(x^{1-\delta})$. This already excludes every zeta zero
+with real part greater than $1-\delta$. To see the last step, put
+$\theta=1-\delta$ and choose $C'$ with
+$A(x)=E(x)+C'x^\theta\ge0$ on a tail. For $\Re s>1$, its Mellin
+transform, up to an entire finite-interval term, is
+$$
+\int_1^\infty A(x)x^{-s-1}dx
+=\frac{-\zeta'(s)/\zeta(s)}s-\frac1{s-1}
+ +\frac{C'}{s-\theta}.                                    \tag{6a}
+$$
+If a zero $\rho$ had $\Re\rho>\theta$, (6a) would have a nonreal pole
+there. The abscissa of convergence of this eventually nonnegative
+Mellin integral would then exceed $\theta$, but its continuation is
+regular at every real point in $(\theta,1]$, contrary to
+[Landau's theorem for Mellin integrals](https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/19.0_pp_463_485_Oscillations_of_error_terms.pdf),
+Chapter 15, Lemma 15.1. In particular, lower estimates
+$B_s(Y)\ge-C_\varepsilon Y^{-1/2+\varepsilon}$ for every
+$\varepsilon>0$ would imply RH. This is a conditional obstruction,
+not an estimate proved here.
+
 ## Why positivity and prime-power support alone do not suffice
 
 The arithmetic values of $\Lambda$ matter. To see this, take a small
-fixed $c>0$ and replace its values, but not its support, by
+fixed real $c\ne0$ and replace its values, but not its support, by
 $$
 \Lambda_c(n)=\Lambda(n)\left(1+\frac{c}{\log^2n}\right)
 \quad(n\ge2),\qquad \Lambda_c(1)=0.
@@ -131,28 +155,33 @@ F_c(x)=F(x)-c\sum_{n\le x}\frac{\Lambda(n)}{n\log^2n}
        +\frac c x\sum_{n\le x}\frac{\Lambda(n)}{\log^2n}.
 $$
 The first new sum converges at infinity and the second term is
-bounded. Since $F$ has a positive infimum on $[2,\infty)$, a small
-enough $c$ makes $F_c>0$ there; on $(1,2)$ it equals $\log x$.
+bounded. For small enough $|c|$, every $\Lambda_c(n)$ is positive on
+prime powers and $F_c>0$ on $[2,\infty)$, since $F$ has a positive
+infimum there; on $(1,2)$ it equals $\log x$.
 The limit $\kappa_c=\lim_{x\to\infty}F_c(x)$ is positive. The same
 atom cancellation gives $F_c'=-E_c/x^2$ almost everywhere.
 
-Put $\phi_Y(x)=p_s^2Y\log^2(x/Y)/(x^2F_c(x))$ on $[Y,2Y)$ and
+Set $r_c(v)=E_c(e^v)/(e^vF_c(e^v))$. Equation (7) and
+$F_c\to\kappa_c$ give, uniformly for $0\le t\le L$,
 $$
-C_0=\int_1^2\frac{\log^2t}{t^2}\,dt>0.
+r_c(u+t)=\frac{c}{\kappa_c u^2}+o(u^{-2}),
+\qquad u=\log Y.
 $$
-Uniformly on that window, (7) yields
-$E_c(x)=cx/\log^2Y+o(Y/\log^2Y)$. Moreover
-$\|\phi_Y\|_\infty+\operatorname{Var}_{[Y,2Y]}\phi_Y=O(1/Y)$;
-this follows from $F_c\to\kappa_c$ and
-$F_c'=-E_c/x^2=O(1/(x\log^2x))$ there. Stieltjes integration by
-parts, including the left limit at $2Y$, now shows that replacing
-$dE_c$ with $c\,dx/\log^2Y$ changes $B_{c,s}(Y)$ by
-$o(\log^{-2}Y)$. Consequently
+The same estimate holds for the left limit at $u+L$: the excluded
+prime-power atom, if present, changes $r_c$ by only
+$O(\log Y/Y)=o(u^{-2})$. Apply (2) with
+$(E,F,r)$ replaced by $(E_c,F_c,r_c)$. Since
+$a-\int_0^Lb(t)dt=\int_0^LH(t)dt$ and the quadratic integral is
+$O(u^{-4})$, put
+$C_0=\int_0^L H(t)dt=\int_1^2\log^2t\,t^{-2}dt>0$ to get
 $$
 B_{c,s}(Y)\sim
-\frac{cp_s^2C_0}{\kappa_c\log^2Y}>0.                  \tag{8}
+\frac{cp_s^2C_0}{\kappa_c\log^2Y}.                    \tag{8}
 $$
-Thus positive prime-power coefficients, their support, the continuous
-factorial ground, and PNT do not force even a fixed-power bound for
-the complete score. Any such bound for the actual $\Lambda$ must use
-more of its arithmetic structure.
+Its eventual sign is the sign of $c$, and its magnitude exceeds every
+fixed power of $Y^{-1}$. Thus positive prime-power coefficients, their
+support, the continuous factorial ground, and PNT do not force a
+fixed-power bound for the complete score. Cofactor-cone arguments that use only
+nonnegative prime-power coefficients remain valid for $\Lambda_c$ and
+therefore cannot force that bound either. Any such bound for the actual
+$\Lambda$ must use more of its arithmetic structure.
