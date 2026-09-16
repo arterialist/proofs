@@ -257,8 +257,9 @@ The cone theorem therefore gives a strict finite-horizon sign:
 
 The constant $C$ is absolute once the uniform remainder in (8) is fixed;
 it is independent of $N$ and of the permitted baseline $\beta$. The
-identity is Fubini's theorem. The sign also holds for any nonnegative
-$q$ in (16), so approximation by concentrated $q$ gives the kernel
+identity is Fubini's theorem. The nonpositive sign also holds for any
+nonnegative $q$ in (16), with strictness when $q$ is nonzero on a set of
+positive measure in $(a,T)$. Approximation by concentrated $q$ gives the kernel
 statement $D_a(s)\le0$ for every $s\ge a$.
 
 For the bound, $0\le W_T,-W_T',W_T''\le C_g^2e^{-v}$, hence

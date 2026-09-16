@@ -185,3 +185,86 @@ Then \(U^2\zeta_{R(U)}^2=O(U^{-1/2})\), so the **complete moving arithmetic sour
 This two-channel readout recovers four times the finite centered Gram at a logarithmic-squared core and has the same exact growth exponent \(2\Theta-1\). It does not identify the odd translation norm with the conditional theta covariance residual.
 
 Both (16) and (19) are RH-equivalent **measurement criteria**, not unconditional bounds showing that their exponent vanishes. Neither estimates the actual full Weil affine residual nor turns killed-ground positivity into a prime-error sign. The analytic theorems and ground concentration remain written mathematics, not Lean formalizations.
+
+## Direct finite Goldbach readout without a terminal atom
+
+The terminal payment in (7a) belongs to the comparison between the
+compact cumulative-error source and the discrete packet. The finite
+Goldbach energy itself has a direct moving-core readout. For integer
+$N\ge2$ and $U=\log N$, retain every $a_n=\Lambda(n)-1$ for $n\le N$,
+including $a_1=-1$, and put
+\[
+d_N(v)=e^{-v/2}\sum_{n=1}^Na_ne^{-ne^{-v}},\qquad
+H_N^{\rm disc}=\|d_N\|_2^2
+=\sum_{m,n\le N}\frac{a_ma_n}{m+n}.
+\tag{20}
+\]
+For the same actual ground and normalization as (4),
+\[
+\boxed{\quad
+\|\mathcal A_{2U}d_N\|_2^2
+=\left[2+O\!\left((1+U)e^{-\sqrt{2U}/8}
+                  +(1+U)e^{-U/8}\right)\right]H_N^{\rm disc}
+\qquad(N\to\infty).
+\quad}
+\tag{21}
+\]
+No $E(N)\delta_N$ is inserted into (20). This bypasses (7a) for a
+measurement of $H_N^{\rm disc}$; it does not estimate the energy.
+
+Here are the cutoff and endpoint estimates. With
+$k_0(y)=e^{-y/2}e^{-e^{-y}}$,
+\[
+d_N=k_0*\sum_{n\le N}\frac{a_n}{\sqrt n}\delta_{\log n},
+\qquad
+M_N:=\sum_{n\le N}\frac{|a_n|}{\sqrt n}
+\ll (1+U)e^{U/2}.
+\tag{22}
+\]
+The last bound uses only $\Lambda(n)\le\log n$. The norm has an
+$N$-independent lower bound: for a fixed sufficiently large $t_0$,
+\[
+\left|\sum_{n=2}^Na_ne^{-nt}\right|
+\le\sum_{n=2}^\infty(1+\log n)e^{-nt}
+\le\tfrac12e^{-t}\quad(t\ge t_0),
+\]
+so $|\sum_{n\le N}a_ne^{-nt}|\ge e^{-t}/2$ there and
+$H_N^{\rm disc}\ge e^{-2t_0}/8>0$.
+
+The unitary Fourier transform of $k_0$ is
+$(2\pi)^{-1/2}\Gamma(1/2+i\omega)$, whose squared modulus is
+$1/(2\cosh(\pi\omega))$. Frequency splitting therefore gives, for
+$\Omega\ge1$,
+\[
+\|d_N'\|_2\le\Omega\|d_N\|_2
+ +C M_N(1+\Omega)e^{-\pi\Omega/2}.
+\tag{23}
+\]
+At $\Omega=2U/\pi$, (22) and the lower bound imply
+$\|d_N'\|_2/\|d_N\|_2\ll U$.
+
+Set $L=5U/4$ and $d_N^0=d_N1_{[-L,U+L]}$. Both packet tails are paid:
+\[
+\|k_0 1_{y>L}\|_2\le e^{-L/2},\qquad
+\|k_0 1_{y<-L}\|_2=2^{-1/2}e^{-e^L},\qquad
+\|d_N-d_N^0\|_2\ll(1+U)e^{-U/8}.
+\tag{24}
+\]
+The support interval has width $U+2L=7U/2<4U$, so the shifts
+$d_N^0(\cdot+2U)$ and $d_N^0(\cdot-2U)$ are disjoint. The lower norm
+bound and (24) give
+$\|B_{2U}d_N\|_2^2=[2+O((1+U)e^{-U/8})]H_N^{\rm disc}$.
+Finally apply the physical-ground translation estimate (10), (23) and
+the tail (5) at $R=2U$ to obtain (21).
+
+The two-channel identity (18) also applies directly to $d_N$.
+At $R(U)=100\log^2(2+U)$, the same derivative estimate yields
+\[
+0\le4H_N^{\rm disc}
+-\bigl(\|\mathcal A_{R(U)}^+d_N\|_2^2
+       +\|\mathcal A_{R(U)}^-d_N\|_2^2\bigr)
+\le C U^{-1/2}H_N^{\rm disc}.
+\tag{25}
+\]
+Both readouts retain the exact ordered Goldbach Gram. Neither is a
+prime-error upper bound or a sign for the full Weil row.
