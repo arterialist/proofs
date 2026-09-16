@@ -374,6 +374,39 @@ hold for all finite real packets. If it did, the functional on finite sums $D_a(
 
 Passing from the finite packet to the uncut prime source also requires the source-tail and deterministic-centering costs in (2), (10), and (14). In particular (21)--(22) do not establish the open critical Goldbach energy estimate or a sign for the full Weil row.
 
+## The explicit additive pair kernel of the signed derivative pairing
+
+For the same finite packet, the whole-line pairing in (8) has an exact ordered-pair expansion. Put $\mathscr P_a=-\int_{\mathbb R}q_a'(v)b_a(v)dv$. From $K_{\rm sc}'(x)=-b_0(x)/(2x)$ and $\mathcal Lb_0(p)=-\sqrt\pi\sqrt p/(1+p)$, integration by parts with the zero moment of $K_{\rm sc}$ gives, for $p>0$,
+$$
+\int_0^\infty e^{-px}K_{\rm sc}(x)dx
+=-\sqrt\pi\,\frac{\sqrt p-\arctan\sqrt p}{p},
+\qquad
+\int_0^\infty e^{-px}xK_{\rm sc}'(x)dx
+=\frac{\sqrt\pi}{2}\frac{\sqrt p}{1+p}.
+\tag{24}
+$$
+Indeed the second identity says $(p\mathcal LK_{\rm sc}(p))'=-\sqrt\pi\sqrt p/[2(1+p)]$, while $p\mathcal LK_{\rm sc}(p)\to0$ at zero. Differentiating the finite $q_a$ and changing variables $x=mt$ now yields
+$$
+\boxed{\quad
+\mathscr P_a=\sum_{m,n}a_ma_nJ(m,n),\qquad
+J(m,n)=\frac{\sqrt\pi}{2n}
+\left[\arctan\sqrt{\frac nm}-\frac{\sqrt{mn}}{m+n}\right].
+\quad}
+\tag{25}
+$$
+Every entry $J(m,n)$ is positive: for $r>0$, the derivative of $\arctan r-r/(1+r^2)$ is $2r^2/(1+r^2)^2>0$ and its value at zero is zero. In particular $J(m,m)=\sqrt\pi(\pi-2)/(8m)$. The kernel is not symmetric as written, but the quadratic form uses its symmetric part $(J(m,n)+J(n,m))/2$.
+
+The Fourier identity (8) proves that this symmetric part is positive definite on every finite coefficient set:
+$$
+\mathscr P_a
+=\int_{\mathbb R}
+\frac{\sqrt\pi\,\omega\coth(\pi\omega)}{1+4\omega^2}
+|\widehat b_a(\omega)|^2d\omega>0
+\quad(a\ne0).
+\tag{26}
+$$
+The weight tends to zero like $1/|\omega|$ at high frequency, so this positive pairing has no uniform lower bound by the full heat energy in (21). For $a_n=(\Lambda(n)-1)1_{n\le N}$, (25) is a complete finite centered-Goldbach pair form, with $a_1=-1$ and all admitted prime powers. Its weight depends on the ratio $n/m$ as well as the total $m+n$; entrywise positivity of $J$ does not remove the signed centered cross terms or give an RH-scale upper bound.
+
 
 ## Dependencies and proof status
 
