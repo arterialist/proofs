@@ -398,3 +398,4 @@ import BuildingBlocks.ActualScatteringMomentMagnitude
 import BuildingBlocks.ActualPrimeBlockMagnitude
 
 import BuildingBlocks.FactorialTerminalReserve
+import BuildingBlocks.ActualFiniteSincPrimeDiagonal

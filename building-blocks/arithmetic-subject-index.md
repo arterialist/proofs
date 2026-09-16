@@ -309,6 +309,8 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 [Full-composition Lambert–Mellin resummation](factorial-full-composition-lambert-mellin-resummation.md) gives an exact all-order horizon generating function, its inverse-zeta Mellin transform, and a uniform signed real-ray L2 clock bound. A finite binomial family proves that this ray has no polynomially stable dyadic inverse. The needed angular or fixed-horizon estimate remains open.
 
+[Finite sinc form and prime diagonal](factorial-finite-sinc-prime-diagonal.md) compiles the exact finite angular kernel, full covariance form, literal prime norm, nonnegative selected diagonal, and its comparison with the full birth diagonal. Paying that row leaves the actual signed off-diagonal central-arc correlation open.
+
 [Local compact scattering](compact-local-scattering-no-contraction.md) and [compiled Lean](BuildingBlocks/CompactLocalScatteringSigns.lean): exact original complex-power multiplier dictionary, finite geometric histories, attenuation at zero and amplification at pi/(M log p), for every prime and M ≥ 1. Physical compact pole-null test realization remains written; no actual-source or dyadic-product sign follows.
 
 ## Actual physical theta series
