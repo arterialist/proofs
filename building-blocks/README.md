@@ -994,4 +994,4 @@ The compiled `FactorialRealCellTest.lean` now proves continuity of the actual mo
 
 - [Reciprocal-prefix Abel clock bound](factorial-reciprocal-prefix-abel-clock-bound.md): twenty-six added compiled theorems prove the actual 3Nt response envelope, Q_N through t=1/sqrt(N)≤9N/4, and same-clock signed LCM boundary and common-dyadic upper bounds. Full larger-clock energy/work and RH remain open.
 
-- [Actual physical scattering moment signs](actual-physical-scattering-moment-signs.md): six compiled theorems identify both original physical Mellin moments with literal finite-history coefficients, prove their opposite coefficient signs, and retain exact finite-prime-block parity. Infinite gamma and full signed arithmetic upper bounds remain open.
+- [Actual physical scattering moment signs](actual-physical-scattering-moment-signs.md): eleven compiled theorems identify both original physical Mellin moments with literal finite-history coefficients, prove their opposite coefficient signs, and retain the exact varying-depth list-block Mellin product and parity. Infinite gamma and full signed arithmetic upper bounds remain open.
