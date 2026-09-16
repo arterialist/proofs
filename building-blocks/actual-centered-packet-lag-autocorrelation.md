@@ -256,6 +256,84 @@ $m(0)=\ell>0$. It does **not** give a negative value for the
 distinguished prime packet $f_N$; its spectral weight in (18) is fixed
 by every $\Lambda(n)-1$ coefficient.
 
+## A critical zero forces a signed actual-packet phase
+
+There is one unconditional arithmetic constraint on that fixed
+spectral weight.  Let $\rho=1/2+i\gamma$ be any critical-line zero of
+$\zeta$, of multiplicity $r_\rho\ge1$.  The exact packet polynomial
+$S_N$ from (18), including $a_1=-1$ and every prime power, satisfies
+\[
+\boxed{\qquad
+\liminf_{N\to\infty}
+ \frac{\operatorname{Re}S_N(\gamma)}{\log N}
+ \le-r_\rho.
+\qquad}                                                    \tag{20}
+\]
+This is a forced negative excursion of the **actual** centered
+prime-power phase, not an assumption of RH or a conclusion about the
+sign of the full packet work.  [Hardy's original critical-line-zero
+paper](https://fr.wikisource.org/wiki/Page:Comptes_rendus_hebdomadaires_des_s%C3%A9ances_de_l%E2%80%99Acad%C3%A9mie_des_sciences,_tome_158,_1914.djvu/1014)
+ensures that the assertion has unconditional instances.  At each such
+frequency, the renewal multiplier itself is positive:
+\[
+ m(\gamma)=\frac1{\gamma^2+1/4}>0,                       \tag{21}
+\]
+because $\zeta(\rho)=0$ in (17).  The negative band near frequency
+$12$ therefore does not contain these exact zero frequencies, although
+it can still carry other packet mass.
+
+Here is a one-sided proof of (20) that does not assume a zero-free
+half-plane.  Set $D(s)=-\zeta'(s)/\zeta(s)-\zeta(s)$, the actual
+Dirichlet series in (6) for $\Re s>1$.  Its residue at $\rho$ is
+$-r_\rho$.  For $t\ge0$ put
+$B(t)=\operatorname{Re}S_{\lfloor e^t\rfloor}(\gamma)$.
+The elementary bound $|\Lambda(n)-1|\le1+\log n$ gives
+$B(t)=O(e^{t/2}(1+t))$.  Suppose (20) were false.  Then for some
+$0<\varepsilon<r_\rho$ and all sufficiently large $t$,
+\[
+ C(t):=B(t)+(r_\rho-\varepsilon)t\ge0.               \tag{22}
+\]
+The passage from integers to all $t$ is valid: between consecutive
+$\log N$ the packet is constant and the added linear term increases.
+
+Choose $T$ beyond the start of (22) and let
+$L_T(h)=\int_T^\infty C(t)e^{-ht}dt$.  It is a genuine nonnegative
+Laplace integral with a finite convergence abscissa $\sigma_c\le1/2$
+(unless it converges for every real $h$).  Absolute Dirichlet
+convergence and Fubini give, for real $h>1/2$, the meromorphic
+identity
+\[
+ L_T(h)=\frac{D(\rho+h)+D(\bar\rho+h)}{2h}
+       +\frac{r_\rho-\varepsilon}{h^2}
+       -\int_0^T C(t)e^{-ht}dt.                         \tag{23}
+\]
+The conjugate pair is essential: it represents the real part of the
+twisted actual source by a holomorphic function of $h$.
+
+At any positive real $a$, (23) is analytic unless $\rho+a$ is a zero
+of $\zeta$.  If it is a zero of multiplicity $r_a$, conjugacy shows
+that (23) has a **simple pole with residue $-r_a/a<0$**.  A
+nonnegative Laplace integral with finite abscissa $\sigma_c>0$
+must be singular at the positive real point $h=\sigma_c$; this is
+the Landau theorem whose local version is compiled in
+[LandauSingularity.lean](BuildingBlocks/LandauSingularity.lean).
+An analytic value contradicts that theorem, while a negative-residue
+pole would make $L_T(h)\to-\infty$ as $h\downarrow\sigma_c$, contrary
+to $L_T(h)\ge0$.  Hence $\sigma_c\le0$ (or the transform is entire).
+Uniqueness of analytic continuation then identifies (23) with the
+convergent Laplace integral at every small positive $h$.  But near
+$h=0$, the two zero residues in (23) give
+\[
+ L_T(h)=-\frac{\varepsilon}{h^2}+O(1/h),
+ \qquad h\downarrow0,                                   \tag{24}
+\]
+again contradicting positivity for small $h>0$.  This proves (20).
+RH Proof derived this phase calibration using the classical Landau
+singularity mechanism; no priority claim is made.  The argument is
+written analysis; the actual Dirichlet-series
+identification, meromorphic continuation and final Landau application
+have not been formalized together in Lean.
+
 The lag threshold depends on $N$. In particular this does not assert
 a negative test inside $0\le s\le\log N$, nor identify $f_N$ with
 the tuned causal derivative $h_\beta'$ of the uncut heat response.
