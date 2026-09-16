@@ -10,7 +10,7 @@ $$
 Every prime power remains in this formula. This note gives a quantitative
 sufficient shape estimate for the actual ground, then checks why the proved
 logarithmic energy and the available boundary theorem do not establish it.
-It does not prove the sign channel or RH.
+It does not prove the sign channel for all large radii or RH. The later [gap-or-collar theorem](theta-ground-first-order-gap-collar-dichotomy.md) proves a strict sign-channel excess on selected favorable radii without assuming the shape hypotheses below.
 
 ## A compact positive-history lemma
 
