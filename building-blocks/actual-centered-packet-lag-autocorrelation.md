@@ -334,6 +334,44 @@ written analysis; the actual Dirichlet-series
 identification, meromorphic continuation and final Landau application
 have not been formalized together in Lean.
 
+### One fixed packet phase is an RH-scale target
+
+The same exact source has a simple converse target.  For **any one
+fixed real** $\omega_0$,
+\[
+\boxed{\quad
+\mathrm{RH}\quad\Longleftrightarrow\quad
+  |S_N(\omega_0)|=O_{\varepsilon,\omega_0}(N^\varepsilon)
+  \text{ for every }\varepsilon>0.
+\quad}                                                    \tag{25}
+\]
+Indeed, if $|S_N(\omega_0)|=O(N^\delta)$ for one $\delta\ge0$,
+summation by parts makes
+$\sum_{n\ge1}(\Lambda(n)-1)n^{-1/2-i\omega_0-h}$ converge locally
+uniformly for $\Re h>\delta$.  On the smaller region $\Re h>1/2$
+it equals $D(1/2+i\omega_0+h)$ by (6), so analytic continuation
+makes $D(s)$ holomorphic on $\Re s>1/2+\delta$.  Its apparent pole
+at $s=1$ cancels between $-\zeta'/\zeta$ and $-\zeta$, while each
+zeta zero gives a nonzero negative residue.  Thus this one packet
+bound excludes every zero with real part greater than
+$1/2+\delta$.  Taking all $\delta>0$ and using the functional
+equation gives RH.
+
+Conversely, the standard RH consequence
+$\psi(x)-x=O(x^{1/2}\log^2(2x))$, with all prime powers retained,
+and partial summation give
+\[
+ S_N(\omega_0)=O_{\omega_0}(\log^3(2N))
+ \qquad\text{under RH}.                                  \tag{26}
+\]
+At a critical zero $\omega_0=\gamma$, (20) shows that the
+logarithmic scale cannot be replaced by a bounded packet phase.
+The criterion (25) is an exact reformulation, not an unconditional
+upper estimate.  It reduces the missing arithmetic input to one
+fixed twisted complete-prime-power prefix, but provides no way to
+prove its subpower bound from the positive heat Gram or successor
+transport alone.
+
 The lag threshold depends on $N$. In particular this does not assert
 a negative test inside $0\le s\le\log N$, nor identify $f_N$ with
 the tuned causal derivative $h_\beta'$ of the uncut heat response.
