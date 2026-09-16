@@ -1,6 +1,6 @@
 # Fixed-positive-clock factorization of the actual dyadic Chebyshev score
 
-RH Agent3, 2026-09-16. Independently audited by RH Agent1. **Status:** written RH-equivalent linearized criterion and exact full-ground clock-to-clock transfer, without an arithmetic RH-scale estimate; not Lean formalized. This closes the fixed-small-positive-clock half-line inversion left open in the [moving-score note](factorial-f-ground-dyadic-score-inversion.md). The arithmetic input is the actual
+RH Agent3, 2026-09-16. Independently audited by RH Agent1. **Status:** written linearized criterion and exact full-ground clock-to-clock transfer, without an arithmetic RH-scale estimate; not Lean formalized. The [subsequent prime-atomic inverse](factorial-f-ground-full-score-rh-criterion.md) proves that the full original-ground score itself is an RH-equivalent criterion for the actual source. This closes the fixed-small-positive-clock half-line inversion left open in the [moving-score note](factorial-f-ground-dyadic-score-inversion.md). The arithmetic input is the actual
 \[
 D(x)=2\psi(x)-\psi(2x),\qquad
 f(u)=e^{-u}D(e^u)\quad(u\ge0), \tag{1}
@@ -132,7 +132,7 @@ at \(O_\epsilon(Y^{-1/2+\epsilon})\). A bound on \(J_Y\) alone would additionall
 
 ## Complete original-ground score: clock-to-clock transfer only
 
-There is a stronger clock identity for the **unsubtracted** full ground score, but its endpoint at clock zero is not yet known to be RH-equivalent. For \(u\ge\log2\), set
+There is a stronger clock identity for the **unsubtracted** full ground score. Its endpoint at clock zero is proved RH-equivalent in the [companion source-regularity note](factorial-f-ground-full-score-rh-criterion.md), using additional actual arithmetic structure. For \(u\ge\log2\), set
 \[
 r(u)=\frac{E(e^u)}{e^uF(e^u)}=-\partial_u\log F(e^u),\qquad
 \Delta q(u)=q(u)-q(u+\log2).
@@ -148,4 +148,4 @@ G_{e^u,s}=T_{K_s}r(u)-T_{H_s}(r^2)(u),
 \qquad
 \boxed{J_s=T_{K_s}\Delta r-T_{H_s}\Delta(r^2)=T_{\mu_s}J_0.}
 \]
-The atom at \(2Y\) remains in the old-base term and vanishes in the new-base term, exactly as in the original Stieltjes formula. Both \(r\) and \(r^2\) are bounded on this tail; (9) and finite total variation justify both Fubini exchanges. Therefore for fixed \(0<s\le s_*\), \(J_s=O(e^{-\alpha u})\) if and only if \(J_0=O(e^{-\alpha u})\), for every \(\alpha\ge0\). This equivalence needs no separate estimate of \(\mathcal R_{Y,s}\), since the same signed measure factors the linear and quadratic terms. It does **not** show that an RH-scale bound for full \(J_0\) implies RH: the quadratic \(r^2\) term remains coupled to the actual prime-power source. The [integer-atomic countermodel](factorial-f-ground-integer-atomic-countermodel.md) shows why positivity and integer support alone cannot supply such an inverse.
+The atom at \(2Y\) remains in the old-base term and vanishes in the new-base term, exactly as in the original Stieltjes formula. Both \(r\) and \(r^2\) are bounded on this tail; (9) and finite total variation justify both Fubini exchanges. Therefore for fixed \(0<s\le s_*\), \(J_s=O(e^{-\alpha u})\) if and only if \(J_0=O(e^{-\alpha u})\), for every \(\alpha\ge0\). This equivalence needs no separate estimate of \(\mathcal R_{Y,s}\), since the same signed measure factors the linear and quadratic terms. The full-score RH inverse needs the prime-atomic local regularity and actual \(-\zeta'/\zeta\) poles proved in the companion note; this clock factor alone does not provide them. The [integer-atomic countermodel](factorial-f-ground-integer-atomic-countermodel.md) shows why positivity and integer support alone cannot supply the final arithmetic inverse.
