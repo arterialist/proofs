@@ -1,8 +1,9 @@
 import BuildingBlocks.FactorialRealCellQuadratic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+import Mathlib.Topology.Algebra.Order.Floor
 
-open Real Finset
-open scoped BigOperators
+open Real Finset Filter Set
+open scoped BigOperators Topology
 namespace BuildingBlocks.FactorialRealCellPhase
 
 noncomputable def centeredTest (t x : ℝ) : ℝ :=
@@ -44,6 +45,24 @@ theorem finiteInverseTest_floor_hasDerivAt (t x : ℝ) :
   intro j hj
   ring
 
+noncomputable def movingInverseTest (t x : ℝ) : ℝ := finiteInverseTest ⌊x⌋₊ t x
+
+theorem movingInverseTest_hasDerivAt {t x : ℝ} (hx : 1 ≤ x) (hn : x ≠ (⌊x⌋₊ : ℝ)) :
+    HasDerivAt (movingInverseTest t) (-inverseTestPhase x t) x := by
+  have hl : (⌊x⌋₊ : ℝ) < x :=
+    lt_of_le_of_ne (Nat.floor_le (by linarith : 0 ≤ x)) hn.symm
+  have hv : ∀ᶠ y in 𝓝 x, ⌊y⌋₊ = ⌊x⌋₊ := by
+    filter_upwards [Ioo_mem_nhds hl (Nat.lt_floor_add_one x)] with y hy
+    exact Nat.floor_eq_on_Ico ⌊x⌋₊ y ⟨hy.1.le, hy.2⟩
+  apply (finiteInverseTest_floor_hasDerivAt t x).congr_of_eventuallyEq
+  filter_upwards [hv] with y hy
+  simp only [movingInverseTest, hy]
+
+theorem movingInverseTest_continuousAt {t x : ℝ} (hx : 1 ≤ x) (hn : x ≠ (⌊x⌋₊ : ℝ)) :
+    ContinuousAt (movingInverseTest t) x := (movingInverseTest_hasDerivAt hx hn).continuousAt
+
+#print axioms movingInverseTest_hasDerivAt
+#print axioms movingInverseTest_continuousAt
 #print axioms centeredTest_one
 #print axioms centeredTest_div_hasDerivAt
 #print axioms finiteInverseTest_hasDerivAt
