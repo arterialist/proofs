@@ -96,6 +96,12 @@ norm \(h\), this reads
 The associated orthonormal-block eigenvalues are the two quantities
 in (8) divided by \(h\). The odd identity agrees with the
 [independent exact collar calculation](successor-cell-odd-collar-triangular-prime-oscillation.md).
+Thus this block is positive semidefinite exactly when
+\(\lvert D_X+R_X^\gamma\rvert\le C_h\). The threshold is strictly
+positive: the first five summands in the series for \(A_h\), together
+with \(hH_0+2I_-I_+\), already give a lower bound greater than
+\(0.022\). The full series gives \(C_h\approx0.12711117\); the decimal
+is only a check.
 
 To prove (5), a prime translation by \(\log d\ge h\) cannot overlap
 either collar with itself, except on a null endpoint. Its two
@@ -135,6 +141,46 @@ the actual prime entry \(\mathcal P_X\) then cancels the leading
 density. In particular, this block explains why the diagonal-only
 Perron supersolution obstruction does not imply a negative full Weil
 direction.
+
+## A centered bound for the actual prime remainder
+
+Let \(\Psi(x)=\sum_{n\le x}\Lambda(n)\), and set
+\(E(x)=\Psi(x)-x\), with \(\Psi\) right-continuous. The
+Stieltjes integration in the odd-collar theorem has no endpoint atom:
+the triangular weight vanishes at \(X/4\) and \(X\). After
+\(x=Xy\), it gives the exact actual-source identity
+\[
+ D_X=X^{-1/2}\int_{1/4}^{1}E(Xy)\,k(y)\,dy,\qquad
+ k(y)=
+ \begin{cases}
+ y^{-3/2}\bigl(-1+\tfrac12\log(4y)\bigr),
+      &1/4\le y<1/2,\\
+ y^{-3/2}\bigl(1+\tfrac12\log(1/y)\bigr),
+      &1/2\le y\le1.
+ \end{cases}                                                   \tag{10a}
+\]
+The kernel is negative on the lower band and positive on the upper.
+Substitution \(y=e^{-u}\) gives
+\[
+ \int_{1/4}^{1/2}k(y)\,dy=-\sqrt2\log2,\qquad
+ \int_{1/2}^{1}k(y)\,dy=\sqrt2\log2.                     \tag{10b}
+\]
+Hence \(\int k=0\) and \(\|k\|_1=2\sqrt2\log2\). Subtracting
+any constant \(b\) from \(E(Xy)\) in (10a), then choosing \(b\)
+halfway between the supremum and infimum of \(E\) on \([X/4,X]\),
+proves
+\[
+ \boxed{\quad
+ |D_X|\le\frac{\sqrt2\log2}{\sqrt X}\,
+ \operatorname{osc}_{[X/4,X]}(\Psi(x)-x).
+ \quad}                                                     \tag{10c}
+\]
+Here oscillation means supremum minus infimum. This bound retains
+the cancellation between the adjacent dyadic bands. The prime
+number theorem yields \(D_X=o(\sqrt X)\), while the odd-collar
+theorem gives nonvanishing excursions of \(D_{2m}\) of both signs.
+Equation (10c) does not supply the uniform \(O(1)\) bound needed
+for a sign in (8).
 
 ## What the surviving row can and cannot sign
 
