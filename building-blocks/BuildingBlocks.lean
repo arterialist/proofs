@@ -473,6 +473,8 @@ import BuildingBlocks.PostBranchKernelIndefiniteFinite
 import BuildingBlocks.PostBranchPrefixSchurFinite
 import BuildingBlocks.PostBranchActualPrimorialFinite
 import BuildingBlocks.PostBranchFullSourceFinite
+import BuildingBlocks.PostBranchTotalAdmissionFinite
+import BuildingBlocks.PostBranchFirstHorizonsFinite
 import BuildingBlocks.CenteredConsumerStructuralFinite
 
 import BuildingBlocks.HardClockWeightedLcmClass
@@ -481,6 +483,7 @@ import BuildingBlocks.CenteredGoldbachTruncatedHeat
 import BuildingBlocks.CenteredGoldbachHeatScaleIncrementFinite
 import BuildingBlocks.CenteredGoldbachSuccessorHeatFinite
 import BuildingBlocks.CenteredGoldbachHistoryShellFinite
+import BuildingBlocks.CenteredGoldbachAdjacentTotalsFinite
 
 import BuildingBlocks.ThetaLocalSpectralAudit
 import BuildingBlocks.MonotoneObservationSchur
