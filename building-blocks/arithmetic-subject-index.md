@@ -59,6 +59,8 @@ The [scattering subject index](scattering-subject-index.md) follows a second ana
 
 ## Actual finite-frequency readouts
 
+The [mixed prime-phase kernel](compact-weil-critical-mixed-character-kernel.md) polarizes the complete critical packet form on every fixed finite family of finite-prime multiplicative characters. Its limit is a strictly positive valuation-space Gram form plus a nonnegative prime-shift Dirichlet energy and positive rank-one pole remainder. The convergence depends on the fixed family and does not sign the growing full packet matrix.
+
 The [critical compact Weil packet crossover](compact-weil-critical-packet-crossover.md) computes the finite full-form residual of the normalized $n^{-1/2}$ divisor packet at $T=cN$, retaining all prime powers, both pole moments, and the signed gamma interaction. Its [two-profile extension](compact-weil-two-profile-perron-crossover.md) gives the exact mixed $2\times2$ limit and the strict negative mixed entry for separated nonnegative profiles. The matched-score projection in the exterior theta covariance is exact but leaves the full conditional edge energy unbounded by current estimates. These are written form limits on specified packet directions, not a full-window Weil sign or RH proof.
 
 The [separated critical-packet bands](compact-weil-separated-divisor-bands-positive-space.md) prove a complete Weil lower bound of order $\log N$ on the low labels $n\le N^\alpha$ and top-half labels $N/2<n\le N$ together, with both local profiles and $T=cN$. The proof uses an $O(\sqrt{\log N})$ actual prime-power cross bound, a top-band gamma loss below its diagonal coefficient, and the full pole cross block at the same square-root-log scale. It does not cover middle labels or the original theta affine residual.
