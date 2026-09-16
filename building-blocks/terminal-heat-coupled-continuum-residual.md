@@ -240,6 +240,71 @@ This conditional diagnostic cannot prove RH. The complete form still
 contains the early arithmetic residual and the shifted gamma term
 in (6), both of which are required for a signed comparison.
 
+## The actual arithmetic residual has no fixed late sign
+
+There is an unconditional sign obstruction for the isolated residual
+when the packet \(N\) is fixed and the cutoff \(Y\) tends to infinity.
+Define
+
+\[
+ \Delta_2(Y)
+ :=\int_{(Y,\infty)}t^{-2}dE(t)
+ =\sum_{k>Y}\frac{\Lambda(k)}{k^2}-\frac1Y.
+ \tag{19}
+\]
+
+For \(\Re s>1\), absolute Fubini gives its exact Mellin transform
+
+\[
+ \int_1^\infty\Delta_2(Y)Y^{1-s}dY
+ =\frac{D(s)-D(2)}{2-s},\qquad
+ D(s)=\frac{-\zeta'(s)}{\zeta(s)}-\frac1{s-1}.
+ \tag{20}
+\]
+
+The apparent singularities at \(s=1,2\) are removable.
+At every nonreal critical-line zeta zero \(\rho\), the right side
+has a pole with nonzero residue; its denominator \(2-\rho\) cannot
+cancel that pole. It is holomorphic on the real interval
+\([1/2,1]\). Also \(\Delta_2(Y)=O(Y^{-1})\) by Chebyshev.
+The positive-Mellin Landau argument used above, now adding
+\(C Y^{-3/2-\delta}\) to either sign, proves
+
+\[
+ \Delta_2(Y)=\Omega_\pm(Y^{-3/2-\delta})
+ \qquad(0<\delta<1/2).
+ \tag{21}
+\]
+
+The variation between neighboring integer cutoffs is
+\(O(\log(2Y)/Y^2)\): between integers only the continuous density
+changes, and crossing a prime-power endpoint changes (19) by
+\(\Lambda(k)/k^2\). Thus both signs in (21) occur along integer
+cutoffs as well.
+
+For each fixed integer \(N\ge2\), the first-moment expansion in the
+[terminal trace](actual-terminal-heat-prime-trace-phase.md) gives
+\(q_N(t)=J_NT_Nt^{-2}+O_N(t^{-3})\). The same note proves
+\(J_N\ne0\) and \(T_N<0\) at every such \(N\). Since the total
+variation of \(dE\) against \(t^{-3}\) beyond \(Y\) is
+\(O(\log(2Y)/Y^2)\), equation (5) yields
+
+\[
+ \boxed{\quad
+ \mathcal D_{N,>Y}
+ =-2J_NT_N\Delta_2(Y)
+   +O_N\!\left(\frac{\log(2Y)}{Y^2}\right)
+ =\Omega_\pm(Y^{-3/2-\delta})
+ \quad(N\text{ fixed},\ 0<\delta<1/2).
+ \quad} \tag{22}
+\]
+
+This is an actual complete-von-Mangoldt sign oscillation after
+continuous-density subtraction, not a modeled prime measure.
+The order of limits is fixed packet first, then late cutoff; it
+does not prove an actual-tail sign at the coupled cutoff \(Y=N\)
+or a sign for (6).
+
 The source, full prime normalization, and compact-to-decaying-form
 extension are justified in the linked terminal trace and double-scale
 notes. This is written mathematics; no Lean formalization is claimed.
