@@ -59,6 +59,8 @@ The [scattering subject index](scattering-subject-index.md) follows a second ana
 
 ## Actual finite-frequency readouts
 
+The [critical packet Hardy estimate](compact-weil-critical-packet-hardy-control.md) uses the exact divisor-graph edge energy to control the additive gamma interaction on the entire resolved one-profile packet space at $T=cN$. Its relative edge-energy coefficient is below $16/27$; the pole has arbitrarily small relative coefficient, and the complete form has a uniform lower bound. The remaining norm constant is not controlled sharply enough to prove full packet positivity.
+
 The [mixed prime-phase kernel](compact-weil-critical-mixed-character-kernel.md) polarizes the complete critical packet form on every fixed finite family of finite-prime multiplicative characters. Its limit is a strictly positive valuation-space Gram form plus a nonnegative prime-shift Dirichlet energy and positive rank-one pole remainder. The convergence depends on the fixed family and does not sign the growing full packet matrix.
 
 The [critical compact Weil packet crossover](compact-weil-critical-packet-crossover.md) computes the finite full-form residual of the normalized $n^{-1/2}$ divisor packet at $T=cN$, retaining all prime powers, both pole moments, and the signed gamma interaction. Its [two-profile extension](compact-weil-two-profile-perron-crossover.md) gives the exact mixed $2\times2$ limit and the strict negative mixed entry for separated nonnegative profiles. The matched-score projection in the exterior theta covariance is exact but leaves the full conditional edge energy unbounded by current estimates. These are written form limits on specified packet directions, not a full-window Weil sign or RH proof.
