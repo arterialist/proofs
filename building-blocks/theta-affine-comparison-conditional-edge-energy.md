@@ -163,6 +163,38 @@ $U(f,f)<10^{-36}(P_\infty/a)$ at $R=2$ also has an unevaluated normalization cos
 
 A usable new estimate would bound the complete conditional expression in (7), evaluated at (1), or the corresponding joint energy entries in (8). The present inputs do not certify a small value at $R=2$ or a vanishing value as $R$ grows. They do provide the exact estimator with the actual affine constraint, both cross-mean cancellations, the matched score action, and every continuous and prime-power edge retained.
 
+## The exact common-score nullspace
+
+The residual has no additional invisible direction. For $u,v$ on opposite exterior halves, the continuous density of $J_c$ divided by $\psi(u)\psi(v)\Phi(u)\Phi(v)e^{-(|u|+|v|)/2}$ is
+$$
+\frac1{1-e^{-2(|u|+|v|)}}-1>0.
+$$
+For distinct $u,v$ on the same half, that ratio is
+$$
+\frac{e^{\min(|u|,|v|)}}{1-e^{-2|u-v|}}-e^R>0,
+$$
+because $\min(|u|,|v|)>R$. Thus $J_c$ is strictly positive almost everywhere off the diagonal on $O\times O$, with both half-lines connected. Since $\gamma$ is equivalent to Lebesgue measure on $O$, $A_c[F]=0$ for an admissible real potential forces $F$ to be constant almost everywhere.
+
+The minimum over the common score coefficient in (5) is attained when $d_y>0$; when $d_y=0$, residual Cauchy--Schwarz makes its value independent of that coefficient. The separate sign minima in (2) are attained as well. Hence (7) and the strict continuous kernel give
+$$
+\boxed{\quad
+n[v]=0\quad\Longleftrightarrow\quad
+v=a+b\varepsilon+s\varphi\quad\gamma\text{-almost everywhere}
+\quad(v\in V_k\text{ real}),
+\quad}
+\tag{11}
+$$
+for real scalars $a,b,s$. The reverse implication uses only that every $A_i$ kills constants and that the same $s$ and sign coefficient $b$ can be chosen in both component forms. On the odd centered sector the constant vanishes, so $\ker n=\operatorname{span}\{\varepsilon,\varphi\}$ there. This keeps the complete prime form in the residual; strictness needs only the continuous component.
+
+For the [minimum-norm Suzuki map](theta-minimal-source-normalized-optimizer-map.md), write $u=U(q,q)$ and $r_y=U(y,q)$ as there. Its undecided full-span witness therefore has the exact test
+$$
+n[ug_y-r_yg_q]>0
+\quad\Longleftrightarrow\quad
+ug_y-r_yg_q\notin\operatorname{span}\{\varepsilon,\varphi\}.
+\tag{12}
+$$
+Source independence in the $M$ metric does not by itself decide this membership. Even if it is strict, (12) would exclude only that rank-one full-span map; it would not evaluate the distinguished affine optimizer or prove RH.
+
 ## Attribution and formal scope
 
 The closed-form representation theorem, ground-state transform, Carleman bound, nonnegative-form Cauchy–Schwarz and affine variational identities used here are classical. The proofs retain the actual ground state and every continuous and prime-power edge. These are written mathematical results, with no Lean claim for the full-form comparison or the remaining arithmetic smallness.

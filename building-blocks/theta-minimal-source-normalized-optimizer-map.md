@@ -240,7 +240,7 @@ Q_0^{(\sigma)}-N\not\succeq0
 
 This witness does not apply to the actual optimizer vector unless c is proportional to d. It preserves the requested distinction between full-span and optimizer-only certificates.
 
-The nonnegative form N makes d^TNd≥0. Proving strict positivity requires showing that ug_y-r_yg_q does not lie in the exact nullspace of the common conditional form. Source independence in the M metric does not by itself prove this residual nondegeneracy. No strict claim is inserted here.
+The nonnegative form N makes d^TNd≥0. The [exact common-score nullspace theorem](theta-affine-comparison-conditional-edge-energy.md#the-exact-common-score-nullspace) identifies that nullspace on odd potentials as $\operatorname{span}\{\varepsilon,\varphi\}$. Thus strict positivity is equivalent to $ug_y-r_yg_q$ lying outside that two-dimensional span. Source independence in the M metric does not by itself prove this residual nondegeneracy. No strict claim is inserted here.
 
 Equivalently, the complete two-by-two test for (19) is
 
