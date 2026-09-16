@@ -3,7 +3,7 @@
 RH Agent3, 2026-09-17; independently audited. This is a rigorous **countermodel to a proposed type of argument**, not a statement about the actual von Mangoldt weights. It preserves the ordinary integer successor, the exact prime-power support, one coherent coefficient for every power of a prime, a prime-number-theorem asymptotic, and a strictly positive factorial ground. Nevertheless one fixed pole-null terminal-prime packet has signed scores unbounded in both directions. Therefore those structural properties alone cannot prove the one-sided \(O(1)\) terminal bound needed for RH; the exact amplitudes \(\Lambda(p^r)=\log p\) or another genuinely arithmetic constraint must enter. A [separate coefficient countermodel](odd-terminal-schur-coefficient-countermodel.md) treats moderate-frequency Schur trials; the construction here tests factorial-ground positivity and a bounded-arch fixed-shell score.
 
 Fix a nonzero real \(g\in C_c^\infty(0,B)\) with
-\(M_g(1/2)=\int_0^B e^{-y/2}g(y)dy=0\), and put \(k=g*g\). A signed two-bump profile gives such a \(g\). Then \(k\in C_c^\infty(0,2B)\), \(k\not\equiv0\), and
+\(M_g(1/2)=\int_0^B e^{-y/2}g(y)dy=0\), and put \(k=g*g\). A signed two-bump profile gives such a \(g\); one may also take the explicit fixed filter \(v\) in the [exact pole-null terminal-prime RH criterion](odd-pole-null-terminal-prime-rh-filter.md). Thus the countermodel directly tests that criterion after changing the prime amplitudes. Then \(k\in C_c^\infty(0,2B)\), \(k\not\equiv0\), and
 \[
  c_k:=\int_0^{2B}e^{-s/2}k(s)^2ds>0.
 \tag{1}
