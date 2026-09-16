@@ -162,6 +162,8 @@ Q(G,z_t)=\sqrt{\beta/2}
 $$
 Thus the small pole value $H_t$ has its exact coefficient, while the actual signed ground-arrival integral remains. The large pole derivative from the coherent-core source is not bounded or discarded by this identity.
 
+The later [coherent-kernel pole detector](theta-coherent-kernel-ground-pole-detection.md) evaluates the clock transform of this full row. Its real residue cancels exactly, so a detected critical zero forces both signs at arbitrarily late clock times; finite Cesàro square mean on an unbounded set of cores is RH-equivalent. Those conclusions use the complete arithmetic Mellin pole and do not supply an unconditional upper bound.
+
 This provides an actual ground-equation consumer for the exponential two-source family, despite the divergent individual theta norms. Obtaining a bound for $Q_{\rm core}(t)$, or for the constrained covariance error, requires a further signed estimate linking these mixed rows; none is assumed here.
 
 ## Attribution and formal scope
