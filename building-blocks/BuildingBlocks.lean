@@ -484,6 +484,7 @@ import BuildingBlocks.CenteredGoldbachHeatScaleIncrementFinite
 import BuildingBlocks.CenteredGoldbachSuccessorHeatFinite
 import BuildingBlocks.CenteredGoldbachHistoryShellFinite
 import BuildingBlocks.CenteredGoldbachAdjacentTotalsFinite
+import BuildingBlocks.CenteredGoldbachEvenCompensationFinite
 
 import BuildingBlocks.ThetaLocalSpectralAudit
 import BuildingBlocks.MonotoneObservationSchur
@@ -493,3 +494,4 @@ import BuildingBlocks.CollectiveSourceRangeFinite
 import BuildingBlocks.CollectiveSourceGalerkinFinite
 import BuildingBlocks.RadiusTwoEdgeCellGeometry
 import BuildingBlocks.RadiusTwoEdgeReversalFinite
+import BuildingBlocks.UncutEdgeParityFinite
