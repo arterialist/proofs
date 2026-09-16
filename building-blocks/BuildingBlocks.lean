@@ -419,6 +419,8 @@ import BuildingBlocks.ThetaSignedCoreFiniteBlock
 import BuildingBlocks.SignedCoreGramContraction
 
 import BuildingBlocks.LargestPrimeSquarefreePackets
+import BuildingBlocks.PrimeAdmissionEnergyFlux
+import BuildingBlocks.KappaCoefficientPositivity
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
