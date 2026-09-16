@@ -335,3 +335,4 @@ import BuildingBlocks.FinitePacketSupportSeparation
 import BuildingBlocks.GoldbachHeatInitialTrace
 import BuildingBlocks.IntegerCarryPhase
 import BuildingBlocks.IntegerCarryPrimitiveAnalytic
+import BuildingBlocks.IntegerCarryPrimitiveIntegral

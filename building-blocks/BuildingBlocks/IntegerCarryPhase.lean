@@ -6,7 +6,7 @@ namespace BuildingBlocks.IntegerCarryPhase
 noncomputable def bernoulliOne (x : ℝ) : ℝ := Int.fract x - 1 / 2
 noncomputable def unitPrimitive (x : ℝ) : ℝ := ((Int.fract x) ^ 2 - Int.fract x) / 2
 noncomputable def phase (r x : ℝ) : ℝ := r * bernoulliOne x - bernoulliOne (r * x)
-/-- The published closed formula; its integral identification is a separate obligation. -/
+/-- The published closed formula, identified with the phase integral in IntegerCarryPrimitiveIntegral. -/
 noncomputable def primitiveFormula (r x : ℝ) : ℝ := r * unitPrimitive x - unitPrimitive (r * x) / r
 
 theorem unitPrimitive_bounds (x : ℝ) : -1 / 8 ≤ unitPrimitive x ∧ unitPrimitive x ≤ 0 := by
