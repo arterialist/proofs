@@ -10,7 +10,14 @@ energy after admitting all primes at most `P`.  The assembled expansion is
  C_P=-4\langle F_P,J_P\rangle .                                      \tag{1}
 \]
 
-For every fixed `epsilon>0`, uniformly for `P<=X^(1/2-epsilon)`,
+After the second-Abel endpoint extension, uniformly for
+
+\[
+ P\le {X\over(\log X)^2\exp\{C(\log\log X)^2\}}
+\]
+
+with sufficiently large absolute `C`, and hence throughout every fixed
+`P<=X^(1-epsilon)`,
 
 \[
  \sup_P|\rho_X(P)|=o(1).                                               \tag{2}
@@ -31,7 +38,7 @@ Here
  E_\infty\ge \frac{e^{-4}(e^2-1)}{16}.                                \tag{4}
 \]
 
-Thus the strongest uniform consequence on the full fixed-power range is a
+Thus the strongest uniform consequence on the proved near-linear range is a
 strictly positive plateau.  It is not termwise control of prime admissions.
 
 ## Cumulative admissions
@@ -57,7 +64,7 @@ Combining (1) at the two endpoints gives
    +\rho_X(P)-\rho_X(\varnothing).                                    \tag{6}
 \]
 
-Hence, if `P(X)->infinity` in the fixed-power range, the cumulative admission
+Hence, if `P(X)->infinity` in the proved near-linear range, the cumulative admission
 tends to `E_infinity-E_emptyset`.  This identity gives no count or sign budget
 for the individual summands.  Positive and negative admissions can have
 finite total variation while their sum converges to this endpoint difference.
@@ -182,8 +189,8 @@ condition `p<=(1-gamma)log log X` is also sufficient.
 This is the exact frontier of the present absolute-error argument, not a
 necessity theorem.  At larger `p`, (1) still determines the level energy, but
 its `O(L^(-2))` error is larger than the known exponentially small individual
-margin.  In particular, the fixed-power range
-`P<=X^(1/2-epsilon)` does not transfer individual signs without a stagewise
+margin.  In particular, even the enlarged near-linear level range does not
+transfer individual signs without a stagewise
 remainder estimate far sharper than the uniform level expansion.
 
 A degree-zero Hodge projection does not remove the endpoint loss.  For any
@@ -230,7 +237,7 @@ positive and negative fixed-stage admissions just described.
 ## Why this does not advance RH
 
 All conclusions occur in the separated-endpoint regime
-`P<=X^(1/2-epsilon)`.  Complete admission has `P=X`, where the endpoint is of
+`P<=X/((log X)^2 exp(C(log log X)^2))`. Complete admission has `P=X`, where the endpoint is of
 the same scale as the non-endpoint plateau and its first coherent component
 cancels that plateau.  The remaining weighted Mertens prefix is precisely the
 uncontrolled term.  Neither (3) nor the small-stage sign changes estimate it.

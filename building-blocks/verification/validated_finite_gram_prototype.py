@@ -2,8 +2,8 @@
 """Exact-rational preflight for the radius-two constrained Gram certificate.
 
 This program deliberately has no floating-point path.  It accepts outward
-rational intervals for the *actual* theta entries, checks that the four real
-constraint rows are present, combines coherent port terms before estimating,
+rational intervals for the *actual* theta entries, checks the source-dependent
+real constraint rows, combines coherent port terms before estimating,
 and applies reproducible Gershgorin/Schur sufficient tests.  The distributed
 template is incomplete because the published sources do not contain a
 validated killed ground or a concrete finite observation row.
@@ -122,17 +122,27 @@ def rational_even_mesh(level: int) -> dict[str, Any]:
 
 def run(doc: dict[str, Any]) -> dict[str, Any]:
     missing: list[str] = []
-    required_rows = ["mean", "a_c", "Re_J", "Im_J"]
-    if doc.get("constraints", {}).get("row_names") != required_rows:
-        raise ValueError(f"constraint rows must be exactly {required_rows}")
+    obs_dim = doc.get("constraints", {}).get("observation_dimension_complex")
+    if obs_dim is None:
+        missing.append("constraints.observation_dimension_complex")
+        required_rows = None
+    else:
+        obs_dim = int(obs_dim)
+        required_rows = (["mean", "a_c"] +
+                         [name for j in range(obs_dim)
+                          for name in (f"Re_J_{j}", f"Im_J_{j}")])
+        if doc.get("constraints", {}).get("row_names") != required_rows:
+            raise ValueError(f"constraint rows must be exactly {required_rows}")
     n = int(doc["trial_dimension"])
     if doc.get("constraints", {}).get("exact_projection_provenance") is None:
         missing.append("constraints.exact_projection_provenance")
     rows = doc["constraints"].get("rows")
     if rows is None:
         missing.append("constraints.rows (exact residuals on constrained basis)")
-    elif len(rows) != 4 or any(len(row) != n for row in rows):
-        raise ValueError("constraints.rows must be 4 by trial_dimension")
+    elif required_rows is None:
+        missing.append("constraints.rows cannot be interpreted before observation dimension is fixed")
+    elif len(rows) != len(required_rows) or any(len(row) != n for row in rows):
+        raise ValueError("constraints.rows has the wrong number of actual real rows")
     elif any(x is None for row in rows for x in row):
         missing.append("constraints.rows contains unpublished entries")
     elif any(q(x) != 0 for row in rows for x in row):

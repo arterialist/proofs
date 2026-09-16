@@ -2,6 +2,14 @@
 
 ## Scope and outcome
 
+**Correction.** The source trace in
+[Canonical finite prime observations](canonical-finite-prime-observation-and-ground-input.md)
+shows that the published observation is finite-vector-valued. The four-row
+example below is conditional on complex observation dimension one, which the
+source does not establish. The current runner and template therefore require
+the actual observation dimension and `2+2d` real rows; they no longer accept
+the four-row example as source data.
+
 I built the smallest exact-rational replay for the finite constrained Gram
 certificate at radius two.  It uses the five even linear hats on
 

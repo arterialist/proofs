@@ -7,6 +7,7 @@
     "complement.lambda_N_plus_1",
     "complement.mixed_normalized_norm",
     "constraints.exact_projection_provenance",
+    "constraints.observation_dimension_complex",
     "constraints.rows (exact residuals on constrained basis)",
     "killed.continuous",
     "killed.prime_head",

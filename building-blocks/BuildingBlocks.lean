@@ -427,6 +427,7 @@ import BuildingBlocks.CoherentPacketAlgebra
 import BuildingBlocks.BoundaryFormSmallness
 import BuildingBlocks.FiniteConstrainedPortCertificate
 import BuildingBlocks.ValidatedFiniteGramEncoding
+import BuildingBlocks.CanonicalFiniteObservation
 
 import BuildingBlocks.LargestPrimeSquarefreePackets
 import BuildingBlocks.PrimeAdmissionEnergyFlux
@@ -451,6 +452,8 @@ import BuildingBlocks.SimultaneousGreenAssemblyFinite
 import BuildingBlocks.HarmonicEndpointCrossFinite
 import BuildingBlocks.GrowingAdmissionSignTransferFinite
 import BuildingBlocks.FriableEndpointCancellationFinite
+import BuildingBlocks.AdmissionIncrementCancellationFinite
+import BuildingBlocks.FriableEndpointCrossoverFinite
 
 import BuildingBlocks.HardClockWeightedLcmClass
 

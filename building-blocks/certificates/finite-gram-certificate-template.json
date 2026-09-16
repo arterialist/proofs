@@ -5,10 +5,11 @@
   "raw_hat_dimension": 5,
   "trial_dimension": 1,
   "constraints": {
-    "row_names": ["mean", "a_c", "Re_J", "Im_J"],
+    "observation_dimension_complex": null,
+    "row_names": null,
     "rows": null,
     "exact_projection_provenance": null,
-    "comment": "The actual published observation is existential O_{M,J}; no scalar complex J, M, edge filters, or entries are specified."
+    "comment": "For complex observation dimension d, rows must be mean,a_c,Re_J_0,Im_J_0,...,Re_J_(d-1),Im_J_(d-1). The source does not fix d."
   },
   "alpha_2": null,
   "mass": null,

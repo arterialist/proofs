@@ -158,11 +158,10 @@ to zero in the range
 \]
 
 The independently audited de la Bretèche--Tenenbaum friable Möbius bound
-controls the same endpoint vector above this region, through every fixed
-power range
+first controls the same endpoint vector above this region through
 
 \[
- \boxed{P\le X^{1/2-\varepsilon}\qquad(\varepsilon>0\text{ fixed}).}
+ P\le X^{1/2-\varepsilon}.
 \tag{11}
 \]
 
@@ -173,12 +172,24 @@ inside `P<=X`, every non-endpoint component is uniform there. Thus (8), with
 a remainder tending to zero, is justified throughout (11), using the
 explicitly stated classical PNT and friable mean-value inputs.
 
-The former restriction `P<=(3-eta)log X` came from a cruder endpoint face
-count and must not be retained. The Lambert-W range (10) is only the
-sign-free part of the proof, not the final range. The first unmatched formula
-beyond (11) is still decay of the same endpoint norm (9): once `P^2` reaches
-the Abel-effective scale, the available friable estimate loses one
-logarithm. No conclusion for `P` comparable to `X` follows.
+The [second-Abel endpoint theorem](friable-endpoint-second-abel-frontier.md),
+independently repaired in
+[its adversarial audit](second-abel-endpoint-frontier-adversarial-audit.md),
+removes the first-layer logarithmic loss before absolute values are taken.
+Combined with the non-endpoint estimates above, the current full expansion
+is uniform in the larger range
+
+\[
+ \boxed{P\le {X\over(\log X)^2
+ \exp\{C(\log\log X)^2\}}}
+ \tag{12}
+\]
+
+for sufficiently large absolute `C`; in particular it holds for every fixed
+`P<=X^(1-epsilon)`. The former restriction `P<=(3-eta)log X` and (11) are
+intermediate frontiers. No conclusion for `P` comparable to `X` follows:
+there the truncated Mertens zero moment remains nonzero and has the explicit
+[near-complete crossover](near-complete-endpoint-crossover.md).
 
 ## Lean scope
 
