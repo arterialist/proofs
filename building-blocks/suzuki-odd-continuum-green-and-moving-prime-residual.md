@@ -198,7 +198,7 @@ The weight is supported on \(Xe^{-3/2}\le n\le Xe^{-1/2}\), so every sum below i
   +XF(1)^4.
  \quad}                                                        \tag{12g}
 \]
-Consequently, (12b) is equivalent to a bounded logarithmic average of the right side of (12g), namely \((\log Y)^{-1}\int_1^Y(\cdots)dX/X\). This retains all prime powers, ordered additive pairs, the linear compensation and the density square. Ordinary Goldbach existence does not bound this centered pair energy.
+Consequently, (12b) is equivalent to a bounded logarithmic average of the right side of (12g), namely \((\log Y)^{-1}\int_1^Y(\cdots)dX/X\). This retains all prime powers, ordered additive pairs, the linear compensation and the density square. The sum over all totals is exactly \(P_X^2\), so the regrouping does not create a new inequality. Ordinary Goldbach existence does not bound this centered pair energy; a transfer from unweighted fixed-total counts would also need control of how the representations split between the two summands. Even one balanced prime pair in a central subwindow for each of \(\asymp X\) totals guarantees only an \(\asymp(\log X)^2\) selected-pair contribution, because each weighted pair is \(\asymp(\log X)^2/X\); the main term is \(\asymp X\).
 
 There is also a direct fixed-source reading. Let \(E(x)=\Psi(x)-x\), \(H(u)=e^{-u/2}E(e^u)\), and \(L(v)=W'(v)+W(v)/2\). For \(a>3/2\), the support of \(W(2a-\log x)\) lies strictly above \(x=1\), so Stieltjes integration by parts has no lower endpoint:
 \[
