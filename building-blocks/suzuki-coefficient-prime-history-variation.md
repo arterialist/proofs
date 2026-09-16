@@ -58,6 +58,18 @@ pointwise Taylor expansion is
 The remainder in (5) depends on \(n\). It cannot be summed at the
 critical line without a separate uniform estimate.
 
+There is a finite proof of (4) as well. Let \(D f(n)=f(n)\log n\) on
+arithmetic functions and write \(\zeta_{\rm ar}(n)=1\) for \(n\ge1\).
+The convolution product rule and
+\(\mu*\zeta_{\rm ar}=\delta_1\) give
+\(D\mu*\zeta_{\rm ar}=-\Lambda\), hence
+\(D\mu*\log=-\Lambda*\Lambda\) since
+\(\log=\zeta_{\rm ar}*\Lambda\). Applying the product rule again
+gives \(D^2\mu*\zeta_{\rm ar}+2D\mu*\log+\mu*D\log=0\).
+The literal squared divisor factor in \(c''_0\) then reduces to
+\(-4D\mu*\log=4\Lambda*\Lambda\). This uses neither an infinite
+Dirichlet series nor a zero-free assumption.
+
 The repository's [original \(V/W\) coefficient](actual-W-positive-primitive-analysis.md)
 keeps only ordered histories with distinct prime-power bases. The
 [same-prime and distinct-prime split](BuildingBlocks/SelbergDistinctPrimes.lean)
@@ -126,11 +138,9 @@ uniform Hankel inequality is still unproved.
 These identities give an exact source map, not RH or Goldbach.
 
 [SuzukiCoefficientVariation.lean](BuildingBlocks/SuzukiCoefficientVariation.lean)
-formalizes the divisor-sum coefficient, (2), and the second
-derivative as the literal finite sum
-\(\sum_{d\mid n}\mu(d)(\log(n/d)-\log d)^2\), using mathlib's
-actual Möbius and von Mangoldt functions with standard axioms only.
-The finite-product identification in (1), the equality of this
-second derivative with \(4\Lambda*\Lambda\) in (4), and operator
-and completed analytic identities (7)--(9) are written mathematics,
-not Lean theorems yet.
+formalizes both derivatives of the divisor-sum coefficient and
+identifies its second derivative with \(4\Lambda*\Lambda\) by the
+finite convolution product rule. It uses mathlib's actual Möbius and
+von Mangoldt functions with standard axioms only. The finite-product
+identification in (1) and the operator and completed analytic
+identities (7)--(9) remain written mathematics, not Lean theorems yet.
