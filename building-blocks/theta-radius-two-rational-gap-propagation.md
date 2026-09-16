@@ -58,21 +58,17 @@ Also \(b(3)=2\cosh(3/2)<2e^{3/2}\).  Hence
 \]
 
 The last inequality uses \(\pi>3\), \(e>2\), so the omitted denominator is
-greater than one.  For a deliberately coarse integer enclosure, use
-\(\pi<4\) and \(e<3\):
+greater than one.  The [rational enclosure audit](theta-radius-two-J3-rational-upper.md)
+uses short rational intervals for \(e\) and \(\pi\), followed by one exact
+integer comparison, to sharpen (5) to
 
 \[
- \pi e^6<4\cdot3^6=2916,
- \qquad
- e^{\pi e^6}<e^{2916}<3^{2916}<10^{2916}.                    \tag{6}
+                   \boxed{J(3)<10^{544},\qquad
+                          N<2\cdot10^{544}.}                  \tag{6}
 \]
 
-Thus the proved rational bounds are
-
-\[
-                   \boxed{J(3)<10^{2916},\qquad
-                          N<2\cdot10^{2916}.}                 \tag{7}
-\]
+The finite rational comparisons are independently executable in
+`verification/theta_radius_two_J3_rational_upper_check.py`.
 
 This estimate uses a lower bound for \(\Phi\), not the frequently used
 upper theta envelope.  Using the latter would give the wrong direction for
@@ -85,16 +81,16 @@ The triangular trial proved
 \[
  \mathscr K[f]<-\frac{143}{2560},
  \qquad
- E_{O_2}[h]=\frac12N+\mathscr K[f].                           \tag{8}
+ E_{O_2}[h]=\frac12N+\mathscr K[f].                           \tag{7}
 \]
 
 This numerator retained the full prime-power sum; the proof merely kept the
-single positive \(n=241\) summand when taking a lower bound.  From (7)--(8),
+single positive \(n=241\) summand when taking a lower bound.  From (6)--(7),
 
 \[
  \frac{E_{O_2}[h]}{N}
- <\frac12-\frac{143}{5120\,10^{2916}}
- <\frac12-10^{-2918}.                                        \tag{9}
+ <\frac12-\frac{143}{5120\,10^{544}}
+ <\frac12-10^{-546}.                                         \tag{8}
 \]
 
 The second strict inequality is exact integer arithmetic because
@@ -103,7 +99,7 @@ The second strict inequality is exact integer arithmetic because
 \[
  \boxed{
  d:=\frac12-\alpha_2>d_0,
- \qquad d_0:=10^{-2918}.}                                    \tag{10}
+ \qquad d_0:=10^{-546}.}                                     \tag{9}
 \]
 
 This is coarse but fully explicit.  It complements the existing opposite
@@ -115,13 +111,13 @@ The established barrier has coercivity
 
 \[
  (A_\varepsilon-\alpha_2)w\ge\delta w,
- \qquad \delta=\frac d8.                                     \tag{11}
+ \qquad \delta=\frac d8.                                    \tag{10}
 \]
 
-Equation (10) gives the rational bound
+Equations (9)--(10) give the rational bound
 
 \[
-                         \boxed{\delta>10^{-2919}.}           \tag{12}
+                         \boxed{\delta>10^{-547}.}           \tag{11}
 \]
 
 The theta tail estimate already proved at radius two extends, for \(T\ge2\),
@@ -129,7 +125,7 @@ to
 
 \[
  \nu(O_T)\le\frac{512}{5}
-                   \exp\!\left[-\frac52e^{2T}\right].       \tag{13}
+                   \exp\!\left[-\frac52e^{2T}\right].      \tag{12}
 \]
 
 Take \(S_0=5\).  Since \(e^5>100\), one has \(e^{10}>10^4\),
@@ -137,29 +133,29 @@ and therefore
 
 \[
  \nu(O_5)<\frac{512}{5}e^{-25000}
-          <\frac12\,10^{-2918}=\frac{d_0}{2}.                \tag{14}
+          <\frac12\,10^{-546}=\frac{d_0}{2}.                 \tag{13}
 \]
 
 For the barrier amplitude requirement
 
 \[
- M>\max\left(1,\frac{2\nu(O_2)}{d_0}\right),                 \tag{15}
+ M>\max\left(1,\frac{2\nu(O_2)}{d_0}\right),                \tag{14}
 \]
 
 use the established \(\nu(O_2)<10^{-47}\).  The integer choice
 
 \[
-                         \boxed{M=10^{2872}}                  \tag{16}
+                         \boxed{M=10^{500}}                   \tag{15}
 \]
 
-satisfies (15), since \(2\nu(O_2)/d_0<2\cdot10^{2871}\).
+satisfies (14), since \(2\nu(O_2)/d_0<2\cdot10^{499}\).
 
 Thus the spectral, tail, and amplitude inputs to the fixed-core barrier are
 now all effective rational data:
 
 \[
- d_0=10^{-2918},\qquad \delta_0=10^{-2919},
- \qquad S_0=5,\qquad M=10^{2872}.                             \tag{17}
+ d_0=10^{-546},\qquad \delta_0=10^{-547},
+ \qquad S_0=5,\qquad M=10^{500}.                              \tag{16}
 \]
 
 ## 5. Where numerical propagation presently stops
@@ -170,16 +166,16 @@ Once the barrier inequality has been completed for one explicit
 \[
  \|\psi_2\|_\infty
  \le\frac{8MC_\varepsilon}{d}
- <8\cdot10^{5790}C_\varepsilon
- <10^{5791}C_\varepsilon.                                    \tag{18}
+ <8\cdot10^{1046}C_\varepsilon
+ <10^{1047}C_\varepsilon.                                    \tag{17}
 \]
 
-The direction in (18) uses \(d>d_0\), hence \(1/d<1/d_0\).
+The direction in (17) uses \(d>d_0\), hence \(1/d<1/d_0\).
 It does not substitute the existing upper bound \(d<10^{-20}\).
 
 The current written barrier proof still uses a qualitative prime-return
 limit to choose its outer strip and then chooses \(\varepsilon\) to pay the
-bounded-strip negative part.  To turn (18) into a number, two constants must
+bounded-strip negative part.  To turn (17) into a number, two constants must
 still be evaluated in this order:
 
 1. an effective full-Chebyshev partial-summation remainder for the fixed
@@ -195,17 +191,17 @@ here.  What has changed is that the previously first missing datum is now
 proved: all remaining non-effectivity lies in this fixed-function
 prime-return and continuous-rate calculation.
 
-Subject only to that last calculation, (18) would feed the already proved
+Subject only to that last calculation, (17) would feed the already proved
 ground-tail estimate
 
 \[
  \|\Phi\psi_2 1_{u<-T}\|_{\mathcal H}
  \le
  \left[C_\theta\{(\alpha_2+1)\|\psi_2\|_\infty^2\nu(O_T)
- +b_T\|\psi_2\|_\infty\sqrt{\nu(O_T)}\}\right]^{1/2}.        \tag{19}
+ +b_T\|\psi_2\|_\infty\sqrt{\nu(O_T)}\}\right]^{1/2}.       \tag{18}
 \]
 
-An entirely numerical version of (19) additionally needs the written
+An entirely numerical version of (18) additionally needs the written
 constant \(C_\theta\) and the chosen \(C_\varepsilon\).  The rational gap,
 the tail cutoff, and the barrier amplitude no longer block it.
 
