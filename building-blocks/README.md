@@ -34,6 +34,10 @@ has zero weighted total moment and the continuum renewal term is exactly
 a future tail. The finite second-order trapezoid bound is formalized in
 [ActualHeatRenewalRectangle.lean](BuildingBlocks/ActualHeatRenewalRectangle.lean);
 the Mellin moment and infinite-tail passage remain written proofs.
+Landau's positive-Laplace theorem and the actual zeta poles show that
+this response takes both signs arbitrarily late despite its eventually
+positive forcing. This rules out response positivity as the missing
+source-specific bound.
 
 ## Discrete harmonic convolution, regularity and aliasing
 

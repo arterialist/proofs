@@ -364,6 +364,40 @@ $[k\log2,(k+1)\log2)$, proving the claim by induction. The
 bounded-response implication for this explicit decaying source
 remains open; uniqueness alone gives no horizon-uniform bound.
 
+There is also an unconditional sign restriction on this distinguished
+response. The original $b(v)$, hence $h_\beta(v)=b(v)$ for $v\ge2$,
+takes **both positive and negative values arbitrarily far out**. To
+prove this, suppose $b$ were eventually of one weak sign. The
+bilateral Laplace transform of $b$ is the meromorphic expression in
+Eq. (8) of the renewal note,
+
+\[
+\widehat b(z)=\Gamma(z+\tfrac12)
+ \left[-\frac{\zeta'(z+\tfrac12)}{\zeta(z+\tfrac12)}
+       -\frac{z+\tfrac12}{z-\tfrac12}\right].
+\tag{15d}
+\]
+
+The negative-time part decays superexponentially and, together with
+any bounded positive-time interval, contributes an entire transform.
+On positive times,
+the unconditional PNT error used for (13a) gives
+$b(v)=O(e^{v/2-c\sqrt v})$, so its absolute convergence abscissa
+$\sigma$ is at most $1/2$. At least one nontrivial zeta zero has
+real part at least $1/2$ by the classical existence and reflection
+theorems; at $z=\rho-1/2$, (15d) has nonzero residue
+$-m_\rho\Gamma(\rho)$. Thus $\sigma\ge0$.
+If $b$ has an eventual weak sign, [Landau's Laplace theorem](BuildingBlocks/LandauSingularity.lean)
+forces a singularity at the real point $z=\sigma$. But (15d) is
+holomorphic on the entire real segment $0\le z\le1/2$:
+$\zeta(s)<0$ for $1/2\le s<1$, and the apparent pole at $s=1$
+cancels. This contradiction proves the two-sided late sign claim.
+The zero-existence and symmetry facts are recorded in
+[DLMF §25.10](https://dlmf.nist.gov/25.10). The general Landau
+principle is formalized in Lean; its application to this actual heat
+transform remains a written proof. Thus eventual positivity of the
+causal forcing in (15c) cannot imply positivity of its response.
+
 The baseline also leaves every zero resonance intact. Its bilateral
 Laplace transform
 $\widehat\beta(z)=\int_{\mathbb R}e^{-zv}\beta(v)\,dv$ is entire:
