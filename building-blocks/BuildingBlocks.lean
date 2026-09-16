@@ -336,3 +336,4 @@ import BuildingBlocks.GoldbachHeatInitialTrace
 import BuildingBlocks.IntegerCarryPhase
 import BuildingBlocks.IntegerCarryPrimitiveAnalytic
 import BuildingBlocks.IntegerCarryPrimitiveIntegral
+import BuildingBlocks.IntegerCarryPrimitiveBounds
