@@ -88,6 +88,34 @@ For each fixed \(N\), this is a smooth compact exterior potential in \(D(K)\). T
 \]
 Here \(D(K)\) convergence means graph norm as in (9). This is a derivative of finite paths followed by a proved limit; no interchange of an infinite coefficient path with differentiation is asserted.
 
+## A literal full-Weil first-variation row
+
+The same tests also consume Suzuki's **completed** Weil form, without identifying that form with the arithmetic coefficient alone. Let \(Q_W\) be the full polarized physical form, with archimedean part \(\mathscr K=A-S\), complete prime translation sum \(S\), and both pole moments \(M_\pm(g)=\int e^{\pm u/2}g(u)du\). Define
+\[
+ g_{N,\omega}=\Phi\psi H_{N,\omega},\quad
+ g_0=\Phi\psi\,\operatorname{sgn}(u)\varphi(|u|),\quad
+ g_N=\Phi\psi H_N,\quad g=\Phi\psi H.
+\tag{12}
+\]
+Every fixed finite path lies in the full Weil form domain. For real \(\omega\) near zero, ordinary differentiation of its quadratic form gives
+\[
+ \boxed{\quad
+ \left.\frac{d}{d\omega}Q_W[g_{N,\omega}]\right|_{0}
+ =2Q_W(g_0,g_N)
+ \longrightarrow 2Q_W(g_0,g).
+ \quad}
+\tag{13}
+\]
+The row on the right retains its literal completion:
+\[
+ Q_W(g_0,g_N)=\mathscr K(g_0,g_N)
+   +M_+(g_0)M_-(g_N)+M_-(g_0)M_+(g_N).
+\tag{14}
+\]
+Here \(\mathscr K\) is a form pairing, not an assertion that \(Ag_0\) exists as an unweighted \(L^2\) vector.
+
+For the limit in (13), graph convergence in (9) implies convergence in the full ground energy. The proved equivalence of the \(\gamma\) and original ground-potential form domains then gives \(\psi H_N\to\psi H\) in original \(L^2(\nu)\) and form norm. The archimedean and complete-prime pairings consequently converge. Each pole moment is a bounded functional of \(\psi H_N\in L^2(\nu)\): Cauchy--Schwarz uses \(\int e^{\pm u}\Phi(u)/b(u)\,du<\infty\). Thus no gamma or pole contribution is lost in passing to the complete-prime derivative. Equation (13) is a full-form mixed row; it gives no sign for that row.
+
 The vectors \(H_N\) or \(H\) may be used as \(u_i\in D(K)\) in the [multirank affine Gram formula](theta-affine-action-rank-domain-obstruction.md#several-action-ranks-an-exact-finite-lower-gap-certificate). Their action columns \((K-M)u_i\) retain the full continuous conductance, the actual ground weights, every internal prime power, and the score constraint through the constrained inverse. The finite successor operators \(R_n\) in Suzuki's Euler transfer are truncated divisor shifts; they are **not** identified with the physical translations in (7). Nor does the positive coefficient family sign the mixed Gram entries. The completed ratio's gamma and pole variation remains part of the full Weil form and cannot be discarded because its arithmetic first variation is \(2\Lambda\). Consequently this construction gives legitimate full-clock tests and possible lower-gap certificates, but no upper bound on \(n[v_U]\) or RH conclusion.
 
 The coefficient identity in (11) is compiled in [SuzukiCoefficientVariation.lean](BuildingBlocks/SuzukiCoefficientVariation.lean). The exponential-growth domain lemma, graph-norm limit, and actual multirank insertion here are written mathematics, not Lean-formalized.
