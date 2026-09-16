@@ -132,6 +132,24 @@ A critical-line zero gives an unconditional quantitative statement as well. Fix 
 \]
 For example, if \(D_\phi(a)\le C\) eventually, the nonnegative transform of \((C-D_\phi)\mathbf1_{[a_0,\infty)}\) has abscissa zero: the nonreal pole forbids a negative abscissa, while Landau's theorem and the absence of a positive-real singularity forbid a positive one. Its modulus at \(\epsilon+2i\gamma\) is at most its value at \(\epsilon>0\). Multiply by \(\epsilon\) and let \(\epsilon\downarrow0\); the two sides tend to \(m_\rho|F(2i\gamma)|^2\) and \(C\), respectively. Apply the same argument to \(-D_\phi\) for the lower bound. [Hardy's theorem](https://fr.wikisource.org/wiki/Page:Comptes_rendus_hebdomadaires_des_s%C3%A9ances_de_l%E2%80%99Acad%C3%A9mie_des_sciences,_tome_158,_1914.djvu/1014) supplies such a zero, so the two-sided fixed-amplitude oscillation is unconditional. By (9), the translated odd Weil row oscillates on both sides of its constant baseline \(A_{\rm arch}[\phi]+2I_-I_+\) by at least this amplitude. If RH fails, the preceding unbounded-excursion statement is stronger.
 
+The same packet gives a square-mean criterion for the complete prime discrepancy:
+\[
+ \boxed{\quad
+ \mathrm{RH}\quad\Longleftrightarrow\quad
+ \limsup_{A\to\infty}\frac1A\int_0^A|D_\phi(a)|^2da<\infty.
+ \quad}                                                        \tag{12b}
+\]
+Under RH, the uniform bound following (12) proves the forward direction. Conversely, a finite square mean makes the *literal* integral \(\widehat D_\phi(z)\) absolutely convergent and holomorphic for every \(\Re z>0\) by Cauchy--Schwarz and \(\int_0^A|D_\phi|^2=O(A)\). An offcritical zero would give a nonzero pole there by (10)--(11), a contradiction. The functional equation completes the reverse implication. Thus (12b) is an RH-equivalent positive energy target, with no unconditional bound asserted.
+
+Even without assuming RH, each finite set \(\mathcal Z\) of distinct critical-line zeros gives
+\[
+ \limsup_{A\to\infty}\frac1A\int_0^A|D_\phi(a)|^2da
+ \ge\sum_{\rho=1/2+i\gamma\in\mathcal Z}
+       m_\rho^2|F(2i\gamma)|^4,
+\tag{12c}
+\]
+where conjugate ordinates are counted separately. If the left side is finite, the literal transform converges on \(\Re z>0\); in the Abel weight \(\epsilon e^{-\epsilon a}da\), the exponentials \(e^{2i\gamma a}\) have limiting identity Gram matrix, while their pairings with \(D_\phi\) tend to the residues \(-m_\rho F(2i\gamma)^2\). Finite-dimensional projection gives the right side as a lower Abel square mean, and integration by parts bounds that Abel mean by the Cesàro limsup. If the left side is infinite, (12c) is immediate.
+
 ## Why the ordinary PNT does not pay this residual
 
 The complete unconditional bound \(|\Psi(X)-X|\le CXe^{-c\sqrt{\log X}}\), as in [Trudgian's Theorem 1](https://arxiv.org/pdf/1401.2689), and Stieltjes integration by parts in (8) yield only
