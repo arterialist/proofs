@@ -144,6 +144,61 @@ monotonicity of the normalized logarithmic prefix $A$; it does not
 determine the sign of the integrated $Q(t)$ or RH. It is not a Lean
 formalization.
 
+The finite obstruction persists at arbitrarily large scales. Write
+$B(y)=\psi(y)-\Psi_1(y)$, with the same complete prime-power source and
+right-continuous cutoff as above.
+
+**Theorem (two-sided late signs of the actual prefix contrast).** For every
+$Y>1$ there are $y_+,y_->Y$ such that $B(y_+)>0$ and $B(y_-)<0$.
+Consequently $A(y)=\Psi_1(y)/y$ has intervals of increase and intervals of
+decrease arbitrarily far out.
+
+**Proof.** Absolute Fubini for $\Re s>1$ gives the exact Mellin transform
+
+$$
+\begin{aligned}
+\mathcal B(s)&=\int_1^\infty B(y)y^{-s-1}\,dy\\
+&=\left(\frac1s-\frac1{s^2}\right)
+  \sum_{n\ge2}\frac{\Lambda(n)}{n^s}
+=\frac{s-1}{s^2}\left(-\frac{\zeta'(s)}{\zeta(s)}\right).
+\end{aligned} \tag{12b}
+$$
+
+Indeed, an atom at $n$ contributes $n^{-s}/s$ to the Mellin transform of
+$\psi$ and $n^{-s}/s^2$ to that of $\Psi_1$. The pole of
+$-\zeta'/\zeta$ at $s=1$ is canceled by $s-1$. There are no zeta zeros on
+the positive real axis: for $0<s<1$, the alternating eta series is
+positive and $\zeta(s)=\eta(s)/(1-2^{1-s})<0$, while $\zeta(s)>0$ for
+$s>1$. Thus $\mathcal B$ is holomorphic near every positive real point.
+At any nontrivial zero $\rho$ of multiplicity $m_\rho$, however, it has
+the nonzero residue
+
+$$
+\operatorname{Res}_{s=\rho}\mathcal B(s)
+=-m_\rho\frac{\rho-1}{\rho^2}. \tag{12c}
+$$
+
+Choose one zero on the critical line, whose existence is unconditional by
+[Hardy's 1914 theorem](https://fr.wikisource.org/wiki/Page:Comptes_rendus_hebdomadaires_des_s%C3%A9ances_de_l%E2%80%99Acad%C3%A9mie_des_sciences,_tome_158,_1914.djvu/1014). If $B$ were
+eventually nonnegative or eventually nonpositive, change its sign if
+needed and discard a bounded initial interval. The resulting nonnegative
+Mellin integrand has a convergence abscissa $\sigma_c\le1$, since
+$B(y)=O(y)$ by Chebyshev. Its transform differs from $\mathcal B$ or
+$-\mathcal B$ by an entire function. The genuine pole (12c) forces
+$\sigma_c\ge\Re\rho=1/2$: convergence to the left of $\rho$ would make
+the transform holomorphic at $\rho$. But
+[Landau's positive-Mellin theorem](https://arxiv.org/html/2411.07436#S2.SS4)
+forces a singularity at the real point $\sigma_c>0$, contradicting the
+real-axis regularity of (12b). Hence neither eventual sign is possible.
+Between prime-power arrivals, $B$ is continuous, so each late strict sign
+holds on a nonempty interval where $A'=B/y^2$ has the corresponding sign.
+$\square$
+
+The proof applies classical Landau theory to this retained prime-power
+prefix. It rules out eventual pointwise positivity in (12). The sign of
+the integrated readout $Q(t)$ remains open. This analytic theorem is a
+written proof; its Lean formalization remains to be done.
+
 Equivalently, the negative and positive parts of w have the same finite mass and separated supports. Formula (11) is a positive mass times the difference of two averages of the actual normalized prefix A at smaller and larger scales. A is not asserted monotone; replacing this signed difference by an assumed monotonicity would be an additional arithmetic premise.
 
 ## The original source and its common inner factor
