@@ -83,5 +83,9 @@ successor and pair histories is the open arithmetic task.
 
 The finite prime-power ground identity is formalized in
 [FactorialHOneFinite.lean](BuildingBlocks/FactorialHOneFinite.lean).
-The factorial residue identity (2), the curvature convolution (6), and
-the analytic implication in (4) remain Lean obligations.
+The exact factorial residue identity (2) is formalized in
+[FactorialResidueFinite.lean](BuildingBlocks/FactorialResidueFinite.lean),
+using the already formalized loading, nonnegativity, and successor identities
+in [ResidueLoadingSuccessor.lean](BuildingBlocks/ResidueLoadingSuccessor.lean).
+The curvature convolution (6) and the analytic implication in (4)
+remain Lean obligations. The lower bound in (4) remains unproved.
