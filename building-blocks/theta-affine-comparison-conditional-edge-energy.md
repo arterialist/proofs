@@ -186,14 +186,14 @@ v=a+b\varepsilon+s\varphi\quad\gamma\text{-almost everywhere}
 $$
 for real scalars $a,b,s$. The reverse implication uses only that every $A_i$ kills constants and that the same $s$ and sign coefficient $b$ can be chosen in both component forms. On the odd centered sector the constant vanishes, so $\ker n=\operatorname{span}\{\varepsilon,\varphi\}$ there. This keeps the complete prime form in the residual; strictness needs only the continuous component.
 
-For the [minimum-norm Suzuki map](theta-minimal-source-normalized-optimizer-map.md), write $u=U(q,q)$ and $r_y=U(y,q)$ as there. Its undecided full-span witness therefore has the exact test
+For the [minimum-norm Suzuki map](theta-minimal-source-normalized-optimizer-map.md), write $u=U(q,q)$ and $r_y=U(y,q)$ as there. Its full-span witness has the exact test
 $$
 n[ug_y-r_yg_q]>0
 \quad\Longleftrightarrow\quad
 ug_y-r_yg_q\notin\operatorname{span}\{\varepsilon,\varphi\}.
 \tag{12}
 $$
-Source independence in the $M$ metric does not by itself decide this membership. Even if it is strict, (12) would exclude only that rank-one full-span map; it would not evaluate the distinguished affine optimizer or prove RH.
+The [actual-source boundary and tail proof](theta-minimal-source-normalized-optimizer-map.md#strict-full-span-failure-for-the-actual-theta-sources) decides this membership: the crossing source has a nonzero logarithmic boundary singularity, while the score source grows faster than the matched sign action at infinity. Thus (12) is strict for the actual sources. It excludes that rank-one full-span map but does not evaluate the distinguished affine optimizer or prove RH.
 
 ## Attribution and formal scope
 

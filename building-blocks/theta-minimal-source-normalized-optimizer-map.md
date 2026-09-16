@@ -240,7 +240,49 @@ Q_0^{(\sigma)}-N\not\succeq0
 
 This witness does not apply to the actual optimizer vector unless c is proportional to d. It preserves the requested distinction between full-span and optimizer-only certificates.
 
-The nonnegative form N makes d^TNd≥0. The [exact common-score nullspace theorem](theta-affine-comparison-conditional-edge-energy.md#the-exact-common-score-nullspace) identifies that nullspace on odd potentials as $\operatorname{span}\{\varepsilon,\varphi\}$. Thus strict positivity is equivalent to $ug_y-r_yg_q$ lying outside that two-dimensional span. Source independence in the M metric does not by itself prove this residual nondegeneracy. No strict claim is inserted here.
+The nonnegative form N makes d^TNd≥0. The [exact common-score nullspace theorem](theta-affine-comparison-conditional-edge-energy.md#the-exact-common-score-nullspace) identifies that nullspace on odd potentials as $\operatorname{span}\{\varepsilon,\varphi\}$. The next theorem proves strict positivity for the actual theta sources.
+
+### Strict full-span failure for the actual theta sources
+
+**Theorem.** For every fixed $R>0$ for which the actual killed ground and score-matched comparison above are defined,
+\[
+\boxed{\quad n[ug_y-r_yg_q]>0.\quad}
+\tag{23}
+\]
+Consequently the named minimum-norm map $U_0$ fails the full two-source certificate (19) for both Suzuki signs. The theorem makes no claim about the optimizer-only inequality (17).
+
+To prove this, suppose instead that the odd potential $h=ug_y-r_yg_q$ belongs to the residual nullspace. Then $h=A\varepsilon+B\varphi$ almost everywhere for real constants $A,B$. The comparison action matches both known columns:
+\[
+M\varepsilon=K\varepsilon,
+\qquad M\varphi=K\varphi=S_f+\delta S_y-\tfrac14S_q.
+\]
+Since $Mg_y=S_y$ and $Mg_q=S_q$, applying $M$ gives an equality of $L^2(\gamma)$ sources,
+\[
+uS_y-r_yS_q
+=A K\varepsilon+B(S_f+\delta S_y-\tfrac14S_q).
+\tag{24}
+\]
+
+The crossing source $S_f=(B\sigma_C)/\rho$ has a nonzero logarithmic singularity at the positive hard boundary. In the normalization $b(x)=2\cosh(x/2)$, $\rho(x)=(1+e^x)^{-1}$, $b(x)\rho(x)=e^{-x/2}$ for $x>0$, and $r(s)=e^{-s/2}/(1-e^{-2s})$, its continuous part at $x=R+t$, $t\downarrow0$, is
+\[
+S_{f,c}(R+t)
+=\frac1{b(R+t)\rho(R+t)}
+\int_{-R}^{R}r(R+t-v)\Phi'(v)\,dv
+=\frac{e^{R/2}\Phi'(R)}2\log(1/t)+O_R(1).
+\tag{25}
+\]
+Indeed $r(s)=1/(2s)+O(1)$ near zero, and the remaining integral after replacing $\Phi'(v)$ by $\Phi'(R)$ is bounded. The [strict theta derivative theorem](theta-derivative-kernel-logconcavity.md#definitions-and-theorem) gives $\Phi'(R)<0$. The prime part of $S_f$ is locally bounded at this boundary: when $R<x<R+1$, a prime shift from $x$ into $[-R,R]$ has $n\le e^{2R+1}$, so only finitely many bounded summands occur. The other sources $S_y=\sigma/\rho$, $S_q=\tau/\rho$, and $K\varepsilon=\varepsilon(T_c+T_p)$ are locally bounded there. For the last assertion, $T_c\le a(1+\kappa_R)$ and the complete prime departure estimate gives $T_p\le2P_\infty B_p/\rho$. Thus (24) forces $B=0$.
+
+The remaining equality $uS_y-r_yS_q=A K\varepsilon$ fails at infinity. The first theta summand dominates $\Phi(x)$ as $x\to+\infty$, giving
+\[
+\sigma(x)=\frac{\Phi'(x)}{\Phi(x)}
+=-2\pi e^{2x}+\tfrac92+O(e^{-2x}),
+\qquad S_y(x)=-2\pi e^{3x}(1+o(1)).
+\tag{26}
+\]
+Meanwhile $S_q(x)=O(e^x)$ and the same complete cross-rate bound gives $K\varepsilon(x)=O_R(e^x)$. Since $u=U(q,q)>0$, the $e^{3x}$ term cannot cancel. Equality (24), initially $\gamma$-almost everywhere, is impossible by these pointwise bounds on every sufficiently far tail because $\gamma$ is equivalent to Lebesgue measure on $O$. Hence $h\notin\operatorname{span}\{\varepsilon,\varphi\}$; the exact nullspace theorem proves (23), and (21) proves full-span failure.
+
+Both arguments use the full actual theta source. The prime powers enter $S_f$ and $K\varepsilon$ and are controlled at the boundary and tail without replacing them by a continuous density. The result is strict but has no numerical lower bound for $n[h]$.
 
 Equivalently, the complete two-by-two test for (19) is
 
@@ -251,10 +293,10 @@ a_\sigma r_y^2-N_{11}\ge0,
 \[
 (a_\sigma r_y^2-N_{11})(a_\sigma u^2-N_{22})
 -(a_\sigma r_yu-N_{12})^2\ge0.
-\tag{23}
+\tag{27}
 \]
 
-All unevaluated terms in (23) are the actual edge integrals (7)-(8), not free covariance parameters.
+The theorem shows that the conditions in (27) cannot all hold for this map. Their unevaluated terms are the actual edge integrals (7)-(8), not free covariance parameters.
 
 ## Allowing one mean-zero interval direction
 
@@ -262,7 +304,7 @@ The minimal map can be enlarged without changing source normalization. Let e_1=B
 
 \[
 U_\lambda g_i=r_i e_0+\lambda_i e_1.
-\tag{24}
+\tag{28}
 \]
 
 The exact interval gamma block in the basis (e_0,e_1) is
@@ -282,7 +324,7 @@ k_{01}=\frac{2\pi}{3\log2}
 \[
 k_1=\frac{2\pi}{3\log2}
 \left(-60-11\sqrt2-8\,2^{1/4}+\log64+48\,2^{3/4}\right).
-\tag{25}
+\tag{29}
 \]
 
 and each entry has an elementary exponential expression from the first-cell kernel. Then
@@ -292,7 +334,7 @@ Q_\lambda^{(\sigma)}
 =a_\sigma rr^T
 +\sigma k_{01}(r\lambda^T+\lambda r^T)
 +(1+\sigma k_1)\lambda\lambda^T.
-\tag{26}
+\tag{30}
 \]
 
 For the optimizer vector its allowance is
@@ -302,14 +344,14 @@ c^TQ_\lambda^{(\sigma)}c
 =\frac{a_\sigma}{4}
 -\sigma k_{01}(c^T\lambda)
 +(1+\sigma k_1)(c^T\lambda)^2.
-\tag{27}
+\tag{31}
 \]
 
-Both coefficients 1+σk_1 are positive. Thus an arbitrary large λ can make (27) pay any finite scalar deficit, but this is not a meaningful arithmetic certificate unless λ is fixed by a stated endpoint or translation law and its construction cost is included. Formula (27) exposes why unrestricted finite-dimensional embedding would trivialize the optimizer question.
+Both coefficients 1+σk_1 are positive. Thus an arbitrary large λ can make (31) pay any finite scalar deficit, but this is not a meaningful arithmetic certificate unless λ is fixed by a stated endpoint or translation law and its construction cost is included. Formula (31) exposes why unrestricted finite-dimensional embedding would trivialize the optimizer question.
 
 ## Result
 
-For the named minimum-norm source-normalized candidate U_0, the Suzuki matrix and both normalization rows are explicit. The actual optimizer criterion is the scalar edge bound (17), with allowances (18). The full-span failure direction is (22). The missing information is entirely on the theta side: an upper enclosure for n[v_U], or a strict residual-energy evaluation for ug_y-r_yg_q.
+For the named minimum-norm source-normalized candidate U_0, the Suzuki matrix and both normalization rows are explicit. The actual optimizer criterion is the scalar edge bound (17), with allowances (18). The actual theta sources give strict full-span failure by (23), while the optimizer-only question remains open. The missing information for that question is an upper enclosure for $n[v_U]$.
 
 The certified Suzuki interval data do not supply those theta edge estimates. Absent an intertwiner, interval positivity cannot replace them.
 
