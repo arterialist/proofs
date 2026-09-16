@@ -52,7 +52,7 @@ It follows directly from $(1-e^{-mt})(1-e^{-nt})=(1-e^{-mt})+(1-e^{-nt})-(1-e^{-
            k(\lfloor N/j\rfloor+\lfloor N/l\rfloor). \tag{3c}
 \]
 
-At a horizon with $M(N)=0$, only the second term remains. This rearrangement alone supplies no upper bound on the coherent quadratic energy; in particular the signed terminal loading in (3c) cannot be dropped at general horizons.
+At a horizon with $M(N)=0$, only the second term remains. [FactorialClockCofactorFinite.lean](BuildingBlocks/FactorialClockCofactorFinite.lean) now compiles (3c) from the previously compiled literal integrated Möbius response and a generic finite quadratic coboundary identity; its axiom report contains only Lean's three standard axioms. This rearrangement alone supplies no upper bound on the coherent quadratic energy; in particular the signed terminal loading in (3c) cannot be dropped at general horizons.
 
 For each fixed $m\ge1$, the positive integrand increases with $N$ and monotone convergence gives $B(m,N)\uparrow k(m)$. The same limit follows from
 $\binom{m+N}{m}=m!^{-1}\prod_{j=1}^m(N+j)$ and

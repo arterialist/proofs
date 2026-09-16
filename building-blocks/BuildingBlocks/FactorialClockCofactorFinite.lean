@@ -87,6 +87,50 @@ theorem kernel_eq_cumulative_coboundary (n m : ℕ) :
   push_cast
   linarith
 
+/-- The full finite kernel energy is a terminal-coefficient row minus
+the cumulative clock evaluated on every ordered pair of sizes. -/
+theorem quadratic_coboundary {ι : Type*} (s : Finset ι) (c : ι → ℝ) (q : ι → ℕ) :
+    (∑ i ∈ s, ∑ j ∈ s, c i * c j * FactorialKernelDictionary.kernel (q i) (q j)) =
+      2 * (∑ i ∈ s, c i) * (∑ i ∈ s, c i * cumulative (q i)) -
+        ∑ i ∈ s, ∑ j ∈ s, c i * c j * cumulative (q i + q j) := by
+  simp_rw [kernel_eq_cumulative_coboundary]
+  simp_rw [mul_sub, mul_add, sum_sub_distrib, sum_add_distrib]
+  have hfirst :
+      (∑ i ∈ s, ∑ j ∈ s, c i * c j * cumulative (q i)) =
+        (∑ i ∈ s, c i * cumulative (q i)) * (∑ j ∈ s, c j) := by
+    rw [sum_mul]
+    apply sum_congr rfl
+    intro i hi
+    rw [mul_sum]
+    apply sum_congr rfl
+    intro j hj
+    ring
+  have hsecond :
+      (∑ i ∈ s, ∑ j ∈ s, c i * c j * cumulative (q j)) =
+        (∑ i ∈ s, c i) * (∑ j ∈ s, c j * cumulative (q j)) := by
+    rw [sum_mul]
+    apply sum_congr rfl
+    intro i hi
+    rw [mul_sum]
+    apply sum_congr rfl
+    intro j hj
+    ring
+  rw [hfirst, hsecond]
+  ring
+
+/-- The exact coboundary form for the literal integrated Möbius quotient
+response, including the terminal Mertens coefficient. -/
+theorem actual_moebius_energy_coboundary (N : ℕ) :
+    FactorialBinaryIntegrability.integratedEnergy N =
+      2 * (BuildingBlocks.MertensTransfer.mertens N : ℝ) *
+        (∑ j ∈ Icc 1 N, (ArithmeticFunction.moebius j : ℝ) * cumulative (N / j)) -
+      ∑ j ∈ Icc 1 N, ∑ l ∈ Icc 1 N,
+        (ArithmeticFunction.moebius j : ℝ) *
+          (ArithmeticFunction.moebius l : ℝ) * cumulative (N / j + N / l) := by
+  rw [FactorialKernelDictionary.actual_moebius_energy]
+  rw [quadratic_coboundary]
+  rw [← BuildingBlocks.MertensTransfer.mertens_eq_sum_Icc]
+
 end
 
 #print axioms cumulative_zero
@@ -95,4 +139,6 @@ end
 #print axioms admission_succ
 #print axioms cumulative_eq_admissions
 #print axioms kernel_eq_cumulative_coboundary
+#print axioms quadratic_coboundary
+#print axioms actual_moebius_energy_coboundary
 end BuildingBlocks.FactorialClockCofactorFinite
