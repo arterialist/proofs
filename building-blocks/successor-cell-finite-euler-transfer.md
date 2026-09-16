@@ -116,10 +116,53 @@ integer-minus-continuum cancellation and the signed full Weil
 completion, rather than deducing positivity from finite
 invertibility.
 
+## A prime phase has an interior successor carry
+
+The finite semigroup law does not make the dense successor-cell model
+phase-equivalent to the exact-divisor graph. For a real sign
+\(\chi(n)\in\{\pm1\}\) on positive integer labels, let
+\(D_\chi z_r=\chi(r)z_r\). The exact
+entrywise defect is
+\[
+ [(D_\chi R_dD_\chi-\chi(d)R_d)z]_r
+ =\left[\chi(r)\chi(\lfloor r/d\rfloor)-\chi(d)\right]
+       z_{\lfloor r/d\rfloor},\qquad r\le N.             \tag{9}
+\]
+If \(\chi\) is completely multiplicative, the bracket vanishes at
+the exact-multiple child \(r=dn\). It need not vanish at the other
+\(d-1\) successor children of the same parent.
+
+Take the completely multiplicative sign on positive integers
+\(\chi_2(n)=(-1)^{v_2(n)}\), which flips the prime 2 and leaves the
+odd primes fixed. For any odd \(n\) with \(2n+1\le N\), the two
+children of the unit cell vector
+\(e_n=\mathbf1_{I_n}/\sqrt{\ell_n}\) give the exact identity
+\[
+ \boxed{\quad
+ (D_{\chi_2}R_2D_{\chi_2}+R_2)e_n
+ =2\sqrt{\frac{\ell_{2n+1}}{\ell_n}}\,e_{2n+1}.
+ \quad}                                                  \tag{10}
+\]
+The multiple child \(2n\) cancels; the nondivisor carry child
+\(2n+1\) survives. Since
+\(\ell_{2n+1}/\ell_n\to\frac12\) as odd \(n\to\infty\),
+\[
+ \liminf_{N\to\infty}
+ \|D_{\chi_2}R_2D_{\chi_2}+R_2\|_{C_N\to C_N}
+ \ge\sqrt2.                                             \tag{11}
+\]
+This is an order-one interior obstruction to transferring a
+fixed-prime phase argument from the exact-divisor graph by a diagonal
+gauge. It does not settle the sign of the full Weil form. An argument
+using such a phase must control the carry entries together with the
+gamma and pole terms.
+
 [SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean)
 formalizes the child-index equivalence, cutoff semigroup law,
-commutation, and vanishing beyond the cutoff with standard mathlib
-axioms. Equations (4)--(8), the weighted Hilbert realization, and
-the full analytic Weil comparison are written mathematics, not
-Lean formalized. No novelty or RH claim follows from the finite
-Euler-product algebra alone.
+commutation, vanishing beyond the cutoff, the gauge defect (9),
+prime-two sign multiplicativity, exact-multiple cancellation, and the
+physical-value identity underlying the normalized carry in (10)
+with standard mathlib axioms. Equations (4)--(8), the weighted Hilbert
+realization and norm limit (11), and the full analytic Weil comparison
+are written mathematics, not Lean formalized. These finite identities
+give no RH conclusion.
