@@ -407,6 +407,22 @@ $$
 $$
 The weight tends to zero like $1/|\omega|$ at high frequency, so this positive pairing has no uniform lower bound by the full heat energy in (21). For $a_n=(\Lambda(n)-1)1_{n\le N}$, (25) is a complete finite centered-Goldbach pair form, with $a_1=-1$ and all admitted prime powers. Its weight depends on the ratio $n/m$ as well as the total $m+n$; entrywise positivity of $J$ does not remove the signed centered cross terms or give an RH-scale upper bound.
 
+There is nevertheless a sharp universal *upper* comparison of these two positive forms. The elementary inequality $y\coth y\le1+y^2/3$ for $y>0$ follows by multiplying by $\sinh y$ and comparing the power-series coefficients: those of $y^{2k+1}$ are $4k(k-1)/(3(2k+1)!)\ge0$. Since $\pi^2<12$, it gives
+$$
+0<\frac{\sqrt\pi\,\omega\coth(\pi\omega)}{1+4\omega^2}
+\le\frac1{\sqrt\pi},
+$$
+with the upper value approached at $\omega=0$. Therefore the symmetric arctangent matrix and the Goldbach heat matrix satisfy, on every finite coefficient set,
+$$
+\boxed{\quad
+0<\sum_{m,n}a_ma_nJ(m,n)
+\le\frac1{\sqrt\pi}\sum_{m,n}\frac{a_ma_n}{m+n}
+\quad(a\ne0).
+\quad}
+\tag{27}
+$$
+The constant is the exact norm of the Fourier multiplier on the full $L^2$ heat space. The upper constant is also sharp across arbitrary finite packets, and no positive reverse constant holds there: their heat vectors are dense in $L^2(0,\infty)$, since a vector orthogonal to every $e^{-nt}$ gives, after $x=e^{-t}$, a finite signed measure with all polynomial moments zero and hence is zero. Density transfers both the near-zero-frequency supremum and the high-frequency decay of the multiplier in (26) to finite packets. The upper inequality still requires an arithmetic bound on its right side before it can control the actual uncut centered-prime source.
+
 
 ## Dependencies and proof status
 
