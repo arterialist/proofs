@@ -4,7 +4,7 @@ The weighted graph identity for the actual odd Weil prime operator measures an *
 
 Let \(a\to\infty\), \(N=e^{2a}\), \(\phi(x)=\cosh(x/2)\), and \(Z_a=\int_{-a}^a\phi(x)^2dx=a+\sinh a\). Use the full weighted row \(S_a[F]=\int (P_a\phi/\phi)|F|^2\) and graph deficit \(D_a[F]=S_a[F]-\langle F,P_aF\rangle\) from the [prime graph identity](prime-shift-weighted-schur-window-asymptotic.md). Every \(p^r<N\) appears with \(\Lambda(p^r)/\sqrt{p^r}\).
 
-**Theorem.** There are real, normalized \(C_c^\infty(0,a)\) odd-half-line tests \(u_a\) with exact pole moment \(\langle\sqrt2\sinh(x/2),u_a\rangle=0\), whose odd extensions \(F_a\) satisfy
+**Theorem.** There are real \(C_c^\infty(0,a)\) half-line tests \(u_a\) with exact pole moment \(\langle\sqrt2\sinh(x/2),u_a\rangle=0\), whose normalized odd extensions \(F_a\) satisfy
 \[
 S_a[F_a]=(1+o(1))e^a,\qquad
 D_a[F_a]=4\log a+O(1),
