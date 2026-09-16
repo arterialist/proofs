@@ -333,6 +333,8 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 [Complete prime-cutoff convergence](theta-exponential-weak-prime-cutoff-limit.md), compiled in [WeakGroundPrimeCutoff.lean](BuildingBlocks/WeakGroundPrimeCutoff.lean), passes the translated test cutoff through both Bochner overlaps and the full prime-power series under these same moment and measurability premises.
 
+The [fixed-core PNT weak-row bound](theta-weak-ground-pnt-density-cancellation.md) cancels the two pole products against the complete prime-density kernel, leaving an integrable exponential kernel and the exact prime-minus-density discrepancy. Moving the Stieltjes derivative onto the explicit scaling test gives $\sqrt t\,|Q_{\rm W}(G_R,h_t)|\le C_{R,\psi}e^{-c\sqrt{\log(1/t)}}$. It retains the initial density cell and every prime power, but gives no sign or moving-core affine estimate. The analytic argument is written, not formalized in Lean.
+
 ## Local finite-history scattering signs
 
 [Actual physical scattering moment signs](actual-physical-scattering-moment-signs.md) compiles nineteen exact coefficient-sign, depth-uniform single-prime and list-block magnitude, finite-block-parity, varying-depth list-product, conjugate-polarized weight and original physical Mellin dictionary conclusions. Positive depth and h≥1 are required for strict signs; the physical identities retain all natural depths. Full gamma and signed prime-power upper bounds remain open.
