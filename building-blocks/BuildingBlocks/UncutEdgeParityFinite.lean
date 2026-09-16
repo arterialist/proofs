@@ -55,22 +55,32 @@ theorem finite_symmetric_edge_bound
   nlinarith
 
 /-- A target with distinct reflected coordinates cannot be in the
-span of even-hat columns whose reflected coordinates agree. -/
+span of even-hat columns whose reflected coordinates agree. This
+version applies to any finite-stage label type. -/
+theorem odd_target_not_in_even_hat_span_at
+    {ι : Type*} (i j : ι)
+    (action : Fin 5 → ι → ℂ) (target : ι → ℂ)
+    (heven : ∀ k, action k i = action k j)
+    (hodd : target i ≠ target j) :
+    ¬ ∃ c : Fin 5 → ℂ,
+      ∀ r, target r = ∑ k : Fin 5, c k * action k r := by
+  rintro ⟨c, hc⟩
+  apply hodd
+  calc
+    target i = ∑ k : Fin 5, c k * action k i := hc i
+    _ = ∑ k : Fin 5, c k * action k j := by
+      apply Finset.sum_congr rfl
+      intro k _
+      rw [heven k]
+    _ = target j := (hc j).symm
+
 theorem odd_target_not_in_even_hat_span
     (action : Fin 5 → Fin 16 → ℂ) (target : Fin 16 → ℂ)
     (heven : ∀ j, action j 9 = action j 10)
     (hodd : target 9 ≠ target 10) :
     ¬ ∃ c : Fin 5 → ℂ,
-      ∀ i, target i = ∑ j : Fin 5, c j * action j i := by
-  rintro ⟨c, hc⟩
-  apply hodd
-  calc
-    target 9 = ∑ j : Fin 5, c j * action j 9 := hc 9
-    _ = ∑ j : Fin 5, c j * action j 10 := by
-      apply Finset.sum_congr rfl
-      intro j _
-      rw [heven j]
-    _ = target 10 := (hc 10).symm
+      ∀ i, target i = ∑ j : Fin 5, c j * action j i :=
+  odd_target_not_in_even_hat_span_at 9 10 action target heven hodd
 
 /-- Monotone-convergence approximation of a positive full cell mass
 eventually yields a positive canonical restricted mass. The analytic
@@ -93,6 +103,7 @@ theorem reflected_unit_cell_indices (M : ℕ) (hM : 4 ≤ M) :
   omega
 
 #print axioms finite_symmetric_edge_bound
+#print axioms odd_target_not_in_even_hat_span_at
 #print axioms odd_target_not_in_even_hat_span
 #print axioms positive_canonical_stage
 #print axioms reflected_unit_cell_indices

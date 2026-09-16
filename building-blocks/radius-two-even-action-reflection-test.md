@@ -116,3 +116,8 @@ the ground and departure-rate cutoff could erase it. The chosen
 Accordingly (6) is a conditional finite-hat obstruction, not an
 unconditional target sign, a full-core range obstruction, or an RH
 statement.
+
+The [moving-cutoff audit](uncut-cell-nine-even-hat-test.md#eventual-canonical-detection-on-the-same-strip)
+proves that some unspecified larger canonical \((M,0)\) stage
+detects the same chosen clock test. It does not determine \(m_9\) at
+\(M=4\).

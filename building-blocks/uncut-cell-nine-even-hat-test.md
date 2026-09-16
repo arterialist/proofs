@@ -57,8 +57,8 @@ give a local lower bound \(\psi_2\ge1/4\) at a translated pair in
 \(\ell\le4\) there. The existing validated-Galerkin plan explicitly
 lists local/translated ground enclosures and \(\ell\)-series
 enclosures as missing numerical inputs. Thus (2) is an exact missing
-theorem, and the canonical odd-reflection witness cannot be made
-unconditional from the published estimates.
+theorem, and the fixed \((M,L)=(4,0)\) odd-reflection witness cannot be
+made unconditional from the published estimates.
 
 There is a distinct *uncut* finite test. Restrict the full
 \(\mathsf P_1\), with no \(E_4\) factor, to the same geometric
@@ -120,3 +120,62 @@ an odd target row from an even-hat span. The actual
 are analytic inputs from the linked theta construction and the
 [first-cell ledger](radius-two-first-edge-cell-geometry.md), not
 Lean-proved here.
+
+## Eventual canonical detection on the same strip
+
+Although the \(M=4\) cutoff is unresolved, the actual \(E_M\) cutoffs
+increase with the integer \(M\): the location and upper ground/rate
+conditions relax, while \(M^{-1}\le\psi_2\) and the distance condition
+also relax. For almost every \(u\in I=(9/4,4-\log3)\), both \(u\) and
+\(v=u+\log3\) have finite location, positive distance from the core,
+positive finite \(\psi_2\), and finite complete \(\ell\). The
+bounded-ground estimate and theta tail make the all-power series for
+\(\ell\) finite on these compact translated intervals. Hence there is
+an \(M_0(u)<\infty\) such that \(u,v\in E_M\) for every integer
+\(M\ge M_0(u)\). No uniform \(M_0\) is claimed.
+
+Let \(\mu_3\) be the full \(q=3,+\) branch of \(\mathsf P_1\), restricted
+to \(I\), and define
+\[
+ c_M=\mu_3\{u\in I:u,u+\log3\in E_M\}.
+\]
+The uncut mass \(c_\infty=\mu_3(I)\) is finite and strictly positive.
+The indicator in \(c_M\) increases to one almost everywhere.
+Monotone convergence therefore gives
+\[
+ 0\le c_M\uparrow c_\infty>0.
+                                                               \tag{7}
+\]
+Thus **some finite integer \(M\ge4\)** has \(c_M>0\). This is an
+existence result; the published bounds do not identify its first
+value or a quantitative mass margin.
+
+At grid level \(L=0\), the surviving part of \(I\) lies in the
+\(q=3,+\) start cell \((2,3)\), whose index in the stage-\(M\)
+grid is \(k_+=M+2\). Reflection sends it to the \(q=3,-\) start cell
+\((-3,-2)\) with index \(k_-=M-3\). Both are valid among the \(2M\)
+unit cells when \(M\ge4\). The two *whole canonical cells* have equal
+positive masses by reflection of \(E_M\) and the full
+\(\mathsf P_1\) density. Their row numbers need not be 9 and 10:
+those numbers belong only to the \(M=4\) sixteen-cell ledger, and
+additional prime powers/labels appear as \(M\) grows.
+
+For the same chosen \(h=1_{[e^{13/4},e^4]}\), every start \(u\in(2,3)\)
+has \(h(e^u)=0\), while \(h(e^{u+\log3})\ge0\) and equals one on
+the positive-mass subset counted by \(c_M\). The far-domain
+indicator is one wherever this end amplitude is nonzero, for every
+\(|\theta|<X^{-1/2}\). Thus the canonical \(q=3,+\) raw target
+row has a nonzero constant-phase amplitude for each of \(Y_1,Y_2\);
+its reflected \(q=3,-\) row is zero because both vertices there are
+negative. The coherent difference is nonzero by the same
+\(1-s_X(e^v)\cos\theta>0\) argument. Each even-hat crossing action
+has equal entries on the reflected pair. Therefore an unspecified
+finite canonical rational-window stage detects the obstruction for
+this **chosen \(h\) and the five-even-hat span**.
+
+The Lean module proves the finite consequences of a positive limiting
+mass and a convergent stage approximation, validates
+\(k_+,k_-<2M\), and gives the parity-span obstruction for any
+stage-dependent label type. The measure exhaustion and theta
+positivity in (7) are the written analytic inputs. No conclusion is
+drawn for the entire core range or RH.
