@@ -444,6 +444,7 @@ import BuildingBlocks.MovingCeilingFiniteAlgebra
 import BuildingBlocks.SignFreeEndpointFrontierFinite
 import BuildingBlocks.FinitePNTErrorPropagation
 import BuildingBlocks.FriableEndpointStieltjesFinite
+import BuildingBlocks.NonendpointRemainderAssemblyFinite
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
