@@ -109,7 +109,7 @@ Substitution into (6) yields
 \sum_{N=2}^Xc_Nz^N
 ={}&(1-z)^2\sum_{N=2}^{X-2}B_Nz^N
  +(1-z)B_{X-1}z^{X-1}\\
-&+z^X(\nu_S*\nu_S)([0,X-2])+z^XL_c(X-2). 
+&+z^X(\nu_S*\nu_S)([0,X-2])+z^XL_c(X-2).
 \end{aligned}\tag{9}
 \]
 
