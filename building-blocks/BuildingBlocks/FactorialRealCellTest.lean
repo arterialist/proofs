@@ -1,8 +1,10 @@
 import BuildingBlocks.FactorialRealCellQuadratic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Topology.Algebra.Order.Floor
+import Mathlib.MeasureTheory.Function.Floor
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-open Real Finset Filter Set
+open Real Finset Filter Set MeasureTheory
 open scoped BigOperators Topology
 namespace BuildingBlocks.FactorialRealCellPhase
 
@@ -121,6 +123,76 @@ theorem movingInverseTest_continuousOn (t : ℝ) :
     exact (movingInverseTest_continuousAt_entry N t).continuousWithinAt
   · exact (movingInverseTest_continuousAt hx hn).continuousWithinAt
 
+theorem inverseTestPhase_measurable (t : ℝ) : Measurable (fun x => inverseTestPhase x t) := by
+  have hm : Measurable (fun p : ℝ × ℕ =>
+      ∑ j ∈ Finset.Icc 1 p.2, (ArithmeticFunction.moebius j : ℝ) / j * scalarPhase (p.1 / j) t) := by
+    apply measurable_from_prod_countable_left
+    intro N
+    change Measurable (fun x : ℝ => ∑ j ∈ Finset.Icc 1 N,
+      (ArithmeticFunction.moebius j : ℝ) / j * scalarPhase (x / j) t)
+    apply Finset.measurable_sum
+    intro j hj
+    unfold scalarPhase
+    exact (measurable_const.sub
+      (((measurable_id.div_const (j : ℝ)).neg.mul_const t).exp.const_mul t)).const_mul _
+  have hp : Measurable (fun x : ℝ => (x, ⌊x⌋₊)) :=
+    measurable_id.prodMk (Nat.measurable_floor (R := ℝ))
+  unfold inverseTestPhase
+  simpa only [Function.comp_def] using hm.comp hp
+
+theorem inverseTestPhase_norm_le {t x : ℝ} (ht : 0 < t) (hx : 1 ≤ x) :
+    ‖inverseTestPhase x t‖ ≤
+      ∑ j ∈ Finset.Icc 1 ⌊x⌋₊, |(ArithmeticFunction.moebius j : ℝ) / j| := by
+  unfold inverseTestPhase
+  apply (norm_sum_le _ _).trans
+  apply sum_le_sum
+  intro j hj
+  have hh := Finset.mem_Icc.mp hj
+  have hjp : (0 : ℝ) < j := by exact_mod_cast (by omega : 0 < j)
+  have hjf : (j : ℝ) ≤ (⌊x⌋₊ : ℝ) := by exact_mod_cast hh.2
+  have hjx : (j : ℝ) ≤ x := hjf.trans (Nat.floor_le (by linarith : 0 ≤ x))
+  have ha : 1 ≤ x / j := (le_div_iff₀ hjp).mpr (by simpa using hjx)
+  have hp := scalarPhase_pos ha ht
+  have hu : scalarPhase (x / j) t ≤ 1 := by linarith [scalarPhase_lt_unit (a := x / j) ht, exp_pos (-t)]
+  rw [norm_mul, Real.norm_eq_abs, Real.norm_eq_abs, abs_of_pos hp]
+  exact mul_le_of_le_one_right (abs_nonneg _) hu
+
+theorem inverseTestPhase_intervalIntegrable {t X : ℝ} (ht : 0 < t) (hX : 1 ≤ X) :
+    IntervalIntegrable (fun x => inverseTestPhase x t) volume 1 X := by
+  apply (intervalIntegrable_const (c :=
+    ∑ j ∈ Finset.Icc 1 ⌊X⌋₊, |(ArithmeticFunction.moebius j : ℝ) / j|)).mono_fun'
+    (inverseTestPhase_measurable t).aestronglyMeasurable
+  filter_upwards [ae_restrict_mem measurableSet_uIoc] with x hx
+  have hh : 1 < x ∧ x ≤ X := by simpa [uIoc_of_le hX] using hx
+  apply (inverseTestPhase_norm_le ht hh.1.le).trans
+  apply sum_le_sum_of_subset_of_nonneg
+  · intro j hj
+    have hjj := Finset.mem_Icc.mp hj
+    exact Finset.mem_Icc.mpr ⟨hjj.1, hjj.2.trans (Nat.floor_mono hh.2)⟩
+  · intro j _ _
+    exact abs_nonneg _
+
+theorem movingInverseTest_integral {t X : ℝ} (ht : 0 < t) (hX : 1 ≤ X) :
+    (∫ x in (1 : ℝ)..X, -inverseTestPhase x t) = movingInverseTest t X - movingInverseTest t 1 := by
+  apply intervalIntegral.integral_eq_sub_of_hasDeriv_right_of_le hX
+    ((movingInverseTest_continuousOn t).mono (fun x hx => hx.1))
+  · intro x hx
+    exact movingInverseTest_hasDerivWithinAt_right hx.1.le
+  · exact (inverseTestPhase_intervalIntegrable ht hX).neg
+
+theorem movingInverseTest_one (t : ℝ) : movingInverseTest t 1 = 0 := by
+  simp [movingInverseTest, finiteInverseTest, centeredTest_one]
+
+theorem movingInverseTest_integral_from_one {t X : ℝ} (ht : 0 < t) (hX : 1 ≤ X) :
+    (∫ x in (1 : ℝ)..X, -inverseTestPhase x t) = movingInverseTest t X := by
+  rw [movingInverseTest_integral ht hX, movingInverseTest_one, sub_zero]
+
+#print axioms movingInverseTest_integral_from_one
+#print axioms movingInverseTest_one
+#print axioms movingInverseTest_integral
+#print axioms inverseTestPhase_intervalIntegrable
+#print axioms inverseTestPhase_norm_le
+#print axioms inverseTestPhase_measurable
 #print axioms movingInverseTest_continuousOn
 #print axioms movingInverseTest_continuousAt_entry
 #print axioms finiteInverseTest_entry_match
