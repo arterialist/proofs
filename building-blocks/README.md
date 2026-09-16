@@ -52,6 +52,8 @@ The [prime-state hard wall](prime-state-hard-wall.md) gives an exact primality s
 
 The [critical mean-square law](centered-goldbach-heat-critical-mean-square-law.md) sharpens the centered heat criterion: RH is equivalent to $\mathscr A(T)=O(T)$, and under RH the exact limit $\mathscr A(T)/T=\sum_\rho m_\rho^2|\Gamma(\rho)|^2+o(1)$ holds without zero-spacing or linear-independence assumptions. The linear upper bound is not established unconditionally; the contour proof is written, not Lean-formalized.
 
+The [critical heat criterion](critical-heat-lyapunov-exponent.md) now identifies its unconditional exponential growth rate exactly as $2\Theta-1$, where $\Theta$ is the supremum of real parts of nontrivial zeta zeros. The [finite centered Goldbach identity](centered-goldbach-heat-lyapunov.md) gives the same exponent directly from its complete signed additive coefficient sum. The [complete-Lambda near-collision audit](goldbach-heat-versus-buchstab-near-collision.md) also retains a positive heat cutoff: its uncentered integral diverges as the cutoff tends to zero.
+
 The same actual-response audit proves the unconditional heat moment
 $\int_0^\infty C(t)\,dt=-(1+\gamma)$. Thus its repaired causal response
 has zero weighted total moment and the continuum renewal term is exactly

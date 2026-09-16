@@ -88,16 +88,23 @@ constraint from the difference \(dr-es\) in (4) to the antidiagonal
 \(dr+es=N\) in (5).  It does not impose a sign on a fixed local
 near-collision row.
 
-The additive heat form likewise reads
+Set $A_t=\sum_{n\ge1}\Lambda(n)e^{-nt}$. The additive heat form must be
+cut off before expanding it. For every $\varepsilon>0$, absolute
+convergence permits the exact identity
 
 \[
- \int_0^\infty|A_t|^2dt
+ \int_\varepsilon^\infty|A_t|^2dt
  =\sum_{d,e}\mu(d)\mu(e)
-   \sum_{r,s\ge2}\frac{(\log r)(\log s)}{dr+es},       \tag{6}
+   \sum_{r,s\ge2}\frac{(\log r)(\log s)
+                 e^{-\varepsilon(dr+es)}}{dr+es}.    \tag{6}
 \]
 
-up to the chosen radial normalization.  It is again the dilated
-two-Möbius covariance, now integrated against a positive sum kernel.
+It is again the dilated two-Möbius covariance, now integrated against a
+positive sum kernel. The uncut integral is infinite: the prime number
+theorem gives $A_t\sim t^{-1}$ as $t\downarrow0$. Thus neither an
+uncut quadruple-sum rearrangement nor a finite uncentered heat norm is
+asserted. For a centered source the density and origin terms in (7)
+must be included before considering the cutoff limit.
 
 ## 3. Density, pole, and origin terms
 

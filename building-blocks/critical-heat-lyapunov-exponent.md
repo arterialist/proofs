@@ -36,9 +36,22 @@ $$
 
 The added one only avoids an irrelevant logarithm at a zero value.
 
+Write
+$$
+\Theta=\sup\{\Re\rho:\zeta(\rho)=0,\ 0<\Re\rho<1\}.
+$$
+The functional equation gives $1/2\le\Theta\le1$. No zero attaining
+the supremum is assumed.
+
 ## Theorem
 
-Unconditionally $0\le\lambda_*\le1$, and
+Unconditionally $0\le\lambda_*\le1$, and in fact
+
+$$
+\boxed{\lambda_*=2\Theta-1.}
+\tag{5a}
+$$
+In particular,
 
 $$
 \boxed{\mathrm{RH}\quad\Longleftrightarrow\quad\lambda_*=0.}
@@ -147,6 +160,46 @@ which contains the alleged zero.  This contradiction proves (6).
 Finally, the elementary estimate $C(t)=O(t^{-1}\log(2/t))$ gives
 $|b(v)|^2=O(e^v(1+v)^2)$ and hence $\lambda_*\le1$.  Monotonicity and
 $\mathscr A\ge1$ give $\lambda_*\ge0$.
+
+### Exact calibration by the zero abscissa
+
+When $\Theta>1/2$, take the supremum of (6) over all zeros with
+$\Re\rho>1/2$; when $\Theta=1/2$, use $\lambda_*\ge0$. Either way
+$\lambda_*\ge2\Theta-1$, even if no zero attains $\Theta$. For the reverse
+bound use the complete explicit formula for the actual Chebyshev function,
+including all prime powers. The [zero-abscissa discrepancy proof](zero-abscissa-scattering-growth.md)
+derives from [Dudek's truncated explicit formula, Theorem 2.1](https://arxiv.org/pdf/1401.4233)
+the uniform estimate
+$$
+\psi(x)-x=O\bigl(x^\Theta\log^2(2x)\bigr)
+\qquad(x\ge1).
+\tag{15}
+$$
+The exact Stieltjes identity for this centering, with its lower endpoint
+retained, is
+$$
+C(t)=t\int_1^\infty(\psi(x)-x)e^{-tx}\,dx.
+\tag{16}
+$$
+For $0<t\le1$, substitute $u=tx$ in (16). The elementary inequality
+$\log(2u/t)\le\log(2/t)+\log(1+u)$, valid for $u\ge t$, and the finite
+Gamma moments of $u^\Theta e^{-u}$ give
+$$
+|C(t)|\ll t^{-\Theta}(1+\log(1/t))^2.
+\tag{17}
+$$
+Consequently
+$$
+|b(v)|^2\ll e^{(2\Theta-1)v}(1+v)^4,
+\qquad
+\mathscr A(T)\ll 1+(1+T)^5e^{(2\Theta-1)T}.
+\tag{18}
+$$
+Taking logarithms and dividing by $T$ proves
+$\lambda_*\le2\Theta-1$, including the endpoint $\Theta=1/2$.
+Together with (6) this proves (5a). The equality identifies the exact
+exponential rate of the **actual** centered Goldbach heat energy; it does
+not determine $\Theta$ or supply the missing RH-scale upper bound.
 
 ## Finite-scale formulation
 

@@ -115,7 +115,23 @@ $$
 
 The triangle inequality now compares the two accumulated energies in both
 directions by constants independent of $T$. Their logarithmic growth
-exponents are equal. The centered heat theorem therefore gives
+exponents are equal. With $\Theta$ denoting the supremum of the real
+parts of the nontrivial zeta zeros, the [exact zero-abscissa calibration](critical-heat-lyapunov-exponent.md)
+therefore gives the quantitative additive identity
+
+$$
+\boxed{
+\limsup_{T\to\infty}\frac{1}{T}\log\!\left(
+1+\sum_{k\ge2}
+\bigl[R_\Lambda(k)-2\psi(k-1)+(k-1)\bigr]
+\frac{e^{-ke^{-T}}-e^{-k}}{k}\right)
+=2\Theta-1.}
+\tag{8a}
+$$
+
+The argument of the logarithm equals $1+\int_{e^{-T}}^1|D(t)|^2dt$
+exactly, so the signed coefficients in this display are never being
+truncated. In particular, the centered heat theorem gives
 
 $$
 \boxed{
