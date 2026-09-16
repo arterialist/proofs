@@ -94,9 +94,29 @@ Here is the one-sided Laplace argument. Put \(v(u)=e^{-\sigma u}b(u)[\psi_R(u)-c
 \]
 Multiply by \(\epsilon\) and let \(\epsilon\downarrow0\). The nonreal residue makes the left limit \(|r|\), while the right limit is \(C\), because \(L_R\) is regular at the real point \(\sigma\). Every eventual upper bound obeys \(C\ge|r|\), proving the limsup bound. Apply the same argument to \(-v\) for the liminf bound. This is the classical positive-Laplace residue argument, also used for the [actual coherent-core fluctuations](coherent-core-critical-zero-fluctuation.md).
 
+An offcritical detected zero forces more than (8):
+\[
+ \Re\rho>1/2,\ M_R(\rho-1/2)\ne0
+ \quad\Longrightarrow\quad
+ \limsup_{T\to\infty}\frac1T\int_R^T
+       b(u)^2|\psi_R(u)-c_R|^2du=\infty.
+\tag{8a}
+\]
+Indeed a finite limsup makes the literal \(L_R(z)\) absolutely convergent and holomorphic for every \(\Re z>0\) by Cauchy--Schwarz, contradicting its nonzero pole (7) at \(z=\rho-1/2\) in that half-plane.
+
+There is a square-mean version at the critical line. Let \(\mathcal Z_R\) be any finite set of distinct critical-line zeros \(\rho=1/2+i\gamma\) with \(M_R(i\gamma)\ne0\), counting \(\gamma\) and \(-\gamma\) separately, and put \(h_R(u)=b(u)[\psi_R(u)-c_R]\). Then
+\[
+ \boxed{\quad
+ \limsup_{T\to\infty}\frac1T\int_R^T|h_R(u)|^2du
+ \ge\sum_{\rho\in\mathcal Z_R}
+       \frac{m_\rho^2|M_R(i\gamma)|^2}{\delta_R^2}.
+ \quad}                                                       \tag{8b}
+\]
+If the left side is infinite there is nothing to prove. If it is finite, Cauchy--Schwarz and the resulting \(O(T)\) cumulative square mass make the literal Laplace integral \(L_R(z)\) converge for every \(\Re z>0\), where it agrees with the continuation in (7). In the Abel weight \(\varepsilon e^{-\varepsilon u}du\) on \([R,\infty)\), the distinct exponentials \(e^{i\gamma u}\) have Gram matrix tending to the identity. Their pairings with \(h_R\) tend, by the residues (7), to \(-m_\rho M_R(i\gamma)/\delta_R\). Finite-dimensional projection gives the right side of (8b) as a lower bound for \(\liminf_{\varepsilon\downarrow0}\varepsilon\int_R^\infty e^{-\varepsilon u}|h_R(u)|^2du\). Integration by parts converts an eventual bound \(\int_R^T|h_R|^2\le(L+o(1))T\) into an upper limit \(L\) for that Abel square mean, proving (8b). In particular a detected conjugate pair contributes twice the square of the amplitude in (8).
+
 ## Actual-ground nonvanishing on large cores
 
-The proved [physical-mass concentration](theta-ground-physical-mass-concentration.md), equations (13)--(14), shows for each fixed \(z\) with \(\Re z>0\) that \(M_R(z)\ne0\) for every sufficiently large \(R\). Therefore, **if** an offcritical zero \(\Re\rho>1/2\) exists, its stronger-scale inequalities (8) hold for all sufficiently large actual grounds. This conditional implication does not assert that such a zero exists.
+The proved [physical-mass concentration](theta-ground-physical-mass-concentration.md), equations (13)--(14), shows for each fixed \(z\) with \(\Re z>0\) that \(M_R(z)\ne0\) for every sufficiently large \(R\). Therefore, **if** an offcritical zero \(\Re\rho>1/2\) exists, both (8) and the infinite square mean (8a) hold for all sufficiently large actual grounds. Conversely, finite weighted tail square mean at each radius in any unbounded set would exclude every right-of-line zero and imply RH by the functional equation. No such finite square-mean estimate has been proved here.
 
 For a critical-line zero \(\rho=1/2+i\gamma\), the same concentration gives the uniform fixed-\(\gamma\) estimate
 \[
