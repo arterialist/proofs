@@ -72,6 +72,8 @@ The complete core arrival \(\mathcal B_R\) is locally integrable; compactness ma
  \quad}                                                       \tag{7}
 \]
 
+If \(\sigma=\Re z_\rho\), then \(\int_R^\infty e^{-\sigma u}b(u)|\psi_R(u)-c_R|du=\infty\). Otherwise the defining Laplace integral in (1) would be holomorphic for \(\Re z>\sigma\) and bounded as \(z\to z_\rho\) from the right by dominated convergence, contradicting the nonzero pole (7). For a detected critical-line zero, the exterior pole-compensation density therefore has infinite total variation, even though its ratio to \(b(u)\) tends to zero. This argument does not assert convergence of the unregularized Laplace integral at \(z_\rho\); (7) is a residue of its meromorphic continuation.
+
 ## A quantitative oscillation consequence
 
 Let \(\sigma=\Re z_\rho\ge0\), \(\gamma=\Im z_\rho\ne0\), and assume \(M_R(z_\rho)\ne0\). Then
