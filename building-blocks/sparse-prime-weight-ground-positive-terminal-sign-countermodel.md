@@ -27,13 +27,21 @@ The continuous-prime main term is \(-2e^aM_g(1/2)^2=0\); the prime number theore
 \tag{3}
 \]
 is strictly positive for every \(x>1\), continuous across every prime-power arrival, and satisfies \(d(x^2\mathfrak F_*')=dx-d\psi_*\).
-3. For the **same** fixed \(g\), the terminal scores \(T_{\Lambda_*}(N)\), defined by (2) with \(\Lambda_*\), have \(\limsup_{N\to\infty}T_{\Lambda_*}(N)=+\infty\) and \(\liminf_{N\to\infty}T_{\Lambda_*}(N)=-\infty\). This remains true after the \(O(e^{-a})\) exact pole correction of the odd boundary packet, whose archimedean logarithmic energy stays \(O_g(1)\).
+3. For the **same** fixed \(g\), the terminal scores \(T_{\Lambda_*}(N)\), defined by (2) with \(\Lambda_*\), have the stronger two-sided growth
+\[
+ \limsup_{a\to\infty}e^{-\theta a}T_{\Lambda_*}(e^{2a})=+\infty,
+ \qquad
+ \liminf_{a\to\infty}e^{-\theta a}T_{\Lambda_*}(e^{2a})=-\infty
+ \quad\text{for every fixed }\theta<1.
+\tag{3a}
+\]
+This remains true after the \(O(e^{-a})\) exact pole correction of the odd boundary packet, whose archimedean logarithmic energy stays \(O_g(1)\).
 
 In particular, even complete prime-power histories plus the positive ground and PNT do not enforce the required one-sided signed bound.
 
 **Construction and proof.** Let \(\varepsilon_j=\varepsilon_0 2^{-j}\), with \(\varepsilon_0>0\) sufficiently small, and choose signs \(\sigma_j=(-1)^j\). Inductively choose real \(a_j\to\infty\) and \(N_j=e^{2a_j}\) so that the prime bands
 \(I_j=(N_je^{-2B},N_j)\) are disjoint and widely separated,
-\(\varepsilon_j e^{a_j}\to\infty\), and
+\(a_j\ge j^2\), \(\varepsilon_j e^{a_j}\to\infty\), and
 \[
  |T_\Lambda(N_j)|\le j^{-1}c_k\varepsilon_j e^{a_j}.
 \tag{4}
@@ -74,6 +82,6 @@ by PNT. Modified primes from earlier bands can enter \(I_j\) only through proper
    +o(\varepsilon_j e^{a_j})+O_B(1),
 \tag{8}
 \]
-which alternates sign with unbounded magnitude. The exact pole correction changes the score by \(O_g(1)\) and preserves the bounded arch energy, proving the last assertion. \(\square\)
+which alternates sign with unbounded magnitude. Since \(a_j\ge j^2\), for every fixed \(\theta<1\) its magnitude after division by \(e^{\theta a_j}\) still diverges: \(\varepsilon_j e^{(1-\theta)a_j}=\varepsilon_0 2^{-j}e^{(1-\theta)a_j}\to\infty\). The exact pole correction changes the score by \(O_g(1)\) and preserves the bounded arch energy, proving the last assertion. \(\square\)
 
-This countermodel does **not** modify the actual Riemann zeta function or prove RH false. The integer successor \(n\mapsto n+1\), strict division graph, prime support, complete powers, positivity of every arrival weight, PNT, and factorial-ground positivity all survive. What fails is the exact arithmetic amplitude \(\log p\) at each prime base. Any successful one-sided terminal inequality must use that exact amplitude or another property that excludes the coherent sparse perturbations; support, positivity, and asymptotic density alone cannot supply it.
+This countermodel does **not** modify the actual Riemann zeta function or prove RH false. The integer successor \(n\mapsto n+1\), strict division graph, prime support, complete powers, positivity of every arrival weight, PNT, and factorial-ground positivity all survive. The set of representations \(m=p+q\) by two ordinary primes is also identical, for every integer \(m\); thus any support-only Goldbach assertion has exactly the same truth value in this coefficient system. What fails is the exact arithmetic amplitude \(\log p\) at each prime base. Any successful one-sided terminal inequality must use that exact amplitude or another property that excludes the coherent sparse perturbations; support, positivity, and asymptotic density alone cannot supply it.
