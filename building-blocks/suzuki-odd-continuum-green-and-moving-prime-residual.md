@@ -150,6 +150,21 @@ Even without assuming RH, each finite set \(\mathcal Z\) of distinct critical-li
 \]
 where conjugate ordinates are counted separately. If the left side is finite, the literal transform converges on \(\Re z>0\); in the Abel weight \(\epsilon e^{-\epsilon a}da\), the exponentials \(e^{2i\gamma a}\) have limiting identity Gram matrix, while their pairings with \(D_\phi\) tend to the residues \(-m_\rho F(2i\gamma)^2\). Finite-dimensional projection gives the right side as a lower Abel square mean, and integration by parts bounds that Abel mean by the Cesàro limsup. If the left side is infinite, (12c) is immediate.
 
+The energy in (12b) has an exact additive-pair reading. Set \(X=e^{2a}\), \(w_X(n)=n^{-1/2}W(\log(X/n))\), and define the complete ordered weighted Goldbach count
+\[
+ R_X(N)=\sum_{n+m=N}\Lambda(n)\Lambda(m)w_X(n)w_X(m).
+\]
+The weight is supported on \(Xe^{-3/2}\le n\le Xe^{-1/2}\), so every sum below is finite. Expanding the literal square gives
+\[
+ \boxed{\quad
+ D_\phi(\tfrac12\log X)^2
+ =\sum_N R_X(N)
+  -2\sqrt X F(1)^2\sum_n\Lambda(n)w_X(n)
+  +XF(1)^4.
+ \quad}                                                        \tag{12d}
+\]
+Consequently, (12b) is equivalent to a bounded logarithmic average of the right side of (12d), namely \((\log Y)^{-1}\int_1^Y(\cdots)dX/X\). This retains all prime powers, ordered additive pairs, the linear compensation and the density square. Ordinary Goldbach existence does not bound this centered pair energy.
+
 ## Why the ordinary PNT does not pay this residual
 
 The complete unconditional bound \(|\Psi(X)-X|\le CXe^{-c\sqrt{\log X}}\), as in [Trudgian's Theorem 1](https://arxiv.org/pdf/1401.2689), and Stieltjes integration by parts in (8) yield only
