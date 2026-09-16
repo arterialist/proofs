@@ -42,9 +42,9 @@ Moreover,
 If \(f\) is the odd extension of \(u/\sqrt2\) from \((0,a)\), then for every interval \(J\subset[0,\infty)\), with \(S_u(t)=\int_0^a u(x)\sin(tx)dx\),
 \[
 \boxed{\frac2\pi\int_J|S_u(t)|^2dt
-\le C a|J|\left[
-\frac{\mathcal D_a[f]}{e^a\|u\|_2^2}
-+\frac{L}{a}+e^{-L}+\epsilon_a\right]\|u\|_2^2.}
+\le C|J|\left[
+\frac{a\mathcal D_a[f]}{e^a}
++(L+a e^{-L}+a\epsilon_a)\|u\|_2^2\right].}
 \tag{5}
 \]
 In particular, if \(\mathcal D_a[f]=o(e^a\|f\|_2^2)\), then with \(L=\sqrt a\) the fraction of sine spectral mass in **each individual** interval of length \(O(1/a)\) tends to zero, uniformly in that interval's location.
@@ -121,7 +121,7 @@ For clarity, this is a statement about the **raw prime graph**. In the [actual o
 +2|\langle h_a,u\rangle|^2+\langle u,\mathcal K_a u\rangle.
 \tag{10}
 \]
-Thus on the pole-null class the graph energy measures the deficit from the \(e^a\) raw-prime row, and the remaining continuum term is bounded by \(4\|u\|_2^2\). Equation (10) does **not** give a uniform upper bound on the signed remainder at the logarithmic archimedean scale. For typical tests, the large row term and graph energy nearly cancel; the theorem describes only tests for which that cancellation is small. To prove the odd Weil sign one would still need the archimedean form to pay for the resulting positive remainder.
+Thus on the pole-null class the graph energy measures the deficit from the \(e^a\) raw-prime row, and the remaining continuum term is bounded by \(4\|u\|_2^2\). Equation (10) does **not** give a uniform upper bound on the signed remainder at the logarithmic archimedean scale. When the raw-prime expectation is small, the large row term and graph energy nearly cancel; the theorem describes tests for which that cancellation is small. To prove the odd Weil sign one would still need the archimedean form to pay for the resulting positive remainder.
 Equivalently, on that pole-null class the exact full odd form is
 \[
 \langle u,A_a^{\rm odd}u\rangle
@@ -148,7 +148,7 @@ The upper natural density of \(E_a\) is \(\le\exp(-c e^{2a}/a^2)\), but the foll
 \liminf_{a\to\infty}\frac2\pi\int_{E_a}|S_{u_a}(t)|^2dt>0.
 \tag{12}
 \]
-The carriers used here have \(\log t_a=O(e^{2a}\log a/a)\).
+One may use carriers with \(\log t_a=O(e^{2a}\log a/a)\). Alternatively, the prime-torus recurrence permits carriers arbitrarily high; no lower bound on the Dirichlet choice is asserted.
 
 **Proof.** Simultaneous Dirichlet approximation of the \(r_a=O(e^{2a}/a)\) admitted prime-power logarithms with denominator parameter \(Q=\lceil a^8\rceil\) gives \(1\le q\le Q^{r_a}\) with \(q\log n\) within \(2\pi/Q\) of \(2\pi\mathbb Z\) for every admitted \(n\). Multiply \(q\) by \(\lceil a^2/q\rceil\) if \(q<a^2\), and leave it unchanged otherwise. The result \(t_a\) satisfies \(t_a\ge a^2\), the stated logarithmic bound, and
 \[
@@ -156,6 +156,7 @@ The carriers used here have \(\log t_a=O(e^{2a}\log a/a)\).
 |e^{it_a\log n}-1|=O(a^{-6}).
 \tag{13}
 \]
+For the alternative high-carrier choice, the prime logarithms are rationally independent, so their torus flow returns to the phase neighborhood in (13) at arbitrarily large times. Prime powers follow from the corresponding prime coordinates after shrinking that neighborhood. The rest of the proof needs only (13) and \(t_a\to\infty\).
 
 Let \(g_a=\phi1_{I_a}/\sqrt{a+\sinh a}\) and \(F_a(x)=\sqrt2g_a(x)\sin(t_ax)\). Then \(F_a\) is odd and \(\|F_a\|_2\to1\). Since
 \(|\sin(t_a(x+\log n))-\sin(t_ax)|\le\delta_a\), the graph identity (1) gives
@@ -195,4 +196,6 @@ On \(B_a\), the distance of \(as-\vartheta(s)\) from \(\pi\mathbb Z\) is less th
 
 Choose an even smooth cutoff that is zero on \(|x|<1\), one on \(2<|x|<a-\eta_a\), and tapers monotonically to zero over \(a-\eta_a<|x|<a\), where \(\eta_a\downarrow0\). This changes \(F_a\) by \(o(1)\) in \(L^2\): the central loss is \(O(e^{-a/2})\), and the endpoint loss is \(O(\sqrt{\eta_a})\). Since (1) has operator norm \(O(e^a)\), (14) changes by \(o(e^a)\); Plancherel keeps the spectral lower bound. For the resulting half-line function \(u_a^{\rm pre}\), integration by parts gives \(\langle h_a,u_a^{\rm pre}\rangle=O(e^{a/2}/t_a)\), uniformly in the monotone taper. Choose \(b_a\in C_c^\infty(a-1,a-1/2)\) with \(\langle h_a,b_a\rangle=1\) and \(\|b_a\|_2=O(e^{-a/2})\). Subtracting \(\langle h_a,u_a^{\rm pre}\rangle b_a\) changes the \(L^2\) norm by \(O(t_a^{-1})\). Normalize. This gives the compact pole-null tests in (12). \(\square\)
 
-The proposition rules out summing the single-interval estimate (5) over the whole resonant set. At these recurrent carriers, \(E_a\) contains \(\asymp a\) resonant components in one bounded frequency band, and the Fourier fringes of a boundary-localized graph near-null test follow them. The logarithmic carrier height in (13) is far above the \(e^a\) row scale, so the archimedean multiplier can pay for this example. The localization theorem and proposition give no all-scale sign for the odd Weil form. The prime shifts follow [Suzuki's Fourier formula, §2.4](https://arxiv.org/html/2606.09096v1); the row asymptotic and graph identity are proved in the linked local note. No novelty or priority is claimed.
+The proposition rules out summing the single-interval estimate (5) over the whole resonant set. In particular, no uniform bound of the form
+\(\frac2\pi\int_{E_a}|S_u|^2\le o(1)\|u\|_2^2+C\mathcal D_a[f]/e^a\)
+can hold even on compact pole-null odd tests. At these recurrent carriers, \(E_a\) contains \(\asymp a\) resonant components in one bounded frequency band, and the Fourier fringes of a boundary-localized graph near-null test follow them. The quantitative Dirichlet construction gives only an **upper** bound on \(\log t_a\), so by itself it does not compare the carrier with the \(e^a\) archimedean scale. If desired, Kronecker recurrence allows a later carrier with \(\log t_a\ge2e^a\), where the archimedean multiplier exceeds the raw-prime row; this loses the stated quantitative upper bound. The localization theorem and proposition give no all-scale sign for the odd Weil form. The prime shifts follow [Suzuki's Fourier formula, §2.4](https://arxiv.org/html/2606.09096v1); the row asymptotic and graph identity are proved in the linked local note. No novelty or priority is claimed.
