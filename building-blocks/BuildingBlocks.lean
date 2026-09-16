@@ -395,3 +395,6 @@ import BuildingBlocks.ActualScatteringMellinSignBridge
 import BuildingBlocks.ActualPrimeBlockMellinParity
 import BuildingBlocks.ActualPrimeBlockWeilWeightParity
 import BuildingBlocks.ActualScatteringMomentMagnitude
+import BuildingBlocks.ActualPrimeBlockMagnitude
+
+import BuildingBlocks.FactorialTerminalReserve

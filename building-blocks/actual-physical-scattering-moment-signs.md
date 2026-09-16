@@ -1,6 +1,6 @@
 # Actual physical scattering moment signs
 
-Eighteen public theorems are compiled in `ActualScatteringMomentSigns.lean`, `ActualScatteringMellinSignBridge.lean`, `ActualPrimeBlockMellinParity.lean`, `ActualPrimeBlockWeilWeightParity.lean`, and `ActualScatteringMomentMagnitude.lean`. RH Agent3 supplied the proofs in the original physical notation. The bounded translation worker changed namespace and import paths only for the first three modules; root made the same namespace/import translation for the last two and reviewed the literal coefficients and physical Mellin correspondence. These are finite-history sign and dictionary results, not a sign theorem for the full Weil form or an RH proof. No novelty certificate is claimed.
+Nineteen public theorems are compiled in `ActualScatteringMomentSigns.lean`, `ActualScatteringMellinSignBridge.lean`, `ActualPrimeBlockMellinParity.lean`, `ActualPrimeBlockWeilWeightParity.lean`, `ActualScatteringMomentMagnitude.lean`, and `ActualPrimeBlockMagnitude.lean`. RH Agent3 supplied the proofs in the original physical notation. The bounded translation worker changed namespace and import paths only for the first three modules; root made the same namespace/import translation for the last three and reviewed the literal coefficients and physical Mellin correspondence. These are finite-history sign and dictionary results, not a sign theorem for the full Weil form or an RH proof. No novelty certificate is claimed.
 
 For a real p≥2 and natural h,M≥1, define the literal multipliers at β=h+1/2 and −β by
 
@@ -30,6 +30,6 @@ The literal one-prime magnitude is also quantitatively compiled. For p≥2 and h
 
     p^(hM)/8 ≤ −A_+(p,h,M)A_−(p,h,M) ≤ 2p^(hM).
 
-The theorem is stated both for real p and for an actual natural prime. It retains the complete finite geometric histories and is uniform in depth. Products give the corresponding block bounds with constants 8^(−|B|) and 2^|B|, but that product specialization and the resulting far-gamma summation are not yet formalized here.
+The theorem is stated both for real p and for an actual natural prime. It retains the complete finite geometric histories and is uniform in depth. The varying-depth list product specialization is also compiled, with constants 8^(−|B|) and 2^|B| and the exact product of p^(hM_p). The resulting far-gamma analytic summation is not yet formalized here.
 
-All eighteen public conclusions depend only on `propext`, `Classical.choice`, and `Quot.sound`. The infinite gamma-series passage, finite overlap rows, all signed prime-power contributions, and the actual arithmetic upper bound remain separate obligations. A single parity-signed paired row does not discharge them.
+All nineteen public conclusions depend only on `propext`, `Classical.choice`, and `Quot.sound`. The infinite gamma-series passage, finite overlap rows, all signed prime-power contributions, and the actual arithmetic upper bound remain separate obligations. A single parity-signed paired row does not discharge them.

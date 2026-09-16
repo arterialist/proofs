@@ -1,13 +1,13 @@
 # Large-clock LCM source and terminal reserve
 
-This independently reviewed written note continues the actual small-leg calculation on the clock band
+This independently reviewed note continues the actual small-leg calculation on the clock band
 \(t\ge N^{-1/2}\). It uses the literal Möbius response, the literal weight
 
 \[
 w(t)=t^{-2}-[t(e^t-1)]^{-1},
 \]
 
-and every ordered pair with \(\operatorname{lcm}(d,e)>N\). It does not use RH, a Mertens decay estimate, or a sign assumption. A bounded worker derived the quotient correlation and terminal estimates; root checked their arithmetic identities, constants, domains, and consequences before publication. This is written mathematics and not a Lean formalization.
+and every ordered pair with \(\operatorname{lcm}(d,e)>N\). It does not use RH, a Mertens decay estimate, or a sign assumption. A bounded worker derived the quotient correlation and terminal estimates; root checked their arithmetic identities, constants, domains, and consequences before publication. The exact finite LCM class, interior Mertens sum, terminal boundary identity (8), and its nonnegativity are now compiled in `FactorialTerminalReserve.lean`; the analytic tail bounds remain written.
 
 Write
 
