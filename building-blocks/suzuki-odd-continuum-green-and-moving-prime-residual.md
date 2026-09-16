@@ -122,6 +122,16 @@ Conversely, under RH the zeros side of Weil's explicit formula gives \(Q_W(f_a)=
 
 The same argument applied to \(-D_\phi\) shows a sharper conditional statement: if RH fails, then \(\liminf_{a\to\infty}D_\phi(a)=-\infty\) and \(\limsup_{a\to\infty}D_\phi(a)=+\infty\). Equation (9) transfers the negative excursions to this one moving odd Weil test.
 
+A critical-line zero gives an unconditional quantitative statement as well. Fix any zero \(\rho=1/2+i\gamma\) with \(\gamma\ne0\) and multiplicity \(m_\rho\). At \(z=2i\gamma\), (10) has residue \(-m_\rho F(2i\gamma)^2\), which is nonzero by (11). The same positive-Laplace comparison, now made at real abscissa zero, yields
+\[
+ \boxed{\quad
+ \limsup_{a\to\infty}D_\phi(a)\ge m_\rho|F(2i\gamma)|^2,
+ \qquad
+ \liminf_{a\to\infty}D_\phi(a)\le-m_\rho|F(2i\gamma)|^2.
+ \quad}                                                        \tag{12a}
+\]
+For example, if \(D_\phi(a)\le C\) eventually, the nonnegative transform of \((C-D_\phi)\mathbf1_{[a_0,\infty)}\) has abscissa zero: the nonreal pole forbids a negative abscissa, while Landau's theorem and the absence of a positive-real singularity forbid a positive one. Its modulus at \(\epsilon+2i\gamma\) is at most its value at \(\epsilon>0\). Multiply by \(\epsilon\) and let \(\epsilon\downarrow0\); the two sides tend to \(m_\rho|F(2i\gamma)|^2\) and \(C\), respectively. Apply the same argument to \(-D_\phi\) for the lower bound. [Hardy's theorem](https://fr.wikisource.org/wiki/Page:Comptes_rendus_hebdomadaires_des_s%C3%A9ances_de_l%E2%80%99Acad%C3%A9mie_des_sciences,_tome_158,_1914.djvu/1014) supplies such a zero, so the two-sided fixed-amplitude oscillation is unconditional. By (9), the translated odd Weil row oscillates on both sides of its constant baseline \(A_{\rm arch}[\phi]+2I_-I_+\) by at least this amplitude. If RH fails, the preceding unbounded-excursion statement is stronger.
+
 ## Why the ordinary PNT does not pay this residual
 
 The complete unconditional bound \(|\Psi(X)-X|\le CXe^{-c\sqrt{\log X}}\), as in [Trudgian's Theorem 1](https://arxiv.org/pdf/1401.2689), and Stieltjes integration by parts in (8) yield only
