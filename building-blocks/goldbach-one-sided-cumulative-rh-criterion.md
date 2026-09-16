@@ -171,7 +171,12 @@ the actual positive prime heat square is formalized in
 The exact continuous Stieltjes-step identity (5), with the natural
 floor extension of the cumulative count, is formalized in
 [GoldbachCumulativeStieltjes.lean](BuildingBlocks/GoldbachCumulativeStieltjes.lean).
-The heat asymptotic and Landau application remain written mathematics.
+The upper bound in (6) and its positive-square-root transfer to an
+upper prime-heat estimate are formalized in
+[GoldbachOneSidedHeatTransfer.lean](BuildingBlocks/GoldbachOneSidedHeatTransfer.lean)
+under an explicit all-cutoff cumulative hypothesis. The eventual-to-
+all-cutoff adjustment, lower transfer, heat Mellin transform and Landau
+application remain written mathematics.
 
 The same calculation proves (2a). If, for some $0<\eta<1/2$, either
 one-sided bound

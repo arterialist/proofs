@@ -333,6 +333,7 @@ import BuildingBlocks.GoldbachPrimeHeatConvolution
 import BuildingBlocks.GoldbachCumulativeFinite
 import BuildingBlocks.GoldbachCumulativeAbel
 import BuildingBlocks.GoldbachCumulativeStieltjes
+import BuildingBlocks.GoldbachOneSidedHeatTransfer
 import BuildingBlocks.FactorialQuotientConstraints
 import BuildingBlocks.FactorialFiniteRenewal
 import BuildingBlocks.FactorialPairedRenewal
