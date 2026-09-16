@@ -440,6 +440,7 @@ import BuildingBlocks.FiniteSamplingErrorAlgebra
 import BuildingBlocks.SimultaneousAdmissionEndpointFinite
 import BuildingBlocks.MovingCeilingFiniteAlgebra
 import BuildingBlocks.SignFreeEndpointFrontierFinite
+import BuildingBlocks.FinitePNTErrorPropagation
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
