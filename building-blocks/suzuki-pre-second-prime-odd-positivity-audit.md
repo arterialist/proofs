@@ -5,6 +5,8 @@ The [first-window certificate](suzuki-reflected-two-half-window-positive-certifi
 \boxed{L_a^{\rm odd}\ge \frac1{625}I\qquad(0<a\le (\log3)/2).}
 \]
 
+[Zhu's 2026 compact-window certificate](https://arxiv.org/html/2608.24827v2) already proves positivity of the **full** Weil form for all complex tests supported in \([-0.8,0.8]\). This note gives an independent bound for Suzuki's pole-free odd operator and makes no priority claim for finite-window positivity.
+
 Let \(a_*=(\log3)/2\). At this endpoint, \(e^{2a_*}=3\), and the \(n=3\) shift touches the two interval endpoints only; its correlation is zero. Thus equation (2) of the first-window certificate remains exact with \(a=a_*\), \(\ell=\log2\), \(w=(\log2)/\sqrt2\), \(E=(\ell-a_*,a_*)\), and \(Ju(x)=u(\ell-x)\) on \(E\). The script asserts \(0<\ell-a_*<a_*\).
 
 This time choose \(M=13/10\) and \(T=24\). The increasing digamma multiplier satisfies \(m(24)>M\) by Arb comparison. As before, let \(C=MI+wJ\), and dominate \((M-m(t))_+\) with a rational step function \(q\) on 300 cells of width \(2/25\), with denominator \(10^{12}\). Every cell's weight is chosen from an outward Arb upper endpoint and individually verified. The script proves \(w<1/2\), hence \(C>(4/5)I\), and \(\int_0^{24}q(t)dt<50\). Its mass enclosure centers at \(24.10534876303504\).

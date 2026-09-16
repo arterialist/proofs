@@ -9,6 +9,8 @@ For Suzuki's localized form in [equations (1.1), (2.7)](https://arxiv.org/html/2
 
 It gives neither the rank-one return bound \(\tau_{1/2}\le1\) nor positivity at all windows. The rational interval computation is [this 1024-bit Arb script](certificates/suzuki_odd_half_window_reflected_two.py).
 
+[Zhu's 2026 compact-window certificate](https://arxiv.org/html/2608.24827v2) already proves positivity of the **full** Weil form for all complex tests supported in \([-0.8,0.8]\), a stronger finite-window result. The present calculation is an independent, source-specific odd-sector certificate and is not a positivity frontier.
+
 ## Operator reduction
 
 Use the unitary identification of odd \(F\in L^2(-a,a)\) with \(u(x)=\sqrt2F(x)\) on \((0,a)\). Put
