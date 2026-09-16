@@ -348,6 +348,11 @@ ordered clamping loss is bounded by
 \]
 All endpoints here use the right-continuous \(\psi\); the inequality
 \(n>M\) keeps a possible atom at \(M\) on the admitted side.
+[`GoldbachSuccessorClampFinite.lean`](BuildingBlocks/GoldbachSuccessorClampFinite.lean)
+compiles the removed-pair endpoint implication and the ordered-pair
+product bound for the actual von Mangoldt weights.  Its two finite
+factors are exactly the early \(\psi(j)\) mass and the moving terminal
+strip mass in (19); it does not formalize the continuous escape kernel.
 
 For the transport loss, split (14) into its rational and logarithmic
 terms.  The latter is \(O(j^2)\) by the logarithmic estimate already
@@ -373,7 +378,7 @@ The prime number theorem gives \(\Delta_X=o(X)\) and
 \(\delta_{\sqrt X}=o(1)\), yielding (18) uniformly.  Every
 prime-power label, early clamped atom and continuous tail of (14) is
 retained.  The finite estimate and its PNT corollary are written
-analysis, not Lean-formalized.
+analysis; only the finite clamping factor is Lean-formalized.
 
 The mesoscopic estimate also joins the macroscopic PNT argument into a
 single density law **uniform over every integer successor depth**:
@@ -402,6 +407,6 @@ law does not control the centered Goldbach fluctuation at the
 
 ## Dependencies and formal scope
 
-The [actual successor charge](actual-successor-resonance-charge-cocycle.md) fixes $\kappa$ and its convergent half-moment difference. The [factorial potential](factorial-ground-state-original-l2-domain.md) fixes the source in (11)–(12). The positive transport, additive convolution and Stieltjes integration use classical measure and summation tools; Matsumoto–Suzuki supply the attributed explicit formula and its separate conditional consumers. Every complete prime-power tail and both compensation terms are retained. The transport, escape bound and weighted comparison in this chapter are written proofs and are not formalized in Lean.
+The [actual successor charge](actual-successor-resonance-charge-cocycle.md) fixes $\kappa$ and its convergent half-moment difference. The [factorial potential](factorial-ground-state-original-l2-domain.md) fixes the source in (11)–(12). The positive transport, additive convolution and Stieltjes integration use classical measure and summation tools; Matsumoto–Suzuki supply the attributed explicit formula and its separate conditional consumers. Every complete prime-power tail and both compensation terms are retained. The finite clamping product is compiled in Lean; the continuous transport, escape bound, PNT asymptotics and weighted comparison remain written proofs.
 
 The [centered circle-majorant consumer](goldbach-additive-source-consumer.md) gives a separate quantitative route to the original source norm and clock action. Its positive majorant cannot be replaced by the signed additive remainder.
