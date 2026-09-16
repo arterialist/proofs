@@ -1,4 +1,5 @@
 import Mathlib.Data.Nat.Init
+import Mathlib.Data.Nat.Log
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.NumberTheory.Padics.PadicVal.Basic
 import Mathlib.Tactic
@@ -419,6 +420,207 @@ theorem twoThreeGauge_fails_at_nine :
     twoThreeGauge 9 * twoThreeGauge (9 / 2) ≠ twoThreeGauge 2 := by
   norm_num [twoThreeGauge_nine, twoThreeGauge_four, twoThreeGauge_two]
 
+/-- Binary-tree depth gives a phase adapted to successor children,
+    rather than to exact multiplicative divisor states. -/
+def treeTwoGauge (n : ℕ) : ℝ := (-1) ^ Nat.log 2 n
+
+theorem treeTwoGauge_child (r : ℕ) (hr : 2 ≤ r) :
+    treeTwoGauge r * treeTwoGauge (r / 2) = -1 := by
+  have hlogpos : 0 < Nat.log 2 r :=
+    Nat.log_pos Nat.one_lt_two hr
+  have hdepth : Nat.log 2 r = Nat.log 2 (r / 2) + 1 := by
+    rw [Nat.log_div_base]
+    exact (Nat.sub_add_cancel hlogpos).symm
+  rw [treeTwoGauge, treeTwoGauge, hdepth, pow_succ]
+  have hsquare : (-1 : ℝ) ^ Nat.log 2 (r / 2) *
+      (-1 : ℝ) ^ Nat.log 2 (r / 2) = 1 := by
+    calc
+      (-1 : ℝ) ^ Nat.log 2 (r / 2) * (-1 : ℝ) ^ Nat.log 2 (r / 2) =
+          ((-1 : ℝ) * (-1)) ^ Nat.log 2 (r / 2) :=
+            (mul_pow _ _ _).symm
+      _ = 1 := by norm_num
+  nlinarith [hsquare]
+
+/-- The depth phase assigns the expected sign to every power of
+    the doubling shift, retaining all proper powers of the prime 2. -/
+theorem treeTwoGauge_pow_child (k r : ℕ) (hr : 2 ^ k ≤ r) :
+    treeTwoGauge r * treeTwoGauge (r / 2 ^ k) = (-1 : ℝ) ^ k := by
+  have hklog : k ≤ Nat.log 2 r :=
+    Nat.le_log_of_pow_le Nat.one_lt_two hr
+  have hdepth : Nat.log 2 r = Nat.log 2 (r / 2 ^ k) + k := by
+    rw [Nat.log_div_base_pow]
+    omega
+  rw [treeTwoGauge, treeTwoGauge, hdepth, pow_add]
+  have hsquare : (-1 : ℝ) ^ Nat.log 2 (r / 2 ^ k) *
+      (-1 : ℝ) ^ Nat.log 2 (r / 2 ^ k) = 1 := by
+    calc
+      (-1 : ℝ) ^ Nat.log 2 (r / 2 ^ k) * (-1 : ℝ) ^ Nat.log 2 (r / 2 ^ k) =
+          ((-1 : ℝ) * (-1)) ^ Nat.log 2 (r / 2 ^ k) :=
+            (mul_pow _ _ _).symm
+      _ = 1 := by norm_num
+  calc
+    (-1 : ℝ) ^ Nat.log 2 (r / 2 ^ k) * (-1) ^ k *
+        (-1) ^ Nat.log 2 (r / 2 ^ k) =
+      (-1 : ℝ) ^ k *
+        ((-1) ^ Nat.log 2 (r / 2 ^ k) *
+          (-1) ^ Nat.log 2 (r / 2 ^ k)) := by ring
+    _ = (-1 : ℝ) ^ k := by rw [hsquare]; ring
+
+theorem treeTwoGauge_transfer_two_pow (N k : ℕ) (z : ℕ → ℝ)
+    (hz : z 0 = 0) :
+    signGauge treeTwoGauge
+        (transfer N (2 ^ k) (signGauge treeTwoGauge z)) =
+      fun r => (-1 : ℝ) ^ k * transfer N (2 ^ k) z r := by
+  funext r
+  by_cases hrN : r ≤ N
+  · by_cases hrk : 2 ^ k ≤ r
+    · have hphase := treeTwoGauge_pow_child k r hrk
+      simp only [signGauge, transfer, if_pos hrN]
+      calc
+        treeTwoGauge r * (treeTwoGauge (r / 2 ^ k) * z (r / 2 ^ k)) =
+            (treeTwoGauge r * treeTwoGauge (r / 2 ^ k)) * z (r / 2 ^ k) := by ring
+        _ = (-1 : ℝ) ^ k * z (r / 2 ^ k) := by rw [hphase]
+    · have hdiv : r / 2 ^ k = 0 := Nat.div_eq_of_lt (by omega)
+      simp [signGauge, transfer, hrN, hdiv, hz]
+  · simp [signGauge, transfer, hrN]
+
+/-- A nonmultiplicative depth phase exactly reverses the dense
+    doubling transfer on every finite successor-cell window. -/
+theorem treeTwoGauge_transfer_two (N : ℕ) (z : ℕ → ℝ) (hz : z 0 = 0) :
+    signGauge treeTwoGauge (transfer N 2 (signGauge treeTwoGauge z)) =
+      fun r => -transfer N 2 z r := by
+  funext r
+  by_cases hr : r ≤ N
+  · by_cases hr2 : 2 ≤ r
+    · have hdiv := signGauge_transfer_defect N 2 r treeTwoGauge z hr
+      have hsign : treeTwoGauge 2 = -1 := by norm_num [treeTwoGauge]
+      rw [hsign, treeTwoGauge_child r hr2, sub_self, zero_mul] at hdiv
+      linarith
+    · have hq : r / 2 = 0 := by omega
+      simp [signGauge, transfer, hr, hq, hz]
+  · simp [signGauge, transfer, hr]
+
+/-- Simultaneous scalar sign phases for the dense 2- and 3-shifts
+    are already forced to be trivial by the fourth successor cell.
+    No multiplicativity assumption on the phase is used. -/
+theorem two_three_sign_phase_rigidity (N : ℕ) (χ : ℕ → ℝ)
+    (s₂ s₃ : ℝ) (hN : 4 ≤ N) (hone : χ 1 = 1)
+    (hsquare_two : χ 2 * χ 2 = 1)
+    (h₂ : ∀ r, 2 ≤ r → r ≤ N → χ r * χ (r / 2) = s₂)
+    (h₃ : ∀ r, 3 ≤ r → r ≤ N → χ r * χ (r / 3) = s₃) :
+    s₂ = 1 ∧ s₃ = 1 ∧ ∀ n, 0 < n → n ≤ N → χ n = 1 := by
+  have hχ2 : χ 2 = s₂ := by
+    simpa [hone] using h₂ 2 (by omega) (by omega)
+  have hχ3 : χ 3 = s₂ := by
+    simpa [hone] using h₂ 3 (by omega) (by omega)
+  have hs32 : s₃ = s₂ := by
+    simpa [hχ3, hone] using (h₃ 3 (by omega) (by omega)).symm
+  have hsquare : s₂ * s₂ = 1 := by simpa [hχ2] using hsquare_two
+  have hχ4_mul : χ 4 * s₂ = s₂ := by
+    simpa [hχ2] using h₂ 4 (by omega) hN
+  have hχ4 : χ 4 = 1 := by
+    calc
+      χ 4 = χ 4 * (s₂ * s₂) := by rw [hsquare]; ring
+      _ = (χ 4 * s₂) * s₂ := by ring
+      _ = s₂ * s₂ := by rw [hχ4_mul]
+      _ = 1 := hsquare
+  have hs3one : s₃ = 1 := by
+    simpa [hχ4, hone] using (h₃ 4 (by omega) hN).symm
+  have hs2one : s₂ = 1 := hs32.symm.trans hs3one
+  refine ⟨hs2one, hs3one, ?_⟩
+  intro n
+  induction n using Nat.strong_induction_on with
+  | h n ih =>
+    intro hnpos hnN
+    by_cases hn1 : n = 1
+    · simpa [hn1] using hone
+    have hn2 : 2 ≤ n := by omega
+    have hkpos : 0 < n / 2 := by omega
+    have hklt : n / 2 < n := by omega
+    have hkN : n / 2 ≤ N := by omega
+    have hk : χ (n / 2) = 1 := ih (n / 2) hklt hkpos hkN
+    simpa [hk, hs2one] using h₂ n hn2 hnN
+
+/-- Testing an exact scalar conjugacy on a physical vector equal to
+    one at all positive labels extracts its entrywise phase law. -/
+theorem phase_relation_of_transfer_conjugacy (N d r : ℕ)
+    (χ : ℕ → ℝ) (s : ℝ) (hd : 0 < d) (hrd : d ≤ r) (hrN : r ≤ N)
+    (hconj : ∀ z : ℕ → ℝ, z 0 = 0 → ∀ q, q ≤ N →
+      signGauge χ (transfer N d (signGauge χ z)) q =
+        s * transfer N d z q) :
+    χ r * χ (r / d) = s := by
+  let z : ℕ → ℝ := fun k => if k = 0 then 0 else 1
+  have hz : z 0 = 0 := by simp [z]
+  have hdiv : r / d ≠ 0 := by
+    exact Nat.ne_of_gt (Nat.div_pos hrd hd)
+  have h := hconj z hz r hrN
+  simpa [signGauge, transfer, hrN, z, hdiv, mul_assoc] using h
+
+/-- Therefore the two complete prime shifts already exclude every
+    nontrivial scalar diagonal sign gauge from the fourth cell. -/
+theorem two_three_operator_phase_rigidity (N : ℕ) (χ : ℕ → ℝ)
+    (s₂ s₃ : ℝ) (hN : 4 ≤ N) (hone : χ 1 = 1)
+    (hsquare_two : χ 2 * χ 2 = 1)
+    (hconj₂ : ∀ z : ℕ → ℝ, z 0 = 0 → ∀ r, r ≤ N →
+      signGauge χ (transfer N 2 (signGauge χ z)) r =
+        s₂ * transfer N 2 z r)
+    (hconj₃ : ∀ z : ℕ → ℝ, z 0 = 0 → ∀ r, r ≤ N →
+      signGauge χ (transfer N 3 (signGauge χ z)) r =
+        s₃ * transfer N 3 z r) :
+    s₂ = 1 ∧ s₃ = 1 ∧ ∀ n, 0 < n → n ≤ N → χ n = 1 := by
+  apply two_three_sign_phase_rigidity N χ s₂ s₃ hN hone hsquare_two
+  · intro r hr2 hrN
+    exact phase_relation_of_transfer_conjugacy N 2 r χ s₂
+      (by omega) hr2 hrN hconj₂
+  · intro r hr3 hrN
+    exact phase_relation_of_transfer_conjugacy N 3 r χ s₃
+      (by omega) hr3 hrN hconj₃
+
+/-- The same fourth-cell obstruction holds for arbitrary nonzero
+    complex phase gauges when conjugacy uses the inverse phase. -/
+theorem two_three_complex_phase_rigidity (N : ℕ) (χ : ℕ → ℂ)
+    (s₂ s₃ : ℂ) (hN : 4 ≤ N) (hone : χ 1 = 1)
+    (hχ2 : χ 2 ≠ 0)
+    (h₂ : ∀ r, 2 ≤ r → r ≤ N → χ r = s₂ * χ (r / 2))
+    (h₃ : ∀ r, 3 ≤ r → r ≤ N → χ r = s₃ * χ (r / 3)) :
+    s₂ = 1 ∧ s₃ = 1 ∧ ∀ n, 0 < n → n ≤ N → χ n = 1 := by
+  have h2val : χ 2 = s₂ := by
+    simpa [hone] using h₂ 2 (by omega) (by omega)
+  have h3val : χ 3 = s₂ := by
+    simpa [hone] using h₂ 3 (by omega) (by omega)
+  have hs32 : s₃ = s₂ := by
+    simpa [h3val, hone] using (h₃ 3 (by omega) (by omega)).symm
+  have h4two : χ 4 = s₂ * s₂ := by
+    simpa [h2val] using h₂ 4 (by omega) hN
+  have h4three : χ 4 = s₃ := by
+    simpa [hone] using h₃ 4 (by omega) hN
+  have hss : s₂ * s₂ = s₂ := by
+    calc
+      s₂ * s₂ = χ 4 := h4two.symm
+      _ = s₃ := h4three
+      _ = s₂ := hs32
+  have hs2ne : s₂ ≠ 0 := by simpa [h2val] using hχ2
+  have hs2one : s₂ = 1 := by
+    have hzero : s₂ * (s₂ - 1) = 0 := by
+      calc
+        s₂ * (s₂ - 1) = s₂ * s₂ - s₂ := by ring
+        _ = 0 := sub_eq_zero.mpr hss
+    exact sub_eq_zero.mp ((mul_eq_zero.mp hzero).resolve_left hs2ne)
+  have hs3one : s₃ = 1 := hs32.trans hs2one
+  refine ⟨hs2one, hs3one, ?_⟩
+  intro n
+  induction n using Nat.strong_induction_on with
+  | h n ih =>
+    intro hnpos hnN
+    by_cases hn1 : n = 1
+    · simpa [hn1] using hone
+    have hn2 : 2 ≤ n := by omega
+    have hkpos : 0 < n / 2 := by omega
+    have hklt : n / 2 < n := by omega
+    have hkN : n / 2 ≤ N := by omega
+    have hk : χ (n / 2) = 1 := ih (n / 2) hklt hkpos hkN
+    simpa [hs2one, hk] using h₂ n hn2 hnN
+
 #print axioms div_eq_iff_child
 #print axioms collar_child_iff
 #print axioms collar_child_exists_iff
@@ -442,5 +644,13 @@ theorem twoThreeGauge_fails_at_nine :
 #print axioms twoThreeGauge_carry_through_eight
 #print axioms twoThreeGauge_transfer_conjugacy_eight
 #print axioms twoThreeGauge_fails_at_nine
+#print axioms treeTwoGauge_child
+#print axioms treeTwoGauge_pow_child
+#print axioms treeTwoGauge_transfer_two
+#print axioms treeTwoGauge_transfer_two_pow
+#print axioms two_three_sign_phase_rigidity
+#print axioms phase_relation_of_transfer_conjugacy
+#print axioms two_three_operator_phase_rigidity
+#print axioms two_three_complex_phase_rigidity
 
 end BuildingBlocks.SuccessorCellTransferFinite

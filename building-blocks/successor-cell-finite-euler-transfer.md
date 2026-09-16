@@ -218,6 +218,69 @@ This excludes an operator-norm-small approximation by a nontrivial
 multiplicative sign gauge. It leaves open localized packet arguments
 and gauges that vary continuously rather than taking signs.
 
+## A successor-tree phase and a two-prime obstruction
+
+The doubling carry can be repaired exactly by abandoning
+multiplicativity. Put
+\(\eta(n)=(-1)^{\lfloor\log_2 n\rfloor}\) for \(n\ge1\),
+with its harmless value at zero chosen as one. Every child
+\(r\ge2\) is one binary-tree level deeper than
+\(\lfloor r/2\rfloor\), so
+\[
+ \eta(r)\eta(\lfloor r/2\rfloor)=-1,
+ \qquad D_\eta R_{2^k}D_\eta=(-1)^kR_{2^k}
+ \quad(k\ge0)
+ \quad\text{on every finite successor window}.           \tag{15}
+\]
+Indeed binary depth drops by exactly \(k\) under division by
+\(2^k\) whenever the parent is positive; when it is zero, the
+physical vector is zero there. Thus every proper power of the
+prime 2 is compatible with this phase.
+This phase is not a multiplicative character:
+\(\eta(3)^2=1\) while \(\eta(9)=-1\). It also cannot assign a
+single scalar phase to the 3-shift. At child \(r=3\) its parent
+is 1 and the phase product is \(-1\); at \(r=4\) its parent
+is again 1 and the product is \(+1\).
+
+In fact, the conflict is independent of the choice of sign gauge.
+Let \(N\ge4\), \(\chi(1)=1\), \(\chi(2)^2=1\), and suppose both
+\(D_\chi R_2D_\chi=s_2R_2\) and
+\(D_\chi R_3D_\chi=s_3R_3\) hold on every physical vector.
+Testing children 2 and 3 for the 2-shift gives
+\(\chi(2)=\chi(3)=s_2\); child 3 for the 3-shift gives
+\(s_3=s_2\). Child 4 for the 2-shift gives
+\(\chi(4)s_2=s_2\), hence \(\chi(4)=1\), while child 4 for
+the 3-shift gives \(s_3=\chi(4)=1\). The 2-shift relation then
+propagates \(\chi(r)=1\) from parent \(\lfloor r/2\rfloor\)
+to every label in the window. Therefore
+\[
+ \boxed{\quad
+ s_2=s_3=1,\qquad \chi(r)=1\quad(1\le r\le N).
+ \quad}                                                  \tag{16}
+\]
+The two smallest prime shifts already make every simultaneous
+scalar diagonal sign conjugacy trivial by cell four. The binary
+phase in (15) handles one shift exactly, but the complete prime-power
+operator (5) contains the incompatible 3-shift and every other
+prime-power history. In the underlying undirected arrival graph,
+the 2-shift edges \(1\leftrightarrow2\) and \(2\leftrightarrow4\), together with
+the 3-shift edge \(1\leftrightarrow4\), form a triangle; the full prime
+graph is already nonbipartite at cell four. This identifies a concrete mixed-prime carry
+that any phase-based Weil argument must retain; it provides no sign
+for the full form.
+
+The obstruction is not restricted to signs. For a nonvanishing complex
+gauge, the usual conjugacy \(D_\chi R_dD_\chi^{-1}=s_dR_d\)
+requires
+\(\chi(r)=s_d\chi(\lfloor r/d\rfloor)\) on every positive
+child. With \(\chi(1)=1\), the same five child relations at
+\(r=2,3,4\) give \(s_3=s_2\) and \(s_2^2=s_2\).
+Nonvanishing forces \(s_2=s_3=1\), and binary-tree induction
+forces \(\chi=1\) throughout the window. This covers arbitrary
+unit-circle phases as a special case. The Lean theorem proves the
+broader complex phase relation directly; the inverse-operator
+notation is its consequence when the gauge is everywhere nonzero.
+
 [SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean)
 formalizes the child-index equivalence, opposite-collar support,
 exact logarithmic overlap weights, cutoff semigroup law,
@@ -228,7 +291,10 @@ It also proves the rigidity conclusion (13) from (12) and from
 operator conjugacy, and the existence of a nonzero carry coefficient
 for a nontrivial sign. The multiplicative \(\chi_2\chi_3\) witness,
 its exact conjugacy through eight cells, and its failure at nine are
-also formalized, all with standard mathlib axioms. Equations
+also formalized. The exact binary-tree phase for all \(2^k\) shifts,
+simultaneous 2-/3-shift sign rigidity (16), and its nonzero-complex
+phase extension compile as well, all with standard mathlib
+axioms. Equations
 (4)--(8), the weighted Hilbert realization and norm bounds (11),
 (14), and the full analytic Weil comparison are written mathematics,
 not Lean formalized. These finite identities give no RH conclusion.
