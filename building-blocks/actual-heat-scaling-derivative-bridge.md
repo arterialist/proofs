@@ -305,6 +305,56 @@ This is a signed quadratic constraint for the linked actual heat and scaling-der
 
 The exact band separation in (16)--(18) is specific to convolution of two histories: convolution becomes pointwise multiplication of their Fourier transforms. For a pointwise square, a product on a finite observation window, or the finite-horizon heat energy, low--high cross terms generally remain. In particular (16) must not be substituted as an error bound for the finite-horizon integral of $b_U(v)^2$.
 
+## A sharp multiplier bound and a finite Goldbach energy consumer
+
+The upper multiplier constant in (6) can be sharpened without a new arithmetic estimate. For $x=|\omega|>0$,
+$$
+|m(\omega)|^2
+=\frac{\pi}{4}\,
+  \frac{x^2+x^2/\sinh^2(\pi x)}{x^2+1/4}
+\le\frac\pi4,
+\tag{20}
+$$
+because $\sinh(\pi x)\ge\pi x\ge2x$. At zero the value is $1/\pi<\pi/4$, and the expression tends to $\pi/4$ as $x\to\infty$. Hence the $L^2$ multiplier norm is exactly $\sqrt\pi/2$; this value may replace $M_*$ in the upper bounds (9), (15), and (17).
+
+There is a direct finite centered-Goldbach version. For any finitely supported real coefficients $(a_n)$, define
+$$
+D_a(t)=\sum_n a_ne^{-nt},\qquad
+b_a(v)=e^{-v/2}D_a(e^{-v}),\qquad
+q_a(v)=e^{-v/2}\sum_n a_n K_{\rm sc}(ne^{-v}).
+$$
+The kernel $\kappa(v)=e^{-v/2}K_{\rm sc}(e^{-v})$ tends to $-1$ at $+\infty$ and to zero at $-\infty$, while $\kappa'\in L^1\cap L^2$ by the endpoint expansions used in (4). The heat kernel $k_0(v)=e^{-v/2}e^{-e^{-v}}$ also belongs to $L^1\cap L^2$. Since
+$$
+q_a(v)=\sum_n\frac{a_n}{\sqrt n}\kappa(v-\log n),\qquad
+b_a(v)=\sum_n\frac{a_n}{\sqrt n}k_0(v-\log n),
+$$
+the same boundary-value Mellin calculation as in (6) gives
+$\widehat{q_a'}(\omega)=m(\omega)\widehat b_a(\omega)$, including the finite value $m(0)=-1/\sqrt\pi$. Plancherel and $t=e^{-v}$ now give the exact finite-arithmetic upper bound
+$$
+\boxed{\quad
+\int_{\mathbb R}|q_a'(v)|^2dv
+\le\frac\pi4\int_0^\infty|D_a(t)|^2dt
+=\frac\pi4\sum_{m,n}\frac{a_ma_n}{m+n}.
+\quad}
+\tag{21}
+$$
+The last equality is a finite ordered additive convolution, including every signed cross term. In particular $a_n=(\Lambda(n)-1)1_{n\le N}$ retains $a_1=-1$ and every prime power through $N$. The right side is nonnegative as a whole even though its individual Goldbach coefficients can have either sign.
+
+For the actual even physical ground $G_R$, let $m_R=\int G_R>0$ and mix this finite packet by
+$$
+\mathcal I_{R,a}(v)=\frac1{m_R}\int G_R(u)
+  [q_a(v+u)+q_a(v-u)]du.
+$$
+Its derivative has multiplier $2M_R(i\omega)/m_R$ relative to $q_a'$, with $|M_R(i\omega)|\le m_R$. Thus (21) yields
+$$
+\boxed{\quad
+\int_{\mathbb R}|\mathcal I_{R,a}'(v)|^2dv
+\le\pi\sum_{m,n}\frac{a_ma_n}{m+n}.
+\quad}
+\tag{22}
+$$
+This is a finite centered-source bound for the actual ground average, with no inverse ground-mass loss. It does not bound the undifferentiated readout: $q_a(+\infty)=-\sum_n a_n/\sqrt n$ is generally nonzero. Passing from the finite packet to the uncut prime source also requires the source-tail and deterministic-centering costs in (2), (10), and (14). In particular (21)--(22) do not establish the open critical Goldbach energy estimate or a sign for the full Weil row.
+
 
 ## Dependencies and proof status
 
