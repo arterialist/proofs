@@ -340,3 +340,4 @@ import BuildingBlocks.IntegerCarryPrimitiveBounds
 import BuildingBlocks.IntegerCarryIntegrationByParts
 import BuildingBlocks.GoldbachHeatDerivative
 import BuildingBlocks.GoldbachHeatProfileDerivative
+import BuildingBlocks.GoldbachHeatCarryWork
