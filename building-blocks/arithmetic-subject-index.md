@@ -59,6 +59,8 @@ The [scattering subject index](scattering-subject-index.md) follows a second ana
 
 ## Actual finite-frequency readouts
 
+The [successor-cell Weil refinement](compact-weil-successor-cell-refinement.md) partitions each window at $L=\frac12\log(N+1)$ into the exact $+1$ clock cells. Integer prime-power shifts refine one cell into consecutive successor cells, giving an exact finite prime matrix with both pole rows and the full gamma integral. Cellwise averages converge in the complete form for each fixed compact smooth test, so positivity on all these finite spaces along an unbounded cutoff sequence would imply RH. The refinement proves no such sign; its graph weights differ from the Balazard divisor-packet energy.
+
 The [critical packet Hardy estimate](compact-weil-critical-packet-hardy-control.md) uses the exact divisor-graph edge energy to control the additive gamma interaction on the entire resolved one-profile packet space at $T=cN$. Its relative edge-energy coefficient is below $16/27$; the pole has arbitrarily small relative coefficient, and the complete form has a uniform lower bound. The remaining norm constant is not controlled sharply enough to prove full packet positivity.
 
 The [mixed prime-phase kernel](compact-weil-critical-mixed-character-kernel.md) polarizes the complete critical packet form on every fixed finite family of finite-prime multiplicative characters. Its limit is a strictly positive valuation-space Gram form plus a nonnegative prime-shift Dirichlet energy and positive rank-one pole remainder. The convergence depends on the fixed family and does not sign the growing full packet matrix.
