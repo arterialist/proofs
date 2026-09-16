@@ -349,3 +349,5 @@ import BuildingBlocks.FactorialRealCellTest
 import BuildingBlocks.FactorialRealCellRenewal
 import BuildingBlocks.FactorialRealCellSteps
 import BuildingBlocks.FactorialRealCellDiscrepancy
+import BuildingBlocks.FactorialRealCellMajorant
+import BuildingBlocks.FactorialRealCellEnergySplit
