@@ -317,6 +317,61 @@ individual 3-shift. It does not bound a localized packet chosen to
 avoid these columns, or sign the full prime-power and archimedean
 Weil form.
 
+There is a useful counterweight to exact phase rigidity. For real
+\(t\), put \(\chi_t(n)=n^{it}=e^{it\log n}\) on positive labels.
+This phase is completely multiplicative. If \(r=dn+j\),
+\(0\le j<d\), and \(n\ge1\), its successor carry obeys
+\[
+ 0\le \log\frac{r}{dn}
+   =\log\left(1+\frac{j}{dn}\right)
+   \le\frac{j}{dn}<\frac1n.
+                                                               \tag{20}
+\]
+The last bound is uniform in \(d\). The unit-circle estimate
+\(|e^{ix}-e^{iy}|\le|x-y|\) now gives
+\[
+ \left|\chi_t(r)\overline{\chi_t(n)}-d^{it}\right|
+ \le\frac{|t|}{n}.
+\]
+Let \(P_{\ge R}\) project onto parent labels \(n\ge R\) in
+\(C_N\). Different parents have disjoint child intervals, and the
+sum of the retained child weights is at most \(\ell_n\). Hence, for
+every \(N,d,R\ge1\),
+\[
+ \boxed{\quad
+ \|(D_{\chi_t}R_dD_{\chi_t}^{-1}-d^{it}R_d)P_{\ge R}\|
+ \le\frac{|t|}{R}.
+ \quad}                                                   \tag{21}
+\]
+The same bound holds on the infinite weighted cell space, where
+the complete child weights sum to \(\ell_n\). Thus the exact
+four-cell obstruction and the binary-depth gap (19) do not exclude
+approximate mixed-prime phases on high cells.
+
+Write \(\mathscr B_N(s)=-\mathscr Z_N'(s)\mathscr Z_N(s)^{-1}\),
+the complete finite prime-power operator in (5). A dilation
+\(d>N/R\) has no children of parents \(n\ge R\) inside the
+window. Summing (21) with every actual \(\Lambda(d)\) retained gives
+\[
+ \boxed{\quad
+ \|(D_{\chi_t}\mathscr B_N(s)D_{\chi_t}^{-1}
+          -\mathscr B_N(s-it))P_{\ge R}\|
+ \le\frac{|t|}{R}
+       \sum_{2\le d\le\lfloor N/R\rfloor}
+          \Lambda(d)d^{-\Re s}.
+ \quad}                                                   \tag{22}
+\]
+At \(\Re s=1/2\), the elementary bound
+\(\Lambda(d)\le\log d\) makes the right side
+\(O_t(\sqrt N\,R^{-3/2}\log(2N))\). It tends to zero for
+\(R=\lfloor N^a\rfloor\), \(1/3<a<1\), while the active
+prime-power range \(d\le N/R\) grows. This is a precise finite
+correspondence between the arithmetic phase \(n^{it}\) and a
+spectral-parameter translation. The estimate is for fixed \(t\);
+growing heights must pay its explicit \(|t|\) factor. It supplies
+no bound for the gamma and pole rows, and no sign for the complete
+Weil form.
+
 [SuccessorCellTransferFinite.lean](BuildingBlocks/SuccessorCellTransferFinite.lean)
 formalizes the child-index equivalence, opposite-collar support,
 exact logarithmic overlap weights, cutoff semigroup law,
@@ -330,8 +385,9 @@ its exact conjugacy through eight cells, and its failure at nine are
 also formalized. The exact binary-tree phase for all \(2^k\) shifts,
 simultaneous 2-/3-shift sign rigidity (16), and its nonzero-complex
 phase extension compile as well. The two interior shell identities
-(17) and exact three-child weight (18) also compile, all with
-standard mathlib axioms. Equations (4)--(8), the weighted Hilbert
-realization and norm bounds (11), (14), (19), and the full analytic
-Weil comparison are written mathematics, not Lean formalized. These
-finite identities give no RH conclusion.
+(17), exact three-child weight (18), and logarithmic carry bound
+(20) also compile, all with standard mathlib axioms. Equations
+(4)--(8), the weighted Hilbert realization and norm bounds (11),
+(14), (19), (21), (22), and the full analytic Weil comparison are
+written mathematics, not Lean formalized. These finite identities
+give no RH conclusion.

@@ -128,6 +128,33 @@ theorem sum_three_child_lengths (n : ℕ) (hn : 0 < n) :
   push_cast
   field_simp
 
+/-- On a nonmultiple child `d*n+j`, the logarithmic carry is less
+    than the inverse parent label, uniformly in the dilation. -/
+theorem log_successor_carry_bound (d n j : ℕ) (hd : 0 < d)
+    (hn : 0 < n) (hj : j < d) :
+    0 ≤ Real.log (((d * n + j : ℕ) : ℝ) / ((d * n : ℕ) : ℝ)) ∧
+      Real.log (((d * n + j : ℕ) : ℝ) / ((d * n : ℕ) : ℝ)) <
+        (1 : ℝ) / (n : ℝ) := by
+  have hdR : (0 : ℝ) < d := by exact_mod_cast hd
+  have hnR : (0 : ℝ) < n := by exact_mod_cast hn
+  have hjR : (j : ℝ) < d := by exact_mod_cast hj
+  have hfrac : (j : ℝ) / ((d : ℝ) * n) < (1 : ℝ) / n := by
+    apply (div_lt_div_iff₀ (mul_pos hdR hnR) hnR).2
+    nlinarith [mul_lt_mul_of_pos_right hjR hnR]
+  have hratio :
+      (((d * n + j : ℕ) : ℝ) / ((d * n : ℕ) : ℝ)) =
+        1 + (j : ℝ) / ((d : ℝ) * n) := by
+    push_cast
+    field_simp
+  rw [hratio]
+  constructor
+  · apply Real.log_nonneg
+    have hnonneg : 0 ≤ (j : ℝ) / ((d : ℝ) * n) := by positivity
+    linarith
+  · have hlog := Real.log_le_sub_one_of_pos
+        (by positivity : 0 < (1 : ℝ) + (j : ℝ) / ((d : ℝ) * n))
+    nlinarith
+
 /-- The exact cell-length weight in the two opposite log-2 collars. -/
 noncomputable def collarWeight (m d : ℕ) : ℝ :=
   ∑ r ∈ Finset.Ico (max m d) (min (2 * m) (2 * d)),
@@ -734,5 +761,6 @@ theorem treeTwoGauge_three_high_shell (k j : ℕ) (hk : 2 ≤ k)
 #print axioms treeTwoGauge_three_low_shell
 #print axioms treeTwoGauge_three_high_shell
 #print axioms sum_three_child_lengths
+#print axioms log_successor_carry_bound
 
 end BuildingBlocks.SuccessorCellTransferFinite
