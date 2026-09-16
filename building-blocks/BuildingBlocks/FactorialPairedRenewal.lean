@@ -1,4 +1,5 @@
 import BuildingBlocks.FactorialFiniteRenewal
+import BuildingBlocks.FactorialKernelDictionary
 
 open Finset
 namespace BuildingBlocks.FactorialBinaryCarry
@@ -51,6 +52,51 @@ theorem paired_terminal_response (N k : ℕ) (hk : N < k) (hk2 : k ≤ 2 * N) (t
   rw [hq, Nat.div_eq_of_lt hk]
   simp [response]
 
+/-- All N new terminal histories are retained in the exact sum. -/
+theorem paired_terminal_sum (N : ℕ) (t : ℝ) :
+    (∑ k ∈ Ioc N (2 * N), (response ((2 * N) / k) t - response (N / k) (2 * t))) =
+      (N : ℝ) * response 1 t := by
+  have he : ∀ k ∈ Ioc N (2 * N), response ((2 * N) / k) t - response (N / k) (2 * t) = response 1 t := by
+    intro k hk
+    exact paired_terminal_response N k (mem_Ioc.mp hk).1 (mem_Ioc.mp hk).2 t
+  rw [Finset.sum_congr rfl he]
+  simp
+  omega
+
+/-- The actual old-history bundle is exactly minus the retained terminal sum. -/
+theorem paired_old_sum (N : ℕ) (t : ℝ) :
+    (∑ k ∈ Icc 1 N, (response ((2 * N) / k) t - response (N / k) (2 * t))) =
+      -(N : ℝ) * response 1 t := by
+  have hu : Icc 1 N ∪ Ioc N (2 * N) = Icc 1 (2 * N) := by ext k; simp; omega
+  have hd : Disjoint (Icc 1 N) (Ioc N (2 * N)) := by
+    apply Finset.disjoint_left.mpr
+    intro k hk hl
+    have h1 := (mem_Icc.mp hk).2
+    have h2 := (mem_Ioc.mp hl).1
+    omega
+  have hs := paired_quotient_response_sum_zero N t
+  rw [← hu, Finset.sum_union hd, paired_terminal_sum] at hs
+  linarith
+
+/-- The full old-history bundle has the exact quadratic terminal reserve N² log 2. -/
+theorem paired_old_energy (N : ℕ) :
+    (∫ t in Set.Ioi 0, (∑ k ∈ Icc 1 N, (response ((2 * N) / k) t - response (N / k) (2 * t)))^2 *
+      FactorialBinaryEnergy.weight t) = (N : ℝ)^2 * Real.log 2 := by
+  simp_rw [paired_old_sum]
+  have he : (fun t : ℝ => (-(N : ℝ) * response 1 t)^2 * FactorialBinaryEnergy.weight t) =
+      fun t => (N : ℝ)^2 * FactorialKernelDictionary.kernelRow 1 1 t := by
+    funext t
+    unfold response FactorialKernelDictionary.kernelRow FactorialEntropyIntegral.numerator
+    simp
+    ring
+  rw [he, MeasureTheory.integral_const_mul, FactorialKernelDictionary.kernel_integral]
+  norm_num [FactorialKernelDictionary.kernel]
+  left
+  ring
+
+#print axioms paired_terminal_sum
+#print axioms paired_old_sum
+#print axioms paired_old_energy
 #print axioms quotient_response_sum_extend
 #print axioms paired_quotient_response_sum_zero
 #print axioms paired_quotient_innovation_sum_zero
