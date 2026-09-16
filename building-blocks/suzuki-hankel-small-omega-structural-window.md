@@ -1,6 +1,6 @@
-# A polynomial small-parameter window for Suzuki's arithmetic Hankel kernel
+# A growing small-parameter window for Suzuki's arithmetic Hankel kernel
 
-This note supplies an unconditional analytic lower bound on a growing part of the [proposed uniform Suzuki sign target](suzuki-hankel-uniform-sign-target.md). The proof uses the actual Jordan-totient coefficients, Suzuki's gamma kernel, and the prime number theorem. It does not settle the target at any fixed positive parameter for all large \(x\), and it gives no RH or new local Weil positivity theorem.
+This note supplies an unconditional analytic lower bound on a growing part of the [proposed uniform Suzuki sign target](suzuki-hankel-uniform-sign-target.md). The proof uses the actual Jordan-totient coefficients, Suzuki's gamma kernel, and a quantitative prime number theorem. It does not settle the target at any fixed positive parameter for all large \(x\), and it gives no RH or new local Weil positivity theorem.
 
 Write \(k_\omega=g_\omega^{\langle1\rangle}\) and
 \[
@@ -141,7 +141,7 @@ k_\omega(t)\sim\frac{(2\pi)^\omega}{\Gamma(1+\omega)}
 \]
 The gamma summands therefore have both signs, so coefficient positivity cannot prove the sign target term by term. A positive representation for the **complete** arithmetic sum remains possible, but (7)--(11) show that it must retain prime compensation.
 
-For fixed \(\omega>0\), [Suzuki, Theorem A.1(5)](https://arxiv.org/html/1204.1827v2) gives \(R_\omega(x)=1+o(1)\) as \(x\to\infty\) **under RH**. That statement is not uniform as \(\omega\downarrow0\); (3) covers only \(x=O(\omega^{-2})\). At \(\omega=1/2\), innerness of \(\Theta_{1/2}\) is unconditional, but innerness alone is no pointwise lower bound for (12). The global half bound for all \(x\) and all \(0<\omega\le1/2\) remains unproved.
+For fixed \(\omega>0\), [Suzuki, Theorem A.1(5)](https://arxiv.org/html/1204.1827v2) gives \(R_\omega(x)=1+o(1)\) as \(x\to\infty\) **under RH**. That statement is not uniform as \(\omega\downarrow0\); (15) covers only a polynomial scale with a logarithmic factor. At \(\omega=1/2\), innerness of \(\Theta_{1/2}\) is unconditional, but innerness alone is no pointwise lower bound for (12). The global half bound for all \(x\) and all \(0<\omega\le1/2\) remains unproved.
 
 The proof's scale restriction is substantive. The negative gamma component in (4) contains \(\omega t^{\omega-1}\); its integral over the sampled range \(1/x<t<1\) is \(1-x^{-\omega}\), which becomes order one when \(\omega\log x\) is of order one. On such exponential scales, the coefficient expansion (7) also loses its uniform small error. The present argument supplies no sign there.
 
@@ -153,3 +153,68 @@ Thus (10) alone gives an \(o(\omega\sqrt{x})\) remainder, not the
 requires a quantitative weighted prime-discrepancy bound at that scale
 or a different exact cancellation. This is a limitation of the stated
 proof, not a claim that the wider sign target is false.
+
+### Quantitative extension beyond the first gamma scale
+
+The standard quantitative prime number theorem gives a larger
+unconditional window. For every fixed \(A>0\),
+\[
+\boxed{\quad
+\lim_{\omega\downarrow0}
+\sup_{2\le x\le \omega^{-2}(\log(1/\omega))^A}
+|R_\omega(x)-1|=0.
+\quad}
+\tag{15}
+\]
+This still leaves every fixed positive \(\omega\) with an unbounded
+tail of \(x\) untreated.
+
+Here are the uniform estimates behind (15). The explicit
+[Johnston--Yang bound for \(\psi(y)-y\)](https://arxiv.org/abs/2204.01980)
+implies, for each fixed \(B>0\),
+\(\psi(y)=y+O_B(y(\log y)^{-B})\) for \(y\ge2\).
+Suzuki's incomplete-beta formula also gives, for
+\(0<\delta\le1/4\), \(0<\omega\le1/4\),
+\[
+\sup_{\delta\le t\le1-\delta}
+|k_\omega(t)-t^{-1/2}|\ll \omega/\delta.
+\tag{16}
+\]
+Indeed, subtract the two complete-beta values in Suzuki's
+incomplete-beta formula used to derive (4). Their
+coefficients are \(B_\omega=1+O(\omega)\) and
+\(A_\omega=O(\omega)\); the omitted lower-beta integrals are
+\(O(\delta^{-1}t^{3-2\omega})\) and
+\(O(\delta^{-1}t^{5/2-\omega})\), respectively. Their
+prefactors are \(O(\omega^2)t^{\omega-1}\) and
+\(O(\omega)t^{-1/2}\), so the combined remainder is
+\(O(\omega/\delta)\)
+on the stated interval.
+
+Put \(M_\omega(x)=x^{-1}\sum_{n\le x}\Lambda(n)k_\omega(n/x)\).
+On \(t=n/x\le\delta\), (6), \(\psi(y)\ll y\), and
+\(\sum_{n\le x}\Lambda(n)/n\ll\log x\) bound the normalized
+mass by \(O(\sqrt\delta+\omega\log x)\). On
+\(t\ge1-\delta\), (6) and the quantitative \(\psi\) estimate
+give \(O_B(\delta+(\log x)^{-B})\). On the middle interval,
+(16) and partial summation give
+\[
+|M_\omega(x)-2|\ll_B
+ \sqrt\delta+\omega\log x+\omega/\delta+
+ \delta^{-1/2}(\log x)^{-B}
+\quad (x\ge\omega^{-2}).
+\tag{17}
+\]
+Choose \(\delta=(\log x)^{-(A+2)}\) and \(B=A+3\);
+for the upper range in (15), \(\log x\asymp\log(1/\omega)\).
+Then \(\omega\sqrt x\,|M_\omega(x)-2|=o(1)\)
+uniformly for
+\(\omega^{-2}\le x\le\omega^{-2}(\log(1/\omega))^A\).
+The errors in (8) and (9) also stay \(o(1)\) there:
+\[
+\omega+\omega^2\sqrt x(\log x)^2+
+\omega^3\sqrt x(\log x)^3=o(1).
+\]
+Thus (9) and (11) still cancel uniformly; (3) handles
+\(x\le\omega^{-2}\). This proves (15). No Lean formalization
+of the analytic uniform estimates (15)--(17) is claimed.
