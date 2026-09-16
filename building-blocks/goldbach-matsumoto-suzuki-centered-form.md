@@ -311,4 +311,4 @@ term. They provide a new zero-sum/gamma consumer, but existing Goldbach
 existence and unconditional representation lower bounds yield no
 one-sided improvement over the PNT-scale centered heat estimate.
 
-This is written analysis. The finite coefficient algebra is being formalized separately; the infinite zero-sum and gamma functional remain Lean obligations.
+[CenteredGoldbachTruncatedHeat.lean](BuildingBlocks/CenteredGoldbachTruncatedHeat.lean) formalizes the truncated heat square, support through $2Y$, the complete interior prime/$\psi$ coefficient and the exact successor difference. The infinite zero-sum and gamma functional remain Lean obligations.

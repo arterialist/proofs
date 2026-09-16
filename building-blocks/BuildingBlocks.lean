@@ -410,3 +410,5 @@ import BuildingBlocks.OddDoublingFiniteMobius
 import BuildingBlocks.ThetaMinimumMapConstant
 
 import BuildingBlocks.HardClockWeightedLcmClass
+
+import BuildingBlocks.CenteredGoldbachTruncatedHeat
