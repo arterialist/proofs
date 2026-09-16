@@ -31,6 +31,7 @@ import BuildingBlocks.DivisorEntropy
 import BuildingBlocks.DivisorOverlap
 import BuildingBlocks.ExactPrimePowerCRT
 import BuildingBlocks.FiniteShiftEnergy
+import BuildingBlocks.FinitePrimeFutureConeEnergy
 import BuildingBlocks.FiniteTransport
 import BuildingBlocks.FourierAliasTail
 import BuildingBlocks.LcmDifferenceProduct
@@ -485,6 +486,8 @@ import BuildingBlocks.CenteredGoldbachSuccessorHeatFinite
 import BuildingBlocks.CenteredGoldbachHistoryShellFinite
 import BuildingBlocks.CenteredGoldbachAdjacentTotalsFinite
 import BuildingBlocks.CenteredGoldbachEvenCompensationFinite
+import BuildingBlocks.GoldbachOddPowerBoundFinite
+import BuildingBlocks.StableOddMobiusPrefixFinite
 
 import BuildingBlocks.ThetaLocalSpectralAudit
 import BuildingBlocks.MonotoneObservationSchur
