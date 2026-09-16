@@ -189,4 +189,14 @@ On the exterior, (2) says precisely
 
 Thus the actual ground source and both pole products cancel at leading density order in either far tail. The signed density itself is only $o(b_\theta(u))$; (14) does not assert finite total variation or a sign. The core term, near-core profile, complete prime discrepancy and moving-$R$ constants remain present. In particular this theorem does not establish the required constrained covariance estimate or RH.
 
+For the actual coherent scaling test $h_t(v)=H(te^{|v|})$, the checked bound $|H(z)|\le C\min(1,z^{-1})$ makes $|H(z)|z^{-1/2}$ integrable. The core part of $\sqrt t\int h_t\,d\widetilde\eta_R$ tends to zero by boundedness. On either exterior half, substitute $z=te^{|v|}$, use $b_\theta(v)\le2e^{|v|/2}$, and apply dominated convergence to (14). This proves the qualitative consequence
+
+\[
+ \sqrt t\,Q_{\rm W}(G_R,h_t)\longrightarrow0
+ \qquad(t\downarrow0).
+\tag{15}
+\]
+
+The separate [PNT-scale weak-row theorem](theta-weak-ground-pnt-density-cancellation.md) gives a stronger stretched-exponential bound for this particular test. Neither result supplies a sign for the remaining arithmetic row.
+
 All statements here are written analysis. No Lean formalization of the far-tail comparison is claimed.
