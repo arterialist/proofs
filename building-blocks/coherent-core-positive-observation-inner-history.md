@@ -127,6 +127,23 @@ $$
 
 The boundary terms vanish at zero because A vanishes there and at infinity because A is bounded and V tends to zero. Absolute convergence follows from $|\psi(y)-\Psi_1(y)|\le Cy$ and (9). Every prime-power arrival is retained in the signed bracket. The positivity of V says nothing by itself about that bracket.
 
+The actual bracket is negative at a finite horizon. At $y=222$,
+\[
+ \psi(222)-\Psi_1(222)
+ =\sum_{p^k\le222}(\log p)
+       \bigl[1-\log(222/p^k)\bigr]<-19/1000.             \tag{12a}
+\]
+The [exact-rational certificate](verification/prime_prefix_contrast_222.py)
+enumerates all 61 prime powers and bounds each logarithm by five terms of
+$2\operatorname{artanh}z$, with the positive geometric tail retained.
+It uses no floating-point sign decision. On $(222,223)$, $\psi$
+is constant and $\Psi_1$ increases, so
+$A'(y)<0$ throughout $(222,223)$. This is a certified finite
+counterexample to pointwise positivity of the input in (12) and to
+monotonicity of the normalized logarithmic prefix $A$; it does not
+determine the sign of the integrated $Q(t)$ or RH. It is not a Lean
+formalization.
+
 Equivalently, the negative and positive parts of w have the same finite mass and separated supports. Formula (11) is a positive mass times the difference of two averages of the actual normalized prefix A at smaller and larger scales. A is not asserted monotone; replacing this signed difference by an assumed monotonicity would be an additional arithmetic premise.
 
 ## The original source and its common inner factor
