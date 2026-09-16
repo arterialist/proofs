@@ -223,6 +223,66 @@ corresponding prime-row tail. Both signs occur for actual complete
 prime-power packets, even after terminal compensation makes the full
 prime series converge. The lag threshold may depend on the packet.
 
+## The Goldbach \(M\)-function in the far-prime tail
+
+This first-moment readout also has a precise link to the Goldbach
+\(M\)-function studied by Matsumoto and Suzuki. In their notation, put
+\[
+ H(X)=\sum_\rho\frac{X^{\rho-1/2}}{\rho(\rho+1)},
+ \qquad X\ge1,
+\]
+with all nontrivial zeros and multiplicities retained. The zero series
+converges absolutely for each \(X\). Their unconditional
+[Proposition 6.1](https://arxiv.org/html/2409.00888v2#S6), with its
+integer-endpoint weight \(X-n=0\) at \(n=X\), gives the exact identity
+\[
+ J(X)=-X^{3/2}H(X)-X\log(2\pi)-12\zeta'(-1)
+       -X\sum_{m\ge1}\frac{X^{-2m}}{2m(2m-1)}+\frac12,
+ \qquad X>1.                                           \tag{18}
+\]
+The last \(1/2\) restores our lower integration endpoint \(1\):
+the paper integrates \(\psi(x)-x\) from \(0\), where it equals \(-x\)
+on \([0,1)\). No prime-power half-weight enters (18), because its
+coefficient \(X-n\) vanishes at the endpoint.
+
+For the literal compact source, define the completed late-prime
+tail coefficient by taking the prime cutoff *after* fixing \(N\):
+\[
+ L_N:=\lim_{Y\to\infty}Y
+       \left[-2\sum_{k>Y}\Lambda(k)q_{\sigma_N}(k)\right]
+     =-2J(N)\mathcal T_{\sigma_N}(N).                \tag{19}
+\]
+This is the exact limit in (11a), not a new sign hypothesis. Write
+\(T_\infty=-\zeta'(2)/\zeta(2)-2<0\). Chebyshev and partial
+summation give
+\(\mathcal T_{\sigma_N}(N)=T_\infty+O(N^{-1})\);
+absolute convergence of the zero series gives \(H(N)=O(\sqrt N)\)
+without RH. Equation (18) therefore yields the fixed normalization
+\[
+ \boxed{\qquad
+ \frac{L_N}{N^{3/2}}=2T_\infty H(N)+O(N^{-1/2}).
+ \qquad}                                               \tag{20}
+\]
+This identifies a physical full-prime-tail readout of the Goldbach
+\(M\)-function signal. It supplies no unconditional bound for it.
+Indeed, boundedness of \(L_N/N^{3/2}\) for all large integers is itself
+equivalent to RH. Under RH, the absolutely convergent critical-line
+zero series makes \(H\) bounded. Conversely, since
+\(\mathcal T_{\sigma_N}(N)\to T_\infty\ne0\), such a bound makes
+\(J(N)=O(N^{3/2})\). Chebyshev interpolates this to real \(X\) at
+cost \(O(X)\), and (15) then defines a holomorphic integral for
+\(\Re s>1/2\), excluding any zeta zero there. Functional-equation
+symmetry completes RH.
+
+The other pole moment of the same literal source is
+\(M_-(\sigma_X)=-F(X)\), where \(F\) is the original positive
+factorial potential. Its separate exact map to Matsumoto--Suzuki's
+\(H_1\) and the RH-equivalent screw function is already proved in
+[the actual core screw-increment readout](actual-core-screw-increment-readout.md)
+and the [rational screw matrices](goldbach-factorial-rational-screw-matrices.md).
+Their \(H_1\) screw criterion must not be assigned to the different
+\(H\) in (18)--(20).
+
 ## The surviving uniform pole cost
 
 The discrete positive pole moment in (5) is the first Riesz mean
