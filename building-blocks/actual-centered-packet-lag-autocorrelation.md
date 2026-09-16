@@ -138,6 +138,65 @@ The improved decay comes from the linked primitive
 $J-\ell=O(e^{-3s/2})$ and its exact boundary term; an absolute
 estimate on the oscillating $H$ alone loses that cell cancellation.
 
+## The unresolved packet memory is confined to logarithmic-logarithmic lags
+
+The same centered primitive also gives a relative bound starting well
+before the source cutoff. The direct moving-core proof gives
+$\|d_N'\|_2/\|d_N\|_2\ll 1+U$ from the gamma heat multiplier. Its
+frequency splitting applies once more to $d_N'$:
+for $\Omega\ge1$,
+\[
+\|d_N''\|_2\le\Omega\|d_N'\|_2
+ +C M_N(1+\Omega)^2e^{-\pi\Omega/2},
+\qquad M_N=\sum_{n\le N}\frac{|a_n|}{\sqrt n}
+\ll(1+U)e^{U/2}.
+\tag{12}
+\]
+There is also an $N$-independent lower bound on $\|d_N'\|_2$.
+Indeed, with $t=e^{-v}$, the $n=1$ term of
+\[
+d_N'(v)=t^{1/2}\sum_{n\le N}a_n(nt-\tfrac12)e^{-nt}
+\]
+is $-t^{1/2}(t-\tfrac12)e^{-t}$. On a fixed interval
+$t\in[t_0,t_0+1]$ with $t_0$ sufficiently large, the absolute sum
+of the $n\ge2$ terms, bounded using $|a_n|\le1+\log n$, is less
+than half this first term, uniformly in $N$. Integrating over that
+interval proves $\|d_N'\|_2\ge c_1>0$. Take
+$\Omega=2U/\pi$ in (12). The remainder is
+$O((1+U)^3e^{-U/2})$, so
+\[
+\boxed{\quad \|f_N'\|_2\le C(1+U)\|f_N\|_2,
+\qquad f_N=d_N'.\quad}
+\tag{13}
+\]
+
+For any $a\ge\log n_0$ and any real $f\in H^1(\mathbb R)$, its
+autocorrelation satisfies $|C_f(a)|\le\|f\|_2^2$ and
+$|C_f'(s)|\le\|f'\|_2\|f\|_2$. Centered integration by parts and
+$|\widetilde J(s)|\le C_Je^{-3s/2}$ therefore give
+\[
+\left|\int_a^\infty H(s)C_f(s)\,ds\right|
+\le C_J e^{-3a/2}\bigl(\|f\|_2^2+\|f\|_2\|f'\|_2\bigr).
+\tag{14}
+\]
+For the **actual** finite packet, (13)--(14) give, whenever
+$K\ge n_0$,
+\[
+\boxed{\quad
+\left|\int_{\log K}^\infty H(s)C_{f_N}(s)\,ds\right|
+\le C(1+U)K^{-3/2}\|f_N\|_2^2.
+\quad}
+\tag{15}
+\]
+For example, $K=\lceil(1+U)^2\rceil$ makes the right side
+$O((1+U)^{-2})\|f_N\|_2^2$, while the cutoff lag is only
+$\log K=2\log\log N+O(1)$. The direct absolute estimate
+$|H(s)|\ll e^{-s/2}$ would give merely $O(K^{-1/2})\|f_N\|_2^2$;
+the stronger power in (15) uses the linked centered primitive and
+the packet's heat-frequency bound. This is a relative localization,
+not an upper bound on $\|f_N\|_2^2$ or a sign for the remaining
+early-lag integral.
+
 The lag threshold depends on $N$. In particular this does not assert
 a negative test inside $0\le s\le\log N$, nor identify $f_N$ with
 the tuned causal derivative $h_\beta'$ of the uncut heat response.
