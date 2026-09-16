@@ -335,6 +335,8 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 The [fixed-core PNT weak-row bound](theta-weak-ground-pnt-density-cancellation.md) cancels the two pole products against the complete prime-density kernel, leaving an integrable exponential kernel and the exact prime-minus-density discrepancy. Moving the Stieltjes derivative onto the explicit scaling test gives $\sqrt t\,|Q_{\rm W}(G_R,h_t)|\le C_{R,\psi}e^{-c\sqrt{\log(1/t)}}$. It retains the initial density cell and every prime power, but gives no sign or moving-core affine estimate. The analytic argument is written, not formalized in Lean.
 
+The [many-cell anti-spike counterprofile](theta-antispike-grid-counterprofile.md) tests the new actual-ground microscopic interval cap against signed lost–retained sampling. It spreads mass over \(R^2\) separated cells, aligns one active \(2^j\) prime-power pair, and places the others at even non-prime-power labels. The cap and previous concentration/logarithmic-energy budgets hold, while the normalized signed sample has both signs and grows like \(2^j/R^4\). The profiles are not ground eigenfunctions; the missing input is a ground-equation constraint on their arithmetic alignment.
+
 ## Local finite-history scattering signs
 
 [Actual physical scattering moment signs](actual-physical-scattering-moment-signs.md) compiles nineteen exact coefficient-sign, depth-uniform single-prime and list-block magnitude, finite-block-parity, varying-depth list-product, conjugate-polarized weight and original physical Mellin dictionary conclusions. Positive depth and h≥1 are required for strict signs; the physical identities retain all natural depths. Full gamma and signed prime-power upper bounds remain open.

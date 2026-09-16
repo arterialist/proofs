@@ -10,6 +10,8 @@ There are absolute constants \(C,R_0\) such that, for \(R\ge R_0\), every interv
 \]
 The complete midpoint windows in the [moving integer-log gap test](theta-ground-moving-log-gap-arrival-inequality.md) have two components of length asymptotic to \(1/(8x_R)\) and lie in this collar eventually. Thus (0) also bounds their total physical \(L^2\) mass fraction by \(2C/R^2\). This anti-concentration estimate does not bound the effective width, \(\delta_R/H_R^2\), the full affine covariance, or RH.
 
+The [many-cell counterprofile](theta-antispike-grid-counterprofile.md) shows the exact scope of this input: smooth comparison histories can satisfy (0), the earlier concentration and logarithmic-energy bounds, yet have signed lost–retained prime sampling of either sign with divergent moment-normalized magnitude. Those histories do not solve the ground equation.
+
 ## Localized actual-ground equation
 
 By evenness it suffices to take \(I\subset(R,T_R)\). Put \(F=1_I G_R\), \(Q=G_R-F\), \(q_F=\|F\|_2^2\), \(q_Q=\|Q\|_2^2\). The complete prime-power physical translation operator is
