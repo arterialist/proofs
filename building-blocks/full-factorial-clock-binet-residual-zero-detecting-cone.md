@@ -273,6 +273,91 @@ Multiplying (22) by $r(m)$ and summing $m\le X$ proves
 $C_r(X)=O(\sqrt X\log^2(2X))$ because
 $\sum_m|r(m)|m^{-1/2}<\infty$. Equation (18) proves the forward direction of (19). No part of this argument establishes the upper bound unconditionally.
 
+## Stable inversion on the exact divisor lattice
+
+The first-coefficient separation also holds in a weighted convolution algebra. For an arithmetic sequence $v$ set $\|v\|_{1,w}=\sum_{m\ge1}m|v(m)|$. Dirichlet convolution satisfies $\|v*z\|_{1,w}\le\|v\|_{1,w}\|z\|_{1,w}$. The strict convexity of $x^{-2}$ gives
+$\sum_{m\ge3}m^{-2}<\int_{5/2}^\infty x^{-2}dx=2/5$ by applying the midpoint integral bound to each unit cell. Hence (9) yields
+
+\[
+ S_1:=\sum_{m\ge2}m|r(m)|
+ <\frac1{360}\left(\frac14+\frac25\right)
+ =\frac{13}{7200},\qquad
+ |r(1)|-S_1>\frac1{504}-\frac{13}{7200}
+ =\frac1{5600}. \tag{22a}
+\]
+
+Let $h=r-r(1)\delta_1$. The Neumann series in this weighted algebra defines an **actual divisor inverse**
+
+\[
+ b=\frac1{r(1)}\sum_{k\ge0}\left(-\frac h{r(1)}\right)^{*k},
+ \qquad b*r=\delta_1,
+ \qquad\boxed{\sum_{m\ge1}m|b(m)|<5600}. \tag{22b}
+\]
+
+For each fixed integer $m$, this series has only finitely many nonzero terms, since $h$ is supported on integers at least $2$. Thus (22b) is both a convergent norm identity and a finite divisor-history formula for each coefficient. It strengthens (11): for $\Re s\ge-1$, absolute convergence and (22a) give
+
+\[
+ \Re R(s)<-\frac1{5600},\qquad
+ \frac1{R(s)}=\sum_{m\ge1}\frac{b(m)}{m^s}
+ \quad\text{absolutely}. \tag{22c}
+\]
+
+This inverse gives a real-arithmetic version of the RH criterion. Define the complete signed source and its prefix by
+
+\[
+ u_r(n)=(r*\Lambda)(n)
+ =\sum_{dm=n}\Lambda(d)r(m),\qquad
+ B_r(x)=\sum_{n\le x}u_r(n)
+ =\sum_{m\le x}r(m)\psi(x/m). \tag{22d}
+\]
+
+Since every $r(m)<0$ and $\Lambda(d)\ge0$, the count $-B_r(x)$ is nondecreasing and retains all prime powers. Its $m=1$ row is $-r(1)\psi(x)$, so direct prime births have positive weight.
+
+Write $R(1)=\sum_m r(m)/m<0$. The prime number theorem and the summability in (22a) give $B_r(x)/x\to R(1)$. More quantitatively,
+
+\[
+ \boxed{\mathrm{RH}\ \Longleftrightarrow\
+ B_r(x)-R(1)x=O_\delta(x^{1/2+\delta})
+ \text{ for every }\delta>0.} \tag{22e}
+\]
+
+On RH, insert $\psi(y)=y+O_\delta(y^{1/2+\delta})$ into (22d); the omitted $m>x$ part of $R(1)x$ is $O(x^{-2})$. In the other direction, $b*r=\delta_1$ gives the **exact** identity $\psi(x)=\sum_{m\le x}b(m)B_r(x/m)$. Since $R(1)\sum_m b(m)/m=1$, the error in (22e) contributes at most $O_\delta(x^{1/2+\delta})\sum_m|b(m)|m^{-1/2-\delta}$, and the missing main-term tail is at most $|R(1)|\|b\|_{1,w}/x$. No analytic continuation or zero-residue argument enters this transfer.
+
+The centered consumer in (20) is linked to this raw prefix by the exact real-variable identity
+
+\[
+ H_r(x)=B_r(x)-\int_1^x\frac{B_r(t)}t\,dt,
+ \qquad
+ B_r(x)=H_r(x)+x\int_1^x\frac{H_r(t)}{t^2}\,dt. \tag{22f}
+\]
+
+If $H_r(x)=O_\delta(x^{1/2+\delta})$ with $0<\delta<1/2$, the integral in the second formula converges at infinity. The already known limit $B_r(x)/x\to R(1)$ identifies its value as $R(1)$, and its tail is $O_\delta(x^{1/2+\delta})$. Thus (22f) proves (22e) from the centered bound. Conversely, (22e) inserted in the first formula bounds $H_r$ at the same scale. Together with $C_r(X)-H_r(X)=O(\log X)$ and $V_X-X=O(\log^2X)$, this is a second, entirely real-arithmetic proof of (19). It exposes a stable inverse on the original exact-division histories; it does not provide the missing square-root estimate for $B_r$ or $P_\epsilon$.
+
+## Additive pairs from the invertible complete source
+
+The same source has an exact Goldbach interface. Put $v(m)=-r(m)>0$, $U=v*\Lambda=-u_r\ge0$, and $c=v^{-1}=-b$, so $\sum_m m|c(m)|<5600$. Let $P_\Lambda(z)=\sum_{d\ge1}\Lambda(d)z^d$ and $P_U(z)=\sum_{n\ge1}U(n)z^n$. Since $\Lambda(d)\le\log d$, one has $U(n)\le(\sum_m v(m))\log n$; the series below therefore converge absolutely for $|z|<1$. Divisor regrouping gives
+
+\[
+ \boxed{P_U(z)=\sum_{m\ge1}v(m)P_\Lambda(z^m),\qquad
+ P_\Lambda(z)=\sum_{m\ge1}c(m)P_U(z^m).} \tag{22g}
+\]
+
+Thus the positive source remembers ordinary additive pairs as well as every multiplicative cofactor. If $\mathcal G_\Lambda(k)=\sum_{d+e=k}\Lambda(d)\Lambda(e)$ and $\mathcal G_U(k)=\sum_{a+b=k}U(a)U(b)$ are ordered additive coefficients, squaring (22g) and comparing the coefficient of $z^k$ gives the finite identities
+
+\[
+ \begin{aligned}
+ \mathcal G_U(k)
+ &=\sum_{md+ne=k}v(m)v(n)\Lambda(d)\Lambda(e)
+ \ge v(1)^2\mathcal G_\Lambda(k),\\
+ \mathcal G_\Lambda(k)
+ &=\sum_{ma+nb=k}c(m)c(n)U(a)U(b).
+ \end{aligned} \tag{22h}
+\]
+
+Every sum in (22h) has positive integer indices and is finite for fixed $k$. The first line is positive and retains the undilated $m=n=1$ Goldbach pair alongside all dilated prime-power histories. The second line recovers the original pair coefficient but has signed mixed-dilation terms. Positivity of $\mathcal G_U(k)$ does not prove a Goldbach representation at an even $k$ or bound those signed terms. No Goldbach existence theorem or RH-scale pair estimate follows from (22g)--(22h).
+
+[FactorialBinetGoldbachFinite.lean](BuildingBlocks/FactorialBinetGoldbachFinite.lean) compiles the complete finite cofactor source, its prime prefix, the full ordered additive/divisor expansion, source positivity, and the inequality $\mathcal G_U(k)\ge v(1)^2\mathcal G_\Lambda(k)$ for any nonnegative weight $v$. The analytic fact that the particular Binet weight $v=-r$ satisfies that hypothesis is still a written proof. The generating-function inversion and signed second line of (22h) are also not formalized.
+
 The nonzero critical-line residue also yields a quantitative **unconditional lower-scale calibration**. For every zero $\rho=1/2+i\gamma$ of multiplicity $m_\rho$, the positive-Mellin residue comparison in the [critical-zero oscillation proof](monotone-cofactor-covariance-critical-oscillation.md), now with $R$ replacing the geometric factor, gives
 
 \[
@@ -285,4 +370,4 @@ The nonzero critical-line residue also yields a quantitative **unconditional low
 
 The $O(\log^2 X)$ variance error does not affect these limits. Hardy's critical-line zero theorem makes (23) unconditional. It is a lower oscillation result, not an upper estimate or a proof of RH.
 
-The full-clock identity (3), exact two-body coboundary (3b), Binet's correction (5), positive residual density (11a), and zero-free bound (11) are the specific mechanism here. The finite telescoping, literal kernel coboundary, and pointwise density positivity are compiled in the new modules. The finite covariance identity is an instance of [MonotoneCofactorCovarianceFinite.lean](BuildingBlocks/MonotoneCofactorCovarianceFinite.lean), whose geometric version is compiled; the improper-integral identification (2), Binet/Laplace formulas, analytic criterion, and oscillation (23) are not formalized. The cofactor covariance is an additional observable built from the original clock. Equation (3c) connects its cumulative cofactor exactly to the original quadratic kernel, but no bound transfers the positive cone's centered score to the original factorial quadratic/angular energy or Goldbach additive-pair norm.
+The full-clock identity (3), exact two-body coboundary (3b), Binet's correction (5), positive residual density (11a), and weighted divisor inverse (22b) are the mechanism here. [FactorialClockCofactorFinite.lean](BuildingBlocks/FactorialClockCofactorFinite.lean) compiles the finite telescoping, literal kernel coboundary, terminal-retaining Möbius energy, and complete-source regrouping for every coefficient sequence. [FactorialBinetResidualDensityPositive.lean](BuildingBlocks/FactorialBinetResidualDensityPositive.lean) proves pointwise density positivity. The finite covariance identity is an instance of [MonotoneCofactorCovarianceFinite.lean](BuildingBlocks/MonotoneCofactorCovarianceFinite.lean), whose geometric version is compiled. The improper-integral identification (2), Binet/Laplace formulas, weighted inverse, analytic criterion, and oscillation (23) are not Lean-formalized. Equation (3c) connects the cumulative cofactor exactly to the original quadratic kernel, but no bound transfers the positive cone's centered score to the original factorial quadratic energy or Goldbach additive-pair norm.

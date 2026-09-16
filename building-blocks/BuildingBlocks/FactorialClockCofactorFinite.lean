@@ -1,5 +1,6 @@
 import Mathlib.Tactic
 import BuildingBlocks.FactorialKernelDictionary
+import BuildingBlocks.CoarsePrimeBounds
 
 /-!
 # Finite cumulative factorial-clock cofactor
@@ -131,6 +132,18 @@ theorem actual_moebius_energy_coboundary (N : ℕ) :
   rw [quadratic_coboundary]
   rw [← BuildingBlocks.MertensTransfer.mertens_eq_sum_Icc]
 
+/-- Regroup every prime-power divisor row by its cofactor, including the
+direct cofactor-one births and all proper prime-power histories. -/
+theorem weighted_prime_source_prefix (v : ℕ → ℝ) (N : ℕ) :
+    (∑ n ∈ Icc 1 N, ∑ m ∈ n.divisors,
+      v m * ArithmeticFunction.vonMangoldt (n / m)) =
+      ∑ m ∈ Icc 1 N, v m * BuildingBlocks.CoarsePrimitive.psi (N / m) := by
+  rw [BuildingBlocks.HyperbolaProduct.sum_divisors_eq_sum_factor_pairs N
+    (fun m d => v m * ArithmeticFunction.vonMangoldt d)]
+  apply sum_congr rfl
+  intro m hm
+  rw [BuildingBlocks.CoarsePrimitive.psi_eq_sum_Icc, mul_sum]
+
 end
 
 #print axioms cumulative_zero
@@ -141,4 +154,5 @@ end
 #print axioms kernel_eq_cumulative_coboundary
 #print axioms quadratic_coboundary
 #print axioms actual_moebius_energy_coboundary
+#print axioms weighted_prime_source_prefix
 end BuildingBlocks.FactorialClockCofactorFinite
