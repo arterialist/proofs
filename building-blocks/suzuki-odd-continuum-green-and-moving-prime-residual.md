@@ -176,7 +176,14 @@ Orthogonality of distinct frequencies in long Cesàro averages, followed by unif
  \qquad(\mathrm{RH}).
  \quad}                                                        \tag{12f}
 \]
-The exponentially decaying term in (12e) contributes zero to the mean. No simplicity or spacing assumption on zeros is used.
+The exponentially decaying term in (12e) is itself exact. Expanding the denominator in (5) geometrically gives
+\[
+ J_a-e^{-a}I_+^2
+ =\sum_{k\ge1}e^{-(4k+1)a}
+       \left(\int\phi(s)e^{(2k+1/2)s}ds\right)^2
+ =\sum_{k\ge1}e^{-(4k+1)a}F(-4k-1)^2.
+\]
+These are precisely the negative powers attached to the trivial zeta zeros \(\rho=-2k\) under \(z=2\rho-1\). They contribute zero to the mean in (12f). No simplicity or spacing assumption on nontrivial zeros is used.
 
 The energy in (12b) has an exact additive-pair reading. Set \(X=e^{2a}\), \(w_X(n)=n^{-1/2}W(\log(X/n))\), and define the complete ordered weighted Goldbach count
 \[
