@@ -128,7 +128,7 @@ J_Y(s)=J_Y^{\rm loc}(s)+J_Y^{\rm fut}(s)
 \]
 Therefore the RH-equivalent original-metric criterion at fixed small \(s\) is the bound on the **subtracted** combination
 \(J_Y^{\rm fut}+J_Y^{\rm loc}-\mathcal R_{Y,s}\)
-at \(O_\epsilon(Y^{-1/2+\epsilon})\). A bound on \(J_Y\) alone would additionally require an independent RH-scale estimate for the coupled-\(F\) correction \(\mathcal R_{Y,s}\); a bound on the future term alone would also require the exact local term. Unconditional PNT estimates for these terms are subpower, not sufficient at this scale. This is the precise remaining arithmetic obligation; no RH-strength estimate is assumed in the factorization.
+at \(O_\epsilon(Y^{-1/2+\epsilon})\). **This particular passage through the linearized score** would require an independent RH-scale estimate for the coupled-\(F\) correction \(\mathcal R_{Y,s}\) if only a bound on \(J_Y\) were given; a bound on the future term alone would also require the exact local term. The subsequent [actual-source nonlinear inverse](factorial-f-ground-full-score-rh-criterion.md) instead uses local prime-atom regularity and the zeta Mellin poles to show that a bound on full \(J_Y\) itself suffices as an RH criterion. Unconditional PNT estimates for these scores remain subpower, not sufficient at this scale. No RH-strength estimate is assumed in either factorization.
 
 ## Complete original-ground score: clock-to-clock transfer only
 
