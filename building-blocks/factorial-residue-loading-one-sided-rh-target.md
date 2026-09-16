@@ -23,7 +23,22 @@ Since \(\{N/d\}=N/d-\lfloor N/d\rfloor\), finite algebra yields
  \boxed{\quad NF(N)=N\log N-\log N!+A_N.\quad}          \tag{2}
 \]
 No PNT estimate, analytic continuation, or endpoint convention is
-needed for (2). Put
+needed for (2).
+
+For arbitrary reweighted coefficients \(w_d\), the missing arithmetic
+condition has an exact finite size. Define
+\(E_w(N)=\sum_{m\le N}(\log m-\sum_{d\mid m}w_d)\), and define
+\(F_w,A_w\) by replacing \(\Lambda\) with \(w\) in (1). Then
+\[
+ NF_w(N)=N\log N-\log N!+A_w(N)+E_w(N).             \tag{2a}
+\]
+For the actual von Mangoldt weights \(E_\Lambda(N)=0\) at every
+horizon. Positivity of reweighted prime coefficients or their Goldbach
+heat square does not preserve this Euler divisor relation. The complete
+finite identity and actual zero defect are proved in
+[EulerResidueDefectFinite.lean](BuildingBlocks/EulerResidueDefectFinite.lean).
+
+Put
 \[
  B_N=N+\log N!-N\log N.
 \]
