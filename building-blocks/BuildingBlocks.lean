@@ -363,3 +363,5 @@ import BuildingBlocks.FactorialRealCellMixedFubini
 import BuildingBlocks.FactorialRealCellDoubleFubini
 
 import BuildingBlocks.FactorialDyadicPhase
+
+import BuildingBlocks.FactorialDyadicIntersections
