@@ -358,6 +358,43 @@ Every sum in (22h) has positive integer indices and is finite for fixed $k$. The
 
 [FactorialBinetGoldbachFinite.lean](BuildingBlocks/FactorialBinetGoldbachFinite.lean) compiles the complete finite cofactor source, its prime prefix, the full ordered additive/divisor expansion, source positivity, and the inequality $\mathcal G_U(k)\ge v(1)^2\mathcal G_\Lambda(k)$ for any nonnegative weight $v$. The analytic fact that the particular Binet weight $v=-r$ satisfies that hypothesis is still a written proof. The generating-function inversion and signed second line of (22h) are also not formalized.
 
+The same complete source gives a sharp **prime-state wall**. By (6) and (11b), $v(m)$ is strictly positive and decreases with $m$. In the divisor identity $\sum_{d\mid n}\Lambda(d)=\log n$, the term $d=n$ carries $v(1)\Lambda(n)$; every other term has cofactor at least $2$ and weight at most $v(2)$. Therefore, for $n\ge2$,
+
+\[
+ v(1)\Lambda(n)\le U(n)
+ \le v(2)\log n+\bigl(v(1)-v(2)\bigr)\Lambda(n). \tag{22i}
+\]
+
+At a prime $p$, the two sides equal $v(1)\log p$. At a composite $n$, $\Lambda(n)\le\tfrac12\log n$: it is zero unless $n=p^j$ with $j\ge2$, when it is $\log p=(\log n)/j$. Thus the normalized full-history state $F_v(n)=U(n)/(v(1)\log n)$ obeys
+
+\[
+ F_v(p)=1\quad(p\text{ prime}),\qquad
+ 0\le F_v(n)\le c_v:=\frac{v(1)+v(2)}{2v(1)}
+ <\frac{47}{80}\quad(n\text{ composite}). \tag{22j}
+\]
+
+The rational bound follows from $v(1)>1/504$ and $v(2)<1/2880$ in (9), which give $v(2)/v(1)<7/40$. The exact composite threshold $c_v$ is attained at $n=4$, where the $d=2,4$ histories contribute $v(2)\log2$ and $v(1)\log2$.
+
+The abstract pointwise wall is compiled in [FactorialBinetGoldbachFinite.lean](BuildingBlocks/FactorialBinetGoldbachFinite.lean): it proves (22i) under the cofactor bound $v(m)\le v(2)$ for $m\ge2$, proves $\Lambda(n)\le\tfrac12\log n$ for composites, and gives the rational composite bound under $40v(2)\le7v(1)$. It also proves the exact $n=4$ equality. The Binet-specific inequalities (9), which discharge those abstract hypotheses for $v=-r$, remain written analysis.
+
+For each fixed $N$, raising these states to a power isolates ordinary primes with an explicit finite error:
+
+\[
+ 0\le\sum_{n=2}^N F_v(n)^h-\pi(N)
+ \le(N-1)(47/80)^h. \tag{22k}
+\]
+
+Likewise, for every $k\ge4$, the positive ordered additive packet obeys
+
+\[
+ 0\le
+ \sum_{\substack{a+b=k\\a,b\ge2}}F_v(a)^hF_v(b)^h
+ -\#\{(p,q):p+q=k,\ p,q\text{ prime}\}
+ \le(k-3)(47/80)^h. \tag{22l}
+\]
+
+These are finite prime and Goldbach filters built from the actual factorial residual and all its divisor histories. They give a numerical certificate for a *fixed* even $k$ if the left packet exceeds its error bound, but supply no such inequality for every even $k$ and no bound on $\psi(x)-x$. The earlier [square-root divisor hard wall](prime-state-hard-wall.md) is a different exact prime classifier; neither classifier controls prime distribution by itself.
+
 The nonzero critical-line residue also yields a quantitative **unconditional lower-scale calibration**. For every zero $\rho=1/2+i\gamma$ of multiplicity $m_\rho$, the positive-Mellin residue comparison in the [critical-zero oscillation proof](monotone-cofactor-covariance-critical-oscillation.md), now with $R$ replacing the geometric factor, gives
 
 \[
