@@ -30,4 +30,9 @@ For the actual N=13 vector A_13=1, A_6=A_4=−1, A_1=−2, all thirteen rows equ
 
 Suppose a repair of integer floor-derivative sampling introduces a nonnegative real-cell reserve containing the left side of (2). An upper bound CN on that reserve would already imply |M(N)|≤sqrt(CN). It therefore cannot be justified merely by interpolating the integer values F_N(k)=1. Such a reserve would retain precisely an uncontrolled arithmetic trace. This observation does not rule out a signed compensation between the phase reserve and other terms, or a different weighted reserve derived from the full factorial density. No identity relating (2) to the original Q_N has been claimed.
 
-The integrated contraction and every repair using only vanishing interior integer differences are already falsified by the actual N=13 certificate in the companion. Equation (2) locates a necessary issue for a particular continuum repair, rather than turning that obstruction into a successful upper mechanism. All statements here are written elementary finite-sum and real-cell calculations; no additional Lean formalization is asserted.
+The integrated contraction and every repair using only vanishing interior integer differences are already falsified by the actual N=13 certificate in the companion. Equation (2) locates a necessary issue for a particular continuum repair, rather than turning that obstruction into a successful upper mechanism. It is not a new no-go beyond the centered-consumer criterion: it is the literal endpoint quantity `M(N)^2`, and a target-scale positive bound for it would already provide the corresponding Mertens estimate.
+
+The finite coefficient and interval-normalization algebra is compiled in
+[FactorialFloorDerivativeObstruction.lean](BuildingBlocks/FactorialFloorDerivativeObstruction.lean).
+The module deliberately does not assert an integral comparison between this
+cell and the original factorial energy.

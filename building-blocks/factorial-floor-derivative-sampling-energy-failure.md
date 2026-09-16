@@ -93,4 +93,20 @@ There is also an exact boundary conservation identity for every N≥1. With F(k)
 
 This is a signed identity. At N=13, R(1,6)=−1 and R(1,13)=1. Thus the product boundary is retained and its rectangles are not a positive measure. The signed total one does not bound the sum of absolute values or its quadratic cost. A comparison involving boundary rectangles remains possible, but needs its own weighted energy identity and bound.
 
-RH Agent2 and its bounded mathematical descendant supplied the sampling counterexample; RH Agent2 supplied the real first-cell companion. The root supplied the independent full-row and ordered-pair review and the signed boundary telescoping observation. These are written proofs and exact finite arithmetic, awaiting Lean formalization.
+RH Agent2 and its bounded mathematical descendant supplied the sampling counterexample; RH Agent2 supplied the real first-cell companion. The root supplied the independent full-row and ordered-pair review and the signed boundary telescoping observation.
+
+## Relation to the centered-consumer obstruction
+
+The failed contraction is a genuinely distinct finite no-go. It disproves a
+specific data-processing inequality for the complete compensated factorial
+kernel at one actual cutoff; it does not follow from, and does not prove, the
+asymptotic centered Abel--Mertens mean-square criterion. By contrast, the
+real first-cell companion isolates `M(N)^2` itself and therefore rejoins that
+criterion rather than adding a second asymptotic obstruction.
+
+[FactorialFloorDerivativeObstruction.lean](BuildingBlocks/FactorialFloorDerivativeObstruction.lean)
+formalizes all thirteen quotient rows, the interior and terminal sampled
+differences, the exact numerator-denominator inequality and positive log
+ratio, the first-cell algebra, its scalar length normalization, and the
+two-dimensional boundary telescope. Every printed theorem uses only the
+standard axioms; no analytic energy upper bound or RH claim is added.
