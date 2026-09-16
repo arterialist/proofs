@@ -77,9 +77,13 @@ All pairs are ordered; the first term is a weighted Goldbach
 prime-power coefficient, and the two centering terms are indispensable.
 Equation (6) is additive convolution of factorial curvature, not the
 original multiplicative distinct-prime \(V/W\) coefficient. A positive
-square of its generating series does not upper-bound the one-sided
-loading deficit in (4). Establishing that deficit from the linked
-successor and pair histories is the open arithmetic task.
+square of its generating series does not make its coefficients
+nonnegative. In fact the coefficient at \(k=5\) is \(2b_2b_3<0\):
+\(b_2=\tfrac32\log2-\log3<0\) since \(8<9\), while
+\(b_3=\tfrac43\log3-\log4>0\) since \(64<81\).
+Thus coefficientwise Goldbach positivity cannot upper-bound the
+one-sided loading deficit in (4). Establishing that deficit from the
+linked successor and pair histories is the open arithmetic task.
 
 The finite prime-power ground identity is formalized in
 [FactorialHOneFinite.lean](BuildingBlocks/FactorialHOneFinite.lean).
@@ -87,5 +91,8 @@ The exact factorial residue identity (2) is formalized in
 [FactorialResidueFinite.lean](BuildingBlocks/FactorialResidueFinite.lean),
 using the already formalized loading, nonnegativity, and successor identities
 in [ResidueLoadingSuccessor.lean](BuildingBlocks/ResidueLoadingSuccessor.lean).
-The curvature convolution (6) and the analytic implication in (4)
-remain Lean obligations. The lower bound in (4) remains unproved.
+The curvature/source identity (5), the full additive convolution (6),
+and its negative \(k=5\) coefficient are formalized in
+[FactorialCurvatureGoldbachFinite.lean](BuildingBlocks/FactorialCurvatureGoldbachFinite.lean).
+The analytic implication in (4) remains a Lean obligation. The lower
+bound in (4) remains unproved.
