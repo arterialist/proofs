@@ -420,7 +420,8 @@ centered Goldbach summatory error to the critical scale with a
 smaller unconditional transport error.  Equation (21) transfers a
 future bound or oscillation between the two centered quantities; it
 does not supply either bound on its own.  It is not a statement about
-the signed compensated iterate.
+the signed compensated iterate.  RH Proof derived (17)--(21) from the
+literal transport formulas in this chapter; no priority claim is made.
 
 ## Dependencies and formal scope
 
