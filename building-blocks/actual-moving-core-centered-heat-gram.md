@@ -21,6 +21,11 @@ C_U(t)=t\int_1^X E(x)e^{-tx}dx,
 \tag{3}
 \]
 The initial value \(E(1)=-1\) is the \(-\delta_1\) in (1). Both descriptions retain the terminal value \(E(X)\).
+At every integer cutoff \(X=N\ge1\), [ActualCompactHeatEndpoint.lean](BuildingBlocks/ActualCompactHeatEndpoint.lean)
+now compiles the exact first identity in (3), identifies the compact source
+with the existing finite source minus its frozen terminal charge, and proves
+zero total charge at \(t=0\). The real-cutoff, ground, and asymptotic steps
+below remain written mathematics.
 
 For each sufficiently large radius \(R\), let \(G_R\) be the actual positive even physical killed ground, \(m_R=\int G_R>0\), and
 \[
@@ -184,7 +189,7 @@ Then \(U^2\zeta_{R(U)}^2=O(U^{-1/2})\), so the **complete moving arithmetic sour
 \]
 This two-channel readout recovers four times the finite centered Gram at a logarithmic-squared core and has the same exact growth exponent \(2\Theta-1\). It does not identify the odd translation norm with the conditional theta covariance residual.
 
-Both (16) and (19) are RH-equivalent **measurement criteria**, not unconditional bounds showing that their exponent vanishes. Neither estimates the actual full Weil affine residual nor turns killed-ground positivity into a prime-error sign. The analytic theorems and ground concentration remain written mathematics, not Lean formalizations.
+Both (16) and (19) are RH-equivalent **measurement criteria**, not unconditional bounds showing that their exponent vanishes. Neither estimates the actual full Weil affine residual nor turns killed-ground positivity into a prime-error sign. Apart from the integer-cutoff endpoint identity noted after (3), the analytic theorems and ground concentration remain written mathematics, not Lean formalizations.
 
 ## Direct finite Goldbach readout without a terminal atom
 
