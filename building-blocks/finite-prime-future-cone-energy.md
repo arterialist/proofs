@@ -33,11 +33,23 @@ step $\langle F_{\{2,3\}},D_5F_{\{2,3\}}\rangle=-1$, so the signed
 cross term amplifies the energy. These values follow by listing the
 finite prefixes; they are not asymptotic claims.
 
-The finite cone conserves only its total signed mass:
+The observation horizon also grows from $Q_S$ to $pQ_S$. After dividing
+by that horizon, Cauchy–Schwarz gives
+
+$$
+\left|\frac{E(S\cup\{p\})}{pQ_S}-\frac{E(S)}{Q_S}\right|
+\le\left(\frac1p+\frac2{\sqrt p}\right)\frac{E(S)}{Q_S}.
+$$
+
+Thus the *energy density* approaches its previous value as a new prime
+$p\to\infty$ with $S$ fixed. The theorem concerns unnormalized energy;
+it does not exclude every possible normalized invariant.
+
+The finite cone has an exact zero-total-mass identity:
 $\sum_{d\mid Q_S}\mu(d)=\prod_{p\in S}(1-1)=0$. Its higher
 multiplicative moments are
 $\sum_{d\mid Q_S}\mu(d)d^k=\prod_{p\in S}(1-p^k)$ for $k>0$;
-they grow in magnitude. Thus a zero total charge is not an energy
+their magnitudes usually grow when another prime is added. Thus a zero total charge is not an energy
 conservation law.
 
 For the Abel energy $Z_N$ defined in
