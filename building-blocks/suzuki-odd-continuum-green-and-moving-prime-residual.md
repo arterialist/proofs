@@ -210,6 +210,16 @@ There is also a direct fixed-source reading. Let \(E(x)=\Psi(x)-x\), \(H(u)=e^{-
 \]
 The compact filter is genuinely signed. Since \(e^{v/2}L(v)=(e^{v/2}W(v))'\), its weighted integral is zero, while \(L\not\equiv0\); therefore it has both signs. For a formal error mode \(E(x)=c x^\rho\), (12h) gives exactly \(c\rho F(2\rho-1)^2e^{(2\rho-1)a}\). The zeta-zero coefficient \(c=-m_\rho/\rho\) thus becomes the residue amplitude \(-m_\rho F(2\rho-1)^2\) in (10), with no endpoint or prime power discarded. The RH-equivalent energy (12b) is a fixed signed-filter mean-square target for the actual critical-scale Chebyshev error \(H\), not a consequence of positivity of \(d\Psi\).
 
+The additive-pair expansion also yields a one-sided local Goldbach criterion. Put \(P_X=\sum_n\Lambda(n)w_X(n)\ge0\), \(M_X=\sqrt X F(1)^2>0\), and \(\mathcal G_\phi(X)=\sum_N R_X(N)=P_X^2\). Either one of the following estimates, separately, is equivalent to RH when it holds for all sufficiently large \(X\) with some fixed \(C<\infty\):
+\[
+ \boxed{\quad
+ \mathcal G_\phi(X)\ge XF(1)^4-C\sqrt X,
+ \qquad\text{or}\qquad
+ \mathcal G_\phi(X)\le XF(1)^4+C\sqrt X.
+ \quad}                                                        \tag{12i}
+\]
+Indeed \(D_\phi(\tfrac12\log X)=(\mathcal G_\phi(X)-M_X^2)/(P_X+M_X)\). Since the denominator is at least \(M_X\), the lower or upper estimate gives, respectively, an eventual lower or upper constant bound on \(D_\phi\). The lower bound implies RH by (12); the upper bound does so by the identical positive-Laplace argument for \(-D_\phi\). Conversely RH gives \(D_\phi=O(1)\), so \(\mathcal G_\phi-M_X^2=2M_XD_\phi+D_\phi^2=O(\sqrt X)\). This local count keeps every ordered prime-power pair inside one fixed multiplicative window; ordinary Goldbach existence supplies no estimate at its required \(\sqrt X\) secondary scale.
+
 ## Why the ordinary PNT does not pay this residual
 
 The complete unconditional bound \(|\Psi(X)-X|\le CXe^{-c\sqrt{\log X}}\), as in [Trudgian's Theorem 1](https://arxiv.org/pdf/1401.2689), and Stieltjes integration by parts in (8) yield only
