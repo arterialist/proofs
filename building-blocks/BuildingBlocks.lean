@@ -431,6 +431,8 @@ import BuildingBlocks.PrimeAdmissionX4Obstruction
 import BuildingBlocks.MobiusStokesFiniteBoundary
 import BuildingBlocks.CrossHorizonMobiusClockFinite
 import BuildingBlocks.FixedProfileGreenAdmissionFinite
+import BuildingBlocks.CrossHorizonHaarFinite
+import BuildingBlocks.FixedProfileGreenTwoParameter
 
 import BuildingBlocks.HardClockWeightedLcmClass
 
