@@ -208,7 +208,50 @@ M:=\int_{\mathbb R}e^{-u/2}\beta(u)\,du=-(1+\gamma).
 \tag{13}
 \]
 
-Now set $h_\beta=b-\beta$. It vanishes on the negative half-line and
+Write $h_\beta=b-\beta$.
+
+This tuned moment is also the **exact moment of the original heat
+response**:
+
+\[
+\int_{\mathbb R}e^{-u/2}b(u)\,du
+=\int_0^\infty C(t)\,dt=-(1+\gamma).
+\tag{13a}
+\]
+
+The integral is absolutely convergent. Indeed the classical
+[zero-free-region PNT error](https://kskedlaya.org/ant/part-2-4.html)
+for $\psi(x)-x$, inserted into
+$P(t)=t\int_0^\infty e^{-tx}\psi(x)\,dx$, gives
+$P(t)-t^{-1}=O\bigl(t^{-1}e^{-c\sqrt{\log(1/t)}}+1\bigr)$
+as $t\downarrow0$ for some $c>0$; this is integrable in $t$ near
+zero after the change $u=\sqrt{\log(1/t)}$.
+Also $P_0(t)-t^{-1}=O(t)$ and $C$ decays exponentially at infinity.
+For $\Re s>1$, absolute Mellin summation gives
+
+\[
+\int_0^\infty C(t)t^{s-1}\,dt
+=\Gamma(s)\left[-\frac{\zeta'(s)}{\zeta(s)}
+                   -\frac{s}{s-1}\right].
+\]
+
+The bracket tends to $-(1+\gamma)$ as $s\downarrow1$;
+absolute integrability permits dominated convergence from the right.
+Thus $h_\beta$ has zero weighted total moment. In particular the
+continuous-volume part $\kappa(u)=e^{u/2}\mathbf1_{u\ge0}$ of the
+renewal measure satisfies the exact future-tail identity
+
+\[
+(\kappa*h_\beta)(v)
+=e^{v/2}\int_0^v e^{-u/2}h_\beta(u)\,du
+=-e^{v/2}\int_v^\infty e^{-u/2}h_\beta(u)\,du.
+\tag{13b}
+\]
+
+This cancels the continuum mode using the complete response history;
+it does not bound the remaining signed integer-cell discrepancy.
+
+This response vanishes on the negative half-line and
 near zero, so its causal traces $h_\beta(0+)$ and $h_\beta'(0+)$
 are both zero. To estimate its exact forcing, put
 $G(t)=t^{-1/2}\beta(-\log t)$. This function is zero near $t=0$,
@@ -266,7 +309,10 @@ $G''\in L^1(0,\infty)$. On a cell $[a,a+\delta]$, integration by parts
 and subtraction of $G'(a+\delta/2)$ show that the trapezoid error is
 at most $\delta^2\int_a^{a+\delta}|G''|/4$. Summing cells, with both
 endpoint values zero in the limit, improves (14) to
-$\mathcal Z\beta(v)=M e^{v/2}+O(e^{-3v/2})$. Therefore
+$\mathcal Z\beta(v)=M e^{v/2}+O(e^{-3v/2})$.
+The [finite trapezoid theorem](BuildingBlocks/ActualHeatRenewalRectangle.lean)
+formalizes the exact endpoint term and finite-grid bound; passage to
+the infinite heat profile remains written analysis. Therefore
 
 \[
 \boxed{g_\beta(v)=\frac12\log(2\pi)e^{-v/2}+O(e^{-v})
