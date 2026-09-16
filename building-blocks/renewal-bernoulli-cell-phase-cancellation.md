@@ -207,8 +207,14 @@ $w_{n,x}''\ge0$. The exact polynomial identities and nonpositive
 factors in (12) are compiled in
 [RenewalBernoulliCellMoments.lean](BuildingBlocks/RenewalBernoulliCellMoments.lean);
 the uniform analytic remainder and the all-$x$ conclusion remain written
-mathematics. This signs each late *individual* real cell, not the finitely
-many early cells or the complex-frequency prime-forcing response.
+mathematics. In fact, (15) applies to **any** nonzero $C^2$ test weight
+$w(r)\ge0$ that is decreasing and convex on $[0,1]$: for $n\ge n_0$,
+$\int_0^1w(r)F_n(r)\,dr<0$. This is a cellwise convex-weight cone.
+A transfer to the actual response would require its complete
+prime-forcing/history test, after the change $v=\log(n+r)$, to belong to
+that cone or to have a separately bounded complement. No such shape
+property has been proved. The result does not sign the finitely many
+early cells or the complex-frequency prime-forcing response.
 
 The grouped cell series \(\sum_{n\ge1}I_n(z)\) now converges locally
 absolutely for \(\Re z>-7/2\), although the ungrouped Laplace integral
