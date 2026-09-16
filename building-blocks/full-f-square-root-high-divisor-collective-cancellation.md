@@ -180,6 +180,72 @@ The complementary sector also inherits the same nonconstant
 $1/\log X$ profile after optimal scalar-density projection as the
 rough sector, with the opposite sign.
 
+## The far density cross cancels as well
+
+The cancellation persists when the positive density is restricted to
+points farther than a threshold $H$ from each atomic location. This
+addresses the far pairing in the rough-sector note without dropping its
+distance indicator. Let
+$$
+R_X(n,x)=\int_X^{2X}w_Y(n)w_Y(x)\,\frac{dY}{Y},\qquad
+G_H(n)=\int_X^{4X}\mathbf1_{|n-x|>H}R_X(n,x)\,dx.
+$$
+For every $H\ge0$, uniformly in $X$,
+$$
+\boxed{\quad
+\sum_n t_D(n)G_H(n)
+=\iint_{|n-x|>H}R_X(n,x)\,d\tau_D(n)\,dx
+\ll_s e^{-c\sqrt{\log X}},
+\quad}                                                     \tag{12}
+$$
+where $d\tau_D=\sum_{X\le n<4X}t_D(n)\delta_n$. The left side of (12)
+is signed; the displayed $\ll$ means an absolute-value bound.
+
+Here is the variation check needed to apply the proof of (5). For each
+$Y$, extend $w_Y$ by zero outside $[Y,2Y)$ and put
+$$
+N_{Y,H}(u)=\int_{u-H}^{u+H}w_Y(x)\,dx,
+\qquad V(Y)=\int_{\mathbb R}w_Y(x)\,dx.
+$$
+Then $G_H(u)=\int_X^{2X}w_Y(u)[V(Y)-N_{Y,H}(u)]\,dY/Y$.
+The nonnegative convolution $N_{Y,H}$ has
+$\|N_{Y,H}\|_\infty\le V(Y)=O_s(1)$ and, uniformly in $H$,
+$$
+\operatorname{Var}_{\mathbb R}N_{Y,H}
+\le\int_{\mathbb R}
+  \bigl(|w_Y(u+H)|+|w_Y(u-H)|\bigr)du
+=2V(Y)=O_s(1).
+$$
+Its derivative formula holds almost everywhere, including when a moving
+boundary crosses the half-open endpoint. Equation (4), the product
+variation inequality, and integration over $dY/Y$ therefore give
+$$
+\|G_H\|_\infty+\operatorname{Var}_{[X,4X]}G_H\ll_s X^{-1}
+\qquad\text{uniformly for }H\ge0.                         \tag{13}
+$$
+Apply the exact divisor grouping (2) with $G_H$ in place of $w_Y$.
+For each $m$, the support lies below $4X/m$, and Abel summation with
+(3) and (13) again gives $O_s(\eta_X/m)$. Summing $\log m/m$ proves
+(12). In particular no smallness condition such as $H=o(X)$ is needed
+for the **complete** signed high-divisor pairing.
+
+Let $\tau_R$ be the rough high-divisor measure from the linked note and
+$\tau_C=\tau_D-\tau_R$. For $1\le H\le X/4$, the rough coefficients are
+nonpositive, the selected semiprime/density rectangles in that note lie
+strictly beyond $H$, and their contribution has size $\gg_s1/\log X$.
+Its total variation is $O_s(X/\log X)$, while $\|G_H\|_\infty\ll_s1/X$.
+Thus, uniformly in this range,
+$$
+\sum_n G_H(n)\,d\tau_R(n)\asymp_s-\frac1{\log X},
+\qquad
+\sum_n G_H(n)\,d\tau_C(n)
+=-\sum_n G_H(n)\,d\tau_R(n)
+ +O_s(e^{-c\sqrt{\log X}})
+\asymp_s+\frac1{\log X}.                                   \tag{14}
+$$
+The complementary high-divisor histories therefore cancel the rough
+**far** density cross too, including its literal distance cutoff.
+
 The theorem is a collective cancellation at the classical PNT/Mertens
 scale. Its error $e^{-c\sqrt{\log X}}$ is larger than $X^{-\delta}$ for
 every fixed $\delta>0$. It therefore does not pay the complete score at
