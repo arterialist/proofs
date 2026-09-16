@@ -254,6 +254,7 @@ import BuildingBlocks.IntegerBirthHistory
 import BuildingBlocks.IntegerBirthGram
 
 import BuildingBlocks.AdditivePairBalance
+import BuildingBlocks.GoldbachTotalImbalanceFinite
 import BuildingBlocks.AdditiveHeatWeight
 import BuildingBlocks.AdditiveHeatGamma
 import BuildingBlocks.AdditiveHeatPairing
