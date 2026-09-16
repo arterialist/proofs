@@ -83,6 +83,76 @@ theorem centeredPair_complete_expansion (v : ℕ → ℝ) (k : ℕ) :
   simp [centeredPair]
   ring
 
+/-- The exact Binet-centered additive coefficient at total six,
+expressed through its five ordered additive histories. -/
+theorem centeredPair_four_exact (v : ℕ → ℝ) :
+    centeredPair v 4 =
+      -2 * v 1 * (v 1 * (Real.log 5 - 1) - v 5) +
+      2 * (v 1 * (Real.log 2 - 1) - v 2) *
+        ((v 1 + v 2) * (Real.log 2 - 1) - v 4) +
+      (v 1 * (Real.log 3 - 1) - v 3) ^ 2 := by
+  have hpair : Finset.antidiagonal 4 =
+      {(0, 4), (1, 3), (2, 2), (3, 1), (4, 0)} := by decide
+  have h2 : (2 : ℕ).divisors = {1, 2} := by decide
+  have h3 : (3 : ℕ).divisors = {1, 3} := by decide
+  have h4 : (4 : ℕ).divisors = {1, 2, 4} := by decide
+  have h5 : (5 : ℕ).divisors = {1, 5} := by decide
+  have hvm2 : ArithmeticFunction.vonMangoldt 2 = Real.log (2 : ℝ) :=
+    ArithmeticFunction.vonMangoldt_apply_prime Nat.prime_two
+  have hvm3 : ArithmeticFunction.vonMangoldt 3 = Real.log (3 : ℝ) :=
+    ArithmeticFunction.vonMangoldt_apply_prime (by decide)
+  have hvm4 : ArithmeticFunction.vonMangoldt 4 = Real.log (2 : ℝ) := by
+    rw [show (4 : ℕ) = 2 ^ 2 by norm_num,
+      ArithmeticFunction.vonMangoldt_apply_pow (by norm_num : (2 : ℕ) ≠ 0),
+      ArithmeticFunction.vonMangoldt_apply_prime Nat.prime_two]
+    norm_num
+  have hvm5 : ArithmeticFunction.vonMangoldt 5 = Real.log (5 : ℝ) :=
+    ArithmeticFunction.vonMangoldt_apply_prime (by decide)
+  simp [centeredPair, centeredSource, hpair, h2, h3, h4, h5,
+    centeredCoefficient, hvm2, hvm3, hvm4, hvm5]
+  ring
+
+/-- The rational component bounds from the Binet moment and logarithm
+estimates force a strictly negative centered coefficient at total six. -/
+theorem centeredPair_four_neg_of_component_bounds (v : ℕ → ℝ)
+    (h1 : (1 / 504 : ℝ) ≤ v 1)
+    (h2 : |centeredSource v 2| ≤ (13 / 10000 : ℝ))
+    (h3 : |centeredSource v 3| ≤ (7 / 10000 : ℝ))
+    (h4 : |centeredSource v 4| ≤ (11 / 10000 : ℝ))
+    (h5 : (9 / 10000 : ℝ) ≤ centeredSource v 5) :
+    centeredPair v 4 < 0 := by
+  have hpair : Finset.antidiagonal 4 =
+      {(0, 4), (1, 3), (2, 2), (3, 1), (4, 0)} := by decide
+  have heq : centeredPair v 4 =
+      -2 * v 1 * centeredSource v 5 +
+      2 * centeredSource v 2 * centeredSource v 4 +
+      (centeredSource v 3) ^ 2 := by
+    simp [centeredPair, hpair]
+    ring
+  have hprod15 : (1 / 504 : ℝ) * (9 / 10000 : ℝ) ≤
+      v 1 * centeredSource v 5 := by
+    calc
+      (1 / 504 : ℝ) * (9 / 10000 : ℝ) ≤
+          (1 / 504 : ℝ) * centeredSource v 5 :=
+        mul_le_mul_of_nonneg_left h5 (by norm_num)
+      _ ≤ v 1 * centeredSource v 5 :=
+        mul_le_mul_of_nonneg_right h1 (by linarith)
+  have hprod24 : centeredSource v 2 * centeredSource v 4 ≤
+      (13 / 10000 : ℝ) * (11 / 10000 : ℝ) := by
+    calc
+      centeredSource v 2 * centeredSource v 4 ≤
+          |centeredSource v 2 * centeredSource v 4| := le_abs_self _
+      _ = |centeredSource v 2| * |centeredSource v 4| := abs_mul _ _
+      _ ≤ (13 / 10000 : ℝ) * (11 / 10000 : ℝ) :=
+        mul_le_mul h2 h4 (abs_nonneg _) (by norm_num)
+  have hsq3 : (centeredSource v 3) ^ 2 ≤ (7 / 10000 : ℝ) ^ 2 := by
+    nlinarith [mul_nonneg (sub_nonneg.mpr h3)
+      (add_nonneg (by norm_num : 0 ≤ (7 / 10000 : ℝ))
+        (abs_nonneg (centeredSource v 3))),
+      sq_abs (centeredSource v 3)]
+  rw [heq]
+  nlinarith
+
 end
 
 #print axioms centeredSource_eq_primeSource_sub_mass
@@ -90,5 +160,7 @@ end
 #print axioms centeredSource_direct_add_proper
 #print axioms centeredPair_complete_expansion
 #print axioms centeredPair_zero
+#print axioms centeredPair_four_exact
+#print axioms centeredPair_four_neg_of_component_bounds
 
 end BuildingBlocks.FactorialBinetCenteredGoldbachFinite

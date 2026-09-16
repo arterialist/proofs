@@ -45,9 +45,43 @@ The signed ordered additive coefficient at total \(k\ge2\) is
 with all four indices positive. Every prime power, direct \(m=n=1\) history, mixed dilation, and additive endpoint remains. The coefficients \(C_v(k)\) need not be positive; the positivity is the full heat square
 
 \[
- D_v(t)^2=\sum_{k\ge2}C_v(k)e^{-kt}\ge0.
+D_v(t)^2=\sum_{k\ge2}C_v(k)e^{-kt}\ge0.
  \tag{6}
 \]
+
+The actual Binet-filtered coefficient at additive total \(6\) is already **strictly negative**. Write \(v_j=v(j)\) and \(d_j=d_v(j)\). Exact divisor enumeration and \(\Lambda(p^r)=\log p\) give
+
+\[
+\begin{aligned}
+d_1&=-v_1,\\
+d_2&=v_1(\log2-1)-v_2,\\
+d_3&=v_1(\log3-1)-v_3,\\
+d_4&=(v_1+v_2)(\log2-1)-v_4,\\
+d_5&=v_1(\log5-1)-v_5,\\
+C_v(6)&=2d_1d_5+2d_2d_4+d_3^2.
+\end{aligned} \tag{6a}
+\]
+
+The Binet moment bound in (2) gives \(0<v_j<1/(360j^3)\) for all \(j\), and \(v_1>1/504\). The elementary enclosures \(69/100<\log2<7/10\), \(1<\log3<6/5\), and \(\log5>3/2\) imply, by rational arithmetic,
+
+\[
+ |d_2|<\frac{13}{10000},\qquad
+ |d_3|<\frac7{10000},\qquad
+ |d_4|<\frac{11}{10000},\qquad
+ d_5>\frac9{10000}. \tag{6b}
+\]
+
+For example, \(|d_2|<(1/360)(31/100)+1/2880=29/24000\), and \(d_5>(1/504)(1/2)-1/45000=611/630000>9/10000\). The other two bounds follow from \(v_3<1/9720\) and \(v_4<1/23040\). Substitution in (6a) gives the explicit strict sign
+
+\[
+ \boxed{C_v(6)
+ < -\frac1{280000}
+       +2\frac{13}{10000}\frac{11}{10000}
+       +\left(\frac7{10000}\right)^2
+ =-\frac{31}{140000000}<0.} \tag{6c}
+\]
+
+The logarithm enclosures follow from short exponential-series bounds; for \(\log5>3/2\), one may instead use \(\log5=2\log2+\log(5/4)\) and \(\log(1+x)\ge x/(1+x)\) at \(x=1/4\). This sign uses the **actual** factorial residual, not a fictitious weight concentrated at \(m=1\). It rules out coefficientwise positivity of the Binet-centered Goldbach square while leaving the full positive heat energy and norm gap intact.
 
 ## A uniform energy gap at every heat horizon
 
@@ -102,6 +136,6 @@ At \(\sigma>2\), the bound \(|d_v(n)|\le(1+\log n)\sum_m v(m)\) makes the ordere
 
 For \(1<\sigma<2\), equation (10) is **not** being used as an absolutely convergent coefficient series. Letting \(\varepsilon\downarrow0\) in (9) shows instead that the positive integral for \(D_v\) is finite exactly when the existing centered heat integral for \(D\) is finite. The latter is finite for every \(\sigma>1\) if and only if RH: the [centered Goldbach heat criterion](centered-goldbach-heat-lyapunov.md) gives the zero-growth exponent at \(\sigma=1\), and integration by parts converts zero growth into finiteness at every \(\sigma>1\). Conversely, finiteness at every \(\sigma>1\) bounds the critical energy by \(O_\sigma(e^{(\sigma-1)T})\), forcing zero exponent. Equivalently, the critical logarithmic-time Lyapunov exponent is unchanged: at \(\sigma=1\), the substitution \(t=e^{-v}\) turns the truncated energy into \(\int_0^T e^{-v}|D(e^{-v})|^2dv\), and (9) compares this with the cofactor version by constants independent of \(T\).
 
-The gap in (9) is an actual arithmetic constraint derived from the Binet cofactor's first-coefficient dominance. It transfers any future RH-strength *upper* estimate for \(D_v\) back to the original centered Goldbach source, with an explicit constant. It does not supply that upper estimate. Coefficientwise positivity would be a different and stronger mechanism; (6) alone does not provide it, and the direct weight concentrated at \(m=1\) already inherits the negative total-four coefficient in [the centered Goldbach obstruction](centered-goldbach-positive-transfer-obstruction.md).
+The gap in (9) is an actual arithmetic constraint derived from the Binet cofactor's first-coefficient dominance. It transfers any future RH-strength *upper* estimate for \(D_v\) back to the original centered Goldbach source, with an explicit constant. It does not supply that upper estimate. Equation (6c) rules out coefficientwise positivity for this actual cofactor; the simpler direct weight concentrated at \(m=1\) already inherits the negative total-four coefficient in [the centered Goldbach obstruction](centered-goldbach-positive-transfer-obstruction.md).
 
-[FactorialBinetCenteredGoldbachFinite.lean](BuildingBlocks/FactorialBinetCenteredGoldbachFinite.lean) compiles the exact divisor-reference subtraction in (3), the negative \(n=1\) endpoint, the direct-versus-proper cofactor split, and the full ordered four-index expansion in (5), with only Lean's standard axioms. The Binet coefficient bounds, infinite dilation interchange, norm inequality (9), and analytic statement (10) are written proofs here, not compiled Lean theorems.
+[FactorialBinetCenteredGoldbachFinite.lean](BuildingBlocks/FactorialBinetCenteredGoldbachFinite.lean) compiles the exact divisor-reference subtraction in (3), the negative \(n=1\) endpoint, the direct-versus-proper cofactor split, the full ordered four-index expansion in (5), the exact total-six formula (6a), and the strict negative sign conditional on the four rational component bounds in (6b), with only Lean's standard axioms. The actual Binet coefficient bounds, logarithm enclosures and their application to the sign (6c), infinite dilation interchange, norm inequality (9), and analytic statement (10) remain written proofs, not compiled Lean theorems.
