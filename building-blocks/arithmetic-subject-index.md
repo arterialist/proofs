@@ -307,6 +307,8 @@ The [conditional-edge estimator](theta-affine-comparison-conditional-edge-energy
 
 [Signed theta response and paid arrival](theta-signed-alternating-response-paid-arrival.md) bounds the finite parameter rectangle by the exact alternating continuous-minus-prime form-dual energy, with all edge data retained. [Suzuki original-metric compensation](suzuki-original-metric-arrival-pairing.md) shows algebraically that the arithmetic identity channel pays the full arrival defect. No form intertwiner currently transfers this compensation to the theta dual energy, and its required arithmetic smallness remains unproved.
 
+[Full-composition Lambert–Mellin resummation](factorial-full-composition-lambert-mellin-resummation.md) gives an exact all-order horizon generating function, its inverse-zeta Mellin transform, and a uniform signed real-ray L2 clock bound. A finite binomial family proves that this ray has no polynomially stable dyadic inverse. The needed angular or fixed-horizon estimate remains open.
+
 [Local compact scattering](compact-local-scattering-no-contraction.md) and [compiled Lean](BuildingBlocks/CompactLocalScatteringSigns.lean): exact original complex-power multiplier dictionary, finite geometric histories, attenuation at zero and amplification at pi/(M log p), for every prime and M ≥ 1. Physical compact pole-null test realization remains written; no actual-source or dyadic-product sign follows.
 
 ## Actual physical theta series
