@@ -113,4 +113,28 @@ Because \(e^R=\sqrt Q\,e^{-2s}\) and \(h=Q^{-2}/100\), (9) becomes
 \]
 This proves (2). An arbitrarily small positive theta-decaying tail can make either \(\psi_\pm\) strictly positive almost everywhere while retaining a bound of the form (7) with a slightly larger absolute constant and at least half the magnitude in (10). The perturbation is made separately at each fixed \(Q\); it does not assert an eigenfunction property.
 
+## The missing ground equation is visible in the energy
+
+For the unperturbed full even profiles \(f_\pm=g_\pm+g_\pm^\vee\), the complete prime quadratic form is tiny. Same-half prime shifts vanish because the whole positive packet has diameter \(O(N/Q)<\log2\). For opposite-half shifts, every candidate label is found by adding two centers. Besides \(a+b_+=\log Q\) and the zero-weight labels \(a+c_k=\log(Q+2k)\), the possible sums miss integer logarithms: \(a+b_-=\log Q+2s\), \(2a=\log Q-3s\), \(2b_+=\log Q+3s\), \(2b_-=\log Q+7s\), \(b_\pm+c_k=\log(Q+2k)+(3\text{ or }5)s\), and
+\[
+ c_i+c_j
+ =\log\!\left(Q+2(i+j)+\frac{4ij}{Q}\right)+3s .
+\]
+The last quantity is more than \(3s>2h\) above the logarithm of the even non-prime-power integer \(Q+2(i+j)\), and remains \(o(1/Q)\) from it uniformly for \(i,j\le N\). All other integer logarithms are separated by \(\asymp1/Q\). Hence only \(Q\) contributes to the plus profile, and no prime power contributes to the minus profile. Counting both ordered active pairs and both translation orientations gives
+\[
+ \langle f_+,Sf_+\rangle
+   =\frac{4\log2}{\sqrt Q}A_+^2,\qquad
+ \langle f_-,Sf_-\rangle=0 .
+\tag{11}
+\]
+
+The support of \(f_\pm\) has Lebesgue measure at most \(4(N+2)h\). The elementary Fourier cap \(\int_{|\xi|\le T}|\widehat f_\pm|^2d\xi\le T|\operatorname{supp}f_\pm|q_\pm/\pi\), with \(T\asymp[(N+2)h]^{-1}\), puts at least three quarters of the mass at frequencies where the archimedean multiplier is at least \(\log T-O(1)\). Since \(\log T=2\log Q-O(\log R)\), it follows that
+\[
+ \langle f_\pm,Af_\pm\rangle\ge cR\,q_\pm,\qquad
+ \langle f_\pm,(A-S)f_\pm\rangle>0
+ \quad\text{for all sufficiently large }Q .
+\tag{12}
+\]
+The actual normalized killed ground instead satisfies \(\langle G_R,(A-S)G_R\rangle=-\delta_R<0\). This is the concrete equation-specific constraint that excludes these particular many-cell histories. A useful estimate for the actual ground would have to exploit how its full prime return pays its logarithmic frequency cost, not only how widely its mass is spread.
+
 The actual ground equation is therefore still indispensable. Microscopic interval anti-concentration controls each grid cell but does not control the signed alignment of many cells with the complete Mangoldt arrivals. This construction limits that particular attempted deduction; it does not weaken the anti-spike theorem, refute a ground-specific quadrature estimate, or decide the full affine covariance or RH. These are written calculations, without Lean formalization.
