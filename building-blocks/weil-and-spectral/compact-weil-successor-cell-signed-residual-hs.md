@@ -126,9 +126,27 @@ source](../../formalization/BuildingBlocks/SuccessorCoarseParentSignedAbel.lean)
 with \(A=\lfloor r/(n+1)\rfloor\), \(B=\lfloor r/n\rfloor\), and the
 exact strict-lower/closed-upper child interval whenever the cutoff lies
 below \(A\). They are classical partial summation, not a new PNT
-estimate. Equation (5) supplies \(H\) in the coarse range. The
-integer-density sum in (7a) still must be compared with the continuous
-integral in (7), and this last comparison is not yet formalized.
+estimate. For real \(a<b\) with \(A=\lfloor a\rfloor\ge1\) and
+\(B=\lfloor b\rfloor>A\), a monotone square-root comparison gives
+\[
+ \left|\sum_{A<d\le B}\frac{\Lambda(d)}{\sqrt d}
+       -2(\sqrt b-\sqrt a)\right|
+ \le\frac{2H}{\sqrt{A+1}}+\frac1{\sqrt A}.          \tag{7c}
+\]
+Here \(|E(k)|\le H\) is required only for the integers
+\(A\le k\le B\). The second term pays the exact fractional endpoint
+and integer-to-continuous density difference. Equation (7c), its
+literal successor-child specialization, and the physical
+\(\sqrt{\ell_r/\ell_n}\) normalization are
+[Lean-compiled](../../formalization/BuildingBlocks/SuccessorCellDensityComparison.lean).
+That module also proves the exact positive-endpoint integral identity
+\(\int_a^b y^{-1/2}dy=2(\sqrt b-\sqrt a)\), so its normalized row
+theorem uses the integral in (7) literally.
+Equation (5) supplies \(H\) in the coarse range. In that range
+\(B/(A+1)<(n+1)/n\le2\), so its first term has the same
+\(O(\sqrt b\,e^{-a_0\Phi(N)/2})\) scale as (7), while the second
+is smaller after cell normalization. This is the finite route to the
+arithmetic part of (9); the PNT insertion remains written.
 
 The continuous integral in (7), with the same normalization, is
 \[
@@ -217,8 +235,12 @@ one-dilation row and its reciprocal-square von Mangoldt weight are
 lemmas](../../formalization/BuildingBlocks/SuccessorHighParentPrimeRow.lean).
 The signed coarse-parent finite Abel comparison and its exact child
 interval are [also Lean-compiled](../../formalization/BuildingBlocks/SuccessorCoarseParentSignedAbel.lean).
-The PNT input, discrete-to-continuous cell comparison, Hilbert--Schmidt
-aggregation, and full analytic theorem are not Lean formalized.
+The inverse-square-root discrete-to-continuous comparison, including
+fractional endpoints and physical cell normalization, is
+[Lean-compiled](../../formalization/BuildingBlocks/SuccessorCellDensityComparison.lean).
+The PNT input, the final exact continuous-cell geometry correction
+in (8), Hilbert--Schmidt aggregation, and full analytic theorem are
+not Lean formalized.
 No literature-priority claim is made. A hypothetical zero with fixed
 \(1/2<\Re\rho<1\) is compatible with (5) and (1), since
 \(y^{\Re\rho}=o(y e^{-a\Phi(y)})\) for every fixed \(a>0\).
