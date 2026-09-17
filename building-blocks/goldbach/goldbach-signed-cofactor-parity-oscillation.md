@@ -21,7 +21,7 @@ all-cutoff $\Omega_\pm$ theorem and the one-step bound. For a
 target $0\le\alpha<1/2$, choose $\alpha<\beta<1/2$ and take
 excursions with $|Q_s|/s^\beta\to\infty$. Moving at most one
 integer step reaches either chosen parity and changes $Q_s$
-by only $O(\log^3(2s))=o(s^\beta)$. The calculation below
+by only $O(\log^2(2s))=o(s^\beta)$. The calculation below
 gives a separate source-level account of that parity transfer;
 it does not strengthen the uniform upper bound.
 
@@ -136,38 +136,38 @@ $p\in\{0,1\}$,
 \tag{7}
 \]
 
-The [compiled one-step bound](../../formalization/BuildingBlocks/GoldbachCofactorSuccessorFinite.lean)
-gives $|Q_{s+2}-Q_s|\ll\log^3(2s)$; the explicit sum of the
-two one-step envelopes is also compiled in the finite parity
-module. Between opposite signs on either parity lattice there
-is an adjacent parity
+The [sharpened compiled one-step bound](../../formalization/BuildingBlocks/GoldbachCofactorSuccessorQuadratic.lean)
+gives $|Q_{s+2}-Q_s|\ll\log^2(2s)$ by summing two neighboring
+steps. The earlier explicit sum of the cubic one-step envelopes
+is also compiled in the finite parity module. Between opposite
+signs on either parity lattice there is an adjacent parity
 crossing, so each parity has infinitely many cutoffs with
 
 \[
-|Q_s|\ll\log^3(2s).
+|Q_s|\ll\log^2(2s).
 \tag{8}
 \]
 
 For any fixed $0<\alpha<1/2$, (7) and the two-step bound also
 give arbitrarily late positive and negative runs of
-$\gg_\alpha s^\alpha/\log^3(2s)$ consecutive cutoffs **of that
+$\gg_\alpha s^\alpha/\log^2(2s)$ consecutive cutoffs **of that
 parity**, each at magnitude at least $s^\alpha$. The result
 does not place a crossing in every dyadic interval, give a
 uniform upper bound, prove binary Goldbach, or exclude an
 off-critical zeta zero.
 
 An upper bound from nearby crossings needs a quantitative
-gap input. At a cutoff $u$ with $|Q_u|\ll\log^3(2X)$ and
+gap input. At a cutoff $u$ with $|Q_u|\ll\log^2(2X)$ and
 $s,u\in[X/2,2X]$, telescoping the one-step law gives
 
 \[
-|Q_s|\ll(1+|s-u|)\log^3(2X).
+|Q_s|\ll(1+|s-u|)\log^2(2X).
 \]
 
 To obtain an RH-scale $O_\varepsilon(X^{1/2+\varepsilon})$
 estimate solely from this inequality, it would suffice to
 place a crossing within
-$O_\varepsilon(X^{1/2+\varepsilon}/\log^3 X)$ of **every**
+$O_\varepsilon(X^{1/2+\varepsilon}/\log^2 X)$ of **every**
 cutoff. The Landau argument supplies only infinitely many
 crossings, with no maximum-gap bound. For comparison, the
 [Vinogradov–Korobov prime-error bound](https://arxiv.org/abs/2508.02041)
@@ -179,8 +179,9 @@ and use the prime-error bound with $\sum_{m\le s}\Lambda(m)\ll s$
 above it. The present oscillation and step estimates do not
 improve this inherited uniform upper bound.
 
-The finite Abel and alternating bounds (2)–(3), the exact
-two-step envelope, the infinite convergent-series identities,
+The finite Abel and alternating bounds (2)–(3), the sharpened
+one-step bound, the earlier explicit two-step envelope, the
+infinite convergent-series identities,
 and both parity projections in (6) are Lean-compiled with
 standard axioms. The logarithmic boundary estimate in (4),
 PNT input in (5), Landau oscillation transfer, and the

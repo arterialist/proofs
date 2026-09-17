@@ -1,7 +1,7 @@
 # Signed Goldbach cofactor crossings
 
 The signed cofactor in the literal Goldbach successor loss takes both
-signs arbitrarily far out. Its one-step change is at most cubic in
+signs arbitrarily far out. Its one-step change is at most quadratic in
 $\log s$, so infinitely many actual integer cutoffs have a
 polylogarithmically small cofactor. This is a sparse statement. It
 does not give the uniform RH-scale bound.
@@ -46,33 +46,46 @@ The complete von Mangoldt function occurs on both legs. The
 endpoint term $\Lambda(s-1)q_2$ is not suppressed.
 [GoldbachCofactorSuccessorFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorSuccessorFinite.lean)
 compiles (2), the exact finite convolution step, and its
-identification with the earlier signed correction. It also
-compiles the explicit bound (4) below.
+identification with the earlier signed correction.
 
 The compiled [Chebyshev bound](../../formalization/BuildingBlocks/CoarsePrimeBounds.lean)
 gives $|E_y|\le C_0y$ with $C_0=4\log2+1$, and the elementary bound
 $0\le\Lambda(n)\le\log n$ holds for $n\ge2$. In (3), put
-$y=s-m$. Then
+$y=s-m$ and $C=4\log2$. Retaining the complementary birth gives
 
 \[
 |q_{y+1}-q_y|
-\le \frac{\log s+1+C_0}{y+1}
+\le \frac{\Lambda(y+1)+C+2}{y+1}
 \quad(2\le y\le s-2).
 \]
 
-The reciprocal sum is at most $1+\log s$. Consequently
+Finite summation by parts, with $\psi(n)\le Cn$, gives
+
+\[
+\sum_{n\le s}\frac{\Lambda(n)}n
+=\frac{\psi(s)}s+\sum_{n<s}\frac{\psi(n)}{n(n+1)}
+\le C(2+\log s).
+\]
+
+The complementary $\Lambda(y+1)/(y+1)$ terms form a subrow of
+this sum, while the remaining reciprocal sum is at most
+$1+\log s$. Consequently
 
 \[
 \boxed{|Q_{s+1}-Q_s|
 \le \log s\left[
- |q_2|+(\log s+1+C_0)(1+\log s)
+ |q_2|+C(2+\log s)+(C+2)(1+\log s)
  \right]
-\ll \log^3(2s).}
+\ll \log^2(2s).}
 \tag{4}
 \]
 
-This step bound uses positivity only for the individual
-$\Lambda$ weights; it makes no claim about the sign of $Q_s$.
+The [quadratic successor module](../../formalization/BuildingBlocks/GoldbachCofactorSuccessorQuadratic.lean)
+compiles this sharpened bound, including the summation-by-parts
+identity and complementary-leg reindexing.
+
+The step bound retains complete $\Lambda$ births before taking
+absolute values; it makes no claim about the sign of $Q_s$.
 
 ## Actual zeta zeros force both signs
 
@@ -186,7 +199,7 @@ negative excursions. Since $C$ is arbitrary,
 The step bound (4) turns these excursions into runs of one
 sign. For each fixed $0<\alpha<1/2$, there are arbitrarily
 late positive and negative blocks of consecutive cutoffs,
-each of length $\gg_\alpha s^\alpha/\log^3(2s)$, on which
+each of length $\gg_\alpha s^\alpha/\log^2(2s)$, on which
 $Q_n\ge s^\alpha$ or $Q_n\le-s^\alpha$, respectively.
 Indeed, choose an excursion with $|Q_s|\ge2s^\alpha$;
 over the stated number of neighboring steps, (4) changes
@@ -200,13 +213,13 @@ absolute value at most $|Q_{s+1}-Q_s|$. Equation (4) proves
 
 \[
 \boxed{\text{Infinitely many integers }s\text{ satisfy }
-       |Q_s|\ll\log^3(2s).}
+       |Q_s|\ll\log^2(2s).}
 \tag{12}
 \]
 
 The Mellin continuation, Landau application, and infinite
 oscillation and crossing conclusions are written analysis.
-The finite source step, explicit bound (4), and convergent-series
-product in (5) are Lean-compiled; a Lean formalization of
-(7)–(12) remains open. The sparse
+The finite source step, sharpened explicit bound (4), and
+convergent-series product in (5) are Lean-compiled; a Lean
+formalization of (7)–(12) remains open. The sparse
 cutoffs in (12) do not exclude any off-critical zero or prove RH.
