@@ -79,6 +79,22 @@ For sufficiently large \(R\), the right side is below one, so \(R>r_k-1\) and \(
 \]
 In particular the complement has density one and contains the explicit midpoint sequence \(R_k=(k+\tfrac12)\log2/2\) for all large \(k\). At every such radius, each label with nonzero \(\Lambda\) in (5) is an **odd prime power**, so all contributing totals \(N\) are even. The compact first moment (4) and mixed term (8) likewise have no power-of-two label. This is a parity reduction for the compact collar, not a prime-only reduction: odd proper powers and all ground-dependent weights remain. It does not control the omitted full-profile tail or the signed error (7).
 
+The proper powers do have a uniform **first-moment** bound, even at exceptional radii. Let \(q_c=\|g_c\|_2^2\), and let \(P_{c,\mathrm{pp}}\) be the part of \(P_c\) in (4) from \(p^j\) with \(j\ge2\). For all sufficiently large \(R\),
+\[
+ \boxed{\qquad 0\le P_{c,\mathrm{pp}}
+ \le C R e^{-19R/20}q_c.\qquad}
+\tag{6c}
+\]
+Indeed \((g_c*g_c)(\log n)\le q_c\) by Cauchy--Schwarz. The interval \((X,X+Y)\), with \(Y=O(X^{21/40})\), contains at most \(O(Y/\sqrt X+1)=O(X^{1/40}+1)\) integer squares. For each exponent \(j\ge3\), its number of integer \(j\)-th powers is at most \(1+O(YX^{-2/3})=O(1)\), and there are only \(O(\log X)\) possible exponents. Hence it contains \(O(X^{1/40}+\log X)\) proper prime powers, each with coefficient \(\Lambda(n)/\sqrt n\le\log(2X)/\sqrt X\). Their coefficient sum is \(O((\log X)X^{-19/40})=O(R e^{-19R/20})\), proving (6c). Translation isometry also bounds their unweighted physical arrival sum by
+\[
+ \left\|\sum_{\substack{p^j\in(X,X+Y)\\j\ge2}}
+ \frac{\Lambda(p^j)}{\sqrt{p^j}}g_c(\log p^j-\cdot)
+ \right\|_{L^2(R,U)}
+ \le C R e^{-19R/20}\sqrt{q_c}.
+\tag{6d}
+\]
+These estimates do not bound the **ground-weighted square** (5): its measure contains the additional factor \(e^{u/2}g_c(u)\), for which an unweighted \(L^2\) translation estimate gives no uniform control without a suitable moving-radius ground bound.
+
 ## The exact profile-error consumer
 
 Let \(c_{\rm dens}=\mu_R-a_R=\int e^{|u|}d\gamma\), the density coefficient in the [actual profile calibration](theta-cross-arrival-density-calibration.md). For the compact row set
