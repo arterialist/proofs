@@ -194,6 +194,7 @@ import BuildingBlocks.SuccessorFeedbackRootTranslation
 
 import BuildingBlocks.GoldbachSuccessorTransfer
 import BuildingBlocks.GoldbachSuccessorLogFinite
+import BuildingBlocks.GoldbachCofactorVolterraFinite
 
 import BuildingBlocks.PrimeStateAndRenewalArch
 import BuildingBlocks.CausalRenewalFiniteCells
