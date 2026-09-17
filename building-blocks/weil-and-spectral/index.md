@@ -34,6 +34,8 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A sharp harmonic Mangoldt gap and a quantitative Weil residual sign](sharp-mangoldt-harmonic-gap-and-weil-residual.md)
 - [Uniform full Weil cross sign for long causal ramps](uniform-full-weil-cross-sign-for-long-causal-ramps.md)
 - [Complete mixed-ramp Weil cross sign for one very short ramp](complete-weil-cross-sign-for-one-short-causal-ramp.md)
+- [Certified mixed-ramp Weil transition regions](certified-mixed-ramp-transition-regions.md)
+- [Complete actual-prime Weil positivity on the positive causal-ramp cone](complete-weil-positive-causal-ramp-cone.md)
 - [A positive two-rate plane for the complete actual-prime Weil form](complete-weil-two-exponential-rate-positive-plane.md)
 - [A positive three-rate plane for the complete actual-prime Weil form](complete-weil-three-exponential-rate-positive-plane.md)
 - [A positive successor-cell space with an actual prime edge](compact-weil-successor-cell-small-measure-positive-space.md)
