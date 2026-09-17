@@ -5,15 +5,17 @@ small eigenvalues of the compact Weil form through truncations of
 global radical vectors. The argument below makes a two-vector min--max
 version precise. It bounds the *full* Weil form of each truncated
 radical vector by a weighted Fourier tail, with the gamma term, both
-poles, and every prime power retained. It does not establish the
-uniform Fourier-tail or Gram estimates needed to bound the first
-excited Weil eigenvalue at the prolate exponential scale.
+poles, and every prime power retained. The two vectors have a
+uniformly positive Gram matrix. The weighted Fourier-tail estimate
+needed to bound the first excited Weil eigenvalue at the prolate
+exponential scale remains open.
 
 ## Exact two-constraint candidates
 
 Put $a=\log\lambda$, $c=2\pi\lambda^2$, and let $p_j$ be the real,
-$L^2[-\lambda,\lambda]$-normalized even prolate function of order $j$,
-extended by zero. Its compressed Fourier eigenvalue is $\chi_j$:
+$L^2[-\lambda,\lambda]$-normalized prolate function of order $j$,
+extended by zero. It is even for even $j$. For the even orders used
+below, its compressed Fourier eigenvalue is $\chi_j$:
 
 \[
  \widehat p_j(v)=\chi_jp_j(v)\quad(|v|<\lambda),\qquad
@@ -50,16 +52,17 @@ limit, so the unnormalized determinant in (2) becomes small.
 The zero extensions of these prolate functions jump at
 $\pm\lambda$. Thus they are not in the even Schwartz space
 $\mathcal S_0^{\rm ev}$ to which the global radical assertion
-applies. For a smooth version, take an even $C_c^\infty$ cutoff
-$\rho_\lambda$ supported strictly inside $(-\lambda,\lambda)$,
-equal to one near zero and on a nonempty interval
-$(\lambda/2,\lambda-\eta)$, where $0<\eta<\lambda/2$. Choose an
-even $b_\lambda\in C_c^\infty(-\lambda/4,\lambda/4)$ with
-$b_\lambda(0)=0$ and $\int b_\lambda=1$. For each raw vector put
+applies. For $\lambda\ge2$, take an even $C_c^\infty$ cutoff
+$\rho_\lambda$ with $0\le\rho_\lambda\le1$, supported strictly
+inside $(-\lambda,\lambda)$ and equal to one on
+$[-3\lambda/4,3\lambda/4]$. Its terminal collar can be as narrow
+as the later Fourier-tail estimate permits. Fix an even
+$b\in C_c^\infty(-1/4,1/4)$ with $b(0)=0$ and $\int b=1$.
+For each raw vector put
 
 \[
  h_i=\rho_\lambda h_i^{\rm raw}
-       -\left(\int\rho_\lambda h_i^{\rm raw}\right)b_\lambda,
+       -\left(\int\rho_\lambda h_i^{\rm raw}\right)b,
  \qquad i=1,2.                                            \tag{3}
 \]
 
@@ -67,12 +70,148 @@ Then $h_i\in\mathcal S_0^{\rm ev}$ and both constraints hold exactly.
 The images $F_i=\mathcal E(h_i)$, where
 $\mathcal E(h)(u)=u^{1/2}\sum_{n\ge1}h(nu)$, are linearly independent
 after restriction to $[\lambda^{-1},\lambda]$. Indeed, for
-$u\in(\lambda/2,\lambda-\eta)$, only $n=1$ contributes and
+$u\in(\lambda/2,3\lambda/4)$, only $n=1$ contributes and
 $F_i(u)=\sqrt u\,h_i^{\rm raw}(u)$. A linear combination vanishing
 there vanishes analytically on $(-\lambda,\lambda)$ and, by the
 disjoint prolate expansions, has both coefficients zero. This proves
-positive definiteness of the finite-$\lambda$ Gram matrix; it gives
-no uniform lower bound as $\lambda\to\infty$.
+positive definiteness of the finite-$\lambda$ Gram matrix. A
+uniform lower bound follows below without resolving the nearly
+equal Fourier eigenvalues in (2).
+
+## A uniform Gram lower bound
+
+The [prolate differential operator, (3.3)](https://arxiv.org/html/2106.01715)
+provides the needed compactness. After dividing it by $\lambda^2$,
+its quadratic form on $[-\lambda,\lambda]$ is
+
+\[
+ \mathfrak t_\lambda(f)=
+ \int_{-\lambda}^{\lambda}
+ \left[\left(1-\frac{q^2}{\lambda^2}\right)|f'(q)|^2
+             +4\pi^2q^2|f(q)|^2\right]dq.              \tag{G1}
+\]
+
+Write $\beta_{j,\lambda}$ for its ordered eigenvalues, with
+$p_j$ as corresponding normalized eigenfunctions. For every fixed
+$j$, the first $j+1$ Hermite functions, approximated by compactly
+supported smooth test functions, give
+$\limsup_{\lambda\to\infty}\beta_{j,\lambda}
+\le 2\pi(2j+1)$ by min--max. In particular,
+
+\[
+ \sup_{\lambda\ge\lambda_0}
+ \int_{\mathbb R}q^2|p_j(q)|^2dq<\infty
+ \qquad(0\le j\le10).                                    \tag{G2}
+\]
+
+These estimates also prove convergence to the Hermite modes, up to
+sign. On each fixed compact $q$-interval, (G1) bounds the derivatives
+of the $p_j$; (G2) makes their $L^2$ mass tight. Rellich compactness
+therefore gives strong $L^2(\mathbb R)$ subsequential limits. Passing
+the weak eigenvalue equation to the limit gives
+$(-\partial_q^2+4\pi^2q^2)p=\beta p$. The limits of the first
+$j+1$ prolate eigenfunctions remain orthonormal. The oscillator
+eigenvalues are the simple numbers $2\pi(2m+1)$, so the ordered
+upper bound above and orthogonality identify each limit as the
+$j$th Hermite function. This proves convergence for every fixed
+$j$, with its irrelevant sign chosen along each subsequence.
+
+The arithmetic map $\mathcal E$ is continuous on a fixed
+multiplicative interval under just these moment bounds. For
+$I=[1,2]$, every sufficiently regular $h$ with finite second
+moment satisfies
+
+\[
+ \left\|u^{1/2}\sum_{n>N}h(nu)\right\|_{L^2(I,du/u)}^2
+ \le \frac{C}{N}\int_0^\infty q^2|h(q)|^2dq .
+                                                               \tag{G3}
+\]
+
+Indeed, apply Cauchy--Schwarz with weights $n^{-3/4}$ and
+$n^{3/4}$, use $\sum_{n>N}n^{-3/2}=O(N^{-1/2})$, and then substitute
+$q=nu$. For each $q$, the overlapping indices lie in
+$q/2\le n\le q$, so
+$\sum_{q/2\le n\le q}n^{1/2}=O(q^{3/2})$; on $q>N$ this is at most
+$O(N^{-1/2}q^2)$. For the finite part, the elementary bound is
+
+\[
+ \left\|u^{1/2}\sum_{n\le N}g(nu)\right\|_{L^2(I,du/u)}
+ \le 2\sqrt N\,\|g\|_{L^2(\mathbb R)}.                 \tag{G4}
+\]
+
+Equations (G3)--(G4) show that strong $L^2$ convergence plus a
+uniform second moment implies convergence of the $\mathcal E$
+images in $L^2(I,du/u)$. Hence $\mathcal E(p_j)$ converges there
+to $\mathcal E(H_j)$ for the corresponding Hermite function $H_j$,
+up to sign.
+
+The six functions $\mathcal E(H_j)$, $j\in
+\{0,2,4,6,8,10\}$, are linearly independent on $I$. A finite
+Hermite combination $H$ is a polynomial times a Gaussian, so
+$\mathcal E(H)$ is real analytic for $u>0$. Vanishing almost
+everywhere on $I$ forces it to vanish for every $u>0$. For
+real $s>1$, absolute convergence then gives
+
+\[
+ 0=\int_0^\infty\mathcal E(H)(u)u^{s-1/2}\frac{du}{u}
+  =\zeta(s)\int_0^\infty H(q)q^{s-1}dq.              \tag{G5}
+\]
+
+Mellin uniqueness gives $H=0$. Thus the map from their
+six-dimensional span into $L^2(I,du/u)$ has a positive minimum
+singular value. By the convergence just proved, there are
+$m>0$ and $\lambda_0$ such that, for every $\lambda\ge\lambda_0$
+and every $f$ in the span of the six $p_j$,
+
+\[
+ \|\mathcal E(f)\|_{L^2(I,du/u)}
+ \ge m\|f\|_{L^2[-\lambda,\lambda]}.                   \tag{G6}
+\]
+
+Indeed, failure would give a sequence of unit coefficient vectors
+whose image norms tend to zero. A subsequence of the coefficients
+and the six prolate signs converges; (G3)--(G4) then give a nonzero
+Hermite combination with zero image, contradicting (G5).
+
+It remains to check that smoothing does not erase this bound.
+For any $f$ in that span with $\int f=0$, put
+$S_\lambda f=\rho_\lambda f-(\int\rho_\lambda f)b$ as in (3).
+The uniform second moment, $0\le\rho_\lambda\le1$, and
+$\rho_\lambda=1$ on $|q|\le3\lambda/4$ give
+
+\[
+ \|(1-\rho_\lambda)f\|_2=O(\lambda^{-1})\|f\|_2,\qquad
+ \left|\int\rho_\lambda f\right|
+ =\left|\int(\rho_\lambda-1)f\right|
+ =O(\lambda^{-1/2})\|f\|_2.                           \tag{G7}
+\]
+
+The second estimate uses Cauchy--Schwarz with $q$ and $q^{-1}$
+on $|q|>3\lambda/4$. Consequently
+$\|S_\lambda f-f\|_2=O(\lambda^{-1/2})\|f\|_2$, while
+the second moment of this difference stays bounded by
+$O(\|f\|_2^2)$. Applying (G3)--(G4) with
+$N\asymp\sqrt\lambda$ gives
+
+\[
+ \|\mathcal E(S_\lambda f)-\mathcal E(f)\|_{L^2(I,du/u)}
+ =O(\lambda^{-1/4})\|f\|_2.                           \tag{G8}
+\]
+
+The two normalized raw vectors in (2) are orthogonal. Apply
+(G6)--(G8) to their arbitrary linear combination. Since
+$I\subset[\lambda^{-1},\lambda]$ for $\lambda\ge2$, their
+smoothed window restrictions $k_1,k_2$ have Gram matrix
+$G=(\langle k_i,k_j\rangle)$ satisfying
+
+\[
+ \boxed{\lambda_{\min}(G)\ge g_0>0
+        \quad\text{for all sufficiently large }\lambda,}
+                                                               \tag{G9}
+\]
+
+where $g_0$ is independent of the cutoff collar width. This proof
+does not need the asymptotic ratios of the nearly equal $\chi_j$.
 
 ## The full Weil form of the lower tail
 
@@ -96,7 +235,9 @@ multiplier is $O(\log(2+|t|))$. The lower tails decay faster than
 every exponential. More explicitly, truncate a tail far below
 $-a$ and mollify each cutoff. These approximants converge in
 $\int(1+\log(1+t^2))|\widehat g(t)|^2dt$ and in both exponentially
-weighted pole integrals. For the prime pairings, the rapid lower
+weighted pole integrals. The gamma cross form passes to the limit
+by Cauchy--Schwarz after adding a constant to its lower-bounded
+multiplier. For the prime pairings, the rapid lower
 decay supplies a uniform majorant
 $C\Lambda(n)n^{-B-1/2}$ for any chosen $B>1/2$.
 Thus the full prime series converges through the approximation.
@@ -205,7 +346,8 @@ $L^2$ prolate concentration leakage by itself does not give (11).
 Let $A_a$ be the self-adjoint compact-window Weil operator with
 eigenvalues $E_0(a)\le E_1(a)\le\cdots$, and let
 $G=(\langle k_i,k_j\rangle)_{i,j=1}^2$. The previous construction
-gives $g_a:=\lambda_{\min}(G)>0$ for each fixed $a$. If (7) holds
+gives $g_a:=\lambda_{\min}(G)\ge g_0>0$ for all sufficiently
+large $a$ by (G9). If (7) holds
 for $t_i$ with the same $B$ and constants $\epsilon_i$, then for
 every $z_1,z_2\in\mathbb C$ the tail of $\sum z_i k_i$ has constant
 at most $\sum|z_i|\epsilon_i$. Equations (5), (9), and the
@@ -216,25 +358,15 @@ two-dimensional min--max principle give the unconditional bound
     C_B\frac{\epsilon_1^2+\epsilon_2^2}{g_a}.}          \tag{13}
 \]
 
-Thus $g_a\ge c^{-K}$ and
-$\epsilon_i\le c^K e^{-c}$ for a fixed $K$ would imply
-$E_1(a)\le\operatorname{poly}(c)e^{-2c}$. Neither input is proved
-here. [Fixed-index prolate asymptotics](https://doi.org/10.1002/sapm196544199)
-suggest a route to the Gram
-bound: after normalization, the first triple should approach the
-Hermite combination of orders $0,4$ vanishing at zero, and the
-second the corresponding combination of orders $2,6$. Their
-$\mathcal E$ images are independent because the Mellin transform
-of $\mathcal E(h)$ is $\zeta$ times that of $h$. A sufficient
-quantitative version would be convergence of the smooth $h_i$ and
-their Fourier transforms in a weighted sup norm
-$\sup_{v\ge0}(1+v)^M(|h(v)|+|\widehat h(v)|)$ with $M>1$; this
-norm controls $\|\mathcal E(h)\|_2$ by the direct sum for $u\ge1$
-and Poisson summation for $u\le1$. Convergence to two independent
-Hermite combinations in this norm would make $G$ converge to their
-positive full-line Gram matrix. Such convergence, including the
-effect of endpoint smoothing and normalization of (2), has not been
-checked. The compressed finite-Fourier relation in (1) is not a
+By (G9), the denominator $g_a$ is already bounded below
+independently of $c$. Thus $\epsilon_i\le c^K e^{-c}$ for a fixed
+$K$ would imply $E_1(a)\le\operatorname{poly}(c)e^{-2c}$.
+That weighted Fourier-tail input remains unproved. The
+$L^2$ prolate leakage and the oscillator convergence used for
+(G9) do not control the weighted supremum and derivative in
+(11). Endpoint smoothing must also preserve the proposed
+$e^{-c}$ scale after normalizing the determinant coefficients
+in (2). The compressed finite-Fourier relation in (1) is not a
 global Fourier eigenrelation, so inversion parity is only
 approximate.
 
