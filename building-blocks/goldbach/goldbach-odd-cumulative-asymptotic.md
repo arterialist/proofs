@@ -231,7 +231,10 @@ unproved one-sided estimate.
 [GoldbachOddCumulativeFinite.lean](../../formalization/BuildingBlocks/GoldbachOddCumulativeFinite.lean)
 formalizes (1) with the exact finite source cutoff and proves that its
 coefficients agree with the complete ordered Goldbach coefficients
-through the cumulative horizon. Its public theorems use only Lean's
-standard logical axioms. Equations (2)--(11), including the PNT,
-generating-series, Landau, and residue applications, remain written
-proofs and are not yet Lean theorems.
+through the cumulative horizon. It also proves (2), using the
+[finite even-power sum](../../formalization/BuildingBlocks/GoldbachOddPowerBoundFinite.lean),
+and the finite convolution (8), with the elementary baseline expressed
+as a finite sum. These public theorems use only Lean's standard logical
+axioms. The closed form for the baseline in (7), the quantitative PNT,
+generating-series identity, Landau criterion, and residue argument
+remain written proofs and are not yet Lean theorems.

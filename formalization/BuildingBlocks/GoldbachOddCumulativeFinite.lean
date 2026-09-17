@@ -1,5 +1,6 @@
 import BuildingBlocks.GoldbachOddPowerBoundFinite
 import BuildingBlocks.GoldbachCumulativeFinite
+import BuildingBlocks.CoarsePrimeBounds
 import Mathlib.Tactic
 
 /-! Exact cumulative odd Goldbach reindexing by the even power-of-two source. -/
@@ -16,6 +17,29 @@ abbrev Λ (n : ℕ) : ℝ := ArithmeticFunction.vonMangoldt n
 
 def oddPartner (Y : ℕ) : ℝ :=
   ∑ m ∈ Icc 1 Y, if Odd m then Λ m else 0
+
+/-- The odd partner keeps every odd prime power and removes exactly
+the even powers of two from the complete Chebyshev sum. -/
+theorem oddPartner_eq_psi_sub_pow2 (Y : ℕ) :
+    oddPartner Y =
+      BuildingBlocks.CoarsePrimitive.psi Y -
+        (Nat.log 2 Y : ℝ) * Real.log 2 := by
+  rw [BuildingBlocks.CoarsePrimitive.psi_eq_sum_Icc]
+  have hsplit :
+      (∑ m ∈ Icc 1 Y, Λ m) =
+        oddPartner Y +
+          ∑ m ∈ Icc 1 Y, if Even m then Λ m else 0 := by
+    unfold oddPartner
+    rw [← Finset.sum_add_distrib]
+    apply Finset.sum_congr rfl
+    intro m hm
+    rcases Nat.even_or_odd m with he | ho
+    · have hnot : ¬Odd m := Nat.not_odd_iff_even.mpr he
+      simp [he, hnot]
+    · have hnot : ¬Even m := Nat.not_even_iff_odd.mpr ho
+      simp [ho, hnot]
+  rw [hsplit, BuildingBlocks.GoldbachOddPowerBoundFinite.even_vonMangoldt_sum]
+  ring
 
 def cumulativeOdd (X : ℕ) : ℝ :=
   ∑ N ∈ Icc 1 X, if Odd N then truncatedPrimeCoefficient X N else 0
@@ -171,8 +195,51 @@ theorem cumulativeOdd_eq_complete (X : ℕ) :
   intro N hN
   rw [truncated_eq_complete X N (mem_Icc.mp hN).2]
 
+def integerPrimeError (N : ℕ) : ℝ :=
+  BuildingBlocks.CoarsePrimitive.psi N - (N : ℝ)
+
+/-- The baseline keeps the full ordinary-counting triangle and removes
+exactly the even prime powers from the odd partner. -/
+def oddBaseline (X : ℕ) : ℝ :=
+  2 * Real.log 2 *
+    ∑ k ∈ Icc 1 (Nat.log 2 X),
+      (((X - 2 ^ k : ℕ) : ℝ) -
+        (Nat.log 2 (X - 2 ^ k) : ℝ) * Real.log 2)
+
+def oddResidual (X : ℕ) : ℝ := cumulativeOdd X - oddBaseline X
+
+/-- The actual centered odd Goldbach cumulative count is a lacunary
+sum of the complete Chebyshev error, with every endpoint retained. -/
+theorem oddResidual_eq_error_convolution (X : ℕ) :
+    oddResidual X =
+      2 * Real.log 2 *
+        ∑ k ∈ Icc 1 (Nat.log 2 X), integerPrimeError (X - 2 ^ k) := by
+  rw [oddResidual, oddBaseline, cumulativeOdd_eq_power_sum]
+  calc
+    2 * Real.log 2 * (∑ k ∈ Icc 1 (Nat.log 2 X), oddPartner (X - 2 ^ k)) -
+        2 * Real.log 2 *
+          (∑ k ∈ Icc 1 (Nat.log 2 X),
+            (((X - 2 ^ k : ℕ) : ℝ) -
+              (Nat.log 2 (X - 2 ^ k) : ℝ) * Real.log 2)) =
+      2 * Real.log 2 *
+        ∑ k ∈ Icc 1 (Nat.log 2 X),
+          (oddPartner (X - 2 ^ k) -
+            (((X - 2 ^ k : ℕ) : ℝ) -
+              (Nat.log 2 (X - 2 ^ k) : ℝ) * Real.log 2)) := by
+                simp only [Finset.sum_sub_distrib]
+                ring
+    _ = _ := by
+          congr 1
+          apply Finset.sum_congr rfl
+          intro k hk
+          rw [oddPartner_eq_psi_sub_pow2]
+          unfold integerPrimeError
+          ring
+
 #print axioms cumulativeOdd_eq_power_sum
 #print axioms cumulativeOdd_eq_complete
+#print axioms oddPartner_eq_psi_sub_pow2
+#print axioms oddResidual_eq_error_convolution
 
 end
 end BuildingBlocks.GoldbachOddCumulativeFinite

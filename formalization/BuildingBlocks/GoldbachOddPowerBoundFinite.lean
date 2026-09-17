@@ -37,6 +37,42 @@ private theorem powerSupport_eq_image (Y : ℕ) :
         ⟨k, hk, rfl⟩
     exact ⟨⟨hpos, hpow⟩, he, hn⟩
 
+/-- The entire even von Mangoldt row through Y consists of the powers
+of two, each with its literal weight log 2. -/
+theorem even_vonMangoldt_sum (Y : ℕ) :
+    (∑ m ∈ Icc 1 Y,
+      if Even m then ArithmeticFunction.vonMangoldt m else 0) =
+      (Nat.log 2 Y : ℝ) * Real.log 2 := by
+  have hsupport :
+      (∑ m ∈ Icc 1 Y,
+        if Even m then ArithmeticFunction.vonMangoldt m else 0) =
+        ∑ m ∈ powerSupport Y, ArithmeticFunction.vonMangoldt m := by
+    unfold powerSupport
+    rw [Finset.sum_filter]
+    apply Finset.sum_congr rfl
+    intro m hm
+    by_cases he : Even m
+    · by_cases hn : ArithmeticFunction.vonMangoldt m = 0
+      · simp [he, hn]
+      · simp [he, hn]
+    · simp [he]
+  rw [hsupport, powerSupport_eq_image]
+  rw [Finset.sum_image (fun _ _ _ _ h => Nat.pow_right_injective (by omega) h)]
+  have hpow (k : ℕ) (hk : k ∈ Icc 1 (Nat.log 2 Y)) :
+      ArithmeticFunction.vonMangoldt (2 ^ k) = Real.log 2 := by
+    have hk1 : 1 ≤ k := (Finset.mem_Icc.mp hk).1
+    rw [ArithmeticFunction.vonMangoldt_apply_pow (by omega),
+      ArithmeticFunction.vonMangoldt_apply_prime Nat.prime_two]
+    norm_num
+  calc
+    (∑ k ∈ Icc 1 (Nat.log 2 Y),
+      ArithmeticFunction.vonMangoldt (2 ^ k)) =
+        ∑ k ∈ Icc 1 (Nat.log 2 Y), Real.log 2 := by
+          apply Finset.sum_congr rfl
+          intro k hk
+          exact hpow k hk
+    _ = _ := by simp [nsmul_eq_mul]
+
 private theorem innerPair (Y m N : ℕ) :
     (∑ n ∈ Icc 1 Y,
       if m + n = N then ArithmeticFunction.vonMangoldt m *
@@ -202,6 +238,7 @@ theorem odd_primeCoefficient_le_two_log_sq {N : ℕ} (hodd : Odd N) (Y : ℕ) :
   nlinarith [hmul]
 
 #print axioms odd_primeCoefficient_power_sum
+#print axioms even_vonMangoldt_sum
 #print axioms odd_primeCoefficient_le_log_count
 #print axioms odd_primeCoefficient_le_two_log_sq
 
