@@ -37,6 +37,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Certified mixed-ramp Weil transition regions](certified-mixed-ramp-transition-regions.md)
 - [Complete actual-prime Weil positivity on the positive causal-ramp cone](complete-weil-positive-causal-ramp-cone.md)
 - [A signed growing-support Weil Gram for two annular bumps](actual-signed-annulus-bump-gram.md)
+- [Almost-all signed Weil positivity across a growing annulus interval](actual-annulus-almost-all-signed-weil.md)
 - [A positive two-rate plane for the complete actual-prime Weil form](complete-weil-two-exponential-rate-positive-plane.md)
 - [A positive three-rate plane for the complete actual-prime Weil form](complete-weil-three-exponential-rate-positive-plane.md)
 - [A positive successor-cell space with an actual prime edge](compact-weil-successor-cell-small-measure-positive-space.md)
