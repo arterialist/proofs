@@ -1,6 +1,6 @@
 # A density bound for negative successor-cell Weil eigenvalues
 
-This written proof concerns the complete [successor-cell Weil matrix](compact-weil-successor-cell-refinement.md), with every admitted \(\Lambda(p^j)=\log p\), both poles, and the gamma integral. Chebyshev's bound \(\psi(x)\ll x\) is its only prime-distribution input. The result counts negative directions; it does not prove positivity or RH. No theorem below is formalized in Lean.
+This written proof concerns the complete [successor-cell Weil matrix](compact-weil-successor-cell-refinement.md), with every admitted \(\Lambda(p^j)=\log p\), both poles, and the gamma integral. The sharpened estimate uses an unconditional Brun–Titchmarsh upper bound for primes in long intervals, plus a separate bound for every higher prime power. The result counts negative directions; it does not prove positivity or RH. No theorem below is formalized in Lean.
 
 For \(N\ge2\), put \(X=N+1\), \(L=\tfrac12\log X\), and let \(S_N\) have the orthonormal cell basis \(e_n=\mathbf1_{I_n}/\sqrt{\ell_n}\), where
 \[
@@ -12,13 +12,13 @@ Let \(Q_N\) be the Hermitian form in equation (8) of the refinement note. Write 
 **Theorem.** There are absolute \(c,C>0\) and \(N_0\) such that, for \(N\ge N_0\), a complex subspace \(V_N\subseteq S_N\) satisfies
 \[
 \boxed{\quad
-\operatorname{codim}_{S_N}V_N\le C\frac{N}{\log N},
+\operatorname{codim}_{S_N}V_N\le C\frac{N}{(\log N)^2},
 \qquad Q_N(f)\ge c\log N\,\|f\|_2^2
 \quad(f\in V_N).\quad}                                      \tag{1}
 \]
 Consequently
 \[
-\boxed{\operatorname{ind}_{\le0}(Q_N)\le C\frac{N}{\log N}=o(N).} \tag{2}
+\boxed{\operatorname{ind}_{\le0}(Q_N)\le C\frac{N}{(\log N)^2}=o(N).} \tag{2}
 \]
 The estimate applies to the full \(N\)-cell space. It complements the [negative-part magnitude bound](compact-weil-successor-cell-negative-part-bound.md), which controls the size of each negative eigenvalue but does not count them.
 
@@ -85,6 +85,76 @@ This proves the last bound in (7). Since \(K_N=A_N+A_N^*\),
 \]
 This calculation retains every proper prime power and the exact \(d=N\) endpoint. It requires no estimate for prime pairs.
 
+## Uniform prime-matrix row bound
+
+The estimate (8) can be sharpened without a prime-pair estimate. Here \(\psi(y)=\sum_{d\le y}\Lambda(d)\). We use the following consequence of the [Brun–Titchmarsh theorem for arbitrary intervals](https://arxiv.org/abs/2312.16090): for real \(x\) sufficiently large and \(x^{2/3}\le h\le x\),
+\[
+\psi(x+h)-\psi(x)\ll h.                                      \tag{8a}
+\]
+Indeed, its modulus-one case gives
+\(\pi(x+h)-\pi(x)\le 2h/\log h\). The primes therefore contribute
+\(O(h\log(2x)/\log h)=O(h)\). For higher powers \(p^k\), \(k\ge2\), even the number of all such powers at most \(2x\) is
+\(O(\sqrt{x}\log x)\), so their total von Mangoldt weight is
+\(O(\sqrt{x}(\log x)^2)=O(h)\). This retains the powers rather than dropping them.
+
+Fix a row \(r\ge2\), and put
+\[
+x_{r,n}=\frac{r}{n+1},\qquad
+h_{r,n}=\frac{r}{n(n+1)}.
+\]
+The elementary inequalities
+\(\ell_r/\ell_n\le(n+1)/r\) and
+\(d>r/(n+1)\) for \(d\in D_{r,n}\) turn (4) into
+\[
+0\le(A_N)_{r,n}
+\le\frac{n+1}{r}
+   \bigl(\psi(x_{r,n}+h_{r,n})-\psi(x_{r,n})\bigr).
+\tag{8b}
+\]
+For \(n\le r^{1/5}\) and all sufficiently large \(r\),
+\(h_{r,n}\le x_{r,n}\) and
+\[
+\frac{h_{r,n}}{x_{r,n}^{2/3}}
+=\frac{r^{1/3}}{n(n+1)^{1/3}}\ge1.
+\]
+Hence (8a)–(8b) give \((A_N)_{r,n}\ll1/n\), and the squared contribution of these columns to row \(r\) is \(O(1)\).
+
+For \(r^{1/5}<n\le\sqrt r\), the integer count in the interval is at most \(1+h_{r,n}\). Since \(\Lambda(d)\le\log r\), (8b) gives
+\[
+(A_N)_{r,n}\le
+(\log r)\left(\frac1n+\frac{n+1}{r}\right).
+\]
+Consequently the squared contribution of these columns is
+\[
+\ll(\log r)^2\left(r^{-1/5}+r^{-1/2}\right)=O(1).
+\tag{8c}
+\]
+Finally, if \(n>\sqrt r\), then \(h_{r,n}<1\), so \(D_{r,n}\) has at most one integer \(d\). For that \(d\),
+\[
+|(A_N)_{r,n}|^2
+=\frac{\ell_r}{\ell_n}\frac{\Lambda(d)^2}{d}
+\le\frac{2\Lambda(d)^2}{d^2}.
+\]
+At fixed \(r\), each \(d\) has the unique parent \(n=\lfloor r/d\rfloor\); thus these columns contribute at most
+\(2\sum_{d\ge2}\Lambda(d)^2/d^2=O(1)\). The finitely many small rows also have a uniform bound. We have proved
+\[
+\sup_{N\ge2}\sup_{2\le r\le N}
+   \sum_{n<r}|(A_N)_{r,n}|^2\ll1,
+\qquad
+\boxed{\|A_N\|_{\mathrm{HS}}^2\ll N,\quad
+\|K_N\|_{\mathrm{HS}}^2=2\|A_N\|_{\mathrm{HS}}^2\ll N.}
+\tag{8d}
+\]
+The exact factor two holds because \(A_N\) is strictly triangular and its adjoint occupies the opposite triangle.
+Consequently, for every \(T>0\), the number of eigenvalues of the complete prime-power matrix \(K_N\) with absolute value at least \(T\) is at most
+\[
+\#\{j:|\lambda_j(K_N)|\ge T\}
+\le \frac{\|K_N\|_{\mathrm{HS}}^2}{T^2}
+\ll\frac{N}{T^2}.
+\tag{8e}
+\]
+This global spectral-energy bound is stronger information than the index corollary below.
+
 ## Gamma mass away from a small subspace
 
 Write \(H(t)=\operatorname{Re}\psi(1/4+it/2)-\log\pi\), the exact gamma multiplier in \(Q_N\). The digamma recurrence and the large-frequency asymptotic in the [negative-part proof](compact-weil-successor-cell-negative-part-bound.md#exact-cancellation-of-the-continuous-prime-density) give
@@ -122,11 +192,11 @@ Every unit \(f\in W_N\) has at least half of its Fourier mass outside \([-T_N,T_
 
 ## Prime and pole removal
 
-Let \(U_N\) be the span of eigenvectors of \(K_N\) with eigenvalue greater than \((c_\Gamma/2)\log N\). The Hilbert–Schmidt estimate (8) gives
+Let \(U_N\) be the span of eigenvectors of \(K_N\) with eigenvalue greater than \((c_\Gamma/2)\log N\). The sharpened Hilbert–Schmidt estimate (8d) gives
 \[
 \dim U_N\le
 \frac{4\|K_N\|_{\mathrm{HS}}^2}{c_\Gamma^2(\log N)^2}
-\ll\frac{N}{\log N}.
+\ll\frac{N}{(\log N)^2}.
 \tag{13}
 \]
 On \(U_N^\perp\), the prime quadratic is at most
@@ -139,7 +209,7 @@ The two exact pole moments \(E_+(f),E_-(f)\) satisfy
  -\left|\frac{E_+(f)-E_-(f)}{\sqrt2}\right|^2.
 \tag{14}
 \]
-Thus the pole term is nonnegative on the kernel of the one complex functional \(E_+-E_-\), a subspace of codimension at most one. Intersect that kernel with \(W_N\cap U_N^\perp\). Equations (11)–(14) give (1), because \(\sqrt N\log N=O(N/\log N)\). The finite-dimensional min–max principle then gives (2).
+Thus the pole term is nonnegative on the kernel of the one complex functional \(E_+-E_-\), a subspace of codimension at most one. Intersect that kernel with \(W_N\cap U_N^\perp\). Equations (11)–(14) give (1), because \(\sqrt N\log N=O(N/(\log N)^2)\). The finite-dimensional min–max principle then gives (2).
 
 A hypothetical off-line zeta zero can contribute a negative Weil direction on a sufficiently large compact window, and one direction is compatible with (2). The theorem therefore gives no zero exclusion. The [exact negative-index theorem](../theta-and-heat/theta-weil-jump-form.md#12-exact-negative-index-including-compact-test-realization) counts nonreal zero pairs in the unrestricted form, whereas (2) bounds the *fraction* of negative directions in this particular growing finite model. No literature-priority claim is made.
 
