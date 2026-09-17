@@ -72,4 +72,4 @@ assert weighted > arb('0.235484')
 # log(p)<5, and P(x)<=sum(a_k)<5 for sigma>=sigma0>1/2.
 kappa = arb(433) / 859
 assert kappa * (weighted - arb('0.000000002')) > arb('0.1187')
-print('Certified: weighted ladder > 0.235484 and corrected Lemma 10 > 0.1187 f(0).')
+print('Certified: weighted ladder > 0.235484; with the paper\'s Lemma 11 lower bound, the prime-power sum > 0.1187 g(0), where g(0) = eta*w(0).')
