@@ -10,7 +10,7 @@ Fix \(R>0\), the actual even bounded killed ground \(\psi\), and the full exteri
 
 ## Exponentially growing smooth odd potentials are operator tests
 
-We first record a useful actual-clock domain lemma. Suppose \(F\) is real, odd, \(C^1\) on the two exterior halves, zero on a neighborhood of the core boundary, and for some fixed \(B,m\ge0\) and \(C<\infty\),
+We first record a useful actual-clock domain lemma. Suppose \(F\) is real, odd, \(C^1\) on each of the two exterior halves, and for some fixed \(B,m\ge0\) and \(C<\infty\),
 \[
  |F(u)|+|F'(u)|\le C W(u),\qquad
  W(u)=(1+|u|)^m e^{B|u|}.
@@ -25,11 +25,12 @@ Then \(F\in D(K)\), and its full action is the absolutely convergent rate integr
 \]
 The equality uses oddness: the rank-one-subtracted clock acts on the centered sector, and the odd \(F\) has zero \(\gamma\)-mean.
 
-Here are the estimates behind the domain assertion. The mean-value theorem and (2) give
+Here are the estimates behind the domain assertion. The mean-value theorem on each half and (2) give
 \[
  |F(u)-F(v)|\le C'(W(u)+W(v))\min(1,|u-v|).
 \tag{4}
 \]
+For endpoints on opposite halves, their distance is at least \(2R\); the same bound follows from \(|F(u)|+|F(v)|\), with a constant depending on \(R\). Thus no continuity across the deleted core is assumed.
 Write \(\Theta(v)=\Phi(v)W(v)\). It decays faster than every ordinary exponential at both ends. Splitting the integers into \(e^j\le n<e^{j+1}\), using \(\Lambda(n)\le\log n\) and at most \(e^{j+1}\) integers in a shell, proves
 \[
  \sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}
@@ -46,6 +47,13 @@ The continuous part of the weighted rate is bounded by \(\sup_v\Phi(v)W(v)\int r
 \tag{6}
 \]
 The right side lies in \(L^2(\gamma)\), since \(\psi\le P_\infty\), \(\rho^{-1}\) grows only exponentially, and \(\nu\) has two-sided theta tails. The same weighted-rate calculation with \(W^2\) in place of \(W\) proves finite full edge energy. For bounded form tests, symmetry and absolute convergence identify the edge form with the \(L^2(\gamma)\) pairing against (3). Truncating a general form test and passing by dominated edge convergence extends that identity to the full form domain. The closed-form representation theorem proves \(F\in D(K)\). No derivative of \(\psi\) or replacement of the prime measure by a density is used.
+
+This also upgrades two actual affine sources. With \(y=\sigma_O\), \(q=\tau_O\), \(\sigma=\Phi'/\Phi\), and \(\tau=\tanh(u/2)\), put \(S_y=y/\rho\) and \(S_q=q/\rho\). Both are odd and smooth on each exterior half. The theta derivative estimates give \(|S_y|+|S_y'|\le C_R e^{B|u|}\) for some fixed \(B\), while \(S_q\) and its derivative have the same type of bound directly. Hence
+\[
+ \boxed{\qquad S_y,S_q\in D(K).\qquad}
+\tag{6a}
+\]
+The existing [prime-profile full-form theorem](theta-prime-profile-full-form-domain.md) needed only their membership in \(V_K\). Equation (6a) does not upgrade the prime profile \(w_p\), the crossing source \(S_f\), or the affine optimizer \(v_U\) to \(D(K)\).
 
 ## The complete Suzuki derivative and graph-norm cutoff limit
 
