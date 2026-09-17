@@ -13,7 +13,7 @@ Q_s=\sum_{\substack{m,h\ge2\\m+h=s}}\Lambda(m)e_h
 \tag{1}
 $$
 
-Use Bellotti's [Vinogradov--Korobov zero-free constant and prime-number-theorem bound](https://arxiv.org/html/2508.02041):
+Use Bellotti's [independent Vinogradov--Korobov zero-free-region theorem](https://arxiv.org/abs/2306.10680):
 
 $$
 \Phi(x)=\frac{(\log x)^{3/5}}{(\log\log x)^{1/5}},\quad
@@ -23,7 +23,7 @@ d=\left(\frac{5^6A_0^3}{2^2 3^4}\right)^{1/5}
 \tag{2}
 $$
 
-so $|E(x)|\ll x e^{-d\Phi(x)}$. Put
+Johnston's [PNT transfer theorem](https://arxiv.org/html/2411.13791) then gives $|E(x)|\ll_\delta x e^{-(d-\delta)\Phi(x)}$ for every fixed $\delta>0$. Put
 
 $$c_2=2^{2/5}d=0.280499938\ldots,
 \qquad \kappa_0=2d-c_2=0.144658465\ldots.
@@ -36,7 +36,7 @@ $$
 \left|\sum_{X<s\le X+H}Q_s\right|
 \ll_\varepsilon
 HX\exp[-(c_2-\varepsilon)\Phi(X)]
-+X^2\exp[-2d\Phi(X)].}
++X^2\exp[-(2d-\varepsilon)\Phi(X)].}
 \tag{4}
 $$
 
@@ -54,7 +54,7 @@ Thus sufficiently long, moving signed intervals gain the exponent $c_2>d$ over d
 
 ## A two-power zero sum
 
-Bellotti's zero-free region gives $\beta\le1-A_0u(|\gamma|)$ for large ordinates, where $u(T)=(\log T)^{-2/3}(\log\log T)^{-1/3}$. Its Corollary 1.4 gives $N(1-Au(T),T)\ll_A1$ for fixed $A>A_0$. For nontrivial zeros $\rho=\beta+i\gamma$, counted with multiplicity, these imply
+The zero-free region gives $\beta\le1-A_0u(|\gamma|)$ for large ordinates, where $u(T)=(\log T)^{-2/3}(\log\log T)^{-1/3}$. We combine it with the classical uniform Ingham estimate $N(\sigma,T)\ll T^{3(1-\sigma)/(2-\sigma)}(\log T)^5$, independently documented by [Chourasiya and Simonič](https://arxiv.org/html/2507.15184). For nontrivial zeros $\rho=\beta+i\gamma$, counted with multiplicity, these imply
 
 $$
 Z_2(x):=\sum_\rho\frac{x^{\beta-1}}{|\rho|^2}
@@ -62,7 +62,7 @@ Z_2(x):=\sum_\rho\frac{x^{\beta-1}}{|\rho|^2}
 \tag{6}
 $$
 
-Indeed, split a dyadic block $T\le|\gamma|<2T$ at $\beta=1-2A_0u(2T)$. The $O(1)$ zeros above that line contribute $O(x^{-A_0u(2T)}/T^2)$; the $O(T\log T)$ remaining zeros contribute $O((\log T)x^{-2A_0u(2T)}/T)$. The optimizer for a term $x^{-Au(T)}/T^k$ has exponent constant $(A/A_0)^{3/5}k^{2/5}d$. The two constants are $2^{2/5}d=c_2$ and $2^{3/5}d=0.322209818\ldots$, respectively. Summing dyadic blocks costs only an arbitrarily small $\varepsilon\Phi(x)$ in the exponent; the high tail is geometric and finitely many low zeros contribute a power saving. This proves (6).
+Indeed, split a dyadic block $T\le|\gamma|<2T$ at $\beta=1-2A_0u(2T)$. Ingham bounds the number above that line by $M(T)\ll T^{6A_0u(2T)/(1+2A_0u(2T))}(\log(2T))^5$; those zeros contribute $O(M(T)x^{-A_0u(2T)}/T^2)$. The $O(T\log T)$ remaining zeros contribute $O((\log T)x^{-2A_0u(2T)}/T)$. The optimizer for a term $x^{-Au(T)}/T^k$ has exponent constant $(A/A_0)^{3/5}k^{2/5}d$. The two constants are $2^{2/5}d=c_2$ and $2^{3/5}d=0.322209818\ldots$, respectively. Up to height $\exp(C\Phi(x))$, $\log M(T)=o(\Phi(x))$ uniformly, so the dyadic count and $M(T)$ cost only an arbitrarily small $\varepsilon\Phi(x)$; above that height the trivial zero count gives a geometric tail. Finitely many low zeros contribute a power saving. This proves (6).
 
 ## The signed prefix and the exact moving endpoint
 
@@ -104,7 +104,7 @@ L_{Y+1}-L_Y
 \tag{10}
 $$
 
-For $X\le Y\le2X$, (8) bounds $B(Y-1)$ by $O_\varepsilon(Xe^{-(c_2-\varepsilon)\Phi(X)})$. Bellotti's bound on $e_{Y-1}$ is smaller than this quantity. Summing (10) for $Y=X,\ldots,X+H-1$ gives
+For $X\le Y\le2X$, (8) bounds $B(Y-1)$ by $O_\varepsilon(Xe^{-(c_2-\varepsilon)\Phi(X)})$. Johnston's PNT bound on $e_{Y-1}$ is smaller than this quantity. Summing (10) for $Y=X,\ldots,X+H-1$ gives
 
 $$
 |L_{X+H}-L_X|\ll_\varepsilon
@@ -112,11 +112,11 @@ HXe^{-(c_2-\varepsilon)\Phi(X)}.
 \tag{11}
 $$
 
-The quadratic remainder satisfies $|V_Y|\ll Y^2e^{-2d\Phi(Y)}$ by splitting its sum at $h=Y/2$ and using Bellotti's bound on both $E(h)$ and $E(Y-h)$; the slow variation of $e^{-d\Phi}$ controls the two resulting partial sums. This is proved in the [global cumulative note](actual-prime-error-convolution-global-cesaro-gain.md#exact-convolution-split-and-its-quadratic-remainder). Consequently, for $X\le Y\le2X$,
+The quadratic remainder satisfies $|V_Y|\ll_\delta Y^2e^{-2(d-\delta)\Phi(Y)}$ by splitting its sum at $h=Y/2$ and using Johnston's bound on both $E(h)$ and $E(Y-h)$; the slow variation of $e^{-(d-\delta)\Phi}$ controls the two resulting partial sums. This is proved in the [global cumulative note](actual-prime-error-convolution-global-cesaro-gain.md#exact-convolution-split-and-its-quadratic-remainder). Choose $\delta=\varepsilon/2$. Consequently, for $X\le Y\le2X$,
 
 $$
-|V_{X+H}-V_X|\ll X^2e^{-2d\Phi(X)}.
+|V_{X+H}-V_X|\ll_\varepsilon X^2e^{-(2d-\varepsilon)\Phi(X)}.
 \tag{12}
 $$
 
-Equations (9), (11), and (12) prove (4). If $H\ge Xe^{-\kappa_0\Phi(X)}$, then $X^2e^{-2d\Phi(X)}\le HXe^{-c_2\Phi(X)}$, which proves (5). All constants implicit in the asymptotic bounds can absorb the finite initial range.
+Equations (9), (11), and (12) prove (4). If $H\ge Xe^{-\kappa_0\Phi(X)}$, then $X^2e^{-(2d-\varepsilon)\Phi(X)}\le HXe^{-(c_2-\varepsilon)\Phi(X)}$, which proves (5). All constants implicit in the asymptotic bounds can absorb the finite initial range. The proof does not use the near-edge zero-density claim or sharp $\delta=0$ PNT estimate of Bellotti's later 2025 preprint.
