@@ -77,6 +77,16 @@ term \(a_\omega y^{1+\omega}/(1+\omega)\) in Suzuki's exact
 [discrepancy representation](suzuki-hankel-exponential-boundary-layer.md).
 It is not an invented Goldbach correction.
 
+[SuzukiPoleNormalizer.lean](BuildingBlocks/SuzukiPoleNormalizer.lean)
+formalizes the actual analytic filling
+\(2\omega/U(1+2\omega)\), where \(U(s)=(s-1)\zeta(s)\) and
+\(U(1)=1\). It proves that the filling equals
+\(1/\zeta(1+2\omega)\) on the positive real half-line, that its
+real restriction has derivative \(2\) at zero, and that the finite
+pole-normalized coefficient has derivative \(2(\Lambda(n)-1)\)
+for every positive integer, including \(n=1\). These are compiled
+theorems using the actual mathlib zeta and von Mangoldt functions.
+
 Let \(C_\omega(N)=\sum_{a+b=N}d_\omega(a)d_\omega(b)\). Its second
 variation is
 \[
@@ -86,6 +96,16 @@ variation is
 The finite sum includes both orientations, every prime power, and
 the terms with \(a=1\) or \(b=1\). This is exactly the signed centered
 Goldbach coefficient of the [heat-energy identity](centered-goldbach-heat-lyapunov.md).
+The same Lean module proves its precise quadratic-coefficient version,
+with the repository's existing `shiftedGoldbach` definition:
+\[
+ \lim_{\omega\to0}\frac{C_\omega(k+2)}{\omega^2}
+ =4\,c_{k+2}.                                           \tag{7a}
+\]
+Thus the finite centered bridge does not rest on a formal second
+derivative of the zeta normalizer. The classical second derivative in
+(7) follows from its analytic filling; that last analytic calculus
+step has not yet been formalized in Lean.
 
 For every fixed \(t>0\), exponential damping permits termwise
 differentiation of
@@ -111,9 +131,9 @@ not upper-bound its centered critical energy. The missing estimate is
 still the RH-equivalent scale comparison for \(D(t)^2\), or an
 independent one-sided bound for the completed Suzuki variation.
 
-The Lean theorem currently proves (4) and \(c_0=\delta_1\) with only
-standard logical axioms. Equations (3) and (5)--(8), including the
-analytic pole-normalizer derivative and infinite heat exchange, are
-written proofs awaiting separate formalization. They use the already
-compiled finite coefficient and centered Goldbach identities, not
-an assumption that Goldbach or RH holds.
+The finite seed identity, raw additive variation, actual pole-normalizer
+derivative, centered first variation, and quadratic limit (7a) compile
+with only standard logical axioms. The uncentered endpoint expansion
+(3), classical second-derivative wording in (7), and infinite heat
+exchange (8) remain written proofs awaiting separate formalization.
+None assumes Goldbach or RH.
