@@ -131,12 +131,12 @@ uniformly by \(T^\delta\) at large height for any fixed \(\delta>0\);
 letting \(\delta\) be small absorbs its optimizer loss into
 \(\varepsilon\). Equations (5)–(6) prove (2).
 
-## The remaining actual-prime term
+## The centered actual-prime term
 
 The exact remainder \(V_s\) in (1) is a shifted signed correlation
 of the centered birth \(\Lambda(m)-1\) with the complete prefix
-error. The currently available absolute estimates do not inherit
-the linear term's improved exponent. [Johnston's bound](https://arxiv.org/abs/2411.13791)
+error. Absolute estimates do not inherit the linear term's improved
+exponent. [Johnston's bound](https://arxiv.org/abs/2411.13791)
 gives \(|e_y|\ll_\eta e^{-(d-\eta)\Phi(y)}\) for every
 \(\eta>0\). Slow variation then gives
 \(\sum_{y\le s}|e_y|^2\ll_\eta s e^{-2(d-\eta)\Phi(s)}\),
@@ -149,13 +149,16 @@ Cauchy gives only
 \]
 
 Thus (2) alone does **not** improve the bound for \(Q_s\). The
-[companion written proof](actual-prime-error-convolution-pointwise-vk-gain.md)
-now supplies the required signed estimate
-\(|V_s|\ll_\varepsilon s\exp[-(c_*-\varepsilon)\Phi(s)]\), where
-\(c_*=0.2714144067\ldots>d\), by a fixed truncated zero cutoff and
-summation by parts on \(\Lambda(m)-1\). This is below the linear ceiling
-\(2^{2/5}d\) but improves Johnston's direct PNT transfer for the full
-\(Q_s\). Equation (7) alone does not supply that gain. No RH claim follows.
+[short-interval proof](goldbach-cofactor-short-interval-vk-gain.md)
+now gives
+\(|V_s|\ll_\varepsilon s\exp[-(d+J(d)-\varepsilon)\Phi(s)]\),
+where \(d+J(d)=0.281822649\ldots>2^{2/5}d\). It uses centered
+prime sums on adaptive intervals and finite Abel summation.
+Consequently the full \(Q_s\) obeys the exponent in (2).
+Equation (7) alone does not supply that gain. The constant
+\(2^{2/5}d\) describes the separately bounded linear term here;
+cancellation between the two terms could give a stronger bound for
+\(Q_s\). No RH claim follows.
 
 The finite split in (1) is Lean-compiled with standard axioms.
 The explicit formula, zero-density optimization and analytic bound
