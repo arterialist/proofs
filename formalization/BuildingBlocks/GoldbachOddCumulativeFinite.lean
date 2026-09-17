@@ -7,7 +7,7 @@ import Mathlib.Tactic
 
 namespace BuildingBlocks.GoldbachOddCumulativeFinite
 
-open Finset Real
+open Finset Real Classical
 open BuildingBlocks.GoldbachOddPowerBoundFinite
 open BuildingBlocks.CenteredGoldbachHeatScaleIncrementFinite
 
@@ -236,10 +236,171 @@ theorem oddResidual_eq_error_convolution (X : ℕ) :
           unfold integerPrimeError
           ring
 
+/-- One integer clock step changes the complete Chebyshev error by the
+actual von Mangoldt birth minus one. -/
+theorem integerPrimeError_succ (N : ℕ) :
+    integerPrimeError (N + 1) - integerPrimeError N = Λ (N + 1) - 1 := by
+  unfold integerPrimeError
+  rw [BuildingBlocks.CoarsePrimitive.psi_succ]
+  push_cast
+  ring
+
+/-- The new power-of-two endpoint contributes zero, so the centered
+odd channel has an exact one-step source law at every integer. -/
+theorem oddResidual_succ (X : ℕ) :
+    oddResidual (X + 1) - oddResidual X =
+      2 * Real.log 2 *
+        ∑ k ∈ Icc 1 (Nat.log 2 X), (Λ (X + 1 - 2 ^ k) - 1) := by
+  let K := Nat.log 2 X
+  let K' := Nat.log 2 (X + 1)
+  have hsubset : Icc 1 K ⊆ Icc 1 K' := by
+    intro k hk
+    exact mem_Icc.mpr ⟨(mem_Icc.mp hk).1,
+      (mem_Icc.mp hk).2.trans (Nat.log_mono_right (Nat.le_succ X))⟩
+  have hnew :
+      (∑ k ∈ Icc 1 K', integerPrimeError (X + 1 - 2 ^ k)) =
+        ∑ k ∈ Icc 1 K, integerPrimeError (X + 1 - 2 ^ k) := by
+    symm
+    apply Finset.sum_subset hsubset
+    intro k hk' hk
+    have hK : K < k := by
+      have hk1 := (mem_Icc.mp hk').1
+      have hnot : ¬ k ≤ K := by
+        intro h
+        exact hk (mem_Icc.mpr ⟨hk1, h⟩)
+      omega
+    have hX : X < 2 ^ k := by
+      by_contra h
+      have hpow : 2 ^ k ≤ X := Nat.le_of_not_gt h
+      have hkK := Nat.le_log_of_pow_le (by omega : 1 < 2) hpow
+      exact Nat.not_le.mpr hK hkK
+    have hX' : 2 ^ k ≤ X + 1 :=
+      (Nat.le_log_iff_pow_le (by omega : 1 < 2)
+        (by omega : X + 1 ≠ 0)).1 (mem_Icc.mp hk').2
+    have hzero : X + 1 - 2 ^ k = 0 := by omega
+    simp [hzero, integerPrimeError, BuildingBlocks.CoarsePrimitive.psi]
+  rw [oddResidual_eq_error_convolution (X + 1), oddResidual_eq_error_convolution X]
+  change 2 * Real.log 2 * (∑ k ∈ Icc 1 K', integerPrimeError (X + 1 - 2 ^ k)) -
+      2 * Real.log 2 * (∑ k ∈ Icc 1 K, integerPrimeError (X - 2 ^ k)) = _
+  rw [hnew]
+  simp only [← mul_sub, ← Finset.sum_sub_distrib]
+  congr 1
+  apply Finset.sum_congr rfl
+  intro k hk
+  have hX : X ≠ 0 := by
+    intro h
+    subst X
+    simp [K] at hk
+  have hpow : 2 ^ k ≤ X :=
+    (Nat.le_log_iff_pow_le (by omega : 1 < 2)
+      hX).1 (mem_Icc.mp hk).2
+  have hstep : X + 1 - 2 ^ k = (X - 2 ^ k) + 1 := by omega
+  rw [hstep, integerPrimeError_succ, ← hstep]
+
+/-- Positivity of every actual von Mangoldt birth bounds the downward
+change in one integer step by the number of active binary shifts. -/
+theorem oddResidual_succ_lower (X : ℕ) :
+    -(2 * Real.log 2) * (Nat.log 2 X : ℝ) ≤
+      oddResidual (X + 1) - oddResidual X := by
+  rw [oddResidual_succ]
+  have hsum :
+      -(Nat.log 2 X : ℝ) ≤
+        ∑ k ∈ Icc 1 (Nat.log 2 X), (Λ (X + 1 - 2 ^ k) - 1) := by
+    calc
+      -(Nat.log 2 X : ℝ) =
+          ∑ k ∈ Icc 1 (Nat.log 2 X), (-1 : ℝ) := by
+            simp [nsmul_eq_mul]
+      _ ≤ _ := by
+            apply Finset.sum_le_sum
+            intro k hk
+            have hΛ : 0 ≤ Λ (X + 1 - 2 ^ k) :=
+              ArithmeticFunction.vonMangoldt_nonneg
+            linarith
+  have hfactor : 0 ≤ 2 * Real.log 2 := by positivity
+  nlinarith [mul_le_mul_of_nonneg_left hsum hfactor]
+
+/-- Ordered binary-power pairs that meet at the even total `X+1`.
+The count includes both orientations when the powers differ. -/
+def binaryPairCount (X : ℕ) : ℝ :=
+  ∑ k ∈ Icc 1 (Nat.log 2 X),
+    if ∃ j : ℕ, 1 ≤ j ∧ X + 1 - 2 ^ k = 2 ^ j then (1 : ℝ) else 0
+
+private theorem evenWeight_eq_indicator {n : ℕ} (he : Even n) :
+    Λ n =
+      if ∃ j : ℕ, 1 ≤ j ∧ n = 2 ^ j then Real.log 2 else 0 := by
+  by_cases h : ∃ j : ℕ, 1 ≤ j ∧ n = 2 ^ j
+  · obtain ⟨j, hj, rfl⟩ := h
+    have h' : ∃ i : ℕ, 1 ≤ i ∧ 2 ^ j = 2 ^ i := ⟨j, hj, rfl⟩
+    rw [if_pos h']
+    change ArithmeticFunction.vonMangoldt (2 ^ j) = Real.log 2
+    rw [ArithmeticFunction.vonMangoldt_apply_pow (by omega),
+      ArithmeticFunction.vonMangoldt_apply_prime Nat.prime_two]
+    norm_num
+  · have hz : Λ n = 0 := by
+      by_contra hn
+      obtain ⟨j, hj, hpow, _⟩ :=
+        BuildingBlocks.GoldbachOddCentering.even_nonzero_vonMangoldt he hn
+      exact h ⟨j, hj, hpow⟩
+    simp [h, hz]
+
+/-- On an odd-to-even clock step, the prime-dependent contribution
+collapses to the explicit number of two-power pairings. -/
+theorem oddResidual_succ_odd (X : ℕ) (hodd : Odd X) :
+    oddResidual (X + 1) - oddResidual X =
+      2 * Real.log 2 *
+        (Real.log 2 * binaryPairCount X - (Nat.log 2 X : ℝ)) := by
+  rw [oddResidual_succ]
+  have hterm (k : ℕ) (hk : k ∈ Icc 1 (Nat.log 2 X)) :
+      Λ (X + 1 - 2 ^ k) =
+        if ∃ j : ℕ, 1 ≤ j ∧ X + 1 - 2 ^ k = 2 ^ j then Real.log 2 else 0 := by
+    have hpow : 2 ^ k ≤ X := by
+      have hX : X ≠ 0 := by
+        intro h
+        subst X
+        simp at hk
+      exact (Nat.le_log_iff_pow_le (by omega : 1 < 2) hX).1
+        (mem_Icc.mp hk).2
+    have hkpos : 1 ≤ k := (mem_Icc.mp hk).1
+    have hepow : Even (2 ^ k) := even_two.pow_of_ne_zero (by omega)
+    obtain ⟨a, ha⟩ := hodd
+    obtain ⟨b, hb⟩ := hepow
+    have he : Even (X + 1 - 2 ^ k) := by
+      refine ⟨a + 1 - b, ?_⟩
+      omega
+    exact evenWeight_eq_indicator he
+  unfold binaryPairCount
+  have hweighted :
+      (∑ k ∈ Icc 1 (Nat.log 2 X),
+          if ∃ j : ℕ, 1 ≤ j ∧ X + 1 - 2 ^ k = 2 ^ j then Real.log 2 else 0) =
+        Real.log 2 *
+          ∑ k ∈ Icc 1 (Nat.log 2 X),
+            if ∃ j : ℕ, 1 ≤ j ∧ X + 1 - 2 ^ k = 2 ^ j then (1 : ℝ) else 0 := by
+    rw [Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro k hk
+    split_ifs <;> ring
+  calc
+    2 * Real.log 2 *
+        (∑ k ∈ Icc 1 (Nat.log 2 X), (Λ (X + 1 - 2 ^ k) - 1)) =
+      2 * Real.log 2 *
+        (∑ k ∈ Icc 1 (Nat.log 2 X),
+          ((if ∃ j : ℕ, 1 ≤ j ∧ X + 1 - 2 ^ k = 2 ^ j then Real.log 2 else 0) - 1)) := by
+            congr 1
+            apply Finset.sum_congr rfl
+            intro k hk
+            rw [hterm k hk]
+    _ = _ := by
+          simp only [Finset.sum_sub_distrib]
+          rw [hweighted]
+          simp [nsmul_eq_mul]
+
 #print axioms cumulativeOdd_eq_power_sum
 #print axioms cumulativeOdd_eq_complete
 #print axioms oddPartner_eq_psi_sub_pow2
 #print axioms oddResidual_eq_error_convolution
+#print axioms oddResidual_succ
+#print axioms oddResidual_succ_lower
+#print axioms oddResidual_succ_odd
 
 end
 end BuildingBlocks.GoldbachOddCumulativeFinite

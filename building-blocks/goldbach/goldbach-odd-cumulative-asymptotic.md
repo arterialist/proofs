@@ -127,6 +127,37 @@ exactly
  =2\log2\sum_{2^k\le N,\ k\ge1}E(N-2^k).} \tag{8}
 \]
 
+The ordinary integer clock also gives an exact local law. Since
+\(E(m+1)-E(m)=\Lambda(m+1)-1\), and a newly admitted power
+\(2^k=N+1\) contributes \(E(0)=0\), equation (8) implies, for every
+integer \(N\ge0\),
+\[
+\boxed{\Delta_{\rm odd}(N+1)-\Delta_{\rm odd}(N)
+=2\log2\sum_{2^k\le N,\ k\ge1}
+  \bigl(\Lambda(N+1-2^k)-1\bigr).} \tag{8a}
+\]
+In particular, nonnegativity of every von Mangoldt weight yields the
+unconditional one-sided step bound
+\[
+\Delta_{\rm odd}(N+1)-\Delta_{\rm odd}(N)
+\ge-2(\log2)J(N). \tag{8b}
+\]
+If \(N\) is odd, then every \(N+1-2^k\) in (8a) is even. Define
+\(C_2(M)\) as the number of **ordered** pairs
+\((k,j)\in\mathbb N_{\ge1}^2\) satisfying \(2^k+2^j=M\).
+The complete even-prime-power support gives the stronger exact identity
+\[
+\boxed{\Delta_{\rm odd}(N+1)-\Delta_{\rm odd}(N)
+=2\log2\left[(\log2)C_2(N+1)
+-J(N)\right],\qquad N\text{ odd}.} \tag{8c}
+\]
+Binary expansion gives \(C_2(M)\in\{0,1,2\}\): it is one when
+\(M=2^r\) with \(r\ge2\), two when \(M\) has exactly two nonzero
+binary digits (both at positions at least one), and zero otherwise.
+Thus the odd-to-even residual step is completely determined by binary
+arithmetic; the odd prime-power information enters at even-to-odd
+steps. This local constraint alone gives no RH-scale estimate.
+
 For \(0<z<1\), all following series converge absolutely. Put
 \(A(z)=\sum_{k\ge1}z^{2^k}>0\),
 \(P(z)=\sum_{n\ge1}\Lambda(n)z^n\), and
@@ -218,6 +249,22 @@ Thus the precisely centered odd cumulative channel changes sign
 arbitrarily far out. The constant is a heat-residue transfer bound;
 no priority or optimality claim is made.
 
+The local bound (8b) makes those sign changes persist over
+square-root-length intervals. Let
+\(D_\rho=4A_\rho/\sqrt\pi\). Equation (11) supplies arbitrarily
+large \(N\) with
+\(\Delta_{\rm odd}(N)\ge(D_\rho/2)\sqrt N\log N\).
+For \(0\le h\le(D_\rho/16)\sqrt N\), summing (8b) over the
+following \(h\) steps loses at most
+\(2h\log(2N)\le(D_\rho/4)\sqrt N\log N\) for large \(N\).
+Hence \(\Delta_{\rm odd}\) remains positive throughout that interval.
+Applying the same bound backward from the arbitrarily deep negative
+values in (11) gives negative intervals
+\([N-(D_\rho/16)\sqrt N,N]\). In particular, both signs occupy
+arbitrarily distant blocks of length proportional to \(\sqrt N\).
+This is an unconditional mesoscopic constraint on the actual odd
+Goldbach channel, not a bound on its global amplitude.
+
 The odd channel in (8) consists of a power of two paired with an odd
 prime power. Ordinary binary Goldbach existence concerns even totals
 represented by two primes and supplies none of the one-sided
@@ -234,7 +281,10 @@ coefficients agree with the complete ordered Goldbach coefficients
 through the cumulative horizon. It also proves (2), using the
 [finite even-power sum](../../formalization/BuildingBlocks/GoldbachOddPowerBoundFinite.lean),
 and the finite convolution (8), with the elementary baseline expressed
-as a finite sum. These public theorems use only Lean's standard logical
-axioms. The closed form for the baseline in (7), the quantitative PNT,
-generating-series identity, Landau criterion, and residue argument
-remain written proofs and are not yet Lean theorems.
+as a finite sum. It also formalizes (8a)--(8c), including the binary
+pair count and the one-sided step bound (8b). These public theorems use
+only Lean's standard logical axioms. The closed form for the baseline
+in (7), the elementary classification \(C_2(M)\in\{0,1,2\}\), the
+quantitative PNT, generating-series identity, Landau criterion,
+residue argument, and square-root-length sign blocks remain written
+proofs and are not yet Lean theorems.
