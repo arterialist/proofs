@@ -106,6 +106,123 @@ odd-total prime-power channel: the left side is positive for all
 sufficiently large \(N\). Its linear size is still below the
 critical \(N^{3/2}\) Goldbach error.
 
+## The centered odd channel detects RH
+
+The elementary term removed in (2) matters for an exact spectral
+transfer. For \(N\ge2\), define
+
+\[
+B_{\rm odd}(N)=2\log2\left[
+ KN-2^{K+1}+2-(\log2)\sum_{k=1}^{K}J(N-2^k)\right],
+\qquad
+\Delta_{\rm odd}(N)=S_{\rm odd}(N)-B_{\rm odd}(N).
+\tag{7}
+\]
+
+Set \(\Delta_{\rm odd}(0)=\Delta_{\rm odd}(1)=0\). Equation (3) says
+exactly
+
+\[
+\boxed{\Delta_{\rm odd}(N)
+ =2\log2\sum_{2^k\le N,\ k\ge1}E(N-2^k).} \tag{8}
+\]
+
+For \(0<z<1\), all following series converge absolutely. Put
+\(A(z)=\sum_{k\ge1}z^{2^k}>0\),
+\(P(z)=\sum_{n\ge1}\Lambda(n)z^n\), and
+\(U(z)=z/(1-z)\). Summing (8) and using
+\(\sum_{n\ge0}\psi(n)z^n=P(z)/(1-z)\) gives the exact identity
+
+\[
+\boxed{
+P(z)-U(z)=
+\frac{1-z}{2(\log2)A(z)}
+ \sum_{N\ge0}\Delta_{\rm odd}(N)z^N.} \tag{9}
+\]
+
+This is a signed, source-faithful transfer from the **odd** Goldbach
+channel to the complete prime heat. It is valid only on the positive
+real heat axis as used below; no assertion about zero-free complex
+values of the lacunary multiplier \(A(z)\) is needed.
+
+Either one of the following one-sided assertions is equivalent to RH:
+
+\[
+\begin{array}{ll}
+\text{lower:}&\Delta_{\rm odd}(N)\ge
+   -C_\varepsilon N^{1/2+\varepsilon},\\
+\text{upper:}&\Delta_{\rm odd}(N)\le
+    C_\varepsilon N^{1/2+\varepsilon},
+\end{array}
+\quad
+\text{for every }\varepsilon>0\text{ and all sufficiently large }N.
+\tag{10}
+\]
+
+The two lines are separate criteria. To prove the converse for either,
+fix \(0<\varepsilon<1/2\) and put \(z=e^{-t}\). The lower line of
+(10) gives
+\(\sum_N\Delta_{\rm odd}(N)e^{-Nt}
+ \ge-C't^{-3/2-\varepsilon}\), after absorbing the finite head;
+the upper line gives the reversed inequality with \(+C't^{-3/2-\varepsilon}\).
+Since \(A(e^{-t})\ge e^{-2t}\ge e^{-2}\) for \(0<t\le1\), equation (9)
+gives the corresponding lower or upper bound
+\(\pm(P(e^{-t})-U(e^{-t}))\le C''t^{-1/2-\varepsilon}\),
+with the sign chosen to match the line of (10).
+The difference between \(U(e^{-t})=1/(e^t-1)\) and the centered heat
+baseline \((1+t^{-1})e^{-t}\) is bounded near zero. Therefore the
+actual normalized heat response has the corresponding one-sided
+bound \(b(v)=O_\pm(e^{\varepsilon v})\).
+The [one-sided heat/Landau argument](goldbach-one-sided-cumulative-rh-criterion.md)
+then excludes every zero with real part greater than
+\(1/2+\varepsilon\); allowing every \(\varepsilon>0\) proves RH.
+Conversely, RH gives \(E(n)=O(n^{1/2}\log^2(2n))\), and the at most
+\(\log_2N\) terms in (8) give
+\(\Delta_{\rm odd}(N)=O(N^{1/2}\log^3(2N))\). Thus RH gives both lines
+of (10). No one-sided bound in (10) is proved unconditionally here.
+
+There is, however, an unconditional two-sided oscillation at the exact
+square-root logarithmic scale. For any known critical-line zero
+\(\rho=1/2+i\gamma\), let
+\(A_\rho=m_\rho|\Gamma(\rho)|>0\). The
+[heat residue argument](goldbach-one-sided-cumulative-rh-criterion.md#oscillation-at-the-critical-endpoint)
+proves \(\limsup b(v)\ge A_\rho\) and
+\(\liminf b(v)\le-A_\rho\) without assuming RH. Elementary dyadic
+counting gives
+\[
+A(e^{-t})=\frac{\log(1/t)}{\log2}+O(1),
+\]
+because the deficit from \(1\) over
+\(k\le\lfloor\log_2(1/t)\rfloor\) is at most
+\(t\sum 2^k<2\), while the remaining tail is bounded by
+\(\sum_{j\ge1}e^{-2^{j-1}}\). An integral comparison also gives
+\[
+\sum_{N\ge2}N^{1/2}\log N\,e^{-Nt}
+ \sim\Gamma(3/2)t^{-3/2}\log(1/t).
+\]
+If eventually
+\(\Delta_{\rm odd}(N)\le c\sqrt N\log N\), equation (9) therefore
+gives \(\limsup b(v)\le c\Gamma(3/2)/2\). The lower-bound case is
+identical. Letting \(c\) approach the respective limit superior or
+inferior proves
+\[
+\boxed{
+\limsup_{N\to\infty}
+\frac{\Delta_{\rm odd}(N)}{\sqrt N\log N}
+\ge\frac{4A_\rho}{\sqrt\pi}>0,\qquad
+\liminf_{N\to\infty}
+\frac{\Delta_{\rm odd}(N)}{\sqrt N\log N}
+\le-\frac{4A_\rho}{\sqrt\pi}<0.} \tag{11}
+\]
+Thus the precisely centered odd cumulative channel changes sign
+arbitrarily far out. The constant is a heat-residue transfer bound;
+no priority or optimality claim is made.
+
+The odd channel in (8) consists of a power of two paired with an odd
+prime power. Ordinary binary Goldbach existence concerns even totals
+represented by two primes and supplies none of the one-sided
+estimates in (10).
+
 Equation (4) is lower order than the \(X^{3/2+\varepsilon}\) error in
 the [one-sided cumulative Goldbach criterion](goldbach-one-sided-cumulative-rh-criterion.md).
 It sharpens the parity accounting but does not supply that criterion's
@@ -115,5 +232,6 @@ unproved one-sided estimate.
 formalizes (1) with the exact finite source cutoff and proves that its
 coefficients agree with the complete ordered Goldbach coefficients
 through the cumulative horizon. Its public theorems use only Lean's
-standard logical axioms. Equations (2)--(6), including the PNT
-application, remain written proofs and are not yet Lean theorems.
+standard logical axioms. Equations (2)--(11), including the PNT,
+generating-series, Landau, and residue applications, remain written
+proofs and are not yet Lean theorems.
