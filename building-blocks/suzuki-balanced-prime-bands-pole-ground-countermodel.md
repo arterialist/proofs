@@ -1,6 +1,6 @@
 # Balanced prime bands preserve the pole and ground limits
 
-RH Agent3, 2026-09-17. **Status:** written countermodel to two proposed scalar repairs of the [sparse downweight test](suzuki-pole-normalized-sparse-prime-countermodel.md). It keeps the actual prime-power locations, a positive weight shared by all powers of each prime, a stretched-exponential PNT error, a positive factorial ground with the **actual limit** \(1+\gamma\), and an Euler product with the **actual right pole residue and constant term**. Its completed first Suzuki variation still has negative excursions larger than every \(x^\delta\), \(\delta<1/2\). The signed weights do not preserve the stronger order \(F_*\ge F\) from the downweight model. No assertion about zeros of \(\zeta\) follows.
+RH Agent3, 2026-09-17; centered-heat extension independently derived by RH Proof. **Status:** written countermodel to two proposed scalar repairs of the [sparse downweight test](suzuki-pole-normalized-sparse-prime-countermodel.md). It keeps the actual prime-power locations, a positive weight shared by all powers of each prime, a stretched-exponential PNT error, a positive factorial ground with the **actual limit** \(1+\gamma\), and an Euler product with the **actual right pole residue and constant term**. Its completed first Suzuki variation still has negative excursions larger than every \(x^\delta\), \(\delta<1/2\), while its centered Goldbach heat energy has logarithmic limsup exponent \(1\). The signed weights do not preserve the stronger order \(F_*\ge F\) from the downweight model. No assertion about zeros of \(\zeta\) follows.
 
 ## Two exact moments and one negative clock moment
 
@@ -66,15 +66,16 @@ Both cancellations in (4) are exact at each chosen \(X\); only the sign evaluati
 
 ## Sparse insertion and completed Suzuki variation
 
-Choose integer \(X_j\to\infty\) with \(X_{j+1}>16X_j\),
+Choose integer \(X_j\to\infty\) with \(X_{j+1}\ge X_j^2>16X_j\),
 \(\log X_j\ge j^4\), and all \(X_j\) large enough for (3)-(5).
 Let \(a_0>0\) be small enough that the actual complete Chebyshev and first-Suzuki-variation errors are
 \[
  \psi(x)-x=O(xe^{-a_0\sqrt{\log x}}),\qquad
- r_1(x)=O(\sqrt x\,e^{-a_0\sqrt{\log x}})
+ r_1(x)=O(\sqrt x\,e^{-a_0\sqrt{\log x}}),\qquad
+ D(t)=O(t^{-1}e^{-a_0\sqrt{\log(1/t)}})
 \tag{6}
 \]
-at large nonintegral \(x\). Put
+at large nonintegral \(x\) and small positive \(t\), where \(D(t)=\sum_{n\ge1}(\Lambda(n)-1)e^{-nt}\). The heat estimate follows by Stieltjes integration of the complete Chebyshev error, after reducing \(a_0\) if necessary; the [earlier test](suzuki-pole-normalized-sparse-prime-countermodel.md#construction-and-the-completed-prime-clock) gives the endpoint calculation. Put
 \(\varepsilon_j=e^{-(a_0/2)\sqrt{\log X_j}}\).
 For \(p\in I_{jk}\), the \(k\)-th band at scale \(X_j\), set
 \[
@@ -175,6 +176,53 @@ Indeed the finite integral equals
  +\frac2{\sqrt R}\sum_{n\le R}d_n.
 \]
 The first and last terms vanish at infinity for a finite set of prime bases, while the middle sum converges. Equation (5) makes the left side of (15) positive for large \(X\), even after all proper powers are included. Hence \(\Delta F(x)<0\) somewhere. Matching the ground limit and retaining the order \(F_*\ge F\) would prevent this negative completed prime-clock perturbation. The construction keeps \(F_*>0\), not that stronger comparison.
+
+## Centered Goldbach heat despite both matched scalar limits
+
+The stronger band separation also makes the centered heat obstruction exact. Put
+\(D_*(t)=\sum_{n\ge1}(\Lambda_*(n)-1)e^{-nt}\) and
+\(\mathscr H_*(T)=1+\int_{e^{-T}}^1D_*(t)^2dt\). For any finite \(T\), the exponential Cauchy product gives the complete signed Goldbach expansion
+\[
+ \mathscr H_*(T)=1+\sum_{N\ge2}
+  \bigl[R_*(N)-2\psi_*(N-1)+(N-1)\bigr]
+  \frac{e^{-Ne^{-T}}-e^{-N}}N,                         \tag{16}
+\]
+absolutely convergently. This is the same finite-horizon normalization as the [actual centered heat criterion](centered-goldbach-heat-lyapunov.md), with every prime power and density endpoint retained.
+
+For \(c\in[1/32,1/16]\), set \(t=c/X_j\). The first-power contribution of the current three-band block to \(D_*(t)-D(t)\), divided by \(\varepsilon_jX_j\), converges uniformly to
+\[
+ C(c)=-\int_{1/8}^{1/4}e^{-cy}dy
+       +2\int_{1/4}^{1/2}e^{-cy}dy
+       -\int_{1/2}^{1}e^{-cy}dy.                         \tag{17}
+\]
+Indeed (4) gives the limiting weights and PNT gives the three weighted integrals. Here \(C(0)=-1/8\), while
+\(|C(c)-C(0)|\le(9/8)c\le9/128\), so \(C(c)\le-7/128\) throughout the interval. The current band's proper powers start at \((X_j/8)^2\) and have exponentially small heat weight at this time scale.
+
+Earlier blocks cannot cancel this negative main term. For a base \(p\ge2\) and \(t\ge(32X_j)^{-1}\),
+\(\sum_{r\ge1}e^{-p^rt}\ll1+\log X_j/\log p\): count the powers below \(X_j\), then bound the geometrically growing tail. Since \(X_i\le\sqrt{X_j}\) for \(i<j\), the absolute contribution of all earlier blocks is
+\[
+ O\!\left(\log X_j\sum_{i<j}\varepsilon_iX_i\right)
+ =O(\sqrt{X_j}\log X_j)
+ =o(\varepsilon_jX_j).                                  \tag{18}
+\]
+All future altered prime powers start beyond \(X_{j+1}/8\ge X_j^2/8\); their total is bounded by
+\(O(\sum_{n\ge X_j^2/8}(\log n)e^{-n/(32X_j)})
+=o(\varepsilon_jX_j)\). Finally (6) makes the actual \(D(t)\) itself \(o(\varepsilon_jX_j)\), uniformly for \(c\in[1/32,1/16]\). Therefore
+\[
+ D_*(c/X_j)\le-c_1\varepsilon_jX_j
+ \qquad(1/32\le c\le1/16)                            \tag{19}
+\]
+for a fixed \(c_1>0\) and all large \(j\).
+
+With \(T_j=\log(32X_j)\), this interval of length \((32X_j)^{-1}\) lies inside \([e^{-T_j},1]\), so
+\(\mathscr H_*(T_j)\gg\varepsilon_j^2X_j
+=X_j e^{-a_0\sqrt{\log X_j}}\). Conversely \(\lambda_p\le2\) gives
+\(|D_*(t)|=O(t^{-1})\) and \(\mathscr H_*(T)=O(e^T)\). Hence
+\[
+ \boxed{\displaystyle
+ \limsup_{T\to\infty}\frac{\log\mathscr H_*(T)}T=1.}   \tag{20}
+\]
+Thus even matching \(F_*(\infty)=1+\gamma\) and the first two right-hand pole coefficients does not turn the qualitative centered Goldbach square into an RH-scale energy bound. This conclusion concerns the deformed system; it is written analysis, not a Lean theorem or an RH result.
 
 It still violates the exact actual divisor identity
 \(\sum_{d\mid n}\Lambda(d)=\log n\), or equivalently the exact amplitudes
