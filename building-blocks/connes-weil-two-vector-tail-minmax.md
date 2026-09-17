@@ -341,6 +341,71 @@ absolutely convergent series yields (7) with
 The factor $\sqrt\lambda$ and the derivative in (11) matter.
 $L^2$ prolate concentration leakage by itself does not give (11).
 
+There is a weaker weighted $L^2$ criterion. For $P>1$ set
+$s_P=(P+1)/2$ and
+
+\[
+ \mathcal A_P(h)^2=
+ \int_\lambda^\infty(v/\lambda)^P
+ \left(|\widehat h(v)|^2
+       +|v\widehat h'(v)|^2\right)dv.                 \tag{H1}
+\]
+
+Write $g(u)=t(-a-u)$ for $u\ge0$ and
+$\mathcal T_P(g)^2=
+\int_0^\infty e^{Pu}(|g(u)|^2+|g'(u)|^2)du$.
+The dilation sum $Tf(v)=\sum_{n\ge1}f(nv)$ obeys
+
+\[
+ \|Tf\|_{L^2((v/\lambda)^Pdv)}
+ \le\zeta(s_P)\|f\|_{L^2((v/\lambda)^Pdv)},
+ \qquad
+ \mathcal T_P(g)^2\le
+       2\zeta(s_P)^2\mathcal A_P(h)^2.               \tag{H2}
+\]
+
+For the first inequality, change variables $w=nv$ in each
+summand: its norm is at most
+$n^{-(P+1)/2}\|f\|$. For the second, use
+$g(u)=\sqrt v\,T\widehat h(v)$ and
+$g'(u)=\sqrt v[(T\widehat h)(v)/2+
+T(v\widehat h')(v)]$, with $v=\lambda e^u$.
+
+The full source formula (6) now gives
+
+\[
+\begin{aligned}
+ |Q(t)|&\le C_P^{(2)}\mathcal T_P(g)^2
+       \le2C_P^{(2)}\zeta(s_P)^2\mathcal A_P(h)^2,\\
+ C_P^{(2)}={}&|m_0|
+  +\int_0^1r(s)(s+s^2)\,ds
+  +5\int_1^\infty r(s)\,ds\\
+ &+\frac{2}{\sqrt{P^2-1}}
+  +2\left(-\frac{\zeta'}{\zeta}\right)(s_P).
+\end{aligned}                                                    \tag{H3}
+\]
+
+To verify the archimedean term, for $0<s\le1$ the interior
+translation costs at most $s^2\|g'\|_2^2$, while the cutoff collar
+costs at most $s\|g\|_{H^1}^2$ by the one-dimensional Sobolev
+supremum bound. For $s\ge1$ the two costs total at most
+$5\|g\|_2^2$. Weighted Cauchy--Schwarz bounds the pole product by
+$2\mathcal T_P(g)^2/\sqrt{P^2-1}$. The prime correlation at
+$d=\log n$ is at most
+$e^{-Pd/2}\mathcal T_P(g)^2$, giving the displayed complete
+logarithmic derivative. The condition $P>1$ makes both the pole
+integral and prime series finite. The weight and derivative in
+(H1) remain to be established for the smoothed prolate vectors;
+unweighted concentration leakage is insufficient. For an
+individual raw zero-extended prolate $p_j$, the nonzero endpoint
+value produces the leading boundary term
+$[p_j(\lambda)e^{2\pi i\lambda v}
+-p_j(-\lambda)e^{-2\pi i\lambda v}]/(2\pi i v)$
+in its Fourier transform. This is an oscillatory $1/v$ tail, and
+$v\widehat p_j'(v)$ does not decay. Thus
+$\mathcal A_P(p_j)=\infty$ for $P>1$. Smoothing at
+$\pm\lambda$ is essential here, not a cosmetic domain change.
+
 ## Min--max consequence and remaining inputs
 
 Let $A_a$ be the self-adjoint compact-window Weil operator with
@@ -358,10 +423,16 @@ two-dimensional min--max principle give the unconditional bound
     C_B\frac{\epsilon_1^2+\epsilon_2^2}{g_a}.}          \tag{13}
 \]
 
+The weighted $L^2$ version is
+$E_1(a)\le
+2C_P^{(2)}\zeta(s_P)^2
+(\mathcal A_P(h_1)^2+\mathcal A_P(h_2)^2)/g_a$.
 By (G9), the denominator $g_a$ is already bounded below
 independently of $c$. Thus $\epsilon_i\le c^K e^{-c}$ for a fixed
 $K$ would imply $E_1(a)\le\operatorname{poly}(c)e^{-2c}$.
-That weighted Fourier-tail input remains unproved. The
+Alternatively, (H3) gives the same conclusion if
+$\mathcal A_P(h_i)\le\operatorname{poly}(c)e^{-c}$ for one fixed
+$P>1$. These weighted Fourier-tail inputs remain unproved. The
 $L^2$ prolate leakage and the oscillator convergence used for
 (G9) do not control the weighted supremum and derivative in
 (11). Endpoint smoothing must also preserve the proposed
