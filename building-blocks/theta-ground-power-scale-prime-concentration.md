@@ -98,3 +98,43 @@ For each fixed `B`, Cauchy–Schwarz in `ν` and the full theta envelope then bo
 Indeed `e^(2R)w/e^R=e^((1−β)R)→∞`. By evenness, half of this assertion is exactly (3). Finally, on `(R,T)` Cauchy–Schwarz gives `(∫_R^T g_R)²≤6w∫_R^T g_R²`. The weighted `B=0` tail is `o(m_R)`, so `(∫_R^Tg_R)=(1−o(1))∫_R^∞g_R`. This proves (4).
 
 This is a ground-specific geometric improvement from known positive prime counts. It neither supplies a relative signed prime quadrature estimate for `g_R` nor controls the full theta gap. The remaining factor between `e^(−βR)` and `R e^(−R)` is precisely where the present short-interval input stops.
+
+## The endpoint exponent `β=19/20`
+
+The quantitative constant in the same Baker–Harman–Pintz estimate also permits the endpoint exponent. This requires a fixed larger trial width; the preceding partition argument assumed a window much longer than `X^0.525`. Put
+
+`X=e^(2R)`, `w=8X^(−19/40)=8e^(−19R/20)`, `T=R+6w`.
+
+Use the same trial `g` and `H=η*η`. For `3/4≤t≤5/4`, restrict the convolution integral to `3/8≤z≤5/8`. Both `z` and `t−z` then lie in `[1/8,7/8]`, where `η≥7√30/64`. Consequently
+
+`H(t)≥h₀:=735/8192`.                                             (8)
+
+Let `x=Xe^(11w/4)`. Since `(w/2)x^(19/40)≥4`,
+
+`x+x^(21/40)≤xe^(w/2)=Xe^(13w/4)`.
+
+Thus every prime in `(x,x+x^(21/40)]` lies in the plateau where `H((log p−2R−2w)/w)≥h₀`. The quantitative Baker–Harman–Pintz lower bound, and `p≤2x` for sufficiently large `R`, give a positive sub-sum of the **complete** trial prime-power return:
+
+`P≥h₀ (log x)/√(2x) · (9/100)x^(21/40)/log x`
+
+`  ≥(9h₀/200)X^(1/40)=(9h₀/1600)e^Rw`.                    (9)
+
+The wider trial still has no same-half prime overlap when `w<log 2`; its opposite continuous term remains nonnegative. Its archimedean cost is at most `C_a+2log(1/w)+log22=O(R)`, whereas (9) grows like `e^(R/20)`. For all sufficiently large `R`, the cost is at most `P/2`, so the exact physical form obeys `K[f]≤−P`. The same theta norm bound as before proves
+
+`δ_R≥d₀ e^Rw ω(R+2w)²`, `d₀=9h₀/3200>0`.                (10)
+
+Substitute (10), with `h=2w`, in the general crossing estimates (14)–(16) of the [sharp internal/exterior theorem](theta-internal-exterior-crossing-sharp-bound.md). Because `e^(2R)w=8e^(21R/20)` dominates `log(1/w)=O(R)`, its explicit prefactors can be absorbed, yielding
+
+`||ψ_R1_{O_T}||_ν≤896(d₀w)^(−1)e^(10w−2πe^(2R)w)`
+
+`                 ≤exp(−πe^(2R)w)`.                         (11)
+
+The physical-mass conversion above applies unchanged: its `exp(Ce^R)` loss is dominated by `exp(πe^(2R)w)`. Hence (3) holds at this endpoint, and
+
+`ℓ_R≤(6+o(1))w=(48+o(1))e^(−19R/20)`.                      (12)
+
+The uncertainty comparison in the [effective-width criterion](theta-ground-effective-width-sign-threshold.md), with its separately proved superexponentially small same-half term and `O(e^(−2R))` continuous correction, now gives an **all-sufficiently-large-radius** endpoint estimate
+
+`P_R/H_R²≥c R e^(−R/20)`                                      (13)
+
+for some absolute `c>0`. This is stronger than taking a lower exponential rate as `β↑19/20`, but its right side still tends to zero. The fixed `1/8` sign-channel threshold and the affine covariance residual remain unproved.
