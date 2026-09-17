@@ -218,6 +218,27 @@ Thus the localized-source conclusion (3) also holds at the critical moving radiu
 \]
 The fixed positive terminal offset supplies the exponential margin. This corollary still requires the exact carrier representation (12). The Lambert prime row in Section 4 violates its subexponential carrier bound, so (13d) does not establish the missing comparison for that source.
 
+There is a second tradeoff at the shrinking endpoint collar. Set \(U=T=R+6w\). The explicit normalized tail from the endpoint crossing theorem is
+\[
+ r_{R,T}\le\frac{896}{d_0w}
+             \exp(10w-2\pi Xw).
+\]
+The theta envelope and its positive first term give
+\[
+ \left(\int_{|u|\ge T}e^{|u|}\omega(u)^2du\right)^{1/2}
+ \le C e^{-T/2}\omega(T).
+\]
+The improved physical-mass bound gives
+\(a_R\ge c e^{-T/2-Ce^{R/20}}\omega(T)\). Consequently
+\[
+ \frac{\int_{|u|\ge T}e^{|u|/2}G_R(u)du}{a_R}
+ \le \exp[-(2\pi+o(1))Xw].
+\tag{13e}
+\]
+At \(R_X=\tfrac12\log X\), an exact carrier supported beyond
+\(T_X=R_X+48X^{-19/40}\) therefore also satisfies (3) if
+\(\log K_X=o(X^{21/40})\). A polynomial carrier meets this stronger norm condition. The unproved carrier control for the actual Lambert field is unchanged.
+
 ## 3. Why the published inputs do not prove the carrier hypothesis
 
 The fixed-radius weighted crossing theorem proves \(J_R(B_Rx)<\infty\)
