@@ -1,7 +1,7 @@
-# A stretched-exponential bound on total negative successor-cell Weil mass
+# A log-log strengthened bound on total negative successor-cell Weil mass
 
 The [complete successor-cell matrix](compact-weil-successor-cell-refinement.md)
-has a [stretched-exponential bound on the *number* of nonpositive
+has a [log-log strengthened bound on the *number* of nonpositive
 eigenvalues](compact-weil-successor-cell-negative-index-stretched-exponential.md)
 and a separate [VK-rate bound on the most negative
 eigenvalue](compact-weil-successor-cell-negative-part-vk-density.md).
@@ -22,11 +22,11 @@ the complete \(N\)-cell Weil matrix satisfies, for \(N\ge N_0\),
 \[
  \boxed{\quad
  \operatorname{Tr}(Q_N)_-
- \le C N\exp(-c\sqrt{\log N}).
+ \le C N\exp\!\bigl(-c\sqrt{\log N\,\log\log N}\bigr).
  \quad}                                                     \tag{1}
 \]
-Thus the average negative eigenvalue mass per cell decays at a
-stretched-exponential rate. Equation (1) is an aggregate estimate;
+Thus the average negative eigenvalue mass per cell decays at this
+log-log strengthened rate. Equation (1) is an aggregate estimate;
 it does not improve the established bound for
 \(\lambda_{\min}(Q_N)\).
 
@@ -50,11 +50,12 @@ Both exact poles are present in this identity.
 
 Set
 \[
- u=\sqrt{\log N},\qquad
+ L=\log N,\qquad u=\sqrt{L\log L},\qquad
  D=\lfloor e^u\rfloor,\qquad
- k=\lfloor u/8\rfloor,\qquad T_0=\sqrt N.                 \tag{3}
+ k=\lfloor L/(8u)\rfloor,\qquad T_0=\sqrt N.             \tag{3}
 \]
-For large \(N\), \(2\le D<N\). Split the prime matrix into \(K_{\le D}\)
+For large \(N\), \(2\le D<N\), \(u=o(L)\), \(k\to\infty\), and
+\(D^k\le e^{uk}\le N^{1/8}\). Split the prime matrix into \(K_{\le D}\)
 and \(K_{>D}\), including all proper powers in their literal
 integer ranges. On the complete space \(S_N\),
 \[
@@ -174,7 +175,7 @@ trace is at most
 The low-frequency contribution to (8) is consequently
 \[
  O(\sqrt N\sqrt D\,\log N)
- =O(\sqrt N e^{u/2}\log N).                              \tag{13}
+ =O(\sqrt N e^{u/2}L).                                   \tag{13}
 \]
 
 For large \(N\), (6) also makes
@@ -207,7 +208,9 @@ polynomial has length \(D^k\le N^{1/8}\) and squared
 coefficient norm at most \(k!V_D^k\). The elementary
 mean-square bound on every dyadic interval
 \([T,2T]\), \(T\ge\sqrt N\), is therefore
-\(O(Tk!V_D^k)\). The exact cell Fourier weight is
+\(O(Tk!V_D^k)\), with an absolute constant independent of \(k\):
+the mean-square remainder \(D^k\log(2D^k)\ll\sqrt N\le T\).
+The exact cell Fourier weight is
 \[
  \omega_N(t)\ll
  \begin{cases}
@@ -219,24 +222,28 @@ and its dyadic weighted sum is \(O(N)\), including
 \(|t|\gg N\). This gives (16) with no truncated-frequency
 remainder.
 
-Since \(k!\le k^k\), \(k\asymp u\), \(V_D\ll u^2\), and
-\(a_N\asymp u^2\), (15)--(16) are
+Since \(k!\le k^k\), \(k\le L/(8u)\), \(V_D\ll u^2\), and
+\(a_N\asymp L\), (15)--(16) are
 \[
- \ll N a_N\left(\frac{CkV_D}{a_N^2}\right)^k
- \ll N u^2\left(\frac{C'}u\right)^k
- \ll N u^2 e^{-c_1u\log u}.                              \tag{17}
+ \ll N L\left(\frac{Ck u^2}{L^2}\right)^k
+ \le N L\left(\frac{C'u}{L}\right)^k.                    \tag{17}
 \]
+For all sufficiently large \(L\), \(k\ge L/(16u)\) and
+\(\log(L/(C'u))\ge(2/5)\log L\). Since \(u^2=L\log L\),
+the expression in (17) is at most
+\(NL e^{-u/40}\ll N e^{-u/80}\).
 Equations (8), (13), and (17) control the negative trace
 of the complete small-prime multiplier. Combining with
 (9), (11), and (12) gives
 \[
  \operatorname{Tr}(Q_N)_-
- \ll \sqrt N e^{u/2}\log N
-      +Nu^2e^{-c_1u\log u}
+ \ll \sqrt N e^{u/2}L
+      +N e^{-u/80}
       +Ne^{-u/2}+\sqrt N
  \ll N e^{-c u},
 \]
-for some absolute \(c>0\), proving (1).
+for some absolute \(c>0\), because \(u=o(L)\). This proves (1)
+using only Chebyshev's \(\psi(x)\ll x\), which is weaker than RH.
 
 This trace bound complements the index and least-eigenvalue
 bounds. A sparse set of negative eigenvalues with large
@@ -245,4 +252,10 @@ inequality remains open.
 
 The [index proof's attribution paragraph](compact-weil-successor-cell-negative-index-stretched-exponential.md)
 compares earlier compact Weil truncations with the different
-successor-cell space used here. No literature-priority claim is made.
+successor-cell space used here. [Bombieri's study of the compact Weil
+functional](https://eudml.org/doc/252338) analyzes negative eigenvalues
+in another truncation. No literature-priority claim across all
+truncations is made. A hypothetical fixed off-critical-line zero pair
+is compatible with (1): a bounded number of negative directions
+fits inside its right side. The full signed Weil criterion remains
+open.

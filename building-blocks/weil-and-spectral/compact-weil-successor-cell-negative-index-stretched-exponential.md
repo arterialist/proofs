@@ -1,4 +1,4 @@
-# A stretched-exponential negative-index bound for the complete successor-cell Weil form
+# A log-log strengthened negative-index bound for the complete successor-cell Weil form
 
 The [exact successor-cell refinement](compact-weil-successor-cell-refinement.md)
 defines the complete \(N\)-cell Weil form \(Q_N\), including every admitted
@@ -16,7 +16,7 @@ bound the size of a negative eigenvalue or prove RH.
 \[
  \boxed{\quad
  \operatorname{codim}_{S_N}V_N
- \le C N\exp(-c\sqrt{\log N}),\qquad
+ \le C N\exp\!\bigl(-c\sqrt{\log N\,\log\log N}\bigr),\qquad
  Q_N(f)\ge c\log N\,\|f\|_2^2\quad(f\in V_N).
  \quad}                                                       \tag{1}
 \]
@@ -24,7 +24,7 @@ In particular,
 \[
  \boxed{\quad
  \operatorname{ind}_{\le0}(Q_N)
- \ll N\exp(-c\sqrt{\log N}).
+ \ll N\exp\!\bigl(-c\sqrt{\log N\,\log\log N}\bigr).
  \quad}                                                       \tag{2}
 \]
 
@@ -45,13 +45,17 @@ the **complete** identity
 \]
 It retains both poles; \(P_N\) is not discarded.
 
-Set \(u=\sqrt{\log N}\), and, for large \(N\), choose
+Set \(L_0=\log N\) and \(u=\sqrt{L_0\log L_0}\), and, for
+large \(N\), choose
 \[
  D=\lfloor e^u\rfloor,\qquad
  M=\lceil e^{2u}\rceil,\qquad
- k=\lfloor u/8\rfloor,\qquad T_0=\sqrt N.
+ k=\lfloor L_0/(8u)\rfloor,\qquad T_0=\sqrt N.
  \tag{4}
 \]
+Here \(u=o(L_0)\), \(k\to\infty\), \(M<N\), and
+\(D^k\le e^{uk}\le N^{1/8}\). Floors and ceilings therefore do
+not alter any of the asymptotic estimates below.
 Let \(\Pi_M\) project onto the cells \(n>M\), so its complement has
 dimension \(M\). All estimates below take place on \(\Pi_MS_N\).
 Split \(K_N=K_{\rm pr}+K_{\rm pow}+K_{>D}\): \(K_{\rm pr}\) has the
@@ -68,8 +72,8 @@ Chebyshev's \(\psi(y)\ll y\) and partial summation give
     +\sum_p\frac{\log p}{p^{3/2}(1-p^{-1/2})}
  \ll\log D=O(u).                                             \tag{5}
 \]
-Thus the full proper-power contribution costs less than
-\((\log N)/32\) for all sufficiently large \(N\).
+Since \(u=o(L_0)\), the full proper-power contribution costs less
+than \((\log N)/32\) for all sufficiently large \(N\).
 
 The shifted multiplier satisfies \(b(t)\ge-C_b\) everywhere and
 \(b(t)\ge\frac13\log N\) on \(|t|>T_0\). For a small parameter
@@ -177,12 +181,14 @@ After expanding the square, the off-diagonal integral is at most
 \(2/|\log(m/n)|\le2Y/|m-n|\); applying
 \(2|a_ma_n|\le|a_m|^2+|a_n|^2\) and summing the harmonic series
 proves (15). In (14),
-\(D^k\le e^{u^2/8}=N^{1/8}\). Thus for every dyadic interval
+\(D^k\le e^{uk}\le e^{L_0/8}=N^{1/8}\). Thus for every dyadic interval
 \([T,2T]\) with \(T\ge T_0=\sqrt N\), (14)--(15) give
 \[
  \int_T^{2T}|P_D(t)|^{2k}dt
  \ll T\,k!V_D^k.                                           \tag{16}
 \]
+The implicit constant is independent of \(k\), because
+\(D^k\log(2D^k)\ll\sqrt N\le T\).
 The same estimate holds on negative-frequency intervals.
 
 On each dyadic interval, combine (13), (16), and
@@ -193,14 +199,17 @@ On each dyadic interval, combine (13), (16), and
  \operatorname{Tr}|H_D|^{2k}
  \ll N\,4^k k!V_D^k.                                       \tag{17}
 \]
-At the threshold \(h_N=(\log N)/32=u^2/32\), Markov's
+At the threshold \(h_N=(\log N)/32=L_0/32\), Markov's
 eigenvalue count, \(k!\le k^k\), and (4) give
 \[
  \#\{j:|\lambda_j(H_D)|>h_N\}
- \ll N\left(\frac{Ck u^2}{u^4}\right)^k
- \le N\left(\frac{C'}u\right)^k
- \le N\exp(-c_1u\log u).                                  \tag{18}
+ \ll N\left(\frac{Ck u^2}{L_0^2}\right)^k
+ \le N\left(\frac{C'u}{L_0}\right)^k
+ \le N\exp(-c_1u).                                        \tag{18}
 \]
+Indeed, for large \(L_0\), \(k\ge L_0/(16u)\) and
+\(\log(L_0/(C'u))\ge(2/5)\log L_0\), so the last factor
+is at most \(e^{-u/40}\).
 Delete these eigenspaces. On their complement the high-frequency
 prime quadratic is at most \(h_N\|f\|_2^2\).
 
@@ -227,7 +236,8 @@ the interval has at most one integer and the squared row sum is
 off the diagonal and \(O(1/n)\) on it, yielding \(O(N/M)\) in
 (19). These are exact cell-matrix bounds; no prime power is omitted.
 
-Substituting (4) in (19) gives
+Substituting (4) in (19), and using
+\(M\asymp e^{2u}\), \(D\asymp e^u\), gives
 \[
  \|T_N\|_{\rm HS}^2\ll N u e^{-u}.                          \tag{20}
 \]
@@ -235,7 +245,7 @@ Delete its eigenvectors with eigenvalue greater than \(h_N\).
 Their dimension is at most
 \[
  \frac{\|T_N\|_{\rm HS}^2}{h_N^2}
- \ll \frac{N e^{-u}}{u^3}.                                \tag{21}
+ \ll \frac{N u e^{-u}}{L_0^2}.                            \tag{21}
 \]
 On the intersection of this complement, the complement from
 (18), and \(W_N\), equations (3), (5), (7), (9), and
@@ -250,11 +260,12 @@ On the intersection of this complement, the complement from
 The total codimension, including the \(M\) coarse cells, is
 \[
  O\!\left(e^{2u}+\sqrt N e^{u/2}
-          +N e^{-c_1u\log u}
-          +\frac{Ne^{-u}}{u^3}\right)
+          +N e^{-c_1u}
+          +\frac{Nu e^{-u}}{L_0^2}\right)
  =O(Ne^{-c u})
 \]
-for some absolute \(c>0\), since \(u=\sqrt{\log N}\).
+for some absolute \(c>0\), since \(u=o(L_0)\) and
+\(\log L_0=o(u)\).
 The finite-dimensional min--max principle proves (1)--(2).
 
 The bound counts possible nonpositive directions; one large negative
