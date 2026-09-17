@@ -1,13 +1,16 @@
 # A critical-span chirped positive constellation for actual zeta
 
-**Status:** unconditional written analytic proof, 18 September 2026. This
+**Status:** unconditional written analytic proof, 18 September 2026. The
+finite Hermitian row-budget step is
+[Lean-compiled](../../formalization/BuildingBlocks/CriticalChirpedGramFinite.lean);
+the actual-prime, archimedean, and pole estimates remain written. This
 extends the [subcritical chirped constellation](chirped-prime-annulus-constellation.md)
 from spans at most `alpha log T`, fixed `alpha<2`, to `2 log T-B` for a
 fixed profile-dependent constant `B`. It uses the complete actual-zeta
 Weil form, including every von Mangoldt prime power, both poles, the
 archimedean term, and literal support endpoints. The normalization is
 [the complete form used in the subcritical theorem](actual-signed-annulus-bump-gram.md#exact-prime-orientation-and-analytic-remainder).
-No new Lean theorem or literature-priority claim is made. The tests depend
+No literature-priority claim is made. The tests depend
 on `T`; this does not prove RH or a pointwise prime-phase bound for a
 fixed profile.
 
@@ -164,6 +167,10 @@ negative of the right side of (9) times `sum|c_j|^2`. Choose `B`
 so large that `C_2 e^(-B/2)<epsilon/2`. Then (4), (6), and (9)
 give (2) for large enough `T`, absorbing the fixed constants and
 `log(2pi)` into the remaining `epsilon log T/2`.
+The [finite Lean theorem](../../formalization/BuildingBlocks/CriticalChirpedGramFinite.lean)
+formalizes this row-budget-to-Gram-margin implication for an arbitrary
+complex Hermitian matrix. It does not formalize (8), (9), or the
+identification of that matrix with the actual prime-power sum.
 
 ## Scope and off-line-mode check
 
