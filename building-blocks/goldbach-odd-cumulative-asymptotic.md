@@ -84,6 +84,28 @@ continuously and periodically. For real \(X\ge4\), the exact formulas
 apply to \(N=\lfloor X\rfloor\), matching the right-continuous
 \(n\le X\) convention.
 
+Dyadic scaling preserves \(\{\log_2N\}\), so the periodic term cancels
+from a two-scale difference. More precisely, the explicit main term
+in (4) satisfies
+
+\[
+2\log2\bigl((K+1)2N-2^{K+2}+2\bigr)
+-2\cdot2\log2\bigl(KN-2^{K+1}+2\bigr)
+=4(N-1)\log2.
+\]
+
+Consequently
+
+\[
+\boxed{S_{\rm odd}(2N)-2S_{\rm odd}(N)
+ =4N\log2+O\!\left(N e^{-c'\sqrt{\log N}}\right).} \tag{6}
+\]
+
+This is an unconditional signed dyadic constraint on the actual
+odd-total prime-power channel: the left side is positive for all
+sufficiently large \(N\). Its linear size is still below the
+critical \(N^{3/2}\) Goldbach error.
+
 Equation (4) is lower order than the \(X^{3/2+\varepsilon}\) error in
 the [one-sided cumulative Goldbach criterion](goldbach-one-sided-cumulative-rh-criterion.md).
 It sharpens the parity accounting but does not supply that criterion's
@@ -93,5 +115,5 @@ unproved one-sided estimate.
 formalizes (1) with the exact finite source cutoff and proves that its
 coefficients agree with the complete ordered Goldbach coefficients
 through the cumulative horizon. Its public theorems use only Lean's
-standard logical axioms. Equations (2)--(5), including the PNT
+standard logical axioms. Equations (2)--(6), including the PNT
 application, remain written proofs and are not yet Lean theorems.
