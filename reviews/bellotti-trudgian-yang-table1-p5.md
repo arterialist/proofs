@@ -24,8 +24,9 @@ U_j=2(-78647)U_{j-1}-1000000^2U_{j-2},
 
 This refutes the individual \(p=5\) certificate, not the paper's zero-free
 theorem. The [independent interval certificate](bellotti-trudgian-yang-ladder-repair.py)
-repairs the aggregate estimate and strengthens the prime-power detector
-bound used in its Lemma 10.
+repairs and strengthens the finite prime-power ladder estimate. A second
+[interval certificate](bellotti-trudgian-yang-weight-cutoff.py) transfers it
+to the paper's detector using a corrected cutoff.
 
 For each prime \(p<100\), the certificate proves a rational bound
 \(G_p(1,x)>m_p\) for every real \(x\). It uses new bounds
@@ -52,20 +53,28 @@ extends the bounds from \(\sigma=1\) to the paper's range
 \sum_{p<100}m_p\log p>0.235484.
 \]
 
-The paper first limits prime powers to \(p^m\le e^{59}\), but its displayed
-15-rung sum includes a few terms beyond that limit. Their total is less
-than \(2\cdot10^{-9}\): there are at most 375 such terms, and each has
-\(p^{-m\sigma}<e^{-59/2}<2\cdot10^{-13}\), \(\log p<5\), and
-\(P(mx)<5\). Write \(g(0)=\eta w(0)\) and
-\(\kappa=433/859\). The inequality checked in the proof of the paper's
-Lemma 11 is \(f(u)\ge\kappa g(0)=f(0)\) for \(0\le u\le59\).
-It therefore implies the corrected detector bound
+The paper's computer-assisted inequality in the proof of Lemma 11 fails
+at its endpoint \(u=59\): for its Lemma 2 parameters, the checked
+expression is less than \(-0.0159\). This does not refute the **stated**
+Lemma 11, which asks only for \(f(u)\ge\kappa f(0)\), because
+\(f(0)=\kappa\eta w(0)\). The displayed check attempts the stronger
+\(f(u)\ge f(0)\).
+
+The weight certificate proves that stronger inequality for
+\(0\le u\le58.7\), even with \(A_0=1/4.85935\). It uses interval
+arithmetic to prove a positive derivative on \([0,0.1]\) and a positive
+margin on \([0.1,58.7]\). For the remaining prime powers among
+\(p<100,\ m\le15\), the total omitted contribution is below
+\(375\cdot5\cdot5e^{-58}<10^{-20}\), since
+\(\sigma\ge\sigma_0>0.993467\). With \(g(0)=\eta w(0)\) and
+\(\kappa=433/859\), the repaired detector estimate is therefore
 \[
 \sum_{n\ge1}\frac{\Lambda(n)}{n^\sigma}f(\log n)P(t\log n)
->f(0)(0.235484-2\cdot10^{-9})>0.1187g(0).
+>\kappa g(0)(0.235484-10^{-20})>0.1187g(0).
 \]
-This is a stronger bound for the paper's actual prime-power detector.
-It has not been propagated through the remaining zero-free-region estimates.
+This improves the paper's numerical detector bound in the normalization
+used by its final calculation. The remaining zero-free-region estimates
+have not been re-certified, so no stronger zero-free region is claimed.
 
 Original claim and coefficients: Bellotti, Trudgian, and Yang (2026).
 Counterexample and replacement certificate: proofs project (17 September 2026).

@@ -1,4 +1,4 @@
-"""Certified replacement for arXiv:2603.21490v1, Lemma 10 ladder.
+"""Certified finite prime-power ladder for arXiv:2603.21490v1.
 
 Run with: uv run --with python-flint==0.9.0 python reviews/bellotti-trudgian-yang-ladder-repair.py
 """
@@ -67,9 +67,9 @@ weighted = sum(arb(p).log() * ball(Fraction(b))
                for p, b in zip(primes, lower))
 assert weighted > arb('0.235484')
 
-# Terms p^m > e^59 cannot use the paper's Lemma 11. Their total is <2e-9:
-# at most 375 terms, p^(-m*sigma)<e^(-59/2)<2e-13,
-# log(p)<5, and P(x)<=sum(a_k)<5 for sigma>=sigma0>1/2.
+# At the corrected cutoff 58.7, omitted terms have total <1e-20:
+# at most 375 terms, p^(-m*sigma)<e^-58 because sigma0>0.993467,
+# log(p)<5, and P(x)<=sum(a_k)<5.
 kappa = arb(433) / 859
-assert kappa * (weighted - arb('0.000000002')) > arb('0.1187')
-print('Certified: weighted ladder > 0.235484; with the paper\'s Lemma 11 lower bound, the prime-power sum > 0.1187 g(0), where g(0) = eta*w(0).')
+assert kappa * (weighted - arb('0.00000000000000000001')) > arb('0.1187')
+print('Certified finite ladder > 0.235484. Together with the separate 58.7 weight certificate, the detector > 0.1187 eta*w(0).')
