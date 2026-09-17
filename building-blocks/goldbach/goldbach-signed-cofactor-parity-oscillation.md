@@ -198,50 +198,63 @@ $O_\varepsilon(X^{1/2+\varepsilon}/[\log X(\log\log X)^2])$
 of **every**
 cutoff. The Landau argument supplies only infinitely many
 crossings, with no maximum-gap bound. For comparison,
-[Bellotti's Theorem 1.5](https://arxiv.org/pdf/2508.02041)
-gives $|E_y|\ll y e^{-\omega(y)}$ with the full
-Vinogradov--Korobov leading exponent
+[Johnston's Corollary 2.3](https://arxiv.org/pdf/2411.13791),
+combined with the [asymptotic Vinogradov--Korobov zero-free
+region](https://arxiv.org/pdf/2306.10680), gives for every
+$\eta>0$
 
 \[
-\omega(x)=\min_{t\ge t_0}\{\nu(t)\log x+\log t\},\qquad
-\nu(t)=A_0(\log t)^{-2/3}(\log\log t)^{-1/3},
+|E_x|\ll_\eta x e^{-(d-\eta)\Phi(x)},\qquad
+\Phi(x)=(\log x)^{3/5}(\log\log x)^{-1/5},
+\quad d=\left(\frac{5^6A_0^3}{2^2 3^4}\right)^{1/5},
+\quad A_0=1/48.0718.
 \]
 
-where the fixed lower cutoff $t_0$ lies in the range of the
-zero-free region. This bound transfers to the complete row
-without loss of its leading constant:
+The zero-free region permits any fixed constant below $A_0$
+for all sufficiently large heights; the polynomial factor in
+Johnston's estimate is absorbed by $e^{\eta\Phi(x)}$.
+The resulting bound transfers to the complete row without
+further loss of the chosen exponent:
 
 \[
-\boxed{|Q_s|\ll s e^{-\omega(s)}.}
+\boxed{|Q_s|\ll_\eta s e^{-(d-\eta)\Phi(s)}
+\qquad\text{for every fixed }\eta>0.}
 \tag{9}
 \]
 
-To check the endpoints, put $H=\lceil se^{-\omega(s)}\rceil$.
-Then $H=o(s)$, and Bellotti's bound at every $x\in[s/2,s]$
+To check the endpoints, put
+$\omega_\eta(x)=(d-\eta)\Phi(x)$ and
+$H=\lceil se^{-\omega_\eta(s)}\rceil$.
+Then $H=o(s)$, and the prime-error bound at every $x\in[s/2,s]$
 gives $E_x=O(H)$ because
-$\omega(s)-\omega(s/2)=o(1)$. For $2\le y\le H$,
+$\omega_\eta(s)-\omega_\eta(s/2)=o(1)$. For $2\le y\le H$,
 $|q_y|\ll1$, while the outer $\Lambda$ mass in the interval
 $s-H\le s-y\le s-2$ is
 $\psi(s-2)-\psi(s-H-1)\ll H$. This part is $O(H)$.
 For $y\ge s/2$, Chebyshev gives outer mass $O(s)$ and
-$|q_y|\ll e^{-\omega(s/2)}=O(e^{-\omega(s)})$.
+$|q_y|\ll_\eta e^{-\omega_\eta(s/2)}
+=O_\eta(e^{-\omega_\eta(s)})$.
 Finally, divide $H<y<s/2$ into intervals
 $Y\le y<2Y$, $Y=2^jH$, truncating the last interval.
 Each outer $\Lambda$ mass is $O(Y+H)=O(Y)$ by
 $\psi(x)=x+E_x$ at the two endpoints, and its contribution
-is $O(Ye^{-\omega(Y)})$. Since the logarithmic slope of
-$\omega$ tends to zero, these terms form a geometric sum
-dominated by $O(se^{-\omega(s)})$. The $\psi$ bounds include
+is $O_\eta(Ye^{-\omega_\eta(Y)})$. Since the logarithmic slope of
+$\omega_\eta$ tends to zero, these terms form a geometric sum
+dominated by $O_\eta(se^{-\omega_\eta(s)})$. The $\psi$ bounds include
 every proper prime power, and the range begins at the
 actual complementary endpoint $y=2$.
 
-Here $\omega(s)\sim d(\log s)^{3/5}(\log\log s)^{-1/5}$,
-where $d=(5^6A_0^3/(2^2 3^4))^{1/5}$ (about $0.2126$
-when $A_0=1/48.0718$). The simpler split at $\sqrt s$
-retains only $2^{-3/5}d$ in its leading exponent. Equation
-(9) preserves Bellotti's leading exponential constant $d$;
-it does not improve the prime-error theorem or give an
-RH-scale bound.
+Here $d\approx0.2126$. The simpler split at $\sqrt s$
+retains only $2^{-3/5}(d-\eta)$ in its leading exponent.
+Equation (9) approaches the independently supported $d$
+as $\eta\downarrow0$; it does not improve the prime-error
+theorem or give an RH-scale bound. The stronger $\eta=0$
+estimate asserted in
+[Bellotti's 2025 preprint](https://arxiv.org/pdf/2508.02041)
+is not used here: its posted proof in §3.1.1 identifies
+$(\psi*\theta*1)(n)$ with $(\psi*1)(n)(\theta*1)(n)$,
+which is false even at a prime $n\le\min(U,W)$. This
+observation does not disprove the preprint's claimed theorem.
 
 The finite Abel and alternating bounds (2)–(3), the sharpened
 quadratic one-step bound, the one-sided odd-total logarithmic
