@@ -6,8 +6,9 @@ gives an \(N\)-dimensional Hermitian form \(Q_N\) with every admitted
 [earlier index estimate](compact-weil-successor-cell-negative-index-density.md)
 is \(O(N/(\log N)^2)\). A coarse-cell deletion and a prime-dilation
 split improve it without a prime number theorem or a zero-free region.
-This is a written analytic proof, not a Lean formalization and not an
-RH proof.
+The full spectral theorem is a written analytic proof, not a Lean
+formalization or an RH proof. Its high-parent row estimate below has
+been formalized separately.
 
 **Theorem.** There are absolute \(c,C>0\) and \(N_0\) such that, for
 \(N\ge N_0\), a complex subspace \(V_N\subseteq S_N\) satisfies
@@ -139,6 +140,13 @@ At fixed \(r\), each \(d\) has only that one parent. Chebyshev and
 Indeed \(\sum_{d\le y}\Lambda(d)^2\ll y\log y\); Stieltjes
 integration by parts bounds its \(d^{-2}\) tail by
 \(O(\int_D^\infty(\log y)y^{-2}dy)\).
+The finite high-parent inequality preceding (10), with the exact
+\(\sqrt{\ell_r/\ell_n}\) coefficient and all von Mangoldt prime powers,
+is proved in
+[SuccessorHighParentPrimeRow.lean](../../formalization/BuildingBlocks/SuccessorHighParentPrimeRow.lean)
+as highParent_vonMangoldt_normalized_row_energy_le. This Lean result
+does not include the Chebyshev tail estimate (10), the low-parent
+estimate (9), or the spectral min--max conclusion.
 Summing (9)--(10) over rows, and using the strict triangularity,
 gives
 \[
