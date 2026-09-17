@@ -19,14 +19,14 @@ Let $N\ge6$ be even. Define the completely multiplicative phase
  \tag{1}
 \]
 
-Set $r(n)=2\mathbf1_{n\ {m odd}}$. The factor $2$ is the density
+Set $r(n)=2\mathbf1_{n\ {\rm odd}}$. The factor $2$ is the density
 reference on the odd lattice; at $n=1$ the centered coefficient is
 $\Lambda(1)-r(1)=-2$. Every actual Mangoldt weight, including proper
 prime powers, remains in
 
 \[
  \mathcal C^{\rm even}_\theta(N)=
- \sum_{\substack{a,b\ge1\\a+b\le N\\a+b\ {m even}}}
+ \sum_{\substack{a,b\ge1\\a+b\le N\\a+b\ {\rm even}}}
  [\Lambda(a)\chi_\theta(a)-r(a)]
  [\Lambda(b)\overline{\chi_\theta(b)}-r(b)],
  \qquad
@@ -43,8 +43,8 @@ The real-angle finite even-total centering algebra, with the actual
 `vonMangoldt` weights and $r(n)$, is compiled in
 [GoldbachEvenPhaseCenterFinite.lean](BuildingBlocks/GoldbachEvenPhaseCenterFinite.lean).
 The same module proves the exact $N-2$ odd-partner reference at every
-even terminal total. The phase specialization, Fourier extraction and ladder count below
-remain written proofs.
+even terminal total. The phase specialization, Fourier extraction and
+ladder count below remain written proofs.
 
 ## Exact first-harmonic extraction
 
@@ -54,10 +54,10 @@ $\pi^{-1}\int_0^{2\pi}e^{im\theta}\cos\theta\,d\theta
 
 \[
  \mathfrak H^{\rm even}_1(N)=2\left[
-  \sum_{\substack{a+b\le N\\a+b\ {m even}\\
+  \sum_{\substack{a+b\le N\\a+b\ {\rm even}\\
                  \nu_3(a)=\nu_3(b)+1}}
     \Lambda(a)\Lambda(b)
-  -(\log3)\sum_{\substack{1\le b\le N-3\\b\ {m odd}}}r(b)
+  -(\log3)\sum_{\substack{1\le b\le N-3\\b\ {\rm odd}}}r(b)
  \right].
  \tag{3}
 \]
@@ -150,5 +150,5 @@ also recovers $E$ with a short ladder, but its main $2+$odd-prime
 row has **odd** total. The generator $3$ and parity-aware reference
 in (2) keep this consumer on even totals. Equations (3)–(7) are
 written proofs; the finite parity-centered pair identity and reference
-count are compiled,
-while its specific Fourier/ladder formalization remains open.
+count are compiled, while its specific Fourier/ladder formalization
+remains open.
