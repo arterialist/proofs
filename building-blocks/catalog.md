@@ -447,7 +447,7 @@ The [reciprocal quotient-window modules](analytic-methods/reciprocal-quotient-wi
 
 ## Unitary prime phases
 
-[Unitary prime-phase lift](prime-distribution/unitary-prime-phase-lift.md) gives a written joint-spectral extension of half-neighbor rigidity. Finite defect yields a self-adjoint scale generator, an exact spectral energy, and the form domain $\operatorname{Dom}|T|^{1/2}$. The proof allows arbitrary spectral multiplicity and distinguishes concentration on a Borel character set from a topological support assertion. It does not identify the counting isometries or the Weil form with this unitary model.
+[Unitary prime-phase lift](prime-distribution/unitary-prime-phase-lift.md) gives a written joint-spectral extension of half-neighbor rigidity. Finite defect yields a self-adjoint scale generator, an exact spectral energy, and the form domain $\operatorname{Dom}|T|^{1/2}$. The proof allows arbitrary spectral multiplicity and distinguishes concentration on a Borel character set from a topological support assertion. A new counting-space calculation shows that, for the raw exact-multiplication isometries and any support-preserving phase gauge, neighboring shift images become asymptotically orthogonal: every nonzero $\ell^2$ vector has infinite half-neighbor defect. The unitary model therefore does not cover this natural counting representation or identify its form with the Weil form.
 
 ## Semilocal scattering and signed arithmetic phases
 

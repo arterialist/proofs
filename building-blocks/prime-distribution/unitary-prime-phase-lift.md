@@ -153,3 +153,74 @@ Conversely, every self-adjoint $T$ defines a unitary completely multiplicative m
 This is a theorem about the unitary multiplicative sector, coupled to the actual additive neighbor indices through (2). It does not construct a successor operator satisfying the full affine relation. The unilateral counting-space prime maps are isometries rather than unitaries, so the theorem cannot be applied to them without an additional representation argument that retains the boundary at one.
 
 The theta zero expressions $n^{i\zeta}$ are nonunitary when $\operatorname{Im}\zeta\ne0$. Their finite-defect strip remains $|\operatorname{Im}\zeta|<1/2$ for both conjugate factors. Imposing unitarity on those expressions would impose the desired midpoint in advance. No equivalence between this successor-division form and the actual Weil or theta jump form has been established. In particular its high-frequency multiplier $\psi(t)\sim(\pi/2)|t|$ differs from the logarithmic archimedean multiplier in the actual theta form. The dimensional lift supplies a representation and a precise regularity condition, with no claim of xi positivity or RH.
+
+## The exact counting representation has no finite-defect vector
+
+The preceding scope warning can be made quantitative. Let
+$\mathcal H=\ell^2(\mathbb N_{\ge1})$ with basis $(e_k)_{k\ge1}$.
+For every $m\ge1$, allow any support-preserving isometry of the form
+
+$$
+V_m e_k=u_m(k)e_{mk},\qquad |u_m(k)|=1.
+\tag{16}
+$$
+
+The raw exact-multiplication map has $u_m(k)=1$; compatible choices of
+$u_m$ also include prime-phase gauges and all their proper powers.
+No semigroup compatibility is needed for the following obstruction.
+Write $T_N(v)=\sum_{k\ge N}|v_k|^2$. Then, for every $v\in\mathcal H$,
+
+$$
+\boxed{\left|\langle V_{2n+1}v,V_{2n}v\rangle\right|
+\le T_{2n}(v)\longrightarrow0,}
+\tag{17}
+$$
+
+and consequently
+
+$$
+\boxed{\left|\|[V_{2n+1}-V_{2n}]v\|^2-2\|v\|^2\right|
+\le2T_{2n}(v)\longrightarrow0.}
+\tag{18}
+$$
+
+In particular,
+$\sum_{n\ge1}\|[V_{2n+1}-V_{2n}]v\|^2=\infty$
+for every $v\ne0$. For a vector supported on $k\le K$, each defect
+square is exactly $2\|v\|^2$ as soon as $2n>K$.
+
+Here is the complete proof. An overlap of basis images requires
+$(2n+1)k=2n\ell$. Since consecutive integers are coprime, the
+solutions with $k,\ell\ge1$ are precisely
+$k=2nr$, $\ell=(2n+1)r$, $r\ge1$. Thus the inner product in (17) is
+a sum of phase-weighted terms
+$v_{2nr}\overline{v_{(2n+1)r}}$. Cauchy--Schwarz bounds its modulus
+by
+
+$$
+\left(\sum_{r\ge1}|v_{2nr}|^2\right)^{1/2}
+\left(\sum_{r\ge1}|v_{(2n+1)r}|^2\right)^{1/2}
+\le T_{2n}(v).
+$$
+
+Both $V_m$ preserve the norm, so expanding the square gives (18).
+The tail $T_{2n}(v)$ tends to zero by square summability. The defect
+terms therefore tend to the positive constant $2\|v\|^2$ when
+$v\ne0$, which proves divergence. The same calculation shows
+$V_{2n+1}^{*}V_{2n}\to0$ strongly: its squared norm on $v$ is
+$\sum_{r\ge1}|v_{(2n+1)r}|^2\le T_{2n+1}(v)$.
+
+A diagonal reweighting of the counting basis does not rescue the raw
+isometric shifts. If $\|e_k\|^2=w_k>0$ and every raw prime map
+$e_k\mapsto e_{pk}$ is an isometry, then $w_{pk}=w_k$ for all primes
+$p$ and integers $k$. Unique factorization gives $w_k=w_1$ for every
+$k$. Phase gauges already fall under (16).
+
+This written Hilbert-space calculation rules out applying the
+finite-defect hypothesis of the unitary theorem above to the natural
+counting representation, even after support-preserving prime phases.
+It does not rule out a different representation or a renormalized
+signed readout, and it gives no bound on $E(x)$ or zeta zeros. Such a
+new representation would have to retain the boundary at one and
+identify its spectral form with the actual prime-power explicit
+formula rather than impose the critical line through unitarity.
