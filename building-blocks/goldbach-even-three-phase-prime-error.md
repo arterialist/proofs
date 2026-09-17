@@ -156,3 +156,57 @@ written proofs. The finite parity-centered pair identity, reference
 count, three-adic row classification, oriented algebraic harmonic,
 and short ladder bound are compiled; the analytic Fourier extraction
 and summation into (5) remain unformalized.
+
+## Unconditional oscillation on the actual even totals
+
+The [Hardy--Littlewood/Littlewood oscillation theorem](https://projecteuclid.org/journals/acta-mathematica/volume-41/issue-none/Contributions-to-the-theory-of-the-riemann-zeta-function-and/10.1007/BF02422942.pdf)
+gives the actual complete-prime-power error
+\[
+ E(x)=\Omega_\pm\!\bigl(\sqrt x\log\log\log x\bigr).
+ \tag{8}
+\]
+The half-weight convention at an integer prime power changes this by
+at most $\tfrac12\log x$, so it does not affect (8). A nearest odd
+integer $m$ is within one unit of $x$; because each von Mangoldt atom
+is at most $\log(x+2)$, replacing $x$ by $m$ changes $E$ by
+$O(\log(x+2))$. Consequently (8) holds along odd integers. Equation
+(5), $P_2(m)\le\log m$, and $0\le d_{m+3}\le2$ then give
+\[
+ \boxed{\quad
+ \mathfrak H^{\rm even}_1(N)
+  =\Omega_\pm\!\bigl(\sqrt N\log\log\log N\bigr)
+  \quad\text{through even }N.\quad}
+ \tag{9}
+\]
+In particular **neither eventual sign** of the actual first harmonic
+can hold. A proof of its RH-scale bound must control the size of both
+oscillating signs, not seek a one-sided sign law.
+
+There is also unconditional logarithmic smallness at many sparse even
+totals. The [Morrill--Platt--Trudgian theorem](https://arxiv.org/html/1910.14203v3)
+proves that the number $V_\psi(T)$ of sign changes of $E(x)$ up to $T$
+is at least $c\log T$ for some $c>0$ and all large $T$. In any
+two-unit interval $[m,m+2)$ with $m$ odd, $E$ decreases with slope
+$-1$ between the two integer arrivals and jumps upward only at those
+arrivals. Hence that interval contains at most four sign changes.
+If it contains one, comparison with its left odd endpoint gives
+$|E(m)|\le2+2\log(T+2)$: the drift costs at most two and the two
+possible Mangoldt jumps cost at most $2\log(T+2)$. Thus, for large $T$,
+\[
+ \#\{\,N\le T+3:N\text{ even},\
+      |\mathfrak H^{\rm even}_1(N)|\le C\log(T+2)\,\}
+       \gg\log T                                             \tag{10}
+\]
+for an absolute $C$. At those same odd $m=N-3$, the actual prime error
+satisfies $|E(m)|\ll\log T$. This is a strong **sparse** bound; it
+does not approach the uniform estimate required for RH.
+
+[GoldbachOddCrossing.lean](BuildingBlocks/GoldbachOddCrossing.lean)
+compiles the exact complete-von-Mangoldt two-step increment, its
+$2+2\log(m+2)$ absolute bound, and the near-zero bound when two odd
+samples straddle a sign change. The external oscillation/counting
+theorems, the real-to-odd sampling argument, and the analytic
+identification of (2) with the algebraic first harmonic are written
+inputs and remain Lean obligations. This corollary closes an eventual
+first-harmonic sign route, but does not give a uniform prime-error
+bound or RH.
