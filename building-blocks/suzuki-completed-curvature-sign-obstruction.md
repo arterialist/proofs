@@ -1,8 +1,8 @@
-# The completed Suzuki curvature changes sign arbitrarily late
+# The completed Suzuki variations change sign arbitrarily late
 
 The coefficient identity \(c''_0=4\Lambda*\Lambda\) does not give a
 one-sided second variation of Suzuki's arithmetic Hankel kernel. In
-fact, the second variation of the **completed** kernel takes both
+fact, both its first and second **completed** variations take both
 signs arbitrarily far out. The gamma and pole terms are essential to
 this statement. It is a constraint on a proposed proof mechanism, not
 a counterexample to positivity at any fixed \(\omega>0\) or a proof
@@ -25,8 +25,9 @@ Write \(\gamma_\xi(u)=\tfrac12u(u-1)\pi^{-u/2}\Gamma(u/2)\),
 \(\xi=\gamma_\xi\zeta\), and
 \(q(s)=\xi'(\tfrac12+s)/\xi(\tfrac12+s)\).
 
-**Theorem.** For every \(X>1\) there are nonintegral \(x_+,x_->X\)
-such that \(r_2(x_+)>0\) and \(r_2(x_-)<0\). More precisely, for
+**Theorem.** For each \(j\in\{1,2\}\) and every \(X>1\)
+there are nonintegral \(x_+,x_->X\) such that
+\(r_j(x_+)>0\) and \(r_j(x_-)<0\). More precisely, for
 each prime power \(m=p^k\),
 \[
  r_2(x)=\frac{4\Lambda(m)}{\sqrt m}
@@ -85,6 +86,12 @@ curvature is
  +4\sum_{2\le n<x}\frac{(\Lambda*\Lambda)(n)}{\sqrt n}.
  \tag{6}
 \]
+The corresponding first variation is
+\[
+ r_1(x)=\frac{k'_0(1/x)}{\sqrt x}
+       +2\sum_{2\le n<x}\frac{\Lambda(n)}{\sqrt n}.
+ \tag{6a}
+\]
 The logarithmic endpoint singularities in (6) are locally
 integrable. The beta formula and the elementary coefficient bounds
 give absolute convergence of its Laplace integral sufficiently far
@@ -123,6 +130,18 @@ contradiction. The repository's
 formalizes the general analytic principle, but this application to
 Suzuki's curvature is a written proof, not a Lean theorem.
 
+The same argument also shows that the **first** completed variation
+\(r_1(x)\) takes both signs arbitrarily far out. Its transform is
+\(-2q(s)/s\), as noted after (3); at each critical zero
+\(s=i\gamma\ne0\) it has a genuine simple pole, while it is
+holomorphic at every real \(s\ge0\), including \(s=0\).
+The beta formula supplies the same large-right-half-plane
+convergence and local integrability used above. Applying Landau
+first to an eventually nonnegative \(r_1\), then to an eventually
+nonpositive \(r_1\), rules out both possibilities. Equivalently,
+the completed first variation cannot have a global eventual sign
+even though the coefficient derivative is \(2\Lambda(n)\ge0\).
+
 There is a related endpoint limit that explains why the parameter
 expansion cannot simply be integrated against a smooth coefficient
 density. The [exact gamma zero moment](suzuki-hankel-exponential-boundary-layer.md)
@@ -145,7 +164,7 @@ bounded by a constant times the modulus of continuity of
 negative mass sits at the scaling endpoint \(t=0\), even
 though every fixed interior \(t\) sees the positive limit kernel.
 
-The conclusion concerns \(\partial_\omega^2R_\omega|_0\), rather
+These conclusions concern derivatives at \(\omega=0\), rather
 than \(R_\omega\) at a fixed positive parameter. In particular,
 the factor \((1-m/x)^\omega\) in (5) makes the Taylor expansion
 nonuniform as \(x\downarrow m\); the negative divergence in (2)
