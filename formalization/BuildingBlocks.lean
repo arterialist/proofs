@@ -552,3 +552,4 @@ import BuildingBlocks.UncutEdgeParityFinite
 import BuildingBlocks.MonotoneCofactorCovarianceFinite
 import BuildingBlocks.TwoRateWeilGramAlgebra
 import BuildingBlocks.ThreeRateWeilGramAlgebra
+import BuildingBlocks.ActualRampPrimeWeights

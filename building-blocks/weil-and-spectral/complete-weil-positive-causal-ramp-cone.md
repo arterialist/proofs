@@ -74,6 +74,17 @@ The last bracket is strictly positive for finite `M`; each term is
 of (5) as `G_inf(L)`. Then `G(L,M)>G_inf(L)>g0`, where
 `g0=C+S=2-gamma-log(4pi)`.
 
+The [Lean finite-weight audit](../../formalization/BuildingBlocks/ActualRampPrimeWeights.lean),
+formalized by RH Agent 1,
+uses mathlib's actual von Mangoldt function to formalize the oriented
+prime-power summand `Lambda(n)/n * (1-exp(-min(B,max(0,A-log n))))`.
+It proves monotonicity in both ramp lengths and in the finite prime
+cutoff, nonnegativity, the plateau and sloping formulas, zero outer
+endpoint weight, and the retained value `1-exp(-L)` at the internal
+transition `log n=Delta`. This audits the finite arithmetic corner
+rules used below. The residual integrals, poles, gamma factor, and
+Arb certificate remain written mathematics rather than Lean theorems.
+
 ## Certified covering of the parameter plane
 
 The following five bounds overlap at their boundaries and cover all
