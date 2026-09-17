@@ -7,7 +7,12 @@ calculation; RH Agent 1 independently checked its reflected-pair
 sign, uniform zero sums, and use of the fixed-bump margin.
 The underlying finite Hermitian inequality is compiled in
 [ActualAnnulusGramAlgebra.lean](../../formalization/BuildingBlocks/ActualAnnulusGramAlgebra.lean).
-The zero-side argument below is not formalized in Lean. No RH or
+The reciprocal Fourier factor, reflected-pair identity, and finite
+central sign bound are compiled in
+[ActualWeilZeroPairAlgebra.lean](../../formalization/BuildingBlocks/ActualWeilZeroPairAlgebra.lean).
+The explicit-formula identification, uniform positivity of the bump
+transform, zero sums, and resulting analytic theorem are not
+formalized in Lean. No RH or
 literature-priority claim is made.
 
 Fix `0<w<log 2` and a real nonnegative nonzero
@@ -41,7 +46,7 @@ every `t in [T,2T]`, the following implication holds. If there is
 no right-half nontrivial zeta zero `rho=beta+i gamma` with
 
 \[
-\beta>\tfrac12,qquad
+\beta>\tfrac12,\qquad
 \frac{\epsilon_\phi}{R}<|\gamma-t|\le H^D,
 \tag{3}
 \]
@@ -101,6 +106,9 @@ W_d(\omega)=\Phi(\omega-id)
 Critical-line zeros instead contribute
 `m_rho |F_R(gamma-t)|^2>=0`. The zero-side series is absolutely
 convergent for each smooth compact test.
+The reciprocal factor and its reflected pairing in (7) are checked
+in the linked Lean zero-pair module; that module does not assert a
+Weil explicit formula for actual zeta.
 
 Because `phi>=0`, both `Phi(-id)` and `Phi(id)` are strictly
 positive real numbers, uniformly for `0<=d<=1/2`.
@@ -120,6 +128,10 @@ for every `R>=1`. Thus **each** central right-half zero has a
 nonpositive growing term in (7), bounded above by
 `-2b_phi m_rho e^(dR)`. Near-coincident off-line zeros reinforce
 this sign regardless of their order in the ordinates.
+The linked Lean module also bounds the paired factor by
+`4||W_d(omega)||+2||W_d(omega)||e^(-dR)-2b_phi e^(dR)`
+from the unit phase and (8). The uniform analytic lower bound in
+(8) is a separate written step.
 
 ## The rest of the zero ensemble
 

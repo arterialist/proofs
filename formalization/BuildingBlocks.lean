@@ -555,6 +555,7 @@ import BuildingBlocks.TwoRateWeilGramAlgebra
 import BuildingBlocks.ThreeRateWeilGramAlgebra
 import BuildingBlocks.ActualRampPrimeWeights
 import BuildingBlocks.ActualAnnulusGramAlgebra
+import BuildingBlocks.ActualWeilZeroPairAlgebra
 import BuildingBlocks.CriticalChirpedGramFinite
 import BuildingBlocks.CriticalChirpedEndpointFinite
 import BuildingBlocks.CriticalChirpedLaplaceFinite
