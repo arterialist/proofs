@@ -1,8 +1,10 @@
 # Exact endpoint conservation for the actual chirped prime cross
 
 **Status:** unconditional written analytic proof, 18 September 2026.
-The identity is finite at every cutoff and retains every
-`Lambda(p^k)=log p` and literal endpoint. It is not Lean-formalized.
+The finite endpoint identity with actual `Lambda(p^k)=log p`, the
+`Lambda(n)/n` weight, and strict collar endpoints is Lean-compiled in
+[CriticalChirpedEndpointFinite.lean](../../formalization/BuildingBlocks/CriticalChirpedEndpointFinite.lean).
+The construction and estimates for the analytic packet remain written.
 It gives a signed average over packet separations, not a pointwise
 prime-phase estimate or RH. No literature-priority claim is made.
 
