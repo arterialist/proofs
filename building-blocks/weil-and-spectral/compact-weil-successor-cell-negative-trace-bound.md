@@ -5,8 +5,9 @@ has a [stretched-exponential bound on the *number* of nonpositive
 eigenvalues](compact-weil-successor-cell-negative-index-stretched-exponential.md)
 and a separate [VK-rate bound on the most negative
 eigenvalue](compact-weil-successor-cell-negative-part-vk-density.md).
-The same high-moment and coarse-cell estimates also control the
-*sum* of all negative eigenvalue magnitudes. This is an
+The same high-moment estimate, together with exact trace-norm
+bounds for large dilations and the continuous kernel, also controls
+the *sum* of all negative eigenvalue magnitudes. This is an
 unconditional written proof for the actual von Mangoldt weights,
 including every prime power, both poles, and the full gamma term.
 It does not prove that any individual eigenvalue is nonnegative or
@@ -29,7 +30,7 @@ stretched-exponential rate. Equation (1) is an aggregate estimate;
 it does not improve the established bound for
 \(\lambda_{\min}(Q_N)\).
 
-## The complete multiplier and a fine-cell block
+## The complete multiplier and an exact split
 
 Put \(X=N+1\), \(L=\tfrac12\log X\), and let \(S_N\) have the
 orthonormal cell basis \(e_n=\mathbf1_{I_n}/\sqrt{\ell_n}\),
@@ -51,16 +52,13 @@ Set
 \[
  u=\sqrt{\log N},\qquad
  D=\lfloor e^u\rfloor,\qquad
- M=\lceil e^{2u}\rceil,\qquad
  k=\lfloor u/8\rfloor,\qquad T_0=\sqrt N.                 \tag{3}
 \]
-For large \(N\), \(2\le D<M<N\). Let \(\Pi_M\) project onto
-the cells \(n>M\). Split the prime matrix into \(K_{\le D}\)
+For large \(N\), \(2\le D<N\). Split the prime matrix into \(K_{\le D}\)
 and \(K_{>D}\), including all proper powers in their literal
-integer ranges. On the fine-cell space \(\Pi_MS_N\),
+integer ranges. On the complete space \(S_N\),
 \[
- \Pi_MQ_N\Pi_M=A_N-T_N,\qquad
- T_N=\Pi_M(K_{>D}-P_N)\Pi_M,                              \tag{4}
+ Q_N=A_N-K_{>D}+P_N,                                      \tag{4}
 \]
 where \(A_N\) is the Fourier-multiplier compression with real
 symbol \(b(t)-F_{\le D}(t)\), and
@@ -102,32 +100,60 @@ an orthonormal basis of its negative spectral space, gives
  \operatorname{Tr}(A_N)_-
  \le \frac1{2\pi}\int_{\mathbb R}
        \bigl(F_{\le D}(t)-b(t)\bigr)_+\,
-          \omega_{M,N}(t)\,dt,\qquad
- \omega_{M,N}(t)=\sum_{n>M}|\widehat e_n(t)|^2.           \tag{8}
+          \omega_N(t)\,dt,\qquad
+ \omega_N(t)=\sum_{n=1}^N|\widehat e_n(t)|^2.             \tag{8}
 \]
 Indeed the Fourier weights of the negative eigenvectors sum
-pointwise to at most \(\omega_{M,N}\). The same variational
-principle and trace-norm duality give
-\[
- \operatorname{Tr}(\Pi_MQ_N\Pi_M)_-
- \le\operatorname{Tr}(A_N)_-+\|T_N\|_1.                   \tag{9}
-\]
+pointwise to at most \(\omega_N\).
 
-The large-dilation and continuous-density row calculation in the
-[index proof](compact-weil-successor-cell-negative-index-stretched-exponential.md#the-large-dilation-residual-and-min--max)
-is uniform in \(D\) and \(M\):
+## Trace norms of the complete residual
+
+Let \(R_d\) be the exact child-cell shift in the
+[refinement theorem](compact-weil-successor-cell-refinement.md).
+Only columns \(n\le\lfloor N/d\rfloor\) are nonzero, and their child
+sets are disjoint. Thus
+\(\operatorname{rank}R_d=\lfloor N/d\rfloor\) and
+\(\|R_d\|_{\rm op}\le1\), including the clipped last column.
+The triangle inequality for the nuclear norm gives
 \[
- \|T_N\|_{\rm HS}^2
- \ll\frac{N(\log N)^2}{M}
-       +\sqrt N(\log N)^2
-       +N\frac{\log(2D)}D+\frac NM
- \ll N u e^{-u}.                                         \tag{10}
+ \begin{aligned}
+ \|K_{>D}\|_1
+ &\le2\sum_{D<d\le N}
+        \frac{\Lambda(d)}{\sqrt d}\,\|R_d\|_1\\
+ &\le2N\sum_{d>D}\frac{\Lambda(d)}{d^{3/2}}
+ \ll\frac N{\sqrt D}.
+ \end{aligned}                                            \tag{9}
 \]
-This estimate includes every \(d>D\) prime power and the full
-continuous matrix. Since \(\operatorname{rank}T_N\le N\),
+The final bound follows by partial summation from Chebyshev's
+\(\psi(x)\ll x\). Every \(d>D\) prime power is retained.
+
+The continuous operator \(P\) on \([-L,L]\) has kernel
+\(e^{|x-y|/2}\). It has the exact factorization
 \[
- \|T_N\|_1\le\sqrt N\,\|T_N\|_{\rm HS}
- \ll N\sqrt u\,e^{-u/2}.                                 \tag{11}
+ e^{|x-y|/2}
+ =g(x)g(y)-\int_{-L}^{L}h_s(x)h_s(y)\,ds,\qquad
+ g(x)=e^{(x+L)/2},\quad
+ h_s(x)=e^{(x-s)/2}\mathbf1_{x\ge s}.                     \tag{10}
+\]
+Indeed, integrating to \(\min(x,y)\) and subtracting from
+\(e^{(x+y+2L)/2}\) leaves \(e^{|x-y|/2}\). Compression preserves
+this rank-one-minus-positive form, so \(P_N\) has at most one
+positive eigenvalue. Its trace is positive, because every diagonal
+cell integral has a positive kernel. Its operator norm is
+\(O(e^L)=O(\sqrt N)\) by the spatial Schur bound. Consequently,
+if \(\lambda_+(P_N)>0\) is the sole positive eigenvalue, then
+\[
+ \|P_N\|_1=2\lambda_+(P_N)-\operatorname{Tr}P_N
+ \le2\|P_N\|_{\rm op}\ll\sqrt N.                           \tag{11}
+\]
+This treats the full, indefinite continuous matrix; positivity
+of \(P_N\) is not assumed.
+
+The variational principle (7), trace-norm duality, and (4) now give
+\[
+ \operatorname{Tr}(Q_N)_-
+ \le\operatorname{Tr}(A_N)_-
+     +\|K_{>D}\|_1+\|P_N\|_1.                             \tag{12}
 \]
 
 ## Low and high Fourier frequencies
@@ -141,14 +167,14 @@ The cell transforms obey
 \(|\widehat e_n(t)|^2\le\ell_n\), so their low-frequency
 trace is at most
 \[
- \frac1{2\pi}\int_{|t|\le T_0}\omega_{M,N}(t)dt
- \le\frac{T_0}{\pi}\sum_{n>M}\ell_n
+ \frac1{2\pi}\int_{|t|\le T_0}\omega_N(t)dt
+ \le\frac{T_0}{\pi}\sum_{n=1}^{N}\ell_n
  \ll\sqrt N\log N.
 \]
 The low-frequency contribution to (8) is consequently
 \[
  O(\sqrt N\sqrt D\,\log N)
- =O(\sqrt N e^{u/2}\log N).                              \tag{12}
+ =O(\sqrt N e^{u/2}\log N).                              \tag{13}
 \]
 
 For large \(N\), (6) also makes
@@ -158,7 +184,7 @@ For large \(N\), (6) also makes
  \bigl(F_{\le D}(t)-b(t)\bigr)_+
  \le\bigl(F_{\rm pr}(t)-a_N\bigr)_+,\qquad
  a_N=\tfrac14\log N.
- \tag{13}
+ \tag{14}
 \]
 For real \(x\) and \(a>0\),
 \((x-a)_+\le |x|^{2k}/a^{2k-1}\). Hence the high-frequency
@@ -166,15 +192,15 @@ portion of (8) is at most
 \[
  a_N^{1-2k}\frac1{2\pi}
    \int_{|t|>T_0}|F_{\rm pr}(t)|^{2k}
-                     \omega_{M,N}(t)\,dt.                \tag{14}
+                     \omega_N(t)\,dt.                    \tag{15}
 \]
 The [high-moment estimate](compact-weil-successor-cell-negative-index-stretched-exponential.md#low-frequency-prime-mass-and-high-moments)
 proves, with
 \(V_D=\sum_{p\le D}(\log p)^2/p\ll u^2\),
 \[
  \frac1{2\pi}\int_{|t|>T_0}|F_{\rm pr}(t)|^{2k}
-                  \omega_{M,N}(t)dt
- \ll N\,4^k k!V_D^k.                                     \tag{15}
+                  \omega_N(t)dt
+ \ll N\,4^k k!V_D^k.                                     \tag{16}
 \]
 For clarity, the \(k\)-th power of the prime Dirichlet
 polynomial has length \(D^k\le N^{1/8}\) and squared
@@ -183,58 +209,31 @@ mean-square bound on every dyadic interval
 \([T,2T]\), \(T\ge\sqrt N\), is therefore
 \(O(Tk!V_D^k)\). The exact cell Fourier weight is
 \[
- \omega_{M,N}(t)\ll
+ \omega_N(t)\ll
  \begin{cases}
   1+\log^+(N/|t|),&1\le|t|\le N,\\
   N^2/t^2,&|t|\ge N,
  \end{cases}
 \]
 and its dyadic weighted sum is \(O(N)\), including
-\(|t|\gg N\). This gives (15) with no truncated-frequency
+\(|t|\gg N\). This gives (16) with no truncated-frequency
 remainder.
 
 Since \(k!\le k^k\), \(k\asymp u\), \(V_D\ll u^2\), and
-\(a_N\asymp u^2\), (14)--(15) are
+\(a_N\asymp u^2\), (15)--(16) are
 \[
  \ll N a_N\left(\frac{CkV_D}{a_N^2}\right)^k
  \ll N u^2\left(\frac{C'}u\right)^k
- \ll N u^2 e^{-c_1u\log u}.                              \tag{16}
+ \ll N u^2 e^{-c_1u\log u}.                              \tag{17}
 \]
-Equations (8), (12), and (16) control the negative trace
-on the fine-cell multiplier.
-
-## Restore the coarse cells
-
-The full form has a crude uniform lower bound
-\[
- Q_N\ge-C\sqrt N\,I.                                      \tag{17}
-\]
-Indeed \(b\ge-C_b\), the prime shifts are contractions and
-\(\sum_{d\le N}\Lambda(d)/\sqrt d\ll\sqrt N\), while
-the continuous kernel \(e^{|x-y|/2}\) has spatial row
-integral \(O(e^L)=O(\sqrt N)\). Thus (17) holds with
-both poles retained through (2).
-
-Let the eigenvalues of \(Q_N\) be
-\(\lambda_1\le\cdots\le\lambda_N\), and those of its
-fine-cell principal compression be
-\(\mu_1\le\cdots\le\mu_{N-M}\). Cauchy interlacing gives
-\(\mu_i\le\lambda_{i+M}\). The first \(M\) eigenvalues
-cost at most \(CM\sqrt N\) by (17); each remaining
-negative magnitude is bounded by the corresponding one
-for the fine compression. Therefore
+Equations (8), (13), and (17) control the negative trace
+of the complete small-prime multiplier. Combining with
+(9), (11), and (12) gives
 \[
  \operatorname{Tr}(Q_N)_-
- \le CM\sqrt N+
-        \operatorname{Tr}(\Pi_MQ_N\Pi_M)_-.
- \tag{18}
-\]
-Combine (9), (11)--(12), (16), and (18). The result is
-\[
- \operatorname{Tr}(Q_N)_-
- \ll e^{2u}\sqrt N+\sqrt N e^{u/2}\log N
+ \ll \sqrt N e^{u/2}\log N
       +Nu^2e^{-c_1u\log u}
-      +N\sqrt u\,e^{-u/2}
+      +Ne^{-u/2}+\sqrt N
  \ll N e^{-c u},
 \]
 for some absolute \(c>0\), proving (1).
