@@ -34,6 +34,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Signed Goldbach cofactor oscillation on each parity](goldbach-signed-cofactor-parity-oscillation.md)
 - [Critical-scale signed cofactor oscillation on each parity](goldbach-signed-cofactor-critical-omega.md)
 - [The alternating Goldbach cofactor has a positive Abel main term](goldbach-alternating-parity-main-term.md)
+- [A better pointwise exponent for the linearized signed cofactor](goldbach-linearized-pointwise-vk-gain.md)
 - [Matsumoto-Suzuki form of the centered Goldbach square](goldbach-matsumoto-suzuki-centered-form.md)
 - [The first Bessel-product cumulant and its arithmetic scope](goldbach-mfunction-fourth-cumulant.md)
 - [A spectral bridge from centered Goldbach pairs to zeta zeros](goldbach-multiplicative-spectral-bridge.md)
