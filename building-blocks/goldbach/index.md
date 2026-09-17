@@ -29,6 +29,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Complete Lambda/Goldbach heat and the Buchstab near-collision covariance](goldbach-heat-versus-buchstab-near-collision.md)
 - [Literal successor transport of the additive Goldbach source](goldbach-literal-successor-counting-transport.md)
 - [The signed successor cofactor retains the centered prime source](goldbach-signed-cofactor-volterra-source.md)
+- [Signed Goldbach cofactor crossings](goldbach-signed-cofactor-oscillation.md)
 - [Matsumoto-Suzuki form of the centered Goldbach square](goldbach-matsumoto-suzuki-centered-form.md)
 - [The first Bessel-product cumulant and its arithmetic scope](goldbach-mfunction-fourth-cumulant.md)
 - [A spectral bridge from centered Goldbach pairs to zeta zeros](goldbach-multiplicative-spectral-bridge.md)
