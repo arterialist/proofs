@@ -4,6 +4,8 @@
 The finite endpoint identity with actual `Lambda(p^k)=log p`, the
 `Lambda(n)/n` weight, and strict collar endpoints is Lean-compiled in
 [CriticalChirpedEndpointFinite.lean](../../formalization/BuildingBlocks/CriticalChirpedEndpointFinite.lean).
+The same file proves that any cutoff `N>=exp(D+w)` captures every term
+of the actual cross for all separations `d<=D`; larger cutoffs agree.
 The construction and estimates for the analytic packet remain written.
 It gives a signed average over packet separations, not a pointwise
 prime-phase estimate or RH. No literature-priority claim is made.

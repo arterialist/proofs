@@ -98,6 +98,39 @@ def actualCrossFinite (N : ℕ) (C : ℝ → ℂ) (d : ℝ) : ℂ :=
     (((ArithmeticFunction.vonMangoldt n / Real.sqrt (n : ℝ) : ℝ) : ℂ) *
       C (Real.log (n : ℝ) - d))
 
+/-- Once the cutoff has passed the largest possible prime-power location
+for every separation `d ≤ D`, enlarging it changes no term. -/
+theorem actual_cross_cutoff_stable (N M : ℕ) (C : ℝ → ℂ)
+    (w D d : ℝ) (hNM : N ≤ M)
+    (hN : Real.exp (D + w) ≤ (N : ℝ)) (hd : d ≤ D)
+    (hC : ∀ y, w ≤ y → C y = 0) :
+    actualCrossFinite M C d = actualCrossFinite N C d := by
+  classical
+  have hsubset : Finset.Icc 2 N ⊆ Finset.Icc 2 M := by
+    intro n hn
+    exact Finset.mem_Icc.mpr
+      ⟨(Finset.mem_Icc.mp hn).1, (Finset.mem_Icc.mp hn).2.trans hNM⟩
+  have hsum := Finset.sum_subset hsubset
+    (f := fun n : ℕ =>
+      (((ArithmeticFunction.vonMangoldt n / Real.sqrt (n : ℝ) : ℝ) : ℂ) *
+        C (Real.log (n : ℝ) - d)))
+    (by
+      intro n hn hnot
+      have hnlarge : N < n := by
+        by_contra h
+        exact hnot (Finset.mem_Icc.mpr
+          ⟨(Finset.mem_Icc.mp hn).1, Nat.le_of_not_gt h⟩)
+      have hnpos : (0 : ℝ) < (n : ℝ) := by
+        exact_mod_cast (show 0 < n by omega)
+      have hNn : Real.exp (D + w) < (n : ℝ) :=
+        lt_of_le_of_lt hN (by exact_mod_cast hnlarge)
+      have hlog : D + w < Real.log (n : ℝ) :=
+        (Real.lt_log_iff_exp_lt hnpos).mpr hNn
+      have hy : w ≤ Real.log (n : ℝ) - d := by linarith
+      dsimp
+      rw [hC _ hy, mul_zero])
+  exact hsum.symm
+
 private theorem mangoldt_weight_simplify (n : ℕ) (hn : 2 ≤ n) :
     ArithmeticFunction.vonMangoldt n / Real.sqrt (n : ℝ) *
       Real.exp (-Real.log (n : ℝ) / 2) =
@@ -279,6 +312,7 @@ theorem actual_cross_finite_exp_collar_of_continuous (N : ℕ) (C F : ℝ → �
     fun_prop
   exact hcont.intervalIntegrable 0 D
 
+#print axioms actual_cross_cutoff_stable
 #print axioms actual_cross_finite_exp_collar_of_continuous
 
 end
