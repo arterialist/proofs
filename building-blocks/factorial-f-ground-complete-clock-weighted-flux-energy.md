@@ -314,3 +314,58 @@ von Mangoldt function and proves the gap is nonnegative when the cell
 weights are nonnegative. The identification of those weights with the
 two \(F\)-ground integrals, the PNT limit (18), and the analytic
 criterion (21) remain written proofs.
+
+## Even Goldbach totals and the powers-of-two row
+
+The moving-cell formulation also permits an exact parity audit.
+Let \(T_N^{\rm odd}\) be the part of \(T_N^{\rm cell}\) with
+\(m+n\) odd, and \(T_N^{\rm even}=T_N^{\rm cell}-T_N^{\rm odd}\).
+Write
+\(A_2(N)=(\log2)\lfloor\log_2N\rfloor\), the total von
+Mangoldt weight of the even prime powers at most \(N\). Since an
+odd total has precisely one even summand, the old-pair contribution
+on \([N,N+1]\) is exactly
+\[
+ 2a_NA_2(N)\{\psi(N)-A_2(N)\}.
+ \tag{22}
+\]
+Every remaining odd-total pair has one new index \(N+1\), so its
+nonnegative contribution \(\eta_N\) satisfies
+\[
+ T_N^{\rm odd}
+ =2a_NA_2(N)\{\psi(N)-A_2(N)\}+\eta_N,
+ \qquad 0\le\eta_N\le D_N^{\rm cell}.
+ \tag{23}
+\]
+This keeps all odd prime powers and every power of two. PNT,
+\(A_2(N)=\log N+O(1)\), and (18) now give
+\[
+ \boxed{\quad
+ \sum_{N=X}^{2X-1}T_N^{\rm odd}
+ =\frac{2\log2}{\kappa_F^2}\log X+o(\log X).
+ \quad}                                                       \tag{24}
+\]
+Indeed the main summand in (23) is
+\(2\log N/(\kappa_F^2N)(1+o(1))\), whose dyadic sum has the
+displayed limit; the total of the \(\eta_N\) is bounded by (18).
+
+Define \(\mathcal U_X^{\rm even}\) by replacing
+\(T_N^{\rm cell}\) with \(T_N^{\rm even}\) in (19), while retaining
+the same complete one-body and continuous centering. Then
+\[
+ \mathcal U_X^{\rm even}
+ =\mathcal U_X-\sum_{N=X}^{2X-1}T_N^{\rm odd}
+ =\int_X^{2X}\frac{E(x)^2}{x^2F(x)^2}dx
+  -\frac{2\log2}{\kappa_F^2}\log X+o(\log X)
+ \tag{25}
+\]
+as an unconditional **signed additive-error** statement; the exact
+identity is the first equality together with (20) and (23).
+Consequently the all-\(\varepsilon\) subpower condition in (21)
+is equivalent if stated with \(\mathcal U_{2^k}^{\rm even}\)
+instead. Unlike \(\mathcal U_X\), the even-only quantity need not
+be nonnegative, because the odd row was removed without changing
+the centering. This is a moving-cutoff, original-\(F\) counterpart
+of the [even-only cumulative Goldbach reduction](goldbach-even-only-cumulative-criterion.md),
+not an unconditional RH estimate. Ordinary Goldbach existence
+supplies no upper bound for (25).
