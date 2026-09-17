@@ -363,3 +363,8 @@ lemma and shell transfer above are written proofs, not Lean theorems.
 The Lean files cited here cover the exact finite split and Abel
 algebra, with no analytic zero estimate formalized. We make no
 literature-priority claim for the analytic bound.
+
+The [subleading refinement](goldbach-cofactor-subleading-vk-gain.md)
+retains Bellotti's exact logarithms and strengthens the full signed
+bound to \(s\exp[-c_2\Phi(s)-\theta\Phi(s)\log\log\log s/\log\log s]\)
+for every \(\theta<c_2/15\).
