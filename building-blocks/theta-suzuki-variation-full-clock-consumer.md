@@ -53,7 +53,7 @@ This also upgrades two actual affine sources. With \(y=\sigma_O\), \(q=\tau_O\),
  \boxed{\qquad S_y,S_q\in D(K).\qquad}
 \tag{6a}
 \]
-The existing [prime-profile full-form theorem](theta-prime-profile-full-form-domain.md) needed only their membership in \(V_K\). Equation (6a) does not upgrade the prime profile \(w_p\), the crossing source \(S_f\), or the affine optimizer \(v_U\) to \(D(K)\).
+The existing [prime-profile full-form theorem](theta-prime-profile-full-form-domain.md) needed only their membership in \(V_K\). Equation (6a) alone does not upgrade the prime profile \(w_p\), the crossing source \(S_f\), or the affine optimizer \(v_U\) to \(D(K)\). A separate [singular-rate and graph-sum proof](theta-score-crossing-second-clock-domain.md) now establishes \(S_f\in D(K)\).
 
 ## The complete Suzuki derivative and graph-norm cutoff limit
 
