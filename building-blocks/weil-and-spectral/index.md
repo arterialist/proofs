@@ -29,6 +29,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A fourth-logarithm negative-index bound for the complete successor-cell Weil form](compact-weil-successor-cell-negative-index-fourth-log.md)
 - [A stretched-exponential negative-index bound for the complete successor-cell Weil form](compact-weil-successor-cell-negative-index-stretched-exponential.md)
 - [A stretched-exponential bound on total negative successor-cell Weil mass](compact-weil-successor-cell-negative-trace-bound.md)
+- [A signed Hilbert–Schmidt estimate for the complete successor-cell residual](compact-weil-successor-cell-signed-residual-hs.md)
 - [A positive successor-cell space with an actual prime edge](compact-weil-successor-cell-small-measure-positive-space.md)
 - [The two-profile Perron packet at critical frequency](compact-weil-two-profile-perron-crossover.md)
 - [September 2026 compact-window result and the actual growing carrier](compact-window-weil-certificate-carrier-scope.md)

@@ -331,6 +331,7 @@ import BuildingBlocks.ActualTerminalPrimeTraceFinite
 import BuildingBlocks.CompactWeilDivisorRayleighFinite
 import BuildingBlocks.CompactWeilDivisorEnergyFinite
 import BuildingBlocks.SuccessorCellTransferFinite
+import BuildingBlocks.SuccessorHighParentPrimeRow
 import BuildingBlocks.SuzukiCoefficientVariation
 import BuildingBlocks.ResidueLoadingSuccessor
 import BuildingBlocks.LogarithmicPrimeWindow
