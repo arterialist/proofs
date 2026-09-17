@@ -8,7 +8,8 @@ import Mathlib.Tactic
 When the new additive total is odd, one prime-power leg in every
 pair must be a power of two. This bounds upward signed cofactor
 steps by one logarithm without any analytic prime-distribution
-estimate. It says nothing about the size of downward steps.
+estimate. The exact step identity below retains the negative
+Chebyshev prefix for a separate analytic drift theorem.
 -/
 
 namespace BuildingBlocks.GoldbachCofactorOddStepFinite
@@ -201,6 +202,25 @@ theorem ratioError_step_le_prime (y : ℕ) (hy : 2 ≤ y) :
     ring
   rw [hid]
   exact sub_le_self _ (div_nonneg hψ hden.le)
+
+/-- The exact successor change retains the complete Chebyshev prefix.
+The negative term is what turns the odd-total step into a strict
+eventual drift after a short-interval prime estimate. -/
+theorem ratioError_step_exact (y : ℕ) (hy : 2 ≤ y) :
+    q y - q (y - 1) =
+      Λ y / (y : ℝ) -
+        ψ (y - 1) / (((y - 1 : ℕ) : ℝ) * (y : ℝ)) := by
+  have hym : 1 ≤ y - 1 := by omega
+  have hidx : y - 1 + 1 = y := by omega
+  have hstep := BuildingBlocks.GoldbachCofactorSuccessorFinite.ratioError_succ
+    (y - 1) hym
+  rw [hidx] at hstep
+  rw [hstep]
+  dsimp [BuildingBlocks.GoldbachCofactorVolterraFinite.primeError]
+  have hy0 : (y : ℝ) ≠ 0 := by positivity
+  have hym0 : (((y - 1 : ℕ) : ℝ)) ≠ 0 := by positivity
+  field_simp
+  ring
 
 /-- The new two-leg endpoint is nonpositive. -/
 theorem ratioError_two_nonpos : q 2 ≤ 0 := by
@@ -396,6 +416,29 @@ theorem signedCofactorError_odd_total_step_le_two_log (s : ℕ)
     _ ≤ 2 * Real.log ((s + 1 : ℕ) : ℝ) :=
       weightedPrimePair_odd_le_two_log (s + 1) hodd (by omega)
 
+/-- Exact finite one-step identity. The signed Chebyshev-prefix term
+is retained for the analytic odd-total drift estimate. -/
+theorem signedCofactorError_step_exact (s : ℕ) (hs : 4 ≤ s) :
+    Q (s + 1) - Q s = Λ (s - 1) * q 2 +
+      ∑ m ∈ Icc 2 (s - 2), Λ m *
+        (Λ (s + 1 - m) / ((s + 1 - m : ℕ) : ℝ) -
+          ψ (s - m) /
+            (((s - m : ℕ) : ℝ) * ((s + 1 - m : ℕ) : ℝ))) := by
+  have hsucc :=
+    BuildingBlocks.GoldbachCofactorSuccessorFinite.signedCofactorError_succ
+      s hs
+  change Q (s + 1) - Q s = Λ (s - 1) * q 2 +
+    ∑ m ∈ Icc 2 (s - 2),
+      Λ m * (q (s + 1 - m) - q (s - m)) at hsucc
+  rw [hsucc]
+  congr 1
+  apply Finset.sum_congr rfl
+  intro m hm
+  have hmle : m ≤ s - 2 := (mem_Icc.mp hm).2
+  have hy : 2 ≤ s + 1 - m := by omega
+  have hpred : s + 1 - m - 1 = s - m := by omega
+  rw [← hpred, ratioError_step_exact (s + 1 - m) hy]
+
 /-- A one-sided upper estimate on an even cutoff transfers to the
 following odd cutoff with only a logarithmic cost. -/
 theorem even_to_odd_upper_transfer (s : ℕ) (hs : 4 ≤ s)
@@ -409,9 +452,11 @@ theorem even_to_odd_upper_transfer (s : ℕ) (hs : 4 ≤ s)
 #print axioms even_prime_power_series_finite
 #print axioms prime_series_neg_finite
 #print axioms ratioError_step_le_prime
+#print axioms ratioError_step_exact
 #print axioms ratioError_two_nonpos
 #print axioms weightedPrimePair_odd_le_two_log
 #print axioms signedCofactorError_odd_total_step_le_two_log
+#print axioms signedCofactorError_step_exact
 #print axioms even_to_odd_upper_transfer
 
 end

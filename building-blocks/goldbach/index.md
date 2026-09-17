@@ -32,6 +32,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [The signed successor cofactor retains the centered prime source](goldbach-signed-cofactor-volterra-source.md)
 - [Signed Goldbach cofactor crossings](goldbach-signed-cofactor-oscillation.md)
 - [A uniform sieve bound for the signed Goldbach cofactor step](goldbach-signed-cofactor-sieve-step.md)
+- [Strict negative cofactor drift at every large odd total](goldbach-odd-total-strict-negative-drift.md)
 - [Signed Goldbach cofactor oscillation on each parity](goldbach-signed-cofactor-parity-oscillation.md)
 - [Critical-scale signed cofactor oscillation on each parity](goldbach-signed-cofactor-critical-omega.md)
 - [The alternating Goldbach cofactor has a positive Abel main term](goldbach-alternating-parity-main-term.md)
