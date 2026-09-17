@@ -111,6 +111,18 @@ def lateThreeLadder (N : ℕ) : Finset ℕ :=
   (Finset.range (N + 1)).filter
     (fun k => 0 < k ∧ N < 4 * 3 ^ k ∧ 3 ^ k ≤ N - 3)
 
+/-- The finite cutoff loses no exponent from the mathematical correction
+set: `k < 3 ^ k ≤ N - 3` already places every admissible `k` in the range. -/
+theorem mem_lateThreeLadder_iff {N k : ℕ} :
+    k ∈ lateThreeLadder N ↔
+      0 < k ∧ N < 4 * 3 ^ k ∧ 3 ^ k ≤ N - 3 := by
+  constructor
+  · exact fun h => (Finset.mem_filter.mp h).2
+  · intro h
+    have hkpow : k < 3 ^ k := Nat.lt_pow_self (by omega : 1 < 3)
+    have hkN : k < N + 1 := by omega
+    exact Finset.mem_filter.mpr ⟨Finset.mem_range.mpr hkN, h⟩
+
 private theorem lateThreeLadder_spread {N x y : ℕ}
     (hx : x ∈ lateThreeLadder N) (hy : y ∈ lateThreeLadder N) :
     x ≤ y + 1 ∧ y ≤ x + 1 := by
@@ -213,6 +225,7 @@ theorem threeFirstHarmonic_oriented (N : ℕ) :
 #print axioms weight_three_adjacent_even_rows
 #print axioms weight_three_reference_row
 #print axioms lateThreeLadder_card_le_two
+#print axioms mem_lateThreeLadder_iff
 #print axioms threeFirstHarmonic_oriented
 
 end BuildingBlocks.GoldbachThreePhaseHarmonicFinite
