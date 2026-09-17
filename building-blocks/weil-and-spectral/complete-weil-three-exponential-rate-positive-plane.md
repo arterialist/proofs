@@ -167,4 +167,9 @@ The analytic inputs are the finite-height theorem of
 [Trudgian's zero-count Corollary 1](https://arxiv.org/html/1208.5846v2).
 The [python-flint Arb documentation](https://python-flint.readthedocs.io/en/stable/arb.html)
 describes the validated ball arithmetic used by the certificate.
-No literature-priority claim is made for the three-rate consequence.
+[Polson's heat-trace work](https://arxiv.org/html/1708.02653v24)
+proves unconditional positivity of large finite Hankel blocks formed
+from derivatives of the squared-zero heat trace. Those heat-moment
+blocks are different from the causal-exponential Weil Gram `K(a,b)`
+studied here. No literature-priority claim is made for the three-rate
+consequence.
