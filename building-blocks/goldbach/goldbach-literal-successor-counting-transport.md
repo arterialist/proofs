@@ -120,6 +120,82 @@ $$
 
 This improves the crude O(X log X) estimate by keeping the cofactor psi(s-m)/(s-m) before taking bounds. The proof requires no RH or prime-pair theorem.
 
+### Universal logarithmic correction and signed arithmetic remainder
+
+The second term in (7) has a limit, not just a uniform bound. For an
+integer $s\ge4$, write it as
+\[
+T_s=\frac1{s^2}\sum_{m+n\le s}\Lambda(m)\Lambda(n)
+ \log\frac{(s-m)(s-n)}{mn}.
+\]
+All sums here start at $m,n\ge2$; the omitted value $\Lambda(1)=0$.
+The logarithm is nonnegative on the admitted triangle because
+$s-m\ge n$ and $s-n\ge m$. Exchanging the ordered variables gives the
+exact one-cofactor identity
+\[
+\boxed{T_s=\frac2{s^2}\sum_{m=2}^{s-2}
+  \Lambda(m)\psi(s-m)\log\frac{s-m}{m}.} \tag{7a}
+\]
+The summands on the right can have either sign; its equality to the
+nonnegative double sum keeps their complete cancellation.
+
+In fact, the prime number theorem alone gives
+\[
+\boxed{T_s\longrightarrow1\qquad(s\to\infty).} \tag{7b}
+\]
+Here is a proof that retains the logarithmic endpoint tails. Put
+$\mu_s=s^{-1}\sum_{2\le n\le s}\Lambda(n)\delta_{n/s}$.
+PNT gives $\mu_s\Rightarrow du$ on $[0,1]$, while Chebyshev gives the
+uniform prefix bound $\mu_s((0,t])\le Ct$. On
+$\Delta=\{(u,v):u,v>0,\ u+v\le1\}$ the kernel
+\[
+K(u,v)=\log\frac{(1-u)(1-v)}{uv}
+\]
+is nonnegative and at most $\log(1/u)+\log(1/v)$.
+The prefix bound and integration by parts give, uniformly in $s$,
+\[
+\int_{0<u\le\delta}\log(1/u)\,d\mu_s(u)
+ \le C\delta\{1+\log(1/\delta)\}.
+\]
+The same bound, together with the uniformly bounded total logarithmic
+moment, makes the two-axis contribution to
+$\int_\Delta K\,d\mu_s\,d\mu_s$ tend to zero as
+$\delta\downarrow0$. Away from the axes the kernel extended by zero
+across $u+v=1$ is bounded and continuous, so weak convergence of the
+product measures gives its ordinary area integral. Symmetry evaluates
+that integral exactly:
+\[
+\int_\Delta K(u,v)\,du\,dv
+=2\int_0^1(1-u)\log\frac{1-u}{u}\,du=1.
+\]
+This proves (7b) without assuming RH or any zero independence.
+
+The $O(s)$ first term in (7) has a different character. With the
+complete Chebyshev error $E(y)=\psi(y)-y$, define
+\[
+Q_s=\sum_{m=2}^{s-2}\Lambda(m)\frac{E(s-m)}{s-m}.
+\]
+Then (7) becomes the exact source-sensitive decomposition
+\[
+\boxed{\mathcal R(s-2)
+=\frac{2(s-1)}s\bigl[\psi(s-2)+Q_s\bigr]+T_s.}
+\tag{7c}
+\]
+PNT gives $Q_s=o(s)$ by splitting at $s-m=Y$ and then letting $Y$
+grow; it supplies no RH-scale bound on this signed cofactor row.
+Thus $T_s\to1$ is an unconditional universal transport constant,
+whereas the unresolved fluctuations remain attached to the actual
+prime-power source $Q_s$. It is not a Goldbach existence or RH result.
+
+[GoldbachSuccessorLogFinite.lean](../../formalization/BuildingBlocks/GoldbachSuccessorLogFinite.lean)
+formalizes the complete finite double sum, its nonnegativity, equality
+to the literal logarithmic ratio, and the exact cofactor reduction
+(7a), using the actual von Mangoldt function. It also proves the
+finite rational-cofactor split into $\psi(s-2)$ and $Q_s$ in (7c).
+The PNT limit (7b), identification of the finite rows with the
+continuous transport loss in (7c), and their analytic estimates
+remain written proofs.
+
 PNT additionally yields R(X)=2X+o(X). For the first sum in (7), split m<=s-Y and m>s-Y. On the first part psi(s-m)/(s-m) tends uniformly to 1 as Y tends to infinity; on the second, Chebyshev bounds it while psi(s)-psi(s-Y)=o(s) for each fixed Y by PNT. First let s tend to infinity and then Y tend to infinity. The second term stays O(1).
 
 ## Exact compensated pair and the weighted constant

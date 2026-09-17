@@ -193,6 +193,7 @@ import BuildingBlocks.IntegerBirthDiscreteAbel
 import BuildingBlocks.SuccessorFeedbackRootTranslation
 
 import BuildingBlocks.GoldbachSuccessorTransfer
+import BuildingBlocks.GoldbachSuccessorLogFinite
 
 import BuildingBlocks.PrimeStateAndRenewalArch
 import BuildingBlocks.CausalRenewalFiniteCells
