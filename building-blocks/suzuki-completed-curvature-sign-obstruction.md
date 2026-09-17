@@ -92,6 +92,9 @@ The corresponding first variation is
        +2\sum_{2\le n<x}\frac{\Lambda(n)}{\sqrt n}.
  \tag{6a}
 \]
+Its [explicit gamma derivative and weighted prime-clock criterion](suzuki-first-variation-weighted-prime-clock.md)
+identify (6a) with a centered \(2\sum\Lambda(n)/\sqrt n-4\sqrt x\)
+readout plus a bounded archimedean term.
 The logarithmic endpoint singularities in (6) are locally
 integrable. The beta formula and the elementary coefficient bounds
 give absolute convergence of its Laplace integral sufficiently far
