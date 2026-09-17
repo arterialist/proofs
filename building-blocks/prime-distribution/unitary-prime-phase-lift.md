@@ -224,3 +224,48 @@ signed readout, and it gives no bound on $E(x)$ or zeta zeros. Such a
 new representation would have to retain the boundary at one and
 identify its spectral form with the actual prime-power explicit
 formula rather than impose the critical line through unitarity.
+
+## The canonical unitary dilation still has infinite defect
+
+One might try to repair the failure of unitarity by adjoining the
+missing divisor preimages. The canonical group-completion space is
+$\widetilde{\mathcal H}=\ell^2(\mathbb Q_{>0})$, with orthonormal basis
+$(e_q)_{q\in\mathbb Q_{>0}}$ and unitary multiplication maps
+$$
+\widetilde U_m e_q=e_{mq}\qquad(m\in\mathbb N_{\ge1}).
+\tag{19}
+$$
+The embedded $\ell^2(\mathbb N_{\ge1})$ is invariant under these maps,
+and their restrictions are exactly the raw counting isometries in (16).
+This dilation is minimal in the elementary group-completion sense:
+every $e_{a/b}$ equals
+$\widetilde U_a\widetilde U_b^*e_1$, for positive integers $a,b$.
+It has also removed the boundary at one, since
+$\widetilde U_m^*e_1=e_{1/m}$.
+
+More generally, allow *any* support-preserving unitary maps
+$W_m e_q=\omega_m(q)e_{mq}$, with $|\omega_m(q)|=1$; no compatibility
+between different $m$ is needed. Then for every
+$v\in\widetilde{\mathcal H}$,
+$$
+\boxed{\langle W_{2n+1}v,W_{2n}v\rangle\longrightarrow0,\qquad
+\|[W_{2n+1}-W_{2n}]v\|^2\longrightarrow2\|v\|^2.}
+\tag{20}
+$$
+To prove the first limit, start with a finitely supported $f$.
+An overlap requires $(2n+1)q=2nr$ for two points $q,r$ in its finite
+support, hence $r/q=1+1/(2n)$. Each fixed pair $q,r$ satisfies this
+for at most one $n$, so the overlap is exactly zero for all sufficiently
+large $n$, regardless of the phases. Approximate an arbitrary $v$ by
+such an $f$. Unitarity bounds the difference of the two inner products
+by $2\|v\|\|v-f\|+\|v-f\|^2$, uniformly in $n$, proving the limit.
+Expanding the square proves the second limit.
+
+Thus every nonzero vector in the canonical unitary dilation has
+infinite half-neighbor defect. Simply making the multiplication maps
+unitary by adjoining rational divisor states cannot supply the
+finite-defect premise of the theorem above. A representation with
+finite defect must change the spectral measure or the readout, and
+still connect it to the *actual* $\Lambda(p^k)=\log p$ coefficients;
+unitarity by itself makes no assertion about zeta zeros. This is a
+written obstruction, not a Lean formalization or an RH estimate.
