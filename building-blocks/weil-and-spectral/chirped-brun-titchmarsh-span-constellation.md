@@ -223,3 +223,8 @@ off-line pair of transform values is too small on this family to
 challenge the `~log T` Gram margin. A different signed arithmetic
 estimate, rather than further absolute counting at this span, is
 needed to reach that mode.
+
+An [exact endpoint conservation identity](chirped-prime-cross-endpoint-conservation.md)
+does give an `O(T^-1)` signed integral of `e^(-d/2)P_T(d)` over every
+separation interval. Its pole-null cancellation is global in `d` and
+does not replace the pointwise row estimate used above.
