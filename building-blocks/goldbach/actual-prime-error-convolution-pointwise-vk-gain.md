@@ -42,7 +42,7 @@ $$
 
 The bound applies to the unsmoothed coefficient $Q_s$ itself. Directly taking absolute values with the prime-number-theorem error gives the smaller exponent $d$, up to an arbitrarily small loss. The argument below retains the signed difference $\Lambda(m)-1$ and controls it with a uniform truncated explicit formula.
 
-**Proof status and attribution.** This is a written analytic proof, not a Lean theorem or an RH result; no literature-priority claim is made. The finite split (8) is checked in [GoldbachCofactorLinearSplitFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorLinearSplitFinite.lean). Its analytic inputs are Bellotti's [2024 zero-free region](https://arxiv.org/abs/2306.10680), Johnston's [PNT transfer theorem](https://arxiv.org/html/2411.13791), classical Ingham zero density as documented by [Chourasiya and Simonič](https://arxiv.org/html/2507.15184), and the uniform explicit-formula theorem of [Cully-Hugill and Johnston](https://arxiv.org/html/2402.04272). It does not use the disputed near-edge zero-density claim or sharp $\varepsilon=0$ PNT assertion of Bellotti's later 2025 preprint.
+**Proof status and attribution.** This is a written analytic proof, not a Lean theorem or an RH result; no literature-priority claim is made. The finite split (8) is checked in [GoldbachCofactorLinearSplitFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorLinearSplitFinite.lean). The exact packet split and residual variation inequality behind (16), with both endpoints retained, are checked in [GoldbachCofactorPointwiseAbelFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorPointwiseAbelFinite.lean). The explicit formula, zero-density optimization, and resulting asymptotic estimate remain written arguments. Their analytic inputs are Bellotti's [2024 zero-free region](https://arxiv.org/abs/2306.10680), Johnston's [PNT transfer theorem](https://arxiv.org/html/2411.13791), classical Ingham zero density as documented by [Chourasiya and Simonič](https://arxiv.org/html/2507.15184), and the uniform explicit-formula theorem of [Cully-Hugill and Johnston](https://arxiv.org/html/2402.04272). It does not use the disputed near-edge zero-density claim or sharp $\varepsilon=0$ PNT assertion of Bellotti's later 2025 preprint.
 
 ## Uniform arithmetic inputs
 
@@ -119,6 +119,8 @@ F(m)=-\sum_{\rho\ \mathrm{near}}\frac{m^\rho}{\rho},
 \tag{12}
 $$
 
+The near-zero set is closed under complex conjugation, so $F(m)$ and $R(m)$ are real; this is the real-valued packet used in the finite Lean identity.
+
 For $m\ge m_0$, (6), the far-zero condition $\beta\le1-8\nu$, and $\sum_{|\gamma|\le T}|\rho|^{-1}\ll\log^2T$ give
 
 $$
@@ -144,7 +146,15 @@ a_{h+1}-a_h
 \tag{15}
 $$
 
-and Chebyshev's bounds imply $\sum_{2\le h\le s}|a_{h+1}-a_h|\ll\log s$ and $\sup_h|a_h|\ll1$. Summation by parts, including both endpoints $R(1)$ and $R(s-2)$, gives
+and Chebyshev's bounds imply $\sum_{2\le h\le s}|a_{h+1}-a_h|\ll\log s$ and $\sup_h|a_h|\ll1$. The finite summation-by-parts identity is
+
+$$
+\sum_{m=2}^{s-2}(R(m)-R(m-1))a_{s-m}
+=R(s-2)a_2-R(1)a_{s-2}
++\sum_{m=2}^{s-3}R(m)(a_{s-m}-a_{s-m-1}).
+$$
+
+It and the bound by the maximum residual times the displayed endpoint-and-variation budget are Lean-compiled in the packet Abel module linked above. The analytic variation estimate then gives
 
 $$
 \left|\sum_{m=2}^{s-2}\bigl(R(m)-R(m-1)\bigr)a_{s-m}\right|
