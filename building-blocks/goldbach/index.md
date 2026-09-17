@@ -3,6 +3,7 @@
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
 - [Actual finite Goldbach packets realize both late autocorrelation phases](actual-centered-packet-lag-autocorrelation.md)
+- [A pointwise Vinogradov--Korobov gain for the actual prime-error convolution](actual-prime-error-convolution-pointwise-vk-gain.md)
 - [Balanced odd Goldbach pairs in the actual window energy](balanced-odd-goldbach-window-energy.md)
 - [Centered consumer: successor, histories, and Goldbach coupling](centered-consumer-successor-history-goldbach.md)
 - [Adjacent Goldbach totals at a fixed cutoff](centered-goldbach-adjacent-total-faces.md)

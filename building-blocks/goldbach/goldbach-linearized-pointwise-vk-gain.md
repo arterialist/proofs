@@ -1,8 +1,9 @@
 # The linearized signed Goldbach cofactor has a better pointwise exponent
 
-The signed cofactor itself is not known to beat the inherited prime-number-theorem
-error. An exact pointwise split shows where a stronger bound would have to come
-from. Keep the actual von Mangoldt function, including every prime power, and put
+The [companion pointwise theorem](actual-prime-error-convolution-pointwise-vk-gain.md)
+beats the inherited prime-number-theorem exponent for the full signed cofactor.
+This note isolates its linear component and the exact signed remainder. Keep the
+actual von Mangoldt function, including every prime power, and put
 
 \[
 E(x)=\psi(x)-x,\qquad e_y=E(y)/y,\qquad
@@ -147,11 +148,14 @@ Cauchy gives only
 \tag{7}
 \]
 
-Thus (2) does **not** improve the bound for \(Q_s\). A genuinely
-signed estimate \(|V_s|\ll_\varepsilon s e^{-(d+\delta-\varepsilon)\Phi(s)}\)
-for any fixed \(\delta>0\) would be a pointwise gain over Bellotti's
-transfer, up to the linear ceiling \(2^{2/5}d\). Such an estimate
-is open; (7) does not supply it. No RH claim follows.
+Thus (2) alone does **not** improve the bound for \(Q_s\). The
+[companion written proof](actual-prime-error-convolution-pointwise-vk-gain.md)
+now supplies the required signed estimate
+\(|V_s|\ll_\varepsilon s\exp[-(c_*-\varepsilon)\Phi(s)]\), where
+\(c_*=0.2714144067\ldots>d\), by a fixed truncated zero cutoff and
+summation by parts on \(\Lambda(m)-1\). This is below the linear ceiling
+\(2^{2/5}d\) but improves Johnston's direct PNT transfer for the full
+\(Q_s\). Equation (7) alone does not supply that gain. No RH claim follows.
 
 The finite split in (1) is Lean-compiled with standard axioms.
 The explicit formula, zero-density optimization and analytic bound
