@@ -516,6 +516,7 @@ import BuildingBlocks.CenteredGoldbachAdjacentTotalsFinite
 import BuildingBlocks.CenteredGoldbachEvenCompensationFinite
 import BuildingBlocks.GoldbachOddPowerBoundFinite
 import BuildingBlocks.GoldbachPrimePhaseCutFinite
+import BuildingBlocks.GoldbachEvenPhaseCenterFinite
 import BuildingBlocks.StableOddMobiusPrefixFinite
 
 import BuildingBlocks.ThetaLocalSpectralAudit

@@ -2,8 +2,10 @@
 
 Written arithmetic proof, 17 September 2026. The complete prime-generator
 phase has a first angular harmonic that recovers the actual Chebyshev error
-$E(N)=\psi(N)-N$ up to an explicit $O_c(\sqrt N\log N)$ error after
-normalization. This is an exact additive/multiplicative bridge: the angular
+$E(N)=\psi(N)-N$. A moving square-root prime band gives an explicit
+$O_c(\sqrt N\log N)$ reconstruction error; the single generator $2$
+has a bounded ladder correction. This is an exact additive/multiplicative
+bridge: the angular
 projection removes the critical prime-square main term found in the
 [complex phase cut](goldbach-complex-prime-phase-square-transition.md).
 An $N^{1+\varepsilon}$ bound for this **signed centered harmonic** is
@@ -176,6 +178,35 @@ at least three give the smaller second term. Equation (9) becomes
  \tag{11}
 \]
 
+The exact fixed-generator specialization is sharper. Set $z=2$ and
+$N\ge4$. Then $\mathcal A_2(N)$ consists of all powers $2^k\le N$.
+The interaction $T_0$ in (6) counts $2^k\le N-2$, while
+$T_{\rm adj}$ counts $2^{k+1}+2^k=3\cdot2^k\le N$.
+Thus, with
+
+\[
+ d_N^{(2)}=\#\{k\ge1:N/3<2^k\le N-2\},
+ \qquad 0\le d_N^{(2)}\le2,
+ \tag{11a}
+\]
+
+the complete exact row is
+
+\[
+ \boxed{\quad
+ \mathfrak H_1(N,2)=2\log2\,[E(N-2)-(\log2)d_N^{(2)}].
+ \quad}
+ \tag{11b}
+\]
+
+Three powers of $2$ have endpoint ratio at least $4$, whereas the
+interval in (11a) has ratio less than $3$, proving the bound on $d_N^{(2)}$.
+This reconstructs $E(N-2)$ with a bounded error; $E(N)$ differs by at
+most $O(\log N)$ across the two intervening integer arrivals. The
+generator-$2$ row pairs $2$ with odd prime powers, so its main additive
+totals are **odd**. The [parity-aware generator-$3$ consumer](goldbach-even-three-phase-prime-error.md)
+gives the corresponding exact reconstruction using even totals.
+
 Consequently, for any one fixed $c>0$,
 
 \[
@@ -187,6 +218,11 @@ Consequently, for any one fixed $c>0$,
  \quad}
  \tag{12}
 \]
+
+Likewise (11b) yields the fixed-generator criterion
+$\mathrm{RH}\Longleftrightarrow
+\mathfrak H_1(N,2)=O_\varepsilon(N^{1/2+\varepsilon})$
+for every $\varepsilon>0$; its required upper bound is still open.
 
 Indeed RH gives $E(N)=O_\varepsilon(N^{1/2+\varepsilon})$ and
 the first line of (11) gives the harmonic estimate. Conversely the
