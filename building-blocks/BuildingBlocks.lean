@@ -67,6 +67,7 @@ import BuildingBlocks.ContractionRecovery
 import BuildingBlocks.FixedCoefficient
 import BuildingBlocks.PrimeEnergy
 import BuildingBlocks.PrimeSignedAverage
+import BuildingBlocks.PrimeIncrementEnergyAbel
 import BuildingBlocks.DivisionRod
 import BuildingBlocks.ActualCriticalSignCriterion
 import BuildingBlocks.TwoCrossingMoment

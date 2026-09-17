@@ -66,6 +66,25 @@ theorem logarithmicPrimeMass_bounds {N : ℕ} (hN : 1 ≤ N) :
   · apply (mul_le_mul_iff_right₀ hn).mp
     nlinarith
 
+/-- Chebyshev's linear bound for the full prime-power source lowers the
+leading logarithmic-square coefficient in the diagonal energy estimate. -/
+theorem primeIncrementEnergy_le_chebyshev {N : ℕ} (hN : 1 ≤ N) :
+    primeIncrementEnergy N ≤ Real.log (N : ℝ) ^ 2 +
+      (4 * Real.log 2 + 1) * Real.log (N : ℝ) + 1 := by
+  have hNreal : (1 : ℝ) ≤ (N : ℝ) := by exact_mod_cast hN
+  have hlog : 0 ≤ Real.log (N : ℝ) := Real.log_nonneg hNreal
+  have hmass := (logarithmicPrimeMass_bounds hN).2
+  have henergy := primeIncrementEnergy_le_reciprocal hN
+  dsimp only [logarithmicPrimeMass] at hmass
+  have hscaled := mul_le_mul_of_nonneg_left hmass hlog
+  nlinarith
+
+theorem prime_energy_upper_chebyshev {N : ℕ} (hN : 1 ≤ N) :
+    discretePrimeErrorEnergy N ≤ 2 * primeErrorDrift N +
+      (Real.log (N : ℝ) ^ 2 + (4 * Real.log 2 + 1) * Real.log (N : ℝ) + 1) :=
+  (prime_energy_upper N).trans
+    (add_le_add_left (primeIncrementEnergy_le_chebyshev hN) _)
+
 theorem logarithmicPrimeMass_sub_harmonic_bounds {N : ℕ} (hN : 1 ≤ N) :
     -2 ≤ logarithmicPrimeMass N - (harmonic N : ℝ) ∧
     logarithmicPrimeMass N - (harmonic N : ℝ) ≤ 4 * Real.log 2 := by

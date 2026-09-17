@@ -443,7 +443,7 @@ The [uniform prime-support theorem](prime-support-removal-asymptotics.md) keeps 
 
 ## Reciprocal approximation and elementary prime energy
 
-The [reciprocal quotient-window modules](reciprocal-quotient-windows.md) prove an exact Gram isometry, local coefficient recovery and the failure of any fixed finite coefficient repair under an explicit Mertens oscillation premise. The [prime-energy identities](prime-energy-first-moment.md) retain the terminal square and prove an unconditional bounded signed first moment; the signed drift still needs an upper bound. The [ordered division-rod inequalities](ordered-division-rods.md) bound products by endpoints and total gap, with the strictness and empty-family hypotheses explicit. These are formalized finite tools, not proofs of the missing RH estimates.
+The [reciprocal quotient-window modules](reciprocal-quotient-windows.md) prove an exact Gram isometry, local coefficient recovery and the failure of any fixed finite coefficient repair under an explicit Mertens oscillation premise. The [prime-energy identities](prime-energy-first-moment.md) retain the terminal square, bound the actual diagonal increment energy by $\frac12\log^2N+O(\log N)$ through finite Abel summation, and prove an unconditional bounded signed first moment; the signed drift still needs an upper bound. The [ordered division-rod inequalities](ordered-division-rods.md) bound products by endpoints and total gap, with the strictness and empty-family hypotheses explicit. These are formalized finite tools, not proofs of the missing RH estimates.
 
 ## Unitary prime phases
 

@@ -7,7 +7,7 @@ e_n=\psi(n)-n,\qquad a_n=\Lambda(n)-1,
 \qquad \psi(n)=\sum_{k\le n}\Lambda(k).
 $$
 
-Then $e_0=0$ and $e_n-e_{n-1}=a_n$. [PrimeEnergy](BuildingBlocks/PrimeEnergy.lean) and [PrimeSignedAverage](BuildingBlocks/PrimeSignedAverage.lean) formalize the finite identities and unconditional estimates below. They are elementary summation-by-parts results, not an RH estimate or a first-formalization claim.
+Then $e_0=0$ and $e_n-e_{n-1}=a_n$. [PrimeEnergy](BuildingBlocks/PrimeEnergy.lean), [PrimeSignedAverage](BuildingBlocks/PrimeSignedAverage.lean), and [PrimeIncrementEnergyAbel](BuildingBlocks/PrimeIncrementEnergyAbel.lean) formalize the finite identities and unconditional estimates below. They are elementary summation-by-parts results, not an RH estimate or a first-formalization claim.
 
 Define
 
@@ -28,16 +28,30 @@ To prove it, telescope the weighted differences $\sum_{n\le N}(e_n^2-e_{n-1}^2)/
 For $N\ge1$,
 
 $$
-I_N\le2(\log N)^2+1+\log N.                         \tag{2}
+I_N\le\frac12(\log N)^2+\left(4\log2+\frac12\right)\log N+3. \tag{2}
 $$
 
-Indeed $0\le\Lambda(n)\le\log N$ for $n\le N$, hence $(\Lambda(n)-1)^2\le\Lambda(n)\log N+1$. The exact factorization sum $\log(N!)=\sum_{n\le N}\lfloor N/n\rfloor\Lambda(n)$ implies $\sum_{n\le N}\Lambda(n)/n\le2\log N$ by the elementary bounds $\log(N!)\le N\log N$ and $\psi(N)\le N\log N$. Summing the inequality and using $H_N\le1+\log N$ proves (2).
+Write $L_N=\sum_{n\le N}\Lambda(n)/n$. The factorial identity and Chebyshev's linear bound give $\log N-1\le L_N\le\log N+4\log2$, as proved below. Since $\Lambda(n)^2\le\Lambda(n)\log n$,
+
+$$
+I_N\le\sum_{n\le N}\frac{\Lambda(n)\log n}{n}-2L_N+H_N.
+$$
+
+Put $\delta_k=\log(k+1)-\log k$. Finite Abel summation keeps the terminal mass:
+
+$$
+\sum_{n\le N}\frac{\Lambda(n)\log n}{n}
+=L_N\log N-\sum_{k=1}^{N-1}L_k\delta_k.
+$$
+
+Here $0\le\delta_k\le1$, $\sum_{k<N}\delta_k=\log N$, and $2\sum_{k<N}(\log k)\delta_k+\sum_{k<N}\delta_k^2=(\log N)^2$. Hence $\sum\delta_k^2\le\log N$ and the Abel sum is at most $\frac12(\log N)^2+(4\log2+\frac32)\log N$. Inserting $L_N\ge\log N-1$ and $H_N\le1+\log N$ proves (2). `primeIncrementEnergy_le_abel` is the compiled bound. The earlier coefficient-one and coefficient-two bounds remain available and can be smaller at short cutoffs.
 
 Thus
 
 $$
 V_N+\frac{e_N^2}{N+1}
-\le2D_N+2(\log N)^2+1+\log N.                        \tag{3}
+\le2D_N+\frac12(\log N)^2+
+\left(4\log2+\frac12\right)\log N+3.                 \tag{3}
 $$
 
 A bound on the signed drift $D_N$ would control the energy and terminal error. Equation (2) alone does not do so. In fact the actual drift is already positive at $N=2$:

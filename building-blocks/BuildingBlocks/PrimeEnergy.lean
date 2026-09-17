@@ -109,12 +109,14 @@ theorem reciprocal_vonMangoldt_sum_le {N : ℕ} (hN : 1 ≤ N) :
   apply (mul_le_mul_iff_right₀ hN0).mp
   nlinarith
 
-/-- This diagonal term is unconditionally polylogarithmic. The signed drift
-in `prime_energy_balance` is not bounded by this theorem. -/
-theorem primeIncrementEnergy_le_log_square {N : ℕ} (hN : 1 ≤ N) :
-    primeIncrementEnergy N ≤ 2 * Real.log (N : ℝ) ^ 2 + 1 + Real.log (N : ℝ) := by
+/-- The diagonal energy is controlled by the reciprocal mass of the complete
+prime-power source. This does not control the signed drift in
+`prime_energy_balance`. -/
+theorem primeIncrementEnergy_le_reciprocal {N : ℕ} (hN : 1 ≤ N) :
+    primeIncrementEnergy N ≤ Real.log (N : ℝ) *
+      (∑ n ∈ Finset.Icc 1 N, ArithmeticFunction.vonMangoldt n / (n : ℝ)) +
+      (1 + Real.log (N : ℝ)) := by
   have hNreal : (1 : ℝ) ≤ (N : ℝ) := by exact_mod_cast hN
-  have hlog : 0 ≤ Real.log (N : ℝ) := Real.log_nonneg hNreal
   have hterm : ∀ n ∈ Finset.Icc 1 N,
       primeIncrement n ^ 2 / (n : ℝ) ≤
         Real.log (N : ℝ) * (ArithmeticFunction.vonMangoldt n / (n : ℝ)) + (n : ℝ)⁻¹ := by
@@ -140,10 +142,17 @@ theorem primeIncrementEnergy_le_log_square {N : ℕ} (hN : 1 ≤ N) :
         ArithmeticFunction.vonMangoldt n / (n : ℝ)) + (harmonic N : ℝ) := by
       simp only [Finset.sum_add_distrib, ← Finset.mul_sum, harmonic_eq_sum_Icc,
         Rat.cast_sum, Rat.cast_inv, Rat.cast_natCast]
-    _ ≤ Real.log (N : ℝ) * (2 * Real.log (N : ℝ)) + (1 + Real.log (N : ℝ)) :=
-      add_le_add (mul_le_mul_of_nonneg_left (reciprocal_vonMangoldt_sum_le hN) hlog)
-        (harmonic_le_one_add_log N)
-    _ = _ := by ring
+    _ ≤ _ := add_le_add_left (harmonic_le_one_add_log N) _
+
+/-- An elementary bound for the diagonal term. The signed drift remains
+uncontrolled. -/
+theorem primeIncrementEnergy_le_log_square {N : ℕ} (hN : 1 ≤ N) :
+    primeIncrementEnergy N ≤ 2 * Real.log (N : ℝ) ^ 2 + 1 + Real.log (N : ℝ) := by
+  have hNreal : (1 : ℝ) ≤ (N : ℝ) := by exact_mod_cast hN
+  have hlog : 0 ≤ Real.log (N : ℝ) := Real.log_nonneg hNreal
+  have hh := primeIncrementEnergy_le_reciprocal hN
+  have hb := mul_le_mul_of_nonneg_left (reciprocal_vonMangoldt_sum_le hN) hlog
+  nlinarith
 
 theorem prime_energy_upper_log_square {N : ℕ} (hN : 1 ≤ N) :
     discretePrimeErrorEnergy N ≤
