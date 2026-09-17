@@ -75,8 +75,9 @@ G(R)=\sum_{d\le R}\mu^2(d)
 \]
 
 The avoided-class numbers may depend on $n$. We need two consequences
-of (5), both with absolute implied constants. Fix an even $n$ and
-an integer interval $I\subset [Y,2Y)\cap[3,n/2)$ of length $H\le Y$.
+of (5), both with absolute implied constants. For the pair estimate,
+fix an even $n$ and an integer interval
+$I\subset [Y,2Y)\cap[3,n/2)$ of length $H\le Y$.
 Take $R=\lfloor\sqrt Y\rfloor$ and $Y$ above a fixed absolute
 threshold. Both $y$ and $n-y$ exceed $R$ for $y\in I$. Thus, if
 both are prime, the forbidden classes modulo $p\le R$ are
@@ -168,7 +169,8 @@ has $\prod_{p\le x}(1-g(p))^{-1}\asymp\log x$ and gives
 
 This is the interval prime upper bound often called the
 $q=1$ Brun--Titchmarsh estimate. It is uniform in the position
-of $I$ and in $n$.
+of $I$ and in $n$. Its one-class proof does not use the parity of
+$n$, so (10) also applies when $n$ is odd.
 
 ## Dyadic sums and proper prime powers
 
