@@ -50,7 +50,7 @@ $$
 
 Thus sufficiently long, moving signed intervals gain the exponent $c_2>d$ over direct use of the prime-number-theorem error. This is an interval-average estimate. At $H=1$, the second term of (4) is too large to improve a pointwise estimate for $Q_s$.
 
-**Proof status.** The analytic estimates below are written proofs. The [Lean finite-swap theorem](../formalization/BuildingBlocks/GoldbachCofactorCumulativeFinite.lean) verifies the underlying complete-prime-power cumulative identity; it does not formalize the zero estimates or (4). This theorem makes no RH claim.
+**Proof status.** The analytic estimates below are written proofs. The [Lean finite-swap theorem](../../formalization/BuildingBlocks/GoldbachCofactorCumulativeFinite.lean) verifies the underlying complete-prime-power cumulative identity; it does not formalize the zero estimates or (4). This theorem makes no RH claim.
 
 ## A two-power zero sum
 
