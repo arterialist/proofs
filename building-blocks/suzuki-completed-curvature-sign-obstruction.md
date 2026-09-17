@@ -123,6 +123,28 @@ contradiction. The repository's
 formalizes the general analytic principle, but this application to
 Suzuki's curvature is a written proof, not a Lean theorem.
 
+There is a related endpoint limit that explains why the parameter
+expansion cannot simply be integrated against a smooth coefficient
+density. The [exact gamma zero moment](suzuki-hankel-exponential-boundary-layer.md)
+is \(\int_0^1t^\omega k_\omega(t)\,dt=0\) for every positive
+\(\omega\), although \(k_0(t)=t^{-1/2}\) has integral \(2\). More
+precisely, as finite signed measures on \([0,1]\),
+\[
+ t^\omega k_\omega(t)\,dt
+ \;\xrightarrow[\omega\downarrow0]{\rm weak}\;
+ t^{-1/2}\,dt-2\delta_0.
+ \tag{8}
+\]
+For a continuous test \(\varphi\), subtract \(\varphi(0)\) using the
+zero moment. Away from \(t=0\), the beta formula gives uniform
+convergence to \(t^{-1/2}\). Near zero the bound
+\(|k_\omega(t)|\ll t^{-1/2}+\omega t^{\omega-1}\) implies that the
+integral of \((\varphi(t)-\varphi(0))t^\omega k_\omega(t)\) is
+bounded by a constant times the modulus of continuity of
+\(\varphi\) there, uniformly in \(\omega\). This proves (8). The
+negative mass sits at the scaling endpoint \(t=0\), even
+though every fixed interior \(t\) sees the positive limit kernel.
+
 The conclusion concerns \(\partial_\omega^2R_\omega|_0\), rather
 than \(R_\omega\) at a fixed positive parameter. In particular,
 the factor \((1-m/x)^\omega\) in (5) makes the Taylor expansion
