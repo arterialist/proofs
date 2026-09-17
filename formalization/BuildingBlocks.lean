@@ -201,6 +201,7 @@ import BuildingBlocks.GoldbachCofactorLinearSplitFinite
 import BuildingBlocks.GoldbachCofactorPointwiseAbelFinite
 import BuildingBlocks.GoldbachCofactorSuccessorQuadratic
 import BuildingBlocks.GoldbachCofactorOddStepFinite
+import BuildingBlocks.GoldbachCofactorWindowFinite
 import BuildingBlocks.GoldbachCofactorParityFinite
 import BuildingBlocks.GoldbachCofactorParitySeries
 

@@ -2,9 +2,11 @@
 
 **Status:** unconditional written analytic theorem, 18 September 2026.
 The exact one-step identity is Lean-compiled in
-[GoldbachCofactorOddStepFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorOddStepFinite.lean).
-The short-interval estimate, window summation and limits below are
-written analysis, not Lean theorems. No literature-priority claim is made.
+[GoldbachCofactorOddStepFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorOddStepFinite.lean),
+and its finite window sum and prefix telescope are compiled in
+[GoldbachCofactorWindowFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorWindowFinite.lean).
+The short-interval estimate and limiting bounds below are written
+analysis, not Lean theorems. No literature-priority claim is made.
 The derivation and its source ranges were independently audited in the
 “Formalize prime phase transitions” Codex task.
 
