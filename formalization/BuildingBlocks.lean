@@ -554,3 +554,4 @@ import BuildingBlocks.TwoRateWeilGramAlgebra
 import BuildingBlocks.ThreeRateWeilGramAlgebra
 import BuildingBlocks.ActualRampPrimeWeights
 import BuildingBlocks.ActualAnnulusGramAlgebra
+import BuildingBlocks.SuccessorMangoldtParity

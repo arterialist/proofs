@@ -69,6 +69,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [The actual feedback tail and its Abel–Mellin poles](successor-feedback-tail-Abel-poles.md)
 - [Harmonic-scale successor order rigidifies completely additive prime energy](successor-order-harmonic-defect-complete-additivity-rigidity.md)
 - [The full cusp-profile asymptotic of the actual quadrature correction](successor-quadrature-cusp-asymptotic.md)
+- [The successor prime-power source has a sparse zero trace](successor-mangoldt-zero-trace.md)
 - [Positivity at every positive age for the actual resolvent under RH](successor-resolvent-all-ages-RH-converse.md)
 - [A common final interval for the actual successor resolvent under RH](successor-resolvent-common-halfline-RH-converse.md)
 - [A successor-clock second-increment criterion for localized trace norm](successor-second-increment-trace-criterion.md)
