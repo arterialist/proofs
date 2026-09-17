@@ -191,8 +191,77 @@ theorem, not an RH-scale error estimate. It is still averaged in
 The prime number theorem remains compatible with hypothetical zeros
 strictly inside the critical strip, so neither does (11) exclude one.
 
+## Exact first weighted moment
+
+The endpoint law also has a convergent first moment. For this step an
+ordinary quantitative PNT error is enough: for example,
+[Johnston--Yang, Theorem 1.1](https://arxiv.org/pdf/2204.01980), gives
+`|psi(x)-x|/x << (log x)^1.515 exp(-0.8274 sqrt(log x))` for `x>=2`.
+Thus `epsilon(D)` in (11) is integrable on `[0,infinity)` and
+`D epsilon(D)->0` as `D->infinity` (the bounded initial interval is
+harmless). Put
+`J_T(D)=int_0^D e^(-d/2)P_T(d) dd`; then (11) gives
+`J_T in L^1(0,infinity)` and `D J_T(D)->0`.
+
+For `Re z>1/2`, absolute convergence allows the exact Laplace
+calculation. Write `E_z(v)=int v(x)e^(zx) dx` and
+`Z_T=||(partial_x^2-1/4)u_T||_2`, where
+`u_T(x)=a(x)e^(i eta T x^2-iTx)`:
+
+\[
+\begin{split}
+\mathcal L_T(z)
+&:=\int_0^\infty e^{-zd}P_T(d)\,dd\\
+&=\left(-\frac{\zeta'}{\zeta}\right)(z+\tfrac12)
+  E_z(q_T)\overline{E_{-\bar z}(q_T)}\\
+&=\left(-\frac{\zeta'}{\zeta}\right)(z+\tfrac12)
+  \frac{(z^2-\tfrac14)^2}{Z_T^2}
+  E_z(u_T)\overline{E_{-\bar z}(u_T)}.
+\end{split}\tag{12}
+\]
+
+The factorization uses `log n>w` for every `n>=2`, so the full
+support of `C_T(log n-d)` lies in `d>0`; the Dirichlet series contains
+every `Lambda(p^k)`. The last line is integration
+by parts in the compact support of `u_T`. No zero location is assumed.
+
+Set `z=1/2+sigma` with real `sigma>0`. The pole of `-zeta'/zeta`
+at `1` has residue `1`, while
+`(z^2-1/4)^2=sigma^2(1+sigma)^2`. Hence
+
+\[
+\lim_{\sigma\downarrow0}
+\frac{\mathcal L_T(\tfrac12+\sigma)}{\sigma}
+=\frac{E_{1/2}(u_T)\overline{E_{-1/2}(u_T)}}{Z_T^2}.
+\tag{13}
+\]
+
+On the other hand, integration by parts at each `sigma>0` gives
+`mathcal L_T(1/2+sigma)
+ =sigma int_0^infinity e^(-sigma D)J_T(D) dD`.
+The integrability above permits dominated convergence in this
+identity. A final finite-cutoff integration by parts, using
+`D J_T(D)->0`, proves the exact improper-integral sum rule
+
+\[
+\boxed{\quad
+\int_0^\infty d\,e^{-d/2}P_T(d)\,dd
+=-\frac{E_{1/2}(u_T)\overline{E_{-1/2}(u_T)}}{Z_T^2}.
+\quad}\tag{14}
+\]
+
+The phase derivative of `u_T` stays bounded away from zero in units
+of `T` on the fixed support. Repeated integration by parts makes both
+numerator factors `O_m(T^(-m))` for every `m`, while `Z_T asymp T^2`.
+Thus the signed moment in (14) is `O_A(T^(-A))` for every fixed
+`A>0`. This is an exact conservation identity for actual prime
+powers, not a pointwise estimate: the Laplace formula is initially
+valid only for `Re z>1/2`, and its meromorphic continuation can still
+have poles from hypothetical off-line zeros.
+
 Equations (8)--(9) use the pole-null moment and a linear Chebyshev
-bound; (11) adds the prime number theorem. Every version retains all
+bound; (11)--(14) add the prime number theorem and the zeta pole.
+Every version retains all
 prime powers. None controls `|P_T(d)|` at an individual separation;
 a narrow positive or negative spike can have a small integral.
 Nor does the weight `e^(-d/2)` amplify the transform at an off-line
