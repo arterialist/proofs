@@ -31,7 +31,9 @@ Two conclusions survive an audit of the proposed moving-radius argument.
       (a_{R_X}+\eta_{R_X})^{-1}
       \le \exp(C_aX^{2\beta})=e^{o(X)}.               \tag{2}
    \]
-   This holds for every residual gap \(\eta_R\ge0\). It is a genuine
+   This holds for every residual gap \(\eta_R\ge0\). The later endpoint
+   ground estimate sharpens the clock mass to
+   \(-\log a_R\le(\pi/2)e^{2R}+O(e^{21R/20})\). It is a genuine
    moving-radius estimate and does not use a moving ground supremum.
 
 2. For an exterior source with an exact terminal-carrier representation,
@@ -43,7 +45,9 @@ Two conclusions survive an audit of the proposed moving-radius argument.
    \]
 
 The second statement is conditional on the weighted carrier bound. The
-current source papers do not prove it for the complete finite-\(X\) Lambert
+critical-radius extension (13d) also applies when the terminal support starts
+a fixed distance beyond \(R=\tfrac12\log X\). The current source papers do not
+prove that bound for the complete finite-\(X\) Lambert
 field. In fact, an exact coefficientwise, quotient-layer-preserving lift
 of that field cannot have \(K_X=e^{o(X)}\): a prime hard-clock coefficient
 forces \(K_X\ge\exp(cX-O(\log X))\). Thus (3) applies to theta-generated
@@ -181,6 +185,38 @@ Equation (12) must be checked for the complete coherent source before the
 absolute bound is taken. Splitting orientations or prime orders first can
 discard favorable cross terms; omitting prime powers changes the ground
 tail used in (9).
+
+### A critical-radius terminal-offset corollary
+
+The [endpoint ground collar and relative-energy bound](theta-ground-endpoint-relative-energy.md) sharpen the clock-mass estimate (1). For \(R\to\infty\), set \(X=e^{2R}\) and \(w=8X^{-19/40}\). That result proves
+\[
+ -\log a_R\le \frac{\pi}{2}X+O(X^{21/40}).
+\tag{13a}
+\]
+The sharp two-endpoint crossing estimate gives a matching exponent for the normalized tail. If \(U=R+\kappa\) for a fixed \(\kappa>0\), divide its crossing norm by the endpoint trial gap
+\(\delta_R\ge d_0e^Rw\,\omega(R+2w)^2\). The far exterior lower error is smaller than half this gap for large \(R\). The ground projection inequality then yields
+\[
+ \log r_{R,U}
+ \le-\frac{\pi}{2}e^{2U}+\frac{\pi}{2}X
+       O(Xw+R).
+\tag{13b}
+\]
+The weighted physical Cauchy–Schwarz estimate used in (10) contributes another
+\(-\pi e^{2U}/2+O(U)\). Combining it with (13a) gives
+\[
+ \frac{\int_{|u|\ge U}e^{|u|/2}G_R(u)\,du}{a_R}
+ \le
+ \exp\!\left[-\pi(e^{2\kappa}-1)X
+                  O(X^{21/40}+R)\right].
+\tag{13c}
+\]
+Thus the localized-source conclusion (3) also holds at the critical moving radius
+\[
+ R_X=\tfrac12\log X,\qquad U_X\ge R_X+\kappa,
+ \qquad \log K_X=o(X),\qquad\kappa>0.
+\tag{13d}
+\]
+The fixed positive terminal offset supplies the exponential margin. This corollary still requires the exact carrier representation (12). The Lambert prime row in Section 4 violates its subexponential carrier bound, so (13d) does not establish the missing comparison for that source.
 
 ## 3. Why the published inputs do not prove the carrier hypothesis
 
