@@ -1,6 +1,7 @@
 # The even-Goldbach three-phase harmonic recovers the complete prime error
 
-Written arithmetic proof, 17 September 2026. A phase on the single
+Written arithmetic proof and Lean formalization by RH Proof,
+17 September 2026. A phase on the single
 generator $3$, observed through **even additive totals** and centered by
 the exact odd-lattice reference, recovers $\psi(N-3)-(N-3)$ with a
 power-of-two correction and a bounded same-prime ladder. This is a
@@ -46,8 +47,11 @@ The same module proves the exact $N-2$ odd-partner reference at every
 even terminal total. [GoldbachThreePhaseHarmonicFinite.lean](BuildingBlocks/GoldbachThreePhaseHarmonicFinite.lean)
 formalizes the actual Mangoldt support classification for the two
 surviving row types, the bound $d_N\le2$, and ordered-pair symmetry
-of the algebraic first harmonic. The analytic Fourier-integral
-identification and final regrouping into (5) remain written proofs.
+of the algebraic first harmonic. [GoldbachThreePhaseEndpoint.lean](BuildingBlocks/GoldbachThreePhaseEndpoint.lean)
+compiles the unique-partner reduction, the exact one-leg endpoint,
+the odd/even prime-power split, the power-of-two count, and the final
+finite regrouping into (5). The analytic Fourier-integral
+identification remains a written proof.
 
 ## Exact first-harmonic extraction
 
@@ -154,8 +158,9 @@ row has **odd** total. The generator $3$ and parity-aware reference
 in (2) keep this consumer on even totals. Equations (3)–(7) are
 written proofs. The finite parity-centered pair identity, reference
 count, three-adic row classification, oriented algebraic harmonic,
-and short ladder bound are compiled; the analytic Fourier extraction
-and summation into (5) remain unformalized.
+short ladder bound, and exact arithmetic identity (5) for that
+algebraic harmonic are compiled. The analytic Fourier extraction and
+RH-equivalence step remain unformalized.
 
 ## Unconditional oscillation on the actual even totals
 
