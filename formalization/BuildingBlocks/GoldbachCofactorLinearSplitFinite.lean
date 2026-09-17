@@ -4,9 +4,9 @@ import Mathlib.Tactic
 /-!
 # The exact linearized cofactor and centered prime-pair remainder
 
-No prime-power leg or endpoint is removed. The linearized term has
-an unconditional smoothed explicit formula; the centered pair term
-is the still-open pointwise cancellation problem.
+No prime-power leg or endpoint is removed. The linearized term and
+centered pair term have separate written analytic estimates. This
+module formalizes only their exact finite split.
 -/
 
 namespace BuildingBlocks.GoldbachCofactorLinearSplitFinite
