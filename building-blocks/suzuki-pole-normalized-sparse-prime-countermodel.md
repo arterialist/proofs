@@ -1,15 +1,16 @@
 # A sparse prime-weight test of the Suzuki--Goldbach bridge
 
-**Status:** written countermodel to a qualitative inference, not a result about zeros of the actual Riemann zeta function. The construction keeps every actual prime-power location, one positive weight per prime base, a stretched-exponential prime-number-theorem error, the positive factorial ground, positive coefficients of a Suzuki-type Euler quotient, its first pole normalization, and the nonnegative complete centered Goldbach heat square. Its completed first prime-clock variation still fails every one-sided bound of order \(x^\delta\), \(\delta<1/2\). Thus these properties do not supply the missing estimate in the [actual Suzuki criterion](suzuki-first-variation-weighted-prime-clock.md). The exact amplitudes \(\Lambda(p^r)=\log p\), the actual functional equation, or another constraint excluding this deformation must enter a successful argument.
+**Status:** written countermodel to a qualitative inference, not a result about zeros of the actual Riemann zeta function. The construction keeps every actual prime-power location, one positive weight per prime base, a stretched-exponential prime-number-theorem error, the positive factorial ground, positive coefficients of a Suzuki-type Euler quotient, its first pole normalization, and the nonnegative complete centered Goldbach heat square. Its completed first prime-clock variation still fails every one-sided bound of order \(x^\delta\), \(\delta<1/2\), and its centered Goldbach heat energy has logarithmic growth exponent exactly \(1\). Thus these properties do not supply the missing estimate in the [actual Suzuki criterion](suzuki-first-variation-weighted-prime-clock.md) or the [actual centered heat criterion](centered-goldbach-heat-lyapunov.md). The exact amplitudes \(\Lambda(p^r)=\log p\), the actual functional equation, or another constraint excluding this deformation must enter a successful argument.
 
 This strengthens the qualitative PNT and factorial-ground test in the [earlier coherent-weight model](sparse-prime-weight-ground-positive-terminal-sign-countermodel.md) for the particular [pole-normalized Suzuki--Goldbach source](suzuki-goldbach-pole-normalizer-bridge.md). It does not assert any Goldbach representation or transfer the actual Suzuki analytic continuation to the deformed Euler product.
 
 ## Construction and the completed prime clock
 
-Choose \(A,a>0\) so that the unconditional complete Chebyshev estimate and its partially summed version give, for large nonintegral \(x\),
+Choose \(A,a>0\) so that the unconditional complete Chebyshev estimate and its partially summed and heat-damped versions give, for large nonintegral \(x\) and small positive \(t\),
 \[
  |\psi(x)-x|\le A x e^{-a\sqrt{\log x}},\qquad
- |r_1(x)|\le A\sqrt{x}e^{-a\sqrt{\log x}},                 \tag{1}
+ |r_1(x)|\le A\sqrt{x}e^{-a\sqrt{\log x}},\qquad
+ |D(t)|\le A t^{-1}e^{-a\sqrt{\log(1/t)}},                 \tag{1}
 \]
 where the *actual* completed first variation is
 \[
@@ -21,7 +22,7 @@ where the *actual* completed first variation is
 The first bound follows from [Trudgian, Theorem 1](https://arxiv.org/pdf/1401.2689), after reducing its exponential constant to absorb its logarithmic prefactor. For the second, Stieltjes partial summation gives
 \(\sum_{n<x}\Lambda(n)n^{-1/2}=\psi(x^-)/\sqrt x+
 \tfrac12\int_1^x\psi(y)y^{-3/2}dy\); the error integral is
-\(O(\sqrt x e^{-a\sqrt{\log x}})\) after reducing \(a\) once more. The bounded \(\kappa-J(x)\) is absorbed. We use the *same* \(a\) in both estimates by taking the smaller one.
+\(O(\sqrt x e^{-a\sqrt{\log x}})\) after reducing \(a\) once more. The bounded \(\kappa-J(x)\) is absorbed. For the third, \(D(t)=\sum_{n\ge1}(\Lambda(n)-1)e^{-nt}\), and Stieltjes integration gives \(\sum\Lambda(n)e^{-nt}=t\int_1^\infty\psi(x)e^{-tx}dx\). The \(\psi(x)=x\) contribution differs from \(1/(e^t-1)\) by \(O(1)\). Split the PNT-error integral at \(x=t^{-1/2}\): its lower part is \(O(1)\), and the upper part is at most \(O(t^{-1}e^{-a_0\sqrt{\log(1/t)}/\sqrt2})\) for the original PNT exponent \(a_0\). We use the *same* smaller \(a\) in all three estimates.
 
 Choose disjoint integer-scale bands
 \(B_j=(X_j/2,X_j]\), with \(X_{j+1}>4X_j\),
@@ -156,6 +157,43 @@ where \(R_*(N)=\sum_{a+b=N}\Lambda_*(a)\Lambda_*(b)\).
 No multiplicative convolution is substituted for this Goldbach **additive** pair sum. At every \(t>0\) the real series
 \(D_*(t)=\sum_{n\ge1}(\Lambda_*(n)-1)e^{-nt}\) converges absolutely, so its complete heat square \(D_*(t)^2\ge0\), with the coefficients in braces in (16). Thus even this centered positivity and the correct first pole normalization do not restrict the one-sided prime-clock error.
 
+## The centered Goldbach heat exponent is exactly one
+
+The positive square just identified can be large despite the strong PNT. Define its complete finite-horizon energy
+\[
+ \mathscr H_*(T)=1+\int_{e^{-T}}^1D_*(t)^2\,dt
+ =1+\sum_{N\ge2}c_N^*
+    \frac{e^{-Ne^{-T}}-e^{-N}}N,\qquad
+ c_N^*=R_*(N)-2\psi_*(N-1)+(N-1).                       \tag{17}
+\]
+The series is absolutely convergent for each finite \(T\), because \(\Lambda_*\le\Lambda\le\log n\), and its identity with the integral is the exponential Cauchy product. It retains all signed centered coefficients, rather than truncating them or claiming they are nonnegative.
+
+Let \(t\in[X_j^{-1},2X_j^{-1}]\). The current band's ordinary primes alone lower-bound the removed heat mass by
+\[
+ \sum_{n\ge1}(\Lambda(n)-\Lambda_*(n))e^{-nt}
+ \ge\varepsilon_j e^{-2}
+       \sum_{X_j/2<p\le X_j}\log p
+ \ge \frac{e^{-2}}3\varepsilon_jX_j                  \tag{18}
+\]
+for all sufficiently large \(j\), by \(\vartheta(X_j)-\vartheta(X_j/2)\sim X_j/2\). Uniformly on this time interval, (1) gives
+\(|D(t)|=O(X_j e^{-a\sqrt{\log X_j}})=
+o(\varepsilon_jX_j)\). Hence
+\(D_*(t)=D(t)-\sum(\Lambda-\Lambda_*)e^{-nt}
+\le-c_1\varepsilon_jX_j\) for a fixed \(c_1>0\). At \(T_j=\log X_j\), the interval in (18) lies inside the energy horizon and has length \(X_j^{-1}\), so
+\[
+ \mathscr H_*(T_j)\ge c_1^2\varepsilon_j^2X_j
+ =c_1^2\exp\{T_j-a\sqrt{T_j}\}.                       \tag{19}
+\]
+Conversely \(0\le\sum\Lambda_*(n)e^{-nt}\le
+\sum\Lambda(n)e^{-nt}=O(t^{-1})\), while
+\(\sum_{n\ge1}e^{-nt}=O(t^{-1})\). Thus \(|D_*(t)|=O(t^{-1})\),
+\(\mathscr H_*(T)=O(e^T)\), and (19) proves the exact rate
+\[
+ \boxed{\displaystyle
+ \limsup_{T\to\infty}\frac{\log\mathscr H_*(T)}T=1.}   \tag{20}
+\]
+The corresponding actual-source rate is \(0\) if and only if RH. Equation (20) concerns only the deformed weights. It shows directly that the listed positivity, complete histories, first pole centering, factorial ground, and stretched-exponential PNT do not control the **critical centered Goldbach energy**; the gap is as large in logarithmic exponent as the elementary heat bound permits.
+
 For clarity, the actual finite Suzuki kernel can also be used with \(c^*_\omega\) in place of \(c_\omega\) to define a deformed arithmetic kernel. Its first variation at a fixed noninteger \(x\) is exactly \(r_{1,*}(x)\): at zero only the state-one coefficient contributes to the gamma derivative, while (14) supplies the deformed prime-power sum. This finite first-variation identity does **not** furnish the deformed kernel with Suzuki's actual zeta functional equation or his analytic RH criterion.
 
-The countermodel leaves the support of ordinary primes unchanged, so it also leaves the truth value of any support-only Goldbach assertion unchanged. It proves only that the listed positive and first-order structural facts cannot imply the actual completed one-sided Suzuki bound. The infinite Euler-product assertions and the sparse-band asymptotics above remain written proofs; the finite ground comparison is the sole Lean formalization here. No RH proof is claimed.
+The countermodel leaves the support of ordinary primes unchanged, so it also leaves the truth value of any support-only Goldbach assertion unchanged. It proves only that the listed positive and first-order structural facts cannot imply the actual completed one-sided Suzuki bound or critical centered heat-energy bound. The [theta-form stress test](theta-sparse-prime-form-stability-test.md) independently shows that the exact actual radical identity detects these bands at their full \(\varepsilon_j\sqrt{X_j}\) scale, despite small operator perturbations; that source-specific identity remains an open route to a signed bound. The infinite Euler-product assertions and the sparse-band asymptotics above remain written proofs; the finite ground comparison is the sole Lean formalization here. No RH proof is claimed.
