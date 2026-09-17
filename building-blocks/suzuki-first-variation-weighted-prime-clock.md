@@ -124,10 +124,51 @@ Therefore, on nonintegral \(x\to\infty\),
 \quad}
 \tag{8}
 \]
+There is a weaker **one-sided** criterion. Let \(q(s)=
+\xi'(\tfrac12+s)/\xi(\tfrac12+s)\). The full Mellin transform,
+on a sufficiently far right line, is
+\[
+\int_1^\infty r_1(x)x^{-s-1}\,dx=-\frac{2q(s)}s.
+\tag{9}
+\]
+It retains the pole and gamma terms and is holomorphic at every
+positive real \(s\). If an off-line zero
+\(\rho=\beta+i\gamma\) has \(\beta>1/2\), (9) has a genuine
+nonreal pole at \(s_\rho=\rho-1/2\).
+Suppose that for every \(\varepsilon>0\), the actual \(r_1\)
+obeys \(r_1(x)\ge-C_\varepsilon x^\varepsilon\) eventually.
+Choose \(\varepsilon<\beta-1/2\). The late-time function
+\(r_1(x)+C_\varepsilon x^\varepsilon\) is nonnegative;
+its Mellin transform has a finite convergence abscissa
+\(\sigma\ge\beta-1/2>\varepsilon\), because of the pole at
+\(s_\rho\). [Landau's positive-transform theorem, used by
+Suzuki](https://arxiv.org/html/1204.1827v2) forces a
+singularity at the real point \(\sigma\). But (9), the
+added \(C_\varepsilon x^\varepsilon\) transform, and the
+compact initial interval are all analytic there. This is a
+contradiction. Under RH, (8) supplies the required lower bounds.
+Thus
+\[
+\boxed{\quad
+\mathrm{RH}\ \Longleftrightarrow\
+\forall\varepsilon>0\ \exists C_\varepsilon>0,\ X_\varepsilon\ge2:
+\ r_1(x)\ge-C_\varepsilon x^\varepsilon
+\quad(x\ge X_\varepsilon,\ x\notin\mathbb N).
+\quad}
+\tag{10}
+\]
+In particular, an eventual fixed or polylogarithmic lower bound
+for this **specific completed** variation would prove RH. Neither
+bound is established here.
+
 The [completed-variation sign theorem](suzuki-completed-curvature-sign-obstruction.md)
 already shows unconditionally that \(r_1\) takes both signs
 arbitrarily far out. That does not establish either growth bound
-in (8). The Lean coefficient and prefix derivatives cover the
+in (8), or the one-sided bound in (10). The Lean coefficient
+and prefix derivatives cover the
 finite arithmetic part of (1)--(2); the incomplete-beta
-derivative, (5), and the analytic equivalence (8) remain written
-mathematics.
+derivative, (5), and the analytic equivalences (8) and (10) remain written
+mathematics. The general
+[positive-transform Landau lemma](BuildingBlocks/LandauSingularity.lean)
+is compiled separately; its application to this \(r_1\) has
+not been formalized.
