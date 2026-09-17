@@ -118,6 +118,60 @@ theorem even_prime_mass_le_log (N : ℕ) (hN : N ≠ 0) :
   have hlog := Real.log_le_log (by positivity : 0 < (2 : ℝ) ^ Nat.log 2 N) hpow
   simpa [Real.log_pow, mul_comm] using hlog
 
+/-- The complete finite even prime-power generating row is exactly
+the lacunary series of powers of two. -/
+theorem even_prime_power_series_finite (N : ℕ) (r : ℝ) :
+    (∑ m ∈ Icc 1 N, if Even m then Λ m * r ^ m else 0) =
+      Real.log 2 * ∑ k ∈ Icc 1 (Nat.log 2 N), r ^ (2 ^ k) := by
+  have hsupport :
+      (∑ m ∈ Icc 1 N, if Even m then Λ m * r ^ m else 0) =
+        ∑ m ∈ evenSupport N, Λ m * r ^ m := by
+    unfold evenSupport
+    rw [Finset.sum_filter]
+    apply Finset.sum_congr rfl
+    intro m hm
+    by_cases he : Even m
+    · by_cases hn : Λ m = 0
+      · simp [he, hn]
+      · simp [he, hn]
+    · simp [he]
+  rw [hsupport, evenSupport_eq_image]
+  rw [Finset.sum_image (fun _ _ _ _ h => Nat.pow_right_injective (by omega) h)]
+  rw [Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro k hk
+  have hk1 : 1 ≤ k := (mem_Icc.mp hk).1
+  have hk0 : k ≠ 0 := by omega
+  change ArithmeticFunction.vonMangoldt (2 ^ k) * r ^ (2 ^ k) =
+    Real.log 2 * r ^ (2 ^ k)
+  rw [ArithmeticFunction.vonMangoldt_apply_pow hk0,
+    ArithmeticFunction.vonMangoldt_apply_prime Nat.prime_two]
+  norm_num
+
+/-- At the alternating frequency the actual prime series is the
+negative ordinary series plus twice the complete even (power-of-two)
+row. No odd-prime or proper-prime-power term is discarded. -/
+theorem prime_series_neg_finite (N : ℕ) (r : ℝ) :
+    (∑ m ∈ Icc 1 N, Λ m * (-r) ^ m) =
+      2 * Real.log 2 *
+        (∑ k ∈ Icc 1 (Nat.log 2 N), r ^ (2 ^ k)) -
+        ∑ m ∈ Icc 1 N, Λ m * r ^ m := by
+  have hparity :
+      (∑ m ∈ Icc 1 N, Λ m * (-r) ^ m) =
+        2 * (∑ m ∈ Icc 1 N,
+          if Even m then Λ m * r ^ m else 0) -
+          ∑ m ∈ Icc 1 N, Λ m * r ^ m := by
+    rw [Finset.mul_sum, ← Finset.sum_sub_distrib]
+    apply Finset.sum_congr rfl
+    intro m hm
+    by_cases he : Even m
+    · simp [he, he.neg_pow]
+      ring
+    · have ho : Odd m := Nat.not_even_iff_odd.mp he
+      simp [he, ho.neg_pow]
+  rw [hparity, even_prime_power_series_finite]
+  ring
+
 /-- The centered ratio's successor is at most the new prime-power
 birth divided by its label. The missing term is the nonnegative
 complete Chebyshev prefix. -/
@@ -352,6 +406,8 @@ theorem even_to_odd_upper_transfer (s : ℕ) (hs : 4 ≤ s)
 
 #print axioms even_reciprocal_mass_le_one
 #print axioms even_prime_mass_le_log
+#print axioms even_prime_power_series_finite
+#print axioms prime_series_neg_finite
 #print axioms ratioError_step_le_prime
 #print axioms ratioError_two_nonpos
 #print axioms weightedPrimePair_odd_le_two_log

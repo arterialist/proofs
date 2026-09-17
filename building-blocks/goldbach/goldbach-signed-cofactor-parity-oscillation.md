@@ -94,6 +94,22 @@ $P(r)\sim t^{-1}$, (4) proves
 \tag{5}
 \]
 
+The [exact alternating parity main term](goldbach-alternating-parity-main-term.md)
+sharpens these absolute bounds. The even von Mangoldt row consists
+only of powers of two, so $P(-r)\sim-t^{-1}$. The centered Abel
+identity then gives
+
+\[
+A_2(-e^{-t})\sim-\tfrac12\log(1/t),\qquad
+F(-e^{-t})\sim\frac{\log(1/t)}{2t}>0.
+\tag{5a}
+\]
+
+The finite power-of-two parity identity is Lean-compiled; the PNT
+boundary limits and integration yielding (5a) remain written
+analysis. The positive sign concerns this Abel sum, not the
+individual signed coefficients.
+
 The two parity projections are exact:
 
 \[
@@ -118,7 +134,7 @@ remain separate.
 The [actual-zero/Landau argument](goldbach-signed-cofactor-oscillation.md)
 already proves that for every $0<\theta<1/2$,
 $t^{1+\theta}F(e^{-t})$ has unbounded excursions of both signs.
-Equation (5) says $t^{1+\theta}F(-e^{-t})\to0$.
+Equation (5a) says $t^{1+\theta}F(-e^{-t})\to0$.
 Hence the same two-sided excursions hold for each of $F_0$ and
 $F_1$.
 
@@ -233,7 +249,7 @@ step, the earlier explicit two-step envelope, the
 infinite convergent-series identities,
 and both parity projections in (6) are Lean-compiled with
 standard axioms. The stronger interval-sieve step bound,
-the logarithmic boundary estimate in (4),
+the logarithmic boundary estimates in (4)–(5a),
 PNT input in (5), Landau oscillation transfer, the
 coefficient and crossing conclusions (7)–(8), and the
 quantitative transfer (9) remain written
