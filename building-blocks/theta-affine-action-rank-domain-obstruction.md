@@ -168,3 +168,60 @@ The separate [crossing-source action proof](theta-score-crossing-second-clock-do
 Indeed (16) gives \(w_p\in D(K)\), while \(w_c\in D(K)\) is known. The formula \(K\varphi=S_f+\delta S_y-\tfrac14S_q\) and (17) put the crossing source in \(D(K)\). The bounded base \(K_0\) maps \(D(K)\) to itself because it is a scalar identity plus constant/sign ranks; hence the matched profile \((K-M_0)\varphi\) lies in \(D(K)\). All finite-rank columns of \(\widehat M\) and their \(K_0^{-1}\) images are then in \(D(K)\). Its Woodbury inverse maps the affine source \(S_f-tS_q\) into \(D(K)\), proving (18). The implication is sufficient, not claimed necessary, and still gives no numerical bound for \(n[v_U]\).
 
 The only second-power input still missing from (18) is \(\varepsilon\in D(K^2)\), equivalently \(w_p\in D(K)\). An action-matched affine rank at \(v_U\) therefore requires that or another actual-theta theorem proving \(v_U\in D(K)\), or a different quantitative bound for \(n[v_U]\) that stays within the known form domain. Criterion (3) is a domain obstruction to that proposed rank, not a claim that the actual optimizer lies outside \(D(K)\). The remaining conditional variance and its arithmetic size are open.
+
+## The exact prime-mean alternative for the actual optimizer
+
+The score-side upgrade also sharpens (18) for the distinguished \(v_U\): a scalar cancellation can put it in \(D(K)\) even if the prime sign profile is not known to lie there. Write
+\[
+ M_0=K_0+\frac{w_c\otimes w_c}{d_c}
+          +\frac{w_p\otimes w_p}{p},\qquad
+ v_*=(K-M_0)\varphi,\qquad
+ g_c=\langle\varphi,w_c\rangle,\quad
+ g_p=\langle\varphi,w_p\rangle.
+\tag{19}
+\]
+Here \(p>0\) and \(d_c>0\) are the actual component sign energies. If \(d_y=\langle v_*,\varphi\rangle>0\), then
+\(\widehat M=M_0+(v_*\otimes v_*)/d_y\); if \(d_y=0\), the score rank is omitted and \(v_*=0\). The known second-power score regularity makes
+\[
+ D_*:=K\varphi-K_0\varphi-\frac{g_c}{d_c}w_c\in D(K),
+ \qquad
+ v_*=D_*-\frac{g_p}{p}w_p.
+\tag{20}
+\]
+Indeed \(K\varphi\in D(K)\), while \(K_0\) preserves \(D(K)\) and \(w_c\in D(K)\).
+
+Put \(s=S_f-tS_q\in D(K)\), so \(\widehat Mv_U=s\). Define
+\[
+ s_U=
+ \begin{cases}
+ \langle v_U,v_*\rangle/d_y,&d_y>0,\\
+ 0,&d_y=0,
+ \end{cases}
+ \qquad
+ c_{p,U}=\frac{\langle v_U,w_p\rangle-s_Ug_p}{p}.
+\tag{21}
+\]
+Rearranging the bounded comparison equation and inserting (20) gives
+\[
+ K_0v_U
+ =s-\frac{\langle v_U,w_c\rangle}{d_c}w_c
+       -s_UD_*-c_{p,U}w_p.
+\tag{22}
+\]
+Every term on the right except the last belongs to \(D(K)\). Both \(K_0\) and \(K_0^{-1}\) preserve \(D(K)\), because each is a scalar identity plus ranks on \(1,\varepsilon\in D(K)\). Therefore
+\[
+ \boxed{\qquad
+ v_U\in D(K)
+ \quad\Longleftrightarrow\quad
+ \bigl(w_p\in D(K)\ \text{or}\ c_{p,U}=0\bigr).
+ \qquad}
+\tag{23}
+\]
+For \(d_y>0\), (6) of the [conditional edge theorem](theta-affine-comparison-conditional-edge-energy.md) identifies the scalar exactly:
+\[
+ c_{p,U}
+ =\tfrac12\mathbb E_{\pi_p}
+       \Delta_\times(v_U-s_U\varphi).
+\tag{24}
+\]
+When \(d_y=0\), the residual is independent of the common score coefficient; choosing \(s_U=0\) gives the same cross-mean formula. Thus the exceptional route in (23) is cancellation of the **complete prime cross-edge mean after the common score subtraction**. It does not remove the prime same-half energy or cross-edge variance in the residual. No actual arithmetic identity presently proves \(c_{p,U}=0\), and (23) gives no upper bound for \(n[v_U]\).
