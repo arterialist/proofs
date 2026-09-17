@@ -185,3 +185,7 @@ is `2 eta T x`, bounded away from zero on the fixed compact support
 of `a`. Thus this packet has negligible loading on that selected zero
 at its nominal carrier. No selected-zero contradiction or RH-scale
 law follows from (2).
+
+The [Brun–Titchmarsh extension](chirped-brun-titchmarsh-span-constellation.md)
+uses the actual short-interval Mangoldt mass to extend this span by
+`2 log log T` without changing the packet or its selected-zero limit.
