@@ -29,6 +29,17 @@ rate of Suzuki's positive coefficient family. In particular, a
 prime power \(p^k\) contributes \(2\log p\) regardless of \(k\);
 an integer with two distinct prime factors has zero first
 variation.
+At every integer cutoff \(N\ge0\), the finite sum can be
+differentiated without any limiting interchange:
+\[
+\left.\partial_\omega\sum_{n\le N}c_\omega(n)\right|_0
+ =2\sum_{n\le N}\Lambda(n)=2\psi(N).
+\tag{2a}
+\]
+This is the finite part of the
+[centered Jordan-discrepancy variation](suzuki-hankel-exponential-boundary-layer.md);
+the derivative of its smooth normalization uses the zeta pole
+separately.
 
 For \(\Re s>1+|\omega|\), Suzuki's absolutely convergent Dirichlet
 series is
@@ -141,6 +152,9 @@ These identities give an exact source map, not RH or Goldbach.
 formalizes both derivatives of the divisor-sum coefficient and
 identifies its second derivative with \(4\Lambda*\Lambda\) by the
 finite convolution product rule. It uses mathlib's actual Möbius and
-von Mangoldt functions with standard axioms only. The finite-product
+von Mangoldt functions with standard axioms only. It also proves
+that the first derivative of the finite prefix
+\(\sum_{n\le N}c_\omega(n)\) is \(2\psi(N)\), retaining every
+prime power and the cutoff endpoint. The finite-product
 identification in (1) and the operator and completed analytic
 identities (7)--(9) remain written mathematics, not Lean theorems yet.

@@ -1,6 +1,7 @@
 import Mathlib.NumberTheory.VonMangoldt
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Tactic
+import BuildingBlocks.CoarsePrimitive
 import BuildingBlocks.SelbergIdentity
 
 /-!
@@ -72,6 +73,28 @@ theorem coefficient_hasDerivAt_zero (n : ℕ) :
         (∑ d ∈ n.divisors, (ArithmeticFunction.moebius d : ℝ) *
           Real.log d) := by simp_rw [mul_sub]; rw [sum_sub_distrib]
       _ = 2 * ArithmeticFunction.vonMangoldt n := by rw [hfirst, hsecond]; ring
+  simpa only [hcoeff] using hsum
+
+/-- The finite Suzuki count through N, with every prime power kept. -/
+noncomputable def coefficientPrefix (N : ℕ) (w : ℝ) : ℝ :=
+  ∑ n ∈ Finset.Icc 1 N, coefficient n w
+
+/-- Its first variation is twice the actual Chebyshev prime-power prefix. -/
+theorem coefficientPrefix_hasDerivAt_zero (N : ℕ) :
+    HasDerivAt (coefficientPrefix N)
+      (2 * BuildingBlocks.CoarsePrimitive.psi N) 0 := by
+  have hsum : HasDerivAt (coefficientPrefix N)
+      (∑ n ∈ Finset.Icc 1 N, 2 * ArithmeticFunction.vonMangoldt n) 0 := by
+    change HasDerivAt
+      (fun w : ℝ => ∑ n ∈ Finset.Icc 1 N, coefficient n w)
+      (∑ n ∈ Finset.Icc 1 N, 2 * ArithmeticFunction.vonMangoldt n) 0
+    apply HasDerivAt.fun_sum
+    intro n hn
+    exact coefficient_hasDerivAt_zero n
+  have hcoeff :
+      (∑ n ∈ Finset.Icc 1 N, 2 * ArithmeticFunction.vonMangoldt n) =
+        2 * BuildingBlocks.CoarsePrimitive.psi N := by
+    rw [BuildingBlocks.CoarsePrimitive.psi_eq_sum_Icc, Finset.mul_sum]
   simpa only [hcoeff] using hsum
 
 /-- The literal finite slope before taking the first variation. -/
@@ -284,6 +307,7 @@ theorem coefficient_second_deriv_eq (n : ℕ) :
 #print axioms coefficient_second_deriv_eq
 
 #print axioms coefficient_hasDerivAt_zero
+#print axioms coefficientPrefix_hasDerivAt_zero
 #print axioms coefficient_second_deriv_zero
 
 end BuildingBlocks.SuzukiCoefficientVariation

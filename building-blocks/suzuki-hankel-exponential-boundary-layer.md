@@ -65,6 +65,44 @@ R_\omega(x)=\frac1{\sqrt x}\int_{0^-}^{x}k_\omega(y/x)\,dE_\omega(y).}
 \]
 Indeed \(dE_\omega=dC_\omega-a_\omega y^\omega dy\), and the smooth term equals \(a_\omega x^{1/2+\omega}\int_0^1t^\omega k_\omega(t)dt=0\). The integral at \(y=0\) converges because \(y^\omega k_\omega(y/x)=O(y^{2\omega-1})+O(y^{\omega-1/2})\). Thus replacing the Jordan coefficients by their positive smooth density gives **zero**, rather than a positive approximation to \(R_\omega\).
 
+### The centered counting clock at the origin of the parameter
+
+The exact discrepancy in (7) has the original centered prime-power
+source as its first variation. Extend \(a_\omega\) to \(\omega=0\)
+by \(a_0=0\). The pole of \(\zeta\) at one gives
+\(a_\omega=2\omega+O(\omega^2)\). For each fixed \(y\ge0\),
+\(C_\omega(y)\) is a finite sum, and the
+[compiled coefficient identity](suzuki-coefficient-prime-history-variation.md)
+gives \(c'_0(n)=2\Lambda(n)\). The finite prefix identity
+\(C'_0(N)=2\psi(N)\) is also compiled in
+[SuzukiCoefficientVariation.lean](BuildingBlocks/SuzukiCoefficientVariation.lean).
+The derivative of \(a_\omega\) supplies the continuous centering.
+Consequently the right derivative is
+\[
+\boxed{\quad
+\left.\partial_{\omega+}E_\omega(y)\right|_{\omega=0}
+  =2\bigl(\psi(y)-y\bigr),\qquad
+\psi(y)=\sum_{n\le y}\Lambda(n).
+\quad}
+\tag{8a}
+\]
+The baseline is \(E_0(y)=\mathbf1_{\{y\ge1\}}\); its derivative,
+not its value, is the centered Chebyshev discrepancy. Taking one
+ordinary counting step yields the complete arrival law
+\[
+\left.\partial_{\omega+}
+ \bigl(E_\omega(N+1)-E_\omega(N)\bigr)\right|_{\omega=0}
+  =2\bigl(\Lambda(N+1)-1\bigr)
+  \qquad(N\in\mathbb N).
+\tag{8b}
+\]
+This retains every prime power and the \(N=0\) endpoint.
+It does not sign \(E_\omega\) or \(R_\omega\): (8) pairs the signed
+discrepancy with a gamma kernel that changes sign, and differentiating
+\(R_\omega\) also differentiates that kernel. The analytic zeta-pole
+normalizer and the full identities (8a)--(8b) are written, not Lean
+formalized.
+
 For \(x=e^{c/\omega}\), the exact scaled Laplace identity is
 \[
 \int_0^\infty R_\omega(e^{c/\omega})e^{-zc}\,dc

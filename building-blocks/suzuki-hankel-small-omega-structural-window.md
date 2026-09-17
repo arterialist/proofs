@@ -168,6 +168,10 @@ unconditional window. For every fixed \(A>0\),
 \]
 This still leaves every fixed positive \(\omega\) with an unbounded
 tail of \(x\) untreated.
+The separate [exponential-boundary-layer note](suzuki-hankel-exponential-boundary-layer.md)
+proves the stronger window
+\(x\le\omega^{-2}\exp(\tfrac14\sqrt{\log(1/\omega)})\).
+The cutoff proof below gives a simpler independent route to (15).
 
 Here are the uniform estimates behind (15). The explicit
 [Johnston--Yang bound for \(\psi(y)-y\)](https://arxiv.org/abs/2204.01980)
