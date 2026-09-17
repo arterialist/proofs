@@ -47,8 +47,11 @@ scaling the spatial variable by $c$.
 
 Let $P_c=\sum_{j\in J}d_j\psi_{j,c}$ with
 $\sum|d_j|^2=1$, $P_c(0)=0$, and $\int_{-1}^1P_c=0$.
-Choose a fixed even compactly supported Gevrey-2 function $b$ with
-$\operatorname{supp}b\subset(-1/4,1/4)$, $b(0)=0$, and $\int b=1$.
+Choose a fixed even compactly supported Gevrey-2 function $b_0$ in
+the *physical* variable with
+$\operatorname{supp}b_0\subset(-1/4,1/4)$, $b_0(0)=0$, and
+$\int b_0=1$. In the scaled variable put
+$b_c(t)=\lambda b_0(\lambda t)$, so $\int b_c=1$.
 For $\eta=(100c^2)^{-1}$ choose an even Gevrey-2 cutoff $\rho_c$
 equal to $1$ on $|t|\le1-2\eta$ and zero on
 $|t|\ge1-\eta$, with
@@ -61,7 +64,7 @@ $|t|\ge1-\eta$, with
 Such cutoffs follow by scaling a fixed Gevrey-2 transition. Define
 one, for example, from $g(s)=e^{-1/s}$ for $s>0$ and $g(s)=0$
 for $s\le0$, using $g(s)/(g(s)+g(1-s))$ on $(0,1)$.
-An even normalized multiple of $t^2g(1-25t^2)$ supplies $b$.
+An even normalized multiple of $t^2g(1-25t^2)$ supplies $b_0$.
 The usual Cauchy estimate for $g$ gives the stated
 $C^r(r!)^2$ derivative bounds.
 
@@ -69,14 +72,16 @@ Define
 
 \[
  H_c(t)=\rho_c(t)P_c(t)
-       -\left(\int_{-1}^1\rho_c(s)P_c(s)\,ds\right)b(t),
+       -\left(\int_{-1}^1\rho_c(s)P_c(s)\,ds\right)b_c(t),
  \qquad h_\lambda(v)=\lambda^{-1/2}H_c(v/\lambda).
                                                                \tag{4}
 \]
 
 Then $h_\lambda$ is even, smooth, supported strictly inside
 $(-\lambda,\lambda)$, and satisfies $h_\lambda(0)=0$ and
-$\int h_\lambda=0$. For every fixed real $M>1$ there are
+$\int h_\lambda=0$. Its correction term is precisely
+$(\int\rho_\lambda h^{\rm raw})b_0$ in the physical-variable
+construction of the two-vector reduction. For every fixed real $M>1$ there are
 $C_{J,M},K_{J,M},c_{J,M}$ such that, for $c\ge c_{J,M}$,
 
 \[
@@ -180,11 +185,11 @@ with the endpoint interpreted by continuity.
 Write $\mathcal F_cH(y)=\int H(t)e^{icty}dt$ and let
 $Y=A_0c^3$, where $A_0$ is a sufficiently large fixed constant.
 For $1\le y\le Y$, decompose
-$\mathcal F_cH=\sum d_jF_j-\mathcal F_cg_c-m_c\mathcal F_cb$.
+$\mathcal F_cH=\sum d_jF_j-\mathcal F_cg_c-m_c\mathcal F_cb_c$.
 The elementary inequalities
 $|\mathcal F_cg_c|\le\|g_c\|_1$ and
 $|(\mathcal F_cg_c)'|\le c\|g_c\|_1$, with the analogous bounds
-for $b$, combine with (7), (9), and (10) to give
+for $b_c$, combine with (7), (9), and (10) to give
 
 \[
  \sup_{1\le y\le Y}y^M
@@ -201,7 +206,9 @@ give, for every integer $r\ge0$,
        \le C\lambda c^r.
 \]
 
-Leibniz's rule, (3), and the fixed Gevrey-2 bound for $b$ imply,
+Leibniz's rule, (3), and
+$\|b_c^{(r)}\|_1\le(C\lambda)^r(r!)^2$ from the fixed
+Gevrey-2 bound for $b_0$ imply,
 after increasing $C_1$,
 
 \[
