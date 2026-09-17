@@ -26,6 +26,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A zero-free-region bound for the successor-cell Weil negative part](compact-weil-successor-cell-negative-part-bound.md)
 - [A classical PNT-rate bound for the complete successor-cell Weil negative part](compact-weil-successor-cell-negative-part-vk-density.md)
 - [A density bound for negative successor-cell Weil eigenvalues](compact-weil-successor-cell-negative-index-density.md)
+- [Off-line zeros force growing negative successor-cell Weil eigenvalues](compact-weil-successor-cell-offline-zero-magnitude-barrier.md)
 - [A positive successor-cell space with an actual prime edge](compact-weil-successor-cell-small-measure-positive-space.md)
 - [The two-profile Perron packet at critical frequency](compact-weil-two-profile-perron-crossover.md)
 - [September 2026 compact-window result and the actual growing carrier](compact-window-weil-certificate-carrier-scope.md)
