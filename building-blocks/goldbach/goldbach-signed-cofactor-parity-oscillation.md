@@ -181,15 +181,51 @@ place a crossing within
 $O_\varepsilon(X^{1/2+\varepsilon}/[\log X(\log\log X)^2])$
 of **every**
 cutoff. The Landau argument supplies only infinitely many
-crossings, with no maximum-gap bound. For comparison, the
-[Vinogradov–Korobov prime-error bound](https://arxiv.org/abs/2508.02041)
-already implies
-$|Q_s|\ll s\exp\{-c(\log s)^{3/5}(\log\log s)^{-1/5}\}$
-for some $c>0$: split the defining sum at $y=\sqrt s$,
-use $|q_y|\ll1$ and $\Lambda\le\log s$ below that point,
-and use the prime-error bound with $\sum_{m\le s}\Lambda(m)\ll s$
-above it. The present oscillation and step estimates do not
-improve this inherited uniform upper bound.
+crossings, with no maximum-gap bound. For comparison,
+[Bellotti's Theorem 1.5](https://arxiv.org/pdf/2508.02041)
+gives $|E_y|\ll y e^{-\omega(y)}$ with the full
+Vinogradov--Korobov leading exponent
+
+\[
+\omega(x)=\min_{t\ge t_0}\{\nu(t)\log x+\log t\},\qquad
+\nu(t)=A_0(\log t)^{-2/3}(\log\log t)^{-1/3},
+\]
+
+where the fixed lower cutoff $t_0$ lies in the range of the
+zero-free region. This bound transfers to the complete row
+without loss of its leading constant:
+
+\[
+\boxed{|Q_s|\ll s e^{-\omega(s)}.}
+\tag{9}
+\]
+
+To check the endpoints, put $H=\lceil se^{-\omega(s)}\rceil$.
+Then $H=o(s)$, and Bellotti's bound at every $x\in[s/2,s]$
+gives $E_x=O(H)$ because
+$\omega(s)-\omega(s/2)=o(1)$. For $2\le y\le H$,
+$|q_y|\ll1$, while the outer $\Lambda$ mass in the interval
+$s-H\le s-y\le s-2$ is
+$\psi(s-2)-\psi(s-H-1)\ll H$. This part is $O(H)$.
+For $y\ge s/2$, Chebyshev gives outer mass $O(s)$ and
+$|q_y|\ll e^{-\omega(s/2)}=O(e^{-\omega(s)})$.
+Finally, divide $H<y<s/2$ into intervals
+$Y\le y<2Y$, $Y=2^jH$, truncating the last interval.
+Each outer $\Lambda$ mass is $O(Y+H)=O(Y)$ by
+$\psi(x)=x+E_x$ at the two endpoints, and its contribution
+is $O(Ye^{-\omega(Y)})$. Since the logarithmic slope of
+$\omega$ tends to zero, these terms form a geometric sum
+dominated by $O(se^{-\omega(s)})$. The $\psi$ bounds include
+every proper prime power, and the range begins at the
+actual complementary endpoint $y=2$.
+
+Here $\omega(s)\sim d(\log s)^{3/5}(\log\log s)^{-1/5}$,
+where $d=(5^6A_0^3/(2^2 3^4))^{1/5}$ (about $0.2126$
+when $A_0=1/48.0718$). The simpler split at $\sqrt s$
+retains only $2^{-3/5}d$ in its leading exponent. Equation
+(9) preserves Bellotti's leading exponential constant $d$;
+it does not improve the prime-error theorem or give an
+RH-scale bound.
 
 The finite Abel and alternating bounds (2)–(3), the sharpened
 quadratic one-step bound, the one-sided odd-total logarithmic
@@ -198,6 +234,7 @@ infinite convergent-series identities,
 and both parity projections in (6) are Lean-compiled with
 standard axioms. The stronger interval-sieve step bound,
 the logarithmic boundary estimate in (4),
-PNT input in (5), Landau oscillation transfer, and the
-coefficient and crossing conclusions (7)–(8) remain written
+PNT input in (5), Landau oscillation transfer, the
+coefficient and crossing conclusions (7)–(8), and the
+quantitative transfer (9) remain written
 analysis; their Lean formalization remains open.
