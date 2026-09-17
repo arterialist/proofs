@@ -557,4 +557,5 @@ import BuildingBlocks.ActualRampPrimeWeights
 import BuildingBlocks.ActualAnnulusGramAlgebra
 import BuildingBlocks.CriticalChirpedGramFinite
 import BuildingBlocks.CriticalChirpedEndpointFinite
+import BuildingBlocks.CriticalChirpedLaplaceFinite
 import BuildingBlocks.SuccessorMangoldtParity

@@ -6,7 +6,11 @@ The finite endpoint identity with actual `Lambda(p^k)=log p`, the
 [CriticalChirpedEndpointFinite.lean](../../formalization/BuildingBlocks/CriticalChirpedEndpointFinite.lean).
 The same file proves that any cutoff `N>=exp(D+w)` captures every term
 of the actual cross for all separations `d<=D`; larger cutoffs agree.
-The construction and estimates for the analytic packet remain written.
+[CriticalChirpedLaplaceFinite.lean](../../formalization/BuildingBlocks/CriticalChirpedLaplaceFinite.lean)
+also compiles the finite complex Laplace factorization and its
+Dirichlet-series limit on `Re z>1/2`. The full infinite-integral
+interchange in (12), the packet's correlation-moment factorization,
+and the subsequent analytic estimates remain written.
 It gives a signed average over packet separations, not a pointwise
 prime-phase estimate or RH. No literature-priority claim is made.
 
@@ -196,6 +200,23 @@ The prime number theorem remains compatible with hypothetical zeros
 strictly inside the critical strip, so neither does (11) exclude one.
 
 ## Exact first weighted moment
+
+The Lean result behind the first line of (12) applies to any continuous
+`C` that vanishes outside `[-w,w]`, where `w<log 2`. For every finite
+cutoff `N`, putting `R_N=log N+w`, it proves
+
+\[
+\int_0^{R_N}e^{-zd}
+  \sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}
+  C(\log n-d)\,dd
+=\left(\sum_{2\le n\le N}\Lambda(n)n^{-z-1/2}\right)
+  \int_{-w}^{w}e^{zy}C(y)\,dy.
+\]
+
+For `Re z>1/2`, Lean also proves that these **finite transforms**
+converge to `(-zeta'/zeta)(z+1/2)` times the compact moment, using
+mathlib's actual von Mangoldt Dirichlet series. This does not by
+itself identify the limit with the full improper integral in (12).
 
 The endpoint law also has a convergent first moment. For this step an
 ordinary quantitative PNT error is enough: for example,
