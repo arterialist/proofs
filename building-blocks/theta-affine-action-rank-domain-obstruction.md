@@ -153,4 +153,18 @@ The physical form proof explains why simply repeating its estimates does not giv
 
 There is one source-domain improvement. The [exponential-growth full-rate lemma](theta-suzuki-variation-full-clock-consumer.md#exponentially-growing-smooth-odd-potentials-are-operator-tests) proves \(S_y,S_q\in D(K)\). Since \(K_0^{-1}\) is a scalar multiple of the identity plus a rank on the sign vector \(\varepsilon\in D(K)\), the bare Woodbury source \(z_s=K_0^{-1}(\delta S_y-t_{\rm score}S_q)\) lies in \(D(K)\). Thus this source column is no longer an operator-domain unknown. The complete prime profile and matched correction columns still enter \(v_U\), so the upgrade does not imply \(v_U\in D(K)\) or bound \(n[v_U]\).
 
+The exact score action \(K\varphi=S_f+\delta S_y-\tfrac14S_q\), together with \(S_y,S_q\in D(K)\), gives a second precise criterion:
+\[
+ \boxed{\quad S_f\in D(K)\quad\Longleftrightarrow\quad
+ \varphi\in D(K^2).\quad}
+\tag{17}
+\]
+Here \(\varphi\in D(K)\) is already proved; (17) makes no assertion that it lies in \(D(K^2)\). Combining (16)--(17) yields a sufficient regularity condition for the entire bounded-model optimizer:
+\[
+ \boxed{\quad \varepsilon,\varphi\in D(K^2)
+ \quad\Longrightarrow\quad v_U\in D(K).\quad}
+\tag{18}
+\]
+Indeed (16) gives \(w_p\in D(K)\), while \(w_c\in D(K)\) is known. The formula \(K\varphi=S_f+\delta S_y-\tfrac14S_q\) and (17) put the crossing source in \(D(K)\). The bounded base \(K_0\) maps \(D(K)\) to itself because it is a scalar identity plus constant/sign ranks; hence the matched profile \((K-M_0)\varphi\) lies in \(D(K)\). All finite-rank columns of \(\widehat M\) and their \(K_0^{-1}\) images are then in \(D(K)\). Its Woodbury inverse maps the affine source \(S_f-tS_q\) into \(D(K)\), proving (18). The implication is sufficient, not claimed necessary, and still gives no numerical bound for \(n[v_U]\).
+
 An action-matched affine rank at \(v_U\) therefore requires a new actual-theta theorem proving \(v_U\in D(K)\), or a different quantitative bound for \(n[v_U]\) that stays within the known form domain. Criterion (3) is a domain obstruction to that proposed rank, not a claim that the actual optimizer lies outside \(D(K)\). The remaining conditional variance and its arithmetic size are open.
