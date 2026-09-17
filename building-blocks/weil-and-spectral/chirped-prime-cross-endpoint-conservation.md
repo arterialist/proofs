@@ -138,10 +138,62 @@ if `g` is absolutely continuous on `[0,D]`, integration by parts in
 \tag{9}
 \]
 
-Thus the cancellation persists for separation weights of bounded
-variation, with no omitted prime-power terms. It follows from the
-pole-null moment and a linear upper bound for the actual Chebyshev
-function. It does not control `|P_T(d)|` at an individual separation;
+## Prime-number-theorem sharpening at a moving endpoint
+
+Both pole transforms vanish separately, so (3) has a second zero.
+For real `s`, set
+`M_T(s)=int e^(s y) C_T(y) dy
+       =E_s(q_T) overline(E_(-s)(q_T))`.
+Compact support permits differentiation. At `s=1/2`, both factors
+vanish, hence `M_T(1/2)=M_T'(1/2)=0`. Since
+`F_T'(y)=e^(y/2)C_T(y)` and `F_T(+-w)=0`, integration by parts gives
+
+\[
+\int_{-w}^{w}F_T(y)\,dy
+=-\int_{-w}^{w}y e^{y/2}C_T(y)\,dy
+=-M_T'(1/2)=0.
+\tag{10}
+\]
+
+Let `N=e^D`, define
+`epsilon(D)=sup_(Ne^(-w)<=x<=Ne^w) |psi(x)-x|/x`, and put
+`K_(T,D)(x)=x^(-1)F_T(log x-D)`. The classical prime number theorem
+gives `epsilon(D)->0` as `D->infinity`, independently of `T`.
+The continuous integral of `K_(T,D)` is exactly zero by (10).
+Thus (5) is the Stieltjes pairing
+`-int K_(T,D) d(psi-x)`. The kernel vanishes at its literal support
+endpoints, so Stieltjes integration by parts has no boundary term.
+Writing `y=log x-D`,
+
+\[
+K_{T,D}'(x)=x^{-2}\bigl(F_T'(y)-F_T(y)\bigr),
+\qquad
+\int_0^\infty x|K_{T,D}'(x)|dx
+\le\int_{-w}^{w}(|F_T'(y)|+|F_T(y)|)dy
+\ll_{a,w,\eta}T^{-1}.
+\]
+
+Consequently the actual prime-power error obeys the stronger uniform
+signed bound
+
+\[
+\boxed{\quad
+\left|\int_0^D e^{-d/2}P_T(d)\,dd\right|
+\ll_{a,w,\eta}\frac{\epsilon(D)}{T},
+\qquad \epsilon(D)\longrightarrow0\quad(D\longrightarrow\infty).
+\quad}\tag{11}
+\]
+
+In particular, `sup_(T>=T_0) T |int_0^D e^(-d/2)P_T(d)dd| -> 0`
+as `D->infinity`. This uses only the unconditional prime number
+theorem, not an RH-scale error estimate. It is still averaged in
+`d`; differentiating it does not give a pointwise bound on `P_T(D)`.
+The prime number theorem remains compatible with hypothetical zeros
+strictly inside the critical strip, so neither does (11) exclude one.
+
+Equations (8)--(9) use the pole-null moment and a linear Chebyshev
+bound; (11) adds the prime number theorem. Every version retains all
+prime powers. None controls `|P_T(d)|` at an individual separation;
 a narrow positive or negative spike can have a small integral.
 Nor does the weight `e^(-d/2)` amplify the transform at an off-line
 zero. A selected-zero argument still needs an additional signed
