@@ -34,6 +34,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A uniform sieve bound for the signed Goldbach cofactor step](goldbach-signed-cofactor-sieve-step.md)
 - [Strict negative cofactor drift at every large odd total](goldbach-odd-total-strict-negative-drift.md)
 - [Full-history cofactor drift at odd totals](goldbach-odd-total-full-history-drift.md)
+- [Mesoscopic parity compensation in the actual Goldbach cofactor](goldbach-cofactor-mesoscopic-parity-conservation.md)
 - [Signed Goldbach cofactor oscillation on each parity](goldbach-signed-cofactor-parity-oscillation.md)
 - [Critical-scale signed cofactor oscillation on each parity](goldbach-signed-cofactor-critical-omega.md)
 - [The alternating Goldbach cofactor has a positive Abel main term](goldbach-alternating-parity-main-term.md)
