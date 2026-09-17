@@ -306,3 +306,11 @@ bound](https://dlmf.nist.gov/25.16.i)
 \(E(x)=O_\varepsilon(x^{1/2+\varepsilon})\) gives the converse.
 No subpower upper bound is proved here; the exact first-order
 centering and actual \(F\)-weight remain in (19).
+
+[GoldbachUnitCellCutFinite.lean](BuildingBlocks/GoldbachUnitCellCutFinite.lean)
+formalizes the finite algebra behind (16) for arbitrary arithmetic
+weights and two abstract cell weights. It then specializes to the actual
+von Mangoldt function and proves the gap is nonnegative when the cell
+weights are nonnegative. The identification of those weights with the
+two \(F\)-ground integrals, the PNT limit (18), and the analytic
+criterion (21) remain written proofs.
