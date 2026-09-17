@@ -51,11 +51,22 @@ The classical Vinogradov–Korobov PNT error, in the form
  E(x):=\psi(x)-(x-1)\ll x e^{-A\Phi(x)}
  \qquad(x\ge x_0),                                         \tag{4}
 \]
-holds with some absolute \(A>0\); see the primary results of
-[Bellotti](https://arxiv.org/abs/2508.02041) and
-[Johnston](https://arxiv.org/abs/2411.13791). We need only this
-unconditional consequence, with no assertion about zeros on the critical
-line. For sufficiently small fixed \(\eta>0\), put
+holds with some absolute \(A>0\). It follows from
+[Johnston's v2 PNT theorem](https://arxiv.org/abs/2411.13791v2)
+using a fixed [Korobov–Vinogradov zero-free region](https://arxiv.org/abs/2306.10680):
+his error is \(x e^{-\omega(x)}\) times a power of \(\log x\), where
+\(\omega(x)=\min_{t\ge3}\{\nu(t)\log x+\log t\}\) and the zero-free
+width satisfies
+\(\nu(t)\gg(\log t)^{-2/3}(\log\log t)^{-1/3}\) for large \(t\);
+on a fixed bounded height interval it has a positive lower bound.
+Thus \(\omega(x)\gg\Phi(x)\). To see this bound, split
+the minimum defining \(\omega\) at \(\log t=\Phi(x)\): above this point
+the \(\log t\) summand is already at least \(\Phi(x)\), while below it
+the zero-free-width summand is \(\gg\Phi(x)\).
+Decreasing \(A\) absorbs the
+logarithmic factor and the \(+1\) in \(E(x)=\psi(x)-x+1\).
+We need only this unconditional consequence, with no assertion about zeros
+on the critical line. For sufficiently small fixed \(\eta>0\), put
 \(T=\exp(\eta\Phi(X))\). Then
 \[
  \epsilon_T(X):=X^{-1/2}\sup_{|t|\le T}|\Delta_X(t)|
