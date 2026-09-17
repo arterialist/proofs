@@ -46,7 +46,8 @@ The complete von Mangoldt function occurs on both legs. The
 endpoint term $\Lambda(s-1)q_2$ is not suppressed.
 [GoldbachCofactorSuccessorFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorSuccessorFinite.lean)
 compiles (2), the exact finite convolution step, and its
-identification with the earlier signed correction.
+identification with the earlier signed correction. It also
+compiles the explicit bound (4) below.
 
 The compiled [Chebyshev bound](../../formalization/BuildingBlocks/CoarsePrimeBounds.lean)
 gives $|E_y|\le C_0y$ with $C_0=4\log2+1$, and the elementary bound
@@ -158,11 +159,34 @@ $Ce^{\theta v}-A_2(e^{-v})$. Therefore
 
 PNT gives $P(t)\sim t^{-1}$. From (5) and (10),
 $t^{1+\theta}\mathcal Q(t)$ is unbounded in both signs.
-If the coefficients $Q_s$ were eventually nonnegative,
-the finite initial part of $\mathcal Q(t)$ would give it a
-fixed lower bound, contradicting its negative excursions.
-Eventual nonpositivity is excluded in the same way. Hence
-$Q_s$ has positive and negative values arbitrarily far out.
+This gives a coefficient-level statement. Fix
+$0\le\alpha<1/2$ and choose $\alpha<\theta<1/2$.
+The elementary estimate
+$\sum_{s\ge4}s^\alpha e^{-st}=O_\alpha(t^{-1-\alpha})$
+shows that an eventual upper bound $Q_s\le Cs^\alpha$
+would imply
+$\limsup_{t\downarrow0}t^{1+\theta}\mathcal Q(t)\le0$.
+That contradicts the positive excursions. An eventual
+lower bound $Q_s\ge-Cs^\alpha$ similarly contradicts the
+negative excursions. Since $C$ is arbitrary,
+
+\[
+\boxed{\limsup_{s\to\infty}\frac{Q_s}{s^\alpha}=+\infty,
+\qquad
+\liminf_{s\to\infty}\frac{Q_s}{s^\alpha}=-\infty
+\quad(0\le\alpha<1/2).}
+\tag{11}
+\]
+
+The step bound (4) turns these excursions into runs of one
+sign. For each fixed $0<\alpha<1/2$, there are arbitrarily
+late positive and negative blocks of consecutive cutoffs,
+each of length $\gg_\alpha s^\alpha/\log^3(2s)$, on which
+$Q_n\ge s^\alpha$ or $Q_n\le-s^\alpha$, respectively.
+Indeed, choose an excursion with $|Q_s|\ge2s^\alpha$;
+over the stated number of neighboring steps, (4) changes
+$Q$ by at most $s^\alpha$. The block length tends to
+infinity because $\alpha>0$.
 
 Between any sufficiently late positive and negative values,
 there is either a zero coefficient or an adjacent sign
@@ -172,11 +196,11 @@ absolute value at most $|Q_{s+1}-Q_s|$. Equation (4) proves
 \[
 \boxed{\text{Infinitely many integers }s\text{ satisfy }
        |Q_s|\ll\log^3(2s).}
-\tag{11}
+\tag{12}
 \]
 
 The Mellin continuation, Landau application, and infinite
-crossing conclusion are written analysis. The finite source
-step is Lean-compiled; a Lean formalization of (4) and
-(7)–(11) remains open. The sparse cutoffs in (11) do not
-exclude any off-critical zero or prove RH.
+oscillation and crossing conclusions are written analysis.
+The finite source step and explicit bound (4) are Lean-compiled;
+a Lean formalization of (7)–(12) remains open. The sparse
+cutoffs in (12) do not exclude any off-critical zero or prove RH.
