@@ -43,8 +43,11 @@ The real-angle finite even-total centering algebra, with the actual
 `vonMangoldt` weights and $r(n)$, is compiled in
 [GoldbachEvenPhaseCenterFinite.lean](BuildingBlocks/GoldbachEvenPhaseCenterFinite.lean).
 The same module proves the exact $N-2$ odd-partner reference at every
-even terminal total. The phase specialization, Fourier extraction and
-ladder count below remain written proofs.
+even terminal total. [GoldbachThreePhaseHarmonicFinite.lean](BuildingBlocks/GoldbachThreePhaseHarmonicFinite.lean)
+formalizes the actual Mangoldt support classification for the two
+surviving row types, the bound $d_N\le2$, and ordered-pair symmetry
+of the algebraic first harmonic. The analytic Fourier-integral
+identification and final regrouping into (5) remain written proofs.
 
 ## Exact first-harmonic extraction
 
@@ -149,6 +152,7 @@ centered angular coefficient in (3). The fixed generator $2$ in the
 also recovers $E$ with a short ladder, but its main $2+$odd-prime
 row has **odd** total. The generator $3$ and parity-aware reference
 in (2) keep this consumer on even totals. Equations (3)–(7) are
-written proofs; the finite parity-centered pair identity and reference
-count are compiled, while its specific Fourier/ladder formalization
-remains open.
+written proofs. The finite parity-centered pair identity, reference
+count, three-adic row classification, oriented algebraic harmonic,
+and short ladder bound are compiled; the analytic Fourier extraction
+and summation into (5) remain unformalized.
