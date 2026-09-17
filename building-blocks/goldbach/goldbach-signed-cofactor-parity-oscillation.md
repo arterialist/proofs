@@ -15,13 +15,19 @@ Q_s=\sum_{m=2}^{s-2}\Lambda(m)q_{s-m}\quad(s\ge4).
 \]
 
 Every proper prime power and the new two-leg endpoint are included.
+For even $s\ge4$, the
+[finite odd-total theorem](../../formalization/BuildingBlocks/GoldbachCofactorOddStepFinite.lean)
+gives $Q_{s+1}\le Q_s+2\log(s+1)$. Thus an upper estimate on
+the even cutoffs transfers to the following odd cutoffs with only
+a logarithmic cost. The reverse one-step direction has no such
+one-sided bound here.
 
 The parity conclusion (7) also follows directly from the earlier
 all-cutoff $\Omega_\pm$ theorem and the one-step bound. For a
 target $0\le\alpha<1/2$, choose $\alpha<\beta<1/2$ and take
 excursions with $|Q_s|/s^\beta\to\infty$. Moving at most one
 integer step reaches either chosen parity and changes $Q_s$
-by only $O(\log^2(2s))=o(s^\beta)$. The calculation below
+by only $O(\log(2s)[\log\log(3s)]^2)=o(s^\beta)$. The calculation below
 gives a separate source-level account of that parity transfer;
 it does not strengthen the uniform upper bound.
 
@@ -138,36 +144,42 @@ $p\in\{0,1\}$,
 
 The [sharpened compiled one-step bound](../../formalization/BuildingBlocks/GoldbachCofactorSuccessorQuadratic.lean)
 gives $|Q_{s+2}-Q_s|\ll\log^2(2s)$ by summing two neighboring
-steps. The earlier explicit sum of the cubic one-step envelopes
-is also compiled in the finite parity module. Between opposite
+steps. The stronger [written interval-sieve bound](goldbach-signed-cofactor-sieve-step.md)
+improves this to
+$|Q_{s+2}-Q_s|\ll\log(2s)[\log\log(3s)]^2$.
+The earlier explicit sum of the cubic one-step envelopes is
+also compiled in the finite parity module. Between opposite
 signs on either parity lattice there is an adjacent parity
 crossing, so each parity has infinitely many cutoffs with
 
 \[
-|Q_s|\ll\log^2(2s).
+|Q_s|\ll\log(2s)[\log\log(3s)]^2.
 \tag{8}
 \]
 
 For any fixed $0<\alpha<1/2$, (7) and the two-step bound also
 give arbitrarily late positive and negative runs of
-$\gg_\alpha s^\alpha/\log^2(2s)$ consecutive cutoffs **of that
+$\gg_\alpha s^\alpha/[\log(2s)(\log\log(3s))^2]$
+consecutive cutoffs **of that
 parity**, each at magnitude at least $s^\alpha$. The result
 does not place a crossing in every dyadic interval, give a
 uniform upper bound, prove binary Goldbach, or exclude an
 off-critical zeta zero.
 
 An upper bound from nearby crossings needs a quantitative
-gap input. At a cutoff $u$ with $|Q_u|\ll\log^2(2X)$ and
+gap input. At a cutoff $u$ with
+$|Q_u|\ll\log(2X)[\log\log(3X)]^2$ and
 $s,u\in[X/2,2X]$, telescoping the one-step law gives
 
 \[
-|Q_s|\ll(1+|s-u|)\log^2(2X).
+|Q_s|\ll(1+|s-u|)\log(2X)[\log\log(3X)]^2.
 \]
 
 To obtain an RH-scale $O_\varepsilon(X^{1/2+\varepsilon})$
 estimate solely from this inequality, it would suffice to
 place a crossing within
-$O_\varepsilon(X^{1/2+\varepsilon}/\log^2 X)$ of **every**
+$O_\varepsilon(X^{1/2+\varepsilon}/[\log X(\log\log X)^2])$
+of **every**
 cutoff. The Landau argument supplies only infinitely many
 crossings, with no maximum-gap bound. For comparison, the
 [Vinogradov–Korobov prime-error bound](https://arxiv.org/abs/2508.02041)
@@ -180,10 +192,12 @@ above it. The present oscillation and step estimates do not
 improve this inherited uniform upper bound.
 
 The finite Abel and alternating bounds (2)–(3), the sharpened
-one-step bound, the earlier explicit two-step envelope, the
+quadratic one-step bound, the one-sided odd-total logarithmic
+step, the earlier explicit two-step envelope, the
 infinite convergent-series identities,
 and both parity projections in (6) are Lean-compiled with
-standard axioms. The logarithmic boundary estimate in (4),
+standard axioms. The stronger interval-sieve step bound,
+the logarithmic boundary estimate in (4),
 PNT input in (5), Landau oscillation transfer, and the
 coefficient and crossing conclusions (7)–(8) remain written
 analysis; their Lean formalization remains open.

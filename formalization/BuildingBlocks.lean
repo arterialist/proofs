@@ -197,6 +197,7 @@ import BuildingBlocks.GoldbachSuccessorLogFinite
 import BuildingBlocks.GoldbachCofactorVolterraFinite
 import BuildingBlocks.GoldbachCofactorSuccessorFinite
 import BuildingBlocks.GoldbachCofactorSuccessorQuadratic
+import BuildingBlocks.GoldbachCofactorOddStepFinite
 import BuildingBlocks.GoldbachCofactorParityFinite
 import BuildingBlocks.GoldbachCofactorParitySeries
 

@@ -87,6 +87,29 @@ identity and complementary-leg reindexing.
 The step bound retains complete $\Lambda$ births before taking
 absolute values; it makes no claim about the sign of $Q_s$.
 
+The [uniform interval-sieve argument](goldbach-signed-cofactor-sieve-step.md)
+further sharpens the written step estimate to
+
+\[
+|Q_{s+1}-Q_s|\ll
+\log(s+1)[\log\log(3s+3)]^2.
+\tag{4'}
+\]
+
+Its sieve and prime-power estimates have not been formalized in Lean.
+There is also a finite, one-sided parity gain: when $s+1$ is odd,
+the even prime-power leg is a power of two, and
+
+\[
+Q_{s+1}-Q_s\le 2\log(s+1).
+\]
+
+[GoldbachCofactorOddStepFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorOddStepFinite.lean)
+compiles this inequality with the endpoint $\Lambda(s-1)q_2\le0$.
+It also compiles transfer of an upper bound at even $s$ to the
+following odd cutoff with this logarithmic cost. The inequality
+does not control downward steps.
+
 ## Actual zeta zeros force both signs
 
 The [source identity](goldbach-signed-cofactor-volterra-source.md)
@@ -196,30 +219,31 @@ negative excursions. Since $C$ is arbitrary,
 \tag{11}
 \]
 
-The step bound (4) turns these excursions into runs of one
+The stronger step bound (4') turns these excursions into runs of one
 sign. For each fixed $0<\alpha<1/2$, there are arbitrarily
 late positive and negative blocks of consecutive cutoffs,
-each of length $\gg_\alpha s^\alpha/\log^2(2s)$, on which
+each of length
+$\gg_\alpha s^\alpha/[\log(2s)(\log\log(3s))^2]$, on which
 $Q_n\ge s^\alpha$ or $Q_n\le-s^\alpha$, respectively.
 Indeed, choose an excursion with $|Q_s|\ge2s^\alpha$;
-over the stated number of neighboring steps, (4) changes
+over the stated number of neighboring steps, (4') changes
 $Q$ by at most $s^\alpha$. The block length tends to
 infinity because $\alpha>0$.
 
 Between any sufficiently late positive and negative values,
 there is either a zero coefficient or an adjacent sign
 change. At an adjacent change, both coefficients have
-absolute value at most $|Q_{s+1}-Q_s|$. Equation (4) proves
+absolute value at most $|Q_{s+1}-Q_s|$. Equation (4') proves
 
 \[
 \boxed{\text{Infinitely many integers }s\text{ satisfy }
-       |Q_s|\ll\log^2(2s).}
+       |Q_s|\ll\log(2s)[\log\log(3s)]^2.}
 \tag{12}
 \]
 
-The Mellin continuation, Landau application, and infinite
-oscillation and crossing conclusions are written analysis.
-The finite source step, sharpened explicit bound (4), and
-convergent-series product in (5) are Lean-compiled; a Lean
-formalization of (7)–(12) remains open. The sparse
+The Mellin continuation, interval-sieve bound (4'), Landau
+application, and infinite oscillation and crossing conclusions
+are written analysis. The finite source step, explicit bound (4),
+one-sided odd-total step, and convergent-series product in (5)
+are Lean-compiled; a Lean formalization of (7)–(12) remains open. The sparse
 cutoffs in (12) do not exclude any off-critical zero or prove RH.
