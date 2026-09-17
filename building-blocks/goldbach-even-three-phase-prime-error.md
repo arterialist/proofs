@@ -51,7 +51,10 @@ of the algebraic first harmonic. [GoldbachThreePhaseEndpoint.lean](BuildingBlock
 compiles the unique-partner reduction, the exact one-leg endpoint,
 the odd/even prime-power split, the power-of-two count, and the final
 finite regrouping into (5). The analytic Fourier-integral
-identification remains a written proof.
+identification, including the original complex phase, is compiled in
+[GoldbachThreePhaseFourier.lean](BuildingBlocks/GoldbachThreePhaseFourier.lean).
+The phase is proved multiplicative on positive integers, and the
+ordered complex triangle is proved real before its cosine projection.
 
 ## Exact first-harmonic extraction
 
@@ -159,8 +162,10 @@ in (2) keep this consumer on even totals. Equations (3)–(7) are
 written proofs. The finite parity-centered pair identity, reference
 count, three-adic row classification, oriented algebraic harmonic,
 short ladder bound, and exact arithmetic identity (5) for that
-algebraic harmonic are compiled. The analytic Fourier extraction and
-RH-equivalence step remain unformalized.
+algebraic harmonic are compiled. The complex phase, its ordered
+triangle, its reality, and the finite Fourier extraction identifying
+(2) with (5) are also compiled. The global RH-equivalence step remains
+unformalized.
 
 ## Unconditional oscillation on the actual even totals
 
@@ -210,8 +215,8 @@ does not approach the uniform estimate required for RH.
 compiles the exact complete-von-Mangoldt two-step increment, its
 $2+2\log(m+2)$ absolute bound, and the near-zero bound when two odd
 samples straddle a sign change. The external oscillation/counting
-theorems, the real-to-odd sampling argument, and the analytic
-identification of (2) with the algebraic first harmonic are written
-inputs and remain Lean obligations. This corollary closes an eventual
+theorems and the real-to-odd sampling argument are written inputs and
+remain Lean obligations. The analytic identification of (2) with the
+algebraic first harmonic is now compiled. This corollary closes an eventual
 first-harmonic sign route, but does not give a uniform prime-error
 bound or RH.

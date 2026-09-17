@@ -521,6 +521,7 @@ import BuildingBlocks.GoldbachEvenPhaseCounterexample
 import BuildingBlocks.GoldbachOddCrossing
 import BuildingBlocks.GoldbachThreePhaseHarmonicFinite
 import BuildingBlocks.GoldbachThreePhaseEndpoint
+import BuildingBlocks.GoldbachThreePhaseFourier
 import BuildingBlocks.StableOddMobiusPrefixFinite
 
 import BuildingBlocks.ThetaLocalSpectralAudit
