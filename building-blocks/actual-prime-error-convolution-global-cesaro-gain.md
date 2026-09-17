@@ -50,7 +50,7 @@ $$
 
 The exponent constant is $3^{2/5}d=0.329890093\ldots$, strictly larger than the constant $d$ inherited by summing the pointwise PNT bound. Equation (5) is a signed cumulative assertion. It does not imply a pointwise bound or a mean-square bound for $Q_s$.
 
-**Proof status.** The analytic bound (5) is a written proof, not a Lean theorem. The exact finite convolution identity in (9) has a separate Lean verification; the zero-sum estimate and analytic exponent remain written arguments. This note makes no RH claim.
+**Proof status.** The analytic bound (5) is a written proof, not a Lean theorem. The exact finite convolution identity in (9) is verified by [`signedCofactorError_cumulative`](../formalization/BuildingBlocks/GoldbachCofactorCumulativeFinite.lean) in Lean, including every prime power and both endpoints. The zero-sum estimate and analytic exponent remain written arguments. This note makes no RH claim.
 
 ## A zero-sum estimate with three powers of the ordinate
 
