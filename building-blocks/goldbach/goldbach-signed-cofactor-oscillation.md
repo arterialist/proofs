@@ -92,6 +92,11 @@ D(u)=\sum_{n\ge1}(\Lambda(n)-1)e^{-nu}.
 \tag{6}
 \]
 
+The convergent-series product in (5), with every prime power
+and $\Lambda(1)=0$, is compiled for real $e^{-t}\in(0,1)$ in
+[GoldbachCofactorParitySeries.lean](../../formalization/BuildingBlocks/GoldbachCofactorParitySeries.lean).
+The Volterra integral in (6) remains written analysis.
+
 The $e^{-t}$ term removes the label-one error $E_1=-1$.
 To check that the actual zero information survives, let
 $M_2(w)=\int_0^\infty A_2(t)t^{w-1}\,dt$, initially for
@@ -201,6 +206,7 @@ absolute value at most $|Q_{s+1}-Q_s|$. Equation (4) proves
 
 The Mellin continuation, Landau application, and infinite
 oscillation and crossing conclusions are written analysis.
-The finite source step and explicit bound (4) are Lean-compiled;
-a Lean formalization of (7)–(12) remains open. The sparse
+The finite source step, explicit bound (4), and convergent-series
+product in (5) are Lean-compiled; a Lean formalization of
+(7)–(12) remains open. The sparse
 cutoffs in (12) do not exclude any off-critical zero or prove RH.

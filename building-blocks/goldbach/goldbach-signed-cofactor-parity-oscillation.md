@@ -91,6 +91,14 @@ F_1(r)=\sum_{\substack{s\ge4\\s\ \mathrm{odd}}}Q_sr^s
 
 The finite version of (6), for any coefficient sequence and
 cutoff, is compiled in the same Lean module.
+The [complete interior-series module](../../formalization/BuildingBlocks/GoldbachCofactorParitySeries.lean)
+also proves absolute convergence for real $|z|<1$, the
+infinite Abel identity obtained from (2), the exact
+$F(z)=P(z)A_2(z)$ convolution with $\Lambda(1)=0$, and both
+infinite parity projections in (6). Thus the passage from
+finite endpoints to the convergent generating functions is
+Lean-certified. The quantitative $t\downarrow0$ estimates
+remain separate.
 
 The [actual-zero/Landau argument](goldbach-signed-cofactor-oscillation.md)
 already proves that for every $0<\theta<1/2$,
@@ -139,8 +147,10 @@ does not place a crossing in every dyadic interval, give a
 uniform upper bound, prove binary Goldbach, or exclude an
 off-critical zeta zero.
 
-The finite Abel and alternating bounds (2)–(3), the finite
-parity projection behind (6), and the exact two-step envelope
-are Lean-compiled with standard axioms. The infinite limits,
-parity oscillation, and crossing conclusions (4)–(8) are
-written analysis; their Lean formalization remains open.
+The finite Abel and alternating bounds (2)–(3), the exact
+two-step envelope, the infinite convergent-series identities,
+and both parity projections in (6) are Lean-compiled with
+standard axioms. The logarithmic boundary estimate in (4),
+PNT input in (5), Landau oscillation transfer, and the
+coefficient and crossing conclusions (7)–(8) remain written
+analysis; their Lean formalization remains open.
