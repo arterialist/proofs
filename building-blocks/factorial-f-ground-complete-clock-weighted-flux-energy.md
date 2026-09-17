@@ -124,3 +124,89 @@ Regroup the ordered pair term by the additive total \(k=m+n\) and gap \(d=|m-n|\
 _{\displaystyle\mathcal K_{A,B}((k+|m-n|)/2)}.          \tag{9}
 \]
 Equation (9) is an exact Goldbach-coordinate bridge: the ordinary-prime sector counts weighted representations \(k=p+q\), while proper-power sectors remain present. The kernel depends on the gap as well as the total, and (8) subtracts the single-prime and continuous terms. Existence of one Goldbach representation for an even \(k\) therefore gives neither an upper bound for the bulk nor a sign for \(G_s\). A usable additive theorem would have to control the weighted pair distribution and its two exact centering terms at the needed scale.
+
+## The gap correction is macroscopic for the actual prime source
+
+The gap in (9) cannot be treated as a lower-order endpoint error. Set
+\(A=X\), \(B=2X\), and keep the actual \(F\)-weight
+\(w_F(x)=1/(x^2F(x)^2)\). Compare the true positive pair term
+\[
+ P_X=\sum_{m,n\le2X}\Lambda(m)\Lambda(n)
+       \mathcal K_{X,2X}(\max(m,n))
+ \tag{10}
+\]
+with the total-only, but still cutoff-preserving, additive surrogate
+\[
+ T_X=\sum_{m,n\le2X}\Lambda(m)\Lambda(n)
+       \mathcal K_{X,2X}((m+n)/2).
+ \tag{11}
+\]
+Thus \(T_X\) can be regrouped by the **clipped** Goldbach total
+\(G_{2X}(k)=\sum_{m+n=k,\,m,n\le2X}\Lambda(m)\Lambda(n)\).
+Using the untruncated Goldbach total would add still more terms.
+Since \((m+n)/2\le\max(m,n)\) and \(\mathcal K\) decreases,
+\(D_X:=T_X-P_X\ge0\) term by term. More explicitly,
+\[
+ D_X=\sum_{m,n\le2X}\Lambda(m)\Lambda(n)
+ \int_{\max(X,(m+n)/2)}^{\max(X,m,n)}w_F(x)\,dx.
+ \tag{12}
+\]
+
+**Proposition.** Unconditionally, for the complete von Mangoldt
+source, including all proper powers,
+\[
+ P_X\sim\frac X{\kappa_F^2},\qquad
+ T_X\sim\frac{(8\log2-4)X}{\kappa_F^2},\qquad
+ \boxed{D_X\sim\frac{(8\log2-5)X}{\kappa_F^2}},
+ \quad \kappa_F=1+\gamma.
+ \tag{13}
+\]
+The last constant is positive: \(8\log2-5>1/3\), since
+\(\log2>2/3\).
+
+Here is a proof using only the [prime number theorem in the form
+\(\psi(x)=x+o(x)\)](https://dlmf.nist.gov/25.16.i) and
+\(F(x)\to\kappa_F\). Fubini makes
+\(P_X=\int_X^{2X}\psi(x)^2w_F(x)dx\), proving its asymptotic.
+For \(T_X\), set
+\(\mu_X=X^{-1}\sum_{n\le2X}\Lambda(n)\delta_{n/X}\).
+The prime number theorem gives weak convergence of \(\mu_X\) to
+Lebesgue measure on \([0,2]\), hence of \(\mu_X\otimes\mu_X\) to
+Lebesgue measure on \([0,2]^2\). For fixed \(1\le v\le2\), the
+line \(u+w=2v\) has zero limiting area, so
+\[
+ X^{-2}\sum_{\substack{m,n\le2X\\m+n\le2Xv}}
+       \Lambda(m)\Lambda(n)
+ \longrightarrow
+ \operatorname{area}\{(u,w)\in[0,2]^2:u+w\le2v\}
+ =4-2(2-v)^2.
+ \tag{14}
+\]
+The left side is uniformly bounded by \((\psi(2X)/X)^2\).
+Dominated convergence, with \(x=Xv\) and
+\(F(Xv)\to\kappa_F\) uniformly for \(1\le v\le2\), now gives
+\[
+ \frac{T_X}{X}\longrightarrow
+ \frac1{\kappa_F^2}\int_1^2
+ \frac{4-2(2-v)^2}{v^2}\,dv
+ =\frac{8\log2-4}{\kappa_F^2}.
+ \tag{15}
+\]
+Subtracting the limit for \(P_X\) proves (13). The difference
+has positive geometric density
+\((2-v)(3v-2)/v^2\) on \(1\le v<2\).
+
+The two centering terms in (8) each have leading magnitude
+\(X/\kappa_F^2\): specifically,
+\(\sum_n\Lambda(n)\mathcal L_{X,2X}(n)
+=\int_X^{2X}\psi(x)/(xF(x)^2)dx\sim X/\kappa_F^2\), and
+\(\int_X^{2X}F(x)^{-2}dx\sim X/\kappa_F^2\).
+They cancel the leading \(P_X\) term, leaving the true
+\(F\)-ground energy
+\(\int_X^{2X}E(x)^2/(x^2F(x)^2)dx=o(X)\) by the prime number theorem.
+Replacing \(P_X\) by \(T_X\) while retaining those exact centering
+terms instead creates the spurious positive main term
+\((8\log2-5)X/\kappa_F^2\). Thus an additive-total Goldbach estimate
+must retain or pay the full gap distribution before it can bound the
+original-metric flux at an RH-relevant scale. This proposition does
+not prove a new bound for that flux or RH.
