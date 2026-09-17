@@ -33,6 +33,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A signed actual-prime residual on a causal exponential cone](complete-weil-causal-exponential-signed-cone.md)
 - [A sharp harmonic Mangoldt gap and a quantitative Weil residual sign](sharp-mangoldt-harmonic-gap-and-weil-residual.md)
 - [A positive two-rate plane for the complete actual-prime Weil form](complete-weil-two-exponential-rate-positive-plane.md)
+- [A positive three-rate plane for the complete actual-prime Weil form](complete-weil-three-exponential-rate-positive-plane.md)
 - [A positive successor-cell space with an actual prime edge](compact-weil-successor-cell-small-measure-positive-space.md)
 - [The two-profile Perron packet at critical frequency](compact-weil-two-profile-perron-crossover.md)
 - [September 2026 compact-window result and the actual growing carrier](compact-window-weil-certificate-carrier-scope.md)
