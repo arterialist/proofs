@@ -80,9 +80,35 @@ theorem phase_pair_decomposition (a b : ℝ) :
   rw [cos_sub]
   ring
 
+noncomputable def centeredGoldbach (X : ℕ) (phase : ℕ → ℝ) : ℝ :=
+  ∑ q ∈ pairDomain X,
+    (weight q.1 * weight q.2 * cos (phase q.1 - phase q.2) -
+      weight q.1 * cos (phase q.1) - weight q.2 * cos (phase q.2) + 1)
+
+/-- Centering the Hermitian triangle cancels each one-active-coordinate
+contribution against the complete integer reference. The remaining one-leg
+factor is `vonMangoldt b - 1`, while the two-active-coordinate interaction
+is retained with its exact sign. -/
+theorem centered_phase_difference (X : ℕ) (phase : ℕ → ℝ) :
+    centeredGoldbach X (fun _ => 0) - centeredGoldbach X phase =
+      ∑ q ∈ pairDomain X,
+        (weight q.1 * (1 - cos (phase q.1)) * (weight q.2 - 1) +
+         weight q.2 * (1 - cos (phase q.2)) * (weight q.1 - 1) -
+         weight q.1 * weight q.2 *
+           ((1 - cos (phase q.1)) * (1 - cos (phase q.2)) +
+             sin (phase q.1) * sin (phase q.2))) := by
+  unfold centeredGoldbach
+  rw [← sum_sub_distrib]
+  apply sum_congr rfl
+  intro q hq
+  simp only [sub_self, cos_zero]
+  rw [cos_sub]
+  ring
+
 #print axioms ordinary_sub_hermitian_eq_cutEnergy
 #print axioms cutEnergy_nonneg
 #print axioms hermitianGoldbach_le_ordinary
 #print axioms phase_pair_decomposition
+#print axioms centered_phase_difference
 
 end BuildingBlocks.GoldbachPrimePhaseCutFinite
