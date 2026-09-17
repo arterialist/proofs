@@ -20,7 +20,7 @@ open BuildingBlocks.GoldbachThreePhaseEndpoint
 
 private instance : Fact (Nat.Prime 3) := ⟨by norm_num⟩
 
-private theorem complex_centered_pair_re (a b r s t u : ℝ) :
+theorem complex_centered_pair_re (a b r s t u : ℝ) :
     (((a : ℂ) * ((Real.cos t : ℂ) + (Real.sin t : ℂ) * Complex.I) - (r : ℂ)) *
       ((b : ℂ) * conj ((Real.cos u : ℂ) + (Real.sin u : ℂ) * Complex.I) -
         (s : ℂ))).re =
@@ -64,7 +64,7 @@ theorem threeComplexPhase_mul {m n : ℕ}
   push_cast
   ring
 
-private theorem re_finset_sum {α : Type*} (s : Finset α) (f : α → ℂ) :
+theorem re_finset_sum {α : Type*} (s : Finset α) (f : α → ℂ) :
     (∑ x ∈ s, f x).re = ∑ x ∈ s, (f x).re := by
   classical
   induction s using Finset.induction_on with
@@ -75,7 +75,7 @@ private theorem evenPairDomain_swap {N a b : ℕ} :
     (a, b) ∈ evenPairDomain N ↔ (b, a) ∈ evenPairDomain N := by
   simp [evenPairDomain, pairDomain, and_comm, add_comm]
 
-private theorem sum_evenPair_swap (N : ℕ) (f : ℕ → ℕ → ℂ) :
+theorem sum_evenPair_swap (N : ℕ) (f : ℕ → ℕ → ℂ) :
     (∑ q ∈ evenPairDomain N, f q.2 q.1) =
       ∑ q ∈ evenPairDomain N, f q.1 q.2 := by
   apply Finset.sum_bij (fun q _ => (q.2, q.1))
@@ -88,7 +88,7 @@ private theorem sum_evenPair_swap (N : ℕ) (f : ℕ → ℕ → ℂ) :
   · intro q hq
     rfl
 
-private theorem hermitian_triangle_real (N : ℕ) (z : ℕ → ℂ) :
+theorem hermitian_triangle_real (N : ℕ) (z : ℕ → ℂ) :
     conj (∑ q ∈ evenPairDomain N, z q.1 * conj (z q.2)) =
       ∑ q ∈ evenPairDomain N, z q.1 * conj (z q.2) := by
   calc
@@ -225,7 +225,7 @@ private theorem constant_first_frequency (c : ℝ) :
   rw [intervalIntegral.integral_const_mul]
   simp [integral_cos, sin_two_pi]
 
-private theorem pair_projection (A B C D : ℝ) (m n : ℕ) :
+theorem pair_projection (A B C D : ℝ) (m n : ℕ) :
     (∫ θ in (0 : ℝ)..2 * π,
       (A * cos ((m : ℝ) * θ - (n : ℝ) * θ) -
           B * cos ((m : ℝ) * θ) -
@@ -267,13 +267,13 @@ private theorem pair_projection (A B C D : ℝ) (m n : ℕ) :
     intervalIntegral.integral_sub (hpair.const_mul A) (hm.const_mul B)]
   simp [pair_cosine_first_frequency, single_cosine_first_frequency]
 
-private theorem indicator_scale {P : Prop} [Decidable P] (A : ℝ) :
+theorem indicator_scale {P : Prop} [Decidable P] (A : ℝ) :
     A * (if P then π else 0) = π * (A * if P then 1 else 0) := by
   by_cases h : P
   · simp [h, mul_comm]
   · simp [h]
 
-private theorem neighbor_indicator_scale (m n : ℕ) (A : ℝ) :
+theorem neighbor_indicator_scale (m n : ℕ) (A : ℝ) :
     A * (if m = n + 1 ∨ n = m + 1 then π else 0) =
       π * (A * ((if m = n + 1 then 1 else 0) +
         (if n = m + 1 then 1 else 0))) := by
