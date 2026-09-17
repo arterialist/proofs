@@ -4,7 +4,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 
 - [Actual charge-arrival loading and exact seeded work](actual-charge-arrival-loading.md)
 - [Actual radius-two joint-null gain versus the constrained gap](actual-joint-null-gain-gap-comparison.md)
-- [Spatial means and logarithmic exceptional sets for the actual memory response](actual-memory-spatial-sign.md)
+- [Pointwise tail and spatial means of the actual memory response](actual-memory-spatial-sign.md)
 - [Actual physical weights and local zero coefficients](actual-physical-local-residue-weights.md)
 - [Exact causal charge signs and the positive-process crossing law](actual-source-causal-charge-law.md)
 - [An additive-clock completion for the actual history](actual-source-mixed-dirichlet-completion.md)
