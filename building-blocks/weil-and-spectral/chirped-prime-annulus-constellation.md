@@ -157,11 +157,13 @@ geometric class, not arbitrary-test Weil positivity.
 This does not establish the proposed fixed-profile phase saving at
 L=c loglogT. The chirp bandwidth K grows with T and suppresses the
 absolute autocorrelation mass before prime phases are considered.
-The geometry needs both K≫e^{L/2} to make the prime interaction small
-and K=o(T) to keep the packet high-frequency with negligible poles.
-These inequalities coexist for L≤αlogT exactly when α<2. The value
-α=2 is a limitation of this construction, not a proven impossibility
-for signed tests or a statement about RH.
+The proof here uses both `K≫e^(L/2)` to make the prime interaction
+`o(log T)` and `K=o(T)` to make the archimedean residual `o(1)`.
+These conditions coexist for `L≤αlog T` when `α<2`. The
+[critical-span extension](chirped-critical-span-constellation.md) instead
+takes `K=ηT`, controls the complete archimedean quadratic form with an
+`O(1)` residual, and reaches `2log T-B` for fixed `B`. That still gives
+no fixed-profile prime-phase saving or RH conclusion.
 
 The fixed-profile phase-resonance problem remains unresolved. No claim
 of literature priority is made here.
