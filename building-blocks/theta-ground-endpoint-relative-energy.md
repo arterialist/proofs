@@ -120,4 +120,6 @@ There is also a sharper denominator for the moving-radius covariance calculation
 
 This specifies the leading theta exponent in the earlier coarse bound \(a_R^{\rm clk}\ge\exp(-C e^{2R})\). It does not control the separate affine residual numerator.
 
+The [many-cell counterprofiles](theta-antispike-grid-counterprofile.md) fit inside this narrower collar: their width is \(O(R^2e^{-2R})\), their relative logarithmic energy is \(O(R^3)=o(e^{R/20})\), and their physical mass exceeds the lower scale in (9). Their signed prime sampling still has either sign. They fail the killed-ground energy equation, so the new bounds do not settle that signed sampling problem.
+
 This is written analysis. The prime upper bound is classical, and every actual prime-power edge is either counted in (7) or bounded in (4); no Lean formalization of these estimates is claimed.
