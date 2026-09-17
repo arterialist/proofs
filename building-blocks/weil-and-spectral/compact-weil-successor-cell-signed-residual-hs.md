@@ -107,6 +107,29 @@ Equations (5)--(6) bound (7) by
 \(C\sqrt b\,e^{-a_0\Phi(N)/2}\). After the exact cell
 normalization, \(\sqrt{\ell_r/\ell_n}\sqrt b\le\sqrt2\).
 
+The arithmetic part also has a finite integer-endpoint formulation.
+Write \(E(k)=\psi(k)-k\), let \(0\le A<B\) be integers, and put
+\(w_k=k^{-1/2}\) for \(k\ge1\). Exact Abel summation gives
+\[
+ \sum_{A<d\le B}(\Lambda(d)-1)w_d
+ =-w_{A+1}E(A)+w_BE(B)
+  +\sum_{d=A+1}^{B-1}E(d)(w_d-w_{d+1}).              \tag{7a}
+\]
+Consequently, if \(|E(k)|\le H\) for every integer
+\(A\le k\le B\), then monotonicity of \(w_k\) and telescoping yield
+\[
+ \left|\sum_{A<d\le B}\frac{\Lambda(d)-1}{\sqrt d}\right|
+ \le \frac{2H}{\sqrt{A+1}}.                         \tag{7b}
+\]
+Both (7a) and (7b) are [Lean-compiled for the actual von Mangoldt
+source](../../formalization/BuildingBlocks/SuccessorCoarseParentSignedAbel.lean),
+with \(A=\lfloor r/(n+1)\rfloor\), \(B=\lfloor r/n\rfloor\), and the
+exact strict-lower/closed-upper child interval whenever the cutoff lies
+below \(A\). They are classical partial summation, not a new PNT
+estimate. Equation (5) supplies \(H\) in the coarse range. The
+integer-density sum in (7a) still must be compared with the continuous
+integral in (7), and this last comparison is not yet formalized.
+
 The continuous integral in (7), with the same normalization, is
 \[
  C_{r,n}=2\sqrt{\frac{r\ell_r}{\ell_n}}
@@ -188,11 +211,13 @@ absolute \(c>0\). The initial-row term (13) is smaller than
 Equation (2) follows by Bessel's inequality for the orthonormal
 rank-one projectors \(f_jf_j^*\) in Hilbert--Schmidt space.
 
-This is a written analytic proof of (1)--(2). The exact
-high-parent, one-dilation row and its reciprocal-square
-von Mangoldt weight are [Lean-compiled finite
-lemmas](../../formalization/BuildingBlocks/SuccessorHighParentPrimeRow.lean);
-the PNT input, continuous-cell comparison, Hilbert--Schmidt
+This is a written analytic proof of (1)--(2). The exact high-parent,
+one-dilation row and its reciprocal-square von Mangoldt weight are
+[Lean-compiled finite
+lemmas](../../formalization/BuildingBlocks/SuccessorHighParentPrimeRow.lean).
+The signed coarse-parent finite Abel comparison and its exact child
+interval are [also Lean-compiled](../../formalization/BuildingBlocks/SuccessorCoarseParentSignedAbel.lean).
+The PNT input, discrete-to-continuous cell comparison, Hilbert--Schmidt
 aggregation, and full analytic theorem are not Lean formalized.
 No literature-priority claim is made. A hypothetical zero with fixed
 \(1/2<\Re\rho<1\) is compatible with (5) and (1), since
