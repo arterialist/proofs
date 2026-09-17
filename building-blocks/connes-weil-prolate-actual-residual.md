@@ -216,6 +216,25 @@ for each fixed $\lambda$. An asymptotic comparison requires bounds
 on $B_\pm$, the moduli $\omega_\pm$, and the actual Weil gap as
 $\lambda$ grows. Equation (11) alone supplies no uniform ratio.
 
+The remainder in (9) has a more specific local modulus. Since $k_a$
+is smooth on a short one-sided collar and $r(s)=1/(2s)+O(1)$, its
+interior integral changes by $O_a(\delta(1+|\log\delta|))$ there.
+The other terms have the same or better modulus. Thus some finite
+$L_a$ satisfies
+$\omega_\pm(\delta)\le L_a\delta(1+|\log\delta|)$
+for all sufficiently small $\delta$. This suggests a precise
+conditional obstruction. Put $c=2\pi\lambda^2$. If along a cofinal
+set of scales $|B_+|$ is bounded below by a polynomial in $c$ times
+$e^{-c}$, while $L_a$ and $\|k_a\|_2$ grow at most polynomially and
+$0<E_1-R_a$ is bounded above by a polynomial times $e^{-2c}$,
+and the endpoint collar admits the width below, choose
+$\delta=e^{-c}$ divided by a sufficiently large polynomial. Then
+(11) gives $\|g_a\|_2/\|k_a\|_2$ at least a polynomial multiple of
+$e^{-3c/2}$, and its ratio to $E_1-R_a$ diverges. These are
+**hypotheses**, not consequences of prolate leakage: the needed
+lower bound for the endpoint combination and upper bound for the
+*Weil* gap are not established here.
+
 ## Prolate endpoint data versus the Weil gap
 
 There is an exact bridge from prolate concentration eigenvalues to
