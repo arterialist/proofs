@@ -87,6 +87,24 @@ theorem weight_three_adjacent_even_rows {a b N : ℕ}
       omega
     omega
 
+/-- The centered one-leg term at first angular frequency has only the
+generator three on its Mangoldt leg. Even total forces an odd reference
+partner and fixes the exact terminal range. -/
+theorem weight_three_reference_row {a b N : ℕ}
+    (ha : weight a ≠ 0)
+    (hv : padicValNat 3 a = 1)
+    (hpair : (a, b) ∈ evenPairDomain N) :
+    a = 3 ∧ Odd b ∧ b ≤ N - 3 := by
+  have ha3 := weight_three_label_one ha hv
+  have htotal : a + b ≤ N := by
+    have h := (Finset.mem_filter.mp hpair).1
+    exact (Finset.mem_filter.mp h).2
+  have heven : Even (a + b) := (Finset.mem_filter.mp hpair).2
+  subst a
+  refine ⟨rfl, ?_, by omega⟩
+  rcases heven with ⟨j, hj⟩
+  exact ⟨j - 2, by omega⟩
+
 /-- Exponents on the same-generator ladder that occur in the odd prefix
 but are too late to fit the even additive triangle. -/
 def lateThreeLadder (N : ℕ) : Finset ℕ :=
@@ -193,6 +211,7 @@ theorem threeFirstHarmonic_oriented (N : ℕ) :
 #print axioms weight_three_label_one
 #print axioms weight_three_adjacent_rows
 #print axioms weight_three_adjacent_even_rows
+#print axioms weight_three_reference_row
 #print axioms lateThreeLadder_card_le_two
 #print axioms threeFirstHarmonic_oriented
 
