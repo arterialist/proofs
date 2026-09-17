@@ -62,6 +62,23 @@ For the proved endpoint collar take \(X=e^{2R}\),
 
 Parity cannot be suppressed. For odd \(N\), exactly one of \(n,N-n\) is even, so a nonzero Mangoldt term requires that label to be a power of two. For even \(N\), the row includes odd-prime-power pairs and pairs of powers of two. At the endpoint collar there is at most one power of two in \((X,X+Y)\) for all sufficiently large \(R\), since \(Y=o(X)\). Its contribution to the square (5) still cannot be discarded using a label count alone: \(H_c(n,m)\) may concentrate on that label. This is the distinction between Goldbach existence, complete prime-power weights, and an upper second-moment estimate.
 
+There is an exact radius selection that removes the power-of-two sector while keeping the actual ground and all other prime powers. Let \(\mathcal E\) be the radii for which the endpoint label interval \((e^{2R},e^{2U})\) contains some \(2^k\), and put \(r_k=k\log2/2\). Since \(w=8e^{-19R/20}\) and \(2U=2R+256e^{-19R/20}\),
+\[
+ R\in\mathcal E
+ \quad\Longrightarrow\quad
+ 0<r_k-R<128e^{-19R/20}
+ \quad\text{for some }k.
+\tag{6a}
+\]
+For sufficiently large \(R\), the right side is below one, so \(R>r_k-1\) and \(r_k-R\le C e^{-19r_k/20}\). The intervals around successive \(r_k\) have geometric lengths. Consequently
+\[
+ \boxed{\qquad
+ |\mathcal E\cap[T,\infty)|\le C e^{-19T/20}
+ \quad(T\text{ sufficiently large}).\qquad}
+\tag{6b}
+\]
+In particular the complement has density one and contains the explicit midpoint sequence \(R_k=(k+\tfrac12)\log2/2\) for all large \(k\). At every such radius, each label with nonzero \(\Lambda\) in (5) is an **odd prime power**, so all contributing totals \(N\) are even. The compact first moment (4) and mixed term (8) likewise have no power-of-two label. This is a parity reduction for the compact collar, not a prime-only reduction: odd proper powers and all ground-dependent weights remain. It does not control the omitted full-profile tail or the signed error (7).
+
 ## The exact profile-error consumer
 
 Let \(c_{\rm dens}=\mu_R-a_R=\int e^{|u|}d\gamma\), the density coefficient in the [actual profile calibration](theta-cross-arrival-density-calibration.md). For the compact row set
