@@ -15,14 +15,14 @@ A(u)=e^{u/2}\sum_{n\in\mathbb Z}e^{-\pi n^2e^{2u}},
 e^{-\pi n^2e^{2u}}.
 $$
 
-[PhysicalThetaParity.lean](../building-blocks/BuildingBlocks/PhysicalThetaParity.lean)
+[PhysicalThetaParity.lean](../formalization/BuildingBlocks/PhysicalThetaParity.lean)
 proves directly that $A(-u)=A(u)$, that its literal differential
 kernel satisfies $\Phi(-u)=\Phi(u)$, and that $\Phi(u)>0$ for every
 real $u$. It first proves summability and the needed derivative
 identities; it invokes Mathlib's real Gaussian Poisson theorem for the
 modular step.
 
-[PhysicalThetaMoments.lean](../building-blocks/BuildingBlocks/PhysicalThetaMoments.lean)
+[PhysicalThetaMoments.lean](../formalization/BuildingBlocks/PhysicalThetaMoments.lean)
 then proves, for every real $\beta$,
 
 $$

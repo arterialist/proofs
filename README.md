@@ -1,28 +1,36 @@
 # Proofs
 
-Mathematical proofs, Lean 4 formalizations and precisely stated investigations arising from work on the Riemann hypothesis. The collection preserves useful known results, different proofs, counterexamples and explicitly incomplete arguments. RH remains unproved.
+This repository collects written proofs, Lean formalizations, and reproducible calculations about primes and the Riemann hypothesis. A central question is how counting by $n\mapsto n+1$ fits with factorization. Each new prime adds a multiplicative generator; its multiples appear later in the count. The notes test what that relationship can prove.
 
-| Directory | Contents |
+There is no proof of RH here. Several results show that a stated bound or sign would imply RH; the bound or sign is still open. Counterexamples record when a proposed shortcut fails.
+
+## Where to look
+
+| Directory | What it contains |
 | --- | --- |
-| [unique-contributions](unique-contributions/) | Original mathematical results, with proofs and comparisons to prior work. |
-| [first-formalizations](first-formalizations/) | First formalizations of known mathematics, supported by a review of existing formal libraries. |
-| [building-blocks](building-blocks/) | Useful mathematical building blocks, including established results, counterexamples and explicitly labeled incomplete attempts. |
-| [reviews](reviews/) | Repository-wide audit, novelty review, and conversation-to-artifact reconciliation. |
+| [Building blocks](building-blocks/) | Research notes grouped by subject, including proved identities, conditional criteria, and counterexamples. |
+| [Formalization](formalization/) | Lean 4 modules and build checks. |
+| [Certificates](certificates/) | Scripts for finite computations and interval bounds cited by the notes. |
+| [Unique contributions](unique-contributions/) | Results whose specific statements or proofs appear original after a documented literature search. |
+| [First formalizations](first-formalizations/) | Lean work on known mathematics for which no earlier public formalization was found in a bounded search. |
+| [Reviews](reviews/) | Literature comparisons and audits of published arguments. |
 
-Each result states its assumptions, mathematical use, sources and proof status. Written or computer-assisted mathematics is distinguished from compiled Lean theorems. A refutation records the exact claim it excludes; an open claim is not presented as a theorem. Priority claims require a specific comparison with prior work.
+The novelty labels describe the searches recorded with each entry. They do not assert that every possible source has been checked. [Adding work](CONTRIBUTING.md) explains where new notes, Lean files, and certificates go.
 
-The [building-blocks index](building-blocks/README.md) organizes the mathematical results. The [arithmetic subject index](building-blocks/arithmetic-subject-index.md) follows dependencies from finite integer laws and phase rigidity to the analytic sign criterion.
+For a short route through the project, start with the [successor and division notes](building-blocks/successor-and-division/), then the [prime distribution notes](building-blocks/prime-distribution/). The [coarse-energy criterion](building-blocks/prime-distribution/coarse-energy-rh-criterion.md) and the [eventual-sign criterion](building-blocks/zeta-and-zeros/actual-critical-sign-criterion.md) show two precise places where an RH-scale estimate is needed. The [subject guide](building-blocks/) points to the other lines of work. The [long catalog](building-blocks/catalog.md) preserves the detailed cross-references.
 
-The [conversation progress reconciliation](reviews/conversation-progress-reconciliation.md) maps the complete recovered RH discussion to its committed proofs, formalizations, obstructions, and current proof frontiers.
+## Reading a claim
 
-## Build
+A Lean file proves its stated theorem under the assumptions in that file. A written argument or numerical certificate has a different scope; the surrounding note says which parts it supports. A conditional RH criterion does not prove its premise. The repository keeps failed approaches because their counterexamples prevent the same mistake from reappearing in a new model.
+
+## Build the Lean library
 
 ```sh
 lake exe cache get
 lake build
-lake env lean building-blocks/verification/Audit.lean
+lake env lean formalization/verification/Audit.lean
 ```
 
-Requires Lean 4.24.0. Dependencies are pinned in [lake-manifest.json](lake-manifest.json). The Lean proofs use only the standard axioms `Classical.choice`, `Quot.sound`, and `propext`.
+The project uses Lean 4.24.0 and the dependencies pinned in [lake-manifest.json](lake-manifest.json). The compiled proofs use the standard axioms `Classical.choice`, `Quot.sound`, and `propext`.
 
 [MIT license](LICENSE). Dependencies retain their own licenses.

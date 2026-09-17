@@ -9,8 +9,8 @@ $$
 
 with every prime power retained. The exact finite-cutoff definitions
 of $V(x)$ and $W(x)=\sum_{d\le x}\sqrt d\,V(x/d)$ are in
-[the mathematical statement](../building-blocks/actual-critical-sign-criterion.md)
-and [the Lean source](../building-blocks/BuildingBlocks/ActualCriticalMellin.lean).
+[the mathematical statement](../building-blocks/zeta-and-zeros/actual-critical-sign-criterion.md)
+and [the Lean source](../formalization/BuildingBlocks/ActualCriticalMellin.lean).
 The completed Lean theorem is
 
 $$
@@ -20,7 +20,7 @@ $$
 
 The theorem
 `BuildingBlocks.ActualCriticalSignCriterion.RiemannHypothesis_of_eventually_nonpos`
-in [ActualCriticalSignCriterion.lean](../building-blocks/BuildingBlocks/ActualCriticalSignCriterion.lean)
+in [ActualCriticalSignCriterion.lean](../formalization/BuildingBlocks/ActualCriticalSignCriterion.lean)
 has that eventual sign as its only premise. The full imported Lean chain
 proves the Mellin identity, positive-measure Landau continuation, and
 exclusion of an off-line zero of any multiplicity. It compiles under

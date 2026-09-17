@@ -1,0 +1,19 @@
+{
+  "LICENSE": "611d12e4d2e055644ae45f311599fb002f88ae61f70f30f3cb464993f361f5fc",
+  "building-blocks/prime-distribution/mertens-prime-transfer.md": "b802580d772c880a285f7b137f600c90b43994da52ee46b3d006dfeff38465f0",
+  "formalization/BuildingBlocks/CoarsePrimeBounds.lean": "3636c6563d5c43aabdd249734871094921179964741024418010d71cdf242065",
+  "formalization/BuildingBlocks/CoarsePrimitive.lean": "f89f8e8086b1d5d12a7bf48c14d88018ddd8cf0f5603df04f433033b711c6adf",
+  "formalization/BuildingBlocks/DivisorForcingBound.lean": "3977a3ea33ceab752db34f0b626e6b209df1d4edbaddca7309706a64cae5e5c7",
+  "formalization/BuildingBlocks/FloorCorrection.lean": "ccdb41c9791242aded0ef411129998f08ae0b686b00ff08d8332cde97d91cc04",
+  "formalization/BuildingBlocks/HyperbolaMertens.lean": "a2c90fc78e84c561a2e30c1d0159c3582efaf13fbe318c9350975832d679598b",
+  "formalization/BuildingBlocks/HyperbolaProduct.lean": "bd09299dfce5138ed92cfa9ca6740237dfd3a5ef469b29a051907b5ac7a22462",
+  "formalization/BuildingBlocks/MertensArithmetic.lean": "3692c403168a80b83bc80020bf20d91528f6558d8815ec6d1a68a56d1933e8bb",
+  "formalization/BuildingBlocks/MertensCutoff.lean": "5158902e68ee65e9a3975533f64ba3d501f8adc69520e668a36023de34876d05",
+  "formalization/BuildingBlocks/MertensPrimeTransfer.lean": "944cf50f27bc33e33f16552d5f5235076bc9b04498ec1cf1c4e351d53bad40bd",
+  "formalization/verification/MertensTransferAudit.lean": "afda2979ff78f96760a58ac8372d1bbaf336b7025ca3f8465859fd59aded08aa",
+  "formalization/verification/mertens-transfer-provenance.json": "7b78ec71855972f3c3ba1c16e90a3faab2694420b716bc678902680713eb98ce",
+  "formalization/verification/verify-mertens-transfer.py": "2010f149adc3276682a9e7bff8f568d57556354132462c5eec035e7a2efccb5a",
+  "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+  "lakefile.toml": "9d4ece18e13250823446204637f1e83a9df876c1c83a13396c1fee1acfaee57d",
+  "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434"
+}

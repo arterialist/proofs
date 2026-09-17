@@ -1,0 +1,23 @@
+{
+  "LICENSE": "611d12e4d2e055644ae45f311599fb002f88ae61f70f30f3cb464993f361f5fc",
+  "building-blocks/zeta-and-zeros/coarse-conditional-rh.md": "c66540fac286657165f3fa701f79fb162489437898d5d339daffbc38fdbddf25",
+  "formalization/BuildingBlocks/CoarseBlockAnalytic.lean": "037addd40a130d21c63bff5937acd2f78a1335ba11dc54047eee77b90ca55bbb",
+  "formalization/BuildingBlocks/CoarseContinuation.lean": "edd34510d7346bd5233a8b9f74bbea2662e4d1f5145b31ef89c4c6817354dd0d",
+  "formalization/BuildingBlocks/CoarseDyadicBase.lean": "08cd3b90099d86351ae9cd01e1db75c7967408e4a48b31b376ac687f26b923d5",
+  "formalization/BuildingBlocks/CoarseDyadicBound.lean": "aed16e5366bb0c3acc470c4bd5d73c491c923b34cb9146ebbce3f70fb54d7f2e",
+  "formalization/BuildingBlocks/CoarseInitialIdentity.lean": "9933e1a92c4f5ca3fb262c327721454844c9ad91cb0b99a2ee48f49b20b4d572",
+  "formalization/BuildingBlocks/CoarsePrimeBounds.lean": "3636c6563d5c43aabdd249734871094921179964741024418010d71cdf242065",
+  "formalization/BuildingBlocks/CoarsePrimitive.lean": "f89f8e8086b1d5d12a7bf48c14d88018ddd8cf0f5603df04f433033b711c6adf",
+  "formalization/BuildingBlocks/CoarsePrimitiveCriterion.lean": "8d74548a88bcc97d2ccff99a7b8c7206ae6af7721888e2867b3d9af51ccc35b2",
+  "formalization/BuildingBlocks/CoarseSummation.lean": "49a97d8f4e6e3ba846505d49e24701fde47f1c038f7ad9d777a0fb04e6b70462",
+  "formalization/BuildingBlocks/FloorCorrection.lean": "ccdb41c9791242aded0ef411129998f08ae0b686b00ff08d8332cde97d91cc04",
+  "formalization/BuildingBlocks/HyperbolaProduct.lean": "bd09299dfce5138ed92cfa9ca6740237dfd3a5ef469b29a051907b5ac7a22462",
+  "formalization/BuildingBlocks/RHContinuation.lean": "a4c7fa3f61f6757de911123da7cb246ca940efee07d773f42cd9bc58d874ee42",
+  "formalization/BuildingBlocks/ZetaPole.lean": "e319eef8ec8863ad1b445105456d79a340c20c5a4f435fd580401118d1e8dfff",
+  "formalization/verification/CoarseConditionalAudit.lean": "612598dde09868628ca07777c40bd0e50a1589a3e1057eadbc8b55aad0fb9dfc",
+  "formalization/verification/coarse-conditional-provenance.json": "6f286b9dc7ea391d6ef002dfeed054c1269c60a5a01fe7c24e9f3a3487565d93",
+  "formalization/verification/verify-coarse-conditional.py": "ee6db3dd27eb28419192bcc4872164d4c4fd68c32f7d5680030de9ba6e4a7b42",
+  "lake-manifest.json": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+  "lakefile.toml": "9d4ece18e13250823446204637f1e83a9df876c1c83a13396c1fee1acfaee57d",
+  "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434"
+}

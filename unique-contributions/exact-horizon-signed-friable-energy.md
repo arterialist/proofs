@@ -9,7 +9,7 @@ F_y(x)=\sum_{\substack{n\le x\\P^+(n)\le y}}\mu(n),\qquad
 Z_N(f)=(1-e^{-2/N})\sum_{m\le N}e^{-2m/N}f(m)^2.
 $$
 
-The [full proof](../building-blocks/signed-smooth-exact-horizon-energy.md) establishes
+The [full proof](../building-blocks/prime-distribution/signed-smooth-exact-horizon-energy.md) establishes
 
 $$
 \log\frac{Z_N(F_y)}N\ge
