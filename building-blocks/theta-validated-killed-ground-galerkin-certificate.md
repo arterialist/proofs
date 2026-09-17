@@ -52,8 +52,11 @@ The certificate must contain these outward rational bounds.
 3. A nonnegative, nonzero eigenvector in \(I_1\). Positivity improvement
    then identifies it with the simple ground (1).
 
-Put \(g=\beta_2-b_1>0\). The known distance \(1/2-\alpha>d_0\) does not
-establish (4), because another discrete eigenvalue may lie below \(1/2\).
+Put \(g=\beta_2-b_1>0\), and require \(\varepsilon_{\rm op}<g\).
+This comparison of the residual with the gap is needed to identify the
+eigenvalue near \(\lambda_h\) with the ground eigenvalue in (10).
+The known distance \(1/2-\alpha>d_0\) does not establish (4), because
+another discrete eigenvalue may lie below \(1/2\).
 
 One finite proof of (4) is a complement coercivity certificate. Provide
 rational \(\beta_h,\beta_\infty,\tau\) such that
@@ -90,7 +93,10 @@ After choosing the positive sign,
 \]
 Indeed write \(\phi_h=a\psi+z\), \(z\perp\psi\), and use
 \(\|z\|\le\varepsilon_{\rm op}/g\) and
-\(1-a\le\|z\|^2/(1+a)\).
+\(1-a\le\|z\|^2/(1+a)\). The residual places some spectral value
+within \(\varepsilon_{\rm op}\) of \(\lambda_h\); since every other
+spectral value is at least \(\beta_2\), the required
+\(\varepsilon_{\rm op}<g\) makes that value \(\alpha\).
 
 ## 4. Strong norm required by prime profiles
 
