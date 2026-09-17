@@ -210,3 +210,99 @@ terms instead creates the spurious positive main term
 must retain or pay the full gap distribution before it can bound the
 original-metric flux at an RH-relevant scale. This proposition does
 not prove a new bound for that flux or RH.
+
+## Unit successor cells retain the additive total at bounded cost
+
+The macroscopic loss in (13) comes from holding the pair cutoff at
+\(2X\) across the whole dyadic block. Ordinary counting supplies a
+different exact decomposition. For each integer \(N\ge2\), define
+\(P_N^{\rm cell}\) and \(T_N^{\rm cell}\) by (10)--(11) with the
+interval \([X,2X]\) replaced by \([N,N+1]\) and **both pair indices
+clipped at \(N+1\)**. Equivalently,
+\(T_N^{\rm cell}=\sum_{k\le2N+2}G_{N+1}(k)
+\mathcal K_{N,N+1}(k/2)\), with the ordered additive pairs retained.
+Put
+\[
+ a_N=\int_N^{N+1}w_F(x)dx,\qquad
+ b_N=\int_{N+1/2}^{N+1}w_F(x)dx.
+\]
+On \(N<x<N+1\), the true max-threshold term sees precisely the
+indices at most \(N\), so \(P_N^{\rm cell}=\psi(N)^2a_N\).
+The additive-total term can exceed it only when one index is the
+new arrival \(N+1\). If the other index is at most \(N-1\), its
+total is at most \(2N\) and it contributes throughout the cell;
+if the other index is \(N\), it enters only for
+\(x\ge N+1/2\). The pair \((N+1,N+1)\) has zero weight on the open
+cell. This proves the exact successor formula
+\[
+\boxed{\quad
+ D_N^{\rm cell}:=T_N^{\rm cell}-P_N^{\rm cell}
+ =2\Lambda(N+1)\{\psi(N-1)a_N+\Lambda(N)b_N\}\ge0.
+\quad}                                                       \tag{16}
+\]
+The second term keeps the adjacent prime-power case, for example
+\(N=8\), \(N+1=9\). For \(N\ge3\), the correction is strictly
+positive exactly when \(N+1\) is a prime power.
+
+Since \(\psi(N-1)/N\to1\) and
+\(a_N=(1+o(1))/(\kappa_F^2N^2)\), while
+\(\Lambda(N)b_N=O(\log N/N^2)\), (16) gives, uniformly for
+large \(N\),
+\[
+ D_N^{\rm cell}
+ =\frac{2\Lambda(N+1)}{\kappa_F^2N}(1+o(1)).
+ \tag{17}
+\]
+Partial summation of \(\psi(x)=x+o(x)\) yields
+\(\sum_{X<n\le2X}\Lambda(n)/n\to\log2\). Hence for integer
+\(X\to\infty\),
+\[
+\boxed{\quad
+\sum_{N=X}^{2X-1}D_N^{\rm cell}
+ \longrightarrow\frac{2\log2}{\kappa_F^2}.
+\quad}                                                       \tag{18}
+\]
+This is a bounded loss, in contrast with the order-\(X\) loss
+from one fixed dyadic pair cutoff in (13).
+
+There is an exact centered additive consumer. Let
+\[
+ \mathcal U_X=
+ \sum_{N=X}^{2X-1}T_N^{\rm cell}
+ -2\sum_{n\le2X}\Lambda(n)\mathcal L_{X,2X}(n)
+ +\int_X^{2X}\frac{dx}{F(x)^2}.
+ \tag{19}
+\]
+Each \(T_N^{\rm cell}\) can be regrouped by the clipped additive
+Goldbach coefficients \(G_{N+1}(k)\), including ordered proper-power
+pairs. Partitioning (8) into unit cells and using (16) gives
+\[
+ \boxed{\quad
+ \mathcal U_X
+ =\int_X^{2X}\frac{E(x)^2}{x^2F(x)^2}dx
+  +\sum_{N=X}^{2X-1}D_N^{\rm cell}\ge0.
+ \quad}                                                       \tag{20}
+\]
+Thus the ordinary successor clock recovers the original positive
+\(F\)-energy from moving clipped additive pair terms and the exact
+one-body centering, with an explicit bounded dyadic correction. More
+precisely, for positive integer dyadic
+\(X=2^k\),
+\[
+ \mathrm{RH}\quad\Longleftrightarrow\quad
+ \forall\varepsilon>0:\ \mathcal U_{2^k}
+       =O_\varepsilon(2^{k\varepsilon})\quad(k\to\infty).
+ \tag{21}
+\]
+This is an RH-strength arithmetic target, not a consequence of
+Goldbach existence. Indeed (18)--(20) make such a
+bound equivalent to a subpower bound for the weighted \(E^2\)
+energy. The latter implies RH: dyadic Cauchy--Schwarz makes
+\(\int_1^\infty E(x)x^{-s-1}dx\) absolutely convergent for every
+\(\Re s>1/2\), and on \(\Re s>1\) this Mellin transform equals
+\(-\zeta'(s)/(s\zeta(s))-1/(s-1)\), excluding zeros to the right
+of the critical line by analytic continuation. The [standard RH
+bound](https://dlmf.nist.gov/25.16.i)
+\(E(x)=O_\varepsilon(x^{1/2+\varepsilon})\) gives the converse.
+No subpower upper bound is proved here; the exact first-order
+centering and actual \(F\)-weight remain in (19).
