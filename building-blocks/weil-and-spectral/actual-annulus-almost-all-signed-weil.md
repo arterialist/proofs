@@ -1,5 +1,10 @@
 # Almost-all signed Weil positivity across a growing annulus interval
 
+**Sharpened:** [A separation-variable Sobolev argument](actual-annulus-sobolev-zero-sampling.md)
+removes the grid loss in the stretched-window bound below, treats every
+`R(X)->infinity` with `R=o(log X)`, and gives the corresponding count
+at actual zeta-zero ordinates. The bounds in this note remain valid.
+
 **Status:** unconditional written analytic proof, 18 September 2026.
 RH Agent 2 supplied the high-moment prime-phase idea and the
 fixed-separation exponent. RH Agent 1 independently audited the
