@@ -105,6 +105,16 @@ plus this bounded Green operator. An estimate asserting that inequality for
 every \(a\) would be the full odd Weil positivity criterion itself, so (5c)
 does not establish it.
 
+The size of this compensation is explicit. Since
+\(\mathcal G_a=2|h_a\rangle\langle h_a|+\mathcal K_a\),
+\(2\|h_a\|_2^2=2(\sinh a-a)\), and \(0\le\mathcal K_a\le4I\),
+\[
+2(\sinh a-a)\le\|\mathcal G_a\|\le2(\sinh a-a)+4.
+\]
+Thus the continuous-prime square has norm \((1+o(1))e^a\), while its
+pole-compensated remainder has norm at most four. This is a written
+operator estimate, not a positivity result for the actual prime remainder.
+
 The positive Green term does **not** make the full continuum baseline
 \(\mathcal A_a+\mathcal K_a\) positive. With the sine-transform convention in
 (5), the half-line Dirichlet resolvent has multiplier
@@ -124,6 +134,14 @@ zero is
 \[
 b(0)=4-\gamma-\frac\pi2-3\log2-\log\pi<0.
 \]
+The completed-zeta functional equation at the center gives
+\(2\zeta'(1/2)/\zeta(1/2)=\log\pi-\psi(1/4)\). Hence
+\[
+b(0)=2\left(2-\frac{\zeta'(1/2)}{\zeta(1/2)}\right).
+\]
+Thus \(b(0)\) is twice the analytic continuation at \(s=1/2\) of
+\(-\zeta'(s)/\zeta(s)-1/(s-1)\). This does not assert convergence of an unregularized
+prime-minus-density sum there.
 For any \(\varphi\in C_c^\infty(0,1)\) with \(\|\varphi\|_2=1\), set
 \(u_a(x)=a^{-1/2}\varphi(x/a)\). Sine Plancherel, the substitution \(s=at\),
 and dominated convergence (the sine transform of \(\varphi\) decays rapidly

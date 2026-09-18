@@ -117,6 +117,37 @@ T_{\lfloor u\rfloor}^0(u^2)-T_N^0(N^2)
 $$
 so the real-variable lower order holds along integers as claimed.
 
+## The coupled Mellin transform
+
+The low/high compensation in (2) has an exact transform. Let
+$\mathfrak T(z)$ be the Mellin transform of
+$u\mapsto T_{\lfloor u\rfloor}^0(u^2)$, put
+$\mathfrak P(z)=p_s^2C_0\int_1^\infty\mathscr C(u)u^{-z-1}du$, and
+let $\mathfrak R(z)$ transform the error in (2). That error is
+$O_s(\log(2u)/u)$, so $\mathfrak R$ is holomorphic on $\Re z>-1$.
+Equations (2)--(4) give, first for $\Re z>0$ and then meromorphically,
+$$
+\boxed{\mathfrak T(z)+\mathfrak P(z)
+=\frac{p_s^2}{2}C(1+z/2)W_0(1+z/2)
+ -\frac{p_s^2}{2}\mathcal B(1+z/2)+\mathfrak R(z).}
+\tag{5}
+$$
+The cutoff pole at $z=\rho-1$ cancels between the high block and its
+low moment. The surviving prime-score pole associated with a zero
+$\rho$ occurs at $z=2(\rho-1)$, the observation scale $Y=u^2$.
+Coincident zero locations may leave a simple pole at a cutoff location,
+but cannot restore the canceled higher-order pole.
+
+If $\Re\rho>1/2$ and $\rho$ has multiplicity $m$, then
+$z_\rho=2(\rho-1)$ lies in $\Re z>-1$. The compact multiplier
+$C(\rho)$ is nonzero by the
+[single-fiber multiplier calculation](../factorial-and-renewal/factorial-f-ground-m2-fiber-rh-criterion.md).
+Thus (5) has a simple pole at $z_\rho$ with residue
+$-p_s^2mC(\rho)\ne0$. This identifies the pole and its amplitude;
+it is not a bound for the coupled score. For a critical-line zero,
+$z_\rho$ lies on $\Re z=-1$, where the elementary error estimate
+does not continue $\mathfrak R$.
+
 The actual-ground high block is treated conditionally on RH in
 [the companion note](../factorial-and-renewal/full-f-square-root-high-divisor-critical-zero-barrier.md).
 Replacing $1/F$ by its limiting constant under only the prime number

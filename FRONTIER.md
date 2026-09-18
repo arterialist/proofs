@@ -1,0 +1,11 @@
+# Current RH frontier
+
+Counting advances by $n\mapsto n+1$; factorization records which prime generators and composite histories have appeared. The results here test whether that joint structure can control the signed prime-power error at the scale needed by the Riemann hypothesis. None proves RH.
+
+The strongest zero-side statement in this repository is the [fixed-bump Weil microcluster bound](building-blocks/weil-and-spectral/actual-weil-offline-microcluster-mass.md). It limits the mass of off-line zeros in a specified annulus and gives a bound on central clusters. It still permits an isolated off-line zero. The [annular Sobolev sampling bound](building-blocks/weil-and-spectral/actual-annulus-sobolev-zero-sampling.md) makes the complete Weil Gram positive outside a very small exceptional carrier set; that is an almost-everywhere statement, not global positivity.
+
+The [chirped packet construction](building-blocks/weil-and-spectral/chirped-brun-titchmarsh-span-constellation.md) proves positive complete Weil forms on a growing finite family of packets. Its selected off-line zero contribution is too small to force a contradiction. On the arithmetic side, the [reciprocal-prime estimate](building-blocks/weil-and-spectral/actual-reciprocal-prime-high-cofactor-saving.md) saves a power on one high-cofactor range. It does not cover the fixed-cofactor term or the full signed row.
+
+**Missing estimate.** At a zero ordinate $T$, a test that loads a hypothetical zero at displacement $\delta>0$ requires a signed bound for the *complete* actual prime-power row at a support span large enough to detect that zero. Existing unsigned bounds exceed the required Weil margin. The published high-cofactor saving, finite packet positivity, zero-density estimates, and exact divisor identities do not control this full row. A useful next theorem must obtain a new unconditional signed estimate from input weaker than RH, or an independent positivity mechanism that controls the same row. Exact rewritings of that estimate are criteria, not proofs of it.
+
+Analytic estimates in the linked notes are written proofs unless their text names a Lean module. Lean verification of finite identities does not certify the analytic estimates that use them.

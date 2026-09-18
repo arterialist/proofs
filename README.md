@@ -11,6 +11,7 @@ The Riemann hypothesis (RH) remains open. Some notes prove that a particular bou
 - [Weil and spectral methods](building-blocks/weil-and-spectral/) studies the complete prime-power form. The [successor-cell theorem](building-blocks/weil-and-spectral/compact-weil-successor-cell-negative-index-density.md) bounds its number of nonpositive directions; it does not establish positivity.
 - [Goldbach and additive pairs](building-blocks/goldbach/) includes an [unconditional signed cofactor bound](building-blocks/goldbach/goldbach-cofactor-subleading-vk-gain.md). Its estimate is separate from the still-open RH-scale prime-error bound.
 - [All subjects](building-blocks/) gives the other routes, including theta functions, geometry, and dynamics.
+- [Current mathematical frontier](FRONTIER.md) records the strongest established bounds and the precise missing estimate.
 
 ## Repository guide
 
@@ -34,5 +35,7 @@ lake env lean formalization/verification/Audit.lean
 ```
 
 The project uses Lean 4.24.0 and dependencies pinned in [lake-manifest.json](lake-manifest.json). The axiom audit reports the standard Lean axioms `Classical.choice`, `Quot.sound`, and `propext`.
+
+Unreviewed calculations, source copies, and private research context live in the ignored `research-local/` directory of a local checkout. They are separate from the published notes and formalizations.
 
 [MIT license](LICENSE). Dependencies keep their own licenses.

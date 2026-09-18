@@ -1,2 +1,9 @@
 .lake/
 .DS_Store
+research-local/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.agents/
+ORIGINAL_REQUEST.md

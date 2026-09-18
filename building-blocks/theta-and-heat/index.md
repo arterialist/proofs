@@ -66,6 +66,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Actual cross-profile domains and weak score tests](theta-cross-profile-weak-score-tests.md)
 - [Theta cutoffs, positive even completions, and a real-zero obstruction](theta-cutoff-completion.md)
 - [Strict log-concavity of the derivative of the square-root theta kernel](theta-derivative-kernel-logconcavity.md)
+- [Theta derivative and the odd pole-removed Weil form](theta-derivative-odd-pole-projection.md)
 - [Effective killed-ground bound at radius two: missing spectral direction](theta-effective-ground-bound-radius-two.md)
 - [The equality space, its orthogonal complement, and the remaining jump form](theta-equality-space.md)
 - [Exact scalar certificate for the plus optimizer allowance](theta-exact-direct-edge-scalar-certificate.md)
