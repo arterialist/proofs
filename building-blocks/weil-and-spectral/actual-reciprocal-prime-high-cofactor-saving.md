@@ -378,6 +378,15 @@ correlation decays outside width `O(H)`, and dyadic distance shells
 combined with the all-prime-power short-interval Mangoldt bound in the
 [Brun–Titchmarsh packet argument](chirped-brun-titchmarsh-span-constellation.md#short-interval-mass-with-all-prime-powers)
 sum to `O(H)` since `H=N/T≫√N` for `λ>2`. This is the original row scale.
+At `d\asymp D\asymp N/2`, Poisson has `L=D/H\asymp T` and about `T`
+effective modes `|m|\lesssim L`, each with BV norm `O(1/T)`; their total
+BV mass remains `O(1)`. But their reciprocal parameters satisfy
+`F=|m|N/D\lesssim T<D^{1/2}`, outside the stronger estimate (1a).
+Even on modes where (1) applies, using it separately gives the scale
+`D^{1-\sigma}/\sqrt N\asymp\sqrt N D^{-\sigma}`, whereas the direct
+absolute `k=2` bound is `H/\sqrt N=\sqrt N/T`. The sharper physical
+localization comes from cancellation among Poisson modes, which the
+termwise absolute estimate discards.
 Equation (9) may itself exceed an `O(log T)` Weil budget because
 `H/√N=T^{λ/2-1}`. Thus (14) isolates a genuine power saving for large
 cofactors but does not close the required pointwise signed estimate.
