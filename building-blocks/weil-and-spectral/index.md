@@ -40,6 +40,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Almost-all signed Weil positivity across a growing annulus interval](actual-annulus-almost-all-signed-weil.md)
 - [Sobolev phase bounds at actual zeta-zero ordinates](actual-annulus-sobolev-zero-sampling.md)
 - [A pointwise off-line microcluster bound from the complete Weil form](actual-weil-offline-microcluster-mass.md)
+- [A reciprocal-prime saving for high cofactors of an actual Weil packet](actual-reciprocal-prime-high-cofactor-saving.md)
 - [Chirped Weil packets form growing positive constellations](chirped-prime-annulus-constellation.md)
 - [A positive two-rate plane for the complete actual-prime Weil form](complete-weil-two-exponential-rate-positive-plane.md)
 - [A positive three-rate plane for the complete actual-prime Weil form](complete-weil-three-exponential-rate-positive-plane.md)
