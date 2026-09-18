@@ -1,11 +1,14 @@
 # A reciprocal-prime saving for high cofactors of an actual Weil packet
 
-**Status:** independently audited written analytic proof, 18 September 2026. The
-estimate below retains the actual von Mangoldt function, including prime
-powers, and uses the exactly pole-null compact packet from the
+**Status:** independently audited written analytic proof, 18 September 2026.
+The finite complex-weighted divisor identity and hard-cutoff rearrangement
+are [Lean-compiled](../../formalization/BuildingBlocks/ActualPrimeCofactorFutureFinite.lean);
+the reciprocal-phase, packet, Poisson, and asymptotic estimates remain
+written mathematics. The estimate retains the actual von Mangoldt function,
+including prime powers, and uses the exactly pole-null compact packet from the
 [critical-span construction](chirped-critical-span-constellation.md). It
-controls one proper subrange of its signed prime row. No part of this note is
-Lean-formalized, and neither a full prime-row bound nor RH follows. The
+controls one proper subrange of its signed prime row. Neither a full
+prime-row bound nor RH follows. The
 Vaughan/van der Corput mechanism is classical; no priority claim is made.
 RH Agent 2 proposed the reciprocal-phase route; RH Proof independently
 checked the bilinear exponents, sharp cutoff, packet rescaling, and divisor
@@ -260,6 +263,12 @@ point therefore yields the *partial* reduction
  +O\!\left(\frac{H}{\sqrt N}T^{-\sigma s/2}
                +\frac{\log N}{\sqrt N}\right).}        \tag{14}
 \]
+
+The [finite Lean theorem](../../formalization/BuildingBlocks/ActualPrimeCofactorFutureFinite.lean)
+proves the algebra of (14) for arbitrary complex weights and a literal hard
+cutoff, assuming the weight vanishes below it. Choosing a finite horizon
+beyond the compact support of `g_N` gives the displayed identity. The Lean
+theorem does not prove (7), (8), (9), or the Euler error (13).
 
 The `k=2` term on the right is still a signed prime correlation centered
 at `N/2`. Its available absolute bound is `O(H/√N)`: the supporting
