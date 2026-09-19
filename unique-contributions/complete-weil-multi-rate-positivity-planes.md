@@ -1,26 +1,26 @@
-# Contribution 31: Unconditional Multi-Rate Positivity Planes for the Complete Actual-Prime Weil Quadratic Form
+# Two- and three-rate positivity planes for the complete actual-prime Weil form
 
 **Authors:** Arterialist Research Team  
 **Date:** September 2026  
-**Primary References:** [`building-blocks/weil-and-spectral/complete-weil-two-exponential-rate-positive-plane.md`](../../building-blocks/weil-and-spectral/complete-weil-two-exponential-rate-positive-plane.md), [`building-blocks/weil-and-spectral/complete-weil-three-exponential-rate-positive-plane.md`](../../building-blocks/weil-and-spectral/complete-weil-three-exponential-rate-positive-plane.md)  
-**Lean Formalizations:** [`formalization/BuildingBlocks/TwoRateWeilGramAlgebra.lean`](../../formalization/BuildingBlocks/TwoRateWeilGramAlgebra.lean), [`formalization/BuildingBlocks/ThreeRateWeilGramAlgebra.lean`](../../formalization/BuildingBlocks/ThreeRateWeilGramAlgebra.lean)  
-**Validated Python/Arb Certificate:** [`certificates/three_rate_weil_xi_signs.py`](../../certificates/three_rate_weil_xi_signs.py)  
-**Target Venue:** *Journal of Functional Analysis* or *Mathematische Zeitschrift*
+**Primary References:** [`building-blocks/weil-and-spectral/complete-weil-two-exponential-rate-positive-plane.md`](../building-blocks/weil-and-spectral/complete-weil-two-exponential-rate-positive-plane.md), [`building-blocks/weil-and-spectral/complete-weil-three-exponential-rate-positive-plane.md`](../building-blocks/weil-and-spectral/complete-weil-three-exponential-rate-positive-plane.md)
+**Lean Formalizations:** [`formalization/BuildingBlocks/TwoRateWeilGramAlgebra.lean`](../formalization/BuildingBlocks/TwoRateWeilGramAlgebra.lean), [`formalization/BuildingBlocks/ThreeRateWeilGramAlgebra.lean`](../formalization/BuildingBlocks/ThreeRateWeilGramAlgebra.lean)
+**Validated Python/Arb Certificate:** [`certificates/three_rate_weil_xi_signs.py`](../certificates/three_rate_weil_xi_signs.py)
+**Scope:** a fixed two- or three-rate family; no claim is made for arbitrary tests or for a resolution of RH.
 
 ---
 
 ## 1. Result and scope
 
-Weil's explicit criterion states that the Riemann Hypothesis is equivalent to the positive semi-definiteness of the Weil quadratic form $Q(f) \ge 0$ on all compactly supported smooth test functions $f \in C_c^\infty(\mathbb{R})$. While positive cones of non-negative, monotone, or single-frequency functions have been studied, exhibiting **multi-dimensional linear subspaces containing sign-changing and complex test functions** where the complete actual-prime Weil form is unconditionally positive definite has remained an open challenge.
+Weil's explicit criterion states that the Riemann Hypothesis is equivalent to the positive semi-definiteness of the Weil quadratic form $Q(f) \ge 0$ on all compactly supported smooth test functions $f \in C_c^\infty(\mathbb{R})$. This page records a fixed finite-rate family of causal exponentials. The linked building-block notes separate the written analytic bridge from the Lean-checked determinant algebra.
 
-**Theorem (Unconditional Multi-Rate Positivity Planes).**  
+**Theorem (Two- and three-rate positivity planes under the stated analytic inputs).**
 Let $u_a(x) = e^{-ax}\mathbf{1}_{[0, \infty)}(x)$ be causal exponentials with decay rates $a > 1/2$. For any set of distinct rates $\{a, b, c\} \subset (1/2, \infty)$, the complete arithmetic Weil quadratic form evaluates exactly to:
 $$
 Q(u_a, u_b) = \frac{F(a) + F(b)}{a + b}, \qquad F(a) := \frac{\xi'}{\xi}\left(a + \frac{1}{2}\right),
 $$
 where $\xi(s) = \frac{1}{2}s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)$ is the completed Riemann xi function, incorporating every proper prime power $\Lambda(n)/\sqrt{n}$, both poles at $s = 0, 1$, and the complete digamma Archimedean factor.
 
-Unconditionally (without assuming the Riemann Hypothesis):
+With the stated analytic inputs (without assuming RH):
 1. **The Two-Rate Plane:** For any distinct $a, b > 1/2$, the $2 \times 2$ Gram matrix:
    $$
    G_{a, b} = \begin{pmatrix} F(a)/a & \frac{F(a)+F(b)}{a+b} \\ \frac{F(a)+F(b)}{a+b} & F(b)/b \end{pmatrix}
@@ -34,7 +34,7 @@ Unconditionally (without assuming the Riemann Hypothesis):
    where $t = a^2$, and $H[t_a, t_b, t_c]$ and $J[t_a, t_b, t_c]$ are the second divided differences of $H(t) := \sqrt{t}F(\sqrt{t})$ and $J(t) := \sqrt{t}/F(\sqrt{t})$.
 4. **Compact Truncation:** For each finite rate set, there exists a finite cutoff $L_0 < \infty$ such that for all $L \ge L_0$, the complete Weil form is strictly positive definite on the compact subspaces $\operatorname{span}\{e^{-ax}\mathbf{1}_{[0, L]}\}$.
 
-Because these planes contain arbitrary complex linear combinations $c_1 u_a + c_2 u_b + c_3 u_c$, this establishes the first certified **multi-dimensional linear subspaces with sign-changing tests** where the complete arithmetic Weil form is positive definite.
+Because these planes contain arbitrary complex linear combinations $c_1 u_a + c_2 u_b + c_3 u_c$, they give a fixed finite-rate sign-changing family. Bombieri's unconditional short-support positivity already covers an infinite-dimensional space of $L^2$ tests, so this page makes no firstness or comparison claim about sign-changing subspaces.
 
 ---
 
@@ -112,18 +112,20 @@ Dividing by the Vandermonde factor $(b^2-a^2)(c^2-a^2)(c^2-b^2)$, $H_{\mathrm{nu
 | **Bombieri (2000) / Burnol (2002)** | Single-scale cones | Fourier positive functions | No | 1-dimensional cones only |
 | **Polson (2017)** | Hankel zero-heat moments | Squared zeros $(\gamma^2)^k$ | No | Moment matrices, not Weil form |
 | **Suzuki (2026)** | Screw-function kernel | Model screw kernel | Yes (assumes RH) | Fails unconditionally |
-| **Two-Rate & Three-Rate Planes (This Work)** | **$\operatorname{span}\{u_a, u_b, u_c\}$** | **Complete actual primes $\Lambda(n)$** | **No (Unconditional)** | **First multi-dimensional sign-changing planes** |
+| **Two-Rate & Three-Rate Planes (This Work)** | **$\operatorname{span}\{u_a, u_b, u_c\}$** | **Complete actual primes $\Lambda(n)$** | **No RH assumption in the stated inputs** | **Fixed finite-rate family; no priority claim** |
 
 ---
 
 ## 4. Reproducibility & Formal Proofs
 
 1. **Lean 4 Formal Verification:**
-   - [`formalization/BuildingBlocks/TwoRateWeilGramAlgebra.lean`](../../formalization/BuildingBlocks/TwoRateWeilGramAlgebra.lean)
-   - [`formalization/BuildingBlocks/ThreeRateWeilGramAlgebra.lean`](../../formalization/BuildingBlocks/ThreeRateWeilGramAlgebra.lean)
+   - [`formalization/BuildingBlocks/TwoRateWeilGramAlgebra.lean`](../formalization/BuildingBlocks/TwoRateWeilGramAlgebra.lean)
+   - [`formalization/BuildingBlocks/ThreeRateWeilGramAlgebra.lean`](../formalization/BuildingBlocks/ThreeRateWeilGramAlgebra.lean)
    - Both modules compile with Lean 4.24.0 and depend strictly on `[propext, Classical.choice, Quot.sound]`.
 2. **Validated Arb Interval Certificate:**
    ```bash
    uv run --with python-flint python3 certificates/three_rate_weil_xi_signs.py
    ```
    Certifies the signs and lower bounds on $\Xi(14) > 0$, $\Xi(15) < 0$, $\Xi(21) < 0$, $\Xi(22) > 0$ to 50 decimal digits of rigorous interval enclosure.
+
+The Lean files check the finite determinant and divided-difference algebra. The analytic identification of the complete Weil form and the sign estimates remain written inputs, as stated in the linked building-block notes. No literature-priority claim is made.

@@ -8,6 +8,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [The adjacent Weil cross block has no uniform signed saving](adjacent-weil-cross-block-doubling-obstruction.md)
 - [Actual physical scattering moment signs](actual-physical-scattering-moment-signs.md)
 - [Poisson self-duality and positive lattice counts do not force critical-line zeros](adelic-poisson-epstein-euler-obstruction.md)
+- [Finite complex norm-square positivity](autocorrelation-fourier-positivity-and-critical-spectral-energy.md)
 - [Bost–Connes local occupations and the signed Weil diagonal](bost-connes-weil-local-occupation-diagonal.md)
 - [Balanced prime strengths make a deformed full Weil form negative](balanced-prime-strength-weil-negative-test.md)
 - [Stable scattering for the centered divisor score](coarse-divisor-scattering-storage.md)

@@ -1,23 +1,22 @@
-# Compound Poisson Delay Semigroup and the Unique Prime-Error Charge Crossing Law
+# Compound Poisson delay semigroup and prime-error charge crossing
 
 **Authors:** Arterialist RH Research Team  
 **Date:** September 2026  
-**Status:** Completed Analytic Proof & Non-Asymptotic Bounds  
-**Target Journal:** *Stochastic Processes and their Applications* / *Electron. J. Probab.*  
+**Status:** Written analytic proof and non-asymptotic bounds; retained as a building-block note pending an independent audit of the modeled charge functional.
 **Primary References in Repo:**
-- [`building-blocks/dynamics-and-feedback/actual-source-causal-charge-law.md`](../building-blocks/dynamics-and-feedback/actual-source-causal-charge-law.md)
-- [`building-blocks/factorial-and-renewal/charge-compensated-clock-response.md`](../building-blocks/factorial-and-renewal/charge-compensated-clock-response.md)
-- [`building-blocks/successor-and-division/positive-successor-seed-jump-process.md`](../building-blocks/successor-and-division/positive-successor-seed-jump-process.md)
+- [`actual-source-causal-charge-law.md`](actual-source-causal-charge-law.md)
+- [`charge-compensated-clock-response.md`](../factorial-and-renewal/charge-compensated-clock-response.md)
+- [`positive-successor-seed-jump-process.md`](../successor-and-division/positive-successor-seed-jump-process.md)
 
 ---
 
 ## Abstract
 
-We construct the continuous compound Poisson delay semigroup $\mathcal{U}_t = \mathbb{E}[R_{X_t}]$ associated with prime jump measures on the causal Hilbert space $\mathcal{E}$ of arithmetic histories. Acting on the actual physical prime error history $a(u) = e^{-u/2}[\psi(e^u) - e^u]$, we prove that the resulting relative charge observable $Q_{\mathrm{rel}}(t) := \delta(\mathcal{U}_t a)$ is an entire function of $t$ that transitions strictly monotonically from its positive arithmetic baseline $Q_{\mathrm{rel}}(0) = \kappa > 0$ to negative infinity as $t \to \infty$. We establish that $Q_{\mathrm{rel}}(t)$ possesses a unique, simple real zero $t_* \in (0, \infty)$, and we prove sharp non-asymptotic two-sided bounds:
+We construct the continuous compound Poisson delay semigroup $\mathcal{U}_t = \mathbb{E}[R_{X_t}]$ associated with prime jump measures on the causal history space $\mathcal{E}$. Acting on the modeled physical prime-error history $a(u) = e^{-u/2}[\psi(e^u) - e^u]$, the relative charge observable $Q_{\mathrm{rel}}(t) := \delta(\mathcal{U}_t a)$ has the exact expansion below. It starts at the positive baseline $Q_{\mathrm{rel}}(0) = \kappa > 0$ and, after multiplication by $e^{\lambda t}$, decreases strictly to $-\infty$; consequently $Q_{\mathrm{rel}}(t)$ tends to $0$ from below. The expansion gives a unique, simple real zero $t_* \in (0, \infty)$ and the following non-asymptotic bounds:
 $$
  \frac{1}{\eta_1} \log\left(1 + \frac{\kappa}{\beta}\right) \le t_* \le \frac{1}{\eta_1} \log\left(1 + \frac{\kappa}{b_1}\right),
 $$
-where $\eta_1 = \widehat{\nu}(1)$, $b_1 = -\frac{1}{2} c_1 L_a(1) > 0$, $\beta = \sum_{j \ge 1} b_j < \infty$, and $L_a(j) = \frac{-\zeta'/\zeta(j+1/2)}{j+1/2} - \frac{1}{j-1/2} < 0$. Furthermore, we establish the exponential leading asymptotic $Q_{\mathrm{rel}}(t) = -b_1 e^{-t\Phi(1)} + O(e^{-t\Phi(2)})$ as $t \to \infty$. This rigorously establishes the exact causal dissipation of prime-error charges under positive delay dynamics.
+where $\eta_1 = \widehat{\nu}(1)$, $b_1 = -\frac{1}{2} c_1 L_a(1) > 0$, $\beta = \sum_{j \ge 1} b_j < \infty$, and $L_a(j) = \frac{-\zeta'/\zeta(j+1/2)}{j+1/2} - \frac{1}{j-1/2} < 0$. Furthermore, we establish the exponential leading asymptotic $Q_{\mathrm{rel}}(t) = -b_1 e^{-t\Phi(1)} + O(e^{-t\Phi(2)})$ as $t \to \infty$. The crossing statement applies to this specified modeled observable under the displayed hypotheses.
 
 ---
 

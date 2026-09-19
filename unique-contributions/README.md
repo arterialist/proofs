@@ -6,10 +6,6 @@ This directory catalogs mathematical reports developed across the repository. St
 
 ## Catalog of contribution reports
 
-1. [Shifted-Multiplier Critical Sign Criterion](actual-shifted-multiplier-sign-criterion.md)
-   - *Result:* Equivalence of RH with eventual negativity of $W(x) = \sum_{d \le x} \sqrt{d} V(x/d)$, where the Dirichlet multiplier $\zeta(s+1/2)$ preserves all off-critical zeros of arbitrary multiplicity with non-vanishing double poles.
-   - *Status:* Formalized in Lean 4 (`ActualCriticalSignCriterion.lean`); priority not assessed in this audit.
-
 2. [Signed Friable Möbius Energy Identities](exact-horizon-signed-friable-energy.md)
    - *Result:* Exact combinatorial identities for $y$-friable integers with signed Möbius convolutions and boundary renewal.
    - *Status:* Formalized in Lean 4; priority not assessed in this audit.
@@ -39,7 +35,7 @@ This directory catalogs mathematical reports developed across the repository. St
    - *Status:* Arb interval arithmetic and rational Sturm sequence verified.
 
 9. [Successor-Cell Weil Stretched-Exponential Negative Index](successor-cell-weil-stretched-exponential-negative-index.md)
-   - *Result:* Quantitative proof that the negative spectral index of the successor-cell Weil form grows at least as $\exp(c (\log X)^\alpha)$.
+   - *Result:* Quantitative upper bound for the negative index of the $N$-cell physical complete Weil form: $\operatorname{ind}_{\le 0}(Q_N) \ll N\exp(-c\sqrt{\log N\log\log N})=o(N)$, obtained from a positive subspace of the stated codimension.
    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
 10. [Uniform Negative Dyadic Divisor Average](uniform-negative-dyadic-divisor-average.md)
@@ -50,12 +46,12 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* The proposed finite-valued compact-uniform limit in v1 has real poles in its target, so the stated all-plane convergence domain cannot be correct. The parameter limit is `a -> infinity`, and holomorphy of the normalizer is not stated.
     - *Status:* Written source audit of a conjectural limit formulation. It does not refute Suzuki's separate operator results. Version 2 replaces the target quotient.
 
-12. [Natural Theta Exponent Concavity and Positive Third Derivative](natural-theta-exponent-convexity-and-third-derivative.md)
-    - *Result:* Complete proof that the Jacobi theta exponent function $h(u) = \log \theta(e^u)$ satisfies strict concavity $h''(u) < 0$ and strictly positive third derivative $h'''(u) > 0$ for all $u > 0$.
+12. [Natural Theta Mellin-Ratio Derivative Signs](natural-theta-exponent-convexity-and-third-derivative.md)
+    - *Result:* Certified proof for the gamma-normalized Mellin ratio $\phi_{\rm nat}(s)=F(s)/F(s+1)$ of the complete Riemann theta kernel on $s>-3/2$: $\phi_{\rm nat}>0$, $\phi_{\rm nat}'>0$, $\phi_{\rm nat}''<0$, and $\phi_{\rm nat}'''>0$, together with the reciprocal-score convexity input.
     - *Status:* Certified Arb interval verification; priority not assessed in this audit.
 
-13. [Causal Ramp Prime Valuation Negative Association and UNOD](causal-ramp-prime-valuation-negative-association.md)
-    - *Result:* Proof that the joint distribution of prime valuations under causal ramp windowing satisfies negative association and uniform negative orthant dependence (UNOD).
+13. [Exact Causal-Ramp Cross-Prime Covariance and Upper-Orthant Bounds](causal-ramp-prime-valuation-negative-association.md)
+    - *Result:* Exact pairwise negative covariance and the stated upper-orthant product inequality for increasing functions of distinct prime valuations; the page explicitly excludes full negative association.
     - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
 14. [Successor-Feedback RH Equivalence with Positive Spectral Margin](successor-feedback-rh-equivalence.md)
@@ -78,10 +74,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Rigorous proof that $M(x) = \sum_{n \le x} \frac{\Lambda(n)}{\sqrt{n}} - 2\sqrt{x} + 1$ satisfies $\limsup M(x) = +\infty$ and $\liminf M(x) = -\infty$ on $\mathbb{R}$ and $\mathbb{N}$ without assuming RH or linear independence of zero ordinates.
     - *Status:* Rigorous mathematical derivation via regularized Laplace transforms and positive Fourier smoothing; priority not assessed in this audit.
 
-19. [Complete Geometric Prime Histories and Collective Entropy Asymptotic](complete-prime-history-entropy.md)
-    - *Result:* Two-term asymptotic $\log \mathcal{L}_X(\kappa X) = -\kappa X + \frac{X}{\log X} [(\kappa+1)\log(\kappa+1) - \kappa\log\kappa] + o(X/\log X)$ for complete Euler unitary prime random walks, rigorously identifying the second-order coefficient as the collective Shannon entropy of geometric depth distributions across all primes $\pi(X)$.
-    - *Status:* Rigorous mathematical derivation via exact exponential tilting and Chebyshev concentration; priority not assessed in this audit.
-
 20. [Incomplete-Box Arithmetic Carry Covariance and Exact Discrete Fourier Reduction](incomplete-box-carry-covariance-and-fourier-reduction.md)
     - *Result:* Exact finite DFT representation $\kappa_d(a, b) = \sum_{j=1}^{d-1} \frac{(1 - e(ja/d))(1 - e(jb/d))}{d(1 - e(-j/d))}$ and incomplete-box covariance reduction with non-asymptotic endpoint error bound $|\operatorname{Cov}(\kappa_d, \kappa_e) - 2C^{\mathrm{flat}}_{d, e} - C^{\mathrm{tri}}_{d, e}| \le \frac{d+e}{8H}$ for arbitrary $H \ge 1$.
     - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
@@ -94,17 +86,9 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact proof on the Boolean divisor complex that interior LCM packets complete to $\sum_{[d, e]=\ell}\mu(d)\mu(e)=\mu(\ell)$, but the boundary escape flux carries the full quadratic mass $\sum_{d, e \le N < [d, e]}\mu(d)\mu(e) = M(N)^2 - M(N)$, and under Abel summation $|\mathcal{E}_X - D_X| \le (1+X/2)^2$, proving that geometric Stokes boundary methods cannot bypass the quadratic Mertens barrier.
     - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
-23. [Compound Poisson Delay Semigroup and Unique Prime-Error Charge Crossing Law](compound-poisson-delay-charge-crossing.md)
-    - *Result:* Proof that under the continuous compound Poisson delay semigroup $\mathcal{U}_t = \mathbb{E}[R_{X_t}]$, the relative charge observable $Q_{\mathrm{rel}}(t) = \delta(\mathcal{U}_t a)$ of the physical prime error $a(u) = e^{-u/2}[\psi(e^u) - e^u]$ is an entire function that transitions monotonically from positive arithmetic baseline $Q_{\mathrm{rel}}(0) = \kappa > 0$ to negative infinity, crossing zero at a unique simple zero $t_*$ with non-asymptotic bounds $\frac{1}{\eta_1}\log(1 + \kappa/\beta) \le t_* \le \frac{1}{\eta_1}\log(1 + \kappa/b_1)$ and leading exponential asymptotic $-b_1 e^{-t\Phi(1)}$.
-    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
-
 24. [Cumulative Successor Ordering and Certified Spectral Oscillation of the RH Critical Transform](cumulative-successor-ordering-and-spectral-oscillation.md)
     - *Result:* Proof via nonnegative factorial identity that the three-fold integrated difference $\int_1^x (\log(x/y))^2 \frac{W(y) - W_b(y)}{y^3} dy > 0$ is strictly positive for all $x > 1$, while 256-bit Arb ball verification of the non-zero residue at the first non-trivial zero $\gamma_1 \approx 14.134725$ proves by Landau oscillation that the unsmoothed difference $W_b(y) - W(y)$ takes both signs arbitrarily far out.
     - *Status:* Rigorous mathematical derivation and Arb interval certificate; priority not assessed in this audit.
-
-25. [Canonical Dual Cosine Formula and Peano Kernel Representation for the Division Lattice Remainder](canonical-dual-cosine-and-peano-lattice-formula.md)
-    - *Result:* Absolutely convergent dual cosine formula for $\mathcal{Q}(t) = \sqrt{t}\sum_{m \ge 1}\log(m) L(tm)$, proof that the derivative contact atom $-\frac{\sqrt{t}}{12} L(t)$ identically cancels the mean of the second Bernoulli polynomial $B_2(\{x\})$, yielding the canonical non-negative Peano arch representation $\mathcal{Q}(t) = F_{\mathrm{cell}}(t) + \frac{\sqrt{t}}{2}\int_1^\infty \{x\}(1-\{x\}) f_t''(x) dx$, and exact convergent differential lift $z L''(z) + L'(z) = -z \mathcal{T}(z)$.
-    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
 26. [Signed Real-Cell Reconstruction of Factorial Energy and Exact Trigamma-Logarithm Phase Kernel](signed-real-cell-factorial-energy-decomposition.md)
     - *Result:* Exact signed real-cell reconstruction $Q_N = Q_C(N) + 2\int_1^N D_N(x) L_N(x)dx + \iint_1^N D_N(x)D_N(y)K(x, y)dx dy$ accounting for all rational jumps $q/j$, continuous boundary-regularized test inversion $\sum_{j \le q} \Phi_t(q/j) = h_t(q)$, and closed-form evaluation of the fundamental bivariate phase kernel $P(a, b) = \frac{1}{a+b} - \psi'(a+b+1) - \log(1+1/a) + \frac{1}{a+1} - \log(1+1/b) + \frac{1}{b+1} + \log 2$.
@@ -126,8 +110,8 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Proof that pointwise non-negativity of lattice representation counts $r(N) \ge 0$, exact Poisson self-duality $\Theta(t) = t^{-1}\Theta(1/t)$, and completed meromorphic reflection $\widehat{E}_Q(s) = \widehat{E}_Q(1-s)$ fail to force critical line zeros, exemplified by $Q(m, n) = m^2 + 5n^2$ which has $\gg T$ off-line zeros in every vertical strip $1/2 < \sigma_1 < \operatorname{Re}s < \sigma_2 < 1$. Pinpoints the exact failure at the coprime witness $a_6 \ne a_2 a_3$, rigorously proving that any proof of RH must fundamentally use the primitive unit Euler product exponent $(1-p^{-s})^{-1}$ at every prime.
     - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
-31. [Unconditional Multi-Rate Positivity Planes for the Complete Actual-Prime Weil Quadratic Form](complete-weil-multi-rate-positivity-planes.md)
-    - *Result:* Proof that the complete arithmetic Weil quadratic form evaluates exactly on causal exponentials $u_a(x) = e^{-ax}\mathbf{1}_{x \ge 0}$ to $Q(u_a, u_b) = \frac{F(a)+F(b)}{a+b}$ with $F(a) = \frac{\xi'}{\xi}(a+1/2)$. Proves unconditional strict positive definiteness on every 2-dimensional plane $\operatorname{span}\{u_a, u_b\}$ and 3-dimensional plane $\operatorname{span}\{u_a, u_b, u_c\}$, establishing the exact bilinear determinant factorization $\det[K(a_i, a_j)] \propto H[t_a, t_b, t_c] J[t_a, t_b, t_c]$ and proving strict concavity of $H(t)=\sqrt{t}F(\sqrt{t})$ and $J(t)=\sqrt{t}/F(\sqrt{t})$ via Platt–Trudgian zero certification and 50-digit Arb ball bounds, providing the first verified multi-dimensional linear subspaces with sign-changing tests where the complete Weil form is positive definite.
+31. [Two- and Three-Rate Positivity Planes for the Complete Actual-Prime Weil Form](complete-weil-multi-rate-positivity-planes.md)
+    - *Result:* Proof that the complete arithmetic Weil quadratic form evaluates exactly on causal exponentials $u_a(x) = e^{-ax}\mathbf{1}_{x \ge 0}$ to $Q(u_a, u_b) = \frac{F(a)+F(b)}{a+b}$ with $F(a) = \frac{\xi'}{\xi}(a+1/2)$. Proves unconditional strict positive definiteness on every 2-dimensional plane $\operatorname{span}\{u_a, u_b\}$ and 3-dimensional plane $\operatorname{span}\{u_a, u_b, u_c\}$, establishing the exact bilinear determinant factorization $\det[K(a_i, a_j)] \propto H[t_a, t_b, t_c] J[t_a, t_b, t_c]$ and proving strict concavity of $H(t)=\sqrt{t}F(\sqrt{t})$ and $J(t)=\sqrt{t}/F(\sqrt{t})$ via Platt–Trudgian zero certification and 50-digit Arb ball bounds, for a fixed finite-rate family; no firstness or comparison claim is made.
     - *Status:* Rigorous mathematical derivation + Lean formalizations + Arb certificate; priority not assessed in this audit.
 
 32. [Positive Finite-Activity Compound Poisson Semigroup and Uniform Bernstein Exponent from the Complete Prime Seed](prime-seed-compound-poisson-semigroup-and-bernstein-exponent.md)
@@ -202,9 +186,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Proves that the collective all-prime birth seed $\operatorname{allPrimeSeed}(v) = \sum_p \operatorname{seed}(\log p, v)$ is unconditionally square-integrable on $\mathbb{R}$ without assuming the Prime Number Theorem, any zero-free region, or the Riemann Hypothesis. Establishes the three-scale geometric bound $v \cdot \operatorname{allPrimeSeed}(v) \le 64 \log 2 + 30$ on $[3\log 2, \infty)$, square tail domination $(\operatorname{allPrimeSeed}(v))^2 \le (64\log 2 + 30) \operatorname{allPrimeSeed}(v)/v$, and finite Lévy activity. Proves the exact transposed integral representation of the relative charge memory defect $\operatorname{defect}(\operatorname{causalMemory}(\operatorname{allPrimeSeed}, f)) = \int_0^\infty \operatorname{memoryDefectKernel}(\operatorname{allPrimeSeed}, u) f(u) du$ and the commutator kernel identity.
     - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
 
-50. [Machine Formalization of Landau's Positive-Measure Singularity Theorem and Critical Sign Criterion](machine-formalization-of-landau-positive-measure-singularity-theorem.md)
-    - *Result:* Gives a Lean 4 proof of the stated Landau singularity theorem for positive Laplace transforms and the conditional implication from eventual non-positivity of the critical arithmetic sum to the Riemann hypothesis. Priority among formalizations is provisional. The page separately records the proved two-sided unboundedness obstruction to that premise.
-    - *Status:* First Lean 4 formalization + rigorous mathematical deduction; priority not assessed in this audit.
 
 51. [Centered Goldbach Total-Four Obstruction and Successor Heat Shift Covariance](centered-goldbach-total-four-obstruction-and-successor-heat-shift.md)
     - *Result:* Exact closed form for the centered additive Goldbach coefficient at the first nontrivial even total $N = 4$: $c_3(4) = (\log 2 - 1)^2 - 2(\log 3 - 1)$. Proves that $c_3(4) < 0$ is unconditionally strictly negative, formally refuting all coefficientwise nonnegativity conjectures on even totals and ruling out positive semidefiniteness of the centered Hankel kernel (as $H_{2, 2} = c_3(4) < 0$). Establishes the successor shift covariance decomposition $c^{\mathrm{shift}}_Y(N) - c_Y(N) = \operatorname{cov}_Y(N) + \operatorname{var}_Y(N)$, proves opposite sign behavior at totals 2 and 4 ($\Delta c(2) = (\log 2)^2 - 2\log 2 < 0$ while $\Delta c(4) = (\log 2 - 1)^2 + (\log 3)^2 - 1 > 0$), and proves the continuous scale shell covariance law $\operatorname{shiftedShell}(Y, T) - \operatorname{heatShell}(Y, T) = 2 \operatorname{crossShell}(Y, T) + \operatorname{variationShell}(Y, T)$.
@@ -338,8 +319,8 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact closed evaluation of the three filtered convolution components that construct the arithmetic potential $V(x)$: the discrete prime-pair tent weight $(x - p^j q^k) \log p \log q$, the symmetrized mixed discrete-continuous subtraction term $-\Lambda(n) \frac{x^2 - n^2}{n}$, and the deterministic density self-energy $\frac{x^2 \log x}{2} + \frac{x^2}{4} - \frac{1}{4}$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-84. [Arithmetic Prime-Transport Operator Zeta-Conjugation and Point Spectrum](arithmetic-prime-transport-operator-zeta-conjugation-and-point-spectrum.md)
-    - *Result:* Exact Dirichlet zeta-conjugation $\zeta * (\mathcal{T} f) = (\zeta * f) \cdot \log n$ and Möbius inversion $\mathcal{T} f = \mu * ((\zeta * f) \cdot \log n)$ for the arithmetic prime-transport operator $(\mathcal{T} f)(n) = f(n) \log n + (\Lambda * f)(n)$. Characterizes the nullspace $\ker(\mathcal{T}) = \mathbb{R} \cdot \mu$ and proves that the point spectrum consists precisely of the non-negative integer logarithms $\operatorname{Spec}_{\mathrm{point}}(\mathcal{T}) = \{\log k : k \in \mathbb{N}_{\ge 1}\}$ with dilated Möbius eigenvectors $f_k = \mu * \delta_k$.
+84. [Arithmetic Coefficient Transport: Zeta Conjugation and Algebraic Point Spectrum](arithmetic-prime-transport-operator-zeta-conjugation-and-point-spectrum.md)
+    - *Result:* Exact Dirichlet zeta-conjugation and Möbius inversion for the coefficient operator $(\mathcal{T} f)(n) = f(n) \log n + (\Lambda * f)(n)$, together with its algebraic kernel and explicitly quantified eigenvalue statement. The page records no Hilbert-space or topological spectral claim.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 85. [Physical Prime-Block Scattering Two-Sided Mellin Parity Law](physical-prime-block-scattering-two-sided-mellin-parity-law.md)
@@ -366,9 +347,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact closed evaluation of the continuous $L^2(0, \infty)$ Hilbert energy $\int_0^\infty S_N(t)^2 dt$ of the prime fluctuation heat source into three components: discrete Cauchy Gram energy $\sum \frac{c_i c_j}{x_i + x_j}$, discrete-continuous logarithmic cross coupling $-2 \sum c_i \log\frac{x_i + N}{x_i + 1}$, and continuum density self-energy $2N\log(2N) - 2(N+1)\log(N+1) + 2\log 2$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-91. [Critical Landau Abscissa of Convergence Theorem](critical-landau-abscissa-of-convergence-theorem.md)
-    - *Result:* Machine-verified proof applying Landau's singularity theorem to the critical arithmetic potential $W(x)$. Proves that if $\operatorname{Re}(W(x)) \le 0$ for $x > A$, then the convergence abscissa of the positive tail measure satisfies $\sigma_c \le 1/2$, forcing unconditional Laplace integrability and holomorphy across the entire open right half-plane $\operatorname{Re}(s) > 1/2$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 92. [Finite Prime-Block Zero Circle Residue Perturbation Bound](finite-prime-block-zero-circle-residue-perturbation-bound.md)
     - *Result:* Exact residue perturbation formula $\oint_{C(s, R)} [W_c(\mathcal{B}_{ps} f, \mathcal{B}_{ps} g) - W_c(f, g)] \frac{\zeta'}{\zeta} = 2\pi i \operatorname{ord}_\xi(s) [ \prod \mathcal{P}_p - 1 ] W_c(s)$ around zeros, and explicit exponential bound $\le 2\pi \operatorname{ord}_\xi(s) |W_c(s)| (\exp(\sum (2B_p + B_p^2)) - 1)$ inside the critical strip $|\operatorname{Re}(s - 1/2)| \le 1/2 - \delta$, where $B_p = \frac{p^{-M\delta}}{1 - p^{-\delta}}$.
@@ -546,9 +524,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact duality between compact prime-error heat source and continuous Chebyshev Laplace transform $H_N(t) = t \int_1^N (\psi(x)-x)e^{-xt} dx$, universal zero total net charge $H_N(0) = 0$, and discrete Goldbach packet comparison.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-136. [Exact Critical Convergence Abscissa and Landau Singularity Barrier](exact-critical-convergence-abscissa-and-landau-singularity-barrier.md)
-    - *Result:* Proof via Landau's singularity theorem that the convergence abscissa of the negative-tail Laplace measure satisfies $\sigma_c \le 1/2$, universal integrability on $\sigma > 1/2$, holomorphy on $\operatorname{Re}(s) > 1/2$, and agreement with the filled transform $\Phi(s)$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 137. [Exact Critical Mellin Eventual Sign Criterion for the Riemann Hypothesis](exact-critical-mellin-eventual-sign-criterion-for-the-riemann-hypothesis.md)
     - *Result:* Machine-verified conditional theorem proving that eventual nonpositivity $\forallᶠ x, \operatorname{Re}(W(x)) \le 0$ implies the Riemann Hypothesis, fully closing every analytic step between real sign and complex zeros.

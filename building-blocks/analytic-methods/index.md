@@ -2,6 +2,7 @@
 
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
+- [Landau positive-measure singularity and critical-sign formalization note](landau-positive-measure-singularity-and-critical-sign.md)
 - [Abstract Hermitian optimizer mismatch and the joint-nullspace sign](abstract-quadratic-optimizer-mismatch.md)
 - [Exact doubling of the actual two-history harmonic convolution](actual-harmonic-doubling.md)
 - [Persistent signed phase current and a logarithmic-form obstruction](actual-phase-current-cesaro-sign-and-log-arch-no-go.md)

@@ -1,13 +1,17 @@
-# First Formalization: Arithmetic Prime-Transport Operator Zeta-Conjugation and Point Spectrum
+# Arithmetic coefficient transport: zeta conjugation and algebraic point spectrum
 
 **Date:** 19 September 2026  
-**Lean 4 Module:** [`formalization/BuildingBlocks/ArithmeticTransport.lean`](../../formalization/BuildingBlocks/ArithmeticTransport.lean)  
+**Lean 4 Module:** [`formalization/BuildingBlocks/ArithmeticTransport.lean`](../formalization/BuildingBlocks/ArithmeticTransport.lean)
 **Lean Version:** Lean 4.24.0 / Lake 5.0.0  
 **Axiom Audit:** Strictly depends on foundational axioms `[propext, Classical.choice, Quot.sound]`; zero custom axioms, zero `sorry`.
 
 ---
 
 ## 1. Overview and Mathematical Scope
+
+This is an algebraic formalization on `ArithmeticFunction ℝ`. The word “point spectrum” below
+refers to the explicitly quantified eigenvalue statement; the module does not define a Hilbert-space
+completion, boundedness, self-adjointness, or topological spectrum.
 
 This formalization establishes the spectral theory and conjugation of the arithmetic prime-transport operator $(\mathcal{T} f)(n) = f(n) \log n + (\Lambda * f)(n)$ in Lean 4:
 

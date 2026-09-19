@@ -1,5 +1,7 @@
 # Complete geometric prime histories and their entropy crossover
 
+Attribution: Arterialist RH research team, September 2026. This note records the stated large-deviation calculation; no priority claim is made.
+
 For each prime $p\le X$, independently let
 
 $$

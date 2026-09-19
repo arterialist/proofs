@@ -1,4 +1,4 @@
-# Natural theta exponent concavity and positive third derivative
+# Natural theta Mellin-ratio derivative signs
 
 **Status:** computer-assisted mathematical proof with Arb interval certificates, September 2026.
 Compact-range certificates:

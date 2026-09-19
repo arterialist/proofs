@@ -1,16 +1,24 @@
 # Actual completed zeta xi and Archimedean factor in Lean 4
 
-**Status:** complete Lean 4 formalization, September 2026.
+**Status:** complete Lean 4 formalization, September 2026. This is a formalization record, not a priority claim for the whole xi package.
 Compiled in:
 - [ActualArchimedeanFactor.lean](../formalization/BuildingBlocks/ActualArchimedeanFactor.lean)
 
 Attribution: Arterialist RH research team, September 2026.
 Classical mathematics: Riemann (1859), Hadamard (1893).
-A search across Mathlib4, Isabelle/AFP, and Coq/ROC indicates that while Mathlib has
-`completedRiemannZeta₀` and functional equations, the entire function $\xi(s) = \frac{1+s(s-1)\widehat\zeta_0(s)}{2}$,
-its Archimedean logarithmic derivative identity, and the exact local zero-multiplicity
-order limit $\lim_{w \to s} (w-s)\frac{\xi'(w)}{\xi(w)} = m = \operatorname{ord}_s(\xi)$ had not
-previously been machine-formalized in Lean 4.
+The public search for this audit found prior Lean xi packages in KeyAI's
+[`ecdlp-lean-verification`](https://github.com/KeyAIGit/ecdlp-lean-verification), including
+[`Xi.lean`](https://github.com/KeyAIGit/ecdlp-lean-verification/blob/main/ResearchOS/AnalyticNumberTheory/RiemannHypothesis/Xi.lean)
+and [`Mult.lean`](https://github.com/KeyAIGit/ecdlp-lean-verification/blob/main/ResearchOS/AnalyticNumberTheory/RiemannHypothesis/Mult.lean),
+as well as the public
+[`li-criterion-rh-equivalence-lean`](https://github.com/nicholasbulka/li-criterion-rh-equivalence-lean)
+repository. Those packages cover the entire xi normalization, elementary symmetries,
+endpoint values, zeta-zero correspondence, and local order material represented here.
+Accordingly, this page makes no first-formalization claim for the entire xi or
+zero-multiplicity package. The narrower Archimedean logarithmic-derivative and completed-zeta
+boundary statements remain useful formalization records; any firstness claim for that
+narrower scope is provisional pending a separate theorem-level search, including the
+`PrimeNumberTheoremAnd` public index.
 
 ## Mathematical content
 

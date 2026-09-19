@@ -7,6 +7,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Pointwise tail and spatial means of the actual memory response](actual-memory-spatial-sign.md)
 - [Actual physical weights and local zero coefficients](actual-physical-local-residue-weights.md)
 - [Exact causal charge signs and the positive-process crossing law](actual-source-causal-charge-law.md)
+- [Compound Poisson delay semigroup and prime-error charge crossing](compound-poisson-delay-charge-crossing.md)
 - [An additive-clock completion for the actual history](actual-source-mixed-dirichlet-completion.md)
 - [Actual finite-source mismatch from the unrestricted clock maximizer](actual-source-square-completion-defect.md)
 - [An exact causal rectangle decomposition and a cube-root frequency cutoff](causal-rectangle-frequency-cutoff.md)

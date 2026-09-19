@@ -1,5 +1,7 @@
 # A canonical dual cosine formula for the actual lattice remainder
 
+Attribution: Arterialist RH research team, September 2026. This note records the exact formulas and their classical Poisson, Bernoulli, and Peano-kernel ingredients; no priority claim is made.
+
 This written proof gives an absolutely convergent dual cosine formula, a centered differential identity and an equivalent Peano formula for the actual lattice remainder. Poisson summation, Bernoulli Fourier series and cell interpolation are classical tools. The exact logarithmic weight removes the singular zero endpoint while retaining the fractional first cell and derivative contacts.
 
 Use the notation and exact identity from [actual coherent division lattice remainder](actual-coherent-division-lattice-remainder.md):

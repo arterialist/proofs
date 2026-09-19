@@ -1,14 +1,15 @@
-# Exact negative cross-prime covariance and upper negative orthant dependence
+# Exact negative cross-prime covariance and upper-orthant product bounds
 
-**Status:** mathematical proof via finite-grid martingale coupling, September 2026.
+**Status:** mathematical proof via finite-grid martingale coupling, September 2026. The scope is the exact cutoff law below; this page does not claim full negative association.
 Note location:
 - [building-blocks/prime-distribution/prime-score-negative-covariance.md](../building-blocks/prime-distribution/prime-score-negative-covariance.md)
 
 Attribution: Arterialist RH research team, September 2026.
 In probabilistic number theory, the heuristic that prime factors compete for space has been known since
-Kubilius (1962). However, establishing *exact, finite-cutoff* negative association without asymptotic
-error terms has remained challenging. This theorem proves exact pairwise negative covariance and
-Upper Negative Orthant Dependence (UNOD) for prime valuations under the arithmetic causal ramp distribution.
+Kubilius (1962). This theorem proves exact pairwise negative covariance and an upper-orthant product
+inequality for increasing functions of distinct prime valuations under the arithmetic causal ramp
+distribution. The product inequality is obtained from the finite divisibility comparison below; it is
+not a claim of full negative association for arbitrary increasing functions of grouped coordinates.
 
 ## Statement
 
@@ -32,7 +33,7 @@ Moreover, the exact covariance identity holds:
 \]
 where $\mu_q(x) = \mathbb{E}_x m_q$ is strictly increasing on $(q, \infty)$.
 
-**Theorem 2 (Upper Negative Orthant Dependence of Prime Valuations).**
+**Theorem 2 (Upper-orthant product inequality for prime valuations).**
 For any finite set of distinct primes $S \subset \mathbb{P}$ and any non-decreasing functions $f_p : \mathbb{N}_0 \to [0, \infty)$:
 \[
  \boxed{\quad \mathbb{E}_x \prod_{p \in S} f_p(v_p(n)) \le \prod_{p \in S} \mathbb{E}_x f_p(v_p(n)). \quad}

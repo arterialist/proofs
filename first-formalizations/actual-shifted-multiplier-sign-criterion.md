@@ -1,4 +1,6 @@
-# An actual shifted-multiplier sign criterion for RH
+# Formalization record: an actual shifted-multiplier sign criterion for RH
+
+**Status:** substantive Lean formalization of a conditional RH criterion. The eventual sign premise is unproved, and this page makes no mathematical-priority claim. A targeted search of Mathlib, KeyAIGit's `ecdlp-lean-verification`, the public Li-criterion Lean repository, and the `PrimeNumberTheoremAnd` index found no matching formalization of this exact shifted coefficient chain as of September 2026; that firstness assessment is provisional.
 
 Define the arithmetic coefficient
 
@@ -31,7 +33,11 @@ The eventual sign itself is **unproved**. This result is a formalized
 conditional RH criterion, not a proof of RH. Its distinct construction
 is the square-root-multiple $W$ with same-prime subtraction and both
 centering terms. The analytic tools, including Landau's positivity
-principle, are classical. Nearby prior work includes
+principle, are classical; a general public Lean treatment of the
+positive-measure continuation step appears in
+[Robin1984's `MGFAnalyticContinuation.lean`](https://github.com/kimihiro64/Robin1984/blob/7fbbe0821e33ddb73f953ee2981dc52813f5568a/Robin1984/Mathlib/Probability/Moments/MGFAnalyticContinuation.lean).
+The exact arithmetic bridge remains the scope of this provisional
+formalization record. Nearby prior work includes
 [Suzuki's weighted von Mangoldt sign criteria](https://arxiv.org/pdf/2411.07436)
 and [Alkan's variants of Pólya and Turán criteria](https://doi.org/10.1016/j.jnt.2021.01.004).
 A targeted search of Mathlib, GitHub, arXiv, and the related formal

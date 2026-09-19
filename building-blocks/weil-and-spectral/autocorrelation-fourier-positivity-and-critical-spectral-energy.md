@@ -1,4 +1,6 @@
-# Catalog entry 358: finite complex norm-square positivity
+# Finite complex norm-square positivity
+
+This is a scalar building block for later Fourier or spectral arguments; it does not itself formalize an autocorrelation, Fourier transform, Weil zero sum, or spectral operator.
 
 This page documents `formalization/BuildingBlocks/AutocorrelationFourierPositivity.lean`.
 

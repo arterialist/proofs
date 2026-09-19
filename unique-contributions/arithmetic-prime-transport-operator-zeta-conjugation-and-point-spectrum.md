@@ -1,14 +1,14 @@
-# Contribution 84: Arithmetic Prime-Transport Operator Zeta-Conjugation and Point Spectrum
+# Arithmetic coefficient transport: zeta conjugation and algebraic point spectrum
 
 **Date:** 19 September 2026  
-**Primary Source Documents:** [`formalization/BuildingBlocks/ArithmeticTransport.lean`](../../formalization/BuildingBlocks/ArithmeticTransport.lean)  
-**Classification:** Analytic Number Theory / Arithmetic Functions / Dirichlet Convolution / Spectral Theory of Arithmetic Operators
+**Primary Source Documents:** [`formalization/BuildingBlocks/ArithmeticTransport.lean`](../formalization/BuildingBlocks/ArithmeticTransport.lean)
+**Classification:** Analytic Number Theory / Arithmetic Functions / Dirichlet Convolution / Algebraic coefficient operators
 
 ---
 
 ## 1. Executive Summary and Mathematical Statement
 
-In the algebraic theory of arithmetic functions, the second generalized von Mangoldt function $\Lambda_2 = \Lambda \log + \Lambda * \Lambda$ arises from differentiating the Dirichlet series $-\zeta'(s)/\zeta(s)$. Generalizing this construction to an arbitrary arithmetic function $f : \mathbb{N} \to \mathbb{R}$ yields the **arithmetic prime-transport operator**:
+In the algebraic theory of arithmetic functions, the second generalized von Mangoldt function $\Lambda_2 = \Lambda \log + \Lambda * \Lambda$ arises from differentiating the Dirichlet series $-\zeta'(s)/\zeta(s)$. Generalizing this construction to an arbitrary arithmetic function $f : \mathbb{N} \to \mathbb{R}$ yields the coefficient operator
 $$
 (\mathcal{T} f)(n) = f(n) \log n + (\Lambda * f)(n).
 $$
@@ -27,12 +27,12 @@ This contribution proves:
    $$
    and for functions of the form $f = \mu * g$, the action simplifies to $\mathcal{T}(\mu * g) = \mu * (g \cdot \log n)$.
 3. **One-Dimensional Kernel Characterization:**  
-   The algebraic nullspace $\ker(\mathcal{T})$ of the prime-transport operator on arithmetic functions is exactly one-dimensional and spanned by the Möbius function $\mu$:
+   The algebraic nullspace of this coefficient operator on arithmetic functions is exactly one-dimensional and spanned by the Möbius function $\mu$:
    $$
    \mathcal{T} f = 0 \iff f(n) = f(1) \mu(n), \quad \forall n \in \mathbb{N}.
    $$
-4. **Complete Point Spectrum Characterization:**  
-   The point eigenvalues $\lambda \in \mathbb{R}$ of $\mathcal{T}$ on non-zero arithmetic functions are exactly the logarithms of positive integers:
+4. **Complete Algebraic Eigenvalue Characterization:**
+   The eigenvalues $\lambda \in \mathbb{R}$ on non-zero arithmetic functions are exactly the logarithms of positive integers:
    $$
    \operatorname{Spec}_{\mathrm{point}}(\mathcal{T}) = \{\log k : k \in \mathbb{N}_{\ge 1}\}.
    $$
@@ -102,8 +102,8 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 4. Literature Context and Target Venues
+## 4. Literature Context and Scope
 
-- **Prior literature comparison:** Selberg's formula is classical. This page formalizes the stated operator, conjugation, and point-spectrum results. Priority among Lean formalizations is not established by this audit.
-- **Advancement:** Establishes the complete spectral decomposition and nullspace of the arithmetic prime-transport operator.
-- **Target Venues:** *Journal of Number Theory* or *Linear Algebra and its Applications*.
+- **Prior literature comparison:** Selberg's convolution identity is classical. This page formalizes the stated coefficient operator, its zeta conjugation, kernel, and algebraic eigenvalue theorem. Priority among Lean formalizations is not established by this audit.
+- **Scope boundary:** `ArithmeticTransport.lean` is an algebraic construction on `ArithmeticFunction ℝ`. It does not define a Hilbert-space completion, a bounded operator, a self-adjoint operator, or a topological spectrum. “Point spectrum” here means the explicitly quantified algebraic eigenvalue statement in the Lean theorem.
+- **Priority:** Any priority claim for this coefficient-space specialization is provisional and requires a separate theorem-level comparison; this page makes no claim that it establishes a new analytic spectral theory.
