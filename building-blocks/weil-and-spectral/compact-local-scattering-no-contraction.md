@@ -130,66 +130,6 @@ compact pole-null test attenuates and another amplifies, with no
 asymptotic test limit, Fourier decay, or Plancherel prerequisite.
 The output shifts range from -(M-1)L to JL. A common sufficiently
 large translation makes all supports causal and preserves the norms
-and pole nulls. This exact construction is written mathematics; its
-physical orthogonality and operator-coefficient identification are not
-yet formalized in Lean. It retains only the local history operator and
-does not replace the gamma/full-prime-power Weil consumer.
-
-
-## Exact finite physical construction, avoiding the Fourier limit
-
-Write L=log p and tau_s eta(v)=eta(v-s). Choose a nonzero nonnegative
-smooth bump kappa supported in an interval of diameter strictly less
-than L and set eta=(D^2-1/4)kappa. Its two pole moments vanish, while
-int eta=-(1/4)int kappa<0, so eta is nonzero. Distinct integer-L
-translates of eta have disjoint supports and are orthogonal in the
-original physical L2 metric.
-
-The unchanged finite history operator is exactly
-
-\[
-V\eta=-r\tau_L\eta+(1-r^2)\sum_{m=0}^{M-1}r^m\tau_{-mL}\eta.
-\]
-
-For this single bump its norm is the exact diagonal sum
-
-\[
-\|V\eta\|_2^2=
-\left[r^2+(1-r^2)^2\sum_{m=0}^{M-1}r^{2m}\right]\|\eta\|_2^2
-=\left[1-(1-r^2)r^{2M}\right]\|\eta\|_2^2<\|\eta\|_2^2.
-\]
-
-For amplification, take theta=pi/M, q=exp(i theta), and the FINITE test
-
-\[
-h_J=\sum_{j=0}^{J-1}q^{-j}\tau_{jL}\eta.
-\]
-
-Each translate is pole-null, so h_J is pole-null. Orthogonality gives
-||h_J||_2^2=J||eta||_2^2. In Vh_J, the coefficient of tau_(kL) eta,
-for each integer 1 <= k <= J-M, is exactly
-
-\[
-q^{-k}\left[-r q+(1-r^2)\sum_{m=0}^{M-1}r^m q^{-m}\right]
-=q^{-k}v_{p,M}(i\theta/L).
-\]
-
-All indices are inside the original box: the positive shift uses
-j=k-1 and each negative shift uses j=k+m. The remaining output
-coefficients occupy disjoint translates too and contribute nonnegative
-squared norms; no boundary term is discarded with a negative sign.
-With G=|v_(p,M)(i theta/L)|^2>1, this proves
-
-\[
-\|Vh_J\|_2^2\ge(J-M)G\|\eta\|_2^2>J\|\eta\|_2^2
-=\|h_J\|_2^2
-\]
-
-for any integer J>MG/(G-1). This also implies J>M. Thus one FINITE
-compact pole-null test attenuates and another amplifies, with no
-asymptotic test limit, Fourier decay, or Plancherel prerequisite.
-The output shifts range from -(M-1)L to JL. A common sufficiently
-large translation makes all supports causal and preserves the norms
 and pole nulls. This exact construction is written mathematics. [CompactScatteringPackets.lean](../../formalization/BuildingBlocks/CompactScatteringPackets.lean) compiles the literal interval nonoverlap, pointwise disjoint-square identity, translation-invariant physical squared norm, and integrated weighted finite norm identity under integrability of the bump square. It also proves the isolated coefficient-energy identity and existence of a finite bulk-gain integer. The operator-coefficient assembly is now compiled below. The full smooth compact pole-null witness identification remains separate. It retains only the local history operator and
 does not replace the gamma/full-prime-power Weil consumer.
 

@@ -1,4 +1,4 @@
-# The full theta killed-core return operator and its excursion metric
+# The theta killed-core exterior return operator and its excursion metric
 
 This note constructs the full operator-valued return through the exterior of a compact interval. It uses the actual theta jump form, all prime powers, and the continuous infinite activity. The construction gives a positive return kernel, an exact nonlocal excursion metric, and an explicit positive correction for the two pole constraints. The sharp comparison on the full core remains unproved; section 7 gives a weaker explicit comparison with its loss. All results in this chapter are written proofs, not Lean formalizations.
 

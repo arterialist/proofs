@@ -78,7 +78,7 @@ A quotient-grouped floating-point search tested 241 selected horizons, including
 
 Separate exact integer checks confirmed sieve values at selected indices and all k in S_N, together with k=1,2,3,N, in (1) for N=13,24,5001,10007,99991,2000000. They corroborate the implementation; the finite divisor proof establishes (1) for every N and k. The analytic representation uses the classical digamma integral and its derivative, as in [DLMF 5.9.16](https://dlmf.nist.gov/5.9.E16).
 
-The open target is a quantitative upper bound on the coherent Q_N for the actual grouped vector, or a useful signed inequality from the entire constraint system (1). Equations (1)-(3), the sign change and finite passing tests prove no such upper bound. Their Lean formalization also remains unfinished.
+The open target is a quantitative upper bound on the coherent Q_N for the actual grouped vector, or a useful signed inequality from the entire constraint system (1). Equations (1)-(3), the sign change and finite passing tests prove no such upper bound. The quotient constraints (1), renewal (3), and sign change are Lean-formalized as recorded above; the Abel polynomial (2) remains written mathematics.
 
 ## A proved energy upper bound and the exact discarded variance
 

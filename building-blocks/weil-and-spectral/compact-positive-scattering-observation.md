@@ -102,7 +102,7 @@ $$
 $$
 Under RH, the proved upper theorem gives $\mathcal N_{f_0}(X)=O((\log X)^{9/2})$. The norm in (8) retains the full operator and growing actual prime history; it is not the absolute value of the constant scalar readout in (9). In particular (10) does not assert that the sign of the single number $Q(f_0)$ decides RH. This is a constructive domain refinement of the norm criterion, with no new unconditional positivity assertion.
 
-## A tilted real test that retains every zero in the critical strip
+## A tilted real test whose filter is nonzero at every nontrivial zero
 
 There is a different useful construction from the same classical bump. It gives a real compact test whose bilateral pole filter has no zero in the open critical strip except the required zero at the origin. Its consumer is the actual translation kernel, rather than the trace norm (8).
 

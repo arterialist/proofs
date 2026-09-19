@@ -22,8 +22,7 @@ nonnegative, and supported in [-d,d]. Define the literal other-prime
 window sums
 
 \[
- K_m^{\rm odd}=\sum_{\substack{p\ne2\ {
-m prime},\ k\ge1}}
+ K_m^{\rm odd}=\sum_{\substack{p\ne2,\ p\ {\rm prime}\\ k\ge1}}
     (\log p)p^{-k/2}R(k\log p-mL),\qquad m\ge1.
 \]
 
