@@ -577,3 +577,4 @@ import BuildingBlocks.ChirpedNonstationaryGradientSeparation
 import BuildingBlocks.ChirpedCarrierDilutionDensityBalance
 import BuildingBlocks.ChirpedDyadicTailSummability
 import BuildingBlocks.ChirpedArchimedeanDigammaBound
+import BuildingBlocks.ChirpedSpectralAssembly

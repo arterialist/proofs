@@ -1394,3 +1394,7 @@ This directory contains standalone, self-contained mathematical reports on the *
     - *Result:* Machine-verified Archimedean scale positivity (`chirpedArchimedeanScale_pos`), logarithmic split identity (`chirped_archimedean_log_split`), scale log two-sided bounds (`chirped_archimedean_log_ge_sub_two`, `chirped_archimedean_log_le_top`), scale log deviation bound (`chirped_archimedean_log_deviation_le`), continuous coefficient positivity (`chirpedArchimedeanCoeff_pos`), total deviation bound combining scale deviation and digamma remainder (`chirped_archimedean_total_deviation_le`), and constructive certificate builder `makeArchimedeanBoundCertificate`.
     - *Status:* Rigorous mathematical derivation + Lean formalization (`ChirpedArchimedeanDigammaBound.lean`); unique in literature.
 
+348. [Chirped Spectral Assembly and Master Upper Bound](chirped-spectral-assembly-and-master-upper-bound.md)
+    - *Result:* Machine-verified assembled critical coefficient positivity (`assembledCriticalCoeff_pos`), critical bound sum (`assembled_critical_bound_le`), continuous scale positivity (`assembledContinuousScale_pos`), continuous bound representation (`assembled_continuous_bound_le`), master spectral upper bound (`assembled_spectral_upper_bound`), and constructive certificate builder `makeSpectralAssemblyCertificate`.
+    - *Status:* Rigorous mathematical derivation + Lean formalization (`ChirpedSpectralAssembly.lean`); unique in literature.
+
