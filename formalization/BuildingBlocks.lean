@@ -647,3 +647,4 @@ import BuildingBlocks.RiemannZetaIntermediateZeroFree
 import BuildingBlocks.RiemannZetaLowIntermediateDeficit
 import BuildingBlocks.RiemannZetaIntermediateDeficitExtension
 import BuildingBlocks.RiemannZetaFrequencyDecayDeficit
+import BuildingBlocks.RiemannZetaSharpenedKernelDeficit
