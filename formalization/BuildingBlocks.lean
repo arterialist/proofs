@@ -603,3 +603,4 @@ import BuildingBlocks.ChirpedStationaryCoreProjection
 import BuildingBlocks.ChirpedWeilExplicitAdmissibility
 import BuildingBlocks.ChirpedSpectralSupportConfinement
 import BuildingBlocks.ChirpedOperatorTraceCoercivity
+import BuildingBlocks.ChirpedSpectralMeasureAnnihilation
