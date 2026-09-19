@@ -34,23 +34,23 @@ S(D;I)=\sum_{m\in I}\mu(m)L_m(T).
 Set
 
 \[
-d_*=\frac{9\lambda+5}{21}.
+d_\dagger=\frac{9\lambda-1}{15},
+\qquad
+\rho_\dagger=d_\dagger-(\lambda-1)
+=\frac{14-6\lambda}{15}>0.
 \tag{3}
 \]
 
 **Theorem.** Fix
 
 \[
-0<\eta<
-\min\!\left(
-d_*-(\lambda-1),\frac{\lambda-1}{14}
-\right).
+0<\eta<\rho_\dagger.
 \]
 
 Uniformly for
 
 \[
-H\le D\le T^{d_*-\eta},
+H\le D\le T^{d_\dagger-\eta},
 \tag{4}
 \]
 
@@ -62,21 +62,29 @@ one has
 \]
 
 All logarithmic and divisor-function losses are included in the margin in (5).
+The improvement over the first orientation of the three-dimensional estimate
+comes from assigning its separated coefficient to the shorter Type II
+variable.
 
-For the explicit exponent
+The first orientation stopped at
+\[
+K_{\mathrm{new}}=HT^{(13-6\lambda)/21}.
+\]
+For a concrete cutoff, take \(\eta=\rho_\dagger/2\) and set
 
 \[
-\rho=\frac{13-6\lambda}{21}>0,
-\qquad
-K_{\mathrm{new}}=HT^\rho=T^{(15\lambda-8)/21},
+K_\dagger=HT^{\rho_\dagger/2}
+=HT^{(7-3\lambda)/15}
+=T^{(12\lambda-8)/15}.
 \tag{6}
 \]
 
-the raw estimates below, summed over the dyadic blocks in the interval, give
+The raw estimates below, summed over the dyadic blocks after the earlier
+cutoff, give
 
 \[
-\sum_{K_{\mathrm{old}}<m\le K_{\mathrm{new}}}
-\mu(m)L_m(T)\ll T^{-\rho/4},
+\sum_{K_{\mathrm{old}}<m\le K_\dagger}
+\mu(m)L_m(T)\ll T^{-\rho_\dagger/8}.
 \tag{7}
 \]
 
@@ -99,14 +107,14 @@ Consequently, with
 \[
 c_\lambda=\min\!\left(
 \frac{29-14\lambda}{60},
-\frac{13-6\lambda}{84}
+\frac{7-3\lambda}{60}
 \right)>0,
 \tag{9}
 \]
 
 \[
 \boxed{
-\sum_{m\le K_{\mathrm{new}}}\mu(m)L_m(T)
+\sum_{m\le K_\dagger}\mu(m)L_m(T)
 \ll T^{-c_\lambda}.}
 \tag{10}
 \]
@@ -124,7 +132,7 @@ equation (10) moves the exact remaining tail to
 \[
 \boxed{
 P_1(T)=
-\sum_{m>K_{\mathrm{new}}}\mu(m)L_m(T)
+\sum_{m>K_\dagger}\mu(m)L_m(T)
 +O(T^{-c_\lambda}).}
 \tag{12}
 \]
@@ -412,9 +420,68 @@ N^{1/4}D^{-5/8}
 \tag{24}
 \]
 
+The phase is symmetric in \(a,b\), but the Robert--Sargos bound is not:
+its \(M_0\)-variable is the one carrying the separated coefficient.  After
+the amplitude separation below, the two arithmetic coefficient sequences
+remain independent and divisor-bounded.  We may therefore interchange the
+two factor variables and apply the same theorem with
+
+\[
+(H_0,N_0,M_0)=(J,A,B).
+\]
+
+This gives the dual estimate
+
+\[
+|S_{\mathrm{II},J}|
+\ll T^\varepsilon(\log T)^C
+\frac{DJ}{L\sqrt N}
+\left[
+\left(\frac{X}{JAB^2}\right)^{1/4}
++(JA)^{-1/4}
++B^{-1/2}
++X^{-1/2}
+\right].
+\tag{23d}
+\]
+
+Orient each rectangle so that \(A\ge B>U\).  Since \(AB\asymp D\),
+the first term in (23d) is at most
+\((N/(D^2U))^{1/4}\), the second is at most
+\((L\sqrt D)^{-1/4}\), and the third is at most \(U^{-1/2}\).
+The same summation over \(J\) therefore gives
+
+\[
+\boxed{
+|S_{\mathrm{II}}(D;I)|
+\ll \frac{T^\varepsilon(\log T)^C D}{\sqrt N}
+\left[
+N^{1/4}D^{-1/2}U^{-1/4}
++L^{-1/4}D^{-1/8}
++U^{-1/2}
++T^{-1/2}
+\right].}
+\tag{24d}
+\]
+
+The earlier obstruction \((LU)^{-1/4}\) in (24) was therefore caused by
+the Cauchy orientation built into that application of the asymmetric
+theorem. Estimate (24d) removes it. The generic
+\(\sqrt{T/Y}\) loss remains unavoidable if the two Dirichlet polynomials
+are first separated and only the standard sharp mean-value bounds for
+arbitrary coefficients are retained. It is not a structural lower bound for
+the original signed sum: the trilinear estimate bypasses that separation.
+The first and third terms in (24d), together with the first Type I term in
+(20), form the next barrier.
+
 ## Separation of the sharp product cutoff
 
-The theorem cited above has rectangular ranges and permits a joint coefficient in \((k,b)\) and a separate coefficient in \(a\). More generally, insert a zero-extended BV weight \(W(ab/D)\), supported on a fixed compact annulus. The interval in (2) is the specialization
+The theorem cited above has rectangular ranges and permits a joint
+coefficient in two variables and a separate coefficient in the third.
+Thus it permits either a joint coefficient in \((k,b)\) and a separate
+coefficient in \(a\), or the dual orientation used in (23d).  More
+generally, insert a zero-extended BV weight \(W(ab/D)\), supported on a
+fixed compact annulus. The interval in (2) is the specialization
 
 \[
 W_I(u)=1_{\{Du\in I\}},
@@ -477,52 +544,115 @@ Write
 
 \[
 s=\lambda-1,\qquad
-U=T^{2s/7},qquad D=T^d.
+U=T^u,\qquad
+u=\frac{3\lambda-2}{15},\qquad D=T^d.
 \tag{28}
 \]
 
-For \(d\le d_*-\eta\), the three exponents in (20) are at most
+The three powers of \(T\) in (20), after the factor \(N^{-1/2}\), are
 
 \[
--\eta/2,qquad
--3\eta/4-s/28,qquad
-d-\lambda/2-1/4.
+E_{\mathrm I,1}=\frac d2+u+\frac16-\frac\lambda2,
+\quad
+E_{\mathrm I,2}=\frac{3d}{4}+\frac u2-\frac\lambda2,
+\quad
+E_{\mathrm I,3}=d-\frac\lambda2-\frac14.
 \tag{29}
 \]
 
-The four exponents in (24) are at most
+The four powers in the dual Type II estimate (24d) are
 
 \[
-3d/8-\lambda/4,qquad
--3\eta/4,qquad
-3d/4-\lambda/2,qquad
-d-\lambda/2-1/2.
+E_{\mathrm{II},1}=\frac d2-\frac\lambda4-\frac u4,
+\quad
+E_{\mathrm{II},2}=\frac{5d}{8}-\frac\lambda2+\frac s4,
+\quad
+E_{\mathrm{II},3}=d-\frac\lambda2-\frac u2,
+\quad
+E_{\mathrm{II},4}=d-\frac\lambda2-\frac12.
 \tag{30}
 \]
 
-The unexpanded terms in (29) and (30) are strictly negative throughout \(2<\lambda<29/14\). After choosing the \(\varepsilon\) in (20) and (24) small enough and absorbing the logarithms, the weakest remaining margin is at least \(\eta/4\). This proves (5).
-
-Finally,
-
-\[
-d_*-(\lambda-1)=2\rho,
-\]
-
-so \(K_{\mathrm{new}}=T^{d_*-\rho}\). At \(\eta=\rho\), the weakest raw power margin in (20) and (24) is \(\rho/2\). Sum those raw estimates and the boundary error (27) over the \(O(\log T)\) dyadic blocks between the two cutoffs before weakening the exponent. After absorbing every dyadic, Fourier-separation, divisor, and logarithmic factor, the whole interval is \(O(T^{-\rho/4})\). This proves (7). The extension is strict because
+The choice of \(u\) balances
+\(E_{\mathrm I,1}\) with \(E_{\mathrm{II},1}\) and
+\(E_{\mathrm{II},3}\). They vanish together at
+\(d=d_\dagger\). At that endpoint the remaining exponents are
 
 \[
-\rho-\frac{29-14\lambda}{116}
-=\frac{899-402\lambda}{2436}>0
+E_{\mathrm I,2}=-\frac{7-3\lambda}{60},\qquad
+E_{\mathrm I,3}=-\frac{19-6\lambda}{60},
 \]
 
-on the stated range.
+\[
+E_{\mathrm{II},2}=-\frac{7-3\lambda}{24},\qquad
+E_{\mathrm{II},4}=-\frac{17-3\lambda}{30}.
+\tag{31}
+\]
+
+All four displayed gaps are positive for \(2<\lambda<29/14\).
+For \(d\le d_\dagger-\eta\), the three active exponents are at most
+\(-\eta/2,-\eta/2,-\eta\). After choosing the \(\varepsilon\) in
+(20) and (24d) small enough and absorbing the logarithms, the weakest
+remaining margin is at least \(\eta/4\). This proves (5).
+
+The decomposition is valid uniformly on this range. Indeed \(2u<s\), so
+\(D>2U^2\) for \(D\ge H\) and large \(T\). Moreover, in the high-mode
+split used for (18),
+
+\[
+\frac{(D/U^2)^3}{T}
+\ge T^{\,3(s-2u)-1}
+=T^{(9s-7)/5},
+\tag{32}
+\]
+
+a fixed positive power because \(s>1\). Thus the discarded Poisson modes
+remain rapidly decreasing with the new value of \(U\).
+
+Take \(\eta=\rho_\dagger/2\) and sum the raw estimates and (27) over
+the \(O(\log T)\) dyadic blocks between \(K_{\mathrm{old}}\) and
+\(K_\dagger\). This gives (7), after weakening the raw
+\(\rho_\dagger/4\) margin to \(\rho_\dagger/8\). The extension beyond
+the earlier cutoff is strict:
+
+\[
+\frac{7-3\lambda}{15}-\frac{13-6\lambda}{21}
+=\frac{9\lambda-16}{105}>0.
+\tag{33}
+\]
+
+More generally, every fixed \(0<\eta<\rho_\dagger\) gives
+
+\[
+\sum_{m\le HT^{\rho_\dagger-\eta}}\mu(m)L_m(T)
+\ll
+T^{-\min\{(29-14\lambda)/60,\,\eta/4\}}.
+\tag{34}
+\]
 
 ## Remaining term
 
-The estimate proves a larger unconditional power-saving segment of the exact Möbius tail. The farther sum
+The estimate proves a larger unconditional power-saving segment of the exact
+Möbius tail. The farther sum
 
 \[
-\sum_{m>K_{\mathrm{new}}}\mu(m)L_m(T)
+\sum_{m>K_\dagger}\mu(m)L_m(T)
 \]
 
-remains the unresolved term in (12). Neither the three-dimensional estimate nor the endpoint separation supplies a bound for that range.
+remains the unresolved term in (12). Within the present Vaughan plus
+Robert--Sargos framework, the precise next obstruction occurs at
+\(d=d_\dagger\): the first Type I term in (20) and the first and third
+dual Type II terms in (24d) all reach exponent zero simultaneously.
+They are, before harmless powers \(T^\varepsilon\) and logarithms,
+
+\[
+\frac{D^{1/2}UT^{1/6}}{\sqrt N},\qquad
+\frac{D}{\sqrt N}\,N^{1/4}D^{-1/2}U^{-1/4},\qquad
+\frac{D}{\sqrt N}\,U^{-1/2}.
+\tag{35}
+\]
+
+The first term decreases only when \(U\) is shortened, while the last two
+then increase. Their simultaneous balance forces
+\(u=(3\lambda-2)/15\) and \(d=(9\lambda-1)/15\).
+Changing the Cauchy orientation again cannot improve all three terms.
