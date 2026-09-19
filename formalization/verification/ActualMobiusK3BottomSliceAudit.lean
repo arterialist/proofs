@@ -5,31 +5,34 @@ open BuildingBlocks.ActualMobiusK3BottomSlice
 
 #check endpoint_identity
 #check aspect_identities
-#check rs_bord_overlap
-#check all_short_alpha_bounds
-#check all_short_first_margin
+#check rs_bord_overlap_margin
 #check small_above_cutoff
 #check small_below_three_cutoffs
 #check forced_atom_identity
 #check uniform_buffer_ledger
 #check pruning_margin
-#check k3_margin
 #check type_i_one_identity
 #check type_i_one_negative
 #check pruning_delta_condition
 #check decomposition_length
 #check transition_reaches_previous_cutoff
+#check equality_geometry
+#check equality_short_factor_admissible
+#check equality_contact_geometry
+#check type_i_endpoint_margin
 
 #print axioms endpoint_identity
-#print axioms rs_bord_overlap
-#print axioms all_short_alpha_bounds
+#print axioms rs_bord_overlap_margin
 #print axioms uniform_buffer_ledger
 #print axioms pruning_margin
-#print axioms k3_margin
 #print axioms type_i_one_negative
 #print axioms pruning_delta_condition
 #print axioms decomposition_length
 #print axioms transition_reaches_previous_cutoff
+#print axioms equality_geometry
+#print axioms equality_short_factor_admissible
+#print axioms equality_contact_geometry
+#print axioms type_i_endpoint_margin
 
 open Lean in
 run_cmd do

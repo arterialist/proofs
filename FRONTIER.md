@@ -43,11 +43,11 @@ extends it further. The dual Robert--Sargos estimate controls rectangles near
 balance, while Bordellès controls the separated range after an explicit
 switch. The [three-factor prefix extension](building-blocks/weil-and-spectral/actual-mobius-k3-bottom-slice-saving.md)
 then works inside the same original uncollapsed Vaughan Type II term. For
-every fixed \(0<\kappa<(\lambda-2)/10\), it combines an unequal-aspect K=3
+every fixed \(0<\kappa<(\lambda-2)/5\), it combines an unequal-aspect K=3
 expansion with the published free-factor pruning theorem and moves the
 complete prefix cutoff to
 \[
-K_F=T^{\lambda/2+1/5-\kappa}.
+K_F=T^{3\lambda/5-\kappa}.
 \]
 The inherited Bourgain Type I estimate remains power saving. The remaining
 tail beyond \(K_F\) is the current open term. On each fixed

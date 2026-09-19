@@ -24,8 +24,8 @@ and retain the normalized pole-null packet and the coefficient row
 Fix
 
 \[
- 0<\kappa<\frac{\lambda-2}{10},\qquad
- d_F=\frac\lambda2+\frac15-\kappa,
+ 0<\kappa<\frac{\lambda-2}{5},\qquad
+ d_F=\frac{3\lambda}{5}-\kappa,
  \qquad K_F=T^{d_F}.
 \tag{1}
 \]
@@ -50,10 +50,10 @@ The endpoint in (1) strictly exceeds the preceding endpoint
  d_*:=\frac{2(\lambda+1)}5
 \]
 
-by every fixed amount below `(lambda-2)/10`, since
+by every fixed amount below `(lambda-2)/5`, since
 
 \[
- d_*+\frac{\lambda-2}{10}=\frac\lambda2+\frac15.
+ d_*+\frac{\lambda-2}{5}=\frac{3\lambda}{5}.
 \tag{4}
 \]
 
@@ -131,7 +131,7 @@ Write
 
 \[
  d=d_*+\delta,
- \qquad \delta_0=\frac{\lambda-2}{10}-\kappa.
+ \qquad \delta_0=\frac{\lambda-2}{5}-\kappa.
 \tag{11}
 \]
 
@@ -146,7 +146,7 @@ prefix, use
 Set the fixed switch
 
 \[
- \xi_0=\frac{\lambda-2}{2}.
+ \xi_0=\lambda-2.
 \tag{13}
 \]
 
@@ -246,42 +246,15 @@ hold with fixed margins. Thus the `3a_0` term and the
 
 remain.
 
-For the all-short part of the second term, let
-
-\[
- c_1+c_2+c_3=x,\qquad
- 0\le c_1\le c_2\le c_3\le u.
-\]
-
-Then `x-2u<=c_1<=x/3`. Group the untouched factor of exponent `y`, the
-original free factor of exponent `w`, and the smallest short factor. By
-(10),
-
-\[
- d-2u\le\alpha=w+y+c_1\le\frac{2d+\xi}{3}.
-\tag{22}
-\]
-
-The first Robert--Sargos margin is therefore
-
-\[
- \frac{\lambda-2-5\delta-\xi}{12}.
-\tag{23}
-\]
-
-For `xi<=xi_0` and `delta<=delta_0`, its numerator is at least `5kappa`.
-The second and fourth margins remain fixed and positive. This handles the
-all-short component uniformly.
-
 ## Buffered subset argument
 
-For either term in (20), let `e_1,...,e_j` be the exponents of the factors
+For either term in the surviving K=3 expansion, let `e_1,...,e_j` be the exponents of the factors
 inside the expanded smaller coefficient. Their sum is `x`. Put
 
 \[
  A_0=\frac{5\delta-\xi}{2},\qquad
  B_0=1-\frac{d+\xi}{2}.
-\tag{24}
+\tag{22}
 \]
 
 Choose the fixed buffer
@@ -297,21 +270,21 @@ The parameter range gives, uniformly for `-1/420<=delta<=delta_0` and
  u<B_0-\tau,qquad
  2(A_0+\tau)<B_0-\tau,qquad
  2(B_0-\tau)>x,
-\tag{25}
+\tag{23}
 \]
 
 \[
  x>A_0+\tau,qquad
  x-A_0-\tau>2\gamma_0+2\delta,
  \qquad \gamma_0=\frac{4-\lambda}{10}.
-\tag{26}
+\tag{24}
 \]
 
 If a subset has exponent sum
 
 \[
  A_0+\tau<s<B_0-\tau,
-\tag{27}
+\tag{25}
 \]
 
 combine it with the factors of total exponent `w+y=(d+xi)/2`. The resulting
@@ -323,10 +296,10 @@ combine it with the factors of total exponent `w+y=(d+xi)/2`. The resulting
 lies a fixed distance inside (19), so (16) or (17) saves a fixed power. The
 empty subset is allowed when `A_0+tau<0`.
 
-Suppose no subset satisfies (27). Every atom is at most `A_0+tau` or at
+Suppose no subset satisfies (25). Every atom is at most `A_0+tau` or at
 least `B_0-tau`. If the total of the small atoms exceeded `A_0+tau`, the
 first partial sum crossing that threshold would be at most
-`2(A_0+tau)<B_0-tau`, contradicting the failure of (27). Their total is at
+`2(A_0+tau)<B_0-tau`, contradicting the failure of (25). Their total is at
 most `A_0+tau`. The inequality `x>A_0+tau` forces a large atom, while
 `2(B_0-tau)>x` makes it unique. Since `u<B_0-tau`, that atom cannot carry an
 `a_0` coefficient. It is one of the unweighted convolutional `1` factors.
@@ -334,7 +307,7 @@ Its exponent `z` satisfies
 
 \[
  z\ge x-A_0-\tau>2\gamma_0+2\delta.
-\tag{28}
+\tag{26}
 \]
 
 The buffer prevents any loss when a dyadic `xi` approaches `5delta` within
@@ -342,7 +315,7 @@ The buffer prevents any loss when a dyadic `xi` approaches `5delta` within
 
 ## Divisor-bounded long-free lemma
 
-The long-free input needed in (28) is the following general form of Robert
+The long-free input needed in (26) is the following general form of Robert
 and Sargos' Theorem 3, equations (6.8)--(6.9). Let `m=qz`, `m~D`, with `z`
 an unweighted dyadic variable of exponent `rho`, and let the complementary
 `q` coefficient be bounded by a fixed divisor function. The normalized
@@ -352,19 +325,54 @@ packet block is
  \ll_\varepsilon T^\varepsilon\left(
  D^{1/2}N^{-1/4}T^{-\rho/4}+DN^{-1/2}T^{-\rho/2}
  +\frac{D}{T\sqrt N}\right).
-\tag{29}
+\tag{27}
 \]
 
 The proof uses only the divisor bound on the outer coefficient. Literal
 factor-product cutoffs are retained until partial summation in `z`, which
 uses the unweighted maximal sum in equation (6.8). No Mellin character is
 placed on `z`. The other factorization variables form the outer
-divisor-bounded coefficient. The selected atom in (28) has coefficient
-exactly one, so (29) applies. At `d=d_*+delta`, condition (28) puts all three
+divisor-bounded coefficient. The selected atom in (26) has coefficient
+exactly one, so (27) applies. At `d=d_*+delta`, condition (26) puts all three
 terms a fixed power below one.
 
-Equations (15), (23), and (25)--(29) cover every Type II rectangle with a
+Equations (15) and (23)--(27) cover every Type II rectangle with a
 uniform power. This is the complete `b_0*b_0*1` term in (6).
+
+## Equality obstruction for this method
+
+The strict loss at `d=3lambda/5` is genuine for this architecture. At the
+limiting geometry take
+
+\[
+ \delta=\frac{\lambda-2}{5},\qquad \xi=\lambda-2,
+ \qquad x=\frac{5-\lambda}{5}.
+\]
+
+In the `a_0^{*2}*1` term choose short-factor exponents
+
+\[
+ 0,\qquad s_0=\frac{5-2\lambda}{5},
+\]
+
+and free-factor exponent
+
+\[
+ z=\frac\lambda5.
+\]
+
+They sum to `x`, and `s_0<=u`. The Robert--Sargos and Bordellès intervals
+meet at one excluded endpoint: the only short subset is exactly at that
+contact, while `z` and the total product lie beyond the Bordellès upper
+endpoint. The long-free threshold is also exactly
+
+\[
+ 2\gamma_0+2\delta=\frac\lambda5=z.
+\]
+
+Thus none of the three estimates has a strict power margin on this valid
+configuration. The method proves every fixed interior cutoff in (1), but it
+does not prove the equality endpoint `d=3lambda/5`.
 
 ## Type I terms and packet shells
 
@@ -373,21 +381,21 @@ The inherited Bourgain Type I estimate is
 \[
  |S_{\rm I}|\ll_\varepsilon T^\varepsilon N^{-1/2}
  \left(D^{1/2}UT^{13/84}+\frac DT\right).
-\tag{30}
+\tag{28}
 \]
 
 At `d=d_*+delta`, its first exponent is
 
 \[
  E_{\rm I}=\frac{42\lambda-103}{1260}+\frac\delta2.
-\tag{31}
+\tag{29}
 \]
 
 For `delta<=delta_0`,
 
 \[
- E_{\rm I}\le\frac{105\lambda-229}{1260}-\frac\kappa2<0.
-\tag{32}
+ E_{\rm I}\le\frac{168\lambda-355}{1260}-\frac\kappa2<0.
+\tag{30}
 \]
 
 The second exponent is `-(lambda+6)/10+delta<0`. The remaining decomposition
