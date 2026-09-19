@@ -1,8 +1,32 @@
-# The balanced Möbius-tail hard shell
+# A balanced Möbius shell after global recombination
 
-This note isolates the arithmetic coefficient left at the endpoint of the
+**Status:** corrected exact global recombination and component-shell
+analysis, 20 September 2026. The
+coefficient identity, multiplicativity, prime-power values, and
+the arithmetic-function identities
+\((a*\mu)*\zeta=a\), \((\mu*\mu)*\zeta=\mu\), and
+\((\mu*\mu)*\zeta*\zeta=1\) are formalized and axiom-audited in
+[`ActualMobiusConvolution.lean`](../../formalization/BuildingBlocks/ActualMobiusConvolution.lean).
+The cross term cannot be discarded on a fixed free-factor slice. It cancels
+exactly only after the full free-factor sum, before any factor-dependent
+partition. The reciprocal energy reduction, power budget, and Poisson
+short-interval form are written mathematics, not Lean. The displayed shell
+is one region of a new partition of the globally rewritten sum; a complete
+analysis of every region in that new partition has not been proved. No
+signed energy gain, larger Möbius cutoff, or Riemann-hypothesis result is
+claimed.
+
+The [primary-source applicability audit](actual-mobius-tail-balanced-literature-audit.md)
+records why the closest published linear, polynomial, modular-inverse, and
+short-interval estimates do not supply the fixed-power reciprocal energy
+gain required below.
+
+The [square-factor pruning](actual-mobius-tail-squarefactor-pruning.md)
+removes, with a fixed power error, the portion in which the square component
+of \(q\) is large after this global recombination.
+
+This note gives the corrected recombination at the endpoint of the
 [rectangle-wise Möbius-tail estimate](actual-mobius-tail-robert-sargos-bordelles-saving.md).
-It is an exact reduction, not a further power-saving estimate.
 
 Let
 
@@ -33,27 +57,38 @@ Indeed, expanding \(b=\mu-a\) gives
 b*b-a*a=\mu*\mu-2a*\mu.
 \]
 
-In the new Type-II blocks, \(q\gg U^2\), so \((a*a)(q)=0\) separately as
-well. Define the full coefficient on this slice by
+On a fixed free-factor slice, \((a*\mu)(q)\) is not covered by the inherited
+Bourgain Type-I estimate: writing \(q=av\) leaves the long coefficient
+\(\mu(v)\). Instead, return to the original \(m\)-shell before introducing
+factor-dependent dyadic or Mellin weights. Since \(L_{tq}(T)=L_m(T)\)
+depends only on \(m=tq\), and \(m\asymp D>U\),
 
 \[
-d_U(q)=(\mu*\mu)(q)-2(a*\mu)(q).
-\tag{1a}
+ \sum_{tq=m}(a*\mu)(q)
+ =(a*\mu*1)(m)
+ =a(m)=0.
+\tag{2}
 \]
 
-The short factor in \(a*\mu\) has length at most \(U\), but its complementary
-factor still carries the coefficient \(\mu\). The inherited Bourgain Type-I
-estimate treats an unweighted long variable, so it does not by itself control
-this cross-term on a fixed free-factor slice. The identity
-\((a*\mu)*\mathbf 1=a\) collapses it only after the complete free-factor sum
-is restored. Consequently the exact hard coefficient is \(d_U\), not
-\(\mu*\mu\) alone.
+Consequently
 
-One explicitly structured component of \(d_U\) is
+\[
+ \sum_{tq=m}\bigl((b*b)(q)-(a*a)(q)\bigr)
+ =\sum_{tq=m}(\mu*\mu)(q).
+\tag{2a}
+\]
+
+This is the same global identity \((\mu*\mu)*1=\mu\). It is essential that
+(2) be used before slicing the free factor; no weighted-long-variable
+Type-I estimate is asserted. Dyadically repartition the right side of (2a).
+This is a new complete partition, not a termwise replacement inside the old
+fixed-slice partition. Bounds from the two partitions cannot be mixed unless
+all complementary regions are accounted for.
+Its arithmetic coefficient is
 
 \[
 c(q)=(\mu*\mu)(q).
-\tag{2}
+\tag{2b}
 \]
 
 This coefficient is multiplicative. On prime powers,
@@ -88,58 +123,21 @@ For \(\operatorname{Re}s>1\), its Dirichlet series is
 \tag{5}
 \]
 
-## Global cancellation before slicing
-
-The cross-term in (1a) cancels exactly when the complete free-factor sum is
-restored. Let \(W\) be any finitely supported weight on the positive
-integers. Finite regrouping and \(\mu*\mathbf1=\varepsilon\) give
-
-\[
-\sum_{t,q\geq1}(a*\mu)(q)W(tq)
-=\sum_{m\leq U}\mu(m)W(m).
-\tag{5a}
-\]
-
-Hence, if \(W(m)=0\) for \(m\leq U\),
-
-\[
-\sum_m\mu(m)W(m)
-=\sum_{t,q\geq1}d_U(q)W(tq)
-=\sum_{t,q\geq1}c(q)W(tq).
-\tag{5b}
-\]
-
-For the original dyadic sum one may take
-\(W(m)=\mathbf1_I(m)L_m(T)\), since \(L_{tq}(T)=L_m(T)\) depends only on
-the product \(m=tq\). Thus the complete product-weighted shell has an exact
-\(c*\mathbf1\) representation with no cancellation error.
-
-This identity must be applied before factor-dependent cutoffs. Its free
-factor \(t\) has the complete natural range. For a prime \(p>U^2\), the
-cross-term cancellation pairs \((t,q)=(1,p)\) with \((p,1)\); it therefore
-does not occur inside the restricted \(t\asymp1\), \(q>U^2\) slice. A new
-partition of the global \(c*\mathbf1\) expression is legitimate, but the
-existing Vaughan support conditions and estimates do not automatically
-transfer to every new factor range.
-
-After the established Fourier and Mellin separation, the endpoint shell has
-the form
+After Fourier and Mellin separation of one balanced region in the globally
+recombined expression, the resulting shell has the form
 
 \[
 \mathcal H_{t,J,Q}=
 \frac1{L\sqrt N}
 \sum_{k\asymp J}\gamma_k
-\sum_{q\asymp Q}d_U(q)W_k(q/Q)
+\sum_{q\asymp Q}c(q)W_k(q/Q)
 e\!\left(-\frac{kN}{tq}\right),
 \tag{6}
 \]
 
 where \(t\asymp1\), \(Q\asymp D/t\), \(J\asymp L=D/H\), and
-\(|\gamma_k|\leq1\). An estimate for the \(c\)-component alone does not
-control (6) unless the \(a*\mu\) component is also bounded or cancels after
-the free-factor slices are recombined. Equations (5a)--(5b) provide such a
-recombination only for the complete product-weighted sum, not for (6) in
-isolation.
+\(|\gamma_k|\leq1\). The cancellation in (2) has already occurred before
+this fixed-slice formula is formed.
 
 At the current analytic endpoint
 
@@ -153,8 +151,7 @@ the balanced Robert--Sargos exponent is
 \frac{5d-2\lambda-2}{8},
 \]
 
-which is zero at \(d=d_*\). If the arithmetic structure in the
-\(c\)-component (2) yields an
+which is zero at \(d=d_*\). If the arithmetic structure in (2b) yields an
 additional factor \(B^{-\sigma}\), with fixed \(\sigma>0\), the exponent
 becomes
 
@@ -169,10 +166,11 @@ d<\frac{2(\lambda+1)}{5-4\sigma}.
 \tag{7}
 \]
 
-Equation (7) quantifies a possible gain for the \(c\)-component. It does not
-move the full endpoint without a matching estimate for the cross-term in
-(1a). Generic arbitrary-coefficient large-sieve bounds do not use (2) and
-stop at \(\sigma=0\).
+Equation (7) quantifies the missing input for this region. It would move the
+component-shell endpoint, but does not move the complete tail without bounds
+for every complementary region in the new partition. Generic
+arbitrary-coefficient large-sieve bounds do not use (2b) and stop at
+\(\sigma=0\).
 
 ## The signed four-variable energy
 
@@ -189,7 +187,7 @@ Choose a real, even, nonnegative function
 \(\lvert\widehat w\rvert\) is bounded below on the bounded joint-frequency
 range in the double large sieve. Set \(\Phi=w*\widetilde w\). Then
 \(\widehat\Phi=\lvert\widehat w\rvert^2\geq0\). For the actual normalized
-coefficients \(\beta_b\) coming from the full coefficient \(d_U\), define
+coefficients \(\beta_b\), define
 
 \[
 \mathcal C_\beta(B;X)=
@@ -281,10 +279,33 @@ Robert--Sargos terms also impose, at balance,
 \tag{16}
 \]
 
-Equations (13)--(16) identify a signed-energy improvement for the full
-coefficient that would move the limiting rectangle. A bound only for the
-\(\mu*\mu\) component does not satisfy this input. No such full-coefficient
-improvement is asserted here.
+Equations (13)--(16) identify the exact signed-energy improvement that would
+move the limiting rectangle. They do not assert that this improvement is
+currently known.
+
+## Delta-symbol compatibility check
+
+Introducing a new variable \(q\) and a delta symbol for \(rs=q\) does not
+by itself expose a classical Kloosterman sum. A standard additive expansion
+would separate the shell into factors of the schematic form
+
+\[
+ \sum_{q\asymp Q}W(q/Q)e(-kN/(tq))e(-a q/c)
+ \quad\text{and}\quad
+ \sum_{r,s}\mu(r)\mu(s)e(a rs/c).
+\tag{16a}
+\]
+
+The first factor still has a mixed reciprocal-linear phase. Poisson
+summation produces a stationary-phase transform depending jointly on
+\(kN/t\), \(a/c\), and the dual frequency, rather than a complete
+Kloosterman sum to which the Weil bound applies directly. The second factor
+is an incomplete Möbius-weighted bilinear sum; completing it discards the
+signed arithmetic being sought. Consequently a delta-symbol insertion plus
+the classical Weil bound alone does not supply (13). This is a compatibility
+check, not an impossibility theorem: a useful delta route would need an
+additional theorem controlling the transformed reciprocal phase together
+with the actual Möbius weights and all packet parameters.
 
 ## Exact short-interval form
 
@@ -294,7 +315,7 @@ smooth packet factors, as
 \[
 \frac1{\sqrt N}
 \sum_{\ell\asymp N/(tQ)}
-\sum_{q\asymp Q}d_U(q)
+\sum_{q\asymp Q}c(q)
 F\!\left(L\left[\ell-\frac{N}{tq}\right]\right).
 \tag{17}
 \]
@@ -302,6 +323,5 @@ F\!\left(L\left[\ell-\frac{N}{tq}\right]\right).
 The center attached to \(\ell\) is \(q_\ell=N/(t\ell)\), the effective
 window length is \(Q/T\), and adjacent centers are spaced by order
 \(Q^2/N\). At \(Q=T^{d_*}\), these are polynomially short intervals.
-Thus (17) is an exact arithmetic restatement of the same obstruction. The
-\(\mu*\mu\) component has additional multiplicative structure, but the full
-short-interval coefficient also contains \(-2a*\mu\).
+Thus (17) is an exact arithmetic restatement of the same obstruction, not a
+known short-interval estimate for \(\mu*\mu\).

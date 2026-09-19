@@ -43,16 +43,34 @@ extends it further. The dual Robert--Sargos estimate controls rectangles near
 balance, while Bordellès controls the separated range after an explicit
 switch. The current analytic endpoint is \(2(\lambda+1)/5\); the concrete
 cutoff \(K_E=T^{2(\lambda+1)/5-1/420}\) has a power-saving prefix estimate,
-and the remaining tail beyond \(K_E\) is the current open term. Expanding the
-Vaughan pieces before absolute values gives the fixed-slice coefficient
-\((\mu*\mu)(q)-2(a*\mu)(q)\). The second term is not covered by the inherited
-unweighted Type-I estimate on that slice. In the complete product-weighted
-sum, however, it cancels exactly before factor-dependent slicing, yielding
-the global representation \(\mu=(\mu*\mu)*\mathbf1\). The
-[balanced hard-shell note](building-blocks/weil-and-spectral/actual-mobius-tail-balanced-hard-shell.md)
-records both identities. Using the global form requires a new complete
-partition analysis because the cancellation crosses free-factor ranges; a
-gain for the restricted \(\mu*\mu\) slice alone does not move the endpoint.
+and the remaining tail beyond \(K_E\) is the current open term. On each fixed
+free-factor slice, the coefficient is
+\((\mu*\mu)(q)-2(a*\mu)(q)\), and the cross term is not Bourgain Type I.
+The corrected
+[balanced-shell recombination](building-blocks/weil-and-spectral/actual-mobius-tail-balanced-hard-shell.md)
+instead sums the free factor first: for \(m>U\),
+\((a*\mu*1)(m)=a(m)=0\). Only after this exact cancellation does it
+repartition the identity \(\mu=(\mu*\mu)*1\) into shells with coefficient
+\((\mu*\mu)(q)\). This creates a new complete partition. The square-factor
+and truncated-divisor estimates control one balanced region of that new
+partition; the complementary regions have not all been bounded, so these
+component estimates cannot yet be combined with the old fixed-slice bounds
+to move the complete endpoint.
+
+The unconditional
+[free-factor pruning](building-blocks/weil-and-spectral/actual-mobius-tail-free-factor-pruning.md)
+instead keeps the original sum
+\(\sum_{r,s>U,t\ge1}\mu(r)\mu(s)L_{rst}(T)\). At
+\(D=T^{d_*+\delta}\), its portion \(t\ge T^v\) saves a fixed power whenever
+\(v>5\delta\), subject to the explicit hybrid margins, because one grouped
+factor has exponent at least \((d+v)/2\). More sharply, a dyadic triple
+\(r\asymp T^x,s\asymp T^y,t\asymp T^z\) is power-saving once
+\(z+|x-y|>5\delta+8\eta\); the unresolved range is simultaneously close to
+\(t=1\) and \(r=s\). In the residual small-\(t\) range,
+the part with \((r,s)>T^\gamma\) is power-saving for
+\(\gamma>(4-\lambda)/10+\delta\). The surviving block has small free factor,
+small common divisor, and includes \(t=1\), \((r,s)=1\),
+\(r,s\asymp D^{1/2}\). These reductions do not move the complete endpoint.
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 
