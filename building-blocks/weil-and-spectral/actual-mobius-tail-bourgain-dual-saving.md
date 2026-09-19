@@ -38,6 +38,40 @@ and
 \tag{2}
 \]
 
+More generally, put
+
+\[
+ \rho_B=d_{B,0}-(\lambda-1)
+ =\frac{197-84\lambda}{210}>0.
+\]
+
+For every fixed \(0<\eta<\rho_B\), every integer interval
+\(I\subseteq[D,2D]\), and
+
+\[
+ H\le D\le T^{d_{B,0}-\eta},
+\]
+
+the original signed block satisfies
+
+\[
+ \boxed{
+ \sum_{m\in I}\mu(m)L_m(T)
+ \ll_{\lambda,\eta}T^{-\eta/4}.}
+\tag{2a}
+\]
+
+Consequently,
+
+\[
+ \sum_{m\le H T^{\rho_B-\eta}}\mu(m)L_m(T)
+ \ll_{\lambda,\eta}
+ T^{-\min\{(29-14\lambda)/60,\eta/4\}}.
+\tag{2b}
+\]
+
+The cutoff in (2) is the specialization \(\eta=1/420\).
+
 Then
 
 \[
