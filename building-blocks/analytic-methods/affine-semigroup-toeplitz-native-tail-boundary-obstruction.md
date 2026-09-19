@@ -382,6 +382,5 @@ still leaves the complete affine Möbius matrix (34). Consequently the
 Toeplitz boundary projection supplies no additional negative future-cone
 work capable of proving the multi-prime far-clock bound.
 
-The authoritative repository was not modified. No KMS phase-transition
-claim, positive path refinement, ordinary termwise Davenport estimate, or
-RH premise is used.
+No KMS phase-transition claim, positive path refinement, ordinary termwise
+Davenport estimate, or RH premise is used.

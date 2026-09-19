@@ -1,10 +1,8 @@
 # Exact other-prime compensation on the q-flat carriers
 
-Written arithmetic derivation, 16 September 2026. This follows the
-coordinator's request to test the full all-place form on the actual
-gamma-plus-binary negative family. The identities below are proved by
-finite expansions and elementary integrals. They are not a Lean
-formalization or a proof of the full Weil sign.
+Written arithmetic derivation, 16 September 2026. The identities below
+are proved by finite expansions and elementary integrals. They are not a
+Lean formalization or a proof of the full Weil sign.
 
 Let L=log 2, r=1/sqrt 2, h=2-r-r^(-1)<0 and b=h-1. Choose the actual
 even nonnegative smooth packet eta from the gamma-binary mechanism
@@ -195,9 +193,9 @@ or RH. The exact symbolic audit checks the autocorrelation formulas
 for J=3,...,40 and the two pole/density identities for J=3,...,10.
 The displayed finite-expansion proofs apply to every J>=3.
 
-## Independent review and exact original-source consumer
+## Exact original-source consumer
 
-RH Agent3 supplied the preceding finite window calculation. RH Proof independently reviewed the full prime-power indexing, the autocorrelation endpoints, the factor of two, the density integral and the diagonal term in (4). This is written mathematics, not a compiled Lean theorem. No literature priority claim is made.
+This is written mathematics, not a compiled Lean theorem. No literature priority claim is made.
 
 The selected-prime row also has an exact finite closed form. For every J>=3 and any 0<r<1, set h=2-r-r^(-1). Then
 
@@ -292,7 +290,7 @@ $$
 
 The zero-endpoint specialization removes only the displayed boundary values. The module proves integrability of the literal finite counting prefix, the open/closed birth-atom FTC identities, and identification with CoarsePrimitive.primeErrorReal on the full covered interval. Every prime power remains through the actual von Mangoldt function. All ten theorems compile without new warnings and depend only on propext, Classical.choice and Quot.sound.
 
-The nine finite-atom and source-identification theorems were contributed by RH Agent3; the original-source theorem retaining arbitrary endpoint values was added during independent root review. These use standard FTC and integration by parts, with no novelty claim. The logarithmic-window specialization, exponential change of variables, density moment and signed finite-window frozen-source pairing are now formalized below under their explicit calculus hypotheses. The packet seed's derivative/support instantiation and the full gamma/form identity (10) remain further formalization obligations. No arithmetic sign is proved here.
+The formalization uses standard FTC and integration by parts, with no novelty claim. The logarithmic-window specialization, exponential change of variables, density moment and signed finite-window frozen-source pairing are now formalized below under their explicit calculus hypotheses. The packet seed's derivative/support instantiation and the full gamma/form identity (10) remain further formalization obligations. No arithmetic sign is proved here.
 
 ### Formalized logarithmic-window calculus and original-source pairing
 
@@ -345,7 +343,7 @@ $$
 
 Integrability uses the already proved L1 membership of the ORIGINAL frozen source at each finite C and the bounded compact kernel. It supplies no uniform bound in C and assumes no L1 or L2 membership of the infinite unfrozen source.
 
-All twenty-seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. They were contributed by RH Agent3 and independently reviewed by RH Proof, using standard calculus with no novelty claim. The packet seed's derivative/support instantiation is now formalized below. The complete gamma/form identity remains a further obligation. The signed arithmetic estimate remains open.
+All twenty-seven theorems compile without warnings and depend only on propext, Classical.choice and Quot.sound. They use standard calculus, with no novelty claim. The packet seed's derivative/support instantiation is now formalized below. The complete gamma/form identity remains a further obligation. The signed arithmetic estimate remains open.
 
 ### Formal smooth seed and literal autocorrelation regularity
 
@@ -353,11 +351,11 @@ All twenty-seven theorems compile without warnings and depend only on propext, C
 
 The final theorem instantiates the entire signed finite-window identity above with R=R_f and D=deriv R_f. Its assumptions are smoothness of f, the explicit seed radius bound, 2r<d, and the existing ordinary window/cutoff geometry 1<=N<=C, 0<=d<=s_i, s_i+d<=log N. Continuity of R and D, the global derivative identity, their support bounds, and compact support of f are proved rather than assumed separately. The original frozen source a_C, every actual von Mangoldt atom, every real signed coefficient, and the density factor M_f(1/2)M_f(-1/2) remain unchanged.
 
-All eight theorems compile without warnings and use only propext, Classical.choice and Quot.sound. RH Agent3 contributed the seven-theorem convolution and support handoff; RH Proof independently reviewed the substitution, support geometry and literal source specialization, derived compact support from the radius bound, and integrated the resulting eight theorems. These are standard smooth convolution and finite-window calculus, with no priority claim. No gamma-form identification, uniform source bound, or signed arithmetic upper estimate follows from this regularity theorem.
+All eight theorems compile without warnings and use only propext, Classical.choice and Quot.sound. These are standard smooth convolution and finite-window calculus, with no priority claim. No gamma-form identification, uniform source bound, or signed arithmetic upper estimate follows from this regularity theorem.
 
 ## Finite Green identity after density cancellation
 
-A subsequent RH Agent3 calculation, independently checked by RH Proof, makes the same cancellation local in a two-sided sequence. This section uses H for the sequence kernel, to distinguish it from the physical test kernel W(y) in (9).
+A subsequent calculation makes the same cancellation local in a two-sided sequence. This section uses H for the sequence kernel, to distinguish it from the physical test kernel W(y) in (9).
 
 Set A=Gamma(eta)+2D, H_0=A and H_m=-P_|m|-E_|m| for m!=0. The raw all-place sequence is H_m-D(r^m+r^(-m)), including its diagonal Gamma(eta). Put alpha=r+r^(-1) and
 
@@ -411,7 +409,7 @@ The exponential tail of P gives K_J=A-2 sum_(m>=1)P_m+O(1/J), by its finite firs
 
 ## Exact response to exponential modes
 
-RH Proof supplied the following bounded test of what the finite filter itself can remove. Extend the finite linear residual R_J to complex sequences. For X_m=q^m with q!=0,1, put d=q+q^(-1)-2. The exact response for every J>=3 is
+The following bounded test shows what the finite filter itself can remove. Extend the finite linear residual R_J to complex sequences. For X_m=q^m with q!=0,1, put d=q+q^(-1)-2. The exact response for every J>=3 is
 
 $$
  \mathcal R_J(X)=\frac{2q}{1-q}
@@ -451,7 +449,7 @@ This is a response calculation, not an assumption that the actual arithmetic err
 
 ## Compiled finite weighted sums and exact response
 
-[FiniteTriangularGeometric.lean](../../formalization/BuildingBlocks/FiniteTriangularGeometric.lean) contains six theorems supplied and independently checked by RH Proof. It proves the recurrence for the literal finite reversed weighted sum, its polynomial identity for every complex q and every natural length, and equality to the forward weighted sum by exact index reflection. Removing its k=0 term gives precisely the positive-lag triangular sum. Its rational closed form requires only q!=1. The exact finite mode-residual theorem retains both endpoint powers and the first-window correction and proves (13) for q!=0,1, h!=0 and positive length.
+[FiniteTriangularGeometric.lean](../../formalization/BuildingBlocks/FiniteTriangularGeometric.lean) contains six theorems. It proves the recurrence for the literal finite reversed weighted sum, its polynomial identity for every complex q and every natural length, and equality to the forward weighted sum by exact index reflection. Removing its k=0 term gives precisely the positive-lag triangular sum. Its rational closed form requires only q!=1. The exact finite mode-residual theorem retains both endpoint powers and the first-window correction and proves (13) for q!=0,1, h!=0 and positive length.
 
 The mode residual is defined from the actual finite weighted sum; no infinite geometric convergence, prime-error estimate, spectral expansion or RH premise appears. All six assumption checks report only propext, Classical.choice and Quot.sound, without new warnings or admitted proofs. These are formalizations of standard finite-sum algebra and its application to the published signed residual, with no novelty claim for the geometric identities. The limit, pole-root specialization, full correlation and frozen-source specialization of the logarithmic-window bridge, full Green identity and signed bound remain additional Lean obligations.
 

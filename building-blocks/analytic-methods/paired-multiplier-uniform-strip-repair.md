@@ -1,8 +1,8 @@
 # Uniform paired multiplier bound and smaller full signed histories
 
-Developed in the RH Agent3 branch, with independent mathematical review by RH Proof. The full analytic conclusions remain written proofs; compiled finite algebra is linked separately. No novelty or RH claim is made.
+The full analytic conclusions remain written proofs; compiled finite algebra is linked separately. No novelty or RH claim is made.
 
-This written, independently audited calculation strengthens the large-history full signed
+This written calculation strengthens the large-history full signed
 comparison. It uses exact finite coefficients of the actual local
 scattering approximation. It neither assigns a sign to the Weil form
 nor proves RH. The exact finite paired polynomial, exponential moment

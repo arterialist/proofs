@@ -494,7 +494,7 @@ Thus the upgrade produces an exact reduction rather than a proof of the
 arithmetic estimate. It isolates the only unbounded component of
 \(R_X^\varepsilon\) after all already-paid geometry is restored.
 
-## 8. Review checks
+## 8. Verification checks
 
 1. Expanding (11) twice and integrating in \(t\) gives (12) with the index
    \(a+b-2\).
@@ -513,6 +513,5 @@ arithmetic estimate. It isolates the only unbounded component of
    \(\|x+y+z\|^2\le3(\|x\|^2+\|y\|^2+\|z\|^2)\), so every cross-region term
    is retained.
 
-The authoritative repository was not modified. No fixed-prime limit, RH
-premise, deleted power, off-domain division state, or unpaid clock/angular
-term is used.
+No fixed-prime limit, RH premise, deleted power, off-domain division state,
+or unpaid clock/angular term is used.

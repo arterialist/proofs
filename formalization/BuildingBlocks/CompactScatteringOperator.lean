@@ -4,7 +4,7 @@ import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 open scoped ContDiff
 
 /-! Literal finite translation operator and its finitely supported coefficients.
-RH Proof formalization. No source-sign or RH assumption. -/
+No source-sign or RH assumption. -/
 namespace BuildingBlocks.CompactScatteringOperator
 open BuildingBlocks.CompactScatteringPackets
 open BuildingBlocks.CompactScatteringCoefficients

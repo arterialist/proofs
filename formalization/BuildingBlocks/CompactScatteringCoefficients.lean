@@ -1,7 +1,6 @@
 import BuildingBlocks.CompactScatteringPackets
 
-/-! Exact coefficients of the finite scattering history on a finite phase box.
-RH Proof formalization of Agent3's finite construction. -/
+/-! Exact coefficients of the finite scattering history on a finite phase box. -/
 namespace BuildingBlocks.CompactScatteringCoefficients
 open BuildingBlocks.CompactLocalScatteringSigns
 

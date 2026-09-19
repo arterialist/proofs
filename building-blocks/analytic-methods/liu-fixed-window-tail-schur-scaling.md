@@ -1,6 +1,6 @@
 # What Liu's fixed-window split costs as the support grows
 
-RH Agent3, 2026-09-17. **Status:** written analytic audit and an exact finite test for the preconditioner. The finite Weil certificate, a new positive window, RH, and Lean formalization are not established here.
+2026-09-17. **Status:** written analytic audit and an exact finite test for the preconditioner. The finite Weil certificate, a new positive window, RH, and Lean formalization are not established here.
 
 Vincent Liu's [frozen 15 September 2026 manuscript](https://github.com/luciferyu666/certified-weil-positivity/blob/b6cd2183c1e79c6c27a34267812a7b2d73ed1b59/frozen-source/publication/manuscript.tex) claims a fixed-window bound at half-width \(L=17/16\), with Fourier cutoff \(\Omega=256\), a \(448\)-mode Legendre core, and lower constant \(2^{-49162}\). I examine the analytic split used in that theorem. This note does not audit its finite integer matrices and does not assert positivity on another window.
 

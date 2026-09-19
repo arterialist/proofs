@@ -1,6 +1,6 @@
 # The actual gamma and binary histories do not suffice for completion
 
-Written mathematical mechanism test by RH Agent3, 16 September 2026. Uses the exact
+Written mathematical mechanism test, 16 September 2026. Uses the exact
 global-moment carrier arrays in [the complete binary-history extremizer](../prime-history/binary-global-pole-history-extremizer.md).
 No full Weil sign, RH conclusion, or Lean theorem is claimed.
 
@@ -120,21 +120,9 @@ energy through its own negative signed arithmetic quadratic. Therefore
 a proposed gamma-plus-binary positive completion, and shows why the
 full signed divisor-incidence coupling remains necessary.
 
-Independent Sol mathematical audit passed the digamma integral bound,
-recurrence, smooth-packet construction, Jensen--Plancherel upper bound,
-FULL first-exponential gamma row, binary proper-power norm, Toeplitz
-limits and real globally mean-and-pole-null carrier extension. No
-canonical or Lean edits made.
+## Scalar formalization
 
-
-## Independent lead review and scalar formalization
-
-RH Proof independently reviewed the mollified nonnegative cosine
-packet, H1 derivative quotient, DLMF integral and recurrence, Jensen
-with the actual spectral probability, complete first-exponential
-gamma cross row, absolute summability, endpoint Toeplitz argument,
-and fixed-theta real mean-null extension. The gamma distributional
-origin is present in A(eta), not assigned an off-origin kernel value.
+The gamma distributional origin is present in A(eta), not assigned an off-origin kernel value.
 Every local moment in (2) is positive; global pole nulls do not remove
 that first exponential separately. The finite full Weil formula still
 includes every odd-prime power at its actual eligible shift.
@@ -150,7 +138,7 @@ packet construction, Jensen--Plancherel step, infinite gamma symbol,
 constrained extremizer or partial-form counterexample. These remain
 written mathematics and further Lean obligations.
 
-The independently checked conclusion refutes only the proposed
+The conclusion refutes only the proposed
 positive completion Gamma-A2 on these admissible growing arrays.
 It does not refute full Weil positivity or prove an RH disproof.
 In particular, nonnegativity of eta does not sign the full arithmetic

@@ -1,6 +1,6 @@
 import BuildingBlocks.CompactLocalScatteringSigns
 
-/-! Agent3 finite-packet prerequisites, independently reviewed by RH Proof.
+/-! Finite-packet prerequisites.
 The physical operator assembly and smooth pole-null bump existence remain written. -/
 namespace BuildingBlocks.CompactScatteringPackets
 
