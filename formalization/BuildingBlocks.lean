@@ -596,3 +596,4 @@ import BuildingBlocks.ChirpedDyadicTailEnergy
 import BuildingBlocks.ChirpedMasterSpectralVanishingBridge
 import BuildingBlocks.ChirpedLinearSpanDominance
 import BuildingBlocks.ChirpedPartitionRefutationSynthesis
+import BuildingBlocks.ChirpedCanonicalWavepacketAdmissibility
