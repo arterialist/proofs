@@ -598,3 +598,4 @@ import BuildingBlocks.ChirpedLinearSpanDominance
 import BuildingBlocks.ChirpedPartitionRefutationSynthesis
 import BuildingBlocks.ChirpedCanonicalWavepacketAdmissibility
 import BuildingBlocks.ChirpedLinearCarrierAssembly
+import BuildingBlocks.ChirpedPairEnergyAlgebra
