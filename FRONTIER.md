@@ -110,6 +110,17 @@ At \(X=T^2\), dyadic summation controls every fixed prefix
 repository's center-averaged prefix beyond its pointwise \(T^{6/5}\)
 cutoff, but the transition shell at \(T^{3/2}\), the remaining tail, and
 the translation to the prescribed center remain open.
+The [critical-window estimate](building-blocks/weil-and-spectral/actual-mobius-critical-window-log-saving.md)
+now treats that exact transition shell. Using the maximal untwisted Möbius
+estimate stated after MRSTT equation (1.7), it proves for every fixed
+\(B>0\)
+\[
+ X^{-1}\int_X^{2X}|\mathcal S_{T^{3/2}}(N,T)|\,dN
+ \ll_B(\log T)^{-B}.
+\]
+This includes the logarithmic cofactor weight and every prime power. It is
+still an almost-all-real-centers result. The complementary shells and the
+translation to the prescribed center remain open.
 Independently, the
 [Selberg mean-square estimate](building-blocks/weil-and-spectral/actual-prime-packet-selberg-almost-all-center.md)
 controls the complete prime row, with every \(\Lambda(p^j)=\log p\), over
