@@ -24,6 +24,13 @@ with a fixed power saving. More generally, for every fixed
 \(T^{-\min\{(29-14\lambda)/60,\eta/4\}}\).
 Equivalently, it writes the prime row as the Möbius tail beyond the larger
 cutoff plus a power-decaying error. The farther tail remains uncontrolled.
+The [Bourgain and dual-trilinear extension](building-blocks/weil-and-spectral/actual-mobius-tail-bourgain-dual-saving.md)
+replaces the Type I third-derivative exponent by Bourgain's exponent pair while
+retaining the dual Type II estimate. It moves the analytic endpoint from
+\(d_\dagger=(9\lambda-1)/15\) to
+\((126\lambda-13)/210\); a fixed-margin cutoff
+\(K_B=T^{(84\lambda-9)/140}\) has a power-saving prefix estimate. The
+remaining tail beyond \(K_B\) is the current open term.
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 
