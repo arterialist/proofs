@@ -154,7 +154,7 @@ Thus
 \widehat G_T(0)=\widehat Q_T(0)=0.
 \]
 
-Poisson summation applied to \(x\mapsto(\log x)g_N(mx)\) gives the exact identity
+Extend \(x\mapsto(\log x)g_N(mx)\) by zero to the negative half-line. The packet is supported in a compact subinterval of \((0,\infty)\), so this extension is smooth. Poisson summation then gives the exact identity
 
 \[
 \boxed{
@@ -362,7 +362,7 @@ Robert and Sargos' theorem applies with
 (H_0,N_0,M_0)=(J,B,A),\qquad
 (\beta_0,\gamma_0,\alpha_0)=(1,-1,-1),
 \qquad
-X=\frac{NJ}{D}=\frac{TJ}{L}.
+X=\frac{NJ}{AB}\asymp\frac{NJ}{D}=\frac{TJ}{L}.
 \tag{22}
 \]
 
@@ -372,7 +372,7 @@ Its nondegeneracy condition
 \alpha_0(\alpha_0-1)\beta_0\gamma_0\ne0
 \]
 
-is satisfied. Equation (1.3) of the cited paper gives
+is satisfied. For shells with \(X>1\), equation (1.3) of the cited paper gives
 
 \[
 |S_{\mathrm{II},J}|
@@ -389,7 +389,15 @@ is satisfied. Equation (1.3) of the cited paper gives
 
 This is a bound for the full trilinear block. It is not obtained by discarding the off-diagonal part of a Cauchy expansion.
 
-Schwartz decay handles \(J\gg L\), while the zero in (13) supplies the factor needed for \(J\ll L\). Summing all shells gives
+The shells with \(J<L/T\), hence \(X\ll1\), are treated without Robert--Sargos. The zero in (13) makes the Fourier amplitude \(O(J/L)\); trivial summation in (21) therefore gives
+
+\[
+|S_{\mathrm{II},J}|
+\ll T^\varepsilon(\log T)^C\frac{D}{\sqrt N}
+\left(\frac JL\right)^2.
+\]
+
+Their dyadic sum is \(O(T^\varepsilon D/(\sqrt N T^2))\), which is dominated by (24). For \(L/T\ll J\ll L\), Robert--Sargos applies and the same zero supplies the small-mode factor needed when summing (23). Schwartz decay handles \(J\gg L\). Summing all shells gives
 
 \[
 \boxed{
