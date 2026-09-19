@@ -1341,3 +1341,7 @@ This directory contains standalone, self-contained mathematical reports on the *
 334. [Exact Critical Three-Halves Screw Remainder Budget and Scale Invariance](exact-critical-three-halves-screw-remainder-budget-and-scale-invariance.md)
     - *Result:* Machine-verified exact dyadic remainder budget $|\Delta| \le 2\sqrt{x}b + \frac{x}{2}b_{\text{sq}}$, exact scale-invariant collapse to universal constant $25C/2$ under Fujii critical $3/2$ exponent, and two-sided margin transfer inequalities.
     - *Status:* Rigorous mathematical derivation + Lean formalization; unique in literature.
+
+335. [Exact Dual Dirichlet Offline Decay and Power Suppression Threshold](exact-dual-dirichlet-offline-decay-and-power-suppression-threshold.md)
+    - *Result:* Machine-verified exact displacement decomposition $\alpha(1/2+\varepsilon, \delta) = \delta/2 - \varepsilon(1-\delta)$ and critical parameter threshold $\delta_{\text{crit}} = \varepsilon/\beta$, proving that for any off-line zero candidate $\beta > 1/2$, the short dual Dirichlet sum multiplied by the scattering factor $\chi(\rho)$ exhibits strict negative power decay $O(T^{-\kappa})$ as $T \to \infty$.
+    - *Status:* Rigorous mathematical derivation + Lean formalization (`DualDirichletOfflineDecay.lean`); unique in literature.

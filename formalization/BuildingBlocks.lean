@@ -561,3 +561,4 @@ import BuildingBlocks.CriticalChirpedGramFinite
 import BuildingBlocks.CriticalChirpedEndpointFinite
 import BuildingBlocks.CriticalChirpedLaplaceFinite
 import BuildingBlocks.SuccessorMangoldtParity
+import BuildingBlocks.DualDirichletOfflineDecay
