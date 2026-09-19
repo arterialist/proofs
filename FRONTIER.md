@@ -43,7 +43,12 @@ extends it further. The dual Robert--Sargos estimate controls rectangles near
 balance, while Bordellès controls the separated range after an explicit
 switch. The current analytic endpoint is \(2(\lambda+1)/5\); the concrete
 cutoff \(K_E=T^{2(\lambda+1)/5-1/420}\) has a power-saving prefix estimate,
-and the remaining tail beyond \(K_E\) is the current open term.
+and the remaining tail beyond \(K_E\) is the current open term. Expanding the
+Vaughan pieces before absolute values reduces the balanced obstruction to the
+[exact coefficient \((\mu*\mu)(q)\)](building-blocks/weil-and-spectral/actual-mobius-tail-balanced-hard-shell.md),
+whose Dirichlet series is \(1/\zeta(s)^2\). A fixed \(B^{-\sigma}\) gain for
+that reciprocal shell would move the endpoint to
+\(2(\lambda+1)/(5-4\sigma)\).
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 

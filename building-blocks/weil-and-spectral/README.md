@@ -12,5 +12,6 @@ Weil forms, Suzuki operators, Connes models, and prime-shift spectral tests.
 - [A Bordellès trilinear extension of the actual Möbius tail](actual-mobius-tail-bordelles-saving.md)
 - [A Cao--Zhai large-sieve extension of the actual Möbius tail](actual-mobius-tail-cao-zhai-large-sieve-saving.md)
 - [A Robert--Sargos--Bordellès extension of the actual Möbius tail](actual-mobius-tail-robert-sargos-bordelles-saving.md)
+- [The balanced Möbius-tail hard shell](actual-mobius-tail-balanced-hard-shell.md)
 
-[Browse all 119 notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.
+[Browse all 120 indexed notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.
