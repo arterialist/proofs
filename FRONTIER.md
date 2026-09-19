@@ -57,6 +57,20 @@ partition; the complementary regions have not all been bounded, so these
 component estimates cannot yet be combined with the old fixed-slice bounds
 to move the complete endpoint.
 
+The [long-free-factor reduction](building-blocks/weil-and-spectral/actual-mobius-global-long-free-factor-reduction.md)
+controls a larger part of that global partition. At
+\(d=2(\lambda+1)/5+\delta\), Robert--Sargos Theorem 3 gives fixed-power
+saving whenever
+\[
+ w\ge 2(4-\lambda)/10+2\delta+\theta,
+\]
+subject to the explicit nonempty-range and saving margins in the note.
+Equivalently, it controls
+\(v\le(3\lambda-2)/5-\delta-\theta\). The proof inserts the packet by
+bounded-variation partial summation in the unweighted free factor. The
+short-free-factor balanced blocks remain open, so this does not move the
+complete pointwise endpoint.
+
 The unconditional
 [free-factor pruning](building-blocks/weil-and-spectral/actual-mobius-tail-free-factor-pruning.md)
 instead keeps the original sum
