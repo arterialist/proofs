@@ -85,6 +85,19 @@ off-diagonal gain threshold before the requested margin. After normalization,
 the diagonal also requires \(\eta<(3\lambda-2)/10\). The finite
 expansion, diagonal, reciprocal gap, coherence-scale identity, and exponent
 rewrite are Lean-compiled; no power-saving correlation estimate is known.
+For the exact swapped tail, the
+[almost-all-center estimate](building-blocks/weil-and-spectral/actual-mobius-tail-almost-all-center-small-n.md)
+uses the 2026 Matomäki--Radziwiłł--Shao--Tao--Teräväinen maximal
+short-interval theorem without unioning its exceptional sets. Averaging the
+packet center gives cancellation, on average with prefactor
+\(T^{\lambda/2-1}\), for outer variables
+\(n\le T^z\) when
+\(z<\lambda-(2/3-\epsilon)^{-1}\). At \(\lambda=2\) this approaches
+\(z<1/2\) and tends to zero outside a relative
+\(O((\log T)^{-M})\) exceptional set of real centers. For fixed
+\(\lambda>2\), the displayed prefactor grows, so this is only logarithmic
+cancellation relative to the absolute bound, not an \(o(1)\) estimate.
+The complementary larger-\(n\) range remains uncontrolled.
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 
