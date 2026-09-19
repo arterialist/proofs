@@ -572,3 +572,4 @@ import BuildingBlocks.ChirpedFresnelGaussianLocalization
 import BuildingBlocks.ChirpedFresnelPhaseCoherence
 import BuildingBlocks.ChirpedConstellationSpanAmplification
 import BuildingBlocks.ChirpedArithmeticArchimedeanMargin
+import BuildingBlocks.ChirpedWeilSpectralDecomposition
