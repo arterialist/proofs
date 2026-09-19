@@ -595,3 +595,4 @@ import BuildingBlocks.ChirpedOfflineSingularCertificate
 import BuildingBlocks.ChirpedDyadicTailEnergy
 import BuildingBlocks.ChirpedMasterSpectralVanishingBridge
 import BuildingBlocks.ChirpedLinearSpanDominance
+import BuildingBlocks.ChirpedPartitionRefutationSynthesis
