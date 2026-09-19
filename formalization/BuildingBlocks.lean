@@ -582,3 +582,4 @@ import BuildingBlocks.ChirpedBrunTitchmarshMass
 import BuildingBlocks.ChirpedBrunTitchmarshRowBound
 import BuildingBlocks.ChirpedGrandSynthesis
 import BuildingBlocks.AutocorrelationFourierPositivity
+import BuildingBlocks.ChirpedZeroPartitionSynthesis
