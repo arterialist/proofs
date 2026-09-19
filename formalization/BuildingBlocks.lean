@@ -594,3 +594,4 @@ import BuildingBlocks.ChirpedTriPartitionSpectralBound
 import BuildingBlocks.ChirpedOfflineSingularCertificate
 import BuildingBlocks.ChirpedDyadicTailEnergy
 import BuildingBlocks.ChirpedMasterSpectralVanishingBridge
+import BuildingBlocks.ChirpedLinearSpanDominance
