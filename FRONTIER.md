@@ -1,6 +1,6 @@
 # Current RH research status
 
-Updated 19 September 2026. Counting by $n\mapsto n+1$ and multiplicative factorization motivate the arithmetic objects here. The remaining problem is a quantitative bound for their complete signed error. An identity describing that error is not such a bound.
+Updated 20 September 2026. Counting by $n\mapsto n+1$ and multiplicative factorization motivate the arithmetic objects here. The remaining problem is a quantitative bound for their complete signed error. An identity describing that error is not such a bound.
 
 ## Checked results and their scope
 
@@ -71,6 +71,20 @@ the part with \((r,s)>T^\gamma\) is power-saving for
 \(\gamma>(4-\lambda)/10+\delta\). The surviving block has small free factor,
 small common divisor, and includes \(t=1\), \((r,s)=1\),
 \(r,s\asymp D^{1/2}\). These reductions do not move the complete endpoint.
+On the coprime primitive block, regrouping by \(n=rs\) gives the exact
+coefficient \(\mu(n)d_{R,S}(n)\); every factorization in one product fiber
+has the same sign, so cancellation must occur between distinct products.
+The
+[reciprocal short-shift reduction](building-blocks/weil-and-spectral/actual-mobius-reciprocal-short-shift-reduction.md)
+expands the primitive \(t=1\) Poisson-mode mean square into its exact
+two-point kernel. Its zero-resonance branch is coherent for
+\(|h|\lesssim D/T\), while nonzero
+integer resonance branches remain in the complete expansion. At the
+endpoint, \(D/T=T^{(2\lambda-3)/5}\), the same exponent as the strict
+off-diagonal gain threshold before the requested margin. After normalization,
+the diagonal also requires \(\eta<(3\lambda-2)/10\). The finite
+expansion, diagonal, reciprocal gap, coherence-scale identity, and exponent
+rewrite are Lean-compiled; no power-saving correlation estimate is known.
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 
