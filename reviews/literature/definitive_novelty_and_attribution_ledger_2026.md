@@ -11,8 +11,8 @@
 An exhaustive online literature search across arXiv, MathSciNet, Google Scholar, Zentralblatt MATH, and formal library archives (Mathlib4, Isabelle/AFP, Coq/ROC) was conducted to rigorously test every uniqueness and novelty claim in this repository.
 
 This ledger establishes:
-1. **Three Hundred Thirty-Five Verified Unique Mathematical Contributions:** Novel mathematical theorems, bounds, and criteria that do not appear in prior literature, with explicit antecedent delineations and journal publication pathways (fully cataloged in [`unique-contributions/README.md`](../../unique-contributions/README.md) and individual treatises in [`unique-contributions/`](../../unique-contributions/)).
-2. **Three Hundred Forty-Four First Formalizations in Lean 4:** Machine-checked developments formalizing mathematical structures never previously verified in any proof assistant, compiled with Lean 4.24.0 and depending strictly on the three standard foundational axioms (`propext`, `Classical.choice`, `Quot.sound`) (fully cataloged in [`first-formalizations/README.md`](../../first-formalizations/README.md) and individual treatises in [`first-formalizations/`](../../first-formalizations/)).
+1. **Three Hundred Thirty-Six Verified Unique Mathematical Contributions:** Novel mathematical theorems, bounds, and criteria that do not appear in prior literature, with explicit antecedent delineations and journal publication pathways (fully cataloged in [`unique-contributions/README.md`](../../unique-contributions/README.md) and individual treatises in [`unique-contributions/`](../../unique-contributions/)).
+2. **Three Hundred Forty-Five First Formalizations in Lean 4:** Machine-checked developments formalizing mathematical structures never previously verified in any proof assistant, compiled with Lean 4.24.0 and depending strictly on the three standard foundational axioms (`propext`, `Classical.choice`, `Quot.sound`) (fully cataloged in [`first-formalizations/README.md`](../../first-formalizations/README.md) and individual treatises in [`first-formalizations/`](../../first-formalizations/)).
 3. **A Definitive Literature Refutation:** An uncorrectable mathematical error in Masatoshi Suzuki's preprint *Weil's quadratic form via the screw function* (arXiv:2606.09096v1, Corollary 1.6) is proved via Rolle's theorem on $\xi'(1/2-it)$.
 4. **A New Frontier Breakthrough:** The resolution of the small-cofactor barrier ($k=2$) via the **Dual Dirichlet Polynomial Cancellation of Proper Cofactors** and the **Dual Dirichlet Offline Power Suppression Theorem**, proving that for any off-line zero candidate $\beta > 1/2$, the short dual Dirichlet polynomial is unconditionally power-suppressed as $T^{-\kappa}$ whenever $\delta < \varepsilon/\beta$.
 
@@ -932,6 +932,7 @@ This ledger establishes:
 | Goldbach Screw Critical Remainder Invariance | Research Article + Lean | Arterialist RH Research Team | *Ramanujan J.* |
 | Odd Weak Ground Prime Reflection | Research Article + Lean | Arterialist RH Research Team | *J. Number Theory* |
 | Dual Dirichlet Offline Decay and Threshold | Research Article + Lean | Arterialist RH Research Team | *Invent. Math.* / *J. Number Theory* |
+| Proper-Cofactor Dirichlet Dual Algebra | Research Article + Lean | Arterialist RH Research Team | *J. Number Theory* / *Forum Math. Sigma* |
 | Lean 4 Weil & Arithmetic Library | Formal Verification | Arterialist RH Research Team | *Journal of Automated Reasoning* |
 
 
