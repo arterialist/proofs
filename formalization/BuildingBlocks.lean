@@ -565,3 +565,4 @@ import BuildingBlocks.DualDirichletOfflineDecay
 import BuildingBlocks.ActualCofactorDirichletDualAlgebra
 import BuildingBlocks.ActualCofactorSpectralNeutralization
 import BuildingBlocks.ActualWeilSignObstruction
+import BuildingBlocks.ChirpedSpectralArithmeticExclusion
