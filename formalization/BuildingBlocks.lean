@@ -641,3 +641,4 @@ import BuildingBlocks.RiemannZetaHighFrequencySynthesis
 import BuildingBlocks.RiemannZetaAutonomousGrandPartition
 import BuildingBlocks.RiemannZetaMasterGrandUnification
 import BuildingBlocks.RiemannZetaCharacteristicDeterminant
+import BuildingBlocks.RiemannZetaSpectralDissipation
