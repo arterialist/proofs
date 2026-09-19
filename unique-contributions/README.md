@@ -1496,3 +1496,7 @@ This directory catalogs mathematical reports developed across the repository. St
 379. [RH from a supplied universal Weil evaluator and zeta symmetries](weil-explicit-grand-rh-bridge.md)
     - *Result:* Imaginary-part trichotomy from a `UniversalWeilSystem`, Schwarz reflection, and real-axis nonvanishing.
     - *Status:* Conditional logical assembly. It duplicates entry 378's bridge pattern and constructs no universal evaluator.
+
+380. [Rectangle-wise Robert--Sargos--Bordellès saving for the actual Möbius tail](actual-mobius-tail-robert-sargos-bordelles-saving.md)
+    - *Result:* Unconditional power-saving control of the exact signed Möbius prefix through \(K_E=T^{2(\lambda+1)/5-1/420}\), improving the preceding analytic endpoint from \((3\lambda+1)/6\) to \(2(\lambda+1)/5\).
+    - *Status:* Written analytic theorem independently checked against the Robert--Sargos and Bordellès source statements and the exact packet reduction; priority is provisional after targeted search.

@@ -38,7 +38,12 @@ uses their stronger estimate on nearly balanced Type II rectangles and the
 Bordellès estimate away from balance. This moves the endpoint to
 \((3\lambda+1)/6\). The concrete cutoff
 \(K_D=T^{(3\lambda+1)/6-1/420}\) has a power-saving prefix estimate, and
-the remaining tail beyond \(K_D\) is the current open term.
+the [rectangle-wise Robert--Sargos--Bordellès hybrid](building-blocks/weil-and-spectral/actual-mobius-tail-robert-sargos-bordelles-saving.md)
+extends it further. The dual Robert--Sargos estimate controls rectangles near
+balance, while Bordellès controls the separated range after an explicit
+switch. The current analytic endpoint is \(2(\lambda+1)/5\); the concrete
+cutoff \(K_E=T^{2(\lambda+1)/5-1/420}\) has a power-saving prefix estimate,
+and the remaining tail beyond \(K_E\) is the current open term.
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 
