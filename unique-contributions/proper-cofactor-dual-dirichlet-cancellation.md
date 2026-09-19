@@ -1,9 +1,20 @@
 # Proper-cofactor cutoff transfer and dual Dirichlet reduction
 
-**Status:** incomplete written reduction, corrected 19 September 2026
-**Classification:** exact Mellin scaling and an individual-zero approximate-functional-equation identity
+**Status:** checked arithmetic cutoff estimate and incomplete spectral reduction, corrected 19 September 2026
+**Classification:** written application of classical estimates; priority not established
 
-## Result
+## Arithmetic cutoff estimate
+
+The [updated research note](../building-blocks/weil-and-spectral/actual-proper-cofactor-dirichlet-dual-cancellation.md) proves
+
+$$
+\left|P_1(T)+\sum_{2\le k\le K}P_k(T)\right|
+\ll T^{-(29-14\lambda)/60},\qquad 2<\lambda<29/14,
+$$
+
+for its specified cutoff $K$. It transfers the saved small-prime prefix to the omitted cofactor tail, with two explicit boundary rows. This bounds the combined expression; it does not isolate $P_1$ or justify the discarded spectral remainders. No originality claim is made for the elementary transfer.
+
+## Spectral reduction
 
 Let `g_N` be the pole-null packet used in the associated Weil calculation. For every integer `k >= 1` and nontrivial zeta zero `rho`, the change of variables `u = kx` gives the exact factorization
 
@@ -42,7 +53,7 @@ The `-1` term displays a formal cancellation with the `k = 1` factor after inser
 
 This reduction does not bound the dual Dirichlet polynomial. Its length is `y_rho = |gamma| / (2 * pi * K)`, which is comparable to `T ^ delta` only within the chosen height band and is not a common cutoff `T ^ delta / (2 * pi)` for every zero.
 
-The report also does not justify exchanging the cofactor and full zero sums, control zeros outside the selected height band, bound the omitted cofactor tail, or prove uniform bounds for the pole, archimedean, truncation, and smoothing remainders. The individual-zero error cannot be promoted to a complete `O(T ^ (-delta / 2))` zero-sum error without those arguments.
+The spectral reduction does not justify exchanging the cofactor and full zero sums, control zeros outside the selected height band, or prove uniform bounds for the pole, archimedean, truncation, and smoothing remainders. The omitted cofactor tail is bounded separately by the arithmetic cutoff estimate above. The individual-zero error cannot be promoted to a complete `O(T ^ (-delta / 2))` zero-sum error without those arguments.
 
 Accordingly, the exact factorization and individual-zero dual identity are useful reductions. They do not eliminate the `O(H / sqrt N)` barrier, prove a signed estimate for the complete prime row, or resolve an RH obstruction.
 

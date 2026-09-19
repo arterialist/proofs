@@ -15,7 +15,7 @@ $$
 where
 
 $$
- w(t)=\frac1{t^2}-\frac1{t(e^t-1)}>0 \qquad $t>0$.
+ w(t)=\frac1{t^2}-\frac1{t(e^t-1)}>0 \qquad (t>0).
 $$
 
 The claim is
@@ -120,7 +120,7 @@ $$
  \left(\frac{g_N(t)}N\right)^2w(t)
  \le
  \begin{cases}
- \dfrac{e^2}{2}\,t\log^2(2/t),&0<t\le1,\$$4pt]
+ \dfrac{e^2}{2}\,t\log^2(2/t),&0<t\le1,\\[4pt]
  t^{-2},&t\ge1.
  \end{cases}
 \tag{8}
