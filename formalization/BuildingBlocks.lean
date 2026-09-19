@@ -570,3 +570,4 @@ import BuildingBlocks.ChirpedSpectralRHBridge
 import BuildingBlocks.ChirpedStationaryPhaseCarrier
 import BuildingBlocks.ChirpedFresnelGaussianLocalization
 import BuildingBlocks.ChirpedFresnelPhaseCoherence
+import BuildingBlocks.ChirpedConstellationSpanAmplification
