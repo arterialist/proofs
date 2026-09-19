@@ -178,3 +178,8 @@ theorem mertens_eq_sum_Icc (N : ℕ) :
   simp
 
 end BuildingBlocks.MertensTransfer
+
+#print axioms BuildingBlocks.MertensTransfer.logFactorial_eq_sum_psi
+#print axioms BuildingBlocks.MertensTransfer.moebius_floor_inversion
+#print axioms BuildingBlocks.MertensTransfer.integerError_eq_moebius_recurrenceForcing
+#print axioms BuildingBlocks.MertensTransfer.centeredDivisorForcing_inverse

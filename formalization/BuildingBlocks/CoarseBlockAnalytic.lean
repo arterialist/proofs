@@ -74,3 +74,6 @@ theorem coarseMellinBlock_analytic (k : ℕ) :
   exact fun s _ => h.analyticAt s
 
 end BuildingBlocks.CoarsePrimitive
+
+#print axioms BuildingBlocks.CoarsePrimitive.coarsePrime_finiteMellin_differentiable
+#print axioms BuildingBlocks.CoarsePrimitive.coarseMellinBlock_analytic

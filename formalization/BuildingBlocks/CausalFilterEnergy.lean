@@ -110,3 +110,8 @@ theorem causalFilter_response_bound {T rate : ℝ} {f r : ℝ → ℝ}
   nlinarith
 
 end BuildingBlocks
+
+#print axioms BuildingBlocks.causalFilter_cross_integral
+#print axioms BuildingBlocks.causalFilter_energy_identity
+#print axioms BuildingBlocks.causalFilter_energy_contraction
+#print axioms BuildingBlocks.causalFilter_response_bound

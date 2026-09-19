@@ -120,3 +120,6 @@ lemma coarseMellinBlock_geometric_bound (hb : CoarsePrimitiveBound) {a R : ℝ}
   exact h
 
 end BuildingBlocks.CoarsePrimitive
+
+#print axioms BuildingBlocks.CoarsePrimitive.coarsePrime_mellin_norm_le
+#print axioms BuildingBlocks.CoarsePrimitive.coarseMellinBlock_geometric_bound

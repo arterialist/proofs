@@ -30,3 +30,5 @@ theorem sum_weightedCurrent (n : ℕ) (hn : 2 ≤ n) :
   omega
 
 end BuildingBlocks.BirthDivisor
+
+#print axioms BuildingBlocks.BirthDivisor.sum_weightedCurrent

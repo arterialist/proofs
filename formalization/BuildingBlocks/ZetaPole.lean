@@ -117,3 +117,7 @@ theorem zeta_jointMellin_principal_part {ρ : ℂ} (hρ0 : ρ ≠ 0) (hρ1 : ρ 
 
 
 end BuildingBlocks
+
+#print axioms BuildingBlocks.zeta_analytic_off_pole
+#print axioms BuildingBlocks.analytic_logDerivative_principal_part
+#print axioms BuildingBlocks.zeta_jointMellin_principal_part

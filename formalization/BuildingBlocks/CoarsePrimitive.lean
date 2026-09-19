@@ -253,3 +253,8 @@ theorem coarsePrime_test_bound {X K : ℝ} (hX : 0 < X) (hK : 0 ≤ K)
       (mul_le_mul_of_nonneg_left (coarsePrefix_abs_integral_le_sqrt hX.le) hK)
 
 end BuildingBlocks.CoarsePrimitive
+
+#print axioms BuildingBlocks.CoarsePrimitive.coarse_terminal_mass_sq_le
+#print axioms BuildingBlocks.CoarsePrimitive.coarsePrime_summation_by_parts
+#print axioms BuildingBlocks.CoarsePrimitive.coarsePrime_mellin_block
+#print axioms BuildingBlocks.CoarsePrimitive.coarsePrime_test_bound

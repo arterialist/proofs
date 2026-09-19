@@ -113,3 +113,7 @@ theorem coarseMellinSum_eq_logDerivative {s : ℂ} (hs : 1 < s.re) :
   ring
 
 end BuildingBlocks.CoarsePrimitive
+
+#print axioms BuildingBlocks.CoarsePrimitive.coarseMellinBlock_hasSum_integral
+#print axioms BuildingBlocks.CoarsePrimitive.coarseMellinSum_eq_integral
+#print axioms BuildingBlocks.CoarsePrimitive.coarseMellinSum_eq_logDerivative
