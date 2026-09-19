@@ -584,3 +584,4 @@ import BuildingBlocks.ChirpedGrandSynthesis
 import BuildingBlocks.AutocorrelationFourierPositivity
 import BuildingBlocks.ChirpedZeroPartitionSynthesis
 import BuildingBlocks.ChirpedGramDefiniteness
+import BuildingBlocks.ChirpedThresholdCalibration
