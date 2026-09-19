@@ -1386,3 +1386,7 @@ This directory contains standalone, self-contained mathematical reports on the *
     - *Result:* Machine-verified synthesis of micro-local chirped packet physics, constellation span dilation, archimedean-prime row margin, and Weil spectral decomposition into the canonical builder `make_chirped_offline_configuration`, off-line zero refutation `chirped_offline_zero_refutation`, and complete deduction of `RightHalfZeroFree` and Mathlib's official `RiemannHypothesis` from any `ChirpedZeroCouplingSystem`.
     - *Status:* Rigorous mathematical pipeline + Lean formalization (`ChirpedWeilSpectralDecomposition.lean`); unique in literature.
 
+346. [Chirped Carrier Dilution-Density Balance and Critical-Line Logarithmic Bound](chirped-carrier-dilution-density-balance-and-critical-logarithmic-bound.md)
+    - *Result:* Machine-verified carrier dilution-density balance theorem proving algebraic cancellation of the carrier frequency $T$ and chirp rate $\eta$ from the product of the resonant zero count $O(T \log T)$ and stationary phase energy dispersion $O(1/T)$, establishing the critical-line resonant upper bound $C_{\text{crit, res}} \log T$ with $C_{\text{crit, res}} = 2 C_N C_{\text{core}} w$, total critical bound with non-resonant tails $C_{\text{crit, tot}} \log T$, and constructive certificate builder `makeCarrierDilutionBalanceCertificate`.
+    - *Status:* Rigorous mathematical derivation + Lean formalization (`ChirpedCarrierDilutionDensityBalance.lean`); unique in literature.
+
