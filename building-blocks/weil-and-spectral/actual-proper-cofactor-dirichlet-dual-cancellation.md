@@ -1,14 +1,17 @@
 # Dirichlet dual cancellation of proper cofactors for an actual Weil packet
 
-**Status:** unconditional written analytic proof, 19 September 2026.
-This resolves the small-cofactor barrier ($k=2$) identified in
+**Status:** incomplete written reduction, 19 September 2026, corrected in the
+segment-3 history audit.
+This reformulates part of the small-cofactor barrier ($k=2$) identified in
 [the reciprocal-prime saving note](actual-reciprocal-prime-high-cofactor-saving.md#a-saved-high-cofactor-subrange).
 The underlying finite hyperbola algebra is compiled in
 [ActualPrimeCofactorFutureFinite.lean](../../formalization/BuildingBlocks/ActualPrimeCofactorFutureFinite.lean).
-The zero-side factorization across cofactors, the approximate functional equation
-transfer, and the resulting dual Dirichlet polynomial reduction are written
-mathematics. It proves that proper cofactors cannot be bounded termwise in isolation;
-their collective phase oscillations cancel the lead zero-side pole of the prime row.
+The exact Mellin scaling across cofactors and the individual-zero approximate
+functional equation are useful identities. They do not bound the resulting dual
+Dirichlet polynomial, justify the exchange with the full zero sum, control the
+omitted cofactor tail, or prove that the smooth explicit-formula remainder is
+small uniformly in the parameters. The note therefore does not resolve the
+small-cofactor barrier or prove a new signed estimate for the actual prime row.
 
 ## Background: The small-cofactor barrier
 
@@ -30,12 +33,12 @@ is a signed prime correlation centered at $N/2$. Bounding it termwise by absolut
 gave the coarse scale $O(H/\sqrt N) = O(T^{\lambda/2 - 1})$, which is the original
 row scale and exceeds the $O(\log T)$ budget of the complete Weil form.
 
-We prove below that this barrier is an artifact of treating individual cofactors
-$k \ge 2$ in isolation. Across the family of cofactors, their zero-side contributions
-sum as a partial Dirichlet series $\sum_{k=2}^K k^{-\rho}$. By the approximate
-functional equation for $\zeta(s)$, this sum equals $-1$ up to a microscopic dual
-Dirichlet polynomial of length $T^{\delta_*} / (2\pi)$. The $-1$ term cancels
-the lead zero-side singularity of the $k=1$ prime row exactly.
+Across a finite family of cofactors, the formal zero-side contribution contains
+the partial Dirichlet series $\sum_{k=2}^K k^{-\rho}$. At an individual zero,
+the approximate functional equation rewrites this as $-1$ plus a dual
+Dirichlet polynomial of length comparable to $T^{\delta_*}$ and an error. The $-1$
+term formally cancels the corresponding $k=1$ factor. This observation is a
+reduction, not a cancellation estimate for the complete explicit formula.
 
 ## Factorization of the zero-side cofactor transform
 
@@ -106,8 +109,9 @@ $K = N / (H T^\delta) = T^{1-\delta}$ with $0 < \delta < 1$:
  = - \sum_\rho J(\rho, T) \left( \sum_{2 \le k \le K} k^{-\rho} \right) + R_{\rm smooth},
  \tag{7}
 \]
-where $R_{\rm smooth}$ collects pole and archimedean remainders, which are $o(1)$
-due to $\widehat G_T(0) = 0$ and $\widehat G_T'(0) = 0$.
+where $R_{\rm smooth}$ denotes the pole, archimedean, truncation, and interchange
+remainders. The two moment vanishings alone do not prove $R_{\rm smooth}=o(1)$
+uniformly. That estimate is an open obligation in this reduction.
 
 Notice that the sum over cofactors is
 \[
@@ -119,42 +123,59 @@ governed by the approximate functional equation for the Riemann zeta function.
 
 **Theorem (Proper-cofactor dual Dirichlet cancellation).** Let $\rho = \beta + i\gamma$
 be a zero of $\zeta(s)$ with $|\gamma| \asymp T$. For $K = T^{1-\delta}$ with $0 < \delta < 1/2$,
-let $y = \frac{T}{2\pi K} = \frac{T^\delta}{2\pi}$. Then
+let
+\[
+ y_\rho=\frac{|\gamma|}{2\pi K}\asymp T^\delta.
+\]
+Then
 \[
  \boxed{\quad
  \sum_{2 \le k \le K} k^{-\rho}
- = - 1 - \chi(\rho) \sum_{1 \le n \le y} n^{\rho-1} + O\left( T^{-(1-\delta)\beta} + T^{-\delta(1-\beta)} \right).
+ = - 1 - \chi(\rho) \sum_{1 \le n \le y_\rho} n^{\rho-1}
+ + O\left( T^{-(1-\delta)\beta}
+   +T^{1/2-\beta-\delta(1-\beta)}\right).
  \quad}
  \tag{9}
+\]
+When $\beta\ge 1/2$, this implies the weaker but simpler bound
+\[
+ O\!\left(T^{-(1-\delta)\beta}+T^{-\delta(1-\beta)}\right).
+ \tag{9a}
 \]
 In particular, for the critical line $\beta = 1/2$:
 \[
  \sum_{2 \le k \le K} k^{-1/2 - i\gamma}
- = - 1 - \chi(1/2+i\gamma) \sum_{1 \le n \le \frac{T^\delta}{2\pi}} n^{-1/2 + i\gamma} + O(T^{-\delta/2}).
+ = - 1 - \chi(1/2+i\gamma) \sum_{1 \le n \le y_\rho} n^{-1/2 + i\gamma} + O(T^{-\delta/2}).
  \tag{10}
 \]
 
 *Proof.* By the Riemann–Siegel / Hardy–Littlewood approximate functional equation
 for $\zeta(s)$ in the critical strip (see Titchmarsh, *The Theory of the Riemann
-Zeta-Function*, Theorem 4.13), for $2\pi x y = |t|$ with $x = K$:
+Zeta-Function*, equation (4.12.4) and Theorem 4.15), for $2\pi x y = |t|$
+with $x = K$:
 \[
  \zeta(s) = \sum_{k \le x} k^{-s} + \chi(s) \sum_{n \le y} n^{s-1} + O(x^{-\sigma} + |t|^{1/2-\sigma} y^{\sigma-1}).
 \]
 Because $\rho$ is a nontrivial zero, $\zeta(\rho) = 0$. Hence
 \[
- 0 = \sum_{k \le K} k^{-\rho} + \chi(\rho) \sum_{n \le y} n^{\rho-1} + O(K^{-\beta} + T^{1/2-\beta} y^{\beta-1}).
+ 0 = \sum_{k \le K} k^{-\rho} + \chi(\rho) \sum_{n \le y_\rho} n^{\rho-1}
+   + O(K^{-\beta} + |\gamma|^{1/2-\beta} y_\rho^{\beta-1}).
 \]
 Rearranging and subtracting $1$ (for $k=1$) yields (9). $\blacksquare$
 
 ## Cancellation against the prime row
 
-Combining Lemma 1 and the Theorem reveals the exact cancellation between the
-$k=1$ prime row and the proper cofactors:
+Combining Lemma 1 and the theorem displays a formal cancellation between the
+$k=1$ factor and the truncated proper-cofactor factors. The following equations
+are valid only after the explicit-formula sum, truncation, and remainder terms
+have been justified uniformly. In particular, let $\mathcal Z_T$ denote a fixed
+height band on which $|\gamma|\asymp T$; the contribution of zeros outside this
+band must be placed in the remainders below unless it is bounded separately.
 
 1. **The $k=1$ prime row:**
    \[
-    \sum_n \Lambda(n) g_N(n) = - \sum_\rho J(\rho, T) \cdot 1^{-\rho} + R_1
-    = - \sum_\rho J(\rho, T) + R_1.
+    \sum_n \Lambda(n) g_N(n) = - \sum_{\rho\in\mathcal Z_T} J(\rho, T) \cdot 1^{-\rho} + R_1
+    = - \sum_{\rho\in\mathcal Z_T} J(\rho, T) + R_1.
     \tag{11}
    \]
 
@@ -162,8 +183,9 @@ $k=1$ prime row and the proper cofactors:
    Substituting (9) into (7):
    \[
     \sum_{2 \le k \le K} \sum_d \Lambda(d) g_N(kd)
-    = - \sum_\rho J(\rho, T) \left( - 1 - \chi(\rho) \sum_{n \le y} n^{\rho-1} \right) + R_2
-    = + \sum_\rho J(\rho, T) + \sum_\rho J(\rho, T) \chi(\rho) \sum_{n \le y} n^{\rho-1} + R_2.
+    = - \sum_{\rho\in\mathcal Z_T} J(\rho, T) \left( - 1 - \chi(\rho) \sum_{n \le y_\rho} n^{\rho-1} \right) + R_2
+    = + \sum_{\rho\in\mathcal Z_T} J(\rho, T)
+      + \sum_{\rho\in\mathcal Z_T} J(\rho, T) \chi(\rho) \sum_{n \le y_\rho} n^{\rho-1} + R_2.
     \tag{12}
    \]
 
@@ -172,33 +194,43 @@ $k=1$ prime row and the proper cofactors:
    \[
     \boxed{\quad
     \sum_n \Lambda(n) g_N(n) + \sum_{2 \le k \le K} \sum_d \Lambda(d) g_N(kd)
-    = \sum_\rho J(\rho, T) \chi(\rho) \sum_{1 \le n \le \frac{T^\delta}{2\pi}} n^{\rho-1} + O(T^{-\delta/2}).
+    = \sum_{\rho\in\mathcal Z_T} J(\rho, T) \chi(\rho)
+      \sum_{1 \le n \le y_\rho} n^{\rho-1} + R(T).
     \quad}
     \tag{13}
    \]
 
-## Mathematical implications for the Weil frontier
+Here $R(T)$ includes the accumulated approximate-functional-equation errors,
+the explicit-formula remainder, the complementary zero ranges, and any error
+from exchanging the cofactor and zero sums. No bound adequate for the Weil
+problem is proved here.
 
-1. **Elimination of the $O(H/\sqrt N)$ termwise barrier:**
+## What the reduction does and does not show
+
+1. **Termwise estimates lose the cofactor phase:**
    The apparent $O(H/\sqrt N)$ barrier arose strictly from bounding $|\sum_d \Lambda(d) g_N(2d)|$
-   by $\sum_d \Lambda(d) |g_N(2d)|$. Because $\sum_{k=2}^K |k^{-\rho}| \asymp K^{1/2} = T^{(1-\delta)/2}$,
+   by $\sum_d \Lambda(d) |g_N(2d)|$. On the critical line,
+   $\sum_{k=2}^K |k^{-\rho}| \asymp K^{1/2} = T^{(1-\delta)/2}$,
    termwise bounding introduces a spurious loss of $T^{(1-\delta)/2}$.
-   In reality, the oscillatory sum $\sum_{k=2}^K k^{-i\gamma}$ exhibits square-root cancellation,
-   summing to $-1$ plus the dual sum.
+   The approximate functional equation transfers this phase to the dual sum. It
+   does not by itself prove square-root cancellation or an $O(\log T)$ bound.
 
-2. **Microscopic dual length:**
+2. **Shorter dual length:**
    Instead of summing over $K = T^{1-\delta}$ cofactors, the dual Dirichlet polynomial
-   has length
+   has length, for zeros with $|\gamma|\asymp T$,
    \[
-    y = \frac{T^\delta}{2\pi}.
+    y_\rho = \frac{|\gamma|}{2\pi K}\asymp T^\delta.
    \]
-   For small $\delta > 0$ (e.g., $\delta = 0.01$), $y = T^{0.01} \ll \log T$ is sub-logarithmic
-   or $O(1)$ for moderate $T$. At $y < 2$, the dual sum contains **only the $n=1$ mode**,
-   giving an exact scalar modulation $\chi(\rho)$.
+   This is shorter than $K=T^{1-\delta}$ when $\delta<1/2$, but for every fixed
+   $\delta>0$ one has $T^\delta/\log T\to\infty$. Thus the dual polynomial is
+   not asymptotically sub-logarithmic. At finite heights where $y_\rho<2$, it has only
+   the $n=1$ term, which does not supply an asymptotic estimate.
 
 3. **Structural origin of cancellation:**
    This cancellation is the spectral reflection of the elementary identity $\Lambda * 1 = \log$.
    The arithmetic function $\log n$ has Dirichlet series $-\zeta'(s)$, which has a double pole
    at $s=1$ but **no poles at the nontrivial zeros $\rho$** of $\zeta(s)$.
-   Therefore, any zero-side singularity present in $\Lambda(n)$ ($k=1$) must be identically
-   cancelled by the higher cofactors ($k \ge 2$) in the divisor convolution.
+   The complete convolution has no pole at a nontrivial zero after multiplication
+   by $\zeta(s)$. Turning that global analytic identity into a bound for this
+   truncated, packet-weighted cofactor sum still requires uniform tail and
+   remainder estimates.
