@@ -567,3 +567,4 @@ import BuildingBlocks.ActualCofactorSpectralNeutralization
 import BuildingBlocks.ActualWeilSignObstruction
 import BuildingBlocks.ChirpedSpectralArithmeticExclusion
 import BuildingBlocks.ChirpedSpectralRHBridge
+import BuildingBlocks.ChirpedStationaryPhaseCarrier
