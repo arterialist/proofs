@@ -46,6 +46,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A reciprocal-prime saving for high cofactors of an actual Weil packet](actual-reciprocal-prime-high-cofactor-saving.md)
 - [A three-dimensional exponential-sum saving for the actual Möbius tail](actual-mobius-tail-three-dimensional-saving.md)
 - [A Bourgain exponent-pair extension of the actual Möbius tail](actual-mobius-tail-bourgain-dual-saving.md)
+- [A Bordellès trilinear extension of the actual Möbius tail](actual-mobius-tail-bordelles-saving.md)
 - [Chirped Weil packets form growing positive constellations](chirped-prime-annulus-constellation.md)
 - [A positive two-rate plane for the complete actual-prime Weil form](complete-weil-two-exponential-rate-positive-plane.md)
 - [A positive three-rate plane for the complete actual-prime Weil form](complete-weil-three-exponential-rate-positive-plane.md)
