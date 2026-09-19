@@ -569,3 +569,4 @@ import BuildingBlocks.ChirpedSpectralArithmeticExclusion
 import BuildingBlocks.ChirpedSpectralRHBridge
 import BuildingBlocks.ChirpedStationaryPhaseCarrier
 import BuildingBlocks.ChirpedFresnelGaussianLocalization
+import BuildingBlocks.ChirpedFresnelPhaseCoherence
