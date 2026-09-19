@@ -17,9 +17,9 @@ This formalization establishes the whole-frequency integrability and non-asympto
    Formal proof of `integrable_density` using the Cauchy envelope majorant.
 3. **Exact Whole-Frequency Logarithmic Moment Bound:**
    Formal proof of `actual_log_moment`:
-   \[
+   $$
    \int_\mathbb{R} \rho_N(\xi) \log(2 + |\xi|) d\xi \le \text{mass}(N) \cdot \left( \log 2 + \log\left(1 + \frac{E_N}{\text{mass}(N)}\right) + 1 \right),
-   \]
+   $$
    covering the zero-mass edge case without any extra hypotheses.
 
 ---
@@ -49,6 +49,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing a rigorous whole-frequency logarithmic moment bound $\int_\mathbb{R} \rho_N(\xi) \log(2 + |\xi|) d\xi \le M_N (\log 2 + \log(1 + E_N/M_N) + 1)$ for the actual prime-counting spectral density without artificial frequency truncation or conditional assumptions.
+This entry documents a machine-verified implementation in Lean 4 establishing a rigorous whole-frequency logarithmic moment bound $\int_\mathbb{R} \rho_N(\xi) \log(2 + |\xi|) d\xi \le M_N (\log 2 + \log(1 + E_N/M_N) + 1)$ for the actual prime-counting spectral density without artificial frequency truncation or conditional assumptions.

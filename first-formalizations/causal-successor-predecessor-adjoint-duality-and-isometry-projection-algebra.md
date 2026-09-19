@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that non-linear logarithmic shifts generate an exact unilateral shift algebra with partial isometry and projection structure on $L^2(0, \infty)$.
+This entry documents a machine-verified proof that non-linear logarithmic shifts generate an exact unilateral shift algebra with partial isometry and projection structure on $L^2(0, \infty)$.

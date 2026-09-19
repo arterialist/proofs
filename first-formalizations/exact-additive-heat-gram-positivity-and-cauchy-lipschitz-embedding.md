@@ -15,9 +15,9 @@ This formalization establishes the exact Hilbert space metric, Cauchy-Hilbert Gr
    Formal proof of `exponential_pair_integrable` and `exponential_pair_integral`: $\int_0^\infty e^{-xt}e^{-yt}dt = \frac{1}{x+y}$.
 2. **Gramian Representation and Positivity:**
    Formal proof of `profile_square`, `finite_heat_gram`, and `finite_additive_gram_nonnegative`:
-   \[
+   $$
    \sum_{i, j \in S} \frac{c_i c_j}{x_i + x_j} = \int_0^\infty \left( \sum_{i \in S} c_i e^{-x_i t} \right)^2 dt \ge 0.
-   \]
+   $$
 3. **Metric Tensor for Differences:**
    Formal proof of `exponential_difference_square_integrable`, `exponential_difference_square_integral`, and `exponential_difference_square_bound`.
 4. **$L^2$ Space Construction:**
@@ -57,6 +57,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 certifying the exact metric tensor and global 1/2-Lipschitz continuity for exponential birth curves into $L^2(0, \infty)$, and the positive-semidefiniteness of Cauchy-Hilbert additive Gram forms via their continuous Laplace square representations.
+This entry documents a machine-verified proof in Lean 4 certifying the exact metric tensor and global 1/2-Lipschitz continuity for exponential birth curves into $L^2(0, \infty)$, and the positive-semidefiniteness of Cauchy-Hilbert additive Gram forms via their continuous Laplace square representations.

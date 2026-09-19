@@ -21,9 +21,9 @@ This formalization proves the entire holomorphy of compact physical Mellin trans
    Formal proof of `entire_weight_circle_coefficient`: $\oint_{C(c, R)} \frac{F(w)}{w-s} dw = 2\pi i F(s)$.
 5. **Exact Pole Residue Circle Vanishing:**
    Formal proof of `pole_null_circle_corrections` and `finite_block_pole_null_circle_corrections`:
-   \[
+   $$
    \oint_{C(c, R)} \frac{\mathcal{W}(w)}{w} dw = 0 \quad \text{and} \quad \oint_{C(c, R)} \frac{\mathcal{W}(w)}{w-1} dw = 0
-   \]
+   $$
    under physical null conditions $\mathcal{M}[f](\pm 1/2) = 0$.
 
 ---
@@ -74,6 +74,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the entire holomorphy of compact physical Mellin transforms and the exact vanishing of Cauchy residue circle corrections around spectral poles $s = 0, 1$ for both bare and block-conditioned physical states.
+This entry documents a machine-verified proof in Lean 4 establishing the entire holomorphy of compact physical Mellin transforms and the exact vanishing of Cauchy residue circle corrections around spectral poles $s = 0, 1$ for both bare and block-conditioned physical states.

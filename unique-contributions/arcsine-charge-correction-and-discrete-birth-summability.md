@@ -1,4 +1,4 @@
-# Unique Contribution 48: Arcsine Charge Correction and Absolute Summability of Discrete Prime Birth Jumps
+# Contribution 48: Arcsine Charge Correction and Absolute Summability of Discrete Prime Birth Jumps
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ChargeBirthSummability.lean`](../../formalization/BuildingBlocks/ChargeBirthSummability.lean), [`formalization/BuildingBlocks/ChargeArcsinBound.lean`](../../formalization/BuildingBlocks/ChargeArcsinBound.lean), [`formalization/BuildingBlocks/IntegerBirthDiscreteCorrection.lean`](../../formalization/BuildingBlocks/IntegerBirthDiscreteCorrection.lean)  
@@ -9,31 +9,31 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the discrete renewal formulation of prime counting functions, the continuous circular angle transformation converts the normalized step coordinate into an angular phase $\arcsin(1/\sqrt{n})$. The difference between this angular phase and the flat Archimedean rate $1/\sqrt{n}$ defines the initial charge correction:
-\[
+$$
 \operatorname{correction}(n) = \arcsin\left(\frac{1}{\sqrt{n}}\right) - \frac{1}{\sqrt{n}}.
-\]
+$$
 This contribution establishes:
 
 1. **Non-Asymptotic Arcsine Derivative Enclosure:**
    For all $z \in [0, 1/\sqrt{2}]$, the non-asymptotic mean-value derivative bounds prove:
-   \[
+   $$
    0 \le \arcsin z - z \le \frac{z^3}{3}.
-   \]
+   $$
 2. **Sharp $n^{-3/2}$ Charge Correction Decay:**
    For every real scale $y \ge 2$:
-   \[
+   $$
    0 \le \arcsin\left(\frac{1}{\sqrt{y}}\right) - \frac{1}{\sqrt{y}} \le \frac{1}{3 y^{3/2}}.
-   \]
+   $$
 3. **Exact Identification with Initial Discrete Birth Jumps:**
    For all integers $n \ge 2$, the charge correction is identically equal to the initial discrete birth jump:
-   \[
+   $$
    \operatorname{correction}(n) = \operatorname{discreteBirth}(n, 1) - \operatorname{discreteBirth}(n, 0).
-   \]
+   $$
 4. **Unconditional Absolute Summability Across Prime Powers:**
    Because $\frac{\Lambda(n)}{3 n^{3/2}}$ is summable (since $\Lambda(n) \le \log n \ll n^{1/4}$ and $\sum n^{-5/4} < \infty$), the von Mangoldt weighted discrete birth jump sequence is **unconditionally absolutely summable**:
-   \[
+   $$
    \sum_{n=2}^\infty \left\| \Lambda(n) (\operatorname{discreteBirth}(n, 1) - \operatorname{discreteBirth}(n, 0)) \right\| < \infty.
-   \]
+   $$
 
 ---
 
@@ -42,16 +42,16 @@ This contribution establishes:
 ### 2.1. Derivative Monotonicity
 The function $f(z) = \arcsin z - z$ has derivative $f'(z) = \frac{1}{\sqrt{1-z^2}} - 1 = \frac{z^2}{\sqrt{1-z^2}(1+\sqrt{1-z^2})}$.  
 For $z \in [0, 1/\sqrt{2}]$, $\sqrt{1-z^2} \ge 1/\sqrt{2}$ and $1+\sqrt{1-z^2} \ge 1$, so:
-\[
+$$
 0 \le f'(z) \le z^2.
-\]
+$$
 Integrating $f'$ on $[0, z]$ immediately yields $0 \le f(z) \le z^3/3$.
 
 ### 2.2. Evaluation at Prime Scales
 Substituting $z = 1/\sqrt{y}$ (which satisfies $z^2 = 1/y \le 1/2$ for all $y \ge 2$):
-\[
+$$
 0 \le \arcsin\left(\frac{1}{\sqrt{y}}\right) - \frac{1}{\sqrt{y}} \le \frac{(1/\sqrt{y})^3}{3} = \frac{1}{3 y^{3/2}}.
-\]
+$$
 
 ### 2.3. Connection to Discrete Birth Step
 From the explicit kernel $q(n, x) = \arcsin(\min(1, \sqrt{x/n}))$, we have $q(n, 0) = 0$ and $q(n, 1) = \arcsin(1/\sqrt{n})$.  

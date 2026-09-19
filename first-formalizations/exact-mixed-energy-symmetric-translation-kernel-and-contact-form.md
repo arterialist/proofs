@@ -17,19 +17,19 @@ This formalization establishes the exact symmetric translation-kernel representa
    Formal proof of `lag_pair_integral`, `lag_shifted_pair_integral`, and `lag_cross_orientation` ($\int H(x-h)G(x) = \int H(x)G(x+h)$).
 3. **Bilinear Form Decomposition:**
    Formal proof of `symmetricKernelPair_integrable` and `bilinear_eq_symmetricKernelPair`:
-   \[
+   $$
    \text{bilinear}(H, G) = 4 \langle H, G \rangle - \text{symmetricKernelPair}(H, G).
-   \]
+   $$
 4. **Discrete Unit Pair Decomposition:**
    Formal proof of `translated_memLp` and `unitPair_eq_translations`:
-   \[
+   $$
    \text{unitPair}(H, G) = 2 \langle H, G \rangle - \int H(x) (G(x-1) + G(x+1)) dx.
-   \]
+   $$
 5. **Exact Contact Form Formula:**
    Formal proof of `contactForm_eq_kernel`: diagonal cancellation yielding:
-   \[
+   $$
    \text{contactForm}(H, G) = -\text{symmetricKernelPair}(H, G) + 2 \int H(x) (G(x-1) + G(x+1)) dx.
-   \]
+   $$
 
 ---
 
@@ -73,6 +73,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact translation-kernel decomposition and diagonal mass cancellation of mixed continuous-discrete Dirichlet contact forms on $L^2(\mathbb{R})$.
+This entry documents a machine-verified proof in Lean 4 establishing the exact translation-kernel decomposition and diagonal mass cancellation of mixed continuous-discrete Dirichlet contact forms on $L^2(\mathbb{R})$.

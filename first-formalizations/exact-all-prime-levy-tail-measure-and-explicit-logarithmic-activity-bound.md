@@ -70,6 +70,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 constructing the exact omitted prime tail measure and proving the universal non-asymptotic logarithmic bound $\frac{32}{\log P}$ unconditionally without PNT or RH.
+This entry documents a machine-verified implementation in Lean 4 constructing the exact omitted prime tail measure and proving the universal non-asymptotic logarithmic bound $\frac{32}{\log P}$ unconditionally without PNT or RH.

@@ -1,6 +1,6 @@
-# Unique Contribution 348: Chirped Spectral Assembly and Master Upper Bound
+# Contribution 348: Chirped Spectral Assembly and Master Upper Bound
 
-## 1. Context and Mathematical Uniqueness
+## 1. Result and scope
 
 In the spectral decomposition of the Weil quadratic form for chirped wavepackets:
 $$Q_{\text{spec}}(T) \le Q_{\text{crit}}(T) + Q_{\text{cont}}(T) - E_{\text{pair}}(T)$$

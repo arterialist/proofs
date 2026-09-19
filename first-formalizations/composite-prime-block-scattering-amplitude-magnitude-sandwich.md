@@ -44,6 +44,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 of two-sided geometric-exponential bounds on composite prime scattering amplitudes, trapping $\mathcal{A}$ within a factor of $16^{|ps|}$ around the exact prime power product $\prod p^{h d(p)}$.
+This entry documents a machine-verified proof in Lean 4 of two-sided geometric-exponential bounds on composite prime scattering amplitudes, trapping $\mathcal{A}$ within a factor of $16^{|ps|}$ around the exact prime power product $\prod p^{h d(p)}$.

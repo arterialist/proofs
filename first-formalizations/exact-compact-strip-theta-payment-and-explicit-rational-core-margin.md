@@ -84,6 +84,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 verifying the rational and order-theoretic core of the compact-strip theta regularization, combining explicit constants ($10^{503}, 10^{1046}$) with coercive resolvent and arrival estimates.
+This entry documents a machine-verified implementation in Lean 4 verifying the rational and order-theoretic core of the compact-strip theta regularization, combining explicit constants ($10^{503}, 10^{1046}$) with coercive resolvent and arrival estimates.

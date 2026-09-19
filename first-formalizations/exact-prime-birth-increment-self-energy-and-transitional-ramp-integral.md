@@ -17,14 +17,14 @@ This formalization establishes the exact three-regime piecewise structure, trans
    Formal proof of the decomposition into ramp and terminal energy components (`increment_square_integral_split`).
 3. **Exact Transitional Ramp Integral:**
    Formal proof of `ramp_square_integral`:
-   \[
+   $$
    \int_{\log N}^{\log(N+1)} (e^v - N)^2 e^{-v} dv = 1 + \frac{N}{N+1} - 2N \log\left(1 + \frac{1}{N}\right).
-   \]
+   $$
 4. **Total Evaluated Self-Energy:**
    Formal proof of `increment_square_integral_evaluated`:
-   \[
+   $$
    \int_0^\infty (\text{increment}(N, v))^2 dv = 1 + \frac{N}{N+1} - 2N \log\left(1 + \frac{1}{N}\right) + \frac{(\Lambda(N+1) - 1)^2}{N+1}.
-   \]
+   $$
 
 ---
 
@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact closed-form evaluation of the $L^2((0, \infty))$ self-energy of the prime birth increment $\int_0^\infty (\Delta \text{source}_N)^2 dv = 1 + \frac{N}{N+1} - 2N\log(1+1/N) + \frac{(\Lambda(N+1)-1)^2}{N+1}$, decomposing the continuous geometric boundary cost from the arithmetic prime jump.
+This entry documents a machine-verified implementation in Lean 4 proving the exact closed-form evaluation of the $L^2((0, \infty))$ self-energy of the prime birth increment $\int_0^\infty (\Delta \text{source}_N)^2 dv = 1 + \frac{N}{N+1} - 2N\log(1+1/N) + \frac{(\Lambda(N+1)-1)^2}{N+1}$, decomposing the continuous geometric boundary cost from the arithmetic prime jump.

@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the simultaneous attenuation and amplification of local prime scattering filters, disproving local uniform contractivity for finite-depth scattering channels.
+This entry documents a machine-verified implementation in Lean 4 establishing the simultaneous attenuation and amplification of local prime scattering filters, disproving local uniform contractivity for finite-depth scattering channels.

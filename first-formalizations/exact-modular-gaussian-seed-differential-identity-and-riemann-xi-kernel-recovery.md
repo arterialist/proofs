@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the shifted Helmholtz operator $(d^2/du^2 - 1/4)$ acting on the modular Gaussian seed $e^{u/2} e^{-\pi n^2 e^{2u}}$ produces the Riemann Xi kernel summand, and recovering the full Riemann kernel $\phi(u)$ term-by-term without interchange hypotheses.
+This entry documents a machine-verified implementation in Lean 4 proving that the shifted Helmholtz operator $(d^2/du^2 - 1/4)$ acting on the modular Gaussian seed $e^{u/2} e^{-\pi n^2 e^{2u}}$ produces the Riemann Xi kernel summand, and recovering the full Riemann kernel $\phi(u)$ term-by-term without interchange hypotheses.

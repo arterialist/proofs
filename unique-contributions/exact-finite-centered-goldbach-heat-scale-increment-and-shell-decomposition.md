@@ -1,4 +1,4 @@
-# Unique Contribution 314: Exact Finite Centered-Goldbach Heat Scale Increment and Shell Decomposition
+# Contribution 314: Exact Finite Centered-Goldbach Heat Scale Increment and Shell Decomposition
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CenteredGoldbachHeatScaleIncrementFinite.lean`](../../formalization/BuildingBlocks/CenteredGoldbachHeatScaleIncrementFinite.lean), [`building-blocks/goldbach-heat/scale-increment.md`](../../building-blocks/goldbach-heat/scale-increment.md)  
@@ -14,21 +14,21 @@ This contribution proves:
 
 1. **Exact Finite Heat-Scale Increment as Squared Heat Flow:**  
    For any literal integer cutoff $Y$ and horizon parameter $T$:
-   \[
+   $$
    \Delta_T \mathcal{H}_Y(T) = \int_{e^{-2T}}^{e^{-T}} \left( \sum_{m=1}^Y (\Lambda(m) - 1) e^{-mt} \right)^2 dt.
-   \]
+   $$
    Consequently, the finite heat-scale increment is strictly non-negative: $\Delta_T \mathcal{H}_Y(T) \ge 0$.
 2. **Exact Horizon Doubling Identity:**  
    The discrete scale increment is identically equal to the finite coefficient sum:
-   \[
+   $$
    \mathcal{H}_Y(2T) - \mathcal{H}_Y(T) = \sum_{N=2}^{2Y} c_Y(N) \mathcal{K}_{\text{shell}}(T, N),
-   \]
+   $$
    where $\mathcal{K}_{\text{shell}}(T, N) = \frac{e^{-N e^{-2T}} - e^{-N e^{-T}}}{N}$.
 3. **Exact Four-Way Centering Shell Decomposition:**  
    The full shell increment decomposes into:
-   \[
+   $$
    \Delta_T \mathcal{H}_Y(T) = \Delta_T^{\text{prime}} - \Delta_T^{\text{left}} - \Delta_T^{\text{right}} + \Delta_T^{\text{count}},
-   \]
+   $$
    where each component is individually non-negative for $T \ge 0$:
    - Prime-prime packet: $\Delta_T^{\text{prime}}(Y, T) \ge 0$
    - Left marginal centering: $\Delta_T^{\text{left}}(Y, T) \ge 0$
@@ -36,9 +36,9 @@ This contribution proves:
    - Background pair count: $\Delta_T^{\text{count}}(Y, T) \ge 0$.
 4. **Exact Parity Splitting:**  
    The scale increment splits cleanly across parity classes:
-   \[
+   $$
    \Delta_T \mathcal{H}_Y(T) = \Delta_T^{\text{even}}(Y, T) + \Delta_T^{\text{odd}}(Y, T).
-   \]
+   $$
 5. **Pointwise Centered Truncation Inequality:**  
    $c_Y(N) \le c_Y^{\text{prime}}(N) + c_Y^{\text{count}}(N)$, showing that signed centering compensation comes entirely from the marginal von Mangoldt subtractions.
 
@@ -48,24 +48,24 @@ This contribution proves:
 
 ### 2.1. Exponential Heat Integral
 For $N \in \mathbb{N}_{\ge 1}$, the antiderivative of $e^{-Nt}$ is $-e^{-Nt}/N$. Thus:
-\[
+$$
 \int_{e^{-2T}}^{e^{-T}} e^{-Nt} dt = \frac{e^{-N e^{-2T}} - e^{-N e^{-T}}}{N} = \mathcal{K}_{\text{shell}}(T, N).
-\]
+$$
 By the definition of the centered finite heat flow:
-\[
+$$
 \left( \sum_{m=1}^Y (\Lambda(m) - 1) e^{-mt} \right)^2 = \sum_{N=2}^{2Y} c_Y(N) e^{-Nt}.
-\]
+$$
 Integrating term-by-term yields $\int_{e^{-2T}}^{e^{-T}} (\text{finiteHeat}(t))^2 dt = \sum_{N=2}^{2Y} c_Y(N) \mathcal{K}_{\text{shell}}(T, N) = \Delta_T \mathcal{H}_Y(T)$.
 
 ### 2.2. Centering Algebraic Decomposition
 At each total $N = m + n$, the centered product expands as:
-\[
+$$
 (\Lambda(m) - 1)(\Lambda(n) - 1) = \Lambda(m)\Lambda(n) - \Lambda(m) - \Lambda(n) + 1.
-\]
+$$
 Summing over $(m, n) \in [1, Y]^2$ with $m + n = N$ gives:
-\[
+$$
 c_Y(N) = c_Y^{\text{prime}}(N) - c_Y^{\text{left}}(N) - c_Y^{\text{right}}(N) + c_Y^{\text{count}}(N).
-\]
+$$
 Multiplying by $\mathcal{K}_{\text{shell}}(T, N)$ and summing over $N \in [2, 2Y]$ yields the 4-way decomposition.
 
 ### 2.3. Kernel Positivity
@@ -111,6 +111,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Hardy & Littlewood (1923) *Some problems of 'Partitio Numerorum'; III: On the expression of a number as a sum of primes*; Goldston, Pintz & Yıldırım (2009) *Primes in tuples I*. Machine verification of exact finite centered heat scale increments, horizon doubling identities, and 4-way marginal decompositions in Lean 4 is new.
+- **Prior Literature:** Hardy & Littlewood (1923) *Some problems of 'Partitio Numerorum'; III: On the expression of a number as a sum of primes*; Goldston, Pintz & Yıldırım (2009) *Primes in tuples I*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes an exact non-asymptotic heat flow framework for centered Goldbach convolutions, providing certified non-negative scale increments and explicit parity splitting.
 - **Target Venues:** *International Journal of Number Theory* or *Journal of Number Theory*.

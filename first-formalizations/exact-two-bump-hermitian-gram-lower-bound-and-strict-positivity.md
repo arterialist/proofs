@@ -43,6 +43,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the sharp spectral contraction lower bound and strict positivity for annular Hermitian Gram matrices.
+This entry documents a machine-verified implementation in Lean 4 proving the sharp spectral contraction lower bound and strict positivity for annular Hermitian Gram matrices.

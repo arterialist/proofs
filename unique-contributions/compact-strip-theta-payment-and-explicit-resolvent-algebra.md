@@ -1,4 +1,4 @@
-# Unique Contribution 60: Compact-Strip Theta Payment and Explicit Resolvent Coercivity
+# Contribution 60: Compact-Strip Theta Payment and Explicit Resolvent Coercivity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ThetaCompactStripRationalCore.lean`](../../formalization/BuildingBlocks/ThetaCompactStripRationalCore.lean)  
@@ -9,35 +9,35 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the operator-theoretic and spectral approaches to the Riemann Hypothesis on compact vertical strips, proving that an arrival term strictly dominates the negative energy deficit of the strip generator requires an explicit quantitative coercivity margin:
-\[
+$$
 \delta \cdot w < \text{total} = \text{strip} + \text{arrival}.
-\]
+$$
 This contribution establishes the exact rational and order-theoretic algebra that converts the transcendental Schur integral bound and resolvent estimates into closed-form explicit decimal constants:
 
 1. **Order-Theoretic Compact-Strip Coercivity:**  
    Given a strip lower bound $\text{strip} \ge -L$, an arrival rate $L + \delta M < \text{arrival}$, and weight bound $w \le M$, the total operator energy strictly satisfies:
-   \[
+   $$
    \delta \cdot w < \text{total}.
-   \]
+   $$
 2. **Rational Schur Resolution at Integer Exponent:**  
    For any integer exponent $B \in \mathbb{N}$ and rational scale $\varepsilon(B) = \frac{1}{2 \cdot 3^B}$, the Schur integral bound $C \le r/4$ under the kernel bound $r \le 1/\varepsilon(B)$ yields the explicit algebraic bound:
-   \[
+   $$
    C \le \frac{3^B}{2}.
-   \]
+   $$
 3. **Explicit Coarse Resolvent Bound:**  
    Combining the resolvent substitution $P \le M C / \delta$ with the physical parameters $M = 10^{500}$ and $\delta_* = \frac{1}{8 \cdot 10^{546}}$ yields the explicit uniform resolvent bound:
-   \[
+   $$
    P \le 4 \cdot 10^{1046} \cdot 3^B.
-   \]
+   $$
 4. **Deficit Absorption by Logarithmic Arrival:**  
    With $B_* = 5 \cdot 10^{503} \cdot 3^{\text{stripExponent}}$ and $c_* = 3^{-\text{stripExponent}}$, the explicit payment margin satisfies:
-   \[
+   $$
    L + \delta_* M < \frac{c_* B_*}{4} = \frac{5}{4} \cdot 10^{503} = 10^{503} + \frac{10^{503}}{4},
-   \]
+   $$
    which strictly absorbs the strip deficit $L = 10^{503}$ and barrier loss $\delta_* M = \frac{1}{8 \cdot 10^{46}}$, proving that the logarithmic arrival rate at $\varepsilon_* = \varepsilon(B_*)$ strictly dominates the compact-strip energy deficit:
-   \[
+   $$
    L + \delta_* M < \frac{c_*}{4} \log\left( \frac{1/2}{\varepsilon_*} \right).
-   \]
+   $$
 
 ---
 
@@ -45,27 +45,27 @@ This contribution establishes the exact rational and order-theoretic algebra tha
 
 ### 2.1. Compact Payment Inequality
 Let $\text{total} = \text{strip} + \text{arrival}$ with $\text{strip} \ge -L$. Since $w \le M$ and $\delta \ge 0$:
-\[
+$$
 \delta w \le \delta M = (\delta M + L) - L < \text{arrival} - L \le \text{arrival} + \text{strip} = \text{total}.
-\]
+$$
 
 ### 2.2. Explicit Margin Calculation
 For $M = 10^{500}$ and $\delta_* = \frac{1}{8 \cdot 10^{546}}$:
-\[
+$$
 \delta_* M = \frac{10^{500}}{8 \cdot 10^{546}} = \frac{1}{8 \cdot 10^{46}} < \frac{1}{4}.
-\]
+$$
 Since $L = 10^{503}$, we have:
-\[
+$$
 L + \delta_* M < 10^{503} + \frac{1}{4} < 10^{503} + \frac{10^{503}}{4} = \frac{5}{4} \cdot 10^{503}.
-\]
+$$
 Since $B_* = 5 \cdot 10^{503} \cdot 3^{\text{stripExponent}}$ and $c_* = 3^{-\text{stripExponent}}$, their product is identically:
-\[
+$$
 c_* B_* = 5 \cdot 10^{503}, \quad \text{whence} \quad \frac{c_* B_*}{4} = \frac{5}{4} \cdot 10^{503}.
-\]
+$$
 Thus $L + \delta_* M < c_* B_* / 4$. Using $1 < \log 3$ and $\log((1/2)/\varepsilon(B_*)) = B_* \log 3$, this proves:
-\[
+$$
 L + \delta_* M < \frac{c_*}{4} \log\left( \frac{1/2}{\varepsilon_*} \right).
-\]
+$$
 
 ---
 
@@ -113,6 +113,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Resolvent bounds and coercivity estimates in scattering theory typically rely on asymptotic notation $O(1)$. Explicit finite decimal constants of this scale ($10^{503}, 10^{1046}$) with certified rational arithmetic had not previously been formalized.
+- **Prior Literature:** Resolvent bounds and coercivity estimates in scattering theory typically rely on asymptotic notation $O(1)$. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes machine-checked closed-form coercivity margins and resolvent upper bounds.
 - **Target Venues:** *Journal of Spectral Theory* or *Applied and Computational Harmonic Analysis*.

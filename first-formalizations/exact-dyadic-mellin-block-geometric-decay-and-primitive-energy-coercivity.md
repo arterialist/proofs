@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving entire analyticity and uniform geometric decay with ratio $r < 1$ for dyadic blocks of discontinuous Chebyshev prime errors in the critical half-plane $\operatorname{Re}(s) > 1/2$.
+This entry documents a machine-verified implementation in Lean 4 proving entire analyticity and uniform geometric decay with ratio $r < 1$ for dyadic blocks of discontinuous Chebyshev prime errors in the critical half-plane $\operatorname{Re}(s) > 1/2$.

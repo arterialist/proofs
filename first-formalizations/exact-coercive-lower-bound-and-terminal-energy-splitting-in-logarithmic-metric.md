@@ -55,6 +55,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the $L^2$ dispersion of the causal arithmetic source coercively controls the normalized Chebyshev error $\frac{(\psi(N) - N)^2}{N}$ from below via exact domain integration in the logarithmic coordinate $v$.
+This entry documents a machine-verified implementation in Lean 4 proving that the $L^2$ dispersion of the causal arithmetic source coercively controls the normalized Chebyshev error $\frac{(\psi(N) - N)^2}{N}$ from below via exact domain integration in the logarithmic coordinate $v$.

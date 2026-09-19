@@ -1,4 +1,4 @@
-# Unique Contribution 178: Exact Same-Prime History Activation Threshold and Cell Monotonicity
+# Contribution 178: Exact Same-Prime History Activation Threshold and Cell Monotonicity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SamePrimeFirstSquare.lean`](../../formalization/BuildingBlocks/SamePrimeFirstSquare.lean), [`building-blocks/primes/same-prime-first-square.md`](../../building-blocks/primes/same-prime-first-square.md)  
@@ -14,27 +14,27 @@ This contribution proves:
 
 1. **Absolute Proper-Power Floor:**  
    For any prime $p$ and integer $m \ge 2$:
-   \[
+   $$
    4 \le p^m.
-   \]
+   $$
    The absolute minimal proper prime power across all primes is $2^2 = 4$.
 2. **Exact Dead-Time Support Vanishing:**  
    The same-prime history function $s(v)$ vanishes identically on the initial logarithmic dead-time interval:
-   \[
+   $$
    v \le \log 4 \implies s(v) = 0.
-   \]
+   $$
    No proper prime power contributes any activity before the threshold $v = \log 4 \approx 1.386294...$.
 3. **Exact Activation Dichotomy:**  
    The function $s(v)$ satisfies the exact if-and-only-if threshold criterion:
-   \[
+   $$
    s(v) > 0 \iff v > \log 4.
-   \]
+   $$
    Immediately upon crossing $v = \log 4$, the $(p=2, m=2)$ term activates with exact weight $\frac{\log^2 2}{2}$, rendering $s(v)$ strictly positive.
 4. **Strict Cell Monotonicity of the Renewal Profile:**  
    For every integer $k \ge 1$, the renewal profile $H(x)$ is strictly monotone increasing on the closed integer cell $[k, k+1]$:
-   \[
+   $$
    x, y \in [k, k+1], \quad x < y \implies H(x) < H(y).
-   \]
+   $$
    This strict monotonicity is governed by the derivative $\frac{d}{dx} \text{cell}_k(x) = \frac{3 B(k) - x A(k)}{x^{5/2}} > 0$.
 
 ---
@@ -60,9 +60,9 @@ Combining with the inactivity for $v \le \log 4$ yields $s(v) > 0 \iff v > \log 
 ### 2.3. Cell Derivative and Strict Monotonicity
 On each cell $[k, k+1]$, the renewal profile satisfies $\text{cell}_k(x) = \frac{x A(k) - B(k)}{x^{3/2}}$.
 Differentiating with respect to $x$:
-\[
+$$
 \frac{d}{dx} \text{cell}_k(x) = \frac{A(k) x^{3/2} - (x A(k) - B(k)) \frac{3}{2} x^{1/2}}{x^3} = \frac{3 B(k) - x A(k)}{2 x^{5/2}}.
-\]
+$$
 By the same-prime aggregation kernel coercivity theorem, $3 B(k) - x A(k) \ge k > 0$ for all $x \in [k, k+1]$.
 Since the derivative is strictly positive on $(k, k+1)$ and continuous on $[k, k+1]$, the mean value theorem implies that $\text{cell}_k$ (and therefore $H$) is strictly monotone increasing on $[k, k+1]$.
 
@@ -93,6 +93,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Prime-power support intervals and delay differential equations in number theory (Wheeler 1974, Hildebrand 1986). Determining exact dead-time inactivity intervals $[0, \log 4]$ and proving strict cell-by-cell monotonicity for renewal kernels has not previously been formalized in Lean 4.
+- **Prior Literature:** Prime-power support intervals and delay differential equations in number theory (Wheeler 1974, Hildebrand 1986). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Proves the sharp activation criterion $s(v) > 0 \iff v > \log 4$ and cell strict monotonicity in Lean 4.
 - **Target Venues:** *Acta Arithmetica* or *Journal of Mathematical Analysis and Applications*.

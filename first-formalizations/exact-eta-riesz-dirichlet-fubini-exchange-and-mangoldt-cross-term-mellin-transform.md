@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the general Fubini exchange theorem for truncated quadratic eta kernels and evaluating the exact continuous Mellin transform of the von Mangoldt cross term.
+This entry documents a machine-verified implementation in Lean 4 proving the general Fubini exchange theorem for truncated quadratic eta kernels and evaluating the exact continuous Mellin transform of the von Mangoldt cross term.

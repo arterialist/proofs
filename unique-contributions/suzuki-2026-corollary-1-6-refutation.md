@@ -1,53 +1,30 @@
-# Refutation of Suzuki's compact uniform convergence claim (arXiv:2606.09096v1, Corollary 1.6)
+# Domain correction for Suzuki's 2026 Corollary 1.6, version 1
 
-**Status:** complete written mathematical refutation, September 2026.
-Attribution: Arterialist RH research team, September 2026.
-Discovers and proves an uncorrectable mathematical error in Masatoshi Suzuki's preprint
-*Weil's quadratic form via the screw function* (arXiv:2606.09096v1, June 2026).
+**Classification:** correction to a conjectural limit formulation, not a refutation of the operator program
 
-## The contested statement
+**Primary source:** [Suzuki, arXiv:2606.09096v1, Corollary 1.6](https://arxiv.org/html/2606.09096v1#S1.SS2)
 
-In arXiv:2606.09096v1, Corollary 1.6, equation (1.12), Suzuki asserts that for suitable
-normalization parameters $\phi(a, z)$ and $\theta(a)$, as $a \downarrow 0$:
-\[
- e^{\phi(a, z)} W(a, \theta(a); z) \longrightarrow F(z) := z^2 \frac{\xi(1/2 - iz)}{\xi'(1/2 - iz)}
-\]
-**uniformly on every compact subset of $\mathbb{C}$**.
+Version 1 asks whether one can choose $\theta=\theta(a)$ and a finite normalizer $\phi(a,z)$ so that, as $a\to\infty$,
 
-## The refutation
+$$
+e^{\phi(a,z)}W(a,\theta(a);z)
+\longrightarrow
+z^2\frac{\xi(1/2-iz)}{\xi'(1/2-iz)}
+$$
 
-**Theorem.** The limit function $F(z)$ has infinitely many real poles. Consequently, the entire
-functions $e^{\phi(a, z)} W(a, \theta(a); z)$ cannot converge uniformly on any compact subset
-of $\mathbb{C}$ containing a real pole of $F(z)$.
+uniformly on every compact subset of $\mathbb C$. This is a conditional criterion in the preprint, not a theorem asserting that the convergence holds. The earlier page incorrectly reversed the limit to $a\downarrow0$.
 
-*Proof.*
-1. **Infinitely many real zeros of $\xi(1/2 - it)$:**
-   By Hardy's theorem (1914), the Riemann zeta function has infinitely many zeros on the critical line.
-   Equivalently, the entire function $t \mapsto \Xi(t) := \xi(1/2 + it) = \xi(1/2 - it)$ has infinitely
-   many real zeros.
-2. **Poles of $F(z)$ from Rolle's theorem:**
-   Because $\Xi(t)$ is real-valued and smooth on $\mathbb{R}$, Rolle's theorem guarantees that between
-   every pair of distinct consecutive real zeros of $\Xi(t)$, the derivative $\Xi'(t) = -i \xi'(1/2 - it)$
-   has at least one real zero.
-3. **Simple zeros and non-cancellation:**
-   Let $t_0 \in \mathbb{R}$ be a zero of $\Xi'(t)$ strictly between two consecutive zeros of $\Xi(t)$.
-   Then $\Xi(t_0) \ne 0$.
-   Therefore, the denominator $\xi'(1/2 - iz)$ vanishes at $z = t_0$ while the numerator
-   $z^2 \xi(1/2 - iz)$ does not vanish (for $t_0 \ne 0$).
-   Hence, $F(z)$ has a genuine pole at $z = t_0$.
-   By Hardy's theorem, there are infinitely many such poles $\{t_k\}_{k=1}^\infty \subset \mathbb{R}$.
-4. **Impossibility of uniform convergence:**
-   For each $a > 0$, $W(a, \theta(a); z)$ is an entire function of $z$ (bounded on compact sets).
-   If $e^{\phi(a, z)} W(a, \theta(a); z)$ converged uniformly on a compact disk $K$ containing $t_0$,
-   the uniform limit of entire functions on $K$ would be holomorphic on the interior of $K$ by
-   Weierstrass's theorem.
-   However, $F(z)$ is meromorphic with a pole at $t_0 \in K^\circ$, a contradiction. $\blacksquare$
+The proposed finite-valued all-plane limit has a domain problem. Put $X(z)=\xi(1/2-iz)$. Hardy's theorem gives infinitely many real zeros of $X$. Between consecutive such zeros, Rolle's theorem gives a real point $c$ with $X'(c)=0$ and $X(c)\ne0$. Hence $z^2X(z)/X'(z)$ has genuine real poles away from zero. Ordinary uniform convergence to that meromorphic function on every compact subset of $\mathbb C$ cannot hold as stated.
 
-## Consequences for the literature
+One must be careful about the normalizer. Version 1 requires $\phi(a,z)$ to be finite but does not state that it is holomorphic. Therefore the familiar claim that the left-hand sides are entire is not justified without an extra hypothesis on $\phi$. With holomorphic normalizers, contour integrals rule out even locally uniform convergence on punctured neighborhoods that enclose a pole. A plausible corrected domain is $\mathbb C\setminus\mathbb R$, together with explicit holomorphy and normalization conditions, but proving that limit remains a separate problem.
 
-Corollary 1.6 in Suzuki's preprint was claimed as a key bridge linking screw functions to the zeros
-of $\xi'(s)$. The refutation demonstrates that the convergence cannot hold uniformly on compact subsets
-of $\mathbb{C}$, and requires an explicit excision of neighborhoods around every zero of $\xi'(1/2 - iz)$.
+This issue is narrow. Suzuki's Theorems 1.1 through 1.5 construct and analyze localized operators and self-adjoint extensions independently of the conjectural limit formula. The correction does not refute those results or the broader spectral program.
 
-Full proof: [building-blocks/weil-and-spectral/suzuki-2026-corollary-1-6-limit-domain-audit.md](../building-blocks/weil-and-spectral/suzuki-2026-corollary-1-6-limit-domain-audit.md).
-See also the adjoint domain gap audit: [building-blocks/weil-and-spectral/suzuki-2026-adjoint-domain-proof-gap.md](../building-blocks/weil-and-spectral/suzuki-2026-adjoint-domain-proof-gap.md).
+Version 2 changes the proposed limit to
+
+$$
+\frac{\xi(1/2-iz)}
+ {\xi(1/2-iz)+\xi'(1/2-iz)},
+$$
+
+while retaining $a\to\infty$ and compact-uniform wording. That revision confirms that the v1 quotient should not be treated as an uncorrectable flaw in the entire paper. The repository's longer argument is in [the limit-domain audit](../building-blocks/weil-and-spectral/suzuki-2026-corollary-1-6-limit-domain-audit.md).

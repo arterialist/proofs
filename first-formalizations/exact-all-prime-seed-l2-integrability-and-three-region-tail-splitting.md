@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the $L^2(\mathbb{R})$ integrability of the complete arithmetic all-prime seed without truncation or unproved RH/PNT hypotheses.
+This entry documents a machine-verified implementation in Lean 4 proving the $L^2(\mathbb{R})$ integrability of the complete arithmetic all-prime seed without truncation or unproved RH/PNT hypotheses.

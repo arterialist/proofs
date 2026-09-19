@@ -45,6 +45,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving explicit non-asymptotic exponential bounds and unconditional Fourier Bochner integrability for the accelerated causal prime source without smoothing windows or unproven conjectures.
+This entry documents a machine-verified implementation in Lean 4 proving explicit non-asymptotic exponential bounds and unconditional Fourier Bochner integrability for the accelerated causal prime source without smoothing windows or unproven conjectures.

@@ -37,7 +37,7 @@ $$\Lambda_0(s) = \frac{1}{2} \int_1^\infty \operatorname{cpowTrigKernel}(s, x) f
 
 This proves unconditionally that `SymmetrizedRepresentation s` holds for every $s \in \mathbb{C}$ without any conditional representation assumptions.
 
-### Unconditional Low-Frequency Zero-Freeness and RH Deductions
+### Low-frequency zero-freeness and conditional RH bridges
 With the representation unconditionally verified:
 1. `symmetrizedRatioExact_unconditional` and `symmetrizedMellinDominated_unconditional` hold unconditionally.
 2. The low-frequency critical strip $(1/2, 1] \times (0, 1]$ is unconditionally zero-free for $\zeta(s)$:
@@ -46,7 +46,7 @@ With the representation unconditionally verified:
    - `certificate_of_modular_inversion_and_fredholm`
    - `certificate_of_modular_inversion_and_refutation`
    - `certificate_of_modular_inversion_and_grand_synthesis`
-4. Mathlib's `RiemannHypothesis` is formally deduced from each of the three completed spectral architectures unconditionally.
+4. Mathlib's `RiemannHypothesis` follows after supplying one of the three spectral-system records. The theorem signatures below show those required arguments.
 
 ---
 
@@ -85,8 +85,8 @@ With the representation unconditionally verified:
 
 ---
 
-## 3. Novelty and Literature Attribution
+## 3. Literature attribution and verification status
 
 - **Literature Context**: The modular inversion identity $x \mapsto 1/x$ for the Mellin transform of theta functions was introduced by Riemann (1859). The classical derivation splits the integral at $1$ and applies $\theta(1/x) = x^{1/2} \theta(x)$ to obtain the integral on $[1, \infty)$.
-- **Novelty of this Formalization**: This constitutes the first formal machine-checked proof in Lean 4 connecting Mathlib's Hurwitz-even functional equation pair structure `hurwitzEvenFEPair 0` and `WeakFEPair.Λ₀` through complex Bochner integration change-of-variables to obtain an unconditional symmetrized representation `SymmetrizedRepresentation s` for all $s \in \mathbb{C}$ with 0 sorries.
+- **Verification status**: This entry records a formal machine-checked proof in Lean 4 connecting Mathlib's Hurwitz-even functional equation pair structure `hurwitzEvenFEPair 0` and `WeakFEPair.Λ₀` through complex Bochner integration change-of-variables to obtain an unconditional symmetrized representation `SymmetrizedRepresentation s` for all $s \in \mathbb{C}$ with 0 sorries.
 - **Taxonomy Placement**: Categorized as **First Formalization 383**.

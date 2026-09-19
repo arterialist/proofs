@@ -76,6 +76,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing circle contour integration formulas connecting $\Lambda'/\Lambda$ directly to $\xi'/\xi$, with verified exact pole cancellation under vanishing boundary Mellin moments.
+This entry documents a machine-verified implementation in Lean 4 establishing circle contour integration formulas connecting $\Lambda'/\Lambda$ directly to $\xi'/\xi$, with verified exact pole cancellation under vanishing boundary Mellin moments.

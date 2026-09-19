@@ -17,14 +17,14 @@ This formalization proves the exact tri-partition of old cyclotomic conductors, 
    Formal proof of `selectedMass_nonneg`, `sectorAbsolute_nonneg`, `selectedAbsolute_nonneg`, `abs_sectorSigned_le`, `abs_selectedSigned_le`, and `selectedAbsolute_mono`.
 3. **Logarithmic-Divisor Bound:**
    Formal proof of `selectedAbsolute_le`:
-   \[
+   $$
    \text{selectedAbsolute}(N, s) \le d(N) \log N \cdot \text{selectedMass}(N, s).
-   \]
+   $$
 4. **Interaction Sum Partition:**
    Formal proof of `selectedSigned_partition`, `oldInteraction_partition`, and `controlledInteraction_abs_le`:
-   \[
+   $$
    |\mathcal{I}_{\text{controlled}}(X, Y)| \le \mathcal{C}_{\text{small}}(X, Y) + \mathcal{C}_{\text{recent}}(X).
-   \]
+   $$
 5. **Discrete-Continuous Equivalence:**
    Formal proof of `nat_sqrt_lt_iff_real` and `mem_interiorConductors_iff`: equivalence of discrete integer bounds to $\sqrt{X} < n < N - \sqrt{N}$.
 
@@ -66,6 +66,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact disjoint conductor tri-partition, Farey interaction splitting, and explicit logarithmic-divisor bounds for cyclotomic boundary dynamics.
+This entry documents a machine-verified proof in Lean 4 establishing the exact disjoint conductor tri-partition, Farey interaction splitting, and explicit logarithmic-divisor bounds for cyclotomic boundary dynamics.

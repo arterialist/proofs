@@ -1,4 +1,4 @@
-# Unique Contribution 157: Exact Causal Filter Energy Dissipation Identity and Critical Contraction
+# Contribution 157: Exact Causal Filter Energy Dissipation Identity and Critical Contraction
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CausalFilterEnergy.lean`](../../formalization/BuildingBlocks/CausalFilterEnergy.lean), [`building-blocks/energy/causal-filter-energy.md`](../../building-blocks/energy/causal-filter-energy.md)  
@@ -14,25 +14,25 @@ This contribution proves:
 
 1. **Exact Cross-Integral Identity for Jump-Admissible Causal Filters:**  
    For any damping rate $\lambda \in \mathbb{R}$, continuous response $r(t)$ with $r(0) = 0$, and interval-integrable input $f(t)$ satisfying $r_+'(t) = f(t) - \lambda r(t)$ on $(0, T)$:
-   \[
+   $$
    2 \int_0^T r(t) f(t) dt = r(T)^2 + 2\lambda \int_0^T r(t)^2 dt.
-   \]
+   $$
 2. **Exact Causal Filter Energy Dissipation Identity:**  
    For any duration $T \in \mathbb{R}$ and square-integrable input $f \in L^2([0, T])$:
-   \[
+   $$
    \int_0^T (f(t) - r(t))^2 dt = \int_0^T f(t)^2 dt - r(T)^2 - (2\lambda - 1) \int_0^T r(t)^2 dt.
-   \]
+   $$
 3. **Critical Energy Contraction Theorem:**  
    If and only if the damping rate satisfies $\lambda \ge 1/2$, the causal filter is a strict $L^2$ contraction for all $T \ge 0$:
-   \[
+   $$
    \int_0^T (f(t) - r(t))^2 dt \le \int_0^T f(t)^2 dt.
-   \]
+   $$
    The boundary threshold $\lambda = 1/2$ corresponds precisely to the critical line in analytic number theory, where interior dissipation $(2\lambda - 1) \int_0^T r^2 dt$ vanishes!
 4. **Sharp $H^2$ Input-Output Response Bound:**  
    For any $\lambda \ge 0$ and $T \ge 0$:
-   \[
+   $$
    \lambda^2 \int_0^T r(t)^2 dt \le \int_0^T f(t)^2 dt.
-   \]
+   $$
 
 ---
 
@@ -41,54 +41,54 @@ This contribution proves:
 ### 2.1. Right-Differentiable Cross Integral
 Since $r(t)$ is continuous on $[0, T]$ and $r(0) = 0$, the quadratic function $r(t)^2$ is continuous on $[0, T]$ with $(r^2)(0) = 0$.
 By the chain rule for right derivatives:
-\[
+$$
 (r^2)_+'(t) = 2 r(t) r_+'(t) = 2 r(t) (f(t) - \lambda r(t)) = 2 r(t) f(t) - 2\lambda r(t)^2.
-\]
+$$
 Integrating both sides over $[0, T]$ using the fundamental theorem of calculus for right derivatives (`intervalIntegral.integral_eq_sub_of_hasDeriv_right`):
-\[
+$$
 \int_0^T (r^2)_+'(t) dt = r(T)^2 - r(0)^2 = r(T)^2.
-\]
+$$
 Thus:
-\[
+$$
 \int_0^T (2 r(t) f(t) - 2\lambda r(t)^2) dt = r(T)^2 \implies 2 \int_0^T r(t) f(t) dt = r(T)^2 + 2\lambda \int_0^T r(t)^2 dt.
-\]
+$$
 
 ### 2.2. Dissipation Identity
 Expanding the $L^2$ error norm:
-\[
+$$
 (f(t) - r(t))^2 = f(t)^2 - 2 r(t) f(t) + r(t)^2.
-\]
+$$
 Integrating over $[0, T]$ and substituting the exact cross integral:
-\[
+$$
 \int_0^T (f - r)^2 dt = \int_0^T f^2 dt - \left( r(T)^2 + 2\lambda \int_0^T r^2 dt \right) + \int_0^T r^2 dt
-\]
-\[
+$$
+$$
 = \int_0^T f^2 dt - r(T)^2 - (2\lambda - 1) \int_0^T r^2 dt.
-\]
+$$
 
 ### 2.3. Critical Line Contraction
 For $T \ge 0$, since $r(T)^2 \ge 0$ and $\int_0^T r^2 dt \ge 0$:
-\[
+$$
 r(T)^2 + (2\lambda - 1) \int_0^T r(t)^2 dt \ge 0 \iff 2\lambda - 1 \ge 0 \iff \lambda \ge \frac{1}{2}.
-\]
+$$
 Under this condition:
-\[
+$$
 \int_0^T (f - r)^2 dt \le \int_0^T f^2 dt.
-\]
+$$
 
 ### 2.4. Input-Output Bound
 Expanding $(f(t) - \lambda r(t))^2 \ge 0$:
-\[
+$$
 0 \le \int_0^T (f - \lambda r)^2 dt = \int_0^T f^2 dt - 2\lambda \int_0^T rf dt + \lambda^2 \int_0^T r^2 dt.
-\]
+$$
 Substituting $2 \int rf = r(T)^2 + 2\lambda \int r^2$:
-\[
+$$
 0 \le \int_0^T f^2 dt - \lambda \left( r(T)^2 + 2\lambda \int_0^T r^2 dt \right) + \lambda^2 \int_0^T r^2 dt = \int_0^T f^2 dt - \lambda r(T)^2 - \lambda^2 \int_0^T r^2 dt.
-\]
+$$
 Since $\lambda \ge 0$ and $r(T)^2 \ge 0$, $\lambda r(T)^2 \ge 0$, yielding:
-\[
+$$
 \lambda^2 \int_0^T r(t)^2 dt \le \int_0^T f(t)^2 dt.
-\]
+$$
 
 ---
 

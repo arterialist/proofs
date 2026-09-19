@@ -56,6 +56,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 of non-asymptotic total-variation error bounds for right-endpoint and composite trapezoid quadrature rules.
+This entry documents a machine-verified proof in Lean 4 of non-asymptotic total-variation error bounds for right-endpoint and composite trapezoid quadrature rules.

@@ -1,4 +1,4 @@
-# Unique Contribution 136: Exact Critical Convergence Abscissa and Landau Singularity Barrier
+# Contribution 136: Exact Critical Convergence Abscissa and Landau Singularity Barrier
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualCriticalConvergence.lean`](../../formalization/BuildingBlocks/ActualCriticalConvergence.lean), [`building-blocks/laplace/actual-critical-convergence.md`](../../building-blocks/laplace/actual-critical-convergence.md)  
@@ -15,19 +15,19 @@ This contribution proves:
 1. **Exact Abscissa Barrier at the Critical Line:**  
    Let $A \ge 1$ be a cutoff such that the critical Mellin kernel has negative tail real part: $\operatorname{Re}(W(x)) \le 0$ for all $x > A$.
    If the convergence set of the tail Laplace measure is bounded below, its convergence abscissa $\sigma_c$ satisfies:
-   \[
+   $$
    \sigma_c \le \frac{1}{2}.
-   \]
+   $$
 2. **Universal Laplace Integrability Above Half:**  
    Under the negative-tail condition, the Laplace transform of the tail measure converges and is strictly integrable at every real parameter:
-   \[
+   $$
    \int_0^\infty e^{-\sigma t} d\mu_A(t) < \infty \quad \text{for all } \sigma > \frac{1}{2}.
-   \]
+   $$
 3. **Holomorphy on the Open Half-Plane $\operatorname{Re}(s) > 1/2$:**  
    The Laplace moment function:
-   \[
+   $$
    s \mapsto \int_0^\infty e^{-s t} d\mu_A(t)
-   \]
+   $$
    is analytic on the entire half-plane $\{s \in \mathbb{C} \mid \operatorname{Re}(s) > 1/2\}$.
 4. **Analytic Continuation Matching Filled Transform:**  
    The continuation candidate $F_A(s) = \mathcal{M}(W_{\text{init}, A})(-s-1) - \int_0^\infty e^{-st} d\mu_A(t)$ is analytic on $\operatorname{Re}(s) > 1/2$ and identically equals the pole-filled transform $\Phi(s)$ for $\operatorname{Re}(s) > 1$.
@@ -38,9 +38,9 @@ This contribution proves:
 
 ### 2.1. Real-Axis Analyticity of Continuation Candidate
 The tail transform is defined by:
-\[
+$$
 F_A(s) = \mathcal{M}(W_{\text{init}, A})(-s-1) - \Phi(s),
-\]
+$$
 where $W_{\text{init}, A}$ is supported on $[1, A]$ and $\Phi(s)$ is the critical transform with trivial poles removed.
 Since $W_{\text{init}, A}$ has compact support, its Mellin transform is entire. By previous construction (`CriticalTransformRealAxis`), $\Phi(s)$ has no poles on the open real ray $(1/2, \infty)$. Thus $F_A(\sigma)$ is analytic at every real point $\sigma > 1/2$.
 

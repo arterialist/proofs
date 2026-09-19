@@ -1,4 +1,4 @@
-# Unique Contribution 257: Exact Arithmetic Correlation Support Cutoff and Prime-Power Bijection
+# Contribution 257: Exact Arithmetic Correlation Support Cutoff and Prime-Power Bijection
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CompleteArithmeticCorrelation.lean`](../../formalization/BuildingBlocks/CompleteArithmeticCorrelation.lean), [`building-blocks/correlation/complete-arithmetic-correlation.md`](../../building-blocks/correlation/complete-arithmetic-correlation.md)  
@@ -9,35 +9,35 @@
 ## 1. Executive Summary and Mathematical Statement
 
 The prime correlation matrix row evaluates the pairing between compactly supported test functions $f, g$ and the primes via:
-\[
+$$
 \text{arithmeticRow}(f, g) = \sum_{n=2}^\infty \frac{\Lambda(n)}{\sqrt{n}} \left( \text{correlation}(f, g)(\log n) + \overline{\text{correlation}(g, f)(\log n)} \right).
-\]
+$$
 Although defined as an infinite series, the compact support of $f$ and $g$ causes the cross-correlation $\text{correlation}(f, g)(x) = \int_{-\infty}^\infty g(v + x)\overline{f(v)} dv$ to vanish identically for sufficiently large displacement $x$.
 
 This contribution proves:
 
 1. **Exact Von Mangoldt Prime-Power Bijection:**  
    For any weight sequence $w : \mathbb{N} \to \mathbb{C}$ and cutoff $N \in \mathbb{N}$:
-   \[
+   $$
    \sum_{n=1}^N \Lambda(n) w(n) = \sum_{\substack{p \le N \\ p \text{ prime}}} \sum_{\substack{j \ge 1 \\ p^j \le N}} (\log p) w(p^j).
-   \]
+   $$
    This theorem provides a constructive machine-verified bijection between the arithmetic domain of prime powers $p^j \le N$ and the filter $\text{IsPrimePow}$ on $\{1, \dots, N\}$.
 2. **Correlation Vanishing Outside Support Width:**  
    If $f, g$ have supports contained in $(a, b)$, then:
-   \[
+   $$
    \text{correlation}(f, g)(x) = 0 \quad \text{for all } x \ge b - a.
-   \]
+   $$
 3. **Finite Truncation Equivalence:**  
    Whenever the integer truncation satisfies $N + 1 \ge e^{b - a}$:
-   \[
+   $$
    \text{arithmeticRow}(f, g) = \text{arithmeticCutoff}(N, f, g).
-   \]
+   $$
    The infinite series collapses unconditionally to a finite sum of length at most $\lfloor e^{b - a} \rfloor$.
 4. **Exact Prime-Power Representation:**  
    For any cutoff $N$:
-   \[
+   $$
    \text{arithmeticCutoff}(N, f, g) = \sum_{\substack{p \le N \\ p \text{ prime}}} \sum_{\substack{j \ge 1 \\ p^j \le N}} \frac{\log p}{\sqrt{p^j}} \left( \text{correlation}(f, g)(j \log p) + \overline{\text{correlation}(g, f)(j \log p)} \right).
-   \]
+   $$
 
 ---
 
@@ -49,16 +49,16 @@ Define the index set $P = \{(p, j) \in [2, N] \times [1, N] \mid p \text{ is pri
 - The mapping $\phi(p, j) = p^j$ is injective by the uniqueness of prime factorization ($p_1^{j_1} = p_2^{j_2} \implies p_1 = p_2$ and $j_1 = j_2$).
 - The mapping $\phi$ is surjective onto $Q$ by definition of prime power.
 - Summing over $Q$ and applying $\Lambda(p^j) = \log p$:
-\[
+$$
 \sum_{n \in Q} \Lambda(n) w(n) = \sum_{(p, j) \in P} (\log p) w(p^j) = \sum_{\substack{p \le N \\ p \text{ prime}}} \sum_{\substack{j \ge 1 \\ p^j \le N}} (\log p) w(p^j).
-\]
+$$
 Since $\Lambda(n) = 0$ for $n \notin Q$, the sum over $Q$ equals the sum over $\{1, \dots, N\}$.
 
 ### 2.2. Correlation Support Width
 The cross-correlation is:
-\[
+$$
 \text{correlation}(f, g)(x) = \int_{\mathbb{R}} g(v + x) \overline{f(v)} \, dv.
-\]
+$$
 For the integrand to be non-zero at $v$, we must have $v \in (a, b)$ and $v + x \in (a, b)$.
 This implies $a < v < b$ and $a < v + x < b$.
 Thus $x < b - v < b - a$.
@@ -66,9 +66,9 @@ Therefore, if $x \ge b - a$, there is no $v$ where both factors are non-zero, an
 
 ### 2.3. Series Collapse
 For $n \ge N + 1 \ge e^{b - a}$:
-\[
+$$
 \log n \ge \log(e^{b - a}) = b - a.
-\]
+$$
 By the width vanishing theorem, $\text{correlation}(f, g)(\log n) = 0$ and $\text{correlation}(g, f)(\log n) = 0$ for all $n > N$.
 Thus $\text{arithmeticTerm}(f, g, n) = 0$ for all $n > N$, and the infinite sum $\sum_{n=2}^\infty$ equals the finite sum $\sum_{n=2}^N$.
 
@@ -107,6 +107,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Explicit formulas and prime sums in spectral theory (Guinand 1948, Weil 1952, Burnol 2002). A machine-verified constructive bijection for $\sum \Lambda(n) w(n) = \sum (\log p) w(p^j)$ and the exact finitary collapse of correlation series for compactly supported test functions in Lean 4 is new.
+- **Prior Literature:** Explicit formulas and prime sums in spectral theory (Guinand 1948, Weil 1952, Burnol 2002). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Guarantees that arithmetic test matrices are finite and computable without truncation error whenever the test functions are compactly supported.
 - **Target Venues:** *Journal of Number Theory* or *Journal of Functional Analysis*.

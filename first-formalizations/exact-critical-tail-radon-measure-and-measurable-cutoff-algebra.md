@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the Borel measurability of arithmetic floor-cutoff sums and constructing the non-negative Radon measure with verified mass-to-Mellin-norm equivalence.
+This entry documents a machine-verified implementation in Lean 4 establishing the Borel measurability of arithmetic floor-cutoff sums and constructing the non-negative Radon measure with verified mass-to-Mellin-norm equivalence.

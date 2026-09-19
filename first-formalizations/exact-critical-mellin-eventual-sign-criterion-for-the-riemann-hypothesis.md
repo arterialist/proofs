@@ -41,6 +41,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the eventual nonpositivity of the critical Mellin kernel implies the Riemann Hypothesis, completing the entire analytic bridge from real-variable sign to complex zero location.
+This entry documents a machine-verified implementation in Lean 4 proving that the eventual nonpositivity of the critical Mellin kernel implies the Riemann Hypothesis, completing the entire analytic bridge from real-variable sign to complex zero location.

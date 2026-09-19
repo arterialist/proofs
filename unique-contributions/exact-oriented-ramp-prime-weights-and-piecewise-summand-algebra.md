@@ -1,4 +1,4 @@
-# Unique Contribution 134: Exact Oriented Ramp Prime Weights and Piecewise Summand Algebra
+# Contribution 134: Exact Oriented Ramp Prime Weights and Piecewise Summand Algebra
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualRampPrimeWeights.lean`](../../formalization/BuildingBlocks/ActualRampPrimeWeights.lean), [`building-blocks/causal-correlations/actual-ramp-prime-weights.md`](../../building-blocks/causal-correlations/actual-ramp-prime-weights.md)  
@@ -9,9 +9,9 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the oriented causal correlation of exponentially damped ramps of lengths $A$ and $B$, the cross-weight at logarithmic prime-power shift $u = \log n$ is governed by the nonlinear kernel:
-\[
+$$
 W(A, B, u) = 1 - \exp\left( -\min\left( B, \max(0, A - u) \right) \right).
-\]
+$$
 In explicit formula and prime-power correlation estimates, evaluating the interaction of this kernel with the discrete measure $\sum_{n=2}^N \frac{\Lambda(n)}{n} \delta_{\log n}$ requires exact piecewise decomposition into plateau, slope, and vanishing regions.
 
 This contribution proves:
@@ -24,19 +24,19 @@ This contribution proves:
    - **Outer Vanishing Region ($u \ge A$):** $W(A, B, u) = 0$.
 2. **Exact Prime-Power Evaluation in the Sloping Region:**  
    For integers $n \ge 1$ with $\log n \in [A - B, A]$:
-   \[
+   $$
    W(A, B, \log n) = 1 - n e^{-A}.
-   \]
+   $$
 3. **Exact Von Mangoldt Summand Decoupling:**  
    In the sloping window, the prime-power cross summand factors algebraically into an unweighted harmonic term minus an unweighted linear density:
-   \[
+   $$
    \frac{\Lambda(n)}{n} W(L + \Delta, L, \log n) = \frac{\Lambda(n)}{n} - \Lambda(n) e^{-(L + \Delta)}.
-   \]
+   $$
 4. **Global Monotonicity and Non-Negativity:**  
    The finite prime-power cross energy $\mathcal{S}_N(A, B) = \sum_{n=2}^N \frac{\Lambda(n)}{n} W(A, B, \log n)$ is non-negative and strictly monotonic in $A, B$, and truncation $N$:
-   \[
+   $$
    0 \le \mathcal{S}_N(A, B) \le \mathcal{S}_{N'}(A', B') \quad \text{for } N \le N', A \le A', B \le B'.
-   \]
+   $$
 
 ---
 
@@ -49,13 +49,13 @@ This contribution proves:
 
 ### 2.2. Prime-Power Evaluation
 For $u = \log n$:
-\[
+$$
 1 - e^{\log n - A} = 1 - e^{\log n} e^{-A} = 1 - n e^{-A}.
-\]
+$$
 Multiplying by $\frac{\Lambda(n)}{n}$:
-\[
+$$
 \frac{\Lambda(n)}{n} (1 - n e^{-A}) = \frac{\Lambda(n)}{n} - \frac{\Lambda(n) n e^{-A}}{n} = \frac{\Lambda(n)}{n} - \Lambda(n) e^{-A}.
-\]
+$$
 
 ### 2.3. Monotonicity and Positivity
 Since $u \mapsto \min(B, \max(0, A - u))$ is non-decreasing in $A$ and $B$, $e^{-\min}$ is non-increasing, so $1 - e^{-\min}$ is non-decreasing.

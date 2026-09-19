@@ -1,37 +1,27 @@
-# First Formalization: Real Axis Non-Vanishing of the Riemann Zeta Function
+# Catalog entry 360: conditional real-axis zeta nonvanishing from eta data
 
-## Mathematical Context
-On the critical strip $(0, 1)$, the Riemann zeta function is linked to the alternating Dirichlet eta series:
-$$\eta(\sigma) = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n^\sigma} = (1 - 2^{1-\sigma}) \zeta(\sigma).$$
+This page documents `formalization/BuildingBlocks/RiemannZetaRealNonvanishing.lean`.
 
-For every real $\sigma \in (0, 1)$:
-1. The alternating series grouping $p_k(\sigma) = (2k-1)^{-\sigma} - (2k)^{-\sigma} > 0$ demonstrates that $\eta(\sigma) \ge p_1(\sigma) = 1 - 2^{-\sigma} > 0$.
-2. The Dirichlet eta multiplier $1 - 2^{1-\sigma} < 0$ because $1 - \sigma > 0$ forces $2^{1-\sigma} > 1$.
-3. As a result, $\zeta(\sigma) = \eta(\sigma) / (1 - 2^{1-\sigma}) < 0$.
-4. Hence, $\zeta(\sigma) \ne 0$ for all real $\sigma \in (0, 1)$.
+The module proves scalar positivity of paired real powers and negativity of the multiplier `1 - 2^(1-σ)`. It does not construct the alternating Dirichlet eta series or prove its relation to `riemannZeta`.
 
-Together with Mathlib's verified `riemannZeta_ne_zero_of_one_le_re` (which certifies non-vanishing for $\operatorname{Re}(s) \ge 1$), this proves that $\zeta(s) \ne 0$ for all real $s > 1/2$ ($s \ne 1$).
+Instead, `DirichletEtaIdentity σ` stores as fields a positive real `eta_val`, the relation
 
-While this argument is classical (Dirichlet 1837, Landau 1909), it was missing from Lean 4 / Mathlib.
+```lean
+(1 - 2^(1 - σ)) * (riemannZeta (σ : ℂ)).re = eta_val
+```
 
-## Formalization Structure in Lean 4
-The formalization is verified in `formalization/BuildingBlocks/RiemannZetaRealNonvanishing.lean` (Module 271):
+and the assertion that the zeta value has zero imaginary part. `riemannZeta_re_neg_of_eta` and `riemannZeta_ne_zero_of_eta` require a value of this structure. `RealAxisNonvanishingSystem` requires such an identity for every `σ ∈ (1/2,1)`, and the final theorem has the exact premise:
 
-1. **Alternating Pair Positivity** (`alternating_pair_pos`):
-   For any $k \ge 1$ and $\sigma > 0$:
-   $$(2k-1)^{-\sigma} - (2k)^{-\sigma} > 0.$$
-2. **First Alternating Term Positivity** (`first_alternating_term_pos`):
-   $$1 - 2^{-\sigma} > 0 \quad \text{for all } \sigma > 0.$$
-3. **Eta Multiplier Negativity** (`eta_multiplier_neg`):
-   $$1 - 2^{1-\sigma} < 0 \quad \text{for all } \sigma < 1.$$
-4. **Negative Real Part on Unit Interval** (`riemannZeta_re_neg_of_eta`):
-   $$\operatorname{Re}(\zeta(\sigma)) < 0 \quad \text{for all } \sigma \in (0, 1).$$
-5. **Real Zero Non-Existence** (`real_axis_zeta_ne_zero`):
-   Combining the Dirichlet eta identity with Mathlib's `riemannZeta_ne_zero_of_one_le_re`, for all real $s > 1/2$ with $s \ne 1$:
-   $$\zeta(s) \ne 0.$$
+```lean
+theorem real_axis_zeta_ne_zero
+    (sys : RealAxisNonvanishingSystem) (s : ℂ)
+    (hsr : 1 / 2 < s.re) (hsim : s.im = 0) (hs1 : s ≠ 1) :
+    riemannZeta s ≠ 0
+```
 
-## Machine Verification
-- **Module**: `formalization/BuildingBlocks/RiemannZetaRealNonvanishing.lean`
-- **Lean Version**: 4.24.0 (Mathlib v4.24.0)
-- **Sorries**: 0
-- **Axioms**: `[propext, Classical.choice, Quot.sound]`
+Thus this module is a conditional packaging of the eta argument. It does not by itself prove real-axis nonvanishing on `(1/2,1)`.
+
+- **Lean:** 4.24.0
+- **Mathlib revision:** `f897ebcf72cd16f89ab4577d0c826cd14afaafc7`
+- **Sorries:** 0
+- **Reported axioms:** `[propext, Classical.choice, Quot.sound]`

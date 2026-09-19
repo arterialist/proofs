@@ -68,6 +68,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the strong $L^2$ convergence of prime renewal cutoffs via Lebesgue dominated convergence and proving uniform operator approximation over the half-line $L^2$ unit ball.
+This entry documents a machine-verified implementation in Lean 4 establishing the strong $L^2$ convergence of prime renewal cutoffs via Lebesgue dominated convergence and proving uniform operator approximation over the half-line $L^2$ unit ball.

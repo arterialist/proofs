@@ -1,4 +1,4 @@
-# First Formalization 389: Spectral Dissipation and Symmetrized Resolvent Energy Identity for the Riemann Hypothesis
+# Resolvent imaginary-part identities and an RH-equivalent balance predicate
 
 **Module Path**: `formalization/BuildingBlocks/RiemannZetaSpectralDissipation.lean`  
 **Root Module**: `formalization/BuildingBlocks.lean`  
@@ -20,7 +20,7 @@ In the context of the Riemann zeta function paired with the quadratic spectral p
 $$\mathcal{D}(s, x) := \operatorname{Im}\left( R(z(s), x) \right) = \frac{-\operatorname{Im}(z(s))}{|z(s) - x|^2} = \frac{t(2\sigma - 1)}{|z(s) - x|^2}$$
 where $s = \sigma + it$.
 
-Prior to this work, no formalization in Lean 4 (or any proof assistant) existed formalizing:
+The module checks the following algebraic identities and predicate equivalences. Worldwide priority has not been established by a reproducible proof-assistant literature search:
 1. The real-axis resolvent imaginary defect function $\mathcal{D}(s, x)$ as a measure of spectral dissipation;
 2. The complete coordinate expansion $\frac{t(2\sigma - 1)}{(\sigma(1 - \sigma) + t^2 - x)^2 + t^2(1 - 2\sigma)^2}$;
 3. The identical vanishing $\mathcal{D}(s, x) = 0$ for all $x \in \mathbb{R}$ when $\sigma = 1/2$;
@@ -28,8 +28,12 @@ Prior to this work, no formalization in Lean 4 (or any proof assistant) existed 
 5. Strict quadrant negativity: $\mathcal{D}(s, x) < 0$ for all $x \in \mathbb{R} \setminus \{z(s)\}$ when $\sigma > 1/2$ and $t < 0$;
 6. Invariance under functional reflection $\mathcal{D}(1 - s, x) = \mathcal{D}(s, x)$ and antisymmetry under complex conjugation $\mathcal{D}(\bar{s}, x) = -\mathcal{D}(s, x)$;
 7. The resonant probe frequency $x^* = \operatorname{Re}(z(s)) = \sigma(1 - \sigma) + t^2$ and the peak dissipation bound $\mathcal{D}(s, x) \le \mathcal{D}(s, x^*) = \frac{1}{t(2\sigma - 1)}$;
-8. The conservative spectral balance condition $\text{ConservativeSpectralBalance}$ requiring all non-trivial zeros to have vanishing dissipation along $\mathbb{R}$, proving the Millennium equivalence $\text{ConservativeSpectralBalance} \iff \text{RiemannHypothesis}$;
+8. The conservative spectral balance condition $\text{ConservativeSpectralBalance}$ requiring all non-trivial zeros to have vanishing dissipation along $\mathbb{R}$, and its equivalence with `RiemannHypothesis`;
 9. Canonical system package `ZetaSpectralDissipationSystem` with universal constructors connecting all autonomous operator systems and `MasterGrandUnification`.
+
+---
+
+The balance predicate already quantifies over all non-trivial zeros, and the module proves it equivalent to RH. It does not prove the predicate independently. `ZetaSpectralDissipationSystem` contains this RH-equivalent information; constructors from Fredholm, Carleman, linear-bridge, and other systems require a system value, and none is supplied here.
 
 ---
 
@@ -95,4 +99,4 @@ All declarations in `RiemannZetaSpectralDissipation.lean` compile with zero erro
   -- [propext, Classical.choice, Quot.sound]
   ```
 - **Library Build**: Built cleanly with `lake build BuildingBlocks` (7,965 jobs completed).
-- **Novelty Attestation**: No prior formalization in any proof assistant formalized real-axis spectral dissipation, its resonant peak bound, or its equivalence with the Riemann Hypothesis via quadratic invariant parametrization.
+- **Priority status**: not established. The current audit checked the Lean signatures and did not complete a worldwide literature search.

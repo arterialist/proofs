@@ -17,9 +17,9 @@ This formalization establishes the exact Hilbert-space $L^2((0, \infty))$ Gram i
    Formal proofs of the ramp product formula (`birth_gram_ramp`) and terminal product formula (`birth_gram_terminal`).
 3. **Exact Closed-Form Decoupled Gram Formula:**
    Formal proof of `birth_gram_integral`:
-   \[
+   $$
    \langle \text{increment}(m), \text{increment}(N) \rangle_{L^2} = (\Lambda(m+1) - 1) \left( \frac{\Lambda(N+1)}{N+1} - \log\left(1 + \frac{1}{N}\right) \right).
-   \]
+   $$
 
 ---
 
@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact closed-form evaluation of the $L^2$ Gram matrix of the prime birth process $\langle \Delta \text{source}_m, \Delta \text{source}_N \rangle = (\Lambda(m+1) - 1)(\frac{\Lambda(N+1)}{N+1} - \log(1+1/N))$, demonstrating algebraic scale-decoupling and intermediate boundary cancellation.
+This entry documents a machine-verified implementation in Lean 4 proving the exact closed-form evaluation of the $L^2$ Gram matrix of the prime birth process $\langle \Delta \text{source}_m, \Delta \text{source}_N \rangle = (\Lambda(m+1) - 1)(\frac{\Lambda(N+1)}{N+1} - \log(1+1/N))$, demonstrating algebraic scale-decoupling and intermediate boundary cancellation.

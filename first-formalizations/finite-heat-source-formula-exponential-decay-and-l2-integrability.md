@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 connecting the discrete Chebyshev error $\psi(N) - N$ to a continuous heat source $S_N(t)$ with uniform exponential decay and unconditional $L^2(0, \infty)$ square integrability.
+This entry documents a machine-verified proof in Lean 4 connecting the discrete Chebyshev error $\psi(N) - N$ to a continuous heat source $S_N(t)$ with uniform exponential decay and unconditional $L^2(0, \infty)$ square integrability.

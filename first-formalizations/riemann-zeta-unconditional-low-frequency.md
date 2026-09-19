@@ -1,6 +1,6 @@
-# First Formalization Dossier: Riemann Zeta Unconditional Low-Frequency Zero-Freeness and Clean RH Deductions
+# Riemann zeta low-frequency zero-freeness and conditional RH bridges
 
-**Classification:** First Machine Formalization in Any Interactive Theorem Prover  
+**Classification:** Lean theorem inventory; worldwide priority not established
 **Entry Number:** 384  
 **Date:** 19 September 2026  
 **Primary Lean Module:** [`formalization/BuildingBlocks/RiemannZetaUnconditionalLowFrequency.lean`](../../formalization/BuildingBlocks/RiemannZetaUnconditionalLowFrequency.lean)  
@@ -10,7 +10,9 @@
 
 ## 1. Executive Summary
 
-This dossier documents the first machine formalization of the **Unconditional Low-Frequency Zero-Freeness Theorem** for the Riemann zeta function and the resulting clean end-to-end deductions of Mathlib's official Millennium target `RiemannHypothesis`.
+This dossier documents a low-frequency zero-freeness theorem for the Riemann zeta function and several implications to Mathlib's `RiemannHypothesis`.
+
+The low-frequency theorem has no Fredholm or carrier-system argument. The RH theorems do: `RiemannHypothesis_of_universal_fredholm`, `RiemannHypothesis_of_universal_refutation`, and `RiemannHypothesis_of_grand_synthesis` require, respectively, `UniversalFredholmSystem`, `UniversalZeroRefutationSystem`, and `GrandSynthesisSystem`. This module does not construct those records, so it does not prove RH without an RH-strength premise.
 
 Building upon the modular Mellin inversion isomorphism established in Module 296, this module unconditionally discharges the last remaining integrability condition:
 $$\int_1^\infty \frac{\operatorname{mellinTrigIntegrandIm}(s, x)}{(2\operatorname{Re}(s) - 1)\operatorname{Im}(s)} \, dx < \infty$$
@@ -81,5 +83,5 @@ The following primary theorems are machine-checked in Lean 4.24.0 without `sorry
 
 ## 4. Literature Significance & Verification
 
-- **Literature Antecedent:** The idea that modular theta representations can bound $\Xi(t)$ for small $t$ dates back to Riemann (1859) and Hardy (1914). However, an explicit quantitative ratio lower/upper contradiction using the exact hyperbolic difference $(x^{\beta/2-1} - x^{(1-\beta)/2-1})/(2\beta - 1)$ bounded by $\frac{1}{2} \log x$ to unconditionally establish $\zeta(s) \ne 0$ on $(1/2, 1] \times (0, 1]$ has never been published as an isolated machine-verified module.
-- **Independence:** The result is proved from Lean 4 Mathlib foundational packages with zero external or classical unverified lemmas.
+- **Literature antecedent:** Modular theta representations and low-height zeta estimates are classical. The repository has not documented a reproducible worldwide search sufficient to establish priority for this exact Lean statement.
+- **Dependency status:** The low-frequency theorem compiles from Mathlib and the imported repository modules. The separate RH implications still require the system values visible in their signatures.

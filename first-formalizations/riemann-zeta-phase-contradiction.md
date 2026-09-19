@@ -56,5 +56,5 @@ Combined with Dirichlet series non-vanishing on $\operatorname{Re}(s) > 1$ (`rie
   - `OffLineZeroRefutationCertificate`: Dual-band zero exclusion certificate structure.
   - `upper_strip_zero_free_of_certificate`: Exclusion in the upper critical strip.
   - `upper_quadrant_zero_free_of_certificate`: Exclusion across the entire open upper quadrant.
-  - `RiemannHypothesis_of_certificate`: Unconditional deduction of Mathlib `RiemannHypothesis`.
+  - `RiemannHypothesis_of_certificate`: deduction of Mathlib `RiemannHypothesis` from an `OffLineZeroRefutationCertificate` argument.
   - `RiemannHypothesis_of_certificate_nonempty`: Equivalence to non-emptiness of certificate space.

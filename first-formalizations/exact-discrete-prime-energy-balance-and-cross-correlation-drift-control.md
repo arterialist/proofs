@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the Riemann Hypothesis / square-root error bound is equivalent to the control of the discrete bilinear prime increment drift $D(N) = \sum_{m < n \le N} \frac{(\Lambda(m)-1)(\Lambda(n)-1)}{n}$.
+This entry documents a machine-verified one-way estimate: if the finite drift $D(N)$ is nonpositive, then `prime_error_square_upper_of_drift_nonpos` bounds the squared prime error at that $N$. The declarations shown above do not prove an equivalence with the Riemann Hypothesis.

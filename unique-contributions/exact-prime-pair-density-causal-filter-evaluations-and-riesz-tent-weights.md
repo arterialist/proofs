@@ -1,4 +1,4 @@
-# Unique Contribution 161: Exact Prime-Pair Density Causal Filter Evaluations and Riesz Tent Weights
+# Contribution 161: Exact Prime-Pair Density Causal Filter Evaluations and Riesz Tent Weights
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PrimeDensityFilter.lean`](../../formalization/BuildingBlocks/PrimeDensityFilter.lean), [`building-blocks/filters/prime-density-filter.md`](../../building-blocks/filters/prime-density-filter.md)  
@@ -14,19 +14,19 @@ This contribution proves:
 
 1. **Exact Prime-Power Pair Filter Evaluation and Riesz Tent Weight:**  
    For prime powers $p^j$ and $q^k$, the causal filter of their convolution produces the exact Riesz tent weight:
-   \[
+   $$
    (\log p \log q) \mathcal{L}_0(\text{conv}(\text{birth}(j\log p), \text{birth}(k\log q)))(s) = \begin{cases} e^{-3s/2}(e^s - p^j q^k)\log p \log q & \text{if } p^j q^k \le e^s, \\ 0 & \text{otherwise.} \end{cases}
-   \]
+   $$
 2. **Exact Mixed Prime-Density Filter Evaluation:**  
    The sum of both mixed convolution orders between the discrete prime-power birth and the continuous background density evaluates to:
-   \[
+   $$
    \log p \left[ \mathcal{L}_0(\text{conv}(\text{birth}(j\log p), \text{density}))(s) + \mathcal{L}_0(\text{conv}(\text{density}, \text{birth}(j\log p)))(s) \right] = \begin{cases} e^{-3s/2}\log p \frac{e^{2s} - (p^j)^2}{p^j} & \text{if } p^j \le e^s, \\ 0 & \text{otherwise.} \end{cases}
-   \]
+   $$
 3. **Exact Pure Density-Square Filter Evaluation:**  
    The causal filter of the background density autocorrelation evaluates in closed form to:
-   \[
+   $$
    \mathcal{L}_0(\text{conv}(\text{density}, \text{density}))(s) = e^{-3s/2}\left( \frac{s}{2} e^{2s} + \frac{1}{4}e^{2s} - \frac{1}{4} \right).
-   \]
+   $$
 
 ---
 
@@ -34,44 +34,44 @@ This contribution proves:
 
 ### 2.1. Prime-Power Pair Evaluation
 By `SamePrimeBirthConvolution.filtered_birth_convolution`, for any birth locations $b, c \ge 0$:
-\[
+$$
 \mathcal{L}_0(\text{conv}(\text{birth}(b), \text{birth}(c)))(s) = \begin{cases} e^{-3s/2}(e^s - e^{b+c}) & \text{if } b+c \le s, \\ 0 & \text{otherwise.} \end{cases}
-\]
+$$
 Setting $b = j \log p$ and $c = k \log q$, we have $e^b = p^j$, $e^c = q^k$, and $e^{b+c} = p^j q^k$.
 The support condition $b+c \le s$ is equivalent to $p^j q^k \le e^s$.
 Multiplying by $\log p \log q$ yields the exact evaluation:
-\[
+$$
 e^{-3s/2}(e^s - p^j q^k)\log p \log q \cdot \mathbf{1}_{p^j q^k \le e^s}.
-\]
+$$
 
 ### 2.2. Mixed Prime-Density Orders
 For $b \ge 0$, the mixed convolution evaluates on $[0, s]$ to the mixed ramp function:
-\[
+$$
 \text{conv}(\text{birth}(b), \text{density})(s) = \mathbf{1}_{s \ge b} (e^{s/2 - b} - e^{-s/2}).
-\]
+$$
 Applying the causal filter $\mathcal{L}_0$:
-\[
+$$
 \mathcal{L}_0(\text{conv}(\text{birth}(b), \text{density}))(s) = \mathbf{1}_{s \ge b} \frac{e^{s/2 - b} - e^{b - 3s/2}}{2}.
-\]
+$$
 By symmetry of convolution, the reversed order $\text{conv}(\text{density}, \text{birth}(b))$ yields the identical quantity.
 Summing the two mixed orders eliminates the factor of $1/2$:
-\[
+$$
 e^{s/2 - b} - e^{b - 3s/2} = e^{-3s/2} \frac{e^{2s} - e^{2b}}{e^b}.
-\]
+$$
 Substituting $b = j \log p$ and multiplying by $\log p$ gives $e^{-3s/2}\log p \frac{e^{2s} - (p^j)^2}{p^j}$ on $p^j \le e^s$.
 
 ### 2.3. Density Square Evaluation
 The background density autocorrelation on $[0, s]$ is:
-\[
+$$
 \text{conv}(\text{density}, \text{density})(v) = v e^{v/2}.
-\]
+$$
 Applying the causal filter $\mathcal{L}_0$:
-\[
+$$
 \int_0^s e^{-3(s-v)/2} v e^{v/2} dv = e^{-3s/2} \int_0^s v e^{2v} dv = e^{-3s/2} \left[ e^{2v}\left(\frac{v}{2} - \frac{1}{4}\right) \right]_0^s
-\]
-\[
+$$
+$$
 = e^{-3s/2}\left( e^{2s}\left(\frac{s}{2} - \frac{1}{4}\right) + \frac{1}{4} \right).
-\]
+$$
 Factoring and normalizing confirms the formula.
 
 ---

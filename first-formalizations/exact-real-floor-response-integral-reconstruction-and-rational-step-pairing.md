@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 reconstructing a discrete arithmetic binary carry response as a continuous Lebesgue integral of literal real quotient floor functions against an inverse test phase.
+This entry documents a machine-verified proof in Lean 4 reconstructing a discrete arithmetic binary carry response as a continuous Lebesgue integral of literal real quotient floor functions against an inverse test phase.

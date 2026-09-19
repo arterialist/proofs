@@ -19,9 +19,9 @@ This formalization establishes the exact harmonic Fourier-Mellin identity connec
    Formal proof of `centering_fourier_integral` and `density_mellin_integral`: $\int_1^N x^{-w} dx = \frac{N^{1-w}-1}{1-w}$.
 4. **Grand Closed-Form Fourier-Mellin Theorem:**
    Formal proof of `causalSource_fourier_mellin`:
-   \[
+   $$
    \int_\mathbb{R} e^{-i\xi v} \text{causalSource}(N, v) dv = \frac{-1 + \sum_{n=2}^N \Lambda(n) n^{-w(\xi)} - \int_1^N x^{-w(\xi)} dx}{w(\xi)}.
-   \]
+   $$
 
 ---
 
@@ -62,6 +62,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 of the exact closed-form Fourier-Mellin transform connecting the real-line causal arithmetic step function directly to the critical-line Dirichlet polynomial discrepancy $\frac{-1 + \sum_{n \le N} \Lambda(n) n^{-(1/2+i\xi)} - \int_1^N x^{-(1/2+i\xi)} dx}{1/2 + i\xi}$.
+This entry documents a machine-verified implementation in Lean 4 of the exact closed-form Fourier-Mellin transform connecting the real-line causal arithmetic step function directly to the critical-line Dirichlet polynomial discrepancy $\frac{-1 + \sum_{n \le N} \Lambda(n) n^{-(1/2+i\xi)} - \int_1^N x^{-(1/2+i\xi)} dx}{1/2 + i\xi}$.

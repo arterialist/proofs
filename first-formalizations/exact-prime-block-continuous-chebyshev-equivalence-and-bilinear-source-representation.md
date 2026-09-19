@@ -69,6 +69,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified bridge in Lean 4 directly equating continuous renewal prime blocks to the discrete von Mangoldt / Chebyshev arithmetic function without approximation, proving $\text{primeBlockSum}(v) = e^{-v/2}\psi(\lfloor e^v \rfloor)$ and establishing the foundation for continuous prime semigroups.
+This entry documents a machine-verified bridge in Lean 4 directly equating continuous renewal prime blocks to the discrete von Mangoldt / Chebyshev arithmetic function without approximation, proving $\text{primeBlockSum}(v) = e^{-v/2}\psi(\lfloor e^v \rfloor)$ and establishing the foundation for continuous prime semigroups.

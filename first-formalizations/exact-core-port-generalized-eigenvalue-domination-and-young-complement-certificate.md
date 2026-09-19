@@ -72,6 +72,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 connecting coordinate interval enclosures, failure witnesses, and 2x2 trial-complement Young margin certificates to verify operator domination in formal theorem proving.
+This entry documents a machine-verified implementation in Lean 4 connecting coordinate interval enclosures, failure witnesses, and 2x2 trial-complement Young margin certificates to verify operator domination in formal theorem proving.

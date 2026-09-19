@@ -17,9 +17,9 @@ This formalization establishes the exact multiplicative telescoping bound, addit
    Formal proof of `ordered_prefix_product_le_last` ($\prod_{i=0}^n q_i \le R_n$) and `ordered_division_product_le` ($\prod q_i \le N$).
 3. **Additive Gap Majorization:**
    Formal proof of `prefix_product_le_next_left` and `ordered_product_le_one_add_total_gap`:
-   \[
+   $$
    \prod_{i < k} \frac{R_i}{L_i} \le 1 + \sum_{i < k} (R_i - L_i).
-   \]
+   $$
 4. **Strict Gap Majorization for Multiple Rods ($k \ge 2$):**
    Formal proof of `ordered_product_lt_one_add_total_gap`: strict inequality when $k \ge 2$.
 5. **Finite Endpoint Interface and Sharpness:**
@@ -73,6 +73,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the discrete multiplicative telescoping bounds and strict additive gap majorization for chains of separated proper division rods.
+This entry documents a machine-verified proof in Lean 4 establishing the discrete multiplicative telescoping bounds and strict additive gap majorization for chains of separated proper division rods.

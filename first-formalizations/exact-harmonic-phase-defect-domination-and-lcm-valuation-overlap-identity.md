@@ -53,6 +53,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the harmonic phase defect domination theorem and expressing $p$-adic valuation cross-moments as exact LCM divisibility sums.
+This entry documents a machine-verified proof in Lean 4 establishing the harmonic phase defect domination theorem and expressing $p$-adic valuation cross-moments as exact LCM divisibility sums.

@@ -16,17 +16,17 @@ This module establishes the comprehensive equivalence and discharge framework fo
    - Via grouped Dirichlet eta relation (`realAxisZeroFree_of_eta_rel`).
    - Via real part negativity (`realAxisZeroFree_of_re_neg`).
 6. Proves full positive real axis non-vanishing `real_axis_zeta_ne_zero_of_zeroFree` for all $s > 1/2$ with $s \ne 1$, combining `RealAxisZeroFree` with Mathlib's verified `riemannZeta_ne_zero_of_one_le_re`.
-7. Proves three grand Riemann Hypothesis deduction theorems that reduce RH to the minimal real-axis zero-freeness condition:
+7. Proves three conditional Riemann Hypothesis deduction theorems that reduce RH to the minimal real-axis zero-freeness condition:
    - `RiemannHypothesis_of_weil_and_zeroFree` from `UniversalWeilSystem`.
    - `RiemannHypothesis_of_refutation_and_zeroFree` from `UniversalZeroRefutationSystem`.
    - `RiemannHypothesis_of_fredholm_and_zeroFree` from `UniversalFredholmSystem`.
 
 ## Background and Mathematical Significance
-The global deduction of the Riemann Hypothesis via spectral trace formulas, Weil explicit formulas, or chirped carrier wavepacket orthogonality rules out zeros off the critical line with non-zero imaginary parts ($\operatorname{Im}(s) \ne 0$). The remaining case—potential real zeros in $(1/2, 1)$—classically required an external Dirichlet eta series identity.
+The supplied universal system records are used to rule out zeros off the critical line with non-zero imaginary parts ($\operatorname{Im}(s) \ne 0$). The remaining case—potential real zeros in $(1/2, 1)$—classically required an external Dirichlet eta series identity.
 
 This module unifies the real axis theory by demonstrating that:
 1. $\zeta(\sigma) = 0$ is strictly equivalent to $\Lambda(\sigma) = 0$ because $\Gamma_{\mathbb{R}}(\sigma)$ has no zeros on the positive real axis.
-2. The deduction of Mathlib's full `RiemannHypothesis` from any of the three universal spectral systems (Weil, carrier refutation, Fredholm determinant) requires only the minimal assertion `RealAxisZeroFree`.
+2. The deduction of Mathlib's full `RiemannHypothesis` from any of the three named universal system records requires only the minimal assertion `RealAxisZeroFree`.
 3. This minimal condition can be discharged by any of three independent mathematical properties: non-vanishing of $\Lambda$, the grouped Dirichlet eta positivity identity, or real part negativity.
 
 ## Machine Verification

@@ -62,6 +62,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the endpoint mass and oscillatory test integrals of the discontinuous prime counting error $\psi(\lfloor x \rfloor) - x$ are strictly bounded by an $L^2$ primitive energy without requiring pointwise prime error bounds.
+This entry documents a machine-verified implementation in Lean 4 proving that the endpoint mass and oscillatory test integrals of the discontinuous prime counting error $\psi(\lfloor x \rfloor) - x$ are strictly bounded by an $L^2$ primitive energy without requiring pointwise prime error bounds.

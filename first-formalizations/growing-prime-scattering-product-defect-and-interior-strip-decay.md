@@ -9,7 +9,7 @@
 
 ## 1. Overview and Mathematical Scope
 
-This formalization provides the first machine-verified proof of uniform block product defect bounds and critical strip interior tail decay for growing prime scattering multipliers:
+This entry documents a machine-verified proof of uniform block product defect bounds and critical strip interior tail decay for growing prime scattering multipliers:
 
 1. **Power and Multiplier Dictionaries:**
    Formal equivalence of complex power notations and scattering multipliers (`full_power_dictionary`, `full_history_dictionary`).
@@ -57,6 +57,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization establishes the first machine-verified bounds on finite prime block scattering products across the critical strip interior, establishing explicit quantitative decay in history truncation depth $M$.
+This entry documents machine-verified bounds on finite prime block scattering products across the critical strip interior, establishing explicit quantitative decay in history truncation depth $M$.

@@ -1,56 +1,31 @@
-# Exact Proper-Cofactor Spectral Neutralization and Asymptotic Margin Dominance
+# Real-power identities for a modeled cofactor exponent
 
-**Date:** 19 September 2026  
-**Status:** Machine-verified in Lean 4 (zero custom axioms: `[propext, Classical.choice, Quot.sound]`, zero `sorry`)  
-**Lean Module:** [`formalization/BuildingBlocks/ActualCofactorSpectralNeutralization.lean`](file:///Users/arterialist/Projects/proofs/formalization/BuildingBlocks/ActualCofactorSpectralNeutralization.lean)
+**Classification:** elementary algebraic model, conditional analytic interpretation
 
----
+**Lean module:** [`ActualCofactorSpectralNeutralization.lean`](../formalization/BuildingBlocks/ActualCofactorSpectralNeutralization.lean)
 
-## 1. Mathematical Significance & Problem Solved
+The Lean file defines
 
-In the arithmetic analysis of the Riemann Hypothesis via the complete Weil explicit formula, a central challenge has been the spectral-versus-arithmetic balance:
-- On the arithmetic side, the chirped and annular packet constructions establish an unconditional positive lower bound $Q(f_T) \ge a_\phi \log T$ ($a_\phi > 0$).
-- On the spectral zero side, any hypothetical off-line zero $\rho = \beta + i\gamma$ with $\beta = 1/2 + \varepsilon$ ($\varepsilon > 0$) appears in the raw prime row $\sum_{n \le N} \Lambda(n) g_N(n)$ with uncompensated amplitude $A(\varepsilon, T) = T^{\beta - 1/2} = T^\varepsilon$, which grows as a positive power of $T$.
+```lean
+offlineAmplitude ε T := T ^ ε
+scatteringModulus ε T := T ^ (-ε)
+```
 
-This module formally proves that the **proper-cofactor dual Dirichlet cancellation** completely eliminates this uncompensated power growth:
-1. **Exact Multiplier Neutralization:** The Riemann scattering multiplier $\chi(\rho)$ has modulus $M(\varepsilon, T) = T^{-\varepsilon}$. Its product with the uncompensated off-line amplitude is identically constant:
-   $$A(\varepsilon, T) \cdot M(\varepsilon, T) = T^\varepsilon \cdot T^{-\varepsilon} = T^0 = 1.$$
-2. **Strict Exponent Depression:** The remaining dual Dirichlet polynomial $S_y(\rho)$ of length $y = T^\delta / (2\pi)$ introduces a growth factor of at most $T^{\delta(\varepsilon + 1/2)}$. For any cofactor cutoff $\delta < \frac{\varepsilon}{\varepsilon + 1/2}$, the compensated exponent:
-   $$\alpha(\varepsilon, \delta) := \delta(\varepsilon + 1/2) < \varepsilon$$
-   is strictly smaller than the raw off-line exponent $\varepsilon$.
-3. **Arbitrary Sub-Power Suppression:** For every pre-assigned exponent $\nu > 0$, choosing $\delta = \frac{\nu}{2(\varepsilon + 1/2)}$ ensures that the total off-line spectral contribution is bounded by $T^\nu$.
-4. **Sub-Square-Root Reduction:** Choosing $\delta < \frac{1}{2(\varepsilon + 1/2)}$ forces $\alpha(\varepsilon, \delta) < 1/2$, preventing any $\sqrt{T}$ or higher power accumulation.
-5. **Unit Boundedness at Dual Length 1:** When the dual length is set to $y = 1$ (where the dual sum collapses to the single term $n=1$), the neutralized spectral amplitude is bounded by $1$.
-6. **Asymptotic Dominance of the Weil Margin:** For any fixed constant bound $C$ on the neutralized off-line mass, the positive arithmetic Weil margin $a_\phi \log T$ eventually strictly exceeds $C$ as $T \to \infty$.
+using real powers. The name `scatteringModulus` is a model definition. It is not proved equal to the exact modulus $|\chi(1/2+\varepsilon+iT)|$ of the Riemann functional-equation factor. Accordingly,
 
----
+$$
+T^\varepsilon T^{-\varepsilon}=1
+$$
 
-## 2. Machine-Verified Theorems
+is an elementary real-power identity, not exact neutralization by the actual scattering multiplier.
 
-The Lean 4 implementation [`ActualCofactorSpectralNeutralization.lean`](file:///Users/arterialist/Projects/proofs/formalization/BuildingBlocks/ActualCofactorSpectralNeutralization.lean) verifies the following key theorems:
+The remaining checked results are also exponent algebra:
 
-1. `amplitude_scattering_exact_neutralization`:
-   $$\forall \varepsilon \in \mathbb{R},\ \forall T > 0,\quad T^\varepsilon \cdot T^{-\varepsilon} = 1.$$
-2. `compensated_exponent_strictly_less`:
-   $$\forall \varepsilon > 0,\ \forall \delta \in \left(0, \frac{\varepsilon}{\varepsilon + 1/2}\right),\quad \delta(\varepsilon + 1/2) < \varepsilon.$$
-3. `compensated_exponent_arbitrarily_small`:
-   $$\forall \varepsilon > 0,\ \forall \nu > 0,\ \exists \delta > 0,\quad \delta(\varepsilon + 1/2) < \nu.$$
-4. `compensated_exponent_sub_half`:
-   $$\forall \varepsilon > 0,\ \forall \delta \in \left(0, \frac{1}{2(\varepsilon + 1/2)}\right),\quad \delta(\varepsilon + 1/2) < \frac{1}{2}.$$
-5. `neutralized_spectral_magnitude_at_one`:
-   $$\forall \varepsilon \in \mathbb{R},\ \forall T > 0,\quad T^\varepsilon \cdot T^{-\varepsilon} \cdot 1 = 1.$$
-6. `net_spectral_offline_suppression`:
-   $$\forall T > 1,\ \delta(\varepsilon + 1/2) < \nu \implies T^\varepsilon \cdot T^{-\varepsilon} \cdot T^{\delta(\varepsilon + 1/2)} < T^\nu.$$
-7. `eventual_dominance_weil_margin`:
-   $$\forall C \in \mathbb{R},\ \forall a > 0,\quad \forall^\infty T \in \text{atTop},\quad C < a \log T.$$
+- $\delta(\varepsilon+1/2)<\varepsilon$ under the displayed threshold;
+- for every $\nu>0$, some $\delta>0$ makes that exponent smaller than $\nu$;
+- the modeled product is below $T^\nu$ when $T>1$;
+- every fixed constant is eventually smaller than $a\log T$ for $a>0$.
 
----
+The module does not define the proper-cofactor sum, derive a dual Dirichlet polynomial from it, prove an actual product estimate for $\chi(s)$, or bound the full off-line spectral contribution by a fixed constant. The last logarithmic dominance theorem applies only after such a constant bound has independently been established.
 
-## 3. Axiom Verification
-
-All 7 theorems have been verified with `#print axioms` under Lean 4.24.0. They depend exclusively on Lean's foundational logical axioms:
-- `propext`
-- `Classical.choice`
-- `Quot.sound`
-
-Zero custom axioms, zero `sorry` placeholders.
+These lemmas may support an analytic proof once uniform Stirling estimates, triangle bounds for the actual Dirichlet polynomial, and the cofactor identity are supplied. They do not by themselves yield spectral neutralization or an RH consequence.

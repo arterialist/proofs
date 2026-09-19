@@ -51,6 +51,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the second-order differential equation $S''(u) - \frac{1}{4}S(u) = \Phi(u)$ linking the physical Jacobi theta sum directly to Riemann's xi-potential.
+This entry documents a machine-verified proof in Lean 4 establishing the second-order differential equation $S''(u) - \frac{1}{4}S(u) = \Phi(u)$ linking the physical Jacobi theta sum directly to Riemann's xi-potential.

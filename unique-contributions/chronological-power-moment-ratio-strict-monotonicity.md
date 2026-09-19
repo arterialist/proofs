@@ -1,4 +1,4 @@
-# Unique Contribution 76: Chronological Power Moment Ratio Strict Monotonicity
+# Contribution 76: Chronological Power Moment Ratio Strict Monotonicity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ChronologicalPowerRatio.lean`](../../formalization/BuildingBlocks/ChronologicalPowerRatio.lean)  
@@ -9,40 +9,40 @@
 ## 1. Executive Summary and Mathematical Statement
 
 Let $A(n)$ and $B(n)$ denote the inverse-square-root mass and the first moment of the first $n$ positive integers:
-\[
+$$
 A(n) = \sum_{j=1}^n \frac{1}{\sqrt{j}}, \quad B(n) = \sum_{j=1}^n \sqrt{j}, \quad D(n) = (n+1) A(n).
-\]
+$$
 In continuous chronological divisibility and boundary reflection bounds, the effective mean clock position is governed by the normalized power ratio:
-\[
+$$
 R(n) = \frac{B(n)}{D(n)} = \frac{\sum_{j=1}^n \sqrt{j}}{(n+1) \sum_{j=1}^n \frac{1}{\sqrt{j}}}.
-\]
+$$
 
 This contribution proves:
 
 1. **Non-Asymptotic Bound on Inverse-Square-Root Mass:**  
    For all integers $n \ge 1$:
-   \[
+   $$
    A(n) \le 2 \sqrt{n} - 1.
-   \]
+   $$
 2. **Strict Monotonicity of the Increment Controller:**  
    The sequence $h(n) = \frac{A(n)}{\sqrt{n+1}} + \frac{1}{n+1}$ is **strictly monotone increasing**:
-   \[
+   $$
    \forall n \in \mathbb{N}, \quad h(n) < h(n+1).
-   \]
+   $$
 3. **Moment Comparison Inequality:**  
    For all $n \ge 1$, the scaled mass strictly bounds the moment:
-   \[
+   $$
    D(n) < B(n) (1 + h(n)).
-   \]
+   $$
 4. **Strict Decreasing Monotonicity of the Normalized Power Ratio:**  
    The sequence of normalized power ratios $R(n) = \frac{B(n)}{D(n)}$ is **strictly decreasing** for all $n \ge 1$:
-   \[
+   $$
    \frac{B(n+1)}{D(n+1)} < \frac{B(n)}{D(n)},
-   \]
+   $$
    and for all $1 \le k < N$:
-   \[
+   $$
    \frac{B(N)}{D(N)} < \frac{B(k)}{D(k)}.
-   \]
+   $$
    In particular, $R(n)$ decreases strictly from $R(1) = 1/2$ toward the continuous limit $\lim_{n \to \infty} R(n) = 1/3$.
 
 ---
@@ -60,19 +60,19 @@ Expressing $h(n+1) - h(n)$ in terms of $A(n)$ and expanding via $A(n) \le 2\sqrt
 By definition, $D(n+1) - D(n) = (n+2)A(n+1) - (n+1)A(n) = A(n) + \frac{n+2}{\sqrt{n+1}} = \sqrt{n+1}(1 + h(n))$.
 Thus $D(n) = \sum_{j=0}^{n-1} \sqrt{j+1}(1 + h(j))$.
 Since $h(j) < h(n)$ for all $j < n$, we obtain:
-\[
+$$
 D(n) < (1 + h(n)) \sum_{j=0}^{n-1} \sqrt{j+1} = B(n)(1 + h(n)).
-\]
+$$
 
 ### 2.4. Strict Decrease of $B(n)/D(n)$
 Cross-multiplying $\frac{B(n+1)}{D(n+1)} < \frac{B(n)}{D(n)}$ is equivalent to:
-\[
+$$
 B(n+1) D(n) < B(n) D(n+1).
-\]
+$$
 Substituting $B(n+1) = B(n) + \sqrt{n+1}$ and $D(n+1) = D(n) + \sqrt{n+1}(1 + h(n))$:
-\[
+$$
 (B(n) + \sqrt{n+1}) D(n) < B(n) (D(n) + \sqrt{n+1}(1 + h(n))) \iff \sqrt{n+1} D(n) < \sqrt{n+1} B(n)(1 + h(n)).
-\]
+$$
 Dividing by $\sqrt{n+1} > 0$ yields $D(n) < B(n)(1 + h(n))$, which was established above.
 
 ---

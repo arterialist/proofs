@@ -62,6 +62,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 of the spectral theory of the arithmetic prime-transport operator, establishing that its point spectrum on arithmetic functions is exactly $\{\log k\}_{k \ge 1}$ and that its kernel is spanned by $\mu$.
+This entry documents a machine-verified proof in Lean 4 of the spectral theory of the arithmetic prime-transport operator, establishing that its point spectrum on arithmetic functions is exactly $\{\log k\}_{k \ge 1}$ and that its kernel is spanned by $\mu$.

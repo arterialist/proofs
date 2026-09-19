@@ -1,4 +1,4 @@
-# Unique Contribution 94: Exact Finite Abel-Mertens Identity and Exponential Derivative Bounds
+# Contribution 94: Exact Finite Abel-Mertens Identity and Exponential Derivative Bounds
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualFiniteAbelMertens.lean`](../../formalization/BuildingBlocks/ActualFiniteAbelMertens.lean)  
@@ -14,26 +14,26 @@ This contribution proves:
 
 1. **Exact Finite Abel-Mertens Identity:**  
    For any $N \in \mathbb{N}$ and any $q \in \mathbb{R}$:
-   \[
+   $$
    \sum_{n=1}^N \mu(n) q^n = M(N) q^N + (1 - q) \sum_{k=0}^{N-1} M(k) q^k.
-   \]
+   $$
    This formula is exact for all $N$, preserving the explicit terminal boundary term $M(N) q^N$ without any integral approximation or asymptotic error.
 2. **Exact Fréchet Derivative of Finite Exponential Möbius Sums:**  
    The finite exponential sum $E_N(t) = \sum_{n=1}^N \mu(n) e^{-nt}$ is continuously differentiable on $\mathbb{R}$, with exact derivative:
-   \[
+   $$
    E_N'(t) = -\sum_{k=0}^{N-1} \mu(k+1) (k+1) e^{-(k+1)t}.
-   \]
+   $$
 3. **Non-Asymptotic Absolute Derivative Majorization:**  
    For all $N \ge 1$ and all $t \in \mathbb{R}$:
-   \[
+   $$
    |E_N'(t)| \le \sum_{k=0}^{N-1} (k+1) e^{-(k+1)t},
-   \]
+   $$
    holding unconditionally with no reliance on the Riemann Hypothesis or infinite series convergence.
 4. **Consecutive Integer Sampling Gap Identity:**  
    For any integer grid scale $X \ge 1$, the spacing between consecutive inverse grid points satisfies the exact positive identity:
-   \[
+   $$
    \frac{2}{X} - \frac{2}{X+1} = \frac{2}{X(X+1)} > 0.
-   \]
+   $$
 5. **Architectural Significance:**  
    Provides the exact non-asymptotic bridge transferring bounds on the discrete Mertens sequence $M(k)$ directly into analytic properties of generating functions and exponential kernels.
 
@@ -46,21 +46,21 @@ By definition, $M(0) = 0$ and $M(N+1) = M(N) + \mu(N+1)$.
 We proceed by induction on $N$.
 - Base case $N = 0$: both sides evaluate to $0$.
 - Inductive step:
-  \[
+  $$
   \sum_{n=1}^{N+1} \mu(n) q^n = \sum_{n=1}^N \mu(n) q^n + \mu(N+1) q^{N+1}.
-  \]
+  $$
   Substituting the inductive hypothesis:
-  \[
+  $$
   M(N) q^N + (1-q) \sum_{k=0}^{N-1} M(k) q^k + \mu(N+1) q^{N+1}.
-  \]
+  $$
   Adding and subtracting $M(N) q^{N+1}$:
-  \[
+  $$
   (M(N) + \mu(N+1)) q^{N+1} + M(N) q^N - M(N) q^{N+1} + (1-q) \sum_{k=0}^{N-1} M(k) q^k.
-  \]
+  $$
   Since $M(N+1) = M(N) + \mu(N+1)$ and $M(N) q^N - M(N) q^{N+1} = (1-q) M(N) q^N$, combining terms gives:
-  \[
+  $$
   M(N+1) q^{N+1} + (1-q) \sum_{k=0}^N M(k) q^k.
-  \]
+  $$
 
 ### 2.2. Derivative Computation and Absolute Bound
 Each term $t \mapsto \mu(n) e^{-nt}$ has derivative $-\mu(n) n e^{-nt}$. Summing linearly gives $E_N'(t)$.

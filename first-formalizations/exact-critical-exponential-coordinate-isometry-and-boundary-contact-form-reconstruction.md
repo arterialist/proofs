@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the critical half-density exponential coordinate isometry, intertwining discrete logarithmic shifts with continuous spatial translations, and reconstructing the boundary contact form from boundary-port pairings.
+This entry documents a machine-verified implementation in Lean 4 proving the critical half-density exponential coordinate isometry, intertwining discrete logarithmic shifts with continuous spatial translations, and reconstructing the boundary contact form from boundary-port pairings.

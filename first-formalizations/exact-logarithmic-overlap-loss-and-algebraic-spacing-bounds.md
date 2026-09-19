@@ -70,6 +70,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing explicit non-asymptotic bounds on the product loss of perturbed logarithmic factors and the resulting uniform error compensation barriers.
+This entry documents a machine-verified proof in Lean 4 establishing explicit non-asymptotic bounds on the product loss of perturbed logarithmic factors and the resulting uniform error compensation barriers.

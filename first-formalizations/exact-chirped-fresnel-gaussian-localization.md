@@ -2,10 +2,11 @@
 
 ## 1. Overview and Significance
 
-This treatise documents the first machine-checked formalization of the **Exact Chirped Fresnel-Gaussian Localization and Stationary Phase Core Theorem** in interactive theorem proving.
+This note documents a machine-checked formalization of the **Exact Chirped Fresnel-Gaussian Localization and Stationary Phase Core Theorem** in interactive theorem proving.
 
 - **Module:** [`formalization/BuildingBlocks/ChirpedFresnelGaussianLocalization.lean`](../formalization/BuildingBlocks/ChirpedFresnelGaussianLocalization.lean)
-- **Lean Version:** Lean 4.24.0 (Mathlib commit 2026-09-11)
+- **Lean version:** Lean 4.24.0
+**Mathlib revision:** `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` from `lake-manifest.json`
 - **Axioms:** Strictly `[propext, Classical.choice, Quot.sound]`. Zero custom axioms, zero `sorry`.
 - **Preceding Work:** [Unique Contribution 342](../unique-contributions/exact-chirped-fresnel-gaussian-localization.md), [First Formalization 350](exact-chirped-stationary-phase-carrier-tuning.md).
 

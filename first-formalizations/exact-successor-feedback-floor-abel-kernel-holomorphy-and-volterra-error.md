@@ -21,9 +21,9 @@ This formalization establishes the complex differentiability, holomorphy on $\te
    Formal proof of `floorAbelKernel_initial` ($\mathcal{K}(z, 1) = 0$) and `floorAbelKernel_eq_intervalIntegral`.
 5. **Exact Volterra Error Identity:**
    Formal proof of `smoothAbelIntegrand_integrable`, `floorAbelError_integrable`, and `floorAbelKernel_sub_smooth`:
-   \[
+   $$
    \mathcal{K}_{\text{floor}}(z, y) - \mathcal{K}_{\text{smooth}}(z, y) = \int_0^{y-1} \text{floorWeightError}(z, t) (y - t)^{-1/2} dt.
-   \]
+   $$
 
 ---
 
@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the parametric holomorphy of floor-discretized fractional Abel kernels on $\text{Re}(z) > 0$ via dominated Bochner differentiation, and provides the exact Volterra integral discrepancy between discrete and continuous kernels.
+This entry documents a machine-verified proof in Lean 4 establishing the parametric holomorphy of floor-discretized fractional Abel kernels on $\text{Re}(z) > 0$ via dominated Bochner differentiation, and provides the exact Volterra integral discrepancy between discrete and continuous kernels.

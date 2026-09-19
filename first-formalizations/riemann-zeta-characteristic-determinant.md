@@ -1,4 +1,4 @@
-# First Formalization 388: Characteristic Spectral Determinant and Reality Duality for the Riemann Hypothesis
+# Quadratic spectral parameter and an RH-equivalent reality predicate
 
 **Module Path**: `formalization/BuildingBlocks/RiemannZetaCharacteristicDeterminant.lean`  
 **Root Module**: `formalization/BuildingBlocks.lean`  
@@ -20,13 +20,17 @@ $$\lambda_\rho = \rho(1 - \rho) = \frac{1}{4} + \gamma^2 \in \mathbb{R}_{>0}$$
 Conversely, any hypothetical off-line zero $\rho = \sigma + i\gamma$ with $\sigma \ne 1/2$ and $\gamma \ne 0$ maps to a non-real spectral eigenvalue whose imaginary part exhibits non-vanishing dispersion:
 $$\operatorname{Im}(\lambda_\rho) = \gamma(1 - 2\sigma) \ne 0$$
 
-Prior to this formalization, while the algebraic identity $\operatorname{Im}(s(1-s)) = t(1-2\sigma)$ is known classically, no machine-checked formalization in Lean 4 (or any proof assistant) existed establishing:
+The module machine-checks the following algebraic facts and logical repackagings. Worldwide priority has not been established by a reproducible proof-assistant literature search:
 1. The reflection-invariant quadratic parameter map $z(s)$ and its coordinate decomposition in Lean's `Complex` algebra;
 2. The rigorous equivalence between critical line confinement $\operatorname{Re}(s) = 1/2$ and eigenvalue reality $\operatorname{Im}(z(s)) = 0$;
 3. The resolvent kernel trace formula $R(w, x) = (w - x)^{-1}$ on the real axis, proving that off-line zeros create an inescapable imaginary defect $\operatorname{Im}(R) \ne 0$;
 4. The deduction of empty off-line zero support (`RightOfflineSupport = ∅`) from the spectral reality condition;
-5. The full logical equivalence between `CharacteristicSpectralReality` and Mathlib's Millennium `RiemannHypothesis`;
+5. The logical equivalence between `CharacteristicSpectralReality` and `RiemannHypothesis`;
 6. The canonical embedding and ingestion of all six autonomous operator systems into a unified characteristic determinant system (`ZetaCharacteristicDeterminantSystem`).
+
+---
+
+`CharacteristicSpectralReality` is a global condition on every non-trivial zeta zero. Its equivalence with RH does not construct the condition independently. Likewise, `ZetaCharacteristicDeterminantSystem` is a record whose existence is proved equivalent to RH, and the constructors from autonomous systems require those systems as arguments.
 
 ---
 

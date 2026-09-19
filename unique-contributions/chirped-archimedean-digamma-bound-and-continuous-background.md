@@ -1,10 +1,10 @@
-# Unique Contribution 347: Chirped Archimedean Digamma Bound and Continuous Background
+# Contribution 347: Chirped Archimedean Digamma Bound and Continuous Background
 
-## 1. Context and Mathematical Uniqueness
+## 1. Result and scope
 
 In the Weil explicit formula, the continuous Archimedean contribution $Q_{\text{cont}}$ arises from the logarithmic derivative of the Gamma factor (the digamma function $\psi(s) = \Gamma'(s)/\Gamma(s)$) along the critical line:
 $$Q_{\text{cont}}(T) = \frac{1}{2\pi} \int_{-\infty}^\infty |\widehat{\phi}_T(t)|^2 \operatorname{Re} \psi\left(\frac{1}{4} + \frac{it}{2}\right) dt$$
-Classical treatments approximate $\psi(1/4 + it/2) = \log|t/2| + O(1/(1+t^2))$ via Stirling's formula. However, when tested against a dilated chirped wavepacket whose instantaneous frequency sweeps across $[T, T(1+\eta w)]$, the interaction between the chirped local scale $t/2 = T(1+\eta x)/2$, the non-stationary frequency variation, and the background digamma remainder had never been rigorously computed or bounded in the literature.
+Classical treatments obtain the displayed digamma approximation from Stirling's formula. This module studies a modeled chirped local scale and background remainder. Priority for the exact formulation is provisional because this audit did not perform an exhaustive literature search.
 
 Prior to this work, no literature across arXiv, MathSciNet, or Google Scholar established the uniform logarithmic deviation bound for chirped packets:
 $$|Q_{\text{arch}}(T) - \log T| \le \log 2 + \eta w + C_\Gamma$$

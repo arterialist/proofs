@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the unconditional linear subordination of bulk interior energy in factorial cell dynamics and proving exact dyadic energy-boundary transfer inequalities.
+This entry documents a machine-verified proof in Lean 4 establishing the unconditional linear subordination of bulk interior energy in factorial cell dynamics and proving exact dyadic energy-boundary transfer inequalities.

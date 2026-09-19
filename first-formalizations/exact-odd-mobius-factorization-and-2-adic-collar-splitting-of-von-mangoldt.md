@@ -67,6 +67,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the 2-adic difference factorization of the Möbius function and proving that all even cofactors in von Mangoldt's dual bracket collapse identically to $\log 2$.
+This entry documents a machine-verified proof in Lean 4 establishing the 2-adic difference factorization of the Möbius function and proving that all even cofactors in von Mangoldt's dual bracket collapse identically to $\log 2$.

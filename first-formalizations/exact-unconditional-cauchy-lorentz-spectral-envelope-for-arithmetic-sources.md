@@ -21,9 +21,9 @@ This formalization establishes the unconditional, uniform Cauchy-Lorentz spectra
    Formal proof of `norm_mellin_numerator_le`: $\|\text{Numerator}\| \le (8 \log 2 + 2) \sqrt{N}$.
 5. **Grand Cauchy-Lorentz Spectral Envelope:**
    Formal proof of `fourier_norm_sq_le`:
-   \[
+   $$
    \|\widehat{\text{causalSource}}(N, \xi)\|^2 \le \frac{4 (8 \log 2 + 2)^2 N}{1 + \xi^2}.
-   \]
+   $$
 
 ---
 
@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving an unconditional, uniform $O(N/(1+\xi^2))$ Cauchy-Lorentz frequency decay envelope for the Fourier transform of the prime counting source function $\widehat{\text{causalSource}}(N, \xi)$ across all real frequencies $\xi \in \mathbb{R}$.
+This entry documents a machine-verified implementation in Lean 4 proving an unconditional, uniform $O(N/(1+\xi^2))$ Cauchy-Lorentz frequency decay envelope for the Fourier transform of the prime counting source function $\widehat{\text{causalSource}}(N, \xi)$ across all real frequencies $\xi \in \mathbb{R}$.

@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first reusable, machine-verified implementation in Lean 4 establishing the Weierstrass analyticity transfer theorem for geometric block series on complex half-planes, cleanly separating the analytic continuation machinery from the arithmetic estimates of the underlying kernel.
+This module provides a reusable project implementation of analyticity transfer for geometric block series on complex half-planes. Its exact formulation may be distinctive, but the audit did not establish Lean-wide or worldwide priority.

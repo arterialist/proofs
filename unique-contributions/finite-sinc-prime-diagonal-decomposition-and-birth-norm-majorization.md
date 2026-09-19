@@ -1,4 +1,4 @@
-# Unique Contribution 95: Finite Sinc Prime Diagonal Decomposition and Birth Norm Majorization
+# Contribution 95: Finite Sinc Prime Diagonal Decomposition and Birth Norm Majorization
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualFiniteSincPrimeDiagonal.lean`](../../formalization/BuildingBlocks/ActualFiniteSincPrimeDiagonal.lean)  
@@ -9,33 +9,33 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In spectral and probabilistic models of the prime spectrum, the energy quadratic form over a symmetric frequency window $[-\delta, \delta]$ involves the normalized Fourier sinc kernel:
-\[
+$$
 \operatorname{sinc}_\delta(k) = \frac{1}{2\pi} \int_{-\delta}^\delta e^{i k \theta} d\theta = \begin{cases} \frac{\delta}{\pi}, & k = 0 \\ \frac{\sin(k\delta)}{\pi k}, & k \ne 0. \end{cases}
-\]
+$$
 When evaluated on a covariance structure $\operatorname{cov}(m, n)$ weighted by radial dilation factors $r^{m+n}$, separating the prime diagonal from off-diagonal interactions is crucial for controlling dispersion.
 
 This contribution proves:
 
 1. **Exact Finite Sinc Form Decomposition:**  
    For any finite index set $S \subset \mathbb{N}$, prime subset $P \subseteq S$, arc width $\delta \ge 0$, radial parameter $r \in \mathbb{R}$, and covariance matrix $\operatorname{cov}(m, n)$:
-   \[
+   $$
    \sum_{m,n \in S} r^{m+n} \operatorname{sinc}_\delta(m-n) \operatorname{cov}(m, n) = \frac{\delta}{\pi} \sum_{p \in P} r^{2p} q(p) + \mathcal{R}(S, P, \delta, r),
-   \]
+   $$
    where $q(p)$ is the diagonal weight and $\mathcal{R}$ is the exact remainder retaining all off-diagonal interactions.
 2. **Literal Prime Birth Norm Evaluation:**  
    When the diagonal weight originates from a collision kernel $K$, the prime birth norm evaluates to:
-   \[
+   $$
    q_{\text{birth}}(p) = K(2p) - 2K(p+1) + K(2),
-   \]
+   $$
    giving the exact literal prime diagonal:
-   \[
+   $$
    \mathcal{D}_P(\delta, r, K) = \frac{\delta}{\pi} \sum_{p \in P} r^{2p} \left( K(2p) - 2K(p+1) + K(2) \right).
-   \]
+   $$
 3. **Non-Negativity and Monotonic Majorization:**  
    If $q \ge 0$ on $P$, then $\mathcal{D}_P \ge 0$. Furthermore, $\mathcal{D}_P$ is monotonically bounded by the full index birth diagonal:
-   \[
+   $$
    \frac{\delta}{\pi} \sum_{p \in P} r^{2p} q(p) \le \frac{\delta}{\pi} \sum_{n \in S} r^{2n} q(n).
-   \]
+   $$
 4. **Finite Comparison Theorem:**  
    If the signed off-diagonal remainder is bounded by $B$ and the prime diagonal is bounded by $V$, then the full sinc energy form is bounded by $B + V$ without any asymptotic approximation.
 

@@ -1,4 +1,4 @@
-# Unique Contribution 139: Exact Laplace-Mellin Measure Duality and Negative-Tail Isomorphism
+# Contribution 139: Exact Laplace-Mellin Measure Duality and Negative-Tail Isomorphism
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualCriticalLaplace.lean`](../../formalization/BuildingBlocks/ActualCriticalLaplace.lean), [`building-blocks/laplace/actual-critical-laplace.md`](../../building-blocks/laplace/actual-critical-laplace.md)  
@@ -14,19 +14,19 @@ This contribution proves:
 
 1. **Exact Coordinate-Density Multiplier Algebra:**  
    Under the logarithmic coordinate change $t(x) = \log x$ and the density $\rho_A(x) = x^{-2} \operatorname{Re}(-W_{\text{tail}, A}(x))$, the Laplace integrand converts identically into the Mellin integrand:
-   \[
+   $$
    \rho_A(x) e^{-s t(x)} = x^{-s-2} (-W_{\text{tail}, A}(x)) \quad \text{for all } x > 1, s \in \mathbb{C}.
-   \]
+   $$
 2. **Exact Laplace-Mellin Integral Equivalence:**  
    The $0$-th Laplace moment of the positive tail measure $\mu_A$ equals the shifted Mellin transform of the negative tail:
-   \[
+   $$
    \int_0^\infty e^{-s t} d\mu_A(t) = \mathcal{M}(-W_{\text{tail}, A})(-s - 1) \quad \text{for all } s \in \mathbb{C}.
-   \]
+   $$
 3. **Half-Plane Analytic Identification:**  
    On the absolute convergence half-plane $\operatorname{Re}(s) > 1$, the Laplace moment decomposes into the entire compact initial Mellin part minus the filled critical transform:
-   \[
+   $$
    \int_0^\infty e^{-s t} d\mu_A(t) = \mathcal{M}(W_{\text{init}, A})(-s - 1) - \Phi(s).
-   \]
+   $$
 
 ---
 
@@ -35,29 +35,29 @@ This contribution proves:
 ### 2.1. Pointwise Coordinate Multiplier Identity
 For $x > 1$, $x$ is real and positive, so $x = e^{\log x}$.
 Thus:
-\[
+$$
 e^{-s \log x} = (e^{\log x})^{-s} = x^{-s}.
-\]
+$$
 The density is defined by $\rho_A(x) = x^{-2} \operatorname{Re}(-W_{\text{tail}, A}(x))$.
 Since $W$ is purely real (Contribution 138), $\operatorname{Re}(-W_{\text{tail}, A}(x)) = -W_{\text{tail}, A}(x)$.
 Therefore:
-\[
+$$
 \rho_A(x) e^{-s t(x)} = x^{-2} (-W_{\text{tail}, A}(x)) x^{-s} = x^{-s-2} (-W_{\text{tail}, A}(x)).
-\]
+$$
 
 ### 2.2. Integral Equivalence
 Integrating over the support $x \in (1, \infty)$ with respect to Lebesgue measure $dx$:
-\[
+$$
 \int_{(1, \infty)} \rho_A(x) e^{-s t(x)} dx = \int_{(1, \infty)} x^{-s-2} (-W_{\text{tail}, A}(x)) dx.
-\]
+$$
 By definition of the pushforward measure $\mu_A = (t)_* (\rho_A \, dx)$ and substitution, the left side is the Laplace transform $\int_0^\infty e^{-st} d\mu_A(t)$.
 The right side is precisely $\mathcal{M}(-W_{\text{tail}, A})(-s - 1)$ since $(-s - 1) - 1 = -s - 2$.
 
 ### 2.3. Decomposition with Filled Transform
 By the linearity of the Mellin transform on $W = W_{\text{init}, A} + W_{\text{tail}, A}$:
-\[
+$$
 \mathcal{M}(-W_{\text{tail}, A})(-s - 1) = \mathcal{M}(W_{\text{init}, A})(-s - 1) - \mathcal{M}(W)(-s - 1).
-\]
+$$
 For $\operatorname{Re}(s) > 1$, $\mathcal{M}(W)(-s - 1) = \Phi(s)$ by Contribution 138.
 Hence $\int_0^\infty e^{-st} d\mu_A(t) = \mathcal{M}(W_{\text{init}, A})(-s - 1) - \Phi(s)$.
 

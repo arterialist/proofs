@@ -1,4 +1,4 @@
-# First Formalization 385: Riemann Zeta Bounded Frequency Zero-Freeness, Millennium High-Frequency Equivalence, and High-Frequency System Promotion
+# Riemann zeta bounded-frequency results and high-frequency system implications
 
 **Module Path**: `formalization/BuildingBlocks/RiemannZetaHighFrequencySynthesis.lean`  
 **Root Module**: `formalization/BuildingBlocks.lean`  
@@ -24,7 +24,7 @@ Building upon the unconditional low-frequency non-vanishing theorems established
 1. The entire bounded frequency horizontal strip $\{ s \in \mathbb{C} \mid \operatorname{Re}(s) > 1/2, |\operatorname{Im}(s)| \le 1, s \ne 1 \}$ is zero-free with zero hypotheses and zero upper bounds on $\operatorname{Re}(s)$.
 2. Any putative off-line zero $s$ in the right half-plane must satisfy $|\operatorname{Im}(s)| > 1$.
 3. Mathlib's formal `RiemannHypothesis` is logically equivalent to non-vanishing on the open high-frequency quadrant $(1/2, \infty) \times (1, \infty)$.
-4. Any high-frequency Fredholm system, wavepacket refutation system, or Grand Synthesis system (which only refutes zeros with $|\operatorname{Im}(s)| > 1$) unconditionally and automatically promotes to a universal system without needing any low-frequency evaluations.
+4. A supplied high-frequency Fredholm, wavepacket-refutation, or synthesis system promotes to the corresponding all-frequency record using the low-frequency theorem. The module does not construct a high-frequency system.
 
 ---
 
@@ -54,7 +54,7 @@ theorem im_lt_neg_one_of_negative_im_offline_zero {s : ℂ} (hsr : 1 / 2 < s.re)
     (hsim : s.im < 0) (hz : riemannZeta s = 0) : s.im < -1
 ```
 
-### C. Millennium Equivalence
+### C. RH equivalence
 ```lean
 theorem rightHalfZeroFree_iff_high_frequency :
     RightHalfZeroFree ↔ (∀ s : ℂ, 1 / 2 < s.re → 1 < s.im → riemannZeta s ≠ 0)
@@ -63,7 +63,7 @@ theorem RiemannHypothesis_iff_high_frequency :
     RiemannHypothesis ↔ (∀ s : ℂ, 1 / 2 < s.re → 1 < s.im → riemannZeta s ≠ 0)
 ```
 
-### D. Canonical Promotion and Master Deductions
+### D. Record conversions and RH implications
 ```lean
 def universal_of_high_frequency_fredholm (hf : HighFrequencyFredholmSystem) :
     UniversalFredholmSystem

@@ -71,6 +71,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the exact Cauchy algebra, sharp interior invariance, and closed successor difference formula $\Delta r_c(N) = \Lambda * \nabla \Lambda - 2\Lambda(N) + 1$ for centered Goldbach convolutions.
+This entry documents a machine-verified implementation in Lean 4 establishing the exact Cauchy algebra, sharp interior invariance, and closed successor difference formula $\Delta r_c(N) = \Lambda * \nabla \Lambda - 2\Lambda(N) + 1$ for centered Goldbach convolutions.

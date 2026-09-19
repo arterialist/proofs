@@ -46,6 +46,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified application of the Banach–Steinhaus theorem to arithmetic Möbius inversion, rigorously proving that general regularity conditions cannot force sub-$2/3$ cancellation.
+This entry documents a machine-verified application of the Banach–Steinhaus theorem to arithmetic Möbius inversion, rigorously proving that general regularity conditions cannot force sub-$2/3$ cancellation.

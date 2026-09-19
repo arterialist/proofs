@@ -1,4 +1,4 @@
-# Unique Contribution 346: Chirped Carrier Dilution-Density Balance and Critical-Line Logarithmic Bound
+# Contribution 346: Chirped Carrier Dilution-Density Balance and Critical-Line Logarithmic Bound
 
 ## 1. Overview and Mathematical Formulation
 
@@ -39,7 +39,7 @@ theorem critical_resonant_bound_of_bounds {C_N C_core eta w T N_zeros E_single :
     N_zeros * E_single ≤ (criticalResonantCoeff C_N C_core w) * Real.log T
 ```
 
-## 3. Novelty and Uniqueness Analysis
+## 3. Result and scope
 
 In prior number theory and oscillatory analysis, test functions localized near frequency $T$ typically incur zero sums scaling as $T \log T$ unless high-order oscillation or specialized cancellation is demonstrated. 
 

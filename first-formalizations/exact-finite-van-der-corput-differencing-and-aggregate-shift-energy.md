@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation of exact, non-asymptotic van der Corput shift energy inequalities in Lean 4 that retains complete signed correlations and aggregate cross-terms across parameter families.
+This entry documents a machine-verified implementation of exact, non-asymptotic van der Corput shift energy inequalities in Lean 4 that retains complete signed correlations and aggregate cross-terms across parameter families.

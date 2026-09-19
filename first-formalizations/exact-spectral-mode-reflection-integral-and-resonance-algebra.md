@@ -53,6 +53,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact continuous reflection convolution for additive spectral modes with resonant and off-resonant branching.
+This entry documents a machine-verified implementation in Lean 4 proving the exact continuous reflection convolution for additive spectral modes with resonant and off-resonant branching.

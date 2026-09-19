@@ -1,7 +1,6 @@
 # Published-history quality control: segment 2
 
-This review covers the 329 published commits assigned by
-`research-local/audits/antigravity-monitor/history-segment-2.json`, from
+This review covers the 329 published commits from
 `d92a63927ccfe4963c31c3a1b17a0665a8339ceb` through
 `30bd62f38b8a0474d40826dffcb5ee7a9d72ad88`, as they stand at the frozen
 baseline `356d968c7ac34a23113d6fe0a5e10217cef4316c`.
@@ -30,9 +29,9 @@ intermediate versions, index-only changes, and root-owned catalog overlap.
   requiring the operator residual to be smaller than the certified spectral
   gap before identifying the nearby spectral value with the ground state.
   Commit `cc576bd1` added that condition before the audited baseline.
-- Commit `28485368` counted the measure-zero endpoint \(n=2X\) as a full
+- Commit `28485368` counted the measure-zero endpoint $n=2X$ as a full
   discrete dyadic cell. Commit `5ac73551` repaired the affected sums to use
-  \(X\le n<2X\) before the audited baseline.
+  $X\le n<2X$ before the audited baseline.
 - Commit `de754a71` introduced a determinant acceptance test in the validated
   killed-ground Galerkin certificate that multiplied two interval lower
   endpoints without checking their signs. Two intervals that cross zero can

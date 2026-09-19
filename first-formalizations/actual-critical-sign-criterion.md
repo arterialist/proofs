@@ -6,18 +6,16 @@ Compiled in:
 - [CriticalTransformContinuationRH.lean](../formalization/BuildingBlocks/CriticalTransformContinuationRH.lean)
 - [ActualCriticalConvergence.lean](../formalization/BuildingBlocks/ActualCriticalConvergence.lean)
 
-A targeted search across Mathlib, the Lean community archives, Isabelle/AFP, and Coq/ROC
-found no prior formalization of an arithmetic sign criterion for the Riemann Hypothesis
-via shifted multipliers, double-pole clearing, and identity theorem continuation.
+The author reports a targeted search across Mathlib, Lean community archives, Isabelle/AFP, and Coq/ROC that found no matching arithmetic sign criterion. This is provisional priority evidence rather than a worldwide guarantee.
 
 ## Mathematical content
 
 The formalized development proves:
-\[
+$$
  \boxed{\quad
  \left( \forall^\infty x \in \mathbb{R},\ \operatorname{Re} W(x) \le 0 \right) \implies \mathrm{RiemannHypothesis}.
  \quad}
-\]
+$$
 Here $W(x) = \sum_{d \le x} \sqrt{d} V(x/d)$ is the arithmetic convolution of the bilinear
 centered von Mangoldt difference with the square-root aggregation kernel.
 

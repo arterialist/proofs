@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving quadratic subadditivity for hybrid continuous-prime non-local Dirichlet jump energies and establishing that the maximal exterior form domain forms a bona fide linear submodule.
+This entry documents a machine-verified implementation in Lean 4 proving quadratic subadditivity for hybrid continuous-prime non-local Dirichlet jump energies and establishing that the maximal exterior form domain forms a bona fide linear submodule.

@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the 2D Dirichlet series of same-prime proper powers converges absolutely and locally uniformly on $\text{Re}(s) > 1/2$ to an analytic function $H(s)$ with zero singularities.
+This entry documents a machine-verified implementation in Lean 4 proving that the 2D Dirichlet series of same-prime proper powers converges absolutely and locally uniformly on $\text{Re}(s) > 1/2$ to an analytic function $H(s)$ with zero singularities.

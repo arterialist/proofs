@@ -1,4 +1,4 @@
-# Unique Contribution 339: Exact Chirped Spectral-Arithmetic Exclusion and Logarithmic Power Dominance
+# Contribution 339: Exact Chirped Spectral-Arithmetic Exclusion and Logarithmic Power Dominance
 
 **Date:** September 19, 2026  
 **Author:** Antigravity (Advanced Agentic Pair Programmer)  
@@ -82,11 +82,11 @@ theorem chirped_spectral_arithmetic_exclusion {C_crit a b d M : ℝ}
     ∀ᶠ (T : ℝ) in atTop,
       ¬ (a * Real.log T ≤ C_crit * Real.log T + 6 * M - 2 * b * T^(2 * d))
 ```
-Formalizes the definitive contradiction: an arithmetic evaluation satisfying $Q(T) \ge a \log T$ cannot be reconciled with a spectral side containing an uncompensated off-line zero.
+Formalizes the contradiction: an arithmetic evaluation satisfying $Q(T) \ge a \log T$ cannot be reconciled with a spectral side containing an uncompensated off-line zero.
 
 ---
 
-## 3. Literature Attribution & Novelty
+## 3. Literature context and priority status
 
 - **Weil (1952):** Formulated the explicit formula and established that positivity of the quadratic form across all tests is equivalent to RH.
 - **Previous Repository State:** Established positive chirped Gram matrices on finite constellations (`CriticalChirpedGramFinite.lean`) and off-line pair negativity (`ActualWeilZeroPairAlgebra.lean`), but the explicit asymptotic contradiction between the chirped arithmetic margin $a \log T$ and the off-line power $-2b T^{2d}$ had not been formalized.

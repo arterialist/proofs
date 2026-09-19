@@ -56,6 +56,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 demonstrating that sequential prime-power packet admission across squarefree supports strictly injects positive energy flux into arithmetic Gram forms, ruling out greedy monotonic energy minimization.
+This entry documents a machine-verified proof in Lean 4 demonstrating that sequential prime-power packet admission across squarefree supports strictly injects positive energy flux into arithmetic Gram forms, ruling out greedy monotonic energy minimization.

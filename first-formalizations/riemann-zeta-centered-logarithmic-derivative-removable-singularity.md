@@ -48,6 +48,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 that the centered logarithmic derivative $-\zeta'(s)/\zeta(s) - s/(s-1)$ is analytic at $s = 1$ with exact value $-\gamma - 1$.
+This entry documents a machine-verified proof in Lean 4 that the centered logarithmic derivative $-\zeta'(s)/\zeta(s) - s/(s-1)$ is analytic at $s = 1$ with exact value $-\gamma - 1$.

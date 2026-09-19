@@ -1,4 +1,4 @@
-# Unique Contribution 331: Exact Factorial Real-Cell Cross Kernel Isometry and Log-Two Budget Majorization
+# Contribution 331: Exact Factorial Real-Cell Cross Kernel Isometry and Log-Two Budget Majorization
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/FactorialRealCellCrossKernel.lean`](../../formalization/BuildingBlocks/FactorialRealCellCrossKernel.lean), [`building-blocks/factorial/cross-kernel.md`](../../building-blocks/factorial/cross-kernel.md)  
@@ -14,23 +14,23 @@ This contribution proves:
 
 1. **Exact Bilinear Phase Integral Identity:**  
    For any scale vectors $a_i, b_j \ge 1$ and real coefficients $c_i, d_j$:
-   \[
+   $$
    \int_0^\infty \left( \sum_i c_i \phi(a_i, t) \right) \left( \sum_j d_j \phi(b_j, t) \right) w(t) \, dt = \sum_i \sum_j c_i d_j \, K_{\text{phase}}(a_i, b_j).
-   \]
+   $$
 2. **Exact 2D Floor-Truncated Cross Kernel Representation:**  
    For continuous scales $x, y \ge 1$, the continuous cross-energy is an exact finite double sum:
-   \[
+   $$
    \int_0^\infty \psi(x, t) \psi(y, t) w(t) \, dt = K_{\text{actual}}(x, y),
-   \]
+   $$
    where
-   \[
+   $$
    K_{\text{actual}}(x, y) = \sum_{j=1}^{\lfloor x \rfloor} \sum_{l=1}^{\lfloor y \rfloor} \frac{\mu(j)}{j} \frac{\mu(l)}{l} K_{\text{phase}}\left(\frac{x}{j}, \frac{y}{l}\right).
-   \]
+   $$
 3. **Exact Majorization by Log 2 and Inverse Coefficient Budgets:**  
    Using the universal phase kernel bound $|K_{\text{phase}}(u, v)| \le \log 2$ for all $u, v \ge 1$:
-   \[
+   $$
    \|K_{\text{actual}}(x, y)\| \le (\log 2) \cdot B(\lfloor x \rfloor) \cdot B(\lfloor y \rfloor),
-   \]
+   $$
    where $B(N) = \sum_{j=1}^N |\mu(j)/j|$ is the inverse coefficient budget.
 4. **Exact Kernel Symmetry:**  
    $K_{\text{actual}}(x, y) = K_{\text{actual}}(y, x)$ unconditionally.
@@ -82,6 +82,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Titchmarsh (1986) *The Theory of the Riemann Zeta-Function*; Montgomery & Vaughan (2007) *Multiplicative Number Theory*. Machine verification of exact 2D Möbius-weighted cross-kernel representations and $\log 2$ budget majorizations in Lean 4 is new.
+- **Prior Literature:** Titchmarsh (1986) *The Theory of the Riemann Zeta-Function*; Montgomery & Vaughan (2007) *Multiplicative Number Theory*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes an exact reproducing kernel formula for inverse test phases across continuous scales, bounding continuous cross-correlations by discrete Möbius budgets.
 - **Target Venues:** *Journal of Functional Analysis* or *Integral Equations and Operator Theory*.

@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified bridge establishing exact algebraic equivalence between finite signed discrete prime sums and continuous causal source integrals without contour integration or complex analytic continuation.
+This entry documents a machine-verified bridge establishing exact algebraic equivalence between finite signed discrete prime sums and continuous causal source integrals without contour integration or complex analytic continuation.

@@ -17,9 +17,9 @@ This formalization proves the explicit quantitative finite-rank defect error bou
    Formal proof of `primeSeedRemainder_eq_zero` ($R_P(v) = 0$ for $v < \log P$), `three_log_two_le_log_cutoff`, and `primeSeedRemainder_bound` ($R_P(v) \le (64\log 2 + 30)/\log P$).
 3. **Exponential Remainder Mass Integration:**
    Formal proof of `exponential_remainder_mass_bound`:
-   \[
+   $$
    \int_0^\infty e^{-w} R_P(w) dw \le \frac{64 \log 2 + 30}{P \log P}.
-   \]
+   $$
 4. **Decay and Energy Form Majorization:**
    Formal proof of `remainder_defectKernel_bound`, `remainder_memory_charge_bound_weighted`, and `remainder_memory_charge_bound_energy`.
 5. **Finite-Rank Operator Rank-Defect Error Bound:**
@@ -71,6 +71,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 certifying explicit non-asymptotic error bounds $O(1 / (P \log P))$ with verified constants $(64\log 2 + 30)$ for finite-rank prime-memory operator approximations against infinite-dimensional causal energy spaces.
+This entry documents a machine-verified proof in Lean 4 certifying explicit non-asymptotic error bounds $O(1 / (P \log P))$ with verified constants $(64\log 2 + 30)$ for finite-rank prime-memory operator approximations against infinite-dimensional causal energy spaces.

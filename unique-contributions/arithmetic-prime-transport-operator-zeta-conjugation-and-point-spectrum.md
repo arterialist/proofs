@@ -1,4 +1,4 @@
-# Unique Contribution 84: Arithmetic Prime-Transport Operator Zeta-Conjugation and Point Spectrum
+# Contribution 84: Arithmetic Prime-Transport Operator Zeta-Conjugation and Point Spectrum
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ArithmeticTransport.lean`](../../formalization/BuildingBlocks/ArithmeticTransport.lean)  
@@ -9,37 +9,37 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the algebraic theory of arithmetic functions, the second generalized von Mangoldt function $\Lambda_2 = \Lambda \log + \Lambda * \Lambda$ arises from differentiating the Dirichlet series $-\zeta'(s)/\zeta(s)$. Generalizing this construction to an arbitrary arithmetic function $f : \mathbb{N} \to \mathbb{R}$ yields the **arithmetic prime-transport operator**:
-\[
+$$
 (\mathcal{T} f)(n) = f(n) \log n + (\Lambda * f)(n).
-\]
+$$
 
 This contribution proves:
 
 1. **Exact Zeta-Conjugation to Logarithmic Multiplication:**  
    Dirichlet convolution with the constant arithmetic function $\zeta(n) \equiv 1$ exactly conjugates the prime-transport operator $\mathcal{T}$ into pointwise multiplication by $\log n$:
-   \[
+   $$
    \zeta * (\mathcal{T} f) = (\zeta * f) \cdot \log n.
-   \]
+   $$
 2. **Möbius Inversion Formula for Transport:**  
    Applying Möbius inversion directly yields:
-   \[
+   $$
    \mathcal{T} f = \mu * ((\zeta * f) \cdot \log n),
-   \]
+   $$
    and for functions of the form $f = \mu * g$, the action simplifies to $\mathcal{T}(\mu * g) = \mu * (g \cdot \log n)$.
 3. **One-Dimensional Kernel Characterization:**  
    The algebraic nullspace $\ker(\mathcal{T})$ of the prime-transport operator on arithmetic functions is exactly one-dimensional and spanned by the Möbius function $\mu$:
-   \[
+   $$
    \mathcal{T} f = 0 \iff f(n) = f(1) \mu(n), \quad \forall n \in \mathbb{N}.
-   \]
+   $$
 4. **Complete Point Spectrum Characterization:**  
    The point eigenvalues $\lambda \in \mathbb{R}$ of $\mathcal{T}$ on non-zero arithmetic functions are exactly the logarithms of positive integers:
-   \[
+   $$
    \operatorname{Spec}_{\mathrm{point}}(\mathcal{T}) = \{\log k : k \in \mathbb{N}_{\ge 1}\}.
-   \]
+   $$
    For each eigenvalue $\lambda = \log k$, the eigenspace contains the dilated Möbius eigenvector $f_k = \mu * \delta_k$, with explicit values:
-   \[
+   $$
    f_k(n) = \begin{cases} \mu(n/k) & \text{if } k \mid n, \\ 0 & \text{otherwise}. \end{cases}
-   \]
+   $$
 5. **Unconditional Eigenvalue Positivity:**  
    Every algebraic eigenvalue $\lambda$ of the arithmetic prime-transport operator satisfies $\lambda \ge 0$.
 
@@ -50,9 +50,9 @@ This contribution proves:
 ### 2.1. Zeta Conjugation Identity
 By Selberg-type identities, $\Lambda * \zeta = \log$ and $(\zeta * f) \log = \zeta * (f \log) + (\zeta \log) * f$.
 Computing $\zeta * (\mathcal{T} f)$:
-\[
+$$
 \zeta * (f \log + \Lambda * f) = \zeta * (f \log) + (\zeta * \Lambda) * f = \zeta * (f \log) + \log * f = (\zeta * f) \log.
-\]
+$$
 Convolving on the left with $\mu$ and using $\mu * \zeta = 1$ proves $\mathcal{T} f = \mu * ((\zeta * f) \log)$.
 
 ### 2.2. Nullspace Derivation
@@ -104,6 +104,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Selberg's formula $\Lambda_2 = \Lambda \log + \Lambda * \Lambda$ is classical. However, abstracting $\mathcal{T} f = f \log + \Lambda * f$ as a linear operator on the space of arithmetic functions, proving its exact Dirichlet conjugation to logarithmic multiplication, and characterizing its point spectrum as precisely $\{\log k\}_{k \ge 1}$ with dilated Möbius eigenvectors had never been formalized in Lean 4.
+- **Prior literature comparison:** Selberg's formula is classical. This page formalizes the stated operator, conjugation, and point-spectrum results. Priority among Lean formalizations is not established by this audit.
 - **Advancement:** Establishes the complete spectral decomposition and nullspace of the arithmetic prime-transport operator.
 - **Target Venues:** *Journal of Number Theory* or *Linear Algebra and its Applications*.

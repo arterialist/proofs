@@ -50,6 +50,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 evaluating the Mellin transform of off-diagonal prime correlation tents with exact subtraction of the diagonal $H(s)$ and complete cancellation of the principal pole at $s=1$.
+This entry documents a machine-verified implementation in Lean 4 evaluating the Mellin transform of off-diagonal prime correlation tents with exact subtraction of the diagonal $H(s)$ and complete cancellation of the principal pole at $s=1$.

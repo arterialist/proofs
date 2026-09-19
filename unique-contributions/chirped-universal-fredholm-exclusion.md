@@ -1,42 +1,31 @@
-# Chirped Universal Fredholm Exclusion: Cutoff-Free Spectral Determinant Refutation of Off-Line Zeros
+# Power-log contradiction from a universal scalar balance package
 
-**Status**: Verified in Lean 4
-**Module**: [`BuildingBlocks.ChirpedUniversalFredholmExclusion`](file:///Users/arterialist/Projects/proofs/formalization/BuildingBlocks/ChirpedUniversalFredholmExclusion.lean)
-**Axiom Footprint**: Standard foundational axioms `[propext, Classical.choice, Quot.sound]`, 0 sorry
+**Classification:** conditional bridge theorem
 
----
+**Lean module:** [`ChirpedUniversalFredholmExclusion.lean`](../formalization/BuildingBlocks/ChirpedUniversalFredholmExclusion.lean)
 
-## 1. Mathematical Novelty and Literature Differentiation
+This module proves a contradiction from a strong package of scalar inequalities. It does not construct a Fredholm operator or determinant.
 
-In spectral and scattering theories of the Riemann zeta function, Fredholm and Carleman regularized determinants $\det_2(I - K_T)$ serve as analytic spectral certificates. Previously, Carleman resolvent growth obstructions required a high-frequency premise $\gamma \ge H_0$ because the carrier $T$ was coupled linearly to $\gamma$ via fixed chirp parameters.
+For positive $\gamma$ and displacement $d$, `UniversalFredholmEvaluation gamma d` contains a freely supplied real function `log_det2` together with
 
-This contribution unifies **Carleman regularized resolvent growth bounds** with **Window-Adaptive Carrier Tuning**, producing the **Universal Fredholm Exclusion Theorem**:
-For any putative off-line zero candidate $s = \beta + i\gamma$ with $\beta > 1/2$ and $\gamma > 0$:
-1. The regularized determinant $\det_2(I - K_T)$ obeys a Carleman growth lower bound:
-   $$2b T^{2d} - (A \log T + C) \le \log |\det_2(I - K_T)|$$
-   derived from the isolated off-line eigenvalue perturbation.
-2. The Carleman spectral balance condition imposes an upper bound $\log |\det_2(I - K_T)| \le M_{\text{bal}}$.
-3. Using variational chirp tuning $\eta \to 1^-$, the carrier scale $T$ is tuned to exceed the quantitative power dominance threshold:
-   $$A \log T + C + M_{\text{bal}} < 2b T^{2d}.$$
+$$
+2bT^{2d}-(A\log T+C)\leq \operatorname{log\_det2}(T)
+$$
 
-Combining (1), (2), and (3) derives an immediate contradiction:
-$$2b T^{2d} \le A \log T + C + M_{\text{bal}} < 2b T^{2d} \implies \text{False}.$$
+and
 
----
+$$
+\operatorname{log\_det2}(T)\leq M_{\rm bal}
+$$
 
-## 2. Core Formulations and Theorems
+for every $T>16$. Carrier tuning chooses a large $T$, and elementary real inequalities then contradict these two fields. This is `refute_universal_fredholm_evaluation`.
 
-### Verified Lean 4 Declarations
+The word "universal" belongs to an assumption. `UniversalFredholmSystem.evaluator` must produce the whole inconsistent evaluation package from every putative upper-half-plane zero. The module does not define such a system, derive its lower or balance fields from the Weil explicit formula, or connect `log_det2` to an operator determinant. Consequently,
 
-- `UniversalFredholmEvaluation`: Bundles Carleman determinant lower growth bounds and spectral balance upper bounds.
-- `refute_universal_fredholm_evaluation`: Derives `False` from any universal Fredholm evaluation for $\gamma > 0$ and $d > 0$.
-- `UniversalFredholmSystem`: Global evaluator mapping candidate zeros to Fredholm evaluations.
-- `no_positive_im_zero_of_universal_fredholm`: Proves no zeros exist with $\operatorname{Re}(s) > 1/2$ and $\operatorname{Im}(s) > 0$.
-- `rightHalfZeroFree_of_universal_fredholm`: Deduces $\zeta(s) \ne 0$ on the entire right half-plane $\operatorname{Re}(s) > 1/2$.
-- `RiemannHypothesis_of_universal_fredholm`: Global deduction of Mathlib's `RiemannHypothesis`.
+```lean
+UniversalFredholmSystem -> RiemannHypothesis
+```
 
----
+is a conditional reduction, not an unconditional proof of RH. The reflection and real-axis hypotheses in the right-half-plane theorem are also explicit arguments.
 
-## 3. Foundational Impact
-
-This resolves the operator-theoretic approach to the Riemann Hypothesis without low-frequency exceptions, demonstrating that the regularized Carleman determinant of the perturbed Hamiltonian cannot maintain finite spectral balance in the presence of any off-line zero.
+The reusable result is the quantified power-versus-logarithm contradiction. An analytic application still has to construct the evaluator without assuming the decisive incompatible bounds.

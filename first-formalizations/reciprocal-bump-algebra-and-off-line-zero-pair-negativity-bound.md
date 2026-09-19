@@ -56,6 +56,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 of the reciprocal bump factor expansion and the quantitative linear negativity bound $4\|W\| + 2\|W\|/r - 2br$ for off-line zero pairs in Weil-type quadratic forms.
+This entry documents a machine-verified proof in Lean 4 of the reciprocal bump factor expansion and the quantitative linear negativity bound $4\|W\| + 2\|W\|/r - 2br$ for off-line zero pairs in Weil-type quadratic forms.

@@ -50,6 +50,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 connecting dyadic interval decompositions of prime error Mellin transforms directly to the derivative and logarithmic derivative of Mathlib's `riemannZeta` with explicit polar subtraction $s/(s-1)$.
+This entry documents a machine-verified implementation in Lean 4 connecting dyadic interval decompositions of prime error Mellin transforms directly to the derivative and logarithmic derivative of Mathlib's `riemannZeta` with explicit polar subtraction $s/(s-1)$.

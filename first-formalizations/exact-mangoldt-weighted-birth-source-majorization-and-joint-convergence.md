@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This milestone formalization provides the first machine-verified proof in Lean 4 establishing the absolute convergence and exact majorization of prime-power weighted birth sources across both discrete arithmetic indices and continuous clock evolutions.
+This entry documents a machine-verified proof in Lean 4 establishing the absolute convergence and exact majorization of prime-power weighted birth sources across both discrete arithmetic indices and continuous clock evolutions.

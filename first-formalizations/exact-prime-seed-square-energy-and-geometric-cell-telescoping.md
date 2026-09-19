@@ -55,6 +55,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the full continuous prime-successor seed is square-integrable on $\mathbb{R}$ with exact $L^2$ norm $\|\text{seed}_{\log p}\|_{L^2}^2 = \frac{1}{p^2}$.
+This entry documents a machine-verified implementation in Lean 4 proving that the full continuous prime-successor seed is square-integrable on $\mathbb{R}$ with exact $L^2$ norm $\|\text{seed}_{\log p}\|_{L^2}^2 = \frac{1}{p^2}$.

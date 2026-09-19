@@ -1,4 +1,4 @@
-# Unique Contribution 70: Finite Signed Logarithmic Window Prime-Source Integration Bridge
+# Contribution 70: Finite Signed Logarithmic Window Prime-Source Integration Bridge
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/LogarithmicPrimeWindow.lean`](../../formalization/BuildingBlocks/LogarithmicPrimeWindow.lean)  
@@ -14,23 +14,23 @@ This contribution proves:
 
 1. **Exact Differentiable Critical Logarithmic Window:**  
    For any smooth, compactly supported test function $R: \mathbb{R} \to \mathbb{R}$ with support in $[-d, d]$ and derivative $D = R'$, the critical-line window $W_s(x) = x^{-1/2} R(\log x - s)$ has exact derivative:
-   \[
+   $$
    W_s'(x) = x^{-3/2} \mathcal{K}_{R, D}(\log x - s), \quad \text{where } \mathcal{K}_{R, D}(y) = D(y) - \frac{1}{2} R(y).
-   \]
+   $$
 2. **Exact Non-Asymptotic Window Residual Formula:**  
    For any truncation $N \ge e^{s+d}$ and any source cutoff $C \ge N$, the physical Chebyshev prime sum minus the continuous density moment:
-   \[
+   $$
    \sum_{n=2}^N \Lambda(n) n^{-1/2} R(\log n - s) - e^{s/2} \int_{-\infty}^\infty e^{y/2} R(y) \, dy
-   \]
+   $$
    **EQUALS EXACTLY** the continuous integral of the complete frozen causal prime source $S_C(v)$ against the shifted kernel:
-   \[
+   $$
    - \int_{-\infty}^\infty S_C(v) \mathcal{K}_{R, D}(v - s) \, dv.
-   \]
+   $$
 3. **Finite Signed Window Linear Superposition Bridge:**  
    For any finite index set $T$, arbitrary shifts $s_i \ge d$, and arbitrary real coefficients $c_i \in \mathbb{R}$:
-   \[
+   $$
    \sum_{i \in T} c_i \left( \sum_{n=2}^N \Lambda(n) n^{-1/2} R(\log n - s_i) - e^{s_i/2} \int_{-\infty}^\infty e^{y/2} R(y) \, dy \right) = - \int_{-\infty}^\infty S_C(v) \left( \sum_{i \in T} c_i \mathcal{K}_{R, D}(v - s_i) \right) dv.
-   \]
+   $$
 4. **Foundational Significance:**  
    Establishes an unconditional, non-asymptotic bridge directly equating linear combinations of discrete prime power evaluations to continuous projections of the causal source field $S_C$, without invoking the Riemann zeta function, complex contours, or the Riemann Hypothesis.
 
@@ -40,25 +40,25 @@ This contribution proves:
 
 ### 2.1. Window Differentiation
 Let $W_s(x) = x^{-1/2} R(\log x - s)$. Differentiating with respect to $x > 0$:
-\[
+$$
 W_s'(x) = -\frac{1}{2} x^{-3/2} R(\log x - s) + x^{-1/2} R'(\log x - s) \frac{1}{x} = x^{-3/2} \left( R'(\log x - s) - \frac{1}{2} R(\log x - s) \right).
-\]
+$$
 Setting $\mathcal{K}_{R, D}(y) = D(y) - \frac{1}{2} R(y)$ where $D = R'$, this is $x^{-3/2} \mathcal{K}_{R, D}(\log x - s)$.
 
 ### 2.2. Summation by Parts and Source Identification
 The prime counting sum with critical weight is integrated by parts against the Chebyshev step function $\theta(x) = \sum_{p^k \le x} \log p$:
-\[
+$$
 \sum_{n=2}^N \Lambda(n) W_s(n) = - \int_1^N \theta(x) W_s'(x) \, dx,
-\]
+$$
 since the boundary terms vanish ($W_s(1) = 0$ because $s \ge d$, and $W_s(N) = 0$ because $\log N \ge s+d$).
 Substituting $x = e^v$, $dx = e^v dv$:
-\[
+$$
 \int_1^N \theta(x) x^{-3/2} \mathcal{K}_{R, D}(\log x - s) \, dx = \int_0^{\log N} \theta(e^v) e^{-v/2} \mathcal{K}_{R, D}(v - s) \, dv.
-\]
+$$
 Subtracting the continuous density integral:
-\[
+$$
 e^{s/2} \int_{-\infty}^\infty e^{y/2} R(y) \, dy = \int_{-\infty}^\infty e^{v/2} \left( R'(v-s) - \frac{1}{2} R(v-s) \right) dv.
-\]
+$$
 Combining terms gives the exact integral against the causal source $S_C(v) = \theta(e^v) e^{-v/2} - e^{v/2}$.
 
 ### 2.3. Linearity and Superposition

@@ -1,4 +1,4 @@
-# Unique Contribution 109: Möbius Divisor History Splitting and Off-Diagonal Goldbach Negativity
+# Contribution 109: Möbius Divisor History Splitting and Off-Diagonal Goldbach Negativity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CenteredGoldbachHistoryShellFinite.lean`](../../formalization/BuildingBlocks/CenteredGoldbachHistoryShellFinite.lean), [`formalization/BuildingBlocks/CenteredGoldbachHeatScaleIncrementFinite.lean`](../../formalization/BuildingBlocks/CenteredGoldbachHeatScaleIncrementFinite.lean)  
@@ -9,50 +9,50 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the additive representation of an integer $N$ as the sum of two prime powers $m + n = N$, the binary prime correlation is governed by the truncated Goldbach coefficient:
-\[
+$$
 r_Y(N) = \sum_{\substack{1 \le m, n \le Y \\ m + n = N}} \Lambda(m) \Lambda(n).
-\]
+$$
 By expanding each von Mangoldt weight through its complete Möbius divisor-logarithm history $\Lambda(k) = \sum_{d \cdot e = k} \mu(d) \log e$, the product $\Lambda(m)\Lambda(n)$ expands into a fourfold sum over divisor pairs $(d, e)$ of $m$ and $(f, g)$ of $n$:
-\[
+$$
 \Lambda(m) \Lambda(n) = \sum_{\substack{d \cdot e = m \\ f \cdot g = n}} \mu(d) \mu(f) \log e \log g.
-\]
+$$
 
 This contribution proves:
 
 1. **Diagonal/Off-Diagonal Möbius Splitting:**  
    The binary prime correlation splits exactly into diagonal ($d = f$) and off-diagonal ($d \ne f$) divisor channels:
-   \[
+   $$
    r_Y(N) = r_Y^{\text{diag}}(N) + r_Y^{\text{off}}(N).
-   \]
+   $$
 2. **Definite Non-Negativity and Logarithmic Dominance of the Diagonal Block:**  
    When $d = f$, the weight involves $\mu(d)^2 \ge 0$, and $\log e \ge 0, \log g \ge 0$, proving that:
-   \[
+   $$
    r_Y^{\text{diag}}(N) \ge 0.
-   \]
+   $$
    Moreover, the primary term $(d, f) = (1, 1)$ yields $\log m \log n$, which establishes the universal lower bound:
-   \[
+   $$
    \log m \log n \le \text{diagonalHistory}(m, n).
-   \]
+   $$
 3. **Parity Obstruction for Odd Totals:**  
    If $d = f$, then $d \mid m$ and $d \mid n$, hence $d \mid (m + n) = N$. When $N$ is odd, every common divisor label $d$ must be odd. In particular, the even divisor $d = 2$ cannot participate in the diagonal history of any odd integer.
 4. **Universal Non-Positivity of Off-Diagonal Histories:**  
    Because $\Lambda(m) \Lambda(n) \le \log m \log n \le \text{diagonalHistory}(m, n)$ for all $m, n \ge 1$:
-   \[
+   $$
    \text{offDiagonalHistory}(m, n) = \Lambda(m) \Lambda(n) - \text{diagonalHistory}(m, n) \le 0.
-   \]
+   $$
    Consequently, every truncated off-diagonal Goldbach coefficient is non-positive:
-   \[
+   $$
    r_Y^{\text{off}}(N) \le 0.
-   \]
+   $$
 5. **Certified Non-Zero Negative Correction:**  
    The off-diagonal correction is strictly negative for genuine prime powers:
-   \[
+   $$
    \text{offDiagonalHistory}(2, 4) = -(\log 2)^2 < 0,
-   \]
+   $$
    and at cutoff $Y = 4$ and total $N = 6$:
-   \[
+   $$
    r_4^{\text{off}}(6) = -2 (\log 2)^2 < 0.
-   \]
+   $$
 
 ---
 
@@ -60,9 +60,9 @@ This contribution proves:
 
 ### 2.1. Algebraic History Expansion
 Since $\Lambda(m) = \sum_{d \mid m} \mu(d) \log(m/d)$, the product $\Lambda(m)\Lambda(n)$ is:
-\[
+$$
 \sum_{d \mid m} \sum_{f \mid n} \mu(d) \mu(f) \log(m/d) \log(n/f).
-\]
+$$
 Partition the divisor index set into $\{ (d, f) : d = f \}$ and $\{ (d, f) : d \ne f \}$.
 For $d = f$, the coefficient is $\mu(d)^2 \in \{0, 1\}$. Since $m/d \ge 1$ and $n/d \ge 1$, the logarithms are non-negative, so every summand is non-negative.
 The sub-sum containing $(d, f) = (1, 1)$ gives $1 \cdot 1 \cdot \log m \cdot \log n$.
@@ -71,13 +71,13 @@ Since all other summands for $d = f > 1$ are $\ge 0$, $\text{diagonalHistory}(m,
 ### 2.2. Non-Positivity of Off-Diagonal Channel
 By Chebyshev's bound, $\Lambda(k) \le \log k$ for all $k \ge 1$.
 Therefore:
-\[
+$$
 \Lambda(m) \Lambda(n) \le \log m \log n \le \text{diagonalHistory}(m, n).
-\]
+$$
 Subtracting $\text{diagonalHistory}(m, n)$ yields:
-\[
+$$
 \text{offDiagonalHistory}(m, n) = \Lambda(m) \Lambda(n) - \text{diagonalHistory}(m, n) \le 0.
-\]
+$$
 Summing over $m + n = N$ with $1 \le m, n \le Y$ gives $r_Y^{\text{off}}(N) \le 0$.
 
 ### 2.3. Explicit Evaluation at $(2, 4)$

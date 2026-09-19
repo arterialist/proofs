@@ -18,7 +18,7 @@ This module formalizes the real-axis reflection duality of both the completed Ri
    `realAxisZeroFree_of_left_half_zero_free`, `realAxisZeroFree_of_left_half_zeta_zero_free`.
 8. Proves the bidirectional equivalence between left-half and right-half zero-freeness:
    `left_half_zeta_zero_free_iff_right_half_zeta_zero_free`, `realAxisZeroFree_iff_left_half_zeta_zero_free`.
-9. Deduces Mathlib's `RiemannHypothesis` from left-half zero-freeness via the three universal spectral systems:
+9. Gives conditional RH deductions from one supplied universal system record plus left-half real-axis zero-freeness:
    - `RiemannHypothesis_of_weil_and_left_half_zero_free`
    - `RiemannHypothesis_of_refutation_and_left_half_zero_free`
    - `RiemannHypothesis_of_fredholm_and_left_half_zero_free`.

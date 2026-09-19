@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the $n^{-3/2}$ $L^1$ decay of integer birth density differences and justifying the termwise dominated convergence integration of countable von Mangoldt arithmetic series.
+This entry documents a machine-verified proof in Lean 4 establishing the $n^{-3/2}$ $L^1$ decay of integer birth density differences and justifying the termwise dominated convergence integration of countable von Mangoldt arithmetic series.

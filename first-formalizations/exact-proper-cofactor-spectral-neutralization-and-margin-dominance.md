@@ -1,4 +1,4 @@
-# Exact Proper-Cofactor Spectral Neutralization and Asymptotic Margin Dominance
+# Reciprocal real-power identity and logarithmic eventual dominance
 
 **Date:** 19 September 2026  
 **Status:** Machine-verified in Lean 4 (zero custom axioms: `[propext, Classical.choice, Quot.sound]`, zero `sorry`)  
@@ -9,16 +9,18 @@
 
 ## 1. Scope of Formalization
 
-This module formalizes the exact spectral neutralization mechanism that prevents hypothetical off-line zeros $\rho = 1/2 + \varepsilon + i\gamma$ ($\varepsilon > 0$) of the Riemann zeta function from producing uncompensated power-growing residues in the Weil explicit formula when convolved across the proper-cofactor ensemble.
+This module defines `offlineAmplitude ε T` to be $T^\varepsilon$ and `scatteringModulus ε T` to be $T^{-\varepsilon}$. These are abstract real-power definitions. The module does not prove that they equal an actual zeta-zero amplitude or Riemann scattering multiplier, and it contains no cofactor sum or Weil explicit formula.
 
 It machine-proves:
-- The exact reciprocal cancellation $T^\varepsilon \cdot T^{-\varepsilon} = 1$ between the off-line zero amplitude and the Riemann scattering multiplier $\chi(\rho)$.
+- The reciprocal real-power identity $T^\varepsilon T^{-\varepsilon}=1$ for $T>0$.
 - The strict reduction of the compensated growth exponent $\delta(\varepsilon + 1/2) < \varepsilon$ below the critical threshold $\delta < \varepsilon / (\varepsilon + 1/2)$.
 - The arbitrary suppression of the compensated exponent below any pre-assigned $\nu > 0$.
 - The sub-square-root bound $\delta(\varepsilon + 1/2) < 1/2$ for $\delta < 1 / (2(\varepsilon + 1/2))$.
-- The absolute unit boundedness at dual Dirichlet length $y = 1$.
-- The strict upper bound $T^\nu$ on the net off-line spectral contribution.
-- The eventual asymptotic dominance of the positive logarithmic Weil margin $a_\phi \log T$ over any fixed constant bound on the neutralized off-line mass.
+- The same identity after multiplication by $1$.
+- An inequality between real powers when the exponent inequality is supplied.
+- The elementary eventual inequality $C<a\log T$ for $a>0$.
+
+Terms such as "spectral contribution" and "Weil margin" are motivation only. No declaration in this file connects the defined powers to those analytic objects.
 
 ---
 

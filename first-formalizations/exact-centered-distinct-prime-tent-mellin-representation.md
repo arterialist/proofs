@@ -50,6 +50,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 computing the exact Mellin transform of centered distinct prime pair correlation functions, with pole cancellation and proper power extraction certified by foundational axioms.
+This entry documents a machine-verified proof in Lean 4 computing the exact Mellin transform of centered distinct prime pair correlation functions, with pole cancellation and proper power extraction certified by foundational axioms.

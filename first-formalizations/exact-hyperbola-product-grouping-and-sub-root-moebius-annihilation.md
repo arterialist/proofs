@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact algebra of hyperbola product coefficients, explicit factor-pair bijection, and sub-root annihilation for Dirichlet hyperbola sums.
+This entry documents a machine-verified implementation in Lean 4 proving the exact algebra of hyperbola product coefficients, explicit factor-pair bijection, and sub-root annihilation for Dirichlet hyperbola sums.

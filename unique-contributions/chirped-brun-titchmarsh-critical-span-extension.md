@@ -4,30 +4,29 @@
 The finite Hermitian row-bound and diagonal dominance algebra are compiled in
 [CriticalChirpedGramFinite.lean](../formalization/BuildingBlocks/CriticalChirpedGramFinite.lean).
 Attribution: Arterialist RH research team, September 2026.
-To the best of our knowledge, the extension of Weil form positivity for structured
-families of packets up to support span $2\log T + 2\log\log T$ has not previously
-appeared in the literature.
+The page studies an extension of Weil-form positivity for a structured packet family.
+Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 
 ## Statement
 
 Fix profile $a \in C_c^\infty((0, w))$ with $0 < w < \log 2$, chirp parameter
 $0 < \eta < 1/(8w)$, and the exactly pole-null packet
-\[
+$$
  q_T(x) = \frac{(\partial_x^2 - 1/4)\{a(x) e^{i\eta T x^2 - iTx}\}}{\|(\partial_x^2 - 1/4)\{a(x) e^{i\eta T x^2 - iTx}\}\|_2}.
-\]
+$$
 Let $Q$ denote the complete actual-zeta Weil form.
 
 **Theorem.** Given $0 < \epsilon < 1$, there exist fixed constants $B > 0$ and $T_0$
 such that, for all $T \ge T_0$, every ordered center set satisfying
-\[
+$$
  0 \le x_1 < \cdots < x_M \le 2\log T + 2\log\log T - B, \qquad x_{j+1} - x_j > w,
-\]
+$$
 and every complex coefficient vector satisfy
-\[
+$$
  \boxed{\quad
  Q\left( \sum_{j=1}^M c_j \tau_{x_j} q_T \right) \ge (1-\epsilon) \log T \sum_{j=1}^M |c_j|^2.
  \quad}
-\]
+$$
 The statement includes every prime power $\Lambda(p^k) = \log p$, both poles, and
 the exact archimedean gamma term. The constellation allows $M = O_w(\log T)$ translates.
 

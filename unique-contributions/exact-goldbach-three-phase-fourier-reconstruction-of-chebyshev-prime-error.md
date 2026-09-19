@@ -1,4 +1,4 @@
-# Unique Contribution 277: Exact Goldbach Three-Phase Fourier Reconstruction of Chebyshev Prime Error
+# Contribution 277: Exact Goldbach Three-Phase Fourier Reconstruction of Chebyshev Prime Error
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/GoldbachThreePhaseFourier.lean`](../../formalization/BuildingBlocks/GoldbachThreePhaseFourier.lean), [`building-blocks/prime-distribution/goldbach-three-phase-fourier.md`](../../building-blocks/prime-distribution/goldbach-three-phase-fourier.md)  
@@ -14,34 +14,34 @@ This contribution proves:
 
 1. **Exact Fourier Inversion for Chebyshev Prime Error:**  
    For every odd integer $x = 2k + 3$ and corresponding even Goldbach triangle cutoff $N = 2k + 6$, the Chebyshev prime error is recovered from the continuous angular Fourier integral of the parity-centered Goldbach triangle:
-   \[
+   $$
    \psi(2k+3) - (2k+3) = \frac{\mathcal{F}_1(2k+6)}{2 \log 3} + \log 2 \cdot \lfloor \log_2(2k+3) \rfloor + 1 + \log 3 \cdot \#\text{lateThreeLadder}(2k+6),
-   \]
+   $$
    where:
-   \[
+   $$
    \mathcal{F}_1(N) = \frac{1}{\pi} \int_0^{2\pi} \text{Re}(G_N(\theta)) \cos \theta \, d\theta.
-   \]
+   $$
 2. **Identification of Angular Integral with Algebraic Harmonic:**  
    Without asymptotic approximations or limiting procedures, the continuous integral across $[0, 2\pi]$ matches the discrete algebraic three-adic first harmonic identically:
-   \[
+   $$
    \frac{1}{\pi} \int_0^{2\pi} \text{evenCenteredGoldbach}(N, \theta) \cos \theta \, d\theta = \text{threeFirstHarmonic}(N).
-   \]
+   $$
 3. **Completely Multiplicative Complex Three-Adic Phase:**  
    The phase assignment $\chi_3(n, \theta) = \exp(i v_3(n) \theta)$ satisfies:
-   \[
+   $$
    \chi_3(mn, \theta) = \chi_3(m, \theta) \chi_3(n, \theta) \quad \text{for all } m, n \ge 1.
-   \]
+   $$
    In particular, $\chi_3(p, \theta) = 1$ for all primes $p \ne 3$, concentrating all non-trivial phase oscillations exclusively on powers of 3.
 4. **Hermitian Real-Valued Triangle:**  
    The centered complex Goldbach triangle $G_N(\theta) = \sum_{q \in \text{evenPairDomain}(N)} A(q_1, \theta) \overline{A(q_2, \theta)}$ has zero imaginary part:
-   \[
+   $$
    \text{Im}(G_N(\theta)) = 0, \quad \text{Re}(G_N(\theta)) = \text{evenCenteredGoldbach}(N, \theta).
-   \]
+   $$
 5. **Exact Orthogonal Biphase Harmonic Projections:**  
    For integers $m, n \ge 0$:
-   \[
+   $$
    \frac{1}{\pi} \int_0^{2\pi} \cos(m\theta - n\theta) \cos \theta \, d\theta = \begin{cases} 1 & \text{if } |m - n| = 1 \\ 0 & \text{otherwise} \end{cases},
-   \]
+   $$
    and $\frac{1}{\pi} \int_0^{2\pi} \cos(m\theta) \cos \theta \, d\theta = 1$ if $m = 1$ and 0 otherwise.
 
 ---
@@ -50,28 +50,28 @@ This contribution proves:
 
 ### 2.1. Finite Phase Representation
 For $n \ge 1$, let $v_3(n) = \text{padicValNat}(3, n)$ be the exponent of 3 in the prime factorization of $n$. Define:
-\[
+$$
 \chi_3(n, \theta) = e^{i v_3(n) \theta} = \cos(v_3(n) \theta) + i \sin(v_3(n) \theta).
-\]
+$$
 Since $v_3(mn) = v_3(m) + v_3(n)$:
-\[
+$$
 \chi_3(mn, \theta) = e^{i (v_3(m) + v_3(n)) \theta} = \chi_3(m, \theta) \chi_3(n, \theta).
-\]
+$$
 For any prime $p \ne 3$, $v_3(p) = 0 \implies \chi_3(p, \theta) = 1$.
 
 ### 2.2. Centered Goldbach Triangle
 The centered amplitude is $A(n, \theta) = \Lambda(n) \chi_3(n, \theta) - \text{oddReference}(n)$.
 The triangular sum over pairs $a + b = N$ is:
-\[
+$$
 G_N(\theta) = \sum_{a+b=N} A(a, \theta) \overline{A(b, \theta)}.
-\]
+$$
 Under swap $(a, b) \mapsto (b, a)$, the conjugate $\overline{G_N(\theta)} = \sum A(b, \theta) \overline{A(a, \theta)} = G_N(\theta)$. Hence $G_N(\theta) \in \mathbb{R}$.
 
 ### 2.3. Fourier Projection
 Expanding the real part:
-\[
+$$
 \text{Re}(A(a, \theta)\overline{A(b, \theta)}) = \Lambda(a)\Lambda(b)\cos((v_3(a)-v_3(b))\theta) - \Lambda(a)r(b)\cos(v_3(a)\theta) - r(a)\Lambda(b)\cos(v_3(b)\theta) + r(a)r(b).
-\]
+$$
 Integrating against $\cos \theta / \pi$:
 - The constant term integrates to $\int_0^{2\pi} \cos \theta \, d\theta = 0$.
 - The single cosines project to $\mathbf{1}_{v_3(a)=1}$ and $\mathbf{1}_{v_3(b)=1}$.
@@ -122,6 +122,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Hardy-Littlewood-Vinogradov circle method for Goldbach problems and additive prime number theory (Vaughan 1997, Tao 2014). Exact algebraic/continuous Fourier identities linking individual circle harmonics directly to prime Chebyshev errors without minor-arc losses in Lean 4 are new.
+- **Prior Literature:** Hardy-Littlewood-Vinogradov circle method for Goldbach problems and additive prime number theory (Vaughan 1997, Tao 2014). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Replaces asymptotic minor-arc heuristic bounds with an exact closed-form relation between continuous angular Fourier integrals and the discrete Chebyshev prime error $\psi(x) - x$.
 - **Target Venues:** *Acta Arithmetica* or *Journal of the European Mathematical Society*.

@@ -72,6 +72,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact parity law $\mathcal{W}_{U_{ps}} = (-1)^k A \mathcal{W}$ and guaranteed parity-compensated positivity $(-1)^k \operatorname{Re}(\mathcal{W}) \ge 0$ for prime-scattering blocks in the Weil explicit formula.
+This entry documents a machine-verified implementation in Lean 4 proving the exact parity law $\mathcal{W}_{U_{ps}} = (-1)^k A \mathcal{W}$ and guaranteed parity-compensated positivity $(-1)^k \operatorname{Re}(\mathcal{W}) \ge 0$ for prime-scattering blocks in the Weil explicit formula.

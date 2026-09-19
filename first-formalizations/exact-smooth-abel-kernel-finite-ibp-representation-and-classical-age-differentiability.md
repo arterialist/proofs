@@ -47,6 +47,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 deriving the exact finite-interval IBP decomposition of the smooth Abel kernel without appealing to the Euler Beta function or meromorphic continuation across $z=1$.
+This entry documents a machine-verified implementation in Lean 4 deriving the exact finite-interval IBP decomposition of the smooth Abel kernel without appealing to the Euler Beta function or meromorphic continuation across $z=1$.

@@ -1,4 +1,4 @@
-# Unique Contribution 329: Exact Cyclotomic Prefix Derivative Multiplicative Update and Root Deficit Stability
+# Contribution 329: Exact Cyclotomic Prefix Derivative Multiplicative Update and Root Deficit Stability
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CyclotomicPrefix.lean`](../../formalization/BuildingBlocks/CyclotomicPrefix.lean), [`building-blocks/cyclotomic-boundary/prefix.md`](../../building-blocks/cyclotomic-boundary/prefix.md)  
@@ -14,26 +14,26 @@ This contribution proves:
 
 1. **Exact Multiplicative Derivative Update at Old Roots:**  
    For any primitive root of unity $\alpha$ of order $n < N$:
-   \[
+   $$
    P_N'(\alpha) = P_{N-1}'(\alpha) \cdot \Phi_N(\alpha).
-   \]
+   $$
    Because $\alpha$ is a root of $P_{N-1}(z)$, the Leibniz term $P_{N-1}(\alpha) \Phi_N'(\alpha)$ vanishes identically, isolating the exact multiplier $\Phi_N(\alpha)$.
 2. **Non-Vanishing Derivative and Simplicity of Prefix Roots:**  
    For any $n \le N$ and primitive $n$-th root $\alpha$:
-   \[
+   $$
    P_N'(\alpha) \ne 0.
-   \]
+   $$
    Thus, all roots of $P_N(z)$ are simple roots, and the logarithmic derivative deficit $\mathcal{D}_N(\alpha) = \max(0, -\log \|P_N'(\alpha)\|)$ is well-defined and finite.
 3. **Exact Logarithmic Deficit Update Bound:**  
    The discrete update in root deficit $\Delta \mathcal{D}_N(\alpha) = \mathcal{D}_N(\alpha) - \mathcal{D}_{N-1}(\alpha)$ satisfies:
-   \[
+   $$
    |\Delta \mathcal{D}_N(\alpha)| \le |\log \|\Phi_N(\alpha)\||.
-   \]
+   $$
 4. **Divisor-Logarithm Growth Bound:**  
    Under regularized cyclotomic identities:
-   \[
+   $$
    |\Delta \mathcal{D}_N(\alpha)| \le d(N) \log N.
-   \]
+   $$
 
 ---
 
@@ -92,6 +92,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Lang (2002) *Algebra* (Cyclotomic Polynomials); Montgomery & Vaughan (2007) *Multiplicative Number Theory*. Machine verification of exact cyclotomic prefix derivative step updates and root deficit Lipschitz stability in Lean 4 is new.
+- **Prior Literature:** Lang (2002) *Algebra* (Cyclotomic Polynomials); Montgomery & Vaughan (2007) *Multiplicative Number Theory*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact multiplicative evolution of polynomial derivatives at roots of unity across cyclotomic tower extensions, bounding local root deficit jumps by incoming cyclotomic evaluations.
 - **Target Venues:** *Journal of Number Theory* or *Acta Arithmetica*.

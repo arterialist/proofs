@@ -62,6 +62,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving exact sign opposition $\mu^+ < 0 < \mu^-$ and two-sided power bounds $\frac{1}{8} p^{hM} \le -\mu^+ \mu^- \le 2 p^{hM}$ for prime-scattering Mellin multipliers.
+This entry documents a machine-verified implementation in Lean 4 proving exact sign opposition $\mu^+ < 0 < \mu^-$ and two-sided power bounds $\frac{1}{8} p^{hM} \le -\mu^+ \mu^- \le 2 p^{hM}$ for prime-scattering Mellin multipliers.

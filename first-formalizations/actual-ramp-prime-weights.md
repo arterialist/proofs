@@ -5,17 +5,15 @@ Compiled in:
 - [ActualRampPrimeWeights.lean](../formalization/BuildingBlocks/ActualRampPrimeWeights.lean)
 
 Attribution: Arterialist RH research team (RH Agent 1), September 2026.
-To the best of our knowledge after searching Mathlib and formalization repositories,
-this is the first formalization of the complete arithmetic corner rules, piecewise
-support plateau and slope identities, and monotonicity for actual-prime causal ramp integrals.
+The arithmetic corner rules and ramp-integral package may be project-specific. The available documentation does not record a reproducible search sufficient to establish worldwide priority.
 
 ## Mathematical content
 
 Formalizes the oriented prime-power summand for causal ramps $f_L(x) = e^{-x/2}\mathbf{1}_{[0, L]}(x)$
 evaluated with Mathlib's actual von Mangoldt function:
-\[
+$$
  w(n, A, B) = \frac{\Lambda(n)}{n} \left( 1 - \exp\left( - \min(B, \max(0, A - \log n)) \right) \right).
-\]
+$$
 
 ### Formalized theorems
 1. **Piecewise evaluation:** Proves the exact formulas across the three geometric regimes:

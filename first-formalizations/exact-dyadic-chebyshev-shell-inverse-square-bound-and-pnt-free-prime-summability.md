@@ -55,6 +55,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that Chebyshev's linear bound $\psi(M) \le C M$ implies the inverse-square bound $\frac{8 \log 2}{\log^2 N}$ on prime shells, establishing the finite total activity of prime renewal measures without PNT.
+This entry documents a machine-verified implementation in Lean 4 proving that Chebyshev's linear bound $\psi(M) \le C M$ implies the inverse-square bound $\frac{8 \log 2}{\log^2 N}$ on prime shells, establishing the finite total activity of prime renewal measures without PNT.

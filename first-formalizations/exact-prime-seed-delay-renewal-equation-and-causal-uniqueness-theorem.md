@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing that the prime successor seed is the unique causal solution of its delay renewal equation without needing any a priori integrability or growth bounds.
+This entry documents a machine-verified implementation in Lean 4 establishing that the prime successor seed is the unique causal solution of its delay renewal equation without needing any a priori integrability or growth bounds.

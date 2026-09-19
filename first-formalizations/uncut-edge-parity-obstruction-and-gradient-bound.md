@@ -12,9 +12,9 @@
 In finite-element and Galerkin approximations to non-local prime jump operators on the critical line, standard basis choices rely on symmetric "even-hat" piecewise linear elements. This formalization establishes two foundational theorems:
 1. **Factor-Four Symmetric Edge Gradient Bound:**
    - Proves that for any graph or complex of directed edges with non-negative edge weights and symmetric endpoint energies ($\sum w(e) \|F(\mathrm{dst}(e))\|^2 = \sum w(e) \|F(\mathrm{src}(e))\|^2$), a one-endpoint marginal bound paying $a \sum w(e) \|F(\mathrm{src}(e))\|^2 \le \mathrm{vertexEnergy}$ implies the universal factor-4 gradient estimate:
-     \[
+     $$
      a \sum_{e \in s} w(e) \|F(\mathrm{dst}(e)) - F(\mathrm{src}(e))\|^2 \le 4 \cdot \mathrm{vertexEnergy}.
-     \]
+     $$
 2. **The Even-Hat Parity Obstruction:**
    - Proves that whenever a Galerkin discretization uses even basis elements whose action produces identical observations on a pair of reflected coordinates ($i$ and $j$), any target vector whose observations on $i$ and $j$ differ **cannot lie in the linear span** of those basis elements.
    - Formally verifies the general theorem for arbitrary index types $\iota$ (`odd_target_not_in_even_hat_span_at`) and the 16-cell concrete instantiation (`odd_target_not_in_even_hat_span`).
@@ -71,6 +71,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
 This formalization provides the rigorous mathematical reason why standard symmetric Galerkin approximations to prime transition operators cannot resolve asymmetric spectral targets. By demonstrating that the even-hat span is mathematically disjoint from odd-reflection targets, this work establishes the necessity of including odd or non-symmetric basis elements in any viable spectral realization scheme.

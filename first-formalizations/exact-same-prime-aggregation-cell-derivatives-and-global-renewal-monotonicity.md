@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact algebraic derivative $\frac{3 B(k) - x A(k)}{2 x^{5/2}}$ and establishing global monotonicity for normalized arithmetic tent renewal functions across infinite jump boundaries.
+This entry documents a machine-verified implementation in Lean 4 proving the exact algebraic derivative $\frac{3 B(k) - x A(k)}{2 x^{5/2}}$ and establishing global monotonicity for normalized arithmetic tent renewal functions across infinite jump boundaries.

@@ -35,7 +35,7 @@ The module constructs canonical `OffLineZeroRefutationCertificate` instances acr
 2. Universal carrier tuning refutation (`certificate_of_representation_and_refutation`).
 3. Chirped spectral-arithmetic Grand Synthesis (`certificate_of_representation_and_grand_synthesis`).
 
-From each certificate, Mathlib's formal definition of `RiemannHypothesis` is unconditionally deduced.
+From each supplied certificate system, the module derives Mathlib's `RiemannHypothesis`. These are conditional implications because the certificate constructors require the system arguments shown below.
 
 ---
 
@@ -71,5 +71,5 @@ From each certificate, Mathlib's formal definition of `RiemannHypothesis` is unc
 ## 3. Novelty and Attribution Assessment
 
 - **Classical Mathematics**: The symmetrized integral representation of the completed Riemann zeta function $\Lambda_0(s) = \frac{1}{2} \int_1^\infty (x^{s/2 - 1} + x^{(1-s)/2 - 1}) f_{\text{modif}}(x) dx$ via the Jacobi theta modular inversion $x \mapsto 1/x$ is a classical identity originating in Riemann's 1859 memoir and treated in Edwards and Titchmarsh.
-- **Novel Formalization**: The formalization in Lean 4 connecting the Bochner integral of the complex kernel to real trigonometric projections via `ContinuousLinearMap.integral_comp_comm` / `integral_im`, the deduction of `SymmetrizedRatioExact`, the bridge to the low-frequency ratio obstruction, and the synthesis with universal off-line zero refutation certificates is completely novel and has never been formalized in Lean 4 or any other proof assistant.
-- **Classification**: **First Formalization** (Entry 382).
+- **Priority status**: The Lean composition may be project-specific. The audit did not establish worldwide proof-assistant priority. The certificate conclusions retain their explicit universal-system arguments.
+- **Classification**: catalog entry 382.

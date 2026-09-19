@@ -67,6 +67,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing explicit inductive square root sums and non-asymptotic hyperbola quotient remainder bounds with constant 26 for the Chebyshev prime error.
+This entry documents a machine-verified implementation in Lean 4 establishing explicit inductive square root sums and non-asymptotic hyperbola quotient remainder bounds with constant 26 for the Chebyshev prime error.

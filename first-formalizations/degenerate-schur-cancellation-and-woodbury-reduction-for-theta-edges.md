@@ -91,6 +91,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
 This formalization establishes the exact algebraic stability of the edge-elimination Schur complement by proving that indeterminate zero denominators automatically force vanishing numerators under PSD conditions, eliminating numerical singularities in machine-checked operator certificates.

@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact symmetric reduction of 2D Goldbach logarithmic transport loss to a 1D Chebyshev convolution, proving unconditional non-negativity and boundary trimming to $s-2$.
+This entry documents a machine-verified proof in Lean 4 establishing the exact symmetric reduction of 2D Goldbach logarithmic transport loss to a 1D Chebyshev convolution, proving unconditional non-negativity and boundary trimming to $s-2$.

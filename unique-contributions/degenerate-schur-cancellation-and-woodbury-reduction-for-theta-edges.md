@@ -1,4 +1,4 @@
-# Unique Contribution 44: Degenerate Schur Complement Cancellation and Three-Column Woodbury Reduction for Conditional Theta Edges
+# Contribution 44: Degenerate Schur Complement Cancellation and Three-Column Woodbury Reduction for Conditional Theta Edges
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ThetaDirectEdgeFiniteAlgebra.lean`](../../formalization/BuildingBlocks/ThetaDirectEdgeFiniteAlgebra.lean), [`formalization/BuildingBlocks/ThetaSignedCoreFiniteBlock.lean`](../../formalization/BuildingBlocks/ThetaSignedCoreFiniteBlock.lean)  
@@ -9,9 +9,9 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the Galerkin discretization of the non-local theta jump operator, the elimination of constraint profiles (such as odd-parity and mean-zero coordinates) leads to rational Schur complement quotients:
-\[
+$$
 \operatorname{edgeTheta} = A_{zz} - \frac{b_c^2}{d_c} - \frac{b_p^2}{d_p} - \frac{m^2}{d_y},
-\]
+$$
 where $m = b_0 - \frac{b_c g_c}{d_c} - \frac{b_p g_p}{d_p}$ is the residual mixed coupling and $d_y = A_{yy} - \frac{g_c^2}{d_c} - \frac{g_p^2}{d_p}$ is the residual diagonal budget.
 
 A fatal numerical and analytical obstacle occurs when the residual diagonal vanishes: $d_y = 0$, where the quotient $m^2 / d_y$ becomes nominally undefined or indeterminate ($0/0$ or $\infty$).
@@ -19,24 +19,24 @@ A fatal numerical and analytical obstacle occurs when the residual diagonal vani
 This contribution establishes:
 1. **Degenerate Cauchy–Schwarz Numerator Cancellation:**  
    Proves that for any $2 \times 2$ positive semidefinite block, if the diagonal entry vanishes ($d = 0$), then the off-diagonal coupling **must vanish identically**:
-   \[
+   $$
    0 \le a \ \wedge \ 0 \le d \ \wedge \ b^2 \le a d \ \wedge \ (d = 0) \implies b = 0.
-   \]
+   $$
    Consequently, whenever the residual diagonal is zero ($d_y = 0$), the residual mixed coupling $m$ vanishes identically ($m = 0$), so the singular Schur quotient is well-defined and evaluates to zero:
-   \[
+   $$
    \operatorname{schurQuotient}(m, d_y) = 0.
-   \]
+   $$
 2. **Exact Three-Column Woodbury Quadratic Expansion:**  
    Proves the exact algebraic reduction of the $4 \times 4$ Gram matrix $G$ against the correction vector $c = (1, -r_1, -r_2, -r_3)^T$:
-   \[
+   $$
    c^T G c = G_{00} - 2 \sum_{j=1}^3 G_{0j} r_j + \sum_{j=1}^3 \sum_{k=1}^3 r_j G_{jk} r_k,
-   \]
+   $$
    preserving all off-diagonal cross terms prior to finite quadratic evaluation.
 3. **Five-Component Coercive Signed Core Decomposition:**  
    Establishes the exact decomposition of the compressed signed core matrix into its five constituent physical blocks: spectral, mean correction, covariance, odd-affine, and prime observation Gram matrices, and proves that the lower certificate:
-   \[
+   $$
    c^*(\operatorname{low}, \operatorname{next}, C_V, \varepsilon) = \min\left( \operatorname{low} - \varepsilon, \ \operatorname{next} - C_V - \frac{C_V^2}{\varepsilon} \right) > 0
-   \]
+   $$
    rigorously implies coercive block positivity $c^* \|c\|^2 \le F$.
 
 ---
@@ -44,16 +44,16 @@ This contribution establishes:
 ## 2. The Degenerate Schur Invariant
 
 Consider the residual $2 \times 2$ block:
-\[
+$$
 \begin{pmatrix}
 A_{zz} - \frac{b_c^2}{d_c} - \frac{b_p^2}{d_p} & m \\
 m & d_y
 \end{pmatrix}.
-\]
+$$
 If the underlying state space maintains positive semidefiniteness, this block must satisfy:
-\[
+$$
 m^2 \le \left(A_{zz} - \frac{b_c^2}{d_c} - \frac{b_p^2}{d_p}\right) d_y.
-\]
+$$
 When $d_y = 0$, the right-hand side is $0$. Because $m^2 \ge 0$, this forces $m^2 = 0$, whence $m = 0$.  
 Thus, the singularity at $d_y = 0$ is removable and cancels algebraically: the projection leaves no indeterminate remainder.
 

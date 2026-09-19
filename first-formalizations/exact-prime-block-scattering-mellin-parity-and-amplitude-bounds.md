@@ -83,6 +83,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact reflection parity law $(-1)^k$ and geometric amplitude bounds for arbitrary prime scattering sequences acting on physical waveforms.
+This entry documents a machine-verified implementation in Lean 4 proving the exact reflection parity law $(-1)^k$ and geometric amplitude bounds for arbitrary prime scattering sequences acting on physical waveforms.

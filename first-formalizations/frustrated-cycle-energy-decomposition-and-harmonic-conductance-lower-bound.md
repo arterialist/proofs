@@ -50,6 +50,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 of the exact ground-state topological energy decomposition $\frac{4}{3} z^2$ on signed frustrated cycles and the harmonic-mean series-parallel conductance inequality.
+This entry documents a machine-verified proof in Lean 4 of the exact ground-state topological energy decomposition $\frac{4}{3} z^2$ on signed frustrated cycles and the harmonic-mean series-parallel conductance inequality.

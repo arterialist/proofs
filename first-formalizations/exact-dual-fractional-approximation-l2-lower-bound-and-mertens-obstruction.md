@@ -65,6 +65,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 connecting the Nyman-Beurling-Báez-Duarte fractional approximation error directly to the growth of the Mertens function, establishing the explicit lower bound $\ge (M(N)+1)^2/(16N)$ via 1-D Jacobian pullback.
+This entry documents a machine-verified implementation in Lean 4 connecting the Nyman-Beurling-Báez-Duarte fractional approximation error directly to the growth of the Mertens function, establishing the explicit lower bound $\ge (M(N)+1)^2/(16N)$ via 1-D Jacobian pullback.

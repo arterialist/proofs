@@ -1,4 +1,4 @@
-# Unique Contribution 133: Exact Dirichlet Cofactor Cutoff Transfer and Proper Future Splitting
+# Contribution 133: Exact Dirichlet Cofactor Cutoff Transfer and Proper Future Splitting
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualPrimeCofactorFutureFinite.lean`](../../formalization/BuildingBlocks/ActualPrimeCofactorFutureFinite.lean), [`building-blocks/primes/actual-prime-cofactor-future-finite.md`](../../building-blocks/primes/actual-prime-cofactor-future-finite.md)  
@@ -14,19 +14,19 @@ This contribution proves:
 
 1. **Exact Weighted Dirichlet Hyperbola Identity:**  
    For any truncation $N \ge 1$ and any complex test weight $g: \mathbb{N} \to \mathbb{C}$:
-   \[
+   $$
    \sum_{n=1}^N g(n) \log n = \sum_{d=1}^N \Lambda(d) \sum_{k=1}^{\lfloor N/d \rfloor} g(d k).
-   \]
+   $$
 2. **Proper Cofactor Splitting:**  
    For any divisor $d \le N$, the cofactor sum splits into the diagonal $k = 1$ self-term and the strictly proper ($k \ge 2$) composite cofactors:
-   \[
+   $$
    \sum_{k=1}^{\lfloor N/d \rfloor} g(d k) = g(d) + \sum_{k=2}^{\lfloor N/d \rfloor} g(d k).
-   \]
+   $$
 3. **Exact Cutoff Transfer Identity:**  
    Given a hard cutoff $C \in \mathbb{N}$, if the test weight satisfies the support vanishing condition $g(d) = 0$ for all $d \le C$, then:
-   \[
+   $$
    \operatorname{primeRow}(N, g) = \operatorname{logRow}(N, g) - \operatorname{lowFullFuture}(N, C, g) - \operatorname{highProperFuture}(N, C, g),
-   \]
+   $$
    where:
    - $\operatorname{primeRow}(N, g) = \sum_{n=1}^N \Lambda(n) g(n)$,
    - $\operatorname{logRow}(N, g) = \sum_{n=1}^N g(n) \log n$,
@@ -39,13 +39,13 @@ This contribution proves:
 
 ### 2.1. Weighted Hyperbola Product
 By the divisor sum formula $\log n = \sum_{d \in \operatorname{divisors}(n)} \Lambda(d)$:
-\[
+$$
 \sum_{n=1}^N g(n) \log n = \sum_{n=1}^N \sum_{d \mid n} \Lambda(d) g(d \cdot (n/d)).
-\]
+$$
 Applying the Dirichlet hyperbola rearrangement $\sum_{n \le N} \sum_{d \mid n} = \sum_{d \le N} \sum_{k \le N/d}$ with $k = n/d$:
-\[
+$$
 \sum_{n=1}^N g(n) \log n = \sum_{d=1}^N \Lambda(d) \sum_{k=1}^{\lfloor N/d \rfloor} g(d k).
-\]
+$$
 
 ### 2.2. Cutoff Transfer Splitting
 Split the outer sum over $d \in [1, N]$ at the cutoff $C$:

@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 decomposing physical scattering Gram matrices into additive Cauchy Gram matrices and a strictly indefinite balance discrepancy form.
+This entry documents a machine-verified proof in Lean 4 decomposing physical scattering Gram matrices into additive Cauchy Gram matrices and a strictly indefinite balance discrepancy form.

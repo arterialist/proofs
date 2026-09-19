@@ -70,6 +70,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation of discrete Green potential-occupation duality $\langle M, (I-T)V \rangle = \langle b, V \rangle$ and explicit Foster-Lyapunov traffic majorization on finite graphs in Lean 4.
+This entry documents a machine-verified implementation of discrete Green potential-occupation duality $\langle M, (I-T)V \rangle = \langle b, V \rangle$ and explicit Foster-Lyapunov traffic majorization on finite graphs in Lean 4.

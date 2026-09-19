@@ -15,14 +15,14 @@ This formalization proves the exact finite heat-scale increment identities and 4
    Formal proof of `truncatedCoefficient_decomposition` and `truncatedCoefficient_le_prime_add_count`.
 2. **Horizon Doubling Identity:**
    Formal proof of `finiteHeatHorizon_double_sub`:
-   \[
+   $$
    \mathcal{H}_Y(2T) - \mathcal{H}_Y(T) = \Delta_T \mathcal{H}_Y(T).
-   \]
+   $$
 3. **Squared Heat Flow Integral Representation:**
    Formal proof of `finiteHeatScaleIncrement_eq_integral`:
-   \[
+   $$
    \Delta_T \mathcal{H}_Y(T) = \int_{e^{-2T}}^{e^{-T}} (\text{finiteHeat}(t))^2 dt.
-   \]
+   $$
 4. **4-Way Centering Shell Decomposition:**
    Formal definitions of `primeScaleIncrement`, `leftMarginalScaleIncrement`, `rightMarginalScaleIncrement`, and `pairCountScaleIncrement`, and proof of `finiteHeatScaleIncrement_decomposition`.
 5. **Parity Splitting and Component Positivity:**
@@ -69,6 +69,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact finite heat-scale increment for centered Goldbach convolutions as an integrated squared heat flow, equipped with exact horizon-doubling formulas, 4-way marginal decompositions, and parity splits.
+This entry documents a machine-verified proof in Lean 4 establishing the exact finite heat-scale increment for centered Goldbach convolutions as an integrated squared heat flow, equipped with exact horizon-doubling formulas, 4-way marginal decompositions, and parity splits.

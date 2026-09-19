@@ -75,6 +75,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
 This formalization provides an exact, constructive solution to the 2-block diagonal dominance balancing problem for arbitrary seminormed spaces. Rather than relying on approximate iterative semidefinite programming (SDP) solvers, it supplies an exact algebraic certificate via radical expressions that Lean 4 can directly verify.

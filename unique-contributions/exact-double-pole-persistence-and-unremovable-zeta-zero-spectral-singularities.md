@@ -1,4 +1,4 @@
-# Unique Contribution 168: Exact Double Pole Persistence and Unremovable Zeta-Zero Spectral Singularities
+# Contribution 168: Exact Double Pole Persistence and Unremovable Zeta-Zero Spectral Singularities
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/LogDerivativePole.lean`](../../formalization/BuildingBlocks/LogDerivativePole.lean), [`building-blocks/meromorphic/log-derivative-pole.md`](../../building-blocks/meromorphic/log-derivative-pole.md)  
@@ -14,30 +14,30 @@ This contribution proves:
 
 1. **Local Analytic Unit Factorization and Logarithmic Residue:**  
    If $f(z) = (z - \rho)^m u(z)$ locally at $\rho$ with $u$ analytic and $u(\rho) \ne 0$, then in a punctured neighborhood $\dot{\mathcal{N}}(\rho)$:
-   \[
+   $$
    \frac{f'(z)}{f(z)} = \frac{m}{z - \rho} + \frac{u'(z)}{u(z)},
-   \]
+   $$
    with $\frac{u'}{u}$ analytic at $\rho$.
 2. **General Double Pole Persistence Theorem:**  
    Let $G(z) = -\frac{m}{z - \rho} + R(z)$ with $m \ge 1$ and $R$ analytic at $\rho$. Let $H, Q$ be analytic at $\rho$ with $Q(\rho) \ne 0$. Then the function $Q(z)(G(z)^2 - H(z))$ has a pole of exact order $2$ at $\rho$, and its leading Laurent coefficient is strictly non-zero:
-   \[
+   $$
    \text{ord}_\rho\left( Q \cdot (G^2 - H) \right) = -2, \quad \text{Coeff}_{-2} = Q(\rho) \cdot m^2 \ne 0.
-   \]
+   $$
    Subtracting ANY analytic function $H(z)$ CANNOT cancel the double pole of $G(z)^2$.
 3. **Finite Positive Analytic Order of Zeta Zeros:**  
    Every non-trivial zero $\rho \ne 1$ of the Riemann zeta function has a well-defined finite positive analytic multiplicity $m \in \mathbb{N}_{\ge 1}$:
-   \[
+   $$
    \text{ord}_\rho(\zeta) = m \ge 1.
-   \]
+   $$
 4. **Persistence of Double Pole at Any Off-Critical Zeta Zero:**  
    For any zero $\rho$ of $\zeta(s)$ with $\text{Re}(\rho) > 1/2$ and $\rho \ne 1$, and for ANY function $H(s)$ analytic at $\rho$ (such as the same-prime Dirichlet series $H(s)$), the weighted squared centered logarithmic derivative:
-   \[
+   $$
    \Phi(s) = \mathcal{M}(s) \cdot \left( \left(-\frac{\zeta'(s)}{\zeta(s)} - \frac{s}{s-1}\right)^2 - H(s) \right)
-   \]
+   $$
    **strictly possesses a double pole at $s = \rho$** of exact order $-2$ with non-zero trailing coefficient:
-   \[
+   $$
    \text{ord}_\rho(\Phi) = -2, \quad \text{Coeff}_{-2} = \mathcal{M}(\rho) \cdot m^2 \ne 0.
-   \]
+   $$
 
 ---
 
@@ -45,25 +45,25 @@ This contribution proves:
 
 ### 2.1. Logarithmic Residue Expansion
 Given $f(z) = (z - \rho)^m u(z)$ near $\rho$, by the product rule for logarithmic derivatives:
-\[
+$$
 \frac{f'(z)}{f(z)} = \frac{((z - \rho)^m)'}{(z - \rho)^m} + \frac{u'(z)}{u(z)} = \frac{m(z - \rho)^{m-1}}{(z - \rho)^m} + \frac{u'(z)}{u(z)} = \frac{m}{z - \rho} + \frac{u'(z)}{u(z)}.
-\]
+$$
 Since $u(\rho) \ne 0$ and $u$ is analytic at $\rho$, $u'/u$ is analytic at $\rho$.
 
 ### 2.2. Laurent Coefficient and Order Preservation
 With $G(z) = -\frac{m}{z - \rho} + R(z)$:
-\[
+$$
 G(z)^2 - H(z) = \left( -\frac{m}{z - \rho} + R(z) \right)^2 - H(z) = \frac{m^2}{(z - \rho)^2} - \frac{2m R(z)}{z - \rho} + R(z)^2 - H(z).
-\]
+$$
 Multiplying by $(z - \rho)^2$:
-\[
+$$
 (z - \rho)^2 (G(z)^2 - H(z)) = m^2 - 2m(z - \rho) R(z) + (z - \rho)^2 (R(z)^2 - H(z)).
-\]
+$$
 Define $K(z) = Q(z) \left( (-(m) + (z - \rho) R(z))^2 - (z - \rho)^2 H(z) \right)$.
 At $z = \rho$:
-\[
+$$
 K(\rho) = Q(\rho) \cdot ((-m)^2 - 0) = Q(\rho) \cdot m^2.
-\]
+$$
 Since $m \ge 1$ and $Q(\rho) \ne 0$, $K(\rho) \ne 0$.
 Moreover, $K$ is analytic at $\rho$.
 Therefore, $Q(z)(G(z)^2 - H(z)) = (z - \rho)^{-2} K(z)$ has exact meromorphic order $-2$, and its trailing coefficient is $K(\rho) = Q(\rho) m^2 \ne 0$.

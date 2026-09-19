@@ -1,4 +1,4 @@
-# Unique Contribution 86: Even-Seed Prime-Block Paired Weil Weight Parity Law
+# Contribution 86: Even-Seed Prime-Block Paired Weil Weight Parity Law
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualPrimeBlockWeilWeightParity.lean`](../../formalization/BuildingBlocks/ActualPrimeBlockWeilWeightParity.lean)  
@@ -9,32 +9,32 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the spectral realization of the explicit formula, the Weil quadratic form pairs test profiles $f$ at critical moments. The paired weight functional $W(f, g)(z)$ evaluates the product of Mellin transforms across dual critical half-lines:
-\[
+$$
 W(f, g)(z) = \mathcal{M}(f)(z) \cdot \overline{\mathcal{M}(g)(\bar{z})}.
-\]
+$$
 
 This contribution proves:
 
 1. **Even Seed Paired Weight Non-Negativity:**  
    For any symmetric test function $f(-v) = f(v)$ and real parameter $b \in \mathbb{R}$, the unscattered paired weight is an exact non-negative modulus squared:
-   \[
+   $$
    W(f, f)(b) = |\mathcal{M}(f)(b)|^2 \ge 0.
-   \]
+   $$
 2. **Exact Prime Block Paired Weight Transformation:**  
    Under any composite sequence of prime scattering layers $ps = [p_1, \dots, p_k]$ with depths, the paired weight transforms by:
-   \[
+   $$
    W(\mathcal{B}_{ps} f, \mathcal{B}_{ps} f)\left(h + \frac{1}{2}\right) = (-1)^{|ps|} \mathcal{A}(ps, \text{depth}, h) \cdot W(f, f)\left(h + \frac{1}{2}\right).
-   \]
+   $$
 3. **Exact Even Seed Block Weight Representation:**  
    For an even profile $f$, the scattered paired weight simplifies to:
-   \[
+   $$
    W(\mathcal{B}_{ps} f, \mathcal{B}_{ps} f)\left(h + \frac{1}{2}\right) = (-1)^{|ps|} \mathcal{A}(ps, \text{depth}, h) \cdot \left| \mathcal{M}(f)\left(h + \frac{1}{2}\right) \right|^2.
-   \]
+   $$
 4. **Universal Parity-Signed Non-Negativity:**  
    Multiplying the scattered weight by the block length parity factor $(-1)^{|ps|}$ yields an unconditionally non-negative real quantity:
-   \[
+   $$
    (-1)^{|ps|} \operatorname{Re}\left( W(\mathcal{B}_{ps} f, \mathcal{B}_{ps} f)\left(h + \frac{1}{2}\right) \right) \ge 0, \quad \forall h \ge 1.
-   \]
+   $$
 5. **Architectural Consequence for Weil Positivity:**  
    This establishes that the local Weil weight row at $h + 1/2$ has its sign deterministically dictated by the parity of the number of prime factors in the block:
    - Blocks with an **even** number of primes generate strictly non-negative paired weights ($W \ge 0$).
@@ -55,9 +55,9 @@ Inducting along the prime list $ps$, each prime layer contributes a factor of $-
 
 ### 2.3. Parity-Signed Positivity
 Multiplying by $(-1)^{|ps|}$:
-\[
+$$
 (-1)^{|ps|} W(\mathcal{B}_{ps} f, \mathcal{B}_{ps} f)\left(h + \frac{1}{2}\right) = ((-1)^{|ps|})^2 \mathcal{A}(ps, \text{depth}, h) |\mathcal{M}(f)(h + 1/2)|^2 = \mathcal{A} |\mathcal{M}(f)|^2 \ge 0.
-\]
+$$
 
 ---
 

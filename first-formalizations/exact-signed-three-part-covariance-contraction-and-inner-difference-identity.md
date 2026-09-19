@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 guaranteeing channel-by-channel cancellation across multi-part spectral splittings and exact signed inner product difference preservation.
+This entry documents a machine-verified implementation in Lean 4 guaranteeing channel-by-channel cancellation across multi-part spectral splittings and exact signed inner product difference preservation.

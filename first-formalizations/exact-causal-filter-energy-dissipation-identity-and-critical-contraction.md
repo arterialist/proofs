@@ -77,6 +77,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the general energy dissipation identity and critical contraction threshold $\lambda \ge 1/2$ for causal jump filters using right-differentiable integration by parts.
+This entry documents a machine-verified implementation in Lean 4 proving the general energy dissipation identity and critical contraction threshold $\lambda \ge 1/2$ for causal jump filters using right-differentiable integration by parts.

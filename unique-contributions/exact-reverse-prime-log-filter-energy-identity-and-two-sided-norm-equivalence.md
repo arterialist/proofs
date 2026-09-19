@@ -1,4 +1,4 @@
-# Unique Contribution 155: Exact Reverse Prime Log Filter Energy Identity and Two-Sided Norm Equivalence
+# Contribution 155: Exact Reverse Prime Log Filter Energy Identity and Two-Sided Norm Equivalence
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PrimeLogFilterReverse.lean`](../../formalization/BuildingBlocks/PrimeLogFilterReverse.lean), [`building-blocks/prime/prime-log-filter-reverse.md`](../../building-blocks/prime/prime-log-filter-reverse.md)  
@@ -14,19 +14,19 @@ This contribution proves:
 
 1. **Exact Reverse Energy Identity via Sum of Squares:**  
    For any duration $T \in \mathbb{R}$, with logarithmic prime error $u(t) = e^{-t/2} E(e^t)$ and response $y(t) = e^{-3t/2} \psi_1(e^t)$:
-   \[
+   $$
    9 \int_0^T (u(t) - y(t))^2 dt - \int_0^T u(t)^2 dt = 2 \int_0^T (2u(t) - 3y(t))^2 dt + 3 y(T)^2.
-   \]
+   $$
 2. **Reverse Energy Coercivity with Sharp Factor 9:**  
    For all $T \ge 0$, without assuming the Riemann Hypothesis or any prime error bounds:
-   \[
+   $$
    \int_0^T u(t)^2 dt \le 9 \int_0^T (u(t) - y(t))^2 dt.
-   \]
+   $$
 3. **Two-Sided Sobolev-Hardy Norm Equivalence:**  
    For all $T \ge 0$:
-   \[
+   $$
    \int_0^T (u(t) - y(t))^2 dt \le \int_0^T u(t)^2 dt \le 9 \int_0^T (u(t) - y(t))^2 dt.
-   \]
+   $$
    Hence, the filtered prime error norm and the raw prime error norm are unconditionally equivalent with optimal sandwich constants $1$ and $9$.
 
 ---
@@ -35,44 +35,44 @@ This contribution proves:
 
 ### 2.1. Sum-of-Squares Derivation
 From `PrimeLogFilter.lean`, the forward energy identity is:
-\[
+$$
 \int_0^T (u - y)^2 dt = \int_0^T u^2 dt - y(T)^2 - 2 \int_0^T y^2 dt.
-\]
+$$
 From `causalFilter_cross_integral` with damping parameter $\lambda = 3/2$:
-\[
+$$
 2 \int_0^T y(t) u(t) dt = y(T)^2 + 3 \int_0^T y(t)^2 dt.
-\]
+$$
 Now consider the quadratic combination $Z(t) = (2u(t) - 3y(t))^2$:
-\[
+$$
 Z(t) = 4 u(t)^2 - 12 y(t) u(t) + 9 y(t)^2.
-\]
+$$
 Integrating $Z(t)$ over $[0, T]$ and substituting the cross integral $12 \int yu = 6(2 \int yu) = 6 y(T)^2 + 18 \int y^2$:
-\[
+$$
 \int_0^T (2u - 3y)^2 dt = 4 \int_0^T u^2 dt - 6 y(T)^2 - 9 \int_0^T y^2 dt.
-\]
+$$
 Multiplying by $2$ and adding $3 y(T)^2$:
-\[
+$$
 2 \int_0^T (2u - 3y)^2 dt + 3 y(T)^2 = 8 \int_0^T u^2 dt - 9 y(T)^2 - 18 \int_0^T y^2 dt.
-\]
+$$
 Comparing this to $9 \int_0^T (u - y)^2 dt - \int_0^T u^2 dt$:
-\[
+$$
 9 \left( \int_0^T u^2 dt - y(T)^2 - 2 \int_0^T y^2 dt \right) - \int_0^T u^2 dt = 8 \int_0^T u^2 dt - 9 y(T)^2 - 18 \int_0^T y^2 dt.
-\]
+$$
 The two expressions are identically equal!
 Thus:
-\[
+$$
 9 \int_0^T (u - y)^2 dt - \int_0^T u^2 dt = 2 \int_0^T (2u - 3y)^2 dt + 3 y(T)^2.
-\]
+$$
 
 ### 2.2. Reverse Bound and Equivalence
 Since the square $(2u - 3y)^2 \ge 0$ and $y(T)^2 \ge 0$, both terms on the right-hand side are non-negative for $T \ge 0$:
-\[
+$$
 2 \int_0^T (2u - 3y)^2 dt + 3 y(T)^2 \ge 0.
-\]
+$$
 Consequently:
-\[
+$$
 9 \int_0^T (u(t) - y(t))^2 dt - \int_0^T u(t)^2 dt \ge 0 \implies \int_0^T u(t)^2 dt \le 9 \int_0^T (u(t) - y(t))^2 dt.
-\]
+$$
 Combining this with the forward contraction $\int_0^T (u - y)^2 dt \le \int_0^T u^2 dt$ yields the two-sided sandwich inequality.
 
 ---

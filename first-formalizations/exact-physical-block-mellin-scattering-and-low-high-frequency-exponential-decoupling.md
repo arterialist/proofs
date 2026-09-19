@@ -66,6 +66,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 connecting physical compactly supported wavefunctions to complex spectral readouts in the critical strip, establishing non-asymptotic exponential decoupling of prime scattering channels via memory depth $M$.
+This entry documents a machine-verified proof in Lean 4 connecting physical compactly supported wavefunctions to complex spectral readouts in the critical strip, establishing non-asymptotic exponential decoupling of prime scattering channels via memory depth $M$.

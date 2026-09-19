@@ -65,6 +65,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing that complete cofactor multiplicative sources polarize strictly between primes and composites, certifying the 47/80 rational damping ratio and proving that raw Goldbach additive totals are subrows of complete cofactor pairings.
+This entry documents a machine-verified proof in Lean 4 establishing that complete cofactor multiplicative sources polarize strictly between primes and composites, certifying the 47/80 rational damping ratio and proving that raw Goldbach additive totals are subrows of complete cofactor pairings.

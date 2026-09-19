@@ -65,6 +65,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 that local paired Weil weights switch signs depending strictly on the parity of the number of primes in a physical scattering block.
+This entry documents a machine-verified proof in Lean 4 that local paired Weil weights switch signs depending strictly on the parity of the number of primes in a physical scattering block.

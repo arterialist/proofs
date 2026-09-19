@@ -73,6 +73,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of a sub-continuum Rayleigh quotient for the killed theta jump process on the exterior domain $O_2$. By certifying both the polynomial Bochner integrals and the rational gap propagation, it rigorously anchors the spectral deficit in Lean 4 without empirical approximation.
+This entry documents a machine-verified proof of a sub-continuum Rayleigh quotient for the killed theta jump process on the exterior domain $O_2$. By certifying both the polynomial Bochner integrals and the rational gap propagation, it rigorously anchors the spectral deficit in Lean 4 without empirical approximation.

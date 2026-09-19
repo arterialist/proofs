@@ -13,16 +13,16 @@
 In the study of arithmetic carry propagation, digital discrepancy, and the variance of local counting functions (such as divisor carries and prime-gap fluctuations across moving windows), lower bounds on the second moment around an arbitrary center $c \in \mathbb{R}$ are essential to rule out degenerate flat profiles.
 
 Given an integer window of length $n$ and a sequence $f : \mathbb{N} \to \mathbb{R}$ with minimum step separation $L > 0$ (i.e., $L(j - i) \le f(j) - f(i)$ for $i \le j$), the variance around an arbitrary center $c$ satisfies the universal cubic lower bound:
-\[
+$$
 \sum_{i=0}^{n-1} (f(i) - c)^2 \ge \frac{L^2 n(n^2 - 1)}{12}.
-\]
+$$
 The proof proceeds via a double-sum metric identity that relates the sum of centered squared deviations to the uncentered pairwise squared differences:
-\[
+$$
 \sum_{i, j < n} (f(i) - f(j))^2 = 2n \sum_{i < n} f(i)^2 - 2 \left( \sum_{i < n} f(i) \right)^2 \le 2n \sum_{i < n} (f(i) - c)^2.
-\]
+$$
 By evaluating the universal quadratic index sum $\sum_{i, j < n} (i - j)^2 = \frac{n^2(n^2 - 1)}{6}$, the lower bound holds independently of the center $c$.
 
-While this inequality is elementary in continuous calculus, formalizing it over discrete integer intervals in proof assistants requires non-trivial algebraic sum manipulations, cast handling from $\mathbb{N}$ to $\mathbb{R}$, and monotonicity handling. This module provides the first verified foundation in Lean 4.
+The discrete proof requires algebraic sums, casts, and monotonicity arguments. It is a reusable project lemma; Lean-wide priority has not been established.
 
 ---
 

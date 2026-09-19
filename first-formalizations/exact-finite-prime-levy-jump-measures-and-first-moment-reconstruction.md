@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 constructing finite-prime Lévy jump measures from continuous prime successor seeds, proving their finite activity and recovering the exact prime harmonic sum $\sum_{p \in S} 2/p$ as the first moment.
+This entry documents a machine-verified implementation in Lean 4 constructing finite-prime Lévy jump measures from continuous prime successor seeds, proving their finite activity and recovering the exact prime harmonic sum $\sum_{p \in S} 2/p$ as the first moment.

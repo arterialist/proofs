@@ -1,8 +1,8 @@
-# Unique Mathematical Contribution 344: Chirped Constellation Span Amplification and Power Dominance Construction
+# Contribution 344: Chirped Constellation Span Amplification and Power Dominance Construction
 
 ## 1. Executive Summary
 
-This note establishes the **Chirped Constellation Span Amplification and Power Dominance Construction**, providing the definitive analytical bridge between the micro-local Fresnel coherent coupling and macroscopic geometric constellation span amplification for chirped wavepacket tests against hypothetical off-line zeros of the Riemann zeta function.
+This note establishes the **Chirped Constellation Span Amplification and Power Dominance Construction**, providing the analytical bridge between the micro-local Fresnel coherent coupling and macroscopic geometric constellation span amplification for chirped wavepacket tests against hypothetical off-line zeros of the Riemann zeta function.
 
 In prior constellation models (e.g., `chirped-critical-span-constellation.md`), packet support was confined to subcritical spans $R \le 2 \log T - B$ due to the uncompensated growth of prime-power rows $P_T(d) \ll e^{d/2}/T$. Following the resolution of the small-cofactor barrier via **Proper-Cofactor Dual Dirichlet Cancellation** (Contribution 338), the lead zero-side pole of the prime row is identically cancelled, unlocking unconstrained geometric constellation spans $R = \lambda \log T$ for any $\lambda > 0$.
 

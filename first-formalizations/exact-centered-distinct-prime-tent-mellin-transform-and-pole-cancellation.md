@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the Mellin transform of the discrete centered distinct-prime cutoff sum equals the centered logarithmic derivative squared minus the same-prime Dirichlet series $H(s)$, rigorously cancelling the second- and first-order poles at $s=1$.
+This entry documents a machine-verified implementation in Lean 4 proving that the Mellin transform of the discrete centered distinct-prime cutoff sum equals the centered logarithmic derivative squared minus the same-prime Dirichlet series $H(s)$, rigorously cancelling the second- and first-order poles at $s=1$.

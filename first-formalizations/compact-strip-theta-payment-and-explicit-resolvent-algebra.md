@@ -9,7 +9,7 @@
 
 ## 1. Overview and Mathematical Scope
 
-This formalization provides the first machine-verified proof of the rational order-algebra, coercivity payment inequalities, and explicit resolvent constants in the compact-strip framework:
+This entry documents a machine-verified proof of the rational order-algebra, coercivity payment inequalities, and explicit resolvent constants in the compact-strip framework:
 
 1. **Order-Theoretic Coercivity Payment:**
    Formal proof that arrival rates strictly dominating strip deficits and barrier losses guarantee net positivity $\delta \cdot w < \text{total}$ (`compact_payment`, `compact_payment_le`).
@@ -71,6 +71,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
 This formalization provides machine-verified certitude that massive constants ($10^{503}, 10^{1046}$) and order-theoretic coercivity arguments in spectral RH frameworks hold strictly without numerical drift or algebraic errors.

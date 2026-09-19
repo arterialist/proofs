@@ -1,4 +1,4 @@
-# Exact Dual Dirichlet Offline Decay and Power Suppression Threshold
+# Dual-exponent real-power algebra and suppression threshold
 
 **Designation:** First Formalization 344  
 **Unique Contribution:** [Unique Contribution 335](../unique-contributions/exact-dual-dirichlet-offline-decay-and-power-suppression-threshold.md)  
@@ -11,11 +11,11 @@
 
 ## 1. Formalization Scope & Mathematical Objective
 
-In the proper-cofactor dual Dirichlet cancellation framework for the Riemann hypothesis, the complete prime-power row is compared against an ensemble of cofactors $k \in [2, K]$ with $K = T^{1-\delta}$. The residual error against an off-line zero $\rho = \beta + i\gamma$ ($\beta = 1/2 + \varepsilon$, $\varepsilon > 0$) is modulated by the short dual Dirichlet polynomial:
+The motivating argument concerns a short dual Dirichlet polynomial, but this Lean module does not define that polynomial, the Gamma or scattering factor, a zeta zero, or a bound for a Dirichlet sum. It formalizes the real-exponent algebra that such an estimate would use. In the intended notation, the external argument would concern
 $$S_y(\rho) = \sum_{1 \le n \le y} n^{\rho-1}, \quad y = \frac{T^\delta}{2\pi},$$
 multiplied by the scattering factor $\chi(\rho)$.
 
-This module formalizes the exact exponent algebra, proves the existence of the critical cutoff threshold $\delta_{\text{crit}}(\beta) = \varepsilon / \beta$, and proves that for any $\delta < \delta_{\text{crit}}(\beta)$, the combined exponent $\alpha(\beta, \delta) = 1/2 - \beta(1 - \delta)$ is strictly negative, forcing unconditional power suppression of the off-line dual Dirichlet sum.
+The module proves that if $\beta = 1/2 + \varepsilon$, $\varepsilon > 0$, and $\delta < \varepsilon/\beta$, then the real number $1/2 - \beta(1-\delta)$ is negative. It also proves corresponding `Real.rpow` identities and inequalities. Applying this algebra to an actual dual sum would require separately proved analytic estimates that are absent here.
 
 ---
 
@@ -43,7 +43,7 @@ theorem dual_exponent_critical_line (δ : ℝ) :
     dualExponent (1/2) δ = δ / 2
 ```
 
-### Unconditional Power Decay and Strict Asymptotic Monotonicity
+### Real-power decay and strict monotonicity under the stated inequalities
 ```lean
 theorem offline_power_decay (T C β δ ε : ℝ) (hT : 1 < T) (hC : 0 < C)
     (hβ : β = 1/2 + ε) (hε : 0 < ε) (hδ : δ < criticalDelta β ε) :

@@ -53,6 +53,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 connecting physical wave packet scattering histories to two-sided Mellin moment multiplier dictionaries with strict sign invariance.
+This entry documents a machine-verified proof in Lean 4 connecting physical wave packet scattering histories to two-sided Mellin moment multiplier dictionaries with strict sign invariance.

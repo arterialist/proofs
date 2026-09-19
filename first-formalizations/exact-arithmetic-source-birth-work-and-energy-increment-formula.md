@@ -17,17 +17,17 @@ This formalization establishes the exact Hilbert-space cross-work and energy inc
    Formal proofs of the ramp product formula (`source_increment_ramp`) and terminal product formula (`source_increment_terminal`).
 3. **Exact Closed-Form Cross-Work Theorem:**
    Formal proof of `source_increment_integral`:
-   \[
+   $$
    \int_0^\infty \text{causalSource}(N, v) \text{increment}(N, v) dv = (\psi(N) - N) \left( \frac{\Lambda(N+1)}{N+1} - \log\left(1 + \frac{1}{N}\right) \right).
-   \]
+   $$
 4. **Exact Total Energy Increment Formula:**
    Formal proof of `full_square_integral_increment`:
-   \[
+   $$
    \begin{aligned}
    \|\text{causalSource}(N+1)\|_{L^2}^2 - \|\text{causalSource}(N)\|_{L^2}^2 &= 2 (\psi(N) - N) \left( \frac{\Lambda(N+1)}{N+1} - \log\left(1 + \frac{1}{N}\right) \right) \\
    &\quad + 1 + \frac{N}{N+1} - 2N \log\left(1 + \frac{1}{N}\right) + \frac{(\Lambda(N+1) - 1)^2}{N+1}.
    \end{aligned}
-   \]
+   $$
 
 ---
 
@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact closed-form evaluation of arithmetic prime birth cross-work $\langle \text{causalSource}(N), \Delta \text{source}_N \rangle = (\psi(N)-N)(\frac{\Lambda(N+1)}{N+1} - \log(1+1/N))$ and the exact step-by-step energy increment formula for the Chebyshev prime-counting field.
+This entry documents a machine-verified implementation in Lean 4 proving the exact closed-form evaluation of arithmetic prime birth cross-work $\langle \text{causalSource}(N), \Delta \text{source}_N \rangle = (\psi(N)-N)(\frac{\Lambda(N+1)}{N+1} - \log(1+1/N))$ and the exact step-by-step energy increment formula for the Chebyshev prime-counting field.

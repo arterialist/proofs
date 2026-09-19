@@ -3,7 +3,7 @@
 **Authors:** Arterialist Formalization Team  
 **Date:** September 2026  
 **Lean 4 Version:** 4.24.0  
-**Mathlib Commit:** 2026-09-15  
+**Mathlib revision:** `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` from `lake-manifest.json`
 **Target Module:** `BuildingBlocks.ActualTerminalPrimeTraceFinite`  
 **Foundational Axioms:** Standard Lean 4 foundations (`[propext, Classical.choice, Quot.sound]`), zero custom axioms, zero `sorry` placeholders.
 
@@ -12,21 +12,21 @@
 ## 1. Mathematical Overview
 
 In the far-lag interaction of prime-power heat packets, the pairwise kernel between charges $a_i$ at positions $x_i > 0$ under a dilation parameter $k > 0$ is governed by the bilinear sum:
-\[
+$$
  \mathcal{K}_k(a, x) := \sum_{i, j \in s} \frac{a_i a_j}{k x_j + x_i}.
-\]
+$$
 For a generic charge configuration, the expansion in inverse powers of $k$ as $k \to \infty$ begins with an $O(k^{-1})$ monopole term:
-\[
+$$
  \frac{1}{k} \sum_{i, j \in s} a_i \frac{a_j}{x_j} = \frac{1}{k} \left( \sum_{i \in s} a_i \right) \left( \sum_{j \in s} \frac{a_j}{x_j} \right).
-\]
+$$
 When the total net charge vanishes, $\sum_{i \in s} a_i = 0$, this monopole term vanishes identically:
-\[
+$$
  \sum_{i, j \in s} a_i \frac{a_j}{k x_j} = \frac{1}{k} \left(\sum_{i \in s} a_i\right) \left(\sum_{j \in s} \frac{a_j}{x_j}\right) = 0.
-\]
+$$
 The exact rational identity then isolates the next non-vanishing term, which is strictly of order $k^{-2}$:
-\[
+$$
  \sum_{i, j \in s} \frac{a_i a_j}{k x_j + x_i} = -\frac{1}{k^2} \left(\sum_{i \in s} a_i x_i\right) \left(\sum_{j \in s} \frac{a_j}{x_j^2}\right) + \sum_{i, j \in s} \frac{a_i a_j x_i^2}{k^2 x_j^2 (k x_j + x_i)}.
-\]
+$$
 The first coefficient is the product of the discrete dipole moment $\sum a_i x_i$ and the inverse-square quadrupole moment $\sum a_j / x_j^2$, with an exact rational remainder that decays as $O(k^{-3})$.
 
 This general theorem applies directly to the discrete centered prime-power packet with frozen terminal compensation:
@@ -122,4 +122,4 @@ The proof is verified by Lean 4 with standard foundational axioms, zero custom a
 
 1. **Mathlib:** Mathlib contains no formalization of far-lag pair kernel expansions, multipole expansions of discrete charge distributions, or terminal compensation of Chebyshev prime-power sources.
 2. **AFP / Coq:** No formal library contains asymptotic multipole cancellation for finite arithmetic charge configurations.
-3. **Novelty:** This is the first machine-verified proof that the terminal compensation of the prime-power error $\psi(N) - N$ identically forces the $O(k^{-1})$ monopole term of the pair kernel $\sum \frac{c_i c_j}{k x_j + x_i}$ to vanish, yielding exact $O(k^{-2})$ dipole decay.
+3. **Novelty:** Provisional priority claim: this may be an early machine-verified proof that the terminal compensation of the prime-power error $\psi(N) - N$ identically forces the $O(k^{-1})$ monopole term of the pair kernel $\sum \frac{c_i c_j}{k x_j + x_i}$ to vanish, yielding exact $O(k^{-2})$ dipole decay.

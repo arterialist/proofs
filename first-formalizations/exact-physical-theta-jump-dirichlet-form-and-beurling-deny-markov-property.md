@@ -55,6 +55,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the Beurling–Deny Markov contraction property for non-local arithmetic Dirichlet forms whose jump distributions are governed by the von Mangoldt function $\Lambda(n)$.
+This entry documents a machine-verified proof in Lean 4 establishing the Beurling–Deny Markov contraction property for non-local arithmetic Dirichlet forms whose jump distributions are governed by the von Mangoldt function $\Lambda(n)$.

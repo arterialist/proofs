@@ -1,4 +1,4 @@
-# Unique Mathematical Contribution 342: Exact Chirped Fresnel-Gaussian Localization and Stationary Phase Core Theorem
+# Contribution 342: Exact Chirped Fresnel-Gaussian Localization and Stationary Phase Core Theorem
 
 ## 1. Executive Summary
 

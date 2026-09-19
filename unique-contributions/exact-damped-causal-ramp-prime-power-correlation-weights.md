@@ -1,4 +1,4 @@
-# Unique Contribution 97: Exact Damped Causal Ramp Prime-Power Correlation Weights
+# Contribution 97: Exact Damped Causal Ramp Prime-Power Correlation Weights
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualRampPrimeWeights.lean`](../../formalization/BuildingBlocks/ActualRampPrimeWeights.lean)  
@@ -17,26 +17,26 @@ This contribution proves:
    - **Outer Vanishing:** $W(A, B, u) = 0$ for all $u \ge A$.
    - **Internal Plateau:** $W(A, B, u) = 1 - e^{-B}$ for all $u \le A - B$.
    - **Sloping Linear-Exponential Interpolation:** For $A - B \le u \le A$:
-     \[
+     $$
      W(A, B, u) = 1 - e^{u - A}.
-     \]
+     $$
 2. **Exact Algebraic Summand on Discrete Primes:**  
    When evaluated at prime powers $u = \log n$, the weight in the sloping region simplifies to the rational-linear formula:
-   \[
+   $$
    W(A, B, \log n) = 1 - n e^{-A}.
-   \]
+   $$
    Consequently, the weighted von Mangoldt summand evaluates to:
-   \[
+   $$
    \frac{\Lambda(n)}{n} W(L + \Delta, L, \log n) = \frac{\Lambda(n)}{n} - \Lambda(n) e^{-(L + \Delta)}.
-   \]
+   $$
    This directly couples the logarithmic prime density $\Lambda(n)/n$ to the unweighted Chebyshev error summand $\Lambda(n) e^{-(L+\Delta)}$ without any error terms.
 3. **Internal Transition Continuity and Positivity:**  
    At the transition point $u = A - B$, the weight attains the strictly positive value $W(A, B, A - B) = 1 - e^{-B} > 0$ for $B > 0$.
 4. **Monotonicity and Positivity across Truncations:**  
    For all $B \ge 0$, $W(A, B, u) \ge 0$ unconditionally. Furthermore, the finite actual prime cross sum:
-   \[
+   $$
    \mathcal{C}_N(A, B) = \sum_{n=2}^N \frac{\Lambda(n)}{n} W(A, B, \log n) \ge 0
-   \]
+   $$
    is non-negative and monotonically non-decreasing in $A, B$, and the truncation cutoff $N$.
 
 ---
@@ -46,9 +46,9 @@ This contribution proves:
 ### 2.1. Correlation Kernel Evaluation
 Let $f_A(t) = e^{-t} \mathbf{1}_{[0, A]}(t)$ and $g_B(t) = e^{-t} \mathbf{1}_{[0, B]}(t)$.
 The continuous cross-correlation at shift $u$ is:
-\[
+$$
 (f_A \star g_B)(u) = \int_{\max(0, u)}^{\min(A, B+u)} e^{-t} e^{-(t-u)} dt = e^u \int_{\max(0, u)}^{\min(A, B+u)} e^{-2t} dt.
-\]
+$$
 Integrating the exponential yields normalized correlation weights governed by $\min(B, \max(0, A-u))$.
 Taking $W(A, B, u) = 1 - \exp(-\min(B, \max(0, A-u)))$:
 - For $u \ge A$, $\max(0, A-u) = 0$, so $\min(B, 0) = 0$, giving $1 - e^0 = 0$.
@@ -59,9 +59,9 @@ Taking $W(A, B, u) = 1 - \exp(-\min(B, \max(0, A-u)))$:
 Setting $u = \log n$ for $n \in [e^\Delta, e^{L+\Delta}]$:
 $e^{u - (L+\Delta)} = e^{\log n - (L+\Delta)} = n e^{-(L+\Delta)}$.
 Multiplying by $\Lambda(n)/n$:
-\[
+$$
 \frac{\Lambda(n)}{n} (1 - n e^{-(L+\Delta)}) = \frac{\Lambda(n)}{n} - \Lambda(n) e^{-(L+\Delta)}.
-\]
+$$
 
 ---
 

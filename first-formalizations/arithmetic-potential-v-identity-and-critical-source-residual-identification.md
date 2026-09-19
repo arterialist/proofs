@@ -45,6 +45,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that the non-asymptotic arithmetic potential $V(x)$ exactly governs the energy residual of the continuous prime source field on logarithmic coordinates.
+This entry documents a machine-verified proof that the non-asymptotic arithmetic potential $V(x)$ exactly governs the energy residual of the continuous prime source field on logarithmic coordinates.

@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 decomposing the generating series of Goldbach cofactor convolutions into prime and error-ratio series with exact parity projection operators on the open unit disk.
+This entry documents a machine-verified proof in Lean 4 decomposing the generating series of Goldbach cofactor convolutions into prime and error-ratio series with exact parity projection operators on the open unit disk.

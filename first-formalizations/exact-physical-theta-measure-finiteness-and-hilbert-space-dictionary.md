@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 constructing the physical Jacobi theta measure $\nu$, proving its finiteness via exponential moments, establishing mutual absolute continuity with Lebesgue measure, and formalizing the physical $L^2$ energy dictionary.
+This entry documents a machine-verified implementation in Lean 4 constructing the physical Jacobi theta measure $\nu$, proving its finiteness via exponential moments, establishing mutual absolute continuity with Lebesgue measure, and formalizing the physical $L^2$ energy dictionary.

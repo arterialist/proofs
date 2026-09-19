@@ -1,4 +1,4 @@
-# Unique Contribution 341: Exact Chirped Stationary Phase Carrier Tuning and Band Localization
+# Contribution 341: Exact Chirped Stationary Phase Carrier Tuning and Band Localization
 
 ## 1. Title and Classification
 - **Title**: Exact Chirped Stationary Phase Carrier Tuning and Band Localization

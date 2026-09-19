@@ -49,6 +49,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 linking the arithmetic critical multiple aggregation $W(x) = \sum_{d \le x} \sqrt{d} V(x/d)$ to its explicit half-line Mellin integral $\int_1^\infty x^{-s-2} W(x) dx = \zeta(s + 1/2) \mathcal{M}(V)(-s-1)$ with certified zero support below $x=1$.
+This entry documents a machine-verified proof in Lean 4 linking the arithmetic critical multiple aggregation $W(x) = \sum_{d \le x} \sqrt{d} V(x/d)$ to its explicit half-line Mellin integral $\int_1^\infty x^{-s-2} W(x) dx = \zeta(s + 1/2) \mathcal{M}(V)(-s-1)$ with certified zero support below $x=1$.

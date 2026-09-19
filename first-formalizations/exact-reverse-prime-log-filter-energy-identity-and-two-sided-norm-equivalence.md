@@ -53,6 +53,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact reverse energy identity and two-sided norm equivalence for logarithmic prime error filters with explicit constant 9.
+This entry documents a machine-verified implementation in Lean 4 proving the exact reverse energy identity and two-sided norm equivalence for logarithmic prime error filters with explicit constant 9.

@@ -9,7 +9,7 @@
 
 ## 1. Overview and Mathematical Scope
 
-This formalization provides the first machine-verified proof of phase rigidity and dyadic shell obstructions for finite successor-cell dilation transfer operators:
+This entry documents a machine-verified proof of phase rigidity and dyadic shell obstructions for finite successor-cell dilation transfer operators:
 
 1. **Exact Multiplicative Semigroup Laws on Successor Cells:**
    Formal proof that integer dilation refines cells via division intervals (`div_eq_iff_child`), satisfies composition $T_{d_1} \circ T_{d_2} = T_{d_1 d_2}$ (`transfer_mul`), and commutes (`transfer_comm`).
@@ -73,6 +73,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that diagonal phase gauges cannot simultaneously twist the 2- and 3-dilation transfer operators without degenerating to the identity, and demonstrates the exact dyadic boundary mechanism that breaks tree-gauge sign assignments.
+This entry documents a machine-verified proof that diagonal phase gauges cannot simultaneously twist the 2- and 3-dilation transfer operators without degenerating to the identity, and demonstrates the exact dyadic boundary mechanism that breaks tree-gauge sign assignments.

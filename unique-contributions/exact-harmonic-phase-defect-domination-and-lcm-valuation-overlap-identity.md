@@ -1,4 +1,4 @@
-# Unique Contribution 328: Exact Harmonic Phase Defect Domination and LCM Valuation Overlap Identity
+# Contribution 328: Exact Harmonic Phase Defect Domination and LCM Valuation Overlap Identity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/HarmonicPrimePhase.lean`](../../formalization/BuildingBlocks/HarmonicPrimePhase.lean), [`building-blocks/harmonic-weights/phase.md`](../../building-blocks/harmonic-weights/phase.md)  
@@ -14,25 +14,25 @@ This contribution proves:
 
 1. **Exact Finite Harmonic Phase Defect Domination:**  
    For any truncation horizon $N \ge 1$ and real parameter $t \in \mathbb{R}$, the harmonic average of composite phase deficits $\|1 - n^{it}\|^2$ is unconditionally dominated by the weighted sum of prime phase defects:
-   \[
+   $$
    \mathcal{D}_N(t) = \frac{1}{H_N} \sum_{n=1}^N \frac{\|1 - \chi_t(n)\|^2}{n} \le \sum_{p \in \text{admittedPrimes}(N)} w_N(p) \|1 - \chi_t(p)\|^2,
-   \]
+   $$
    where $w_N(p) = \frac{1}{H_N} \sum_{n=1}^N \frac{\Omega(n) v_p(n)}{n}$.
 2. **Exact Representation of $p$-Adic Valuations as Divisor Indicators:**  
    For any prime $p$ and integer $n$:
-   \[
+   $$
    v_p(n) = \sum_{i=1}^{n-1} \mathbf{1}_{p^i \mid n}.
-   \]
+   $$
 3. **Exact LCM Representation of Valuation Overlaps:**  
    For any primes $p, q$ (distinct or identical), the cross-product of $p$-adic and $q$-adic valuations is an exact 2D sum over LCM divisibility conditions:
-   \[
+   $$
    v_p(n) v_q(n) = \sum_{i=1}^{n-1} \sum_{j=1}^{n-1} \mathbf{1}_{\text{lcm}(p^i, q^j) \mid n}.
-   \]
+   $$
 4. **Exact Maximum-Power Overlap on the Diagonal:**  
    When $p = q$, the least common multiple collapses to $\text{lcm}(p^i, p^j) = p^{\max(i, j)}$, yielding:
-   \[
+   $$
    v_p(n)^2 = \sum_{i=1}^{n-1} \sum_{j=1}^{n-1} \mathbf{1}_{p^{\max(i, j)} \mid n}.
-   \]
+   $$
 
 ---
 
@@ -78,6 +78,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Halász (1968) *Über die Mittelwerte multiplikativer zahlentheoretischer Funktionen*; Elliott (1979) *Probabilistic Number Theory*. Machine verification of exact harmonic phase defect inequalities and valuation LCM overlap formulas in Lean 4 is new.
+- **Prior Literature:** Halász (1968) *Über die Mittelwerte multiplikativer zahlentheoretischer Funktionen*; Elliott (1979) *Probabilistic Number Theory*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Connects composite phase fluctuations directly to prime phase deficits without spectral gap assumptions, expressing all valuation moments via exact LCM divisibility lattices.
 - **Target Venues:** *Ramanujan Journal* or *Journal of Number Theory*.

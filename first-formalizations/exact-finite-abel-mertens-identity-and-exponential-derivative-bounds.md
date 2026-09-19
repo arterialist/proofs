@@ -55,6 +55,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 of the exact discrete Abel-Mertens summation identity with the boundary term $M(N) q^N$ and its associated exponential derivative bounds.
+This entry documents a machine-verified proof in Lean 4 of the exact discrete Abel-Mertens summation identity with the boundary term $M(N) q^N$ and its associated exponential derivative bounds.

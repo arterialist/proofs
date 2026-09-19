@@ -67,6 +67,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 deriving the exact age derivative for singular Abel fractional error kernels and capturing the moving boundary value $E_z(y-1)$ alongside the hypersingular $(y-t)^{-3/2}$ integral correction.
+This entry documents a machine-verified implementation in Lean 4 deriving the exact age derivative for singular Abel fractional error kernels and capturing the moving boundary value $E_z(y-1)$ alongside the hypersingular $(y-t)^{-3/2}$ integral correction.

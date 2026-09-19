@@ -59,5 +59,5 @@ Finally, this constructs the canonical `MellinEnergyEnvelope` and provides end-t
 ## 3. Novelty and Attribution Assessment
 
 - **Classical Mathematics**: The application of the Mean Value Theorem to hyperbolic differences and the estimation of integral transforms using dominated convergence are classical tools in real analysis and analytic number theory.
-- **Novel Formalization**: The end-to-end Lean 4 formalization bounding the hyperbolic power difference slope by $(1/2)\log x$, establishing the pointwise ratio domination by $(x-1)^2 e^{-\pi x}$, and constructing the `MellinEnergyEnvelope` to exclude low-frequency off-line zeros of the Riemann zeta function is completely novel and absent from Mathlib and any existing repository.
-- **Classification**: **First Formalization** (Entry 380).
+- **Priority status**: This is a project-specific combination of slope, domination, and conditional certificate lemmas. The audit did not perform a reproducible worldwide literature search, so priority is unverified.
+- **Classification**: catalog entry 380.

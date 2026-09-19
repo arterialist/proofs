@@ -49,6 +49,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 expressing exponential arithmetic carry responses as exact discrete geometric convolutions of the Mertens function, with fiberwise-proven quotient multiplicity bounds.
+This entry documents a machine-verified implementation in Lean 4 expressing exponential arithmetic carry responses as exact discrete geometric convolutions of the Mertens function, with fiberwise-proven quotient multiplicity bounds.

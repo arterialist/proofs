@@ -74,6 +74,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the exact Archimedean scattering phase decomposition, the zero-order isomorphism $\operatorname{order}_s(\xi) = \operatorname{order}_s(\zeta)$, and the convergence of $(s-\rho)\frac{\zeta'(s)}{\zeta(s)} \to m_\rho$ at arbitrary zeros in the critical strip.
+This entry documents a machine-verified implementation in Lean 4 establishing the exact Archimedean scattering phase decomposition, the zero-order isomorphism $\operatorname{order}_s(\xi) = \operatorname{order}_s(\zeta)$, and the convergence of $(s-\rho)\frac{\zeta'(s)}{\zeta(s)} \to m_\rho$ at arbitrary zeros in the critical strip.

@@ -1,4 +1,4 @@
-# Unique Contribution 143: Exact Disproof of Selberg Centered Primitive Positivity Pairing
+# Contribution 143: Exact Disproof of Selberg Centered Primitive Positivity Pairing
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SelbergCenteredPairing.lean`](../../formalization/BuildingBlocks/SelbergCenteredPairing.lean), [`building-blocks/selberg/selberg-centered-pairing.md`](../../building-blocks/selberg/selberg-centered-pairing.md)  
@@ -14,26 +14,26 @@ This contribution proves:
 
 1. **Exact Closed-Form Evaluations at Initial Steps:**  
    The finite centered convolution primitive $S(x)$ and the prime-error area primitive $A(x)$ evaluate at integers $x \in \{2, 3, 4\}$ to:
-   \[
+   $$
    \begin{aligned}
    S(2) &= 2 \log 2 + \frac{3}{4}, \\
    S(3) &= -\frac{5}{2} \log 2 + \frac{9}{2} \log 3 + 2, \\
    S(4) &= 10 \log 2 - \frac{7}{3} \log 3 + \frac{15}{4},
    \end{aligned}
-   \]
+   $$
    and
-   \[
+   $$
    \begin{aligned}
    A(2) &= -\frac{3}{2}, \\
    A(3) &= \log 2 - 4, \\
    A(4) &= 2 \log 2 + \log 3 - \frac{15}{2}.
    \end{aligned}
-   \]
-2. **Definitive Refutation of Non-Negative Pairing:**  
+   $$
+2. **Refutation of Non-Negative Pairing:**
    The paired bilinear sum of consecutive increment differences over $x \in \{2, 3, 4\}$ satisfies the strict negative upper bound:
-   \[
+   $$
    (A(3) - A(2))(S(3) - S(2)) + (A(4) - A(3))(S(4) - S(3)) < -\frac{13}{6} \approx -2.1667 < 0.
-   \]
+   $$
 3. **Impossibility of Naive Dissipative Selberg Pairings:**  
    This establishes a certified Lean 4 counterexample proving that no uncompensated bilinear monotonicity exists between the prime-error primitive and the centered Selberg convolution primitive.
 
@@ -43,30 +43,30 @@ This contribution proves:
 
 ### 2.1. Exact Primitive Values
 Evaluating $S(x)$ definitionally:
-\[
+$$
 S(x) = \sum_{a \le x} \sum_{b \le x/a} (x - ab) \Lambda(a) \Lambda(b) - x^2 \sum_{n \le x} \frac{\Lambda(n)}{n} + \sum_{n \le x} n \Lambda(n) + \frac{x^2}{2} \log x + \frac{x^2}{4} - \frac{1}{4}.
-\]
+$$
 Using $\Lambda(1) = 0$, $\Lambda(2) = \log 2$, $\Lambda(3) = \log 3$, and $\Lambda(4) = \log 2$:
 - For $x = 2$: the sum over $ab \le 2$ has only $(1, 1), (1, 2), (2, 1)$, whose weights vanish since $\Lambda(1) = 0$. The linear terms give $2 \log 2 + 3/4$.
 - For $x = 3$ and $x = 4$: explicit expansion yields the exact rational linear forms in $\log 2$ and $\log 3$.
 
 ### 2.2. Rigorous Interval Arithmetic Bounds
 Using machine-verified bounds on logarithms:
-\[
+$$
 0.69 < \log 2 < 0.70, \quad 1.00 < \log 3 < 1.10,
-\]
+$$
 the consecutive differences evaluate to:
-\[
+$$
 \begin{aligned}
 A(3) - A(2) &= \log 2 - \frac{5}{2} \in (-1.81, -1.80), \\
 S(3) - S(2) &= -\frac{9}{2} \log 2 + \frac{9}{2} \log 3 + \frac{5}{4} \in (2.60, 3.10),
 \end{aligned}
-\]
+$$
 giving a large negative product $(A(3) - A(2))(S(3) - S(2)) \approx -5$.
 Similarly, for the second term, explicit non-linear arithmetic verified by `nlinarith` confirms:
-\[
+$$
 (A(3) - A(2))(S(3) - S(2)) + (A(4) - A(3))(S(4) - S(3)) < -\frac{13}{6} < 0.
-\]
+$$
 
 ---
 

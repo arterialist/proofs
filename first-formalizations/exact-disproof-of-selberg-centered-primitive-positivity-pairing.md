@@ -13,7 +13,7 @@ This formalization establishes the certified machine-verified counterexample ref
 
 1. **Closed-Form Evaluations:**
    Formal evaluation of $S(2), S(3), S(4)$ and $A(2), A(3), A(4)$ (`selbergCenteredArea_two`, `selbergCenteredArea_three`, `selbergCenteredArea_four`, `primePrimitiveArea_two`, `primePrimitiveArea_three`, `primePrimitiveArea_four`).
-2. **Definitive Strict Negative Pairing Bound:**
+2. **Exact Strict Negative Pairing Bound:**
    Formal proof that the discrete increment inner product satisfies $\langle \Delta A, \Delta S \rangle < -13/6 < 0$ (`selbergCenteredPairing_two_lt`).
 
 ---
@@ -48,6 +48,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified counterexample in Lean 4 proving that naive dissipative inner products between prime-error primitives and Selberg auto-convolutions fail strictly.
+This entry documents a machine-verified counterexample in Lean 4 proving that naive dissipative inner products between prime-error primitives and Selberg auto-convolutions fail strictly.

@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 connecting the critical Gamma reflection identity to sharp rational Lorentzian majorization bounds for parabolic heat spectral kernels.
+This entry documents a machine-verified proof in Lean 4 connecting the critical Gamma reflection identity to sharp rational Lorentzian majorization bounds for parabolic heat spectral kernels.

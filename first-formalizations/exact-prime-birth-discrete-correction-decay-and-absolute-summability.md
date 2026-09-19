@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the non-asymptotic $O(y^{-3/2})$ decay rate for the arithmetic angle defect, its identification with discrete birth variations, and the absolute convergence of the prime-weighted defect series $\sum \Lambda(n) |\text{correction}(n)| < \infty$.
+This entry documents a machine-verified implementation in Lean 4 proving the non-asymptotic $O(y^{-3/2})$ decay rate for the arithmetic angle defect, its identification with discrete birth variations, and the absolute convergence of the prime-weighted defect series $\sum \Lambda(n) |\text{correction}(n)| < \infty$.

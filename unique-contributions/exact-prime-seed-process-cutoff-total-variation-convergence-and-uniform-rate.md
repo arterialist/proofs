@@ -1,4 +1,4 @@
-# Unique Contribution 198: Exact Prime Seed Process Cutoff Total Variation Convergence and Uniform Rate
+# Contribution 198: Exact Prime Seed Process Cutoff Total Variation Convergence and Uniform Rate
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PrimeSeedCutoffConvergence.lean`](../../formalization/BuildingBlocks/PrimeSeedCutoffConvergence.lean), [`building-blocks/primes/prime-seed-cutoff-convergence.md`](../../building-blocks/primes/prime-seed-cutoff-convergence.md)  
@@ -14,25 +14,25 @@ This contribution proves:
 
 1. **Exact Lévy Measure Cutoff Splitting:**  
    The finite-prime Lévy jump measure $\nu_{\text{primesBelow } P}$ and the prime tail measure $\nu_{> P}$ split the full all-prime Lévy measure exactly:
-   \[
+   $$
    \nu_{\text{primesBelow } P} + \nu_{> P} = \nu_{\mathcal{P}}.
-   \]
+   $$
 2. **Exact Activity Defect Identity:**  
    The difference between the total jump rates of the all-prime process and the cutoff process equals the total mass of the tail measure:
-   \[
+   $$
    \|\nu_{\mathcal{P}}\| - \|\nu_{\text{primesBelow } P}\| = \nu_{> P}(\mathbb{R}).
-   \]
+   $$
 3. **Quantitative Event-Wise Convergence Rate:**  
    For all prime cutoffs $P \ge 8$, operational times $u \ge 0$, and ANY Borel event $A \subseteq \mathbb{R}$:
-   \[
+   $$
    \left| \mathbb{P}(X_u^{(P)} \in A) - \mathbb{P}(X_u \in A) \right| \le \frac{32 u}{\log P}.
-   \]
+   $$
    Notice the sharp explicit constant 32 and the logarithmic decay $O(u / \log P)$, valid simultaneously for all events $A$.
 4. **Uniform Total Variation Convergence on Compact Time Intervals:**  
    For any upper time horizon $U > 0$ and any tolerance $\varepsilon > 0$, there exists an explicit cutoff $P_0$ such that for all $P \ge P_0$, for all operational times $u \in [0, U]$, and for ALL Borel events $A \subseteq \mathbb{R}$:
-   \[
+   $$
    \left| \mathbb{P}(X_u^{(P)} \in A) - \mathbb{P}(X_u \in A) \right| < \varepsilon.
-   \]
+   $$
    Thus the cutoff jump processes converge to the all-prime jump process in total variation distance uniformly over bounded time intervals.
 
 ---
@@ -42,27 +42,27 @@ This contribution proves:
 ### 2.1. Measure Splitting and Activity Defect
 By `levyMeasure_eq_sum_singleton`, $\nu_S = \sum_{p \in S} \nu_{\{p\}}$.
 Partitioning primes into $p < P$ and $p \ge P$, the measures satisfy:
-\[
+$$
 \nu_{\text{primesBelow } P} + \nu_{> P} = \nu_{\mathcal{P}}.
-\]
+$$
 Evaluating both sides on $\mathbb{R} = \text{univ}$ gives:
-\[
+$$
 \|\nu_{\mathcal{P}}\| - \|\nu_{\text{primesBelow } P}\| = \nu_{> P}(\mathbb{R}).
-\]
+$$
 
 ### 2.2. Poisson Coupling Event Bound
 By `finiteJumpLaw_event_bound`, when two Lévy measures satisfy $\mu \le \nu$, their Poisson laws satisfy:
-\[
+$$
 |\mathcal{P}_u^{(\mu)}(A) - \mathcal{P}_u^{(\nu)}(A)| \le u (\|\nu\| - \|\mu\|) = u \, \nu_{> P}(\mathbb{R}).
-\]
+$$
 By the explicit prime tail bound `primeTailLevyMeasure_mass_le_log` (proved via dyadic Chebyshev bounds for $P \ge 8$):
-\[
+$$
 \nu_{> P}(\mathbb{R}) \le \frac{32}{\log P}.
-\]
+$$
 Multiplying by $u$ yields:
-\[
+$$
 |\mathcal{P}_u^{(P)}(A) - \mathcal{P}_u(A)| \le \frac{32 u}{\log P}.
-\]
+$$
 
 ### 2.3. Uniform Convergence
 For $u \le U$, $\frac{32 u}{\log P} \le \frac{32 U}{\log P}$.
@@ -108,6 +108,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Approximation of infinite-activity Lévy processes by compound Poisson processes (Asmussen-Rosiński 2001, Cohen-Teugels 2011). Non-asymptotic total variation error bounds with explicit constants for prime renewal processes in Lean 4 are new.
+- **Prior Literature:** Approximation of infinite-activity Lévy processes by compound Poisson processes (Asmussen-Rosiński 2001, Cohen-Teugels 2011). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact defect identity $\|\nu\| - \|\nu_P\| = \nu_{> P}(\mathbb{R})$, derives the explicit quantitative rate $\frac{32 u}{\log P}$, and machine-verifies uniform total variation convergence in Lean 4.
 - **Target Venues:** *Bernoulli* or *Annals of Applied Probability*.

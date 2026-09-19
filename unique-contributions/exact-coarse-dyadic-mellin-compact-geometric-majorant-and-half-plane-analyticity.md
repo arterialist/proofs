@@ -1,4 +1,4 @@
-# Unique Contribution 219: Exact Coarse Dyadic Mellin Compact Geometric Majorant and Half-Plane Analyticity
+# Contribution 219: Exact Coarse Dyadic Mellin Compact Geometric Majorant and Half-Plane Analyticity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CoarseContinuation.lean`](../../formalization/BuildingBlocks/CoarseContinuation.lean), [`formalization/BuildingBlocks/CoarseSummation.lean`](../../formalization/BuildingBlocks/CoarseSummation.lean), [`building-blocks/coarse/coarse-continuation.md`](../../building-blocks/coarse/coarse-continuation.md)  
@@ -14,23 +14,23 @@ This contribution proves:
 
 1. **Compact Geometric Majorant:**  
    Under the coarse primitive energy bound $E(2^k) \le C_\epsilon (2^k)^{4+\epsilon}$ for all $\epsilon > 0$, for any compact subset $K \subset \{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}$, there exists a summable sequence $u : \mathbb{N} \to \mathbb{R}$ such that:
-   \[
+   $$
    \sup_{s \in K} \| \text{coarseMellinBlock}_k(s) \| \le u_k \quad \text{for all } k \in \mathbb{N},
-   \]
+   $$
    where the dyadic Mellin block is:
-   \[
+   $$
    \text{coarseMellinBlock}_k(s) = \int_{2^k}^{2 \cdot 2^k} (\psi(x) - x) x^{-(s+1)} \, dx.
-   \]
+   $$
 2. **Locally Uniform Partial Sum Convergence:**  
    The finite dyadic partial sums converge locally uniformly on $\{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}$ to the infinite sum:
-   \[
+   $$
    \lim_{t \to \infty} \sum_{k \in t} \text{coarseMellinBlock}_k(s) = \sum_{k=0}^\infty \text{coarseMellinBlock}_k(s) = \text{coarseMellinSum}(s).
-   \]
+   $$
 3. **Half-Plane Analyticity:**  
    The total coarse Mellin sum $\text{coarseMellinSum}(s)$ is analytic on the open half-plane:
-   \[
+   $$
    \text{coarseMellinSum} \in \mathcal{O}\left(\{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}\right).
-   \]
+   $$
 
 ---
 
@@ -39,15 +39,15 @@ This contribution proves:
 ### 2.1. Extremal Coordinates on Compact Sets
 Let $K \subset \mathbb{H}_{1/2}$ be a non-empty compact set.
 By the extreme value theorem, the continuous functions $s \mapsto \text{Re}(s)$ and $s \mapsto \|s+1\|$ achieve their minimum and maximum on $K$, respectively:
-\[
+$$
 a = \min_{s \in K} \text{Re}(s) > \frac{1}{2}, \quad R = \max_{s \in K} \|s + 1\| < \infty.
-\]
+$$
 
 ### 2.2. Uniform Geometric Decay
 By the Cauchy-Schwarz dyadic estimate (`coarseMellinBlock_geometric_bound`), whenever $\text{Re}(s) \ge a > 1/2$ and $\|s+1\| \le R$:
-\[
+$$
 \|\text{coarseMellinBlock}_k(s)\| \le M(a, R) \cdot r(a)^k,
-\]
+$$
 with ratio $r(a) = 2^{-(a - 1/2 - \epsilon/2)} < 1$.
 Since $r < 1$, the majorant $u_k = M r^k$ is a convergent geometric progression with $\sum_{k=0}^\infty u_k < \infty$.
 
@@ -83,6 +83,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Dyadic decompositions of Mellin transforms, Dirichlet series, and Weierstrass convergence theorems (Titchmarsh 1986, Montgomery-Vaughan 2007). Formal machine verification of locally uniform convergence and half-plane analyticity for dyadic Mellin blocks in Lean 4 is new.
+- **Prior Literature:** Dyadic decompositions of Mellin transforms, Dirichlet series, and Weierstrass convergence theorems (Titchmarsh 1986, Montgomery-Vaughan 2007). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Connects discrete dyadic prime energy bounds to complex half-plane holomorphy via a fully machine-checked Weierstrass theorem.
 - **Target Venues:** *Complex Analysis and Operator Theory* or *Journal of Mathematical Analysis and Applications*.

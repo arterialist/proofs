@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving continuum cell positivity and coercivity $3 B(k) - x A(k) \ge k > 0$ for same-prime renewal kernels.
+This entry documents a machine-verified implementation in Lean 4 proving continuum cell positivity and coercivity $3 B(k) - x A(k) \ge k > 0$ for same-prime renewal kernels.

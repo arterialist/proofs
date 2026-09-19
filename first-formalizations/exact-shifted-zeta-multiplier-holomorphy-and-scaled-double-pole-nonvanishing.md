@@ -51,6 +51,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 certifying that the shifted zeta multiplier $M(s) = \zeta(s+1/2)/(s(s+1))$ never vanishes on $\text{Re}(s) > 1/2$, proving that off-critical zeros of arbitrary multiplicity $m \ge 1$ cannot cancel out in floor-mediated contour transforms.
+This entry documents a machine-verified proof in Lean 4 certifying that the shifted zeta multiplier $M(s) = \zeta(s+1/2)/(s(s+1))$ never vanishes on $\text{Re}(s) > 1/2$, proving that off-critical zeros of arbitrary multiplicity $m \ge 1$ cannot cancel out in floor-mediated contour transforms.

@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that the cumulative causal feedback of higher prime powers is globally monotone and contractive under time delays.
+This entry documents a machine-verified proof that the cumulative causal feedback of higher prime powers is globally monotone and contractive under time delays.

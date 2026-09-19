@@ -67,6 +67,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the $(\sqrt{p}-1)^2$ energy growth law under prime adjunction in squarefree divisor cubes, proving that completed prime-cone energy strictly increases whenever a prime $p \ge 5$ is adjoined.
+This entry documents a machine-verified proof in Lean 4 establishing the $(\sqrt{p}-1)^2$ energy growth law under prime adjunction in squarefree divisor cubes, proving that completed prime-cone energy strictly increases whenever a prime $p \ge 5$ is adjoined.

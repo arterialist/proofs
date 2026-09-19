@@ -56,6 +56,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 constructing smooth localized wave packets in $C_c^\infty(\mathbb{R}, \mathbb{C})$ that identically annihilate the spectral poles at $s = \pm 1/2$ via an exact three-point difference stencil.
+This entry documents a machine-verified proof in Lean 4 constructing smooth localized wave packets in $C_c^\infty(\mathbb{R}, \mathbb{C})$ that identically annihilate the spectral poles at $s = \pm 1/2$ via an exact three-point difference stencil.

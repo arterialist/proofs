@@ -81,6 +81,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the orthogonal minimum-norm principle for linear observations and proving the complete bifurcation of $2 \times 2$ quadratic forms at the boundary of the positive cone.
+This entry documents a machine-verified implementation in Lean 4 establishing the orthogonal minimum-norm principle for linear observations and proving the complete bifurcation of $2 \times 2$ quadratic forms at the boundary of the positive cone.

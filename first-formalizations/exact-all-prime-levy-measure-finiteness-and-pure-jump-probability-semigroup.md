@@ -66,6 +66,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 constructing the all-prime Lévy jump measure, proving its finiteness unconditionally from elementary Chebyshev bounds, and proving the exact convolution semigroup law $\mathcal{P}_{u+v} = \mathcal{P}_u * \mathcal{P}_v$.
+This entry documents a machine-verified implementation in Lean 4 constructing the all-prime Lévy jump measure, proving its finiteness unconditionally from elementary Chebyshev bounds, and proving the exact convolution semigroup law $\mathcal{P}_{u+v} = \mathcal{P}_u * \mathcal{P}_v$.

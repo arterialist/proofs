@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified algebraic decomposition isolating the singular prime diagonal energy $\tau(s)$ from distinct prime interactions and continuous density in the quadratic energy balance of the prime source.
+This entry documents a machine-verified algebraic decomposition isolating the singular prime diagonal energy $\tau(s)$ from distinct prime interactions and continuous density in the quadratic energy balance of the prime source.

@@ -15,21 +15,21 @@ This formalization establishes the exact arithmetic definition of the symmetric 
    Formal proof that $(\sum_{n \in s} c_n \text{increment}(n, v))^2$ is integrable on $(0, \infty)$ for any finite set $s \subset \mathbb{N}_{\ge 2}$ (`finite_square_integrable`).
 2. **Double-Sum Energy Expansion:**
    Formal proof of `finite_energy_eq_double_sum`:
-   \[
+   $$
    \int_0^\infty \left( \sum_{n \in s} c_n \text{increment}(n, v) \right)^2 dv = \sum_{m \in s} \sum_{n \in s} c_m c_n \int_0^\infty \text{increment}(m, v) \text{increment}(n, v) dv.
-   \]
+   $$
 3. **Kernel Equivalence:**
    Formal proof that `birth_gram_eq_kernel` equates the continuous $L^2$ inner product to `gramKernel m n`.
 4. **Finite Kernel Energy Formula:**
    Formal proof of `finite_energy_eq_kernel`:
-   \[
+   $$
    \int_0^\infty \left( \sum_{n \in s} c_n \text{increment}(n, v) \right)^2 dv = \sum_{m \in s} \sum_{n \in s} c_m c_n \text{gramKernel}(m, n).
-   \]
+   $$
 5. **Unconditional Positive Semi-Definiteness:**
    Formal proof of `finite_kernel_quadratic_nonnegative`:
-   \[
+   $$
    \sum_{m \in s} \sum_{n \in s} c_m c_n \text{gramKernel}(m, n) \ge 0.
-   \]
+   $$
 
 ---
 
@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the arithmetic prime Gram kernel $\text{gramKernel}(m, n)$ defines an unconditionally positive semi-definite matrix on any finite set of scales $s \subset \mathbb{N}_{\ge 2}$, establishing a rigorous RKHS structure for prime birth increments.
+This entry documents a machine-verified implementation in Lean 4 proving that the arithmetic prime Gram kernel $\text{gramKernel}(m, n)$ defines an unconditionally positive semi-definite matrix on any finite set of scales $s \subset \mathbb{N}_{\ge 2}$, establishing a rigorous RKHS structure for prime birth increments.

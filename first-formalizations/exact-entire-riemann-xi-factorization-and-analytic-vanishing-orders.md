@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 connecting the entire Riemann $\xi$ function and its functional equation directly to the vanishing orders and logarithmic derivative residues of Mathlib's native `riemannZeta`.
+This entry documents a machine-verified implementation in Lean 4 connecting the entire Riemann $\xi$ function and its functional equation directly to the vanishing orders and logarithmic derivative residues of Mathlib's native `riemannZeta`.

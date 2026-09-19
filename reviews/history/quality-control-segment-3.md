@@ -2,7 +2,7 @@
 
 **Baseline:** `356d968c7ac34a23113d6fe0a5e10217cef4316c`
 
-**Scope:** all 329 commits in `research-local/audits/antigravity-monitor/history-segment-3.json`
+**Scope:** the 329 commits from `f639a5857324f7b8ceca2b2bc9fc92ba822a6e79` through `356d968c7ac34a23113d6fe0a5e10217cef4316c`
 
 Every assigned commit received an inventory disposition, and the ignored
 coverage ledger contains exactly 329 entries. The theorem-level audit followed
@@ -20,10 +20,10 @@ as an unconditional resolution of the fixed-cofactor barrier. That conclusion
 did not follow from the displayed calculation.
 
 The exact dilation identity
-\[
+$$
   \int_0^\infty x^{\rho-1}g_N(kx)\,dx
   =k^{-\rho}\int_0^\infty u^{\rho-1}g_N(u)\,du
-\]
+$$
 is valid. Applying the approximate functional equation at one zero also gives a
 valid dual-polynomial identity. Neither step estimates the dual polynomial after
 it is summed over zeros. The note also lacked uniform control of the explicit
@@ -38,9 +38,9 @@ sub-logarithmic. Its exact cutoff is
 `y_ρ = |Im ρ|/(2πK)`, which depends on the zero; `|Im ρ| ≍ T` gives only
 `y_ρ ≍ T^δ`, not the equality printed in the original zero sum. The general
 approximate-functional-equation error has exponent
-\[
+$$
   T^{1/2-\beta-\delta(1-\beta)},
-\]
+$$
 not merely `T^{-δ(1-β)}` when `β < 1/2`. The original citation to Titchmarsh,
 Theorem 4.13, also omitted that theorem's logarithm in the first error term. The
 log-free form used here is equation (4.12.4), justified in Theorem 4.15 of
@@ -57,9 +57,9 @@ Commits `6c7142e`, `3a32f0be`, and `41a391af` used the posted 2025 Bellotti
 preprint to obtain an
 epsilon-free near-edge zero-density estimate and prime-number-theorem constant.
 Its proof used
-\[
+$$
   (\psi*\theta*1)(n)=(\psi*1)(n)(\theta*1)(n),
-\]
+$$
 which confuses Dirichlet convolution with pointwise multiplication. At a prime
 `p < min(U,W)`, the two sides already differ. This invalidates the displayed
 proof of the cited lemma and leaves its downstream endpoint claims unestablished;
@@ -104,7 +104,7 @@ checked the principal literature inputs for the repaired Vinogradov--Korobov
 bounds, arbitrary-height explicit formula, short-interval prime estimates,
 Brun--Titchmarsh bound, Robert--Sargos derivative estimate, and uniform Landau
 formula. Exact finite Lean modules were distinguished from the written analytic
-arguments they support. No history was rewritten.
+arguments they support. These mathematical corrections are additive changes.
 
 This review establishes the status of the claims above and records whether each
 assigned commit remains represented at the baseline. It is not a claim that all

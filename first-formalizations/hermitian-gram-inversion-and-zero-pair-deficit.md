@@ -3,7 +3,7 @@
 **Authors:** Arterialist Formalization Team  
 **Date:** September 2026  
 **Lean 4 Version:** 4.24.0  
-**Mathlib Commit:** 2026-09-15  
+**Mathlib revision:** `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` from `lake-manifest.json`
 **Target Modules:** `BuildingBlocks.ActualWeilZeroPairAlgebra`, `BuildingBlocks.ActualAnnulusGramAlgebra`  
 **Foundational Axioms:** Standard Lean 4 foundations (`[propext, Classical.choice, Quot.sound]`), zero custom axioms, zero `sorry` placeholders.
 
@@ -13,31 +13,31 @@
 
 In the spectral theory of the Weil explicit quadratic form, testing against pairs of complex zeros $\rho = \beta + i\gamma$ requires two complementary finite-dimensional algebraic mechanisms:
 1. **The Off-Critical Zero-Pair Linear Deficit:** When an off-critical zero pair $(\rho, 1 - \bar{\rho})$ is tested with a translated-bump test function, the algebraic multiplier involves reciprocal factors:
-   \[
+   $$
     (1 - z)(1 - z^{-1}) = 2 - z - z^{-1}.
-   \]
+   $$
    Replacing the algebraic inverse $z^{-1}$ by the complex conjugate $\bar{z}$ would reverse the selected zero sign; retaining the inverse ensures that the reflected zero at $z' = (\bar{z})^{-1}$ matches via complex conjugation:
-   \[
+   $$
     W^* (1 - (\bar{z})^{-1})(1 - \bar{z}) = \left( W(1 - z)(1 - z^{-1}) \right)^*.
-   \]
+   $$
    Summing the zero and its reflection yields:
-   \[
+   $$
     \operatorname{Re}\left[ W(1 - z)(1 - z^{-1}) \right] + \operatorname{Re}\left[ W^* (1 - (\bar{z})^{-1})(1 - \bar{z}) \right] = 2\operatorname{Re}\left[ W(2 - z - z^{-1}) \right].
-   \]
+   $$
    Under radial scaling $z = u r$ with growth factor $r > 0$ and phase $\|u\| = 1$, if the oscillatory coefficient has positive real part $\operatorname{Re}(Wu) \ge b > 0$, the paired contribution satisfies:
-   \[
+   $$
     2\operatorname{Re}\left[ W\left(2 - u r - \frac{\bar{u}}{r}\right) \right] \le 4\|W\| + \frac{2\|W\|}{r} - 2 b r.
-   \]
+   $$
    As $r \to \infty$, the linear term $-2br$ dominates all positive terms, forcing the paired Weil zero contribution to $-\infty$.
 
 2. **Annular Hermitian Gram Positivity:** In the annular decomposition around the critical line, two-bump prime crosses are governed by a $2 \times 2$ Hermitian Gram matrix with diagonal weight $d > 0$ and off-diagonal cross-coupling $p \in \mathbb{C}$:
-   \[
+   $$
     \begin{pmatrix} a^* & b^* \end{pmatrix} \begin{pmatrix} d & -p^* \\ -p & d \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = d(|a|^2 + |b|^2) - 2\operatorname{Re}(b \bar{a} p).
-   \]
+   $$
    Applying Cauchy–Schwarz and the AM–GM inequality yields:
-   \[
+   $$
     (d - \|p\|)(|a|^2 + |b|^2) \le d(|a|^2 + |b|^2) - 2\operatorname{Re}(b \bar{a} p).
-   \]
+   $$
    Consequently, strict diagonal dominance $\|p\| < d$ guarantees strict positivity for all non-trivial vectors $(a, b) \ne (0, 0)$.
 
 ---
@@ -112,4 +112,4 @@ The proofs depend exclusively on standard Lean 4 foundations with zero custom ax
 
 1. **Mathlib:** Mathlib provides basic complex arithmetic and the AM–GM inequality (`two_mul_le_add_sq`), but possesses no formalization of Weil zero-pairing, reciprocal bump multipliers, or off-critical radial deficit theorems.
 2. **AFP / Coq:** No formalization of the spectral zero-pair linear deficit in Weil explicit formulas exists in Isabelle/AFP or Coq/ROC.
-3. **Novelty:** This is the first machine-verified proof that pairing an off-critical zero with its reflection under reciprocal bump convolution produces an inescapable negative linear deficit $-2br$ as the radial scale $r \to \infty$.
+3. **Novelty:** Provisional priority claim: this may be an early machine-verified proof that pairing an off-critical zero with its reflection under reciprocal bump convolution produces an inescapable negative linear deficit $-2br$ as the radial scale $r \to \infty$.

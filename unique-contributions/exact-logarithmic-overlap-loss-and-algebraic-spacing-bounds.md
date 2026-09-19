@@ -1,4 +1,4 @@
-# Unique Contribution 287: Exact Logarithmic Overlap Loss and Algebraic Spacing Bounds
+# Contribution 287: Exact Logarithmic Overlap Loss and Algebraic Spacing Bounds
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/LogarithmicOverlap.lean`](../../formalization/BuildingBlocks/LogarithmicOverlap.lean), [`building-blocks/logarithmic-overlap/bounds.md`](../../building-blocks/logarithmic-overlap/bounds.md)  
@@ -14,34 +14,34 @@ This contribution proves:
 
 1. **Exact Overlap Identity:**  
    For any $L > 0$, $0 \le u < 1$, and $v \ge 0$:
-   \[
+   $$
    (L + \log(1 - u))(L + \log(1 + u + v)) - L(L + \log(1 + v)) = L \log(1 - \Phi(u, v)) + \log(1 - u) \log(1 + u + v),
-   \]
+   $$
    where $\Phi(u, v) = \frac{u(u + v)}{1 + v}$ is the canonical relative overlap fraction.
-2. **Definitive Overlap Loss Bound:**  
+2. **Overlap Loss Bound:**
    Because $\log(1 - u) \le 0$ and $\log(1 + u + v) \ge 0$, the cross-product of logarithms is negative semi-definite, and $\log(1 - \Phi) \le -\Phi$, yielding the non-asymptotic inequality:
-   \[
+   $$
    (L + \log(1 - u))(L + \log(1 + u + v)) - L(L + \log(1 + v)) \le -L \frac{u(u + v)}{1 + v}.
-   \]
+   $$
 3. **Uniform Error Compensation Bound:**  
    If a perturbed upper product with uniform error parameter $\eta \ge 0$ majorizes the baseline:
-   \[
+   $$
    L(L + \log(1 + v)) \le (L + \log(1 - u) + \eta)(L + \log(1 + u + v) + \eta),
-   \]
+   $$
    then $\eta$ must unconditionally pay for the entire overlap loss:
-   \[
+   $$
    L \frac{u(u + v)}{1 + v} \le (2L + \log(1 + v)) \eta + \eta^2.
-   \]
+   $$
 4. **Normalized Spacing Fraction Bound:**  
    Dividing by $L$ gives the scale-invariant spacing criterion:
-   \[
+   $$
    \frac{u(u + v)}{1 + v} \le \left( 2 + \frac{\log(1 + v)}{L} \right) \eta + \frac{\eta^2}{L}.
-   \]
+   $$
 5. **Reciprocal Correction Identity:**  
    For reciprocal perturbations $(A + \kappa/A)(B + \kappa/B)$, the exact algebraic identity:
-   \[
+   $$
    (A + \kappa/A)(B + \kappa/B) = AB + \kappa(A/B + B/A) + \frac{\kappa^2}{AB}
-   \]
+   $$
    enables tight quantification of hyperbolic curvature compensation.
 
 ---
@@ -50,35 +50,35 @@ This contribution proves:
 
 ### 2.1. Decomposition of the Rational Argument
 Notice that:
-\[
+$$
 1 - \Phi(u, v) = 1 - \frac{u(u+v)}{1+v} = \frac{1 + v - u^2 - uv}{1+v} = \frac{(1 - u)(1 + u + v)}{1 + v}.
-\]
+$$
 Since $0 \le u < 1$ and $v \ge 0$, all three factors $(1-u)$, $(1+u+v)$, and $(1+v)$ are strictly positive.
 Taking the logarithm:
-\[
+$$
 \log(1 - \Phi(u, v)) = \log(1 - u) + \log(1 + u + v) - \log(1 + v).
-\]
+$$
 
 ### 2.2. Product Expansion and Loss
 Expanding the product difference:
-\[
+$$
 (L + \log(1 - u))(L + \log(1 + u + v)) - L(L + \log(1 + v))
-\]
-\[
+$$
+$$
 = L^2 + L(\log(1 - u) + \log(1 + u + v)) + \log(1 - u)\log(1 + u + v) - L^2 - L\log(1 + v)
-\]
-\[
+$$
+$$
 = L(\log(1 - u) + \log(1 + u + v) - \log(1 + v)) + \log(1 - u)\log(1 + u + v)
-\]
-\[
+$$
+$$
 = L \log(1 - \Phi(u, v)) + \log(1 - u)\log(1 + u + v).
-\]
+$$
 Since $u \in [0, 1)$, $\log(1-u) \le 0$. Since $u, v \ge 0$, $\log(1+u+v) \ge 0$.
 Thus $\log(1-u)\log(1+u+v) \le 0$.
 Furthermore, using $\log(1 - x) \le -x$ for $x < 1$:
-\[
+$$
 L \log(1 - \Phi(u, v)) \le -L \Phi(u, v) = -L \frac{u(u+v)}{1+v}.
-\]
+$$
 This proves the fundamental loss inequality.
 
 ---
@@ -124,6 +124,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Spacing problems in multiplicative number theory (Erdős, Hall & Tenenbaum 1988), GCD/LCM bounds (de la Bretèche & Tenenbaum 2013). The non-asymptotic verification of logarithmic product overlap loss and normalized uniform error constraints in Lean 4 is new.
+- **Prior Literature:** Spacing problems in multiplicative number theory (Erdős, Hall & Tenenbaum 1988), GCD/LCM bounds (de la Bretèche & Tenenbaum 2013). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes a rigorous non-asymptotic lower bound on the error cost incurred by perturbed logarithmic products, preventing false cancellations in GCD spacing models.
 - **Target Venues:** *Acta Arithmetica* or *Journal of Mathematical Analysis and Applications*.

@@ -49,6 +49,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the Fubini interchange theorem for operator defect functionals on non-$L^1$ boundary densities, linking the collective continuum charge deficit directly to integrated discrete prime birth defects.
+This entry documents a machine-verified implementation in Lean 4 establishing the Fubini interchange theorem for operator defect functionals on non-$L^1$ boundary densities, linking the collective continuum charge deficit directly to integrated discrete prime birth defects.

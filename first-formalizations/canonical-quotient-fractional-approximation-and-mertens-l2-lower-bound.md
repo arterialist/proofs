@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of an explicit $L^2$ lower bound on Báez-Duarte fractional-part approximations in terms of the Mertens function, demonstrating why arithmetic quotient coefficients cannot achieve zero $L^2$ error.
+This entry documents a machine-verified proof of an explicit $L^2$ lower bound on Báez-Duarte fractional-part approximations in terms of the Mertens function, demonstrating why arithmetic quotient coefficients cannot achieve zero $L^2$ error.

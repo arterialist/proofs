@@ -1,4 +1,4 @@
-# Unique Contribution 251: Exact Completed Zeta Circle Pole Cancellation and Xi Contour Equivalence
+# Contribution 251: Exact Completed Zeta Circle Pole Cancellation and Xi Contour Equivalence
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CompletedZetaPoleCorrections.lean`](../../formalization/BuildingBlocks/CompletedZetaPoleCorrections.lean), [`building-blocks/archimedean/completed-zeta-pole-corrections.md`](../../building-blocks/archimedean/completed-zeta-pole-corrections.md)  
@@ -14,23 +14,23 @@ This contribution proves:
 
 1. **Exact Logarithmic Derivative Pole Formula:**  
    For any $s \ne 0, 1$ with $\xi(s) \ne 0$:
-   \[
+   $$
    \frac{\Lambda'(s)}{\Lambda(s)} = \frac{\xi'(s)}{\xi(s)} - \frac{1}{s} - \frac{1}{s - 1}.
-   \]
+   $$
 2. **General Entire Contour Correction Theorem:**  
    For any entire function $F(s)$ (`Differentiable ℂ F`) and circle contour $C(c, R)$ with $0, 1 \in B(c, R)$ and $\xi(w) \ne 0$ on the boundary sphere:
-   \[
+   $$
    \oint_{C(c, R)} F(w) \frac{\Lambda'(w)}{\Lambda(w)} \, dw = \oint_{C(c, R)} F(w) \frac{\xi'(w)}{\xi(w)} \, dw - 2\pi i (F(0) + F(1)).
-   \]
-3. **Grand Pole Cancellation Theorem:**  
+   $$
+3. **Pole Cancellation Theorem:**
    For any centered test pair $f, g$ whose Mellin moments vanish at $\pm 1/2$:
-   \[
+   $$
    \mathcal{M}[f](-1/2) = 0 \quad \text{and} \quad \mathcal{M}[f](1/2) = 0,
-   \]
+   $$
    the centered physical residue weight satisfies $F(0) = 0$ and $F(1) = 0$. Consequently, the polar residues vanish identically:
-   \[
+   $$
    \oint_{C(c, R)} F(w) \frac{\Lambda'(w)}{\Lambda(w)} \, dw = \oint_{C(c, R)} F(w) \frac{\xi'(w)}{\xi(w)} \, dw.
-   \]
+   $$
 4. **Finite Euler-Product Block Invariance:**  
    The exact contour identity holds unconditionally for all finite prime truncations and arbitrary Euler-product blocks $M$.
 
@@ -40,27 +40,27 @@ This contribution proves:
 
 ### 2.1. Logarithmic Derivative Relation
 Since $\xi(s) = \frac{s(s-1)}{2} \Lambda(s)$, applying the logarithmic derivative product rule gives:
-\[
+$$
 \frac{\xi'(s)}{\xi(s)} = \frac{1}{s} + \frac{1}{s - 1} + \frac{\Lambda'(s)}{\Lambda(s)}.
-\]
+$$
 Rearranging:
-\[
+$$
 \frac{\Lambda'(s)}{\Lambda(s)} = \frac{\xi'(s)}{\xi(s)} - \frac{1}{s} - \frac{1}{s - 1}.
-\]
+$$
 
 ### 2.2. Contour Integration and Cauchy Residue Theorem
 Multiplying by $F(w)$ and integrating over $C(c, R)$:
-\[
+$$
 \oint_{C(c, R)} F(w) \frac{\Lambda'(w)}{\Lambda(w)} \, dw = \oint_{C(c, R)} F(w) \frac{\xi'(w)}{\xi(w)} \, dw - \oint_{C(c, R)} \frac{F(w)}{w} \, dw - \oint_{C(c, R)} \frac{F(w)}{w - 1} \, dw.
-\]
+$$
 By Cauchy's integral formula for entire functions $F(w)$:
-\[
+$$
 \oint_{C(c, R)} \frac{F(w)}{w} \, dw = 2\pi i F(0), \quad \oint_{C(c, R)} \frac{F(w)}{w - 1} \, dw = 2\pi i F(1).
-\]
+$$
 Substituting yields:
-\[
+$$
 \oint_{C(c, R)} F(w) \frac{\Lambda'(w)}{\Lambda(w)} \, dw = \oint_{C(c, R)} F(w) \frac{\xi'(w)}{\xi(w)} \, dw - 2\pi i (F(0) + F(1)).
-\]
+$$
 
 ### 2.3. Pole Cancellation via Mellin Moment Vanishing
 The physical weight $F(w) = \text{centeredWeight}(f, g)(w)$ is constructed from the Mellin transforms $\mathcal{M}[f](w - 1/2)$ and $\mathcal{M}[g](w - 1/2)$.
@@ -121,6 +121,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Cauchy's integral formula and contour integration of completed Dirichlet series (Riemann 1859, Weil 1952, Bombieri 2000). A machine-verified formal proof in Lean 4 proving exact pole cancellation $F(0) + F(1) = 0$ and the equivalence of circle integrals of $\Lambda'/\Lambda$ and $\xi'/\xi$ is new.
+- **Prior Literature:** Cauchy's integral formula and contour integration of completed Dirichlet series (Riemann 1859, Weil 1952, Bombieri 2000). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes a rigorous bridge between contour integration of the completed zeta function and the entire spectral function $\xi$ without pole singularities.
 - **Target Venues:** *Journal of Functional Analysis* or *Complex Analysis and Operator Theory*.

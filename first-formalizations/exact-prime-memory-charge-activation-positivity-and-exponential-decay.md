@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that arithmetic primes activate the memory kernel beyond its sign-change boundary, establishing unconditional positivity and exponential decay $O(e^{-u})$ for the memory operator.
+This entry documents a machine-verified implementation in Lean 4 proving that arithmetic primes activate the memory kernel beyond its sign-change boundary, establishing unconditional positivity and exponential decay $O(e^{-u})$ for the memory operator.

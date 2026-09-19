@@ -62,6 +62,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving explicit non-asymptotic hyperbolic bounds and logarithmic cutoff estimates $\int_d^1 K(s) ds \le -\frac{3}{2}\log d$ for the physical continuous arrival kernel without uncertified asymptotic limits.
+This entry documents a machine-verified implementation in Lean 4 proving explicit non-asymptotic hyperbolic bounds and logarithmic cutoff estimates $\int_d^1 K(s) ds \le -\frac{3}{2}\log d$ for the physical continuous arrival kernel without uncertified asymptotic limits.

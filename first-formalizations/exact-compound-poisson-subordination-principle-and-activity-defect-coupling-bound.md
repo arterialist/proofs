@@ -65,6 +65,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the general compound Poisson subordination principle $e^{-u(\|\nu\| - \|\mu\|)} \mathcal{P}_u^{(\mu)} \le \mathcal{P}_u^{(\nu)}$ and establishing the sharp event error bound $u (\|\nu\| - \|\mu\|)$ without extraneous constants.
+This entry documents a machine-verified implementation in Lean 4 proving the general compound Poisson subordination principle $e^{-u(\|\nu\| - \|\mu\|)} \mathcal{P}_u^{(\mu)} \le \mathcal{P}_u^{(\nu)}$ and establishing the sharp event error bound $u (\|\nu\| - \|\mu\|)$ without extraneous constants.

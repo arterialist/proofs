@@ -83,6 +83,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving exact zero-charge singularity cancellation in pair-interaction kernels and the discrete terminal compensation of Chebyshev prime-power fluctuations.
+This entry documents a machine-verified implementation in Lean 4 proving exact zero-charge singularity cancellation in pair-interaction kernels and the discrete terminal compensation of Chebyshev prime-power fluctuations.

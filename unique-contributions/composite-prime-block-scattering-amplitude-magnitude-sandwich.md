@@ -1,4 +1,4 @@
-# Unique Contribution 87: Composite Prime-Block Scattering Amplitude Magnitude Sandwich
+# Contribution 87: Composite Prime-Block Scattering Amplitude Magnitude Sandwich
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualPrimeBlockMagnitude.lean`](../../formalization/BuildingBlocks/ActualPrimeBlockMagnitude.lean), [`formalization/BuildingBlocks/ActualScatteringMomentMagnitude.lean`](../../formalization/BuildingBlocks/ActualScatteringMomentMagnitude.lean)  
@@ -14,14 +14,14 @@ This contribution proves:
 
 1. **Two-Sided Geometric Sandwich on Composite Amplitudes:**  
    For any finite list of primes $ps = [p_1, \dots, p_k]$, any depth assignment $\text{depth} : \mathbb{N} \to \mathbb{N}$ with $\text{depth}(p) \ge 1$, and any integer $h \ge 1$:
-   \[
+   $$
    \left(\frac{1}{8}\right)^{|ps|} \prod_{p \in ps} p^{h \cdot \text{depth}(p)} \le \mathcal{A}(ps, \text{depth}, h) \le 2^{|ps|} \prod_{p \in ps} p^{h \cdot \text{depth}(p)}.
-   \]
+   $$
 2. **Logarithmic Energy Equivalence:**  
    Writing the prime power product as an exponential of the weighted logarithmic divisor energy $\mathcal{E}(ps) = \sum_{p \in ps} h \cdot \text{depth}(p) \log p$, the scattering amplitude satisfies:
-   \[
+   $$
    e^{-|ps|\log 8} e^{\mathcal{E}(ps)} \le \mathcal{A}(ps, \text{depth}, h) \le e^{|ps|\log 2} e^{\mathcal{E}(ps)}.
-   \]
+   $$
 3. **Exact Asymptotic Stability:**  
    The growth of the scattering amplitude is asymptotically governed by the arithmetic exponent $\sum_p h \cdot \text{depth}(p) \log p$, with the geometric prefactors $(1/8)^{|ps|}$ and $2^{|ps|}$ depending only on the prime cardinality $|ps|$ and completely independent of the size of the primes themselves.
 
@@ -31,18 +31,18 @@ This contribution proves:
 
 ### 2.1. Single-Prime Multiplier Magnitude
 For an individual prime $p$, the local magnitude $W(p) = -M_+(p) M_-(p)$ satisfies the base inequality:
-\[
+$$
 \frac{1}{8} p^{h \cdot \text{depth}(p)} \le W(p) \le 2 p^{h \cdot \text{depth}(p)}.
-\]
+$$
 
 ### 2.2. Inductive Multiplicativity
 By definition, $\mathcal{A}(ps, \text{depth}, h) = \prod_{p \in ps} W(p)$.
 Proceeding by list induction:
 - For $ps = []$, the empty product is 1, matching $(1/8)^0 \cdot 1 = 1 \le 1 \le 2^0 \cdot 1 = 1$.
 - For $p :: qs$, multiplying the base step for $p$ by the inductive hypothesis for $qs$ preserves non-negativity:
-  \[
+  $$
   \frac{1}{8} p^{h \cdot \text{depth}(p)} \cdot \left(\frac{1}{8}\right)^{|qs|} \prod_{q \in qs} q^{h \cdot \text{depth}(q)} \le W(p) \cdot \mathcal{A}(qs) \le 2 p^{h \cdot \text{depth}(p)} \cdot 2^{|qs|} \prod_{q \in qs} q^{h \cdot \text{depth}(q)}.
-  \]
+  $$
   Combining the prefactors $(1/8) \cdot (1/8)^{|qs|} = (1/8)^{|ps|}$ and $2 \cdot 2^{|qs|} = 2^{|ps|}$ completes the induction.
 
 ---

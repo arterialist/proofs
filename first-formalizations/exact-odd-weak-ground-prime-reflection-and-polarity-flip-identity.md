@@ -17,14 +17,14 @@ This formalization proves the exact finite prime reflection identity for odd sca
    Formal proof of `pair_below` ($\ell < u$), `pair_above` ($u < \ell$), and `pair_reflect`.
 3. **Polarity Flip Identity:**
    Formal proof of `pair_with_flip`:
-   \[
+   $$
    \text{oddScale}(f, t, u + \ell) + \text{oddScale}(f, t, u - \ell) = f(t e^{u+\ell}) - f(t e^{\ell - u}) + \mathbf{1}_{\ell < u}(f(t e^{u-\ell}) + f(t e^{\ell-u})).
-   \]
+   $$
 4. **Finite Von Mangoldt Sum Identities:**
    Formal proof of `finite_reflected_row`, `exp_plus_log`, `exp_log_sub`, `finite_vonMangoldt_reflected_row`, and `finite_vonMangoldt_scaled_row`:
-   \[
+   $$
    \sum_{n \in s} \frac{\Lambda(n)}{\sqrt{n}} \text{pair}_n = \sum_{n \in s} \frac{\Lambda(n)}{\sqrt{n}} (f(tn e^u) - f(tn e^{-u})) + \sum_{n < e^u} \frac{\Lambda(n)}{\sqrt{n}} (f(t e^{u-\log n}) + f(t e^{\log n - u})).
-   \]
+   $$
 
 ---
 
@@ -86,6 +86,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 decomposing finite von Mangoldt-weighted odd scale reflections into symmetric dilation differences and explicit low-prime polarity corrections across the threshold boundary $\log n = u$.
+This entry documents a machine-verified proof in Lean 4 decomposing finite von Mangoldt-weighted odd scale reflections into symmetric dilation differences and explicit low-prime polarity corrections across the threshold boundary $\log n = u$.

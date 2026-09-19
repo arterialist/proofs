@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact dyadic lacunary reduction of odd Goldbach sums and proving the uniform $2(\log N)^2$ bound for truncated prime coefficients.
+This entry documents a machine-verified proof in Lean 4 establishing the exact dyadic lacunary reduction of odd Goldbach sums and proving the uniform $2(\log N)^2$ bound for truncated prime coefficients.

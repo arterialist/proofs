@@ -1,4 +1,4 @@
-# Unique Contribution 54: Pairwise Metric Variance Identity and Sharp Separated Window Lower Bounds
+# Contribution 54: Pairwise Metric Variance Identity and Sharp Separated Window Lower Bounds
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CarryWindowVariance.lean`](../../formalization/BuildingBlocks/CarryWindowVariance.lean), [`first-formalizations/pairwise-metric-variance-and-carry-window-bounds.md`](../../first-formalizations/pairwise-metric-variance-and-carry-window-bounds.md)  
@@ -14,20 +14,20 @@ This contribution establishes:
 
 1. **Universal Double-Sum Pairwise Variance Identity:**  
    For any sequence $f : \mathbb{N} \to \mathbb{R}$ on an interval of length $n$:
-   \[
+   $$
    \sum_{i=0}^{n-1} \sum_{j=0}^{n-1} (f(i) - f(j))^2 = 2n \sum_{i=0}^{n-1} (f(i))^2 - 2 \left( \sum_{i=0}^{n-1} f(i) \right)^2.
-   \]
+   $$
 2. **Sharp Center-Independent Lower Bound:**  
    If $f$ satisfies the step-separation condition $|f(j) - f(i)| \ge L |j - i|$ for all $i, j \in \{0, \dots, n-1\}$, then for **every** center $c \in \mathbb{R}$:
-   \[
+   $$
    \sum_{i=0}^{n-1} (f(i) - c)^2 \ge \frac{L^2 n(n^2 - 1)}{12}.
-   \]
+   $$
    This bound is strictly sharp: equality is achieved when $f(i) = Li$ and $c = \frac{L(n-1)}{2}$.
 3. **Exact Integer Quadratic Form Evaluation:**  
    The proof hinges on the exact evaluation of the discrete double index sum:
-   \[
+   $$
    \sum_{i=0}^{n-1} \sum_{j=0}^{n-1} (i - j)^2 = \frac{n^2 (n^2 - 1)}{6},
-   \]
+   $$
    derived via power sums of cast integer ranges.
 
 ---
@@ -36,33 +36,33 @@ This contribution establishes:
 
 ### 2.1. Pairwise Sum Identity
 Expanding $(f(i) - f(j))^2 = f(i)^2 - 2f(i)f(j) + f(j)^2$:
-\[
+$$
 \sum_{i, j < n} (f(i) - f(j))^2 = \sum_{j < n} \sum_{i < n} f(i)^2 - 2 \left(\sum_{i < n} f(i)\right) \left(\sum_{j < n} f(j)\right) + \sum_{i < n} \sum_{j < n} f(j)^2 = 2n \sum_{i < n} f(i)^2 - 2 \left(\sum_{i < n} f(i)\right)^2.
-\]
+$$
 Applying this identity to $g(i) = f(i) - c$ (where $g(i) - g(j) = f(i) - f(j)$):
-\[
+$$
 \sum_{i, j < n} (f(i) - f(j))^2 = 2n \sum_{i < n} (f(i) - c)^2 - 2 \left(\sum_{i < n} (f(i) - c)\right)^2 \le 2n \sum_{i < n} (f(i) - c)^2.
-\]
+$$
 
 ### 2.2. Index Quadratic Form
 Using standard power sum formulas:
-\[
+$$
 \sum_{i=0}^{n-1} i = \frac{n(n-1)}{2}, \quad \sum_{i=0}^{n-1} i^2 = \frac{n(n-1)(2n-1)}{6}.
-\]
+$$
 Then:
-\[
+$$
 \sum_{i, j < n} (i - j)^2 = 2n \frac{n(n-1)(2n-1)}{6} - 2 \left(\frac{n(n-1)}{2}\right)^2 = \frac{n^2(n-1)}{6} [2(2n-1) - 3(n-1)] = \frac{n^2(n-1)(n+1)}{6} = \frac{n^2(n^2 - 1)}{6}.
-\]
+$$
 
 ### 2.3. Separation Lower Bound
 If $(f(i) - f(j))^2 \ge L^2 (i - j)^2$, then:
-\[
+$$
 \sum_{i, j < n} (f(i) - f(j))^2 \ge L^2 \sum_{i, j < n} (i - j)^2 = \frac{L^2 n^2 (n^2 - 1)}{6}.
-\]
+$$
 Combining with the upper bound:
-\[
+$$
 2n \sum_{i < n} (f(i) - c)^2 \ge \frac{L^2 n^2 (n^2 - 1)}{6} \implies \sum_{i < n} (f(i) - c)^2 \ge \frac{L^2 n(n^2 - 1)}{12}.
-\]
+$$
 
 ---
 

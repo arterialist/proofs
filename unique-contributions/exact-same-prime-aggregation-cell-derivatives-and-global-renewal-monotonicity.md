@@ -1,4 +1,4 @@
-# Unique Contribution 181: Exact Same-Prime Aggregation Cell Derivatives and Global Renewal Monotonicity
+# Contribution 181: Exact Same-Prime Aggregation Cell Derivatives and Global Renewal Monotonicity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SamePrimeAggregationMonotone.lean`](../../formalization/BuildingBlocks/SamePrimeAggregationMonotone.lean), [`building-blocks/primes/same-prime-aggregation-monotone.md`](../../building-blocks/primes/same-prime-aggregation-monotone.md)  
@@ -14,30 +14,30 @@ This contribution proves:
 
 1. **Normalized Chronological Tent Equivalence:**  
    For all $x > 0$:
-   \[
+   $$
    H(x) = \frac{S(x)}{x^{3/2}}.
-   \]
+   $$
 2. **Exact Piecewise Cell Identification:**  
    For any integer $k \ge 1$ and every point $x \in [k, k+1]$:
-   \[
+   $$
    H(x) = \text{cell}_k(x) = \frac{x A(k) - B(k)}{x^{3/2}}.
-   \]
+   $$
    The boundary value at $x = k+1$ matches continuously because the newly arriving tent term at $k+1$ vanishes at its birth.
 3. **Exact Cell Derivative Formula:**  
    For every $x > 0$, the cell profile has the exact derivative:
-   \[
+   $$
    \frac{d}{dx} \text{cell}_k(x) = \frac{3 B(k) - x A(k)}{2 x^{5/2}}.
-   \]
+   $$
 4. **Intra-Cell Monotonicity:**  
    For every integer $k \ge 1$, because $3 B(k) - x A(k) \ge k > 0$ on $[k, k+1]$:
-   \[
+   $$
    \text{cell}_k \text{ is monotone non-decreasing on } [k, k+1].
-   \]
+   $$
 5. **Global Monotonicity of the Multiplicative and Logarithmic Profiles:**  
    The renewal profile $H(x)$ is monotone non-decreasing on the entire semi-infinite ray $[1, \infty)$ with $H(1) = 0$. Consequently, the external logarithmic age profile $h(v) = H(e^v)$ is monotone non-decreasing on $[0, \infty)$:
-   \[
+   $$
    0 \le u \le v \implies h(u) \le h(v).
-   \]
+   $$
 
 ---
 
@@ -47,12 +47,12 @@ This contribution proves:
 Let $\text{cell}_k(x) = \frac{u(x)}{w(x)}$ with $u(x) = x A(k) - B(k)$ and $w(x) = x^{3/2} = x \sqrt{x}$.
 The derivatives are $u'(x) = A(k)$ and $w'(x) = \sqrt{x} + \frac{x}{2\sqrt{x}} = \frac{3}{2} \sqrt{x}$.
 By the quotient rule:
-\[
+$$
 \frac{d}{dx} \text{cell}_k(x) = \frac{A(k) x^{3/2} - (x A(k) - B(k)) \frac{3}{2} x^{1/2}}{x^3}
-\]
-\[
+$$
+$$
 = \frac{x^{1/2} [ x A(k) - \frac{3}{2} x A(k) + \frac{3}{2} B(k) ]}{x^3} = \frac{\frac{3}{2} B(k) - \frac{1}{2} x A(k)}{x^{5/2}} = \frac{3 B(k) - x A(k)}{2 x^{5/2}}.
-\]
+$$
 
 ### 2.2. Cell Monotonicity via Kernel Positivity
 By the aggregation kernel theorem, $3 B(k) - x A(k) \ge k > 0$ for all $x \in [k, k+1]$.
@@ -97,6 +97,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Piecewise continuous renewal kernels and Volterra delay operators (Askey 1975, Gripenberg 1990). Exact derivation of the cell derivative $\frac{3 B(k) - x A(k)}{2 x^{5/2}}$ and machine-checked global monotonicity for arithmetic tent normalizations in Lean 4 is new.
+- **Prior Literature:** Piecewise continuous renewal kernels and Volterra delay operators (Askey 1975, Gripenberg 1990). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Proves the exact derivative formula and global monotonicity of $H$ and $h$ in Lean 4.
 - **Target Venues:** *Journal of Mathematical Analysis and Applications* or *Results in Mathematics*.

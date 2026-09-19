@@ -56,6 +56,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the sharp equivalence between continuous piecewise affine coarse primitive integrals and discrete nodal quadratic forms, providing the computational foundation for certified interval bounds on energy functionals.
+This entry documents a machine-verified implementation in Lean 4 establishing the sharp equivalence between continuous piecewise affine coarse primitive integrals and discrete nodal quadratic forms, providing the computational foundation for certified interval bounds on energy functionals.

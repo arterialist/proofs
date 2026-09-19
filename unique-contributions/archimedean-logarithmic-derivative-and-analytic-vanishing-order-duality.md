@@ -1,4 +1,4 @@
-# Unique Contribution 61: Archimedean Logarithmic Derivative and Analytic Vanishing Order Duality
+# Contribution 61: Archimedean Logarithmic Derivative and Analytic Vanishing Order Duality
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualArchimedeanFactor.lean`](../../formalization/BuildingBlocks/ActualArchimedeanFactor.lean)  
@@ -14,32 +14,32 @@ This contribution proves:
 
 1. **Exact Archimedean Logarithmic Derivative and Spectral Multiplier:**  
    On the half-plane $\operatorname{Re}(s) > 0$, the logarithmic derivative of $\Gamma_{\mathbb{R}}$ satisfies:
-   \[
+   $$
    \frac{\Gamma_{\mathbb{R}}'(s)}{\Gamma_{\mathbb{R}}(s)} = -\frac{\log \pi}{2} + \frac{1}{2} \frac{\Gamma'(s/2)}{\Gamma(s/2)}.
-   \]
+   $$
    On the critical line $s = 1/2 + i t$, the real spectral multiplier evaluates to:
-   \[
+   $$
    \operatorname{archMultiplier}(t) = 2 \operatorname{Re}\left( \frac{\Gamma_{\mathbb{R}}'}{\Gamma_{\mathbb{R}}}\left( \frac{1}{2} + i t \right) \right) = -\log \pi + \operatorname{Re}\left( \frac{\Gamma'}{\Gamma}\left( \frac{1}{4} + \frac{i t}{2} \right) \right).
-   \]
+   $$
 2. **Boundary Logarithmic Derivative of Completed Zeta and Xi:**  
    For $\operatorname{Re}(s) > 1$, the logarithmic derivative of $\xi(s) = \frac{1}{2} s(s-1) \Gamma_{\mathbb{R}}(s) \zeta(s)$ satisfies the exact prime-series identity:
-   \[
+   $$
    \frac{\xi'(s)}{\xi(s)} = \frac{1}{s} + \frac{1}{s - 1} - \frac{\log \pi}{2} + \frac{1}{2} \frac{\Gamma'(s/2)}{\Gamma(s/2)} - \sum_{n=1}^\infty \frac{\Lambda(n)}{n^s}.
-   \]
+   $$
 3. **General Analytic Logarithmic Residue Duality:**  
    For ANY complex analytic function $f$ with finite vanishing order $m \in \mathbb{N}$ at $s \in \mathbb{C}$:
-   \[
+   $$
    \lim_{\substack{w \to s \\ w \ne s}} (w - s) \frac{f'(w)}{f(w)} = m.
-   \]
+   $$
 4. **Exact Order Identification of Zeta and Xi:**  
    For every $s$ in the half-plane $\operatorname{Re}(s) > 0$ with $s \ne 1$, the vanishing order of $\xi$ equals the vanishing order of $\zeta$:
-   \[
+   $$
    \operatorname{ord}_s(\xi) = \operatorname{ord}_s(\zeta) < \infty,
-   \]
+   $$
    and consequently:
-   \[
+   $$
    \lim_{\substack{w \to s \\ w \ne s}} (w - s) \frac{\zeta'(w)}{\zeta(w)} = \operatorname{ord}_s(\xi) = \operatorname{ord}_s(\zeta).
-   \]
+   $$
 
 ---
 
@@ -48,24 +48,24 @@ This contribution proves:
 ### 2.1. Gamma Factor Derivative
 Since $\Gamma_{\mathbb{R}}(s) = \exp((-s/2)\log \pi) \Gamma(s/2)$:
 Applying the product rule for logarithmic derivatives $\operatorname{logDeriv}(fg) = \operatorname{logDeriv}(f) + \operatorname{logDeriv}(g)$:
-\[
+$$
 \operatorname{logDeriv}(\exp((-s/2)\log \pi)) = -\frac{\log \pi}{2}, \quad \operatorname{logDeriv}(\Gamma(s/2)) = \frac{1}{2} \frac{\Gamma'(s/2)}{\Gamma(s/2)}.
-\]
+$$
 Taking real parts at $s = 1/2 + it$ yields the critical line multiplier.
 
 ### 2.2. Analytic Logarithmic Residue
 Let $f$ be analytic at $s$ with order $m$. By Weierstrass factorization in a punctured disk:
-\[
+$$
 f(w) = (w - s)^m g(w), \quad \text{with } g(s) \ne 0.
-\]
+$$
 Then:
-\[
+$$
 \frac{f'(w)}{f(w)} = \frac{m}{w - s} + \frac{g'(w)}{g(w)}.
-\]
+$$
 Multiplying by $(w - s)$:
-\[
+$$
 (w - s) \frac{f'(w)}{f(w)} = m + (w - s) \frac{g'(w)}{g(w)}.
-\]
+$$
 Since $g$ is analytic and $g(s) \ne 0$, $g'/g$ is continuous at $s$, so $(w - s) g'(w)/g(w) \to 0$ as $w \to s$. Thus the limit is precisely $m$.
 
 ### 2.3. Zero Equivalence
@@ -112,6 +112,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** The logarithmic derivative formula for $\xi(s)$ is classical (Riemann 1859). The general theorem connecting filter limits of $(w-s) f'/f$ to `analyticOrderNatAt` in Mathlib and establishing exact order equality with `riemannZeta` has not previously been formalized in Lean 4.
+- **Prior Literature:** The logarithmic derivative formula for $\xi(s)$ is classical (Riemann 1859). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Connects Mathlib's topological filters and analytic order definitions directly to the completed zeta function and von Mangoldt series.
 - **Target Venues:** *Complex Analysis and Operator Theory* or *Archive for Mathematical Logic / Formalized Mathematics*.

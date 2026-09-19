@@ -9,7 +9,7 @@
 
 ## 1. Overview and Mathematical Scope
 
-This formalization provides the first machine-verified proof of the structural obstruction preventing sub-2/3 bounds for general square-root-bounded Lipschitz sources under Möbius floor inversion:
+This entry documents a machine-verified proof of the structural obstruction preventing sub-2/3 bounds for general square-root-bounded Lipschitz sources under Möbius floor inversion:
 
 1. **Reciprocal Square Tail Bound and Squarefree Density:**
    Formal proof of $\sum_{k=2}^m 1/k^2 \le 3/4$ (`reciprocal_square_sum_Icc_bound`) and the squarefree counting lower bound on finite intervals.
@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that coarse square-root bounds and Lipschitz regularity are structurally insufficient to imply sub-2/3 bounds on Möbius floor inverses, formally ruling out a broad class of attempted proofs of the Riemann Hypothesis that do not exploit the arithmetic structure of divisor forcing.
+This entry documents a machine-verified proof that coarse square-root bounds and Lipschitz regularity are structurally insufficient to imply sub-2/3 bounds on Möbius floor inverses, formally ruling out a broad class of attempted proofs of the Riemann Hypothesis that do not exploit the arithmetic structure of divisor forcing.

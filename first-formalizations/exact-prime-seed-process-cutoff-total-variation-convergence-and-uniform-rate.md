@@ -55,6 +55,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 deriving the quantitative total variation error rate $\frac{32 u}{\log P}$ for prime cutoff jump processes and proving uniform total variation convergence on compact time intervals.
+This entry documents a machine-verified implementation in Lean 4 deriving the quantitative total variation error rate $\frac{32 u}{\log P}$ for prime cutoff jump processes and proving uniform total variation convergence on compact time intervals.

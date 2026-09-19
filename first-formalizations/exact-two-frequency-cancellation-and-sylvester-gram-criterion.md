@@ -67,6 +67,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the two-frequency cancellation identity and completing-the-square Sylvester non-negativity for symmetric $2 \times 2$ matrices.
+This entry documents a machine-verified implementation in Lean 4 proving the two-frequency cancellation identity and completing-the-square Sylvester non-negativity for symmetric $2 \times 2$ matrices.

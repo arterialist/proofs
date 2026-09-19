@@ -1,4 +1,4 @@
-# Unique Contribution 130: Exact Zero-Circle Residue Formula and Prime-Block Perturbation Bounds
+# Contribution 130: Exact Zero-Circle Residue Formula and Prime-Block Perturbation Bounds
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualZeroCircleResidues.lean`](../../formalization/BuildingBlocks/ActualZeroCircleResidues.lean), [`building-blocks/complex-analysis/actual-zero-circle-residues.md`](../../building-blocks/complex-analysis/actual-zero-circle-residues.md)  
@@ -14,28 +14,28 @@ This contribution proves:
 
 1. **Exact Circle Integral Residue Formula for Analytic Functions:**  
    If $f$ is analytic at $s$ with finite zero order $m = \operatorname{ord}_s(f) < \infty$, then for sufficiently small circle radius $R \in (0, \varepsilon)$ and any entire weight $F$:
-   \[
+   $$
    \oint_{C(s, R)} F(w) \frac{f'(w)}{f(w)} dw = 2\pi i \cdot m \cdot F(s).
-   \]
+   $$
 2. **Exact Circle Integrals for $\xi$ and $\zeta$:**  
    For $s \in \mathbb{C}$ with $\operatorname{Re}(s) > 0, s \ne 1$:
-   \[
+   $$
    \oint_{C(s, R)} F(w) \frac{\xi'(w)}{\xi(w)} dw = \oint_{C(s, R)} F(w) \frac{\zeta'(w)}{\zeta(w)} dw = 2\pi i \cdot \operatorname{ord}_s(\xi) \cdot F(s).
-   \]
+   $$
 3. **Exact Physical Prime-Block Circle Residue:**  
    For test functions $f, g \in C_c(\mathbb{R})$, a finite set of primes, and scattering depth $M \ge 1$:
-   \[
+   $$
    \oint_{C(s, R)} W_{U_{\text{primes}} f, U_{\text{primes}} g}(w) \frac{\zeta'(w)}{\zeta(w)} dw = 2\pi i \cdot \operatorname{ord}_s(\xi) \cdot \left( \prod_{p \in \text{primes}} \mathcal{P}_p\left(s - \frac{1}{2}, M\right) \right) W_{f, g}(s).
-   \]
+   $$
 4. **Exact Signed Prime-Block Perturbation Difference:**  
-   \[
+   $$
    \oint_{C(s, R)} \left( W_{U_{\text{primes}} f, U_{\text{primes}} g}(w) - W_{f, g}(w) \right) \frac{\zeta'(w)}{\zeta(w)} dw = 2\pi i \cdot \operatorname{ord}_s(\xi) \cdot \left( \prod_{p \in \text{primes}} \mathcal{P}_p\left(s - \frac{1}{2}, M\right) - 1 \right) W_{f, g}(s).
-   \]
+   $$
 5. **Interior Strip Exponential Perturbation Bound:**  
    For zeros in the critical strip interior $|\operatorname{Re}(s - 1/2)| \le 1/2 - \delta$ with $\delta > 0$:
-   \[
+   $$
    \left\| \oint_{C(s, R)} (W_{\text{block}} - W) \frac{\zeta'}{\zeta} dw \right\| \le 2\pi \operatorname{ord}_s(\xi) |W_{f, g}(s)| \left( \exp\left( \sum_{p \in \text{primes}} (2 B_p + B_p^2) \right) - 1 \right),
-   \]
+   $$
    where $B_p = \frac{p^{-M\delta}}{1 - p^{-\delta}}$ decays exponentially with scattering depth $M$.
 
 ---
@@ -48,18 +48,18 @@ Then $\frac{f'(w)}{f(w)} = \frac{m}{w - s} + H(w)$ where $H(w) = \frac{g'(w)}{g(
 
 ### 2.2. Circle Integration
 For any entire function $F(w)$:
-\[
+$$
 \oint_{C(s, R)} F(w) \frac{f'(w)}{f(w)} dw = m \oint_{C(s, R)} \frac{F(w)}{w - s} dw + \oint_{C(s, R)} F(w) H(w) dw.
-\]
+$$
 By Cauchy's integral theorem, $\oint F H = 0$ since $F H$ is holomorphic inside the disk.
 By Cauchy's integral formula, $\oint \frac{F(w)}{w - s} dw = 2\pi i F(s)$.
 Thus the integral evaluates exactly to $2\pi i m F(s)$.
 
 ### 2.3. Prime-Block Centered Weight
 Under physical prime-block action, the centered test weight is entire and satisfies:
-\[
+$$
 W_{U_{\text{primes}} f, U_{\text{primes}} g}(s) = \left( \prod_{p \in \text{primes}} \mathcal{P}_p(s - 1/2, M) \right) W_{f, g}(s).
-\]
+$$
 Evaluating the contour integral yields the exact factorization.
 
 ### 2.4. Interior Comparison Bound

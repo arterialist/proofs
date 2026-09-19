@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the $N=13$ grouped Möbius floor-derivative obstruction and certifying the exact positive logarithmic surplus of factorial energy via multiprecision integer arithmetic.
+This entry documents a machine-verified proof in Lean 4 establishing the $N=13$ grouped Möbius floor-derivative obstruction and certifying the exact positive logarithmic surplus of factorial energy via multiprecision integer arithmetic.

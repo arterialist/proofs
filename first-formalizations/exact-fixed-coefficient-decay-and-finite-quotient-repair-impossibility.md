@@ -68,6 +68,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 demonstrating that the Mertens oscillation obstruction cannot be bypassed by any finite-rank modifications to the quotient array coefficients.
+This entry documents a machine-verified proof in Lean 4 demonstrating that the Mertens oscillation obstruction cannot be bypassed by any finite-rank modifications to the quotient array coefficients.

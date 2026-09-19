@@ -66,6 +66,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving an unconditional $O(1)$ bound on the signed harmonic first moment $\sum_{n=1}^N \frac{\psi(n)-n}{n(n+1)}$ with explicit constant $2+4\log 2$.
+This entry documents a machine-verified implementation in Lean 4 proving an unconditional $O(1)$ bound on the signed harmonic first moment $\sum_{n=1}^N \frac{\psi(n)-n}{n(n+1)}$ with explicit constant $2+4\log 2$.

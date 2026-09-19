@@ -1,4 +1,4 @@
-# Unique Contribution 262: Exact Conditional Score Disagreement Penalty and Bilinear Schur Residual
+# Contribution 262: Exact Conditional Score Disagreement Penalty and Bilinear Schur Residual
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ConditionalScoreQuadratic.lean`](../../formalization/BuildingBlocks/ConditionalScoreQuadratic.lean), [`building-blocks/quadratic/conditional-score-quadratic.md`](../../building-blocks/quadratic/conditional-score-quadratic.md)  
@@ -14,26 +14,26 @@ This contribution proves:
 
 1. **Exact Scalar Score Disagreement Penalty:**  
    For any parameters $e_c, e_p, b_c, b_p \in \mathbb{R}$ and non-zero curvatures $d_c, d_p, d_c + d_p \ne 0$:
-   \[
+   $$
    (e_c + e_p) - \frac{(b_c + b_p)^2}{d_c + d_p} = \left(e_c - \frac{b_c^2}{d_c}\right) + \left(e_p - \frac{b_p^2}{d_p}\right) + \frac{d_c d_p}{d_c + d_p} \left( \frac{b_c}{d_c} - \frac{b_p}{d_p} \right)^2.
-   \]
+   $$
 2. **Monotonicity of Joint Score Energy:**  
    Whenever the individual curvatures are strictly positive ($d_c > 0, d_p > 0$):
-   \[
+   $$
    \left(e_c - \frac{b_c^2}{d_c}\right) + \left(e_p - \frac{b_p^2}{d_p}\right) \le (e_c + e_p) - \frac{(b_c + b_p)^2}{d_c + d_p}.
-   \]
+   $$
    The joint constrained minimum is strictly larger than the sum of separate unconstrained minima unless the optimal scores match exactly: $b_c / d_c = b_p / d_p$.
 3. **Bilinear Schur Residual Form:**  
    For any symmetric bilinear form $B$ on a real vector space $V$ and non-null vector $\phi \in V$, the rank-one Schur complement:
-   \[
+   $$
    \text{scoreResidual}(B, \phi)(x, y) = B(x, y) - \frac{B(x, \phi) B(\phi, y)}{B(\phi, \phi)}
-   \]
+   $$
    is positive semidefinite whenever $B$ is positive semidefinite, and identically annihilates the test vector: $\text{scoreResidual}(B, \phi)(\phi, v) = 0$ for all $v \in V$.
 4. **Exact Bilinear Joint Form Penalty Identity:**  
    For any two symmetric bilinear forms $B_c, B_p$ with $B_c(\phi, \phi) \ne 0, B_p(\phi, \phi) \ne 0$ and $B_c(\phi, \phi) + B_p(\phi, \phi) \ne 0$:
-   \[
+   $$
    \text{scoreResidual}(B_c + B_p, \phi)(v, v) = \text{scoreResidual}(B_c, \phi)(v, v) + \text{scoreResidual}(B_p, \phi)(v, v) + \frac{B_c(\phi, \phi) B_p(\phi, \phi)}{B_c(\phi, \phi) + B_p(\phi, \phi)} \left( \frac{B_c(v, \phi)}{B_c(\phi, \phi)} - \frac{B_p(v, \phi)}{B_p(\phi, \phi)} \right)^2.
-   \]
+   $$
 5. **Degenerate Pairing Annihilation:**  
    If $B$ is positive semidefinite and $B(\phi, \phi) = 0$, then $B(v, \phi) = 0$ for all $v \in V$.
 
@@ -43,21 +43,21 @@ This contribution proves:
 
 ### 2.1. Scalar Disagreement Identity
 Consider the difference between the joint minimum and separate minima:
-\[
+$$
 \Delta = \left[ (e_c + e_p) - \frac{(b_c + b_p)^2}{d_c + d_p} \right] - \left[ \left(e_c - \frac{b_c^2}{d_c}\right) + \left(e_p - \frac{b_p^2}{d_p}\right) \right] = \frac{b_c^2}{d_c} + \frac{b_p^2}{d_p} - \frac{(b_c + b_p)^2}{d_c + d_p}.
-\]
+$$
 Putting over the common denominator $d_c d_p (d_c + d_p)$:
-\[
+$$
 \frac{b_c^2 d_p (d_c + d_p) + b_p^2 d_c (d_c + d_p) - (b_c + b_p)^2 d_c d_p}{d_c d_p (d_c + d_p)}.
-\]
+$$
 Expanding the numerator:
-\[
+$$
 b_c^2 d_c d_p + b_c^2 d_p^2 + b_p^2 d_c^2 + b_p^2 d_c d_p - (b_c^2 d_c d_p + 2 b_c b_p d_c d_p + b_p^2 d_c d_p) = b_c^2 d_p^2 - 2 b_c b_p d_c d_p + b_p^2 d_c^2 = (b_c d_p - b_p d_c)^2.
-\]
+$$
 Dividing by $d_c d_p (d_c + d_p)$:
-\[
+$$
 \frac{(b_c d_p - b_p d_c)^2}{d_c d_p (d_c + d_p)} = \frac{d_c d_p}{d_c + d_p} \left( \frac{b_c}{d_c} - \frac{b_p}{d_p} \right)^2.
-\]
+$$
 
 ### 2.2. Bilinear Form Extension
 For $v \in V$, the quadratic displacement along $\phi$ is $B(v - s\phi, v - s\phi) = B(v, v) - 2 s B(v, \phi) + s^2 B(\phi, \phi)$.
@@ -107,6 +107,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Schur complements, Gauss-Markov estimation, and parallel sum of positive operators (Anderson-Duffin 1969, Horn-Johnson 2012). A machine-verified algebraic proof of the exact score disagreement penalty and the additive Schur complement decomposition in Lean 4 is new.
+- **Prior Literature:** Schur complements, Gauss-Markov estimation, and parallel sum of positive operators (Anderson-Duffin 1969, Horn-Johnson 2012). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Quantifies the exact energetic cost of forcing disparate sectors (e.g., continuous background vs arithmetic primes) into a single score parameter.
 - **Target Venues:** *Linear Algebra and its Applications* or *SIAM Journal on Matrix Analysis and Applications*.

@@ -17,9 +17,9 @@ This formalization establishes the unconditional Lebesgue integrability of prime
    Formal proofs of `coarse_dyadic_Ioc_union` ($\bigcup_k (2^k, 2^{k+1}] = (1, \infty)$) and `coarseMellinBlock_hasSum_integral` ($\sum_k \text{coarseMellinBlock}(k, s) = \int_1^\infty \Delta(x) x^{-(s+1)} dx$).
 3. **Grand Logarithmic Derivative Identity:**
    Formal proof of `coarseMellinSum_eq_logDerivative`:
-   \[
+   $$
    s \cdot \text{coarseMellinSum}(s) = -\frac{\zeta'(s)}{\zeta(s)} - \frac{s}{s - 1} \quad \text{for all } \text{Re}(s) > 1.
-   \]
+   $$
 
 ---
 
@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 connecting dyadic block partitions of the Chebyshev prime counting error to Mathlib's native Riemann zeta function and its derivative, rigorously proving $s \cdot \text{coarseMellinSum}(s) = -\frac{\zeta'(s)}{\zeta(s)} - \frac{s}{s - 1}$.
+This entry documents a machine-verified implementation in Lean 4 connecting dyadic block partitions of the Chebyshev prime counting error to Mathlib's native Riemann zeta function and its derivative, rigorously proving $s \cdot \text{coarseMellinSum}(s) = -\frac{\zeta'(s)}{\zeta(s)} - \frac{s}{s - 1}$.

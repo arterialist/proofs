@@ -1,4 +1,4 @@
-# Unique Contribution 142: Exact Same-Prime and Distinct-Prime Convolution Decomposition
+# Contribution 142: Exact Same-Prime and Distinct-Prime Convolution Decomposition
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SelbergDistinctPrimes.lean`](../../formalization/BuildingBlocks/SelbergDistinctPrimes.lean), [`building-blocks/selberg/selberg-distinct-primes.md`](../../building-blocks/selberg/selberg-distinct-primes.md)  
@@ -14,24 +14,24 @@ This contribution proves:
 
 1. **Exact Orthogonal Convolution Splitting:**  
    For every integer $n \ge 1$, the Dirichlet auto-convolution decomposes uniquely as:
-   \[
+   $$
    (\Lambda * \Lambda)(n) = W_{\text{same}}(n) + W_{\text{distinct}}(n).
-   \]
+   $$
 2. **Proper Power Support of the Same-Prime Weight:**  
    The same-prime weight is defined by:
-   \[
+   $$
    W_{\text{same}}(n) = \Lambda(n) (\log n - \Lambda(n)).
-   \]
+   $$
    It is non-negative ($W_{\text{same}}(n) \ge 0$), evaluates on prime powers to:
-   \[
+   $$
    W_{\text{same}}(p^k) = (k - 1) \log^2 p \quad \text{for } k \ge 1,
-   \]
+   $$
    and vanishes identically ($W_{\text{same}}(n) = 0$) unless $n = p^k$ is a proper prime power with $k \ge 2$. In particular, $W_{\text{same}}(p) = 0$ on all primes, and $W_{\text{same}}(n) = 0$ on all integers with two or more distinct prime factors.
 3. **Coprime Divisor Representation of the Distinct-Prime Weight:**  
    The distinct-prime weight $W_{\text{distinct}}(n) = (\Lambda * \Lambda)(n) - W_{\text{same}}(n)$ satisfies the exact coprime sum identity:
-   \[
+   $$
    W_{\text{distinct}}(n) = \sum_{d \mid n, \, \gcd(d, n/d) = 1} \Lambda(d) \Lambda\left(\frac{n}{d}\right) \ge 0.
-   \]
+   $$
    It vanishes identically on all prime powers: $W_{\text{distinct}}(p^k) = 0$.
 
 ---
@@ -42,27 +42,27 @@ This contribution proves:
 Let $n = p^k$ with $p$ prime and $k \ge 1$.
 The divisors of $p^k$ are $p^j$ for $0 \le j \le k$.
 Then:
-\[
+$$
 (\Lambda * \Lambda)(p^k) = \sum_{j=0}^k \Lambda(p^j) \Lambda(p^{k-j}).
-\]
+$$
 For $j = 0$, $\Lambda(1) = 0$. For $j = k$, $\Lambda(1) = 0$.
 For $1 \le j \le k - 1$, $\Lambda(p^j) = \log p$ and $\Lambda(p^{k-j}) = \log p$.
 There are exactly $k - 1$ such indices.
 Thus:
-\[
+$$
 (\Lambda * \Lambda)(p^k) = (k - 1) \log^2 p.
-\]
+$$
 
 ### 2.2. Same-Prime Weight Evaluation
 By definition, $W_{\text{same}}(n) = \Lambda(n) (\log n - \Lambda(n))$.
 If $n = p^k$:
-\[
+$$
 \Lambda(p^k) = \log p, \quad \log(p^k) = k \log p.
-\]
+$$
 Thus:
-\[
+$$
 W_{\text{same}}(p^k) = \log p (k \log p - \log p) = (k - 1) \log^2 p.
-\]
+$$
 If $k = 1$, $W_{\text{same}}(p) = 0$. If $n$ is not a prime power, $\Lambda(n) = 0$, so $W_{\text{same}}(n) = 0$.
 Hence $W_{\text{same}}(n) = 0$ unless $n = p^k$ with $k \ge 2$.
 

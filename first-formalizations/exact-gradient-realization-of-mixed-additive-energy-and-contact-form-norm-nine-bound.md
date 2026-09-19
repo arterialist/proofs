@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the $L^2$ gradient measure isometry of mixed additive energy and proving the norm-9 continuity bound for the contact bilinear operator form.
+This entry documents a machine-verified proof in Lean 4 establishing the $L^2$ gradient measure isometry of mixed additive energy and proving the norm-9 continuity bound for the contact bilinear operator form.

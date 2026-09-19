@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 proving uniform $O(1)$ upper bounds on paired arithmetic scattering multipliers throughout the critical strip, independent of both prime size and history depth.
+This entry documents a machine-verified proof in Lean 4 proving uniform $O(1)$ upper bounds on paired arithmetic scattering multipliers throughout the critical strip, independent of both prime size and history depth.

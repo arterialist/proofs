@@ -1,7 +1,7 @@
 # First Formalization 373: Upper Half-Plane Reduction of the Riemann Hypothesis and Off-Line Zero Inversion
 
 ## 1. Classification and Attribution
-- **Type**: First Formalization (The mathematical principles are classical—due to Riemann 1859, Hadamard, and Titchmarsh—but their mechanized formulation and integration with the unconditional real axis discharge in Lean 4 are nowhere to be found in Mathlib or the wider formal mathematics literature).
+- **Type**: Lean formalization of classical principles due to Riemann, Hadamard, and Titchmarsh. Priority for this exact mechanized combination has not been established by a reproducible literature search.
 - **Module**: `BuildingBlocks.RiemannZetaUpperHalfPlaneReduction` (Module 286)
 - **Dependencies**: Standard foundational axioms: `[propext, Classical.choice, Quot.sound]`.
 - **Zero Sorries**: 0 sorries, completely machine-checked.

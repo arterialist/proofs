@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing that the spectral diagonal $\tau(s)$ coincides identically with the sum of all filtered autoconvolutions of individual prime-power blocks, with exact proper-power multiplicities derived combinatorially without approximation.
+This entry documents a machine-verified implementation in Lean 4 establishing that the spectral diagonal $\tau(s)$ coincides identically with the sum of all filtered autoconvolutions of individual prime-power blocks, with exact proper-power multiplicities derived combinatorially without approximation.

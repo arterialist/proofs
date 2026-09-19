@@ -10,7 +10,7 @@
 
 ## 1. Description & Formal Significance
 
-This module provides the first complete, machine-verified proof of the asymptotic exclusion between chirped arithmetic Weil form positivity and spectral off-line zero existence. Specifically, it proves that for dilated chirped packets with critical span $R = 2 \log T - B$:
+This module machine-checks an abstract asymptotic exclusion from the stated scalar lower- and upper-bound hypotheses. Specifically, it proves that for dilated chirped packets with critical span $R = 2 \log T - B$:
 
 1. Any off-line zero displacement $d = \beta - 1/2 > 0$ generates power growth $T^{2d}$ with exponent $2d > 0$.
 2. The natural logarithm is universally bounded by $(2/\alpha) T^{\alpha/2}$ for any positive power $\alpha > 0$ and all $T > 0$.

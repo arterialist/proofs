@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing explicit logarithmic cutoff tuning and two-block Young parameter estimation for Kato relative form-smallness in perturbed quadratic forms.
+This entry documents a machine-verified implementation in Lean 4 establishing explicit logarithmic cutoff tuning and two-block Young parameter estimation for Kato relative form-smallness in perturbed quadratic forms.

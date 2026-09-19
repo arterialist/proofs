@@ -37,4 +37,4 @@ In this module, the open condition `CompletedZetaEnergyDominant` is completely d
   - `propext`
   - `Classical.choice`
   - `Quot.sound`
-- **Prior Literature**: While the change of variables $x \mapsto 1/x$ for $\xi(s)$ goes back to Riemann (1859), this provides the first formal machine proof in Lean 4 verifying the Bochner integral change of variables, establishing the numerical dominance of poles over the entire component, and deriving unconditional real-axis zero freedom for $\zeta(s)$.
+- **Prior literature and scope**: The change of variables goes back to Riemann. This module machine-checks the stated real-axis results, but the audit did not establish that it is the first Lean proof. Its RH bridge theorems remain conditional on supplied universal system records.

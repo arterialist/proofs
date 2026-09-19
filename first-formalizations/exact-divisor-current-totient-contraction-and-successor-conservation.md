@@ -41,6 +41,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact invariant contraction of two-sided divisor currents $\sum J(n, d) = -2$ via Gauss totient summation.
+This entry documents a machine-verified implementation in Lean 4 proving the exact invariant contraction of two-sided divisor currents $\sum J(n, d) = -2$ via Gauss totient summation.

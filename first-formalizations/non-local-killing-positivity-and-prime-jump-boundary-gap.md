@@ -48,6 +48,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that non-local boundary killing for prime jump processes eliminates constant zero-energy modes, establishing a strictly positive spectral floor without boundary trace constraints on the core trial state.
+This entry documents a machine-verified proof that non-local boundary killing for prime jump processes eliminates constant zero-energy modes, establishing a strictly positive spectral floor without boundary trace constraints on the core trial state.

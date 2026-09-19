@@ -1,6 +1,6 @@
-# Unique Contribution 349: Chirped Brun–Titchmarsh Geometric Row Bound
+# Contribution 349: Chirped Brun–Titchmarsh Geometric Row Bound
 
-## 1. Context and Mathematical Uniqueness
+## 1. Result and scope
 
 In the arithmetic analysis of the Weil quadratic form for dilated chirped wavepacket constellations, the prime cross-correlation terms between distinct packet centers $x_j, x_k$ separated by distance $d = |x_k - x_j| > w$ take the form:
 $$P_T(d) = \sum_{n \ge 2} \frac{\Lambda(n)}{\sqrt{n}} C_T(\log n - d)$$

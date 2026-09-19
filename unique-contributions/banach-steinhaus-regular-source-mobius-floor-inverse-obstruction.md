@@ -1,4 +1,4 @@
-# Unique Contribution 68: Banach–Steinhaus Regular Source Möbius Floor-Inverse Obstruction
+# Contribution 68: Banach–Steinhaus Regular Source Möbius Floor-Inverse Obstruction
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/RegularSource.lean`](../../formalization/BuildingBlocks/RegularSource.lean), [`building-blocks/prime-distribution/regular-source-mobius-obstruction.md`](../../building-blocks/prime-distribution/regular-source-mobius-obstruction.md)  
@@ -16,17 +16,17 @@ This contribution proves:
    Define the Banach space $\mathcal{X}_{\mathrm{reg}}$ of normalized bounded sequences $p = (a, b) \in \ell^\infty(\mathbb{N}) \times \ell^\infty(\mathbb{N})$ satisfying the difference relation $b(q) = a(q+1)\sqrt{q+1} - a(q)\sqrt{q}$, equipped with the supremum norm $\max(\|a\|_\infty, \|b\|_\infty)$.
 2. **Failure of Uniform Boundedness of the Möbius Functional:**  
    For any exponent $r < 2/3$, the evaluation functionals $\Lambda_{r, N}(p) = \frac{1}{N^r} \sum_{d \le N} \mu(d) f_p(\lfloor N/d \rfloor)$ fail to be uniformly bounded:
-   \[
+   $$
    \neg \exists C < \infty, \quad \forall N \in \mathbb{N}, \quad \|\Lambda_{r, N}\|_{\mathcal{X}_{\mathrm{reg}}^*} \le C.
-   \]
+   $$
 3. **Banach–Steinhaus Obstruction Theorem:**  
    By the uniform boundedness principle (Banach–Steinhaus theorem), there exists a **fixed, deterministic arithmetic trajectory** $f: \mathbb{N} \to \mathbb{R}$ satisfying:
    - **Square-root growth bound:** $|f(q)| \le \sqrt{q}$ for all $q \in \mathbb{N}$,
    - **Lipschitz unit increments:** $|f(q+1) - f(q)| \le 1$ for all $q \in \mathbb{N}$,
    YET its Möbius floor inverse satisfies:
-   \[
+   $$
    \neg \exists C > 0, N_0 \in \mathbb{N}, \quad \forall N \ge N_0, \quad \left| \sum_{d=1}^N \mu(d) f\left(\left\lfloor \frac{N}{d} \right\rfloor\right) \right| \le C N^r.
-   \]
+   $$
 4. **Methodological Consequence for RH:**  
    This theorem establishes an unconditional barrier: no purely analytic or growth-based argument (relying on $|f(q)| \le \sqrt{q}$ and $|\Delta f| \le 1$) can ever prove Möbius cancellation below exponent $2/3$. Any valid proof of RH or sub-$2/3$ cancellation must exploit the deep multiplicative structure of the prime counting function, rather than general regularity.
 
@@ -39,9 +39,9 @@ To disprove uniform boundedness, for each $N$ one constructs localized squarefre
 
 ### 2.2. Functional Divergence
 Because the test packets satisfy $\|p\| \le 1$, the operator norm of $\Lambda_{r, N}$ satisfies:
-\[
+$$
 \|\Lambda_{r, N}\| \ge c N^{2/3 - r}.
-\]
+$$
 Since $r < 2/3$, $2/3 - r > 0$, so $\|\Lambda_{r, N}\| \to \infty$ as $N \to \infty$.
 
 ### 2.3. Application of Banach–Steinhaus

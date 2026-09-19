@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the all-prime pure jump renewal process has infinite first moment at all positive operational times $u > 0$, rigorously formalizing the interplay between finite Lévy activity and Euler harmonic prime divergence.
+This entry documents a machine-verified implementation in Lean 4 proving that the all-prime pure jump renewal process has infinite first moment at all positive operational times $u > 0$, rigorously formalizing the interplay between finite Lévy activity and Euler harmonic prime divergence.

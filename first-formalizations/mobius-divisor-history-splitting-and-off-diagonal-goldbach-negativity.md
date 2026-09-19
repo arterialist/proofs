@@ -73,6 +73,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 decomposing binary Goldbach sums through Möbius divisor histories into an unconditionally non-negative diagonal block and an unconditionally non-positive off-diagonal block with explicit negative witnesses.
+This entry documents a machine-verified proof in Lean 4 decomposing binary Goldbach sums through Möbius divisor histories into an unconditionally non-negative diagonal block and an unconditionally non-positive off-diagonal block with explicit negative witnesses.

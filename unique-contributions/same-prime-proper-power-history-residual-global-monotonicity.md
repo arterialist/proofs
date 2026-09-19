@@ -1,4 +1,4 @@
-# Unique Contribution 74: Same-Prime Proper-Power History Residual Global Monotonicity
+# Contribution 74: Same-Prime Proper-Power History Residual Global Monotonicity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SamePrimeHistoryResidual.lean`](../../formalization/BuildingBlocks/SamePrimeHistoryResidual.lean)  
@@ -14,25 +14,25 @@ This contribution proves:
 
 1. **Exact Representation of Proper Power Residual:**  
    For any continuous age $v \in \mathbb{R}$, the active proper-power same-prime residual is:
-   \[
+   $$
    s(v) = \sum_{p \le e^v} \sum_{\substack{m \ge 2 \\ p^m \le e^v}} \frac{(m-1)(\log p)^2}{\sqrt{p^m}} h(v - m \log p),
-   \]
+   $$
    where $h(v)$ is the normalized chronological divisibility aggregation function ($h(v) = 0$ for $v \le 0$).
 2. **Unconditional Non-Negativity:**  
    For all ages $v \in \mathbb{R}$, the history residual is strictly non-negative:
-   \[
+   $$
    \forall v \in \mathbb{R}, \quad s(v) \ge 0.
-   \]
+   $$
 3. **Global Monotonicity Across Growing Truncation Cutoffs:**  
    Despite the discrete floor cutoff $\lfloor e^v \rfloor$ introducing jump discontinuities into the active index sets, the function $s: \mathbb{R} \to \mathbb{R}$ is **globally monotone non-decreasing on the entire real line**:
-   \[
+   $$
    \forall u, v \in \mathbb{R}, \quad u \le v \implies s(u) \le s(v).
-   \]
+   $$
 4. **Universal Delay Contraction Inequality:**  
    For any non-negative time delay $r \ge 0$ and any age $v \in \mathbb{R}$:
-   \[
+   $$
    s(v - r) \le s(v).
-   \]
+   $$
 5. **Significance for Causal Stability:**  
    This establishes that the cumulative feedback from higher prime powers is unconditionally stabilizing: delays cannot cause energy growth or amplify retroactive instabilities in the causal prime field.
 
@@ -47,9 +47,9 @@ Therefore, each individual delayed term $t_{p, m}(v) = w(p, m) h(v - m \log p)$ 
 
 ### 2.2. Monotonicity of Truncated Sums
 For fixed cutoff $N \in \mathbb{N}$, the rectangular sum:
-\[
+$$
 \Phi_N(v) = \sum_{p=2}^N \mathbf{1}_{\mathrm{Prime}}(p) \sum_{m=2}^N t_{p, m}(v)
-\]
+$$
 is a sum of monotone functions with non-negative coefficients, hence $\Phi_N(v)$ is monotone in $v$.
 Furthermore, for fixed $v$, increasing $N$ adds terms with $t_{p, m}(v) \ge 0$, so $\Phi_N(v) \le \Phi_{N+1}(v)$.
 
@@ -57,9 +57,9 @@ Furthermore, for fixed $v$, increasing $N$ adds terms with $t_{p, m}(v) \ge 0$, 
 For $u \le v$, let $M = \lfloor e^u \rfloor$ and $N = \lfloor e^v \rfloor$.
 Since $e^u \le e^v$, $M \le N$.
 Then:
-\[
+$$
 s(u) = \Phi_M(u) \le \Phi_M(v) \le \Phi_N(v) = s(v).
-\]
+$$
 The first inequality follows from the monotonicity of $\Phi_M(\cdot)$ in the age argument, and the second from the monotonicity of $\Phi_{(\cdot)}(v)$ in the cutoff index.
 
 ### 2.4. Delay Inequality

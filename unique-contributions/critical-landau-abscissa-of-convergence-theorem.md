@@ -1,4 +1,4 @@
-# Unique Contribution 91: Critical Landau Abscissa of Convergence Theorem
+# Contribution 91: Critical Landau Abscissa of Convergence Theorem
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualCriticalConvergence.lean`](../../formalization/BuildingBlocks/ActualCriticalConvergence.lean), [`formalization/BuildingBlocks/LandauSingularity.lean`](../../formalization/BuildingBlocks/LandauSingularity.lean)  
@@ -14,26 +14,26 @@ This contribution proves:
 
 1. **Upper Bound on Critical Abscissa Under Tail Sign Constraint:**  
    If the critical arithmetic potential $W(x)$ has non-positive real part eventually (i.e. $\operatorname{Re}(W(x)) \le 0$ for all $x > A \ge 1$), then the abscissa of convergence of the positive tail measure satisfies:
-   \[
+   $$
    \sigma_c = \inf \operatorname{convSet}(\mu_{\text{tail}}) \le \frac{1}{2}.
-   \]
+   $$
    In particular, the convergence abscissa **cannot** lie strictly in the right-half of the critical strip $(1/2, 1)$.
 2. **Universal Laplace Integrability on the Open Critical Half-Plane:**  
    Under the tail sign condition, the positive tail measure $\mu_{\text{tail}}$ is unconditionally Laplace integrable at every real $\sigma > 1/2$:
-   \[
+   $$
    \int_0^\infty e^{-\sigma t} d\mu_{\text{tail}}(t) < \infty, \quad \forall \sigma > \frac{1}{2}.
-   \]
+   $$
 3. **Analytic Continuation Across the Entire Right Half-Plane:**  
    The Laplace moment functional:
-   \[
+   $$
    s \mapsto \int_0^\infty e^{-s t} d\mu_{\text{tail}}(t)
-   \]
+   $$
    is analytic on the entire open right half-plane $\mathbb{H}_{1/2} = \{s \in \mathbb{C} : \operatorname{Re}(s) > 1/2\}$.
 4. **Exact Identification with the Filled Transform:**  
    The full analytic continuation $C(s)$ matches the filled transform $\operatorname{filledTransform}(s)$ for all $\operatorname{Re}(s) > 1$:
-   \[
+   $$
    C(s) = \operatorname{filledTransform}(s), \quad \forall \operatorname{Re}(s) > 1.
-   \]
+   $$
 5. **Architectural Significance:**  
    This establishes that any one-sided sign hypothesis on the critical potential immediately forces the domain of convergence of the Laplace transform to reach all the way to the critical line $\operatorname{Re}(s) = 1/2$, preventing any premature singularity from appearing anywhere in the open interval $(1/2, 1)$.
 
@@ -96,6 +96,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Landau's theorem is classical (Landau 1905, Widder 1941), and its application to Chebyshev-type prime error oscillations is known (Ingham 1932, Montgomery–Vaughan 2007). However, the machine-verified formalization connecting Landau's real-axis singularity theorem to the filled critical Mellin transform and proving that $\sigma_c \le 1/2$ had never been achieved in Lean.
+- **Prior literature:** Landau's theorem and its use in prime-error oscillation arguments are classical. This page gives a Lean proof for the stated filled critical Mellin transform; priority among formalizations is not established by this audit.
 - **Advancement:** Establishes the machine-verified critical abscissa bound $\sigma_c \le 1/2$ and full right-half-plane analytic continuation.
 - **Target Venues:** *Mathematische Annalen* or *Inventiones Mathematicae*.

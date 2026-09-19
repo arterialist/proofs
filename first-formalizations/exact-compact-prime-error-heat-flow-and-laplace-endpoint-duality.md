@@ -57,6 +57,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the integration-by-parts duality between compact discrete-continuous prime heat packets and the continuous Laplace transform of Chebyshev error fluctuations, along with universal zero net charge.
+This entry documents a machine-verified implementation in Lean 4 establishing the integration-by-parts duality between compact discrete-continuous prime heat packets and the continuous Laplace transform of Chebyshev error fluctuations, along with universal zero net charge.

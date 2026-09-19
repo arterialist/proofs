@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the general contraction recovery bound and establishing asymptotic difference transfer for subcritical index maps.
+This entry documents a machine-verified implementation in Lean 4 proving the general contraction recovery bound and establishing asymptotic difference transfer for subcritical index maps.

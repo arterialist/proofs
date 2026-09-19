@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving global integrability and an explicit non-asymptotic layer-cake logarithmic moment bound for the whole-frequency arithmetic source without artificial frequency cutoffs or unproven hypotheses.
+This entry documents a machine-verified implementation in Lean 4 proving global integrability and an explicit non-asymptotic layer-cake logarithmic moment bound for the whole-frequency arithmetic source without artificial frequency cutoffs or unproven hypotheses.

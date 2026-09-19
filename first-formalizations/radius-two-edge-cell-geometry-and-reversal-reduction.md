@@ -95,7 +95,7 @@ Both modules compile with zero warnings, zero errors, zero `sorry`, and strictly
 
 ## 3. Novelty and Literature Context
 
-Prior literature on spectral approximations to the Weil quadratic form and prime shift operators (Connes, Suzuki, Meyer) operated either with continuous Paley–Wiener spaces or abstract operator truncations without analyzing the discrete cell geometry of localized jump transitions. This is the first machine-checked formalization of:
+Prior literature on spectral approximations to the Weil quadratic form and prime shift operators (Connes, Suzuki, Meyer) operated either with continuous Paley–Wiener spaces or abstract operator truncations without analyzing the discrete cell geometry of localized jump transitions. This is a machine-checked formalization of:
 1. The exact stage emptiness $M=2, 3$ from interval lengths versus $\log 2$.
 2. The exact 16-cell partition at $(M, L)=(4, 0)$ with Bochner interval integral representation.
 3. The exact $16 \to 10$ and $16 \to 5$ dimensional reductions under reversal and reflection invariance.

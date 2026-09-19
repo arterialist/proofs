@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the discrete cellular Bessel inequality for boundary observer systems and proving the dimension duality of the canonical four-constraint space.
+This entry documents a machine-verified implementation in Lean 4 establishing the discrete cellular Bessel inequality for boundary observer systems and proving the dimension duality of the canonical four-constraint space.

@@ -19,9 +19,9 @@ This formalization establishes the exact operator defect evaluation for truncate
    Formal proof of `original_defect_growth`: $\text{defect}(v \mapsto e^{v/2}) = 0$ via dominated convergence.
 4. **Grand Arithmetic Density Defect Formula:**
    Formal proof of `original_density_defect`:
-   \[
+   $$
    \text{defect}(v \mapsto (e^v - 1)e^{-v/2}) = 1 - \frac{\pi}{4}.
-   \]
+   $$
 
 ---
 
@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the shift-commutation $\mathcal{T}(\text{cutoff}(R)) = \text{cutoff}(R-1)$, the exact annihilation of exponential growth $\text{defect}(e^{v/2}) = 0$, and the closed-form geometric evaluation $\text{defect}((e^v-1)e^{-v/2}) = 1 - \pi/4$.
+This entry documents a machine-verified implementation in Lean 4 proving the shift-commutation $\mathcal{T}(\text{cutoff}(R)) = \text{cutoff}(R-1)$, the exact annihilation of exponential growth $\text{defect}(e^{v/2}) = 0$, and the closed-form geometric evaluation $\text{defect}((e^v-1)e^{-v/2}) = 1 - \pi/4$.

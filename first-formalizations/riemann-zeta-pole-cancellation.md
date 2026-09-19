@@ -20,7 +20,7 @@ This module formalizes the real pole cancellation mechanism of the completed Rie
    $$\zeta(\sigma : \mathbb{C}) \ne 0 \quad (\sigma \in (0, 1))$$
    (`riemannZeta_ofReal_ne_zero_of_completed_bound`).
 6. Deduces the abstract real-axis zero-freeness property `RealAxisZeroFree` on $(1/2, 1)$ (`realAxisZeroFree_of_completed_bound`), and positive real axis non-vanishing on $(1/2, \infty) \setminus \{1\}$ (`real_axis_zeta_ne_zero_of_completed_bound`).
-7. Completes end-to-end deduction bridges deriving Mathlib's `RiemannHypothesis` from the three universal spectral systems under the bounded entire part condition:
+7. Provides deductions of Mathlib's `RiemannHypothesis` from one supplied universal system record together with the unproved uniform bound on the entire part:
    - `RiemannHypothesis_of_weil_and_completed_bound`
    - `RiemannHypothesis_of_refutation_and_completed_bound`
    - `RiemannHypothesis_of_fredholm_and_completed_bound`.
@@ -28,7 +28,7 @@ This module formalizes the real pole cancellation mechanism of the completed Rie
 ## Background and Mathematical Significance
 The completed Riemann zeta function $\Lambda(s)$ satisfies the decomposition $\Lambda(s) = \Lambda_0(s) - 1/s - 1/(1-s)$, where $\Lambda_0(s)$ is an entire function given by the Mellin transform of the modified Jacobi theta kernel. On the critical real segment $\sigma \in (0, 1)$, the singular term $1/\sigma + 1/(1-\sigma) = \frac{1}{\sigma(1-\sigma)}$ attains its minimum value of $4$ at $\sigma = 1/2$ and diverges to $+\infty$ at both endpoints $\sigma \to 0^+$ and $\sigma \to 1^-$.
 
-Because the theta tail integral defining $\Lambda_0(\sigma)$ is numerically very small ($\Lambda_0(1/2) \approx 0.023 \ll 4$), the singular pole term dominates across the entire open interval $(0, 1)$, ensuring $\operatorname{Re}(\Lambda(\sigma)) < 0$. This module provides the machine-checked framework linking this pole cancellation directly to zero refutation, Gamma non-vanishing descent, and the final deduction of the Riemann Hypothesis.
+The Lean file does not establish a uniform numerical estimate for $\Lambda_0$. Its nonvanishing conclusions assume `h_bound : (completedRiemannZeta₀ (σ : ℂ)).re < 4` pointwise, or the corresponding uniform hypothesis on $(1/2,1)$. The RH implications additionally require a supplied `UniversalWeilSystem`, `UniversalZeroRefutationSystem`, or `UniversalFredholmSystem`.
 
 ## Machine Verification
 - **Module:** `formalization/BuildingBlocks/RiemannZetaPoleCancellation.lean`

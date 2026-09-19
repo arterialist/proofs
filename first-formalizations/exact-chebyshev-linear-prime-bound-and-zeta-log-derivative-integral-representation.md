@@ -19,9 +19,9 @@ This formalization establishes Chebyshev's unconditional linear prime upper boun
    Formal proof of `psi_le_linear`: $\psi(N) \le (4\log 2) N$ for all $N \in \mathbb{N}$ using complete induction.
 4. **Zeta Log-Derivative Integral Representation:**
    Formal proof of `zeta_logDerivative_eq_prime_integral_unconditional`:
-   \[
+   $$
    -\frac{\zeta'(s)}{\zeta(s)} = s \int_1^\infty \psi(\lfloor x \rfloor) x^{-(s+1)} \, dx \quad \text{for all } \text{Re}(s) > 1.
-   \]
+   $$
 
 ---
 
@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving Chebyshev's unconditional linear bound $\psi(N) \le (4\log 2)N$ by complete induction and linking it directly to the integral representation of Mathlib's native `riemannZeta` logarithmic derivative, establishing a fully constructive arithmetic foundation for prime-counting analytic continuation.
+This entry documents a machine-verified implementation in Lean 4 proving Chebyshev's unconditional linear bound $\psi(N) \le (4\log 2)N$ by complete induction and linking it directly to the integral representation of Mathlib's native `riemannZeta` logarithmic derivative, establishing a fully constructive arithmetic foundation for prime-counting analytic continuation.

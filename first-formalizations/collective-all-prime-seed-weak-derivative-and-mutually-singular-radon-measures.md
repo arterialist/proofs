@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of a distributional derivative decomposition for an infinite superposition of prime renewal clocks into mutually singular Radon measures with infinite global mass and local finiteness in Lean 4.
+This entry documents a machine-verified proof of a distributional derivative decomposition for an infinite superposition of prime renewal clocks into mutually singular Radon measures with infinite global mass and local finiteness in Lean 4.

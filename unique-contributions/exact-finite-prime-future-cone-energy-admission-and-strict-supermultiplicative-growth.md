@@ -1,4 +1,4 @@
-# Unique Contribution 325: Exact Finite Prime Future-Cone Energy Admission and Strict Supermultiplicative Growth
+# Contribution 325: Exact Finite Prime Future-Cone Energy Admission and Strict Supermultiplicative Growth
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/FinitePrimeFutureConeEnergy.lean`](../../formalization/BuildingBlocks/FinitePrimeFutureConeEnergy.lean), [`building-blocks/prime-future-cone/finite-energy.md`](../../building-blocks/prime-future-cone/finite-energy.md)  
@@ -14,29 +14,29 @@ This contribution proves:
 
 1. **Exact Prime Adjunction Difference Identity:**  
    For any finite set of primes $S$ and fresh prime $p \notin S$:
-   \[
+   $$
    \text{cubePrefix}(S \cup \{p\}, m) = \text{cubePrefix}(S, m) - \text{cubePrefix}(S, \lfloor m/p \rfloor).
-   \]
+   $$
 2. **Exact Dilated Reverse Triangle Inequality:**  
    For any vectors $f$ and $g$ satisfying $\|g\|^2 = p \|f\|^2$:
-   \[
+   $$
    (\sqrt{p} - 1)^2 \|f\|^2 \le \|f - g\|^2.
-   \]
+   $$
 3. **Exact Dilated Energy Scaling:**  
    For any history $F$ on length $N$:
-   \[
+   $$
    \sum_{m=0}^{p N - 1} F(\lfloor m/p \rfloor)^2 = p \sum_{n=0}^{N-1} F(n)^2.
-   \]
+   $$
 4. **Exact Energy Lower Bound Under Prime Adjunction:**  
    For any nonempty finite set of primes $S$ and fresh prime $p \notin S$:
-   \[
+   $$
    (\sqrt{p} - 1)^2 \mathcal{E}(S) \le \mathcal{E}(S \cup \{p\}).
-   \]
+   $$
 5. **Strict Energy Growth for Primes $p \ge 5$:**  
    Since $p \ge 5 \implies \sqrt{p} \ge \sqrt{5} > 2 \implies (\sqrt{p} - 1)^2 > 1$, adjoining any prime $p \ge 5$ strictly increases the completed energy:
-   \[
+   $$
    \mathcal{E}(S) < \mathcal{E}(S \cup \{p\}) \qquad (\forall p \ge 5, p \notin S).
-   \]
+   $$
 
 ---
 
@@ -99,6 +99,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Beurling (1955) *A closure problem related to the Riemann Zeta-function*; Nyman (1950) *On the one-dimensional translation group*; Bagchi (2006) *On the Nyman-Beurling criterion for the Riemann hypothesis*. Machine verification of finite prime future cone energy growth and strict increase for $p \ge 5$ in Lean 4 is new.
+- **Prior Literature:** Beurling (1955) *A closure problem related to the Riemann Zeta-function*; Nyman (1950) *On the one-dimensional translation group*; Bagchi (2006) *On the Nyman-Beurling criterion for the Riemann hypothesis*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact supermultiplicative energy factor $(\sqrt{p}-1)^2$ under prime adjunction in finite squarefree cubes, guaranteeing strict divergence of prime-cone energies.
 - **Target Venues:** *Journal of Functional Analysis* or *Proceedings of the AMS*.

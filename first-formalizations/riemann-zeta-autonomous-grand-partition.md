@@ -1,4 +1,4 @@
-# First Formalization 386: Autonomous Grand Zero Partition, Low-Frequency Discharge, and Unified High-Frequency Spectral Deduction
+# Low-frequency partition and high-frequency system implications
 
 **Module Path**: `formalization/BuildingBlocks/RiemannZetaAutonomousGrandPartition.lean`  
 **Root Module**: `formalization/BuildingBlocks.lean`  
@@ -22,23 +22,25 @@
 
 ## 1. Mathematical and Formal Context
 
-In spectral and operator-theoretic approaches to the Riemann Hypothesis, grand partition architectures split the complex plane along the imaginary axis into a low-frequency slab $|\operatorname{Im}(s)| \le H$ and a high-frequency complement $|\operatorname{Im}(s)| > H$. Historically, Lean formalizations of such partition frameworks required an external numerical verification certificate (such as Platt & Trudgian's computational bound up to height $H = 3 \cdot 10^{12}$) bundled into the hypothesis `LowFrequencyZeroFree H`.
+In spectral and operator-theoretic approaches to the Riemann Hypothesis, partition architectures split the complex plane along the imaginary axis into a low-frequency slab $|\operatorname{Im}(s)| \le H$ and a high-frequency complement $|\operatorname{Im}(s)| > H$. Historically, Lean formalizations of such partition frameworks required an external numerical verification certificate (such as Platt & Trudgian's computational bound up to height $H = 3 \cdot 10^{12}$) bundled into the hypothesis `LowFrequencyZeroFree H`.
 
-With the completion of Module 298 (`RiemannZetaHighFrequencySynthesis.lean`), bounded-frequency non-vanishing is proven analytically with zero hypotheses for the unit slab $[-1, 1]$. Module 299 permanently discharges this low-frequency dependency, establishing:
+The module combines a low-frequency result with implications from high-frequency evaluation records. The record names contain "Autonomous", but each record has an `evaluator` field that must be supplied. No evaluator instance is constructed in this module.
+
+It establishes:
 1. **Unconditional Low-Frequency Certification**:
    `LowFrequencyZeroFree 1` holds unconditionally: every zero of $\zeta(s)$ with $s \ne 1$ and $|\operatorname{Im}(s)| \le 1$ satisfies $\operatorname{Re}(s) \le 1/2$. Consequently, for every $H \le 1$, `LowFrequencyZeroFree H` is proven unconditionally.
 2. **Autonomous Grand Partition Equivalence**:
-   Mathlib's official Millennium target `RiemannHypothesis` and the right-half zero-free condition `RightHalfZeroFree` are each proven logically equivalent to high-frequency zero-freeness at unit height `HighFrequencyZeroFree 1`.
-3. **Autonomous High-Frequency Operator Systems**:
-   Self-contained autonomous systems are formulated requiring evaluations *strictly* on the high-frequency domain $1 < |\operatorname{Im}(s)|$:
+   Mathlib's official RH predicate `RiemannHypothesis` and the right-half zero-free condition `RightHalfZeroFree` are each proven logically equivalent to high-frequency zero-freeness at unit height `HighFrequencyZeroFree 1`.
+3. **High-frequency operator record types**:
+   The following records require evaluations on the high-frequency domain $1 < |\operatorname{Im}(s)|$:
    - `AutonomousWeilTraceSystem`
    - `AutonomousOperatorTraceSystem`
    - `AutonomousFredholmDeterminantSystem`
    - `AutonomousCarlemanResolventSystem`
    - `AutonomousLinearBridgeSystem`
    - `AutonomousCanonicalEvaluationSystem`
-4. **Canonical Projections and Deductions**:
-   Each autonomous system automatically projects to its classical counterpart with $H = 1$ and the unconditional `lowFrequencyZeroFree_one` certificate, deducing Mathlib's official `RiemannHypothesis`.
+4. **Projections and conditional deductions**:
+   Given a value of one of those records, the module projects it to the earlier record type and deduces `RiemannHypothesis`. The implication is not a construction of the record.
 5. **Radical Zero Confinement and Support Emptiness**:
    Under each autonomous system, the right off-line spectral zero support is proven strictly empty: `RightOfflineSupport = ∅`, and `SpectralZeroSupport ⊆ CriticalLineSupport`.
 
@@ -90,7 +92,7 @@ def AutonomousCarlemanResolventSystem.toCarlemanResolventSystem {ι : Type*} [Fi
     (sys : AutonomousCarlemanResolventSystem ι) : CarlemanResolventSystem (ι := ι)
 ```
 
-### D. Universal End-to-End RH Deductions
+### D. RH implications from supplied system records
 ```lean
 theorem RiemannHypothesis_of_autonomous_weil_system (sys : AutonomousWeilTraceSystem) :
     RiemannHypothesis

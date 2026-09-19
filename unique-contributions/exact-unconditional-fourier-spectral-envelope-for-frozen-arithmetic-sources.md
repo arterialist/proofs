@@ -1,4 +1,4 @@
-# Unique Contribution 212: Exact Unconditional Fourier-Spectral Envelope for Frozen Arithmetic Sources
+# Contribution 212: Exact Unconditional Fourier-Spectral Envelope for Frozen Arithmetic Sources
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ChargeFrozenSpectralBound.lean`](../../formalization/BuildingBlocks/ChargeFrozenSpectralBound.lean), [`building-blocks/charge/charge-frozen-spectral-bound.md`](../../building-blocks/charge/charge-frozen-spectral-bound.md)  
@@ -14,33 +14,33 @@ This contribution proves:
 
 1. **Exact Critical Line Mellin Atom Modulus:**  
    For all base points $x > 0$, frequency $\xi \in \mathbb{R}$, and critical line parameter $w(\xi) = 1/2 + i\xi$:
-   \[
+   $$
    \|x^{-w(\xi)}\| = x^{-1/2}.
-   \]
+   $$
 2. **Weighted Chebyshev-Mertens Prime Power Sum Bound:**  
    For all integers $N \ge 2$:
-   \[
+   $$
    \left\| \sum_{n=2}^N \Lambda(n) n^{-w(\xi)} \right\| \le \sum_{n=2}^N \Lambda(n) n^{-1/2} \le (8 \log 2) N^{1/2}.
-   \]
+   $$
 3. **Continuous Main Density Integral Bound:**  
    For all $N \ge 1$:
-   \[
+   $$
    \left\| \int_1^N x^{-w(\xi)} \, dx \right\| \le 2(N^{1/2} - 1).
-   \]
+   $$
 4. **Critical Mellin Numerator Majorant:**  
    Combining the discrete prime atom and the continuous background:
-   \[
+   $$
    \left\| -1 + \sum_{n=2}^N \Lambda(n) n^{-w(\xi)} - \int_1^N x^{-w(\xi)} \, dx \right\| \le (8 \log 2 + 2) N^{1/2}.
-   \]
+   $$
 5. **Exact Denominator Modulus Identity:**  
-   \[
+   $$
    \|w(\xi)\|^2 = \frac{1}{4} + \xi^2.
-   \]
+   $$
 6. **Universal Unconditional Fourier-Spectral Envelope:**  
    For *every* real frequency $\xi \in \mathbb{R}$ and all cutoff scales $N \ge 2$, with zero cutoffs in frequency and zero reliance on unproven conjectures:
-   \[
+   $$
    \left\| \int_{-\infty}^\infty e^{-i \xi v} \, \text{causalSource}(N, v) \, dv \right\|^2 \le \frac{4 (8 \log 2 + 2)^2 N}{1 + \xi^2}.
-   \]
+   $$
    This proves unconditional quadratic spectral decay $O((1 + \xi^2)^{-1})$ for the Fourier transform of the causal arithmetic charge source across all frequencies $\xi \in \mathbb{R}$.
 
 ---
@@ -49,36 +49,36 @@ This contribution proves:
 
 ### 2.1. Critical Modulus
 Since $w(\xi) = 1/2 + i\xi$:
-\[
+$$
 x^{-w(\xi)} = \exp(-w(\xi) \log x) = \exp(-(1/2)\log x) \exp(-i\xi \log x) = x^{-1/2} (\cos(\xi\log x) - i\sin(\xi\log x)).
-\]
+$$
 Taking complex norm: $\|x^{-w(\xi)}\| = x^{-1/2}$.
 
 ### 2.2. Prime Sum and Density Integrals
 Applying the triangle inequality:
-\[
+$$
 \left\| \sum_{n=2}^N \Lambda(n) n^{-w(\xi)} \right\| \le \sum_{n=2}^N \Lambda(n) \|n^{-w(\xi)}\| = \sum_{n=2}^N \Lambda(n) n^{-1/2}.
-\]
+$$
 By the Chebyshev-Mertens weighted prime bound (`weighted_vonMangoldt_le` with exponent $r = 1/2$), this sum is bounded by $(8 \log 2) N^{1/2}$.
 For the density integral:
-\[
+$$
 \left\| \int_1^N x^{-w(\xi)} dx \right\| \le \int_1^N x^{-1/2} dx = [2 x^{1/2}]_1^N = 2(N^{1/2} - 1).
-\]
+$$
 Combining these with the $-1$ boundary term:
-\[
+$$
 \| \text{numerator} \| \le 1 + (8\log 2) N^{1/2} + 2(N^{1/2} - 1) \le (8\log 2 + 2) N^{1/2}.
-\]
+$$
 
 ### 2.3. Mellin-Fourier Connection and Quadratic Envelope
 The Fourier transform of the causal source relates to the Mellin numerator by division by $w(\xi)$:
-\[
+$$
 \left\| \widehat{\text{causalSource}}(N, \xi) \right\|^2 = \frac{\| \text{numerator} \|^2}{\|w(\xi)\|^2} = \frac{\| \text{numerator} \|^2}{\frac{1}{4} + \xi^2}.
-\]
+$$
 Setting $B = (8\log 2 + 2)^2 N$, we have $\| \text{numerator} \|^2 \le B$.
 Since $\frac{1}{\frac{1}{4} + \xi^2} = \frac{4}{1 + 4\xi^2} \le \frac{4}{1 + \xi^2}$, we obtain:
-\[
+$$
 \left\| \widehat{\text{causalSource}}(N, \xi) \right\|^2 \le \frac{4 (8 \log 2 + 2)^2 N}{1 + \xi^2}.
-\]
+$$
 
 ---
 
@@ -120,6 +120,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Mellin transforms in prime number theory (Montgomery-Vaughan 2007, Titchmarsh 1986). Explicit non-asymptotic Fourier envelopes $O(N/(1+\xi^2))$ holding uniformly across all frequencies $\xi \in \mathbb{R}$ without zero-free assumptions machine-verified in Lean 4 are new.
+- **Prior Literature:** Mellin transforms in prime number theory (Montgomery-Vaughan 2007, Titchmarsh 1986). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Proves the unconditional quadratic frequency envelope $4(8\log 2 + 2)^2 N / (1+\xi^2)$ for the causal arithmetic charge source in Lean 4.
 - **Target Venues:** *Ramanujan Journal* or *Journal of Number Theory*.

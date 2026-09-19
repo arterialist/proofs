@@ -51,6 +51,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that $\text{Re}(\zeta(\sigma)) < 0$ on $(0, 1)$ and establishing the unconditional analyticity of the filled quadratic prime transform along the entire real ray $(1/2, \infty)$.
+This entry documents a machine-verified implementation in Lean 4 proving that $\text{Re}(\zeta(\sigma)) < 0$ on $(0, 1)$ and establishing the unconditional analyticity of the filled quadratic prime transform along the entire real ray $(1/2, \infty)$.

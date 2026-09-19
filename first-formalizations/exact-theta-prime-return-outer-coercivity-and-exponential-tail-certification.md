@@ -69,6 +69,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the quantitative coercivity of Chebyshev prime-return outer integrals and high-precision $10^{-598}$-scale tail bounds.
+This entry documents a machine-verified proof in Lean 4 establishing the quantitative coercivity of Chebyshev prime-return outer integrals and high-precision $10^{-598}$-scale tail bounds.

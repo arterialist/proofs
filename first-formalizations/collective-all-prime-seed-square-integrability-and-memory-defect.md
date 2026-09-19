@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that the superposition of all prime jump seeds is unconditionally square-integrable on $\mathbb{R}$ without assuming the Prime Number Theorem or any zero-free region, providing the rigorous foundation for collective prime memory semigroups.
+This entry documents a machine-verified proof that the superposition of all prime jump seeds is unconditionally square-integrable on $\mathbb{R}$ without assuming the Prime Number Theorem or any zero-free region, providing the rigorous foundation for collective prime memory semigroups.

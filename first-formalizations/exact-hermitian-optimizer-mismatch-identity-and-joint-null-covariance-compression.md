@@ -15,9 +15,9 @@ This formalization establishes the exact scalar Hermitian algebra, optimizer mis
    Formal proof of `affine_completion_of_square`, `affine_minimum_lower_bound`, `affine_optimizer_value`, and `affine_minimum_eq_iff`.
 2. **Exact Optimizer-Mismatch Identity:**
    Formal proof of `optimizer_mismatch_identity`:
-   \[
+   $$
    \mathcal{V}_C - \mathcal{V}_Q = \mathcal{Q}_{Q - C}(c_Q) + d_C |c_Q - c_C|^2.
-   \]
+   $$
 3. **Signed Observed Comparison and Nonnegativity:**
    Formal proof of `observed_optimizer_mismatch_identity` and `unobserved_gain_nonnegative`: certified lower bounds under finite observation.
 4. **Common Nullspace Optimization:**
@@ -74,6 +74,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact decomposition of variational form comparison into residual quadratic evaluations and metric optimizer-mismatch penalties, accompanied by certified joint-null covariance compression.
+This entry documents a machine-verified proof in Lean 4 establishing the exact decomposition of variational form comparison into residual quadratic evaluations and metric optimizer-mismatch penalties, accompanied by certified joint-null covariance compression.

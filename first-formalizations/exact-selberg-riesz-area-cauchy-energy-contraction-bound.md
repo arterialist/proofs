@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the sharp $N^{3/2}$ energy contraction upper bound bounding discrete Selberg auto-convolutions by continuous quadratic prime-error energy.
+This entry documents a machine-verified implementation in Lean 4 establishing the sharp $N^{3/2}$ energy contraction upper bound bounding discrete Selberg auto-convolutions by continuous quadratic prime-error energy.

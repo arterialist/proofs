@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of the exact discrete energy step law for the causal prime source, decomposing the energy increment into microscopic discrepancy cross-work, deterministic ramp dissipation, and prime atom mass.
+This entry documents a machine-verified proof of the exact discrete energy step law for the causal prime source, decomposing the energy increment into microscopic discrepancy cross-work, deterministic ramp dissipation, and prime atom mass.

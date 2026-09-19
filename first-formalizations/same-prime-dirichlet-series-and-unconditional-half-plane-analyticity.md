@@ -9,7 +9,7 @@
 
 ## 1. Overview and Mathematical Scope
 
-This formalization provides the first machine-verified proof that the same-prime diagonal Dirichlet series $H(s) = \sum_p \frac{(\log p)^2 p^{-2s}}{(1 - p^{-s})^2}$ converges absolutely and defines a complex analytic function on the entire half-plane $\operatorname{Re}(s) > 1/2$:
+This entry documents a machine-verified proof that the same-prime diagonal Dirichlet series $H(s) = \sum_p \frac{(\log p)^2 p^{-2s}}{(1 - p^{-s})^2}$ converges absolutely and defines a complex analytic function on the entire half-plane $\operatorname{Re}(s) > 1/2$:
 
 1. **Exact Multiplicity Power Term:**
    Formal identity proving that each proper power $p^{k+2}$ has coefficient $(\log p)^2 (k+1)$ and that the power series sums to the diagonal Euler factor (`powerTerm_hasSum`, `samePrimeTerm_eq_cpow`).
@@ -57,6 +57,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
 This formalization establishes the foundational properties of the diagonal pair correlation Dirichlet series in Lean 4, proving that prime correlations along the diagonal exhibit no singularities or obstructions in the open critical strip $\operatorname{Re}(s) > 1/2$.

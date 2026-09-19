@@ -1,4 +1,4 @@
-# Unique Contribution 107: Exact Finite van der Corput Differencing and Aggregate Shift Energy
+# Contribution 107: Exact Finite van der Corput Differencing and Aggregate Shift Energy
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/FiniteShiftEnergy.lean`](../../formalization/BuildingBlocks/FiniteShiftEnergy.lean), [`formalization/BuildingBlocks/AggregateShiftEnergy.lean`](../../formalization/BuildingBlocks/AggregateShiftEnergy.lean)  
@@ -14,21 +14,21 @@ This contribution proves:
 
 1. **Exact Finite Shift Envelope Identity:**  
    For any support bound $N \in \mathbb{N}$ and shift window $H \in \mathbb{N}$, the common shift envelope $\mathcal{E}(N, H) = [-H, N) \subset \mathbb{Z}$ has exact cardinality $N + H$, and satisfies the exact shift conservation:
-   \[
+   $$
    \sum_{n \in \mathcal{E}(N, H)} \sum_{h=0}^{H-1} z(n + h) = H \sum_{n=0}^{N-1} z(n)
-   \]
+   $$
    for any sequence $z: \mathbb{Z} \to \mathbb{C}$ supported on $[0, N)$.
 2. **Sharp Finite Shift Energy Inequality with Complete Signed Correlations:**  
    For any complex sequence $z$ supported on $[0, N)$:
-   \[
+   $$
    H^2 \left| \sum_{n=0}^{N-1} z(n) \right|^2 \le (N + H) \sum_{h=0}^{H-1} \sum_{j=0}^{H-1} \sum_{n=-H}^{N-1} \operatorname{Re}\left( z(n+h) \overline{z(n+j)} \right).
-   \]
+   $$
    Every correlation entry is retained with its exact sign and complex conjugate; no term is replaced by absolute values.
 3. **Aggregate Finite Shift Energy without Outer Cauchy Loss:**  
    For any finite family of sequences $\{z_p\}_{p \in s}$ and weights $\{a_p\}_{p \in s}$:
-   \[
+   $$
    H^2 \left| \sum_{p \in s} a_p \sum_{n=0}^{N-1} z_p(n) \right|^2 \le (N + H) \sum_{h, j < H} \sum_{n \in \mathcal{E}(N, H)} \sum_{p, q \in s} \operatorname{Re}\left( a_p \overline{a_q} z_p(n+h) \overline{z_q(n+j)} \right).
-   \]
+   $$
    Unlike the standard weighted bound which applies Cauchy-Schwarz across $s$ (incurring an outer factor $\sum |a_p|^2$ and losing all off-diagonal correlations $p \ne q$), this aggregate bound preserves all cross-constituent interference terms.
 
 ---
@@ -43,21 +43,21 @@ Summing over $h \in \{0, \dots, H-1\}$ yields $H \sum_{n=0}^{N-1} z(n)$.
 
 ### 2.2. Finite van der Corput Differencing
 By Cauchy-Schwarz on $\ell^2(\mathcal{E}(N, H))$:
-\[
+$$
 \left| \sum_{n \in \mathcal{E}} 1 \cdot \left( \sum_{h=0}^{H-1} z(n+h) \right) \right|^2 \le |\mathcal{E}| \sum_{n \in \mathcal{E}} \left| \sum_{h=0}^{H-1} z(n+h) \right|^2.
-\]
+$$
 The left side is $|H \sum_{n=0}^{N-1} z(n)|^2 = H^2 |\sum_{n=0}^{N-1} z(n)|^2$.
 The right side expansion is:
-\[
+$$
 |\mathcal{E}| \sum_{n \in \mathcal{E}} \sum_{h=0}^{H-1} \sum_{j=0}^{H-1} z(n+h) \overline{z(n+j)}.
-\]
+$$
 Taking real parts and exchanging the finite summation order completes the proof of `finite_shift_energy`.
 
 ### 2.3. Aggregate Differencing
 Applying the basic inequality directly to the composite sequence $Z(n) = \sum_{p \in s} a_p z_p(n)$ (which is supported on $[0, N)$ by linearity):
-\[
+$$
 H^2 \left| \sum_{n=0}^{N-1} Z(n) \right|^2 \le (N+H) \sum_{h, j < H} \sum_{n \in \mathcal{E}} \operatorname{Re}(Z(n+h) \overline{Z(n+j)}).
-\]
+$$
 Expanding $Z(n+h) \overline{Z(n+j)} = \sum_{p, q \in s} a_p \overline{a_q} z_p(n+h) \overline{z_q(n+j)}$ yields `aggregate_finite_shift_energy`.
 
 ---

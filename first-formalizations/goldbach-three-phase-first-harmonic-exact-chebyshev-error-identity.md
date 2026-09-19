@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of an exact non-asymptotic identity expressing the first 3-adic harmonic of the binary Goldbach convolution directly in terms of the classical Chebyshev prime counting error $\psi(x) - x$.
+This entry documents a machine-verified proof of an exact non-asymptotic identity expressing the first 3-adic harmonic of the binary Goldbach convolution directly in terms of the classical Chebyshev prime counting error $\psi(x) - x$.

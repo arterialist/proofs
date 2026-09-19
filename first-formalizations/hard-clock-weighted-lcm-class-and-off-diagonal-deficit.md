@@ -10,9 +10,9 @@
 ## 1. Overview and Mathematical Scope
 
 This formalization verifies the exact prime-local product formula and the global off-diagonal nonpositivity for the bilinear Möbius-weighted least common multiple arithmetic function:
-\[
+$$
 W(k) = \sum_{i \mid k} \sum_{j \mid k} [\operatorname{lcm}(i, j) = k] \mu(i) \mu(j) i j.
-\]
+$$
 
 Key theorems formalized:
 1. **Prime Local Evaluation:**
@@ -79,6 +79,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-checked proof in Lean 4 of the exact evaluation of the bilinear Möbius-weighted LCM arithmetic function and establishes the nonpositivity of its off-diagonal deficit.
+This entry documents a machine-checked proof in Lean 4 of the exact evaluation of the bilinear Möbius-weighted LCM arithmetic function and establishes the nonpositivity of its off-diagonal deficit.

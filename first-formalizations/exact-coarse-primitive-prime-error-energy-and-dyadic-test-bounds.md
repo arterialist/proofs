@@ -65,6 +65,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing rigorous summation by parts and dyadic test-function bounds for the discontinuous Chebyshev error function $\psi(\lfloor x \rfloor) - x$ controlled solely by its continuous primitive $L^2$ energy.
+This entry documents a machine-verified implementation in Lean 4 establishing rigorous summation by parts and dyadic test-function bounds for the discontinuous Chebyshev error function $\psi(\lfloor x \rfloor) - x$ controlled solely by its continuous primitive $L^2$ energy.

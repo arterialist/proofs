@@ -17,9 +17,9 @@ This formalization proves the exact elimination of the non-zero mean obstruction
    Definitions of `meanCorrectedDual` and `meanCorrectedError`, with formal proofs of `meanCorrectedDual_reciprocal` and `meanCorrectedError_periodic`.
 3. **Exact Mean Zero Cancellation:**
    Formal proof of `meanCorrectedError_mean_zero`:
-   \[
+   $$
    \int_0^1 \mathcal{E}_{\text{corr}}(N, y) dy = 0.
-   \]
+   $$
 4. **Compact Support Vanishing:**
    Formal proof of `boundaryCorrection_zero_of_small` and `meanCorrectedDual_zero_above_one`: $\mathcal{D}_{\text{corr}}(N, x) = 0$ for all $x > 1$ and $N \ge 2$.
 5. **Uniform Bounds and Integrability:**
@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 constructing an exact periodic boundary correction that completely neutralizes the non-zero mean obstruction of the Nyman–Beurling step approximation while strictly maintaining compact support on $(0, 1]$ and reciprocal duality.
+This entry documents a machine-verified proof in Lean 4 constructing an exact periodic boundary correction that completely neutralizes the non-zero mean obstruction of the Nyman–Beurling step approximation while strictly maintaining compact support on $(0, 1]$ and reciprocal duality.

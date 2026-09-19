@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact evaluation of prime atom defect charges as differences of discrete birth integrals, establishing absolute von Mangoldt summability, and deriving the exact reference constant $\pi/4 - 1$.
+This entry documents a machine-verified implementation in Lean 4 proving the exact evaluation of prime atom defect charges as differences of discrete birth integrals, establishing absolute von Mangoldt summability, and deriving the exact reference constant $\pi/4 - 1$.

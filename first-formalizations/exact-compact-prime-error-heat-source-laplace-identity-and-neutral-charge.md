@@ -49,6 +49,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact identity between discrete prime heat packets and the continuous Laplace transform $t \int_1^N (\psi(x)-x)e^{-xt} dx$, with guaranteed neutrality of the total charge at $t=0$.
+This entry documents a machine-verified implementation in Lean 4 proving the exact identity between discrete prime heat packets and the continuous Laplace transform $t \int_1^N (\psi(x)-x)e^{-xt} dx$, with guaranteed neutrality of the total charge at $t=0$.

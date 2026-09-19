@@ -1,4 +1,4 @@
-# Unique Contribution 313: Exact Smooth Filtration Prime Bifurcation and Generator Rank Dynamics
+# Contribution 313: Exact Smooth Filtration Prime Bifurcation and Generator Rank Dynamics
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/Model.lean`](../../formalization/BuildingBlocks/Model.lean), [`building-blocks/smooth-filtration/model.md`](../../building-blocks/smooth-filtration/model.md)  
@@ -14,28 +14,28 @@ This contribution proves:
 
 1. **Exact Prime Bifurcation of State Transitions:**  
    The filtration undergoes a strict transition at step $n$ if and only if $n$ is prime:
-   \[
+   $$
    \text{before}(n+1) \ne \text{before}(n) \iff n \text{ is prime}.
-   \]
+   $$
    Similarly, an integer $n \in \mathbb{N}_{\ge 1}$ is absent from its own prior state if and only if it is prime:
-   \[
+   $$
    n \notin \text{before}(n) \iff n \text{ is prime}.
-   \]
+   $$
 2. **Canonical Monoid Isomorphism at Prime Steps:**  
    At every prime $p$, the state at step $p+1$ decomposes canonically into the direct product of the non-negative integers (representing powers of $p$) and the prior state:
-   \[
+   $$
    \mathbb{N} \times \text{before}(p) \simeq \text{before}(p+1), \qquad (k, m) \mapsto p^k m.
-   \]
+   $$
 3. **Exact Indicator Dynamics of Generator Rank:**  
    The number of active prime generators $\text{generatorRank}(n) = |\{p < n : p \text{ is prime}\}|$ satisfies the exact difference equation:
-   \[
+   $$
    \text{generatorRank}(n+1) = \text{generatorRank}(n) + \mathbf{1}_{\text{Prime}}(n).
-   \]
+   $$
 4. **Information Preservation Under Forward Embeddings:**  
    For any $n \le k$, the natural inclusion map:
-   \[
+   $$
    \text{retain}(n \le k) : \text{before}(n) \hookrightarrow \text{before}(k)
-   \]
+   $$
    is strictly injective, establishing that forward discrete time steps lose no prime factor information.
 5. **Divisor and Monoid Closure:**  
    Each stage $\text{before}(n)$ is multiplicatively closed ($a, b \in \text{before}(n) \implies ab \in \text{before}(n)$) and divisor-hereditary ($a \in \text{before}(n), b \mid a \implies b \in \text{before}(n)$).
@@ -93,6 +93,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** De Bruijn (1951) *On the number of positive integers $\le x$ and free of prime factors $> y$*; Hildebrand & Tenenbaum (1993) *Integers without large prime factors*. Machine verification of exact smooth monoid state transitions, prime bifurcation, and step equivalences in Lean 4 is new.
+- **Prior Literature:** De Bruijn (1951) *On the number of positive integers $\le x$ and free of prime factors $> y$*; Hildebrand & Tenenbaum (1993) *Integers without large prime factors*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes an exact dynamical systems and filtration perspective on prime generation with machine-certified rank dynamics and monoid product decomposition.
 - **Target Venues:** *Integers* or *Journal of Integer Sequences*.

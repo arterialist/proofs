@@ -75,6 +75,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving support gap propagation for convolution powers of finite measures and establishing the strict causality and sub-threshold atomicity $\mathcal{P}_u(A) = e^{-u\|\mu\|}\delta_0(A)$ of the all-prime jump process.
+This entry documents a machine-verified implementation in Lean 4 proving support gap propagation for convolution powers of finite measures and establishing the strict causality and sub-threshold atomicity $\mathcal{P}_u(A) = e^{-u\|\mu\|}\delta_0(A)$ of the all-prime jump process.

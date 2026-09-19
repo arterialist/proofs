@@ -1,4 +1,4 @@
-# Unique Contribution 300: Exact Factorial Binary Infinite Energy Recurrence and Cauchy Majorant
+# Contribution 300: Exact Factorial Binary Infinite Energy Recurrence and Cauchy Majorant
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/FactorialBinaryIntegrability.lean`](../../formalization/BuildingBlocks/FactorialBinaryIntegrability.lean), [`building-blocks/factorial-binary/integrability.md`](../../building-blocks/factorial-binary/integrability.md)  
@@ -14,28 +14,28 @@ This contribution proves:
 
 1. **Exact Infinite-Horizon Dyadic Energy Balance:**  
    For all integers $N \ge 0$ and binary digits $b \in \{0, 1\}$, the total integrated carry energy $\mathcal{E}(N) = \int_0^\infty \text{energyRow}(N, u) du$ satisfies the exact renewal recurrence:
-   \[
+   $$
    \mathcal{E}(2N + b) - 2\mathcal{E}(N) = \mathcal{W}(N, b) - \mathcal{D}(N),
-   \]
+   $$
    where $\mathcal{D}(N) = \int_0^\infty \text{densityRow}(N, u) du$ is the integrated boundary dissipation and $\mathcal{W}(N, b) = \int_0^\infty \text{workRow}(N, b, u) du$ is the integrated innovation work.
 2. **Global Cauchy Majorant for Carry Energy:**  
    For all $N \ge 1$ and $u > 0$:
-   \[
+   $$
    \text{energyRow}(N, u) \le \frac{2 (\text{sizeBudget}(N))^2}{1 + u^2},
-   \]
+   $$
    where $\text{sizeBudget}(N) = \sum_{n=1}^N |\mu(n)| (1 + \lfloor N/n \rfloor)$. Since $(1 + u^2)^{-1} \in L^1(0, \infty)$, this provides an unconditional integrable majorant.
 3. **Improper Integrability of All Energy Functionals:**  
    The functionals $\text{energyRow}(N, \cdot)$, $\text{densityRow}(N, \cdot)$, and $\text{workRow}(N, b, \cdot)$ are all unconditionally Lebesgue-integrable on $(0, \infty)$.
 4. **Scale Invariance of Half-Argument Integrals:**  
    Under the change of variable $u \mapsto u/2$:
-   \[
+   $$
    \int_0^\infty \frac{1}{2} \text{energyRow}(N, u/2) du = \int_0^\infty \text{energyRow}(N, u) du = \mathcal{E}(N).
-   \]
+   $$
 5. **Integrated Innovation Work Representation in Original Clock:**  
    The innovation work admits the canonical time representation:
-   \[
+   $$
    \mathcal{W}(N, b) = \int_0^\infty \left( 2 \text{response}(N, 2t) \text{innovation}(N, b, t) + \text{innovation}(N, b, t)^2 \right) w(t) dt.
-   \]
+   $$
 
 ---
 
@@ -50,9 +50,9 @@ Summing over the Möbius support:
 ### 2.2. Cauchy Majorization
 The kernel weight satisfies $w(u) = (u(e^u - 1))^{-1} \le u^{-2}$.
 Hence:
-\[
+$$
 \text{energyRow}(N, u) = \text{response}(N, u)^2 w(u) \le \frac{\text{response}(N, u)^2}{u^2}.
-\]
+$$
 - For $u \le 1$: $\text{energyRow}(N, u) \le (\text{sizeBudget}(N) u)^2 / u^2 = \text{sizeBudget}(N)^2 \le \frac{2 \text{sizeBudget}(N)^2}{1 + u^2}$.
 - For $u \ge 1$: $\text{energyRow}(N, u) \le \text{sizeBudget}(N)^2 / u^2 \le \frac{2 \text{sizeBudget}(N)^2}{1 + u^2}$ (since $1 + u^2 \le 2u^2$).
 Thus $\text{energyRow}(N, u) \le 2 (\text{sizeBudget}(N))^2 (1 + u^2)^{-1}$ everywhere on $(0, \infty)$.
@@ -100,6 +100,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Legendre carry formulas (1808); Kummer's theorem (1852); Knuth's carry analysis (1973); Diaconis and Fulman (2009) *Carries, Shuffling, and Symmetric Functions*. Machine verification of the improper continuous carry energy integral, global Cauchy majorant, and infinite dyadic renewal recurrence in Lean 4 is new.
+- **Prior Literature:** Legendre carry formulas (1808); Kummer's theorem (1852); Knuth's carry analysis (1973); Diaconis and Fulman (2009) *Carries, Shuffling, and Symmetric Functions*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact continuous-time energy-dissipation-work identity for dyadic factorial carries across the entire infinite horizon $(0, \infty)$, providing an exact foundation for non-perturbative carry estimates.
 - **Target Venues:** *Ergodic Theory and Dynamical Systems* or *Advances in Applied Mathematics*.

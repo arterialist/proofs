@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that iterates of the successor transfer operator act as exact linear shifts on the physical variable, yielding a holomorphic driver generating function on the unit disk.
+This entry documents a machine-verified proof that iterates of the successor transfer operator act as exact linear shifts on the physical variable, yielding a holomorphic driver generating function on the unit disk.

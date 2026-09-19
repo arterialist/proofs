@@ -1,4 +1,4 @@
-# Unique Contribution 228: Exact Arithmetic Source Birth Work and Energy Increment Formula
+# Contribution 228: Exact Arithmetic Source Birth Work and Energy Increment Formula
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ChargeFrozenBirthWork.lean`](../../formalization/BuildingBlocks/ChargeFrozenBirthWork.lean), [`building-blocks/charge/charge-frozen-birth-work.md`](../../building-blocks/charge/charge-frozen-birth-work.md)  
@@ -9,26 +9,26 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the dynamics of arithmetic fluctuations, passing from scale $N$ to scale $N+1$ changes the continuous causal energy $\|\text{causalSource}(N)\|_{L^2}^2$. The variation is governed by the work done by the existing field on the newly injected prime birth perturbation:
-\[
+$$
 W(N) = \langle \text{causalSource}(N), \text{increment}(N) \rangle_{L^2} = \int_0^\infty \text{causalSource}(N, v) \text{increment}(N, v) \, dv.
-\]
+$$
 This contribution proves:
 
 1. **Integrability and Support Decoupling:**  
    The cross-term $\text{causalSource}(N, v) \text{increment}(N, v)$ is integrable on $(0, \infty)$ and vanishes identically on the interior interval $(0, \log N]$.
 2. **Exact Prime Birth Work Formula:**  
    For every integer $N \ge 2$, the work done by the causal source on the scale increment factors into the total accumulated Chebyshev error times the localized logarithmic spectral discrepancy:
-   \[
+   $$
    \int_0^\infty \text{causalSource}(N, v) \text{increment}(N, v) \, dv = (\psi(N) - N) \left( \frac{\Lambda(N+1)}{N+1} - \log\left(1 + \frac{1}{N}\right) \right).
-   \]
+   $$
 3. **Exact Global Energy Increment Formula:**  
    The step-by-step variation in the physical $L^2((0, \infty))$ energy evaluates in closed form:
-   \[
+   $$
    \begin{aligned}
    \int_0^\infty (\text{causalSource}(N+1, v))^2 \, dv - \int_0^\infty (\text{causalSource}(N, v))^2 \, dv &= 2 (\psi(N) - N) \left( \frac{\Lambda(N+1)}{N+1} - \log\left(1 + \frac{1}{N}\right) \right) \\
    &\quad + 1 + \frac{N}{N+1} - 2N \log\left(1 + \frac{1}{N}\right) + \frac{(\Lambda(N+1) - 1)^2}{N+1}.
    \end{aligned}
-   \]
+   $$
 4. **Conservation and Boundary Cancellation:**  
    Intermediate boundary terms generated at $v = \log(N+1)$ between the continuous background ramp and the terminal exponential tail cancel exactly, proving that arithmetic source energy evolves through discrete Markovian work transfers.
 
@@ -44,27 +44,27 @@ On $(0, a]$, $\text{increment}(N, v) = 0$, so the integral on $(0, a]$ vanishes 
 On $(a, b)$, $\text{causalSource}(N, v) = (\psi(N) - N)e^{-v/2}$, while $\text{increment}(N, v) = -(e^v - N)e^{-v/2}$.
 Their product is $-(\psi(N) - N)(1 - N e^{-v})$.
 Integrating from $a$ to $b$:
-\[
+$$
 \int_a^b -(\psi(N) - N)(1 - N e^{-v}) \, dv = -(\psi(N) - N) \left( \log\left(1 + \frac{1}{N}\right) - \frac{1}{N+1} \right).
-\]
+$$
 
 ### 2.3. Terminal Work
 On $(b, \infty)$, both functions are in their exponential tails:
-\[
+$$
 \text{causalSource}(N, v) = (\psi(N) - N) e^{-v/2}, \quad \text{increment}(N, v) = (\Lambda(N+1) - 1) e^{-v/2}.
-\]
+$$
 Their product is $(\psi(N) - N)(\Lambda(N+1) - 1) e^{-v}$.
 Integrating from $b$ to $\infty$:
-\[
+$$
 \int_b^\infty e^{-v} \, dv = e^{-b} = \frac{1}{N+1}.
-\]
+$$
 The terminal integral is therefore $(\psi(N) - N) \frac{\Lambda(N+1) - 1}{N+1}$.
 
 ### 2.4. Total Work and Energy Variation
 Adding the ramp work and terminal work:
-\[
+$$
 (\psi(N) - N) \left( -\log\left(1 + \frac{1}{N}\right) + \frac{1}{N+1} + \frac{\Lambda(N+1)}{N+1} - \frac{1}{N+1} \right) = (\psi(N) - N) \left( \frac{\Lambda(N+1)}{N+1} - \log\left(1 + \frac{1}{N}\right) \right).
-\]
+$$
 The boundary term $\frac{1}{N+1}$ cancels identically.
 Expanding $\|\text{causalSource}(N+1)\|_{L^2}^2 = \|\text{causalSource}(N) + \text{increment}(N)\|_{L^2}^2 = \|\text{causalSource}(N)\|_{L^2}^2 + 2\langle \text{causalSource}(N), \text{increment}(N) \rangle + \|\text{increment}(N)\|_{L^2}^2$ and substituting the ramp self-energy from Contribution 227 finishes the proof.
 
@@ -110,6 +110,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Discrete energy methods in differential equations and stepwise variation formulas (Tenenbaum 2015, Iwaniec-Kowalski 2004). The exact closed-form evaluation of cross-work and energy increments for arithmetic source fields in Lean 4 is new.
+- **Prior Literature:** Discrete energy methods in differential equations and stepwise variation formulas (Tenenbaum 2015, Iwaniec-Kowalski 2004). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Provides an exact closed-form recurrence for arithmetic energy without any asymptotic truncation error.
 - **Target Venues:** *Journal of Number Theory* or *Journal of Mathematical Analysis and Applications*.

@@ -1,4 +1,4 @@
-# Unique Contribution 131: Exact Zero-Charge Pair Kernel Expansion and Terminal Prime Trace
+# Contribution 131: Exact Zero-Charge Pair Kernel Expansion and Terminal Prime Trace
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualTerminalPrimeTraceFinite.lean`](../../formalization/BuildingBlocks/ActualTerminalPrimeTraceFinite.lean), [`building-blocks/heat-flow/actual-terminal-prime-trace-finite.md`](../../building-blocks/heat-flow/actual-terminal-prime-trace-finite.md)  
@@ -9,33 +9,33 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the trace formula and heat kernel formulation of prime distributions, the centered prime packet truncated at $N$ has non-vanishing net charge equal to the Chebyshev error $\psi(N) - N$. Appending a terminal compensation atom $-(\psi(N) - N)$ creates a discrete zero-charge source distribution on $\mathbb{R}_{>0}$. In the pair-interaction kernel with dilation parameter $k > 0$:
-\[
+$$
 K_k(x, y) = \frac{1}{k y + x},
-\]
+$$
 an arbitrary finite source has a leading $k^{-1}$ singularity as $k \to \infty$.
 
 This contribution proves:
 
 1. **Exact Zero-Charge Singularity Cancellation:**  
    For any finite set $s$ of sources $a_i$ at positive positions $x_i > 0$ with exact zero net charge $\sum_{i \in s} a_i = 0$, the $k^{-1}$ leading term vanishes identically:
-   \[
+   $$
    \sum_{i \in s} \sum_{j \in s} \frac{a_i a_j}{k x_j + x_i} = -\frac{1}{k^2} \left( \sum_{i \in s} a_i x_i \right) \left( \sum_{j \in s} \frac{a_j}{x_j^2} \right) + \sum_{i \in s} \sum_{j \in s} \frac{a_i a_j x_i^2}{k^2 x_j^2 (k x_j + x_i)}.
-   \]
+   $$
 2. **Identification of Truncated Net Charge with Chebyshev Error:**  
    For the centered discrete prime coefficients $c(n) = \Lambda(n) - 1$:
-   \[
+   $$
    \sum_{n=1}^N c(n) = \psi(N) - N.
-   \]
+   $$
 3. **Exact Zero Net Charge of Terminal-Compensated Packet:**  
    Defining $c_N(n) = c(n)$ for $n \le N$ and $c_N(N+1) = -(\psi(N) - N)$ at position $x_{N+1} = N$:
-   \[
+   $$
    \sum_{n=1}^{N+1} c_N(n) = 0.
-   \]
+   $$
 4. **Exact Discrete Terminal Heat Transform:**  
    For all $t \in \mathbb{R}$:
-   \[
+   $$
    \sum_{n=1}^{N+1} c_N(n) e^{-x_n t} = \sum_{n=1}^N (\Lambda(n) - 1) e^{-n t} - (\psi(N) - N) e^{-N t}.
-   \]
+   $$
 5. **Universal Far-Lag Pair Kernel Expansion for Terminal Prime Packets:**  
    The terminal-compensated prime packet satisfies the exact zero-charge expansion, eliminating the $k^{-1}$ leading term and giving an explicit $O(k^{-3})$ rational remainder.
 
@@ -45,33 +45,33 @@ This contribution proves:
 
 ### 2.1. Algebraic Decomposition of Kernel Entries
 For each pair of sources $(i, j)$:
-\[
+$$
 \frac{1}{k x_j + x_i} = \frac{1}{k x_j} \left( 1 - \frac{x_i}{k x_j + x_i} \right) = \frac{1}{k x_j} - \frac{x_i}{k^2 x_j^2} + \frac{x_i^2}{k^2 x_j^2 (k x_j + x_i)}.
-\]
+$$
 Multiplying by $a_i a_j$:
-\[
+$$
 \frac{a_i a_j}{k x_j + x_i} = a_i \frac{a_j}{k x_j} - \frac{(a_i x_i)(a_j / x_j^2)}{k^2} + \frac{a_i a_j x_i^2}{k^2 x_j^2 (k x_j + x_i)}.
-\]
+$$
 
 ### 2.2. Zero-Charge Vanishing of Leading Singularity
 Summing the first term over all $i, j \in s$:
-\[
+$$
 \sum_{i \in s} \sum_{j \in s} a_i \frac{a_j}{k x_j} = \left( \sum_{i \in s} a_i \right) \left( \sum_{j \in s} \frac{a_j}{k x_j} \right) = 0 \cdot \sum_{j \in s} \frac{a_j}{k x_j} = 0,
-\]
+$$
 due strictly to the zero-charge condition $\sum_{i \in s} a_i = 0$.
 
 ### 2.3. Quadratic Coefficient Factorization
 Summing the second term over $i, j \in s$:
-\[
+$$
 \sum_{i \in s} \sum_{j \in s} \frac{(a_i x_i)(a_j / x_j^2)}{k^2} = \frac{1}{k^2} \left( \sum_{i \in s} a_i x_i \right) \left( \sum_{j \in s} \frac{a_j}{x_j^2} \right),
-\]
+$$
 which factors completely into the first dipole moment $\sum a_i x_i$ times the inverse-square charge $\sum a_j / x_j^2$.
 
 ### 2.4. Terminal Prime Packet Compensation
 The prefix sum evaluates to:
-\[
+$$
 \sum_{n=1}^N (\Lambda(n) - 1) = \sum_{n=1}^N \Lambda(n) - \sum_{n=1}^N 1 = \psi(N) - N.
-\]
+$$
 Adding the $(N+1)$-th atom with weight $-(\psi(N) - N)$ yields a sum of zero, verifying the exact applicability of the algebraic expansion.
 
 ---

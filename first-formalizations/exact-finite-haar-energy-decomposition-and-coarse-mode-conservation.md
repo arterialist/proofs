@@ -17,9 +17,9 @@ This formalization proves the exact finite Haar energy decomposition for dyadic 
    Formal proofs of `total_gaugeShift`, `haarCoefficients_gaugeShift`, and `haarDetailEnergy_gaugeShift`.
 3. **Exact Haar Energy Identity:**
    Formal proof by structural induction of `squareEnergy_eq_coarse_add_haar`:
-   \[
+   $$
    \|p\|^2 = \mathcal{E}_{\text{coarse}}(p) + \mathcal{E}_{\text{detail}}(p).
-   \]
+   $$
 4. **Coarse Merging Recursion and Remainder Conservation:**
    Formal proofs of `child_coarse_recursion` and `coarse_remainder_conserved`.
 5. **Sequence Conversion and Möbius Clock Applications:**
@@ -67,6 +67,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the inductive dyadic Haar wavelet energy identity, gauge invariance of wavelets, and the mathematical conservation of the coarse mode against multiscale cancellation.
+This entry documents a machine-verified proof in Lean 4 establishing the inductive dyadic Haar wavelet energy identity, gauge invariance of wavelets, and the mathematical conservation of the coarse mode against multiscale cancellation.

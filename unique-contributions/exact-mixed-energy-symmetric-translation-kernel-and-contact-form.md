@@ -1,4 +1,4 @@
-# Unique Contribution 305: Exact Mixed-Energy Symmetric Translation Kernel and Contact Form
+# Contribution 305: Exact Mixed-Energy Symmetric Translation Kernel and Contact Form
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/MixedEnergyKernel.lean`](../../formalization/BuildingBlocks/MixedEnergyKernel.lean), [`building-blocks/mixed-energy/kernel.md`](../../building-blocks/mixed-energy/kernel.md)  
@@ -9,34 +9,34 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the variational theory of energy dissipation on real line geometries, the mixed gradient quadratic form measures the $L^2$ discrepancy across both infinitesimal spatial scales and discrete lag shifts:
-\[
+$$
 \text{gradient}(H)(h, x) = H(x) - H(x - h).
-\]
+$$
 Pairing two functions $H, G \in L^2(\mathbb{R})$ across the product measure $d\mu_{\text{gradient}}(h, x) = d\mu_{\text{lag}}(h) dx$ produces the bilinear energy form $\text{bilinear}(H, G)$. Simultaneously, the discrete unit step forms the unit pair $\text{unitPair}(H, G)$, and their difference yields the physical contact form $\text{contactForm}(H, G) = \text{bilinear}(H, G) - 2 \cdot \text{unitPair}(H, G)$.
 
 This contribution proves:
 
 1. **Exact Representation of the Physical Contact Form:**  
    For any $H, G \in L^2(\mathbb{R})$:
-   \[
+   $$
    \text{contactForm}(H, G) = - \text{symmetricKernelPair}(H, G) + 2 \int_{-\infty}^\infty H(x) \left( G(x - 1) + G(x + 1) \right) dx,
-   \]
+   $$
    where the diagonal mass terms identically cancel.
 2. **Expansion of the Continuous Bilinear Form:**  
    The bilinear gradient form expands into diagonal and symmetric lag-kernel components:
-   \[
+   $$
    \text{bilinear}(H, G) = 4 \int_{-\infty}^\infty H(x) G(x) dx - \int_{\mathbb{R} \times \mathbb{R}} H(x) \left( G(x - h) + G(x + h) \right) d\mu_{\text{lag}}(h) dx.
-   \]
+   $$
 3. **Discrete Unit Pair Decomposition:**  
    The discrete unit step form decomposes into:
-   \[
+   $$
    \text{unitPair}(H, G) = 2 \int_{-\infty}^\infty H(x) G(x) dx - \int_{-\infty}^\infty H(x) \left( G(x - 1) + G(x + 1) \right) dx.
-   \]
+   $$
 4. **Cross-Orientation Invariance:**  
    Under the gradient measure, backward and forward shifts are exact adjoints:
-   \[
+   $$
    \int H(x - h) G(x) d\mu_{\text{lag}}(h) dx = \int H(x) G(x + h) d\mu_{\text{lag}}(h) dx.
-   \]
+   $$
 5. **Universal Energy Finiteness:**  
    Any function $H \in L^2(\mathbb{R}, dx)$ automatically has finite mixed gradient energy: $\text{energy}(H) < \infty$.
 
@@ -46,9 +46,9 @@ This contribution proves:
 
 ### 2.1. Bilinear Expansion
 Expanding the pointwise gradient product:
-\[
+$$
 (H(x) - H(x-h))(G(x) - G(x-h)) = H(x)G(x) + H(x-h)G(x-h) - H(x)G(x-h) - H(x-h)G(x).
-\]
+$$
 Integrating with respect to $dx$:
 - $\int H(x) G(x) dx$ is the standard inner product.
 - By translation invariance of Lebesgue measure, $\int H(x-h) G(x-h) dx = \int H(x) G(x) dx$.
@@ -59,21 +59,21 @@ Hence $\text{bilinear}(H, G) = 4 \langle H, G \rangle - \text{symmetricKernelPai
 
 ### 2.2. Unit Pair Expansion
 Similarly, for the discrete unit shift $h = 1$:
-\[
+$$
 \text{unitPair}(H, G) = \int (H(x) - H(x-1))(G(x) - G(x-1)) dx = 2 \langle H, G \rangle - \int H(x)(G(x-1) + G(x+1)) dx.
-\]
+$$
 
 ### 2.3. Cancellation in Contact Form
 Subtracting $2 \times \text{unitPair}$:
-\[
+$$
 \text{contactForm}(H, G) = \text{bilinear}(H, G) - 2 \cdot \text{unitPair}(H, G)
-\]
-\[
+$$
+$$
 = \left( 4 \langle H, G \rangle - \text{symmetricKernelPair}(H, G) \right) - 2 \left( 2 \langle H, G \rangle - \int H(x)(G(x-1) + G(x+1)) dx \right)
-\]
-\[
+$$
+$$
 = - \text{symmetricKernelPair}(H, G) + 2 \int H(x) (G(x-1) + G(x+1)) dx.
-\]
+$$
 The diagonal term $4\langle H, G \rangle - 4\langle H, G \rangle = 0$ cancels identically.
 
 ---
@@ -114,6 +114,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Beurling and Deny (1959) *Dirichlet Spaces*; Fukushima (1980) *Dirichlet Forms and Markov Processes*. Machine verification of symmetric translation-kernel decompositions and diagonal mass cancellation in mixed continuous-discrete contact forms in Lean 4 is new.
+- **Prior Literature:** Beurling and Deny (1959) *Dirichlet Spaces*; Fukushima (1980) *Dirichlet Forms and Markov Processes*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact algebraic structure and translation representations for mixed continuous-discrete Dirichlet contact forms on $L^2(\mathbb{R})$.
 - **Target Venues:** *Journal of Functional Analysis* or *Potential Analysis*.

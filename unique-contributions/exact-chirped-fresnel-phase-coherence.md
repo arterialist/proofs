@@ -1,4 +1,4 @@
-# Unique Mathematical Contribution 343: Exact Chirped Fresnel Phase Coherence and Core Lower Bound Theorem
+# Contribution 343: Exact Chirped Fresnel Phase Coherence and Core Lower Bound Theorem
 
 ## 1. Executive Summary
 

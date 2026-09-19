@@ -68,6 +68,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact Dirichlet series and Mellin transform of distinct prime-power pairs via bijective prime-power reindexing and same-prime diagonal subtraction.
+This entry documents a machine-verified implementation in Lean 4 proving the exact Dirichlet series and Mellin transform of distinct prime-power pairs via bijective prime-power reindexing and same-prime diagonal subtraction.

@@ -44,6 +44,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the continuous logarithmic-time reflection integral representation of the discrete Selberg Riesz area primitive without continuity assumptions.
+This entry documents a machine-verified implementation in Lean 4 establishing the continuous logarithmic-time reflection integral representation of the discrete Selberg Riesz area primitive without continuity assumptions.

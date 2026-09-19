@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 constructing the exact Hilbert adjoint $\mathcal{T}_{\text{comp}}^*$ for charge-compensated successor dynamics, proving the rank-one perturbation formula and establishing $L^2$ duality.
+This entry documents a machine-verified implementation in Lean 4 constructing the exact Hilbert adjoint $\mathcal{T}_{\text{comp}}^*$ for charge-compensated successor dynamics, proving the rank-one perturbation formula and establishing $L^2$ duality.

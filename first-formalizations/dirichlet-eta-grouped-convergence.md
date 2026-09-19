@@ -1,7 +1,7 @@
 # Grouped Dirichlet Eta Convergence and Positivity
 
 ## Summary
-This module provides the first machine-verified proof in Lean 4 of the absolute convergence and strict positivity of the grouped Dirichlet eta function on the positive real axis:
+This module provides a machine-verified proof in Lean 4 of the absolute convergence and strict positivity of the grouped Dirichlet eta function on the positive real axis:
 1. Formalizes the grouped alternating pairs:
    $$u_n(\sigma) = (2n+1)^{-\sigma} - (2n+2)^{-\sigma} \quad (n \in \mathbb{N}).$$
 2. Proves pointwise strict positivity `etaPair_pos`:

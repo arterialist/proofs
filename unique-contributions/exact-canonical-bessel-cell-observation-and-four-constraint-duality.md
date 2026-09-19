@@ -1,4 +1,4 @@
-# Unique Contribution 269: Exact Canonical Bessel Cell Observation and Four-Constraint Duality
+# Contribution 269: Exact Canonical Bessel Cell Observation and Four-Constraint Duality
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CanonicalFiniteObservation.lean`](../../formalization/BuildingBlocks/CanonicalFiniteObservation.lean), [`building-blocks/spectral/canonical-finite-observation.md`](../../building-blocks/spectral/canonical-finite-observation.md)  
@@ -14,21 +14,21 @@ This contribution proves:
 
 1. **Finite Canonical Bessel Cell Observation Inequality:**  
    For any orthonormal family $\{v_i\}_{i \in \iota}$ in a complex Hilbert space $E$, and any finite index subset $s \subseteq \iota$:
-   \[
+   $$
    \sum_{i \in s} |\langle v_i, h \rangle|^2 \le \|h\|^2.
-   \]
+   $$
    This ensures that observing finite cellular components provides a coefficient-one dissipative observation without overestimating the total available state energy.
 2. **Four Real Constraints Duality for Scalar Observations:**  
    Defining the total number of real boundary constraints for a complex observation of dimension $d$ by $\text{actualRealConstraintCount}(d) = 2 + 2d$ (accounting for real and imaginary parts of the $d$ coordinates plus the mean and arrival boundary rows):
-   \[
+   $$
    \text{actualRealConstraintCount}(d) = 4 \iff d = 1.
-   \]
+   $$
    The canonical four-constraint space of the core-to-port boundary theory corresponds uniquely and exactly to a scalar complex observation ($d = 1$).
 3. **Exact Affine Completion of Squares Identity:**  
    For quadratic forms $Q_{ff}, Q_{fq}, Q_{qq}$ with optimal affine coefficient $c = \frac{Q_{fq} + m}{Q_{qq}}$:
-   \[
+   $$
    Q_{ff} - \frac{(Q_{fq} + m)(Q_{fq} + m)^*}{Q_{qq}} = Q_{ff} - c (Q_{fq} + m)^*.
-   \]
+   $$
 
 ---
 
@@ -38,18 +38,18 @@ This contribution proves:
 Let $\{v_i\}_{i \in s}$ be an orthonormal family in $E$.
 The orthogonal projection onto the subspace $V_s = \text{span}\{v_i : i \in s\}$ is given by $P_s h = \sum_{i \in s} \langle v_i, h \rangle v_i$.
 By Pythagorean decomposition:
-\[
+$$
 \|h\|^2 = \|P_s h\|^2 + \|(I - P_s) h\|^2 = \sum_{i \in s} |\langle v_i, h \rangle|^2 + \|(I - P_s) h\|^2 \ge \sum_{i \in s} |\langle v_i, h \rangle|^2.
-\]
+$$
 
 ### 2.2. Constraint Dimensionality Duality
 $\text{actualRealConstraintCount}(d) = 2 + 2d = 4 \iff 2d = 2 \iff d = 1$.
 
 ### 2.3. Affine Gain Factorization
 Substituting $c = (Q_{fq} + m) / Q_{qq}$ into $c(Q_{fq} + m)^*$:
-\[
+$$
 c (Q_{fq} + m)^* = \frac{Q_{fq} + m}{Q_{qq}} (Q_{fq} + m)^* = \frac{(Q_{fq} + m)(Q_{fq} + m)^*}{Q_{qq}}.
-\]
+$$
 Subtracting from $Q_{ff}$ completes the proof.
 
 ---
@@ -82,6 +82,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Bessel's inequality in Hilbert spaces and dimension counting in boundary control (Curtain-Zwart 1995, Conway 1990). A machine-verified verification establishing cell observation energy bounds and four-constraint dimension duality in Lean 4 is new.
+- **Prior Literature:** Bessel's inequality in Hilbert spaces and dimension counting in boundary control (Curtain-Zwart 1995, Conway 1990). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Connects discrete cellular boundary observations rigorously to coefficient-one dissipation bounds.
 - **Target Venues:** *Systems & Control Letters* or *Journal of Mathematical Analysis and Applications*.

@@ -1,4 +1,4 @@
-# Unique Contribution 237: Exact Entirety and Global Analyticity of Arithmetic Dyadic Mellin Blocks
+# Contribution 237: Exact Entirety and Global Analyticity of Arithmetic Dyadic Mellin Blocks
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CoarseBlockAnalytic.lean`](../../formalization/BuildingBlocks/CoarseBlockAnalytic.lean), [`building-blocks/coarse/coarse-block-analytic.md`](../../building-blocks/coarse/coarse-block-analytic.md)  
@@ -14,19 +14,19 @@ This contribution proves:
 
 1. **Complex Differentiability of Finite Arithmetic Mellin Integrals:**  
    For any positive base $X > 0$, the localized Mellin integral of the discontinuous prime error function $\Delta(x) = \psi(x) - x$:
-   \[
+   $$
    s \mapsto \int_X^{2X} (\psi(x) - x) x^{-(s+1)} \, dx
-   \]
+   $$
    is globally complex-differentiable on the entire complex plane $\mathbb{C}$ (i.e. is an entire function).
 2. **Global Analyticity of Dyadic Mellin Blocks:**  
    For every dyadic block index $k \in \mathbb{N}$, the dyadic block function:
-   \[
+   $$
    s \mapsto \text{coarseMellinBlock}(k, s) = \int_{2^k}^{2^{k+1}} (\psi(x) - x) x^{-(s+1)} \, dx
-   \]
+   $$
    is analytic on $\mathbb{C}$ without any singularities:
-   \[
+   $$
    \text{AnalyticOnNhd } \mathbb{C} \, (\text{coarseMellinBlock } k) \, \text{univ}.
-   \]
+   $$
 3. **Leibniz Dominated Differentiation for Discontinuous Prime Kernels:**  
    The proof rigorously establishes the interchange of complex differentiation and integration under the parameter-dependent kernel $W(s, x) = \exp(-(s+1)\log(\max(X, x)))$ by constructing compact uniform bounds on cylinders $\overline{B}(s_0, 1) \times [X, 2X]$.
 
@@ -44,18 +44,18 @@ For every fixed $x \ge X$, $s \mapsto W(s, x)$ is entire with derivative $D(s, x
 For any point $s_0 \in \mathbb{C}$, consider the compact closed ball $\overline{B}(s_0, 1)$.
 The cylinder $\overline{B}(s_0, 1) \times [X, 2X]$ is compact in $\mathbb{C} \times \mathbb{R}$.
 Since $(s, x) \mapsto D(s, x)$ is jointly continuous, it achieves a maximum modulus $C < \infty$ on this cylinder:
-\[
+$$
 \|D(s, x)\| \le C \quad \text{for all } s \in B(s_0, 1), x \in [X, 2X].
-\]
+$$
 The majorant is:
-\[
+$$
 \|\Delta(x) D(s, x)\| \le C |\Delta(x)|.
-\]
+$$
 Since $\Delta(x)$ is Riemann-integrable / bounded and locally integrable on $[X, 2X]$, the majorant $C |\Delta(x)|$ is integrable on $[X, 2X]$.
 By the parametric Leibniz integral theorem (`hasDerivAt_integral_of_dominated_loc_of_deriv_le`), the integral:
-\[
+$$
 I(s) = \int_X^{2X} \Delta(x) W(s, x) \, dx
-\]
+$$
 is complex differentiable at $s_0$. Since $s_0 \in \mathbb{C}$ was arbitrary, $I(s)$ is entire.
 
 ### 2.3. Extension to Dyadic Blocks
@@ -85,6 +85,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Parametric integrals in complex analysis and entire Mellin kernels (Ahlfors 1979, Titchmarsh 1986). The formal verification of entirety for finite Mellin transforms of the actual discontinuous prime counting error $\psi(x) - x$ in Lean 4 is new.
+- **Prior Literature:** Parametric integrals in complex analysis and entire Mellin kernels (Ahlfors 1979, Titchmarsh 1986). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Guarantees that all singularities in the prime Mellin transform arise strictly from the infinite summation of dyadic blocks, with every individual block being entire on $\mathbb{C}$.
 - **Target Venues:** *Complex Variables and Elliptic Equations* or *Journal of Mathematical Analysis and Applications*.

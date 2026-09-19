@@ -66,6 +66,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing dilation uniqueness above the square-root parent scale, eliminating off-diagonal interference in operator row sums and bounding normalized high-parent prime energy by reciprocal-square tails.
+This entry documents a machine-verified proof in Lean 4 establishing dilation uniqueness above the square-root parent scale, eliminating off-diagonal interference in operator row sums and bounding normalized high-parent prime energy by reciprocal-square tails.

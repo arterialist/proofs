@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving uniform global decay $\text{seed}_L(v) \le e^{-v/2}$ and establishing completely explicit, non-asymptotic prime square tail bounds $\sum_{p \in S} \frac{1}{p^2} \le \frac{32 \log 2}{Y \log Y}$ without using $\mathcal{O}$-notation.
+This entry documents a machine-verified implementation in Lean 4 proving uniform global decay $\text{seed}_L(v) \le e^{-v/2}$ and establishing completely explicit, non-asymptotic prime square tail bounds $\sum_{p \in S} \frac{1}{p^2} \le \frac{32 \log 2}{Y \log Y}$ without using $\mathcal{O}$-notation.

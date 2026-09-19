@@ -1,4 +1,4 @@
-# Unique Contribution 230: Exact Unconditional Cauchy-Lorentz Spectral Envelope for Arithmetic Sources
+# Contribution 230: Exact Unconditional Cauchy-Lorentz Spectral Envelope for Arithmetic Sources
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ChargeFrozenSpectralBound.lean`](../../formalization/BuildingBlocks/ChargeFrozenSpectralBound.lean), [`building-blocks/charge/charge-frozen-spectral-bound.md`](../../building-blocks/charge/charge-frozen-spectral-bound.md)  
@@ -14,29 +14,29 @@ This contribution proves:
 
 1. **Exact Critical Pointwise Mellin Atom Modulus:**  
    For any positive base $x > 0$ and any real frequency $\xi \in \mathbb{R}$, with the critical-line Mellin weight $w(\xi) = 1/2 + i\xi$:
-   \[
+   $$
    \|x^{-w(\xi)}\| = \|x^{-(1/2 + i\xi)}\| = x^{-1/2}.
-   \]
+   $$
 2. **Unconditional Chebyshev Weighted Sum Bound:**  
    For every integer $N \ge 2$ and every $\xi \in \mathbb{R}$:
-   \[
+   $$
    \left\| \sum_{n=2}^N \Lambda(n) n^{-w(\xi)} \right\| \le \sum_{n=1}^N \frac{\Lambda(n)}{\sqrt{n}} \le (8 \log 2) N^{1/2}.
-   \]
+   $$
 3. **Continuous Background Density Integral Bound:**  
    For every integer $N \ge 1$ and every $\xi \in \mathbb{R}$:
-   \[
+   $$
    \left\| \int_1^N x^{-w(\xi)} \, dx \right\| \le \int_1^N x^{-1/2} \, dx = 2(N^{1/2} - 1).
-   \]
+   $$
 4. **Uniform Discrepancy Numerator Bound:**  
    The total critical Mellin numerator satisfies:
-   \[
+   $$
    \left\| -1 + \sum_{n=2}^N \Lambda(n) n^{-w(\xi)} - \int_1^N x^{-w(\xi)} \, dx \right\| \le (8 \log 2 + 2) N^{1/2}.
-   \]
-5. **Grand Unconditional Cauchy-Lorentz Spectral Envelope:**  
+   $$
+5. **Unconditional Cauchy-Lorentz Spectral Envelope:**
    For every integer $N \ge 2$ and every frequency $\xi \in \mathbb{R}$:
-   \[
+   $$
    \left\| \int_{-\infty}^\infty e^{-i \xi v} \text{causalSource}(N, v) \, dv \right\|^2 \le \frac{4 (8 \log 2 + 2)^2 N}{1 + \xi^2}.
-   \]
+   $$
    This proves that the physical Fourier spectral density $\rho_N(\xi) = \|\widehat{\text{causalSource}}(N, \xi)\|^2$ is bounded globally and unconditionally by an explicit integrable Cauchy-Lorentz envelope decaying as $O((1 + \xi^2)^{-1})$.
 
 ---
@@ -45,46 +45,46 @@ This contribution proves:
 
 ### 2.1. Critical Modulus
 Using the complex power definition:
-\[
+$$
 x^{-w(\xi)} = \exp(-w(\xi) \log x) = \exp(-(1/2 + i\xi) \log x) = \exp(-\tfrac{1}{2} \log x) \cdot \exp(-i \xi \log x).
-\]
+$$
 Taking absolute values:
-\[
+$$
 \|x^{-w(\xi)}\| = \exp(-\tfrac{1}{2}\log x) = x^{-1/2}.
-\]
+$$
 
 ### 2.2. Discrete and Continuous Sums
 By the triangle inequality:
-\[
+$$
 \left\| \sum_{n=2}^N \Lambda(n) n^{-w(\xi)} \right\| \le \sum_{n=2}^N \Lambda(n) \|n^{-w(\xi)}\| = \sum_{n=2}^N \frac{\Lambda(n)}{\sqrt{n}}.
-\]
+$$
 By Chebyshev's weighted prime power estimate (`weighted_vonMangoldt_le`), $\sum_{n \le N} \Lambda(n) n^{-1/2} \le (8 \log 2) \sqrt{N}$.
 For the continuous term:
-\[
+$$
 \left\| \int_1^N x^{-w(\xi)} dx \right\| \le \int_1^N \|x^{-w(\xi)}\| dx = \int_1^N x^{-1/2} dx = \left[ 2x^{1/2} \right]_1^N = 2(\sqrt{N} - 1).
-\]
+$$
 Combining these with $|-1| = 1$:
-\[
+$$
 1 + (8 \log 2)\sqrt{N} + 2(\sqrt{N} - 1) = (8 \log 2 + 2)\sqrt{N} - 1 \le (8 \log 2 + 2)\sqrt{N}.
-\]
+$$
 
 ### 2.3. Division by the Critical Weight
 By the Fourier-Mellin representation (Contribution 225):
-\[
+$$
 \widehat{\text{causalSource}}(N, \xi) = \frac{-1 + \sum_{n=2}^N \Lambda(n) n^{-w(\xi)} - \int_1^N x^{-w(\xi)} dx}{w(\xi)}.
-\]
+$$
 The modulus squared of the denominator is:
-\[
+$$
 \|w(\xi)\|^2 = |1/2 + i\xi|^2 = 1/4 + \xi^2.
-\]
+$$
 Squaring the numerator bound:
-\[
+$$
 \left\| \text{Numerator} \right\|^2 \le (8 \log 2 + 2)^2 N.
-\]
+$$
 Dividing by $1/4 + \xi^2$:
-\[
+$$
 \frac{(8 \log 2 + 2)^2 N}{1/4 + \xi^2} = \frac{4 (8 \log 2 + 2)^2 N}{1 + 4\xi^2} \le \frac{4 (8 \log 2 + 2)^2 N}{1 + \xi^2},
-\]
+$$
 since $1 + \xi^2 \le 1 + 4\xi^2$.
 
 ---
@@ -127,6 +127,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Anticoncentration and high-frequency bounds for Dirichlet polynomials, stationary phase estimates in prime number theory (Montgomery 1971, Soundararajan 2009, Harper 2019). The exact unconditional, machine-verified Cauchy-Lorentz bound for the causal arithmetic Fourier transform in Lean 4 is new.
+- **Prior Literature:** Anticoncentration and high-frequency bounds for Dirichlet polynomials, stationary phase estimates in prime number theory (Montgomery 1971, Soundararajan 2009, Harper 2019). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes uniform spectral decay $O(N/(1+\xi^2))$ holding across the entire continuous frequency spectrum without conditional assumptions.
 - **Target Venues:** *Journal of Fourier Analysis and Applications* or *Mathematika*.

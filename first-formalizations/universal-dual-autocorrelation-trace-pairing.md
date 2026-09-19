@@ -15,9 +15,9 @@ This formalization establishes the exact real-space duality connecting smooth wi
    Formal proof that the autocorrelation of a compactly supported $C^\infty$ bump is compactly supported in $[-2r, 2r]$ and $C^\infty$ (`autocorrelation_contDiff`, `autocorrelation_tsupport_subset`).
 2. **Derivative of the Window Function:**
    Formal derivation of the exact differentiation formula for the logarithmic window $W(x) = x^{-1/2} R(\log x - s)$:
-   \[
+   $$
    W'(x) = x^{-3/2} (R'(\log x - s) - R(\log x - s)/2)
-   \]
+   $$
    (`window_hasDerivAt`, `windowDerivative_continuousAt`).
 3. **Physical Moment Factorization:**
    Formal verification that the integral $\int e^{y/2} A_f(y) dy$ factors as the product of physical moments $\hat{f}(1/2)\hat{f}(-1/2)$ (`densityMoment_autocorrelation`).
@@ -72,6 +72,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of a real-space dual trace formula connecting smooth windowed prime sums directly to causal error integrals, completely circumventing complex contour integration and the non-trivial zeros of $\zeta(s)$.
+This entry documents a machine-verified proof of a real-space dual trace formula connecting smooth windowed prime sums directly to causal error integrals, completely circumventing complex contour integration and the non-trivial zeros of $\zeta(s)$.

@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 constructing the exact Jordan decomposition of the distributional derivative of an arithmetic renewal function, proving mutual singularity via explicit topological/measure-theoretic separation, and evaluating its total variation norm in closed form.
+This entry documents a machine-verified implementation in Lean 4 constructing the exact Jordan decomposition of the distributional derivative of an arithmetic renewal function, proving mutual singularity via explicit topological/measure-theoretic separation, and evaluating its total variation norm in closed form.

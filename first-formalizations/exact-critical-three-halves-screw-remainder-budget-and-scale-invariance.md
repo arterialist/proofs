@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact scale-invariant cancellation of dyadic Goldbach screw remainders at the critical 3/2 exponent, fixing the sharp threshold constant at $25C/2$.
+This entry documents a machine-verified proof in Lean 4 establishing the exact scale-invariant cancellation of dyadic Goldbach screw remainders at the critical 3/2 exponent, fixing the sharp threshold constant at $25C/2$.

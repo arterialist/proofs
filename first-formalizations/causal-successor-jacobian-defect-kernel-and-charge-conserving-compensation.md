@@ -55,6 +55,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified construction of an exact rank-one boundary compensation that enforces charge conservation in logarithmic shift transfer operators.
+This entry documents a machine-verified construction of an exact rank-one boundary compensation that enforces charge conservation in logarithmic shift transfer operators.

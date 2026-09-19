@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact paired reciprocal bump algebraic identity and the resulting linear negativity bound $-2 b r$ for zero pairs in the Weil explicit formula.
+This entry documents a machine-verified implementation in Lean 4 proving the exact paired reciprocal bump algebraic identity and the resulting linear negativity bound $-2 b r$ for zero pairs in the Weil explicit formula.

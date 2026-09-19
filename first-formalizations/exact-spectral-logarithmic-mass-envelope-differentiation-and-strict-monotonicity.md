@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 computing the exact classical derivative and proving the unconditional strict monotonicity of the logarithmic mass envelope $h(1 + \log(1 + A/h))$ without asymptotic approximations.
+This entry documents a machine-verified implementation in Lean 4 computing the exact classical derivative and proving the unconditional strict monotonicity of the logarithmic mass envelope $h(1 + \log(1 + A/h))$ without asymptotic approximations.

@@ -15,16 +15,16 @@ This formalization proves the global Cauchy majorant, improper Lebesgue integrab
    Formal proof of `sizeBudget_nonneg`, `exponential_increment_bounds`, `response_abs_linear` ($|R(N, t)| \le K t$), and `response_abs_bounded` ($|R(N, t)| \le K$).
 2. **Global Integrable Cauchy Majorant:**
    Formal proof of `weight_le_inverse_square` ($w(u) \le 1/u^2$) and `energyRow_majorant`:
-   \[
+   $$
    \text{energyRow}(N, u) \le \frac{2 (\text{sizeBudget}(N))^2}{1 + u^2}.
-   \]
+   $$
 3. **Improper Lebesgue Integrability on $(0, \infty)$:**
    Formal proof of `energyRow_integrable`, `densityRow_le_energy`, `densityRow_integrable`, `scaled_energyRow_integrable`, and `workRow_integrable`.
 4. **Dilation Scaling Identity:**
    Formal proof of `scaled_energy_integral`:
-   \[
+   $$
    \int_0^\infty \frac{1}{2} \text{energyRow}(N, u/2) du = \mathcal{E}(N).
-   \]
+   $$
 5. **Exact Infinite-Horizon Energy Balance:**
    Formal proof of `binary_energy_infinite` ($\mathcal{E}(2N+b) - 2\mathcal{E}(N) = \mathcal{W}(N, b) - \mathcal{D}(N)$) and `integratedWork_original_clock`.
 
@@ -69,6 +69,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the global improper Lebesgue integrability and infinite-horizon dyadic recurrence $\mathcal{E}(2N+b) - 2\mathcal{E}(N) = \mathcal{W}(N, b) - \mathcal{D}(N)$ for factorial binary carry dynamics.
+This entry documents a machine-verified proof in Lean 4 establishing the global improper Lebesgue integrability and infinite-horizon dyadic recurrence $\mathcal{E}(2N+b) - 2\mathcal{E}(N) = \mathcal{W}(N, b) - \mathcal{D}(N)$ for factorial binary carry dynamics.

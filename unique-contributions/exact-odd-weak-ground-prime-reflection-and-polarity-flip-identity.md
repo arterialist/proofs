@@ -1,4 +1,4 @@
-# Unique Contribution 309: Exact Odd Weak Ground Prime Reflection and Polarity Flip Identity
+# Contribution 309: Exact Odd Weak Ground Prime Reflection and Polarity Flip Identity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/OddWeakGroundPrimeReflectionFinite.lean`](../../formalization/BuildingBlocks/OddWeakGroundPrimeReflectionFinite.lean), [`building-blocks/theta-ground/odd-reflection.md`](../../building-blocks/theta-ground/odd-reflection.md)  
@@ -9,27 +9,27 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the spectral decomposition of theta-ground kernels associated with the Riemann zeta function, odd test functions undergo sign inversion under logarithmic scale reflection:
-\[
+$$
 \text{oddScale}(f, t, v) = \begin{cases} f(t e^v) & \text{if } v > 0, \\ -f(t e^{-v}) & \text{if } v < 0, \\ 0 & \text{if } v = 0. \end{cases}
-\]
+$$
 When evaluating prime-power contributions at a positive scale parameter $u > 0$ paired with prime logarithms $\ell = \log n$, the argument $u - \ell$ changes sign across the critical threshold $u = \ell = \log n$.
 
 This contribution proves:
 
 1. **Exact Finite Von Mangoldt Scaled Row Identity:**  
    For any test function $f : \mathbb{R} \to \mathbb{R}$, $t \in \mathbb{R}$, $u > 0$, and any finite set of integers $s \subset \mathbb{N}_{\ge 2}$ avoiding the discrete singular points $\log n = u$:
-   \[
+   $$
    \sum_{n \in s} \frac{\Lambda(n)}{\sqrt{n}} \left( \text{oddScale}(f, t, u + \log n) + \text{oddScale}(f, t, u - \log n) \right)
-   \]
-   \[
+   $$
+   $$
    = \sum_{n \in s} \frac{\Lambda(n)}{\sqrt{n}} \left( f(t n e^u) - f(t n e^{-u}) \right) + \sum_{\substack{n \in s \\ \log n < u}} \frac{\Lambda(n)}{\sqrt{n}} \left( f(t e^{u - \log n}) + f(t e^{\log n - u}) \right).
-   \]
+   $$
    This decomposes the odd reflected prime sum into an antisymmetric dilation difference $\sum \frac{\Lambda(n)}{\sqrt{n}} (f(tne^u) - f(tne^{-u}))$ and an explicit non-negative polarity correction supported solely on the finite set of small primes $n < e^u$.
 2. **Singular Threshold Polarity Flip Identity:**  
    For any $u > 0$, $\ell \ge 0$, and $\ell \ne u$:
-   \[
+   $$
    \text{oddScale}(f, t, u + \ell) + \text{oddScale}(f, t, u - \ell) = f(t e^{u + \ell}) - f(t e^{\ell - u}) + \mathbf{1}_{\ell < u} \left( f(t e^{u - \ell}) + f(t e^{\ell - u}) \right).
-   \]
+   $$
 3. **Antisymmetry Under Scale Reflection:**  
    The odd scale transform is strictly odd: $\text{oddScale}(f, t, -v) = - \text{oddScale}(f, t, v)$ for all $v \in \mathbb{R}$.
 4. **Antisymmetry of the Paired Kernel:**  
@@ -51,9 +51,9 @@ Let $u > 0$ and $\ell \ge 0$.
    The pair sum is $f(t e^{u+\ell}) - f(t e^{\ell - u})$.
 
 Unifying both cases:
-\[
+$$
 \text{oddScale}(f, t, u + \ell) + \text{oddScale}(f, t, u - \ell) = f(t e^{u+\ell}) - f(t e^{\ell - u}) + \mathbf{1}_{\ell < u} \left( f(t e^{u-\ell}) + f(t e^{\ell - u}) \right).
-\]
+$$
 When $\ell < u$, $-f(t e^{\ell - u}) + f(t e^{\ell - u}) = 0$, leaving $f(t e^{u+\ell}) + f(t e^{u-\ell})$. When $\ell > u$, the indicator is zero, leaving $f(t e^{u+\ell}) - f(t e^{\ell - u})$.
 
 ### 2.2. Von Mangoldt Summation
@@ -119,6 +119,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Weil (1952) *Sur les "formules explicites" de la théorie des nombres premiers*; Bombieri (2000) *Problems of the Millennium: The Riemann Hypothesis*. Machine verification of exact odd-scale prime reflection decompositions and polarity flip corrections in Lean 4 is new.
+- **Prior Literature:** Weil (1952) *Sur les "formules explicites" de la théorie des nombres premiers*; Bombieri (2000) *Problems of the Millennium: The Riemann Hypothesis*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact algebraic formula decoupling symmetric prime dilation sums from low-prime polarity deficits across sign boundaries.
 - **Target Venues:** *Journal of Number Theory* or *Acta Arithmetica*.

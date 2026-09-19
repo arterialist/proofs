@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 combining functional analysis (the Banach-Steinhaus uniform boundedness theorem on complete normed spaces) with analytic number theory (Möbius arithmetic functions and squarefree density) to prove the impossibility of sub-2/3 floor-sum bounds on regular sequences.
+This entry documents a machine-verified implementation in Lean 4 combining functional analysis (the Banach-Steinhaus uniform boundedness theorem on complete normed spaces) with analytic number theory (Möbius arithmetic functions and squarefree density) to prove the impossibility of sub-2/3 floor-sum bounds on regular sequences.

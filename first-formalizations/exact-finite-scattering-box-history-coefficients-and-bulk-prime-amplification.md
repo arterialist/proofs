@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the exact bulk factorization of scattering history operators on finite phase boxes and proving that every prime $p$ generates strictly super-unitary amplification across the interior of the scattering lattice.
+This entry documents a machine-verified implementation in Lean 4 establishing the exact bulk factorization of scattering history operators on finite phase boxes and proving that every prime $p$ generates strictly super-unitary amplification across the interior of the scattering lattice.

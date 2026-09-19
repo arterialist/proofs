@@ -7,22 +7,22 @@ RH Agent3 developed the written calculation and the finite-phase formalization. 
 For an actual prime p and integer M >= 1 put r = p^(-1/2), and use
 the unchanged multipliers
 
-\[
+$$
 u_p(z)=\frac{1-p^{z-1/2}}{1-p^{-z-1/2}},\qquad
 v_{p,M}(z)=-p^{z-1/2}+(1-p^{-1})\sum_{j=0}^{M-1}p^{-j(z+1/2)}.
-\]
+$$
 
 The finite geometric sum gives v = u(1-d), where
 
-\[
+$$
 d(it)=\frac{(1-r^2)r^M e^{-iMt\log p}}{1-r e^{it\log p}}.
-\]
+$$
 
 Since |u(it)| = 1, the exact squared-norm multiplier change is
 
-\[
+$$
 |v(it)|^2-1=-2\Re d(it)+|d(it)|^2.
-\]
+$$
 
 At t = 0, d = (1+r)r^M lies strictly between 0 and 2:
 r <= 1/sqrt(2) and (1+r)r^M <= r+r^2 < 2.
@@ -31,10 +31,10 @@ Consequently |v(0)|^2-1 < 0.
 At t_* = pi/(M log p), set theta = pi/M and a = (1-r^2)r^M > 0.
 The numerator phase is -1, so
 
-\[
+$$
 \Re d(it_*)=-a\frac{1-r\cos\theta}{|1-r e^{i\theta}|^2}<0,
 \qquad |v(it_*)|^2-1>0.
-\]
+$$
 
 Thus every depth M has both attenuation and amplification frequencies.
 This remains true when M grows with the transport scale. Smallness of
@@ -44,20 +44,20 @@ Both signs can be realized by smooth compact tests with the literal
 two pole moments zero. Choose a nonzero eta in C_c^infinity(R), and
 at either frequency t_0 above set
 
-\[
+$$
 f_L(v)=L^{-1/2}\eta(v/L)e^{-it_0v},\qquad
 h_L=(D^2-1/4)f_L.
-\]
+$$
 
 Integration by parts gives M_(+/-1/2) h_L = 0. In the angular Fourier
 convention int h(v)e^{itv}dv, the transform of f_L concentrates at t_0,
 and that of h_L is -(t^2+1/4) times it. Plancherel and dominated
 convergence therefore give
 
-\[
+$$
 \lim_{L\to\infty}\frac{\|V_{p,M}h_L\|_2^2}{\|h_L\|_2^2}
 =|v_{p,M}(it_0)|^2.
-\]
+$$
 
 For completeness, domination after t = t_0 + s/L follows from the
 bounded finite translation multiplier and
@@ -87,32 +87,32 @@ original physical L2 metric.
 
 The unchanged finite history operator is exactly
 
-\[
+$$
 V\eta=-r\tau_L\eta+(1-r^2)\sum_{m=0}^{M-1}r^m\tau_{-mL}\eta.
-\]
+$$
 
 For this single bump its norm is the exact diagonal sum
 
-\[
+$$
 \|V\eta\|_2^2=
 \left[r^2+(1-r^2)^2\sum_{m=0}^{M-1}r^{2m}\right]\|\eta\|_2^2
 =\left[1-(1-r^2)r^{2M}\right]\|\eta\|_2^2<\|\eta\|_2^2.
-\]
+$$
 
 For amplification, take theta=pi/M, q=exp(i theta), and the FINITE test
 
-\[
+$$
 h_J=\sum_{j=0}^{J-1}q^{-j}\tau_{jL}\eta.
-\]
+$$
 
 Each translate is pole-null, so h_J is pole-null. Orthogonality gives
 ||h_J||_2^2=J||eta||_2^2. In Vh_J, the coefficient of tau_(kL) eta,
 for each integer 1 <= k <= J-M, is exactly
 
-\[
+$$
 q^{-k}\left[-r q+(1-r^2)\sum_{m=0}^{M-1}r^m q^{-m}\right]
 =q^{-k}v_{p,M}(i\theta/L).
-\]
+$$
 
 All indices are inside the original box: the positive shift uses
 j=k-1 and each negative shift uses j=k+m. The remaining output
@@ -120,10 +120,10 @@ coefficients occupy disjoint translates too and contribute nonnegative
 squared norms; no boundary term is discarded with a negative sign.
 With G=|v_(p,M)(i theta/L)|^2>1, this proves
 
-\[
+$$
 \|Vh_J\|_2^2\ge(J-M)G\|\eta\|_2^2>J\|\eta\|_2^2
 =\|h_J\|_2^2
-\]
+$$
 
 for any integer J>MG/(G-1). This also implies J>M. Thus one FINITE
 compact pole-null test attenuates and another amplifies, with no

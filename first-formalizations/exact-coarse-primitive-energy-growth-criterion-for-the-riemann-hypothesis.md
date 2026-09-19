@@ -39,6 +39,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the dyadic coarse primitive energy growth condition $\text{coarsePrimitiveSquare}(2^k) \le C_\epsilon (2^k)^{4+\epsilon}$ is formally sufficient to deduce the full Riemann Hypothesis `Target`.
+This entry documents a machine-verified implementation in Lean 4 proving that the dyadic coarse primitive energy growth condition $\text{coarsePrimitiveSquare}(2^k) \le C_\epsilon (2^k)^{4+\epsilon}$ is formally sufficient to deduce the full Riemann Hypothesis `Target`.

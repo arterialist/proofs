@@ -17,9 +17,9 @@ This formalization establishes the exact, non-asymptotic global cubic sandwich i
    Formal verification that both $\arcsin x - x$ and $\frac{x^3}{3} - (\arcsin x - x)$ have nonnegative derivatives on $[0, z]$.
 3. **Grand Global Cubic Sandwich Theorem:**
    Formal proof of `arcsin_sub_bounds`:
-   \[
+   $$
    0 \le \arcsin(z) - z \le \frac{z^3}{3} \quad \text{for all } z \ge 0 \text{ with } z^2 \le 1/2.
-   \]
+   $$
 
 ---
 
@@ -40,6 +40,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the global cubic sandwich inequality $0 \le \arcsin(z) - z \le z^3/3$ across the entire domain $[0, 1/\sqrt{2}]$ using constructive monotonicity, eliminating Taylor expansion remainders in the analysis of arithmetic angle defects.
+This entry documents a machine-verified implementation in Lean 4 establishing the global cubic sandwich inequality $0 \le \arcsin(z) - z \le z^3/3$ across the entire domain $[0, 1/\sqrt{2}]$ using constructive monotonicity, eliminating Taylor expansion remainders in the analysis of arithmetic angle defects.

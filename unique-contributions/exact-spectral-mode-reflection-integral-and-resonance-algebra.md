@@ -1,4 +1,4 @@
-# Unique Contribution 147: Exact Spectral Mode Reflection Integral and Resonance Algebra
+# Contribution 147: Exact Spectral Mode Reflection Integral and Resonance Algebra
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SelbergSpectralModes.lean`](../../formalization/BuildingBlocks/SelbergSpectralModes.lean), [`building-blocks/selberg/selberg-spectral-modes.md`](../../building-blocks/selberg/selberg-spectral-modes.md)  
@@ -14,17 +14,17 @@ This contribution proves:
 
 1. **Exact Reflected Spectral Mode Integral:**  
    For any two real frequencies $\gamma, \delta \in \mathbb{R}$ and any real time duration $T \in \mathbb{R}$, with additive spectral modes $e_{\gamma}(t) = \exp(i \gamma t)$:
-   \[
+   $$
    \int_0^T e_{\gamma}(t) e_{\delta}(T - t) dt = \begin{cases}
    T \exp(i \gamma T) & \text{if } \gamma = \delta \text{ (exact resonance)}, \\
    \dfrac{\exp(i \gamma T) - \exp(i \delta T)}{i(\gamma - \delta)} & \text{if } \gamma \ne \delta \text{ (off-resonant mode)}.
    \end{cases}
-   \]
+   $$
 2. **Universal Reflection Convolution of Finite Spectral Sums:**  
    For any finite collections of modes $\sum_{i \in s} A_i e_{\gamma_i}(t)$ and $\sum_{j \in r} B_j e_{\delta_j}(t)$, the reflection integral evaluates to the exact double sum:
-   \[
+   $$
    \int_0^T \left( \sum_{i \in s} A_i e_{\gamma_i}(t) \right) \left( \sum_{j \in r} B_j e_{\delta_j}(T - t) \right) dt = \sum_{i \in s} \sum_{j \in r} A_i B_j \left( \mathbf{1}_{\gamma_i = \delta_j} T e^{i \gamma_i T} + \mathbf{1}_{\gamma_i \ne \delta_j} \frac{e^{i \gamma_i T} - e^{i \delta_j T}}{i(\gamma_i - \delta_j)} \right).
-   \]
+   $$
 
 ---
 
@@ -32,29 +32,29 @@ This contribution proves:
 
 ### 2.1. Exact Resonance Branch ($\gamma = \delta$)
 If $\gamma = \delta$:
-\[
+$$
 e_{\gamma}(t) e_{\delta}(T - t) = \exp(i \gamma t) \exp(i \gamma (T - t)) = \exp(i \gamma (t + T - t)) = \exp(i \gamma T).
-\]
+$$
 The integrand is independent of the integration variable $t$.
 Integrating the constant over $[0, T]$:
-\[
+$$
 \int_0^T \exp(i \gamma T) dt = T \exp(i \gamma T).
-\]
+$$
 
 ### 2.2. Off-Resonant Branch ($\gamma \ne \delta$)
 If $\gamma \ne \delta$:
-\[
+$$
 e_{\gamma}(t) e_{\delta}(T - t) = \exp(i \delta T) \exp(i (\gamma - \delta) t).
-\]
+$$
 Since $\gamma - \delta \ne 0$, the complex frequency $\alpha = i(\gamma - \delta)$ satisfies $\alpha \ne 0$.
 Integrating the exponential:
-\[
+$$
 \int_0^T \exp(\alpha t) dt = \left[ \frac{\exp(\alpha t)}{\alpha} \right]_0^T = \frac{\exp(\alpha T) - 1}{\alpha} = \frac{\exp(i (\gamma - \delta) T) - 1}{i(\gamma - \delta)}.
-\]
+$$
 Multiplying by the prefactor $\exp(i \delta T)$:
-\[
+$$
 \exp(i \delta T) \frac{\exp(i (\gamma - \delta) T) - 1}{i(\gamma - \delta)} = \frac{\exp(i \gamma T) - \exp(i \delta T)}{i(\gamma - \delta)}.
-\]
+$$
 
 ### 2.3. Bilinear Expansion for Finite Spectral Sums
 By linearity and distributivity of the Bochner/Lebesgue integral over finite sums, the integral of the product of two finite spectral packets expands into the double sum of individual mode reflection integrals, retaining each off-diagonal cross term with its exact phase difference.

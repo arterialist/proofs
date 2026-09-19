@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of negative correlation and sub-multiplicativity of divisibility events in continuous chronological tent measures, establishing the non-negativity of dilation determinants.
+This entry documents a machine-verified proof of negative correlation and sub-multiplicativity of divisibility events in continuous chronological tent measures, establishing the non-negativity of dilation determinants.

@@ -1,4 +1,4 @@
-# Unique Contribution 291: Exact Mangoldt-Weighted Birth-Source Majorization and Joint Convergence
+# Contribution 291: Exact Mangoldt-Weighted Birth-Source Majorization and Joint Convergence
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/IntegerBirthSourceBound.lean`](../../formalization/BuildingBlocks/IntegerBirthSourceBound.lean), [`building-blocks/birth-kernel/source-bounds.md`](../../building-blocks/birth-kernel/source-bounds.md)  
@@ -14,30 +14,30 @@ This contribution proves:
 
 1. **Complete Von Mangoldt-Weighted Source Majorization:**  
    For all real clock arguments $u \ge 0$:
-   \[
+   $$
    \sum_{n=0}^\infty \Lambda(n+2) U(n+2, u) \le \sum_{n=0}^\infty \Lambda(n+2) \widetilde{U}(n+2, u),
-   \]
+   $$
    with both infinite sums proven absolutely convergent!
 2. **Exact Analytic Defect Identity:**  
    The defect between the regularized and exact sources decomposes into the convergent termwise difference:
-   \[
+   $$
    \sum_{n=0}^\infty \Lambda(n+2) \widetilde{U}(n+2, u) - \sum_{n=0}^\infty \Lambda(n+2) U(n+2, u) = \sum_{n=0}^\infty \Lambda(n+2) \left( \widetilde{U}(n+2, u) - U(n+2, u) \right).
-   \]
+   $$
 3. **Uniform Scale-Invariant First-Moment Bound:**  
    For every birth location $n \ge 2$ and every argument $u \ge 0$:
-   \[
+   $$
    |U(n, u)| \le \frac{(\pi + 1) u}{n \sqrt{n}}, \qquad |\widetilde{U}(n, u)| \le \frac{(\pi + 1) u}{n \sqrt{n}}.
-   \]
+   $$
 4. **Absolute Von Mangoldt Decay at Critical Exponent 3/2:**  
    Rigorous deduction via Dirichlet $L$-series theory that:
-   \[
+   $$
    \sum_{n=1}^\infty \frac{\Lambda(n)}{n \sqrt{n}} = \sum_{n=1}^\infty \frac{\Lambda(n)}{n^{3/2}} < \infty.
-   \]
+   $$
 5. **Joint Clock-Birth Two-Dimensional Absolute Summability:**  
    For any clock damping parameter $t > 0$, the double series across both birth indices and clock integers converges absolutely:
-   \[
+   $$
    \sum_{n=0}^\infty \sum_{j=0}^\infty e^{-tj} \Lambda(n+2) |U(n+2, j)| < \infty, \qquad \sum_{n=0}^\infty \sum_{j=0}^\infty e^{-tj} \Lambda(n+2) |\widetilde{U}(n+2, j)| < \infty.
-   \]
+   $$
 
 ---
 
@@ -45,24 +45,24 @@ This contribution proves:
 
 ### 2.1. First-Moment Envelope for the Raw Source
 For $0 \le u \le n$, convexity of $u \mapsto q(n, u)$ yields:
-\[
+$$
 0 \le U(n, u) \le \left( \frac{\pi}{2} - 1 \right) \frac{u}{n \sqrt{n}} \le \frac{(\pi + 1) u}{n \sqrt{n}}.
-\]
+$$
 For $u \ge n$, $q(n, u) = \frac{\pi}{2 \sqrt{u}}$, so:
-\[
+$$
 |U(n, u)| = \left| \frac{\pi}{2 \sqrt{u}} - \frac{1}{\sqrt{n}} \right| \le \frac{\pi + 1}{\sqrt{n}} \le \frac{(\pi + 1) u}{n \sqrt{n}}.
-\]
+$$
 Thus the bound $|U(n, u)| \le \frac{(\pi + 1) u}{n \sqrt{n}}$ holds universally for all $u \ge 0$.
 
 ### 2.2. Preservation Under Linear Interpolation
 Let $j = \lfloor u \rfloor$. The interpolant is the convex combination:
-\[
+$$
 \widetilde{U}(n, u) = (j + 1 - u) U(n, j) + (u - j) U(n, j+1).
-\]
+$$
 Applying the triangle inequality and the bounds at $j$ and $j+1$:
-\[
+$$
 |\widetilde{U}(n, u)| \le (j + 1 - u) \frac{(\pi + 1) j}{n \sqrt{n}} + (u - j) \frac{(\pi + 1)(j + 1)}{n \sqrt{n}} = \frac{(\pi + 1) u}{n \sqrt{n}}.
-\]
+$$
 
 ### 2.3. Summability and Majorization
 Because $\sum \frac{\Lambda(n)}{n^{3/2}} < \infty$, the comparison test shows that both $\sum \Lambda(n+2) U(n+2, u)$ and $\sum \Lambda(n+2) \widetilde{U}(n+2, u)$ converge absolutely for each fixed $u \ge 0$.
@@ -104,6 +104,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Dirichlet series of arithmetic functions (Apostol 1976), Prime Number Theorem in $L$-series representations, and interpolation theory. Machine-checked proofs of von Mangoldt-weighted birth source convergence and two-dimensional double-sum integrability in Lean 4 are new.
+- **Prior Literature:** Dirichlet series of arithmetic functions (Apostol 1976), Prime Number Theorem in $L$-series representations, and interpolation theory. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes that the continuous piecewise linear smoothing of discrete prime-power birth rates preserves absolute summability and provides an exact upper barrier for the full arithmetic source.
 - **Target Venues:** *Journal of Number Theory* or *Constructive Approximation*.

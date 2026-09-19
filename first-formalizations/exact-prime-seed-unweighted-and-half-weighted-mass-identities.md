@@ -65,6 +65,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that continuous causal prime seeds integrate to $\frac{2}{p}$ (unweighted) and $\frac{\log p}{p(p-1)}$ (half-weighted), linking continuous semigroup dynamics to classical Dirichlet prime-power coefficients.
+This entry documents a machine-verified implementation in Lean 4 proving that continuous causal prime seeds integrate to $\frac{2}{p}$ (unweighted) and $\frac{\log p}{p(p-1)}$ (half-weighted), linking continuous semigroup dynamics to classical Dirichlet prime-power coefficients.

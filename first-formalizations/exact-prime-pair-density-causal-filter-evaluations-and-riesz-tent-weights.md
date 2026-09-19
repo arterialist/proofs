@@ -56,6 +56,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that causal linear filtering of prime-power birth convolutions exactly synthesizes the Riesz typical mean weight without Fourier inversion or contour integration.
+This entry documents a machine-verified implementation in Lean 4 proving that causal linear filtering of prime-power birth convolutions exactly synthesizes the Riesz typical mean weight without Fourier inversion or contour integration.

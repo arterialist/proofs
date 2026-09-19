@@ -1,4 +1,4 @@
-# Unique Contribution 69: Causal Source Convolution Distinct-Prime and Density Decomposition
+# Contribution 69: Causal Source Convolution Distinct-Prime and Density Decomposition
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PrimeSourceDistinctFilter.lean`](../../formalization/BuildingBlocks/PrimeSourceDistinctFilter.lean)  
@@ -14,25 +14,25 @@ This contribution proves:
 
 1. **Filtered Source-Tau Residual Decomposition Theorem:**  
    For every age $s \ge 0$, the difference between the full filtered source self-convolution and the calibrated diagonal prime energy $\tau(s)$ decomposes identically into:
-   \[
+   $$
    \mathcal{L}_0(S * S)(s) - \tau(s) = \mathcal{L}_0(\mathrm{distinct})(s) - \mathcal{L}_0(\mathrm{mixedLeft})(s) - \mathcal{L}_0(\mathrm{mixedRight})(s) + \mathcal{L}_0(D * D)(s),
-   \]
+   $$
    where $\mathcal{L}_0(F)(s) = \int_0^s e^{-3(s-v)/2} F(v) \, dv$.
 2. **Identification of Constituents:**  
    - **Diagonal Energy:** $\tau(s) = \mathcal{L}_0(\mathrm{diagonal}_s)(s) = \sum_{p \le e^s} \mathcal{L}_0(B_p * B_p)(s)$ coincides with the calibrated singular self-interaction of prime power ladders.
    - **Distinct Prime Off-Diagonal Energy:**  
-     \[
+     $$
      \mathrm{distinct}(s, v) = \sum_{p \le e^s} \sum_{q \le e^s, q \ne p} (B_p * B_q)(v).
-     \]
+     $$
    - **Mixed Prime-Density Interactions:**  
-     \[
+     $$
      \mathrm{mixedLeft}(s, v) = \sum_{p \le e^s} (B_p * D)(v), \quad \mathrm{mixedRight}(s, v) = \sum_{p \le e^s} (D * B_p)(v).
-     \]
+     $$
    - **Continuous Background Density Self-Convolution:**  
      Has the exact closed form:
-     \[
+     $$
      (D * D)(s) = \int_0^s e^{u/2} e^{(s-u)/2} \, du = s e^{s/2}.
-     \]
+     $$
 3. **Local $L^2$ Integrability of Causal Primordial Sources:**  
    Every constituent function $B_p$, $\mathrm{frozenSum}(s)$, $D$, and the complete source $S$ belongs to $L^2([0, s])$ for every compact interval $[0, s]$, ensuring unconditional convergence and linearity of the functional $\mathcal{L}_0$.
 4. **Significance for RH:**  
@@ -45,35 +45,35 @@ This contribution proves:
 ### 2.1. Causal Source Representation
 On any compact interval $v \in [0, s]$, $S(v) = \sum_{p \le e^s} B_p(v) - D(v)$.
 Expanding the bilinear convolution $(S * S)(v) = \int_0^v S(u) S(v-u) \, du$:
-\[
+$$
 (S * S)(v) = \left( \sum_{p \le e^s} B_p - D \right) * \left( \sum_{q \le e^s} B_q - D \right)(v).
-\]
+$$
 By bilinearity of convolution on compact intervals:
-\[
+$$
 (S * S)(v) = \sum_{p, q \le e^s} (B_p * B_q)(v) - \sum_{p \le e^s} (B_p * D)(v) - \sum_{q \le e^s} (D * B_q)(v) + (D * D)(v).
-\]
+$$
 
 ### 2.2. Splitting of Prime Pairs
 The double sum over primes splits into diagonal ($p = q$) and off-diagonal ($p \ne q$):
-\[
+$$
 \sum_{p, q \le e^s} (B_p * B_q)(v) = \sum_{p \le e^s} (B_p * B_p)(v) + \sum_{p \ne q \le e^s} (B_p * B_q)(v) = \mathrm{diagonal}(s, v) + \mathrm{distinct}(s, v).
-\]
+$$
 Subtracting the diagonal term:
-\[
+$$
 (S * S)(v) - \mathrm{diagonal}(s, v) = \mathrm{distinct}(s, v) - \mathrm{mixedLeft}(s, v) - \mathrm{mixedRight}(s, v) + (D * D)(v).
-\]
+$$
 
 ### 2.3. Filter Action and Diagonal Identification
 Applying the linear filter $\mathcal{L}_0$:
-\[
+$$
 \mathcal{L}_0((S * S) - \mathrm{diagonal})(s) = \mathcal{L}_0(\mathrm{distinct})(s) - \mathcal{L}_0(\mathrm{mixedLeft})(s) - \mathcal{L}_0(\mathrm{mixedRight})(s) + \mathcal{L}_0(D * D)(s).
-\]
+$$
 Theorem `filtered_diagonal_eq_tau` establishes that $\mathcal{L}_0(\mathrm{diagonal}_s)(s) = \tau(s)$, which yields the exact result.
 
 ### 2.4. Closed Form of Density Convolution
-\[
+$$
 (D * D)(s) = \int_0^s e^{u/2} e^{(s-u)/2} \, du = \int_0^s e^{s/2} \, du = s e^{s/2}.
-\]
+$$
 
 ---
 

@@ -4,8 +4,8 @@
 (18 September 2026). Arithmetic corner rules and ramp prime-power weights are formalized in
 [ActualRampPrimeWeights.lean](../formalization/BuildingBlocks/ActualRampPrimeWeights.lean).
 Attribution: Arterialist RH research team (RH Agents 1, 2, 3), September 2026.
-To the best of our knowledge, the complete Weil form has not previously been proved strictly
-positive on the infinite-dimensional cone of positive mixtures of causal ramps.
+The page states positivity on the infinite-dimensional cone of positive mixtures of causal ramps.
+Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 
 ## Statement
 
@@ -14,19 +14,19 @@ Weil form, retaining all prime powers $\Lambda(p^k) = \log p$, both poles at $s=
 exact digamma multiplier.
 
 **Theorem.** For every $L, M > 0$:
-\[
+$$
  \boxed{\quad
  Q(f_L, f_M) > 0.0024 \min\{L, M, 1\} > 0.
  \quad}
-\]
+$$
 Consequently, every nonzero finite positive Borel measure $\mu$ with compact support in $(0, \infty)$
 generates a profile $f_\mu(x) = \int_0^\infty f_L(x)\,\mu(dL) = e^{-x/2} h(x) \mathbf{1}_{x \ge 0}$,
 where $h(x) = \mu([x, \infty))$ is nonnegative and nonincreasing, satisfying
-\[
+$$
  \boxed{\quad
  Q(f_\mu) > 0.0024 \int_0^1 h(t)^2\,dt > 0.
  \quad}
-\]
+$$
 This proves unconditional coercivity on this infinite-dimensional cone of profiles of arbitrary support.
 
 ## Mathematical mechanism and verification

@@ -69,6 +69,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof connecting continuous and discrete renewal operators via the exact non-asymptotic B-spline transfer factor $4\sinh^2(t/2)/t^2$.
+This entry documents a machine-verified proof connecting continuous and discrete renewal operators via the exact non-asymptotic B-spline transfer factor $4\sinh^2(t/2)/t^2$.

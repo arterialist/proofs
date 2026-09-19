@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 that smooth compact wavepackets can eliminate both boundary poles at $s=0, 1$ uniformly across all prime scattering blocks.
+This entry documents a machine-verified proof in Lean 4 that smooth compact wavepackets can eliminate both boundary poles at $s=0, 1$ uniformly across all prime scattering blocks.

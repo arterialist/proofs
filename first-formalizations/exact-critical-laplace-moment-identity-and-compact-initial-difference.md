@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 equating the Laplace transform of an arithmetic sign-tail measure to the explicit holomorphic difference between a compact interval integral and the meromorphic critical zeta transform.
+This entry documents a machine-verified proof in Lean 4 equating the Laplace transform of an arithmetic sign-tail measure to the explicit holomorphic difference between a compact interval integral and the meromorphic critical zeta transform.

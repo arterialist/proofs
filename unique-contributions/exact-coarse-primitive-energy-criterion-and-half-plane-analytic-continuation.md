@@ -1,4 +1,4 @@
-# Unique Contribution 238: Exact Coarse Primitive Energy Criterion and Half-Plane Analytic Continuation
+# Contribution 238: Exact Coarse Primitive Energy Criterion and Half-Plane Analytic Continuation
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CoarseContinuation.lean`](../../formalization/BuildingBlocks/CoarseContinuation.lean), [`building-blocks/coarse/coarse-continuation.md`](../../building-blocks/coarse/coarse-continuation.md)  
@@ -14,20 +14,20 @@ This contribution proves:
 
 1. **Summable Compact Majorant Existence:**  
    For any compact set $K \subset \{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}$, under `CoarsePrimitiveBound`, there exists an absolutely summable sequence $u: \mathbb{N} \to \mathbb{R}$ ($\sum_{k=0}^\infty u_k < \infty$) dominating all dyadic Mellin blocks on $K$:
-   \[
+   $$
    \|\text{coarseMellinBlock}(k, s)\| \le u_k \quad \text{for all } k \in \mathbb{N}, s \in K.
-   \]
+   $$
 2. **Locally Uniform Convergence of Dyadic Partial Sums:**  
    The sequence of partial sums of dyadic Mellin blocks:
-   \[
+   $$
    S_T(s) = \sum_{k \le T} \text{coarseMellinBlock}(k, s) = \sum_{k \le T} \int_{2^k}^{2^{k+1}} (\psi(x) - x) x^{-(s+1)} \, dx
-   \]
+   $$
    converges locally uniformly on the open right half-plane $\mathcal{H}_{1/2} = \{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}$ to the total Mellin sum $\text{coarseMellinSum}(s)$.
-3. **Grand Analytic Continuation Theorem:**  
+3. **Analytic Continuation Theorem:**
    Under `CoarsePrimitiveBound`, the total prime error Mellin sum $\text{coarseMellinSum}(s)$ is analytic on the entire open half-plane $\text{Re}(s) > 1/2$:
-   \[
+   $$
    \text{AnalyticOnNhd } \mathbb{C} \, \text{coarseMellinSum} \, \{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}.
-   \]
+   $$
    This establishes that an $L^2$ primitive bound on prime fluctuations guarantees zero singularities for the prime Mellin transform in the entire critical half-plane $\text{Re}(s) > 1/2$.
 
 ---
@@ -38,9 +38,9 @@ This contribution proves:
 Let $K \subset \{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}$ be compact.
 Since $K$ is compact, $a = \inf_{s \in K} \text{Re}(s) > 1/2$ and $R = \sup_{s \in K} \|s + 1\| < \infty$.
 By Contribution 236 (`coarseMellinBlock_geometric_bound`), there exist $M > 0$ and $0 \le r < 1$ such that:
-\[
+$$
 \|\text{coarseMellinBlock}(k, s)\| \le M \cdot r^k \quad \text{for all } s \in K, k \in \mathbb{N}.
-\]
+$$
 Defining $u_k = M r^k$:
 Since $0 \le r < 1$, the geometric series $\sum_{k=0}^\infty u_k = \frac{M}{1 - r} < \infty$ is summable, providing the required Weierstrass $M$-test majorant.
 
@@ -79,6 +79,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Analytic continuation via Dirichlet series and Mellin transforms in analytic number theory (Titchmarsh 1986, Montgomery-Vaughan 2007). The formal machine-checked proof connecting an $L^2$ primitive energy bound to the analytic continuation of the prime Mellin sum across $\text{Re}(s) > 1/2$ in Lean 4 is new.
+- **Prior Literature:** Analytic continuation via Dirichlet series and Mellin transforms in analytic number theory (Titchmarsh 1986, Montgomery-Vaughan 2007). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes a complete, verified pipeline from coarse energy bounds to locally uniform convergence and complex analyticity on the critical half-plane.
 - **Target Venues:** *Inventiones Mathematicae* or *Annals of Mathematics*.

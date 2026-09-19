@@ -57,6 +57,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the exact real-line Plancherel identity $\text{mass}(N) = 2\pi \|\text{causalSource}(N)\|_{L^2}^2$ via Fourier inversion of the autocorrelation function, along with its explicit terminal boundary decomposition into prefix dispersion and the normalized terminal error $\frac{(\psi(N)-N)^2}{N}$.
+This entry documents a machine-verified implementation in Lean 4 proving the exact real-line Plancherel identity $\text{mass}(N) = 2\pi \|\text{causalSource}(N)\|_{L^2}^2$ via Fourier inversion of the autocorrelation function, along with its explicit terminal boundary decomposition into prefix dispersion and the normalized terminal error $\frac{(\psi(N)-N)^2}{N}$.

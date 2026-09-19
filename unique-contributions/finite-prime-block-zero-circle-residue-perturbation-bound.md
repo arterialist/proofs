@@ -1,4 +1,4 @@
-# Unique Contribution 92: Finite Prime-Block Zero Circle Residue Perturbation Bound
+# Contribution 92: Finite Prime-Block Zero Circle Residue Perturbation Bound
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualZeroCircleResidues.lean`](../../formalization/BuildingBlocks/ActualZeroCircleResidues.lean), [`formalization/BuildingBlocks/GrowingPrimeScatteringBounds.lean`](../../formalization/BuildingBlocks/GrowingPrimeScatteringBounds.lean)  
@@ -14,24 +14,24 @@ This contribution proves:
 
 1. **General Analytic Zero Circle Residue Theorem:**  
    For any function $f$ analytic at $s$ with finite vanishing order $m = \operatorname{ord}_f(s) \in \mathbb{N}$, and any entire test function $F$, there exists an $\varepsilon > 0$ such that for all circle radii $0 < R < \varepsilon$:
-   \[
+   $$
    \oint_{C(s, R)} F(w) \frac{f'(w)}{f(w)} dw = 2\pi i \cdot m \cdot F(s).
-   \]
+   $$
 2. **Scattered Prime Block Residue Factorization:**  
    For any finite set of primes and depth $M$, the contour integral of the scattered centered weight around $s$ factors as:
-   \[
+   $$
    \oint_{C(s, R)} W_c(\mathcal{B}_{ps} f, \mathcal{B}_{ps} g)(w) \frac{\zeta'(w)}{\zeta(w)} dw = 2\pi i \operatorname{ord}_\xi(s) \left( \prod_{p \in primes} \mathcal{P}_p\left(s - \frac{1}{2}, M\right) \right) W_c(f, g)(s).
-   \]
+   $$
 3. **Exact Difference Formula:**  
    The contour perturbation across the zero circle is given by:
-   \[
+   $$
    \oint_{C(s, R)} \left[ W_c(\mathcal{B}_{ps} f, \mathcal{B}_{ps} g) - W_c(f, g) \right] \frac{\zeta'}{\zeta} dw = 2\pi i \operatorname{ord}_\xi(s) \left[ \prod_{p \in primes} \mathcal{P}_p\left(s - \frac{1}{2}, M\right) - 1 \right] W_c(f, g)(s).
-   \]
+   $$
 4. **Exponential Scattering Perturbation Bound Inside the Critical Strip:**  
    For any zero $s$ within the strip $|\operatorname{Re}(s - 1/2)| \le 1/2 - \delta$ ($\delta > 0$), the perturbation is bounded exponentially by:
-   \[
+   $$
    \left| \oint_{C(s, R)} \left[ W_c(\mathcal{B}_{ps} f, \mathcal{B}_{ps} g) - W_c(f, g) \right] \frac{\zeta'}{\zeta} dw \right| \le 2\pi \operatorname{ord}_\xi(s) |W_c(f, g)(s)| \left( \exp\left( \sum_{p \in primes} (2 B_p + B_p^2) \right) - 1 \right),
-   \]
+   $$
    where $B_p = \frac{p^{-M\delta}}{1 - p^{-\delta}}$.
 5. **Architectural Consequence:**  
    Since $B_p = O(p^{-M\delta})$, as the scattering depth $M \to \infty$, the perturbation around ANY non-trivial zero decays exponentially fast to zero, proving uniform stability of the spectral zeros under physical prime scattering truncations.

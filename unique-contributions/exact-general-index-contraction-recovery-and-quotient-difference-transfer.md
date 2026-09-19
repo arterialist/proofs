@@ -1,4 +1,4 @@
-# Unique Contribution 260: Exact General Index Contraction Recovery and Quotient Difference Transfer
+# Contribution 260: Exact General Index Contraction Recovery and Quotient Difference Transfer
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ContractionRecovery.lean`](../../formalization/BuildingBlocks/ContractionRecovery.lean), [`building-blocks/recovery/contraction-recovery.md`](../../building-blocks/recovery/contraction-recovery.md)  
@@ -14,34 +14,34 @@ This contribution proves:
 
 1. **General Contraction Recovery Bound:**  
    Let $T : \mathbb{N} \to \mathbb{N}$ be any index mapping satisfying $T(N) < N$ for $N > 0$ and $\sqrt{T(N)} \le r \sqrt{N}$ with contraction factor $r < 1$. If for all $N \ge K$:
-   \[
+   $$
    |a(N) - a(T(N))| \le \delta \sqrt{N},
-   \]
+   $$
    then there exists an explicit base constant $B = \sum_{k=0}^{K-1} |a(k)| \ge 0$ such that for all $N \in \mathbb{N}$:
-   \[
+   $$
    |a(N)| \le \frac{\delta}{1 - r} \sqrt{N} + B.
-   \]
+   $$
    The geometric series $\sum_{j=0}^\infty r^j = \frac{1}{1 - r}$ resums the entire cascade of scale transitions unconditionally.
 2. **Contraction Asymptotic Transfer:**  
    Under the same contraction hypothesis, if the difference sequence satisfies:
-   \[
+   $$
    \lim_{N \to \infty} \frac{a(N) - a(T(N))}{\sqrt{N}} = 0,
-   \]
+   $$
    then the underlying sequence satisfies:
-   \[
+   $$
    \lim_{N \to \infty} \frac{a(N)}{\sqrt{N}} = 0.
-   \]
+   $$
 3. **Square-Root Quotient Contraction:**  
    For any integer multiplier $q \in \mathbb{N}$ and contraction $T(N) = \lfloor qN / (q + 1) \rfloor$:
-   \[
+   $$
    \sqrt{\left\lfloor \frac{qN}{q+1} \right\rfloor} \le \sqrt{\frac{q}{q+1}} \sqrt{N}.
-   \]
+   $$
    Since $q / (q + 1) < 1$, the contraction factor $r = \sqrt{q/(q+1)} < 1$ is strictly subcritical.
 4. **Quotient Difference Recovery:**  
    For any integer ratio $q \in \mathbb{N}$:
-   \[
+   $$
    \lim_{N \to \infty} \frac{a(N) - a(\lfloor qN/(q+1) \rfloor)}{\sqrt{N}} = 0 \implies \lim_{N \to \infty} \frac{a(N)}{\sqrt{N}} = 0.
-   \]
+   $$
 
 ---
 
@@ -54,26 +54,26 @@ Let $B = \sum_{k=0}^{K-1} |a(k)|$. We prove by strong induction on $N$ that $|a(
 - If $N \ge K$:
   Since $N \ge K > 0$, $T(N) < N$ by hypothesis.
   By the induction hypothesis:
-  \[
+  $$
   |a(T(N))| \le \frac{\delta}{1-r}\sqrt{T(N)} + B.
-  \]
+  $$
   By triangle inequality:
-  \[
+  $$
   |a(N)| \le |a(N) - a(T(N))| + |a(T(N))| \le \delta \sqrt{N} + \frac{\delta}{1-r}\sqrt{T(N)} + B.
-  \]
+  $$
   Using $\sqrt{T(N)} \le r \sqrt{N}$:
-  \[
+  $$
   |a(N)| \le \delta \sqrt{N} + \frac{\delta r}{1-r}\sqrt{N} + B = \delta \left(1 + \frac{r}{1-r}\right) \sqrt{N} + B = \frac{\delta}{1-r}\sqrt{N} + B.
-  \]
+  $$
 
 ### 2.2. Asymptotic Transfer to $\mathcal{N}(0)$
 For any $\epsilon > 0$, set $\delta = \epsilon (1 - r) / 2 > 0$.
 Since $\frac{a(N) - a(T(N))}{\sqrt{N}} \to 0$, there exists $K$ such that $|a(N) - a(T(N))| \le \delta \sqrt{N}$ for $N \ge K$.
 By the contraction bound, $|a(N)| \le \frac{\delta}{1-r}\sqrt{N} + B = \frac{\epsilon}{2}\sqrt{N} + B$.
 Dividing by $\sqrt{N}$:
-\[
+$$
 \frac{|a(N)|}{\sqrt{N}} \le \frac{\epsilon}{2} + \frac{B}{\sqrt{N}}.
-\]
+$$
 Since $B/\sqrt{N} \to 0$, for sufficiently large $N$ we have $B/\sqrt{N} < \epsilon/2$, which yields $\frac{|a(N)|}{\sqrt{N}} < \epsilon$.
 
 ---
@@ -117,6 +117,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Tauberian theorems, dyadic contraction, and difference equations (Karamata 1930, Hardy 1949). A machine-verified strong induction framework for general subcritical index contractions $\sqrt{T(N)} \le r \sqrt{N}$ and quotient difference transfer in Lean 4 is new.
+- **Prior Literature:** Tauberian theorems, dyadic contraction, and difference equations (Karamata 1930, Hardy 1949). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes a general framework for transferring difference bounds across discrete scale contractions to absolute bounds.
 - **Target Venues:** *American Mathematical Monthly* or *Journal of Mathematical Analysis and Applications*.

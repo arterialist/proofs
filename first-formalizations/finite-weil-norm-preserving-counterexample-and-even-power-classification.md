@@ -38,4 +38,4 @@
 
 ## Novelty & Literature Comparison
 
-Prior formalizations in Mathlib4, Isabelle/AFP, and Coq do not contain arithmetic certificates or power classifications for operator monotonicity tests in the Weil explicit formula. This is the first formalization of a finite arithmetic obstruction refuting operator monotonicity for the Weil quadratic form.
+The finite counterexample and even-power classification may be a distinctive project contribution. No reproducible search record establishes absence from Mathlib, Isabelle/AFP, Coq, or other libraries, so worldwide priority remains provisional.

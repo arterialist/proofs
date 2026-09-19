@@ -10,7 +10,7 @@
 
 ## 1. Formalization Summary
 
-This formalization provides the first machine-checked proof that the von Mangoldt prime-power row $P(N, g)$ decomposes identically into the non-oscillatory logarithmic row $L(N, g)$ minus the proper-cofactor dilated prime-power rows, and that against completely multiplicative weights $\chi$, this forms an exact finite Dirichlet convolution equation.
+This entry documents a machine-checked proof that the von Mangoldt prime-power row $P(N, g)$ decomposes identically into the non-oscillatory logarithmic row $L(N, g)$ minus the proper-cofactor dilated prime-power rows, and that against completely multiplicative weights $\chi$, this forms an exact finite Dirichlet convolution equation.
 
 The formalization achieves:
 1. Complete involution-based proof of divisor-sum symmetry `sum_divisors_swap`.

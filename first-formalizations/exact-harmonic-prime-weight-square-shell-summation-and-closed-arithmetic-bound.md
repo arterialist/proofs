@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact 2D square-shell identity for maximums of exponents and deriving the closed rational arithmetic upper bound for harmonic prime weights on LCM lattices.
+This entry documents a machine-verified proof in Lean 4 establishing the exact 2D square-shell identity for maximums of exponents and deriving the closed rational arithmetic upper bound for harmonic prime weights on LCM lattices.

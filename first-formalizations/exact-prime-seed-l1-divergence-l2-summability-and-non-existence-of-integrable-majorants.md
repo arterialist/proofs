@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the structural non-existence of an $L^1(\mathbb{R})$ majorant for collective prime seeds, explaining why $L^2$ Hilbert space structures and oscillatory cancellations are required to control the full prime generator.
+This entry documents a machine-verified implementation in Lean 4 establishing the structural non-existence of an $L^1(\mathbb{R})$ majorant for collective prime seeds, explaining why $L^2$ Hilbert space structures and oscillatory cancellations are required to control the full prime generator.

@@ -1,4 +1,4 @@
-# Unique Contribution 115: Exact Complete Weil Divisor-Packet Prime Energy Identity
+# Contribution 115: Exact Complete Weil Divisor-Packet Prime Energy Identity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CompactWeilDivisorEnergyFinite.lean`](../../formalization/BuildingBlocks/CompactWeilDivisorEnergyFinite.lean), [`building-blocks/weil-and-spectral/complete-divisor-packet-energy.md`](../../building-blocks/weil-and-spectral/complete-divisor-packet-energy.md)  
@@ -9,41 +9,41 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the spectral analysis of Weil's explicit formula on finite arithmetic graphs, let $g : \mathbb{N} \to \mathbb{R}$ be an arbitrary test vector, and consider the vertex norm:
-\[
+$$
 \|g\|_{\text{vertex}}^2 = \sum_{n=1}^N \frac{g(n)^2}{n},
-\]
+$$
 along with the symmetric Weil prime bilinear form:
-\[
+$$
 \mathcal{P}_N(g) = 2 \sum_{d=1}^N \sum_{n \le N/d} \frac{\Lambda(d)}{n d} g(n) g(n d),
-\]
+$$
 where $\Lambda(d)$ is the von Mangoldt function.
 
 This contribution proves:
 
 1. **Exact Incoming Prime Square Identity:**  
    Summing the shifted square energy over all divisor pairs $n d \le N$ with weight $\frac{\Lambda(d)}{nd}$ recovers the exact logarithmic vertex mass:
-   \[
+   $$
    \sum_{d=1}^N \sum_{n \le N/d} \frac{\Lambda(d)}{n d} g(n d)^2 = \sum_{m=1}^N \frac{\log m}{m} g(m)^2.
-   \]
+   $$
    This identity uses the complete arithmetic identity $\sum_{d \mid m} \Lambda(d) = \log m$ without any prime-power truncation or approximation.
 2. **Exact Ground-State Energy Identity:**  
    The prime deficit $\log N \cdot \|g\|_{\text{vertex}}^2 - \mathcal{P}_N(g)$ decomposes identically as:
-   \[
+   $$
    \log N \sum_{n=1}^N \frac{g(n)^2}{n} - 2 \sum_{d=1}^N \sum_{n \le N/d} \frac{\Lambda(d)}{n d} g(n) g(n d) = \mathcal{E}_{\text{history}}(g) + \mathcal{E}_{\text{boundary}}(g),
-   \]
+   $$
    where the history energy is a manifestly non-negative Dirichlet quadratic form:
-   \[
+   $$
    \mathcal{E}_{\text{history}}(g) = \sum_{d=1}^N \sum_{n \le N/d} \frac{\Lambda(d)}{n d} (g(n) - g(n d))^2 \ge 0,
-   \]
+   $$
    and the boundary energy is given by:
-   \[
+   $$
    \mathcal{E}_{\text{boundary}}(g) = \sum_{n=1}^N \frac{g(n)^2}{n} \left( \log\left(\frac{N}{n}\right) - \sum_{d \le N/n} \frac{\Lambda(d)}{d} \right).
-   \]
+   $$
 3. **Pointwise Mertens Boundary Representation:**  
    At each integer vertex $n \in [1, N]$, the local boundary defect:
-   \[
+   $$
    \operatorname{defect}(N, n) = \log\left(\frac{N}{n}\right) - \sum_{d \le N/n} \frac{\Lambda(d)}{d}
-   \]
+   $$
    is precisely the classical Mertens prime-logarithm difference at scale $x = N/n$, isolating the exact boundary obstacle to Weil positivity.
 
 ---
@@ -52,32 +52,32 @@ This contribution proves:
 
 ### 2.1. Incoming Square Identity
 Using the hyperbola factorization bijection $(n, d) \mapsto m = nd$:
-\[
+$$
 \sum_{d=1}^N \sum_{n \le N/d} \frac{\Lambda(d)}{nd} g(nd)^2 = \sum_{m=1}^N \frac{g(m)^2}{m} \sum_{d \mid m} \Lambda(d).
-\]
+$$
 By the classical identity $\sum_{d \mid m} \Lambda(d) = \log m$, this equals $\sum_{m=1}^N \frac{\log m}{m} g(m)^2$.
 
 ### 2.2. Ground-State Decomposition
 Expanding the history difference square:
-\[
+$$
 (g(n) - g(nd))^2 = g(n)^2 - 2 g(n) g(nd) + g(nd)^2.
-\]
+$$
 Multiplying by $\frac{\Lambda(d)}{nd}$ and summing over $nd \le N$:
-\[
+$$
 \mathcal{E}_{\text{history}}(g) = \sum_{d=1}^N \sum_{n \le N/d} \frac{\Lambda(d)}{nd} g(n)^2 - \mathcal{P}_N(g) + \sum_{d=1}^N \sum_{n \le N/d} \frac{\Lambda(d)}{nd} g(nd)^2.
-\]
+$$
 Substituting the incoming square identity:
-\[
+$$
 \mathcal{E}_{\text{history}}(g) = \sum_{n=1}^N \frac{g(n)^2}{n} \sum_{d \le N/n} \frac{\Lambda(d)}{d} - \mathcal{P}_N(g) + \sum_{m=1}^N \frac{\log m}{m} g(m)^2.
-\]
+$$
 Now consider the total logarithmic energy:
-\[
+$$
 \log N \cdot \|g\|_{\text{vertex}}^2 = \sum_{n=1}^N \frac{\log N}{n} g(n)^2 = \sum_{n=1}^N \frac{\log n}{n} g(n)^2 + \sum_{n=1}^N \frac{\log(N/n)}{n} g(n)^2.
-\]
+$$
 Subtracting $\mathcal{P}_N(g)$:
-\[
+$$
 \log N \cdot \|g\|_{\text{vertex}}^2 - \mathcal{P}_N(g) = \mathcal{E}_{\text{history}}(g) + \sum_{n=1}^N \frac{g(n)^2}{n} \left( \log\left(\frac{N}{n}\right) - \sum_{d \le N/n} \frac{\Lambda(d)}{d} \right),
-\]
+$$
 which proves the identity.
 
 ---

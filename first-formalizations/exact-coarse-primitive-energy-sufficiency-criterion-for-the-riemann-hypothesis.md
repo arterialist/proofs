@@ -15,9 +15,9 @@ This formalization establishes the conditional sufficiency of the coarse primiti
    Formal proof of `primeExtension_of_coarsePrimitiveBound`: $G(s) = s \cdot \text{coarseMellinSum}(s)$ satisfies `HolomorphicPrimeExtension`.
 2. **Grand RH Sufficiency Theorem:**
    Formal proof of `target_of_coarsePrimitiveBound`:
-   \[
+   $$
    \text{CoarsePrimitiveBound} \implies \text{Target}.
-   \]
+   $$
 3. **End-to-End Analytic Bridge:**
    Connects the dyadic block geometric decay and Weierstrass locally uniform convergence directly to the elimination of non-trivial zeros off the critical line via the differential equation $\zeta'(s) + A(s)\zeta(s) = 0$.
 
@@ -43,6 +43,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the coarse primitive energy bound $E(X) \le C X^{4+\epsilon}$ implies Mathlib's native formulation of the Riemann Hypothesis (`Target`), completing the analytic bridge from operator energy estimates to the zero-free region $\text{Re}(s) > 1/2$.
+This entry documents a machine-verified implementation in Lean 4 proving that the coarse primitive energy bound $E(X) \le C X^{4+\epsilon}$ implies Mathlib's native formulation of the Riemann Hypothesis (`Target`), completing the analytic bridge from operator energy estimates to the zero-free region $\text{Re}(s) > 1/2$.

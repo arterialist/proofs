@@ -15,21 +15,21 @@ This formalization proves the exact layer-cake identity for logarithmic spectral
    Formal proof of `reciprocal_intervalIntegrable` and `reciprocal_primitive` ($\int_0^t \frac{1}{2+x} dx = \log(2+t) - \log 2$).
 2. **Logarithmic Layer-Cake Identity:**
    Formal proof of `logarithmic_layercake`:
-   \[
+   $$
    \int_{\mathbb{R}} (\log(2+|x|) - \log 2) d\mu = \int_0^\infty \mu(\{|x| > t\}) \frac{1}{2+t} dt.
-   \]
+   $$
 3. **Two-Regime Truncation Bounds:**
    Formal proof of `logarithmic_layercake_le` and `log_increment_integral_le`:
-   \[
+   $$
    \int_{\mathbb{R}} (\log(2+|x|) - \log 2) d\mu \le H (\log(2+R) - \log 2) + \frac{2A}{R}.
-   \]
+   $$
 4. **Optimal Threshold Minimization:**
    Formal proof of `optimized_increment_bound`: sharp upper bound $H (\log(1 + A/H) + 1)$ attained at $R = 2A/H$.
 5. **Universal Density Log-Moment Bounds:**
    Formal proof of `log_moment_integrable`, `log_moment_le`, `density_log_moment`, `density_log_moment_zero`, and `density_log_moment_nonnegative_mass`:
-   \[
+   $$
    \int_{\mathbb{R}} r(x) \log(2+|x|) dx \le H \left( \log 2 + \log(1 + A/H) + 1 \right).
-   \]
+   $$
 
 ---
 
@@ -76,6 +76,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact logarithmic layer-cake representation and sharp non-circular logarithmic moment bounds under Cauchy tail domination.
+This entry documents a machine-verified proof in Lean 4 establishing the exact logarithmic layer-cake representation and sharp non-circular logarithmic moment bounds under Cauchy tail domination.

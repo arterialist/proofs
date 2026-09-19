@@ -65,6 +65,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified spectral theory of arithmetic convolution operators in Lean 4, establishing the complete point spectrum and eigenspace decomposition of the prime transport operator without analytic approximations.
+This entry documents a machine-verified spectral theory of arithmetic convolution operators in Lean 4, establishing the complete point spectrum and eigenspace decomposition of the prime transport operator without analytic approximations.

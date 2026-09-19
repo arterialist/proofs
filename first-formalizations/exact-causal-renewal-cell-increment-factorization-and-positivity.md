@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that local cell increments of the causal Archimedean renewal equation are strictly positive, leveraging exact logarithmic-mean factorization and algebraic cubic gaps on discrete square-root intervals.
+This entry documents a machine-verified implementation in Lean 4 proving that local cell increments of the causal Archimedean renewal equation are strictly positive, leveraging exact logarithmic-mean factorization and algebraic cubic gaps on discrete square-root intervals.

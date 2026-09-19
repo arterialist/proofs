@@ -1,4 +1,4 @@
-# Unique Contribution 165: Exact Eta-Riesz-Dirichlet Fubini Exchange and Mangoldt Cross-Term Mellin Transform
+# Contribution 165: Exact Eta-Riesz-Dirichlet Fubini Exchange and Mangoldt Cross-Term Mellin Transform
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/EtaRieszDirichlet.lean`](../../formalization/BuildingBlocks/EtaRieszDirichlet.lean), [`building-blocks/mellin/eta-riesz-dirichlet.md`](../../building-blocks/mellin/eta-riesz-dirichlet.md)  
@@ -14,24 +14,24 @@ This contribution proves:
 
 1. **Exact Finite Cutoff Identity for Infinite Series of Eta Kernels:**  
    For any Dirichlet sequence $c: \mathbb{N} \to \mathbb{C}$ and any $x \in \mathbb{R}$:
-   \[
+   $$
    \sum_{n=0}^\infty c(n+1) K_\eta(n+1, x) = \sum_{n \in [0, \lfloor x \rfloor)} c(n+1) K_\eta(n+1, x) = \text{cutoffSum}(c, x),
-   \]
+   $$
    since $K_\eta(n+1, x) = \frac{x^2 - (n+1)^2}{2(n+1)} \mathbf{1}_{x > n+1}$ vanishes identically for all $n \ge \lfloor x \rfloor$.
 2. **General Eta-Riesz-Dirichlet Fubini Exchange Theorem:**  
    If the coefficient sequence $c$ satisfies the absolute Dirichlet convergence condition:
-   \[
+   $$
    \sum_{n=0}^\infty \|c(n+1)\| (n+1)^{-\text{Re}(s)} < \infty \quad \text{for } \text{Re}(s) > 1,
-   \]
+   $$
    then the Mellin transform of the finite cutoff sum converges on $\text{Re}(s) > 1$ and evaluates identically to:
-   \[
+   $$
    \mathcal{M}\left( \sum_{n \le x} c(n) \frac{x^2 - n^2}{2n} \right)(-s-1) = \frac{\sum_{n=1}^\infty c(n) n^{-s}}{(s-1)(s+1)}.
-   \]
+   $$
 3. **Exact Von Mangoldt Cross-Term Mellin Transform:**  
    Specializing to $c(n) = \Lambda(n)$, the actual prime cross term $\text{crossTerm}(x) = \sum_{n \le x} \Lambda(n) \frac{x^2 - n^2}{2n}$ has the exact Mellin transform:
-   \[
+   $$
    \mathcal{M}(\text{crossTerm})(-s-1) = \frac{-\frac{\zeta'(s)}{\zeta(s)}}{(s-1)(s+1)} \quad (\text{Re}(s) > 1).
-   \]
+   $$
 
 ---
 
@@ -45,31 +45,31 @@ Thus the infinite series $\sum_{n=0}^\infty c(n+1) K_\eta(n+1, x)$ terminates at
 
 ### 2.2. Dominated Convergence and Fubini Interchange
 Consider the bivariate kernel on $(0, \infty) \times \mathbb{N}$:
-\[
+$$
 g(x, n) = x^{-s-2} c(n+1) K_\eta(n+1, x).
-\]
+$$
 For each fixed $n$, the Mellin transform integral evaluates to:
-\[
+$$
 \int_0^\infty x^{-s-2} K_\eta(n+1, x) dx = \frac{(n+1)^{-s}}{(s-1)(s+1)}.
-\]
+$$
 The $L^1$ norm of the integrand on $(0, \infty)$ satisfies:
-\[
+$$
 \int_0^\infty \|g(x, n)\| dx = \frac{\|c(n+1)\| (n+1)^{-\text{Re}(s)}}{(\text{Re}(s)-1)(\text{Re}(s)+1)}.
-\]
+$$
 Summing over $n \in \mathbb{N}$, the series of $L^1$ norms is bounded by:
-\[
+$$
 \frac{1}{(\text{Re}(s)-1)(\text{Re}(s)+1)} \sum_{n=0}^\infty \|c(n+1)\| (n+1)^{-\text{Re}(s)} < \infty.
-\]
+$$
 By the Lebesgue-Fubini theorem for series of integrable functions (`SummableIntegrals.integrable_tsum_of_summable_integral_norm`), the sum and the integral commute:
-\[
+$$
 \int_0^\infty x^{-s-2} \left( \sum_{n=0}^\infty c(n+1) K_\eta(n+1, x) \right) dx = \sum_{n=0}^\infty \int_0^\infty g(x, n) dx = \frac{\sum_{n=1}^\infty c(n) n^{-s}}{(s-1)(s+1)}.
-\]
+$$
 
 ### 2.3. Specialization to Von Mangoldt
 For $c(n) = \Lambda(n)$, the Dirichlet series is the logarithmic derivative of $\zeta(s)$:
-\[
+$$
 \sum_{n=1}^\infty \frac{\Lambda(n)}{n^s} = -\frac{\zeta'(s)}{\zeta(s)} \quad (\text{Re}(s) > 1).
-\]
+$$
 Applying the general Fubini exchange theorem yields the closed form $\frac{-\zeta'(s)/\zeta(s)}{(s-1)(s+1)}$.
 
 ---

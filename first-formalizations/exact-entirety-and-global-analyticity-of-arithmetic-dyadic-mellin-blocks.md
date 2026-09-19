@@ -42,6 +42,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that localized dyadic Mellin blocks of the prime counting error $\psi(x) - x$ are entire and analytic on the entire complex plane $\mathbb{C}$, confirming that all arithmetic singularities are global phenomena of infinite dyadic summation.
+This entry documents a machine-verified implementation in Lean 4 proving that localized dyadic Mellin blocks of the prime counting error $\psi(x) - x$ are entire and analytic on the entire complex plane $\mathbb{C}$, confirming that all arithmetic singularities are global phenomena of infinite dyadic summation.

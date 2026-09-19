@@ -13,24 +13,24 @@ This formalization establishes the exact quadrature error identities and uniform
 
 1. **Finite Right-Endpoint Rectangle Bound:**
    Formal proof by mathematical induction that for any $C^1$ function $G$ on $[0, N\delta]$, the right-endpoint Riemann sum error is bounded by the mesh size times the total variation of $G$ (`finite_right_rectangle`, `finite_right_rectangle_div`):
-   \[
+   $$
    \left| \delta \sum_{m=0}^{N-1} G((m+1)\delta) - \int_0^{N\delta} G(t) dt \right| \le \delta \int_0^{N\delta} |G'(t)| dt.
-   \]
+   $$
 2. **Exact Cell Trapezoid Integration-by-Parts Identity:**
    Formal derivation of the exact error representation of the trapezoid rule on a single interval $[a, b]$ with symmetric quadratic kernel $w(t) = (t-a)(b-t)/2$ (`trap_cell_identity`):
-   \[
+   $$
    \frac{b-a}{2}(G(a) + G(b)) - \int_a^b G(t) dt = \int_a^b \frac{(t-a)(b-t)}{2} G''(t) dt.
-   \]
+   $$
 3. **Trapezoid Cell Kernel Bound:**
    Formal verification that $|(t-a)(b-t)/2| \le (b-a)^2/4$ on $[a, b]$, yielding the sharp $L^1$ second-derivative bound (`trap_cell_bound`):
-   \[
+   $$
    \left| \frac{b-a}{2}(G(a) + G(b)) - \int_a^b G(t) dt \right| \le \frac{(b-a)^2}{4} \int_a^b |G''(t)| dt.
-   \]
+   $$
 4. **Global Finite Multi-Cell Trapezoid Rule:**
    Formal induction across $N$ cells proving the global trapezoid error bound (`finite_trapezoid_cells`, `finite_trapezoid_endpoints`):
-   \[
+   $$
    \left| \frac{\delta}{2}(G(0) + G((N+1)\delta)) + \delta \sum_{m=1}^N G(m\delta) - \int_0^{(N+1)\delta} G(t) dt \right| \le \frac{\delta^2}{4} \int_0^{(N+1)\delta} |G''(t)| dt.
-   \]
+   $$
 
 ---
 
@@ -73,6 +73,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
 This formalization establishes the exact non-asymptotic Peano kernel integration-by-parts identity for trapezoidal quadrature in Lean 4 without discretization asymptotics, providing the certified foundation for renewal cell step errors.

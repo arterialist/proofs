@@ -1,6 +1,6 @@
 # Published-history quality control: segment 1
 
-This review covers all 328 commits assigned by `research-local/audits/antigravity-monitor/history-segment-1.json` at frozen baseline `356d968c7ac34a23113d6fe0a5e10217cef4316c`. Its commit ledger is exhaustive. The theorem-level checks follow each substantive change into the current file and record exact evidence for material findings; the ledger is not presented as if an inventory or a successful Lean build alone proved correctness. Catalogs, first-formalization claims, and recent `RiemannZeta`/`Chirped` synthesis prose were audited by parallel reviewers and are outside this note's correction scope.
+This review covers the 328 commits from `76ea442399f98b6e6d6931df171ef0c0bba0c96b` through `63e8af7271bfc9944dbcc8206c57c08f286c115f` at frozen baseline `356d968c7ac34a23113d6fe0a5e10217cef4316c`. Its commit ledger is exhaustive. The theorem-level checks follow each substantive change into the current file and record exact evidence for material findings; the ledger is not presented as if an inventory or a successful Lean build alone proved correctness. Catalogs, first-formalization claims, and recent `RiemannZeta`/`Chirped` synthesis prose were audited by parallel reviewers and are outside this note's correction scope.
 
 ## Corrections
 
@@ -13,10 +13,10 @@ This review covers all 328 commits assigned by `research-local/audits/antigravit
 
 Commit `0dc06794` split a state allocation into prime and composite sectors and omitted `n=1`. That omission changes the leading compensation by `x^2 log(x)/2 + x^2/4`. Commit `284292e0` already restored
 
-\[
+$$
 B_{\{1\}}(x)=(x-1)[x+R(x-1)]
  =\frac{x^2\log x}{2}+\frac{x^2}{4}-\frac14
-\]
+$$
 
 and the exact identity `W=B_{\{1\}}+B_P+B_C`. The frozen baseline is correct; the ledger records this as a historical correction.
 

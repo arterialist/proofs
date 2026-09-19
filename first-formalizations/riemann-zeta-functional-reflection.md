@@ -1,7 +1,7 @@
 # Riemann Zeta Functional Equation Reflection Symmetry
 
 ## Summary
-This module provides the first machine-verified formalization in Lean 4 proving that the Riemann zeta function satisfies the Schwarz reflection symmetry across the real axis on the negative half-plane:
+This module provides a machine-verified formalization in Lean 4 proving that the Riemann zeta function satisfies the Schwarz reflection symmetry across the real axis on the negative half-plane:
 $$\zeta(\overline{w}) = \overline{\zeta(w)} \quad \text{for all } w \in \mathbb{C} \text{ with } \operatorname{Re}(w) < 0 \text{ away from non-positive integers}.$$
 
 The result is deduced directly from the Riemann zeta functional equation (`riemannZeta_one_sub`):
@@ -9,7 +9,7 @@ $$\zeta(1 - s) = 2(2\pi)^{-s}\Gamma(s)\cos(\pi s / 2)\zeta(s)$$
 and the half-plane Dirichlet series conjugation theorem on $\operatorname{Re}(s) > 1$ formalized in Module 274.
 
 ## Background and Significance
-Prior to this formalization, Mathlib contained the functional equation `riemannZeta_one_sub`, but had no formalization of how the functional equation behaves under complex conjugation. In analytic number theory, the fact that $\zeta(\bar{s}) = \overline{\zeta(s)}$ on $\operatorname{Re}(s) < 0$ is deduced by conjugating each factor on the right-hand side of the functional equation.
+The proof composes Mathlib's functional equation with conjugation lemmas and the project theorem for the half-plane of absolute convergence. In analytic number theory, the fact that $\zeta(\bar{s}) = \overline{\zeta(s)}$ on $\operatorname{Re}(s) < 0$ is deduced by conjugating each factor on the right-hand side of the functional equation.
 
 By formalizing the exact commutation of each constituent factor:
 - $2 \in \mathbb{R}$
@@ -18,7 +18,7 @@ By formalizing the exact commutation of each constituent factor:
 - Cosine $\cos(\pi s / 2)$ via `Complex.cos_conj`
 - Riemann zeta $\zeta(s)$ via Dirichlet series conjugation on $\operatorname{Re}(s) > 1$
 
-this module produces an unconditional machine-verified proof of the reflection symmetry on $\operatorname{Re}(w) < 0$.
+this module proves the reflection symmetry under the theorem's explicit side conditions: `w.re < 0`, `∀ n, 1 - w ≠ -n`, and `w ≠ 0`.
 
 ## Mathematical Formulation
 

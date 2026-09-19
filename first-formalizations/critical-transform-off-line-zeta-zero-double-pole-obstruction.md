@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 that candidate quadratic logarithmic-derivative transforms have unavoidable double poles at any non-trivial zeros off the critical line, establishing a rigorous spectral barrier and RH criterion.
+This entry documents a machine-verified proof in Lean 4 that candidate quadratic logarithmic-derivative transforms have unavoidable double poles at any non-trivial zeros off the critical line, establishing a rigorous spectral barrier and RH criterion.

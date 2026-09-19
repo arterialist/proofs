@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the classical integral representation $\zeta(s) = \frac{s}{s-1} - s \int_1^\infty (x - \lfloor x \rfloor) x^{-(s+1)} dx$ throughout the entire critical strip $\text{Re}(s) > 0, s \ne 1$, mediated by a verified complex domain identity theorem.
+This entry documents a machine-verified proof in Lean 4 establishing the classical integral representation $\zeta(s) = \frac{s}{s-1} - s \int_1^\infty (x - \lfloor x \rfloor) x^{-(s+1)} dx$ throughout the entire critical strip $\text{Re}(s) > 0, s \ne 1$, mediated by a verified complex domain identity theorem.

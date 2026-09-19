@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of Landau's positive-measure singularity theorem in Lean 4, providing the rigorous foundation for Tauberian theorems on Dirichlet series and establishing the machine-checked deduction of the Riemann Hypothesis from one-sided arithmetic sign criteria.
+This entry documents a machine-verified proof of Landau's positive-measure singularity theorem in Lean 4, providing the rigorous foundation for Tauberian theorems on Dirichlet series and establishing the machine-checked deduction of the Riemann Hypothesis from one-sided arithmetic sign criteria.

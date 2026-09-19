@@ -64,5 +64,5 @@ From each certificate, the official Mathlib `RiemannHypothesis` is formally dedu
 ## 3. Novelty and Attribution Assessment
 
 - **Classical Mathematics**: The comparison of functional equation pole residues against integral transform magnitudes is a standard conceptual tool in analytic number theory.
-- **Novel Formalization**: The formalization in Lean 4 of the quantitative ratio collision between the geometric residue barrier $\ge 2/5 = 0.40$ and the halved Mellin majorant integral $\le 1/20 = 0.05$, the calculation of the $0.35$ deficit gap, and the modular synthesis with dual-band refutation certificates is completely novel and nowhere to be found in existing literature or proof repositories.
+- **Novel Formalization**: The formalization in Lean 4 of the quantitative ratio collision between the geometric residue barrier $\ge 2/5 = 0.40$ and the halved Mellin majorant integral $\le 1/20 = 0.05$, the calculation of the $0.35$ deficit gap, and the modular synthesis with dual-band refutation certificates is a candidate priority claim that requires a reproducible literature and repository search.
 - **Classification**: **First Formalization** (Entry 381).

@@ -72,6 +72,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 constructing a continuous geometric cell embedding that identifies arithmetic coprime pair areas and proves that prime powers act as negative deceleration shocks while composite numbers act as positive acceleration impulses.
+This entry documents a machine-verified proof in Lean 4 constructing a continuous geometric cell embedding that identifies arithmetic coprime pair areas and proves that prime powers act as negative deceleration shocks while composite numbers act as positive acceleration impulses.

@@ -57,6 +57,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 proving that dynamic floor-indexed Möbius sums can produce everywhere continuous functions satisfying the classical Fundamental Theorem of Calculus without regularizing boundary smoothings.
+This entry documents a machine-verified proof in Lean 4 proving that dynamic floor-indexed Möbius sums can produce everywhere continuous functions satisfying the classical Fundamental Theorem of Calculus without regularizing boundary smoothings.

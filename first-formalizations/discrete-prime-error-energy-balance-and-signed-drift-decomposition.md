@@ -59,6 +59,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-checked discrete energy conservation law for prime trajectories, elucidating why prime power fluctuations require delicate off-diagonal phase cancellations to prevent error divergence.
+This entry documents a machine-checked discrete energy conservation law for prime trajectories, elucidating why prime power fluctuations require delicate off-diagonal phase cancellations to prevent error divergence.

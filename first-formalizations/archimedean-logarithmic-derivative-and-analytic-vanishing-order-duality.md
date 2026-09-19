@@ -57,6 +57,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
 This formalization provides the bridge in Lean 4 between topological neighborhood filters, analytic vanishing order definitions, and the classical logarithmic derivative representations of Riemann's zeta and xi functions.

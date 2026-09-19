@@ -1,4 +1,4 @@
-# Unique Contribution 326: Exact Harmonic Prime Weight Square-Shell Summation and Closed Arithmetic Bound
+# Contribution 326: Exact Harmonic Prime Weight Square-Shell Summation and Closed Arithmetic Bound
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/HarmonicPrimeWeightBound.lean`](../../formalization/BuildingBlocks/HarmonicPrimeWeightBound.lean), [`building-blocks/harmonic-weights/bound.md`](../../building-blocks/harmonic-weights/bound.md)  
@@ -14,24 +14,24 @@ This contribution proves:
 
 1. **Exact 2D Square-Shell Count Identity:**  
    For any ratio $r \in \mathbb{R}$ and integer horizon $N$:
-   \[
+   $$
    \sum_{i=1}^{N-1} \sum_{j=1}^{N-1} r^{\max(i, j)} = \sum_{j=1}^{N-1} (2j - 1) r^j.
-   \]
+   $$
 2. **Exact Same-Prime Reciprocal Bound:**  
    Summing the weighted square-shells via derivative geometric series proves that for any prime $p$:
-   \[
+   $$
    \text{samePrimeReciprocalSum}(N, p) = \sum_{i=1}^{N-1} \sum_{j=1}^{N-1} \frac{1}{p^{\max(i, j)}} \le \frac{p+1}{(p-1)^2}.
-   \]
+   $$
 3. **Exact Coprime Decoupling of Cross-Prime Powers:**  
    For distinct primes $p \ne q$, coprimality $\gcd(p^i, q^j) = 1$ factorizes the double sum:
-   \[
+   $$
    \sum_{i=1}^{N-1} \sum_{j=1}^{N-1} \frac{1}{\text{lcm}(p^i, q^j)} = \left( \sum_{i=1}^{N-1} \frac{1}{p^i} \right) \left( \sum_{j=1}^{N-1} \frac{1}{q^j} \right) \le \frac{1}{p-1} \frac{1}{q-1}.
-   \]
+   $$
 4. **Exact Closed Arithmetic Bound on Harmonic Prime Weights:**  
    For any horizon $N \ge 1$ and prime $p$, the harmonic prime weight is bounded by the explicit closed rational expression:
-   \[
+   $$
    w_N(p) \le \frac{p+1}{(p-1)^2} + \frac{1}{p-1} \sum_{q \in \text{admittedPrimes}(N), q \ne p} \frac{1}{q-1}.
-   \]
+   $$
 
 ---
 
@@ -87,6 +87,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Apostol (1976) *Introduction to Analytic Number Theory*; Tenenbaum (2015) *Introduction to Analytic and Probabilistic Number Theory*. Machine verification of exact square-shell maximum reductions and closed LCM-lattice prime weight bounds in Lean 4 is new.
+- **Prior Literature:** Apostol (1976) *Introduction to Analytic Number Theory*; Tenenbaum (2015) *Introduction to Analytic and Probabilistic Number Theory*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Provides an exact closed arithmetic bound on harmonic prime weights in terms of the prime $p$ and the harmonic series of coprime admitted primes, eliminating all two-dimensional exponent lattices.
 - **Target Venues:** *Ramanujan Journal* or *Integers*.

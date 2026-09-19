@@ -1,4 +1,4 @@
-# Unique Contribution 206: Exact Physical Theta Measure Finiteness and Hilbert Space Dictionary
+# Contribution 206: Exact Physical Theta Measure Finiteness and Hilbert Space Dictionary
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PhysicalThetaMeasure.lean`](../../formalization/BuildingBlocks/PhysicalThetaMeasure.lean), [`building-blocks/theta/physical-theta-measure.md`](../../building-blocks/theta/physical-theta-measure.md)  
@@ -14,28 +14,28 @@ This contribution proves:
 
 1. **Hyperbolic Representation:**  
    The growth factor $b(v) = e^{v/2} + e^{-v/2}$ equals the exact hyperbolic cosine:
-   \[
+   $$
    b(v) = 2 \cosh(v/2) > 0 \quad (\forall v \in \mathbb{R}).
-   \]
+   $$
 2. **Strict Positivity, Continuity, and Integrability of the Physical Weight:**  
    The weight function $w(v) = b(v) \phi(v)$ is strictly positive and continuous on $\mathbb{R}$, and possesses finite total mass:
-   \[
+   $$
    \int_{-\infty}^\infty 2 \cosh(v/2) \phi(v) \, dv < \infty,
-   \]
+   $$
    derived rigorously from the exponential moments of $\phi$.
 3. **Finite Measure Space:**  
    The measure $\nu = \text{volume.withDensity}(w(v))$ is an authentic finite measure (`IsFiniteMeasure nu`) on $\mathbb{R}$, as is every restricted exterior measure $\nu|_{\{|v| > R\}}$.
 4. **Mutual Absolute Continuity:**  
    $\nu$ and the standard Lebesgue volume measure are mutually absolutely continuous:
-   \[
+   $$
    \nu \ll \text{volume} \quad \text{and} \quad \text{volume} \ll \nu.
-   \]
+   $$
    Consequently, the almost-everywhere filters coincide: $(\forallᵐ v \, \partial\nu, P(v)) \iff (\forallᵐ v, P(v))$, and measurability is preserved identically.
 5. **Physical Mass $L^2$ Dictionary:**  
    For any strongly measurable function $\psi$, $\psi \in L^2(\mathbb{R}, \nu)$ if and only if the physical wave function $\phi \psi$ has finite energy under the inverse weight $b(v)/\phi(v)$:
-   \[
+   $$
    \int_\mathbb{R} |\psi(v)|^2 \, d\nu(v) = \int_\mathbb{R} \frac{b(v)}{\phi(v)} |\phi(v) \psi(v)|^2 \, dv < \infty.
-   \]
+   $$
    This provides an exact isometric bridge between the kinetic Hilbert space $L^2(\nu)$ and the physical field amplitude formulation.
 
 ---
@@ -56,13 +56,13 @@ The mutual absolute continuity immediately equates the null sets, almost-everywh
 
 ### 2.3. Isometric Dictionary
 For any $v \in \mathbb{R}$, since $\phi(v) > 0$:
-\[
+$$
 w(v) \psi(v)^2 = b(v) \phi(v) \psi(v)^2 = \frac{b(v)}{\phi(v)} (\phi(v) \psi(v))^2.
-\]
+$$
 Integrating against Lebesgue measure across $\mathbb{R}$ gives the equality of $L^2$ norms:
-\[
+$$
 \|\psi\|_{L^2(\nu)}^2 = \int_\mathbb{R} \psi(v)^2 w(v) dv = \int_\mathbb{R} \frac{b(v)}{\phi(v)} |\phi(v) \psi(v)|^2 dv.
-\]
+$$
 
 ---
 
@@ -102,6 +102,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Weighted Hilbert spaces associated with Jacobi theta functions and Riemann Xi integral representations (Pólya 1926, de Bruijn 1950, Newman 1976). Machine formalization of the exact finite physical theta measure and its $L^2$ dictionary in Lean 4 is new.
+- **Prior Literature:** Weighted Hilbert spaces associated with Jacobi theta functions and Riemann Xi integral representations (Pólya 1926, de Bruijn 1950, Newman 1976). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Proves the finiteness and mutual absolute continuity of $\nu = \text{withDensity}(2\cosh(v/2)\phi(v))$ and establishes the exact Hilbert space isometry in Lean 4.
 - **Target Venues:** *Journal of Mathematical Analysis and Applications* or *Analysis and Mathematical Physics*.

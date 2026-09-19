@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the geometric finite-depth scattering energy identity and establishing the exact $L^2$ isometry for compactly supported lattice translates.
+This entry documents a machine-verified implementation in Lean 4 proving the geometric finite-depth scattering energy identity and establishing the exact $L^2$ isometry for compactly supported lattice translates.

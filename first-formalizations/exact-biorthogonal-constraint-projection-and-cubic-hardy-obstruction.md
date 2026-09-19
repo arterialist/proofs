@@ -61,6 +61,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving the biorthogonal projection theorem for simultaneous linear functionals and establishing the cubic-vs-quadratic Hardy scaling obstruction against finite correction recovery.
+This entry documents a machine-verified implementation in Lean 4 proving the biorthogonal projection theorem for simultaneous linear functionals and establishing the cubic-vs-quadratic Hardy scaling obstruction against finite correction recovery.

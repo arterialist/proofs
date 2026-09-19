@@ -1,4 +1,4 @@
-# Unique Contribution 140: Exact Critical Tail Radon Measure and Measurable Cutoff Algebra
+# Contribution 140: Exact Critical Tail Radon Measure and Measurable Cutoff Algebra
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualCriticalMeasure.lean`](../../formalization/BuildingBlocks/ActualCriticalMeasure.lean), [`building-blocks/measure/actual-critical-measure.md`](../../building-blocks/measure/actual-critical-measure.md)  
@@ -14,18 +14,18 @@ This contribution proves:
 
 1. **Borel Measurability of Arithmetic Floor-Cutoff Sums:**  
    If $F: \mathbb{N} \times \mathbb{R} \to \mathbb{C}$ is measurable in $x$ for each $n$, then the floor-truncated sum:
-   \[
+   $$
    x \mapsto \sum_{n < \lfloor x \rfloor} F(n, x)
-   \]
+   $$
    is Borel measurable on $\mathbb{R}$. Consequently, $V(x)$, $W(x)$, and the negative tail $-W_{\text{tail}, A}(x)$ are Borel measurable.
 2. **Construction of the Critical Tail Radon Measure:**  
    The critical tail measure $\mu_A$ on $\mathbb{R}_{>1}$ is defined with density $\rho_A(x) = \operatorname{ofReal}(x^{-2} \operatorname{Re}(-W_{\text{tail}, A}(x)))$.
    Under the eventual sign condition $\operatorname{Re}(W(x)) \le 0$ on $(A, \infty)$, $\mu_A$ is a non-negative measure.
 3. **Exact Mass-to-Mellin-Norm Identity:**  
    For any real $\sigma \in \mathbb{R}$, the Laplace mass with observable $t(x) = \max(\log x, 0)$ satisfies:
-   \[
+   $$
    \int_1^\infty e^{-\sigma t(x)} d\mu_A(x) = \int_1^\infty \| x^{-\sigma - 2} (-W_{\text{tail}, A}(x)) \| dx.
-   \]
+   $$
 4. **Non-Emptiness of the Convergence Set:**  
    For any cutoff $A \ge 1$ under the sign condition, the convergence set of the tail Laplace measure is non-empty, containing the entire ray $(1, \infty)$ and witnessed at $\sigma = 2$.
 
@@ -43,9 +43,9 @@ Composing $H$ with the measurable map $x \mapsto (x, \lfloor x \rfloor)$ proves 
 ### 2.2. Mass Identity
 The density is $\rho_A(x) = x^{-2} \operatorname{Re}(-W_{\text{tail}, A}(x))$.
 Using the exponential identity $x^{-2} e^{-\sigma \log x} = x^{-\sigma - 2}$ and the fact that $-W_{\text{tail}, A}(x)$ is non-negative and real:
-\[
+$$
 \rho_A(x) e^{-\sigma \log x} = x^{-\sigma - 2} (-W_{\text{tail}, A}(x)) = \| x^{-\sigma - 2} (-W_{\text{tail}, A}(x)) \|.
-\]
+$$
 Integrating over $(1, \infty)$ yields the mass identity.
 
 ### 2.3. Convergence at $\sigma = 2$

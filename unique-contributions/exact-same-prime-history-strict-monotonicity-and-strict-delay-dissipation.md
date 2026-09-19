@@ -1,4 +1,4 @@
-# Unique Contribution 180: Exact Same-Prime History Strict Monotonicity and Strict Delay Dissipation
+# Contribution 180: Exact Same-Prime History Strict Monotonicity and Strict Delay Dissipation
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SamePrimeStrictDelay.lean`](../../formalization/BuildingBlocks/SamePrimeStrictDelay.lean), [`building-blocks/primes/same-prime-strict-delay.md`](../../building-blocks/primes/same-prime-strict-delay.md)  
@@ -14,32 +14,32 @@ This contribution proves:
 
 1. **Global Strict Monotonicity of the Continuous Renewal Profile:**  
    By gluing cell-by-cell derivatives across integer transitions:
-   \[
+   $$
    H \text{ is strictly monotone increasing on } [1, \infty).
-   \]
+   $$
    Consequently, the normalized tent profile $h(u) = H(e^u)$ is strictly monotone increasing on $[0, \infty)$.
 2. **First Square Strict Activation:**  
    The primary proper-power summand $\text{term}(2, 2, v) = \frac{\log^2 2}{2} h(v - \log 4)$ satisfies:
-   \[
+   $$
    \log 4 \le u < v \implies \text{term}(2, 2, u) < \text{term}(2, 2, v).
-   \]
+   $$
 3. **Global Strict Monotonicity of the Same-Prime History Function:**  
    Since all other summands and cutoff expansions are non-decreasing:
-   \[
+   $$
    \log 4 \le u < v \implies s(u) < s(v).
-   \]
+   $$
    The same-prime history function is strictly monotone increasing for all $v \ge \log 4$.
 4. **Strict Delay Loss:**  
    For any evaluation point $v > \log 4$ and every strictly positive delay $r > 0$:
-   \[
+   $$
    s(v - r) < s(v).
-   \]
+   $$
    Delaying by any positive amount strictly drops the history energy.
 5. **Universal Strict Causal Dissipation:**  
    For any Borel probability measure $\mu$ on $[0, \infty)$ having strictly positive mass on positive delays ($\mu((0, \infty)) > 0$):
-   \[
+   $$
    \forall v > \log 4: \quad \int_0^\infty s(v - r) \, d\mu(r) - s(v) < 0.
-   \]
+   $$
    The delay dissipation residual is *strictly negative* at every age beyond the first square $\log 4$.
 
 ---
@@ -75,9 +75,9 @@ For every $r \in (0, \infty)$, $g(r) = s(v) - s(v - r) > 0$.
 Thus the support of $g$ contains the open ray $(0, \infty)$.
 Since $\mu((0, \infty)) > 0$, the set on which $g(r) > 0$ has strictly positive $\mu$-measure.
 An integrable non-negative function that is strictly positive on a set of positive measure has a strictly positive integral:
-\[
+$$
 \int_0^\infty (s(v) - s(v - r)) \, d\mu(r) > 0 \implies \int_0^\infty s(v - r) \, d\mu(r) < s(v).
-\]
+$$
 Subtracting $s(v)$ gives $\int_0^\infty s(v - r) \, d\mu(r) - s(v) < 0$.
 
 ---
@@ -108,6 +108,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Strictly positive operators and strict dissipation in delay differential systems (Krasovskii 1959, Hale-Verduyn Lunel 1993, Breda-Maset-Vermiglio 2015). Machine verification of strict delay dissipation bounds arising from discrete prime-power renewal histories in Lean 4 is new.
+- **Prior Literature:** Strictly positive operators and strict dissipation in delay differential systems (Krasovskii 1959, Hale-Verduyn Lunel 1993, Breda-Maset-Vermiglio 2015). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes global strict monotonicity of $s(v)$ on $[\log 4, \infty)$ and proves strict causal delay dissipation $\int_0^\infty s(v-r)d\mu(r) - s(v) < 0$ in Lean 4.
 - **Target Venues:** *SIAM Journal on Mathematical Analysis* or *Journal of Functional Analysis*.

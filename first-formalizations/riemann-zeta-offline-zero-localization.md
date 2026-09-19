@@ -1,7 +1,7 @@
 # First Formalization 374: Off-Line Zero First Quadrant Localization and Completed Zeta Decay
 
 ## 1. Classification and Attribution
-- **Type**: First Formalization (The geometric localization of the completed zeta function into the open first quadrant and the quantitative $1/\gamma^2$ and $1/\gamma^4$ norm and ratio decay bounds for putative off-line zeros are classical consequences of Hadamard factorization and algebraic inversion, but have never before been mechanized in Lean 4 or any interactive theorem prover).
+- **Type**: Catalog entry 374. The localization and decay statements are classical consequences of the stated inputs. Their exact Lean formulation may be project-specific; worldwide proof-assistant priority has not been established.
 - **Module**: `BuildingBlocks.RiemannZetaOffLineZeroLocalization` (Module 287)
 - **Dependencies**: Standard foundational axioms: `[propext, Classical.choice, Quot.sound]`.
 - **Zero Sorries**: 0 sorries, completely machine-checked.

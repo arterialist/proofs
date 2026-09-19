@@ -75,6 +75,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof bounding discrete prime child dilation transfers against continuous successor cell integral operators with explicit non-asymptotic remainder terms.
+This entry documents a machine-verified proof bounding discrete prime child dilation transfers against continuous successor cell integral operators with explicit non-asymptotic remainder terms.

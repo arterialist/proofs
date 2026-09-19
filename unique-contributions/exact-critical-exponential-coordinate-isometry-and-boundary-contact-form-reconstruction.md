@@ -1,4 +1,4 @@
-# Unique Contribution 258: Exact Critical Exponential Coordinate Isometry and Boundary Contact Form Reconstruction
+# Contribution 258: Exact Critical Exponential Coordinate Isometry and Boundary Contact Form Reconstruction
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CriticalCoordinatePairing.lean`](../../formalization/BuildingBlocks/CriticalCoordinatePairing.lean), [`building-blocks/operator/critical-coordinate-pairing.md`](../../building-blocks/operator/critical-coordinate-pairing.md)  
@@ -9,34 +9,34 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the boundary-port analysis of causal renewal operators, mapping the physical coordinate $x \in (1, \infty)$ to the logarithmic coordinate $v = \log x \in (0, \infty)$ requires the critical half-density Jacobian multiplier $e^{v/2}$. The physical lift is defined by:
-\[
+$$
 \text{physicalLift}(H)(v) = e^{v/2} H(e^v).
-\]
+$$
 This coordinate change diagonalizes the dilation generator while intertwining unit translation shifts in $x$ with the discrete shift operators $\text{successor}$ and $\text{predecessor}$ in $v$.
 
 This contribution proves:
 
 1. **Critical Half-Density Isometry:**  
    For any square-integrable physical profiles $H, G$ and lower cutoff $a \in \mathbb{R}$:
-   \[
+   $$
    \int_a^\infty \text{physicalLift}(H)(v) \cdot \text{physicalLift}(G)(v) \, dv = \int_{e^a}^\infty H(x) G(x) \, dx.
-   \]
+   $$
    In particular, the transformation preserves the $L^2$ inner product and norms identically: $\|\text{physicalLift}(H)\|_{L^2(a, \infty)} = \|H\|_{L^2(e^a, \infty)}$.
 2. **Successor Port Dilation Identity:**  
    The logarithmic successor pairing reconstructs the physical forward unit-shift integral:
-   \[
+   $$
    \int_0^\infty \text{physicalLift}(H)(v) \cdot \text{successor}(\text{physicalLift}(G))(v) \, dv = \int_1^\infty H(x) G(x + 1) \, dx.
-   \]
+   $$
 3. **Predecessor Port Dilation Identity:**  
    The logarithmic predecessor pairing reconstructs the physical backward unit-shift integral:
-   \[
+   $$
    \int_0^\infty \text{physicalLift}(H)(u) \cdot \text{predecessor}(\text{physicalLift}(G))(u) \, du = \int_2^\infty H(x) G(x - 1) \, dx.
-   \]
-4. **Grand Boundary Contact Form Reconstruction:**  
+   $$
+4. **Boundary Contact Form Reconstruction:**
    For any causal profiles $H, G \in L^2(\mathbb{R})$ supported on $[1, \infty)$, the non-local physical contact form decomposes into the symmetric kernel pair plus the two boundary-port pairings:
-   \[
+   $$
    \text{contactForm}(H, G) = -\text{symmetricKernelPair}(H, G) + 2 \left( \langle \text{physicalLift}(H), \text{successor}(\text{physicalLift}(G)) \rangle + \langle \text{physicalLift}(H), \text{predecessor}(\text{physicalLift}(G)) \rangle \right).
-   \]
+   $$
 5. **Universal Contact Energy Bound:**  
    The total contact form is uniformly bounded by $9 \sqrt{E(H)} \sqrt{E(G)}$.
 
@@ -46,27 +46,27 @@ This contribution proves:
 
 ### 2.1. Critical Half-Density Isometry
 Under the change of variables $x = e^v$, $dx = e^v dv$:
-\[
+$$
 \text{physicalLift}(H)(v) \cdot \text{physicalLift}(G)(v) = \left(e^{v/2} H(e^v)\right) \left(e^{v/2} G(e^v)\right) = e^v H(e^v) G(e^v).
-\]
+$$
 Integrating over $(a, \infty)$:
-\[
+$$
 \int_a^\infty \text{physicalLift}(H)(v) \text{physicalLift}(G)(v) \, dv = \int_a^\infty H(e^v) G(e^v) e^v \, dv = \int_{e^a}^\infty H(x) G(x) \, dx.
-\]
+$$
 
 ### 2.2. Intertwining with Shifts
 By the definition of the critical successor lift:
-\[
+$$
 \text{successor}(\text{physicalLift}(G))(v) = \text{physicalLift}(x \mapsto G(x + 1))(v).
-\]
+$$
 Applying the isometry formula with $a = 0$ ($e^0 = 1$):
-\[
+$$
 \int_0^\infty \text{physicalLift}(H)(v) \cdot \text{successor}(\text{physicalLift}(G))(v) \, dv = \int_1^\infty H(x) G(x + 1) \, dx.
-\]
+$$
 Similarly, for the predecessor, which is supported on $(\log 2, \infty)$:
-\[
+$$
 \int_0^\infty \text{physicalLift}(H)(u) \cdot \text{predecessor}(\text{physicalLift}(G))(u) \, du = \int_{\log 2}^\infty \text{physicalLift}(H)(u) \text{physicalLift}(x \mapsto G(x - 1))(u) \, du = \int_2^\infty H(x) G(x - 1) \, dx.
-\]
+$$
 
 ### 2.3. Contact Form Reconstruction
 The physical contact form is defined as $\text{contactForm}(H, G) = -\text{symmetricKernelPair}(H, G) + 2 \int_{\mathbb{R}} H(x)(G(x+1) + G(x-1)) dx$.
@@ -113,6 +113,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Unitary coordinate changes and Mellin transforms in quantum scattering (Newton 1982, Reed-Simon 1979). A machine-verified constructive proof of the critical exponential isometry intertwining discrete shift operators with physical translations and reconstructing the boundary contact form in Lean 4 is new.
+- **Prior Literature:** Unitary coordinate changes and Mellin transforms in quantum scattering (Newton 1982, Reed-Simon 1979). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Connects the physical spatial domain of prime renewal with the logarithmic boundary-port state space.
 - **Target Venues:** *Journal of Functional Analysis* or *Communications in Mathematical Physics*.

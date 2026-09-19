@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the continuous successor operator advances the discrete prime birth index $\mathcal{T}(\beta_n) = \text{birthPull}(n, 1)$, that the operator defect matches the arithmetic correction $\text{defect}(\beta_n) = \text{correction}(n)$, and that the total von Mangoldt weighted defect series is absolutely summable.
+This entry documents a machine-verified implementation in Lean 4 proving that the continuous successor operator advances the discrete prime birth index $\mathcal{T}(\beta_n) = \text{birthPull}(n, 1)$, that the operator defect matches the arithmetic correction $\text{defect}(\beta_n) = \text{correction}(n)$, and that the total von Mangoldt weighted defect series is absolutely summable.

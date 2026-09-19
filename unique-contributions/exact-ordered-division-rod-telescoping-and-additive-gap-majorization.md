@@ -1,4 +1,4 @@
-# Unique Contribution 302: Exact Ordered Division Rod Telescoping and Additive Gap Majorization
+# Contribution 302: Exact Ordered Division Rod Telescoping and Additive Gap Majorization
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/DivisionRod.lean`](../../formalization/BuildingBlocks/DivisionRod.lean), [`building-blocks/renewal-rod/division-rod.md`](../../building-blocks/renewal-rod/division-rod.md)  
@@ -14,25 +14,25 @@ This contribution proves:
 
 1. **Exact Multiplicative Telescoping Bound:**  
    For any sequence of strictly separated proper division rods $(L_i, R_i)_{i=0}^{k-1}$ with $R_i \le N$ and $1 \le N$:
-   \[
+   $$
    \prod_{i=0}^{k-1} \frac{R_i}{L_i} \le N.
-   \]
+   $$
    The multiplicative product of exact integer ratios cannot exceed the global right endpoint bound $N$.
 2. **Exact Additive Gap Majorization:**  
    The multiplicative product is majorized by one plus the total sum of rod gaps:
-   \[
+   $$
    \prod_{i=0}^{k-1} \frac{R_i}{L_i} \le 1 + \sum_{i=0}^{k-1} (R_i - L_i).
-   \]
+   $$
 3. **Strict Separation Strictness for Multiple Rods ($k \ge 2$):**  
    Whenever $k \ge 2$, strict separation $R_i < L_{i+1}$ forces the additive gap inequality to be strictly sharp:
-   \[
+   $$
    \prod_{i=0}^{k-1} \frac{R_i}{L_i} < 1 + \sum_{i=0}^{k-1} (R_i - L_i).
-   \]
+   $$
 4. **Proper Divisibility Gap Coverage:**  
    Every proper rod satisfies $2 L_i \le R_i$, which implies:
-   \[
+   $$
    R_i \le 2(R_i - L_i).
-   \]
+   $$
    The right endpoint is bounded by twice the gap width.
 5. **Sharpness Classification:**  
    Equality in the additive gap bound $\prod (R_i/L_i) = 1 + \sum (R_i - L_i)$ holds if and only if $k = 1$ and $L_0 = 1$.
@@ -47,23 +47,23 @@ By induction on $n$, for any sequence where $R_i < L_{i+1}$:
 - Inductive step: Assume $\prod_{i=0}^{n-1} (R_i/L_i) \le R_{n-1}$.
   By separation, $R_{n-1} < L_n$, so $\prod_{i=0}^{n-1} (R_i/L_i) \le L_n$.
   Multiplying by $R_n/L_n$:
-  \[
+  $$
   \left(\prod_{i=0}^{n-1} \frac{R_i}{L_i}\right) \frac{R_n}{L_n} \le L_n \cdot \frac{R_n}{L_n} = R_n.
-  \]
+  $$
   Thus $\prod_{i=0}^{k-1} (R_i/L_i) \le R_{k-1} \le N$.
 
 ### 2.2. Additive Gap Induction
 Let $P_n = \prod_{i=0}^{n-1} q_i$, where $q_i = R_i / L_i \ge 2$.
 Write $q_n = 1 + (q_n - 1)$.
 Then:
-\[
+$$
 P_{n+1} = P_n q_n = P_n + P_n (q_n - 1).
-\]
+$$
 By induction, $P_n \le 1 + \sum_{i=0}^{n-1} (R_i - L_i)$.
 Furthermore, $P_n \le L_n$. Since $L_n (q_n - 1) = L_n (R_n/L_n - 1) = R_n - L_n$, we obtain:
-\[
+$$
 P_{n+1} \le \left( 1 + \sum_{i=0}^{n-1} (R_i - L_i) \right) + L_n (q_n - 1) = 1 + \sum_{i=0}^n (R_i - L_i).
-\]
+$$
 When $k \ge 2$, $P_{n} < L_n$ strictly by separation, and $q_n - 1 \ge 1 > 0$, making the inequality strictly sharp.
 
 ---
@@ -111,6 +111,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Multiplicative number theory and division graphs (Erdős 1938); divisor chains and Dilworth's theorem (Anderson 1967). Machine verification of discrete multiplicative telescoping bounds and strict additive gap majorization for separated proper division rods in Lean 4 is new.
+- **Prior Literature:** Multiplicative number theory and division graphs (Erdős 1938); divisor chains and Dilworth's theorem (Anderson 1967). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Provides an exact non-asymptotic combinatorial barrier bounding multiplicative amplification across disjoint divisor intervals by the linear additive gap sum.
 - **Target Venues:** *Discrete Mathematics* or *The Electronic Journal of Combinatorics*.

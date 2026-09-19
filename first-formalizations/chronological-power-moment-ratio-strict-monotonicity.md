@@ -51,6 +51,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that the discrete moment ratio $\sum_{j=1}^n \sqrt{j} / ((n+1)\sum_{j=1}^n j^{-1/2})$ decreases strictly monotonically for all $n \ge 1$.
+This entry documents a machine-verified proof that the discrete moment ratio $\sum_{j=1}^n \sqrt{j} / ((n+1)\sum_{j=1}^n j^{-1/2})$ decreases strictly monotonically for all $n \ge 1$.

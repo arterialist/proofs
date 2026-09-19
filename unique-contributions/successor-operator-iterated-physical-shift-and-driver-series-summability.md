@@ -1,4 +1,4 @@
-# Unique Contribution 79: Successor-Operator Iterated Physical Shift and Driver-Series Summability
+# Contribution 79: Successor-Operator Iterated Physical Shift and Driver-Series Summability
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SuccessorFeedbackSource.lean`](../../formalization/BuildingBlocks/SuccessorFeedbackSource.lean)  
@@ -14,25 +14,25 @@ This contribution proves:
 
 1. **Exact Iterated Physical Shift Formula:**  
    For any error profile $H : \mathbb{R} \to \mathbb{R}$ and every iteration step $j \in \mathbb{N}$, the $j$-th iterate of the successor operator satisfies the exact closed form:
-   \[
+   $$
    (T^j \mathcal{L} H)(v) = e^{v/2} H(e^v + j), \quad \forall v \in \mathbb{R}.
-   \]
+   $$
    Notice that $j$ applications of the nonlinear clock map $\sigma$ correspond to a pure linear integer translation $x \mapsto x + j$ on the physical variable $x = e^v$.
 2. **Uniform Defect Boundedness Across All Iterates:**  
    If $H$ is bounded by $|H(x)| \le M$ on $(0, \infty)$, then the defect of every iterate is uniformly bounded:
-   \[
+   $$
    |\operatorname{defect}(T^j \mathcal{L} H)| \le 2 M, \quad \forall j \in \mathbb{N}.
-   \]
+   $$
 3. **Chebyshev Physical Error Bounds:**  
    By Chebyshev's elementary bound $\psi(n) \le (4\log 2) n$, the physical Chebyshev error profile $E(x) = \frac{\psi(\lfloor x \rfloor)}{x} - 1$ satisfies $|E(x)| \le 4\log 2 + 1$ on $(0, \infty)$, implying:
-   \[
+   $$
    |d_j| \le 2(4 \log 2 + 1), \quad \forall j \in \mathbb{N}.
-   \]
+   $$
 4. **Analyticity of the Feedback Driver Generating Function:**  
    For any radius $|r| < 1$, the generating function series is unconditionally absolutely summable:
-   \[
+   $$
    \sum_{j=0}^\infty |d_j r^j| \le \frac{2(4 \log 2 + 1)}{1 - |r|} < \infty.
-   \]
+   $$
    Consequently, the discrete feedback driver generating function $\mathcal{D}(z) = \sum_{j=0}^\infty d_j z^j$ is holomorphic in the open unit disk $\mathbb{D} = \{z \in \mathbb{C} : |z| < 1\}$.
 
 ---
@@ -43,33 +43,33 @@ This contribution proves:
 For $j = 0$, $(T^0 \mathcal{L} H)(v) = e^{v/2} H(e^v)$.
 Assume $(T^j \mathcal{L} H)(v) = e^{v/2} H(e^v + j)$.
 Then:
-\[
+$$
 (T^{j+1} \mathcal{L} H)(v) = T(T^j \mathcal{L} H)(v) = e^{(v - \sigma(v))/2} (T^j \mathcal{L} H)(\sigma(v)).
-\]
+$$
 By inductive hypothesis:
-\[
+$$
 (T^j \mathcal{L} H)(\sigma(v)) = e^{\sigma(v)/2} H(e^{\sigma(v)} + j).
-\]
+$$
 Multiplying:
-\[
+$$
 e^{(v - \sigma(v))/2} e^{\sigma(v)/2} = e^{v/2}.
-\]
+$$
 Since $e^{\sigma(v)} = 1 + e^v$:
-\[
+$$
 H(e^{\sigma(v)} + j) = H(1 + e^v + j) = H(e^v + (j+1)).
-\]
+$$
 Thus $(T^{j+1} \mathcal{L} H)(v) = e^{v/2} H(e^v + j + 1)$, completing the induction.
 
 ### 2.2. Uniform Defect Bound
 The defect is defined as:
-\[
+$$
 \operatorname{defect}(f) = \frac{1}{2} \int_0^\infty K(v) f(v) \, dv.
-\]
+$$
 For $f = T^j \mathcal{L} H$, $|K(v) (T^j \mathcal{L} H)(v)| \le (2 e^{-v}) (e^{v/2} M) = 2 M e^{-v/2}$.
 Integrating:
-\[
+$$
 \int_0^\infty 2 M e^{-v/2} \, dv = 4 M.
-\]
+$$
 Multiplying by $1/2$ yields $|\operatorname{defect}(T^j \mathcal{L} H)| \le 2 M$.
 
 ### 2.3. Generating Function Summability

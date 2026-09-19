@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proofs in Lean 4 of the exact closed formulas for the three constituent components of the arithmetic potential $V(x)$, forming the mathematical foundation for the master identity $\mathcal{L}_0(S * S)(s) - \tau(s) = x^{-3/2} V(x)$.
+This entry documents machine-verified proofs in Lean 4 of the exact closed formulas for the three constituent components of the arithmetic potential $V(x)$, forming the mathematical foundation for the identity $\mathcal{L}_0(S * S)(s) - \tau(s) = x^{-3/2} V(x)$.

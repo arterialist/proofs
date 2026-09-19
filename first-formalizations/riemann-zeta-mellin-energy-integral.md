@@ -56,4 +56,4 @@ Each deduction establishes Mathlib's official `RiemannHypothesis` with zero exte
 
 ## 3. Novelty and Literature Analysis
 
-Prior to this formalization, no interactive theorem prover contained the quantitative factorization of the imaginary Mellin integrand into hyperbolic power differences and oscillatory sine ratios, nor the corresponding majorization by $(x - 1)^2 e^{-\pi x}$. While Mellin representations of completed zeta functions have been known in classical analytic number theory since Riemann (1859), this explicit sub-critical ratio bound ($\le 0.01$ vs $\ge 0.40$) and its structural integration into dual-band certificates for full Riemann Hypothesis deductions in Lean 4 represent an original formal achievement.
+Mellin representations of completed zeta functions are classical. The quantitative factorization and bounds may be a distinctive project formulation, but the audit did not establish their absence from every proof assistant. Any RH conclusion using the dual-band certificates must be read with the certificate theorem's explicit hypotheses.

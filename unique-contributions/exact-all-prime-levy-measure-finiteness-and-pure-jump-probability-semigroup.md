@@ -1,4 +1,4 @@
-# Unique Contribution 196: Exact All-Prime Lévy Measure Finiteness and Pure-Jump Probability Semigroup
+# Contribution 196: Exact All-Prime Lévy Measure Finiteness and Pure-Jump Probability Semigroup
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PrimeSeedAllPrimeLevy.lean`](../../formalization/BuildingBlocks/PrimeSeedAllPrimeLevy.lean), [`building-blocks/primes/prime-seed-all-prime-levy.md`](../../building-blocks/primes/prime-seed-all-prime-levy.md)  
@@ -14,31 +14,31 @@ This contribution proves:
 
 1. **Explicit Prime Lévy Mass Bound:**  
    For every prime $p \ge 2$, the total mass of the singleton jump measure $\nu_{\{p\}}(dv) = \frac{\text{seed}_{\log p}(v)}{v} dv$ satisfies:
-   \[
+   $$
    \int_{\mathbb{R}} \frac{\text{seed}_{\log p}(v)}{v} \, dv \le \frac{2}{p \log p}.
-   \]
+   $$
 2. **Summability via Chebyshev Shell Estimates:**  
    Without assuming PNT, RH, or asymptotic prime densities, the sum over all primes is summable:
-   \[
+   $$
    \sum_{p \in \mathcal{P}} \int_{\mathbb{R}} \frac{\text{seed}_{\log p}(v)}{v} \, dv < \infty.
-   \]
+   $$
 3. **Finite All-Prime Lévy Measure:**  
    The aggregate all-prime measure $\nu_{\mathcal{P}} = \sum_{p \in \mathcal{P}} \nu_{\{p\}}$ is a finite Borel measure (`IsFiniteMeasure`):
-   \[
+   $$
    \nu_{\mathcal{P}}(\mathbb{R}) = \sum_{p \in \mathcal{P}} \int_{\mathbb{R}} \frac{\text{seed}_{\log p}(v)}{v} \, dv < \infty.
-   \]
+   $$
 4. **Finite Local Prime Support and Density Identification:**  
    At any finite age $v \in \mathbb{R}$, only primes $p \le \lfloor e^v \rfloor$ have non-zero seed evaluations. The collective seed $B(v) = \sum_{p \in \mathcal{P}} \text{seed}_{\log p}(v)$ is a well-defined pointwise finite sum, and the Lévy measure satisfies:
-   \[
+   $$
    \nu_{\mathcal{P}} = \text{volume.withDensity}\left(v \mapsto \frac{B(v)}{v}\right).
-   \]
+   $$
 5. **Non-Integrability of the Unweighted Seed:**  
    The unweighted collective seed $B(v)$ is strictly non-integrable: $B \notin L^1(\mathbb{R})$. Finiteness of activity relies essentially on the age denominator $v$.
 6. **Pure-Jump Transition Probability Semigroup:**  
    For operational time $u \ge 0$, the compound Poisson law $\mathcal{P}_u = \text{poissonLaw}(\text{normalizedJump } \nu_{\mathcal{P}}, u \|\nu_{\mathcal{P}}\|)$ defines a rigorous Markov transition probability semigroup:
-   \[
+   $$
    \mathcal{P}_0 = \delta_0, \quad \mathcal{P}_u * \mathcal{P}_w = \mathcal{P}_{u+w},
-   \]
+   $$
    with exact series expansion $\mathcal{P}_u = \sum_{n=0}^\infty e^{-u \|\nu_{\mathcal{P}}\|} \frac{u^n}{n!} \nu_{\mathcal{P}}^{*n}$.
 
 ---
@@ -47,9 +47,9 @@ This contribution proves:
 
 ### 2.1. Individual Prime Jump Bound
 By `integral_seed_div_age_le`, for $L = \log p > 0$:
-\[
+$$
 \int_{\mathbb{R}} \frac{\text{seed}_{\log p}(v)}{v} \, dv \le \frac{2 e^{-\log p}}{\log p} = \frac{2}{p \log p}.
-\]
+$$
 
 ### 2.2. Summability Across Primes
 By `summable_prime_reciprocal_mul_log` (proved via dyadic Chebyshev shells without PNT), $\sum_p \frac{1}{p \log p} < \infty$.
@@ -115,6 +115,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Construction of compound Poisson and pure-jump Lévy processes (Lévy 1937, Sato 1999, Applebaum 2009). Formalization of an arithmetic Lévy measure summing over all primes with proved finiteness without PNT in Lean 4 is new.
+- **Prior Literature:** Construction of compound Poisson and pure-jump Lévy processes (Lévy 1937, Sato 1999, Applebaum 2009). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes $\sum_p \int \frac{\text{seed}_{\log p}}{v} < \infty$, proves $\nu_{\mathcal{P}} = \text{withDensity}(B(v)/v)$, and constructs the convolution probability semigroup $\mathcal{P}_{u+v} = \mathcal{P}_u * \mathcal{P}_v$ in Lean 4.
 - **Target Venues:** *Stochastic Processes and their Applications* or *Probability Theory and Related Fields*.

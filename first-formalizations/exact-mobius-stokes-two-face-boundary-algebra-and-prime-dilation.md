@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact two-face discrete Stokes boundary identity for the Möbius function under prime dilation, eliminating bulk interior terms via primitive cofactor bijections.
+This entry documents a machine-verified proof in Lean 4 establishing the exact two-face discrete Stokes boundary identity for the Möbius function under prime dilation, eliminating bulk interior terms via primitive cofactor bijections.

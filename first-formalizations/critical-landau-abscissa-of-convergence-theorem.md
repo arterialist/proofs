@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 combining Landau's theorem on non-negative measures with the arithmetic potential, rigorously guaranteeing that any one-sided tail sign hypothesis forces the Laplace convergence domain to extend all the way to $\operatorname{Re}(s) = 1/2$.
+This entry documents a machine-verified proof in Lean 4 combining Landau's theorem on non-negative measures with the arithmetic potential, rigorously guaranteeing that any one-sided tail sign hypothesis forces the Laplace convergence domain to extend all the way to $\operatorname{Re}(s) = 1/2$.

@@ -1,4 +1,4 @@
-# Unique Contribution 333: Exact Odd Goldbach Dyadic Lacunary Reduction and Uniform Two-Log-Squared Bound
+# Contribution 333: Exact Odd Goldbach Dyadic Lacunary Reduction and Uniform Two-Log-Squared Bound
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/GoldbachOddPowerBoundFinite.lean`](../../formalization/BuildingBlocks/GoldbachOddPowerBoundFinite.lean), [`building-blocks/goldbach/odd-power-bound.md`](../../building-blocks/goldbach/odd-power-bound.md)  
@@ -14,24 +14,24 @@ This contribution proves:
 
 1. **Exact Even Von Mangoldt Summation:**  
    For any cutoff $Y \ge 1$:
-   \[
+   $$
    \sum_{m=1}^Y \mathbf{1}_{\text{Even}(m)} \Lambda(m) = \lfloor \log_2 Y \rfloor \log 2.
-   \]
+   $$
 2. **Exact Dyadic Lacunary Reduction:**  
    For any odd integer $N$ and source cutoff $Y$, the truncated prime coefficient collapses from a 2D convolution to a 1D lacunary sum:
-   \[
+   $$
    C_Y(N) = 2 \log 2 \sum_{k=1}^{\lfloor \log_2 Y \rfloor} \mathbf{1}_{2^k \le N, N-2^k \in [1, Y]} \Lambda(N - 2^k).
-   \]
+   $$
 3. **Logarithmic Count Bound:**  
    With the admissible power set of cardinality $\le \lfloor \log_2 N \rfloor$:
-   \[
+   $$
    C_Y(N) \le 2 \log 2 \lfloor \log_2 N \rfloor \log N.
-   \]
+   $$
 4. **Uniform Two-Log-Squared Upper Bound:**  
    Because $\lfloor \log_2 N \rfloor \log 2 \le \log N$, for all odd $N$ and all source cutoffs $Y$:
-   \[
+   $$
    C_Y(N) \le 2 (\log N)^2.
-   \]
+   $$
 
 ---
 
@@ -89,6 +89,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Hardy & Littlewood (1923) *Partitio Numerorum*; Vinogradov (1937) *Representation of an odd number as a sum of three primes*. Machine verification of exact dyadic lacunary reductions and uniform $2(\log N)^2$ bounds for truncated binary Goldbach sums in Lean 4 is new.
+- **Prior Literature:** Hardy & Littlewood (1923) *Partitio Numerorum*; Vinogradov (1937) *Representation of an odd number as a sum of three primes*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact algebraic parity collapse of odd Goldbach convolution sums into dyadic lacunary orbits, producing a uniform $2(\log N)^2$ majorant independent of source truncation.
 - **Target Venues:** *American Mathematical Monthly* or *Integers*.

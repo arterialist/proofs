@@ -1,4 +1,4 @@
-# Unique Contribution 191: Exact Prime Block Continuous Chebyshev Equivalence and Bilinear Source Representation
+# Contribution 191: Exact Prime Block Continuous Chebyshev Equivalence and Bilinear Source Representation
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PrimeBlockSource.lean`](../../formalization/BuildingBlocks/PrimeBlockSource.lean), [`building-blocks/primes/prime-block-source.md`](../../building-blocks/primes/prime-block-source.md)  
@@ -14,34 +14,34 @@ This contribution proves:
 
 1. **Finite Prime-Power Parametrization of the von Mangoldt Sum:**  
    For every positive integer $N \in \mathbb{N}$, the Chebyshev $\psi(N)$ function decomposes bijectively into the double sum:
-   \[
+   $$
    \psi(N) = \sum_{p \in [2, N], p \text{ prime}} \sum_{j \in [1, N], p^j \le N} \log p.
-   \]
+   $$
 2. **Exact Age-Floor Prime-Power Activation Equivalence:**  
    For any prime $p$ and integer exponent $j \ge 1$, the continuous age activation threshold matches the discrete floor inequality exactly:
-   \[
+   $$
    j \log p \le v \iff p^j \le \lfloor e^v \rfloor.
-   \]
+   $$
 3. **Exact Continuous Prime Block Representation:**  
    For every prime $p$ and continuous age $v \in \mathbb{R}$:
-   \[
+   $$
    \text{primeBlock}_p(v) = e^{-v/2} \sum_{j=1}^{\lfloor e^v \rfloor} \mathbf{1}_{p^j \le \lfloor e^v \rfloor} \log p.
-   \]
+   $$
    In particular, primes beyond the floor cutoff ($p > \lfloor e^v \rfloor$) satisfy $\text{primeBlock}_p(v) = 0$ identically.
 4. **The Fundamental Bridge Identity:**  
    The finite sum of all continuous prime blocks equals the normalized Chebyshev function identically:
-   \[
+   $$
    \text{primeBlockSum}(v) = \sum_{p=2}^{\lfloor e^v \rfloor} \mathbf{1}_{p \text{ prime}} \text{primeBlock}_p(v) = e^{-v/2} \psi(\lfloor e^v \rfloor).
-   \]
+   $$
 5. **Exact Bilinear Arithmetic Source Representation:**  
    The centered arithmetic source function $\text{source}(v) = e^{-v/2}(\psi(\lfloor e^v \rfloor) - e^v) \mathbf{1}_{v \ge 0}$ satisfies:
-   \[
+   $$
    \text{source}(v) = \text{primeBlockSum}(v) - e^{v/2}, \quad \text{source}(0) = -1.
-   \]
+   $$
    For any two observation ages $u, v \ge 0$, the bilinear product expands with all cross-prime interference terms and continuous background terms:
-   \[
+   $$
    \text{source}(u)\text{source}(v) = \text{primeBlockSum}(u)\text{primeBlockSum}(v) - e^{v/2}\text{primeBlockSum}(u) - e^{u/2}\text{primeBlockSum}(v) + e^{(u+v)/2}.
-   \]
+   $$
    No primes are omitted, no higher prime powers are discarded, and the equivalence is exact on the entire non-negative real line $[0, \infty)$.
 
 ---
@@ -53,9 +53,9 @@ Let $P = \{ (p, j) \in [2, N] \times [1, N] : p \text{ prime}, p^j \le N \}$ and
 The map $\phi(p, j) = p^j$ is a bijection from $P$ to $Q$ by the fundamental theorem of arithmetic.
 Furthermore, $\Lambda(p^j) = \log p$.
 Thus:
-\[
+$$
 \sum_{(p, j) \in P} \log p = \sum_{n \in Q} \Lambda(n).
-\]
+$$
 Since $\Lambda(n) = 0$ when $n$ is not a prime power, $\sum_{n \in Q} \Lambda(n) = \sum_{n=1}^N \Lambda(n) = \psi(N)$.
 
 ### 2.2. Continuous Age-Floor Activation
@@ -66,9 +66,9 @@ Substituting into $\text{primeBlock}_p(v) = e^{-v/2} \sum_j \mathbf{1}_{v \ge j 
 
 ### 2.3. Bridge Identity and Bilinear Product
 Summing $\text{primeBlock}_p(v)$ over all primes $p \le \lfloor e^v \rfloor$:
-\[
+$$
 \sum_{p \le \lfloor e^v \rfloor} \text{primeBlock}_p(v) = e^{-v/2} \sum_{p \le \lfloor e^v \rfloor} \sum_{p^j \le \lfloor e^v \rfloor} \log p = e^{-v/2} \psi(\lfloor e^v \rfloor).
-\]
+$$
 Subtracting $e^{v/2}$ gives $\text{source}(v) = e^{-v/2}(\psi(\lfloor e^v \rfloor) - e^v)$.
 Multiplying $\text{source}(u)$ and $\text{source}(v)$ yields the 4-term bilinear expansion in `source_product`.
 
@@ -113,6 +113,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Classical von Mangoldt sums and Chebyshev function equivalences (Landau 1909, Ingham 1932, Montgomery-Vaughan 2007). Machine-verified continuous age-floor equivalences connecting prime renewal blocks and Chebyshev sums in Lean 4 are new.
+- **Prior Literature:** Classical von Mangoldt sums and Chebyshev function equivalences (Landau 1909, Ingham 1932, Montgomery-Vaughan 2007). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact identity $\text{primeBlockSum}(v) = e^{-v/2}\psi(\lfloor e^v \rfloor)$ and proves the bilinear source product formula in Lean 4.
 - **Target Venues:** *Ramanujan Journal* or *Journal of Number Theory*.

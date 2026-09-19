@@ -56,6 +56,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof that boundary defects of iterated successor operators decay exponentially as $e^{-R/2}$ and that the physical feedback driver is identically governed by the integrated difference of Chebyshev prime errors.
+This entry documents a machine-verified proof that boundary defects of iterated successor operators decay exponentially as $e^{-R/2}$ and that the physical feedback driver is identically governed by the integrated difference of Chebyshev prime errors.

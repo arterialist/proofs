@@ -68,6 +68,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the exact discrete Möbius hyperbola inversion connecting Dirichlet divisor forcing to Chebyshev's prime error with the exact topological shift $2\gamma$.
+This entry documents a machine-verified implementation in Lean 4 establishing the exact discrete Möbius hyperbola inversion connecting Dirichlet divisor forcing to Chebyshev's prime error with the exact topological shift $2\gamma$.

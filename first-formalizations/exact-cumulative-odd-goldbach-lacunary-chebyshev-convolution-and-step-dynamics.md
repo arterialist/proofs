@@ -66,6 +66,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact representation of cumulative odd Goldbach counts via lacunary dyadic Chebyshev error sums, and proving the exact binary-pair collapse of its discrete step derivative.
+This entry documents a machine-verified proof in Lean 4 establishing the exact representation of cumulative odd Goldbach counts via lacunary dyadic Chebyshev error sums, and proving the exact binary-pair collapse of its discrete step derivative.

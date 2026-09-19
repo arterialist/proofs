@@ -55,6 +55,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 evaluating the charge defect of the continuous successor transfer operator on the natural arithmetic relative density to the exact geometric value $1 - \pi/4$.
+This entry documents a machine-verified proof in Lean 4 evaluating the charge defect of the continuous successor transfer operator on the natural arithmetic relative density to the exact geometric value $1 - \pi/4$.

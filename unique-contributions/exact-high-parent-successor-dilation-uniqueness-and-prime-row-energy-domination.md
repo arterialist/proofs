@@ -1,4 +1,4 @@
-# Unique Contribution 324: Exact High-Parent Successor Dilation Uniqueness and Prime Row Energy Domination
+# Contribution 324: Exact High-Parent Successor Dilation Uniqueness and Prime Row Energy Domination
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SuccessorHighParentPrimeRow.lean`](../../formalization/BuildingBlocks/SuccessorHighParentPrimeRow.lean), [`building-blocks/successor-cell/high-parent-row.md`](../../building-blocks/successor-cell/high-parent-row.md)  
@@ -14,34 +14,34 @@ This contribution proves:
 
 1. **Exact Dilation Uniqueness Above Square-Root Threshold:**  
    If $r < n^2$, and $d, e \in \mathbb{N}$ are integer dilations mapping parent cell $n$ into child cell $r$, meaning:
-   \[
+   $$
    d n \le r < d(n + 1) \quad \text{and} \quad e n \le r < e(n + 1),
-   \]
+   $$
    then $d = e$ unconditionally.
    Consequently, the cardinality of the active dilation set is bounded by 1:
-   \[
+   $$
    |\text{highParentChildren}(r, n, D)| \le 1.
-   \]
+   $$
 2. **Complete Elimination of Prime-Power Cross-Terms:**  
    Because the active dilation set contains at most one element, the square of the complete von Mangoldt row sum contains zero cross-terms:
-   \[
+   $$
    \left( \sum_{d \in \text{highParentChildren}(r, n, D)} \frac{\Lambda(d)}{\sqrt{d}} \right)^2 = \sum_{d \in \text{highParentChildren}(r, n, D)} \left( \frac{\Lambda(d)}{\sqrt{d}} \right)^2.
-   \]
+   $$
 3. **Exact Two-Reciprocal-Dilation Cell Length Ratio:**  
    For physical logarithmic cell lengths $\text{cellLength}(n) = \log\left(\frac{n+1}{n}\right)$, whenever $dn \le r$:
-   \[
+   $$
    \frac{\text{cellLength}(r)}{\text{cellLength}(n)} \le \frac{n+1}{r} \le \frac{2}{d}.
-   \]
+   $$
 4. **Exact Normalized Row Energy Domination:**  
    The total physically normalized row energy across all high parents $n > \sqrt{r}$ is bounded by twice the reciprocal-square tail of active von Mangoldt weights:
-   \[
+   $$
    \sum_{n \le r, r < n^2} \left( \sqrt{\frac{\text{cellLength}(r)}{\text{cellLength}(n)}} \sum_{d \in \text{children}} \frac{\Lambda(d)}{\sqrt{d}} \right)^2 \le 2 \sum_{d = D+1}^r \left( \frac{\Lambda(d)}{d} \right)^2.
-   \]
+   $$
 5. **Unnormalized Energy Domination:**  
    Without normalization, the energy is bounded by the exact tail:
-   \[
+   $$
    \sum_{n \le r, r < n^2} \left( \sum_{d \in \text{children}} \frac{\Lambda(d)}{\sqrt{d}} \right)^2 \le \sum_{d = D+1}^r \frac{\Lambda(d)^2}{d}.
-   \]
+   $$
 
 ---
 
@@ -50,9 +50,9 @@ This contribution proves:
 ### 2.1. Dilation Uniqueness
 If $d \ge n$, then $d n \ge n^2 > r$, contradicting $d n \le r$. Thus $d < n$ and similarly $e < n$.
 Suppose $d < e$. Then $d + 1 \le e$, which implies:
-\[
+$$
 d(n + 1) = d n + d < d n + n = (d + 1) n \le e n \le r.
-\]
+$$
 This contradicts $r < d(n + 1)$. Symmetrically, $e < d$ is impossible. Hence $d = e$.
 
 ### 2.2. Cross-Term Cancellation
@@ -104,6 +104,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Nyman (1950) *On the one-dimensional translation group and semi-group in certain function spaces*; Beurling (1955) *A closure problem related to the Riemann Zeta-function*; Báez-Duarte (2003) *A strengthening of the Nyman-Beurling criterion for the Riemann hypothesis*. Machine verification of exact dilation uniqueness, cross-term elimination, and normalized row energy bounds in Lean 4 is new.
+- **Prior Literature:** Nyman (1950) *On the one-dimensional translation group and semi-group in certain function spaces*; Beurling (1955) *A closure problem related to the Riemann Zeta-function*; Báez-Duarte (2003) *A strengthening of the Nyman-Beurling criterion for the Riemann hypothesis*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Resolves the high-parent regime of the successor-cell operator by showing that dilation uniqueness eliminates all off-diagonal interference, yielding an exact reciprocal-square tail bound on prime energy.
 - **Target Venues:** *Journal of Functional Analysis* or *Mathematische Zeitschrift*.

@@ -3,7 +3,7 @@
 **Authors:** Arterialist Formalization Team  
 **Date:** September 2026  
 **Lean 4 Version:** 4.24.0  
-**Mathlib Commit:** 2026-09-15  
+**Mathlib revision:** `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` from `lake-manifest.json`
 **Target Modules:** `BuildingBlocks.ActualFiniteAbelMertens`, `BuildingBlocks.ActualCenteredPoissonKernel`  
 **Foundational Axioms:** Standard Lean 4 foundations (`[propext, Classical.choice, Quot.sound]`), zero custom axioms, zero `sorry` placeholders.
 
@@ -17,34 +17,34 @@ This formalization provides exact, non-asymptotic discrete identities for both t
 
 1. **Exact Finite Abel Summation with Retained Terminal Mertens Term:**
    For any $N \in \mathbb{N}$ and parameter $q \in \mathbb{R}$:
-   \[
+   $$
     \sum_{n=1}^N \mu(n) q^n = M(N) q^N + (1 - q) \sum_{k=0}^{N-1} M(k) q^k.
-   \]
+   $$
    This retains the boundary term $M(N) q^N$ exactly without any asymptotic remainder.
 
 2. **Differentiability and Finite Derivative Bounds:**
    For the truncated exponential sum $E_N(t) := \sum_{n=1}^N \mu(n) e^{-nt}$, Mathlib's differential calculus (`HasDerivAt`) is deployed to establish exact termwise differentiation at all $t \in \mathbb{R}$:
-   \[
+   $$
     \frac{d}{dt} E_N(t) = -\sum_{n=1}^N \mu(n) n e^{-nt},
-   \]
+   $$
    together with the unconditional finite derivative bound:
-   \[
+   $$
     |E_N'(t)| \le \sum_{n=1}^N n e^{-nt},
-   \]
+   $$
    valid for all $N$ without requiring infinite series convergence or analytic continuation.
 
 3. **Centered Poisson Covariance Kernel Nonnegativity:**
    For the discrete Poisson kernel with discount parameter $q \in [0, 1]$, the centered covariance between horizons $n$ and $m$ factors into an exact geometric sum:
-   \[
+   $$
     q^{\max(n, m)} - q^{n+m} = (1 - q) \sum_{k=0}^{\min(n, m) - 1} q^{\max(n, m) + k} \ge 0.
-   \]
+   $$
    This proves that the centered Poisson covariance is unconditionally non-negative across all pairs $(n, m)$.
 
 4. **Consecutive Grid Gap Identity:**
    For consecutive integer sampling rates $2/X$, the gap is explicitly:
-   \[
+   $$
     \frac{2}{X} - \frac{2}{X+1} = \frac{2}{X(X+1)} > 0 \qquad (X \ge 1).
-   \]
+   $$
 
 ---
 
@@ -117,4 +117,4 @@ Zero custom axioms, zero `sorry` placeholders.
 
 1. **Mathlib:** Mathlib includes `moebius` in `NumberTheory.ArithmeticFunction` and basic summation by parts (`Finset.sum_range_by_parts`), but lacks the exact terminal-retained Abel identity specialized to the Mertens state function, the termwise `HasDerivAt` proof for truncated exponential Möbius sums, and the centered Poisson covariance kernel decomposition into geometric tails.
 2. **AFP / Coq:** Existing formalizations of the Prime Number Theorem (e.g. Harrison in HOL Light, Eberl in Isabelle/AFP) work primarily with asymptotic $O$-bounds and complex integrals rather than exact finite discrete operator identities.
-3. **Novelty:** This is the first machine-verified proof of exact finite Abel summation for the physical Möbius sequence with retained boundary term and exact geometric tail factoring for centered Poisson covariance.
+3. **Novelty:** Provisional priority claim: this may be an early machine-verified proof of exact finite Abel summation for the physical Möbius sequence with retained boundary term and exact geometric tail factoring for centered Poisson covariance.

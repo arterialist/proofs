@@ -13,16 +13,16 @@ This formalization establishes the dyadic block energy bounds and the uniform ge
 
 1. **Dyadic Block Energy Bound:**
    Formal proof of `coarsePrime_mellin_norm_le`:
-   \[
+   $$
    \left\| \int_X^{2X} \Delta(x) x^{-(s+1)} dx \right\| \le \sqrt{\frac{2 E(X)}{X}} X^{-(a+1)} + \|s+1\| X^{-(a+2)} \sqrt{X E(X)}.
-   \]
+   $$
 2. **Negative Power Exponent:**
    Formal proof of `coarseMellinBlock_power_bound`: $\|\text{coarseMellinBlock}(k, s)\| \le M (2^k)^b$ with $b = (1/2 - a)/2 < 0$.
 3. **Grand Geometric Decay Theorem:**
    Formal proof of `coarseMellinBlock_geometric_bound`:
-   \[
+   $$
    \|\text{coarseMellinBlock}(k, s)\| \le M \cdot r^k \quad \text{with } r = 2^{(1/2-a)/2} < 1,
-   \]
+   $$
    holding uniformly on compact subsets of the half-plane $\text{Re}(s) > 1/2$.
 
 ---
@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the geometric decay $\|\text{coarseMellinBlock}(k, s)\| \le M r^k$ of dyadic arithmetic Mellin blocks with explicit ratio $r = 2^{(1/2-a)/2} < 1$, rigorously bridging $L^2$ primitive energy bounds with normal convergence and holomorphy of Mellin transforms in $\text{Re}(s) > 1/2$.
+This entry documents a machine-verified implementation in Lean 4 establishing the geometric decay $\|\text{coarseMellinBlock}(k, s)\| \le M r^k$ of dyadic arithmetic Mellin blocks with explicit ratio $r = 2^{(1/2-a)/2} < 1$, rigorously bridging $L^2$ primitive energy bounds with normal convergence and holomorphy of Mellin transforms in $\text{Re}(s) > 1/2$.

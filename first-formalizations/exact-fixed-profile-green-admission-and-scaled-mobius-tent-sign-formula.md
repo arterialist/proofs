@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact scaled sign formula for Green packet admissions, demonstrating that the leading sign is rigorously governed by the negative truncated Möbius tent $-T_{\text{closed}}(p)$ while accounting for all finite cofactor and delayed faces.
+This entry documents a machine-verified proof in Lean 4 establishing the exact scaled sign formula for Green packet admissions, demonstrating that the leading sign is rigorously governed by the negative truncated Möbius tent $-T_{\text{closed}}(p)$ while accounting for all finite cofactor and delayed faces.

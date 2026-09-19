@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of the exact arithmetic Gram kernel representing causal prime step transitions and its unconditional positive semidefiniteness on all finite subsets of natural numbers.
+This entry documents a machine-verified proof of the exact arithmetic Gram kernel representing causal prime step transitions and its unconditional positive semidefiniteness on all finite subsets of natural numbers.

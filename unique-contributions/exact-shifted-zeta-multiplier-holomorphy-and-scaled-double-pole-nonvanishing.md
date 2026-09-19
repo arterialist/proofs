@@ -1,4 +1,4 @@
-# Unique Contribution 299: Exact Shifted Zeta Multiplier Holomorphy and Scaled Double-Pole Nonvanishing
+# Contribution 299: Exact Shifted Zeta Multiplier Holomorphy and Scaled Double-Pole Nonvanishing
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ShiftedZetaMultiplier.lean`](../../formalization/BuildingBlocks/ShiftedZetaMultiplier.lean), [`building-blocks/contour-inversion/shifted-zeta-multiplier.md`](../../building-blocks/contour-inversion/shifted-zeta-multiplier.md)  
@@ -9,18 +9,18 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the contour inversion of arithmetic Mellin transforms, the interaction of logarithmic-derivative poles with the all-multiples floor kernel is mediated by the shifted zeta multiplier:
-\[
+$$
 M(s) = \frac{\zeta(s + 1/2)}{s(s + 1)}.
-\]
+$$
 For off-critical zeros $\rho$ with $\text{Re}(\rho) > 1/2$, the shifted argument satisfies $\text{Re}(\rho + 1/2) > 1$. If $M(\rho)$ were zero, the putative pole could cancel, masking an off-critical zero.
 
 This contribution proves:
 
 1. **Exact Scaled Multiplicity Double-Pole Nonvanishing:**  
    For any putative zero $\rho$ in the open half-plane $\Omega = \{s \in \mathbb{C} : \text{Re}(s) > 1/2\}$ and any positive integer multiplicity $m \ge 1$:
-   \[
+   $$
    M(\rho) \cdot m^2 \ne 0.
-   \]
+   $$
    This proves that every off-critical zero generates an un-cancellable double pole of strictly nonzero residue in the integrated contour transform.
 2. **Holomorphy and Nonvanishing on the Entire Domain:**  
    The multiplier $M(s)$ is analytic on $\Omega$ and satisfies $M(s) \ne 0$ for all $s \in \Omega$, consuming the unconditional nonvanishing of the Euler product $\zeta(z) \ne 0$ on $\text{Re}(z) > 1$.
@@ -36,9 +36,9 @@ This contribution proves:
 ### 2.1. Domain Shift and Euler Product Nonvanishing
 Let $s \in \Omega = \{s \in \mathbb{C} : \text{Re}(s) > 1/2\}$.
 Then:
-\[
+$$
 \text{Re}(s + 1/2) = \text{Re}(s) + 1/2 > 1/2 + 1/2 = 1.
-\]
+$$
 By the Euler product for the Riemann zeta function, $\zeta(w) = \prod_p (1 - p^{-w})^{-1} \ne 0$ for all $\text{Re}(w) > 1$.
 In particular, $\zeta(s + 1/2) \ne 0$ and $s + 1/2 \ne 1$ (since $\text{Re}(s+1/2) > 1 \ne 1$).
 Hence $\zeta(s + 1/2)$ is holomorphic and non-vanishing.
@@ -80,6 +80,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Titchmarsh (1986) *The Theory of the Riemann Zeta-Function*; Montgomery and Vaughan (2007) *Multiplicative Number Theory*; Mathlib's formalization of `riemannZeta_ne_zero_of_one_lt_re`. Machine verification of the shifted multiplier holomorphy and nonvanishing double-pole residue scaling in Lean 4 is new.
+- **Prior Literature:** Titchmarsh (1986) *The Theory of the Riemann Zeta-Function*; Montgomery and Vaughan (2007) *Multiplicative Number Theory*; Mathlib's formalization of `riemannZeta_ne_zero_of_one_lt_re`. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the certified non-cancellation of off-critical pole residues in floor-mediated Mellin transforms, rigorously closing any possibility of hidden zero cancellation via the background multiplier.
 - **Target Venues:** *Complex Analysis and Operator Theory* or *Bulletin of the London Mathematical Society*.

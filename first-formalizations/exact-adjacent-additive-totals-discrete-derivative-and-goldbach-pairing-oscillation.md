@@ -13,9 +13,9 @@ This formalization proves the exact discrete derivative formula for adjacent con
 
 1. **Adjacent Discrete Derivative Identity:**
    Formal proof of `boundedCoefficient_adjacent`:
-   \[
+   $$
    C_Y(N+1) - C_Y(N) = \text{core}(a, Y, N) + \text{birth}(a, Y, N) - \text{departure}(a, Y, N).
-   \]
+   $$
 2. **Face Evaluations:**
    Formal proof of `birthFace_eq_if` and `departureFace_eq_if`.
 3. **Interior Derivative and Constant Cancellation:**
@@ -68,6 +68,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the exact discrete derivative decomposition for truncated additive convolutions and proving the impossibility of universal adjacent-pair sign bounds under heat kernels.
+This entry documents a machine-verified proof in Lean 4 establishing the exact discrete derivative decomposition for truncated additive convolutions and proving the impossibility of universal adjacent-pair sign bounds under heat kernels.

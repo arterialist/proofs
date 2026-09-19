@@ -70,6 +70,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 calculating the exact jump discontinuities of prime successor seeds, proving that positive continuous growth and birth jumps balance the infinite downward proper-power jumps to zero, and determining the exact total variation budget.
+This entry documents a machine-verified implementation in Lean 4 calculating the exact jump discontinuities of prime successor seeds, proving that positive continuous growth and birth jumps balance the infinite downward proper-power jumps to zero, and determining the exact total variation budget.

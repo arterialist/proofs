@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing universal energy dissipation and non-positive residuals $\int s(v-r)d\mu(r) - s(v) \le 0$ under arbitrary causal probability distributions.
+This entry documents a machine-verified implementation in Lean 4 establishing universal energy dissipation and non-positive residuals $\int s(v-r)d\mu(r) - s(v) \le 0$ under arbitrary causal probability distributions.

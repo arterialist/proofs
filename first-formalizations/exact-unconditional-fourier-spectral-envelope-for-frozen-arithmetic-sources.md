@@ -69,6 +69,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing an explicit, unconditional quadratic spectral envelope $O(N/(1+\xi^2))$ for the Fourier transform of the causal arithmetic charge source across all frequencies $\xi \in \mathbb{R}$.
+This entry documents a machine-verified implementation in Lean 4 establishing an explicit, unconditional quadratic spectral envelope $O(N/(1+\xi^2))$ for the Fourier transform of the causal arithmetic charge source across all frequencies $\xi \in \mathbb{R}$.

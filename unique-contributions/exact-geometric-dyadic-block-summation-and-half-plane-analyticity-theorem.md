@@ -1,4 +1,4 @@
-# Unique Contribution 242: Exact Geometric Dyadic Block Summation and Half-Plane Analyticity Theorem
+# Contribution 242: Exact Geometric Dyadic Block Summation and Half-Plane Analyticity Theorem
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/CoarseSummation.lean`](../../formalization/BuildingBlocks/CoarseSummation.lean), [`building-blocks/coarse/coarse-summation.md`](../../building-blocks/coarse/coarse-summation.md)  
@@ -14,18 +14,18 @@ This contribution proves:
 
 1. **Compact Majorant Construction from Vertical Bounds:**  
    If a sequence of functions $f_k(s)$ satisfies uniform geometric decay $M r^k$ ($0 \le r < 1$) on any region $a \le \text{Re}(s)$ and $\|s+1\| \le R$, then for every compact set $K \subset \{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}$, there exists a summable sequence $u: \mathbb{N} \to \mathbb{R}$ with:
-   \[
+   $$
    \|f_k(s)\| \le u(k) \quad \text{for all } k \in \mathbb{N}, s \in K.
-   \]
+   $$
    The proof uses extreme-value compactness to extract $z = \operatorname{argmin}_{s \in K} \text{Re}(s)$ and $w = \operatorname{argmax}_{s \in K} \|s+1\|$.
 2. **Locally Uniform Convergence of Block Series:**  
    The sequence of partial sums $\sum_{k \in t} f_k(s)$ converges locally uniformly on the open half-plane $\mathcal{H}_{1/2} = \{s \in \mathbb{C} \mid \text{Re}(s) > 1/2\}$ to the total sum $\sum_{k=0}^\infty f_k(s)$.
-3. **Grand Geometric Analyticity Transfer Theorem:**  
+3. **Geometric Analyticity Transfer Theorem:**
    `coarseMellinSum_analytic_of_geometric`:  
    If each block $f_k$ is analytic on $\mathbb{C}$, and the family satisfies geometric decay on bounded vertical strips, then the infinite series:
-   \[
+   $$
    F(s) = \sum_{k=0}^\infty f_k(s)
-   \]
+   $$
    is analytic on the entire open half-plane $\mathcal{H}_{1/2}$.
 
 ---
@@ -88,6 +88,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Classical Weierstrass convergence theorem and normal families in complex analysis (Ahlfors 1979, Rudin 1987). A self-contained, machine-verified framework transferring geometric bounds on dyadic blocks to half-plane analyticity in Lean 4 is new.
+- **Prior Literature:** Classical Weierstrass convergence theorem and normal families in complex analysis (Ahlfors 1979, Rudin 1987). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Provides an abstract, reusable theorem decoupling the geometric decay estimates of specific kernel blocks from the topological machinery of analytic continuation.
 - **Target Venues:** *Complex Analysis and Operator Theory* or *Journal of Mathematical Analysis and Applications*.

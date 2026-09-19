@@ -1,4 +1,4 @@
-# Unique Contribution 210: Exact Complete Core Arrival Operator Regularity and Closed-Interval L² Stability
+# Contribution 210: Exact Complete Core Arrival Operator Regularity and Closed-Interval L² Stability
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PhysicalContinuousArrivalMass.lean`](../../formalization/BuildingBlocks/PhysicalContinuousArrivalMass.lean), [`building-blocks/theta/physical-continuous-arrival-mass.md`](../../building-blocks/theta/physical-continuous-arrival-mass.md)  
@@ -14,33 +14,33 @@ This contribution proves:
 
 1. **Explicit Tail Mass Majorization:**  
    For every separation distance $d > 0$:
-   \[
+   $$
    \int_d^\infty K(s) \, ds \le \frac{3}{2} \text{boundaryLog}(d) + \frac{2}{1 - e^{-2}}.
-   \]
+   $$
 2. **Boundary Distance Decomposition:**  
    For any core interior point $|v| < R$:
-   \[
+   $$
    \text{boundaryLog}\left( \frac{R - |v|}{2} \right) \le \text{boundaryLog}(R - v) + \text{boundaryLog}(R + v) + \log 2.
-   \]
+   $$
 3. **Core Majorant Bound for Continuous Arrival:**  
    For any bounded wave function $|\psi(w)| \le P$ almost everywhere:
-   \[
+   $$
    \|\mathcal{A}_{\text{cont}}[R, \psi](v)\| \le C_1 \left( \text{boundaryLog}(R - v) + \text{boundaryLog}(R + v) \right) + C_2 = \text{coreMajorant}(v).
-   \]
+   $$
 4. **$L^2$ Regularity of Continuous Arrival:**  
    Since $\log^2(R \pm v)$ is integrable on $(-R, R)$:
-   \[
+   $$
    \mathcal{A}_{\text{cont}}[R, \psi] \in L^2((-R, R)) \quad \text{and} \quad \mathcal{A}_{\text{cont}}[R, \psi] \in L^2([-R, R]).
-   \]
+   $$
 5. **Unified $L^2$ Stability of the Complete Core Arrival Operator:**  
    The complete arrival operator combining continuous and arithmetic prime influx:
-   \[
+   $$
    \mathcal{A}_{\text{complete}}[R, \psi](v) = \mathcal{A}_{\text{cont}}[R, \psi](v) + \mathcal{A}_{\text{prime}}[R, \psi](v)
-   \]
+   $$
    satisfies:
-   \[
+   $$
    \mathcal{A}_{\text{complete}}[R, \psi] \in L^2([-R, R]) \quad \text{and} \quad \int_{-R}^R |\mathcal{A}_{\text{complete}}[R, \psi](v)|^2 \, dv < \infty.
-   \]
+   $$
 
 ---
 
@@ -56,9 +56,9 @@ This gives the uniform bound $\frac{3}{2} \text{boundaryLog}(d) + \frac{2}{1 - e
 ### 2.2. Core Logarithmic Separation
 For $|v| < R$, the distance from $v$ to the exterior $\{|w| > R\}$ is at least $R - |v|$.
 Setting $d = (R - |v|)/2 > 0$:
-\[
+$$
 \log(d/2) = \log d - \log 2 \implies \text{boundaryLog}(d/2) \le \text{boundaryLog}(d) + \log 2.
-\]
+$$
 Since $R - |v| = \min(R - v, R + v)$, $\text{boundaryLog}(R - |v|) \le \text{boundaryLog}(R - v) + \text{boundaryLog}(R + v)$.
 Combining these gives the two-sided log boundary estimate.
 
@@ -123,6 +123,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Boundary regularity for non-local operators and singular boundary potentials (Caffarelli-Silvestre 2007, Ros-Oton-Serra 2014). Machine verification of $L^2$ closed-interval stability for hybrid continuous-prime arrival operators in Lean 4 is new.
+- **Prior Literature:** Boundary regularity for non-local operators and singular boundary potentials (Caffarelli-Silvestre 2007, Ros-Oton-Serra 2014). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Resolves the logarithmic boundary singularity of the continuous arrival kernel and proves complete $L^2$ regularity of $\mathcal{A}_{\text{complete}}[R, \psi]$ on $[-R, R]$ in Lean 4.
 - **Target Venues:** *Communications in Partial Differential Equations* or *Journal of Functional Analysis*.

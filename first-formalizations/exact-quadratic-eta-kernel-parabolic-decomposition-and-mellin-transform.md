@@ -58,6 +58,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the quadratic birth kernel decomposes into the Riesz linear mean plus quadratic excess and computing its exact Mellin transform and $L^1$ norm in closed form.
+This entry documents a machine-verified implementation in Lean 4 proving that the quadratic birth kernel decomposes into the Riesz linear mean plus quadratic excess and computing its exact Mellin transform and $L^1$ norm in closed form.

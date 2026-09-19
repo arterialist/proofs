@@ -67,6 +67,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof of the strict negativity of the first nontrivial centered Goldbach coefficient $c_3(4) < 0$ and the refutation of Hankel positivity for centered prime convolutions, accompanied by the exact algebraic successor covariance decomposition in Lean 4.
+This entry documents a machine-verified proof of the strict negativity of the first nontrivial centered Goldbach coefficient $c_3(4) < 0$ and the refutation of Hankel positivity for centered prime convolutions, accompanied by the exact algebraic successor covariance decomposition in Lean 4.

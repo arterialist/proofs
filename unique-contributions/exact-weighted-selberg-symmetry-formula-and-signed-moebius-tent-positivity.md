@@ -1,4 +1,4 @@
-# Unique Contribution 148: Exact Weighted Selberg Symmetry Formula and Signed Möbius Tent Positivity
+# Contribution 148: Exact Weighted Selberg Symmetry Formula and Signed Möbius Tent Positivity
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/SelbergTent.lean`](../../formalization/BuildingBlocks/SelbergTent.lean), [`building-blocks/selberg/selberg-tent.md`](../../building-blocks/selberg/selberg-tent.md)  
@@ -14,19 +14,19 @@ This contribution proves:
 
 1. **Exact Finite Weighted Selberg Symmetry Identity:**  
    For any integer truncation $N \ge 1$ and an arbitrary weight function $w: \mathbb{N} \to \mathbb{R}$:
-   \[
+   $$
    \sum_{n=1}^N w(n) \Lambda(n) \log n + \sum_{a=1}^N \Lambda(a) \sum_{b=1}^{\lfloor N/a \rfloor} w(ab) \Lambda(b) = \sum_{d=1}^N \mu(d) \sum_{q=1}^{\lfloor N/d \rfloor} w(dq) \log^2 q.
-   \]
+   $$
 2. **Exact Triangular Tent Symmetry Identity:**  
    Specializing to the linear tent weight $w(n) = N - n$:
-   \[
+   $$
    \sum_{n=1}^N (N - n) \Lambda(n) \log n + \sum_{a=1}^N \sum_{b=1}^{\lfloor N/a \rfloor} (N - ab) \Lambda(a) \Lambda(b) = \sum_{d=1}^N \mu(d) \sum_{q=1}^{\lfloor N/d \rfloor} (N - dq) \log^2 q.
-   \]
+   $$
 3. **Unconditional Positivity of the Signed Möbius Tent Sum:**  
    Despite the pseudo-random sign oscillation of the Möbius function $\mu(d) \in \{-1, 0, 1\}$, the signed double sum is unconditionally non-negative for all integers $N \ge 1$:
-   \[
+   $$
    0 \le \sum_{d=1}^N \mu(d) \sum_{q=1}^{\lfloor N/d \rfloor} (N - dq) \log^2 q.
-   \]
+   $$
 
 ---
 
@@ -34,42 +34,42 @@ This contribution proves:
 
 ### 2.1. Weighted Divisor-Pair Reindexing
 Using $\Lambda_2(n) = \sum_{d \mid n} \mu(d) \log^2(n/d)$:
-\[
+$$
 \sum_{n=1}^N w(n) \Lambda_2(n) = \sum_{n=1}^N \sum_{d \mid n} \mu(d) w(n) \log^2(n/d).
-\]
+$$
 Let $n = dq$ where $q = n/d$.
 As $n$ ranges over $1 \le n \le N$ and $d$ ranges over divisors of $n$, the pair $(d, q)$ bijectively traverses all positive integers with $dq \le N$, i.e., $1 \le d \le N$ and $1 \le q \le \lfloor N/d \rfloor$.
 Thus:
-\[
+$$
 \sum_{n=1}^N w(n) \Lambda_2(n) = \sum_{d=1}^N \mu(d) \sum_{q=1}^{\lfloor N/d \rfloor} w(dq) \log^2 q.
-\]
+$$
 
 ### 2.2. Weighted Prime Decomposition
 Using $\Lambda_2(n) = \Lambda(n) \log n + \sum_{d \mid n} \Lambda(d) \Lambda(n/d)$:
-\[
+$$
 \sum_{n=1}^N w(n) \Lambda_2(n) = \sum_{n=1}^N w(n) \Lambda(n) \log n + \sum_{n=1}^N \sum_{d \mid n} w(n) \Lambda(d) \Lambda(n/d).
-\]
+$$
 Reindexing the double sum over factor pairs $a b = n \le N$:
-\[
+$$
 \sum_{n=1}^N \sum_{d \mid n} w(n) \Lambda(d) \Lambda(n/d) = \sum_{a=1}^N \Lambda(a) \sum_{b=1}^{\lfloor N/a \rfloor} w(ab) \Lambda(b).
-\]
+$$
 Equating both expressions yields the general weighted identity.
 
 ### 2.3. Proof of Tent Positivity
 For $w(n) = N - n$:
 On the range $1 \le n \le N$, $w(n) = N - n \ge 0$.
 Since $\Lambda_2(n) \ge 0$ for all $n \in \mathbb{N}$ (proved in `SelbergIdentity.lean` via $\Lambda(n) \ge 0$ and $\Lambda(n) \le \log n$):
-\[
+$$
 w(n) \Lambda_2(n) = (N - n) \Lambda_2(n) \ge 0 \quad \text{for every } n \in [1, N].
-\]
+$$
 Therefore, the sum over $n \in [1, N]$ is a sum of non-negative real numbers:
-\[
+$$
 0 \le \sum_{n=1}^N (N - n) \Lambda_2(n).
-\]
+$$
 By the weighted Möbius reindexing identity, this sum is identically equal to the signed Möbius tent sum:
-\[
+$$
 \sum_{n=1}^N (N - n) \Lambda_2(n) = \sum_{d=1}^N \mu(d) \sum_{q=1}^{\lfloor N/d \rfloor} (N - dq) \log^2 q.
-\]
+$$
 This proves unconditional non-negativity.
 
 ---

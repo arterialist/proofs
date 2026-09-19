@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving local $L^2$ regularity of the logarithmic Chebyshev prime error and establishing rigorous Cauchy-Schwarz reflected convolution transfer bounds without any unverified analytical assumptions.
+This entry documents a machine-verified implementation in Lean 4 proving local $L^2$ regularity of the logarithmic Chebyshev prime error and establishing rigorous Cauchy-Schwarz reflected convolution transfer bounds without any unverified analytical assumptions.

@@ -1,4 +1,4 @@
-# Unique Contribution 334: Exact Critical Three-Halves Screw Remainder Budget and Scale Invariance
+# Contribution 334: Exact Critical Three-Halves Screw Remainder Budget and Scale Invariance
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/GoldbachScrewRemainderThresholdFinite.lean`](../../formalization/BuildingBlocks/GoldbachScrewRemainderThresholdFinite.lean), [`building-blocks/goldbach/screw-remainder-threshold.md`](../../building-blocks/goldbach/screw-remainder-threshold.md)  
@@ -14,14 +14,14 @@ This contribution proves:
 
 1. **Exact Absolute Dyadic Remainder Budget:**  
    For any scale $x \ge 0$ and error bounds $|\text{err}| \le b$, $|\text{errSq}| \le b_{\text{sq}}$:
-   \[
+   $$
    \left| 2\sqrt{x} \, \text{err} - \frac{x}{2} \, \text{errSq} \right| \le 2\sqrt{x} b + \frac{x}{2} b_{\text{sq}}.
-   \]
+   $$
 2. **Exact Critical Three-Halves Scale-Invariant Collapse:**  
    When the errors scale at the critical Fujii/Montgomery exponent $3/2$ (giving weighted errors $|\text{err}| \le \frac{5C}{\sqrt{x}}$ and $|\text{errSq}| \le \frac{5C}{x}$), the scale $x$ vanishes identically:
-   \[
+   $$
    2\sqrt{x}\left(\frac{5C}{\sqrt{x}}\right) + \frac{x}{2}\left(\frac{5C}{x}\right) = 10C + \frac{5}{2}C = \frac{25}{2}C.
-   \]
+   $$
    Thus, the total error budget is bounded by the universal, scale-independent constant $\frac{25}{2}C$.
 3. **Exact Two-Sided Margin Transfer:**  
    - If $\text{raw} + \text{budget} \le 3 \cdot \text{origin}$, then $\text{raw} - \text{contribution} \le 3 \cdot \text{origin}$.
@@ -82,6 +82,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Fujii (1991) *An additive problem of prime numbers*; Montgomery & Vaughan (1975) *The exceptional set in Goldbach's problem*. Machine verification of critical three-halves remainder scale invariance in Lean 4 is new.
+- **Prior Literature:** Fujii (1991) *An additive problem of prime numbers*; Montgomery & Vaughan (1975) *The exceptional set in Goldbach's problem*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Establishes the exact algebraic scale invariance of the dyadic Goldbach screw error budget at the critical exponent $3/2$, fixing the absolute threshold constant at $25C/2$.
 - **Target Venues:** *Ramanujan Journal* or *Integers*.

@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the exact Laurent principal part and residue $-m/\rho$ of the joint arithmetic Mellin operator at any zeta zero without assuming zero simplicity.
+This entry documents a machine-verified implementation in Lean 4 establishing the exact Laurent principal part and residue $-m/\rho$ of the joint arithmetic Mellin operator at any zeta zero without assuming zero simplicity.

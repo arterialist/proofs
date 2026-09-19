@@ -1,4 +1,4 @@
-# Unique Contribution 98: Exact Two-Sided Physical Scattering Mellin Bridge and History Dictionaries
+# Contribution 98: Exact Two-Sided Physical Scattering Mellin Bridge and History Dictionaries
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/ActualScatteringMellinSignBridge.lean`](../../formalization/BuildingBlocks/ActualScatteringMellinSignBridge.lean), [`formalization/BuildingBlocks/FullComplexHistoryMellin.lean`](../../formalization/BuildingBlocks/FullComplexHistoryMellin.lean), [`formalization/BuildingBlocks/ActualScatteringMomentSigns.lean`](../../formalization/BuildingBlocks/ActualScatteringMomentSigns.lean)  
@@ -14,24 +14,24 @@ This contribution proves:
 
 1. **Positive History Dictionary:**  
    For any prime scale $p \ge 2$, integer moment index $h \in \mathbb{N}$, and truncation depth $M$:
-   \[
+   $$
    \mathcal{H}_p\left(h + \frac{1}{2}, M\right) = \mathcal{P}_p^+(h, M) = p^h \sum_{j=0}^M \left( \frac{1}{p^{h+1}} \right)^j.
-   \]
+   $$
 2. **Negative History Dictionary:**  
    At the reflected moment point $s = -(h + 1/2)$:
-   \[
+   $$
    \mathcal{H}_p\left(-\left(h + \frac{1}{2}\right), M\right) = \mathcal{P}_p^-(h, M) = \frac{1}{p^{h+1}} \sum_{j=0}^M (p^h)^j.
-   \]
+   $$
 3. **Exact Two-Sided Physical Scattering Mellin Factorization:**  
    For any prime $p \ge 2$ and any continuous test carrier with compact support $f \in C_c(\mathbb{R}, \mathbb{C})$, the two-sided product of Mellin moments of the scattered wave packet $\mathcal{S}_{p, M} f$ satisfies the exact factorization:
-   \[
+   $$
    \mathcal{M}(\mathcal{S}_{p, M} f)\left(h + \frac{1}{2}\right) \cdot \mathcal{M}(\mathcal{S}_{p, M} f)\left(-\left(h + \frac{1}{2}\right)\right) = \left( \mathcal{P}_p^+(h, M) \cdot \mathcal{P}_p^-(h, M) \right) \cdot \left[ \mathcal{M}(f)\left(h + \frac{1}{2}\right) \cdot \mathcal{M}(f)\left(-\left(h + \frac{1}{2}\right)\right) \right].
-   \]
+   $$
 4. **Spectral Moment Sign Invariance:**  
    Because $\mathcal{P}_p^+(h, M) > 0$ and $\mathcal{P}_p^-(h, M) > 0$ are strictly positive real numbers, the two-sided Mellin product sign:
-   \[
+   $$
    \operatorname{sgn}\left( \mathcal{M}(\mathcal{S}_{p, M} f)\left(h + \frac{1}{2}\right) \cdot \mathcal{M}(\mathcal{S}_{p, M} f)\left(-\left(h + \frac{1}{2}\right)\right) \right) = \operatorname{sgn}\left( \mathcal{M}(f)\left(h + \frac{1}{2}\right) \cdot \mathcal{M}(f)\left(-\left(h + \frac{1}{2}\right)\right) \right)
-   \]
+   $$
    is invariant under the physical scattering transformation for all primes $p$, depths $M$, and moments $h$.
 
 ---
@@ -40,9 +40,9 @@ This contribution proves:
 
 ### 2.1. Complex History Multplier Specialization
 The full complex history multiplier is:
-\[
+$$
 \mathcal{H}_p(s, M) = p^{s - 1/2} \sum_{j=0}^M p^{-j(s + 1/2)}.
-\]
+$$
 - At $s = h + 1/2$: $s - 1/2 = h$ and $-(s + 1/2) = -(h + 1)$, so $p^{s-1/2} = p^h$ and $p^{-j(s+1/2)} = (p^{-(h+1)})^j$, matching $\mathcal{P}_p^+(h, M)$.
 - At $s = -(h + 1/2)$: $s - 1/2 = -(h + 1)$ and $-(s + 1/2) = -(-h) = h$, so $p^{s-1/2} = p^{-(h+1)}$ and $p^{-j(s+1/2)} = (p^h)^j$, matching $\mathcal{P}_p^-(h, M)$.
 

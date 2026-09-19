@@ -63,6 +63,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 establishing the exact compensated commutator identity and output defect charge integrability for causal half-line memory operators.
+This entry documents a machine-verified implementation in Lean 4 establishing the exact compensated commutator identity and output defect charge integrability for causal half-line memory operators.

@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 demonstrating that mean-corrected Nyman–Beurling dual approximations cannot converge without forcing the sub-$\sqrt{N}$ asymptotic vanishing of the second-window Mertens coefficient $M(N) + M(N/2) + 3$.
+This entry documents a machine-verified proof in Lean 4 demonstrating that mean-corrected Nyman–Beurling dual approximations cannot converge without forcing the sub-$\sqrt{N}$ asymptotic vanishing of the second-window Mertens coefficient $M(N) + M(N/2) + 3$.

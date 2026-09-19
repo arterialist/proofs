@@ -1,7 +1,7 @@
 # Riemann Zeta Dirichlet Conjugation and Half-Plane Reflection
 
 ## Summary
-This module provides the first machine-verified formalization in Lean 4 proving that the Riemann zeta function commutes with complex conjugation on the half-plane of absolute convergence:
+This module provides a machine-verified formalization in Lean 4 proving that the Riemann zeta function commutes with complex conjugation on the half-plane of absolute convergence:
 $$\zeta(\overline{s}) = \overline{\zeta(s)} \quad \text{for all } s \in \mathbb{C} \text{ with } \operatorname{Re}(s) > 1.$$
 
 The theorem is proven directly from Mathlib's formal Dirichlet series representation:
@@ -9,7 +9,7 @@ $$\zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s},$$
 establishing that complex conjugation distributes across integer complex powers, reciprocals, and infinite sums.
 
 ## Background and Prior Art
-While the Schwarz reflection principle for $\zeta(s)$ is classical mathematics taught in standard introductory analytic number theory, it was entirely absent from Mathlib's `Mathlib.NumberTheory.LSeries.RiemannZeta` and related libraries. Mathlib defined `riemannZeta` as `hurwitzZetaEven 0` and proved values at zero and even negative integers, but did not formalize conjugation equivariance $\zeta(\bar{s}) = \overline{\zeta(s)}$ or its consequence on the symmetry of zero sets.
+The proof uses the pinned Mathlib Dirichlet-series representation and `tsum_star`. A bounded source search of the pinned revision did not find a Mathlib theorem with this zeta-conjugation conclusion. This establishes the local library gap checked here, not worldwide priority.
 
 ## Mathematical Formulation
 

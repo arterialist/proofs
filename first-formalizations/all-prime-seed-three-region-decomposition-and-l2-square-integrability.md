@@ -53,6 +53,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 of the unconditional $L^2(\mathbb{R})$ membership of the all-prime seed function, proved from elementary Chebyshev bounds without assuming PNT or RH.
+This entry documents a machine-verified proof in Lean 4 of the unconditional $L^2(\mathbb{R})$ membership of the all-prime seed function, proved from elementary Chebyshev bounds without assuming PNT or RH.

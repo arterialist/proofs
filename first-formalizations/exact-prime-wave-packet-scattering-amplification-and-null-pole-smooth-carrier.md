@@ -64,6 +64,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving constructive energy amplification of the discrete prime history-scattering operator on smooth, compactly supported wave packets with vanishing pole moments, demonstrating that proper-cofactor subspace constraints are mathematically necessary to ensure stability.
+This entry documents a machine-verified implementation in Lean 4 proving constructive energy amplification of the discrete prime history-scattering operator on smooth, compactly supported wave packets with vanishing pole moments, demonstrating that proper-cofactor subspace constraints are mathematically necessary to ensure stability.

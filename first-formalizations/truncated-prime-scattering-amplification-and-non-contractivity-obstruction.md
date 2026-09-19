@@ -9,7 +9,7 @@
 
 ## 1. Overview and Mathematical Scope
 
-This formalization provides the first machine-verified proof that finite history truncations of prime scattering multipliers fail to be contractions on $L^2$:
+This entry documents a machine-verified proof that finite history truncations of prime scattering multipliers fail to be contractions on $L^2$:
 
 1. **Geometric History Sum Factorization:**
    Formal identity factorizing the finite geometric memory sum into a unitary phase and a complex tail term (`finite_history_numerator`, `finite_history_factorization`, `compact_phase_factorization`).
@@ -51,6 +51,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
 This formalization establishes an unconditional obstruction to naive causal truncations in operator-theoretic Riemann Hypothesis programs, rigorously identifying the resonant frequency where norm amplification occurs.

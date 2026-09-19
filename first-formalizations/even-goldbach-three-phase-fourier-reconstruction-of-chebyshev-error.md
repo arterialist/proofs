@@ -9,7 +9,7 @@
 
 ## 1. Overview and Mathematical Scope
 
-This formalization provides the first machine-verified proof of exact Fourier extraction for the even Goldbach triangle with completely multiplicative 3-adic phase, and its inversion to the Chebyshev prime error:
+This entry documents a machine-verified proof of exact Fourier extraction for the even Goldbach triangle with completely multiplicative 3-adic phase, and its inversion to the Chebyshev prime error:
 
 1. **Multiplicative Character Properties:**
    Formal proof that $\chi_3(mn, \theta) = \chi_3(m, \theta) \chi_3(n, \theta)$ (`threeComplexPhase_mul`), $\chi_3(3^j, \theta) = e^{i j \theta}$ (`threeComplexPhase_three_pow`), and $\chi_3(p, \theta) = 1$ for all primes $p \ne 3$ (`threeComplexPhase_other_prime`).
@@ -54,6 +54,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified identity connecting the additive Goldbach problem directly to the prime number theorem's error term $\psi(X) - X$ via 3-adic multiplicative Fourier harmonics.
+This entry documents a machine-verified identity connecting the additive Goldbach problem directly to the prime number theorem's error term $\psi(X) - X$ via 3-adic multiplicative Fourier harmonics.

@@ -1,4 +1,4 @@
-# Unique Contribution 82: All-Prime Seed Three-Region Decomposition and L² Square Integrability
+# Contribution 82: All-Prime Seed Three-Region Decomposition and L² Square Integrability
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/PrimeSeedAllPrimeSquare.lean`](../../formalization/BuildingBlocks/PrimeSeedAllPrimeSquare.lean)  
@@ -9,9 +9,9 @@
 ## 1. Executive Summary and Mathematical Statement
 
 In the stochastic and causal operator framework for primes, the collective all-prime seed function is defined by:
-\[
+$$
 \operatorname{allPrimeSeed}(v) = \sum_{p} \operatorname{seed}(\log p, v) = \sum_{p \le e^v} e^{(v - \log p)/2} e^{-(v - \log p)}.
-\]
+$$
 While the collective seed has an infinite first moment due to the divergence of $\sum 1/p$, its higher energy and $L^2$ norms are controlled by the sub-diffusive spacing of primes.
 
 This contribution proves:
@@ -22,24 +22,24 @@ This contribution proves:
    - Middle primes: $e^{v/3} < p \le e^{v/2}$, with aggregate contribution $\le 4 e^{-v/6}$.
    - Large primes: $p > e^{v/2}$, with aggregate contribution $\le \frac{64 \log 2}{v}$.
    Yields the uniform three-region bound:
-   \[
+   $$
    \operatorname{finitePrimeSeed}(S, v) \le \frac{64 \log 2}{v} + 5 e^{-v/6}.
-   \]
+   $$
 2. **Universal Age Bound:**  
    For all $v \ge 3 \log 2$:
-   \[
+   $$
    v \cdot \operatorname{allPrimeSeed}(v) \le 64 \log 2 + 30.
-   \]
+   $$
 3. **Square Tail Dominance:**  
    The square of the all-prime seed is pointwise majorized by its weighted Lévy density:
-   \[
+   $$
    (\operatorname{allPrimeSeed}(v))^2 \le (64 \log 2 + 30) \frac{\operatorname{allPrimeSeed}(v)}{v}.
-   \]
+   $$
 4. **Unconditional $L^2(\mathbb{R})$ Square Integrability:**  
    Using only Chebyshev's elementary upper bound and the finite activity of the prime Lévy measure, without assuming the Prime Number Theorem or the Riemann Hypothesis:
-   \[
+   $$
    \int_{-\infty}^\infty (\operatorname{allPrimeSeed}(v))^2 \, dv < \infty, \quad \operatorname{allPrimeSeed} \in L^2(\mathbb{R}, \operatorname{volume}).
-   \]
+   $$
 
 ---
 

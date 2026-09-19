@@ -19,9 +19,9 @@ This formalization establishes the exact sign parity law of composite prime scat
    Formal verification that physical prime blocks preserve continuity and compact support (`physical_block_regular`) and act multiplicatively on the Mellin transform (`actual_block_mellin`).
 4. **Exact Block Mellin Parity Theorem:**
    Formal verification of the exact sign parity identity:
-   \[
+   $$
    \mathcal{M}(\mathcal{B} f)\left(h + \frac{1}{2}\right) \mathcal{M}(\mathcal{B} f)\left(-\left(h + \frac{1}{2}\right)\right) = (-1)^{|ps|} \mathcal{A} \left[ \mathcal{M}(f)\left(h + \frac{1}{2}\right) \mathcal{M}(f)\left(-\left(h + \frac{1}{2}\right)\right) \right]
-   \]
+   $$
    (`actual_block_two_sided_mellin_parity`).
 
 ---
@@ -67,6 +67,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 that each prime in a physical scattering block induces an exact sign flip $(-1)$ on two-sided real Mellin moments at half-integers $\pm(h + 1/2)$, establishing a parity barrier against classical positive-definite bounds.
+This entry documents a machine-verified proof in Lean 4 that each prime in a physical scattering block induces an exact sign flip $(-1)$ on two-sided real Mellin moments at half-integers $\pm(h + 1/2)$, establishing a parity barrier against classical positive-definite bounds.

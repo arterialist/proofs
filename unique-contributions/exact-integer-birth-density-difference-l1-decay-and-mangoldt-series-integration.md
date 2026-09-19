@@ -1,4 +1,4 @@
-# Unique Contribution 332: Exact Integer Birth Density Difference L1 Decay and Mangoldt Series Integration
+# Contribution 332: Exact Integer Birth Density Difference L1 Decay and Mangoldt Series Integration
 
 **Date:** 19 September 2026  
 **Primary Source Documents:** [`formalization/BuildingBlocks/IntegerBirthDifferenceL1.lean`](../../formalization/BuildingBlocks/IntegerBirthDifferenceL1.lean), [`building-blocks/integer-birth/difference-l1.md`](../../building-blocks/integer-birth/difference-l1.md)  
@@ -14,29 +14,29 @@ This contribution proves:
 
 1. **Exact Half-Density Common Tail Identity:**  
    For all $x > 0$ and index $j$:
-   \[
+   $$
    \rho_j(x) - \rho_{j+1}(x) = \frac{1}{2\sqrt{x}(x+j)(x+j+1)}.
-   \]
+   $$
 2. **Exact Strip-Plus-Tail Majorant:**  
    For $n \ge 2$, $x > 1$, the density difference is pointwise dominated by a bounded strip indicator plus an inverse algebraic tail:
-   \[
+   $$
    \|\rho_n(j+1, x) - \rho_n(j, x)\| \le \text{stripMajorant}_n(j, x) + \text{tailMajorant}_n(j, x).
-   \]
+   $$
 3. **Exact $L^1$ Polynomial Clock Decay:**  
    Integrating the majorants yields the sharp $n^{-3/2}$ decay:
-   \[
+   $$
    \int_1^\infty \|\rho_n(j+1, x) - \rho_n(j, x)\| \, dx \le \frac{2(j+2)^2}{n^{3/2}}.
-   \]
+   $$
 4. **Countable Von Mangoldt-Weighted $L^1$ Summability:**  
    Because $\Lambda(n) \le \log n$ and $\sum_{n} n^{-3/2} \log n < \infty$:
-   \[
+   $$
    \sum_{n=0}^\infty \int_1^\infty \|\Lambda(n+2) (\rho_{n+2}(j+1, x) - \rho_{n+2}(j, x))\| \, dx < \infty.
-   \]
+   $$
 5. **Exact Termwise Interchanged Integral Formula:**  
    The countable series of signed continuous birth differences is $L^1$-integrable, and its integral equals the series of discrete birth differences:
-   \[
+   $$
    \int_1^\infty \sum_{n=0}^\infty \Lambda(n+2) (\rho_{n+2}(j+1, x) - \rho_{n+2}(j, x)) \, dx = \sum_{n=0}^\infty \Lambda(n+2) (b(n+2, j+1) - b(n+2, j)).
-   \]
+   $$
 
 ---
 
@@ -91,6 +91,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Rudin (1987) *Real and Complex Analysis*; Montgomery & Vaughan (2007) *Multiplicative Number Theory*. Machine verification of exact $L^1$ decay bounds for integer birth densities and termwise Fubini integration of von Mangoldt series in Lean 4 is new.
+- **Prior Literature:** Rudin (1987) *Real and Complex Analysis*; Montgomery & Vaughan (2007) *Multiplicative Number Theory*. Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
 - **Advancement:** Bridges continuous density models of prime arrivals with discrete arithmetic corrections via machine-verified $L^1$ dominated convergence.
 - **Target Venues:** *Journal of Functional Analysis* or *Ramanujan Journal*.

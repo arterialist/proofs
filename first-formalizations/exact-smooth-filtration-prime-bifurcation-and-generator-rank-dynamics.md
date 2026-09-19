@@ -21,9 +21,9 @@ This formalization establishes the discrete dynamical filtration model of smooth
    Formal definition of `prime_step_equiv`: $\mathbb{N} \times \text{before}(p) \simeq \text{before}(p+1)$ and evaluation `prime_step_equiv_apply`.
 5. **Generator Rank Step Dynamics:**
    Formal definition of `generatorRank` and proof of `generatorRank_succ`:
-   \[
+   $$
    \text{generatorRank}(n+1) = \text{generatorRank}(n) + \text{if } n.\text{Prime} \text{ then } 1 \text{ else } 0.
-   \]
+   $$
 
 ---
 
@@ -60,6 +60,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified proof in Lean 4 establishing the discrete dynamical filtration model of smooth numbers, where state bifurcations and generator rank updates occur if and only if the discrete time step encounters a prime number.
+This entry documents a machine-verified proof in Lean 4 establishing the discrete dynamical filtration model of smooth numbers, where state bifurcations and generator rank updates occur if and only if the discrete time step encounters a prime number.

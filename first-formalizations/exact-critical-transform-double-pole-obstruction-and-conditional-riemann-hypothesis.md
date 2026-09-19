@@ -52,6 +52,6 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 3. Novelty and Mathematical Impact
+## 3. Scope and verification status
 
-This formalization provides the first machine-verified implementation in Lean 4 proving that the global half-plane analyticity of the regularized quadratic prime transform strictly implies Mathlib's native `RiemannHypothesis` via an exact order $-2$ pole contradiction.
+This entry documents a machine-verified implementation in Lean 4 proving that the global half-plane analyticity of the regularized quadratic prime transform strictly implies Mathlib's native `RiemannHypothesis` via an exact order $-2$ pole contradiction.
