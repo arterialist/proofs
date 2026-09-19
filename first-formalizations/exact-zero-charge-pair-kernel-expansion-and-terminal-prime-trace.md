@@ -1,8 +1,8 @@
-# First Formalization: Exact Zero-Charge Pair Kernel Expansion and Terminal Prime Trace
+# Exact zero-charge pair kernel expansion and terminal prime trace
 
-**Date:** 19 September 2026  
-**Lean 4 Module:** [`formalization/BuildingBlocks/ActualTerminalPrimeTraceFinite.lean`](../../formalization/BuildingBlocks/ActualTerminalPrimeTraceFinite.lean)  
-**Lean Version:** Lean 4.24.0 / Lake 5.0.0  
+**Date:** 19 September 2026
+**Lean 4 Module:** [`formalization/BuildingBlocks/ActualTerminalPrimeTraceFinite.lean`](../formalization/BuildingBlocks/ActualTerminalPrimeTraceFinite.lean)
+**Lean Version:** Lean 4.24.0 / Lake 5.0.0
 **Axiom Audit:** Strictly depends on foundational axioms `[propext, Classical.choice, Quot.sound]`; zero custom axioms, zero `sorry`.
 
 ---
@@ -85,4 +85,4 @@ Zero custom axioms, zero `sorry`.
 
 ## 3. Scope and verification status
 
-This entry documents a machine-verified implementation in Lean 4 proving exact zero-charge singularity cancellation in pair-interaction kernels and the discrete terminal compensation of Chebyshev prime-power fluctuations.
+This entry documents a machine-verified implementation in Lean 4 proving exact zero-charge singularity cancellation in pair-interaction kernels and the discrete terminal compensation of Chebyshev prime-power fluctuations. A targeted search of Mathlib's finite-sum and measure-theory libraries, the public KeyAIGit `ecdlp-lean-verification` repository, the public Li-criterion Lean repository, and the `PrimeNumberTheoremAnd` index found no matching formalization of this combined terminal-compensated prime-packet package. The priority wording is provisional and limited to that search; the algebraic cancellation itself is classical and no mathematical-priority claim is made.

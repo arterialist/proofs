@@ -14,21 +14,9 @@ This directory catalogs mathematical reports developed across the repository. St
    - *Result:* Cancellation and sign-definiteness for twice-compensated arithmetic kernels on the proper-cone cone.
    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
-4. [Pointwise Off-Line Zero Microcluster Mass Cap](pointwise-offline-microcluster-mass-cap.md)
-   - *Result:* Explicit cap on the clustered zero density off the critical line via local kernel localization.
-   - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
-
 5. [Chirped Brun–Titchmarsh Critical Span Extension](chirped-brun-titchmarsh-critical-span-extension.md)
    - *Result:* Quadratic phase cancellation extending the usable critical span in Brun–Titchmarsh estimates.
    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
-
-6. [Reciprocal-Prime High-Cofactor Vaughan Saving](reciprocal-prime-high-cofactor-vaughan-saving.md)
-   - *Result:* Type-II bilinear saving in Vaughan's decomposition for reciprocal-prime weighted high cofactors.
-   - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
-
-7. [Proper-cofactor cutoff transfer and dual Dirichlet reduction](proper-cofactor-dual-dirichlet-cancellation.md)
-   - *Result:* A checked arithmetic transfer bounds the combined prime row and truncated proper-cofactor head for $2<\lambda<29/14$. The separate prime row remains open.
-   - *Status:* Written classical-input estimate; no priority claim for the transfer. The earlier approximate-functional-equation reduction still requires weighted error and complementary-zero control.
 
 8. [Certified Complete Weil Positivity on Causal Ramp Cone](complete-weil-positive-causal-ramp-cone.md)
    - *Result:* Exact rational Sturm certificate proving complete Weil quadratic form positivity on the causal ramp cone.
@@ -37,10 +25,6 @@ This directory catalogs mathematical reports developed across the repository. St
 9. [Successor-Cell Weil Stretched-Exponential Negative Index](successor-cell-weil-stretched-exponential-negative-index.md)
    - *Result:* Quantitative upper bound for the negative index of the $N$-cell physical complete Weil form: $\operatorname{ind}_{\le 0}(Q_N) \ll N\exp(-c\sqrt{\log N\log\log N})=o(N)$, obtained from a positive subspace of the stated codimension.
    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
-
-10. [Uniform Negative Dyadic Divisor Average](uniform-negative-dyadic-divisor-average.md)
-    - *Result:* Proof that the dyadically averaged divisor sum $\mathbb{E}_{d \sim D} [\mu(d) \tau(d)]$ exhibits uniform negative bias under causal windowing.
-    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
 11. [Domain correction for Suzuki's 2026 Corollary 1.6, version 1](suzuki-2026-corollary-1-6-refutation.md)
     - *Result:* The proposed finite-valued compact-uniform limit in v1 has real poles in its target, so the stated all-plane convergence domain cannot be correct. The parameter limit is `a -> infinity`, and holomorphy of the normalizer is not stated.
@@ -54,10 +38,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact pairwise negative covariance and the stated upper-orthant product inequality for increasing functions of distinct prime valuations; the page explicitly excludes full negative association.
     - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
-14. [Successor-Feedback RH Equivalence with Positive Spectral Margin](successor-feedback-rh-equivalence.md)
-    - *Result:* Strict equivalence $\mathrm{RH} \iff \liminf_{r \to 1^-} E(r) \ge 0 \iff \liminf_{r \to 1^-} E(r) \ge 5/3$ with an unconditional positive spectral margin of $5/3$.
-    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
-
 15. [Connes Prolate Residual Barrier at the Zhu Window](connes-prolate-residual-barrier-at-zhu-window.md)
     - *Result:* Proves the stated residual lower bound of order $\Omega(1)$ for the modeled prolate-spheroidal trace comparison at the Zhu critical window scale. Priority is provisional.
     - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
@@ -69,10 +49,6 @@ This directory catalogs mathematical reports developed across the repository. St
 17. [Presieved Prime Pair Matrix Completion Scalar Barrier and Nonuniform Repair](presieved-prime-pair-matrix-completion-barrier.md)
     - *Result:* Proof that scalar semidefinite completion of presieved distinct-pair convolution matrices is fatally obstructed across all primorial sieves $W$ ($\lambda_* \ge \rho h^2/(8\pi^4)$ and $\mathcal{Q}_{h, W} < 0$), and certified nonuniform repair placing charges on zero-weight residues.
     - *Status:* Rigorous mathematical derivation and exact rational Sturm sequence certificates; priority not assessed in this audit.
-
-18. [Unconditional Two-Sided Unboundedness of the Critical Natural Prime Charge](critical-natural-charge-two-sided-unboundedness.md)
-    - *Result:* Rigorous proof that $M(x) = \sum_{n \le x} \frac{\Lambda(n)}{\sqrt{n}} - 2\sqrt{x} + 1$ satisfies $\limsup M(x) = +\infty$ and $\liminf M(x) = -\infty$ on $\mathbb{R}$ and $\mathbb{N}$ without assuming RH or linear independence of zero ordinates.
-    - *Status:* Rigorous mathematical derivation via regularized Laplace transforms and positive Fourier smoothing; priority not assessed in this audit.
 
 20. [Incomplete-Box Arithmetic Carry Covariance and Exact Discrete Fourier Reduction](incomplete-box-carry-covariance-and-fourier-reduction.md)
     - *Result:* Exact finite DFT representation $\kappa_d(a, b) = \sum_{j=1}^{d-1} \frac{(1 - e(ja/d))(1 - e(jb/d))}{d(1 - e(-j/d))}$ and incomplete-box covariance reduction with non-asymptotic endpoint error bound $|\operatorname{Cov}(\kappa_d, \kappa_e) - 2C^{\mathrm{flat}}_{d, e} - C^{\mathrm{tri}}_{d, e}| \le \frac{d+e}{8H}$ for arbitrary $H \ge 1$.
@@ -94,14 +70,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact signed real-cell reconstruction $Q_N = Q_C(N) + 2\int_1^N D_N(x) L_N(x)dx + \iint_1^N D_N(x)D_N(y)K(x, y)dx dy$ accounting for all rational jumps $q/j$, continuous boundary-regularized test inversion $\sum_{j \le q} \Phi_t(q/j) = h_t(q)$, and closed-form evaluation of the fundamental bivariate phase kernel $P(a, b) = \frac{1}{a+b} - \psi'(a+b+1) - \log(1+1/a) + \frac{1}{a+1} - \log(1+1/b) + \frac{1}{b+1} + \log 2$.
     - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
-27. [Prime Division Renewal Operator and Lyapunov Polynomial Scale-Doubling Stability for RH](prime-division-renewal-lyapunov-scale-stability.md)
-    - *Result:* Formulation of prime division recurrence as a causal renewal equation $(\mathcal{Z} b)(v) := \sum_{m \ge 1} m^{-1/2} b(v - \log m) = f(v)$ with spectral symbol $\zeta(z+1/2)$, proof that off-critical zeros $\beta > 1/2$ act as unstable scale resonances with exponential energy growth rate $2\beta - 1$, and establishment of the exact finite-horizon Lyapunov polynomial scale-doubling stability equivalence $\mathrm{RH} \iff \exists C, K, T_0 > 0 : 1 + \|b\|_{L^2(0, 2T)}^2 \le C T^K [1 + \|b\|_{L^2(0, T)}^2]$.
-    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
-
-28. [Uniform Local Window Square Mean of the Critical Prime Charge under the Riemann Hypothesis](uniform-local-square-mean-of-critical-charge.md)
-    - *Result:* Proof that under RH, the critical prime charge $m(v) = \sum_{n \le e^v}\frac{\Lambda(n)}{\sqrt{n}} - 2e^{v/2} + 1$ satisfies the strictly uniform local window square-mean bound $\sup_{V \ge 0}\int_V^{V+1} |m(v)|^2 dv \le C_* < \infty$, implying $\int_R^\infty \frac{|m(v)|^2}{v^2} dv \ll R^{-1}$, established via frequency-bin decomposition and Toeplitz-Schur decay without assuming zero simplicity, zero spacing, or pointwise convergence.
-    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
-
 29. [Unconditional Critical-Zero Fluctuation Bounds and Mean-Square Spectral Measure for the Coherent Prime Core](unconditional-critical-zero-fluctuation-and-core-variance.md)
     - *Result:* Unconditional proof that the coherent prime core $q(v) = Q(e^{-v})$ under the physical arcsine/tangent kernel $M_K(s) = \frac{\sqrt{\pi}\Gamma(s)\tan(\pi s)}{2s}$ fluctuates around the real residue $a_0 = \frac{\zeta'(1/2)}{\zeta(1/2)}$ with amplitude $\ge m_\rho |M_K(\rho)|$ at every critical zero $\rho$, and satisfies the strictly positive unconditional mean-square energy lower bound $\limsup_{T \to \infty} \frac{1}{T}\int_0^T |q(v)-a_0|^2 dv \ge \sum_{\operatorname{Re}\rho=1/2} m_\rho^2 |M_K(\rho)|^2 > 0$ via almost-orthogonal character projection.
     - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
@@ -113,10 +81,6 @@ This directory catalogs mathematical reports developed across the repository. St
 31. [Two- and Three-Rate Positivity Planes for the Complete Actual-Prime Weil Form](complete-weil-multi-rate-positivity-planes.md)
     - *Result:* Proof that the complete arithmetic Weil quadratic form evaluates exactly on causal exponentials $u_a(x) = e^{-ax}\mathbf{1}_{x \ge 0}$ to $Q(u_a, u_b) = \frac{F(a)+F(b)}{a+b}$ with $F(a) = \frac{\xi'}{\xi}(a+1/2)$. Proves unconditional strict positive definiteness on every 2-dimensional plane $\operatorname{span}\{u_a, u_b\}$ and 3-dimensional plane $\operatorname{span}\{u_a, u_b, u_c\}$, establishing the exact bilinear determinant factorization $\det[K(a_i, a_j)] \propto H[t_a, t_b, t_c] J[t_a, t_b, t_c]$ and proving strict concavity of $H(t)=\sqrt{t}F(\sqrt{t})$ and $J(t)=\sqrt{t}/F(\sqrt{t})$ via Platt–Trudgian zero certification and 50-digit Arb ball bounds, for a fixed finite-rate family; no firstness or comparison claim is made.
     - *Status:* Rigorous mathematical derivation + Lean formalizations + Arb certificate; priority not assessed in this audit.
-
-32. [Positive Finite-Activity Compound Poisson Semigroup and Uniform Bernstein Exponent from the Complete Prime Seed](prime-seed-compound-poisson-semigroup-and-bernstein-exponent.md)
-    - *Result:* Construction of the positive finite-activity Lévy measure $\nu(dv) = \frac{B(v)}{v}dv$ from the arithmetic prime jump profiles $B_p(v) = e^{v/2}p^{-\lfloor v/\log p\rfloor - 1}\mathbf{1}_{v \ge \log p}$. Proves the exact convolution semigroup identity $\mathsf{P}_u * \mathsf{P}_v = \mathsf{P}_{u+v}$ with total variation coupling bound $\sup_A |\mathsf{P}_u(A) - \mathsf{P}_{P, u}(A)| \le 32 u / \log P$, and establishes the strictly uniform half-plane bound $\sup_{\operatorname{Re}(s) \ge 0} |\Phi(s) - \Phi_P(s)| \le \frac{64}{\log P}$ for all $P \ge 8$ up to and including the imaginary boundary, recovering the centered prime generator as $Z_P(t) = -\operatorname{Re}[(1+2it)\Phi_P'(-it)]$.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
 
 33. [Two Canceled Moments in the Integer-Cell Renewal Primitive and Uniform Convex-Cone Sign Deficit](integer-cell-renewal-bernoulli-moments-and-convex-sign.md)
     - *Result:* Proof that on late logarithmic cells $[\log n, \log(n+1)]$, the renewal discrepancy $J(\log(n+r)) - \ell$ expands into Bernoulli profiles $f_0, f_1, f_2$ whose first two moments and first correction mean vanish identically: $\int_0^1 f_0 = \int_0^1 r f_0 = \int_0^1 f_1 = 0$. Evaluates the surviving phase coefficient exactly to $-\frac{(2z+7)(2z+9)}{2880}n^{-z-9/2}$, proves that the double primitives are nonpositive on the real line and strictly negative on $(0, 1]$, and proves that for all $n \ge n_0$, all frequencies $x \ge 0$, and all decreasing, convex $C^2$ test weights $w(r) \ge 0$, the weighted cell integral is strictly negative: $\int_0^1 w(r)(J(\log(n+r)) - \ell)dr < 0$.
@@ -132,10 +96,6 @@ This directory catalogs mathematical reports developed across the repository. St
 
 36. [Exact Finite Dyadic Divisor Renewal, Factorial Deficit Recurrence, and Unconditional Negative Prime Discrepancy](exact-dyadic-divisor-renewal-and-negative-factorial-deficit.md)
     - *Result:* Exact evaluation of the complete dyadic divisor prime discrepancy $D_N = \sum_{d=1}^N (\psi(\lfloor 2N/d\rfloor) - \psi(\lfloor N/d\rfloor) - N/d)$ as the negative factorial deficit $D_N = \log((2N)!/N!) - N H_N = -A_N$. Proof of the exact recurrence $A_{N+1} - A_N = H_N + 1 - \log(4N+2)$, strict lower bound $A_{N+1} - A_N > 3/2 - \log 4 \approx 0.1137 > 0$, and unconditional strict negativity $D_N < -N(3/2 - \log 4) < 0$ and $D_N/N < \log 4 - 3/2 < 0$ across all integers $N \ge 1$. Proves exact boundary cancellation in the continuous convolution renewal equation and strict eventual positivity of the causal birth forcing $(\widetilde{c} *_D r)(n) > 0$ for all $n \ge 3$.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
-
-37. [Arithmetic Counterexample to Universal Normalized Finite-History Monotonicity of the Weil Quadratic Form](finite-history-full-weil-monotonicity-obstruction.md)
-    - *Result:* Rigorous refutation of universal normalized finite-history monotonicity $Q(\alpha^{-1/2}V_{p, 1}f) \ge Q(f)$ for the arithmetic Weil quadratic form at the concrete prime $p = 10007$. Constructs a compact smooth plateau packet $f_t$ and an unbounded Kronecker–Weyl sequence of frequencies proving $\lim_{t \to \infty} (Q(\alpha^{-1/2}V_{10007, 1}f_t) - Q(f_t)) < 0$, while both individual full forms remain strictly positive at high frequency. Isolates 24 observing primes in $[9695, 10319]$, proves the exhaustive unconstrained classification of all even prime powers $q^k \in [3p/4, 4p/3]$ forcing $k=2$ and $q \in \{89, 97, 101, 103, 107, 109, 113\}$, and certifies the exact positive rational margin $\frac{24 \cdot 13}{1632} - \frac{14}{400} - \frac{49}{344} = \frac{251}{18275} > 0$.
     - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
 
 38. [Algebraic Geometry of the Radius-Two Paid-Theta Edge Complex, Rank Reduction, and the Even-Hat Parity Obstruction](radius-two-edge-reversal-reduction-and-parity-obstruction.md)
@@ -191,16 +151,8 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact closed form for the centered additive Goldbach coefficient at the first nontrivial even total $N = 4$: $c_3(4) = (\log 2 - 1)^2 - 2(\log 3 - 1)$. Proves that $c_3(4) < 0$ is unconditionally strictly negative, formally refuting all coefficientwise nonnegativity conjectures on even totals and ruling out positive semidefiniteness of the centered Hankel kernel (as $H_{2, 2} = c_3(4) < 0$). Establishes the successor shift covariance decomposition $c^{\mathrm{shift}}_Y(N) - c_Y(N) = \operatorname{cov}_Y(N) + \operatorname{var}_Y(N)$, proves opposite sign behavior at totals 2 and 4 ($\Delta c(2) = (\log 2)^2 - 2\log 2 < 0$ while $\Delta c(4) = (\log 2 - 1)^2 + (\log 3)^2 - 1 > 0$), and proves the continuous scale shell covariance law $\operatorname{shiftedShell}(Y, T) - \operatorname{heatShell}(Y, T) = 2 \operatorname{crossShell}(Y, T) + \operatorname{variationShell}(Y, T)$.
     - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
 
-52. [Zero-Charge Prime Packet Pair-Kernel Expansion and Far-Lag Dipole Decay](zero-charge-prime-packet-pair-expansion-and-far-lag-dipole-decay.md)
-    - *Result:* Exact algebraic multipole decomposition for finite charge pairs under dilation $k > 0$: $\sum_{i, j \in s} \frac{a_i a_j}{k x_j + x_i} = -\frac{1}{k^2}(\sum a_i x_i)(\sum a_j / x_j^2) + \sum_{i, j} \frac{a_i a_j x_i^2}{k^2 x_j^2 (k x_j + x_i)}$ whenever $\sum a_i = 0$. Proves the exact cancellation of the leading $O(k^{-1})$ monopole term, isolating the $O(k^{-2})$ dipole-quadrupole product. Proves that the discrete centered prime-power packet $c_n = \Lambda(n) - 1$ augmented by the frozen boundary compensation $c_{N+1} = -(\psi(N) - N)$ placed at $x = N$ has identically zero net charge, proving that the far-lag interaction between prime discrepancy packets decays as a dipole $O(k^{-2})$.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
-
 53. [Universal Dual Autocorrelation Trace Pairing for Discrete Prime Packets](universal-dual-autocorrelation-trace-pairing.md)
     - *Result:* Exact real-space duality formula relating smooth windowed prime sums directly to continuous causal source integrals without complex zeros: $\sum_{i \in T} c_i (\sum_{n=2}^N \Lambda(n) W_{A_f}(s_i, n) - e^{s_i/2}\hat{f}(1/2)\hat{f}(-1/2)) = -\int_{\mathbb{R}} a_C(v) \sum_{i \in T} c_i K_{A_f, A_f'}(v - s_i) dv$, where $A_f = f * \tilde{f}$ is the continuous autocorrelation, $K_{A_f, A_f'}(y) = A_f'(y) - \frac{1}{2} A_f(y)$, and $a_C(v)$ is the causal frozen prime source. Proves exact factorization of the main term into physical moments $\hat{f}(1/2)\hat{f}(-1/2)$, boundary vanishing, and non-asymptotic equality with zero remainder.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-54. [Pairwise Metric Variance Identity and Sharp Separated Window Lower Bounds](pairwise-metric-variance-and-separated-window-lower-bounds.md)
-    - *Result:* Exact double-sum variance identity for discrete sequences $\sum_{i, j < n} (f(i) - f(j))^2 = 2n \sum_{i < n} f(i)^2 - 2(\sum_{i < n} f(i))^2 \le 2n \sum_{i < n} (f(i) - c)^2$ around an arbitrary center $c \in \mathbb{R}$. Exact evaluation of the discrete double index sum $\sum_{i, j < n} (i - j)^2 = \frac{n^2(n^2 - 1)}{6}$, yielding the sharp center-independent variance lower bound $\sum_{i=0}^{n-1} (f(i) - c)^2 \ge \frac{L^2 n(n^2 - 1)}{12}$ for any $L$-separated sequence.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 55. [Collective All-Prime Seed Weak Derivative and Mutually Singular Radon Measures](collective-all-prime-seed-weak-derivative-and-mutually-singular-radon-measures.md)
@@ -376,10 +328,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact matching dictionaries $\mathcal{H}_p(h + 1/2, M) = \mathcal{P}_p^+(h, M)$ and $\mathcal{H}_p(-(h+1/2), M) = \mathcal{P}_p^-(h, M)$ between complex analytic history multipliers and discrete multipliers, proving the two-sided Mellin product factorization $\mathcal{M}(\mathcal{S}_{p, M} f)(h+1/2) \mathcal{M}(\mathcal{S}_{p, M} f)(-(h+1/2)) = \mathcal{P}_p^+ \mathcal{P}_p^- \mathcal{M}(f)(h+1/2) \mathcal{M}(f)(-(h+1/2))$ and spectral moment sign invariance under prime scattering.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-99. [Exact Zero-Charge Pair Kernel Expansion and Terminal Prime Trace](exact-zero-charge-pair-kernel-expansion-and-terminal-prime-trace.md)
-    - *Result:* Exact vanishing of the $1/k$ dipole term and closed $O(1/k^2)$ expansion $\sum_{i, j} \frac{a_i a_j}{k x_j + x_i} = -\frac{1}{k^2} (\sum a_i x_i)(\sum a_j / x_j^2) + \sum_{i, j} \frac{a_i a_j x_i^2}{k^2 x_j^2 (k x_j + x_i)}$ under zero charge $\sum a_i = 0$, applied to the terminal-compensated prime packet with exact Chebyshev error weight $-(\psi(N) - N)$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 100. [Reciprocal Bump Algebra and Off-Line Zero-Pair Negativity Bound](reciprocal-bump-algebra-and-off-line-zero-pair-negativity-bound.md)
     - *Result:* Exact reciprocal bump identity $(1 - z)(1 - z^{-1}) = 2 - z - z^{-1}$, conjugate reflection swap $\bar{W}(1-\bar{z}^{-1})(1-\bar{z}) = \overline{W(1-z)(1-z^{-1})}$, and quantitative off-line paired negativity bound $2\operatorname{Re}(W(2 - u r - \bar{u}/r)) \le 4|W| + 2|W|/r - 2br$ with explicit negative linear term $-2br$ contradicting Weil positivity.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
@@ -502,10 +450,6 @@ This directory catalogs mathematical reports developed across the repository. St
 
 130. [Exact Zero-Circle Residue Formula and Prime-Block Perturbation Bounds](exact-zero-circle-residue-formula-and-prime-block-perturbation-bounds.md)
     - *Result:* Exact circle integral residue formula $\oint F \frac{f'}{f} dw = 2\pi i m F(s)$, exact evaluation for $\xi$ and $\zeta$, prime-block centered weight factorization, and quantitative interior exponential perturbation bounds.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-131. [Exact Zero-Charge Pair Kernel Expansion and Terminal Prime Trace](exact-zero-charge-pair-kernel-expansion-and-terminal-prime-trace.md)
-    - *Result:* Identical vanishing of $k^{-1}$ singularity under zero charge $\sum a_i = 0$, exact dipole $-k^{-2}$ leading term, Chebyshev error identity $\sum (\Lambda(n)-1) = \psi(N)-N$, discrete terminal zero-charge compensation, and universal far-lag pair kernel expansion.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 132. [Exact Prime-Block Weil Weight Parity and Definite Positivity](exact-prime-block-weil-weight-parity-and-definite-positivity.md)
@@ -1357,117 +1301,21 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Machine-verified explicit span dilation parameter $\lambda(d, \mu) = (1+\mu)/(2d) > 0$ for any off-line zero displacement $d > 0$ and target exponent $\mu > 0$, exponent cancellation $2\lambda d - 1 = \mu$, growth factor identity $T^{2\lambda d} / T = T^\mu$, positive amplified off-line coupling coefficient $b = a_{\min}^2 / \eta > 0$, energy product formula $(a_{\min}^2/(\eta T)) T^{2\lambda d} = b T^\mu$, divergence $b T^\mu \to +\infty$, eventual spectral deficit $C_{\text{crit}} \log T + 6M - 2b T^\mu < a \log T$, mutual exclusion of positive arithmetic lower margins with off-line spectral upper bounds, and constructive parameter bundle `makeAmplifiedParameters`.
     - *Status:* Rigorous mathematical derivation + Lean formalization (`ChirpedConstellationSpanAmplification.lean`); priority not assessed in this audit.
 
-345. [Chirped Zero Coupling Pipeline and RH Deduction](chirped-zero-coupling-pipeline-and-rh-deduction.md)
-    - *Result:* Machine-verified synthesis of micro-local chirped packet physics, constellation span dilation, archimedean-prime row margin, and Weil spectral decomposition into the canonical builder `make_chirped_offline_configuration`, off-line zero refutation `chirped_offline_zero_refutation`, and complete deduction of `RightHalfZeroFree` and Mathlib's official `RiemannHypothesis` from any `ChirpedZeroCouplingSystem`.
-    - *Status:* Rigorous mathematical pipeline + Lean formalization (`ChirpedWeilSpectralDecomposition.lean`); priority not assessed in this audit.
-
-346. [Chirped Carrier Dilution-Density Balance and Critical-Line Logarithmic Bound](chirped-carrier-dilution-density-balance-and-critical-logarithmic-bound.md)
-    - *Result:* Machine-verified carrier dilution-density balance theorem proving algebraic cancellation of the carrier frequency $T$ and chirp rate $\eta$ from the product of the resonant zero count $O(T \log T)$ and stationary phase energy dispersion $O(1/T)$, establishing the critical-line resonant upper bound $C_{\text{crit, res}} \log T$ with $C_{\text{crit, res}} = 2 C_N C_{\text{core}} w$, total critical bound with non-resonant tails $C_{\text{crit, tot}} \log T$, and constructive certificate builder `makeCarrierDilutionBalanceCertificate`.
-    - *Status:* Rigorous mathematical derivation + Lean formalization (`ChirpedCarrierDilutionDensityBalance.lean`); priority not assessed in this audit.
-
 347. [Chirped Archimedean Digamma Bound and Continuous Background](chirped-archimedean-digamma-bound-and-continuous-background.md)
     - *Result:* Machine-verified Archimedean scale positivity (`chirpedArchimedeanScale_pos`), logarithmic split identity (`chirped_archimedean_log_split`), scale log two-sided bounds (`chirped_archimedean_log_ge_sub_two`, `chirped_archimedean_log_le_top`), scale log deviation bound (`chirped_archimedean_log_deviation_le`), continuous coefficient positivity (`chirpedArchimedeanCoeff_pos`), total deviation bound combining scale deviation and digamma remainder (`chirped_archimedean_total_deviation_le`), and constructive certificate builder `makeArchimedeanBoundCertificate`.
     - *Status:* Rigorous mathematical derivation + Lean formalization (`ChirpedArchimedeanDigammaBound.lean`); priority not assessed in this audit.
-
-348. [Chirped Spectral Assembly and Master Upper Bound](chirped-spectral-assembly-and-master-upper-bound.md)
-    - *Result:* Machine-verified assembled critical coefficient positivity (`assembledCriticalCoeff_pos`), critical bound sum (`assembled_critical_bound_le`), continuous scale positivity (`assembledContinuousScale_pos`), continuous bound representation (`assembled_continuous_bound_le`), master spectral upper bound (`assembled_spectral_upper_bound`), and constructive certificate builder `makeSpectralAssemblyCertificate`.
-    - *Status:* Rigorous mathematical derivation + Lean formalization (`ChirpedSpectralAssembly.lean`); priority not assessed in this audit.
 
 349. [Chirped Brun–Titchmarsh Geometric Row Bound and Carrier Cancellation](chirped-brun-titchmarsh-geometric-row-bound.md)
     - *Result:* Machine-verified constellation span decomposition (`constellationSpan_div_two`), exponential evaluation (`exp_half_constellationSpan`), carrier frequency cancellation $\exp(D_T/2)/T = \exp(-B/2)\log T$ (`span_carrier_cancellation`), short-interval scale ratio identity (`short_interval_scale_ratio`), exponential square root (`sqrt_exp_eq_exp_div_two`), cross scale factor (`cross_scale_factor_eq`), reverse geometric shell multiplier positivity (`geometricShellRatio_pos`), total geometric coefficient positivity (`totalGeometricCoeff_pos`), high-distance row equality and upper bound (`brun_titchmarsh_high_distance_row_eq`, `brun_titchmarsh_high_distance_row_le`), total row sum bound (`total_prime_row_le`), and constructive certificate builder `makeBrunTitchmarshRowCertificate`.
     - *Status:* Rigorous mathematical derivation + Lean formalization (`ChirpedBrunTitchmarshRowBound.lean`); priority not assessed in this audit.
 
-350. [Power-log contradiction from a `GrandSynthesisSystem`](chirped-grand-synthesis-and-rh-deduction.md)
-    - *Result:* Buffer identities and a scalar contradiction from a proposition containing all required arithmetic and spectral estimates.
-    - *Status:* Conditional certificate theorem. `GrandSynthesisSystem` is assumed, not constructed for actual Weil packets.
-
-351. [Combining supplied low- and high-frequency zero-free certificates](chirped-zero-partition-synthesis.md)
-    - *Result:* Direct case split from `LowFrequencyZeroFree H` and `HighFrequencyZeroFree H`, plus elementary carrier arithmetic.
-    - *Status:* Classical logical packaging. The file defines the Platt-Trudgian height numerically but does not formalize that external computation.
-
 352. [Finite Gram coercivity and a separate scalar deficit bound](chirped-gram-definiteness-and-rayleigh-coercivity.md)
     - *Result:* Proves finite-dimensional coercivity from supplied row and column bounds, plus separate real asymptotic deficit algebra.
     - *Status:* Classical coercivity specialization. No link from the modeled Gram form or deficit to an actual zeta test function is proved.
 
-353. [Numeric chirp calibration and interval containment](chirped-threshold-calibration-and-window-embedding.md)
-    - *Result:* Verifies the chosen constants, derivative cancellation, curvature value, radius bound, and interval containment.
-    - *Status:* Elementary parameter algebra. No stationary-phase integral or external numerical zero certificate is formalized.
-
 354. [Conditional scalar coercive exclusion](chirped-coercive-spectral-arithmetic-energy-deficit.md)
     - *Result:* Derives a contradiction from scalar arithmetic and spectral functions with supplied equality and incompatible bounds.
     - *Status:* The RH theorem assumes `CoerciveSystem`, which contains the decisive analytic estimates. No operator or Weil form is constructed.
-
-355. [An explicit power-log threshold and conditional exclusion](chirped-quantitative-exclusion-threshold.md)
-    - *Result:* Proves an explicit real threshold above which a power term dominates a logarithmic expression.
-    - *Status:* The zeta conclusions assume `QuantitativeCoerciveSystem`, including equality and all analytic bounds.
-
-356. [Quadratic phase bands and a pointwise kernel bound](chirped-phase-band-localization.md)
-    - *Result:* Calculates a quadratic phase's stationary point and derivative separation, then proves a pointwise bound under amplitude and derivative hypotheses.
-    - *Status:* No oscillatory integral or actual spectral-localization estimate is proved.
-
-357. [Finite-list deficit algebra and conditional multi-zero exclusion](chirped-multi-zero-deficit-superposition.md)
-    - *Result:* Proves positivity and comparison results for a finite list of defined pair-energy terms.
-    - *Status:* The module does not construct actual zeta-zero contributions. Its conditional system stores the decisive estimates.
-
-358. [Pointwise second-order decay algebra for a quadratic phase](chirped-second-order-quadrature-decay.md)
-    - *Result:* Proves pointwise scalar bounds and scale reductions for a modeled second-order expression.
-    - *Status:* No integration-by-parts identity for an oscillatory integral or spectral energy bound is formalized.
-
-359. [Conditional combination of three spectral bands](chirped-tri-partition-spectral-bound.md)
-    - *Result:* Proves elementary band partition facts and combines supplied component bounds.
-    - *Status:* The spectral decomposition and analytic estimates are hypotheses; the RH theorem assumes candidate-zero refutations.
-
-360. [An inconsistent certificate type for a modeled off-line zero](chirped-offline-singular-certificate.md)
-    - *Result:* Proves real growth lemmas and shows that a record containing equality with incompatible bounds is empty.
-    - *Status:* The certificate builder requires the decisive analytic claims; it does not derive them from a zeta zero.
-
-361. [Finite dyadic envelope sums and their decay](chirped-dyadic-tail-energy.md)
-    - *Result:* Proves finite geometric-sum bounds and decay of a defined logarithmic envelope.
-    - *Status:* The shell decay and zero-count quantities are definitions, not proved bounds for the actual zeta spectrum.
-
-362. [Conditional vanishing-envelope contradiction](chirped-master-spectral-vanishing-bridge.md)
-    - *Result:* Proves decay of a scalar tail envelope and contradiction from a `VanishingBridgeSystem`.
-    - *Status:* The system stores the exact equality and incompatible analytic estimates; no global spectral-vanishing theorem is proved.
-
-363. [Linear power dominance and a conditional bridge](chirped-linear-span-dominance.md)
-    - *Result:* Proves scalar exponent identities and an explicit threshold for linear power dominance.
-    - *Status:* The span is a scalar definition, and the RH theorem assumes a witness carrying all bridge estimates.
-
-364. [RH from a low-height certificate and a linear-bridge witness](chirped-partition-refutation-synthesis.md)
-    - *Result:* Conditional partition theorem and exact numerical calibration of the chosen carrier threshold.
-    - *Status:* Requires both `LowFrequencyZeroFree` and a witness producing the incompatible linear bridge for every high-frequency candidate.
-
-365. [Contradiction from a canonical evaluation package](chirped-canonical-wavepacket-admissibility.md)
-    - *Result:* Positivity of chosen parameters and a conversion from an assumed `CanonicalEvaluationSystem` to the earlier scalar contradiction.
-    - *Status:* Conditional certificate. No actual wavepacket evaluator is constructed.
-
-366. [Contradiction from supplied modular scalar components](chirped-linear-carrier-assembly.md)
-    - *Result:* Conversions among records that store the required arithmetic and spectral bounds, followed by reuse of their inconsistency.
-    - *Status:* Conditional data assembly. The component record is not derived from zeta or prime sums.
-
-367. [Complex pair-energy algebra and conditional modular assembly](chirped-pair-energy-algebra.md)
-    - *Result:* Proves a complex-number inequality and transient absorption under a supplied coherent-projection bound.
-    - *Status:* `PairedZeroData` stores all analytic estimates and the balance identity; the module does not derive them from an actual zero.
-
-368. [Identities for a modeled stationary-core weight](chirped-stationary-core-projection.md)
-    - *Result:* Proves identities among defined scalar core quantities and conditionally assembles paired-zero data.
-    - *Status:* No envelope integral or stationary-phase amplitude lower bound is formalized. The RH conclusion assumes paired-zero witnesses.
-
-369. [Contradiction in a supplied Weil wavepacket evaluation](chirped-weil-explicit-admissibility.md)
-    - *Result:* `WeilWavepacketEvaluation` packages exact equality with incompatible arithmetic and spectral bounds, and Lean proves that no such package is inhabited.
-    - *Status:* Conditional certificate theorem. The module does not derive the bounds from the Weil explicit formula or construct the evaluator required by its RH implications.
-
-370. [RH-equivalent support predicates and a conditional trace-system bridge](chirped-spectral-support-confinement.md)
-    - *Result:* Direct set-theoretic equivalences between RH, critical-line containment, and right-half zero-freeness, plus consequences of a supplied `WeilTraceSystem`.
-    - *Status:* Classical reformulation and conditional bridge. The spectral support is the zeta-zero set by definition, and no trace system is constructed.
-
-371. [Scalar trace contradiction under assumed uniform bounds](chirped-operator-trace-coercivity.md)
-    - *Result:* Machine-checked power-log contradiction for two arbitrary scalar functionals satisfying assumed coercivity, spectral depression, and exact equality.
-    - *Status:* Conditional scalar theorem. The file constructs no operator or trace and does not show that zeta zeros supply an `OperatorTraceEvaluation`.
-
-372. [Support emptiness from supplied low- and high-frequency certificates](chirped-spectral-measure-annihilation.md)
-    - *Result:* Pointwise support-emptiness predicates and their consequences for RH-equivalent zero sets.
-    - *Status:* Conditional set theory. No Radon measure or point-mass vanishing equation is formalized.
 
 373. [Chirped trace-discrepancy exponentials](chirped-fredholm-determinant.md)
     - *Result:* A scalar trace difference, its real exponential, and reductions to the same assumed coercive contradiction as entry 371.
@@ -1476,27 +1324,3 @@ This directory catalogs mathematical reports developed across the repository. St
 374. [Half-scaled chirped trace discrepancy under assumed coercive bounds](chirped-carleman-resolvent-bound.md)
     - *Result:* Half of the scalar trace difference, its exponential, and logical equivalences to entries 371 and 373.
     - *Status:* Conditional reformulation. The module has no Hilbert-Schmidt operator, Carleman inequality, or resolvent field.
-
-375. [Carrier and core-radius algebra for adjustable chirp rate](chirped-universal-carrier-tuning.md)
-    - *Result:* Machine-checked choice of $\eta$ and $T=\gamma/(1-\eta)$ giving a large carrier, modeled phase alignment, core containment, and power-log dominance.
-    - *Status:* Verified real algebra. Uniform preservation of actual Weil-packet estimates as $\eta$ varies is not proved.
-
-376. [Power-log contradiction from a supplied universal wavepacket evaluator](chirped-universal-zero-refutation.md)
-    - *Result:* A universal evaluation package is inconsistent once it contains exact equality and the incompatible bounds.
-    - *Status:* Conditional bridge. `UniversalZeroRefutationSystem.evaluator`, the decisive map from zeta zeros to evaluations, is assumed and not constructed.
-
-377. [Power-log contradiction from a universal scalar balance package](chirped-universal-fredholm-exclusion.md)
-    - *Result:* Contradiction between assumed lower and upper bounds on a freely supplied real function `log_det2`.
-    - *Status:* Conditional bridge. No determinant is constructed, and the evaluator field supplies the decisive incompatible bounds.
-
-378. [RH from a supplied universal evaluator, reflection, and real-axis nonvanishing](zeta-universal-rh-bridge.md)
-    - *Result:* Machine-checked imaginary-part trichotomy using three supplied system packages.
-    - *Status:* Conditional logical assembly. It does not construct the universal evaluator system.
-
-379. [RH from a supplied universal Weil evaluator and zeta symmetries](weil-explicit-grand-rh-bridge.md)
-    - *Result:* Imaginary-part trichotomy from a `UniversalWeilSystem`, Schwarz reflection, and real-axis nonvanishing.
-    - *Status:* Conditional logical assembly. It duplicates entry 378's bridge pattern and constructs no universal evaluator.
-
-380. [Rectangle-wise Robert--Sargos--Bordellès saving for the actual Möbius tail](actual-mobius-tail-robert-sargos-bordelles-saving.md)
-    - *Result:* Unconditional power-saving control of the exact signed Möbius prefix through \(K_E=T^{2(\lambda+1)/5-1/420}\), improving the preceding analytic endpoint from \((3\lambda+1)/6\) to \(2(\lambda+1)/5\).
-    - *Status:* Written analytic theorem independently checked against the Robert--Sargos and Bordellès source statements and the exact packet reduction; priority is provisional after targeted search.

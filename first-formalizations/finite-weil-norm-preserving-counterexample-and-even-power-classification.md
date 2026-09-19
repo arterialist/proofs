@@ -1,6 +1,13 @@
-# First Formalization 47: Finite Arithmetic Weil Prime Margin and Exhaustive Even Prime Power Classification
+# Finite arithmetic Weil prime margin and even-power classification
 
 ## Summary & Verification Status
+
+This is a formalization record for the finite arithmetic certificates used by
+the written norm-preserving comparison argument. Lean checks the selected
+prime window, the rational margin, and the exhaustive even-power
+classification. It does not formalize the smooth packets, Kronecker--Weyl
+phase selection, gamma asymptotics, or the full Weil-form comparison, so this
+page alone does not prove the analytic counterexample.
 
 - **Lean Modules:**
   - [`formalization/BuildingBlocks/FiniteWeilPrimeCertificate.lean`](../formalization/BuildingBlocks/FiniteWeilPrimeCertificate.lean)
@@ -36,6 +43,12 @@
 
 ---
 
-## Novelty & Literature Comparison
+## Search scope and attribution
 
-The finite counterexample and even-power classification may be a distinctive project contribution. No reproducible search record establishes absence from Mathlib, Isabelle/AFP, Coq, or other libraries, so worldwide priority remains provisional.
+The finite arithmetic statements are elementary consequences of primality,
+integer inequalities, and rational arithmetic. A targeted search of Mathlib,
+the public KeyAIGit `ecdlp-lean-verification` repository, the public
+Li-criterion Lean repository, and the `PrimeNumberTheoremAnd` index found no
+matching theorem package. This is a provisional formalization priority
+statement only, to the best of that search. It makes no claim that the
+underlying arithmetic is mathematically new.
