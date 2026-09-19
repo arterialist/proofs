@@ -62,7 +62,11 @@ C_v(6)&=2d_1d_5+2d_2d_4+d_3^2.
 \end{aligned} \tag{6a}
 \]
 
-The Binet moment bound in (2) gives \(0<v_j<1/(360j^3)\) for all \(j\), and \(v_1>1/504\). The elementary enclosures \(2/3<\log2<1\), \(1<\log3<6/5\), and \(\log5>3/2\) imply, by rational arithmetic,
+The pointwise Binet bounds in equation (9) of the linked
+[full factorial-clock note](../factorial-and-renewal/full-factorial-clock-binet-residual-zero-detecting-cone.md)
+give \(0<v_j<1/(360j^3)\) for all \(j\), and \(v_1>1/504\). The
+elementary enclosures \(2/3<\log2<1\), \(1<\log3<6/5\), and
+\(\log5>3/2\) imply, by rational arithmetic,
 
 \[
  |d_2|<\frac{13}{10000},\qquad

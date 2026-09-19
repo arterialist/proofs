@@ -184,7 +184,11 @@ Accept
 \[
  \eta_p=(A_{cc}b_p-A_{cp}b_c)/\Delta_A                       \tag{20}
 \]
-only if \(\underline\Delta_A>0\). Likewise put
+only if \(\underline A_{cc}\ge 0\), \(\underline A_{pp}\ge 0\), and
+\(\underline\Delta_A>0\). The two sign checks are needed because the product
+of two negative lower endpoints need not be a lower bound for
+\(A_{cc}A_{pp}\). Equivalently, replace the product in (19) by a validated
+interval product and use its lower endpoint. Likewise put
 \[
  \underline D_y=\underline d_y+\underline h_y                \tag{21}
 \]
