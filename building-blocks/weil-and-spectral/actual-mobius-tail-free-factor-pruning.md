@@ -310,6 +310,31 @@ Thus all representations of one product have the same sign. For example,
 \(210=10\cdot21=14\cdot15\) gives two distinct balanced coprime squarefree
 representations with sign \(+1\).
 
+More exactly, let
+
+\[
+ d_{R,S}(n)=
+ \#\{r\mid n:r\asymp R,\ n/r\asymp S,\ (r,n/r)=1\}.
+\tag{17a}
+\]
+
+Regrouping the primitive \(t=1\) block by its product gives
+
+\[
+ \sum_{\substack{r\asymp R,\ s\asymp S\\(r,s)=1}}
+ \mu(r)\mu(s)L_{rs}(T)
+ =
+ \sum_n \mu(n)d_{R,S}(n)L_n(T).
+\tag{17b}
+\]
+
+The algebraic fiber statement behind (17b) is formalized in Lean as
+`coprimeFactorFiber_sum`: for any finite family of coprime pairs with common
+product \(n\), the sum of their Möbius products is exactly the family
+cardinality times \(\mu(n)\). The regrouped form shows that any remaining
+cancellation must occur between different products \(n\), not between
+factorizations of one product.
+
 There is also a power-scale falsifier for any proposed reciprocal-energy
 gain based uniformly only on this support information. Restrict a coefficient
 sequence to primes by

@@ -123,6 +123,30 @@ theorem balancedMobiusCoefficient_mul_zeta :
   unfold balancedMobiusCoefficient
   exact mul_moebius_mul_zeta ArithmeticFunction.moebius
 
+/-- Möbius signs multiply exactly on a coprime factorization. -/
+theorem moebius_mul_of_coprime {r s : ℕ} (hcop : r.Coprime s) :
+    ArithmeticFunction.moebius r * ArithmeticFunction.moebius s =
+      ArithmeticFunction.moebius (r * s) := by
+  exact
+    (ArithmeticFunction.isMultiplicative_moebius.map_mul_of_coprime hcop).symm
+
+/-- Every coprime factorization in one product fiber has the same Möbius
+sign. Consequently the fiber sum is its cardinality times `μ(n)`; there is
+no cancellation inside the fiber. -/
+theorem coprimeFactorFiber_sum (n : ℕ) (S : Finset (ℕ × ℕ))
+    (hS : ∀ p ∈ S, p.1.Coprime p.2 ∧ p.1 * p.2 = n) :
+    ∑ p ∈ S,
+        ArithmeticFunction.moebius p.1 * ArithmeticFunction.moebius p.2 =
+      (S.card : ℤ) * ArithmeticFunction.moebius n := by
+  calc
+    ∑ p ∈ S,
+        ArithmeticFunction.moebius p.1 * ArithmeticFunction.moebius p.2 =
+      ∑ _p ∈ S, ArithmeticFunction.moebius n := by
+        apply Finset.sum_congr rfl
+        intro p hp
+        rw [moebius_mul_of_coprime (hS p hp).1, (hS p hp).2]
+    _ = (S.card : ℤ) * ArithmeticFunction.moebius n := by simp
+
 /-- The long squarefree coefficient in the pruned shell. Pointwise this is
 `μ(n)` times the divisor count; nonsquarefree inputs vanish automatically. -/
 noncomputable def squarefreeCoreCoefficient : ArithmeticFunction ℤ :=
