@@ -96,3 +96,4 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Local arithmetic calibration of the positive clock](successor-clock-arithmetic-calibration.md)
 - [The full time-ordered factorial birth correction is trace class](time-ordered-factorial-birth-trace-class.md)
 - [Total clock dissipation and the actual signed birth work](total-clock-dissipation-and-signed-work.md)
+- [PNT subquadratic bound for the complete factorial clock and signed work](factorial-full-clock-pnt-subquadratic.md)

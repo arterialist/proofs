@@ -128,3 +128,4 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Uniform zero-free-region PNT error for the rough-prime Green row](uniform-rough-prime-pnt-partial-summation.md)
 - [Higher-dimensional unitary prime phases and the exact defect domain](unitary-prime-phase-lift.md)
 - [A fixed-logarithm bound for a central Möbius–divisor block](voronoi-mobius-central-block.md)
+- [Chebyshev coarse-energy bound and a finite dyadic counterexample](coarse-primitive-chebyshev-envelope-dyadic-falsifier.md)
