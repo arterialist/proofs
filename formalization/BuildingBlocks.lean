@@ -580,3 +580,4 @@ import BuildingBlocks.ChirpedArchimedeanDigammaBound
 import BuildingBlocks.ChirpedSpectralAssembly
 import BuildingBlocks.ChirpedBrunTitchmarshMass
 import BuildingBlocks.ChirpedBrunTitchmarshRowBound
+import BuildingBlocks.ChirpedGrandSynthesis
