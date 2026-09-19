@@ -34,9 +34,22 @@ b*b-a*a=\mu*\mu-2a*\mu.
 \]
 
 In the new Type-II blocks, \(q\gg U^2\), so \((a*a)(q)=0\) separately as
-well. The term \(a*\mu\) contains a factor of length at most \(U\) and
-returns to the already controlled Type-I architecture. The irreducible
-balanced coefficient is therefore
+well. Define the full coefficient on this slice by
+
+\[
+d_U(q)=(\mu*\mu)(q)-2(a*\mu)(q).
+\tag{1a}
+\]
+
+The short factor in \(a*\mu\) has length at most \(U\), but its complementary
+factor still carries the coefficient \(\mu\). The inherited Bourgain Type-I
+estimate treats an unweighted long variable, so it does not by itself control
+this cross-term on a fixed free-factor slice. The identity
+\((a*\mu)*\mathbf 1=a\) collapses it only after the complete free-factor sum
+is restored. Consequently the exact hard coefficient is \(d_U\), not
+\(\mu*\mu\) alone.
+
+One explicitly structured component of \(d_U\) is
 
 \[
 c(q)=(\mu*\mu)(q).
@@ -82,14 +95,15 @@ the form
 \mathcal H_{t,J,Q}=
 \frac1{L\sqrt N}
 \sum_{k\asymp J}\gamma_k
-\sum_{q\asymp Q}c(q)W_k(q/Q)
+\sum_{q\asymp Q}d_U(q)W_k(q/Q)
 e\!\left(-\frac{kN}{tq}\right),
 \tag{6}
 \]
 
 where \(t\asymp1\), \(Q\asymp D/t\), \(J\asymp L=D/H\), and
-\(|\gamma_k|\leq1\). The short-factor terms omitted from (6) are covered by
-the Type-I estimate.
+\(|\gamma_k|\leq1\). An estimate for the \(c\)-component alone does not
+control (6) unless the \(a*\mu\) component is also bounded or cancels after
+the free-factor slices are recombined.
 
 At the current analytic endpoint
 
@@ -103,7 +117,8 @@ the balanced Robert--Sargos exponent is
 \frac{5d-2\lambda-2}{8},
 \]
 
-which is zero at \(d=d_*\). If the arithmetic structure in (2) yields an
+which is zero at \(d=d_*\). If the arithmetic structure in the
+\(c\)-component (2) yields an
 additional factor \(B^{-\sigma}\), with fixed \(\sigma>0\), the exponent
 becomes
 
@@ -118,8 +133,10 @@ d<\frac{2(\lambda+1)}{5-4\sigma}.
 \tag{7}
 \]
 
-Equation (7) quantifies the missing input. Generic arbitrary-coefficient
-large-sieve bounds do not use (2) and stop at \(\sigma=0\).
+Equation (7) quantifies a possible gain for the \(c\)-component. It does not
+move the full endpoint without a matching estimate for the cross-term in
+(1a). Generic arbitrary-coefficient large-sieve bounds do not use (2) and
+stop at \(\sigma=0\).
 
 ## The signed four-variable energy
 
@@ -136,7 +153,7 @@ Choose a real, even, nonnegative function
 \(\lvert\widehat w\rvert\) is bounded below on the bounded joint-frequency
 range in the double large sieve. Set \(\Phi=w*\widetilde w\). Then
 \(\widehat\Phi=\lvert\widehat w\rvert^2\geq0\). For the actual normalized
-coefficients \(\beta_b\), define
+coefficients \(\beta_b\) coming from the full coefficient \(d_U\), define
 
 \[
 \mathcal C_\beta(B;X)=
@@ -228,9 +245,10 @@ Robert--Sargos terms also impose, at balance,
 \tag{16}
 \]
 
-Equations (13)--(16) identify the exact signed-energy improvement that would
-move the limiting rectangle. They do not assert that this improvement is
-currently known.
+Equations (13)--(16) identify a signed-energy improvement for the full
+coefficient that would move the limiting rectangle. A bound only for the
+\(\mu*\mu\) component does not satisfy this input. No such full-coefficient
+improvement is asserted here.
 
 ## Exact short-interval form
 
@@ -240,7 +258,7 @@ smooth packet factors, as
 \[
 \frac1{\sqrt N}
 \sum_{\ell\asymp N/(tQ)}
-\sum_{q\asymp Q}c(q)
+\sum_{q\asymp Q}d_U(q)
 F\!\left(L\left[\ell-\frac{N}{tq}\right]\right).
 \tag{17}
 \]
@@ -248,5 +266,6 @@ F\!\left(L\left[\ell-\frac{N}{tq}\right]\right).
 The center attached to \(\ell\) is \(q_\ell=N/(t\ell)\), the effective
 window length is \(Q/T\), and adjacent centers are spaced by order
 \(Q^2/N\). At \(Q=T^{d_*}\), these are polynomially short intervals.
-Thus (17) is an exact arithmetic restatement of the same obstruction, not a
-known short-interval estimate for \(\mu*\mu\).
+Thus (17) is an exact arithmetic restatement of the same obstruction. The
+\(\mu*\mu\) component has additional multiplicative structure, but the full
+short-interval coefficient also contains \(-2a*\mu\).
