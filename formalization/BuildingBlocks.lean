@@ -602,3 +602,4 @@ import BuildingBlocks.ChirpedPairEnergyAlgebra
 import BuildingBlocks.ChirpedStationaryCoreProjection
 import BuildingBlocks.ChirpedWeilExplicitAdmissibility
 import BuildingBlocks.ChirpedSpectralSupportConfinement
+import BuildingBlocks.ChirpedOperatorTraceCoercivity
