@@ -622,3 +622,4 @@ import BuildingBlocks.RiemannZetaRealAxisDischarge
 import BuildingBlocks.RiemannZetaPoleCancellation
 import BuildingBlocks.RiemannZetaReflectionDuality
 import BuildingBlocks.RiemannZetaKernelPositivity
+import BuildingBlocks.RiemannZetaKernelEnergyBound
