@@ -44,3 +44,15 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Two actual histories: bilinear storage and boundary flux](two-history-bilinear-storage.md)
 - [Coprime forcing and finite interaction bounds](two-history-forcing.md)
 - [Unilateral transfer of the actual two-history storage](two-history-storage-laplace-transfer.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [All-Prime Seed Three-Region Decomposition and L² Square Integrability](all-prime-seed-three-region-decomposition-and-l2-square-integrability.md)
+- [Arithmetic Potential $V(x)$ Identity and Critical Source Residual Identification](arithmetic-potential-v-identity-and-critical-source-residual-identification.md)
+- [Causal Prime Source Birth Step Energy Increment and Discrepancy Work Identity](causal-prime-birth-energy-increment-and-discrepancy-work.md)
+- [Causal Source Convolution Distinct-Prime and Density Decomposition](causal-source-convolution-distinct-prime-and-density-decomposition.md)
+- [Collective All-Prime Seed Weak Derivative and Mutually Singular Radon Measures](collective-all-prime-seed-weak-derivative-and-mutually-singular-radon-measures.md)
+- [Composite Prime-Block Scattering Amplitude Magnitude Sandwich](composite-prime-block-scattering-amplitude-magnitude-sandwich.md)
+- [Exact All-Prime Jump Process Causal Support and Initial-Gap Theorem](exact-all-prime-jump-process-causal-support-and-initial-gap-theorem.md)
+- [Exact All-Prime Jump Process Finite-Activity Infinite-First-Moment Dichotomy](exact-all-prime-jump-process-finite-activity-infinite-first-moment-dichotomy.md)
+- [Exact All-Prime Lévy Measure Finiteness and Pure-Jump Probability Semigroup](exact-all-prime-levy-measure-finiteness-and-pure-jump-probability-semigroup.md)

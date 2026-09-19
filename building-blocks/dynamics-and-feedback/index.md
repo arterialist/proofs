@@ -49,3 +49,9 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Variable-row and monotone canonical-observation certificate](variable-row-monotone-observation-certificate.md)
 - [Exact source exponent under variable process time](variable-time-source-exponent.md)
 - [A cutoff-centered signed Gram estimate with an absorbable prefix error](weighted-prefix-centered-source-gram.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [Arcsine Charge Correction and Absolute Summability of Discrete Prime Birth Jumps](arcsine-charge-correction-and-discrete-birth-summability.md)
+- [Collective All-Prime Seed Square-Integrability and Transposed Memory Defect Representation](collective-all-prime-seed-square-integrability-and-memory-defect.md)
+- [Discrete Potential-Occupation Duality and Finite Flow Traffic Bounds](discrete-potential-occupation-duality-and-finite-flow-traffic-bounds.md)

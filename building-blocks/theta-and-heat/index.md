@@ -175,3 +175,10 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Weighted smoothing into the actual jump-form domain](theta-zero-mode-form-smoothing.md)
 - [Canonical cell 9 and an uncut even-hat observation](uncut-cell-nine-even-hat-test.md)
 - [Euler-prime phase winding defeats every fixed positive xi shift](xi-shift-euler-phase-obstruction.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [The Arithmetic Birth Gram Kernel and Universal Positive Semidefiniteness](arithmetic-birth-gram-kernel-and-universal-semidefiniteness.md)
+- [Compact-Strip Theta Payment and Explicit Resolvent Coercivity](compact-strip-theta-payment-and-explicit-resolvent-algebra.md)
+- [Degenerate Schur Complement Cancellation and Three-Column Woodbury Reduction for Conditional Theta Edges](degenerate-schur-cancellation-and-woodbury-reduction-for-theta-edges.md)
+- [Exact Additive Heat Gram Positivity and Cauchy-Lipschitz Embedding](exact-additive-heat-gram-positivity-and-cauchy-lipschitz-embedding.md)

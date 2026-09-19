@@ -153,3 +153,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Contradiction in a supplied Weil wavepacket evaluation](chirped-weil-explicit-admissibility.md)
 - [Chirped Zero Coupling Pipeline and RH Deduction](chirped-zero-coupling-pipeline-and-rh-deduction.md)
 - [Combining supplied low- and high-frequency zero-free certificates](chirped-zero-partition-synthesis.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [Even-seed paired Weil-weight parity identity](even-seed-prime-block-paired-weil-weight-parity-law.md)

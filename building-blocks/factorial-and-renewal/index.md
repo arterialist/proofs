@@ -97,3 +97,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [The full time-ordered factorial birth correction is trace class](time-ordered-factorial-birth-trace-class.md)
 - [Total clock dissipation and the actual signed birth work](total-clock-dissipation-and-signed-work.md)
 - [PNT subquadratic bound for the complete factorial clock and signed work](factorial-full-clock-pnt-subquadratic.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [Continuous-to-Discrete Renewal Transfer via the Exact Exponential B-Spline Factor $4\sinh^2(t/2)/t^2$](continuous-to-discrete-renewal-exponential-hat-transfer.md)

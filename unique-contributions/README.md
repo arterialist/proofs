@@ -114,49 +114,16 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact arithmetic product evaluation of the bilinear Möbius-weighted LCM arithmetic class $S(k) = \sum_{\operatorname{lcm}(i, j)=k} \mu(i)\mu(j) i j = \prod_{p \mid k} p(p-2)$ for all squarefree integers $k$, vanishing identically on non-squarefree integers and even squarefree integers $S(2m) = 0$. Proves unconditional nonpositivity of the complete off-diagonal sum $S_{\ne}(k) = \prod_{p \mid k} p(p-2) - k^2 \le 0$ with strict negativity $S_{\ne}(k) < 0$ for all squarefree $k > 1$, while demonstrating that the kernel-difference distortion alone evaluates to $2p(p-1) > 0$ at primes, establishing why soft local clock truncations fail.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-42. [Continuous-to-Discrete Renewal Transfer via the Exact Exponential B-Spline Factor 4 sinh^2(t/2) / t^2](continuous-to-discrete-renewal-exponential-hat-transfer.md)
-    - *Result:* Exact identity proving that the continuous Laplace transform of the piecewise linear interpolant of an integer renewal source sequence with $c(0) = 0$ is identically equal to the discrete generating transform multiplied by the exact hyperbolic sinc factor $\int_0^\infty e^{-tu} \widetilde{c}(u) du = \frac{4\sinh^2(t/2)}{t^2} \sum_{j=0}^\infty e^{-tj} c(j)$. Proves exact left/right exponential hat affine integrals $\operatorname{leftHat}(t)c + \operatorname{rightHat}(t)d$, the hat multiplier combination $\operatorname{leftHat}(t) + e^t \operatorname{rightHat}(t) = \frac{4\sinh^2(t/2)}{t^2}$, and the exact complete arithmetic defect formula connecting continuous and discrete Poisson renewal models without ad hoc error terms.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 43. [Non-Local Killing Positivity and Arithmetic Prime Jump Boundary Gap](non-local-killing-positivity-and-prime-jump-boundary-gap.md)
     - *Result:* Proof that non-local Dirichlet boundary killing of the Jacobi jump process on a core $[-R, R]$ eliminates constant zero-energy modes, forcing every non-zero constant core state $f(u) \equiv c \ne 0$ to carry strictly positive Dirichlet energy $\operatorname{killedEnergy}(R, c) > 0$. Identifies the explicit geometric crossing interval $u \in (-R-a, -R-a + \min(R, a)/2)$ where $u$ is outside the core and $u+a$ is inside the core, proving that the jump shift $a = \log 2$ at the very first prime $p = 2$ alone guarantees an unconditional strictly positive spectral floor $\ge \frac{\log 2}{\sqrt{2}} \operatorname{edgeMass}(k, \log 2) > 0$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-44. [Degenerate Schur Complement Cancellation and Three-Column Woodbury Reduction for Conditional Theta Edges](degenerate-schur-cancellation-and-woodbury-reduction-for-theta-edges.md)
-    - *Result:* Algebraic resolution of singular Schur complement quotients in multi-column Galerkin edge elimination for non-local jump operators. Proves via $2 \times 2$ positive semidefinite determinant conditions that whenever the residual diagonal budget vanishes ($d_y = 0$), the residual mixed coupling numerator vanishes identically ($m = 0$), establishing algebraic stability of the quotient convention $\operatorname{schurQuotient}(m, 0) = 0$. Proves the exact 3-column Woodbury quadratic expansion $c^T G c$ for $c = (1, -r^T)^T$ preserving all off-diagonal cross terms, and verifies the 5-component signed core decomposition (spectral, mean correction, covariance, odd-affine, prime observation) with coercive lower bound $c^* > 0$.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
-
-45. [Causal Prime Source Birth Step Energy Increment and Discrepancy Work Identity](causal-prime-birth-energy-increment-and-discrepancy-work.md)
-    - *Result:* Exact closed-form evaluation of the $L^2(0, \infty)$ energy change under discrete horizon steps $N \to N+1$: $\int_0^\infty (a_{N+1}(v))^2 dv - \int_0^\infty (a_N(v))^2 dv = 2(\psi(N) - N) (\frac{\Lambda(N+1)}{N+1} - \log(1 + 1/N)) + 1 + \frac{N}{N+1} - 2N\log(1 + 1/N) + \frac{(\Lambda(N+1)-1)^2}{N+1}$. Establishes the exact piecewise dissection of the birth increment $\delta_N(v) = a_{N+1}(v) - a_N(v)$, closed evaluation of the deterministic geometric ramp energy $\int_{\log N}^{\log(N+1)} (e^v - N)^2 e^{-v} dv = 1 + \frac{N}{N+1} - 2N\log(1 + 1/N)$, and exact cross-work integral linking accumulated Chebyshev error with the local prime discrepancy step.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
-
-46. [The Arithmetic Birth Gram Kernel and Universal Positive Semidefiniteness](arithmetic-birth-gram-kernel-and-universal-semidefiniteness.md)
-    - *Result:* Explicit evaluation of the continuous $L^2$ Gram matrix of prime birth increments $K(m, n) = \langle \delta_m, \delta_n \rangle = \int_0^\infty \delta_m(v) \delta_n(v) dv$. Proves that for all off-diagonal entries $m < n$, the earlier index factors out rank-1 as $(\Lambda(m+1) - 1)$, while the later index is precisely the prime discrepancy step $\frac{\Lambda(n+1)}{n+1} - \log(1 + 1/n)$. Proves that the discrete arithmetic matrix $K(m, n)$ is unconditionally positive semidefinite on every finite subset of integers $s \subset \{n \in \mathbb{N} \mid n \ge 2\}$: $\sum_{m, n \in s} c_m c_n K(m, n) \ge 0$.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
 
 47. [Arithmetic Heat Response Cell Extrema and Rigorous Alignment Refutation](actual-heat-response-cell-extrema-and-alignment-refutation.md)
     - *Result:* Rigorous refutation of both same-sign alignment ($h' H \ge 0$) and anti-alignment ($h' H \le 0$) between the actual arithmetic heat response derivative $h'$ and the Euler kernel $H$ across the first logarithmic cell $[\log 2, \log 3]$. Machine-certified by zero-floating-point rational interval arithmetic: $h'(\log 2) \in (-0.060112, -0.060111) < 0$ and $h'(\log 3) \in (0.070492, 0.070494) > 0$ proving an interior local minimum, while at $v = \log(5/2)$, both $h'(v) > 0$ and $H(v) > 0$ strictly hold simultaneously. Proves topological obstruction to single-sign differential Lyapunov criteria on logarithmic cells.
     - *Status:* Rigorous mathematical derivation + certified rational interval arithmetic; priority not assessed in this audit.
 
-48. [Arcsine Charge Correction and Absolute Summability of Discrete Prime Birth Jumps](arcsine-charge-correction-and-discrete-birth-summability.md)
-    - *Result:* Non-asymptotic derivation of the mean-value derivative bounds $0 \le \arcsin z - z \le z^3/3$ on $[0, 1/\sqrt{2}]$, yielding the sharp $n^{-3/2}$ decay $0 \le \arcsin(1/\sqrt{y}) - 1/\sqrt{y} \le \frac{1}{3y^{3/2}}$ on $[2, \infty)$. Exact algebraic identification with the first discrete birth jump $\operatorname{correction}(n) = \operatorname{discreteBirth}(n, 1) - \operatorname{discreteBirth}(n, 0)$, and proof of unconditional absolute summability $\sum_{n=2}^\infty \|\Lambda(n)(\operatorname{discreteBirth}(n, 1) - \operatorname{discreteBirth}(n, 0))\| < \infty$ across all prime powers.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
-
-49. [Collective All-Prime Seed Square-Integrability and Transposed Memory Defect Representation](collective-all-prime-seed-square-integrability-and-memory-defect.md)
-    - *Result:* Proves that the collective all-prime birth seed $\operatorname{allPrimeSeed}(v) = \sum_p \operatorname{seed}(\log p, v)$ is unconditionally square-integrable on $\mathbb{R}$ without assuming the Prime Number Theorem, any zero-free region, or the Riemann Hypothesis. Establishes the three-scale geometric bound $v \cdot \operatorname{allPrimeSeed}(v) \le 64 \log 2 + 30$ on $[3\log 2, \infty)$, square tail domination $(\operatorname{allPrimeSeed}(v))^2 \le (64\log 2 + 30) \operatorname{allPrimeSeed}(v)/v$, and finite Lévy activity. Proves the exact transposed integral representation of the relative charge memory defect $\operatorname{defect}(\operatorname{causalMemory}(\operatorname{allPrimeSeed}, f)) = \int_0^\infty \operatorname{memoryDefectKernel}(\operatorname{allPrimeSeed}, u) f(u) du$ and the commutator kernel identity.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
-
-
-51. [Centered Goldbach Total-Four Obstruction and Successor Heat Shift Covariance](centered-goldbach-total-four-obstruction-and-successor-heat-shift.md)
-    - *Result:* Exact closed form for the centered additive Goldbach coefficient at the first nontrivial even total $N = 4$: $c_3(4) = (\log 2 - 1)^2 - 2(\log 3 - 1)$. Proves that $c_3(4) < 0$ is unconditionally strictly negative, formally refuting all coefficientwise nonnegativity conjectures on even totals and ruling out positive semidefiniteness of the centered Hankel kernel (as $H_{2, 2} = c_3(4) < 0$). Establishes the successor shift covariance decomposition $c^{\mathrm{shift}}_Y(N) - c_Y(N) = \operatorname{cov}_Y(N) + \operatorname{var}_Y(N)$, proves opposite sign behavior at totals 2 and 4 ($\Delta c(2) = (\log 2)^2 - 2\log 2 < 0$ while $\Delta c(4) = (\log 2 - 1)^2 + (\log 3)^2 - 1 > 0$), and proves the continuous scale shell covariance law $\operatorname{shiftedShell}(Y, T) - \operatorname{heatShell}(Y, T) = 2 \operatorname{crossShell}(Y, T) + \operatorname{variationShell}(Y, T)$.
-    - *Status:* Rigorous mathematical derivation + Lean formalizations; priority not assessed in this audit.
-
 53. [Universal Dual Autocorrelation Trace Pairing for Discrete Prime Packets](universal-dual-autocorrelation-trace-pairing.md)
     - *Result:* Exact real-space duality formula relating smooth windowed prime sums directly to continuous causal source integrals without complex zeros: $\sum_{i \in T} c_i (\sum_{n=2}^N \Lambda(n) W_{A_f}(s_i, n) - e^{s_i/2}\hat{f}(1/2)\hat{f}(-1/2)) = -\int_{\mathbb{R}} a_C(v) \sum_{i \in T} c_i K_{A_f, A_f'}(v - s_i) dv$, where $A_f = f * \tilde{f}$ is the continuous autocorrelation, $K_{A_f, A_f'}(y) = A_f'(y) - \frac{1}{2} A_f(y)$, and $a_C(v)$ is the causal frozen prime source. Proves exact factorization of the main term into physical moments $\hat{f}(1/2)\hat{f}(-1/2)$, boundary vanishing, and non-asymptotic equality with zero remainder.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-55. [Collective All-Prime Seed Weak Derivative and Mutually Singular Radon Measures](collective-all-prime-seed-weak-derivative-and-mutually-singular-radon-measures.md)
-    - *Result:* Exact Jordan decomposition of the distributional derivative of the collective prime renewal seed $(\operatorname{allPrimeSeed})' = \mu_{\mathrm{all}}^+ - \mu_{\mathrm{all}}^-$ into mutually singular measures $\mu_{\mathrm{all}}^+ \perp \mu_{\mathrm{all}}^-$. Proves that the global total variation is unconditionally infinite $\mu_{\mathrm{all}}^\pm(\mathbb{R}) = \infty$ via the divergence of prime reciprocals $\sum_p 1/p = \infty$, while establishing local finiteness $\mu_{\mathrm{all}}^\pm((-\infty, A]) < \infty$ for every cutoff $A$ via finite prime clock support below $e^A$. Formally proves the weak distributional derivative identity $\int \operatorname{allPrimeSeed} \cdot \varphi' = \int \varphi d\mu_{\mathrm{all}}^- - \int \varphi d\mu_{\mathrm{all}}^+$ against any $C^1$ test function bounded above.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 56. [Regular Source Möbius Floor-Inverse Obstruction via Banach–Steinhaus](regular-source-mobius-floor-inverse-obstruction.md)
@@ -171,22 +138,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact tail factorization for truncated prime scattering multipliers $\operatorname{paired}(p, z, M) = (1 - \operatorname{tail}_p(z, M))(1 - \operatorname{tail}_p(-z, M))$, with uniform geometric decay $\|\operatorname{defect}_p(z, M)\| \le P^{-M\delta}(1 + \frac{1}{\delta \log P})$ across the critical strip interior $|\operatorname{Re}(z)| \le 1/2 - \delta$ for primes $p \ge P > 1$. Proves the finite block product comparison $\|\prod_{p \in s} \operatorname{paired}(p, z, M) - 1\| \le \exp(|s|(2B + B^2)) - 1$, and establishes weighted low/high shell decomposition for infinite prime series.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-59. [Canonical Quotient Fractional Approximation and Mertens $L^2$ Lower Bound](canonical-quotient-fractional-approximation-and-mertens-l2-lower-bound.md)
-    - *Result:* Exact total quotient mass identity $\sum_{q=1}^N c_q(N) = M(N)$ and 1-periodic reciprocal error representation $R_N(y) = 1 + \sum_{q=1}^N c_q(N) \{qy\} - \{y\}$ for the canonical arithmetic quotient coefficients in Báez-Duarte fractional approximation. Proves the unconditional quantitative $L^2(0, 1)$ lower bound $\operatorname{dualMeanSquareError}(N) \ge \frac{(M(N)+1)^2}{16N}$ and deduces $\frac{M(N)^2}{N} \le 32 \operatorname{dualMeanSquareError}(N) + \frac{2}{N}$, proving that canonical quotient coefficients are obstructed from $L^2$ convergence by known Mertens oscillations.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-60. [Compact-Strip Theta Payment and Explicit Resolvent Coercivity](compact-strip-theta-payment-and-explicit-resolvent-algebra.md)
-    - *Result:* Exact order-theoretic coercivity payment theorem proving $\delta \cdot w < \mathrm{total} = \mathrm{strip} + \mathrm{arrival}$ from strip lower bounds and arrival rates. Proves the Schur integral bound $C \le 3^B / 2$ at rational scale $\varepsilon(B) = 1/(2 \cdot 3^B)$, deduces the explicit uniform resolvent bound $P \le 4 \cdot 10^{1046} \cdot 3^B$ from barrier parameters $M = 10^{500}$ and $\delta_* = 1/(8 \cdot 10^{546})$, and proves that logarithmic arrival at $\varepsilon_* = \varepsilon(B_*)$ strictly absorbs the decimal strip energy deficit $10^{503} + \frac{1}{8 \cdot 10^{46}} < \frac{c_*}{4} \log((1/2)/\varepsilon_*)$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-61. [Archimedean Logarithmic Derivative and Analytic Vanishing Order Duality](archimedean-logarithmic-derivative-and-analytic-vanishing-order-duality.md)
-    - *Result:* Exact formulas for the Archimedean logarithmic derivative $\frac{\Gamma_{\mathbb{R}}'(s)}{\Gamma_{\mathbb{R}}(s)} = -\frac{\log \pi}{2} + \frac{1}{2} \frac{\Gamma'(s/2)}{\Gamma(s/2)}$ and critical-line spectral multiplier $\operatorname{archMultiplier}(t) = -\log \pi + \operatorname{Re}\frac{\Gamma'}{\Gamma}(1/4 + it/2)$. Proves the general analytic residue theorem $\lim_{w \to s} (w - s) \frac{f'(w)}{f(w)} = \operatorname{ord}_s(f)$ in punctured neighborhood filters, and establishes exact vanishing order identity $\operatorname{ord}_s(\xi) = \operatorname{ord}_s(\zeta) < \infty$ for all $\operatorname{Re}(s) > 0$ ($s \ne 1$), connecting logarithmic residues of $\zeta'/\zeta$ directly to entire $\xi$ zero multiplicities.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-62. [Even Goldbach Three-Phase Fourier Reconstruction of Chebyshev Prime Error](even-goldbach-three-phase-fourier-reconstruction-of-chebyshev-error.md)
-    - *Result:* Exact Fourier projection identity identifying the continuous angular integral $H_1(N) = \frac{1}{\pi} \int_0^{2\pi} \operatorname{complexCenteredGoldbach}(N, \theta) \cos \theta \, d\theta$ of the parity-centered even Goldbach triangle with completely multiplicative 3-adic phase $\chi_3(n, \theta) = \exp(i v_3(n) \theta)$ with its discrete first harmonic. Proves the non-asymptotic inversion identity $\psi(2k+3) - (2k+3) = \frac{H_1(2k+6)}{2 \log 3} + \log 2 \lfloor \log_2(2k+3) \rfloor + 1 + \log 3 \cdot |\operatorname{lateThreeLadder}(2k+6)|$, recovering the Chebyshev prime counting error directly from the Goldbach first harmonic.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 63. [Truncated Prime Scattering Amplification and Non-Contractivity Obstruction](truncated-prime-scattering-amplification-and-non-contractivity-obstruction.md)
     - *Result:* Exact geometric sum factorization of the truncated prime scattering multiplier $S_{p, M}(t)$ into a unitary phase and complex tail term. Proves that for every prime $p$ and every history truncation depth $M \ge 1$, $S_{p, M}(t)$ is strictly contractive at frequency zero ($|S_{p, M}(0)|^2 < 1$), but strictly expansive at the resonant frequency $t = \frac{\pi}{M \log p}$ ($|S_{p, M}(t_{\mathrm{res}})|^2 > 1$), establishing an unconditional obstruction to $L^2$ contractivity for causal history cutoffs.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
@@ -195,52 +146,20 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Closed-form representation of the same-prime diagonal Dirichlet series $H(s) = \sum_{p} \frac{(\log p)^2 p^{-2s}}{(1 - p^{-s})^2} = \sum_{p} \sum_{k=0}^\infty (\log p)^2 (k+1) p^{-(k+2)s}$ with exact power multiplicities $k+1$. Constructs an explicit summable product majorant on $\operatorname{Re}(s) \ge \sigma > 1/2$, proves locally uniform convergence, and establishes unconditional holomorphy and complex analyticity across the entire half-plane $\operatorname{Re}(s) > 1/2$ without any RH or zero-free assumptions.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-65. [Discrete Prime Error Energy Balance and Signed Drift Decomposition](discrete-prime-error-energy-balance-and-signed-drift-decomposition.md)
-    - *Result:* Exact weighted discrete integration-by-parts identity and prime error energy balance $\mathcal{E}(N) = 2 \mathcal{D}(N) + \mathcal{I}(N) - \frac{E(N)^2}{N+1}$, decomposing prime error energy into off-diagonal drift and diagonal increment energy. Proves the log-square bound $\mathcal{I}(N) \le 2 \log^2 N + \log N + 1$, shows that nonpositive drift would imply RH via $E(N)^2 \le (N+1)(2 \log^2 N + \dots)$, and proves the initial positivity obstruction $\mathcal{D}(2) = (1 - \log 2)/2 > 0$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-66. [Causal Successor Jacobian Defect Kernel and Charge-Conserving Compensation](causal-successor-jacobian-defect-kernel-and-charge-conserving-compensation.md)
-    - *Result:* Exact pull-back integration theorem for the causal successor operator $(T f)(v) = \sqrt{\frac{e^v}{1 + e^v}} f(\log(1 + e^v))$ yielding $\int_0^\infty (T f)(v) \, dv - \int_0^\infty f(u) \, du = \int_0^\infty K(u) f(u) \, du$ with uniformly bounded defect kernel $|K(u)| \le 1$. Proves that the rank-one boundary perturbation $\widetilde{T} f(v) = T f(v) - e^{-v/2} \operatorname{defect}(f)$ strictly preserves the total $L^1$ integral and charge for all integrable causal sources.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-67. [Causal Successor-Predecessor Adjoint Duality and Isometry-Projection Algebra](causal-successor-predecessor-adjoint-duality-and-isometry-projection-algebra.md)
-    - *Result:* Exact Hilbert adjoint relation $\langle f, T g \rangle = \langle P f, g \rangle$ on $L^2(0, \infty)$ between the causal successor and predecessor operators. Proves that $T \circ P = I$ on $(0, \infty)$, that $P \circ T = \mathbf{1}_{(\log 2, \infty)}$ is the orthogonal projection onto functions supported away from the initial cell, that $P$ is an exact isometry ($\int_0^\infty (P f)^2 = \int_0^\infty f^2$), and that $T$ is a co-isometry ($\int_0^\infty (T f)^2 = \int_{\log 2}^\infty f^2$).
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 68. [Banach–Steinhaus Regular Source Möbius Floor-Inverse Obstruction](banach-steinhaus-regular-source-mobius-floor-inverse-obstruction.md)
     - *Result:* Failure of uniform boundedness for the regular Möbius functional $\Lambda_{r, N}(p) = \frac{1}{N^r} \sum_{d \le N} \mu(d) f_p(\lfloor N/d \rfloor)$ on the Banach space $\mathcal{X}_{\mathrm{reg}}$ of square-root-bounded Lipschitz trajectories for all exponents $r < 2/3$. By the Banach–Steinhaus theorem, proves the existence of a fixed trajectory $f$ with $|f(q)| \le \sqrt{q}$ and $|\Delta f(q)| \le 1$ whose Möbius floor inverse cannot be bounded by $O(N^r)$, proving an unconditional barrier to proving RH via general regularity.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-69. [Causal Source Convolution Distinct-Prime and Density Decomposition](causal-source-convolution-distinct-prime-and-density-decomposition.md)
-    - *Result:* Exact filtered source-tau residual identity $\mathcal{L}_0(S * S)(s) - \tau(s) = \mathcal{L}_0(\mathrm{distinct})(s) - \mathcal{L}_0(\mathrm{mixedLeft})(s) - \mathcal{L}_0(\mathrm{mixedRight})(s) + \mathcal{L}_0(D * D)(s)$ for the arithmetic prime source on $[0, s]$. Proves local $L^2$ integrability of the complete prime field and establishes the exact closed form $(D * D)(s) = s e^{s/2}$ for the background density self-convolution.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 70. [Finite Signed Logarithmic Window Prime-Source Integration Bridge](finite-signed-logarithmic-window-prime-source-integration-bridge.md)
     - *Result:* Exact non-asymptotic integration bridge equating finite linear combinations of discrete prime power sums $\sum_{i \in T} c_i (\sum_{n=2}^N \Lambda(n) n^{-1/2} R(\log n - s_i) - e^{s_i/2} \int e^{y/2} R(y) \, dy)$ to the continuous causal source integral $-\int_{-\infty}^\infty S_C(v) (\sum_{i \in T} c_i \mathcal{K}_{R, D}(v - s_i)) \, dv$, where $\mathcal{K}_{R, D} = R' - R/2$, without contour integration or RH assumptions.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-71. [Arithmetic Potential V(x) Identity and Critical Source Residual Identification](arithmetic-potential-v-identity-and-critical-source-residual-identification.md)
-    - *Result:* Exact closed non-asymptotic formula for the arithmetic potential $V(x) = \sum_{p \ne q} (x - p^j q^k)\log p \log q - \sum_{n \le x} \Lambda(n)\frac{x^2 - n^2}{n} + (\frac{x^2 \log x}{2} + \frac{x^2}{4} - \frac{1}{4})$, proving the master identity $\mathcal{L}_0(S * S)(s) - \tau(s) = e^{-3s/2} V(e^s)$ relating the filtered causal source energy residual directly to $x^{-3/2} V(x)$ with boundary vanishing $V(1) = 0$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 72. [Riemann Zeta Centered Logarithmic Derivative Removable Singularity](riemann-zeta-centered-logarithmic-derivative-removable-singularity.md)
     - *Result:* Exact removable singularity of the centered logarithmic derivative $G(s) = -\frac{\zeta'(s)}{\zeta(s)} - \frac{s}{s-1}$ at the pole $s = 1$. Proves that the analytic extension $G_{\mathrm{filled}}$ is complex analytic at $s = 1$ with exact value $G_{\mathrm{filled}}(1) = -\gamma - 1$, where $\gamma$ is the Euler–Mascheroni constant.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-73. [Critical Transform Off-Line Zeta Zero Double-Pole Obstruction](critical-transform-off-line-zeta-zero-double-pole-obstruction.md)
-    - *Result:* Exact meromorphic double pole of the candidate critical transform $\mathcal{F}(s) = M(s)(G_{\mathrm{filled}}(s)^2 - H(s))$ at every off-line zero $\rho$ with $\operatorname{Re}(\rho) > 1/2$. Proves that $\operatorname{meromorphicOrderAt}(\mathcal{F}, \rho) = -2$ with non-zero trailing coefficient $M(\rho) m^2 \ne 0$, proving that $\mathcal{F}$ is provably non-analytic at any off-line zero and establishing an exact spectral criterion for the Riemann Hypothesis.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 74. [Same-Prime Proper-Power History Residual Global Monotonicity](same-prime-proper-power-history-residual-global-monotonicity.md)
     - *Result:* Exact non-negativity $s(v) \ge 0$ and global monotonicity of the causal proper-power prime residual $s(v) = \sum_{p} \sum_{m \ge 2} \frac{(m-1)(\log p)^2}{\sqrt{p^m}} h(v - m \log p)$ on all of $\mathbb{R}$ under simultaneous growth of continuous age and discrete floor cutoffs $\lfloor e^v \rfloor$. Proves the universal delay contraction inequality $s(v - r) \le s(v)$ for all $r \ge 0$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-75. [Chronological Divisibility Turán Determinant and Sub-Multiplicativity](chronological-divisibility-turan-determinant-and-sub-multiplicativity.md)
-    - *Result:* Exact non-negativity of the multiplicative Turán dilation determinant $S(x/a) S(x/b) - S(x) S(x/(ab)) \ge 0$ for all integers $a, b \ge 1$ and $x > 1$ in the square-root weighted chronological tent measure $S(x) = \sum_{j=1}^{\lfloor x \rfloor} \frac{x - j}{\sqrt{j}}$. Proves the exact sub-multiplicativity (negative association) of divisibility events $\mathbb{P}(ab \mid x) \le \mathbb{P}(a \mid x) \mathbb{P}(b \mid x)$, bounding composite divisibility by the product of marginals.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-76. [Chronological Power Moment Ratio Strict Monotonicity](chronological-power-moment-ratio-strict-monotonicity.md)
-    - *Result:* Exact upper bound $A(n) = \sum_{j=1}^n j^{-1/2} \le 2\sqrt{n} - 1$, strict monotonicity of the controller sequence $h(n) = A(n)/\sqrt{n+1} + 1/(n+1)$, and strict decreasing monotonicity of the normalized chronological moment ratio $R(n) = \frac{\sum_{j=1}^n \sqrt{j}}{(n+1) \sum_{j=1}^n j^{-1/2}}$ for all $n \ge 1$, proving $R(n+1) < R(n)$ strictly from $R(1) = 1/2$ toward $1/3$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 77. [Successor-Cell Discrete-Continuous Density Comparison and PNT Bridge](successor-cell-discrete-continuous-density-comparison-and-pnt-bridge.md)
@@ -263,10 +182,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact closed evaluation of the one-leg reference sum $(\log 3)(2k+4)$ and even prime power prefix $\operatorname{twoPowerPrefix}(Y) = (\log 2) \lfloor \log_2 Y \rfloor$. Proves the exact non-asymptotic identity equating the 3-adic first harmonic $\operatorname{threeFirstHarmonic}(2k+6)$ on the even Goldbach triangle directly to the complete Chebyshev prime error $2 \log 3 [\psi(2k+3) - (2k+3) - (\log 2) \lfloor \log_2(2k+3) \rfloor - 1 - (\log 3) |\operatorname{ladder}|]$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-82. [All-Prime Seed Three-Region Decomposition and L² Square Integrability](all-prime-seed-three-region-decomposition-and-l2-square-integrability.md)
-    - *Result:* Three-region prime decomposition bound $\operatorname{finitePrimeSeed}(S, v) \le \frac{64\log 2}{v} + 5 e^{-v/6}$, universal age bound $v \cdot \operatorname{allPrimeSeed}(v) \le 64\log 2 + 30$, and unconditional $L^2(\mathbb{R})$ square integrability $\int_{-\infty}^\infty (\operatorname{allPrimeSeed}(v))^2 dv < \infty$ derived without PNT or RH from elementary Chebyshev bounds and Lévy finite activity.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 83. [Filtered Prime-Density Convolution and Three-Component Potential Decomposition](filtered-prime-density-convolution-and-three-component-potential-decomposition.md)
     - *Result:* Exact closed evaluation of the three filtered convolution components that construct the arithmetic potential $V(x)$: the discrete prime-pair tent weight $(x - p^j q^k) \log p \log q$, the symmetrized mixed discrete-continuous subtraction term $-\Lambda(n) \frac{x^2 - n^2}{n}$, and the deterministic density self-energy $\frac{x^2 \log x}{2} + \frac{x^2}{4} - \frac{1}{4}$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
@@ -277,14 +192,6 @@ This directory catalogs mathematical reports developed across the repository. St
 
 85. [Physical Prime-Block Scattering Two-Sided Mellin Parity Law](physical-prime-block-scattering-two-sided-mellin-parity-law.md)
     - *Result:* Strict opposing signs $M_+(p, h, M) < 0$ and $M_-(p, h, M) > 0$ for single-prime history Mellin multipliers, yielding strictly positive composite amplitude $\mathcal{A} > 0$ and the exact sign parity law $\mathcal{M}(\mathcal{B}_{ps} f)(h + 1/2) \mathcal{M}(\mathcal{B}_{ps} f)(-(h + 1/2)) = (-1)^{|ps|} \mathcal{A} [\mathcal{M}(f)(h + 1/2) \mathcal{M}(f)(-(h + 1/2))]$ for any block of primes $ps$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-86. [Even-Seed Prime-Block Paired Weil Weight Parity Law](even-seed-prime-block-paired-weil-weight-parity-law.md)
-    - *Result:* Exact parity identity $W(\mathcal{B}_{ps} f, \mathcal{B}_{ps} f)(h + 1/2) = (-1)^{|ps|} \mathcal{A}(ps, \text{depth}, h) W(f, f)(h + 1/2)$ for paired Weil weights across composite prime scattering blocks. Proves that for even seeds, the scattered weight equals $(-1)^{|ps|} \mathcal{A} |\mathcal{M}(f)(h+1/2)|^2$, whence the parity-signed weight $(-1)^{|ps|} \operatorname{Re}(W(\mathcal{B}_{ps} f, \mathcal{B}_{ps} f)) \ge 0$ is unconditionally non-negative for all $h \ge 1$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-87. [Composite Prime-Block Scattering Amplitude Magnitude Sandwich](composite-prime-block-scattering-amplitude-magnitude-sandwich.md)
-    - *Result:* Exact two-sided geometric-exponential sandwich $(1/8)^{|ps|} \prod_{p \in ps} p^{h \cdot \text{depth}(p)} \le \mathcal{A}(ps, \text{depth}, h) \le 2^{|ps|} \prod_{p \in ps} p^{h \cdot \text{depth}(p)}$ for the aggregate amplitude of composite prime scattering blocks, bounding amplification by the arithmetic logarithmic energy up to a factor of $16^{|ps|}$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 88. [Smooth Compact Carrier Polar Residue Nullification and Scattering Preservation](smooth-compact-carrier-polar-residue-nullification-and-scattering-preservation.md)
@@ -332,10 +239,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact reciprocal bump identity $(1 - z)(1 - z^{-1}) = 2 - z - z^{-1}$, conjugate reflection swap $\bar{W}(1-\bar{z}^{-1})(1-\bar{z}) = \overline{W(1-z)(1-z^{-1})}$, and quantitative off-line paired negativity bound $2\operatorname{Re}(W(2 - u r - \bar{u}/r)) \le 4|W| + 2|W|/r - 2br$ with explicit negative linear term $-2br$ contradicting Weil positivity.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-101. [Critical Gamma Norm Identity and Lorentzian Majorization Bound](critical-gamma-norm-identity-and-lorentzian-majorization-bound.md)
-    - *Result:* Exact critical line Gamma norm squared $|\Gamma(1/2 + i\xi)|^2 = \frac{\pi}{\cosh(\pi\xi)}$, quadratic cosh minorization $1 + 4\xi^2 \le \cosh(\pi\xi)$, and sharp rational Lorentzian majorization $\frac{\pi}{\cosh(\pi\xi)} \le \frac{\pi / 4}{1/4 + \xi^2}$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 102. [Exact Physical-Additive Gram Kernel Balance Decomposition](exact-physical-additive-gram-kernel-balance-decomposition.md)
     - *Result:* Exact pointwise kernel identity $K_{\text{phys}}(x, y) = 2 K_{\text{add}}(x, y) - K_{\text{bal}}(x, y)$ between physical kernel $1/\max(x, y)$ and Cauchy kernel $1/(x+y)$ with discrepancy kernel $K_{\text{bal}}(x, y) = \frac{|x-y|}{\max(x, y)(x+y)}$, finite Gram quadratic decomposition $\mathcal{G}(K_{\text{phys}}) = 2\mathcal{G}(K_{\text{add}}) - \mathcal{G}(K_{\text{bal}})$, and proof of strict indefiniteness of the balance form.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
@@ -358,10 +261,6 @@ This directory catalogs mathematical reports developed across the repository. St
 
 107. [Exact Finite van der Corput Differencing and Aggregate Shift Energy](exact-finite-van-der-corput-differencing-and-aggregate-shift-energy.md)
     - *Result:* Exact shift conservation on the common envelope $\sum_{n \in \mathcal{E}} \sum_{h < H} z(n+h) = H \sum_{n < N} z(n)$, sharp finite shift energy inequality $H^2 |\sum z(n)|^2 \le (N+H) \sum_{h, j < H} \sum_{n \in \mathcal{E}} \operatorname{Re}(z(n+h)\overline{z(n+j)})$ retaining signed correlations, and aggregate shift energy preserving cross-constituent interference terms.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-108. [Discrete Potential-Occupation Duality and Finite Flow Traffic Bounds](discrete-potential-occupation-duality-and-finite-flow-traffic-bounds.md)
-    - *Result:* Exact discrete Green identity $\sum_{i \in s} M_i (V_i - \sum_j T_{ij} V_j) = \sum_{i \in s} b_i V_i$, absorption mass conservation $\sum M_i r_i = \sum b_i$, and Foster-Lyapunov total traffic majorization $\sum_{i \in s} M_i \le \frac{2}{c} \sum_{i \in s} b_i V_i + B$ on arbitrary finite graphs.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 109. [Möbius Divisor History Splitting and Off-Diagonal Goldbach Negativity](mobius-divisor-history-splitting-and-off-diagonal-goldbach-negativity.md)
@@ -681,10 +580,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Exact proper-power jump amplitude $\Delta = -(1-e^{-L})e^{-(j+2)L/2} < 0$, infinite downward jump summation $\sum |\Delta| = e^{-L} + e^{-3L/2}$, derivative mass balance $\frac{1}{2}\int \rho + e^{-3L/2} - \sum |\Delta| = 0$, and total variation budget $\text{TV} = 2e^{-L} + 2e^{-3L/2}$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-190. [Exact All-Prime Jump Process Causal Support and Initial-Gap Theorem](exact-all-prime-jump-process-causal-support-and-initial-gap-theorem.md)
-    - *Result:* Universal lower seed inactivity $v < \log 2 \implies \text{seed}_{\log p}(v) = 0$, all-prime Lévy measure initial gap $\nu_{\mathcal{P}}((-\infty, \log 2)) = 0$, convolution power support addition $\mu^{*n}((-\infty, nL)) = 0$, sub-threshold atomicity $\mathcal{P}_u(A) = e^{-u\|\mu\|}\delta_0(A)$, and strict causal non-negativity $\mathbb{P}(X_u < 0) = 0$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 191. [Exact Prime Block Continuous Chebyshev Equivalence and Bilinear Source Representation](exact-prime-block-continuous-chebyshev-equivalence-and-bilinear-source-representation.md)
     - *Result:* Exact double sum $\psi(N) = \sum_{p} \sum_j \log p$, age-floor activation $j\log p \le v \iff p^j \le \lfloor e^v \rfloor$, fundamental bridge identity $\text{primeBlockSum}(v) = e^{-v/2}\psi(\lfloor e^v \rfloor)$, and bilinear arithmetic source product expansion.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
@@ -697,16 +592,8 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Mutual singularity certificate $D^+(\text{seed}_L) \perp D^-(\text{seed}_L)$ on countable proper-power set $A$, canonical `JordanDecomposition ℝ`, total variation measure $|D| = D^+ + D^-$, and exact closed-form total variation norm $\|D(\text{seed}_L)\|_{\text{TV}} = 2e^{-L} + 2e^{-3L/2}$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-194. [Exact All-Prime Jump Process Finite-Activity Infinite-First-Moment Dichotomy](exact-all-prime-jump-process-finite-activity-infinite-first-moment-dichotomy.md)
-    - *Result:* Singleton first-moment reconstruction $\int v d\nu_{\{p\}} = \frac{2}{p}$, all-prime Lévy measure first-moment divergence $\int v d\nu_{\mathcal{P}} = \infty$, process first-moment divergence $\mathbb{E}[X_u] = \infty$ for all $u > 0$, and non-integrability of the age coordinate.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 195. [Exact Prime Seed Weak Derivative Identity and Order-Zero Variation Bound](exact-prime-seed-weak-derivative-identity-and-order-zero-variation-bound.md)
     - *Result:* Intra-cell integration by parts $\int_{I_j} \text{seed}_L(\phi' + \phi/2) = A_j - B_j$, global boundary telescoping identity $\int \text{seed}_L \phi' = -\frac{1}{2}\int \text{seed}_L \phi - e^{-3L/2}\phi(L) + \sum (1-e^{-L})e^{-(j+2)L/2}\phi((j+2)L)$, and order-zero operator bound $|\int \text{seed}_L \phi'| \le (2e^{-L} + 2e^{-3L/2})M$.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-196. [Exact All-Prime Lévy Measure Finiteness and Pure-Jump Probability Semigroup](exact-all-prime-levy-measure-finiteness-and-pure-jump-probability-semigroup.md)
-    - *Result:* Prime Lévy bound $\int \frac{\text{seed}_{\log p}}{v} \le \frac{2}{p\log p}$, unconditional summability $\sum_p \|\nu_{\{p\}}\| < \infty$, finite measure $\text{IsFiniteMeasure}(\nu_{\mathcal{P}})$, continuous density $\nu_{\mathcal{P}} = \text{withDensity}(B(v)/v)$, and convolution probability semigroup $\mathcal{P}_{u+w} = \mathcal{P}_u * \mathcal{P}_w$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 197. [Exact Prime Seed L² Strong Cutoff Convergence and Uniform Operator Approximation](exact-prime-seed-l2-strong-cutoff-convergence-and-uniform-operator-approximation.md)
@@ -1145,10 +1032,6 @@ This directory catalogs mathematical reports developed across the repository. St
     - *Result:* Machine-verified exact translation-kernel representation of the mixed gradient bilinear form $\text{bilinear}(H, G) = 4\langle H, G \rangle - \text{symmetricKernelPair}(H, G)$, discrete unit pair decomposition $\text{unitPair} = 2\langle H, G \rangle - \int H(x)(G(x-1)+G(x+1))dx$, and exact diagonal mass cancellation in the physical contact form $\text{contactForm}(H, G) = -\text{symmetricKernelPair} + 2\int H(x)(G(x-1)+G(x+1))dx$ for all $H, G \in L^2(\mathbb{R})$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
-306. [Exact Additive Heat Gram Positivity and Cauchy-Lipschitz Embedding](exact-additive-heat-gram-positivity-and-cauchy-lipschitz-embedding.md)
-    - *Result:* Machine-verified exact metric tensor $\|\text{birth}(x) - \text{birth}(y)\|_{L^2}^2 = \frac{(x-y)^2}{2xy(x+y)}$, global 1/2-Lipschitz continuity into $L^2(0, \infty)$, and positive-semidefiniteness of finite Cauchy-Hilbert additive Gram forms $\sum c_i c_j / (x_i + x_j) \ge 0$ via Laplace profile integration.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
 307. [Exact Cyclotomic-Farey Tri-Partition and Conductor Interaction Control](exact-cyclotomic-farey-tri-partition-and-conductor-interaction-control.md)
     - *Result:* Machine-verified exact tri-partition of old conductors $\mathcal{O}_N = \text{small} \sqcup \text{recent} \sqcup \text{interior}$, Farey interaction sum decomposition $\mathcal{I}_{\text{old}} = \mathcal{I}_{\text{controlled}} + \mathcal{I}_{\text{interior}}$, boundary cost majorization $|\mathcal{I}_{\text{controlled}}| \le \mathcal{C}_{\text{small}} + \mathcal{C}_{\text{recent}}$, and logarithmic-divisor bound $\le d(N) \log N \cdot \text{selectedMass}$.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
@@ -1179,10 +1062,6 @@ This directory catalogs mathematical reports developed across the repository. St
 
 314. [Exact Finite Centered-Goldbach Heat Scale Increment and Shell Decomposition](exact-finite-centered-goldbach-heat-scale-increment-and-shell-decomposition.md)
     - *Result:* Machine-verified exact finite heat scale increment $\Delta_T \mathcal{H}_Y(T) = \int_{e^{-2T}}^{e^{-T}} (\text{finiteHeat}(t))^2 dt \ge 0$, horizon doubling identity $\mathcal{H}_Y(2T) - \mathcal{H}_Y(T) = \sum c_Y(N) \mathcal{K}_{\text{shell}}(T, N)$, 4-way marginal decomposition $\Delta_T^{\text{prime}} - \Delta_T^{\text{left}} - \Delta_T^{\text{right}} + \Delta_T^{\text{count}}$, and parity splitting into even and odd classes.
-    - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
-
-315. [Exact Adjacent Additive Totals Discrete Derivative and Goldbach Pairing Oscillation](exact-adjacent-additive-totals-discrete-derivative-and-goldbach-pairing-oscillation.md)
-    - *Result:* Machine-verified exact adjacent discrete derivative $C_Y(N+1) - C_Y(N) = \text{core} + \text{birth} - \text{departure}$, interior centering constant cancellation, odd-total factor of 2, and rigorous proof of sign oscillation for adjacent even/odd pairs under heat-shell kernels.
     - *Status:* Rigorous mathematical derivation + Lean formalization; priority not assessed in this audit.
 
 316. [Exact Fixed-Profile Green Admission and Scaled Möbius Tent Sign Formula](exact-fixed-profile-green-admission-and-scaled-mobius-tent-sign-formula.md)

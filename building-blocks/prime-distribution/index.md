@@ -129,3 +129,8 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Higher-dimensional unitary prime phases and the exact defect domain](unitary-prime-phase-lift.md)
 - [A fixed-logarithm bound for a central Möbius–divisor block](voronoi-mobius-central-block.md)
 - [Chebyshev coarse-energy bound and a finite dyadic counterexample](coarse-primitive-chebyshev-envelope-dyadic-falsifier.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [Canonical Quotient Fractional Approximation and Mertens $L^2$ Lower Bound](canonical-quotient-fractional-approximation-and-mertens-l2-lower-bound.md)
+- [Discrete Prime Error Energy Balance and Signed Drift Decomposition](discrete-prime-error-energy-balance-and-signed-drift-decomposition.md)

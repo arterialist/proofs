@@ -65,3 +65,9 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Presieving before positive matrix completion](presieved-prime-pair-completion.md)
 - [Suzuki's pole normalizer and the centered Goldbach square](suzuki-goldbach-pole-normalizer-bridge.md)
 - [The theta prime-profile square is a weighted Goldbach pair row](theta-prime-profile-goldbach-pair-row.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [Centered Goldbach Total-Four Obstruction and Successor Heat Shift Covariance](centered-goldbach-total-four-obstruction-and-successor-heat-shift.md)
+- [Finite 3-adic Fourier extraction for a centered Goldbach polynomial](even-goldbach-three-phase-fourier-reconstruction-of-chebyshev-error.md)
+- [Exact Adjacent Additive Totals Discrete Derivative and Goldbach Pairing Oscillation](exact-adjacent-additive-totals-discrete-derivative-and-goldbach-pairing-oscillation.md)

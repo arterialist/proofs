@@ -23,3 +23,9 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A self-dual Hermitian partition function with off-line zeros](self-dual-hermitian-partition-offline-zero-example.md)
 - [Square-root aggregation of the distinct-prime sign criterion](sqrt-multiple-sign-criterion.md)
 - [An analytic three-halves zero-moment bound under RH](zero-three-halves-moment-analytic-bound.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [Archimedean Logarithmic Derivative and Analytic Vanishing Order Duality](archimedean-logarithmic-derivative-and-analytic-vanishing-order-duality.md)
+- [Critical Gamma Norm Identity and Lorentzian Majorization Bound](critical-gamma-norm-identity-and-lorentzian-majorization-bound.md)
+- [Critical Transform Off-Line Zeta Zero Double-Pole Obstruction](critical-transform-off-line-zeta-zero-double-pole-obstruction.md)

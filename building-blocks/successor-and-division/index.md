@@ -76,3 +76,10 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Global maximal translation bounds for the complete successor seed](successor-seed-maximal-translation.md)
 - [Uniform prime-cutoff and time crossover of the signed successor packet](uniform-prime-time-successor-packet.md)
 - [A uniform square-sum constraint for the actual successor driver](uniform-successor-driver-square-bound.md)
+
+## Demoted contribution reports retained as building blocks
+
+- [Causal Successor Jacobian Defect Kernel and Charge-Conserving Compensation](causal-successor-jacobian-defect-kernel-and-charge-conserving-compensation.md)
+- [Causal Successor-Predecessor Adjoint Duality and Isometry-Projection Algebra](causal-successor-predecessor-adjoint-duality-and-isometry-projection-algebra.md)
+- [Chronological Divisibility Turán Determinant and Sub-Multiplicativity](chronological-divisibility-turan-determinant-and-sub-multiplicativity.md)
+- [Chronological Power Moment Ratio Strict Monotonicity](chronological-power-moment-ratio-strict-monotonicity.md)
