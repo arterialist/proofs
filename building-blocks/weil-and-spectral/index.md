@@ -50,6 +50,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A Bordellès trilinear extension of the actual Möbius tail](actual-mobius-tail-bordelles-saving.md)
 - [A Cao--Zhai large-sieve extension of the actual Möbius tail](actual-mobius-tail-cao-zhai-large-sieve-saving.md)
 - [A Robert--Sargos--Bordellès extension of the actual Möbius tail](actual-mobius-tail-robert-sargos-bordelles-saving.md)
+- [A three-factor extension of the complete Möbius prefix](actual-mobius-k3-bottom-slice-saving.md)
 - [The balanced Möbius-tail hard shell](actual-mobius-tail-balanced-hard-shell.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
 - [Center averaging of the exact reciprocal Möbius packet](actual-mobius-reciprocal-center-average-saving.md)

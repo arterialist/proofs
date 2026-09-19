@@ -1,0 +1,53 @@
+import BuildingBlocks.ActualMobiusK3BottomSlice
+import Lean.Util.CollectAxioms
+
+open BuildingBlocks.ActualMobiusK3BottomSlice
+
+#check endpoint_identity
+#check aspect_identities
+#check rs_bord_overlap
+#check all_short_alpha_bounds
+#check all_short_first_margin
+#check small_above_cutoff
+#check small_below_three_cutoffs
+#check forced_atom_identity
+#check uniform_buffer_ledger
+#check pruning_margin
+#check k3_margin
+#check type_i_one_identity
+#check type_i_one_negative
+#check pruning_delta_condition
+#check decomposition_length
+#check transition_reaches_previous_cutoff
+
+#print axioms endpoint_identity
+#print axioms rs_bord_overlap
+#print axioms all_short_alpha_bounds
+#print axioms uniform_buffer_ledger
+#print axioms pruning_margin
+#print axioms k3_margin
+#print axioms type_i_one_negative
+#print axioms pruning_delta_condition
+#print axioms decomposition_length
+#print axioms transition_reaches_previous_cutoff
+
+open Lean in
+run_cmd do
+  let env ← getEnv
+  let target := `BuildingBlocks.ActualMobiusK3BottomSlice
+  let selected := env.constants.toList.filter fun (name, _) =>
+    match env.getModuleIdxFor? name with
+    | none => false
+    | some idx => env.header.moduleNames[idx.toNat]! == target
+  if selected.isEmpty then
+    throwError "No declarations found for the K=3 prefix module"
+  let audit : Lean.CollectAxioms.M Unit := do
+    for (name, _) in selected do
+      Lean.CollectAxioms.collect name
+  let (_, state) := (audit.run env).run {}
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  unless state.axioms.all (fun name => allowed.contains name) do
+    throwError m!"Unexpected axiom dependency: {state.axioms}"
+  logInfo m!"K3 PREFIX DECLARATION COUNT {selected.length}"
+  logInfo m!"K3 PREFIX TRANSITIVE AXIOMS {state.axioms}"
+  logInfo "K3 PREFIX AXIOM AUDIT PASSED"
