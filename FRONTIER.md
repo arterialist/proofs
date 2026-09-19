@@ -10,11 +10,15 @@ Updated 19 September 2026. Counting by $n\mapsto n+1$ and multiplicative factori
 
 ## Signed prime remainder
 
-The [reciprocal-prime estimate](building-blocks/weil-and-spectral/actual-reciprocal-prime-high-cofactor-saving.md) treats a high-cofactor range. The [proper-cofactor Dirichlet reduction](building-blocks/weil-and-spectral/actual-proper-cofactor-dirichlet-dual-cancellation.md) does not discharge the whole remaining signed zero sum or the omitted cofactor tail. The corrected note withdraws its earlier claim to resolve the small-cofactor barrier.
+The [reciprocal-prime estimate](building-blocks/weil-and-spectral/actual-reciprocal-prime-high-cofactor-saving.md) bounds a small-prime prefix. A checked [cutoff transfer](building-blocks/weil-and-spectral/actual-proper-cofactor-dirichlet-dual-cancellation.md) now controls the omitted cofactor tail and the combined prime row plus truncated proper-cofactor head by $O(T^{-(29-14\lambda)/60})$, for $2<\lambda<29/14$ and the specified cutoff. It uses the existing prefix estimate and two boundary rows. The prime row alone remains uncontrolled; cutoff averaging cannot separate it from the other rows. The discarded approximate-functional-equation argument still does not bound the complete signed zero sum.
 
 The [dual exponent module](formalization/BuildingBlocks/DualDirichletOfflineDecay.lean) proves real-power algebra. A classical bound for one short dual Dirichlet polynomial is distinct from a uniform estimate for the complete arithmetic expression. The [power-model identity](formalization/BuildingBlocks/ActualCofactorSpectralNeutralization.lean) $T^\varepsilon T^{-\varepsilon}=1$ does not establish exact cancellation of actual zeta scattering factors. A fixed positive power $T^\delta$ eventually exceeds $\log T$; it cannot be treated as a logarithmic error by choosing a small fixed $\delta$.
 
 Earlier [microcluster](building-blocks/weil-and-spectral/actual-weil-offline-microcluster-mass.md) and [sampling](building-blocks/weil-and-spectral/actual-annulus-sobolev-zero-sampling.md) estimates constrain selected zero configurations or exceptional sets. They do not exclude an isolated off-line zero. The [published-history reviews](reviews/history/README.md) record the checked claims and remaining limits.
+
+## Other unconditional bounds
+
+The [full factorial clock](building-blocks/factorial-and-renewal/factorial-full-clock-pnt-subquadratic.md) satisfies $Q_N=o(N^2)$ and $|W_N|=o(N^2)$ by the classical PNT. Its RH consumer needs the much stronger one-sided $W_N\ll_\varepsilon N^{1+\varepsilon}$. The [coarse primitive envelope](building-blocks/prime-distribution/coarse-primitive-chebyshev-envelope-dyadic-falsifier.md) is $S_X\le(91/60)(4\log2-1)^2X^5$ by Chebyshev; the missing exponent is $4+\varepsilon$. These are written classical-input consequences, not new published zeta-frontier bounds.
 
 ## Displacement correction
 

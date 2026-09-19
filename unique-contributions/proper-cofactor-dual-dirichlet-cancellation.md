@@ -1,4 +1,4 @@
-# Proper-cofactor dual Dirichlet reduction
+# Proper-cofactor cutoff transfer and dual Dirichlet reduction
 
 **Status:** incomplete written reduction, corrected 19 September 2026
 **Classification:** exact Mellin scaling and an individual-zero approximate-functional-equation identity

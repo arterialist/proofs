@@ -30,9 +30,9 @@ This directory catalogs mathematical reports developed across the repository. St
    - *Result:* Type-II bilinear saving in Vaughan's decomposition for reciprocal-prime weighted high cofactors.
    - *Status:* Rigorous mathematical derivation; priority not assessed in this audit.
 
-7. [Proper-Cofactor Dual Dirichlet Reduction](proper-cofactor-dual-dirichlet-cancellation.md)
-   - *Result:* Exact Mellin scaling by $k^{-\rho}$ and an individual-zero approximate-functional-equation reduction to a dual polynomial with cutoff $y_\rho=|\gamma|/(2\pi K)$.
-   - *Status:* Incomplete reduction. The dual polynomial, zero-sum interchange, cofactor tail, and explicit-formula remainders remain uncontrolled, so the small-cofactor barrier is not resolved.
+7. [Proper-cofactor cutoff transfer and dual Dirichlet reduction](proper-cofactor-dual-dirichlet-cancellation.md)
+   - *Result:* A checked arithmetic transfer bounds the combined prime row and truncated proper-cofactor head for $2<\lambda<29/14$. The separate prime row remains open.
+   - *Status:* Written classical-input estimate; no priority claim for the transfer. The earlier approximate-functional-equation reduction still requires weighted error and complementary-zero control.
 
 8. [Certified Complete Weil Positivity on Causal Ramp Cone](complete-weil-positive-causal-ramp-cone.md)
    - *Result:* Exact rational Sturm certificate proving complete Weil quadratic form positivity on the causal ramp cone.

@@ -49,7 +49,7 @@ log-free form used here is equation (4.12.4), justified in Theorem 4.15 of
 The corrected note now presents the calculation as an incomplete reduction,
 uses an unspecified remainder `R(T)` in the assembled formula, gives the
 critical-strip error with its full exponent, and lists the analytic estimates
-still needed. This leaves the fixed-cofactor barrier open.
+still needed. This leaves the separate fixed-cofactor barrier open. A subsequent arithmetic cutoff transfer in the linked note bounds the combined prime row and cofactor head; it does not validate the discarded spectral remainder or isolate the prime row.
 
 ## Bellotti 2025 source dependency
 
