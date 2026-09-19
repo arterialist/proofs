@@ -53,6 +53,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [The balanced Möbius-tail hard shell](actual-mobius-tail-balanced-hard-shell.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
 - [Almost-all-center cancellation in the small outer-variable Möbius tail](actual-mobius-tail-almost-all-center-small-n.md)
+- [A Selberg mean-square bound for the complete actual prime packet](actual-prime-packet-selberg-almost-all-center.md)
 - [Chirped Weil packets form growing positive constellations](chirped-prime-annulus-constellation.md)
 - [A positive two-rate plane for the complete actual-prime Weil form](complete-weil-two-exponential-rate-positive-plane.md)
 - [A positive three-rate plane for the complete actual-prime Weil form](complete-weil-three-exponential-rate-positive-plane.md)

@@ -98,6 +98,24 @@ packet center gives cancellation, on average with prefactor
 \(\lambda>2\), the displayed prefactor grows, so this is only logarithmic
 cancellation relative to the absolute bound, not an \(o(1)\) estimate.
 The complementary larger-\(n\) range remains uncontrolled.
+Independently, the
+[Selberg mean-square estimate](building-blocks/weil-and-spectral/actual-prime-packet-selberg-almost-all-center.md)
+controls the complete prime row, with every \(\Lambda(p^j)=\log p\), over
+real packet centers:
+\[
+ \left(N_0^{-1}\int_{N_0}^{2N_0}|P_1(N,T)|^2\,dN\right)^{1/2}
+ \ll \frac{\sqrt{N_0}}T
+ \exp\!\left[-c\left(\frac{\log N_0}{\log\log N_0}\right)^{1/3}\right]
+ +\frac{(\log N_0)^2}{T}.
+\]
+At \(N_0=T^2\) this tends to zero outside a stretched-exponentially
+sparse set of real centers. For fixed \(\lambda>2\), the prefactor
+\(T^{\lambda/2-1}\) grows. The elementary packet upper-bound scale for a
+fixed zero with \(\beta<1\) is smaller than this envelope by the power gap
+\(T^{\lambda(\beta-1)}\), so the envelope is weaker than RH scale. The
+often-quoted stronger Saffari--Vaughan
+variance of order \(hX\log^2(2X/h)\) is explicitly conditional on RH and is
+not used.
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 
