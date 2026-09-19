@@ -98,6 +98,18 @@ packet center gives cancellation, on average with prefactor
 \(\lambda>2\), the displayed prefactor grows, so this is only logarithmic
 cancellation relative to the absolute bound, not an \(o(1)\) estimate.
 The complementary larger-\(n\) range remains uncontrolled.
+The [reciprocal center-average estimate](building-blocks/weil-and-spectral/actual-mobius-reciprocal-center-average-saving.md)
+works before Vaughan decomposition, so its coefficient is the original
+\(\mu(m)\). For a dyadic shell \(m\asymp D\), it proves
+\[
+ \left(X^{-1}\int_X^{2X}|S_D(N,T)|^2\,dN\right)^{1/2}
+ \ll (\log T)^C\left(\sqrt{D/X}+D/\sqrt{TX}\right).
+\]
+At \(X=T^2\), dyadic summation controls every fixed prefix
+\(D\le T^{3/2-\eta}\) for almost all real centers. This extends the
+repository's center-averaged prefix beyond its pointwise \(T^{6/5}\)
+cutoff, but the transition shell at \(T^{3/2}\), the remaining tail, and
+the translation to the prescribed center remain open.
 Independently, the
 [Selberg mean-square estimate](building-blocks/weil-and-spectral/actual-prime-packet-selberg-almost-all-center.md)
 controls the complete prime row, with every \(\Lambda(p^j)=\log p\), over

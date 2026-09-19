@@ -52,6 +52,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A Robert--Sargos--Bordellès extension of the actual Möbius tail](actual-mobius-tail-robert-sargos-bordelles-saving.md)
 - [The balanced Möbius-tail hard shell](actual-mobius-tail-balanced-hard-shell.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
+- [Center averaging of the exact reciprocal Möbius packet](actual-mobius-reciprocal-center-average-saving.md)
 - [Almost-all-center cancellation in the small outer-variable Möbius tail](actual-mobius-tail-almost-all-center-small-n.md)
 - [A Selberg mean-square bound for the complete actual prime packet](actual-prime-packet-selberg-almost-all-center.md)
 - [Chirped Weil packets form growing positive constellations](chirped-prime-annulus-constellation.md)
