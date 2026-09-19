@@ -10,5 +10,6 @@ Weil forms, Suzuki operators, Connes models, and prime-shift spectral tests.
 - [A three-dimensional exponential-sum saving for the actual Möbius tail](actual-mobius-tail-three-dimensional-saving.md)
 - [A Bourgain exponent-pair extension of the actual Möbius tail](actual-mobius-tail-bourgain-dual-saving.md)
 - [A Bordellès trilinear extension of the actual Möbius tail](actual-mobius-tail-bordelles-saving.md)
+- [A Cao--Zhai large-sieve extension of the actual Möbius tail](actual-mobius-tail-cao-zhai-large-sieve-saving.md)
 
-[Browse all 118 notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.
+[Browse all 119 notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.

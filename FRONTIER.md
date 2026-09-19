@@ -32,9 +32,13 @@ retaining the dual Type II estimate. It moves the analytic endpoint from
 \(K_B=T^{(84\lambda-9)/140}\) has a power-saving prefix estimate. The
 [Bordellès trilinear extension](building-blocks/weil-and-spectral/actual-mobius-tail-bordelles-saving.md)
 keeps that Bourgain Type I estimate and replaces Type II by Bordellès's
-reciprocal three-variable bound. This moves the endpoint to \(4\lambda/7\).
-The concrete cutoff \(K_C=T^{4\lambda/7-1/420}\) has a power-saving prefix
-estimate, and the remaining tail beyond \(K_C\) is the current open term.
+reciprocal three-variable bound, moving the endpoint to \(4\lambda/7\).
+The [Cao--Zhai large-sieve extension](building-blocks/weil-and-spectral/actual-mobius-tail-cao-zhai-large-sieve-saving.md)
+uses their stronger estimate on nearly balanced Type II rectangles and the
+Bordellès estimate away from balance. This moves the endpoint to
+\((3\lambda+1)/6\). The concrete cutoff
+\(K_D=T^{(3\lambda+1)/6-1/420}\) has a power-saving prefix estimate, and
+the remaining tail beyond \(K_D\) is the current open term.
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 
