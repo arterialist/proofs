@@ -44,13 +44,15 @@ balance, while Bordellès controls the separated range after an explicit
 switch. The current analytic endpoint is \(2(\lambda+1)/5\); the concrete
 cutoff \(K_E=T^{2(\lambda+1)/5-1/420}\) has a power-saving prefix estimate,
 and the remaining tail beyond \(K_E\) is the current open term. Expanding the
-Vaughan pieces before absolute values gives the exact balanced coefficient
-\((\mu*\mu)(q)-2(a*\mu)(q)\). The first component has Dirichlet series
-\(1/\zeta(s)^2\), but the second retains a long Möbius coefficient and is not
-covered by the inherited unweighted Type-I estimate on a fixed free-factor
-slice. The [balanced hard-shell note](building-blocks/weil-and-spectral/actual-mobius-tail-balanced-hard-shell.md)
-records the corrected reduction. A gain for \(\mu*\mu\) alone does not move
-the full endpoint without control of this cross-term.
+Vaughan pieces before absolute values gives the fixed-slice coefficient
+\((\mu*\mu)(q)-2(a*\mu)(q)\). The second term is not covered by the inherited
+unweighted Type-I estimate on that slice. In the complete product-weighted
+sum, however, it cancels exactly before factor-dependent slicing, yielding
+the global representation \(\mu=(\mu*\mu)*\mathbf1\). The
+[balanced hard-shell note](building-blocks/weil-and-spectral/actual-mobius-tail-balanced-hard-shell.md)
+records both identities. Using the global form requires a new complete
+partition analysis because the cancellation crosses free-factor ranges; a
+gain for the restricted \(\mu*\mu\) slice alone does not move the endpoint.
 The discarded approximate-functional-equation argument still does not bound
 the complete signed zero sum.
 

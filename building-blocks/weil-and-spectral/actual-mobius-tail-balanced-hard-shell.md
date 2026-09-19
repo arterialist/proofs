@@ -88,6 +88,40 @@ For \(\operatorname{Re}s>1\), its Dirichlet series is
 \tag{5}
 \]
 
+## Global cancellation before slicing
+
+The cross-term in (1a) cancels exactly when the complete free-factor sum is
+restored. Let \(W\) be any finitely supported weight on the positive
+integers. Finite regrouping and \(\mu*\mathbf1=\varepsilon\) give
+
+\[
+\sum_{t,q\geq1}(a*\mu)(q)W(tq)
+=\sum_{m\leq U}\mu(m)W(m).
+\tag{5a}
+\]
+
+Hence, if \(W(m)=0\) for \(m\leq U\),
+
+\[
+\sum_m\mu(m)W(m)
+=\sum_{t,q\geq1}d_U(q)W(tq)
+=\sum_{t,q\geq1}c(q)W(tq).
+\tag{5b}
+\]
+
+For the original dyadic sum one may take
+\(W(m)=\mathbf1_I(m)L_m(T)\), since \(L_{tq}(T)=L_m(T)\) depends only on
+the product \(m=tq\). Thus the complete product-weighted shell has an exact
+\(c*\mathbf1\) representation with no cancellation error.
+
+This identity must be applied before factor-dependent cutoffs. Its free
+factor \(t\) has the complete natural range. For a prime \(p>U^2\), the
+cross-term cancellation pairs \((t,q)=(1,p)\) with \((p,1)\); it therefore
+does not occur inside the restricted \(t\asymp1\), \(q>U^2\) slice. A new
+partition of the global \(c*\mathbf1\) expression is legitimate, but the
+existing Vaughan support conditions and estimates do not automatically
+transfer to every new factor range.
+
 After the established Fourier and Mellin separation, the endpoint shell has
 the form
 
@@ -103,7 +137,9 @@ e\!\left(-\frac{kN}{tq}\right),
 where \(t\asymp1\), \(Q\asymp D/t\), \(J\asymp L=D/H\), and
 \(|\gamma_k|\leq1\). An estimate for the \(c\)-component alone does not
 control (6) unless the \(a*\mu\) component is also bounded or cancels after
-the free-factor slices are recombined.
+the free-factor slices are recombined. Equations (5a)--(5b) provide such a
+recombination only for the complete product-weighted sum, not for (6) in
+isolation.
 
 At the current analytic endpoint
 
