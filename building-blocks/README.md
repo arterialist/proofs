@@ -2,6 +2,8 @@
 
 Each folder has a short introduction and an alphabetical list of notes. The notes include proved results, conditional RH criteria, and counterexamples; check the proof status in each one.
 
+Lean compilation verifies the stated implication with its hypotheses. Structure fields such as `sys` or `evaluator`, and explicit assumptions such as `h_rh`, remain premises. Scalar and finite-dimensional models do not by themselves construct the named analytic operator. The current formal threshold chain proves unconditional cumulative zero-freeness through height $7.465$; later slabs require their displayed hypotheses. The proper-cofactor calculation does not yet prove the signed cofactor bound needed by its Weil application.
+
 ## Counting and prime histories
 
 - [Successor and division](successor-and-division/) connects the $+1$ order with divisibility.
