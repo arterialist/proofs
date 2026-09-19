@@ -6,7 +6,7 @@ Catalog of Lean formalization notes, with attribution where it is documented and
 
 "First formalization" is the historical name of this repository series. The numbering records catalog order, not novelty, independence, importance, or priority. A compiled Lean theorem verifies only its stated type from its stated hypotheses. It does not by itself verify the motivating paper argument, a numerical experiment, or a claim that no earlier proof-assistant formalization exists.
 
-Unless an entry cites a reproducible search of named libraries, repositories, and dates, any priority claim is unverified and should be read only as a candidate for literature review. The present audit has checked the theorem signatures called out below and the high-risk Riemann-hypothesis entries near the end of the catalog. It has not checked all 389 entries against the worldwide proof-assistant literature. The [claim audit](../reviews/current-rh-claim-audit.md) states the public review scope.
+Unless an entry cites a reproducible search of named libraries, repositories, and dates, any priority claim is unverified and should be read only as a candidate for literature review. The catalog does not claim that all 389 entries have been checked against the worldwide proof-assistant literature.
 
 The source of truth for the dependency revision is `lake-manifest.json`. At this audit it pins Mathlib to `f897ebcf72cd16f89ab4577d0c826cd14afaafc7`. Dates printed as "Mathlib commit" in older entries are metadata errors unless replaced by a Git hash.
 

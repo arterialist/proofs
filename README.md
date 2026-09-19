@@ -2,7 +2,7 @@
 
 Counting moves from $n$ to $n+1$. Factorization describes the same number through primes. This repository studies how those two structures meet, especially how a new prime affects later composite numbers and the error in counting primes.
 
-Some results prove that a particular bound would imply the Riemann hypothesis (RH); they do not prove the bound. The recent Lean zero-free result covers $\operatorname{Re}(s)>1/2$ and $0<\operatorname{Im}(s)\le 7.465$. The high-frequency operator interfaces still require unproved estimates. The [claim audit](reviews/current-rh-claim-audit.md) records corrections to earlier summaries and distinguishes written proofs, Lean results, and numerical evidence.
+Some results prove that a particular bound would imply the Riemann hypothesis (RH); they do not prove the bound. The recent Lean zero-free result covers $\operatorname{Re}(s)>1/2$ and $0<\operatorname{Im}(s)\le 7.465$. The high-frequency operator interfaces still require unproved estimates. Each result states whether it is written mathematics, a Lean theorem, or a finite computation.
 
 ## Start reading
 
