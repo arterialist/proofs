@@ -78,6 +78,17 @@ bounded-variation partial summation in the unweighted free factor. The
 short-free-factor balanced blocks remain open, so this does not move the
 complete pointwise endpoint.
 
+At the three-fifths contact, the unconditional
+[critical prime-fiber sampling estimate](building-blocks/weil-and-spectral/actual-mobius-critical-prime-fiber-sampling-saving.md)
+now controls the exact \(q=q'\) residual by
+\(\mathcal E_=\ll T^\varepsilon P Q^4\), a full factor \(Q\) below its
+unsaved \(P Q^5\) target. It retains the prime denominator, separated
+packet weights, hard endpoints, both nonzero Poisson signs, and the
+divisor-square norm of the collapsed coefficient. Cauchy in the coherent
+\(q\)-sum spends exactly this gain, and the \(q\ne q'\) nonzero-alias
+correlation remains unbounded. The theorem therefore removes the diagonal
+residual but does not move the complete Möbius-prefix endpoint.
+
 The unconditional
 [free-factor pruning](building-blocks/weil-and-spectral/actual-mobius-tail-free-factor-pruning.md)
 instead keeps the original sum

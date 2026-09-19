@@ -52,6 +52,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A Robert--Sargos--Bordellès extension of the actual Möbius tail](actual-mobius-tail-robert-sargos-bordelles-saving.md)
 - [A three-factor extension of the complete Möbius prefix](actual-mobius-k3-bottom-slice-saving.md)
 - [The balanced Möbius-tail hard shell](actual-mobius-tail-balanced-hard-shell.md)
+- [Sampling saving on the critical prime fiber](actual-mobius-critical-prime-fiber-sampling-saving.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
 - [Center averaging of the exact reciprocal Möbius packet](actual-mobius-reciprocal-center-average-saving.md)
 - [Arbitrary logarithmic saving in the critical Möbius window](actual-mobius-critical-window-log-saving.md)

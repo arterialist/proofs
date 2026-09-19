@@ -14,5 +14,6 @@ Weil forms, Suzuki operators, Connes models, and prime-shift spectral tests.
 - [A Robert--Sargos--Bordellès extension of the actual Möbius tail](actual-mobius-tail-robert-sargos-bordelles-saving.md)
 - [A three-factor extension of the complete Möbius prefix](actual-mobius-k3-bottom-slice-saving.md)
 - [The balanced Möbius-tail hard shell](actual-mobius-tail-balanced-hard-shell.md)
+- [Sampling saving on the critical prime fiber](actual-mobius-critical-prime-fiber-sampling-saving.md)
 
-[Browse all 157 indexed notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.
+[Browse all 159 indexed notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.
