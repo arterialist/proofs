@@ -11,22 +11,12 @@ open scoped Topology
 namespace BuildingBlocks.ChirpedPhaseBandLocalization
 
 /-!
-# Chirped Phase Band Localization and Stationary Point Analysis
+# Quadratic Chirp Phase Algebra
 
-This module formalizes the spectral band localization of chirped wavepackets:
-1. Formula for the stationary phase critical point:
-   `x_*(T, η, γ) = (T - γ) / (2 * η * T)`.
-2. Vanishing of the phase derivative `Φ'(x_*) = 0`.
-3. Equivalence between interior localization `x_* ∈ (0, w)` and resonant band membership
-   `γ ∈ (T(1 - 2ηw), T)`.
-4. Canonical evaluation for parameters `η = 1/4`, `w = 1`, yielding the resonant band `(T/2, T)`.
-5. Computation of the phase second derivative `Φ''(x) = -2ηT`.
-6. Non-resonant gradient separation: uniform lower bound `|Φ'(x)| ≥ Δ` outside the band.
-7. Pointwise bound on the first-order integration-by-parts kernel.
-8. Constructive `PhaseBandCertificate` bundle.
-
-All proofs depend strictly on Lean 4 foundational axioms: `[propext, Classical.choice, Quot.sound]`.
-Zero `sorry` placeholders.
+This module differentiates a quadratic phase, locates its stationary point, and proves elementary
+gradient-separation and pointwise rational bounds under stated assumptions.  The results concern
+real scalar expressions; they do not define a wavepacket integral or establish an integrated
+spectral estimate.
 -/
 
 /-- The chirped phase function Φ(x) = x(T - γ) - x²(ηT). -/
@@ -187,7 +177,7 @@ theorem phase_deriv_abs_ge_of_low_frequency {T eta gamma w Delta x : ℝ}
   have h2 : chirpedPhaseDeriv T eta gamma x ≤ |chirpedPhaseDeriv T eta gamma x| := le_abs_self _
   linarith
 
-/-- First-order integration-by-parts amplitude bound. -/
+/-- Scalar expression motivated by a first-order integration-by-parts bound. -/
 noncomputable def ibpKernelBound (A A' eta T Delta : ℝ) : ℝ :=
   A' / Delta + (2 * eta * T * A) / (Delta ^ 2)
 
@@ -202,7 +192,7 @@ theorem ibpKernelBound_pos {A A' eta T Delta : ℝ}
   have h2 : 0 < (2 * eta * T * A) / (Delta ^ 2) := div_pos hnum hden
   linarith
 
-/-- Pointwise bound on the integration-by-parts integrand:
+/-- Pointwise bound for the defined rational expression:
 |(a'(x) / Φ'(x)) - (a(x) Φ''(x) / (Φ'(x))²)| ≤ A'/Δ + (2ηTA)/Δ². -/
 theorem ibp_integrand_pointwise_bound
     {a a' deriv deriv_sec A A' eta T Delta : ℝ}
@@ -259,7 +249,7 @@ theorem ibp_integrand_pointwise_bound
     exact hle_trans
   linarith
 
-/-- A constructive certificate packaging phase band localization and non-resonant bounds. -/
+/-- Certificate packaging phase parameters and proved scalar bounds. -/
 structure PhaseBandCertificate where
   T : ℝ
   eta : ℝ

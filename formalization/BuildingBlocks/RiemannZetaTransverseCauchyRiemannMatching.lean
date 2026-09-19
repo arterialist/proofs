@@ -7,36 +7,12 @@ import BuildingBlocks.RiemannZetaDisplacementAsymptotics
 import BuildingBlocks.RiemannZetaDisplacementCauchyRiemannSlope
 
 /-!
-# Module 325: RiemannZetaTransverseCauchyRiemannMatching
+# Rational Displacement Secant Algebra
 
-This module establishes the exact Transverse Cauchy-Riemann Conformal Matching Theorem.
-
-## Mathematical Architecture
-
-1. **Transverse Secant Slope of Displacement**:
-   For any complex frequency $s = 1/2 + d + it$, the displacement residual satisfies:
-   $$R(d, s) = d \cdot S_{\text{trans}}(d, s),$$
-   where the transverse secant slope is:
-   $$S_{\text{trans}}(d, s) := \frac{2(1/4 - d^2)}{|s(s-1)|^2}.$$
-
-2. **Critical Line Limit**:
-   At the critical line ($d = 0$, $s = 1/2 + it$), the transverse slope evaluates to:
-   $$S_0(t) := \frac{1}{2(t^2 + 1/4)^2}.$$
-
-3. **Cauchy-Riemann Conformal Matching Theorem**:
-   The transverse derivative $\partial_d R(0, 1/2 + it)$ matches **identically** with the
-   longitudinal critical-line Cauchy-Riemann differential operator of Module 322:
-   $$S_0(t) = 2 P(t) + t P'(t).$$
-   This proves that the transverse rate of increase across the critical line is governed
-   by the longitudinal frequency derivative of the pole profile, as required by the
-   holomorphy of $-1/(s(s-1))$.
-
-4. **Strict Positivity**:
-   For all $t \in \mathbb{R}$, $S_0(t) > 0$.
-   For all $d \in (0, 1/2)$ and $t > 0$, $S_{\text{trans}}(d, s) > 0$.
-
-All declarations depend strictly on standard Lean 4 foundational axioms:
-`[propext, Classical.choice, Quot.sound]`. Zero `sorry` placeholders.
+This module factors the rational displacement residual through a defined secant expression and
+proves that its value at the critical line equals the previously defined rational pole-profile
+expression.  The equality is algebraic.  No derivative limit or Cauchy-Riemann theorem for the
+completed zeta function is formalized here.
 -/
 
 namespace BuildingBlocks.RiemannZetaTransverseCauchyRiemannMatching
@@ -91,11 +67,10 @@ theorem transverseSecant_criticalPoint (t : ℝ) :
     _ = 1 / (2 * (t^2 + 1 / 4)^2) := by
       field_simp
 
-/-! ### Section 3: Transverse Cauchy-Riemann Conformal Matching Theorem -/
+/-! ### Section 3: Equality of Two Rational Expressions -/
 
-/-- **The Transverse Cauchy-Riemann Conformal Matching Theorem**:
-The transverse slope $S_0(t)$ matches identically with the longitudinal
-differential operator $2 P(t) + t P'(t)$ on the critical line. -/
+/-- The defined critical secant expression equals the algebraic combination
+`2 * poleProfile t + t * poleProfileDeriv t`. -/
 theorem transverse_cauchy_riemann_matching (t : ℝ) :
     criticalTransverseSlope t = 2 * poleProfile t + t * poleProfileDeriv t := by
   unfold criticalTransverseSlope

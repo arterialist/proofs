@@ -10,40 +10,14 @@ import BuildingBlocks.RiemannZetaTransverseCauchyRiemannMatching
 import BuildingBlocks.RiemannZetaDisplacementZeroExclusion
 
 /-!
-# Module 329: RiemannZetaDisplacementDecayBound
+# A Quartic Upper Bound for a Scalar Residual
 
-This module establishes sharp two-sided algebraic bounds on the pole residual $R(d, s)$
-and formalizes the Fourier decay bounds for the displacement envelope.
-
-## Mathematical Architecture
-
-1. **Exact Denominator Decomposition**:
-   For $s = 1/2 + d + it$ with $0 < d < 1/2$ and $t > 0$:
-   $$s(s-1) = (d^2 - t^2 - 1/4) + i(2dt),$$
-   so that:
-   $$|s(s-1)|^2 = (t^2 + 1/4 - d^2)^2 + 4d^2 t^2.$$
-
-2. **Strict Lower Bound on Denominator**:
-   Since $0 < d < 1/2$, we have $1/4 - d^2 > 0$, which implies:
-   $$t^2 + 1/4 - d^2 > t^2 > 0.$$
-   Squaring both sides and adding $4d^2 t^2 \ge 0$:
-   $$|s(s-1)|^2 > t^4.$$
-   Consequently, the displacement residual satisfies the strict upper bound:
-   $$R(d, s) < \frac{2d(1/4 - d^2)}{t^4}.$$
-
-3. **Upper Bound on Denominator**:
-   For $d \in (0, 1/2)$ and $t > 0$:
-   $$(t^2 + 1/4 - d^2)^2 + 4d^2 t^2 < (t^2 + 1/4)^2 + t^2.$$
-   This gives the positive lower bound:
-   $$R(d, s) > \frac{2d(1/4 - d^2)}{(t^2 + 1/4)^2 + t^2}.$$
-
-4. **Zero Exclusion by Residual Bounds**:
-   Combining these bounds with the Zero Balance Theorem of Module 328:
-   - If $|\mathcal{D}_{\theta}(s)| < \frac{2d(1/4 - d^2)}{(t^2 + 1/4)^2 + t^2}$, then $\mathcal{D}_{\theta}(s) \ne R(d, s)$, so $\zeta(s) \ne 0$.
-   - If $\mathcal{D}_{\theta}(s) > \frac{2d(1/4 - d^2)}{t^4}$, then $\mathcal{D}_{\theta}(s) \ne R(d, s)$, so $\zeta(s) \ne 0$.
-
-All declarations depend strictly on standard Lean 4 foundational axioms:
-`[propext, Classical.choice, Quot.sound]`. Zero `sorry` placeholders.
+This module defines the real expression `denomSq d t`, proves the one-sided bound
+`t^4 < denomSq d t`, and derives an upper bound for `displacementResidualVal` with that
+denominator.  Its final theorems show that an arbitrary real number `D_theta` differs from the
+residual when `D_theta` lies in either of two stated ranges.  The file does not define a Fourier
+transform, prove displacement-envelope decay, identify `D_theta` with a theta integral, or derive
+nonvanishing of `riemannZeta`.
 -/
 
 namespace BuildingBlocks.RiemannZetaDisplacementDecayBound
@@ -59,7 +33,7 @@ noncomputable section
 
 /-! ### Section 1: Denominator Bounds -/
 
-/-- The exact denominator $|s(s-1)|^2$ in terms of $d$ and $t$:
+/-- The scalar denominator expression used below:
 $$\operatorname{denom}(d, t) := (t^2 + 1/4 - d^2)^2 + 4d^2 t^2.$$ -/
 def denomSq (d t : ℝ) : ℝ :=
   (t ^ 2 + 1 / 4 - d ^ 2) ^ 2 + 4 * d ^ 2 * t ^ 2
@@ -93,7 +67,7 @@ theorem denomSq_pos {d t : ℝ} (hd_pos : 0 < d) (hd_lt : d < 1 / 2) (ht : 0 < t
   have h_gt := denomSq_gt_t4 hd_pos hd_lt ht
   linarith
 
-/-! ### Section 2: Strict Residual Bounds -/
+/-! ### Section 2: A Strict Residual Upper Bound -/
 
 /-- Strict upper bound on the displacement residual:
 $$R(d, s) < \frac{2d(1/4 - d^2)}{t^4}.$$ -/
@@ -113,11 +87,9 @@ theorem displacementResidual_lt_quartic {d t : ℝ}
   have h_denom_gt := denomSq_gt_t4 hd_pos hd_lt ht
   exact div_lt_div_of_pos_left h_num ht4_pos h_denom_gt
 
-/-! ### Section 3: Asymptotic Zero Exclusion Theorems -/
+/-! ### Section 3: Scalar Mismatch Criteria -/
 
-/-- **Excess Zero Exclusion**:
-If the theta displacement exceeds the quartic upper bound $\frac{2d(1/4 - d^2)}{t^4}$,
-then it cannot equal the residual $R(d, s)$, excluding zeros. -/
+/-- If an arbitrary `D_theta` is at least the quartic upper bound, it differs from the residual. -/
 theorem zero_exclusion_of_quartic_excess {d t D_theta : ℝ}
     (hd_pos : 0 < d) (hd_lt : d < 1 / 2) (ht : 0 < t)
     (h_excess : 2 * d * (1 / 4 - d ^ 2) / t ^ 4 ≤ D_theta) :
@@ -127,10 +99,8 @@ theorem zero_exclusion_of_quartic_excess {d t D_theta : ℝ}
   rw [h_eq] at h_excess
   linarith
 
-/-- **Non-Zero Frequency Zero-Free Gap Condition**:
-Any off-line frequency $s = 1/2 + d + it$ with $0 < d < 1/2$ and $t > 0$ where
-$\mathcal{D}_{\theta}(s) \le 0$ or $\mathcal{D}_{\theta}(s) \ge \frac{2d(1/4-d^2)}{t^4}$
-is provably zero-free for $\zeta(s)$. -/
+/-- An arbitrary `D_theta` differs from the positive residual if it is nonpositive or at least
+the quartic upper bound. -/
 theorem offline_zero_free_of_bounds {d t D_theta : ℝ}
     (hd_pos : 0 < d) (hd_lt : d < 1 / 2) (ht : 0 < t)
     (h_outside : D_theta ≤ 0 ∨ 2 * d * (1 / 4 - d ^ 2) / t ^ 4 ≤ D_theta) :

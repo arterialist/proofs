@@ -11,27 +11,12 @@ namespace BuildingBlocks.ChirpedQuadratureDecay
 open BuildingBlocks.ChirpedPhaseBandLocalization
 
 /-!
-# Chirped Second-Order Integration-by-Parts and High-Frequency Quadrature Decay
+# Pointwise Second-Order Chirp Bounds
 
-This module formalizes the second-order non-stationary phase decay for quadratic chirped wavepackets:
-1. Exact vanishing of the chirped phase third derivative:
-   `Φ'''(x) ≡ 0` identically for any quadratic chirp `Φ(x) = Tx - ηTx² - γx`.
-2. Second-order integration-by-parts differential operator:
-   `D₂(a, Φ) = a'' / (Φ')² - 3 a' Φ'' / (Φ')³ + 3 a (Φ'')² / (Φ')⁴`.
-   Because `Φ''' = 0`, the remainder term from `a Φ''' / (Φ')³` vanishes identically.
-3. Pointwise bound under uniform amplitude bounds `|a| ≤ A₀`, `|a'| ≤ A₁`, `|a''| ≤ A₂`,
-   curvature `|Φ''| = 2ηT`, and gradient separation `|Φ'| ≥ Δ > 0`:
-   `|D₂| ≤ A₂ / Δ² + 6ηT A₁ / Δ³ + 12η²T² A₀ / Δ⁴`.
-4. Scale reduction for high frequencies `Δ ≥ T`:
-   `6ηT A₁ / Δ³ ≤ 6η A₁ / Δ²` and `12η²T² A₀ / Δ⁴ ≤ 12η² A₀ / Δ²`,
-   yielding `|D₂| ≤ (A₂ + 6η A₁ + 12η² A₀) / Δ² = C_IBP2 / Δ²`.
-5. Fourth-power spectral energy decay:
-   `|D₂|² ≤ C_IBP2² / Δ⁴`.
-6. Dyadic annulus geometric decay factor:
-   for `Δ ≥ 2^(m-1) * T`, `Δ⁻⁴ ≤ 16 / (16^m * T⁴)`.
-
-All proofs depend strictly on Lean 4 foundational axioms: `[propext, Classical.choice, Quot.sound]`.
-Zero `sorry` placeholders.
+This module defines a scalar expression named `secondOrderIBPOperator` and bounds that expression
+from amplitude, curvature, and gradient inequalities.  It also proves algebraic square and dyadic
+bounds.  No oscillatory integral, integration-by-parts formula with boundary terms, or quadrature
+error is defined, so these results alone are not an integral decay estimate.
 -/
 
 /-- The third derivative of the quadratic chirped phase is identically zero. -/
@@ -46,7 +31,7 @@ theorem hasDerivAt_chirpedPhaseSecondDeriv (T eta x : ℝ) :
     HasDerivAt (fun _ : ℝ => -2 * eta * T) 0 x :=
   hasDerivAt_const x (-2 * eta * T)
 
-/-- The second-order integration-by-parts differential operand:
+/-- A scalar expression motivated by a second-order integration-by-parts calculation:
 `D₂ = a₂ / p₁² - 3 * a₁ * p₂ / p₁³ + 3 * a₀ * p₂² / p₁⁴`. -/
 noncomputable def secondOrderIBPOperator (a₀ a₁ a₂ p₁ p₂ : ℝ) : ℝ :=
   a₂ / p₁^2 - 3 * a₁ * p₂ / p₁^3 + 3 * a₀ * p₂^2 / p₁^4
@@ -170,8 +155,7 @@ theorem scale_reduction_quartic {T Δ : ℝ} (hT : 0 ≤ T) (hT_le : T ≤ Δ) (
     nlinarith [div_nonneg hT (le_of_lt hΔ)]
   exact div_le_div_of_nonneg_right hsq1 (le_of_lt hΔ2)
 
-/-- Master second-order IBP decay theorem:
-in the high-frequency regime Δ ≥ T > 0, the second-order IBP operator decays as C_IBP2 / Δ². -/
+/-- Pointwise bound for `secondOrderIBPOperator` when `Delta >= T > 0`. -/
 theorem second_order_decay_bound
     {a₀ a₁ a₂ p₁ p₂ A₀ A₁ A₂ eta T Δ : ℝ}
     (ha₀ : |a₀| ≤ A₀) (ha₁ : |a₁| ≤ A₁) (ha₂ : |a₂| ≤ A₂)
@@ -203,8 +187,7 @@ theorem second_order_decay_bound
       (A₂ + 6 * eta * A₁ + 12 * eta^2 * A₀) / Δ^2 := by ring
   linarith
 
-/-- Fourth-power spectral energy decay:
-the squared second-order IBP operator is bounded by C_IBP2² / Δ⁴. -/
+/-- Squaring the nonnegative pointwise bound gives a fourth-power denominator. -/
 theorem fourth_power_energy_decay
     {a₀ a₁ a₂ p₁ p₂ A₀ A₁ A₂ eta T Δ : ℝ}
     (ha₀ : |a₀| ≤ A₀) (ha₁ : |a₁| ≤ A₁) (ha₂ : |a₂| ≤ A₂)
@@ -229,7 +212,7 @@ theorem fourth_power_energy_decay
   rw [heq] at hsq
   exact hsq
 
-/-- Constructive certificate for second-order IBP quadrature decay. -/
+/-- Certificate storing constants for the scalar pointwise bound. -/
 structure QuadratureDecayCertificate where
   A₀ : ℝ
   A₁ : ℝ

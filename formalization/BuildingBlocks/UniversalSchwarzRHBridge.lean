@@ -11,7 +11,7 @@ import BuildingBlocks.ChirpedUniversalFredholmExclusion
 import BuildingBlocks.CriticalTransformRH
 
 /-!
-# Module 277: Unconditional Schwarz Reflection RH Bridge
+# Module 277: RH bridges with proved Schwarz reflection
 
 This module formalizes the elimination of the external Schwarz reflection hypothesis
 `ZetaSchwarzReflection` from the grand Riemann Hypothesis deduction pipeline.
@@ -24,7 +24,7 @@ With the establishment of `RiemannZetaGlobalSchwarzReflection.lean` (Module 276 
 the exact conjugation symmetry $\zeta(\bar{s}) = \overline{\zeta(s)}$ on $\operatorname{Re}(s) > 0$ and the
 critical half-plane zero reflection equivalence:
 $$\zeta(s) = 0 \iff \zeta(\bar{s}) = 0 \quad (\operatorname{Re}(s) > 1/2)$$
-have been proved unconditionally from Mathlib's real-valued Hurwitz modifying kernel.
+are supplied by the imported reflection module.
 
 In this module, we:
 1. Establish the exact real-valuedness of $\zeta(\sigma)$ on the positive real axis:
@@ -34,7 +34,8 @@ In this module, we:
    - `UniversalWeilSystem` + `RealAxisNonvanishingSystem` (Weil explicit wavepacket evaluation).
    - `UniversalZeroRefutationSystem` + `RealAxisNonvanishingSystem` (Universal chirped carrier tuning).
    - `UniversalFredholmSystem` + `RealAxisNonvanishingSystem` (Universal Fredholm determinant trace).
-   with **zero external reflection premises**.
+   without an external reflection structure. Each deduction still assumes the named evaluation
+   system and a `RealAxisNonvanishingSystem`; this file constructs neither.
 
 ## Foundational Axiom Status
 
@@ -101,10 +102,10 @@ theorem riemannZeta_ofReal_zero_iff_re_zero {σ : ℝ} (hσ : 0 < σ) :
     rw [riemannZeta_ofReal_eq_re hσ, hre, ofReal_zero]
 
 /-!
-### 2. Unconditional Weil Explicit RH Bridge
+### 2. Conditional Weil explicit RH bridge
 -/
 
-/-- Right-half zero-freeness unconditionally deduced from a `UniversalWeilSystem` and
+/-- Right-half zero-freeness deduced from a `UniversalWeilSystem` and
 `RealAxisNonvanishingSystem`, with no external reflection hypothesis. -/
 theorem rightHalfZeroFree_of_weil_and_real
     (sys : UniversalWeilSystem)
@@ -129,7 +130,7 @@ theorem rightHalfZeroFree_of_weil_and_real
   · -- Case 3: 0 < Im(s) (Upper half-plane zero)
     exact WeilExplicitGrandRHBridge.no_positive_im_offline_zero sys s hsr h_pos hz
 
-/-- Full Mathlib Riemann Hypothesis unconditionally deduced from a `UniversalWeilSystem` and
+/-- Mathlib's `RiemannHypothesis` deduced from a `UniversalWeilSystem` and
 `RealAxisNonvanishingSystem`. -/
 theorem RiemannHypothesis_of_weil_and_real
     (sys : UniversalWeilSystem)
@@ -139,10 +140,10 @@ theorem RiemannHypothesis_of_weil_and_real
   exact rightHalfZeroFree_of_weil_and_real sys real_sys
 
 /-!
-### 3. Unconditional Universal Zero Refutation RH Bridge
+### 3. Conditional universal zero-refutation RH bridge
 -/
 
-/-- Right-half zero-freeness unconditionally deduced from a `UniversalZeroRefutationSystem` and
+/-- Right-half zero-freeness deduced from a `UniversalZeroRefutationSystem` and
 `RealAxisNonvanishingSystem`. -/
 theorem rightHalfZeroFree_of_refutation_and_real
     (sys : UniversalZeroRefutationSystem)
@@ -167,7 +168,7 @@ theorem rightHalfZeroFree_of_refutation_and_real
   · -- Case 3: 0 < Im(s)
     exact ChirpedUniversalZeroRefutation.no_positive_im_offline_zero sys s hsr h_pos hz
 
-/-- Full Mathlib Riemann Hypothesis unconditionally deduced from a `UniversalZeroRefutationSystem`
+/-- Mathlib's `RiemannHypothesis` deduced from a `UniversalZeroRefutationSystem`
 and `RealAxisNonvanishingSystem`. -/
 theorem RiemannHypothesis_of_refutation_and_real
     (sys : UniversalZeroRefutationSystem)
@@ -177,10 +178,10 @@ theorem RiemannHypothesis_of_refutation_and_real
   exact rightHalfZeroFree_of_refutation_and_real sys real_sys
 
 /-!
-### 4. Unconditional Fredholm Determinant RH Bridge
+### 4. Conditional bridge from the scalar Fredholm-named system
 -/
 
-/-- Right-half zero-freeness unconditionally deduced from a `UniversalFredholmSystem` and
+/-- Right-half zero-freeness deduced from a `UniversalFredholmSystem` and
 `RealAxisNonvanishingSystem`. -/
 theorem rightHalfZeroFree_of_fredholm_and_real
     (f_sys : UniversalFredholmSystem)
@@ -205,7 +206,7 @@ theorem rightHalfZeroFree_of_fredholm_and_real
   · -- Case 3: 0 < Im(s)
     exact no_positive_im_zero_of_universal_fredholm f_sys s hsr h_pos hz
 
-/-- Full Mathlib Riemann Hypothesis unconditionally deduced from a `UniversalFredholmSystem` and
+/-- Mathlib's `RiemannHypothesis` deduced from a `UniversalFredholmSystem` and
 `RealAxisNonvanishingSystem`. -/
 theorem RiemannHypothesis_of_fredholm_and_real
     (f_sys : UniversalFredholmSystem)

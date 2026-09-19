@@ -10,43 +10,13 @@ import BuildingBlocks.ChirpedMasterSpectralVanishingBridge
 import BuildingBlocks.ChirpedConstellationSpanAmplification
 
 /-!
-# Chirped Linear Span Dominance and Displacement-Independent Refutation
+# Linear Power Dominance and a Conditional Bridge
 
-This module establishes the linear constellation span dilation theorem and the
-displacement-independent carrier refutation threshold for chirped wavepacket tests
-against putative off-line zeros of the Riemann zeta function.
-
-## Mathematical Core
-
-1. **Linear Exponent Calibration**:
-   For any putative off-line zero displacement `d = β - 1/2 > 0`, setting the constellation
-   span dilation to `spanDilationLinear d = 1 / d` yields the amplified exponent
-   `2 * λ * d - 1 = 2 * (1 / d) * d - 1 = 1`.
-   Consequently, the net off-line coherent coupling grows with exact linear power `T^1 = T`,
-   scaling as `2 * b * T`, where `b = a_min^2 / η > 0`.
-
-2. **Displacement-Independent Dominance**:
-   Because the net power exponent is 1, the carrier scale required to overwhelm the
-   critical-line logarithmic background `A * Real.log T + C` depends purely on `(b, A, C)`
-   and is entirely independent of the displacement `d > 0`.
-   Via the universal half-power bound `Real.log T ≤ 2 * Real.sqrt T`, the dominance
-   condition reduces to the quadratic `2 * b * u^2 - 2 * |A| * u - (|C| + 1) > 0` in `u = Real.sqrt T`.
-
-3. **Explicit Closed-Form Carrier Threshold**:
-   We define:
-   `linearDisc b A C = |A|^2 + 2 * b * (|C| + 1)`
-   `linearRoot b A C = (|A| + Real.sqrt (linearDisc b A C)) / (2 * b)`
-   `linearCarrierThreshold b A C = (linearRoot b A C + 1)^2`
-   We prove that for all `T ≥ linearCarrierThreshold b A C`, `A * Real.log T + C < 2 * b * T`.
-
-4. **Linear Vanishing Bridge System and Global RH Deduction**:
-   We bundle the linear power deficit into `LinearVanishingBridgeSystem`, establish the
-   master refutation scale `T_* = max (tailEpsilonThreshold C_tail_tot 1) (linearCarrierThreshold b A (C + 1))`,
-   prove that every `LinearVanishingBridgeSystem` is mathematically self-contradictory (`linear_vanishing_bridge_refutation`),
-   and deduce `RightHalfZeroFree` and Mathlib's official `RiemannHypothesis`.
-
-All declarations depend strictly on the standard foundational axioms:
-`[propext, Classical.choice, Quot.sound]`.
+This module proves elementary identities for the choice `1/d`, an explicit threshold for linear
+power dominance, and inconsistency of `LinearVanishingBridgeSystem`.  That structure stores
+arbitrary scalar functions and the lower, upper, and equality hypotheses used in the contradiction.
+The file does not derive those hypotheses from zeta zeros; its RH theorem assumes the required
+system for every candidate zero.
 -/
 
 namespace BuildingBlocks.ChirpedLinearSpanDominance
@@ -215,10 +185,7 @@ theorem linear_power_dominance
   have hC_le : C ≤ |C| := le_abs_self C
   linarith
 
-/-- The Linear Vanishing Bridge System bundles the arithmetic lower bound,
-the vanishing-tail spectral upper bound with amplified linear power `2 * b * T`,
-and the Weil explicit identity.
-Notice: The threshold for this system is completely independent of the zero's displacement `d`! -/
+/-- Package of two scalar functions, their lower and upper bounds, and their equality. -/
 structure LinearVanishingBridgeSystem where
   C_crit : ℝ
   C_tail_tot : ℝ
@@ -258,12 +225,7 @@ theorem one_le_masterLinearCarrierRefutationScale (sys : LinearVanishingBridgeSy
     one_le_tailEpsilonThreshold sys.C_tail_tot 1
   exact le_trans h1 (le_max_left _ _)
 
-/-- Master Refutation Theorem for Linear Vanishing Bridge Systems:
-Every `LinearVanishingBridgeSystem` is mathematically self-contradictory.
-At the explicit, closed-form carrier scale `T_* = masterLinearCarrierRefutationScale sys`,
-the non-resonant tail energy is strictly bounded by 1, while the linear power deficit
-strictly overwhelms the logarithmic and constant margins, forcing `Q_spec T_* < Q_arith T_*`
-and contradicting the Weil explicit formula identity `Q_arith = Q_spec`. -/
+/-- The stored lower bound, upper bound, and equality are inconsistent at the chosen scale. -/
 theorem linear_vanishing_bridge_refutation (sys : LinearVanishingBridgeSystem) : False := by
   let T := masterLinearCarrierRefutationScale sys
   have hT1 : 1 ≤ T := one_le_masterLinearCarrierRefutationScale sys
@@ -288,14 +250,14 @@ theorem linear_vanishing_bridge_refutation (sys : LinearVanishingBridgeSystem) :
         linarith
   exact lt_irrefl _ (lt_of_le_of_lt h_comb h_contra)
 
-/-- Logical Inadmissibility of Off-Line Zeros from Linear Vanishing Bridge Systems. -/
+/-- Candidate-zero exclusion conditional on the stated system-producing witness. -/
 theorem rightHalfZeroFree_of_linear_bridge
     (witness : ∀ s : ℂ, riemannZeta s = 0 → s ≠ 1 → 1 / 2 < s.re → LinearVanishingBridgeSystem) :
     RightHalfZeroFree := by
   intro s hsr hs hz
   exact (linear_vanishing_bridge_refutation (witness s hz hs hsr)).elim
 
-/-- Full End-to-End Deduction of Mathlib's Official `RiemannHypothesis` from Linear Vanishing Bridge Systems. -/
+/-- Conditional deduction of `RiemannHypothesis` from the stated witness. -/
 theorem RiemannHypothesis_of_linear_bridge
     (witness : ∀ s : ℂ, riemannZeta s = 0 → s ≠ 1 → 1 / 2 < s.re → LinearVanishingBridgeSystem) :
     RiemannHypothesis :=

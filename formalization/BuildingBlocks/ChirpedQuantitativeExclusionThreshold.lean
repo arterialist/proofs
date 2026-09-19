@@ -13,21 +13,12 @@ import BuildingBlocks.ChirpedGramDefiniteness
 import BuildingBlocks.ChirpedCoerciveSpectralExclusion
 
 /-!
-# Chirped Quantitative Exclusion Threshold and Power Dominance
+# Quantitative Power-Dominance Threshold
 
-This module constructs an explicit, closed-form quantitative threshold `T_thresh(d, b, A, C)`
-such that for all `T ≥ T_thresh`, the power divergence `2 * b * T^(2d)` unconditionally and
-pointwise strictly exceeds any linear combination `A * log T + C`:
-  `∀ T ≥ T_thresh, A * log T + C < 2 * b * T^(2d)`.
-
-This elevates the asymptotic filter-theoretic exclusion `∀ᶠ T in atTop` to a pointwise,
-computationally verifiable inequality. In particular, for canonical parameters and any
-off-line zero candidate with displacement `d > 0`, the threshold `T_thresh` is completely
-explicit and falls orders of magnitude below the Platt–Trudgian empirical verification
-height `H_0 = 3 * 10^12`.
-
-All declarations depend strictly on the standard foundational axioms:
-`[propext, Classical.choice, Quot.sound]`.
+This module gives an explicit threshold after which `2*b*T^(2*d)` dominates a logarithmic-linear
+expression, assuming `d > 0` and `b > 0`.  Its exclusion results apply to scalar inequalities
+supplied as hypotheses.  No analytic spectral estimate or zeta-zero-to-system construction is
+proved here.
 -/
 
 namespace BuildingBlocks.ChirpedQuantitativeExclusionThreshold
@@ -199,9 +190,8 @@ theorem quantitative_offline_refutation
   have hnot := quantitative_coercive_exclusion hd hb hT
   exact hnot hscalar
 
-/-- Bundle of hypotheses defining a Quantitative Coercive System:
-an off-line zero candidate induces a Weil pair at a single carrier scale
-`T ≥ quantitativeThreshold d b (C_crit - c₀) (6M + C_tot)`. -/
+/-- Hypothesis that every candidate zero supplies scalar lower, upper, and equality bounds at a
+scale above the quantitative threshold. -/
 def QuantitativeCoerciveSystem : Prop :=
   ∀ s : ℂ, (1 : ℝ) / 2 < s.re → s ≠ 1 → riemannZeta s = 0 →
     ∃ (ι : Type) (_ : Fintype ι) (_ : Nonempty ι)
@@ -213,7 +203,7 @@ def QuantitativeCoerciveSystem : Prop :=
       (c₀ * Real.log T - C_tot) * energy c ≤ W_arith c T ∧
       W_spec c T ≤ (C_crit * Real.log T + 6 * M - 2 * b * T^(2 * (s.re - 1/2))) * energy c
 
-/-- Any QuantitativeCoerciveSystem refutes off-line zeros, establishing RightHalfZeroFree. -/
+/-- A `QuantitativeCoerciveSystem` is inconsistent; an assumed instance yields `RightHalfZeroFree`. -/
 theorem rightHalfZeroFree_of_quantitative_system (hsys : QuantitativeCoerciveSystem) :
     RightHalfZeroFree := by
   intro s hsr hs hz
@@ -223,7 +213,7 @@ theorem rightHalfZeroFree_of_quantitative_system (hsys : QuantitativeCoerciveSys
   have hd : 0 < s.re - 1 / 2 := by linarith
   exact quantitative_offline_refutation c hc hd hb hT hid harith hspec
 
-/-- Deduction of Mathlib's official `RiemannHypothesis` from any `QuantitativeCoerciveSystem`. -/
+/-- Conditional deduction of `RiemannHypothesis` from a `QuantitativeCoerciveSystem`. -/
 theorem RiemannHypothesis_of_quantitative_system (hsys : QuantitativeCoerciveSystem) :
     RiemannHypothesis :=
   CriticalTransformRH.noRightZeros_implies_RiemannHypothesis

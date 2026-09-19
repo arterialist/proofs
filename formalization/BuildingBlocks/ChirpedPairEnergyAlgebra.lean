@@ -15,30 +15,15 @@ open BuildingBlocks.ChirpedCanonicalWavepacketAdmissibility
 open BuildingBlocks.ChirpedLinearCarrierAssembly
 
 /-!
-# Chirped Pair Energy Algebra and Carrier-Normalized Negativity
+# Scalar Pair-Energy Algebra
 
-This module formalizes the carrier-normalized quadratic energy form for a pair of
-complex-conjugate off-line zeros evaluated on dilated chirped wavepacket constellations.
-
-By combining the zero-pair reflection algebra from `ActualWeilZeroPairAlgebra` with
-the quadratic span dilation $r = T^2$, this module proves:
-1. The carrier-normalized chirped zero-pair energy $E_{\text{pair}}(T)$ satisfies:
-   `chirpedPairEnergy W u T ≤ 4 * ‖W‖ / T + 2 * ‖W‖ / T^3 - 2 * b * T`.
-2. For all carrier frequencies $T \ge 1$, the transient decay terms are uniformly bounded:
-   `4 * ‖W‖ / T + 2 * ‖W‖ / T^3 ≤ 6 * ‖W‖`.
-3. Consequently, the carrier-normalized chirped pair energy is bounded by:
-   `chirpedPairEnergy W u T ≤ 6 * ‖W‖ - 2 * b * T`.
-4. The extracted off-line pair energy satisfies:
-   `2 * b * T - 6 * ‖W‖ ≤ offlinePairExtractedEnergy W u T`.
-5. Absorbing the bounded $6 * ‖W‖$ offset into the arithmetic cross-term yields an admissible
-   modular component system `ChirpedModularComponents`.
-6. Master refutation: no off-line zero configuration with non-vanishing coherent projection
-   can exist in the critical strip (`paired_zero_refutation`).
-7. Autonomous certificates (`PairedZeroCertificate`) and the end-to-end global deduction
-   of Mathlib's official `RiemannHypothesis` (`RiemannHypothesis_of_paired_witness`).
+This module bounds a complex scalar expression `chirpedPairEnergy` and builds conditional records
+from user-supplied real functions and inequalities.  `PairedZeroData` does not contain a proof that
+its weights or balance law arise analytically from the zeta zero named by a separate certificate.
+The zero-free and RH results require witness functions supplying all of this data.
 -/
 
-/-- The carrier-normalized chirped zero-pair energy form. -/
+/-- A complex scalar expression in the supplied weight, phase, and carrier. -/
 noncomputable def chirpedPairEnergy (W u : ℂ) (T : ℝ) : ℝ :=
   2 * (W * (2 - u * ((T^2 : ℝ) : ℂ) - star u / ((T^2 : ℝ) : ℂ))).re / T
 
@@ -131,8 +116,7 @@ theorem absorbedPairEnergy_lower (W u : ℂ) (b : ℝ) {T : ℝ}
   have h := offlinePairExtractedEnergy_lower W u b hT hu hmain
   linarith
 
-/-- Construction of ChirpedModularComponents by incorporating a paired zero
-with weight W and phase u satisfying (W * u).re ≥ canonicalCarrierCoupling cfg. -/
+/-- Construct modular components from supplied scalar functions, bounds, weight, and phase. -/
 noncomputable def makePairedModularComponents
     (cfg : ChirpedWavepacketConfiguration)
     (W u : ℂ) (hu : ‖u‖ = 1)
@@ -178,8 +162,7 @@ noncomputable def makePairedModularComponents
     have hw := h_weil T
     linarith
 
-/-- Refutation of any paired zero configuration that produces an admissible
-modular component system: no such configuration can exist. -/
+/-- The supplied modular bounds and balance identity are inconsistent. -/
 theorem paired_zero_refutation
     (cfg : ChirpedWavepacketConfiguration)
     (W u : ℂ) (hu : ‖u‖ = 1)
@@ -196,7 +179,7 @@ theorem paired_zero_refutation
     h_crit h_tail h_diag h_cross h_weil
   exact modular_components_refutation comp
 
-/-- A bundle witnessing that an off-line zero s induces a paired modular configuration. -/
+/-- Bundle of scalar functions and bounds used by the conditional witness theorems. -/
 structure PairedZeroData where
   cfg : ChirpedWavepacketConfiguration
   W : ℂ
@@ -221,7 +204,7 @@ noncomputable def PairedZeroData.toModularComponents (data : PairedZeroData) :
     data.Q_crit data.Q_tail data.Q_diag data.Q_cross
     data.h_crit data.h_tail data.h_diag data.h_cross data.h_weil
 
-/-- Autonomous certificate refuting a zero from paired energy data. -/
+/-- Certificate combining candidate-zero facts with inconsistent scalar data. -/
 structure PairedZeroCertificate (s : ℂ) where
   hz : riemannZeta s = 0
   hs : s ≠ 1
@@ -233,7 +216,7 @@ theorem refute_zero_of_paired_certificate {s : ℂ}
     (cert : PairedZeroCertificate s) : False :=
   modular_components_refutation cert.data.toModularComponents
 
-/-- High-frequency zero freeness from paired zero witnesses. -/
+/-- Conditional high-frequency zero freeness from paired-data witnesses. -/
 theorem highFrequencyZeroFree_of_paired_witness
     (H : ℝ)
     (witness : ∀ s : ℂ, riemannZeta s = 0 → s ≠ 1 → H < |s.im| → 1 / 2 < s.re →
@@ -242,7 +225,7 @@ theorem highFrequencyZeroFree_of_paired_witness
   highFrequencyZeroFree_of_modular_witness H (fun s hz hs hH hsr =>
     (witness s hz hs hH hsr).toModularComponents)
 
-/-- Master Global Deduction of Riemann Hypothesis from paired zero witnesses. -/
+/-- Conditional deduction of `RiemannHypothesis` from low-height and paired-data witnesses. -/
 theorem RiemannHypothesis_of_paired_witness
     (h_pt : LowFrequencyZeroFree plattTrudgianHeight)
     (witness : ∀ s : ℂ, riemannZeta s = 0 → s ≠ 1 → plattTrudgianHeight < |s.im| → 1 / 2 < s.re →

@@ -12,38 +12,12 @@ import BuildingBlocks.ChirpedLinearCarrierAssembly
 import BuildingBlocks.ChirpedPairEnergyAlgebra
 
 /-!
-# Chirped Stationary Core Projection and Coherent Spectral Weight
+# Algebraic Stationary-Core Weight Model
 
-This module formalizes the coherent spectral projection across the stationary phase Fresnel core.
-Given a chirped wavepacket configuration tuned to carrier frequency `T = (4/3)γ₀`, the quadratic
-phase deviation across the Fresnel core of radius `δ = 2 / √T` is bounded by 1 radian, ensuring
-pointwise phase coherence `cos(ΔΦ) ≥ 1/2`.
-
-Integrating this coherent core yields the amplitude lower bound `I_core = 2 * a_min / √T` and
-squared spectral weight `W_core = 4 * a_min^2 / T`. Multiplying by the carrier dilation factor `T`
-yields the carrier-normalized weight `W_norm = 4 * a_min^2`, which strictly exceeds the required
-coupling `canonicalCarrierCoupling cfg = 2 * a_min^2`.
-
-This establishes the existence of the paired zero witness and deduces the complete zero refutation
-and global Riemann Hypothesis from the stationary core projection.
-
-## Main Definitions and Theorems
-- `canonicalFresnelRadius`: The intrinsic Fresnel core radius `2 / √T`.
-- `canonicalCoreLength`: The Fresnel core interval length `4 / √T`.
-- `coherentCoreAmplitude`: The coherent core amplitude lower bound `2 * a_min / √T`.
-- `coherentSpectralWeight`: The squared spectral weight `4 * a_min^2 / T`.
-- `normalizedCoherentWeight`: The carrier-normalized weight `4 * a_min^2`.
-- `canonicalComplexWeight`: The complex spectral weight embedding `normalizedCoherentWeight`.
-- `canonicalComplexWeight_main_bound`: Proof that `canonicalCarrierCoupling ≤ (W * 1).re`.
-- `makeCanonicalPairedZeroData`: Constructor for `PairedZeroData`.
-- `refute_canonical_paired_zero`: Zero refutation from the canonical paired data.
-- `makeCanonicalPairedCertificate`: Autonomous certificate refuting an off-line zero.
-- `highFrequencyZeroFree_of_canonical_projector_witness`: High-frequency zero-freeness.
-- `RiemannHypothesis_of_canonical_projector_witness`: Master global deduction of RH.
-
-## Axiom Status
-All declarations depend strictly on standard foundational axioms:
-`[propext, Classical.choice, Quot.sound]`.
+This module defines scalar formulas for a core radius, amplitude, and weight and proves identities
+between them.  It does not define or estimate a stationary-phase integral.  The constructors for
+`PairedZeroData` require the spectral, tail, diagonal, cross, and balance bounds as arguments.
+Accordingly, the zero-free and RH theorems remain conditional on a witness supplying those data.
 -/
 
 namespace BuildingBlocks.ChirpedStationaryCoreProjection
@@ -65,10 +39,10 @@ noncomputable def canonicalFresnelRadius (T : ℝ) : ℝ := 2 / Real.sqrt T
 /-- Canonical Fresnel core length L = 2δ = 4 / √T. -/
 noncomputable def canonicalCoreLength (T : ℝ) : ℝ := 4 / Real.sqrt T
 
-/-- Coherent core amplitude integral lower bound I_core = L * (a_min / 2) = 2 * a_min / √T. -/
+/-- Defined scalar core amplitude `L * (a_min / 2) = 2 * a_min / sqrt T`. -/
 noncomputable def coherentCoreAmplitude (a_min T : ℝ) : ℝ := 2 * a_min / Real.sqrt T
 
-/-- Coherent spectral weight W_core = I_core^2 = 4 * a_min^2 / T. -/
+/-- Defined scalar weight `4 * a_min^2 / T`. -/
 noncomputable def coherentSpectralWeight (a_min T : ℝ) : ℝ := 4 * a_min^2 / T
 
 /-- Carrier-normalized coherent weight W_norm = W_core * T = 4 * a_min^2. -/
@@ -154,7 +128,7 @@ theorem norm_one_eq_one : ‖(1 : ℂ)‖ = 1 := by simp
 
 /-! ### 3. Canonical Paired Zero Data and Refutation -/
 
-/-- Construction of canonical PairedZeroData using the canonical coherent weight W and phase u = 1. -/
+/-- Construct `PairedZeroData` from supplied functions and bounds, using `W` and `u = 1`. -/
 noncomputable def makeCanonicalPairedZeroData
     (cfg : ChirpedWavepacketConfiguration)
     (Q_crit Q_tail Q_diag Q_cross : ℝ → ℝ)
@@ -180,7 +154,7 @@ noncomputable def makeCanonicalPairedZeroData
   h_cross := h_cross
   h_weil := h_weil
 
-/-- Master refutation of any off-line zero with canonical paired energy balance. -/
+/-- Contradiction from the supplied scalar bounds and balance identity. -/
 theorem refute_canonical_paired_zero
     (cfg : ChirpedWavepacketConfiguration)
     (Q_crit Q_tail Q_diag Q_cross : ℝ → ℝ)
@@ -195,7 +169,7 @@ theorem refute_canonical_paired_zero
     h_crit h_tail h_diag h_cross h_weil).toModularComponents
   exact modular_components_refutation comp
 
-/-- Autonomous certificate for an off-line zero constructed from canonical wavepacket data. -/
+/-- Certificate builder requiring candidate-zero facts and every scalar bound. -/
 noncomputable def makeCanonicalPairedCertificate
     {s : ℂ} (hz : riemannZeta s = 0) (hs : s ≠ 1) (hsr : 1 / 2 < s.re)
     (cfg : ChirpedWavepacketConfiguration)
@@ -213,7 +187,7 @@ noncomputable def makeCanonicalPairedCertificate
   data := makeCanonicalPairedZeroData cfg Q_crit Q_tail Q_diag Q_cross
     h_crit h_tail h_diag h_cross h_weil
 
-/-- High-frequency zero-freeness from a canonical wavepacket zero evaluator. -/
+/-- Conditional high-frequency zero freeness from a paired-data witness. -/
 theorem highFrequencyZeroFree_of_canonical_projector_witness
     (H : ℝ)
     (witness : ∀ s : ℂ, riemannZeta s = 0 → s ≠ 1 → H < |s.im| → 1 / 2 < s.re →
@@ -221,7 +195,7 @@ theorem highFrequencyZeroFree_of_canonical_projector_witness
     HighFrequencyZeroFree H :=
   highFrequencyZeroFree_of_paired_witness H witness
 
-/-- Master Global Deduction of Riemann Hypothesis from canonical projector witness. -/
+/-- Conditional deduction of `RiemannHypothesis` from low-height and paired-data witnesses. -/
 theorem RiemannHypothesis_of_canonical_projector_witness
     (h_pt : LowFrequencyZeroFree plattTrudgianHeight)
     (witness : ∀ s : ℂ, riemannZeta s = 0 → s ≠ 1 → plattTrudgianHeight < |s.im| → 1 / 2 < s.re →

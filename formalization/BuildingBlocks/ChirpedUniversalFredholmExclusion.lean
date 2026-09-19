@@ -7,30 +7,27 @@ import BuildingBlocks.Scope
 import BuildingBlocks.CriticalTransformRH
 
 /-!
-# Universal Fredholm Determinant Exclusion and Unconstrained RH Deduction
+# Abstract scalar-balance exclusion and conditional RH deduction
 
-This module establishes the universal Fredholm determinant exclusion theorem, completely
-eliminating the high-frequency cutoff `H₀` from the Fredholm and Carleman resolvent framework.
+This module proves a contradiction from a package of scalar lower and upper bounds. The package
+is called `UniversalFredholmEvaluation`, but it does not construct a Fredholm operator,
+a regularized determinant, or its logarithm.
 
 In `ChirpedFredholmDeterminant.lean` and `ChirpedCarlemanResolventBound.lean`, off-line zeros
 were refuted under a high-frequency premise `γ ≥ H₀` to satisfy the window embedding condition
 for fixed chirp rate `η = 1/4`.
 
-Using the universal carrier tuning theorem from `ChirpedUniversalCarrierTuning.lean`, we show
-that for **any** off-line zero ordinate `γ > 0`, the chirp rate `η → 1⁻` constructs a tuned
-carrier `T > 16` exceeding `quantitativeThreshold d b A C`. At this carrier scale:
-1. The 2-regularized Carleman determinant satisfies the growth lower bound
-   `2 * b * T^(2d) - (A * log T + C) ≤ log |det₂(I - K_T)|`.
-2. The Carleman spectral balance condition imposes the upper bound
-   `log |det₂(I - K_T)| ≤ M_bal`.
+Using the universal carrier tuning theorem from `ChirpedUniversalCarrierTuning.lean`, the proof
+chooses a carrier `T > 16` above `quantitativeThreshold d b A C`. At this carrier scale:
+1. The field `h_lower` supplies
+   `2 * b * T^(2d) - (A * log T + C) ≤ log_det₂ T`.
+2. The field `h_balance` supplies `log_det₂ T ≤ M_bal`.
 3. The quantitative power dominance `A * log T + C + M_bal < 2 * b * T^(2d)` forces an
    immediate scalar contradiction `False`.
 
-Consequently:
-- Every zero candidate with `Re(s) > 1/2` and `Im(s) > 0` is refuted unconditionally.
-- The need for supercomputer low-frequency verifications is completely dissolved.
-- Mathlib's official `RiemannHypothesis` is deduced unconditionally from any universal
-  Fredholm evaluation system.
+The zero-exclusion and RH theorems are therefore conditional on a supplied
+`UniversalFredholmSystem`. In particular, this file does not instantiate that structure or show
+that `log_det₂` is the logarithm of an analytic Fredholm determinant.
 
 All declarations depend strictly on the standard foundational axioms:
 `[propext, Classical.choice, Quot.sound]`.
@@ -45,8 +42,9 @@ open BuildingBlocks.ChirpedCarlemanResolventBound
 
 noncomputable section
 
-/-- A universal Carleman regularized Fredholm evaluation package for an off-line candidate
-with positive imaginary part `γ > 0` and displacement `d = β - 1/2 > 0`. -/
+/-- A scalar evaluation package for an off-line candidate. The `log_det₂` field is an arbitrary
+real-valued function constrained only by `h_lower` and `h_balance`; no operator or determinant is
+part of this structure. -/
 structure UniversalFredholmEvaluation (γ d : ℝ) where
   b : ℝ
   A : ℝ
@@ -57,9 +55,8 @@ structure UniversalFredholmEvaluation (γ d : ℝ) where
   h_lower : ∀ T, 16 < T → 2 * b * T^(2 * d) - (A * Real.log T + C) ≤ log_det₂ T
   h_balance : ∀ T, 16 < T → log_det₂ T ≤ M_bal
 
-/-- Refutation of any Universal Fredholm Evaluation:
-At the universal carrier scale, the power growth of the Carleman determinant strictly
-overwhelms the spectral balance bound, forcing `False`. -/
+/-- The lower and upper bounds in a `UniversalFredholmEvaluation` contradict power dominance at
+the carrier supplied by `universal_offline_carrier_exists`. -/
 theorem refute_universal_fredholm_evaluation {γ d : ℝ} (hγ : 0 < γ) (hd : 0 < d)
     (ev : UniversalFredholmEvaluation γ d) : False := by
   set A_eff := ev.A
@@ -75,15 +72,13 @@ theorem refute_universal_fredholm_evaluation {γ d : ℝ} (hγ : 0 < γ) (hd : 0
     linarith
   linarith
 
-/-- Universal Fredholm System:
-A system that supplies a universal Fredholm evaluation for any putative off-line zero
-with `Re(s) > 1/2` and `Im(s) > 0`. -/
+/-- A hypothesis package that supplies a scalar evaluation for every putative off-line zero with
+`Re(s) > 1/2` and `Im(s) > 0`. This file does not construct a value of this structure. -/
 structure UniversalFredholmSystem where
   evaluator : ∀ (s : ℂ), (1 : ℝ) / 2 < s.re → 0 < s.im → riemannZeta s = 0 →
     UniversalFredholmEvaluation s.im (s.re - 1 / 2)
 
-/-- Universal Off-Line Zero Exclusion:
-No zeros of `riemannZeta` can exist with `Re(s) > 1/2` and `Im(s) > 0`. -/
+/-- A `UniversalFredholmSystem` rules out zeros with `Re(s) > 1/2` and `Im(s) > 0`. -/
 theorem no_positive_im_zero_of_universal_fredholm (sys : UniversalFredholmSystem)
     (s : ℂ) (hsr : (1 : ℝ) / 2 < s.re) (hsim : 0 < s.im) (hz : riemannZeta s = 0) :
     False := by
@@ -113,7 +108,8 @@ theorem rightHalfZeroFree_of_universal_fredholm
   · -- Positive imaginary part: refuted directly
     exact no_positive_im_zero_of_universal_fredholm sys s hsr h_pos hz
 
-/-- Full Mathlib Riemann Hypothesis deduced from any Universal Fredholm System. -/
+/-- Conditional deduction of Mathlib's `RiemannHypothesis` from a `UniversalFredholmSystem`,
+global zero conjugation, and real-axis nonvanishing. -/
 theorem RiemannHypothesis_of_universal_fredholm
     (sys : UniversalFredholmSystem)
     (h_symm : ∀ s : ℂ, riemannZeta s = 0 ↔ riemannZeta (star s) = 0)

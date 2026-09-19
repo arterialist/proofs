@@ -8,35 +8,13 @@ import BuildingBlocks.ChirpedDyadicTailEnergy
 import BuildingBlocks.ChirpedQuantitativeExclusionThreshold
 
 /-!
-# Chirped Master Spectral Vanishing Bridge and Global RH Deduction
+# Contradiction from Supplied Tail and Coercivity Bounds
 
-This module establishes the ultimate bridge uniting the dyadic high-frequency non-resonant
-tail energy summation from `ChirpedDyadicTailEnergy.lean` with the quantitative power
-dominance threshold from `ChirpedQuantitativeExclusionThreshold.lean`.
-
-Key mathematical architecture:
-1. **Vanishing Non-Resonant Tail Envelope**:
-   The total non-resonant tail energy is bounded by
-   `totalNonresonantTailEnvelope C_tail_tot T = C_tail_tot * (log T / T³)`.
-   We prove `totalNonresonantTailEnvelope C_tail_tot T → 0` as `T → +∞`.
-2. **Constructive Explicit Tail Threshold**:
-   For any pre-assigned tolerance `ε > 0`, we establish the explicit, computable threshold
-   `tailEpsilonThreshold C_tail_tot ε = √(C_tail_tot / ε) + 1`.
-   For all `T ≥ tailEpsilonThreshold C_tail_tot ε`, the non-resonant tail energy is
-   strictly smaller than `ε`.
-3. **Master Refutation Theorem**:
-   Any `VanishingBridgeSystem` coupling an off-line candidate zero to a chirped wavepacket
-   forces `2b T^(2d) < (C_crit - c0) log T + (C_tot + 1)` at the unified carrier scale
-   `T_* = max (tailEpsilonThreshold C_tail_tot 1) (quantitativeThreshold d b A C)`.
-   Simultaneously, quantitative power dominance proves `(C_crit - c0) log T + (C_tot + 1) < 2b T^(2d)`.
-   This produces a direct contradiction, proving that no off-line zero can couple to
-   the chirped wavepacket without violating the Weil explicit formula.
-4. **End-to-End RH Deduction**:
-   We deduce `RightHalfZeroFree` and Mathlib's official `RiemannHypothesis`.
-
-This establishes **Unique Contribution 362** in the ledger.
-All proofs depend strictly on the standard foundational axioms:
-`[propext, Classical.choice, Quot.sound]`.
+`totalNonresonantTailEnvelope` is the scalar function `C/T^2`.  A `VanishingBridgeSystem` stores
+two arbitrary real functions together with an arithmetic lower bound, a spectral upper bound,
+and their equality.  Power dominance makes that package inconsistent.  This module does not
+construct the functions or prove the stored bounds from a wavepacket or the Weil explicit formula.
+The RH theorem is conditional on a witness producing such a system for every candidate zero.
 -/
 
 namespace BuildingBlocks.ChirpedMasterSpectralVanishingBridge
@@ -114,14 +92,13 @@ structure VanishingBridgeSystem where
     c0 * Real.log T - C_tot ≤ Q_arith T
   h_weil_eq : ∀ T : ℝ, Q_arith T = Q_spec T
 
-/-- Explicit master carrier scale refuting any putative off-line zero candidate. -/
+/-- Carrier scale chosen to satisfy both scalar thresholds. -/
 def masterRefutationCarrier (sys : VanishingBridgeSystem) : ℝ :=
   let A := sys.C_crit - sys.c0
   let C := sys.C_tot + 1
   max (tailEpsilonThreshold sys.C_tail_tot 1) (quantitativeThreshold sys.d sys.b A C)
 
-/-- Master Refutation Theorem: Any `VanishingBridgeSystem` is mathematically self-contradictory.
-That is, no off-line zero can couple to the chirped wavepacket without violating the Weil explicit formula. -/
+/-- The lower bound, upper bound, and equality stored in a `VanishingBridgeSystem` are inconsistent. -/
 theorem vanishing_bridge_refutation (sys : VanishingBridgeSystem) : False := by
   let A := sys.C_crit - sys.c0
   let C := sys.C_tot + 1
@@ -158,7 +135,7 @@ theorem vanishing_bridge_refutation (sys : VanishingBridgeSystem) : False := by
     exact hshift
   linarith
 
-/-- Logical inadmissibility: No candidate zero `s` with `Re(s) > 1/2` can admit a `VanishingBridgeSystem`. -/
+/-- Candidate-zero exclusion conditional on a witness supplying a `VanishingBridgeSystem`. -/
 theorem rightHalfZeroFree_of_vanishing_bridge
     (witness : ∀ s : ℂ, riemannZeta s = 0 → s ≠ 1 → 1 / 2 < s.re → VanishingBridgeSystem) :
     RightHalfZeroFree := by
@@ -166,14 +143,14 @@ theorem rightHalfZeroFree_of_vanishing_bridge
   have sys := witness s hz hs hsr
   exact (vanishing_bridge_refutation sys).elim
 
-/-- End-to-End deduction of Mathlib's official RiemannHypothesis from the vanishing bridge. -/
+/-- Conditional deduction of `RiemannHypothesis` from the stated witness function. -/
 theorem RiemannHypothesis_of_vanishing_bridge
     (witness : ∀ s : ℂ, riemannZeta s = 0 → s ≠ 1 → 1 / 2 < s.re → VanishingBridgeSystem) :
     RiemannHypothesis :=
   CriticalTransformRH.noRightZeros_implies_RiemannHypothesis
     (rightHalfZeroFree_of_vanishing_bridge witness)
 
-/-- Canonical constructor for VanishingBridgeSystem. -/
+/-- Constructor requiring all scalar functions and decisive bounds as arguments. -/
 def makeVanishingBridgeSystem
     (C_crit C_tail_tot c0 C_tot b d : ℝ)
     (hb : 0 < b) (hd : 0 < d) (hC_crit : 0 ≤ C_crit) (hC_tail : 0 ≤ C_tail_tot)

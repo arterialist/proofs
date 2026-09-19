@@ -9,9 +9,9 @@ import BuildingBlocks.RiemannZetaHyperbolicDisparityKernel
 /-!
 # Module 319: RiemannZetaDisplacementAsymptotics
 
-This module establishes the asymptotic $O(t^{-4})$ decay and coordinate rigidity bounds
-for the Riemann zeta displacement functional, refuting candidate off-line zeros in the
-upper half-plane that violate the asymptotic window.
+This module proves a pointwise $t^{-4}$ upper bound for the algebraic residual and derives
+conditional zero tests. It does not prove a global sign for the displacement functional or an
+unconditional zero-free region.
 
 ## Mathematical Overview
 
@@ -32,10 +32,16 @@ In this module, we prove:
 3. **Displacement Functional**:
    We define $\mathcal{F}_{\text{disp}}(s) := 2(\sigma - 1/2)\operatorname{Re}(\Lambda_0(s)) - t \operatorname{Im}(\Lambda_0(s))$.
    At any candidate zero $s$, $\mathcal{F}_{\text{disp}}(s) = R(d, s)$.
-4. **Constructive High-Frequency Zero Refutation**:
+4. **Conditional zero tests**:
    - Refutation by lower bound: Any candidate with $\mathcal{F}_{\text{disp}}(s) \le 0$ is not a zero.
    - Refutation by upper decay: Any candidate with $\mathcal{F}_{\text{disp}}(s) > \frac{d}{2 t^4}$ is not a zero.
    - Refutation by exact residual mismatch: Any candidate with $\mathcal{F}_{\text{disp}}(s) \ne R(d, s)$ is not a zero.
+
+   Each theorem requires the displayed sign, bound violation, or mismatch as an input. This file
+   does not establish any of them for arbitrary points. For fixed $1/2 < \sigma < 1$, eventual
+   positivity needs a separate estimate on the zeta contribution and does not imply global
+   positivity. Numerical quadrature at $s=0.75+20i$, for example, gives approximately
+   $-8.75470256\times 10^{-7}$ for the displacement diagnostic.
 
 ## Foundational Integrity
 
@@ -228,7 +234,7 @@ theorem displacementFunctional_le_decay {s : ℂ}
   have hd_le : s.re - 1 / 2 ≤ 1 / 2 := by linarith
   exact displacementResidual_le_div_im_four hd_nonneg hd_le hsim
 
-/-! ### Section 4: Constructive Zero Refutation Theorems -/
+/-! ### Section 4: Conditional zero tests -/
 
 /-- Refutation by non-positivity:
 If $\mathcal{F}_{\text{disp}}(s) \le 0$, then $s$ cannot be a zero with $1/2 < \sigma < 1$ and $t > 0$. -/

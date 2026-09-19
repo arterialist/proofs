@@ -6,10 +6,10 @@ import BuildingBlocks.CriticalTransformRH
 import BuildingBlocks.Scope
 
 /-!
-# Unified Universal Riemann Hypothesis Bridge
+# Conditional RH bridges from universal evaluation systems
 
-This module formalizes the grand unification of the Chirped Universal Zero Refutation and
-Universal Fredholm Exclusion architectures with:
+This module combines the Chirped Universal Zero Refutation and scalar Fredholm-named exclusion
+hypotheses with:
 1. Schwarz Reflection Symmetry (`ZetaSchwarzReflection`, Module 270)
 2. Real Axis Non-Vanishing (`RealAxisNonvanishingSystem`, Module 271)
 
@@ -22,8 +22,8 @@ Under this unification:
   3. Lower half-plane zero (`Im(s) < 0`): Reflected to the upper half-plane via `zero_iff_star_zero`,
      where the universal refutation produces an identical contradiction `False`.
 
-This yields the complete, unconstrained deduction of `RightHalfZeroFree` and the Mathlib
-official `RiemannHypothesis`.
+This yields `RightHalfZeroFree` and Mathlib's `RiemannHypothesis` conditional on the displayed
+system arguments. No theorem in this file constructs those systems.
 
 All declarations depend strictly on the standard foundational axioms:
 `[propext, Classical.choice, Quot.sound]`.
@@ -68,7 +68,7 @@ theorem rightHalfZeroFree_of_unified_system
   · -- Case 3: 0 < Im(s) (Upper half-plane zero)
     exact no_positive_im_offline_zero sys s hsr h_pos hz
 
-/-- Full Mathlib Riemann Hypothesis deduced from a Unified Universal System. -/
+/-- Conditional deduction of Mathlib's `RiemannHypothesis` from the three system arguments. -/
 theorem RiemannHypothesis_of_unified_system
     (sys : UniversalZeroRefutationSystem)
     (sr : ZetaSchwarzReflection)
@@ -78,7 +78,7 @@ theorem RiemannHypothesis_of_unified_system
   exact rightHalfZeroFree_of_unified_system sys sr real_sys
 
 /-!
-### 2. Unification of Universal Fredholm Determinant Exclusion
+### 2. Bridge from the scalar Fredholm-named exclusion package
 -/
 
 /-- Right-half zero freeness deduced from a Universal Fredholm Exclusion System, Schwarz reflection,
@@ -107,7 +107,8 @@ theorem rightHalfZeroFree_of_unified_fredholm
   · -- Case 3: 0 < Im(s) (Upper half-plane zero)
     exact no_positive_im_zero_of_universal_fredholm sys s hsr h_pos hz
 
-/-- Full Mathlib Riemann Hypothesis deduced from a Unified Universal Fredholm System. -/
+/-- Conditional deduction of Mathlib's `RiemannHypothesis` from the Fredholm-named scalar system,
+reflection, and real-axis nonvanishing. -/
 theorem RiemannHypothesis_of_unified_fredholm
     (sys : UniversalFredholmSystem)
     (sr : ZetaSchwarzReflection)

@@ -4,37 +4,11 @@ import BuildingBlocks.ChirpedZeroPartitionSynthesis
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# Chirped High-Frequency Parameter Calibration and Window Embedding
+# Chirped Parameter Calibration
 
-This module formalizes the high-frequency parameter calibration for the chirped
-wavepacket construction:
-
-1. **Canonical Parameter Choice:**
-   - Window width `w = 1`
-   - Stationary point `x_0 = 1/2`
-   - Chirp rate `η = 1/4`
-   - Effective factor `1 - 2 * η * x_0 = 3/4`
-   - Tuned carrier frequency `T = (4/3) * γ`
-
-2. **Micro-local Stationary Cancellation:**
-   The phase derivative evaluates to zero:
-     `Φ'(x_0) = 1 - 2 * η * x_0 - γ / T = 0`
-   with constant negative curvature:
-     `Φ''(x_0) = -2 * η = -1/2 ≠ 0`
-
-3. **Window Interior Embedding:**
-   For any carrier `T > 16`, the intrinsic Fresnel core radius:
-     `δ = 2 / Real.sqrt T`
-   satisfies `δ < 1/2`, ensuring the entire stationary core
-   `[x_0 - δ, x_0 + δ]` is strictly contained inside `(0, 1) = (0, w)`.
-
-4. **High-Frequency Threshold Scale:**
-   For zeros above the Platt–Trudgian height `γ > 3 * 10^12`:
-     `canonicalCarrier γ > plattTrudgianHeight`
-   and the logarithmic scale is strictly positive:
-     `0 < Real.log plattTrudgianHeight ≤ Real.log (canonicalCarrier γ)`.
-
-This establishes **Unique Contribution 353** in Lean 4.
+This module checks elementary identities for fixed chirp parameters, the associated stationary
+point, window containment, and numerical carrier-height inequalities.  It does not construct a
+wavepacket transform or prove an estimate for zeta zeros.
 -/
 
 namespace BuildingBlocks.ChirpedThresholdCalibration
@@ -126,7 +100,7 @@ theorem canonical_window_embedding {δ : ℝ} (_hδ_pos : 0 < δ) (hδ : δ < 1 
   · linarith
   · linarith
 
-/-- High-frequency carrier lower bound for zeros at or above Platt–Trudgian height. -/
+/-- Carrier lower bound for a real parameter at or above `plattTrudgianHeight`. -/
 theorem carrier_gt_plattTrudgianHeight {γ : ℝ}
     (hγ : plattTrudgianHeight ≤ γ) :
     plattTrudgianHeight < canonicalCarrier γ := by
@@ -138,7 +112,7 @@ theorem carrier_gt_plattTrudgianHeight {γ : ℝ}
       nlinarith
     _ ≤ (4 / 3 : ℝ) * γ := mul_le_mul_of_nonneg_left hγ (by norm_num)
 
-/-- High-frequency carrier lower bound for zeros strictly above Platt–Trudgian height. -/
+/-- Carrier lower bound for a real parameter strictly above `plattTrudgianHeight`. -/
 theorem carrier_of_high_frequency {γ : ℝ}
     (hγ : plattTrudgianHeight < γ) :
     plattTrudgianHeight < canonicalCarrier γ := by

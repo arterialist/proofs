@@ -12,27 +12,15 @@ open BuildingBlocks.ChirpedQuantitativeExclusionThreshold
 open BuildingBlocks
 
 /-!
-# Chirped Multi-Zero Deficit Superposition and Monotonicity
+# Finite Scalar Deficit Superposition
 
-This module formalizes the multi-zero spectral deficit superposition principle:
-1. Every off-line zero candidate pair `(β, γ)` with `β > 1/2` carries positive coupling `b > 0`
-   and off-line displacement `d = β - 1/2 > 0`.
-2. The pair energy `2 * b * T^(2d)` is strictly positive for all `T > 0`.
-3. For any finite list of off-line pairs, the total spectral deficit is the sum of pair energies.
-4. Deficit Monotonicity: for any designated off-line pair `p ∈ pairs`,
-   `pairEnergy p T ≤ totalOfflineDeficit pairs T`,
-   which implies `- totalOfflineDeficit pairs T ≤ - pairEnergy p T`.
-5. Master Multi-Zero Upper Bound: additional off-line zeros only deepen the deficit,
-   never compensating or canceling it.
-6. Single-Threshold Exclusion: any carrier scale `T ≥ T_thresh` that refutes the designated pair `p`
-   automatically refutes the entire multi-zero system.
-7. Deduction of `RightHalfZeroFree` and Mathlib's official `RiemannHypothesis`.
-
-All proofs depend strictly on Lean 4 foundational axioms: `[propext, Classical.choice, Quot.sound]`.
-Zero `sorry` placeholders.
+`OfflinePair` is an abstract record of real parameters with positivity fields.  This module proves
+that the defined positive powers add monotonically over a finite list and contradict a supplied
+`weil_ineq`.  It does not show that zeta zeros produce these records or this inequality.  The RH
+conversion theorem separately assumes a refutation for every candidate zero.
 -/
 
-/-- A candidate off-line zero pair in the critical strip. -/
+/-- Abstract positive-parameter record; no zeta-zero property is included. -/
 structure OfflinePair where
   beta : ℝ
   gamma : ℝ
@@ -49,7 +37,7 @@ theorem displacement_pos (p : OfflinePair) : 0 < displacement p := by
   unfold displacement
   linarith [p.hbeta]
 
-/-- The spectral deficit energy contributed by an off-line zero pair at carrier scale T. -/
+/-- A positive power expression attached to an `OfflinePair`. -/
 noncomputable def pairEnergy (p : OfflinePair) (T : ℝ) : ℝ :=
   2 * p.b * T ^ (2 * displacement p)
 
@@ -66,7 +54,7 @@ theorem pairEnergy_nonneg (p : OfflinePair) {T : ℝ} (hT : 0 < T) :
     0 ≤ pairEnergy p T :=
   le_of_lt (pairEnergy_pos p hT)
 
-/-- The total off-line spectral deficit summed over a finite list of zero pairs. -/
+/-- Sum of the defined pair expressions over a finite list. -/
 noncomputable def totalOfflineDeficit (pairs : List OfflinePair) (T : ℝ) : ℝ :=
   (pairs.map (fun p => pairEnergy p T)).sum
 
@@ -102,7 +90,7 @@ theorem totalDeficit_neg_le_pair_neg (pairs : List OfflinePair) (p : OfflinePair
   have h := pairEnergy_le_totalDeficit pairs p hp hT
   linarith
 
-/-- Master multi-zero upper bound: presence of additional off-line zeros only deepens the deficit. -/
+/-- Adding nonnegative pair expressions can only decrease the subtracted total. -/
 theorem multi_zero_spectral_upper_bound (pairs : List OfflinePair) (p : OfflinePair)
     (hp : p ∈ pairs) (Q_crit Q_cont : ℝ) {T : ℝ} (hT : 0 < T) :
     Q_crit + Q_cont - totalOfflineDeficit pairs T ≤
@@ -148,7 +136,7 @@ structure MultiZeroCoerciveSystem where
   weil_ineq : ∀ T : ℝ, 0 < T →
     c0 * Real.log T - C_tot ≤ C_crit * Real.log T + 6 * M_cont - totalOfflineDeficit pairs T
 
-/-- A multi-zero coercive system cannot contain any off-line zero pairs. -/
+/-- A list satisfying the packaged inequality at every positive scale must be empty. -/
 theorem multi_zero_system_empty (sys : MultiZeroCoerciveSystem) :
     sys.pairs = [] := by
   cases hcases : sys.pairs with
@@ -172,21 +160,21 @@ theorem multi_zero_system_empty (sys : MultiZeroCoerciveSystem) :
     have hweil := sys.weil_ineq T hT_pos
     exact hcontra hweil
 
-/-- End-to-end deduction of `RightHalfZeroFree` from multi-zero refutation. -/
+/-- Conversion of an assumed candidate-zero refutation into `RightHalfZeroFree`. -/
 theorem rightHalfZeroFree_of_multi_zero_refutation
     (hrefute : ∀ (s : ℂ), 1 / 2 < s.re → s ≠ 1 → riemannZeta s = 0 → False) :
     RightHalfZeroFree := by
   intro s hsr hs hz
   exact (hrefute s hsr hs hz).elim
 
-/-- End-to-end deduction of Mathlib's official `RiemannHypothesis` from multi-zero refutation. -/
+/-- Conditional conversion of the assumed refutation into `RiemannHypothesis`. -/
 theorem RiemannHypothesis_of_multi_zero_refutation
     (hrefute : ∀ (s : ℂ), 1 / 2 < s.re → s ≠ 1 → riemannZeta s = 0 → False) :
     RiemannHypothesis :=
   CriticalTransformRH.noRightZeros_implies_RiemannHypothesis
     (rightHalfZeroFree_of_multi_zero_refutation hrefute)
 
-/-- A constructive certificate of multi-zero deficit superposition and exclusion. -/
+/-- Certificate copying the positive parameters from one abstract pair. -/
 structure MultiZeroCertificate where
   p : OfflinePair
   d : ℝ

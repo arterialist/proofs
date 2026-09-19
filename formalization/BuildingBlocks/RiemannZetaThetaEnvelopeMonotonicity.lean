@@ -8,42 +8,13 @@ import BuildingBlocks.RiemannZetaKernelPositivity
 import BuildingBlocks.RiemannZetaDisplacementFourierEnvelope
 
 /-!
-# Module 327: RiemannZetaThetaEnvelopeMonotonicity
+# Gaussian-Mode and Abstract Envelope Derivatives
 
-This module investigates the analytic structure of the master displacement envelope:
-$$W_d(u) := d K(u) \cosh\left(\frac{du}{2}\right) - 2 K'(u) \sinh\left(\frac{du}{2}\right),$$
-where $K(u) = e^{u/4}(\vartheta(e^u) - 1)$.
-
-## Mathematical Architecture
-
-1. **Gaussian Mode Monotonicity**:
-   The theta excess decomposes into Gaussian modes:
-   $$g_n(u) := e^{u/4} \exp\left(-\pi (n+1)^2 e^u\right) \quad (n \ge 0).$$
-   We compute the exact derivative:
-   $$\frac{d}{du} g_n(u) = \left(\frac{1}{4} - \pi (n+1)^2 e^u\right) g_n(u).$$
-   For all $u \ge 0$, since $e^u \ge 1$ and $\pi (n+1)^2 \ge \pi > 3 > 1/4$:
-   $$\frac{1}{4} - \pi (n+1)^2 e^u \le \frac{1}{4} - \pi < 0.$$
-   Since $g_n(u) > 0$, every single Gaussian mode is strictly decreasing on $[0, \infty)$:
-   $$g_n'(u) < 0 \quad \text{for all } u \ge 0.$$
-
-2. **Master Envelope Derivative Cancellation**:
-   Differentiating $W_d(u)$ with respect to $u$:
-   $$\frac{d}{du}\left[ d K(u) \cosh\left(\frac{du}{2}\right) \right] =
-     d K'(u) \cosh\left(\frac{du}{2}\right) + \frac{d^2}{2} K(u) \sinh\left(\frac{du}{2}\right),$$
-   $$\frac{d}{du}\left[ 2 K'(u) \sinh\left(\frac{du}{2}\right) \right] =
-     2 K''(u) \sinh\left(\frac{du}{2}\right) + d K'(u) \cosh\left(\frac{du}{2}\right).$$
-   Subtracting these two, the cross-terms $d K'(u) \cosh(du/2)$ cancel identically:
-   $$W_d'(u) = \left(\frac{d^2}{2} K(u) - 2 K''(u)\right) \sinh\left(\frac{du}{2}\right).$$
-
-3. **Origin Boundary Invariant**:
-   Since $\sinh(0) = 0$, the first derivative of the envelope at the self-dual axis $u = 0$
-   vanishes identically for all $d$:
-   $$W_d'(0) = 0.$$
-   This rigorously establishes why there is no $O(t^{-2})$ Fourier cosine boundary contribution,
-   forcing the leading oscillatory decay to be of quartic order $O(t^{-4})$.
-
-All declarations depend strictly on standard Lean 4 foundational axioms:
-`[propext, Classical.choice, Quot.sound]`. Zero `sorry` placeholders.
+This module proves that each explicitly defined Gaussian mode has negative derivative on `u >= 0` and differentiates an
+abstract expression `envelopeW` under derivative hypotheses for arbitrary functions `K`, `K'`,
+and `K''`.  It does not identify their sums with the theta kernel, justify termwise
+differentiation, define a Fourier integral, or derive quartic Fourier decay.  The origin theorem
+only evaluates the displayed derivative expression at `u = 0`.
 -/
 
 namespace BuildingBlocks.RiemannZetaThetaEnvelopeMonotonicity
@@ -124,14 +95,14 @@ theorem gaussianMode_deriv_neg (n : ℕ) {u : ℝ} (hu : 0 ≤ u) :
   have h_pos := gaussianMode_pos n u
   exact mul_neg_of_neg_of_pos h_fac h_pos
 
-/-! ### Section 2: Master Envelope Derivative and Invariant -/
+/-! ### Section 2: Abstract Envelope Derivative and Origin Value -/
 
 /-- General algebraic definition of the displacement envelope for arbitrary profile $K$ and derivative $K'$:
 $$W_d(u) = d K(u) \cosh\left(\frac{du}{2}\right) - 2 K'(u) \sinh\left(\frac{du}{2}\right).$$ -/
 def envelopeW (d : ℝ) (K K' : ℝ → ℝ) (u : ℝ) : ℝ :=
   d * K u * cosh (d * u / 2) - 2 * K' u * sinh (d * u / 2)
 
-/-- **Master Envelope Derivative Identity**:
+/-- Derivative identity for the abstract envelope:
 If $K$ has derivative $K'$ and $K'$ has derivative $K''$ at $u$, the derivative of $W_d$ evaluates to:
 $$W_d'(u) = \left(\frac{d^2}{2} K(u) - 2 K''(u)\right) \sinh\left(\frac{du}{2}\right).$$
 In particular, the cross-terms $d K'(u) \cosh(du/2)$ cancel identically. -/
@@ -160,9 +131,7 @@ theorem hasDerivAt_envelopeW (d : ℝ) {K K' K'' : ℝ → ℝ} {u : ℝ}
   rw [h_alg] at h_diff
   exact h_diff
 
-/-- **Origin Boundary Invariant**:
-At the self-dual point $u = 0$, the derivative of the envelope vanishes identically for all $d$:
-$$W_d'(0) = 0.$$ -/
+/-- The displayed derivative expression vanishes at `u = 0` because `sinh 0 = 0`. -/
 theorem envelopeW_deriv_zero (d : ℝ) (K K'' : ℝ → ℝ) :
     (((d ^ 2 / 2) * K 0 - 2 * K'' 0) * sinh (d * 0 / 2)) = 0 := by
   have h0 : d * 0 / 2 = 0 := by ring

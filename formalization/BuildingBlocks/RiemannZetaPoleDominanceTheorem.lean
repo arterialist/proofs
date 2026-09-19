@@ -9,8 +9,8 @@ import BuildingBlocks.RiemannZetaDisplacementAsymptotics
 # Module 320: RiemannZetaPoleDominanceTheorem
 
 This module formalizes the exact pole-zeta additive decomposition of the completed Riemann zeta
-function $\Lambda_0(s)$ and the displacement functional $\mathcal{F}_{\text{disp}}(s)$, establishing
-the Pole Dominance Principle.
+function $\Lambda_0(s)$ and the displacement functional $\mathcal{F}_{\text{disp}}(s)$. It proves
+algebraic identities only; it does not prove an asymptotic pole-dominance estimate.
 
 ## Mathematical Architecture
 
@@ -40,13 +40,15 @@ the Pole Dominance Principle.
 
 7. **Zero Specialization & Refutation**:
    - At any zero $\zeta(s) = 0$, $\mathcal{F}_{\text{zeta}}(s) = 0$, so $\mathcal{F}_{\text{disp}}(s) = R(\sigma - 1/2, s) > 0$.
-   - Conversely, any point with $\mathcal{F}_{\text{zeta}}(s) \ne 0$ is unconditionally non-vanishing: $\zeta(s) \ne 0$.
+   - Conversely, $\mathcal{F}_{\text{zeta}}(s) \ne 0$ directly implies $\zeta(s) \ne 0$.
 
-8. **Asymptotic Agreement and Obstruction**:
-   For each fixed $1/2 < \sigma < 1$, as $t \to \infty$, the Archimedean-zeta term decays exponentially ($\mathcal{O}(e^{-\pi t / 4})$),
-   while $R(d, s) \sim \frac{2d(1/4 - d^2)}{t^4} > 0$ decays polynomially. Thus $\lim_{t \to \infty} t^4 \mathcal{F}_{\text{disp}}(s) = 2d(1/4 - d^2) > 0$.
-   At any candidate zero, $\mathcal{F}_{\text{zeta}}(s) = 0$ identically, so $\mathcal{F}_{\text{disp}}(s) = R(d, s) > 0$ strictly.
-   Consequently, blanket nonpositivity $\mathcal{F}_{\text{disp}}(s) \le 0$ cannot refute zeros.
+8. **Scope of the result**:
+   At a candidate zero, $\mathcal{F}_{\text{zeta}}(s) = 0$, so
+   $\mathcal{F}_{\text{disp}}(s) = R(d,s) > 0$. No theorem below bounds
+   $\Gamma_{\mathbb R}(s)\zeta(s)$ away from zeros or proves a Stirling asymptotic. A bound derived
+   from standard vertical-strip estimates would retain a polynomial factor, for example
+   $O_\sigma(t^{\sigma/2+3/2}e^{-\pi t/4})$ for the displacement contribution under a suitable
+   polynomial zeta bound. The previously stated bare $O(e^{-\pi t/4})$ estimate was too strong.
 
 ## Foundational Integrity
 
@@ -144,7 +146,7 @@ theorem displacementFunctionalPole_eq_residual (s : ℂ) :
   rw [neg_one_div_re, neg_one_div_im, mul_sub_one_re, mul_sub_one_im]
   ring
 
-/-- The Master Pole-Zeta Decomposition Theorem:
+/-- Pole-zeta decomposition:
 For any $s$ with $1/2 < \sigma < 1$:
 $$\mathcal{F}_{\text{disp}}(s) = R(\sigma - 1/2, s) + \mathcal{F}_{\text{zeta}}(s).$$ -/
 theorem displacementFunctional_master_decomposition {s : ℂ}

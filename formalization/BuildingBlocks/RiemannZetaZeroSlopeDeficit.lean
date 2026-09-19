@@ -2,31 +2,11 @@ import Mathlib.NumberTheory.LSeries.RiemannZeta
 import BuildingBlocks.RiemannZetaDisplacementCauchyRiemannSlope
 
 /-!
-# Zero Slope Deficit and Logarithmic Derivative Separation
+# Auxiliary Slope-Deficit Bound
 
-This module establishes the explicit deficit in the displacement functional derivative
-caused by the completed zeta logarithmic derivative $- \zeta'/\zeta(s)$ at an off-line zero.
-
-We build upon the previously formalized:
-1. `RiemannZetaDisplacementReflectionAntisymmetry`
-2. `RiemannZetaDisplacementCauchyRiemannSlope`
-
-At any hypothetical zero $\zeta(s) = 0$ with $\sigma = 1/2 + d > 1/2$, the displacement 
-functional exactly evaluates to the positive residual $R(d, s)$.
-
-This module initiates the differential contradiction: while the algebraic evaluation is 
-strictly positive at the zero, the local geometry of the critical strip requires the 
-longitudinal (frequency) variations to dominate polynomial decay. 
-
-By analyzing the completed zeta component $\mathcal{F}_{\text{zeta}} (s)$:
-$$ \mathcal{F}_{\text{zeta}}(s) = (2\sigma - 1)\operatorname{Re}(\Lambda(s)) - t \operatorname{Im}(\Lambda(s)) $$
-
-We formally define the slope deficit at a root using standard complex geometry.
-
-## Foundational Integrity
-
-Zero `sorry` placeholders, zero non-standard axioms. Depends strictly on:
-`[propext, Classical.choice, Quot.sound]`.
+This module defines two explicit real functions and proves nonnegativity of one and an upper bound
+for the other when `t >= 2`.  Despite the historical names, it does not use a zeta-zero hypothesis,
+a logarithmic derivative, or local critical-strip geometry, and it proves no zero contradiction.
 -/
 
 namespace BuildingBlocks.RiemannZetaZeroSlopeDeficit
@@ -40,17 +20,15 @@ noncomputable section
 
 /-! ### Section 1: Completed Zeta Algebraic Real/Imaginary Parts -/
 
-/-- Re-statement of the Cauchy-Riemann scaling relation at the critical line.
-For the pole profile $P(t) = 1/(t^2 + 1/4)$, the critical operator evaluates strictly positive. -/
+/-- Re-export of positivity for the explicit rational pole-profile expression. -/
 theorem pole_critical_slope_pos_reassert (t : ℝ) : 
     0 < 1 / (2 * (t^2 + 1 / 4)^2) :=
   BuildingBlocks.RiemannZetaDisplacementCauchyRiemannSlope.pole_critical_slope_pos (t)
 
-/-- The logarithmic derivative evaluation scale:
-$t \frac{d}{dt} \log(t^2 + 1/4) = \frac{2t^2}{t^2 + 1/4}$. -/
+/-- The explicit rational function `2*t^2/(t^2+1/4)`. -/
 def logDerivScale (t : ℝ) : ℝ := (2 * t^2) / (t^2 + 1 / 4)
 
-/-- The logarithmic derivative scale is non-negative. -/
+/-- The explicit rational function is nonnegative. -/
 theorem logDerivScale_nonneg (t : ℝ) : 0 ≤ logDerivScale t := by
   unfold logDerivScale
   have h_num : 0 ≤ 2 * t^2 := mul_nonneg zero_le_two (sq_nonneg t)
@@ -59,7 +37,7 @@ theorem logDerivScale_nonneg (t : ℝ) : 0 ≤ logDerivScale t := by
     linarith
   exact div_nonneg h_num (le_of_lt h_den)
 
-/-! ### Section 2: Deficit Structure and Non-vanishability -/
+/-! ### Section 2: An Auxiliary Rational Difference -/
 
 /-- A polynomial deficit profile representing the gap between the pole 
 critical slope and logarithmic zero tracking. -/

@@ -5,54 +5,12 @@ import BuildingBlocks.RiemannZetaDisplacementAsymptotics
 import BuildingBlocks.RiemannZetaUpperHalfPlaneReduction
 
 /-!
-# Critical Line Invariant Reflection and Displacement Antisymmetry
+# Critical-Line Reflection and Displacement Antisymmetry
 
-This module establishes the exact reflection symmetry and parity properties of the completed
-Riemann zeta function and the displacement functional $\mathcal{F}_{\text{disp}}(s)$ under the
-anti-holomorphic involution across the critical line:
-$$\iota(s) := 1 - \overline{s}.$$
-
-Geometrically, $\iota$ maps $s = \sigma + it$ to $(1 - \sigma) + it$, reflecting the real
-coordinate across the critical line $\sigma = 1/2$ while preserving the imaginary frequency $t$.
-
-## Mathematical Architecture
-
-1. **Critical Reflection Involution**:
-   The operator $\iota(s) = 1 - \overline{s}$ is an exact involution on $\mathbb{C}$:
-   $$\iota(\iota(s)) = s, \quad \operatorname{Re}(\iota(s)) = 1 - \sigma, \quad \operatorname{Im}(\iota(s)) = t.$$
-   The fixed-point set of $\iota$ is precisely the critical line $\operatorname{Re}(s) = 1/2$.
-
-2. **Completed Zeta Reflection Symmetries**:
-   Combining the functional equation $\Lambda_0(1 - s) = \Lambda_0(s)$ with global Schwarz
-   reflection $\Lambda_0(\overline{s}) = \overline{\Lambda_0(s)}$ yields:
-   $$\Lambda_0(\iota(s)) = \overline{\Lambda_0(s)}, \qquad \Lambda(\iota(s)) = \overline{\Lambda(s)}.$$
-   Consequently, the real parts are even across $\sigma = 1/2$, while the imaginary parts are odd:
-   $$\operatorname{Re}(\Lambda_0(1 - \sigma + it)) = \operatorname{Re}(\Lambda_0(\sigma + it)),$$
-   $$\operatorname{Im}(\Lambda_0(1 - \sigma + it)) = -\operatorname{Im}(\Lambda_0(\sigma + it)).$$
-   On the critical line $\sigma = 1/2$, the imaginary parts vanish identically.
-
-3. **Displacement Functional Antisymmetry**:
-   Because $\sigma - 1/2$ is odd under $\sigma \mapsto 1 - \sigma$ while $\operatorname{Re}(\Lambda_0)$ is even,
-   and $t$ is even while $\operatorname{Im}(\Lambda_0)$ is odd, the displacement functional is
-   identically antisymmetric (odd) across the critical line:
-   $$\mathcal{F}_{\text{disp}}(\iota(s)) = -\mathcal{F}_{\text{disp}}(s).$$
-   Identical antisymmetry holds for the Archimedean-zeta component $\mathcal{F}_{\text{zeta}}$
-   and the pole component $\mathcal{F}_{\text{pole}}$.
-
-4. **Critical Line Vanishing**:
-   On the critical line $\operatorname{Re}(s) = 1/2$:
-   $$\mathcal{F}_{\text{disp}}(1/2 + it) = 0, \quad \mathcal{F}_{\text{zeta}}(1/2 + it) = 0, \quad \mathcal{F}_{\text{pole}}(1/2 + it) = 0.$$
-
-5. **Dual Offline Zero Geometry**:
-   At any putative off-line zero $s$ in the right half of the strip ($\sigma > 1/2$):
-   $$\mathcal{F}_{\text{disp}}(s) = R(\sigma - 1/2, s) > 0,$$
-   while at the reflected dual zero $\iota(s)$ in the left half of the strip ($1 - \sigma < 1/2$):
-   $$\mathcal{F}_{\text{disp}}(\iota(s)) = -R(\sigma - 1/2, s) < 0.$$
-
-## Foundational Integrity
-
-Zero `sorry` placeholders, zero non-standard axioms. Depends strictly on:
-`[propext, Classical.choice, Quot.sound]`.
+This module proves reflection identities for the completed zeta functions and the associated
+algebraic displacement functionals.  It also derives the sign of the displacement at a reflected
+candidate from an assumed off-line zeta zero and previously proved residual positivity.  These
+symmetry and sign identities do not exclude such zeros.
 -/
 
 namespace BuildingBlocks.RiemannZetaDisplacementReflectionAntisymmetry

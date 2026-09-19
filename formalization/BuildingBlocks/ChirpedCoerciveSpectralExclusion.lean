@@ -12,28 +12,12 @@ import BuildingBlocks.ChirpedGrandSynthesis
 import BuildingBlocks.ChirpedGramDefiniteness
 
 /-!
-# Chirped Coercive Spectral-Arithmetic Energy Deficit and Exclusion
+# Conditional Coercive Scalar Exclusion
 
-This module establishes the bilinear Coercive Spectral-Arithmetic Exclusion Theorem
-for dilated chirped wavepacket constellations on finite-dimensional coefficient spaces `ι → ℂ`.
-
-By combining:
-1. The coercive arithmetic floor `(c₀ * log T - C_tot) * energy c ≤ W_arith c T`
-   derived from Gershgorin–Schur Rayleigh coercivity on the chirped Gram matrix,
-2. The spectral upper bound `W_spec c T ≤ (C_crit * log T + 6M - 2b T^(2d)) * energy c`
-   arising from the non-negativity of critical-line spectral energy (Wiener–Khinchin)
-   and the coherent off-line pair energy deficit,
-3. The Weil explicit formula quadratic identity `W_arith c T = W_spec c T`,
-this module proves:
-- Complete vector energy cancellation for all non-trivial vectors `c ≠ 0`:
-  `c₀ * log T - C_tot ≤ C_crit * log T + 6M - 2b T^(2d)`,
-- Filter-theoretic eventual violation: for all sufficiently large `T`,
-  the arithmetic floor strictly exceeds the spectral ceiling,
-- Unconditional refutation of any off-line zero producing such a system,
-- End-to-end deduction of `RightHalfZeroFree` and Mathlib's official `RiemannHypothesis`.
-
-All declarations depend strictly on the standard foundational axioms:
-`[propext, Classical.choice, Quot.sound]`.
+This module derives a contradiction from supplied arithmetic lower bounds, spectral upper bounds,
+and an equality between the two scalar functions.  `CoerciveSystem` packages those hypotheses;
+it is not constructed here from a Weil explicit formula or from an off-line zeta zero.  The RH
+theorem is conditional on a `CoerciveSystem` witness for every candidate zero.
 -/
 
 namespace BuildingBlocks.ChirpedCoerciveSpectralExclusion
@@ -107,8 +91,7 @@ theorem coercive_spectral_exclusion_eventual
   intro hle
   linarith
 
-/-- The Coercive Off-Line Zero Refutation Theorem:
-An off-line zero producing a valid coercive Weil pair contradicts the eventual deficit. -/
+/-- The supplied lower bound, upper bound, and equality contradict eventual power dominance. -/
 theorem coercive_offline_zero_refutation
     {W_arith W_spec : (ι → ℂ) → ℝ → ℝ} (c : ι → ℂ) (hc : c ≠ 0)
     {c₀ C_tot C_crit M b d : ℝ} (hc₀ : 0 < c₀) (hb : 0 < b) (hd : 0 < d)
@@ -134,7 +117,7 @@ def CoerciveSystem : Prop :=
       (∀ᶠ (T : ℝ) in atTop, (c₀ * Real.log T - C_tot) * energy c ≤ W_arith c T) ∧
       (∀ᶠ (T : ℝ) in atTop, W_spec c T ≤ (C_crit * Real.log T + 6 * M - 2 * b * T^(2 * (s.re - 1/2))) * energy c)
 
-/-- Any CoerciveSystem refutes the existence of off-line zeros, yielding RightHalfZeroFree. -/
+/-- A `CoerciveSystem` is inconsistent; hence an assumed instance proves `RightHalfZeroFree`. -/
 theorem rightHalfZeroFree_of_coercive_system (hsys : CoerciveSystem) :
     RightHalfZeroFree := by
   intro s hsr hs hz
@@ -143,7 +126,7 @@ theorem rightHalfZeroFree_of_coercive_system (hsys : CoerciveSystem) :
   have hd : 0 < s.re - 1 / 2 := by linarith
   exact coercive_offline_zero_refutation c hc hc₀ hb hd hid harith hspec
 
-/-- Deduction of Mathlib's official `RiemannHypothesis` from any `CoerciveSystem`. -/
+/-- Conditional deduction of `RiemannHypothesis` from an assumed `CoerciveSystem`. -/
 theorem RiemannHypothesis_of_coercive_system (hsys : CoerciveSystem) :
     RiemannHypothesis :=
   CriticalTransformRH.noRightZeros_implies_RiemannHypothesis

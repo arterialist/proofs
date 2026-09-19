@@ -5,9 +5,9 @@ import BuildingBlocks.CriticalTransformRH
 import BuildingBlocks.Scope
 
 /-!
-# Weil Explicit Grand Riemann Hypothesis Bridge
+# Conditional RH bridge from universal wavepacket evaluations
 
-This module formalizes the grand deduction of Mathlib's official `RiemannHypothesis` from the
+This module deduces Mathlib's official `RiemannHypothesis` from the
 Weil explicit formula wavepacket evaluation framework (`ChirpedWeilExplicitAdmissibility`),
 Schwarz reflection symmetry (`RiemannZetaSchwarzReflection`), and real axis non-vanishing
 (`RiemannZetaRealNonvanishing`).
@@ -17,14 +17,14 @@ Under this synthesis:
    by trichotomy on its imaginary part `s.im`:
    - `s.im = 0`: Real zeros are excluded by Dirichlet eta alternating sum positivity on `(1/2, 1)`
      and Mathlib's boundary theorem on `[1, ∞)` (`real_axis_zeta_ne_zero`).
-   - `0 < s.im`: Upper half-plane zeros admit a Weil explicit wavepacket evaluation, which is
-     refuted unconditionally by linear power dominance (`refute_weil_evaluation`).
+   - `0 < s.im`: the input `UniversalWeilSystem` supplies a wavepacket evaluation, which
+     `refute_weil_evaluation` refutes.
    - `s.im < 0`: Lower half-plane zeros are reflected across the real line via Schwarz reflection
      `zero_iff_star_zero` to the upper half-plane, where the Weil refutation produces an identical
      contradiction `False`.
-2. Consequently, no off-line zeros exist anywhere in the open right half-plane `RightHalfZeroFree`.
+2. Consequently, the three supplied systems imply `RightHalfZeroFree`.
 3. By `CriticalTransformRH.noRightZeros_implies_RiemannHypothesis`, Mathlib's official
-   `RiemannHypothesis` holds unconditionally.
+   `RiemannHypothesis` follows conditionally on those systems.
 
 All declarations depend strictly on the standard foundational axioms:
 `[propext, Classical.choice, Quot.sound]`.
@@ -38,8 +38,8 @@ open BuildingBlocks.RiemannZetaRealNonvanishing
 
 noncomputable section
 
-/-- A universal system providing Weil explicit wavepacket evaluations for all off-line zero
-candidates in the upper half-plane. -/
+/-- A hypothesis package providing wavepacket evaluations for all off-line zero candidates in the
+upper half-plane. This module does not construct an inhabitant. -/
 structure UniversalWeilSystem where
   evaluator : ∀ (s : ℂ), (1 : ℝ) / 2 < s.re → 0 < s.im → riemannZeta s = 0 →
     WeilWavepacketEvaluation s

@@ -2,40 +2,12 @@ import Mathlib.NumberTheory.LSeries.RiemannZeta
 import BuildingBlocks.RiemannZetaDisplacementReflectionAntisymmetry
 
 /-!
-# Displacement Cauchy-Riemann Linear Slope and Critical Line Energy
+# Critical-Line Pole Profile Algebra
 
-This module establishes the machine-verified exact computation of the linear slope of the
-displacement functional and the pole residual at the critical line $\sigma = 1/2$:
-
-1. **Exact Critical Line Pole Value**:
-   On the critical line $s = 1/2 + it$, the pole function $-1/(s(s-1))$ is purely real and evaluates
-   to the positive Cauchy-Lorentz profile:
-   $$\frac{-1}{s(s-1)} = \frac{1}{t^2 + 1/4}.$$
-
-2. **Cauchy-Riemann Differential Structure**:
-   For any holomorphic function $f = u + iv$ satisfying real-axis Schwarz reflection, the
-   transverse derivative $\partial u / \partial \sigma$ and $\partial v / \partial \sigma$ along
-   the critical line are related by Cauchy-Riemann to the longitudinal frequency derivatives:
-   $$\frac{\partial u}{\partial \sigma} = \frac{\partial v}{\partial t}, \qquad
-     \frac{\partial v}{\partial \sigma} = -\frac{\partial u}{\partial t}.$$
-
-3. **Critical Line Slope Identity**:
-   The infinitesimal slope of the displacement functional across the critical line decomposes as:
-   $$\left.\frac{\partial \mathcal{F}_{\text{disp}}}{\partial d}\right|_{d=0} =
-     2 u(1/2, t) + t \frac{\partial u}{\partial t}(1/2, t) =
-     \frac{1}{t}\frac{d}{dt}\left(t^2 u(1/2, t)\right).$$
-
-4. **Exact Pole Residual Slope**:
-   Evaluating this differential operator on the pole profile $P(t) = \frac{1}{t^2 + 1/4}$ yields:
-   $$2 P(t) + t P'(t) = \frac{2}{t^2 + 1/4} - \frac{2t^2}{(t^2 + 1/4)^2} = \frac{1}{2(t^2 + 1/4)^2},$$
-   which matches the linear term of the displacement residual $R(d, 1/2 + it)$ at $d = 0$:
-   $$\left.\frac{\partial}{\partial d} \left(\frac{2d(1/4 - d^2)}{|s(s-1)|^2}\right)\right|_{d=0} =
-     \frac{1}{2(t^2 + 1/4)^2}.$$
-
-## Foundational Integrity
-
-Zero `sorry` placeholders, zero non-standard axioms. Depends strictly on:
-`[propext, Classical.choice, Quot.sound]`.
+This module evaluates the rational pole term on `s = 1/2 + it`, defines its scalar derivative
+profile, and proves the identity `2*P(t) + t*P'(t) = 1/(2*(t^2+1/4)^2)` by algebra.  It does not
+formalize derivatives of the completed zeta function or a general Cauchy-Riemann theorem, and it
+does not prove that this expression is the transverse derivative of the full displacement.
 -/
 
 namespace BuildingBlocks.RiemannZetaDisplacementCauchyRiemannSlope
@@ -122,11 +94,11 @@ theorem poleProfile_pos (t : ℝ) : 0 < poleProfile t := by
   unfold poleProfile
   exact div_pos one_pos (critical_denom_pos t)
 
-/-- The frequency derivative profile:
+/-- A defined expression with the value of the derivative of the rational pole profile:
 $P'(t) = -\frac{2t}{(t^2 + 1/4)^2}$. -/
 def poleProfileDeriv (t : ℝ) : ℝ := -2 * t / (t^2 + 1 / 4)^2
 
-/-- Exact critical slope operator:
+/-- Algebraic identity for the two defined profiles:
 $2 P(t) + t P'(t) = \frac{1}{2(t^2 + 1/4)^2}$. -/
 theorem pole_critical_slope_identity (t : ℝ) :
     2 * poleProfile t + t * poleProfileDeriv t = 1 / (2 * (t^2 + 1 / 4)^2) := by
@@ -139,16 +111,16 @@ theorem pole_critical_slope_identity (t : ℝ) :
   field_simp
   ring
 
-/-- Positivity of the critical slope of the pole residual:
+/-- Positivity of the resulting rational expression:
 $\frac{1}{2(t^2 + 1/4)^2} > 0$ for all $t \in \mathbb{R}$. -/
 theorem pole_critical_slope_pos (t : ℝ) : 0 < 1 / (2 * (t^2 + 1 / 4)^2) := by
   have hd_pos := critical_denom_pos t
   have hd2_pos : 0 < (t^2 + 1 / 4)^2 := sq_pos_of_pos hd_pos
   exact div_pos one_pos (mul_pos two_pos hd2_pos)
 
-/-! ### Section 3: Asymptotic Slope Decay -/
+/-! ### Section 3: Rational Upper Bound -/
 
-/-- At high frequency $t \ge t_0 > 0$, the critical slope is bounded by $1 / (2 t^4)$. -/
+/-- For `t > 0`, the rational expression is bounded by `1/(2*t^4)`. -/
 theorem pole_critical_slope_le_quartic {t : ℝ} (ht : 0 < t) :
     1 / (2 * (t^2 + 1 / 4)^2) ≤ 1 / (2 * t^4) := by
   have ht2 : t^2 ≤ t^2 + 1 / 4 := by linarith

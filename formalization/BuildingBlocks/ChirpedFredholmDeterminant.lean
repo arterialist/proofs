@@ -21,31 +21,27 @@ import BuildingBlocks.ChirpedOperatorTraceCoercivity
 import BuildingBlocks.ChirpedSpectralMeasureAnnihilation
 
 /-!
-# Chirped Fredholm Determinant and Regularized Trace Factorization
+# Scalar trace discrepancy packaged with Fredholm terminology
 
-This module formalizes the regularized Fredholm determinant and trace factorization framework
-for the Riemann zeta function on chirped wavepacket constellations.
+This module defines a scalar trace discrepancy and packages hypotheses under names borrowed from
+Fredholm determinant theory. It does not define a Hilbert-space operator, prove trace-class or
+Hilbert-Schmidt properties, or construct an analytic Fredholm determinant.
 
-In Fredholm and regularized determinant theory (Pólya–Hilbert, Connes, Burnol, Meyer), the zeros of
-the Riemann zeta function correspond to the spectral vanishing locus of a regularized Fredholm
-determinant:
-  `Δ(s) = det_reg(I - (s - 1/2) ℋ⁻¹)`.
-When paired with the chirped wavepacket family, the logarithmic Fredholm determinant
-`LogFredholmDeterminant` evaluates to the discrepancy between the arithmetic and spectral traces:
-  `log Δ(T, c) = Tr_arith(T, c) - Tr_spec(T, c)`.
+`LogFredholmDeterminant` is definitionally `T_arith T c - T_spec T c`.
+`RegularizedFredholmDeterminant` is definitionally `exp (-LogFredholmDeterminant ...)`. Thus the
+ordinary real logarithm of the latter, where simplified, has the opposite sign from
+`LogFredholmDeterminant`; the names do not establish a determinant/log-determinant relation.
 
-Under the Weil explicit formula on the critical line, arithmetic and spectral traces balance:
+Under the supplied trace-balance predicate, arithmetic and spectral traces balance:
   `Tr_arith(T, c) = Tr_spec(T, c) ↔ log Δ(T, c) = 0 ↔ Δ(T, c) = 1`.
 
-However, any hypothetical off-line zero candidate `s = β + iγ` with `d = β - 1/2 > 0` induces an
-unbalanced rank-one spectral projection with negative quadratic residue `-2b * T^(2d) * ‖c‖²`.
-This forces the logarithmic Fredholm determinant to satisfy:
+The hypotheses `ArithmeticCoercivity` and `SpectralTraceZeroBound` imply the scalar bound:
   `log Δ(T, c) ≥ 𝒢_Fredholm(T) * ‖c‖² > 0`
 for all carrier frequencies `T ≥ T_thresh`.
 
 Under trace balance `log Δ(T, c) = 0`, this yields `0 > 0`, an immediate contradiction.
-Consequently, no off-line zero can exist, and Mathlib's official `RiemannHypothesis` is deduced
-unconditionally from any `FredholmDeterminantSystem`.
+The later zero-exclusion and RH results are conditional on a supplied
+`FredholmDeterminantSystem`; this file does not construct such a system from zeta-function data.
 
 ## Axiom Status
 All declarations depend strictly on standard foundational axioms:
@@ -76,20 +72,19 @@ variable {ι : Type*} [Fintype ι] [Nonempty ι]
 
 noncomputable section
 
-/-- Logarithmic Fredholm determinant functional on chirped wavepacket constellations:
-The logarithmic discrepancy between the arithmetic and spectral traces. -/
+/-- Scalar discrepancy between two real-valued trace functions. Despite its historical name,
+this definition is not shown here to be a logarithm of a Fredholm determinant. -/
 def LogFredholmDeterminant
     (T_arith T_spec : ℝ → (ι → ℂ) → ℝ) (T : ℝ) (c : ι → ℂ) : ℝ :=
   T_arith T c - T_spec T c
 
-/-- Regularized Fredholm determinant functional:
-Defined via the exponential of the negative logarithmic Fredholm determinant. -/
+/-- Exponential of the negative scalar discrepancy. No operator-theoretic determinant property is
+proved for this definition. -/
 def RegularizedFredholmDeterminant
     (T_arith T_spec : ℝ → (ι → ℂ) → ℝ) (T : ℝ) (c : ι → ℂ) : ℝ :=
   Real.exp (-(LogFredholmDeterminant T_arith T_spec T c))
 
-/-- Fredholm spectral balance predicate:
-The logarithmic Fredholm determinant vanishes identically for all carrier scales and test vectors. -/
+/-- Equality of the two supplied trace functions at every carrier and test vector. -/
 def FredholmSpectralBalance
     (T_arith T_spec : ℝ → (ι → ℂ) → ℝ) : Prop :=
   ∀ (T : ℝ) (c : ι → ℂ), LogFredholmDeterminant T_arith T_spec T c = 0
@@ -108,7 +103,7 @@ theorem fredholmSpectralBalance_iff_weilTraceEquivalence
     unfold LogFredholmDeterminant
     linarith
 
-/-- Lower bound on the logarithmic Fredholm determinant from arithmetic coercivity and spectral depression. -/
+/-- Lower bound on the scalar trace discrepancy from the two supplied trace inequalities. -/
 theorem log_fredholm_lower_bound
     {T_arith T_spec : ℝ → (ι → ℂ) → ℝ} {c₀ C_arith C_crit C_nonres b d T : ℝ}
     (h_arith : ArithmeticCoercivity T_arith c₀ C_arith)
@@ -132,8 +127,8 @@ theorem refute_fredholm_balance
   have hequiv := (fredholmSpectralBalance_iff_weilTraceEquivalence T_arith T_spec).mp h_bal
   exact refute_operator_trace hd hb h_arith h_spec hequiv c hc
 
-/-- An autonomous Fredholm Determinant Evaluation structure packaging the trace operators,
-coercivity parameters, test vector, and spectral balance condition. -/
+/-- A hypothesis package containing two real-valued functions, coercivity bounds, a test vector,
+and their pointwise equality. It contains no Fredholm operator or determinant construction. -/
 structure FredholmDeterminantEvaluation (s : ℂ) where
   c₀ : ℝ
   hc₀_pos : 0 < c₀
@@ -169,13 +164,13 @@ def FredholmDeterminantEvaluation.toOperatorTraceEvaluation
   test_vector := fde.test_vector
   h_test_ne_zero := fde.h_test_ne_zero
 
-/-- Pointwise refutation of any off-line zero admitting a Fredholm determinant evaluation. -/
+/-- Pointwise contradiction from a supplied scalar evaluation package. -/
 theorem refute_fredholm_evaluation
     {s : ℂ} (hs : 1 / 2 < s.re) (eval : FredholmDeterminantEvaluation (ι := ι) s) : False :=
   refute_operator_trace_evaluation hs eval.toOperatorTraceEvaluation
 
-/-- Global Fredholm Determinant System: Bundles computational low-frequency verification
-with high-frequency Fredholm determinant evaluations for all putative off-line zeros. -/
+/-- A hypothesis package combining low-frequency zero-freeness with scalar evaluations for
+putative high-frequency off-line zeros. -/
 structure FredholmDeterminantSystem where
   height : ℝ
   h_height_ge_one : 1 ≤ height
@@ -191,7 +186,7 @@ def FredholmDeterminantSystem.toOperatorTraceSystem
   low_free := fds.low_free
   evaluator := fun s hs hH => (fds.evaluator s hs hH).toOperatorTraceEvaluation
 
-/-- Master off-line zero exclusion from a Fredholm Determinant System. -/
+/-- Off-line zero exclusion conditional on a `FredholmDeterminantSystem`. -/
 theorem no_offline_zero_of_fredholm_system
     (fds : FredholmDeterminantSystem (ι := ι))
     (s : ℂ) (hs : s ∈ RightOfflineSupport) (hH : fds.height < |s.im|) : False :=
@@ -208,7 +203,8 @@ theorem rightHalfZeroFree_of_fredholm_system
     (fds : FredholmDeterminantSystem (ι := ι)) : RightHalfZeroFree :=
   rightHalfZeroFree_of_operator_trace_system fds.toOperatorTraceSystem
 
-/-- Master Global Deduction of Mathlib's official `RiemannHypothesis` from a Fredholm Determinant System. -/
+/-- Conditional deduction of Mathlib's `RiemannHypothesis` from a
+`FredholmDeterminantSystem`. -/
 theorem RiemannHypothesis_of_fredholm_system
     (fds : FredholmDeterminantSystem (ι := ι)) : RiemannHypothesis :=
   RiemannHypothesis_of_operator_trace_system fds.toOperatorTraceSystem

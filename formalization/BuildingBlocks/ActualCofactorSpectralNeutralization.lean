@@ -6,14 +6,20 @@ open Real Filter
 
 namespace BuildingBlocks.ActualCofactorSpectralNeutralization
 
+/-!
+This file proves identities for scalar power models. In particular,
+`scatteringModulus ε T` is defined to be `T ^ (-ε)`; it is not the exact modulus of the Gamma
+factor or Riemann scattering multiplier. The theorems below do not estimate the difference between
+that analytic quantity and this model.
+-/
+
 /-- The uncompensated off-line zero amplitude at frequency `T`. -/
 noncomputable def offlineAmplitude (ε : ℝ) (T : ℝ) : ℝ := T ^ ε
 
-/-- The modulus of the Riemann scattering multiplier `χ(ρ)` at abscissa `1/2 + ε`. -/
+/-- Scalar power model for the leading size `T ^ (-ε)`. -/
 noncomputable def scatteringModulus (ε : ℝ) (T : ℝ) : ℝ := T ^ (-ε)
 
-/-- Exact algebraic neutralization: the Riemann scattering multiplier exactly
-cancels the raw off-line zero amplitude, leaving unit magnitude `T^0 = 1`. -/
+/-- Exact cancellation between the two scalar power definitions. -/
 theorem amplitude_scattering_exact_neutralization (ε : ℝ) (T : ℝ) (hT : 0 < T) :
     offlineAmplitude ε T * scatteringModulus ε T = 1 := by
   unfold offlineAmplitude scatteringModulus
@@ -72,8 +78,8 @@ theorem neutralized_spectral_magnitude_at_one (ε : ℝ) (T : ℝ) (hT : 0 < T) 
     offlineAmplitude ε T * scatteringModulus ε T * 1 = 1 := by
   rw [amplitude_scattering_exact_neutralization ε T hT, mul_one]
 
-/-- Net spectral off-line suppression: the combined product of the off-line amplitude,
-the scattering multiplier, and the dual Dirichlet growth is strictly bounded by `T^ν`
+/-- Power-model suppression: the combined product of the two scalar amplitudes and the modeled
+dual growth is strictly bounded by `T^ν`
 for any pre-assigned positive power `ν > 0`. -/
 theorem net_spectral_offline_suppression (ε δ ν : ℝ) (T : ℝ) (hT : 1 < T)
     (hcomp : compensatedExponent ε δ < ν) :
@@ -82,9 +88,8 @@ theorem net_spectral_offline_suppression (ε δ ν : ℝ) (T : ℝ) (hT : 1 < T)
   rw [amplitude_scattering_exact_neutralization ε T hTpos, one_mul]
   exact Real.rpow_lt_rpow_of_exponent_lt hT hcomp
 
-/-- Asymptotic dominance of the logarithmic Weil margin: for any fixed positive constants
-`C` (the neutralized off-line zero mass bound) and `a > 0` (the arithmetic Gram margin),
-the positive Weil margin `a * log T` eventually strictly exceeds the neutralized off-line bound. -/
+/-- Elementary logarithmic dominance: for constants `C` and `a > 0`, `a * log T` eventually
+exceeds `C`. The theorem does not identify either constant with a Weil-form estimate. -/
 theorem eventual_dominance_weil_margin (C a : ℝ) (ha : 0 < a) :
     ∀ᶠ T in Filter.atTop, C < a * Real.log T := by
   have hlim : Filter.Tendsto (fun T => a * Real.log T) Filter.atTop Filter.atTop :=

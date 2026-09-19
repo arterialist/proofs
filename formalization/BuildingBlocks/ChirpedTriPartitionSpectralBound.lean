@@ -13,41 +13,23 @@ open BuildingBlocks.ChirpedPhaseBandLocalization
 open BuildingBlocks.ChirpedQuadratureDecay
 
 /-!
-# Chirped Tri-Partition Spectral Bound and Resonant Separation
+# Scalar Three-Band Partition Bounds
 
-This module formalizes the tri-partition of the Riemann zero spectrum under chirped wavepacket probing:
-1. Tri-partition of frequencies into three mutually disjoint bands:
-   - Low-frequency band: `γ ≤ T / 2`
-   - Resonant band: `T / 2 < γ < T`
-   - High-frequency band: `γ ≥ T`
-2. Strict gradient separation in the non-resonant bands:
-   - For `γ ≤ 0`: `Φ'(x) ≥ T / 2` uniformly on `[0, 1]`
-   - For `γ ≥ 2 * T`: `|Φ'(x)| ≥ γ - T ≥ T` uniformly on `[0, 1]`
-3. Non-resonant energy suppression:
-   Quadratic and quartic IBP decay suppresses low- and high-frequency zero tails:
-   `Q_nonres(T) = Q_low(T) + Q_high(T) ≤ C_nonres`.
-4. Resonant critical bound:
-   `Q_crit(T) ≤ C_crit * Real.log T`.
-5. Master tri-partition spectral upper bound:
-   `Q_spec(T) ≤ C_crit * Real.log T + C_nonres - 2 * b * T^(2 * d)`.
-6. Quantitative power dominance and refutation:
-   For all `T ≥ T_thresh`, the negative off-line power `- 2 * b * T^(2 * d)` overwhelms
-   the critical and non-resonant bounds, establishing `RightHalfZeroFree` and
-   Mathlib's `RiemannHypothesis`.
-
-All proofs depend strictly on Lean 4 foundational axioms: `[propext, Classical.choice, Quot.sound]`.
-Zero `sorry` placeholders.
+This module partitions a real frequency parameter into low, resonant, and high predicates.  Its
+spectral upper bound is obtained by adding bounds stored in `TriPartitionCertificate`; the file
+does not derive those bounds from a zeta spectrum.  The gradient lemmas cover their own explicit
+subranges, and the RH result assumes a separate refutation for every candidate zero.
 -/
 
-/-- Partition predicate: low-frequency zero ordinates. -/
+/-- Low-frequency predicate for a real parameter. -/
 def isLowFrequency (T gamma : ℝ) : Prop :=
   gamma ≤ T / 2
 
-/-- Partition predicate: resonant zero ordinates. -/
+/-- Resonant-band predicate for a real parameter. -/
 def isResonant (T gamma : ℝ) : Prop :=
   T / 2 < gamma ∧ gamma < T
 
-/-- Partition predicate: high-frequency zero ordinates. -/
+/-- High-frequency predicate for a real parameter. -/
 def isHighFrequency (T gamma : ℝ) : Prop :=
   T ≤ gamma
 
@@ -82,7 +64,7 @@ theorem low_high_disjoint {T gamma : ℝ} (hT : 0 < T)
   unfold isHighFrequency at hhigh
   linarith
 
-/-- The target tuned zero γ₀ = (3/4) * T lies strictly inside the resonant band for T > 0. -/
+/-- The parameter `gamma = (3/4)*T` lies strictly inside the resonant band for `T > 0`. -/
 theorem tuned_zero_is_resonant {T : ℝ} (hT : 0 < T) :
     isResonant T ((3 / 4) * T) := by
   unfold isResonant
@@ -90,7 +72,7 @@ theorem tuned_zero_is_resonant {T : ℝ} (hT : 0 < T) :
   · linarith
   · linarith
 
-/-- Uniform gradient separation for negative-ordinate zeros on [0, 1] with η = 1/4. -/
+/-- Uniform gradient separation for `gamma <= 0` on `[0,1]` with `eta = 1/4`. -/
 theorem negative_ordinate_gradient_separation
     {T gamma x : ℝ} (_hT : 0 < T) (hgamma : gamma ≤ 0)
     (_hx0 : 0 ≤ x) (hx1 : x ≤ 1) :
@@ -105,7 +87,7 @@ theorem negative_ordinate_gradient_separation
       _ = T / 2 := mul_one _
   linarith
 
-/-- Uniform gradient separation for high-frequency zeros γ ≥ 2 * T on [0, 1] with η = 1/4. -/
+/-- Uniform gradient separation for `gamma >= 2*T` on `[0,1]` with `eta = 1/4`. -/
 theorem high_frequency_gradient_separation
     {T gamma x : ℝ} (hT : 0 ≤ T) (hgamma : 2 * T ≤ gamma)
     (hx0 : 0 ≤ x) (_hx1 : x ≤ 1) :
@@ -120,7 +102,7 @@ theorem high_frequency_gradient_separation
   have habs : - (T - gamma - (T / 2) * x) ≤ |T - gamma - (T / 2) * x| := neg_le_abs _
   exact le_trans hle habs
 
-/-- Tri-partition spectral bound certificate structure. -/
+/-- Positive constants used in the later scalar bounds. -/
 structure TriPartitionCertificate where
   C_crit : ℝ
   C_nonres : ℝ
@@ -131,7 +113,7 @@ structure TriPartitionCertificate where
   hb_pos : 0 < b
   hd_pos : 0 < d
 
-/-- Master tri-partition spectral upper bound from constituent band estimates. -/
+/-- Sum of the three constituent bounds stored in the certificate. -/
 theorem tri_partition_spectral_upper_bound
     (cert : TriPartitionCertificate)
     (Q_spec Q_crit Q_nonres E_pair : ℝ → ℝ)
@@ -147,7 +129,7 @@ theorem tri_partition_spectral_upper_bound
   have hp := h_pair T
   linarith
 
-/-- Contradiction when the negative off-line power overwhelms the arithmetic and spectral sides. -/
+/-- Contradiction among the supplied bounds when the power term dominates. -/
 theorem tri_partition_coercive_refutation
     (cert : TriPartitionCertificate)
     (Q_arith Q_spec Q_crit Q_nonres E_pair : ℝ → ℝ)
@@ -170,14 +152,14 @@ theorem tri_partition_coercive_refutation
   have heq := h_ident T
   linarith
 
-/-- End-to-end deduction of `RightHalfZeroFree` from tri-partition refutation. -/
+/-- Conversion of an assumed candidate-zero refutation into `RightHalfZeroFree`. -/
 theorem rightHalfZeroFree_of_tri_partition_refutation
     (hrefute : ∀ (s : ℂ), 1 / 2 < s.re → s ≠ 1 → riemannZeta s = 0 → False) :
     BuildingBlocks.RightHalfZeroFree := by
   intro s hsr hs hz
   exact (hrefute s hsr hs hz).elim
 
-/-- End-to-end deduction of Mathlib's official `RiemannHypothesis` from tri-partition refutation. -/
+/-- Conditional conversion of the assumed refutation into `RiemannHypothesis`. -/
 theorem RiemannHypothesis_of_tri_partition_refutation
     (hrefute : ∀ (s : ℂ), 1 / 2 < s.re → s ≠ 1 → riemannZeta s = 0 → False) :
     RiemannHypothesis :=

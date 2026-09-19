@@ -5,37 +5,12 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# Chirped Gram Definiteness and Rayleigh Quotient Coercivity
+# Scalar Gram-Lower-Bound Algebra
 
-This module formalizes the strict positive definiteness and Rayleigh quotient coercivity
-of the arithmetic Weil quadratic form on chirped packet constellations:
-
-1. **Diagonal Floor and Cross Row Budget:**
-   Under Archimedean diagonal log-growth `d(T) = log T - C_D` and Brun–Titchmarsh
-   geometric row bound `R(T) = C_geom * exp(-B/2) * log T + C_0`, the net margin
-   satisfies:
-     `d(T) - R(T) = (1 - C_geom * exp(-B/2)) * log T - (C_D + C_0)`
-
-2. **Canonical Buffer Coercivity:**
-   Under the canonical buffer `B = 2 * log C_geom + 1`, the net margin coefficient
-   evaluates unconditionally to `c_0 = 1 - exp(-1/2) > 0`, yielding the uniform floor:
-     `d(T) - R(T) = (1 - exp(-1/2)) * log T - C_tot`
-
-3. **Strict Positive Definiteness and Rayleigh Coercivity:**
-   For any non-zero coefficient vector `c ≠ 0`, the energy is strictly positive:
-     `0 < energy c`
-   The Rayleigh quotient `gramLower d p c / energy c` is bounded below by `d - R`.
-   For `T > exp(C_tot / (1 - exp(-1/2)))`, the margin is strictly positive:
-     `0 < gramLower d(T) p c`
-   proving that the arithmetic Weil form is strictly positive definite on the entire
-   constellation span.
-
-4. **Spectral Deficit Incompatibility:**
-   An off-line zero pair extracts energy `2 * b * T^(2 * d_disp)` that unconditionally
-   exceeds `C_crit * log T + 6 * M - ((1 - exp(-1/2)) * log T - C_tot)`, establishing
-   the impossibility of matching the coercive positive definite arithmetic Gram floor.
-
-This establishes **Unique Contribution 352** in Lean 4.
+This module proves finite-dimensional norm identities and scalar coercivity consequences from
+an assumed lower form `gramLower`.  The functions called arithmetic and spectral margins are
+real expressions; no Weil quadratic form, Gram matrix, or zeta-zero coupling is constructed.
+The exclusion theorem is an incompatibility among its explicit scalar inequalities.
 -/
 
 namespace BuildingBlocks.ChirpedGramDefiniteness
@@ -118,8 +93,7 @@ theorem rayleigh_floor_pos (logT C_tot : ℝ)
       _ = canonicalCoeff * logT := mul_comm _ _
   linarith
 
-/-- Strict Positive Definiteness: for any non-zero vector `c ≠ 0` and sufficiently large `log T`,
-the arithmetic Gram lower form is strictly positive. -/
+/-- Positivity of the defined lower form for a nonzero vector under the threshold hypothesis. -/
 theorem gramLower_strictly_positive [Nonempty ι]
     (d R C_tot : ℝ) (p : ι → ι → ℂ) (c : ι → ℂ)
     (hc : c ≠ 0)
@@ -157,7 +131,7 @@ theorem rayleighQuotient_ge_margin [Nonempty ι]
   have hmargin := gramLower_ge_margin d R p c hrow hcol
   exact (le_div_iff₀ he).mpr hmargin
 
-/-- Offline spectral deficit: an off-line pair energy eventually exceeds the critical background. -/
+/-- A positive power eventually exceeds the stated logarithmic background. -/
 theorem offline_deficit_eventual (C_crit M b d_disp c_0 C_tot : ℝ)
     (hb : 0 < b) (hd : 0 < d_disp) :
     ∀ᶠ (T : ℝ) in atTop,
@@ -168,8 +142,7 @@ theorem offline_deficit_eventual (C_crit M b d_disp c_0 C_tot : ℝ)
   filter_upwards [hdom] with T hT
   linarith
 
-/-- Positivity Exclusion: the coercive Gram arithmetic lower bound cannot be matched by
-the off-line spectral deficit for large T. -/
+/-- The two supplied scalar bounds are incompatible for sufficiently large `T`. -/
 theorem spectral_arithmetic_positivity_exclusion
     {C_crit M b d_disp c_0 C_tot : ℝ}
     (hb : 0 < b) (hd : 0 < d_disp) :
@@ -179,7 +152,7 @@ theorem spectral_arithmetic_positivity_exclusion
   filter_upwards [hdef] with T hT hle
   linarith
 
-/-- Certificate bundling Gram matrix definiteness, coercivity floor, and threshold. -/
+/-- Certificate bundling scalar constants and their positivity properties. -/
 structure ChirpedGramDefinitenessCertificate where
   C_tot : ℝ
   C_tot_nonneg : 0 ≤ C_tot
@@ -188,7 +161,7 @@ structure ChirpedGramDefinitenessCertificate where
   threshold_log : ℝ
   threshold_spec : C_tot / coeff ≤ threshold_log
 
-/-- Constructive builder for the canonical Gram definiteness certificate. -/
+/-- Builder for the scalar certificate using `canonicalCoeff`. -/
 def makeCanonicalGramDefinitenessCertificate (C_tot : ℝ) (hC : 0 ≤ C_tot) :
     ChirpedGramDefinitenessCertificate where
   C_tot := C_tot

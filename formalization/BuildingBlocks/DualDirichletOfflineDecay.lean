@@ -4,13 +4,12 @@ import Mathlib.Tactic
 open Real
 
 /-!
-# Exact power decay of the dual Dirichlet polynomial at off-line zeros
+# Exponent algebra for a modeled dual Dirichlet bound
 
-This module proves that for any hypothetical off-line zero `ρ = β + iγ` of the
-Riemann zeta function with `β = 1/2 + ε` (`ε > 0`), the product of the scattering
-multiplier `χ(ρ)` (which scales as `T^(1/2 - β) = T^(-ε)`) with the short dual
-Dirichlet polynomial of length `y = T^δ / (2π)` (which scales as `T^(δ*β)`)
-exhibits strict, unconditional negative power decay in `T`:
+This module proves algebraic facts about the exponent obtained by combining the modeled powers
+`T^(1/2 - β)` and `T^(δ*β)`. It does not define a complex Dirichlet polynomial, estimate its
+absolute value, or prove a bound for the analytic scattering multiplier. Under those external
+bounds, the combined model has negative exponent:
 
   `|χ(ρ) S_y(ρ)| ≪ T^(1/2 - β(1 - δ)) = T^(δ/2 - ε(1 - δ))`
 
@@ -18,8 +17,8 @@ Whenever the cofactor cutoff parameter satisfies the critical threshold
 
   `δ < δ_crit(β) := (β - 1/2) / β = ε / β`,
 
-the combined exponent is strictly negative, ensuring that the remaining dual
-Dirichlet term in the proper-cofactor cancellation is power-suppressed as `T → ∞`.
+the combined exponent is strictly negative. Applying this exponent calculation to an analytic
+dual sum requires separate hypotheses controlling that sum and its constants.
 -/
 
 namespace BuildingBlocks.DualDirichletOfflineDecay
@@ -67,8 +66,7 @@ theorem dual_product_exponent (β δ : ℝ) :
   unfold dualExponent
   ring
 
-/-- Unconditional power decay: for `T > 1`, the scaled amplitude is strictly
-less than the unscaled constant. -/
+/-- For `T > 1`, the abstract power model is smaller than its positive coefficient. -/
 theorem offline_power_decay (T C β δ ε : ℝ) (hT : 1 < T) (hC : 0 < C)
     (hβ : β = 1/2 + ε) (hε : 0 < ε) (hδ : δ < criticalDelta β ε) :
     C * T ^ (dualExponent β δ) < C := by
@@ -89,8 +87,7 @@ theorem offline_power_strict_monotonicity {T1 T2 C β δ ε : ℝ}
     Real.rpow_lt_rpow_of_neg hT1 hT12 hneg
   exact mul_lt_mul_of_pos_left hpow hC
 
-/-- Exact product representation combining the multiplier bound with the
-dual polynomial length bound. -/
+/-- Product identity for two modeled powers and arbitrary coefficients. -/
 theorem offline_dual_product_bound {T C_chi C_poly β δ : ℝ}
     (hT : 0 < T) :
     (C_chi * T ^ (1/2 - β)) * (C_poly * T ^ (δ * β)) =

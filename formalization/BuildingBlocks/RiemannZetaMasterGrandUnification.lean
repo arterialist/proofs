@@ -371,6 +371,10 @@ abbrev masterGrandUnification_of_autonomous_linear_bridge :=
   rhConsequences_of_autonomous_linear_bridge
 abbrev masterGrandUnification_of_autonomous_canonical := rhConsequences_of_autonomous_canonical
 
+/-- Compatibility theorem for the downstream characteristic-system equivalence. -/
+theorem master_grand_unification_iff_RiemannHypothesis :
+    Nonempty MasterGrandUnification ↔ RiemannHypothesis :=
+  nonempty_rhConsequences_iff_RiemannHypothesis
 
 #print axioms target_eq_RH
 #print axioms rightHalfZeroFree_iff_rightOfflineSupport_empty

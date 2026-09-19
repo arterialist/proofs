@@ -9,6 +9,11 @@ open scoped Topology
 
 namespace BuildingBlocks.ActualWeilSignObstruction
 
+/-!
+These are scalar power-dominance lemmas. The file does not construct a Weil quadratic form or
+derive the assumed coefficients and exponents from the explicit formula.
+-/
+
 /-- The off-line zero growth rate exponent α = c * ε is strictly positive
 for any positive span scaling c > 0 and off-critical shift ε > 0. -/
 theorem offline_growth_exponent_pos {c ε : ℝ} (hc : 0 < c) (hε : 0 < ε) :
@@ -76,10 +81,9 @@ theorem offline_net_negativity_with_remainder {α ν b C_tail : ℝ} (hαν : ν
   have hdom := subpower_dominance hαν hb hC hT1 hT
   linarith
 
-/-- The Weil Sign Incompatibility Theorem:
-Suppose an arithmetic quadratic form satisfies a positive lower bound Q(T) ≥ M_arith.
-If an uncompensated off-line zero forces an upper bound Q(T) ≤ C_bound - 2 * b * T^α,
-then Q(T) eventually falls strictly below M_arith, producing a direct contradiction. -/
+/-- The scalar upper-bound expression `C_bound - 2 * b * T^α` eventually falls below
+`M_arith`. A contradiction for a Weil quadratic form needs separate lower- and upper-bound
+hypotheses connecting that form to these scalars. -/
 theorem weil_sign_incompatibility {M_arith C_bound b α : ℝ}
     (hb : 0 < b) (hα : 0 < α) :
     ∀ᶠ (T : ℝ) in atTop, C_bound - 2 * b * T^α < M_arith := by

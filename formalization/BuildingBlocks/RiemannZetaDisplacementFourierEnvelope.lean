@@ -11,42 +11,18 @@ import BuildingBlocks.RiemannZetaDisplacementCauchyRiemannSlope
 import BuildingBlocks.RiemannZetaTransverseCauchyRiemannMatching
 
 /-!
-# Module 326: RiemannZetaDisplacementFourierEnvelope
+# Hyperbolic-Trigonometric Kernel Identity
 
-This module directly addresses the oscillatory Fourier-Mellin kernel of the theta function,
-bridging the displacement functional to the true analytic core of the Riemann Hypothesis.
+This module defines a real kernel and a boundary-profile expression, differentiates the latter,
+and proves a pointwise algebraic decomposition.  It does not define the theta envelope, a Fourier
+or Mellin integral, or an integration-by-parts theorem.  `boundaryProfile_zero` treats only
+`u = 0`; no boundary limit at infinity is established.
 
-## Mathematical Architecture
-
-1. **The Core Obstacle: Oscillatory Cancellation**:
-   The completed Riemann zeta function decomposes into the pole term and the theta integral:
-   $$\Lambda(s) = -\frac{1}{s(s-1)} + \int_1^\infty x^{-3/4}(\vartheta(x)-1) \left[ x^{d/2} e^{i(t/2)\log x} + x^{-d/2} e^{-i(t/2)\log x} \right] \frac{dx}{x}.$$
-   Any off-line root requires the oscillatory theta integral to balance the positive pole
-   residual $R(d, s) > 0$.
-
-2. **Hyperbolic-Trigonometric Disparity Decomposition**:
-   With $u = \log x$, the displacement kernel combination evaluates to:
-   $$D(d, t, u) := 2d \cosh\left(\frac{du}{2}\right) \cos\left(\frac{tu}{2}\right) - t \sinh\left(\frac{du}{2}\right) \sin\left(\frac{tu}{2}\right).$$
-
-3. **Exact Integration-by-Parts Invariant**:
-   We prove the fundamental differential identity:
-   $$\frac{d}{du}\left[ 2 \sinh\left(\frac{du}{2}\right) \cos\left(\frac{tu}{2}\right) \right] =
-     d \cosh\left(\frac{du}{2}\right) \cos\left(\frac{tu}{2}\right) - t \sinh\left(\frac{du}{2}\right) \sin\left(\frac{tu}{2}\right),$$
-   so that:
-   $$D(d, t, u) = d \cosh\left(\frac{du}{2}\right) \cos\left(\frac{tu}{2}\right) + \frac{d}{du}\left[ 2 \sinh\left(\frac{du}{2}\right) \cos\left(\frac{tu}{2}\right) \right].$$
-
-4. **Boundary Vanishing at the Self-Dual Axis**:
-   At $u = 0$ ($x = 1$), the boundary flux evaluates to:
-   $$2 \sinh(0) \cos(0) = 0,$$
-   meaning boundary terms vanish identically in the integration by parts.
-
-5. **Fourier Envelope Reduction**:
-   This reduces the $t$-amplified oscillatory integral to a pure Fourier cosine transform
-   against the master theta envelope:
-   $$W(d, u) := d K(u) \cosh\left(\frac{du}{2}\right) - 2 K'(u) \sinh\left(\frac{du}{2}\right).$$
-
-All declarations depend strictly on standard Lean 4 foundational axioms:
-`[propext, Classical.choice, Quot.sound]`. Zero `sorry` placeholders.
+For context, the standard completed-zeta representation has pole term `+1/(s*(s-1))` and
+one half times the integral of
+`(x^(s/2-1) + x^((1-s)/2-1)) * (theta(x)-1)` with respect to `dx`.  After extracting the
+hyperbolic-trigonometric bracket, its weight is `x^(-3/4)*(theta(x)-1) dx`, equivalently
+`exp(u/4)*(theta(exp u)-1) du`.  That integral representation is not proved in this file.
 -/
 
 namespace BuildingBlocks.RiemannZetaDisplacementFourierEnvelope
@@ -112,10 +88,10 @@ theorem hasDerivAt_boundaryProfile (d t u : ℝ) :
   rw [h_val] at h_prod
   exact h_prod
 
-/-- Master Integration-by-Parts Decomposition:
-The displacement kernel decomposes into a pure cosine amplitude and the exact derivative
-of the boundary profile:
-$$D(d, t, u) = d \cosh\left(\frac{du}{2}\right) \cos\left(\frac{tu}{2}\right) + \frac{d}{du} B(d, t, u).$$ -/
+/-- Pointwise decomposition of the kernel using the expression computed as the derivative of
+`boundaryProfile`:
+$$D(d, t, u) = d \cosh\left(\frac{du}{2}\right) \cos\left(\frac{tu}{2}\right) + \frac{d}{du} B(d, t, u).$$
+No integral or boundary limit is asserted by this theorem. -/
 theorem displacementKernel_eq_add_deriv (d t u : ℝ) :
     displacementKernel d t u =
       d * cosh (d * u / 2) * cos (t * u / 2) +

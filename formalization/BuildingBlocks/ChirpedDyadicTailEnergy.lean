@@ -7,32 +7,12 @@ import BuildingBlocks.Scope
 import BuildingBlocks.ChirpedQuadratureDecay
 
 /-!
-# Chirped Dyadic Tail Energy Summation and Fourth-Power Asymptotic Vanishing
+# Finite Dyadic Envelope Algebra
 
-This module establishes the dyadic summation and asymptotic vanishing of the
-high-frequency non-resonant spectral tail under chirped second-order integration by parts.
-
-From `ChirpedQuadratureDecay.lean`, each non-resonant zero with frequency separation
-`Δ(γ) = |γ| - T ≥ 2^(m-1) * T` in dyadic shell `m ≥ 1` contributes spectral energy
-decaying like `O(Δ(γ)⁻⁴) ≤ 16 * C_IBP2² / (16^m * T⁴)`.
-
-Multiplying by the Riemann–von Mangoldt zero count `N(2^(m+1) T) - N(2^m T) ≤ C_dens * 2^(m+1) T * log(2^(m+1) T)`
-yields the dyadic shell energy bound:
-`E_shell(m, T) ≤ 32 * C_IBP2² * C_dens * (log T / T³) * ((m+2) / 8^m)`.
-
-Summing over all dyadic shells `m ≥ 1`:
-1. The geometric factor sum `∑_{m=1}^M (m+2)/8^m ≤ 1/2 ≤ 1` for all `M`.
-2. The total high-frequency tail energy is bounded uniformly by
-   `E_tail(T) ≤ 16 * C_IBP2² * C_dens * (log T / T³)`.
-3. For large carrier scale `T → +∞`, the tail energy vanishes:
-   `E_tail(T) → 0` as `T → +∞`.
-
-This proves that non-resonant high-frequency zeros do not merely contribute an
-asymptotic constant `O(1)`, but actively vanish at rate `O(T⁻³ log T) → 0`.
-
-This establishes **Unique Contribution 361** in the ledger.
-All proofs depend strictly on the standard foundational axioms:
-`[propext, Classical.choice, Quot.sound]`.
+This module defines scalar shell envelopes and proves finite-sum geometric bounds.  The names
+`shellPointwiseDecay` and `shellZeroCount` are formulas, not estimates derived here for an actual
+zeta-zero sum.  No infinite tail, oscillatory integral, or Riemann-von Mangoldt remainder theorem
+is formalized in this file.
 -/
 
 namespace BuildingBlocks.ChirpedDyadicTailEnergy
@@ -48,12 +28,12 @@ noncomputable section
 def shellMinDelta (m : ℕ) (T : ℝ) : ℝ :=
   (2 : ℝ)^(m - 1) * T
 
-/-- Pointwise fourth-power energy decay bound for an individual zero in dyadic shell `m ≥ 1`:
+/-- Defined fourth-power shell expression for `m ≥ 1`:
 `shellPointwiseDecay C_IBP2 m T = 16 * C_IBP2^2 / (16^m * T^4)`. -/
 def shellPointwiseDecay (C_IBP2 : ℝ) (m : ℕ) (T : ℝ) : ℝ :=
   16 * C_IBP2^2 / ((16 : ℝ)^m * T^4)
 
-/-- Conservative zero count in dyadic shell `[2^m T, 2^(m+1) T)`:
+/-- Defined count-shaped expression for the shell `[2^m T, 2^(m+1) T)`:
 `shellZeroCount C_dens m T = C_dens * 2^(m + 1) * T * ((m + 2 : ℝ) * Real.log T)`. -/
 def shellZeroCount (C_dens : ℝ) (m : ℕ) (T : ℝ) : ℝ :=
   C_dens * (2 : ℝ)^(m + 1) * T * ((m + 2 : ℝ) * Real.log T)
@@ -63,13 +43,13 @@ def shellZeroCount (C_dens : ℝ) (m : ℕ) (T : ℝ) : ℝ :=
 def geometricShellFactor (m : ℕ) : ℝ :=
   (m + 2 : ℝ) / (8 : ℝ)^m
 
-/-- Unified master shell energy bound:
+/-- Defined shell envelope:
 `shellEnergyBound C_IBP2 C_dens m T = 32 * C_IBP2^2 * C_dens * (Real.log T / T^3) * geometricShellFactor m`. -/
 def shellEnergyBound (C_IBP2 C_dens : ℝ) (m : ℕ) (T : ℝ) : ℝ :=
   32 * C_IBP2^2 * C_dens * (Real.log T / T^3) * geometricShellFactor m
 
-/-- Algebraic factorization: the product of individual fourth-power decay and shell zero count
-identically evaluates to the master shell energy bound. -/
+/-- Algebraic factorization: the product of the two defined shell expressions
+equals the defined shell envelope by algebra. -/
 theorem shell_energy_product_eq (C_IBP2 C_dens T : ℝ) (m : ℕ) (hT : T ≠ 0) :
     shellPointwiseDecay C_IBP2 m T * shellZeroCount C_dens m T =
     shellEnergyBound C_IBP2 C_dens m T := by
@@ -86,7 +66,7 @@ theorem shell_energy_product_eq (C_IBP2 C_dens T : ℝ) (m : ℕ) (hT : T ≠ 0)
   field_simp
   ring
 
-/-- Finite dyadic tail energy summed across shells `1 ≤ m ≤ M`:
+/-- Finite sum of the defined shell envelopes for `1 ≤ m ≤ M`:
 `finiteDyadicTailEnergy C_IBP2 C_dens M T = ∑ m ∈ Finset.range M, shellEnergyBound C_IBP2 C_dens (m + 1) T`. -/
 def finiteDyadicTailEnergy (C_IBP2 C_dens : ℝ) (M : ℕ) (T : ℝ) : ℝ :=
   ∑ m ∈ Finset.range M, shellEnergyBound C_IBP2 C_dens (m + 1) T
@@ -158,7 +138,7 @@ theorem sum_quarter_pow_le (M : ℕ) :
   have hpos : 0 ≤ (4 / 3 : ℝ) * ((1 / 4 : ℝ)^M) := by positivity
   linarith
 
-/-- Master geometric factor sum bound:
+/-- Finite geometric-factor sum bound:
 `∑ m ∈ Finset.range M, geometricShellFactor (m + 1) ≤ 1 / 2` for all `M`. -/
 theorem sum_geometric_shell_factor_le_half (M : ℕ) :
     ∑ m ∈ Finset.range M, geometricShellFactor (m + 1) ≤ 1 / 2 := by
@@ -177,13 +157,13 @@ theorem sum_geometric_shell_factor_le_half (M : ℕ) :
   rw [hhalf] at hbound
   exact le_trans hsum hbound
 
-/-- The geometric factor sum is unconditionally bounded by 1 for all `M`. -/
+/-- The finite geometric-factor sum is bounded by 1 for all `M`. -/
 theorem sum_geometric_shell_factor_le_one (M : ℕ) :
     ∑ m ∈ Finset.range M, geometricShellFactor (m + 1) ≤ 1 := by
   have hhalf := sum_geometric_shell_factor_le_half M
   linarith
 
-/-- Master Finite Dyadic Tail Energy Theorem:
+/-- Finite sum bound for the defined dyadic envelope:
 For any number of dyadic shells `M` and any carrier scale `T ≥ 1`, the total
 high-frequency tail energy is bounded uniformly by
 `16 * C_IBP2^2 * C_dens * (log T / T^3)`. -/
