@@ -1,7 +1,7 @@
 /-
-Copyright (c) 2026 Antigravity Team. All rights reserved.
+Copyright (c) 2026 Arterialist. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
-Authors: Antigravity Team
+Authors: Arterialist
 -/
 import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Analysis.Calculus.Deriv.Mul

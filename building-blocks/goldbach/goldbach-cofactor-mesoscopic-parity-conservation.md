@@ -7,8 +7,6 @@ and its finite window sum and prefix telescope are compiled in
 [GoldbachCofactorWindowFinite.lean](../../formalization/BuildingBlocks/GoldbachCofactorWindowFinite.lean).
 The short-interval estimate and limiting bounds below are written
 analysis, not Lean theorems. No literature-priority claim is made.
-The derivation and its source ranges were independently audited in the
-“Formalize prime phase transitions” Codex task.
 
 Let `Lambda` be the complete von Mangoldt function, with
 `Lambda(p^j)=log p` for every prime power. For integers `s>=4` put

@@ -1,6 +1,6 @@
 # A sign barrier for twice-compensated divisor cones
 
-**Status:** complete written proof; not yet formalized in Lean. Attribution: Arterialist–Codex RH research collaboration, 16 September 2026. To the best of our knowledge after a targeted search of divisor-sum, Mellin-transform, and vanishing-moment literature, the specific proper-cofactor sign theorem below has not appeared in a public source. Mellin convolution and Laplace uniqueness used in its proof are classical; this priority assessment is provisional.
+**Status:** complete written proof; not yet formalized in Lean. Author: Arterialist, 16 September 2026. To the best of our knowledge after a targeted search of divisor-sum, Mellin-transform, and vanishing-moment literature, the specific proper-cofactor sign theorem below has not appeared in a public source. Mellin convolution and Laplace uniqueness used in its proof are classical; this priority assessment is provisional.
 
 Let \(w:(0,1]\to\mathbb R\) be measurable and nonzero in \(L^1\), with
 \[

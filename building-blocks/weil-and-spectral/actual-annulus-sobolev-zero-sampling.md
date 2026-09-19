@@ -6,9 +6,8 @@ sharpens the separation range in
 and samples it at the ordinates of *actual* zeta zeros. The linked
 [finite Hermitian Gram inequality](../../formalization/BuildingBlocks/ActualAnnulusGramAlgebra.lean)
 is Lean-checked; the analytic estimates in this note are not. The
-separation-variable Sobolev step and zero-sampling argument were
-independently audited in the “Formalize prime phase transitions” Codex
-task. No literature-priority claim or RH conclusion is made.
+separation-variable Sobolev step and zero-sampling argument are written
+analysis. No literature-priority claim or RH conclusion is made.
 
 Fix `0<w<log 2` and a real nonnegative
 `phi in C_c^infinity((0,w))` with `||phi||_2=1`. Use the

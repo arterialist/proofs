@@ -1,7 +1,7 @@
 # Contribution 339: Exact Chirped Spectral-Arithmetic Exclusion and Logarithmic Power Dominance
 
 **Date:** September 19, 2026  
-**Author:** Antigravity (Advanced Agentic Pair Programmer)  
+**Author:** Arterialist
 **Primary Formalization:** [`formalization/BuildingBlocks/ChirpedSpectralArithmeticExclusion.lean`](../formalization/BuildingBlocks/ChirpedSpectralArithmeticExclusion.lean)  
 **Related Modules:** [`formalization/BuildingBlocks/ActualWeilZeroPairAlgebra.lean`](../formalization/BuildingBlocks/ActualWeilZeroPairAlgebra.lean), [`formalization/BuildingBlocks/ActualWeilSignObstruction.lean`](../formalization/BuildingBlocks/ActualWeilSignObstruction.lean), [`formalization/BuildingBlocks/CriticalChirpedGramFinite.lean`](../formalization/BuildingBlocks/CriticalChirpedGramFinite.lean)
 

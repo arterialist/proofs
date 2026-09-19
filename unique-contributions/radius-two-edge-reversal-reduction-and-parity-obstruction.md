@@ -1,7 +1,7 @@
 # Algebraic Geometry of the Radius-Two Paid-Theta Edge Complex, Rank Reduction, and the Even-Hat Parity Obstruction
 
 **Date:** 19 September 2026  
-**Authors:** Arterialist RH Research Team & Antigravity AI  
+**Author:** Arterialist
 **Lean Formalization:** 
 - [`formalization/BuildingBlocks/RadiusTwoEdgeCellGeometry.lean`](../../formalization/BuildingBlocks/RadiusTwoEdgeCellGeometry.lean)
 - [`formalization/BuildingBlocks/RadiusTwoEdgeReversalFinite.lean`](../../formalization/BuildingBlocks/RadiusTwoEdgeReversalFinite.lean)
