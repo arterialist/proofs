@@ -591,3 +591,4 @@ import BuildingBlocks.ChirpedPhaseBandLocalization
 import BuildingBlocks.ChirpedMultiZeroDeficitSuperposition
 import BuildingBlocks.ChirpedQuadratureDecay
 import BuildingBlocks.ChirpedTriPartitionSpectralBound
+import BuildingBlocks.ChirpedOfflineSingularCertificate
