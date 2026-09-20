@@ -519,6 +519,83 @@ The identities in (27e)--(27f) and the positivity of all nonsaturated
 margins are checked in
 `formalization/BuildingBlocks/ActualMobiusCriticalSemiprimeAliasDispersion.lean`.
 
+### A second K=3 expansion of the signed outer factor
+
+The coefficient `A_c` in (27c) must not be treated as `mu(c)`.  Return to
+the original variables `c=st`, where `s>U` is the untouched signed Möbius
+factor and `t` is the original free factor.  At the equality geometry write
+
+\[
+ y=\log_T s,\qquad \omega=\log_T t,
+ \qquad y+\omega=C=\frac{4\lambda}{5}-1.
+\]
+
+Since the smaller signed exponent is `x=(5-lambda)/5`, orientation gives
+`0<=omega<=lambda-2` and `x<=y<=C`.  Direct calculation yields
+
+\[
+ 2u<y<3u.
+\tag{27g}
+\]
+
+Thus the same exact K=3 identity may be applied to `mu(s)` before
+separation.  Its `3a_0` term and cubic-tail remainder vanish by support.
+The one-nonunit histories cancel as in (27a).  In its all-unit part, the
+net single-free `s` atom has exponent at least `x>lambda/5`, so the
+long-free estimate controls it strictly.  What remains has two new
+unweighted free factors, say `v,w`, together with the old free factor `t`;
+their exponent sum is `C`.
+
+Put
+
+\[
+ L=C-\frac\lambda5=\frac{3\lambda}{5}-1,
+ \qquad U_1=1-\frac\lambda5=x.
+\]
+
+If a subset of the new outer free atoms has exponent `S` with
+`L<S<U_1` and `S ne lambda/5`, grouping it with the old `Q` factor gives
+an exponent strictly inside one of the Robert--Sargos or Bordellès
+intervals.  If an outer atom has exponent at least `U_1`, the long-free
+estimate applies.  An atom in `(L,U_1)` either gives the strict grouping or
+is itself the repeated value `lambda/5`.  If there is no such atom, every
+atom is at most `L`; order them arbitrarily and take the first partial sum
+exceeding `L`.  Since
+
+\[
+ 2L<U_1
+\]
+
+throughout `lambda<29/14`.  The partial sum therefore lies in `(L,U_1)`.
+After excluding the strict grouping case, it must equal `lambda/5`.
+Consequently the only repeated contact has an outer subproduct of exponent
+`lambda/5` and complementary exponent `L`.  The scale identities are
+
+\[
+ C=\frac\lambda5+L,qquad
+ \left(1-\frac{2\lambda}{5}\right)+L=\frac\lambda5,
+\tag{27h}
+\]
+
+and
+
+\[
+ 0<L<u<\frac\lambda5.
+\tag{27i}
+\]
+
+Hence the second expansion does not produce another signed cancellation.
+It either gives a strict analytic grouping or reduces the remaining contact
+to a self-similar unweighted geometry: two factors of scale `Q`, while the
+old `P` factor times the new short complementary block also has scale `Q`.
+This is a sharper residual than (27d), but no estimate for that symmetric
+three-`Q` configuration is proved here.
+
+Lean checks (27g)--(27i), including the support range for every
+`0<=omega<=lambda-2`, in
+`formalization/BuildingBlocks/ActualMobiusK3BottomSlice.lean`.  The second
+history expansion and the subset dichotomy remain written mathematics.
+
 ## Type I terms and packet shells
 
 The inherited Bourgain Type I estimate is

@@ -20,6 +20,9 @@ open BuildingBlocks.ActualMobiusK3BottomSlice
 #check equality_short_factor_admissible
 #check equality_contact_geometry
 #check type_i_endpoint_margin
+#check outer_signed_second_k3_range
+#check second_k3_self_similar_contact
+#check second_k3_greedy_gap
 
 #print axioms endpoint_identity
 #print axioms rs_bord_overlap_margin
@@ -33,6 +36,9 @@ open BuildingBlocks.ActualMobiusK3BottomSlice
 #print axioms equality_short_factor_admissible
 #print axioms equality_contact_geometry
 #print axioms type_i_endpoint_margin
+#print axioms outer_signed_second_k3_range
+#print axioms second_k3_self_similar_contact
+#print axioms second_k3_greedy_gap
 
 open Lean in
 run_cmd do

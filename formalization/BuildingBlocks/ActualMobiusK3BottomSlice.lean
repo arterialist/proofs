@@ -183,5 +183,57 @@ theorem type_i_endpoint_margin (lambda kappa : ℝ) :
   simp [deltaMax]
   ring
 
+/-- At the equality endpoint, the untouched signed factor has exponent
+`y = C-t`, where the original free factor satisfies `0 ≤ t ≤ lambda-2`.
+Throughout the stated lambda range this signed factor lies strictly between
+`2u` and `3u`, so a second K=3 expansion is support-exact and its cubic tail
+vanishes. -/
+theorem outer_signed_second_k3_range {lambda t : ℝ}
+    (hlow : 2 < lambda) (hhigh : lambda < 29 / 14)
+    (ht0 : 0 ≤ t) (ht : t ≤ lambda - 2) :
+    2 * cutoffU lambda < 4 * lambda / 5 - 1 - t ∧
+      4 * lambda / 5 - 1 - t < 3 * cutoffU lambda := by
+  simp [cutoffU]
+  constructor <;> nlinarith
+
+/-- If the second all-unit split again lands exactly on the excluded
+subset contact, its exponents are forced into a self-similar pattern.  The
+new short exponent `ell` is below the original cutoff, while multiplying it
+by the old short scale produces another `Q` scale. -/
+theorem second_k3_self_similar_contact {lambda : ℝ}
+    (hlow : 2 < lambda) (hhigh : lambda < 29 / 14) :
+    let p := 1 - 2 * lambda / 5
+    let q := lambda / 5
+    let c := 4 * lambda / 5 - 1
+    let ell := 3 * lambda / 5 - 1
+    c = q + ell ∧ p + ell = q ∧
+      p + 2 * q + ell = 3 * q ∧
+      0 < ell ∧ ell < cutoffU lambda ∧ p < cutoffU lambda ∧
+      cutoffU lambda < q := by
+  dsimp
+  constructor
+  · ring
+  constructor
+  · ring
+  constructor
+  · ring
+  constructor
+  · nlinarith
+  constructor
+  · simp [cutoffU]
+    nlinarith
+  constructor
+  · simp [cutoffU]
+    nlinarith
+  · simp [cutoffU]
+    nlinarith
+
+/-- The greedy subset step in the second expansion cannot jump across the
+whole admissible interval: twice the lower endpoint is still below the
+upper endpoint. -/
+theorem second_k3_greedy_gap {lambda : ℝ} (hhigh : lambda < 29 / 14) :
+    2 * (3 * lambda / 5 - 1) < 1 - lambda / 5 := by
+  nlinarith
+
 end
 end BuildingBlocks.ActualMobiusK3BottomSlice
