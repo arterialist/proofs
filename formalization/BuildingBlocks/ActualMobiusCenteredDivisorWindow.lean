@@ -56,6 +56,50 @@ theorem remainderDefect_le_window_mul (H g : ℕ) :
     (H % g) * (g - H % g) ≤ H * g := by
   exact Nat.mul_le_mul (Nat.mod_le H g) (Nat.sub_le g (H % g))
 
+/-- Distinct rational frequencies are separated by the reciprocal product
+of their positive denominators. -/
+theorem rationalFrequencySpacing (a b : ℤ) (n m : ℕ)
+    (hn : 0 < n) (hm : 0 < m)
+    (hneq : a * (m : ℤ) ≠ b * (n : ℤ)) :
+    (1 : ℚ) / ((n : ℚ) * m) ≤
+      |(a : ℚ) / n - (b : ℚ) / m| := by
+  have hnq : (n : ℚ) ≠ 0 := by positivity
+  have hmq : (m : ℚ) ≠ 0 := by positivity
+  have hcross : (a * (m : ℤ) - b * (n : ℤ)) ≠ 0 :=
+    sub_ne_zero.mpr hneq
+  have habsZ : (1 : ℤ) ≤ |a * (m : ℤ) - b * (n : ℤ)| :=
+    Int.one_le_abs hcross
+  have habsQ : (1 : ℚ) ≤
+      |((a * (m : ℤ) - b * (n : ℤ) : ℤ) : ℚ)| := by
+    exact_mod_cast habsZ
+  rw [show (a : ℚ) / n - (b : ℚ) / m =
+      (((a * (m : ℤ) - b * (n : ℤ) : ℤ) : ℚ) /
+        ((n : ℚ) * m)) by
+      field_simp
+      norm_num
+      ring]
+  rw [abs_div]
+  have hden : 0 < (n : ℚ) * m := mul_pos (by positivity) (by positivity)
+  rw [abs_of_pos hden]
+  exact (div_le_div_iff_of_pos_right hden).mpr habsQ
+
+/-- Frequencies with positive denominators at most 2Q are separated by
+1/(4Q^2). -/
+theorem dyadicRationalFrequencySpacing (a b : ℤ) (n m Q : ℕ)
+    (hn : 0 < n) (hm : 0 < m)
+    (hnQ : n ≤ 2 * Q) (hmQ : m ≤ 2 * Q)
+    (hneq : a * (m : ℤ) ≠ b * (n : ℤ)) :
+    (1 : ℚ) / (4 * (Q : ℚ) ^ 2) ≤
+      |(a : ℚ) / n - (b : ℚ) / m| := by
+  have hbase := rationalFrequencySpacing a b n m hn hm hneq
+  have hQ : 0 < Q := by omega
+  have hprodNat : n * m ≤ 4 * Q ^ 2 := by
+    nlinarith [Nat.mul_le_mul hnQ hmQ]
+  have hprod : (n : ℚ) * m ≤ 4 * (Q : ℚ) ^ 2 := by
+    exact_mod_cast hprodNat
+  have hnm : 0 < (n : ℚ) * m := by positivity
+  exact (one_div_le_one_div_of_le hnm hprod).trans hbase
+
 def p (lambda : ℝ) : ℝ := 1 - 2 * lambda / 5
 def q (lambda : ℝ) : ℝ := lambda / 5
 def windowExponent (lambda : ℝ) : ℝ := q lambda - p lambda
@@ -110,14 +154,14 @@ theorem almostAllHighScaleSaves {lambda : ℝ} (hlambda : lambda < 5 / 2) :
   rw [almostAllHighScaleExponent_eq]
   linarith
 
-/-- The T-exponent of the local N-window Q^5 / P^(2-sigma). -/
+/-- The T-exponent of the large-sieve local N-window Q^4 / P^(1-sigma). -/
 def localCenterLengthExponent (lambda sigma : ℝ) : ℝ :=
-  5 * q lambda - (2 - sigma) * p lambda
+  4 * q lambda - (1 - sigma) * p lambda
 
-/-- At the local window length Q^5 / P^(2-sigma), the normalized boundary
-term Q^5 / (P^2 Y) has exponent -sigma*p. -/
+/-- At the local window length Q^4 / P^(1-sigma), the normalized large-sieve
+boundary term Q^4 / (P Y) has exponent -sigma*p. -/
 theorem localBoundaryGainExponent (lambda sigma : ℝ) :
-    (5 * q lambda - 2 * p lambda) -
+    (4 * q lambda - p lambda) -
         localCenterLengthExponent lambda sigma = -sigma * p lambda := by
   simp [localCenterLengthExponent]
   ring
@@ -144,6 +188,8 @@ end BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.balancedResidueDefect
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.remainderDefectBounds
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.remainderDefect_le_window_mul
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.rationalFrequencySpacing
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicRationalFrequencySpacing
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsExponent
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsSaves
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.twoWindowExponent

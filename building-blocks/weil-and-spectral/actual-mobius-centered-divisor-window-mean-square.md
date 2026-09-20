@@ -1,7 +1,8 @@
 # Mean square of centered restricted-divisor windows
 
 **Status:** unconditional written arithmetic theorem, 20 September 2026.
-The exact residue-class defect and critical exponent ledger are Lean-checked.
+The exact residue-class defect, rational-frequency separation, and critical
+exponent ledger are Lean-checked.
 The divisor covariance expansion and finite-interval averaging remain written
 mathematics. This gives a fixed-power estimate for the genuine high
 product-resonance kernel after averaging the real packet center, and a
@@ -123,21 +124,32 @@ yields
 Thus the root mean square is
 \(O(B\sqrt{H\log(2Q)})\), rather than the cruder \(O(B\sqrt Q)\).
 
-The full period \(L\) is not required. Over any \(X\) consecutive centers,
-counting one residue class in an interval differs from its exact density by
-at most one. Expanding (1)--(2) and applying this to the joint and two
-marginal congruences gives
+The full period \(L\) is not required. Group equal characters in the exact
+finite Fourier expansion (9) from the preceding centering note. This writes
+
+\[
+ B_H(C)=\sum_{\alpha\in\mathscr A}c_\alpha e(\alpha C),
+ \qquad
+ \sum_{\alpha\in\mathscr A}|c_\alpha|^2
+ =\frac1L\sum_{C\bmod L}|B_H(C)|^2.
+ \tag{10a}
+\]
+
+Every \(\alpha\) is a nonzero reduced rational modulo one whose denominator
+is at most \(2Q\). Distinct such frequencies have circular spacing at least
+\(1/(4Q^2)\). The additive large-sieve inequality therefore gives, uniformly
+over every \(X\) consecutive integer centers,
 
 \[
  \frac1X\sum_{C=C_0}^{C_0+X-1}|B_H(C)|^2
- \ll B^2\left(
- H\left(1+\log\frac{2Q}{H}\right)+\frac{H^2Q^2}{X}\right).
+ \ll B^2H\left(1+\log\frac{2Q}{H}\right)
+ \left(1+\frac{Q^2}{X}\right).
  \tag{11}
 \]
 
-The implied constant is absolute and uniform in \(C_0\). At
-\(X\asymp Q^3\) and \(H\le Q\), the error is at most \(O(B^2H)\), so
-(11) is \(O(B^2H\log(2Q))\).
+The implied constant is absolute and uniform in \(C_0\). This improves the
+direct residue-boundary error \(O(B^2H^2Q^2/X)\) by a full factor \(H\).
+At \(X\ge Q^2\), (11) is \(O(B^2H\log(2Q))\).
 
 For two centered coefficient families with bounds \(B\) and \(B'\),
 Cauchy's inequality in the same center variable therefore gives
@@ -145,8 +157,7 @@ Cauchy's inequality in the same center variable therefore gives
 \[
  \frac1X\sum_{C=C_0}^{C_0+X-1}
  |B_H(C)B'_H(C)|
- \ll BB'\left(
- H\left(1+\log\frac{2Q}{H}\right)+\frac{H^2Q^2}{X}\right).
+ \ll BB'H\log(2Q)\left(1+\frac{Q^2}{X}\right).
  \tag{11a}
 \]
 
@@ -176,7 +187,7 @@ as boundary terms and derivative integrals of products of sharp partial
 sums of \(E_\theta\) and \(E_{\theta'}\). Average those terms in \(C\)
 before taking the derivative integrals. Equation (11a), uniformly for every
 partial-window length \(O(H)\), bounds each averaged product by
-\(O_K(BB'[H\log(2Q)+H^2Q^2/X])\). The normalized first derivatives cost
+\(O_K(BB'H\log(2Q)[1+Q^2/X])\). The normalized first derivatives cost
 \(H^{-1}\), the mixed derivative costs \(H^{-2}\), and their integration
 ranges have lengths \(O(H)\) and area \(O(H^2)\). Thus the Abel constants
 remain uniform in \(H,V,Q,X\).
@@ -186,8 +197,7 @@ Applying (11a) tile by tile gives the uniform finite-interval form
 \[
  \frac1X\int_{C_0}^{C_0+X}
  |\mathcal R_{H,V}(C)|\,dC
- \ll_K BB'\left(
- V\log(2Q)+\frac{VH Q^2}{X}\right).
+ \ll_K BB'V\log(2Q)\left(1+\frac{Q^2}{X}\right).
  \tag{11c0}
 \]
 
@@ -333,14 +343,14 @@ length \(Y\) contained in a fixed dyadic range \(N\asymp Q^5\). For fixed
  \boxed{
  \frac1Y\int_{N_0}^{N_0+Y}\mathcal A_F(N)\,dN
  \ll_\varepsilon T^\varepsilon\left(
- \frac1P+\frac{Q^5}{P^2Y}\right).}
+ \frac1P+\frac{Q^4}{PY}\right).}
  \tag{21}
 \]
 
 Fix \(0<\sigma\le1\) and take
 
 \[
- Y=\frac{Q^5}{P^{2-\sigma}}.
+ Y=\frac{Q^4}{P^{1-\sigma}}.
  \tag{22}
 \]
 
@@ -368,13 +378,13 @@ dyadic center range contains a positive-measure set of centers good for all
 high scales. The limiting exponent identity behind (21)--(24) is
 
 \[
- (5q-2p)-\bigl(5q-(2-\sigma)p\bigr)=-\sigma p.
+ (4q-p)-\bigl(4q-(1-\sigma)p\bigr)=-\sigma p.
  \tag{25}
 \]
 
 This is a local density theorem, not a value at an independently prescribed
 center. Letting \(\sigma\) tend to zero approaches intervals of length
-\(Q^5/P^2\), but simultaneously removes the fixed-power saving.
+\(Q^4/P\), but simultaneously removes the fixed-power saving.
 
 This identifies both the gain and its limit. The product kernel occupies a
 diagonal strip of difference width \(H\) and center width
@@ -390,8 +400,9 @@ checks (5), the bounds (7)--(8), and the exponents (14)--(16) and (20). Its
 [axiom audit](../../formalization/verification/ActualMobiusCenteredDivisorWindowAudit.lean)
 finds only propext, Classical.choice, and Quot.sound. Lean does not
 formalize the congruence averaging in (3), the gcd sum in (9), or the
-finite-interval and smooth-kernel estimates (11)--(11e), Markov's inequality,
-or the dyadic unions in (18)--(19) and (23)--(24). Lean also checks the local
+large-sieve and smooth-kernel estimates (11)--(11e), Markov's inequality, or
+the dyadic unions in (18)--(19) and (23)--(24). Lean checks the denominator
+product and dyadic \(1/(4Q^2)\) frequency gaps used before (11), and the local
 length and gain identity (25).
 
 ## Literature boundary
@@ -406,3 +417,9 @@ asymptotic regimes and, in part, deeper analytic inputs. Equations (3)--(11e)
 are a direct finite Chinese-remainder calculation for the particular
 restricted coefficient and moving kernel here. No literature-priority claim
 is made, and none of those broader theorems is used.
+
+The finite-interval step (11) uses the classical additive large sieve in the
+sharp spaced-frequency form of Montgomery and Vaughan,
+[*The large sieve*](https://doi.org/10.1112/S0025579300004708). Its only
+specialized input here is the elementary denominator bound compiled in the
+Lean companion.

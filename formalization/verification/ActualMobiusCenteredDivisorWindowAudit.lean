@@ -5,6 +5,8 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #check balancedResidueDefect
 #check remainderDefectBounds
 #check remainderDefect_le_window_mul
+#check rationalFrequencySpacing
+#check dyadicRationalFrequencySpacing
 #check normalizedWindowRmsExponent
 #check normalizedWindowRmsSaves
 #check twoWindowExponent
@@ -18,6 +20,8 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms balancedResidueDefect
 #print axioms remainderDefectBounds
 #print axioms remainderDefect_le_window_mul
+#print axioms rationalFrequencySpacing
+#print axioms dyadicRationalFrequencySpacing
 #print axioms normalizedWindowRmsExponent
 #print axioms normalizedWindowRmsSaves
 #print axioms twoWindowExponent
