@@ -70,18 +70,6 @@ Substitution of $A=\log-B$ into (4) yields the exact history formula
 The negative current boundary value and the positive accumulated history
 must remain together. Positivity of $B$ does not sign their difference.
 
-Finite summation by parts gives the equivalent transition form
-
-\[
--NB(N)+\sum_{k=0}^{N-1}B(k)
-=\sum_{k=0}^{N-1}(k+1)\bigl(B(k)-B(k+1)\bigr).                  \tag{6a}
-\]
-
-Combining this with the exact jump law (2) rewrites the prime error using the
-actual von Mangoldt jumps and the smooth logarithmic clock. The ramp weights
-are nonnegative, but the transitions have both signs; this identity supplies
-no positivity or cancellation estimate by itself.
-
 ## 3. The literal dyadic terminal mass
 
 For a positive integer $X$, the continuous terminal channel is
@@ -130,10 +118,64 @@ prime-power jump remain present.
 Equation (3) alone bounds the two sides of this contrast separately at order
 $X^2$. The desired complete-dual terminal estimate is
 $O_\varepsilon(X^{3/2+\varepsilon/2})$, so compactness and positivity of the
-boundary still lose a square root. Any improvement must use correlation in
-the exact successor law (2), rather than only the box constraint (3).
+boundary still lose a square root. An improvement through this representation
+therefore needs information beyond the box constraint (3).
 
-## 4. Formal verification
+## 4. Positive transition kernel and the energy loss
+
+Finite summation by parts also gives, for every $N$,
+
+\[
+ -NB(N)+\sum_{j=0}^{N-1}B(j)
+ =\sum_{m=0}^{N-1}(m+1)\bigl(B(m)-B(m+1)\bigr).                   \tag{11}
+\]
+
+All ramp coefficients in (11) are nonnegative. Summing (11) over the
+dyadic cells in (9) and reversing the finite sums gives
+
+\[
+ T_X=\sum_{k=X}^{2X-1}D(k)-\frac X2
+ +\sum_{m=0}^{2X-2}q_X(m)\bigl(B(m)-B(m+1)\bigr),                 \tag{12}
+\]
+
+where
+
+\[
+ q_X(m)=
+ \begin{cases}
+ X(m+1),&0\le m<X,\\
+ (m+1)(2X-1-m),&X\le m\le2X-2.
+ \end{cases}                                                       \tag{13}
+\]
+
+Substitution of the exact jump law (2) turns the last sum into
+
+\[
+ \sum_{m=0}^{2X-2}q_X(m)
+ \left(
+  \frac{\Lambda(m+1)}{m+1}
+  -\bigl(\log(m+1)-\log m\bigr)
+ \right).                                                         \tag{14}
+\]
+
+Thus a positive kernel occurs, but it multiplies a signed centered
+transition. Paying for those transitions separately does not improve the
+power of $X$. Indeed $q_X(m)\le X(m+1)$ and
+$\sum_mq_X(m)\ll X^3$. The elementary bounds
+$\Lambda(n)\le\log n$ and
+$\log n-\log(n-1)\ll1/(n-1)$ give
+
+\[
+ \sum_mq_X(m)|B(m)-B(m+1)|^2\ll X\log^3(2X).                     \tag{15}
+\]
+
+Cauchy--Schwarz applied to (12) therefore gives only
+$O(X^2\log^{3/2}X)$ for its transition part. This particular absolute-energy
+argument does not improve the power $X^2$. A successful estimate through
+(14) would have to retain cancellation between the prime-power jumps and the
+smooth logarithmic clock.
+
+## 5. Formal verification
 
 [HarmonicBoundaryHistory.lean](../../formalization/BuildingBlocks/HarmonicBoundaryHistory.lean)
 verifies:
@@ -141,7 +183,8 @@ verifies:
 - `harmonicMangoldtBoundary_succ`, the exact jump law (2);
 - `psi_eq_harmonicPrimeMass_abel`, the Abel identity (4);
 - `integerError_eq_harmonicBoundary_history`, equation (6);
-- `integerError_eq_harmonicBoundary_transition_sum`, equation (6a), and
+- `neg_mul_add_history_eq_transition_sum`, equation (11);
+- `integerError_eq_harmonicBoundary_transition_sum` and
   `integerError_eq_primeTransition_sum`, its exact von Mangoldt form;
 - `primePrimitiveArea_nat_eq_sum_integerError`, the exact half-cell formula;
 - `coarseTerminalMassFinite_eq_discreteDyadicTerminalMass`, equality of
@@ -154,8 +197,10 @@ verifies:
 
 The axiom audit for the principal equalities reports only `propext`,
 `Classical.choice`, and `Quot.sound`. There are no custom axioms and no
-`sorry` declarations. Equation (10) is a written finite reindexing of (9);
-it is not separately named as a Lean theorem.
+`sorry` declarations. Equations (10) and the compressed kernel
+(12)--(14) are written finite reindexings of the corresponding nested Lean
+identities; they are not separately named Lean theorems. Estimate (15) is a
+written elementary bound.
 
 ## Verdict
 
