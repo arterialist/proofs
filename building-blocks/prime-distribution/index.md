@@ -106,6 +106,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Prime-support removal in a centered multiplicative convolution](prime-support-removal-asymptotics.md)
 - [Prime transport in the mixed additive completion](prime-transport-in-mixed-completion.md)
 - [Strict original-energy decrease for the actual prime-two source](prime-two-anticausal-energy.md)
+- [Profinite Haar independence does not control the finite prime successor orbit](profinite-successor-haar-discrepancy-obstruction.md)
 - [Proper prime cones retain zeta zeros, but their concave inequalities have large slack](proper-prime-cone-zero-preserving-slack.md)
 - [A fixed regular source with a large Möbius floor inverse](regular-source-mobius-obstruction.md)
 - [Rough Euler inversion does not order the Abel energies](rough-euler-inverse-abel-covariance.md)
