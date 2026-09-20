@@ -1,0 +1,8 @@
+import BuildingBlocks.MobiusDistinctPrimeRecombination
+
+#check BuildingBlocks.distinctPrimePairFunction_apply
+#check BuildingBlocks.moebius_mul_distinctPrimePairFunction
+#check BuildingBlocks.moebius_distinctPrimePairWeight_formula
+
+#print axioms BuildingBlocks.moebius_mul_distinctPrimePairFunction
+#print axioms BuildingBlocks.moebius_distinctPrimePairWeight_formula

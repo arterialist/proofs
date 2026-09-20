@@ -51,6 +51,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Harmonic phase resolution and the actual weighted prime flow](harmonic-prime-laplacian-flow.md)
 - [Integrating prime channels before taking the norm triangle](integrated-prime-channel-triangle.md)
 - [The actual mixed prime–density overlap correction](jordan-mixed-correction.md)
+- [Actual Möbius recombination of the distinct-prime Selberg weight](actual-mobius-distinct-prime-recombination.md)
 - [Formalization of the kernel coefficient](kappa-coefficient-positivity-formalization.md)
 - [Exact early-divisor sieve for fresh large primes, and its additive limit](large-prime-additive-sieve-and-indefinite-kernel.md)
 - [Largest-prime layer Gram and the adjacent filtration correlation](largest-prime-layer-gram-and-adjacent-correlation.md)
