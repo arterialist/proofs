@@ -1288,3 +1288,45 @@ fixed-power saving from (30).
 Exact endpoint, prime-power, dyadic, ordinary-prime, adversarial-composite,
 and symbolic record-prime tests can detect missing terms but cannot change
 this operator obstruction. No unconditional power gain is proved here.
+
+### Angular energy across scales does not improve the forcing
+
+Write (B_1=B_R+iB_I). Equation (29) is
+[
+ C_\theta=q_0+q_1\cos\theta+q_2\sin\theta,qquad
+ (q_0,q_1,q_2)=(T_X,-T_X-B_R,-B_I).
+]
+Normalized angular averaging gives the exact norm
+[
+ \frac1{2\pi}\int_0^{2\pi}|C_\theta|^2d\theta
+ =q_0^2+\frac{q_1^2+q_2^2}{2}.
+\tag{31}
+]
+For vector-valued (q), let
+[
+ (\mathcal T_Xq)(X)=\frac1{\log X}
+ \sum_{a\le X}\frac{\Lambda(a)}a q(X/a).
+]
+A zero power (q_\rho(X)=X^\rho v_\rho) satisfies
+[
+ \frac{\mathcal T_Xq_\rho(X)}{q_\rho(X)}
+ =\frac1{\log X}\sum_{a\le X}\frac{\Lambda(a)}{a^{\rho+1}}
+ \longrightarrow0,
+\tag{32}
+]
+because the sum tends to (-\zeta'(\rho+1)/\zeta(\rho+1)). Thus small or
+antiparallel finite-scale ratios are compatible with every off-line zero
+mode and cannot prove a zero-free strip.
+
+More decisively, (30) is (q+\mathcal T_Xq=F_X) componentwise, where the
+angular coefficients of (F_X=(G_{X,\theta}-R_{X,\theta})/(X\log X))
+retain the same explicit-formula zero response. On the mode (32), the
+self-coupling tends to zero and (F_X=q_\rho+o(q_\rho)). Hence even a
+uniform contraction (|\mathcal T_Xq|\le\kappa|q|), (kappa<1),
+would improve (q) only if the forcing already had a stronger bound; such
+a forcing estimate requires the same fixed zero-free information sought
+for (B_1). Unit twists likewise show no coefficient-independent angular
+coercivity. Numerical scale tests can falsify an asserted constant but do
+not address the forcing poles. This ends the Selberg branch: angular
+energy redistributes the prime-error mode across scales but does not
+remove it.
