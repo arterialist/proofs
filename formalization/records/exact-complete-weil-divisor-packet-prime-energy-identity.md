@@ -135,6 +135,23 @@ theorem complex_prime_deficit_eq_history_add_pointwise
       complexHistoryEnergy N g +
         ∑ n ∈ Finset.Icc 1 N,
           boundaryDefect N n * Complex.normSq (g n) / (n : ℝ)
+
+def mangoldtHarmonicSum (X : ℕ) : ℝ :=
+  ∑ d ∈ Finset.Icc 1 X,
+    ArithmeticFunction.vonMangoldt d / (d : ℝ)
+
+def BalazardBoundAt (X : ℕ) : Prop :=
+  mangoldtHarmonicSum X ≤ Real.log (X : ℝ)
+
+theorem complexBoundaryEnergy_nonneg_of_balazard
+    (N : ℕ) (g : ℕ → ℂ)
+    (hB : ∀ X ≤ N, BalazardBoundAt X) :
+    0 ≤ complexBoundaryEnergy N g
+
+theorem complexPrimeGraph_le_log_mul_vertexNorm_of_balazard
+    (N : ℕ) (g : ℕ → ℂ)
+    (hB : ∀ X ≤ N, BalazardBoundAt X) :
+    complexPrimeGraph N g ≤ Real.log (N : ℝ) * complexVertexNorm N g
 ```
 Axioms audit confirms strict dependence on:
 ```
@@ -142,10 +159,17 @@ Axioms audit confirms strict dependence on:
 ```
 Zero custom axioms, zero `sorry`.
 
+The last two theorems are implications from the explicitly named
+`BalazardBoundAt` hypothesis. The implication, including the exact floor
+cutoff `N / n`, is Lean-verified. The unconditional proof that
+`BalazardBoundAt X` holds for every `X` remains a cited published analytic
+input and is not yet formalized in Lean. Thus this record does not present
+the conditional Lean theorem as a formal proof of Balazard's source theorem.
+
 ---
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Weil explicit formula quadratic forms (Weil 1952, Bombieri 2000, Connes 1999). Divisor graph representations and Mertens boundary defect decompositions on finite hyperbola networks are novel.
-- **Advancement:** Establishes machine-verified ground-state decomposition of the complete Weil prime form into a non-negative Dirichlet history square plus pointwise Mertens boundary defects.
+- **Prior Literature:** Weil explicit formula quadratic forms (Weil 1952, Bombieri 2000, Connes 1999). The all-cutoff inequality used to sign the boundary is [Ramaré–Zuniga-Alterman, Theorem 1.3, with Balazard's appendix](https://arxiv.org/html/2312.05138). No priority claim is made here for the divisor-graph reformulation.
+- **Advancement:** Establishes a machine-verified real and complex ground-state decomposition of the complete Weil prime form into a non-negative Dirichlet history square plus pointwise Mertens boundary defects, and verifies the exact implication from the separately stated Balazard hypotheses to the finite Hermitian spectral ceiling.
 - **Target Venues:** *Journal of the European Mathematical Society* or *Mathematische Annalen*.

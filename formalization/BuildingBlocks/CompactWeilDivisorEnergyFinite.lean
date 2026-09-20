@@ -115,6 +115,43 @@ def boundaryDefect (N n : ℕ) : ℝ :=
   Real.log (N : ℝ) - Real.log (n : ℝ) -
     ∑ d ∈ Finset.Icc 1 (N / n), Λ d / (d : ℝ)
 
+/-- The exact harmonic von Mangoldt sum appearing in Balazard's
+all-cutoff inequality. -/
+def mangoldtHarmonicSum (X : ℕ) : ℝ :=
+  ∑ d ∈ Finset.Icc 1 X,
+    ArithmeticFunction.vonMangoldt d / (d : ℝ)
+
+/-- The finite-cutoff statement of Balazard's inequality. The published
+theorem proves this proposition for every cutoff; that analytic proof is
+not reproduced in this module. -/
+def BalazardBoundAt (X : ℕ) : Prop :=
+  mangoldtHarmonicSum X ≤ Real.log (X : ℝ)
+
+/-- Balazard's inequality at the quotient cutoff signs the exact boundary
+coefficient. The floor in `N / n` is retained. -/
+theorem boundaryDefect_nonneg_of_balazardBoundAt
+    {N n : ℕ} (hn : n ∈ Finset.Icc 1 N)
+    (hB : BalazardBoundAt (N / n)) :
+    0 ≤ boundaryDefect N n := by
+  obtain ⟨hn1, hnN⟩ := Finset.mem_Icc.mp hn
+  have hnposNat : 0 < n := hn1
+  have hNposNat : 0 < N := hnposNat.trans_le hnN
+  have hqposNat : 0 < N / n := Nat.div_pos hnN hnposNat
+  have hnpos : 0 < (n : ℝ) := by exact_mod_cast hnposNat
+  have hqpos : 0 < ((N / n : ℕ) : ℝ) := by exact_mod_cast hqposNat
+  have hqle : ((N / n : ℕ) : ℝ) ≤ (N : ℝ) / (n : ℝ) := by
+    rw [le_div_iff₀ hnpos]
+    exact_mod_cast Nat.div_mul_le_self N n
+  have hlogfloor : Real.log ((N / n : ℕ) : ℝ) ≤
+      Real.log (N : ℝ) - Real.log (n : ℝ) := by
+    rw [← Real.log_div (Nat.cast_ne_zero.mpr hNposNat.ne')
+      (Nat.cast_ne_zero.mpr hnposNat.ne')]
+    exact Real.log_le_log hqpos hqle
+  unfold boundaryDefect
+  change 0 ≤ Real.log (N : ℝ) - Real.log (n : ℝ) -
+    mangoldtHarmonicSum (N / n)
+  exact sub_nonneg.mpr (hB.trans hlogfloor)
+
 /-- Exact regrouping of the global boundary remainder by its actual
 integer vertices. This identifies the precise inequality still needed
 for a formally proved nonnegative boundary. -/
@@ -145,6 +182,27 @@ theorem boundaryEnergy_eq_pointwise (N : ℕ) (g : ℕ → ℝ) :
             g n ^ 2 / (n : ℝ) := by ring
   rw [hinner]
   ring
+
+/-- Pointwise nonnegative boundary defects sign the real boundary energy. -/
+theorem boundaryEnergy_nonneg_of_boundaryDefect_nonneg
+    (N : ℕ) (g : ℕ → ℝ)
+    (hD : ∀ n ∈ Finset.Icc 1 N, 0 ≤ boundaryDefect N n) :
+    0 ≤ boundaryEnergy N g := by
+  rw [boundaryEnergy_eq_pointwise]
+  apply Finset.sum_nonneg
+  intro n hn
+  exact div_nonneg (mul_nonneg (hD n hn) (sq_nonneg _)) (Nat.cast_nonneg n)
+
+/-- The family of Balazard cutoff bounds through `N` signs the real
+boundary energy. -/
+theorem boundaryEnergy_nonneg_of_balazard
+    (N : ℕ) (g : ℕ → ℝ)
+    (hB : ∀ X ≤ N, BalazardBoundAt X) :
+    0 ≤ boundaryEnergy N g := by
+  apply boundaryEnergy_nonneg_of_boundaryDefect_nonneg
+  intro n hn
+  apply boundaryDefect_nonneg_of_balazardBoundAt hn
+  exact hB (N / n) (Nat.div_le_self N n)
 
 /-- Incoming prime-power edge mass at a vertex is exactly its logarithm.
 This is the complete identity `∑_{d∣m} Λ(d) = log m` with the
@@ -326,6 +384,43 @@ private theorem complexBoundaryEnergy_eq_parts (N : ℕ) (g : ℕ → ℂ) :
   simp_rw [mul_add, add_div, Finset.sum_add_distrib]
   ring
 
+/-- Pointwise form of the complex boundary remainder. -/
+theorem complexBoundaryEnergy_eq_pointwise (N : ℕ) (g : ℕ → ℂ) :
+    complexBoundaryEnergy N g =
+      ∑ n ∈ Finset.Icc 1 N,
+        boundaryDefect N n * Complex.normSq (g n) / (n : ℝ) := by
+  rw [complexBoundaryEnergy_eq_parts]
+  rw [boundaryEnergy_eq_pointwise, boundaryEnergy_eq_pointwise]
+  simp only [Complex.normSq_apply]
+  rw [← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro n hn
+  ring
+
+/-- Pointwise nonnegative boundary defects sign the complex boundary
+energy for arbitrary phases. -/
+theorem complexBoundaryEnergy_nonneg_of_boundaryDefect_nonneg
+    (N : ℕ) (g : ℕ → ℂ)
+    (hD : ∀ n ∈ Finset.Icc 1 N, 0 ≤ boundaryDefect N n) :
+    0 ≤ complexBoundaryEnergy N g := by
+  rw [complexBoundaryEnergy_eq_pointwise]
+  apply Finset.sum_nonneg
+  intro n hn
+  exact div_nonneg
+    (mul_nonneg (hD n hn) (Complex.normSq_nonneg _))
+    (Nat.cast_nonneg n)
+
+/-- Balazard's published all-cutoff inequality, supplied here as its exact
+finite hypothesis, signs the complex boundary energy. -/
+theorem complexBoundaryEnergy_nonneg_of_balazard
+    (N : ℕ) (g : ℕ → ℂ)
+    (hB : ∀ X ≤ N, BalazardBoundAt X) :
+    0 ≤ complexBoundaryEnergy N g := by
+  apply complexBoundaryEnergy_nonneg_of_boundaryDefect_nonneg
+  intro n hn
+  apply boundaryDefect_nonneg_of_balazardBoundAt hn
+  exact hB (N / n) (Nat.div_le_self N n)
+
 /-- Exact complex ground-state transform of the complete divisor-packet prime
 form. This is the Hermitian extension needed by the compact Weil form; it
 uses no positivity or analytic hypothesis. -/
@@ -356,9 +451,23 @@ theorem complex_prime_deficit_eq_history_add_pointwise
   intro n hn
   ring
 
+/-- Under the exact finite Balazard hypotheses, the complete complex
+prime graph is bounded above by its logarithmic vertex mass. -/
+theorem complexPrimeGraph_le_log_mul_vertexNorm_of_balazard
+    (N : ℕ) (g : ℕ → ℂ)
+    (hB : ∀ X ≤ N, BalazardBoundAt X) :
+    complexPrimeGraph N g ≤ Real.log (N : ℝ) * complexVertexNorm N g := by
+  rw [← sub_nonneg]
+  rw [complex_prime_deficit_eq_history_add_boundary]
+  exact add_nonneg (complexHistoryEnergy_nonneg N g)
+    (complexBoundaryEnergy_nonneg_of_balazard N g hB)
+
 #print axioms complex_prime_deficit_eq_history_add_boundary
 #print axioms complex_prime_deficit_eq_history_add_pointwise
 #print axioms complexHistoryEnergy_nonneg
+#print axioms boundaryDefect_nonneg_of_balazardBoundAt
+#print axioms complexBoundaryEnergy_nonneg_of_balazard
+#print axioms complexPrimeGraph_le_log_mul_vertexNorm_of_balazard
 
 end
 
