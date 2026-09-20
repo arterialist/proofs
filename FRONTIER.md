@@ -194,21 +194,6 @@ the diagonal also requires \(\eta<(3\lambda-2)/10\). The finite
 expansion, diagonal, reciprocal gap, coherence scale, and zero-branch
 exponent margins are Lean-compiled; no estimate for the complete nonzero
 resonance contribution is known.
-Completing the divisor fibers before taking a norm gives the
-[Mangoldt cross-fiber covariance](building-blocks/weil-and-spectral/actual-mangoldt-cross-fiber-covariance.md).
-Its squared endpoint target is \(P^2Q^5T^{-2\rho}\). The equal-slope
-diagonal is \(O(T^\varepsilon P Q^3)\), but Cauchy and the reciprocal large
-sieve give \(O(T^\varepsilon P Q^6)\), losing \(Q/P\). The nonzero
-determinant fibers contain products of two actual von Mangoldt functions on
-phase cells of length \(Q/P^2=T^{\lambda-2}\). A completely multiplicative
-phase can align one arbitrarily selected outer mode and force twisted
-covariance \(\gg Q^6\). Thus a proof uniform in arbitrary outer coefficients
-and based only on coefficient magnitudes, support, convolution identities,
-or positive norms cannot recover even the zero-saving endpoint. This
-falsifier does not apply to the fixed physical outer coefficients; an
-untwisted main-term identity or another non-twist-equivariant constraint is
-still possible. Lean checks the target and loss exponents; the covariance
-reduction and twist obstruction are written.
 For the exact swapped tail, the
 [almost-all-center estimate](building-blocks/weil-and-spectral/actual-mobius-tail-almost-all-center-small-n.md)
 uses the 2026 Matomäki--Radziwiłł--Shao--Tao--Teräväinen maximal
