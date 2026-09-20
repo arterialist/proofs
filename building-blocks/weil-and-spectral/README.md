@@ -18,5 +18,6 @@ Weil forms, Suzuki operators, Connes models, and prime-shift spectral tests.
 - [Sampling saving on the critical prime fiber](actual-mobius-critical-prime-fiber-sampling-saving.md)
 - [A dual row bound on the critical prime fiber](actual-mobius-critical-dual-k-row-entry.md)
 - [One-Q Poisson recovery at the all-unit endpoint](actual-mobius-critical-one-q-poisson-endpoint.md)
+- [Additive Fourier saving for the critical localized divisor box](actual-mobius-localized-divisor-fourier-saving.md)
 
-[Browse all 162 indexed notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.
+[Browse all 168 indexed notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.
