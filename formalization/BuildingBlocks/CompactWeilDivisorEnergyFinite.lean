@@ -234,3 +234,132 @@ theorem prime_deficit_eq_history_add_pointwise (N : ℕ) (g : ℕ → ℝ) :
 end
 
 end BuildingBlocks.CompactWeilDivisorEnergyFinite
+
+namespace BuildingBlocks.CompactWeilDivisorEnergyFinite
+
+open scoped BigOperators ComplexConjugate
+
+noncomputable section
+
+private abbrev Λc (d : ℕ) : ℝ := ArithmeticFunction.vonMangoldt d
+
+private def complexEdgeWeight (n d : ℕ) : ℝ :=
+  Λc d / ((n : ℝ) * d)
+
+/-- Weighted vertex norm for complex packet coefficients. -/
+def complexVertexNorm (N : ℕ) (g : ℕ → ℂ) : ℝ :=
+  ∑ n ∈ Finset.Icc 1 N, Complex.normSq (g n) / (n : ℝ)
+
+/-- Hermitian prime graph, written as twice the real part of every oriented
+prime-power edge. -/
+def complexPrimeGraph (N : ℕ) (g : ℕ → ℂ) : ℝ :=
+  2 * ∑ d ∈ Finset.Icc 1 N,
+    ∑ n ∈ Finset.Icc 1 (N / d),
+      complexEdgeWeight n d * (g n * conj (g (n * d))).re
+
+/-- Complex divisor-history energy with every von Mangoldt edge retained. -/
+def complexHistoryEnergy (N : ℕ) (g : ℕ → ℂ) : ℝ :=
+  ∑ d ∈ Finset.Icc 1 N,
+    ∑ n ∈ Finset.Icc 1 (N / d),
+      complexEdgeWeight n d * Complex.normSq (g n - g (n * d))
+
+/-- The same literal finite boundary remainder for complex coefficients. -/
+def complexBoundaryEnergy (N : ℕ) (g : ℕ → ℂ) : ℝ :=
+  (∑ n ∈ Finset.Icc 1 N,
+      (Real.log (N : ℝ) - Real.log (n : ℝ)) *
+        Complex.normSq (g n) / (n : ℝ)) -
+    ∑ d ∈ Finset.Icc 1 N,
+      ∑ n ∈ Finset.Icc 1 (N / d),
+        complexEdgeWeight n d * Complex.normSq (g n)
+
+private theorem complexVertexNorm_eq_parts (N : ℕ) (g : ℕ → ℂ) :
+    complexVertexNorm N g = vertexNorm N (fun n => (g n).re) +
+      vertexNorm N (fun n => (g n).im) := by
+  unfold complexVertexNorm vertexNorm
+  rw [← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro n hn
+  rw [Complex.normSq_apply]
+  ring
+
+private theorem complexPrimeGraph_eq_parts (N : ℕ) (g : ℕ → ℂ) :
+    complexPrimeGraph N g = primeGraph N (fun n => (g n).re) +
+      primeGraph N (fun n => (g n).im) := by
+  unfold complexPrimeGraph primeGraph complexEdgeWeight edgeWeight Λc Λ
+  rw [← mul_add]
+  apply congrArg (fun x : ℝ => 2 * x)
+  rw [← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro d hd
+  rw [← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro n hn
+  simp [Complex.mul_re]
+  ring
+
+private theorem complexHistoryEnergy_eq_parts (N : ℕ) (g : ℕ → ℂ) :
+    complexHistoryEnergy N g = historyEnergy N (fun n => (g n).re) +
+      historyEnergy N (fun n => (g n).im) := by
+  unfold complexHistoryEnergy historyEnergy complexEdgeWeight edgeWeight Λc Λ
+  rw [← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro d hd
+  rw [← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro n hn
+  simp only [Complex.normSq_apply, Complex.sub_re, Complex.sub_im]
+  ring
+
+/-- The complete complex divisor-history energy is nonnegative. -/
+theorem complexHistoryEnergy_nonneg (N : ℕ) (g : ℕ → ℂ) :
+    0 ≤ complexHistoryEnergy N g := by
+  rw [complexHistoryEnergy_eq_parts]
+  exact add_nonneg
+    (historyEnergy_nonneg N (fun n => (g n).re))
+    (historyEnergy_nonneg N (fun n => (g n).im))
+
+private theorem complexBoundaryEnergy_eq_parts (N : ℕ) (g : ℕ → ℂ) :
+    complexBoundaryEnergy N g = boundaryEnergy N (fun n => (g n).re) +
+      boundaryEnergy N (fun n => (g n).im) := by
+  unfold complexBoundaryEnergy boundaryEnergy complexEdgeWeight edgeWeight Λc Λ
+  simp only [Complex.normSq_apply]
+  simp_rw [mul_add, add_div, Finset.sum_add_distrib]
+  ring
+
+/-- Exact complex ground-state transform of the complete divisor-packet prime
+form. This is the Hermitian extension needed by the compact Weil form; it
+uses no positivity or analytic hypothesis. -/
+theorem complex_prime_deficit_eq_history_add_boundary
+    (N : ℕ) (g : ℕ → ℂ) :
+    Real.log (N : ℝ) * complexVertexNorm N g - complexPrimeGraph N g =
+      complexHistoryEnergy N g + complexBoundaryEnergy N g := by
+  rw [complexVertexNorm_eq_parts, complexPrimeGraph_eq_parts,
+    complexHistoryEnergy_eq_parts, complexBoundaryEnergy_eq_parts]
+  have hre := prime_deficit_eq_history_add_boundary N (fun n => (g n).re)
+  have him := prime_deficit_eq_history_add_boundary N (fun n => (g n).im)
+  linarith
+
+/-- Complex pointwise form of the exact divisor-history conservation law. -/
+theorem complex_prime_deficit_eq_history_add_pointwise
+    (N : ℕ) (g : ℕ → ℂ) :
+    Real.log (N : ℝ) * complexVertexNorm N g - complexPrimeGraph N g =
+      complexHistoryEnergy N g +
+        ∑ n ∈ Finset.Icc 1 N,
+          boundaryDefect N n * Complex.normSq (g n) / (n : ℝ) := by
+  rw [complex_prime_deficit_eq_history_add_boundary]
+  rw [complexBoundaryEnergy_eq_parts]
+  rw [boundaryEnergy_eq_pointwise, boundaryEnergy_eq_pointwise]
+  simp only [Complex.normSq_apply]
+  rw [← Finset.sum_add_distrib]
+  apply congrArg (fun x : ℝ => complexHistoryEnergy N g + x)
+  apply Finset.sum_congr rfl
+  intro n hn
+  ring
+
+#print axioms complex_prime_deficit_eq_history_add_boundary
+#print axioms complex_prime_deficit_eq_history_add_pointwise
+#print axioms complexHistoryEnergy_nonneg
+
+end
+
+end BuildingBlocks.CompactWeilDivisorEnergyFinite

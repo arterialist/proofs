@@ -45,6 +45,16 @@ This contribution proves:
    \operatorname{defect}(N, n) = \log\left(\frac{N}{n}\right) - \sum_{d \le N/n} \frac{\Lambda(d)}{d}
    $$
    is precisely the classical Mertens prime-logarithm difference at scale $x = N/n$, isolating the exact boundary obstacle to Weil positivity.
+4. **Complex Hermitian Extension:**
+   For arbitrary $g : \mathbb{N} \to \mathbb{C}$, the same identity holds with $g(n)^2$ replaced by $|g(n)|^2$ and each graph edge replaced by
+   $$
+   2\frac{\Lambda(d)}{nd}\operatorname{Re}\bigl(g(n)\overline{g(nd)}\bigr).
+   $$
+   Its history term is
+   $$
+   \sum_{d=1}^N\sum_{n\le N/d}\frac{\Lambda(d)}{nd}|g(n)-g(nd)|^2\ge 0.
+   $$
+   This extension retains all prime powers and permits phase-sensitive test vectors. It does not establish a sign for the boundary defect.
 
 ---
 
@@ -110,6 +120,21 @@ theorem prime_deficit_eq_history_add_pointwise (N : ℕ) (g : ℕ → ℝ) :
       historyEnergy N g +
         ∑ n ∈ Finset.Icc 1 N,
           boundaryDefect N n * g n ^ 2 / (n : ℝ)
+
+theorem complexHistoryEnergy_nonneg (N : ℕ) (g : ℕ → ℂ) :
+    0 ≤ complexHistoryEnergy N g
+
+theorem complex_prime_deficit_eq_history_add_boundary
+    (N : ℕ) (g : ℕ → ℂ) :
+    Real.log (N : ℝ) * complexVertexNorm N g - complexPrimeGraph N g =
+      complexHistoryEnergy N g + complexBoundaryEnergy N g
+
+theorem complex_prime_deficit_eq_history_add_pointwise
+    (N : ℕ) (g : ℕ → ℂ) :
+    Real.log (N : ℝ) * complexVertexNorm N g - complexPrimeGraph N g =
+      complexHistoryEnergy N g +
+        ∑ n ∈ Finset.Icc 1 N,
+          boundaryDefect N n * Complex.normSq (g n) / (n : ℝ)
 ```
 Axioms audit confirms strict dependence on:
 ```
