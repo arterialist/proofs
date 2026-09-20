@@ -233,6 +233,170 @@ but they do not change the power \(X^{\Re\rho+1}\). A proposed
 absolute zero-free-region or Möbius estimates has therefore hidden the
 required square-root cancellation.
 
+## Selberg self-coupling audit of the terminal mode
+
+For real \(x\ge1\), define the exact first Riesz error
+
+\[
+ D(x)=\sum_{n\le x}(x-n)\Lambda(n)-\frac{x^2}{2}
+ =\int_0^x(\psi(t)-t)\,dt.
+ \tag{4h}
+\]
+
+For real \(y\ge1\), write \(M(y)=D(2y)-D(y)\). At integral \(X\), this is
+literally the terminal mass:
+
+\[
+ M(X)=D(2X)-D(X).
+ \tag{4i}
+\]
+
+Use Selberg's pointwise convolution identity
+
+\[
+ \Lambda(n)\log n+(\Lambda*\Lambda)(n)
+ =(\mu*\log^2)(n).
+ \tag{4j}
+\]
+
+Put \(G=\mu*\log^2\), and retain the complete Riesz increment
+
+\[
+ U_X=X\sum_{n\le X}G(n)
+ +\sum_{X<n\le2X}(2X-n)G(n).
+ \tag{4k}
+\]
+
+Summing (4j) with this increment gives the exact boundary identity
+
+\[
+\begin{aligned}
+ U_X={}&X\sum_{n\le X}\Lambda(n)\log n
+ +\sum_{X<n\le2X}(2X-n)\Lambda(n)\log n\\
+ &+X\sum_{ab\le X}\Lambda(a)\Lambda(b)
+ +\sum_{X<ab\le2X}(2X-ab)\Lambda(a)\Lambda(b).
+ \tag{4l}
+\end{aligned}
+\]
+
+Every equality sign in (4l) is finite. The terms \(n=X,2X\) and
+\(ab=X,2X\) carry their displayed literal coefficients, and every proper
+prime power remains.
+
+The convolution increment in the second line has a useful exact form:
+
+\[
+\begin{aligned}
+ &X\sum_{ab\le X}\Lambda(a)\Lambda(b)
+ +\sum_{X<ab\le2X}(2X-ab)\Lambda(a)\Lambda(b)\\
+ &\qquad=\sum_{a\le X}a\Lambda(a)M(X/a)
+ +\frac32X^2\sum_{a\le X}\frac{\Lambda(a)}a.
+ \tag{4m}
+\end{aligned}
+\]
+
+To see the boundary cancellation, first write the Riesz convolution at
+\(x\) as
+
+\[
+ \sum_{a\le x}a\Lambda(a)D(x/a)
+ +\frac{x^2}{2}\sum_{a\le x}\frac{\Lambda(a)}a.
+\]
+
+For \(X<a\le2X\), one has \(1\le2X/a<2\), so
+\(D(2X/a)=-(2X/a)^2/2\). These terms cancel the corresponding part of the
+density sum exactly, leaving (4m).
+
+Finally set
+
+\[
+ B_X^{\log}=X\sum_{n\le X}\Lambda(n)\log(n/X)
+ +\sum_{X<n\le2X}(2X-n)\Lambda(n)\log(n/X).
+\]
+
+The first line of (4l) is
+\((\log X)(M(X)+3X^2/2)+B_X^{\log}\). Therefore Selberg's identity gives
+the exact self-coupling equation
+
+\[
+\boxed{\begin{aligned}
+ (\log X)M(X)+\sum_{a\le X}a\Lambda(a)M(X/a)
+ ={}&U_X-B_X^{\log}\\
+ &-\frac32X^2\left(\log X+
+ \sum_{a\le X}\frac{\Lambda(a)}a\right).
+\end{aligned}}
+ \tag{4n}
+\]
+
+This identity does not yield a contractive absolute-value estimate. With
+\(m(y)=M(y)/y^2\), division by \(X^2\log X\) makes its self-coupling
+operator
+
+\[
+ (T_Xm)(X)=\frac1{\log X}
+ \sum_{a\le X}\frac{\Lambda(a)}a\,m(X/a).
+ \tag{4o}
+\]
+
+Its positive \(L^\infty\)-operator mass is
+
+\[
+ \frac1{\log X}\sum_{a\le X}\frac{\Lambda(a)}a=1+o(1).
+ \tag{4p}
+\]
+
+by the ordinary PNT. Thus taking absolute values in (4n) gives contraction
+constant one, not a fixed \(\kappa<1\). Taking the three large terms on the
+right separately is worse: each has scale \(X^2\log X\), and their density
+main terms must cancel before the prime error is visible. Recovering a
+fixed contraction would require a new signed correlation between
+\(M(X/a)\) and the positive weights \(\Lambda(a)/a\); the Selberg identity
+itself supplies no such sign.
+
+The linearized explicit-formula mode is a direct falsifier. Up to an
+irrelevant nonzero scalar, take \(R_\rho(x)=x^\rho\), with
+\(1/2<\Re\rho<1\). Its Riesz increment is
+
+\[
+ M_\rho(X)=\frac{2^{\rho+1}-1}{\rho+1}X^{\rho+1}.
+ \tag{4q}
+\]
+
+The coefficient is nonzero. After normalization by \(X^2\), this mode
+tends to zero like \(X^{\Re\rho-1}\), so the qualitative contraction used
+in Selberg's elementary PNT is fully compatible with it. At the required
+normalization \(X^{3/2}\), however, it grows like
+\(X^{\Re\rho-1/2}\). Hence a contraction at the latter scale would already
+exclude the off-line mode rather than follow from Selberg self-coupling.
+
+The same obstruction is visible before summation. If
+\(L(s)=-\zeta'(s)/\zeta(s)\), the Dirichlet-series form of (4j) is the
+tautology
+
+\[
+ -L'(s)+L(s)^2=\frac{\zeta''(s)}{\zeta(s)}.
+ \tag{4r}
+\]
+
+Near a simple zero \(\rho\), one has
+\(L(s)=-(s-\rho)^{-1}+O(1)\). The double poles in \(-L'\) and \(L^2\)
+have coefficients \(-1\) and \(+1\), so they cancel with exact constant
+one; the remaining simple pole agrees with \(\zeta''/\zeta\). The identity
+is therefore algebraically compatible with a zero anywhere in
+\(1/2<\Re\rho<1\) and cannot by itself improve its location.
+
+The current unconditional estimate remains
+
+\[
+ |M(X)|\ll_\delta X^2\exp[-(d-\delta)\Phi(X)],
+ \tag{4s}
+\]
+
+obtained directly from (4h) and the Vinogradov--Korobov PNT error. The
+finite Selberg expansion preserves more algebra, but without an additional
+signed estimate it gives no smaller exponent or fixed-power saving. This
+is the precise stopping point; no contractive inequality is asserted.
+
 ## Exact prime twist in every nonzero mode
 
 For \(j\in\mathbb Z\setminus\{0\}\), define
