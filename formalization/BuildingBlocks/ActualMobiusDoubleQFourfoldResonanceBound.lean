@@ -32,6 +32,16 @@ theorem resonance_count_exponent (lambda f : ℝ) :
       6 * q lambda - p lambda - f := by
   ring
 
+/-- The average-center lower-count construction has the same exponent as
+the fixed-center upper count.  Its factors are: determinant tuples
+`(Q/P)Q^3`, the two `Q` variables, center-incidence length `Q^5/F`, and
+division by the `Q^5` available integer centers. -/
+theorem average_center_lower_count_exponent (lambda f : ℝ) :
+    ((q lambda - p lambda) + 3 * q lambda) + 2 * q lambda +
+        (5 * q lambda - f) - 5 * q lambda =
+      6 * q lambda - p lambda - f := by
+  ring
+
 /-- Multiplying the Fourier-integral size `P^2 F/Q^2` by the
 resonance count gives `P Q^4`. -/
 theorem leading_block_exponent (lambda f : ℝ) :

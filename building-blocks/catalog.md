@@ -107,6 +107,8 @@ For the canonical all-unit residue, the [fourfold high-block completion](weil-an
 \]
 for (Q^2\le F\le T^{1-\kappa}).  The error terms save powers, but the leading product-resonance ratio is (Q/P^2=T^{\lambda-2}>1).  The new estimate is therefore stronger than direct determinant counting but still does not control the high blocks.  Its Lean companion verifies only the exponent and remainder algebra; the four transforms and product-resonance count are written and independently audited.
 
+The [average-center sharpness theorem](weil-and-spectral/actual-mobius-high-resonance-count-sharpness.md) proves that this resonance count cannot be improved uniformly.  Elementary coprime determinant families and pigeonholing produce some integer center \(N\asymp Q^5\) with \(\gg Q^6/(PF)\) tuples in both high-block windows, matching the upper count.  Its exponent identity is Lean-checked; the coprime-pair and averaging proof is written.  This rules out further sparsity, gcd, and unit-residual arguments at this stage.  A successful bound must retain cancellation among the signed Fourier kernels or divisor coefficients.
+
 The [localized-divisor additive Fourier estimate](weil-and-spectral/actual-mobius-localized-divisor-fourier-saving.md) retains the complete positive coefficient-one box from the second K=3 expansion.  For every coprime additive twist it proves
 \[
  |\mathcal L(a,M)|\ll_\varepsilon T^\varepsilon

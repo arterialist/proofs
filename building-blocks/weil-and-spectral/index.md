@@ -60,6 +60,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Double-Q weighted Cauchy and the full-rank Gram kernel](actual-mobius-double-q-full-rank-gram.md)
 - [Joint outer/alias spacing in the smooth double-Q Gram](actual-mobius-double-q-dual-spacing-saving.md)
 - [Fourfold completion of the high double-Q Gram block](actual-mobius-double-q-fourfold-resonance-bound.md)
+- [Average-center sharpness of the high product-resonance count](actual-mobius-high-resonance-count-sharpness.md)
 - [Additive Fourier saving for the critical localized divisor box](actual-mobius-localized-divisor-fourier-saving.md)
 - [Ordered cross sums of localized Möbius histories](actual-mobius-complete-history-cross-sum.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)

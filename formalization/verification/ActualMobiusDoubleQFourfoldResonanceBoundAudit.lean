@@ -5,6 +5,7 @@ open BuildingBlocks.ActualMobiusDoubleQFourfoldResonanceBound
 #check physical_scale
 #check window_product_exponent
 #check resonance_count_exponent
+#check average_center_lower_count_exponent
 #check leading_block_exponent
 #check leading_ratio_exponent
 #check resonance_excess_eq
@@ -19,6 +20,7 @@ open BuildingBlocks.ActualMobiusDoubleQFourfoldResonanceBound
 #print axioms physical_scale
 #print axioms window_product_exponent
 #print axioms resonance_count_exponent
+#print axioms average_center_lower_count_exponent
 #print axioms leading_block_exponent
 #print axioms leading_ratio_exponent
 #print axioms resonance_excess_eq

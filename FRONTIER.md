@@ -129,6 +129,15 @@ then reverses the alias transform, applies the \(B\)-process in the two
 The main ratio is \(Q/P^2=T^{\lambda-2}>1\).  Thus it sharply reduces the
 high-block loss but does not control those blocks.  It also identifies the
 remaining loss with nonzero product-resonance differences of width \(Q/P\).
+The
+[average-center sharpness theorem](building-blocks/weil-and-spectral/actual-mobius-high-resonance-count-sharpness.md)
+shows that the count itself is best possible uniformly in the center:
+coprime determinant families and pigeonholing give some integer
+\(N\asymp Q^5\) with \(\gg Q^6/(PF)\) tuples in the two resonance windows.
+The exponent ledger is Lean-checked and the counting proof is written.
+Thus further gcd, unit-residual, or absolute sparsity refinements cannot
+remove the \(Q/P^2\) loss; only cancellation in the actual Fourier kernels
+or restricted divisor coefficients can do so.
 Since the \(F\)-partition is introduced
 after squaring, this result does not yet bound a linear subsum or move the
 complete Möbius-prefix endpoint.
