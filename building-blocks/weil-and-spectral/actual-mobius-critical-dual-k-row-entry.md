@@ -1,7 +1,8 @@
 # A dual row bound on the critical prime fiber
 
 **Status.** This note proves an unconditional row-entry estimate for the
-dual matrix after its complementary coefficient has been removed:
+dual matrix after its complementary coefficient has been removed, under a
+prime restriction on the long all-unit free factor:
 \[
   |\mathcal G(k,k')|\ll_\varepsilon
   T^\varepsilon Q^3\sqrt P.
@@ -11,6 +12,8 @@ comparison benchmark because \(P<Q\). It still loses \(\sqrt P\) against
 row orthogonality.
 Schur's test therefore gives \(P^{3/2}Q^3\), which does not produce a
 positive \(\rho\) or extend the complete Möbius prefix.
+The exact K=3 contact term has unrestricted integer free factors. Thus the
+lemma applies to its prime-prime subcomponent, not to the full residual.
 
 The exponent and determinant-line ledgers are checked in
 [`ActualMobiusCriticalDualKRow.lean`](../../formalization/BuildingBlocks/ActualMobiusCriticalDualKRow.lean).
@@ -77,7 +80,7 @@ Our choice of \(w\) gives
 \]
 Passing to the coefficient-uniform norm of \(BB^*\) therefore removes all
 arithmetic signs carried by \(R_\theta\) without increasing its norm. The
-surviving semiprime local coefficient is \(+1\), and the exact K=3 history
+surviving all-unit local coefficient is \(+1\), and the exact K=3 history
 does not provide an independent \(q\)-sign for the dual Gram to exploit.
 Bounded separated packet weights may remain in \(d_q\). The dual matrix has
 no complementary Möbius sign to exploit.
@@ -263,4 +266,7 @@ Any use of the complementary Möbius signs must return to the primal
 \(q\ne q'\) energy before the \(r\)-Cauchy or operator-norm step. The
 required object is a curved correlation of
 \(R_\theta(r)\overline{R_\theta(r')}\) across the reciprocal Poisson
-aliases. No fixed-power bound for that correlation is proved here.
+aliases. No fixed-power bound for that correlation is proved here. For
+unrestricted integer denominators, equal reduced fractions also have
+multiplicity, so the prime-row estimate (16) does not transfer to the full
+all-unit contact sum. That integer residual remains open.

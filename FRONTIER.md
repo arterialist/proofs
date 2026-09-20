@@ -80,14 +80,19 @@ complete pointwise endpoint.
 
 At the three-fifths contact, the unconditional
 [critical prime-fiber sampling estimate](building-blocks/weil-and-spectral/actual-mobius-critical-prime-fiber-sampling-saving.md)
-now controls the exact \(q=q'\) residual by
+controls the prime-prime subcomponent of the \(q=q'\) energy by
 \(\mathcal E_=\ll T^\varepsilon P Q^4\), a full factor \(Q\) below its
 unsaved \(P Q^5\) target. It retains the prime denominator, separated
 packet weights, hard endpoints, both nonzero Poisson signs, and the
 divisor-square norm of the collapsed coefficient. Cauchy in the coherent
 \(q\)-sum spends exactly this gain, and the \(q\ne q'\) nonzero-alias
-correlation remains unbounded. The theorem therefore removes the diagonal
-residual but does not move the complete Möbius-prefix endpoint.
+correlation remains unbounded. More fundamentally, the exact K=3 history
+leaves two unweighted integer free factors, not prime variables. Its
+one-nonunit histories cancel; the surviving all-unit contact sum has local
+coefficient \(1\), and collapsing the two factors gives a restricted divisor
+count. Composite values and repeated reduced fractions remain uncontrolled.
+The theorem therefore bounds a thin prime-prime subcomponent and does not
+move the complete Möbius-prefix endpoint.
 The [dual row-entry estimate](building-blocks/weil-and-spectral/actual-mobius-critical-dual-k-row-entry.md)
 gives the independent uniform bound
 \(\mathcal G(k,k')\ll T^\varepsilon Q^3\sqrt P\) after the complementary
@@ -95,7 +100,9 @@ coefficient is removed by \(TT^*\). This improves the direct
 \(Q^{7/2+\varepsilon}\) benchmark,
 but Schur's test gives \(P^{3/2}Q^3\) and still loses \(\sqrt P\). The
 complementary Möbius coefficient has already disappeared from this matrix,
-so the lemma does not give \(\rho>0\) or extend the complete prefix.
+so the lemma does not give \(\rho>0\) or extend the complete prefix. It too
+is a prime-prime subcomponent estimate; it does not transfer to the
+unrestricted integer free factors in the exact contact sum.
 
 The unconditional
 [free-factor pruning](building-blocks/weil-and-spectral/actual-mobius-tail-free-factor-pruning.md)

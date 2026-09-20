@@ -1,14 +1,15 @@
 # Sampling saving on the critical prime fiber
 
 **Status.** This note proves an unconditional written mean-square estimate
-for a prime-restricted diagonal slice at the three-fifths Möbius endpoint. Lean
+for the prime-restricted diagonal subcomponent of the all-unit contact split
+at the three-fifths Möbius endpoint. The exact K=3 free variables range over
+all integers, so this estimate does not control the full contact split. Lean
 checks the complete exponent ledger in
 [`ActualMobiusCriticalPrimeFiberSampling.lean`](../../formalization/BuildingBlocks/ActualMobiusCriticalPrimeFiberSampling.lean).
 The continuous Hilbert inequality and sampling argument are written
-analysis.  The exact K=3 history count shows that the live all-unit cross
-has unrestricted integer factors, so this prime slice is not the complete
-residual.  This result does not control that residual, extend the complete
-Möbius prefix, or prove the Riemann hypothesis.
+analysis. This result does not control the unrestricted integer fiber or
+the off-diagonal prime-prime subcomponent, extend the complete Möbius
+prefix, or prove the Riemann hypothesis.
 
 ## Statement
 
@@ -34,11 +35,8 @@ Thus
 \tag{2}
 \]
 
-Let \(a_c(\theta)\) and \(b_p(\theta)\) be separated packet coefficients
-after restricting an ordered all-unit split in the critical K=3 fiber to a
-prime `q`.  The history coefficient is positive; the notation does not
-assign separate Möbius signs to `p` and `q`.  This restriction belongs to
-the sampling theorem, not to the complete K=3 residual.  The
+Let \(a_c(\theta)\) and \(b_p(\theta)\) be any of the separated packet
+coefficients arising from the critical quadratic Möbius fiber. The
 established Fourier--Mellin separator has total \(L^1\)-mass
 \(T^\varepsilon\); within each component its \(k\)- and \(q\)-weights are
 bounded scalars and the following \(r\)-coefficient is common to every
@@ -53,8 +51,8 @@ bounds and set
 \tag{3}
 \]
 
-For either sign of the physical Poisson modes, define the exact diagonal
-prime-fiber energy
+For either sign of the physical Poisson modes, define the diagonal energy
+of the prime-restricted subcomponent
 
 \[
  \mathcal E_{=}(\theta)=
@@ -89,8 +87,8 @@ after absorbing the fixed \(T^\varepsilon\) loss.
 
 Minkowski's inequality over the separator, followed by its
 \(T^\varepsilon\) total \(L^1\)-mass bound, gives the same estimate for the
-actual superposed \(q=q'\) residual, with one further \(T^\varepsilon\)
-loss.
+prime-restricted superposed \(q=q'\) subcomponent, with one further
+\(T^\varepsilon\) loss.
 
 ## Coefficient norm
 
@@ -209,7 +207,9 @@ shell, the extra factor \(Q\) changes (5) back into
 \tag{15}
 \]
 
-which has \(\rho=0\). Thus (5) rigorously removes the formerly saturated
-diagonal prime fiber, but it cannot be promoted to a full-shell saving by
-that Cauchy step. The two-prime off-diagonal must retain both \(q\) variables
-and obtain cancellation across its nonzero aliases.
+which has \(\rho=0\). Thus (5) rigorously controls the diagonal inside the
+auxiliary prime-prime restriction, but it cannot be promoted to a full-shell
+saving by that Cauchy step. In the exact K=3 term the two free variables are
+unrestricted integers; repeated reduced fractions and composite values
+remain. Even within the prime restriction, the off-diagonal must retain both
+\(q\) variables and obtain cancellation across its nonzero aliases.

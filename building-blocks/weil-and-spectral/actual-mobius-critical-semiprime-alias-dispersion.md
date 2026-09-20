@@ -1,13 +1,14 @@
-# The critical semiprime alias-dispersion target
+# The critical all-unit alias-dispersion target
 
-**Status.** This note gives an unconditional reduction of the critical
-semiprime shell, a written mean-square estimate for its diagonal prime
-fiber, and a comparison with the analytic estimates used below. The exponent identities are formalized in
+**Status.** This note gives an unconditional alias reduction for the
+all-unit contact split, a written mean-square estimate for its
+prime-restricted diagonal subcomponent, and a comparison with the analytic
+estimates used below. The exponent identities are formalized in
 [`ActualMobiusCriticalSemiprimeAliasDispersion.lean`](../../formalization/BuildingBlocks/ActualMobiusCriticalSemiprimeAliasDispersion.lean).
 The continuous mean-value and sampling argument below is written
 mathematics. No prefix extension or Riemann-hypothesis result is claimed.
 
-## 1. Critical scales and the exact packet
+## 1. Critical scales and the exact contact packet
 
 At the endpoint \(d=3\lambda/5\), put
 
@@ -18,9 +19,8 @@ At the endpoint \(d=3\lambda/5\), put
 \]
 
 Here \(k\asymp L\) is the physical Poisson mode, \(p\asymp P\) and
-\(q\asymp Q\) are the unrestricted integer variables in the surviving
-ordered all-unit cross, and \(c\asymp C\) contains the untouched signed
-outer factor. The scale
+\(q\asymp Q\) are the two unweighted integer factors in the surviving
+all-unit split, and \(c\asymp C\) contains the untouched outer factor. The scale
 relations are
 
 \[
@@ -42,15 +42,11 @@ form
 \tag{3}
 \]
 
-with bounded separated packet coefficients and the actual arithmetic
-provenance retained.  The K=3 history count shows that the one-nonunit
-histories cancel before this shell is estimated.  The surviving ordered
-splits `(p,q)` and `(q,p)` come from the all-unit `1*1` histories and have
-positive coefficient.  Thus the notation \(b_p d_q\) does not supply local
-Möbius cancellation.  The companion negative single-free packet must be
-retained separately if one seeks cancellation between the single-free and
-two-free parts of the rough Möbius coefficient.  Restricting `p,q` to
-distinct primes produces a test slice, not the complete residual in (3).
+with bounded separated packet coefficients and the actual outer arithmetic
+sign retained. The exact K=3 history gives coefficient \(1\) on each local
+factor. Thus \(p,q\) range over integers and carry no independent Möbius
+sign. Restricting both variables to primes gives a valid subcomponent, but
+does not recover the full contact split.
 
 The phase has size
 
@@ -255,7 +251,7 @@ power saving in (13), or in the full signed alias form (7), without replacing
 the nonzero aliases by their separate absolute spacing counts. The next
 section resolves (13); the following section records what remains in (7).
 
-## 6. A power saving for the saturated residual
+## 6. A power saving for the prime-restricted residual
 
 The particular residual (13) does admit a direct unconditional saving. The
 argument uses the aliases collectively through continuous sampling rather
@@ -333,8 +329,9 @@ Cauchy--Schwarz, gives
 \tag{24}
 \]
 
-In the actual residual, \(q,q'\asymp Q\) are prime and \(k,k'\asymp P<Q\).
-Thus \(\gcd(k,q)=\gcd(k',q')=1\), and equality \(k/q=k'/q'\) forces
+Restrict this subcomponent to prime \(q,q'\asymp Q\), with
+\(k,k'\asymp P<Q\). Then \(\gcd(k,q)=\gcd(k',q')=1\), and equality
+\(k/q=k'/q'\) forces
 \(k=k'\) and \(q=q'\). There is no multiplicity loss. The packet weights
 are harmless after the established Fourier--Mellin separation: each
 component has bounded scalar \(k\)- and \(q\)-weights and one common
@@ -349,10 +346,10 @@ Hence
 \tag{25}
 \]
 
-If one deliberately enlarges the prime \(q\)-sum to all integers, equal
-reduced fractions can have multiplicity \(O(P)\); the corresponding weaker
-majorant is \(T^\varepsilon P^2Q^2\|R\|_2^2\). That enlarged estimate is
-not the value used for the actual semiprime fiber.
+For the actual unrestricted integer \(q\)-sum, equal reduced fractions can
+have multiplicity \(O(P)\); the corresponding weaker majorant is
+\(T^\varepsilon P^2Q^2\|R\|_2^2\). This is the relevant scale for the full
+all-unit contact split and does not give the saving below.
 
 For (14), fixed divisor bounds and the standard fixed divisor-moment bound
 give
@@ -387,10 +384,10 @@ fixed
 \tag{29}
 \]
 
-This theorem removes that residual obstruction. It does not by itself
-assert that all \(q\ne q'\) terms in the full expansion (7) have the same
-margin; that splice must be checked against the preceding double-large-sieve
-decomposition before a complete prefix extension is claimed.
+This theorem controls the prime-prime subcomponent of that residual. It
+does not control the composite integer values present in the exact K=3
+all-unit split, nor does it assert that all \(q\ne q'\) terms in (7) have
+the same margin. The full integer contact sum therefore remains open.
 
 The alternative fixed-\(q\) local-density argument gives the weaker but
 compatible bound \(Q^5T^\varepsilon\). Indeed,
