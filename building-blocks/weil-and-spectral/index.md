@@ -63,6 +63,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Average-center sharpness of the high product-resonance count](actual-mobius-high-resonance-count-sharpness.md)
 - [Additive Fourier saving for the critical localized divisor box](actual-mobius-localized-divisor-fourier-saving.md)
 - [Ordered cross sums of localized Möbius histories](actual-mobius-complete-history-cross-sum.md)
+- [The complete Mangoldt cross-fiber covariance](actual-mangoldt-cross-fiber-covariance.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
 - [Unit-residual survivor audit at the critical Möbius scales](actual-mobius-unit-residual-survivor-audit.md)
 - [Center averaging of the exact reciprocal Möbius packet](actual-mobius-reciprocal-center-average-saving.md)
