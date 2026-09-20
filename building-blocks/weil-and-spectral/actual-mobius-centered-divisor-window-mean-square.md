@@ -446,6 +446,52 @@ for the exponent ledger, requires cancellation from the nonlinear reciprocal
 product geometry. Equations (26)--(27) isolate its elementary spacing and
 fiber inputs without treating either as that missing cancellation theorem.
 
+The arbitrary coefficients in (28) are stronger than the actual arithmetic
+problem requires. Define the finite Dirichlet kernel
+
+\[
+ D_H(x)=\sum_{0\le u<H}e(ux).
+\]
+
+For the finite Fourier interpolation used in (10a), summing (9) of the
+centering note over the window gives the exact expansion
+
+\[
+ B_H(C)=\sum_{n\in\mathcal S}\frac{\theta_n}{n}
+ \sum_{h=1}^{n-1}D_H(h/n)e(hC/n).
+ \tag{29}
+\]
+
+If \(a/d\in(0,1)\) is reduced, all pairs with \(h/n=a/d\) are
+\((h,n)=(ak,dk)\). Hence its grouped Fourier coefficient is
+
+\[
+ c_{a/d}=D_H(a/d)\,\beta_d,
+ \qquad
+ \beta_d=\sum_{\substack{k\ge1\\dk\in\mathcal S}}
+ \frac{\theta_{dk}}{dk}.
+ \tag{30}
+\]
+
+Thus the allowed coefficient vectors form the image of the at most
+\(|\mathcal S|\le Q+1\) divisor weights \(\theta_n\), rather than an
+arbitrary space of \(\asymp PQ\) rational-frequency coefficients. Write
+\(\mathcal V_H(\theta)\) for the exact periodic variance on the right side
+of (6). The coefficient-uniform statement actually needed here is only
+
+\[
+ \sum_{s\in\mathcal S_Q}|B_H(N/s)|^2
+ \ll_\varepsilon Q^{2+\varepsilon}\mathcal V_H(\theta),
+ \qquad N\asymp Q^5.
+ \tag{31}
+\]
+
+Moreover, \(\mathcal S_Q\subset[Q^2,4Q^2]\), so the same estimate with the
+left side completed to every integer \(Q^2\le s\le4Q^2\) would imply (31).
+This one-variable reciprocal sampling inequality preserves all coefficient
+relations in (29)--(30) and is strictly weaker than (28). It remains
+unproved.
+
 This identifies both the gain and its limit. The product kernel occupies a
 diagonal strip of difference width \(H\) and center width
 \(V=Q^3/F\ge H\). Tiling it into \(H\)-scale boxes makes (10) the correct
@@ -457,16 +503,17 @@ pieces outside this high block, remains open.
 
 [ActualMobiusCenteredDivisorWindow.lean](../../formalization/BuildingBlocks/ActualMobiusCenteredDivisorWindow.lean)
 checks (5), the bounds (7)--(8), the reciprocal separation (26), the exact
-fiber grouping (27), its divisor-count bound, and the exponents (14)--(16)
-and (20). Its
+fiber grouping (27), its divisor-count bound, the containment
+\(\mathcal S_Q\subset[Q^2,4Q^2]\), and the exponents (14)--(16) and (20). Its
 [axiom audit](../../formalization/verification/ActualMobiusCenteredDivisorWindowAudit.lean)
 finds only propext, Classical.choice, and Quot.sound. Lean does not
 formalize the congruence averaging in (3), the gcd sum in (9), or the
 large-sieve and smooth-kernel estimates (11)--(11e), Markov's inequality, or
 the dyadic unions in (18)--(19) and (23)--(24). Lean checks the denominator
 product and dyadic \(1/(4Q^2)\) frequency gaps used before (11), and the local
-length and gain identity (25). It does not formalize or assume (28), nor the
-analytic bound \(\tau(s)\ll_\varepsilon s^\varepsilon\).
+length and gain identity (25). It does not formalize or assume (28) or (31),
+the coefficient formulas (29)--(30), or the analytic bound
+\(\tau(s)\ll_\varepsilon s^\varepsilon\).
 
 ## Literature boundary
 

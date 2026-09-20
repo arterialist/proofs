@@ -10,6 +10,7 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #check reciprocalNaturalSpacing
 #check dyadicReciprocalProductSpacing
 #check criticalReciprocalProductSpacing
+#check dyadicProductSet_subset_interval
 #check sum_dyadicPairs_by_product
 #check dyadicProductMultiplicity_le_divisorsCard
 #check normalizedWindowRmsExponent
@@ -30,6 +31,7 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms reciprocalNaturalSpacing
 #print axioms dyadicReciprocalProductSpacing
 #print axioms criticalReciprocalProductSpacing
+#print axioms dyadicProductSet_subset_interval
 #print axioms sum_dyadicPairs_by_product
 #print axioms dyadicProductMultiplicity_le_divisorsCard
 #print axioms normalizedWindowRmsExponent

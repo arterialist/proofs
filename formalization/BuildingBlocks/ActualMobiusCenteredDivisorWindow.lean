@@ -177,6 +177,18 @@ def dyadicProductPairs (Q : ℕ) : Finset (ℕ × ℕ) :=
 def dyadicProductSet (Q : ℕ) : Finset ℕ :=
   (dyadicProductPairs Q).image fun qr => qr.1 * qr.2
 
+/-- Every represented product lies in the completed interval `[Q^2,4Q^2]`. -/
+theorem dyadicProductSet_subset_interval (Q : ℕ) :
+    dyadicProductSet Q ⊆ Finset.Icc (Q ^ 2) (4 * Q ^ 2) := by
+  intro s hs
+  obtain ⟨qr, hqr, rfl⟩ := Finset.mem_image.mp hs
+  have hmem := Finset.mem_product.mp hqr
+  have hq := Finset.mem_Icc.mp hmem.1
+  have hr := Finset.mem_Icc.mp hmem.2
+  rw [Finset.mem_Icc]
+  constructor <;> nlinarith [Nat.mul_le_mul hq.1 hr.1,
+    Nat.mul_le_mul hq.2 hr.2]
+
 /-- The multiplicity with which a product occurs among ordered dyadic pairs. -/
 def dyadicProductMultiplicity (Q s : ℕ) : ℕ :=
   ((dyadicProductPairs Q).filter fun qr => qr.1 * qr.2 = s).card
@@ -330,6 +342,7 @@ end BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.reciprocalNaturalSpacing
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicReciprocalProductSpacing
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.criticalReciprocalProductSpacing
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicProductSet_subset_interval
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.sum_dyadicPairs_by_product
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicProductMultiplicity_le_divisorsCard
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsExponent
