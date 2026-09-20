@@ -169,6 +169,74 @@ theorem criticalReciprocalProductSpacing (N q r q' r' Q : ℕ)
       dyadicReciprocalProductSpacing N q r q' r' Q hN hq hr hq' hr'
         hqQ hrQ hqQ' hrQ' hprodNe
 
+/-- Ordered pairs in the dyadic product packet. -/
+def dyadicProductPairs (Q : ℕ) : Finset (ℕ × ℕ) :=
+  Finset.Icc Q (2 * Q) ×ˢ Finset.Icc Q (2 * Q)
+
+/-- The distinct products represented by the dyadic packet. -/
+def dyadicProductSet (Q : ℕ) : Finset ℕ :=
+  (dyadicProductPairs Q).image fun qr => qr.1 * qr.2
+
+/-- The multiplicity with which a product occurs among ordered dyadic pairs. -/
+def dyadicProductMultiplicity (Q s : ℕ) : ℕ :=
+  ((dyadicProductPairs Q).filter fun qr => qr.1 * qr.2 = s).card
+
+/-- Every pair-sum whose summand depends only on `q*r` groups exactly by the
+distinct product, with the fiber cardinality as multiplicity. -/
+theorem sum_dyadicPairs_by_product {M : Type*} [AddCommMonoid M]
+    (Q : ℕ) (F : ℕ → M) :
+    ∑ qr ∈ dyadicProductPairs Q, F (qr.1 * qr.2) =
+      ∑ s ∈ dyadicProductSet Q, dyadicProductMultiplicity Q s • F s := by
+  rw [← Finset.sum_fiberwise_of_maps_to
+    (s := dyadicProductPairs Q) (t := dyadicProductSet Q)
+    (g := fun qr => qr.1 * qr.2)
+    (fun qr hqr => Finset.mem_image.mpr ⟨qr, hqr, rfl⟩)
+    (fun qr => F (qr.1 * qr.2))]
+  apply Finset.sum_congr rfl
+  intro s hs
+  rw [show (∑ i ∈ dyadicProductPairs Q with i.1 * i.2 = s,
+      F (i.1 * i.2)) =
+      ∑ _i ∈ (dyadicProductPairs Q).filter (fun i => i.1 * i.2 = s),
+        F s by
+    apply Finset.sum_congr rfl
+    intro i hi
+    rw [(Finset.mem_filter.mp hi).2]]
+  simp [dyadicProductMultiplicity]
+
+/-- Product multiplicity is at most the ordinary divisor count. The first
+coordinate injects the restricted factor pairs into the divisors of `s`. -/
+theorem dyadicProductMultiplicity_le_divisorsCard (Q s : ℕ) (hQ : 0 < Q) :
+    dyadicProductMultiplicity Q s ≤ s.divisors.card := by
+  unfold dyadicProductMultiplicity
+  apply Finset.card_le_card_of_injOn Prod.fst
+  · intro qr hqr
+    change qr.1 ∈ s.divisors
+    rw [Nat.mem_divisors]
+    have hp := (Finset.mem_filter.mp hqr).2
+    constructor
+    · exact ⟨qr.2, hp.symm⟩
+    · intro hs0
+      have hmem := (Finset.mem_filter.mp hqr).1
+      have hqmem := (Finset.mem_product.mp hmem).1
+      have hrmem := (Finset.mem_product.mp hmem).2
+      have hq : 0 < qr.1 :=
+        lt_of_lt_of_le hQ (Finset.mem_Icc.mp hqmem).1
+      have hr : 0 < qr.2 :=
+        lt_of_lt_of_le hQ (Finset.mem_Icc.mp hrmem).1
+      have hprod : 0 < qr.1 * qr.2 := Nat.mul_pos hq hr
+      omega
+  · intro a ha b hb hab
+    apply Prod.ext hab
+    have hpa := (Finset.mem_filter.mp ha).2
+    have hpb := (Finset.mem_filter.mp hb).2
+    have hamem := (Finset.mem_filter.mp ha).1
+    have haq := (Finset.mem_Icc.mp (Finset.mem_product.mp hamem).1).1
+    apply Nat.mul_left_cancel (lt_of_lt_of_le hQ haq)
+    calc
+      a.1 * a.2 = s := hpa
+      _ = b.1 * b.2 := hpb.symm
+      _ = a.1 * b.2 := by rw [hab]
+
 def p (lambda : ℝ) : ℝ := 1 - 2 * lambda / 5
 def q (lambda : ℝ) : ℝ := lambda / 5
 def windowExponent (lambda : ℝ) : ℝ := q lambda - p lambda
@@ -262,6 +330,8 @@ end BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.reciprocalNaturalSpacing
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicReciprocalProductSpacing
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.criticalReciprocalProductSpacing
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.sum_dyadicPairs_by_product
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicProductMultiplicity_le_divisorsCard
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsExponent
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsSaves
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.twoWindowExponent
