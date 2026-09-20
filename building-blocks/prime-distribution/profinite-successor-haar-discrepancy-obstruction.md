@@ -237,3 +237,87 @@ The analytic inputs used above are the classical prime number theorem,
 Mertens' product theorem, and the elementary identity
 $\Lambda(n)=-\sum_{d\mid n}\mu(d)\log d$. No novelty or
 first-formalization claim is made.
+
+## Signed Fourier blocks: a gain below the hyperbola and its loss above
+
+Center the exact-period sawtooth by
+\[
+ r_d(k)=R_d(k)+\frac{d-1}{2d},\qquad
+ \widetilde B_d(m)=\sum_{h=0}^{m-1}r_d(X+h).
+\]
+For \(1\le j<d\), finite Fourier inversion gives
+\[
+ r_d(k)=\sum_{j=1}^{d-1}\beta_d(j)e(jk/d),\qquad
+ \beta_d(j)=\frac1{d(1-e(-j/d))}.
+\tag{12}
+\]
+Thus, for dyadic modulus blocks \(d\asymp D,e\asymp E\), the exact signed
+quadratic block before any inequality is
+\[
+ \boxed{\mathcal Q_{D,E}=
+ \sum_{m\le X}\left(\sum_{d\asymp D}-\mu(d)\log d\,widetilde B_d(m)\right)
+ \overline{\left(\sum_{e\asymp E}-\mu(e)\log e\,widetilde B_e(m)\right)}.}
+\tag{13}
+\]
+Writing \(S_m(\alpha)=\sum_{h<m}e(\alpha h)\), its exact Fourier form is
+\[
+ \mathcal Q_{D,E}=\sum_{d,j,e,k}\mu(d)\mu(e)\log d\log e\,
+ \beta_d(j)\overline{\beta_e(k)}e(X(j/d-k/e))
+ \sum_{m\le X}S_m(j/d)\overline{S_m(k/e)}.
+\tag{14}
+\]
+All four sums have the ranges in (13) and (12); in particular the
+\(\mu(d)\mu(e)\) signs remain present.
+
+Reduce each fraction \(j/d=a/q\). For a fixed reduced \(a/q\), the
+aggregated coefficient on the \(D\)-block is
+\[
+ c_{q,a}^{(D)}=\frac1{1-e(-a/q)}
+ \sum_{D<q\ell\le2D}\frac{-\mu(q\ell)\log(q\ell)}{q\ell}.
+\tag{15}
+\]
+The elementary absolute estimate in (15), together with
+\(|1-e(-a/q)|\gg\min(a,q-a)/q\), gives
+\[
+ \sum_{q\le2D}\sum_{(a,q)=1}|c_{q,a}^{(D)}|^2\ll D\log^2(2D).
+\tag{16}
+\]
+This step does not claim Möbius cancellation. The additive large sieve for
+reduced Farey fractions, followed by the \(\ell^2\)-operator bound
+\(\| (x_h)\mapsto(\sum_{h<m}x_h)_m\|\ll X\), now proves
+\[
+ \sum_{m\le X}\left|\sum_{d\asymp D}-\mu(d)\log d\,
+ \widetilde B_d(m)\right|^2
+ \ll X^2(X+D^2)D\log^2(2D).
+\tag{17}
+\]
+Consequently Cauchy--Schwarz between the two already signed blocks gives
+\[
+ |\mathcal Q_{D,E}|\ll X^2
+ \sqrt{D(X+D^2)E(X+E^2)}\log(2D)\log(2E).
+\tag{18}
+\]
+If \(DE\le X\), (18) is \(O(X^4\log^2X)\), and summing the
+\(O(\log^2X)\) dyadic pairs gives
+\[
+ \boxed{\sum_{DE\le X}\mathcal Q_{D,E}\ll X^4\log^4X.}
+\tag{19}
+\]
+This is a genuine one-power saving for the below-hyperbola centered
+sawtooth blocks, using only exact residue Fourier inversion and the
+unconditional additive large sieve.
+
+The same calculation also supplies the decisive failure test. For
+\(D,E\asymp X\), the right side of (18) is \(O(X^5\log^2X)\), with no
+power saving. These blocks lie entirely in \(DE>X\). Their periods exceed
+or match the observed interval, so residue orthogonality has no additional
+averaging to spend; the coherent cutoff example in the cited cutoff-versus-period
+note shows that a uniform arbitrary-coefficient improvement is false.
+For the actual Möbius coefficients, cancellation between these large
+blocks and the affine terms in (9) remains possible but is not supplied by
+the large sieve. Hence the complementary \(DE>X\) region erases the gain
+available in (19), and summing (13) over all blocks returns only the
+original \(X^5\) energy scale. This Fourier decomposition stops here: a
+full fixed-power bound would require a new signed estimate specifically
+for the actual above-hyperbola coefficients, not another use of residue
+orthogonality.
