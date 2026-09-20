@@ -249,9 +249,37 @@ theorem dyadicProductMultiplicity_le_divisorsCard (Q s : ℕ) (hQ : 0 < Q) :
       _ = b.1 * b.2 := hpb.symm
       _ = a.1 * b.2 := by rw [hab]
 
+/-- The reciprocal-sampling bandwidth loss `1 + F/Q^2`, applied to an
+averaged `1/P` gain, is at most `1/P + K` whenever the support margin gives
+`F ≤ P Q^2 K`. -/
+theorem normalizedReciprocalSampling_le (P Q F K : ℝ)
+    (hP : 0 < P) (hQ : 0 < Q) (hF : F ≤ P * Q ^ 2 * K) :
+    (1 / P) * (1 + F / Q ^ 2) ≤ 1 / P + K := by
+  have hQ2 : 0 < Q ^ 2 := sq_pos_of_pos hQ
+  have hband : F / Q ^ 2 ≤ P * K := by
+    apply (div_le_iff₀ hQ2).2
+    nlinarith
+  calc
+    (1 / P) * (1 + F / Q ^ 2) =
+        1 / P + (F / Q ^ 2) / P := by ring
+    _ ≤ 1 / P + (P * K) / P := by
+      exact add_le_add_left (div_le_div_of_nonneg_right hband hP.le) _
+    _ = 1 / P + K := by field_simp
+
 def p (lambda : ℝ) : ℝ := 1 - 2 * lambda / 5
 def q (lambda : ℝ) : ℝ := lambda / 5
 def windowExponent (lambda : ℝ) : ℝ := q lambda - p lambda
+
+/-- The two normalized fixed-center terms have a negative common exponent
+throughout the critical range whenever the support margin `kappa` is
+positive. -/
+theorem fixedReciprocalSamplingSaves {lambda kappa : ℝ}
+    (hlambda : lambda < 5 / 2) (hkappa : 0 < kappa) :
+    max (-p lambda) (-kappa) < 0 := by
+  apply max_lt
+  · simp [p]
+    linarith
+  · linarith
 
 /-- A square-root-H root-mean-square bound divided by a window of length
 H = Q/P has exponent -(3*lambda - 5)/10. -/
@@ -345,6 +373,8 @@ end BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicProductSet_subset_interval
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.sum_dyadicPairs_by_product
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicProductMultiplicity_le_divisorsCard
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedReciprocalSampling_le
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.fixedReciprocalSamplingSaves
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsExponent
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsSaves
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.twoWindowExponent

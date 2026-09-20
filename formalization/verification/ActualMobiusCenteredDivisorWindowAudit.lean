@@ -13,6 +13,8 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #check dyadicProductSet_subset_interval
 #check sum_dyadicPairs_by_product
 #check dyadicProductMultiplicity_le_divisorsCard
+#check normalizedReciprocalSampling_le
+#check fixedReciprocalSamplingSaves
 #check normalizedWindowRmsExponent
 #check normalizedWindowRmsSaves
 #check twoWindowExponent
@@ -34,6 +36,8 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms dyadicProductSet_subset_interval
 #print axioms sum_dyadicPairs_by_product
 #print axioms dyadicProductMultiplicity_le_divisorsCard
+#print axioms normalizedReciprocalSampling_le
+#print axioms fixedReciprocalSamplingSaves
 #print axioms normalizedWindowRmsExponent
 #print axioms normalizedWindowRmsSaves
 #print axioms twoWindowExponent

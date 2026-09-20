@@ -5,9 +5,10 @@ The exact residue-class defect, rational-frequency separation, and critical
 exponent ledger are Lean-checked.
 The divisor covariance expansion and finite-interval averaging remain written
 mathematics. This gives a fixed-power estimate for the genuine high
-product-resonance kernel after averaging the real packet center, and a
-simultaneous almost-all-center saving for every dyadic high block. It does
-not prove the required prescribed-center estimate or the Riemann hypothesis.
+product-resonance kernel at the prescribed reciprocal packet centers, as
+well as the earlier averaged and almost-all-center estimates. It does not
+control the separate endpoint and tail blocks or prove the Riemann
+hypothesis.
 
 ## Centered restricted-divisor coefficient
 
@@ -243,6 +244,60 @@ The factor \(T^\varepsilon\) absorbs the divisor-bounded separator weights,
 the absolutely summable smooth separation, and dyadic truncation. The proof
 uses no Möbius sign and no \(\Lambda(d)e(-kN/d)\) packet.
 
+## Bandlimited reciprocal sampling
+
+The smooth leading residual has additional structure in the center variable
+that is absent from a sharp divisor window. Before the final Fourier
+integration, its center phase is exactly \(e(-Cz)\), while the retained
+difference cutoff has
+
+\[
+ |z|\ll \frac{F}{Q^3}=\frac1V.
+ \tag{11f}
+\]
+
+Thus each smoothly separated component, as a function of \(C\), has Fourier
+support in an interval of length \(O(1/V)\). The discarded smooth tails have
+arbitrarily rapid decay and are absorbed in \(T^\varepsilon\). Modulating by
+the midpoint of that interval moves it to the origin without changing
+absolute values.
+
+The \(L^1\) Plancherel--Pólya inequality says that if \(f\in L^1(\mathbb R)\)
+has Fourier support of length \(O(\sigma)\), and
+\(\mathcal X\subset\mathbb R\) is \(\Delta\)-separated, then
+
+\[
+ \sum_{x\in\mathcal X}|f(x)|
+ \ll (\sigma+\Delta^{-1})\int_{\mathbb R}|f(C)|\,dC.
+ \tag{11g}
+\]
+
+One may prove (11g) by reproducing \(f\) with a Schwartz kernel whose Fourier
+transform is one on the support of \(\widehat f\), then summing its translates
+over the separated set. Smooth dyadic localization in \(C\) produces rapidly
+decreasing Fourier tails at scale \(Q^{-3}\). Decomposing those tails
+dyadically and using the uniform local estimate (11c0) makes them summable;
+the base scale \(Q^{-3}\) is dominated by (11f). Consequently (11c),
+including its smooth tails, supplies the required localized \(L^1\) norm
+\(O_\varepsilon(T^\varepsilon VQ^3)\).
+
+For the distinct products \(s=qr\), equation (26) gives
+\(\Delta\gg Q\). Equations (11f)--(11g), followed by the exact product
+grouping (27) below, therefore give at every prescribed \(N\asymp Q^5\)
+
+\[
+ \boxed{
+ |\mathcal R_F(N)|
+ \ll_\varepsilon T^\varepsilon\frac{Q^5}{F}
+ \left(1+\frac{F}{Q^2}\right).}
+ \tag{11h}
+\]
+
+The product multiplicity costs only \(Q^\varepsilon\), by the divisor bound
+proved below. This sampling step uses the exact compact \(z\)-support of the
+smooth residual; it is not a claim that arbitrary sharp windows are
+bandlimited.
+
 ## Critical scale and exact remaining gap
 
 In the high fourfold block,
@@ -301,6 +356,32 @@ Let \(\mathfrak F_T\) be the dyadic values in
  \frac{P^2F/Q^2}{P^3Q^3}\,|\mathcal R_F(N)|.
  \tag{17}
 \]
+
+Equation (11h) gives the prescribed-center estimate
+
+\[
+ \mathcal A_F(N)
+ \ll_\varepsilon T^\varepsilon\frac1P
+ \left(1+\frac{F}{Q^2}\right).
+ \tag{17a}
+\]
+
+The retained high range has \(F\le T^{1-\kappa}=PQ^2T^{-\kappa}\).
+Therefore
+
+\[
+ \boxed{
+ \mathcal A_F(N)
+ \ll_\varepsilon T^\varepsilon
+ \left(P^{-1}+T^{-\kappa}\right).}
+ \tag{17b}
+\]
+
+Both exponents are strictly negative because
+\(P=T^{1-2\lambda/5}\), \(\lambda<5/2\), and \(\kappa>0\). Summing the
+\(O(\log T)\) dyadic \(F\)-blocks only changes epsilon. This proves a fixed
+power saving for the complete smooth leading high product-resonance block at
+the actual prescribed packet center.
 
 For every fixed \(\varepsilon>0\), apply (11e) with a smaller epsilon,
 then use Markov's inequality and take the union over
@@ -488,18 +569,21 @@ of (6). The coefficient-uniform statement actually needed here is only
 
 Moreover, \(\mathcal S_Q\subset[Q^2,4Q^2]\), so the same estimate with the
 left side completed to every integer \(Q^2\le s\le4Q^2\) would imply (31).
-This one-variable reciprocal sampling inequality preserves all coefficient
+This one-variable sharp-window sampling inequality preserves all coefficient
 relations in (29)--(30) and is strictly weaker than (28). It remains
-unproved.
+unproved, but (11h) bypasses it for the smooth residual actually used in the
+high block.
 
-This identifies both the gain and its limit. The product kernel occupies a
+This identifies both the gain and its limit for the center-average method.
+The product kernel occupies a
 diagonal strip of difference width \(H\) and center width
 \(V=Q^3/F\ge H\). Tiling it into \(H\)-scale boxes makes (10) the correct
 one-window estimate. The theorem controls the simultaneous \(q,r\) sum in
 mean over the real center and, by (18)--(19), at almost every center for all
-dyadic high scales at once. It does not give the bound at a prescribed
-\(N\). That translation, together with the separate endpoint and tail
-pieces outside this high block, remains open.
+dyadic high scales at once. The bandlimited sampling step (11f)--(11h)
+supplies the prescribed-center translation for the smooth leading high
+block. The separate endpoint and tail pieces outside this high block remain
+open.
 
 [ActualMobiusCenteredDivisorWindow.lean](../../formalization/BuildingBlocks/ActualMobiusCenteredDivisorWindow.lean)
 checks (5), the bounds (7)--(8), the reciprocal separation (26), the exact
@@ -510,9 +594,10 @@ finds only propext, Classical.choice, and Quot.sound. Lean does not
 formalize the congruence averaging in (3), the gcd sum in (9), or the
 large-sieve and smooth-kernel estimates (11)--(11e), Markov's inequality, or
 the dyadic unions in (18)--(19) and (23)--(24). Lean checks the denominator
-product and dyadic \(1/(4Q^2)\) frequency gaps used before (11), and the local
-length and gain identity (25). It does not formalize or assume (28) or (31),
-the coefficient formulas (29)--(30), or the analytic bound
+product and dyadic \(1/(4Q^2)\) frequency gaps used before (11), the local
+length and gain identity (25), and the normalization inequality behind
+(17a)--(17b). It does not formalize the Plancherel--Pólya sampling step,
+(28), (31), the coefficient formulas (29)--(30), or the analytic bound
 \(\tau(s)\ll_\varepsilon s^\varepsilon\).
 
 ## Literature boundary
@@ -544,3 +629,9 @@ monomial exponential sums. A relevant benchmark is Robert and Sargos,
 [*Three-dimensional exponential sums with monomials*](https://doi.org/10.1515/CRELLE.2006.012).
 No consequence of their theorem is asserted here; matching its hypotheses to
 the coefficient-uniform operator norm in (28) remains open.
+
+The prescribed-center step (11g) uses the classical \(L^1\)
+Plancherel--Pólya inequality. A modern statement for separated real samples
+and entire functions of exponential type is given by Pesenson,
+[*Plancherel--Polya-type inequalities for entire functions of exponential
+type in \(L^p(\mathbb R^d)\)*](https://doi.org/10.1016/j.jmaa.2006.08.032).
