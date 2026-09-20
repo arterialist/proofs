@@ -428,10 +428,12 @@ The pole term \(x^2/2\) has already been removed in the definition of
  \tag{4t}
 \]
 
-The contour and absolute-convergence justification are the same as in
-[Soundararajan's integrated explicit formula, Lemma 1](https://arxiv.org/pdf/math/0612106),
-with the present first Riesz kernel supplying \(\rho(\rho+1)\) in place of
-\(\rho^2\).
+This follows by Mellin inversion with kernel \(x^{s+1}/(s(s+1))\), or by
+integrating the standard von Mangoldt explicit formula recorded in
+[DLMF 25.16.2](https://dlmf.nist.gov/25.16.E2). The extra factor
+\((s+1)^{-1}\) makes the nontrivial-zero series absolutely convergent;
+the shell estimate (4u) supplies the required justification for passing to
+the integrated series.
 
 There is no endpoint half-weight: the coefficient of a possible atom at
 the Riesz cutoff is zero. The constant residue in \(D(2X)-D(X)\) cancels,
