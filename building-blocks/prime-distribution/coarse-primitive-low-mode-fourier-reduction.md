@@ -345,13 +345,13 @@ Its positive \(L^\infty\)-operator mass is
  \tag{4p}
 \]
 
-by the ordinary PNT. Thus taking absolute values in (4n) gives contraction
-constant one, not a fixed \(\kappa<1\). Taking the three large terms on the
-right separately is worse: each has scale \(X^2\log X\), and their density
-main terms must cancel before the prime error is visible. Recovering a
-fixed contraction would require a new signed correlation between
-\(M(X/a)\) and the positive weights \(\Lambda(a)/a\); the Selberg identity
-itself supplies no such sign.
+by Mertens' first theorem; this asymptotic does not require RH. Thus taking
+absolute values in (4n) gives contraction constant one, not a fixed
+\(\kappa<1\). Taking the three large terms on the right separately is worse:
+each has scale \(X^2\log X\), and their density main terms must cancel before
+the prime error is visible. Recovering a fixed contraction would require a
+new signed correlation between \(M(X/a)\) and the positive weights
+\(\Lambda(a)/a\); the Selberg identity itself supplies no such sign.
 
 The linearized explicit-formula mode is a direct falsifier. Up to an
 irrelevant nonzero scalar, take \(R_\rho(x)=x^\rho\), with
