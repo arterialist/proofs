@@ -664,6 +664,83 @@ These remain Vinogradov--Korobov-scale estimates. They do not reach the
 \(X^{3+\varepsilon}\) inputs in (12)--(13), or the resulting
 \(S_X\ll X^{4+\varepsilon}\) RH criterion.
 
+### Exact factorial--Möbius reparametrization and its fixed-power obstruction
+
+The corresponding discrete prefix energy has an exact finite arithmetic
+form before any inequality is used. For integers \(n\ge1\), put
+
+\[
+ a_n=\int_n^{n+1}E(t)\,dt=\psi(n)-n-\frac12.
+ \tag{4aa11}
+\]
+
+For \(1\le m\le X\), the integer prefix is
+\(P(m)=\sum_{r=0}^{m-1}a_{X+r}\). Consequently
+
+\[
+ \boxed{
+ S_X^{\mathbb Z,+}:=\sum_{m=1}^X|P(m)|^2
+ =\sum_{r,s=0}^{X-1}
+ \bigl(X-\max(r,s)\bigr)a_{X+r}a_{X+s}.}
+ \tag{4aa12}
+\]
+
+The kernel is the positive Gram matrix of the prefix-sum operator. It
+retains every diagonal and signed off-diagonal interaction.
+
+The identity \(\Lambda=\mu*\log\) gives, still exactly,
+
+\[
+ \boxed{
+ a_n=\sum_{d\le n}\mu(d)
+ \log\!\left(\left\lfloor\frac nd\right\rfloor!\right)
+ -n-\frac12.}
+ \tag{4aa13}
+\]
+
+Equations (4aa12)--(4aa13) are the factorial--Möbius decomposition of the
+actual energy. They are a change of coordinates, rather than an estimate:
+substitution into (4aa12) produces a signed quadratic form in
+\(\mu(d)\mu(e)\) with exactly the original value. A triangle inequality
+in either divisor variable removes those signs and gives no fixed power
+saving over the elementary \(S_X^{\mathbb Z,+}\ll X^5\), up to logarithms.
+Abel summation using the known Vinogradov--Korobov Mertens estimate can
+recover a subexponential saving only. A bound
+\(M(y)\ll y^{1-\eta}\) with fixed \(\eta>0\), which would create a fixed
+power by this route, would already imply the presently unknown assertion
+that \(1/\zeta(s)\) is analytic in the fixed half-plane
+\(\Re s>1-\eta\).
+
+A single explicit-formula mode is a fast falsifier for any claimed
+factorial gain obtained without a new signed correlation. If
+\(E_\rho(t)=-t^\rho/\rho\), then
+
+\[
+ P_\rho(Xv)=-\frac{X^{\rho+1}}
+ {\rho(\rho+1)}\bigl((1+v)^{\rho+1}-1\bigr),
+ \]
+
+and a Riemann-sum calculation gives
+
+\[
+ \sum_{m=1}^X|P_\rho(m)|^2
+ =\frac{X^{2\Re\rho+3}}{|\rho(\rho+1)|^2}
+ \left\{\int_0^1|(1+v)^{\rho+1}-1|^2\,dv+O_\rho(X^{-1})\right\}.
+ \tag{4aa14}
+\]
+
+The integral is strictly positive. Hence a proposed
+\(X^{5-\delta+\varepsilon}\) argument that treats zero modes separately
+or takes absolute values would already require
+\(\Re\rho\le1-\delta/2\). The factorial identity does not supply that
+fixed strip; it carries the mode unchanged into its signed divisor
+quadratic form. This is an obstruction to the decomposition-plus-Cauchy
+method, not a claim that every arithmetic bilinear estimate is impossible.
+A genuine next input would have to control the signed off-diagonal form in
+(4aa12)--(4aa13) for the actual Möbius weights without reducing it to a
+one-variable Mertens bound. No such unconditional fixed-power estimate is
+currently inserted here.
+
 ### Higher Riesz means do not improve this constant
 
 For a fixed integer \(r\ge1\), define the \(r\)-fold primitive
