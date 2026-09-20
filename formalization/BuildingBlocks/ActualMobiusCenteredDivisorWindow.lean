@@ -100,6 +100,75 @@ theorem dyadicRationalFrequencySpacing (a b : ℤ) (n m Q : ℕ)
   have hnm : 0 < (n : ℚ) * m := by positivity
   exact (one_div_le_one_div_of_le hnm hprod).trans hbase
 
+/-- Distinct reciprocal sample points `N / s` and `N / t` are separated by
+`N / (s * t)`. This is the elementary curvature input for sampling at
+products `s = q * r`; it does not assert the needed spectral large-sieve
+estimate. -/
+theorem reciprocalNaturalSpacing (N s t : ℕ)
+    (hN : 0 < N) (hs : 0 < s) (ht : 0 < t) (hst : s ≠ t) :
+    (N : ℚ) / ((s : ℚ) * t) ≤
+      |(N : ℚ) / s - (N : ℚ) / t| := by
+  have hdiffZ : (t : ℤ) - s ≠ 0 := sub_ne_zero.mpr (by exact_mod_cast hst.symm)
+  have hdiff : (1 : ℚ) ≤ |(t : ℚ) - s| := by
+    exact_mod_cast Int.one_le_abs hdiffZ
+  have hdenPos : 0 < (s : ℚ) * t := mul_pos (by positivity) (by positivity)
+  rw [show (N : ℚ) / s - (N : ℚ) / t =
+      (N : ℚ) * ((t : ℚ) - s) / ((s : ℚ) * t) by field_simp]
+  rw [abs_div, abs_mul, abs_of_nonneg (by positivity : (0 : ℚ) ≤ N),
+    abs_of_pos hdenPos]
+  have hnum : (N : ℚ) ≤ (N : ℚ) * |(t : ℚ) - s| := by
+    simpa using mul_le_mul_of_nonneg_left hdiff (show (0 : ℚ) ≤ N by positivity)
+  exact div_le_div_of_nonneg_right
+    hnum (le_of_lt hdenPos)
+
+/-- If `q,r,q',r'` lie in `[1,2Q]` and their products differ, the reciprocal
+centers `N/(qr)` are separated by `N/(16Q^4)`. -/
+theorem dyadicReciprocalProductSpacing (N q r q' r' Q : ℕ)
+    (hN : 0 < N) (hq : 0 < q) (hr : 0 < r)
+    (hq' : 0 < q') (hr' : 0 < r')
+    (hqQ : q ≤ 2 * Q) (hrQ : r ≤ 2 * Q)
+    (hqQ' : q' ≤ 2 * Q) (hrQ' : r' ≤ 2 * Q)
+    (hprodNe : q * r ≠ q' * r') :
+    (N : ℚ) / (16 * (Q : ℚ) ^ 4) ≤
+      |(N : ℚ) / (q * r) - (N : ℚ) / (q' * r')| := by
+  have hQ : 0 < Q := by omega
+  have hleft : q * r ≤ 4 * Q ^ 2 := by
+    nlinarith [Nat.mul_le_mul hqQ hrQ]
+  have hright : q' * r' ≤ 4 * Q ^ 2 := by
+    nlinarith [Nat.mul_le_mul hqQ' hrQ']
+  have hdenNat : (q * r) * (q' * r') ≤ 16 * Q ^ 4 := by
+    nlinarith [Nat.mul_le_mul hleft hright]
+  have hden : ((q * r : ℕ) : ℚ) * (q' * r' : ℕ) ≤
+      16 * (Q : ℚ) ^ 4 := by
+    exact_mod_cast hdenNat
+  have hsmall : (N : ℚ) / (16 * (Q : ℚ) ^ 4) ≤
+      (N : ℚ) / (((q * r : ℕ) : ℚ) * (q' * r' : ℕ)) := by
+    exact div_le_div_of_nonneg_left (by positivity) (by positivity) hden
+  simpa only [Nat.cast_mul] using
+    hsmall.trans (reciprocalNaturalSpacing N (q * r) (q' * r') hN
+      (Nat.mul_pos hq hr) (Nat.mul_pos hq' hr') hprodNe)
+
+/-- At the critical packet scale `N ≥ Q^5`, distinct product centers are
+separated by at least `Q/16`. -/
+theorem criticalReciprocalProductSpacing (N q r q' r' Q : ℕ)
+    (hN : 0 < N) (hq : 0 < q) (hr : 0 < r)
+    (hq' : 0 < q') (hr' : 0 < r')
+    (hqQ : q ≤ 2 * Q) (hrQ : r ≤ 2 * Q)
+    (hqQ' : q' ≤ 2 * Q) (hrQ' : r' ≤ 2 * Q)
+    (hscale : Q ^ 5 ≤ N) (hprodNe : q * r ≠ q' * r') :
+    (Q : ℚ) / 16 ≤
+      |(N : ℚ) / (q * r) - (N : ℚ) / (q' * r')| := by
+  have hQ : 0 < Q := by omega
+  have hscaleQ : (Q : ℚ) ^ 5 ≤ N := by exact_mod_cast hscale
+  calc
+    (Q : ℚ) / 16 = (Q : ℚ) ^ 5 / (16 * (Q : ℚ) ^ 4) := by
+      field_simp
+    _ ≤ (N : ℚ) / (16 * (Q : ℚ) ^ 4) :=
+      div_le_div_of_nonneg_right hscaleQ (by positivity)
+    _ ≤ |(N : ℚ) / (q * r) - (N : ℚ) / (q' * r')| :=
+      dyadicReciprocalProductSpacing N q r q' r' Q hN hq hr hq' hr'
+        hqQ hrQ hqQ' hrQ' hprodNe
+
 def p (lambda : ℝ) : ℝ := 1 - 2 * lambda / 5
 def q (lambda : ℝ) : ℝ := lambda / 5
 def windowExponent (lambda : ℝ) : ℝ := q lambda - p lambda
@@ -190,6 +259,9 @@ end BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.remainderDefect_le_window_mul
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.rationalFrequencySpacing
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicRationalFrequencySpacing
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.reciprocalNaturalSpacing
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.dyadicReciprocalProductSpacing
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.criticalReciprocalProductSpacing
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsExponent
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsSaves
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.twoWindowExponent

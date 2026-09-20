@@ -7,6 +7,9 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #check remainderDefect_le_window_mul
 #check rationalFrequencySpacing
 #check dyadicRationalFrequencySpacing
+#check reciprocalNaturalSpacing
+#check dyadicReciprocalProductSpacing
+#check criticalReciprocalProductSpacing
 #check normalizedWindowRmsExponent
 #check normalizedWindowRmsSaves
 #check twoWindowExponent
@@ -22,6 +25,9 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms remainderDefect_le_window_mul
 #print axioms rationalFrequencySpacing
 #print axioms dyadicRationalFrequencySpacing
+#print axioms reciprocalNaturalSpacing
+#print axioms dyadicReciprocalProductSpacing
+#print axioms criticalReciprocalProductSpacing
 #print axioms normalizedWindowRmsExponent
 #print axioms normalizedWindowRmsSaves
 #print axioms twoWindowExponent

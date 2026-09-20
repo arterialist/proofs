@@ -386,6 +386,44 @@ This is a local density theorem, not a value at an independently prescribed
 center. Letting \(\sigma\) tend to zero approaches intervals of length
 \(Q^4/P\), but simultaneously removes the fixed-power saving.
 
+## Reciprocal centers at the prescribed packet
+
+The actual fixed packet center is sampled through reciprocal products rather
+than through consecutive values of the center variable. If
+\(1\le q,r,q',r'\le 2Q\), \(qr\ne q'r'\), and \(N>0\), then the exact identity
+
+\[
+ \left|\frac{N}{qr}-\frac{N}{q'r'}\right|
+ =\frac{N|q'r'-qr|}{qrq'r'}
+ \ge \frac{N}{16Q^4}
+ \tag{26}
+\]
+
+shows that distinct product centers are separated by at least \(Q/16\) at
+the critical scale \(N\ge Q^5\). This is much more separation than the unit
+lattice, but it does not by itself prove a sampling inequality: an equally
+spaced set can alias against the rational frequencies \(h/n\).
+
+The precise remaining candidate is the curvature-sensitive estimate
+
+\[
+ \sum_{q,r\asymp Q}
+ \left|\sum_{\alpha\in\mathcal F}c_\alpha
+ e\!\left(\frac{N\alpha}{qr}\right)\right|^2
+ \ll_\varepsilon Q^{2+\varepsilon}
+ \sum_{\alpha\in\mathcal F}|c_\alpha|^2,
+ \qquad N\asymp Q^5,
+ \tag{27}
+\]
+
+for the reduced frequencies arising from \(1\le h\le P\) and
+\(Q\le n\le2Q\), with repeated products \(qr\) counted as they occur in the
+packet. Equation (27) is not proved here. The generic double-large-sieve
+scale is \(PQ^2\), so proving (27), or any fixed-power improvement sufficient
+for the exponent ledger, requires cancellation from the nonlinear reciprocal
+product geometry. Equation (26) isolates its elementary spacing input
+without treating it as that missing cancellation theorem.
+
 This identifies both the gain and its limit. The product kernel occupies a
 diagonal strip of difference width \(H\) and center width
 \(V=Q^3/F\ge H\). Tiling it into \(H\)-scale boxes makes (10) the correct
@@ -396,14 +434,15 @@ dyadic high scales at once. It does not give the bound at a prescribed
 pieces outside this high block, remains open.
 
 [ActualMobiusCenteredDivisorWindow.lean](../../formalization/BuildingBlocks/ActualMobiusCenteredDivisorWindow.lean)
-checks (5), the bounds (7)--(8), and the exponents (14)--(16) and (20). Its
+checks (5), the bounds (7)--(8), the reciprocal separation (26), and the
+exponents (14)--(16) and (20). Its
 [axiom audit](../../formalization/verification/ActualMobiusCenteredDivisorWindowAudit.lean)
 finds only propext, Classical.choice, and Quot.sound. Lean does not
 formalize the congruence averaging in (3), the gcd sum in (9), or the
 large-sieve and smooth-kernel estimates (11)--(11e), Markov's inequality, or
 the dyadic unions in (18)--(19) and (23)--(24). Lean checks the denominator
 product and dyadic \(1/(4Q^2)\) frequency gaps used before (11), and the local
-length and gain identity (25).
+length and gain identity (25). It does not formalize or assume (27).
 
 ## Literature boundary
 
@@ -423,3 +462,9 @@ sharp spaced-frequency form of Montgomery and Vaughan,
 [*The large sieve*](https://doi.org/10.1112/S0025579300004708). Its only
 specialized input here is the elementary denominator bound compiled in the
 Lean companion.
+
+The unresolved estimate (27) belongs to the setting of multidimensional
+monomial exponential sums. A relevant benchmark is Robert and Sargos,
+[*Three-dimensional exponential sums with monomials*](https://doi.org/10.1515/CRELLE.2006.012).
+No consequence of their theorem is asserted here; matching its hypotheses to
+the coefficient-uniform operator norm in (27) remains open.
