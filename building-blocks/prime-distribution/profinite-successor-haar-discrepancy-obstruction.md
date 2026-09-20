@@ -255,8 +255,8 @@ Thus, for dyadic modulus blocks \(d\asymp D,e\asymp E\), the exact signed
 quadratic block before any inequality is
 \[
  \boxed{\mathcal Q_{D,E}=
- \sum_{m\le X}\left(\sum_{d\asymp D}-\mu(d)\log d\,widetilde B_d(m)\right)
- \overline{\left(\sum_{e\asymp E}-\mu(e)\log e\,widetilde B_e(m)\right)}.}
+ \sum_{m\le X}\left(\sum_{d\asymp D}-\mu(d)\log d\,\widetilde B_d(m)\right)
+ \overline{\left(\sum_{e\asymp E}-\mu(e)\log e\,\widetilde B_e(m)\right)}.}
 \tag{13}
 \]
 Writing \(S_m(\alpha)=\sum_{h<m}e(\alpha h)\), its exact Fourier form is
@@ -300,7 +300,8 @@ Consequently Cauchy--Schwarz between the two already signed blocks gives
 If \(DE\le X\), (18) is \(O(X^4\log^2X)\), and summing the
 \(O(\log^2X)\) dyadic pairs gives
 \[
- \boxed{\sum_{DE\le X}\mathcal Q_{D,E}\ll X^4\log^4X.}
+ \boxed{\left|\sum_{DE\le X}\mathcal Q_{D,E}\right|
+\ll X^4\log^4X.}
 \tag{19}
 \]
 This is a genuine one-power saving for the below-hyperbola centered
@@ -311,13 +312,32 @@ The same calculation also supplies the decisive failure test. For
 \(D,E\asymp X\), the right side of (18) is \(O(X^5\log^2X)\), with no
 power saving. These blocks lie entirely in \(DE>X\). Their periods exceed
 or match the observed interval, so residue orthogonality has no additional
-averaging to spend; the coherent cutoff example in the cited cutoff-versus-period
-note shows that a uniform arbitrary-coefficient improvement is false.
-For the actual Möbius coefficients, cancellation between these large
-blocks and the affine terms in (9) remains possible but is not supplied by
-the large sieve. Hence the complementary \(DE>X\) region erases the gain
-available in (19), and summing (13) over all blocks returns only the
-original \(X^5\) energy scale. This Fourier decomposition stops here: a
-full fixed-power bound would require a new signed estimate specifically
-for the actual above-hyperbola coefficients, not another use of residue
-orthogonality.
+averaging to spend.
+
+There is also a direct prefix counterexample for arbitrary coefficients. Let
+\(X=10M\) and \(\mathcal D=\{9M,\ldots,10M-1\}\). For
+\(0\le h<M\) and \(d\in\mathcal D\), one has
+\[
+ r_d(X+h)=\frac32-\frac{X+h+1/2}{d}>\frac5{18}.
+\]
+Consequently, for \(1\le m\le M\),
+\[
+ \sum_{d\in\mathcal D}\widetilde B_d(m)>\frac{5Mm}{18},
+ \qquad
+ \sum_{m\le M}\left|\sum_{d\in\mathcal D}
+ \widetilde B_d(m)\right|^2\gg X^5.
+\tag{20}
+\]
+This is the prefix version of the
+[cutoff-versus-period obstruction](../analytic-methods/cutoff-period-gcd-obstruction.md).
+It shows that a uniform arbitrary-coefficient improvement is false.
+
+For the actual Möbius coefficients, cancellation between the large blocks and
+the affine terms in (9) remains possible but is not supplied by the large
+sieve. Thus the available estimate for the complementary \(DE>X\) region
+erases the saving from (19) when one forms a full upper bound. Summing (13)
+over all blocks returns only the original \(X^5\) scale. This Fourier
+decomposition stops here: a full fixed-power bound would require a new signed
+estimate specifically for the actual above-hyperbola coefficients, not
+another use of residue orthogonality. No novelty claim is made for the
+large-sieve application.
