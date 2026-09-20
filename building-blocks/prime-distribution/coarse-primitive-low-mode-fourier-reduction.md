@@ -1223,49 +1223,68 @@ symbolic, modular, or streaming evaluation.
 
 ### Positive rotations do not make the Selberg operator contractive
 
-Let (T_X=sum_{X<nle2X}Lambda(n)-X) and
-[
- C_\theta(X)=sum_{X<nle2X}\Lambda(n)
+Let
+\[
+ T_X=\sum_{X<n\le2X}\Lambda(n)-X,
+ \qquad
+ C_\theta(X)=\sum_{X<n\le2X}\Lambda(n)
  [1-\cos(2\pi n/X+\theta)]-X.
-]
-Since (B_1=A_1-T_X), exact expansion gives
-[
- \boxed{C_\theta(X)=(1-\cos\theta)T_X-
+\]
+Direct expansion of the definition of \(B_1\) gives
+\[
+ \boxed{
+ C_\theta(X)=(1-\cos\theta)T_X-
  \Re(e^{-i\theta}B_1(X)).}
 \tag{29}
-]
+\]
 Thus uniform control in \(\theta\) would jointly control the terminal error
 and both components of the first mode.
 
-Put (W_\theta(u)=1-\cos(2\pi u+\theta)),
-[
+Put \(W_\theta(u)=1-\cos(2\pi u+\theta)\), and define
+\[
  R_{X,\theta}=\sum_{X<n\le2X}\Lambda(n)\log(n/X)W_\theta(n/X),
-quad
+\]
+\[
  G_{X,\theta}=\sum_{X<n\le2X}(\mu*\log^2)(n)W_\theta(n/X).
-]
+\]
 Selberg's identity and finite divisor grouping give exactly
-[
- \boxed{\log X,C_\theta(X)+\sum_{a\le X}\Lambda(a)C_\theta(X/a)
+\[
+ \boxed{
+ \log X\,C_\theta(X)+\sum_{a\le X}\Lambda(a)C_\theta(X/a)
  =G_{X,\theta}-R_{X,\theta}-X\log X
  -X\sum_{a\le X}\frac{\Lambda(a)}a.}
 \tag{30}
-]
-The convolution before rearrangement is
-(sum_{a\le X}\Lambda(a)[C_\theta(X/a)+X/a]\ge0).
-Its positivity gives only a one-sided inequality after discarding it; it
-does not bound \(|C_\theta|\). After normalization the retained
+\]
+Before rearrangement, the convolution term is
+\[
+ \sum_{a\le X}\Lambda(a)
+ [C_\theta(X/a)+X/a]\ge0.
+\]
+Its positivity gives only a one-sided inequality after the term is discarded;
+it does not bound \(|C_\theta|\). After normalization, the retained
 self-coupling again has mass
-((\log X)^{-1}\sum_{a\le X}\Lambda(a)/a=1+o(1)).
+\[
+ \frac1{\log X}\sum_{a\le X}\frac{\Lambda(a)}a=1+o(1).
+\]
 Therefore (30) is Selberg's elementary PNT bootstrap with a positive test,
 not a coercive contraction.
 
-The old unconditional bound is
-(|C_\theta(X)|\ll_\varepsilon Xe^{-(d-\varepsilon)\Phi(X)}), uniformly
-in \(\theta\), from the pointwise PNT; a proposed
-(X^{1-\delta+\varepsilon}) bound would be a fixed-power improvement.
-A zero mode survives (29)--(30) with a nonzero rotated Mellin multiplier
-for some \(\theta\), while unit twists rotate the uncontrolled component.
-Hence a uniform fixed-power proof by separated zero modes already requires
-the corresponding fixed zero-free strip. Exact endpoint, prime-power,
-dyadic, ordinary-prime, adversarial-composite, and symbolic record-prime
-tests can detect missing terms but cannot change this operator obstruction.
+The pointwise prime-number-theorem estimate gives the uniform baseline
+\[
+ |C_\theta(X)|\ll_\varepsilon
+ X\exp[-(d-\varepsilon)\Phi(X)].
+\]
+A bound of order \(X^{1-\delta+\varepsilon}\) would be a fixed-power
+improvement. For any fixed zero \(\rho\), the Mellin multipliers of
+\(W_\theta\) cannot vanish for every \(\theta\): their constant component is
+\[
+ \int_1^2u^{\rho-1}\,du=\frac{2^\rho-1}{\rho}\ne0
+\]
+for a nontrivial zeta zero. Thus some rotation retains that zero mode. Unit
+twists likewise rotate the uncontrolled component. A proof based on separated
+zero modes or coefficient magnitudes therefore cannot obtain a uniform
+fixed-power saving from (30).
+
+Exact endpoint, prime-power, dyadic, ordinary-prime, adversarial-composite,
+and symbolic record-prime tests can detect missing terms but cannot change
+this operator obstruction. No unconditional power gain is proved here.
