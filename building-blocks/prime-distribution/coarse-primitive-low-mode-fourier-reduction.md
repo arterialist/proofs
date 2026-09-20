@@ -132,8 +132,8 @@ The constant \(d\) comes from Bellotti's independent
 through Johnston's
 [PNT transfer theorem](https://arxiv.org/abs/2411.13791). Polynomial
 logarithmic factors in that transfer are absorbed by \(\delta\Phi(X)\).
-This statement does not use the later disputed sharp density-to-PNT
-claim. Passing from (4c) to (4d) loses the sign change at \(t=3X/2\), a
+This statement uses only the quoted pointwise prime-number-theorem
+estimate. Passing from (4c) to (4d) loses the sign change at \(t=3X/2\), a
 factor \(X\) from the integration length, and an arbitrarily small amount
 \(\delta\) in the Vinogradov--Korobov exponent. It loses no prime powers or
 endpoint terms. The absolutely convergent zero estimate below improves
@@ -546,11 +546,11 @@ for every fixed \(\varepsilon>0\),
 
 This improves the direct constant \(d=0.212579202\ldots\) in (4s). It
 uses Bellotti's 2024 zero-free theorem and the classical Ingham density
-estimate, as independently and explicitly restated by
+estimate, as explicitly restated by
 [Chourasiya--Simonič](https://arxiv.org/abs/2507.15184). It does not use
-the disputed later density-to-PNT argument. The mechanism is the same
-independently sourced \(\rho^{-2}\) optimization used for the linearized
-Goldbach cofactor, now applied to the exact terminal Riesz increment.
+any sharper density-to-PNT transfer. The mechanism is the same
+\(\rho^{-2}\) optimization used for the linearized Goldbach cofactor, now
+applied to the exact terminal Riesz increment.
 
 ### The same gain for the centered mode and joint dispersion
 
@@ -567,7 +567,7 @@ constant and affine archimedean terms vanish under (4aa1), and hence
 
 \[
  Z=-\sum_\rho\frac{X^{\rho+1}}{\rho(\rho+1)}G(\rho)
- +O(X^{-1}),
+ \; + \; O(X^{-1}),
  \qquad
  G(s)=\frac{2^{s+2}-1}{s+2}-\frac{1+2^{s+1}}2.
  \tag{4aa2}
