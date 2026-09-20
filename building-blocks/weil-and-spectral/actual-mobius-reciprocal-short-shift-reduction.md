@@ -1,8 +1,9 @@
 # Reciprocal mean square as an actual short-shift Möbius correlation
 
-**Status:** exact finite reduction and literature boundary, 20 September
-2026. The finite mean-square expansion, its diagonal, the exact reciprocal
-phase gap, the coherence scale, and the endpoint exponent identities are
+**Status:** exact finite reduction, absolute zero-resonance bound, and
+literature boundary, 20 September 2026. The finite mean-square expansion,
+its diagonal, the exact reciprocal phase gap, the coherence scale, and the
+zero-resonance endpoint exponent identities are
 formalized and axiom-audited in
 [`ActualMobiusReciprocalCorrelation.lean`](../../formalization/BuildingBlocks/ActualMobiusReciprocalCorrelation.lean).
 No estimate for the off-diagonal correlation is proved here. In particular,
@@ -221,12 +222,51 @@ threshold exponent is also the length of the coherent shift interval:
 \tag{15}
 \]
 
-This identifies the scale of the zero-resonance obstruction precisely. A
-direct branchwise estimate must obtain signed cancellation across this
-coherent short-shift range, rather than merely improve the treatment of
-separated reciprocal phases. An estimate of the complete kernel could
-instead use cancellation between resonance branches; nothing here excludes
-that possibility.
+The coherence scale alone does not make this branch an obstruction.  The
+geometric kernel is at most (L), there are (O(H)) shifts with
+(H=D/T), and for both coefficients in (1)--(2) the divisor bound gives
+(|A(n)|\ll_\varepsilon T^\varepsilon).  Therefore absolute summation of
+the entire zero-resonance branch gives
+
+\[
+ \boxed{
+ \mathcal E_{0}
+ \ll_\varepsilon T^\varepsilon LHD
+ =T^\varepsilon\frac{D^3}{N}.}
+ \tag{15a}
+\]
+
+This includes hard interval endpoints: they can only shorten the (n)- or
+(h)-ranges.  To place (15a) under the second term of (11), it suffices
+that
+
+\[
+ \rho<\lambda-d.
+ \tag{15b}
+\]
+
+At (d=d_*), choose
+
+\[
+ \rho_0=\frac{\lambda-1}{2}.
+ \tag{15c}
+\]
+
+The two available margins are exactly equal:
+
+\[
+ \rho_0-(d_*-1)
+ = (\lambda-d_*)-\rho_0
+ =\frac{\lambda+1}{10}>0.
+ \tag{15d}
+\]
+
+Thus, for example, every fixed
+(0<\eta<(\lambda+1)/20) satisfies the strict requirement
+(\rho_0>d_*-1+2\eta), after leaving the usual (T^\varepsilon) room.
+No signed Möbius correlation estimate is needed for the zero-resonance
+branch.  The unresolved terms are the nonzero integer-resonance branches
+of the complete kernel.
 
 ## Published inputs and their boundary
 
@@ -276,10 +316,9 @@ is not itself a fixed multiplicative function. More decisively, the
 conclusion is a typical-interval saving tending to zero, not the power
 \(T^{-\rho}\) required by (11).
 
-Therefore none of these results proves (11). One sufficient new input is a
-power-saving weighted two-point correlation for the actual coefficient in
-(10), uniform through shifts \(|h|\lesssim D/T\), together with control of
-the nonzero-resonance branches. A different estimate may instead cancel the
-complete off-diagonal at once. The zero branch has a Chowla-type parity
-barrier, but no equivalence with the classical two-point Chowla conjecture
-is asserted.
+Therefore none of these results proves (11).  Equation (15a) already
+controls the complete zero-resonance branch without cancellation.  The
+remaining sufficient input is a power-saving estimate for the nonzero
+integer-resonance branches, or an estimate which cancels the complete
+off-diagonal at once.  No two-point Chowla input is required for the branch
+isolated in (10).

@@ -154,13 +154,16 @@ The
 [reciprocal short-shift reduction](building-blocks/weil-and-spectral/actual-mobius-reciprocal-short-shift-reduction.md)
 expands the primitive \(t=1\) Poisson-mode mean square into its exact
 two-point kernel. Its zero-resonance branch is coherent for
-\(|h|\lesssim D/T\), while nonzero
-integer resonance branches remain in the complete expansion. At the
-endpoint, \(D/T=T^{(2\lambda-3)/5}\), the same exponent as the strict
-off-diagonal gain threshold before the requested margin. After normalization,
+\(|h|\lesssim D/T\), but absolute summation already bounds that entire
+branch by \(T^\varepsilon D^3/N\). At the endpoint, the choice
+\(\rho=(\lambda-1)/2\) lies above the strict correlation threshold and
+below the absolute-bound ceiling by the same margin
+\((\lambda+1)/10\). Thus the zero branch needs no Chowla cancellation;
+the nonzero integer-resonance branches remain open. After normalization,
 the diagonal also requires \(\eta<(3\lambda-2)/10\). The finite
-expansion, diagonal, reciprocal gap, coherence-scale identity, and exponent
-rewrite are Lean-compiled; no power-saving correlation estimate is known.
+expansion, diagonal, reciprocal gap, coherence scale, and zero-branch
+exponent margins are Lean-compiled; no estimate for the complete nonzero
+resonance contribution is known.
 For the exact swapped tail, the
 [almost-all-center estimate](building-blocks/weil-and-spectral/actual-mobius-tail-almost-all-center-small-n.md)
 uses the 2026 Matomäki--Radziwiłł--Shao--Tao--Teräväinen maximal

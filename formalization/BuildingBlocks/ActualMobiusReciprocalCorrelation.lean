@@ -153,4 +153,36 @@ theorem endpointDiagonalThreshold (lambda : ℝ) :
   unfold BuildingBlocks.ActualMobiusFreeFactorPruning.endpoint
   ring
 
+/-- A convenient exponent for the absolutely bounded zero-resonance branch. -/
+noncomputable def zeroBranchRho (lambda : ℝ) : ℝ :=
+  (lambda - 1) / 2
+
+/-- At the endpoint, `zeroBranchRho` lies above the required correlation
+threshold by exactly `(lambda + 1) / 10`. -/
+theorem zeroBranchRho_lower_margin (lambda : ℝ) :
+    zeroBranchRho lambda -
+        (BuildingBlocks.ActualMobiusFreeFactorPruning.endpoint lambda - 1) =
+      (lambda + 1) / 10 := by
+  unfold zeroBranchRho BuildingBlocks.ActualMobiusFreeFactorPruning.endpoint
+  ring
+
+/-- The absolute zero-resonance estimate `D^3/N` permits every
+`rho < lambda - d*`; `zeroBranchRho` stays below that ceiling by the same
+margin `(lambda + 1) / 10`. -/
+theorem zeroBranchRho_upper_margin (lambda : ℝ) :
+    (lambda - BuildingBlocks.ActualMobiusFreeFactorPruning.endpoint lambda) -
+        zeroBranchRho lambda =
+      (lambda + 1) / 10 := by
+  unfold zeroBranchRho BuildingBlocks.ActualMobiusFreeFactorPruning.endpoint
+  ring
+
+/-- If the requested final saving uses less than half the lower margin, the
+absolute zero-resonance bound satisfies the strict off-diagonal condition. -/
+theorem zeroBranch_supports_final_margin {lambda eta : ℝ}
+    (hmargin : 20 * eta < lambda + 1) :
+    BuildingBlocks.ActualMobiusFreeFactorPruning.endpoint lambda - 1 +
+        2 * eta < zeroBranchRho lambda := by
+  have hgap := zeroBranchRho_lower_margin lambda
+  linarith
+
 end BuildingBlocks.ActualMobiusReciprocalCorrelation
