@@ -3,10 +3,9 @@
 **Status:** unconditional written arithmetic theorem, 20 September 2026.
 The exact residue-class defect and critical exponent ledger are Lean-checked.
 The divisor covariance expansion and finite-interval averaging remain written
-mathematics. This is an averaged one-dimensional constraint on the genuine
-centered coefficient from the fourfold product kernel, together with its
-real-center smooth-kernel consequence. It does not prove the required
-prescribed-center power-saving estimate or the Riemann hypothesis.
+mathematics. This gives a fixed-power estimate for the genuine high
+product-resonance kernel after averaging the real packet center. It does not
+prove the required prescribed-center estimate or the Riemann hypothesis.
 
 ## Centered restricted-divisor coefficient
 
@@ -93,41 +92,35 @@ The elementary inequality
  \tag{7}
 \]
 
-and \(|\theta_n|\le B\) give
+and the second elementary bound
 
 \[
- \frac1L\sum_{C\bmod L}B_H(C)^2
- \le\frac{B^2}{4}
- \sum_{n,m\in\mathcal S}\frac{(n,m)^2}{nm}.
+ b(g-b)\le Hg
  \tag{8}
 \]
 
-For \(n,m\in[Q,2Q]\),
+retain the window length. Group the pairs \(n,m\) in (6) by their exact
+gcd \(g\). There are at most
 
 \[
- (n,m)^2\le\sum_{d\mid n,\ d\mid m}d^2.
-\]
-
-There are at most \(Q/d+1\le3Q/d\) multiples of \(d\) in this interval.
-Consequently
-
-\[
- \sum_{n,m\in\mathcal S}\frac{(n,m)^2}{nm}
- \le 18Q,
+ \left(\frac Qg+1\right)^2\le\frac{9Q^2}{g^2}
  \tag{9}
 \]
 
-and
+ordered pairs in the dyadic interval with gcd \(g\). Since \(nm\ge Q^2\),
+the contribution from \(g\le H\), using (7), is \(O(B^2H)\). If \(g>H\),
+then \(H\bmod g=H\), and (8) gives \(O(B^2H/g)\). Summing the harmonic tail
+yields
 
 \[
  \boxed{
- \left(\frac1L\sum_{C\bmod L}|B_H(C)|^2\right)^{1/2}
- \le\frac3{\sqrt2}B\sqrt Q.}
+ \frac1L\sum_{C\bmod L}|B_H(C)|^2
+ \ll B^2H\left(1+\log\frac{2Q}{H}\right).}
  \tag{10}
 \]
 
-The bound is independent of \(H\). It is useful once \(H\) exceeds
-\(\sqrt Q\).
+Thus the root mean square is
+\(O(B\sqrt{H\log(2Q)})\), rather than the cruder \(O(B\sqrt Q)\).
 
 The full period \(L\) is not required. Over any \(X\) consecutive centers,
 counting one residue class in an interval differs from its exact density by
@@ -136,12 +129,14 @@ marginal congruences gives
 
 \[
  \frac1X\sum_{C=C_0}^{C_0+X-1}|B_H(C)|^2
- \ll B^2\left(Q+\frac{H^2Q^2}{X}\right).
+ \ll B^2\left(
+ H\left(1+\log\frac{2Q}{H}\right)+\frac{H^2Q^2}{X}\right).
  \tag{11}
 \]
 
 The implied constant is absolute and uniform in \(C_0\). At
-\(X\asymp Q^3\) and \(H\le Q\), (11) is \(O(B^2Q)\).
+\(X\asymp Q^3\) and \(H\le Q\), the error is at most \(O(B^2H)\), so
+(11) is \(O(B^2H\log(2Q))\).
 
 For two centered coefficient families with bounds \(B\) and \(B'\),
 Cauchy's inequality in the same center variable therefore gives
@@ -149,7 +144,8 @@ Cauchy's inequality in the same center variable therefore gives
 \[
  \frac1X\sum_{C=C_0}^{C_0+X-1}
  |B_H(C)B'_H(C)|
- \ll BB'\left(Q+\frac{H^2Q^2}{X}\right).
+ \ll BB'\left(
+ H\left(1+\log\frac{2Q}{H}\right)+\frac{H^2Q^2}{X}\right).
  \tag{11a}
 \]
 
@@ -174,12 +170,15 @@ put
 
 Partition the second normalized coordinate into \(O(V/H)\) intervals of
 physical length \(H\). On each tile, both \(A\) and \(A'\) lie in intervals
-of length \(O(H)\). Two-dimensional Abel summation bounds the weighted tile
-by a fixed constant times the supremum of products of sharp partial sums
-of \(E_\theta\) and \(E_{\theta'}\). The normalized first derivatives cost
-\(H^{-1}\), the mixed derivative costs \(H^{-2}\), and integration over an
-\(H\)-square cancels these factors. Thus the Abel constant is uniform in
-\(H,V,Q\).
+of length \(O(H)\). Two-dimensional Abel summation writes the weighted tile
+as boundary terms and derivative integrals of products of sharp partial
+sums of \(E_\theta\) and \(E_{\theta'}\). Average those terms in \(C\)
+before taking the derivative integrals. Equation (11a), uniformly for every
+partial-window length \(O(H)\), bounds each averaged product by
+\(O_K(BB'H\log(2Q))\). The normalized first derivatives cost \(H^{-1}\),
+the mixed derivative costs \(H^{-2}\), and their integration ranges have
+lengths \(O(H)\) and area \(O(H^2)\). Thus every tile costs
+\(O_K(BB'H\log(2Q))\), uniformly in \(H,V,Q\).
 
 Applying (11a) tile by tile gives, for every interval of \(X\asymp Q^3\)
 consecutive centers,
@@ -188,7 +187,7 @@ consecutive centers,
  \boxed{
  \frac1X\int_{C_0}^{C_0+X}
  |\mathcal R_{H,V}(C)|\,dC
- \ll_{K}BB'\frac{QV}{H}.}
+ \ll_{K}BB'V\log(2Q).}
  \tag{11c}
 \]
 
@@ -216,7 +215,7 @@ normalization. Summing (11c) by the triangle inequality over the
  \boxed{
  \frac1{Q^5}\int_{N_0}^{N_0+Q^5}
  |\mathcal R_F(N)|\,dN
- \ll_\varepsilon T^\varepsilon\frac{P Q^5}{F}.}
+ \ll_\varepsilon T^\varepsilon\frac{Q^5}{F}.}
  \tag{11e}
 \]
 
@@ -244,37 +243,44 @@ and the difference window has length
 The moving center \(N/(qr)\) traverses an interval of length
 \(\asymp Q^3\) when \(N\) traverses a length-\(Q^5\) interval with
 \(q,r\asymp Q\) fixed. Equations (11)--(13) therefore give the normalized
-root-mean-square saving
+root-mean-square saving, up to a logarithm,
 
 \[
- \frac{\sqrt Q}{H}
- \asymp\frac P{\sqrt Q}
- =T^{-(\lambda-2)/2}.
+ \frac1{\sqrt H}
+ \asymp\sqrt{\frac P Q}
+ =T^{-(3\lambda-5)/10}.
  \tag{14}
 \]
 
 Equations (11c)--(11e) supply
 
 \[
- \frac{P^2}{Q}=T^{-(\lambda-2)},
+ \frac P Q=T^{1-3\lambda/5},
  \tag{15}
 \]
 
-exactly the factor needed to cancel the current normalized loss
-\(Q/P^2=T^{\lambda-2}\) after averaging the actual separated smooth kernel
-over real packet centers.
+which cancels the current normalized loss \(Q/P^2=T^{\lambda-2}\) and
+leaves the additional factor
+
+\[
+ \frac1P=T^{-(1-2\lambda/5)}.
+ \tag{16}
+\]
+
+Equivalently, multiplying (11e) by the Fourier-integral scale
+\(M=P^2F/Q^2\) and dividing by the Gram target \(P^3Q^3\) gives the
+normalized real-center average \(O_\varepsilon(T^\varepsilon/P)\).
 
 This identifies both the gain and its limit. The product kernel occupies a
 diagonal strip of difference width \(H\) and center width
 \(V=Q^3/F\ge H\). Tiling it into \(H\)-scale boxes makes (10) the correct
 one-window estimate. The theorem controls the simultaneous \(q,r\) sum only
 after a real-center average. It does not give the bound at a prescribed
-\(N\), does not supply a simultaneous statement for all scales, and gives
-no additional \(T^{-\delta}\) beyond the critical factor (15). Those are
-the remaining steps.
+\(N\) and does not supply a simultaneous statement for all scales. Those
+are the remaining steps.
 
 [ActualMobiusCenteredDivisorWindow.lean](../../formalization/BuildingBlocks/ActualMobiusCenteredDivisorWindow.lean)
-checks (5), the sharp bound (7), and the exponents (14)--(15). Its
+checks (5), the bounds (7)--(8), and the exponents (14)--(16). Its
 [axiom audit](../../formalization/verification/ActualMobiusCenteredDivisorWindowAudit.lean)
 finds only propext, Classical.choice, and Quot.sound. Lean does not
 formalize the congruence averaging in (3), the gcd sum in (9), or the

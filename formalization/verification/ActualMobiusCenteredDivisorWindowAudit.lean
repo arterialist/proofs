@@ -4,15 +4,21 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 
 #check balancedResidueDefect
 #check remainderDefectBounds
+#check remainderDefect_le_window_mul
 #check normalizedWindowRmsExponent
 #check normalizedWindowRmsSaves
 #check twoWindowExponent
+#check averagedResidualExponent
+#check averagedResidualSaves
 
 #print axioms balancedResidueDefect
 #print axioms remainderDefectBounds
+#print axioms remainderDefect_le_window_mul
 #print axioms normalizedWindowRmsExponent
 #print axioms normalizedWindowRmsSaves
 #print axioms twoWindowExponent
+#print axioms averagedResidualExponent
+#print axioms averagedResidualSaves
 
 open Lean in
 run_cmd do

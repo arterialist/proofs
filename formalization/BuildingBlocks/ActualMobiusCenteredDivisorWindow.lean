@@ -6,7 +6,7 @@ import Mathlib
 For a window of H consecutive integers distributed among g residue
 classes, the exact centered pair-count defect is b * (g - b), where
 b = H % g. This file checks that identity, its sharp quadratic bound,
-and the critical exponent obtained after normalizing a sqrt Q window
+and the critical exponent obtained after normalizing a sqrt H window
 mean by a window of length Q / P.
 -/
 
@@ -50,28 +50,52 @@ theorem remainderDefectBounds (H g : ℕ) (hg : 0 < g) :
   · exact mul_nonneg hbz (sub_nonneg.mpr hbgz)
   · nlinarith [sq_nonneg ((g : ℤ) - 2 * (H % g : ℤ))]
 
+/-- The same defect is at most the window length times the modulus. This is
+stronger than the quadratic bound when the modulus exceeds the window. -/
+theorem remainderDefect_le_window_mul (H g : ℕ) :
+    (H % g) * (g - H % g) ≤ H * g := by
+  exact Nat.mul_le_mul (Nat.mod_le H g) (Nat.sub_le g (H % g))
+
 def p (lambda : ℝ) : ℝ := 1 - 2 * lambda / 5
 def q (lambda : ℝ) : ℝ := lambda / 5
 def windowExponent (lambda : ℝ) : ℝ := q lambda - p lambda
 
-/-- A sqrt Q root-mean-square bound divided by a window of length Q/P
-has exponent -(lambda - 2) / 2. -/
+/-- A square-root-H root-mean-square bound divided by a window of length
+H = Q/P has exponent -(3*lambda - 5)/10. -/
 theorem normalizedWindowRmsExponent (lambda : ℝ) :
-    q lambda / 2 - windowExponent lambda = -(lambda - 2) / 2 := by
+    windowExponent lambda / 2 - windowExponent lambda =
+      -(3 * lambda - 5) / 10 := by
   simp [p, q, windowExponent]
   ring
 
-theorem normalizedWindowRmsSaves {lambda : ℝ} (hlambda : 2 < lambda) :
-    q lambda / 2 - windowExponent lambda < 0 := by
+theorem normalizedWindowRmsSaves {lambda : ℝ} (hlambda : 5 / 3 < lambda) :
+    windowExponent lambda / 2 - windowExponent lambda < 0 := by
   rw [normalizedWindowRmsExponent]
   linarith
 
 /-- Two such normalized window bounds supply exactly the factor
-P^2 / Q = T^(-(lambda - 2)). -/
+P / Q = T^(1 - 3*lambda/5). -/
 theorem twoWindowExponent (lambda : ℝ) :
-    2 * (q lambda / 2 - windowExponent lambda) = -(lambda - 2) := by
-  rw [normalizedWindowRmsExponent]
+    2 * (windowExponent lambda / 2 - windowExponent lambda) =
+      p lambda - q lambda := by
+  simp [windowExponent]
   ring
+
+/-- Combining the two-window gain with the previous Q/P^2 loss leaves
+the strict averaged saving P^(-1). -/
+theorem averagedResidualExponent (lambda : ℝ) :
+    (q lambda - 2 * p lambda) +
+        2 * (windowExponent lambda / 2 - windowExponent lambda) =
+      -p lambda := by
+  simp [windowExponent]
+  ring
+
+theorem averagedResidualSaves {lambda : ℝ} (hlambda : lambda < 5 / 2) :
+    (q lambda - 2 * p lambda) +
+        2 * (windowExponent lambda / 2 - windowExponent lambda) < 0 := by
+  rw [averagedResidualExponent]
+  simp [p]
+  linarith
 
 end
 
@@ -79,6 +103,9 @@ end BuildingBlocks.ActualMobiusCenteredDivisorWindow
 
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.balancedResidueDefect
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.remainderDefectBounds
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.remainderDefect_le_window_mul
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsExponent
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.normalizedWindowRmsSaves
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.twoWindowExponent
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.averagedResidualExponent
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.averagedResidualSaves
