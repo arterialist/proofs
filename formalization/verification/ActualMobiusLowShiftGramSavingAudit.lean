@@ -3,46 +3,47 @@ import BuildingBlocks.ActualMobiusLowShiftGramSaving
 open BuildingBlocks.ActualMobiusLowShiftGramSaving
 
 #check physical_scale
+#check q_pos
 #check p_cubed_lt_pq
-#check parameterized_endpoint_bound_exponent
-#check parameterized_gram_saving
-#check parameterized_range_gap
-#check parameterized_range_extends_p_cubed
-#check parameterized_original_sum_saving
-#check absolute_endpoint_bound_exponent
-#check gram_saving_identity
-#check gram_saving_positive
-#check original_sum_saving_identity
-#check original_sum_saving_positive
-#check endpoint_error_saving_gap
-#check p_pos
-#check endpoint_error_saving_stronger
+#check small_range_gram_gap
+#check middle_endpoint_bound_exponent
+#check middle_range_gram_gap
+#check high_endpoint_bound_exponent
+#check high_range_gram_saving
+#check high_range_square_root_scale_saving
+#check high_endpoint_above_pq_gap
+#check high_endpoint_above_pq
+#check high_endpoint_above_p_cubed
+#check high_saving_below_middle
+#check endpoint_error_stronger
+#check diagonal_gram_gap
 #check canonical_kappa_pos
-#check canonical_kappa_lt
-#check canonical_range_gap
-#check canonical_original_sum_saving
-#check parameterized_endpoint_error_stronger
+#check canonical_kappa_lt_third
+#check canonical_upper_exponent
+#check canonical_gram_saving
+#check canonical_square_root_scale_saving
 
 #print axioms physical_scale
+#print axioms q_pos
 #print axioms p_cubed_lt_pq
-#print axioms parameterized_endpoint_bound_exponent
-#print axioms parameterized_gram_saving
-#print axioms parameterized_range_gap
-#print axioms parameterized_range_extends_p_cubed
-#print axioms parameterized_original_sum_saving
-#print axioms absolute_endpoint_bound_exponent
-#print axioms gram_saving_identity
-#print axioms gram_saving_positive
-#print axioms original_sum_saving_identity
-#print axioms original_sum_saving_positive
-#print axioms endpoint_error_saving_gap
-#print axioms p_pos
-#print axioms endpoint_error_saving_stronger
+#print axioms small_range_gram_gap
+#print axioms middle_endpoint_bound_exponent
+#print axioms middle_range_gram_gap
+#print axioms high_endpoint_bound_exponent
+#print axioms high_range_gram_saving
+#print axioms high_range_square_root_scale_saving
+#print axioms high_endpoint_above_pq_gap
+#print axioms high_endpoint_above_pq
+#print axioms high_endpoint_above_p_cubed
+#print axioms high_saving_below_middle
+#print axioms endpoint_error_stronger
+#print axioms diagonal_gram_gap
 #print axioms canonical_kappa_pos
-#print axioms canonical_kappa_lt
-#print axioms canonical_range_gap
-#print axioms canonical_original_sum_saving
-#print axioms parameterized_endpoint_error_stronger
+#print axioms canonical_kappa_lt_third
+#print axioms canonical_upper_exponent
+#print axioms canonical_gram_saving
+#print axioms canonical_square_root_scale_saving
+
 open Lean in
 run_cmd do
   let env ← getEnv

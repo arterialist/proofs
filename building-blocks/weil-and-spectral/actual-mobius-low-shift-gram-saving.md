@@ -1,18 +1,21 @@
-# Low-shift saving in the actual one-\(Q\) Möbius Gram kernel
+# Smooth determinant-shift estimate in the one-\(Q\) Gram kernel
 
 **Status:** unconditional written estimate, 20 September 2026. The Lean
 companion checks only the scale and exponent algebra. The history
-provenance, determinant count, and Cauchy argument remain written
-mathematics. For every fixed \(0<\kappa<\lambda-2\), this note proves a
-fixed power saving for
+provenance, determinant count, Cauchy reduction, and second-derivative
+estimate remain written mathematics. For every fixed
 \[
- |h|\le PQT^{-\kappa}
+ 0<\kappa<\frac{q_0}{3}=\frac{\lambda}{15},
+\]
+this note proves a fixed power saving for
+\[
+ |h|\le P Q^{4/3}T^{-\kappa}
 \]
 in the Gram kernel arising from the actual one-\(Q\) Poisson endpoint. It
-does not estimate the remaining range up to the natural determinant scale,
-extend the Möbius prefix by itself, or imply the Riemann hypothesis.
+does not estimate the remaining large determinant range, extend the Möbius
+prefix by itself, or imply the Riemann hypothesis.
 
-## Statement and coefficient provenance
+## Endpoint sum and the only coefficient input
 
 Put
 \[
@@ -44,57 +47,37 @@ The coefficients are divisor bounded, \(V\) is jointly inert, and
 \tag{4}
 \]
 
-The coefficient in (4) retains the actual \(K=3\) history. In the first
-all-unit expansion,
-\[
- -3+\tau(r_0)
- =-1+\sum_{ux=r_0}1_{u\ge2}1_{x\ge2}.
-\tag{5}
-\]
-The negative single-free packet is controlled before the endpoint.
-Applying the same identity to the remaining signed factor \(s_0\) gives
-\[
- -3+\tau(s_0)
- =-1+\sum_{vw=s_0}1_{v\ge2}1_{w\ge2}.
-\tag{6}
-\]
-Thus the live pre-separation residual is a positive ordered tuple sum in
-\(u,x,v,w,t\). At repeated contact, fix a nonempty proper labeled subset
-\(I\subset\{t,v,w\}\) of product scale \(Q\). Then \(|I|=1\) or \(2\),
-and after factorwise dyadic rectangularization one fixed history has
-\[
- \beta(n)=
- \sum_{\prod_{i\in I}n_i=n}\prod_{i\in I}w_i(n_i),
-\tag{7}
-\]
-before the unit-modulus log-linear twists introduced by the finite
-Fourier--Mellin separator. A common product cutoff must be separated before
-(7) is an autonomous one-variable coefficient. Ordered history
-multiplicities are retained, and no Möbius sign remains in \(\beta\).
-The divisor-moment bound (4) follows uniformly for every fixed history and
-separator component. The full provenance is in the
+The bound (4) is part of the exact endpoint theorem. Its arithmetic
+provenance is the positive ordered all-unit residual of two successive
+\(K=3\) expansions. After factorwise dyadic rectangularization, a fixed
+history is a one- or two-atom restricted divisor convolution, with the
+common product cutoff separated before it becomes an autonomous
+one-variable coefficient. No Möbius sign is discarded in obtaining (4).
+The full history derivation is in the
 [\(K=3\) bottom-slice note](actual-mobius-k3-bottom-slice-saving.md).
 
-## Exact Gram normalization
+No pointwise or Fourier information about \(\beta\) is needed below.
+
+## Weighted Cauchy and exact Gram normalization
 
 Write
 \[
  \mathcal D=P^{1/2}\mathcal S_{\mathrm{lead}}
  =\sum_{n\asymp Q}\beta(n)A_n.
 \]
-Cauchy's inequality gives
+Use (4) directly in Cauchy's inequality:
 \[
  |\mathcal D|^2
- \le \#\{n\asymp Q\}
-       \sum_{n\asymp Q}|\beta(n)A_n|^2
- \ll Q\mathcal G,
-\tag{8}
+ \le \left(\sum_{n\asymp Q}|\beta(n)|^2\right)
+      \left(\sum_{n\asymp Q}|A_n|^2\right)
+ \ll_\varepsilon T^\varepsilon Q\,\mathcal G.
+\tag{5}
 \]
-where
+The Gram kernel is now smooth in \(n\):
 \[
 \begin{aligned}
  \mathcal G={}&
- \sum_{n\asymp Q}|\beta(n)|^2
+ \sum_{n\asymp Q}
  \sum_{\substack{k,k'\asymp P\\m,m'\asymp PQ\\r,r'\asymp Q}}
  a_k\overline{a_{k'}}b_m\overline{b_{m'}}
  \delta(r)\overline{\delta(r')}\\
@@ -103,40 +86,44 @@ where
  e\!\left(-2\sqrt N\,n^{-1/2}
  \left[\sqrt{km/r}-\sqrt{k'm'/r'}\right]\right).
 \end{aligned}
-\tag{9}
+\tag{6}
 \]
-Therefore
+In particular, \(|\beta(n)|^2\) does not occur in (6).
+
+Since \(\mathcal S_{\mathrm{lead}}=P^{-1/2}\mathcal D\),
 \[
  |\mathcal S_{\mathrm{lead}}|^2
- =P^{-1}|\mathcal D|^2
- \ll \frac QP\,\mathcal G.
-\tag{10}
+ \ll_\varepsilon T^\varepsilon\frac QP\,\mathcal G.
+\tag{7}
 \]
 The endpoint target
 \[
- |\mathcal S_{\mathrm{lead}}|\ll P Q^{5/2}
-\tag{11}
+ |\mathcal S_{\mathrm{lead}}|\ll_\varepsilon
+ T^\varepsilon P Q^{5/2}
+\tag{8}
 \]
-has square \(P^2Q^5\). By (10), its exact Gram target is
+has square \(P^2Q^5\). Its exact Gram target is therefore
 \[
- \mathcal G\ll \frac PQ\,P^2Q^5=P^3Q^4.
-\tag{12}
+ \mathcal G\ll_\varepsilon T^\varepsilon
+ \frac PQ\,P^2Q^5
+ =T^\varepsilon P^3Q^4.
+\tag{9}
 \]
 
-## Fixed nonzero determinant shifts
+## Determinant representations
 
 Put
 \[
  u=km\asymp U:=P^2Q,\qquad u'=k'm'\asymp U,\qquad
  h=ur'-u'r.
-\tag{13}
+\tag{10}
 \]
-For fixed \(h\ne0\) and fixed \(r,r'\asymp Q\), let \(d=(r,r')\). Equation
-(13) has no solution unless \(d\mid h\). If \(d\mid h\), the possible
-\(u\)'s lie in one residue class modulo \(r/d\), so there are
+For fixed \(h\ne0\) and fixed \(r,r'\asymp Q\), let \(d=(r,r')\).
+Equation (10) has no solution unless \(d\mid h\). If \(d\mid h\), the
+possible \(u\)'s lie in one residue class modulo \(r/d\), giving
 \[
  O(Ud/Q+1)=O(P^2d+1)
-\tag{14}
+\tag{11}
 \]
 choices. Writing \(r=da,\ r'=da'\), and discarding \((a,a')=1\) for an
 upper bound, gives
@@ -146,111 +133,191 @@ upper bound, gives
  &\ll \sum_{d\mid h}(Q/d)^2(P^2d+1)
  \ll_\varepsilon T^\varepsilon P^2Q^2.
  \end{aligned}
-\tag{15}
+\tag{12}
 \]
-The restricted representations \(u=km,\ u'=k'm'\), the divisor-bounded
-coefficients, and the inert weights cost fixed divisor moments, already
+The restricted representations \(u=km,\ u'=k'm'\), divisor-bounded
+coefficients, and inert weights cost fixed divisor moments, already
 absorbed into \(T^\varepsilon\).
 
-Fix
+For \(h=0\), write \(r=da,\ r'=da'\), with \((a,a')=1\). The relation
+\(ur'=u'r\) forces \(u=av,\ u'=a'v\). Summing the
+\(O(P^2d+1)\) possible \(v\)'s gives
 \[
- 0<\kappa<\lambda-2,
+ R(0)\ll_\varepsilon T^\varepsilon P^2Q^2.
+\tag{13}
+\]
+
+## The smooth \(n\)-sum
+
+For a fixed outer tuple in (6), put
+\[
+ \beta_0=2\sqrt N
+ \left(\sqrt{\frac{km}{r}}-\sqrt{\frac{k'm'}{r'}}\right).
+\tag{14}
+\]
+Rationalizing the difference in (14) with (10) gives, on
+\(|h|\asymp H\),
+\[
+ |\beta_0|\asymp \frac{Q^{1/2}H}{P}.
+\tag{15}
+\]
+The jointly inert amplitude in (6), as a function of \(n/Q\), has uniform
+derivative bounds. For
+\[
+ f(x)=-\beta_0x^{-1/2}
+\]
+and \(x\asymp Q\),
+\[
+ |f''(x)|\asymp\frac{H}{PQ^2}.
 \tag{16}
 \]
-and let \(\mathcal G_H\) be the part of (9) with
+The classical van der Corput second-derivative estimate, together with the
+trivial bound, therefore gives
 \[
- 1\le |h|\asymp H\le PQT^{-\kappa}.
-\]
-There are \(O(H)\) shifts in this block. Using (4) and (15), with the
-\(n\)-sum taken absolutely for each outer tuple, gives
-\[
- \boxed{\;
- |\mathcal G_H|
- \ll_\varepsilon T^\varepsilon H P^2Q^3.
- \;}
+ K(H):=
+ \left|\sum_{n\asymp Q}W_{\mathrm{out}}(n/Q)e(-\beta_0n^{-1/2})\right|
+ \ll_\varepsilon T^\varepsilon
+ \min\!\left(
+ Q,\sqrt{\frac HP}+\sqrt{\frac{T}{H}}
+ \right).
 \tag{17}
 \]
-Relative to the Gram target (12), the ratio is
+A reference for the two-term estimate, uniform in interval endpoints, is
+O. Robert, [*On van der Corput's \(k\)-th derivative test for exponential
+sums*, §3.1](https://perso.univ-st-etienne.fr/rool6510/robert-2015-indag.pdf).
+
+Let \(\mathcal G_H\) be the part of (6) with \(1\le|h|\asymp H\).
+Equations (12) and (17) give
 \[
- \frac{H P^2Q^3}{P^3Q^4}=\frac{H}{PQ}\le T^{-\kappa}.
+ |\mathcal G_H|
+ \ll_\varepsilon T^\varepsilon H P^2Q^2K(H).
 \tag{18}
 \]
-Thus every dyadic block in the stated range has Gram saving
-\(T^{-\kappa}\). Equation (10) takes a square root, giving
+
+## Three shift ranges
+
+For \(1\le H\le P\), use \(K(H)\ll Q\). Then
 \[
- |\mathcal S_{\mathrm{lead},\,0<|h|\le PQT^{-\kappa}}|
- \ll_\varepsilon
- T^\varepsilon P Q^{5/2}T^{-\kappa/2}.
+ |\mathcal G_H|
+ \ll_\varepsilon T^\varepsilon H P^2Q^3
+ \le T^\varepsilon P^3Q^3,
 \tag{19}
 \]
-No cancellation between arithmetic Fourier modes, Poisson aliases, or
-different dyadic \(H\)-blocks is used. Each block is bounded absolutely by
-(17), and the logarithmic number of blocks is absorbed into
-\(T^\varepsilon\).
+which is below the target (9) by \(Q^{-1}\).
 
-This range strictly contains \(H\le P^3\), because
+For \(P\le H\le PQ\), the second term in (17) dominates:
 \[
- \frac{PQT^{-\kappa}}{P^3}
- =T^{\lambda-2-\kappa}>1.
+ |\mathcal G_H|
+ \ll_\varepsilon T^\varepsilon
+ P^2Q^2(TH)^{1/2}.
 \tag{20}
 \]
-For the canonical choice \(\kappa=(\lambda-2)/2\), the upper shift is
-\(PQT^{-(\lambda-2)/2}\), and the original-sum saving in (19) is
-\(T^{-(\lambda-2)/4}\). On the smaller range \(H\le P^3\), (18) gives the
-stronger Gram saving \(T^{-(\lambda-2)}\).
-
-## The exact diagonal
-
-For \(h=0\), write \(r=da,\ r'=da'\), with \((a,a')=1\). The relation
-\(ur'=u'r\) forces \(u=av,\ u'=a'v\). For fixed \(d,a,a'\), the number of
-possible \(v\)'s is \(O(P^2d+1)\). Hence
+Relative to (9), its ratio is
 \[
- \begin{aligned}
- R(0)
- &\ll \sum_{d\ll Q}(Q/d)^2(P^2d+1)\\
- &\ll_\varepsilon T^\varepsilon P^2Q^2.
- \end{aligned}
+ \frac{(TH)^{1/2}}{PQ^2}
+ =\frac{H^{1/2}}{P^{1/2}Q}
+ \le Q^{-1/2}.
 \tag{21}
 \]
-Using (4),
+
+For \(PQ\le H\), the first term in (17) dominates:
+\[
+ |\mathcal G_H|
+ \ll_\varepsilon T^\varepsilon
+ P^{3/2}Q^2H^{3/2}.
+\tag{22}
+\]
+Its ratio to (9) is exactly
+\[
+ \left(\frac{H}{P Q^{4/3}}\right)^{3/2}.
+\tag{23}
+\]
+Fix
+\[
+ 0<\kappa<\frac{q_0}{3}.
+\tag{24}
+\]
+For
+\[
+ H\le P Q^{4/3}T^{-\kappa},
+\tag{25}
+\]
+equation (23) is at most \(T^{-3\kappa/2}\). The bound in (21) is
+\(T^{-q_0/2}\), which is stronger because \(3\kappa/2<q_0/2\).
+Consequently all nonzero dyadic shifts in (25) satisfy
+\[
+ |\mathcal G_H|
+ \ll_\varepsilon
+ T^\varepsilon P^3Q^4T^{-3\kappa/2}.
+\tag{26}
+\]
+Summing the logarithmically many blocks in (26) gives
+\[
+ \sum_{\substack{H\ \mathrm{dyadic}\\
+ H\le P Q^{4/3}T^{-\kappa}}}
+ |\mathcal G_H|
+ \ll_\varepsilon
+ T^\varepsilon P^3Q^4T^{-3\kappa/2}.
+\tag{27}
+\]
+After multiplication by \(Q/P\) in (7) and a square root, this part of
+the absolute Gram upper bound has scale
+\[
+ T^\varepsilon P Q^{5/2}T^{-3\kappa/4}.
+\tag{28}
+\]
+This is not a separately defined subsum of \(\mathcal S_{\mathrm{lead}}\).
+It does not bound the full sum until the remaining Gram blocks are
+controlled.
+
+The upper range in (25) lies strictly above \(PQ\), since
+\[
+ \frac{P Q^{4/3}T^{-\kappa}}{PQ}
+ =T^{q_0/3-\kappa}>1.
+\tag{29}
+\]
+It therefore also lies above \(P^3\) by (2). The canonical choice
+\(\kappa=q_0/6\) gives upper shift \(P Q^{7/6}\), Gram saving
+\(Q^{-1/4}\), and square-root scale saving \(Q^{-1/8}\).
+
+No cancellation between different determinant shifts is used. Each
+dyadic block is bounded by (18), and the logarithmic number of blocks is
+absorbed into \(T^\varepsilon\).
+
+## Diagonal and endpoint terms
+
+Using (13) and the trivial smooth \(n\)-sum,
 \[
  |\mathcal G_0|
  \ll_\varepsilon T^\varepsilon P^2Q^3
  =T^\varepsilon P^3Q^4(PQ)^{-1}.
-\tag{22}
+\tag{30}
 \]
-After the prefactor in (10), the diagonal contributes at most
+After multiplication by \(Q/P\) in (7) and a square root, the diagonal
+has scale
 \[
  T^\varepsilon P^{1/2}Q^2
  =T^\varepsilon P Q^{5/2}(PQ)^{-1/2}
-\tag{23}
+\tag{31}
 \]
-to \(|\mathcal S_{\mathrm{lead}}|\). It is therefore smaller than every
-nonzero low-shift endpoint considered above.
+in the absolute Gram upper bound.
 
-## Endpoint and formal status
-
-The number of dyadic coefficient histories and separator pieces is
+The number of coefficient histories and separator pieces is
 \(T^\varepsilon\). The public one-\(Q\) endpoint assigns hard endpoints
-before smoothing; its endpoint errors save \(Q^{-1/2}=T^{-\lambda/10}\)
-relative to (11). This is stronger than the saving in (19), because
-\[
-\frac{\kappa}{2}<\frac{\lambda-2}{2}<\frac{\lambda}{10}
-\tag{24}
-\]
-throughout \(2<\lambda<29/14\). Lower stationary terms have smaller inert
-amplitudes. These losses therefore do not change (19).
+before smoothing; its endpoint errors save \(Q^{-1/2}=T^{-q_0/2}\)
+relative to (8). This is stronger than the square-root scale in (28), since
+\(3\kappa/4<q_0/4<q_0/2\). Lower stationary terms have smaller inert
+amplitudes. These losses do not change (27)--(28).
 
-For every fixed \(\kappa>0\), the estimate stops at
-\(|h|=PQT^{-\kappa}\). The margin in (18) vanishes at \(H\asymp PQ\).
-Completing the endpoint power saving requires a separate estimate for the
-remaining band beginning near that scale and for all larger shifts.
+The estimate stops at \(H=P Q^{4/3}T^{-\kappa}\). The margin in (23)
+vanishes at \(H\asymp P Q^{4/3}\). Completing the endpoint power saving
+requires a separate estimate for the remaining large determinant range.
 
 [ActualMobiusLowShiftGramSaving.lean](../../formalization/BuildingBlocks/ActualMobiusLowShiftGramSaving.lean)
-checks \(PQ^2=T\), the parameterized exponent in (18), the strict
-extension past \(P^3\), the canonical choice of \(\kappa\), and the
-endpoint-error comparison (24). Its
+checks the three range exponents, the parameterized saving in (26)--(28),
+the strict extension above \(PQ\) and \(P^3\), and the canonical choice
+\(\kappa=q_0/6\). Its
 [axiom audit](../../formalization/verification/ActualMobiusLowShiftGramSavingAudit.lean)
 checks every declaration in the module. Lean does not formalize the
-history expansion, determinant counts, Cauchy reduction, or analytic
-endpoint theorem.
+history expansion, determinant counts, weighted Cauchy reduction, or
+second-derivative estimate.

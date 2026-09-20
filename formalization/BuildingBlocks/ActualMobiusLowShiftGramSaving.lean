@@ -1,12 +1,12 @@
 import Mathlib
 
 /-!
-# Exponent ledger for the actual low-shift Möbius Gram saving
+# Exponent ledger for the smooth determinant-shift estimate
 
 This module checks only the scale and exponent algebra in
 actual-mobius-low-shift-gram-saving.md. It does not formalize the K = 3
-history expansion, determinant representation count, Cauchy reduction,
-analytic endpoint theorem, or an implication for RH.
+history expansion, determinant representation count, weighted Cauchy
+reduction, second-derivative estimate, or an implication for RH.
 -/
 
 namespace BuildingBlocks
@@ -17,133 +17,133 @@ noncomputable section
 def p (lambda : ℝ) : ℝ := 1 - 2 * lambda / 5
 def q (lambda : ℝ) : ℝ := lambda / 5
 
-/-- The physical scale relation P Q^2 = T. -/
 theorem physical_scale (lambda : ℝ) :
     p lambda + 2 * q lambda = 1 := by
   simp [p, q]
   ring
 
-/-- The low-shift endpoint P^3 lies below P Q exactly when lambda > 2. -/
+theorem q_pos {lambda : ℝ} (hlow : 2 < lambda) :
+    0 < q lambda := by
+  simp [q]
+  linarith
+
 theorem p_cubed_lt_pq {lambda : ℝ} (hlow : 2 < lambda) :
     3 * p lambda < p lambda + q lambda := by
   simp [p, q]
   linarith
 
-/-- At the upper shift H = P Q T^(-kappa), the absolute bound
-H P^2 Q^3 has exponent equal to the Gram target minus kappa. -/
-theorem parameterized_endpoint_bound_exponent (lambda kappa : ℝ) :
-    (p lambda + q lambda - kappa) +
-        2 * p lambda + 3 * q lambda =
-      3 * p lambda + 4 * q lambda - kappa := by
-  ring
-
-theorem parameterized_gram_saving (lambda kappa : ℝ) :
+/-- In the range H at most P, the absolute bound P^3 Q^3 is below
+the Gram target P^3 Q^4 by exponent q. -/
+theorem small_range_gram_gap (lambda : ℝ) :
     (3 * p lambda + 4 * q lambda) -
-        (3 * p lambda + 4 * q lambda - kappa) =
-      kappa := by
+        (3 * p lambda + 3 * q lambda) =
+      q lambda := by
   ring
 
-/-- The parameterized upper range extends strictly past P^3 whenever
-kappa < lambda - 2. -/
-theorem parameterized_range_gap (lambda kappa : ℝ) :
-    (p lambda + q lambda - kappa) - 3 * p lambda =
-      lambda - 2 - kappa := by
-  simp [p, q]
+/-- At H = P Q, the middle-range bound
+P^2 Q^2 (T H)^(1/2) has exponent 3p + 7q/2. -/
+theorem middle_endpoint_bound_exponent (lambda : ℝ) :
+    2 * p lambda + 2 * q lambda +
+        (1 + p lambda + q lambda) / 2 =
+      3 * p lambda + 7 * q lambda / 2 := by
+  rw [← physical_scale lambda]
   ring
 
-theorem parameterized_range_extends_p_cubed {lambda kappa : ℝ}
-    (hkappa : kappa < lambda - 2) :
-    3 * p lambda < p lambda + q lambda - kappa := by
-  have h := parameterized_range_gap lambda kappa
-  linarith
-
-theorem parameterized_original_sum_saving (lambda kappa : ℝ) :
-    ((3 * p lambda + 4 * q lambda) -
-        (3 * p lambda + 4 * q lambda - kappa)) / 2 =
-      kappa / 2 := by
-  ring
-
-/-- At H = P^3, the absolute bound H P^2 Q^3 has exponent 5p + 3q. -/
-theorem absolute_endpoint_bound_exponent (lambda : ℝ) :
-    3 * p lambda + 2 * p lambda + 3 * q lambda =
-      5 * p lambda + 3 * q lambda := by
-  ring
-
-/-- Relative to the Gram target P^3 Q^4, the low-shift endpoint
-absolute bound saves exponent lambda - 2. -/
-theorem gram_saving_identity (lambda : ℝ) :
+theorem middle_range_gram_gap (lambda : ℝ) :
     (3 * p lambda + 4 * q lambda) -
-        (5 * p lambda + 3 * q lambda) =
-      lambda - 2 := by
-  simp [p, q]
+        (3 * p lambda + 7 * q lambda / 2) =
+      q lambda / 2 := by
   ring
 
-theorem gram_saving_positive {lambda : ℝ} (hlow : 2 < lambda) :
-    5 * p lambda + 3 * q lambda <
-      3 * p lambda + 4 * q lambda := by
-  have h := gram_saving_identity lambda
-  linarith
+/-- In the high smooth range, the bound
+P^(3/2) Q^2 H^(3/2), evaluated at
+H = P Q^(4/3) T^(-kappa), is the Gram target minus 3kappa/2. -/
+theorem high_endpoint_bound_exponent (lambda kappa : ℝ) :
+    3 * p lambda / 2 + 2 * q lambda +
+        3 * (p lambda + 4 * q lambda / 3 - kappa) / 2 =
+      3 * p lambda + 4 * q lambda - 3 * kappa / 2 := by
+  ring
 
-/-- The outer Cauchy step takes a square root, leaving half of the
-Gram exponent saving in the original one-Poisson sum. -/
-theorem original_sum_saving_identity (lambda : ℝ) :
+theorem high_range_gram_saving (lambda kappa : ℝ) :
+    (3 * p lambda + 4 * q lambda) -
+        (3 * p lambda + 4 * q lambda - 3 * kappa / 2) =
+      3 * kappa / 2 := by
+  ring
+
+/-- Square-root scale of the controlled Gram contribution. This does not
+bound the original sum until the remaining Gram blocks are controlled. -/
+theorem high_range_square_root_scale_saving (lambda kappa : ℝ) :
     ((3 * p lambda + 4 * q lambda) -
-        (5 * p lambda + 3 * q lambda)) / 2 =
-      (lambda - 2) / 2 := by
-  rw [gram_saving_identity]
-
-theorem original_sum_saving_positive {lambda : ℝ} (hlow : 2 < lambda) :
-    0 < (lambda - 2) / 2 := by
-  linarith
-
-/-- The endpoint-error saving q/2 exceeds the low-shift original-sum
-saving by exactly p. -/
-theorem endpoint_error_saving_gap (lambda : ℝ) :
-    q lambda / 2 - (lambda - 2) / 2 = p lambda := by
-  simp [p, q]
+        (3 * p lambda + 4 * q lambda - 3 * kappa / 2)) / 2 =
+      3 * kappa / 4 := by
   ring
 
-theorem p_pos {lambda : ℝ} (hhigh : lambda < 29 / 14) :
-    0 < p lambda := by
-  simp [p]
-  norm_num at hhigh ⊢
+/-- The high endpoint exceeds P Q by exponent q/3 - kappa. -/
+theorem high_endpoint_above_pq_gap (lambda kappa : ℝ) :
+    (p lambda + 4 * q lambda / 3 - kappa) -
+        (p lambda + q lambda) =
+      q lambda / 3 - kappa := by
+  ring
+
+theorem high_endpoint_above_pq {lambda kappa : ℝ}
+    (hkappa : kappa < q lambda / 3) :
+    p lambda + q lambda <
+      p lambda + 4 * q lambda / 3 - kappa := by
+  have h := high_endpoint_above_pq_gap lambda kappa
   linarith
 
-theorem endpoint_error_saving_stronger {lambda : ℝ}
-    (hhigh : lambda < 29 / 14) :
-    (lambda - 2) / 2 < q lambda / 2 := by
-  have hgap := endpoint_error_saving_gap lambda
-  have hp := p_pos hhigh
+theorem high_endpoint_above_p_cubed {lambda kappa : ℝ}
+    (hlow : 2 < lambda) (hkappa : kappa < q lambda / 3) :
+    3 * p lambda <
+      p lambda + 4 * q lambda / 3 - kappa := by
+  exact lt_trans (p_cubed_lt_pq hlow) (high_endpoint_above_pq hkappa)
+
+/-- Under kappa < q/3, the high-range Gram saving 3kappa/2 is
+smaller than the middle-range saving q/2 and therefore controls the
+uniform exponent. -/
+theorem high_saving_below_middle {lambda kappa : ℝ}
+    (hkappa : kappa < q lambda / 3) :
+    3 * kappa / 2 < q lambda / 2 := by
   linarith
 
-/-- The canonical choice kappa = (lambda - 2)/2 is positive. -/
+/-- The public endpoint-error saving q/2 is also stronger than the
+square-root scale saving 3kappa/4. -/
+theorem endpoint_error_stronger {lambda kappa : ℝ}
+    (hlow : 2 < lambda) (hkappa : kappa < q lambda / 3) :
+    3 * kappa / 4 < q lambda / 2 := by
+  have hq := q_pos hlow
+  linarith
+
+/-- The exact diagonal P^2 Q^3 is below the Gram target by exponent p+q. -/
+theorem diagonal_gram_gap (lambda : ℝ) :
+    (3 * p lambda + 4 * q lambda) -
+        (2 * p lambda + 3 * q lambda) =
+      p lambda + q lambda := by
+  ring
+
+/-- Canonical choice kappa = q/6. -/
 theorem canonical_kappa_pos {lambda : ℝ} (hlow : 2 < lambda) :
-    0 < (lambda - 2) / 2 := by
+    0 < q lambda / 6 := by
+  have hq := q_pos hlow
   linarith
 
-theorem canonical_kappa_lt {lambda : ℝ} (hlow : 2 < lambda) :
-    (lambda - 2) / 2 < lambda - 2 := by
+theorem canonical_kappa_lt_third {lambda : ℝ} (hlow : 2 < lambda) :
+    q lambda / 6 < q lambda / 3 := by
+  have hq := q_pos hlow
   linarith
 
-/-- The canonical upper range extends past P^3 by exponent
-(lambda - 2)/2. -/
-theorem canonical_range_gap (lambda : ℝ) :
-    (p lambda + q lambda - (lambda - 2) / 2) -
-        3 * p lambda =
-      (lambda - 2) / 2 := by
-  simp [p, q]
+theorem canonical_upper_exponent (lambda : ℝ) :
+    p lambda + 4 * q lambda / 3 - q lambda / 6 =
+      p lambda + 7 * q lambda / 6 := by
   ring
 
-theorem canonical_original_sum_saving (lambda : ℝ) :
-    ((lambda - 2) / 2) / 2 = (lambda - 2) / 4 := by
+theorem canonical_gram_saving (lambda : ℝ) :
+    3 * (q lambda / 6) / 2 = q lambda / 4 := by
   ring
 
-theorem parameterized_endpoint_error_stronger {lambda kappa : ℝ}
-    (hkappa : kappa < lambda - 2)
-    (hhigh : lambda < 29 / 14) :
-    kappa / 2 < q lambda / 2 := by
-  have hfixed := endpoint_error_saving_stronger hhigh
-  linarith
+theorem canonical_square_root_scale_saving (lambda : ℝ) :
+    3 * (q lambda / 6) / 4 = q lambda / 8 := by
+  ring
 
 end
 end ActualMobiusLowShiftGramSaving

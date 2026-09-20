@@ -97,9 +97,20 @@ The leading separated contribution is
  a_kb_m\beta(q_1)\delta(q_2)V_{k,m,q_1,q_2}
  e\!\left(-2\sqrt{\frac{kNm}{q_1q_2}}\right).      \tag{12}
 \]
-The finitely many lower stationary terms have the same form with smaller
-inert amplitudes. All dyadic, divisor, separator, and endpoint costs are
-\(T^\varepsilon\).
+On each fixed normalized support, the leading weight is jointly inert:
+for every multi-index \(\mathbf j=(j_1,j_2,j_3,j_4)\),
+\[
+ \left|(k\partial_k)^{j_1}(m\partial_m)^{j_2}
+ (q_1\partial_{q_1})^{j_3}(q_2\partial_{q_2})^{j_4}
+ V_{k,m,q_1,q_2}\right|
+ \ll_{\mathbf j,\varepsilon}T^\varepsilon .
+\]
+This follows by differentiating the stationary point in (8), the normalized
+amplitude in (10), and the original inert packet weight. The finitely many
+lower stationary terms have the same property with smaller amplitudes.
+The finite Fourier--Mellin separators have total \(L^1\) cost
+\(T^\varepsilon\). All dyadic, divisor, separator, and endpoint costs are
+therefore absorbed into \(T^\varepsilon\).
 
 ## Exact product spacing
 
