@@ -15,29 +15,20 @@ $$
 for all sufficiently large $|t|$ whenever
 
 $$
-\sigma\geq1-\frac{1}{48.0717(\log |t|)^{2/3}(\log\log |t|)^{1/3}}.
+\sigma\geq1-\frac{1}{48.0716(\log |t|)^{2/3}(\log\log |t|)^{1/3}}.
 $$
 
 This improves the previously published asymptotic constant $48.0718$.
 
 ## Certificate
 
-The script contains integers $C_0,\ldots,C_{46}$ and defines
+The script contains exact rational factors for two normalized Fejér squares. One is the published MTY degree-46 polynomial; the other is an optimized factor found in this project. It forms the convex combination
 
 $$
-D=\sum_{j=0}^{46}C_j^2,
-\qquad
-N_k=2\sum_{j=0}^{46-k}C_jC_{j+k}.
+P(x)=\frac13P_{\mathrm{MTY}}(x)+\frac23P_{\mathrm{opt}}(x).
 $$
 
-Consequently,
-
-$$
-P(x)=\frac{\left|\sum_{j=0}^{46}C_je^{ijx}\right|^2}{D}
-=1+\sum_{k=1}^{46}\frac{N_k}{D}\cos(kx).
-$$
-
-Exact integer arithmetic verifies $N_k>0$ for every $k$ and $N_1>D$. This proves all polynomial admissibility conditions without numerical sampling.
+Each component is nonnegative for every real $x$, so their mixture is nonnegative and has $b_0=1$. Exact rational autocorrelations verify $b_k>0$ for every $1\leq k\leq46$ and $b_1>b_0$. This proves all polynomial admissibility conditions without numerical sampling.
 
 Let $b=\sum_{k=1}^{46}b_k$, and let $\theta\in(0,\pi/2)$ be the unique solution of
 
@@ -48,7 +39,7 @@ $$
 Alternating Taylor bounds with rational arithmetic certify
 
 $$
-1.132689689<\theta<1.132689691.
+1.132670959<\theta<1.132670962.
 $$
 
 Uniqueness follows because
@@ -74,7 +65,7 @@ $$
 R_2^3=\frac9{16}\frac{b^2(b+1)B^2}{\cos^6\theta}.
 $$
 
-The script proves the resulting rational upper-bound comparison with $48.0717^3$ exactly. The polynomial's numerical objective is approximately $48.071684583$; this decimal is explanatory and is not used by the certificate.
+The script proves the resulting rational upper-bound comparison with $48.0716^3$ exactly. The polynomial's numerical objective is approximately $48.071596170$; this decimal is explanatory and is not used by the certificate.
 
 Run:
 
