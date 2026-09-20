@@ -81,6 +81,158 @@ Here the constant \(\psi(X)\) disappears because its centered weight has
 integral zero. The coefficient at \(n=2X\) again vanishes literally, and
 every proper prime power in the block remains in the sum.
 
+## Finite Vaughan audit of the centered mode
+
+Put
+
+\[
+ K_X(n)=\frac{(n-X)(n-2X)}{2X}\,1_{X<n\le2X}.
+ \tag{4b}
+\]
+
+Then (4a) is \(Z=X^2/12+\sum_n\Lambda(n)K_X(n)\). If
+\(R(t)=\psi(t)-t\), Stieltjes summation with the two literal endpoint zeros
+of \(K_X\) gives the exact identity
+
+\[
+ \boxed{
+ Z=-\int_X^{2X}R(t)\left(\frac tX-\frac32\right)\,dt.}
+ \tag{4c}
+\]
+
+Thus this centered quantity is already a signed, once-smoothed PNT error;
+the quadratic prime weight does not create a new nonzero additive
+frequency.
+
+For
+
+\[
+ \Phi(X)=\frac{(\log X)^{3/5}}{(\log\log X)^{1/5}},\qquad
+ d=\left(\frac{5^6}{2^2 3^4(48.0718)^3}\right)^{1/5}
+ =0.212579202\ldots,
+\]
+
+the unconditional Vinogradov--Korobov transfer gives, for each fixed
+\(\delta>0\),
+
+\[
+ R(t)\ll_\delta t\exp[-(d-\delta)\Phi(t)].
+\]
+
+Consequently (4c) gives the strongest presently justified direct bound
+used here:
+
+\[
+ \boxed{
+ Z\ll_\delta X^2\exp[-(d-\delta)\Phi(X)].}
+ \tag{4d}
+\]
+
+The constant \(d\) comes from Bellotti's independent
+[Vinogradov--Korobov zero-free region](https://arxiv.org/abs/2306.10680)
+through Johnston's
+[PNT transfer theorem](https://arxiv.org/abs/2411.13791). Polynomial
+logarithmic factors in that transfer are absorbed by \(\delta\Phi(X)\).
+This statement does not use the later disputed sharp density-to-PNT
+claim. Passing from (4c) to (4d) loses the sign change at \(t=3X/2\), a
+factor \(X\) from the integration length, and an arbitrarily small amount
+\(\delta\) in the Vinogradov--Korobov exponent. It loses no prime powers or
+endpoint terms.
+
+The finite Vaughan identity shows exactly where a direct attempt to
+recover that sign cancellation stops. For \(U,V<X\), let
+\(\mu_{\le V}=\mu1_{[1,V]}\) and
+\(\Lambda_{\le U}=\Lambda1_{[1,U]}\). Substitution of
+
+\[
+ \Lambda=\mu_{\le V}*\log+\Lambda_{\le U}
+ -\Lambda_{\le U}*\mu_{\le V}*1
+ +\mu_{>V}*\Lambda_{>U}*1
+\]
+
+into (4a) gives the exact finite decomposition
+
+\[
+\begin{aligned}
+ Z={}&\frac{X^2}{12}
+ +\sum_{r\le V}\mu(r)\sum_\ell(\log\ell)K_X(r\ell)\\
+ &-\sum_{\substack{r\le V\\s\le U}}
+   \mu(r)\Lambda(s)\sum_\ell K_X(rs\ell)
+ +\sum_{\substack{r>V\\s>U}}
+   \mu(r)\Lambda(s)\sum_\ell K_X(rs\ell).
+ \tag{4e}
+\end{aligned}
+\]
+
+The missing \(\Lambda_{\le U}\) term is literally zero because \(K_X\)
+is supported above \(X>U\). The last line is the balanced Type II term.
+The same principal term survives in a Heath--Brown identity, split among
+more factors.
+
+The polynomial is useful in each inner progression:
+
+\[
+ \sum_\ell K_X(q\ell)=-\frac{X^2}{12q}+O(X),
+ \tag{4f}
+\]
+
+uniformly in \(q\), by bounded variation. The corresponding logarithmic
+inner sum has an \(O(X\log X)\) discretization error. The principal terms
+of all lines of (4e) recombine with \(X^2/12\); estimating the lines
+separately destroys that cancellation. With \(U=V=X^{1/3}\), absolute
+summation of the Type II discretization errors already costs
+\(O(X^2\log X)\), while the original Chebyshev bound is only \(O(X^2)\).
+Cauchy--Schwarz does not repair this because the phase is exactly zero.
+
+If the \(r\)-variable in the principal Type II term is summed first, the
+remaining object is a weighted partial sum of \(\mu(r)\). The known
+zero-free-region Mertens estimate reproduces the subexponential scale in
+(4d). Replacing it by
+
+\[
+ \sum_{r\le y}\mu(r)\ll_\varepsilon y^{1/2+\varepsilon}
+\]
+
+would supply the required square-root scale for that exposed factor, but
+that uniform Mertens estimate is equivalent to RH; the other decomposed
+terms would still have to be recombined without absolute-value losses.
+Keeping \(r\) and \(s\) coupled would require a new principal-arc Type II
+cancellation of the same strength; no classical Vaughan or Heath--Brown
+estimate supplies it. This is the stopping point, not a new input to
+assume.
+
+There are two immediate falsifiers for a claimed closure. First, for every
+fixed \(\varepsilon<1/2\),
+
+\[
+ \frac{X^2e^{-(d-\delta)\Phi(X)}}{X^{3/2+\varepsilon}}
+ =X^{1/2-\varepsilon}e^{-(d-\delta)\Phi(X)}\longrightarrow\infty.
+\]
+
+Thus a Vinogradov--Korobov or Mertens subexponential saving does not reach
+(12). Second, if
+
+\[
+ W(u)=\tfrac12(u-1)(u-2)1_{[1,2]}(u),
+\]
+
+then a zeta zero \(\rho\) enters the explicit formula for \(Z\) with the
+scale \(X^{\rho+1}\widetilde W(\rho)\), where
+
+\[
+ \widetilde W(s)=\frac12\left(
+ \frac{2^{s+2}-1}{s+2}
+ -3\frac{2^{s+1}-1}{s+1}
+ +2\frac{2^s-1}{s}\right).
+ \tag{4g}
+\]
+
+The endpoint zeros give \(\widetilde W(\sigma+i\tau)=O_\sigma(|\tau|^{-2})\),
+but they do not change the power \(X^{\Re\rho+1}\). A proposed
+\(X^{3/2+\varepsilon}\) proof that treats this zero-frequency term only by
+absolute zero-free-region or Möbius estimates has therefore hidden the
+required square-root cancellation.
+
 ## Exact prime twist in every nonzero mode
 
 For \(j\in\mathbb Z\setminus\{0\}\), define
