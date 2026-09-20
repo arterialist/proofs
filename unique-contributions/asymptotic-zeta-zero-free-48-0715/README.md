@@ -15,20 +15,28 @@ $$
 for all sufficiently large $|t|$ whenever
 
 $$
-\sigma\geq1-\frac{1}{48.0716(\log |t|)^{2/3}(\log\log |t|)^{1/3}}.
+\sigma\geq1-\frac{1}{48.0715(\log |t|)^{2/3}(\log\log |t|)^{1/3}}.
 $$
 
 This improves the previously published asymptotic constant $48.0718$.
 
 ## Certificate
 
-The script contains exact rational factors for two normalized Fejér squares. One is the published MTY degree-46 polynomial; the other is an optimized factor found in this project. It forms the convex combination
+The script contains 23 exact integer factors defining the normalized sum of Fejér squares
 
 $$
-P(x)=\frac13P_{\mathrm{MTY}}(x)+\frac23P_{\mathrm{opt}}(x).
+P_{\mathrm{opt}}(x)=
+\frac{\sum_{r=1}^{23}\left|\sum_{j=0}^{46}C_{r,j}e^{ijx}\right|^2}
+{\sum_{r=1}^{23}\sum_{j=0}^{46}C_{r,j}^2}.
 $$
 
-Each component is nonnegative for every real $x$, so their mixture is nonnegative and has $b_0=1$. Exact rational autocorrelations verify $b_k>0$ for every $1\leq k\leq46$ and $b_1>b_0$. This proves all polynomial admissibility conditions without numerical sampling.
+It forms
+
+$$
+P(x)=\frac1{100}P_{\mathrm{MTY}}(x)+\frac{99}{100}P_{\mathrm{opt}}(x),
+$$
+
+where $P_{\mathrm{MTY}}$ is rebuilt exactly from the published degree-46 factor. Both components are globally nonnegative and normalized by $b_0=1$. Exact rational autocorrelations verify $b_k>0$ for every $1\leq k\leq46$ and $b_1>b_0$. Thus every polynomial admissibility condition is established without numerical sampling.
 
 Let $b=\sum_{k=1}^{46}b_k$, and let $\theta\in(0,\pi/2)$ be the unique solution of
 
@@ -39,7 +47,7 @@ $$
 Alternating Taylor bounds with rational arithmetic certify
 
 $$
-1.132670959<\theta<1.132670962.
+1.132645700<\theta<1.132645703.
 $$
 
 Uniqueness follows because
@@ -65,7 +73,7 @@ $$
 R_2^3=\frac9{16}\frac{b^2(b+1)B^2}{\cos^6\theta}.
 $$
 
-The script proves the resulting rational upper-bound comparison with $48.0716^3$ exactly. The polynomial's numerical objective is approximately $48.071596170$; this decimal is explanatory and is not used by the certificate.
+The script proves the resulting rational upper-bound comparison with $48.0715^3$ exactly. The polynomial's numerical objective is approximately $48.071463726$; this decimal is explanatory and is not used by the certificate.
 
 Run:
 
