@@ -8,6 +8,12 @@ prime-twist bounds in (12)--(13) are not proved, so this note does not
 establish `CoarsePrimitiveBound` or the Riemann hypothesis. No Lean
 formalization of the Fourier and bounded-variation steps is claimed.
 
+The [boundary sine refinement](coarse-primitive-boundary-sine-reduction.md)
+uses the vanishing endpoint correction \(Q(u)=P(u)-uP(X)/X\). A recent
+exponential-sum estimate then lowers the unresolved mode cutoff from
+\(X^{1/3}\) to \(X^{1/4}\) and removes the separate centered zero-mode
+hypothesis. The terminal mass and the remaining low sine modes stay open.
+
 ## Exact spectral decomposition
 
 Let \(X\ge1\) be an integer, write
