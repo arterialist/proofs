@@ -108,8 +108,8 @@ For
 
 \[
  \Phi(X)=\frac{(\log X)^{3/5}}{(\log\log X)^{1/5}},\qquad
- d=\left(\frac{5^6}{2^2 3^4(48.07123)^3}\right)^{1/5}
- =0.212580714\ldots,
+ d=\left(\frac{5^6}{2^2 3^4(48.0712269117)^3}\right)^{1/5}
+ =0.212580722694\ldots,
 \]
 
 the unconditional Vinogradov--Korobov transfer gives, for each fixed
@@ -468,7 +468,7 @@ no separate Perron remainder.
 Use the certified degree-110 refinement of Bellotti's zero-free region with
 
 \[
- A_0=\frac1{48.07123},\qquad
+ A_0=\frac1{48.0712269117},\qquad
  u(T)=(\log T)^{-2/3}(\log\log T)^{-1/3},
 \]
 
@@ -518,8 +518,8 @@ in (4x) has \((a,k)=(1,2)\), while the far term has \((a,k)=(2,1)\).
 Their exponent constants are respectively
 
 \[
- c_M=2^{2/5}d=0.280501934\ldots,
- \qquad 2^{3/5}d=0.322212110\ldots.
+ c_M=2^{2/5}d=0.280501945273\ldots,
+ \qquad 2^{3/5}d=0.322212123108\ldots.
  \tag{4z}
 \]
 
@@ -542,11 +542,11 @@ for every fixed \(\varepsilon>0\),
  \boxed{
  |M(X)|\ll_\varepsilon
  X^2\exp[-(c_M-\varepsilon)\Phi(X)],
- \qquad c_M=0.280501934\ldots.}
+ \qquad c_M=0.280501945273\ldots.}
  \tag{4aa}
 \]
 
-This improves the direct constant \(d=0.212580714\ldots\) in (4s). It
+This improves the direct constant \(d=0.212580722694\ldots\) in (4s). It
 uses the certified refinement of Bellotti's 2024 zero-free theorem and the classical Ingham density
 estimate, as explicitly restated by
 [Chourasiya--Simonič](https://arxiv.org/abs/2507.15184). It does not use

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact certificate for an asymptotic zeta zero-free constant < 48.07123."""
+"""Exact certificate for an asymptotic zeta zero-free constant < 48.0712269117."""
 from fractions import Fraction as F
 import json
 
@@ -43,12 +43,12 @@ def root_bounds(x):
     assert sl>0 and cl>0
     return sl*sl-b1+b1*x*cl/su, su*su-b1+b1*x*cu/sl
 
-lo=F(1132674386,10**9); hi=F(1132674388,10**9)
+lo=F(1132674386730249,10**15); hi=F(22653487734605,2*10**13)
 assert 0<lo<hi<F(3,2) and hi*hi<2
 flo=root_bounds(lo); fhi=root_bounds(hi)
 assert flo[0]>0 and fhi[1]<0
 cos_hi_lower,_=cos_bounds(hi)
-target=F(4807123,100000)
+target=F(480712269117,10**10)
 lhs=F(9,16)*b*b*(b+1)*B*B
 rhs=target**3*cos_hi_lower**6
 assert lhs<rhs
@@ -57,6 +57,6 @@ print(json.dumps({
  "all_bk_positive":True,"b1_gt_1":True,
  "minimum_bk_index":min(range(1,K+1),key=lambda k:bk[k]),
  "minimum_bk_decimal":format(float(min(bk[1:])),".17g"),
- "theta_bracket":["1.132674386","1.132674388"],
- "R_strictly_below":"48.07123",
+ "theta_bracket":["1.132674386730249","1.132674386730250"],
+ "R_strictly_below":"48.0712269117",
  "exact_cube_margin_decimal":format(float(rhs-lhs),".17g")},indent=2))

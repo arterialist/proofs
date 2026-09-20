@@ -15,7 +15,7 @@ $$
 for all sufficiently large $|t|$ whenever
 
 $$
-\sigma\geq1-\frac{1}{48.07123(\log |t|)^{2/3}(\log\log |t|)^{1/3}}.
+\sigma\geq1-\frac{1}{48.0712269117(\log |t|)^{2/3}(\log\log |t|)^{1/3}}.
 $$
 
 This improves the previously published asymptotic constant $48.0718$.
@@ -47,7 +47,7 @@ $$
 Alternating Taylor bounds with rational arithmetic certify
 
 $$
-1.132674386<\theta<1.132674388.
+1.132674386730249<\theta<1.132674386730250.
 $$
 
 Uniqueness follows because
@@ -73,7 +73,7 @@ $$
 R_2^3=\frac9{16}\frac{b^2(b+1)B^2}{\cos^6\theta}.
 $$
 
-The script proves the resulting rational upper-bound comparison with $48.07123^3$ exactly. The polynomial's numerical objective is approximately $48.071226912$; this decimal is explanatory and is not used by the certificate.
+The script proves the resulting rational upper-bound comparison with $48.0712269117^3$ exactly. The polynomial's numerical objective is approximately $48.071226911675126$; this decimal is explanatory and is not used by the certificate.
 
 Run:
 
