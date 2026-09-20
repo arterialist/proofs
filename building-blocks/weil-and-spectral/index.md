@@ -56,6 +56,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Sampling saving on the critical prime fiber](actual-mobius-critical-prime-fiber-sampling-saving.md)
 - [A dual row bound on the critical prime fiber](actual-mobius-critical-dual-k-row-entry.md)
 - [One-Q Poisson recovery at the all-unit endpoint](actual-mobius-critical-one-q-poisson-endpoint.md)
+- [Low-shift saving in the actual one-Q Möbius Gram kernel](actual-mobius-low-shift-gram-saving.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
 - [Center averaging of the exact reciprocal Möbius packet](actual-mobius-reciprocal-center-average-saving.md)
 - [Arbitrary logarithmic saving in the critical Möbius window](actual-mobius-critical-window-log-saving.md)
