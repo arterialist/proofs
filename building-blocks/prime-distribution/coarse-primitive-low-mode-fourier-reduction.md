@@ -3,10 +3,10 @@
 **Status:** unconditional written Fourier reduction, 20 September 2026.
 The finite identities retain every von Mangoldt prime power and both dyadic
 endpoints. The bounded-variation estimate gives an unconditional
-high-frequency tail. The terminal, centered zero-mode, and low prime-twist
-bounds isolated below are not proved, so this note does not establish
-`CoarsePrimitiveBound` or the Riemann hypothesis. No Lean formalization of
-the Fourier and bounded-variation steps is claimed.
+high-frequency tail. The RH-scale terminal, centered zero-mode, and low
+prime-twist bounds in (12)--(13) are not proved, so this note does not
+establish `CoarsePrimitiveBound` or the Riemann hypothesis. No Lean
+formalization of the Fourier and bounded-variation steps is claimed.
 
 ## Exact spectral decomposition
 
@@ -119,8 +119,7 @@ the unconditional Vinogradov--Korobov transfer gives, for each fixed
  R(t)\ll_\delta t\exp[-(d-\delta)\Phi(t)].
 \]
 
-Consequently (4c) gives the strongest presently justified direct bound
-used here:
+Consequently (4c) gives the direct pointwise-PNT baseline:
 
 \[
  \boxed{
@@ -137,7 +136,8 @@ This statement does not use the later disputed sharp density-to-PNT
 claim. Passing from (4c) to (4d) loses the sign change at \(t=3X/2\), a
 factor \(X\) from the integration length, and an arbitrarily small amount
 \(\delta\) in the Vinogradov--Korobov exponent. It loses no prime powers or
-endpoint terms.
+endpoint terms. The absolutely convergent zero estimate below improves
+the constant \(d\) to \(2^{2/5}d\).
 
 The finite Vaughan identity shows exactly where a direct attempt to
 recover that sign cancellation stops. For \(U,V<X\), let
@@ -551,6 +551,118 @@ estimate, as independently and explicitly restated by
 the disputed later density-to-PNT argument. The mechanism is the same
 independently sourced \(\rho^{-2}\) optimization used for the linearized
 Goldbach cofactor, now applied to the exact terminal Riesz increment.
+
+### The same gain for the centered mode and joint dispersion
+
+The centered functional is a trapezoidal remainder of the same Riesz
+error. Indeed, from \(P(u)=D(X+u)-D(X)\),
+
+\[
+ Z=\frac1X\int_X^{2X}D(t)\,dt-\frac{D(X)+D(2X)}2.
+ \tag{4aa1}
+\]
+
+Substitution of (4t) is termwise valid by absolute convergence. The
+constant and affine archimedean terms vanish under (4aa1), and hence
+
+\[
+ Z=-\sum_\rho\frac{X^{\rho+1}}{\rho(\rho+1)}G(\rho)
+ +O(X^{-1}),
+ \qquad
+ G(s)=\frac{2^{s+2}-1}{s+2}-\frac{1+2^{s+1}}2.
+ \tag{4aa2}
+\]
+
+This is exactly the multiplier obtained directly from (4c):
+
+\[
+ \frac{X^{\rho+1}}\rho
+ \int_1^2u^\rho\left(u-\frac32\right)\,du
+ =-\frac{X^{\rho+1}}{\rho(\rho+1)}G(\rho).
+ \tag{4aa3}
+\]
+
+One integration by parts shows uniformly for \(0\le\Re s\le1\) and
+\(|\Im s|\ge1\) that
+
+\[
+ \int_1^2u^s\left(u-\frac32\right)\,du
+ =\frac{2^{s+1}+1}{2(s+1)}
+ -\frac{2^{s+2}-1}{(s+1)(s+2)}
+ \ll\frac1{|s|}.
+ \tag{4aa4}
+\]
+
+Thus the outside factor \(1/\rho\) in (4aa3) gives the full
+\(1/|\rho|^2\) decay, including both boundary terms. Applying the same
+near/far density split as in (4w)--(4z) gives, for every fixed
+\(\varepsilon>0\),
+
+\[
+ \boxed{|Z|\ll_\varepsilon
+ X^2\exp[-(c_M-\varepsilon)\Phi(X)].}
+ \tag{4aa5}
+\]
+
+The improvement also survives jointly across all nonzero Fourier modes.
+Put \(v=u/X\). Formula (4t) gives the uniformly and absolutely convergent
+identity on \(0\le v\le1\)
+
+\[
+ P(Xv)=-\sum_\rho\frac{X^{\rho+1}}
+ {\rho(\rho+1)}\bigl((1+v)^{\rho+1}-1\bigr)
+ -Xv\log(2\pi)+O(X^{-1}).
+ \tag{4aa6}
+\]
+
+For \(0\le\beta\le1\), the zero profile in parentheses has uniformly
+bounded normalized \(L^2[0,1]\) norm. Subtracting its mean is an
+orthogonal projection and cannot increase that norm. Minkowski's
+inequality, followed by the identical dyadic near/far zero estimate,
+therefore yields
+
+\[
+ \left(\frac1X\int_0^X|P(u)-\mu|^2\,du\right)^{1/2}
+ \ll_\varepsilon
+ X^2\exp[-(c_M-\varepsilon)\Phi(X)].
+ \tag{4aa7}
+\]
+
+The centered affine term in (4aa6) has norm \(O(X)\), and the trivial-zero
+profiles contribute \(O(X^{-1})\), so neither affects the estimate.
+Combining (4aa7) with the exact Parseval identity (14e) proves, uniformly
+for every \(J\ge1\),
+
+\[
+ \boxed{
+ \mathcal L_J(X)^{1/2}\le\mathcal L_\infty(X)^{1/2}
+ \ll_\varepsilon X^2
+ \exp[-(c_M-\varepsilon)\Phi(X)],}
+ \tag{4aa8}
+\]
+
+and consequently
+
+\[
+ \mathcal L_J(X)\ll_\varepsilon X^4
+ \exp[-2(c_M-\varepsilon)\Phi(X)].
+ \tag{4aa9}
+\]
+
+This strengthens (14g), including throughout \(J\le X^{1/3}\), without
+estimating separate \(j\)-modes or discarding their correlations. Together
+with (4aa) and (4aa5), (14f) also gives the unconditional full-variance
+bound
+
+\[
+ S_X\ll_\varepsilon X^5
+ \exp[-2(c_M-\varepsilon)\Phi(X)].
+ \tag{4aa10}
+\]
+
+These remain Vinogradov--Korobov-scale estimates. They do not reach the
+\(X^{3+\varepsilon}\) inputs in (12)--(13), or the resulting
+\(S_X\ll X^{4+\varepsilon}\) RH criterion.
 
 ### Higher Riesz means do not improve this constant
 
