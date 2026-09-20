@@ -414,13 +414,13 @@ large-sieve estimates and short-interval Möbius theorems do not supply it.
 The quantity in (19) is a scalar quadratic contribution, not a prefix
 vector. Consequently an expression (U_X=P_X-Q_<) is not defined. This is
 not repaired by choosing square roots blockwise: the hyperbolic mask
-(mathbf1_{dele X}) is not positive semidefinite. Indeed, choose integers
-(e<\sqrt X<d) with (dele X<d^2). On the two coordinates (e,d), its
+(mathbf 1_{de\le X}) is not positive semidefinite. Indeed, choose integers
+(e<\sqrt X<d) with (de\le X<d^2). On the two coordinates (e,d), its
 matrix is
 \[
  \begin{pmatrix}1&1\\1&0\end{pmatrix},
 \]
-which has determinant (-1). Thus the signed sum of all (DEle X)
+which has determinant (-1). Thus the signed sum of all (DE\le X)
 blocks can be negative and cannot equal (|Q_<|_2^2) for any canonical
 vector (Q_<). The cross terms that create the saving in (19) prevent the
 proposed vector subtraction.
@@ -428,22 +428,22 @@ proposed vector subtraction.
 There is also a decisive obstruction for every legitimate replacement.
 If one chooses an actual vector decomposition (P_X=V_X+U_X) with
 \[
- \sum_{mle X}|V_X(m)|^2\ll X^{4+\varepsilon}
+ \sum_{m\le X}|V_X(m)|^2\ll X^{4+\varepsilon}
 \]
 and proves
 \[
- \sum_{mle X}|U_X(m)|^2\ll X^{5-\delta+\varepsilon},
+ \sum_{m\le X}|U_X(m)|^2\ll X^{5-\delta+\varepsilon},
 \]
 then the exact triangle inequality gives
 \[
- \sum_{mle X}|P_X(m)|^2
- \le2sum_{mle X}|V_X(m)|^2+2sum_{mle X}|U_X(m)|^2
+ \sum_{m\le X}|P_X(m)|^2
+ \le2\sum_{m\le X}|V_X(m)|^2+2\sum_{m\le X}|U_X(m)|^2
  \ll X^{5-\min(\delta,1)+\varepsilon}.
 \tag{23}
 \]
 The partial-power proposition in the coarse-energy note then excludes all
 zeta zeros with
-\(Re\rho>1-\min(\delta,1)/2\). Hence a bound for a genuine fully
+(\Re\rho>1-\min(\delta,1)/2\). Hence a bound for a genuine fully
 recombined complement is already the corresponding fixed zero-free
 half-plane theorem. It cannot follow from an input advertised as strictly
 weaker merely by the present decomposition.
