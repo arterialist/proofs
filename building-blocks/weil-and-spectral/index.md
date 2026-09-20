@@ -62,6 +62,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Fourfold completion of the high double-Q Gram block](actual-mobius-double-q-fourfold-resonance-bound.md)
 - [Average-center sharpness of the high product-resonance count](actual-mobius-high-resonance-count-sharpness.md)
 - [Exact centering of the high product-divisor kernel](actual-mobius-product-divisor-centering.md)
+- [Mean square of centered restricted-divisor windows](actual-mobius-centered-divisor-window-mean-square.md)
 - [Additive Fourier saving for the critical localized divisor box](actual-mobius-localized-divisor-fourier-saving.md)
 - [Ordered cross sums of localized Möbius histories](actual-mobius-complete-history-cross-sum.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
