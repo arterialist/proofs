@@ -4,8 +4,10 @@
 The gcd normalization and unit-residual conclusions are Lean-verified in
 [`ActualMobiusReciprocalCorrelation.lean`](../../formalization/BuildingBlocks/ActualMobiusReciprocalCorrelation.lean).
 The survivor sum and exponent comparison below are written mathematics.
-No bound for that sum is proved. This note does not extend the Möbius
-cutoff or prove the Riemann hypothesis.
+No bound for the abstract sharp survivor sum is proved here. Its canonical
+smooth high-block realization is now controlled at the prescribed center by
+the later bandlimited reciprocal-sampling theorem. This note does not extend
+the remaining Möbius tail or prove the Riemann hypothesis.
 
 ## Exact survivor sum and count
 
@@ -176,11 +178,8 @@ Here a fixed \(k,r\) gives \(x\asymp kN/r\asymp P Q^3\) and
 which grows at every critical \(\lambda\). This theorem does not give a
 vanishing discrepancy in the required block.
 
-The missing unconditional input must use the collective \(q\ne q'\)
-aliases or the determinant-weighted product resonances. It must save a
-fixed power beyond the \(Q/P\) multiplicity of admissible nonzero
-differences. In the high Gram block, the best written fourfold completion
-has the [normalized bound](actual-mobius-double-q-fourfold-resonance-bound.md#result-and-remaining-obstruction)
+The direct fourfold completion has the
+[normalized bound](actual-mobius-double-q-fourfold-resonance-bound.md#result-and-remaining-obstruction)
 
 \[
  T^\varepsilon\left(
@@ -190,10 +189,25 @@ has the [normalized bound](actual-mobius-double-q-fourfold-resonance-bound.md#re
  \tag{13}
 \]
 
-Its first term is \(Q/P^2=T^{\lambda-2}>1\) throughout (5). Any new
-estimate must remove that loss while retaining the signed arithmetic
-coefficients and the endpoint intervals. Such a finite exponential-sum
-estimate would be weaker than RH, but no cited theorem supplies it.
+Its first term is \(Q/P^2=T^{\lambda-2}>1\) throughout (5), so determinant
+counting alone does not suffice. The later
+[centered-window and bandlimited reciprocal-sampling theorem](actual-mobius-centered-divisor-window-mean-square.md#bandlimited-reciprocal-sampling)
+retains the signed divisor coefficients and removes this loss for the
+canonical smooth high block. It first proves an \(L^1\) center average of
+size \(T^\varepsilon Q^5/F\), then samples the exact center phase
+\(e(-Cz)\), \(|z|\ll F/Q^3\), at the separated points \(C=N/(qr)\).
+After normalization the resulting prescribed-center bound is
+
+\[
+ \mathcal A_F(N)\ll_\varepsilon T^\varepsilon
+ \left(P^{-1}+T^{-\kappa}\right).
+ \tag{13a}
+\]
+
+This resolves the obstruction recorded in (13) for that smooth canonical
+realization. It does not prove a coefficient-uniform estimate for the raw
+sharp survivor formula (4), and it does not address the farther Möbius tail
+outside the high block.
 
 ## Fast falsifier for unit-density arguments
 
@@ -212,6 +226,7 @@ more direct: \((s,q)=1\) is vacuous. Therefore replacing the residual count
 by \(\varphi(q)/q\) cannot prove (8), and completing a Ramanujan sum without
 tracking the zero Fourier mode cannot do so either.
 
-The next viable step must create cancellation across distinct products or
-moduli. Further congruence identities that leave the absolute count in
-(4) unchanged do not move the critical estimate.
+The falsifier still applies to any attempted proof of the raw sharp formula
+using unit density alone. Further congruence identities that leave the
+absolute count in (4) unchanged do not reproduce the bandlimited sampling
+gain.
