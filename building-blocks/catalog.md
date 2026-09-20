@@ -336,9 +336,9 @@ For $`X>0`$, a continuous complex test function $`w`$ differentiable inside the 
 \le\sqrt{2S_X/X}\,\lVert w(2X)\rVert+K\sqrt{XS_X}.
 ```
 
-The module also proves the exact finite Mellin identity, retaining the terminal mass and integer jumps. It supplies no growth bound for $`S_X`$ or infinite-series continuation theorem. The mathematics uses classical Cauchy–Schwarz and one-sided integration by parts.
+The module also proves the exact finite Mellin identity, retaining the terminal mass and integer jumps. A written Fourier reduction separates $`S_X`$ into the terminal mass, a centered zero mode, low additive von Mangoldt twists, and an unconditional bounded-variation tail. The unresolved uniform input reaches frequencies $`j\le X^{1/3+o(1)}`$; controlling a fixed number of observed dominant modes cannot close the required exponent. The module supplies no growth bound for $`S_X`$ or infinite-series continuation theorem. The mathematics uses classical Cauchy–Schwarz and one-sided integration by parts.
 
-[Assumptions, use and attribution](prime-distribution/coarse-primitive.md) · [Written RH criterion](prime-distribution/coarse-energy-rh-criterion.md) · [Verification](../formalization/verification/coarse-primitive.json).
+[Assumptions, use and attribution](prime-distribution/coarse-primitive.md) · [Low-mode Fourier reduction](prime-distribution/coarse-primitive-low-mode-fourier-reduction.md) · [Written RH criterion](prime-distribution/coarse-energy-rh-criterion.md) · [Verification](../formalization/verification/coarse-primitive.json).
 
 ## Exact hyperbola endpoint correction
 
