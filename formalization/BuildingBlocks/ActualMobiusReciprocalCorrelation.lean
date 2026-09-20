@@ -209,4 +209,27 @@ theorem exact_resonance_reduced_product_dvd_center
       _ = a * b * (ell * g) := by ac_rfl
   exact (coprime_product_difference hab hle).dvd_of_dvd_mul_right hdvd
 
+/-- The full reduced arithmetic structure of an exact integer-center
+reciprocal resonance. Besides the product dividing the center, the quotient
+c = N/(a*b) satisfies g ∣ c*(b-a). Positivity excludes degenerate zero
+factors when cancelling the product. -/
+theorem exact_resonance_reduced_structure
+    {N a b ell g : ℕ} (hab : Nat.Coprime a b) (ha : 0 < a) (hb : 0 < b)
+    (hle : a ≤ b) (hres : N * (b - a) = ell * g * (a * b)) :
+    ∃ c, N = (a * b) * c ∧ g ∣ c * (b - a) := by
+  have hdvd : a * b ∣ N :=
+    exact_resonance_reduced_product_dvd_center hab hle hres
+  rcases hdvd with ⟨c, hc⟩
+  refine ⟨c, hc, ?_⟩
+  have habpos : 0 < a * b := Nat.mul_pos ha hb
+  have hcancel : c * (b - a) = ell * g := by
+    apply Nat.eq_of_mul_eq_mul_left habpos
+    calc
+      (a * b) * (c * (b - a)) = N * (b - a) := by rw [hc]; ac_rfl
+      _ = ell * g * (a * b) := hres
+      _ = (a * b) * (ell * g) := by ac_rfl
+  refine ⟨ell, ?_⟩
+  rw [hcancel]
+  ac_rfl
+
 end BuildingBlocks.ActualMobiusReciprocalCorrelation

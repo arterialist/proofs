@@ -166,7 +166,8 @@ below the absolute-bound ceiling by the same margin
 For an integer center, an exact nonzero resonance between
 \(n=ga\) and \(m=gb\), with \((a,b)=1\), forces \(ab\mid N\) and
 \(g\mid (N/ab)(b-a)\). The divisor bound makes all such exact pairs
-negligible. The nonzero near-resonance branches remain open, as does any
+negligible; both divisibility statements are Lean-checked. The nonzero
+near-resonance branches remain open, as does any
 transfer from integer to prescribed real centers. After normalization,
 the diagonal also requires \(\eta<(3\lambda-2)/10\). The finite
 expansion, diagonal, reciprocal gap, coherence scale, and zero-branch

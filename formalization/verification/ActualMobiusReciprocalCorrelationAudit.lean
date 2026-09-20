@@ -33,6 +33,8 @@ open Lean
 #print axioms BuildingBlocks.ActualMobiusReciprocalCorrelation.coprime_product_difference
 #check BuildingBlocks.ActualMobiusReciprocalCorrelation.exact_resonance_reduced_product_dvd_center
 #print axioms BuildingBlocks.ActualMobiusReciprocalCorrelation.exact_resonance_reduced_product_dvd_center
+#check BuildingBlocks.ActualMobiusReciprocalCorrelation.exact_resonance_reduced_structure
+#print axioms BuildingBlocks.ActualMobiusReciprocalCorrelation.exact_resonance_reduced_structure
 
 open Lean in
 run_cmd do

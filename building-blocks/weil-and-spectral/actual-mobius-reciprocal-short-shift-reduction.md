@@ -349,8 +349,9 @@ coefficients in (1)--(2) and
 \]
 
 which is below the diagonal \(T^\varepsilon LD\).  The Lean companion
-formalizes the coprimality and divisibility implication (15k).  The divisor
-count and (15m) are written applications of the classical divisor bound.
+formalizes the coprimality implication, \(ab\mid N\), and the quotient
+structure \(g\mid c(b-a)\) in (15k)--(15l).  The divisor count and (15m)
+are written applications of the classical divisor bound.
 
 This does not bound the near-resonant pairs with
 
