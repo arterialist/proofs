@@ -232,4 +232,52 @@ theorem exact_resonance_reduced_structure
   rw [hcancel]
   ac_rfl
 
+/-- For a near reciprocal resonance above an integer phase, the common
+divisor of the center and the reduced denominator must divide the literal
+integer residual. No coprimality assumption is needed for this necessary
+condition. -/
+theorem gcd_center_reducedProduct_dvd_upperResidual
+    {N a b ell g r : ℕ}
+    (hres : N * (b - a) = ell * g * (a * b) + r) :
+    N.gcd (a * b) ∣ r := by
+  have hcenter : N.gcd (a * b) ∣ N * (b - a) :=
+    dvd_mul_of_dvd_left (Nat.gcd_dvd_left N (a * b)) _
+  have hphase : N.gcd (a * b) ∣ ell * g * (a * b) := by
+    exact dvd_mul_of_dvd_right (Nat.gcd_dvd_right N (a * b)) (ell * g)
+  rw [hres] at hcenter
+  exact (Nat.dvd_add_iff_right hphase).mpr hcenter
+
+/-- The same gcd divisibility for a near reciprocal resonance below an
+integer phase. -/
+theorem gcd_center_reducedProduct_dvd_lowerResidual
+    {N a b ell g r : ℕ}
+    (hres : N * (b - a) + r = ell * g * (a * b)) :
+    N.gcd (a * b) ∣ r := by
+  have hcenter : N.gcd (a * b) ∣ N * (b - a) :=
+    dvd_mul_of_dvd_left (Nat.gcd_dvd_left N (a * b)) _
+  have hphase : N.gcd (a * b) ∣ ell * g * (a * b) := by
+    exact dvd_mul_of_dvd_right (Nat.gcd_dvd_right N (a * b)) (ell * g)
+  rw [← hres] at hphase
+  exact (Nat.dvd_add_iff_right hcenter).mpr hphase
+
+/-- A nonnegative upper residual strictly smaller than the forced gcd is
+zero, so the purported near resonance is already exact. -/
+theorem upperResidual_eq_zero_of_lt_gcd
+    {N a b ell g r : ℕ}
+    (hres : N * (b - a) = ell * g * (a * b) + r)
+    (hr : r < N.gcd (a * b)) :
+    r = 0 :=
+  Nat.eq_zero_of_dvd_of_lt
+    (gcd_center_reducedProduct_dvd_upperResidual hres) hr
+
+/-- A nonnegative lower residual strictly smaller than the forced gcd is
+zero, so this orientation also collapses to exact resonance. -/
+theorem lowerResidual_eq_zero_of_lt_gcd
+    {N a b ell g r : ℕ}
+    (hres : N * (b - a) + r = ell * g * (a * b))
+    (hr : r < N.gcd (a * b)) :
+    r = 0 :=
+  Nat.eq_zero_of_dvd_of_lt
+    (gcd_center_reducedProduct_dvd_lowerResidual hres) hr
+
 end BuildingBlocks.ActualMobiusReciprocalCorrelation

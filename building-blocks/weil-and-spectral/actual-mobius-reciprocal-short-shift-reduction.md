@@ -353,16 +353,54 @@ formalizes the coprimality implication, \(ab\mid N\), and the quotient
 structure \(g\mid c(b-a)\) in (15k)--(15l).  The divisor count and (15m)
 are written applications of the classical divisor bound.
 
-This does not bound the near-resonant pairs with
+The same integer structure prunes part of the near-resonant branch. For a
+nearest integer \(\ell\), define the nonnegative integer residual \(r\) by
+one of the two equations
 
 \[
- 0<\left\|N\left(\frac1n-\frac1m\right)\right\|\lesssim L^{-1},
- \tag{15n}
+ N(b-a)=\ell gab+r,
+ \qquad\text{or}\qquad
+ N(b-a)+r=\ell gab.                                  \tag{15n}
 \]
 
-which form the remaining pointwise obstruction.  It also makes no claim
-for a nonintegral real center.  Any use of integer centers in the final
-zero-detection argument would require a separate transfer theorem.
+Every common divisor of \(N\) and \(ab\) divides both \(N(b-a)\) and
+\(\ell gab\). Hence, in both orientations,
+
+\[
+ \boxed{\gcd(N,ab)\mid r.}                            \tag{15o}
+\]
+
+In particular,
+
+\[
+ 0\le r<\gcd(N,ab)\quad\Longrightarrow\quad r=0.      \tag{15p}
+\]
+
+The phase residual is \(r/(gab)\). Therefore a genuinely nonzero resonance
+inside the strict geometric-kernel window \(r/(gab)<L^{-1}\) must satisfy
+
+\[
+ \boxed{
+ g\,\frac{ab}{\gcd(N,ab)}>L.}                         \tag{15q}
+\]
+
+Thus reduced denominators whose \(N\)-coprime part, after multiplication by
+the shared factor \(g\), is shorter than the mode interval collapse to the
+already counted exact branch. The divisibility statements (15o)--(15p), for
+both signs of the residual, are Lean-verified. No coprimality hypothesis is
+required for these necessary conditions.
+
+This still does not bound all near-resonant pairs with
+
+\[
+ 0<\left\|N\left(\frac1n-\frac1m\right)\right\|\lesssim L^{-1}.
+ \tag{15r}
+\]
+
+The survivors satisfy (15q) and form the remaining pointwise obstruction.
+The argument also makes no claim for a nonintegral real center. Any use of
+integer centers in the final zero-detection argument would require a
+separate transfer theorem.
 
 ## Published inputs and their boundary
 
