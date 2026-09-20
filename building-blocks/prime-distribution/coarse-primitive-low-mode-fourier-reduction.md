@@ -108,8 +108,8 @@ For
 
 \[
  \Phi(X)=\frac{(\log X)^{3/5}}{(\log\log X)^{1/5}},\qquad
- d=\left(\frac{5^6}{2^2 3^4(48.0718)^3}\right)^{1/5}
- =0.212579202\ldots,
+ d=\left(\frac{5^6}{2^2 3^4(48.07125)^3}\right)^{1/5}
+ =0.212580661\ldots,
 \]
 
 the unconditional Vinogradov--Korobov transfer gives, for each fixed
@@ -127,8 +127,10 @@ Consequently (4c) gives the direct pointwise-PNT baseline:
  \tag{4d}
 \]
 
-The constant \(d\) comes from Bellotti's independent
-[Vinogradov--Korobov zero-free region](https://arxiv.org/abs/2306.10680)
+The constant \(d\) uses the exact
+[degree-90 zero-free-region certificate](../../unique-contributions/asymptotic-zeta-zero-free-48-07125/README.md),
+which refines Bellotti's
+[Vinogradov--Korobov region](https://arxiv.org/abs/2306.10680),
 through Johnston's
 [PNT transfer theorem](https://arxiv.org/abs/2411.13791). Polynomial
 logarithmic factors in that transfer are absorbed by \(\delta\Phi(X)\).
@@ -463,10 +465,10 @@ In particular, truncating (4t) at height \(H\ge3\) has the explicit tail
 This is both the zero tail and the truncation error; the exact formula has
 no separate Perron remainder.
 
-Use Bellotti's independent zero-free region with
+Use the certified degree-90 refinement of Bellotti's zero-free region with
 
 \[
- A_0=\frac1{48.0718},\qquad
+ A_0=\frac1{48.07125},\qquad
  u(T)=(\log T)^{-2/3}(\log\log T)^{-1/3},
 \]
 
@@ -516,8 +518,8 @@ in (4x) has \((a,k)=(1,2)\), while the far term has \((a,k)=(2,1)\).
 Their exponent constants are respectively
 
 \[
- c_M=2^{2/5}d=0.280499938\ldots,
- \qquad 2^{3/5}d=0.322209818\ldots.
+ c_M=2^{2/5}d=0.280501864\ldots,
+ \qquad 2^{3/5}d=0.322212030\ldots.
  \tag{4z}
 \]
 
@@ -540,12 +542,12 @@ for every fixed \(\varepsilon>0\),
  \boxed{
  |M(X)|\ll_\varepsilon
  X^2\exp[-(c_M-\varepsilon)\Phi(X)],
- \qquad c_M=0.280499938\ldots.}
+ \qquad c_M=0.280501864\ldots.}
  \tag{4aa}
 \]
 
-This improves the direct constant \(d=0.212579202\ldots\) in (4s). It
-uses Bellotti's 2024 zero-free theorem and the classical Ingham density
+This improves the direct constant \(d=0.212580661\ldots\) in (4s). It
+uses the certified refinement of Bellotti's 2024 zero-free theorem and the classical Ingham density
 estimate, as explicitly restated by
 [Chourasiya--Simonič](https://arxiv.org/abs/2507.15184). It does not use
 any sharper density-to-PNT transfer. The mechanism is the same
