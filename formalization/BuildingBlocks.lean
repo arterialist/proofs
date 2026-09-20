@@ -676,3 +676,4 @@ import BuildingBlocks.MobiusDistinctPrimeRecombination
 import BuildingBlocks.ActualMobiusK3SemiprimeHistory
 import BuildingBlocks.ActualMobiusCriticalOneQPoissonEndpoint
 import BuildingBlocks.ActualMobiusLowShiftGramSaving
+import BuildingBlocks.ActualMobiusDoubleQFullRankGram
