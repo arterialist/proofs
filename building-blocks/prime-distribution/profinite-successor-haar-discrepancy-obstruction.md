@@ -341,3 +341,61 @@ decomposition stops here: a full fixed-power bound would require a new signed
 estimate specifically for the actual above-hyperbola coefficients, not
 another use of residue orthogonality. No novelty claim is made for the
 large-sieve application.
+
+## The top modulus block is a weighted Möbius Riesz mean
+
+The largest-modulus range can be combined with the affine term in (9)
+without approximation. If \(X<d\le2X\) and \(X\le k<2X\), then
+\(\lfloor k/d\rfloor=\mathbf1_{d\le k}\). Hence
+\[
+ B_d(m)=(X+m-d)_+-\frac{A_m}{d},
+ \qquad A_m=\frac{m(2X+m-1)}2.
+\]
+Using \(a_Y=-\sum_{d\le Y}\mu(d)\log d/d\), the complete contribution of
+all \(d>X\), together with the affine term in (9), is exactly
+\[
+ \boxed{H_X(m)=-\sum_{X<d<X+m}\mu(d)\log d\,(X+m-d)
+ +(a_X-1)A_m.}
+\tag{20}
+\]
+Thus the apparent large-modulus reciprocal term cancels exactly against
+the matching part of \(a_{2X}\). If
+\(W_X(t)=\sum_{X<d\le t}\mu(d)\log d\), then the first term in (20) is
+\(-\int_X^{X+m}W_X(t)\,dt\), with the usual step-function convention.
+This is the requested moving-interval form, including both endpoints.
+
+No published unconditional short-interval mean-square theorem for
+\(\mu\) gives a fixed power for \(\sum_{m\le X}|H_X(m)|^2\). Results that
+average over the interval's starting point do not control this fixed-start,
+nested family, and deleting their exceptional starting points is not
+available here. Applying the classical zero-free-region bound to the
+weighted sums in (20) reproduces only a Vinogradov--Korobov saving.
+
+There is also a precise analytic obstruction. The Dirichlet series of the
+weight in (20) is
+\[
+ \sum_{n\ge1}\frac{\mu(n)\log n}{n^s}=\frac{\zeta'(s)}{\zeta(s)^2}.
+\tag{21}
+\]
+A simple zero \(\rho\) of \(\zeta\) is a double pole of (21), so its
+Riesz contribution to (20) has size
+\(X^{\rho+1}\) times a nonzero affine-logarithmic profile in \(m/X\).
+The correction \((a_X-1)A_m\) removes the reciprocal endpoint term used
+to pass from \(a_{2X}\) to \(a_X\); it does not cancel this profile for
+all \(0<m\le X\). Its squared norm therefore has scale
+\(X^{2\Re\rho+3}\), up to powers of \(\log X\) and a nonzero
+\(\rho\)-dependent factor. Consequently a proof of
+\[
+ \sum_{m\le X}|H_X(m)|^2\ll_\varepsilon X^{5-\delta+\varepsilon}
+\tag{22}
+\]
+by contour separation or absolute zero-mode estimates would already force
+the fixed zero-free half-plane \(\Re\rho\le1-\delta/2\). Joint treatment
+with the affine term does not avoid this implication because (20) has
+already performed its exact cancellation.
+
+This isolates the decisive obstruction in the actual \(D\asymp X\)
+block. A fixed-power estimate would require new cancellation among the
+zero modes, equivalently a new signed mean-square theorem for the nested
+weighted Möbius Riesz means in (20). Existing residue orthogonality,
+large-sieve estimates and short-interval Möbius theorems do not supply it.
