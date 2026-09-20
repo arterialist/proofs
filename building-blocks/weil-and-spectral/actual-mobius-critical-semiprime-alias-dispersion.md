@@ -17,9 +17,10 @@ At the endpoint \(d=3\lambda/5\), put
 \tag{1}
 \]
 
-Here \(k\asymp L\) is the physical Poisson mode, \(p\asymp P\) is the
-short member of the surviving semiprime fiber, \(q\asymp Q\) is its long
-member, and \(c\asymp C\) contains the untouched outer factor. The scale
+Here \(k\asymp L\) is the physical Poisson mode, \(p\asymp P\) and
+\(q\asymp Q\) are the unrestricted integer variables in the surviving
+ordered all-unit cross, and \(c\asymp C\) contains the untouched signed
+outer factor. The scale
 relations are
 
 \[
@@ -41,10 +42,15 @@ form
 \tag{3}
 \]
 
-with bounded separated packet coefficients and the actual arithmetic signs
-retained. In the literal distinct-prime semiprime sector the two local
-Möbius signs multiply to \(+1\), so no saving may be inserted merely from
-the notation \(b_p d_q\).
+with bounded separated packet coefficients and the actual arithmetic
+provenance retained.  The K=3 history count shows that the one-nonunit
+histories cancel before this shell is estimated.  The surviving ordered
+splits `(p,q)` and `(q,p)` come from the all-unit `1*1` histories and have
+positive coefficient.  Thus the notation \(b_p d_q\) does not supply local
+Möbius cancellation.  The companion negative single-free packet must be
+retained separately if one seeks cancellation between the single-free and
+two-free parts of the rough Möbius coefficient.  Restricting `p,q` to
+distinct primes produces a test slice, not the complete residual in (3).
 
 The phase has size
 

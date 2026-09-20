@@ -16,6 +16,10 @@ open BuildingBlocks.ActualMobiusCriticalSemiprimeAliasDispersion
 #check sampling_vs_fixedQ
 #check compositeQ_majorant_gain
 #check offDiagonal_schur_deficit
+#check collapsed_allUnit_rs_saturation
+#check collapsed_allUnit_rs_other_margins
+#check allUnit_long_free_rs_exact_contact
+#check allUnit_short_free_rs_losses
 
 #print axioms critical_scale_ledger
 #print axioms full_alias_ledger
@@ -30,6 +34,10 @@ open BuildingBlocks.ActualMobiusCriticalSemiprimeAliasDispersion
 #print axioms sampling_vs_fixedQ
 #print axioms compositeQ_majorant_gain
 #print axioms offDiagonal_schur_deficit
+#print axioms collapsed_allUnit_rs_saturation
+#print axioms collapsed_allUnit_rs_other_margins
+#print axioms allUnit_long_free_rs_exact_contact
+#print axioms allUnit_short_free_rs_losses
 
 open Lean in
 run_cmd do

@@ -127,4 +127,58 @@ theorem offDiagonal_schur_deficit (lambda : ℝ) :
   dsimp
   ring
 
+/-- If the two all-unit free factors are collapsed to a variable of length
+`P*Q`, the coefficient-bearing Robert--Sargos theorem has one term with
+relative saving `(P*C)^(-1/4)=Q^(-1/2)`.  This is exactly the saving required
+by the packet normalization, with no strict margin. -/
+theorem collapsed_allUnit_rs_saturation (lambda : ℝ) :
+    let p := 1 - 2 * lambda / 5
+    let q := lambda / 5
+    let c := 4 * lambda / 5 - 1
+    let x := p + q
+    p + c = 2 * q ∧
+      x = 1 - lambda / 5 ∧
+      p + c + x = 1 + q ∧
+      (p + c) / 4 = q / 2 := by
+  dsimp
+  constructor
+  · ring
+  constructor
+  · ring
+  constructor <;> ring
+
+/-- The other three relative-saving terms in the collapsed
+Robert--Sargos bound have a positive margin over the required `Q^(-1/2)`
+in the present lambda range.  The `(P*C)^(-1/4)` term is the unique
+saturation. -/
+theorem collapsed_allUnit_rs_other_margins (lambda : ℝ)
+    (hlow : 2 < lambda) (hhigh : lambda < 29 / 14) :
+    0 < 1 / 4 - lambda / 10 ∧
+      0 < (1 - lambda / 5) / 2 - lambda / 10 ∧
+      0 < 1 / 2 - lambda / 10 := by
+  constructor
+  · nlinarith
+  constructor <;> nlinarith
+
+/-- Applying the unweighted long-free Robert--Sargos theorem directly to
+the long factor `Q` reaches equality in each of its first two normalized
+terms at the three-fifths endpoint. -/
+theorem allUnit_long_free_rs_exact_contact (lambda : ℝ) :
+    let d := 3 * lambda / 5
+    let q := lambda / 5
+    d / 2 - lambda / 4 - q / 4 = 0 ∧
+      d - lambda / 2 - q / 2 = 0 := by
+  dsimp
+  constructor <;> ring
+
+/-- Choosing the short factor `P` as the unweighted inner variable is
+strictly worse: both normalized exponents are positive for `lambda>2`. -/
+theorem allUnit_short_free_rs_losses (lambda : ℝ) (h : 2 < lambda) :
+    let d := 3 * lambda / 5
+    let p := 1 - 2 * lambda / 5
+    0 < d / 2 - lambda / 4 - p / 4 ∧
+      0 < d - lambda / 2 - p / 2 := by
+  dsimp
+  constructor <;> nlinarith
+
 end BuildingBlocks.ActualMobiusCriticalSemiprimeAliasDispersion

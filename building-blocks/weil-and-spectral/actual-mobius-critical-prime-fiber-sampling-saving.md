@@ -1,12 +1,14 @@
 # Sampling saving on the critical prime fiber
 
 **Status.** This note proves an unconditional written mean-square estimate
-for the exact diagonal prime fiber at the three-fifths Möbius endpoint. Lean
+for a prime-restricted diagonal slice at the three-fifths Möbius endpoint. Lean
 checks the complete exponent ledger in
 [`ActualMobiusCriticalPrimeFiberSampling.lean`](../../formalization/BuildingBlocks/ActualMobiusCriticalPrimeFiberSampling.lean).
 The continuous Hilbert inequality and sampling argument are written
-analysis. This result does not yet control the off-diagonal two-prime fiber,
-extend the complete Möbius prefix, or prove the Riemann hypothesis.
+analysis.  The exact K=3 history count shows that the live all-unit cross
+has unrestricted integer factors, so this prime slice is not the complete
+residual.  This result does not control that residual, extend the complete
+Möbius prefix, or prove the Riemann hypothesis.
 
 ## Statement
 
@@ -32,8 +34,11 @@ Thus
 \tag{2}
 \]
 
-Let \(a_c(\theta)\) and \(b_p(\theta)\) be any of the separated packet
-coefficients arising from the critical quadratic Möbius fiber. The
+Let \(a_c(\theta)\) and \(b_p(\theta)\) be separated packet coefficients
+after restricting an ordered all-unit split in the critical K=3 fiber to a
+prime `q`.  The history coefficient is positive; the notation does not
+assign separate Möbius signs to `p` and `q`.  This restriction belongs to
+the sampling theorem, not to the complete K=3 residual.  The
 established Fourier--Mellin separator has total \(L^1\)-mass
 \(T^\varepsilon\); within each component its \(k\)- and \(q\)-weights are
 bounded scalars and the following \(r\)-coefficient is common to every

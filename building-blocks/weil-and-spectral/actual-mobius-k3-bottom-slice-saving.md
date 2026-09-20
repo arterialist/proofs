@@ -339,9 +339,9 @@ terms a fixed power below one.
 Equations (15) and (23)--(27) cover every Type II rectangle with a
 uniform power. This is the complete `b_0*b_0*1` term in (6).
 
-## Equality obstruction for this method
+## Equality contact and exact history cancellation
 
-The strict loss at `d=3lambda/5` is genuine for this architecture. At the
+Termwise estimation loses its strict margin at `d=3lambda/5`. At the
 limiting geometry take
 
 \[
@@ -349,30 +349,175 @@ limiting geometry take
  \qquad x=\frac{5-\lambda}{5}.
 \]
 
-In the `a_0^{*2}*1` term choose short-factor exponents
+In the all-unit part of `a_0^{*3}*1^{*2}`, put all three `a_0` factors at
+the unit and choose the two free-factor exponents
 
 \[
- 0,\qquad s_0=\frac{5-2\lambda}{5},
+ p_0=\frac{5-2\lambda}{5},\qquad q_0=\frac\lambda5.
 \]
 
-and free-factor exponent
+They sum to `x`; both ordered placements occur.  The Robert--Sargos and
+Bordellès intervals meet at one excluded endpoint: the only short subset
+is exactly at that contact, while `q_0` and the total product lie beyond
+the Bordellès upper endpoint. The long-free threshold is also exactly
 
 \[
- z=\frac\lambda5.
-\]
-
-They sum to `x`, and `s_0<=u`. The Robert--Sargos and Bordellès intervals
-meet at one excluded endpoint: the only short subset is exactly at that
-contact, while `z` and the total product lie beyond the Bordellès upper
-endpoint. The long-free threshold is also exactly
-
-\[
- 2\gamma_0+2\delta=\frac\lambda5=z.
+ 2\gamma_0+2\delta=\frac\lambda5=q_0.
 \]
 
 Thus none of the three estimates has a strict power margin on this valid
-configuration. The method proves every fixed interior cutoff in (1), but it
-does not prove the equality endpoint `d=3lambda/5`.
+cubic all-unit cross.  This is the actual termwise equality contact after
+the one-nonunit histories below are combined exactly.
+
+### Exact mixed-semiprime history count
+
+Let `p` and `q` be distinct primes with
+`p<=U<q`, so
+
+\[
+ a_0(p)=\mu(p)=-1,\qquad a_0(q)=a_0(pq)=0.
+\]
+
+At `n=pq`, the histories in
+`-3 a_0^{*2}*1+a_0^{*3}*1^{*2}` with exactly one nonunit `a_0` factor
+cancel exactly.  The quadratic term has two positions for `p`, hence
+
+\[
+ -3\,(2\mu(p))=6.
+\]
+
+The cubic term has three positions for `p` and two ordered splittings of
+the remaining prime `q` between its two free factors, hence
+
+\[
+ 3\,\tau(q)\mu(p)=3\cdot2\cdot(-1)=-6.
+\]
+
+Therefore the particular one-nonunit history used in the termwise equality
+contact is absent from the combined K=3 identity.  The surviving total
+coefficient comes from the all-unit histories.  They
+contribute `-3` in the quadratic term and
+`(1*1)(pq)=tau(pq)=4` in the cubic term.  Therefore
+
+\[
+ \bigl(-3+\tau(pq)\bigr)
+ +\bigl(-3(2\mu(p))+3\tau(q)\mu(p)\bigr)
+ =1=\mu(pq).
+\tag{27a}
+\]
+
+The all-unit coefficient has the sharper decomposition
+
+\[
+ \tau(pq)-3
+ =-1+\bigl(\tau(pq)-2\bigr)
+ =-1+2=1.
+\tag{27b}
+\]
+
+Here `-1` is the net single-free-factor packet: the two cubic splittings
+`(1,pq)` and `(pq,1)` combine with the three negative quadratic copies.
+The remaining `+2` consists of the ordered nontrivial free splittings
+`(p,q)` and `(q,p)`.
+
+More generally, before smoothing or taking absolute values, let `A_c` be
+the coefficient of the complementary signed factor and let `W` be a common
+product weight.  The complete all-unit contribution is exactly
+
+\[
+ -\sum_{c,r}A_cW(c,r)L_{cr}
+ +\sum_c\sum_{v,w\ge2}A_cW(c,vw)L_{cvw}.
+\tag{27c}
+\]
+
+The first term has one free factor of exponent
+`x=(5-lambda)/5`, strictly beyond the long-free threshold.  The second term
+contains the two ordered cross histories
+
+\[
+ 2\sum_{c\asymp C}A_c
+   \sum_{p\asymp P}\sum_{q\asymp Q}
+      W(c,pq)L_{cpq}.
+\tag{27d}
+\]
+
+Here `p` and `q` are unrestricted integers.  A literal distinct-prime
+semiprime sector is only one slice of (27d), not the complete endpoint
+residual.  These two all-unit histories reproduce the critical two-scale
+geometry with positive unweighted coefficients.  Hence the displayed
+one-nonunit contact cancels, while the cubic all-unit cross remains.  The
+equality endpoint is not proved.
+
+This provenance rules out using `mu(p)mu(q)=+1` as evidence for a separate
+local-sign cancellation mechanism.  A possible future cancellation would
+have to retain the negative single-free packet together with the positive
+prime-pair packet, rather than assign Möbius signs to the two free factors.
+
+The identities in (27a)--(27b), including `tau(pq)=4`, `mu(pq)=1`, and the
+two ordered nontrivial splits, are
+formalized in
+`formalization/BuildingBlocks/ActualMobiusK3SemiprimeHistory.lean` and
+checked by
+`formalization/verification/ActualMobiusK3SemiprimeHistoryAudit.lean`.
+Lean verifies the resulting multiplicity identity after the history
+enumeration above; the cutoff definition of `a_0` and the enumeration of
+the convolution tuples remain written mathematics.
+
+### Why regrouping the all-unit splits has no strict margin
+
+The ordered nontrivial splits are unweighted in either free variable, so
+Robert--Sargos Theorem 3, equations (6.8)--(6.9), applies directly.  Taking
+the long variable of exponent `q=lambda/5` in (27), however, gives
+
+\[
+ \frac d2-\frac\lambda4-\frac q4=0,
+ \qquad
+ d-\frac\lambda2-\frac q2=0
+ \quad\left(d=\frac{3\lambda}{5}\right).
+\tag{27e}
+\]
+
+Thus both leading terms meet the normalization exactly.  Taking the short
+variable of exponent `p=1-2lambda/5` is worse: the corresponding exponents
+are `(3lambda-5)/20` and `(3lambda-5)/10`, both positive.
+
+One can instead collapse the hard dyadic product `r=pq`.  Its coefficient
+
+\[
+ B(r)=\#\{(p,q):p\asymp P,\ q\asymp Q,\ pq=r\}
+\]
+
+is divisor-bounded, and hard product cutoffs can be retained in `B`.
+Robert--Sargos Theorem 1 allows this coefficient.  With
+
+\[
+ H=P,\qquad M=PQ,\qquad HC=PC=Q^2,
+\]
+
+its four relative factors are
+
+\[
+ T^{-1/4},\qquad (PC)^{-1/4}=Q^{-1/2},
+ \qquad (PQ)^{-1/2},\qquad T^{-1/2}.
+\tag{27f}
+\]
+
+The raw exponent is `1+lambda/5`, while the packet target is
+`1+lambda/10`; hence the required relative saving is exactly
+`Q^{-1/2}=T^{-lambda/10}`.  The second term of (27f) is therefore saturated.
+The other three terms have strict margins for `2<lambda<29/14`.
+
+The hard dyadic ranges do not prevent the collapse, but they do prevent
+using the stronger unweighted Theorem 3 in the collapsed variable: `B(r)`
+is a divisor-bounded factorization coefficient, not the constant-one
+coefficient on a complete interval.  Enlarging its support is not an
+absolute majorization of an exponential sum.  Thus direct use of the
+unweighted long variable and collapsed use of the coefficient-bearing
+theorem reach the same endpoint with no fixed power to spare.
+
+The identities in (27e)--(27f) and the positivity of all nonsaturated
+margins are checked in
+`formalization/BuildingBlocks/ActualMobiusCriticalSemiprimeAliasDispersion.lean`.
 
 ## Type I terms and packet shells
 
