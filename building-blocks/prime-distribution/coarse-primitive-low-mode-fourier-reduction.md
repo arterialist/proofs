@@ -385,17 +385,250 @@ one; the remaining simple pole agrees with \(\zeta''/\zeta\). The identity
 is therefore algebraically compatible with a zero anywhere in
 \(1/2<\Re\rho<1\) and cannot by itself improve its location.
 
-The current unconditional estimate remains
+The direct pointwise-PNT estimate is
 
 \[
  |M(X)|\ll_\delta X^2\exp[-(d-\delta)\Phi(X)],
  \tag{4s}
 \]
 
-obtained directly from (4h) and the Vinogradov--Korobov PNT error. The
-finite Selberg expansion preserves more algebra, but without an additional
-signed estimate it gives no smaller exponent or fixed-power saving. This
-is the precise stopping point; no contractive inequality is asserted.
+obtained from (4h) and the Vinogradov--Korobov PNT error. The finite Selberg
+expansion preserves more algebra, but without an additional signed estimate
+it gives no improvement. The separate absolutely convergent zero formula
+below does improve the subexponential constant; that gain does not come
+from Selberg self-coupling.
+
+## Absolutely convergent zero estimate for the terminal mode
+
+Mellin inversion of the first Riesz mean gives, with every nontrivial zero
+counted with multiplicity,
+
+\[
+\begin{aligned}
+ D(x)={}&-\sum_\rho\frac{x^{\rho+1}}{\rho(\rho+1)}
+ -x\log(2\pi)+\frac{\zeta'(-1)}{\zeta(-1)}\\
+ &-\sum_{m\ge1}\frac{x^{1-2m}}{2m(2m-1)}.
+\end{aligned}
+\]
+
+The pole term \(x^2/2\) has already been removed in the definition of
+\(D\). Subtracting the two endpoints gives
+
+\[
+\boxed{\begin{aligned}
+ M(X)={}&-\sum_\rho
+ \frac{(2^{\rho+1}-1)X^{\rho+1}}{\rho(\rho+1)}
+ -X\log(2\pi)\\
+ &-\sum_{m\ge1}
+ \frac{(2X)^{1-2m}-X^{1-2m}}{2m(2m-1)}\\
+ ={}&-\sum_\rho
+ \frac{(2^{\rho+1}-1)X^{\rho+1}}{\rho(\rho+1)}
+ -X\log(2\pi)+O(X^{-1}).
+\end{aligned}}
+ \tag{4t}
+\]
+
+The contour and absolute-convergence justification are the same as in
+[Soundararajan's integrated explicit formula, Lemma 1](https://arxiv.org/pdf/math/0612106),
+with the present first Riesz kernel supplying \(\rho(\rho+1)\) in place of
+\(\rho^2\).
+
+There is no endpoint half-weight: the coefficient of a possible atom at
+the Riesz cutoff is zero. The constant residue in \(D(2X)-D(X)\) cancels,
+and the trivial zeros give the displayed \(O(X^{-1})\). Formula (4t) may
+also be obtained by integrating the standard explicit formula before
+subtracting the two endpoints. The zero series is absolutely convergent
+because
+
+\[
+ N(T)=O(T\log T),\qquad
+ \sum_{T<|\gamma|\le2T}\frac1{|\rho(\rho+1)|}
+ \ll\frac{\log T}{T}.
+ \tag{4u}
+\]
+
+In particular, truncating (4t) at height \(H\ge3\) has the explicit tail
+
+\[
+ \boxed{
+ \sum_{|\gamma|>H}
+ \left|\frac{(2^{\rho+1}-1)X^{\rho+1}}
+ {\rho(\rho+1)}\right|
+ \ll X^2\frac{\log H}{H}.}
+ \tag{4v}
+\]
+
+This is both the zero tail and the truncation error; the exact formula has
+no separate Perron remainder.
+
+Use Bellotti's independent zero-free region with
+
+\[
+ A_0=\frac1{48.0718},\qquad
+ u(T)=(\log T)^{-2/3}(\log\log T)^{-1/3},
+\]
+
+so that \(\beta\le1-A_0u(|\gamma|)\) at sufficiently large height. On a
+dyadic block \(T\le|\gamma|<2T\), split at
+\(\beta=1-2A_0u(2T)\). The near-edge zero count
+
+\[
+ \mathcal N(T)=N(1-2A_0u(2T),2T)
+\]
+
+obeys, by Ingham's unconditional density estimate,
+
+\[
+\mathcal N(T)\ll
+ T^{6A_0u(2T)/(1+2A_0u(2T))}(\log T)^5.
+ \tag{4w}
+\]
+
+The two parts of the block in (4t), after removing the common \(X^2\),
+are therefore
+
+\[
+ \boxed{
+ \frac{\mathcal N(T)}{T^2}
+ e^{-A_0u(2T)\log X}
+ +\frac{\log T}{T}
+ e^{-2A_0u(2T)\log X}.}
+ \tag{4x}
+\]
+
+The first term retains the full \(1/\gamma^2\) Riesz decay for the sparse
+near-edge zeros. The second uses the ordinary \(O(T\log T)\) count only
+after moving twice as far from one. No cancellation between zeros is
+assumed.
+
+For fixed \(a,k>0\), the elementary Vinogradov--Korobov optimization is
+
+\[
+ \min_T\{aA_0u(T)\log X+k\log T\}
+ =\bigl(a^{3/5}k^{2/5}d+o(1)\bigr)\Phi(X).
+ \tag{4y}
+\]
+
+At all optimizer heights \(\log\mathcal N(T)=o(\Phi(X))\). The near term
+in (4x) has \((a,k)=(1,2)\), while the far term has \((a,k)=(2,1)\).
+Their exponent constants are respectively
+
+\[
+ c_M=2^{2/5}d=0.280499938\ldots,
+ \qquad 2^{3/5}d=0.322209818\ldots.
+ \tag{4z}
+\]
+
+Choose the terminal truncation height
+\(H=\exp(C\Phi(X))\) with any fixed \(C>c_M\). Equation (4v) then
+contributes
+
+\[
+ O\bigl(X^2\Phi(X)e^{-C\Phi(X)}\bigr),
+\]
+
+which is smaller than the near-edge block. There are only
+\(O(\Phi(X))\) dyadic blocks below \(H\); their number, the logarithmic
+factors, and \(\mathcal N(T)=T^{o(1)}\) cost an arbitrarily small amount in
+the exponent. The finitely many lower zeros contribute \(O(X^{2-c})\) for
+some fixed \(c>0\), and the archimedean term in (4t) is \(O(X)\). Hence,
+for every fixed \(\varepsilon>0\),
+
+\[
+ \boxed{
+ |M(X)|\ll_\varepsilon
+ X^2\exp[-(c_M-\varepsilon)\Phi(X)],
+ \qquad c_M=0.280499938\ldots.}
+ \tag{4aa}
+\]
+
+This improves the direct constant \(d=0.212579202\ldots\) in (4s). It
+uses Bellotti's 2024 zero-free theorem and the classical Ingham density
+estimate, as independently and explicitly restated by
+[Chourasiya--Simonič](https://arxiv.org/abs/2507.15184). It does not use
+the disputed later density-to-PNT argument. The mechanism is the same
+independently sourced \(\rho^{-2}\) optimization used for the linearized
+Goldbach cofactor, now applied to the exact terminal Riesz increment.
+
+### Higher Riesz means do not improve this constant
+
+For a fixed integer \(r\ge1\), define the \(r\)-fold primitive
+
+\[
+ D_r(x)=\frac1{(r-1)!}\int_0^x(x-t)^{r-1}(\psi(t)-t)\,dt.
+ \tag{4ab}
+\]
+
+Then \(D_r^{(r)}=\psi-x\), \(D_r^{(r-1)}=D_1\), and a zero contributes
+
+\[
+ -\frac{x^{\rho+r}}
+ {\rho(\rho+1)\cdots(\rho+r)}.
+ \tag{4ac}
+\]
+
+There are \(r+1\) denominator factors. On a dyadic zero block the near
+part therefore has penalty \(T^{-(r+1)+o(1)}\), while the ordinary count
+on the far part leaves \(T^{-r}\). Repeating (4x)--(4y) gives
+
+\[
+ D_r(x)\ll_{r,\varepsilon}x^{r+1}
+ \exp[-(c_r^{\rm Riesz}-\varepsilon)\Phi(x)],
+ \qquad
+ c_r^{\rm Riesz}=(r+1)^{2/5}d.
+ \tag{4ad}
+\]
+
+The far-zero constant is
+\(2^{3/5}r^{2/5}d\), which is larger because
+\(8r^2>(r+1)^2\). The polynomial, pole, and trivial-zero terms in
+\(D_r\) have size \(O_r(x^r)\) and do not affect (4ad). For fixed \(r\),
+all constants are uniform on \([x/2,2x]\), and
+\(\Phi(y)=\Phi(x)(1+o(1))\) there.
+
+Apply the finite-interval
+[Gorny interpolation inequality](https://doi.org/10.1017/S0308210500022150)
+to \(D_r\) on \([x/2,2x]\), with derivative order \(r-1\). Here
+\(D_r\in W^{r,\infty}\) because \(\psi-x\) is locally bounded; the usual
+mollification argument gives the same inequality as in the smooth case.
+It gives
+
+\[
+ \|D_1\|_\infty
+ \ll_r
+ \|D_r\|_\infty^{1/r}\|\psi-x\|_\infty^{(r-1)/r}
+ +x^{-(r-1)}\|D_r\|_\infty.
+ \tag{4ae}
+\]
+
+The second term has the stronger exponent \(c_r^{\rm Riesz}\). Combining
+the first with the ordinary PNT exponent \(d\) produces
+
+\[
+ c_r^{\rm interp}
+ =d\left(1-\frac1r+\frac{(r+1)^{2/5}}r\right).
+ \tag{4af}
+\]
+
+This is maximized at \(r=1\), where it equals \(2^{2/5}d=c_M\). Indeed,
+for \(a=2/5\), the function
+\(r2^a-r+1-(r+1)^a\) vanishes at \(r=1\) and has positive derivative for
+\(r\ge1\). Thus higher smoothing followed by local interpolation restores
+no loss, but it also gives no improvement over (4aa). If zero density is
+discarded and only ordinary shell counting is used, the proposed
+\(r^{2/5}d\) Riesz constant is valid at the weaker scale; its optimized
+interpolation constant is about \(1.1853d\), still below
+\(2^{2/5}d\approx1.3195d\).
+
+The requested fast comparison is exact: if one ignores zero density and
+balances only \(A_0u(T)\log X\) against a \(1/T\) tail, (4y) has
+\((a,k)=(1,1)\) and reproduces Johnston's constant \(d\). The improvement
+to \(2^{2/5}d\) comes precisely from retaining both the second denominator
+and the sparse near-edge zero count.
+
+No originality claim is made for this Riesz-mean optimization or the
+interpolation audit. They are direct applications of the cited explicit
+formula, zero-free region, zero-density theorem, and Gorny inequality.
 
 ## Exact prime twist in every nonzero mode
 
