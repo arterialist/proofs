@@ -1,6 +1,7 @@
 # Joint outer/alias spacing beyond the double-\(Q\) transition
 
-**Status:** written Gram estimate with two independent audit passes,
+**Status:** written Gram estimate; the sharpened quadratic outer-spacing
+argument has two independent audit passes,
 20 September 2026. The Lean companion checks only exponent algebra. The
 uniform parameter-symbol stationary transform is proved below as written
 analysis from a standard parameter-dependent stationary-phase theorem; it
@@ -234,7 +235,7 @@ In the range used below,
 \[
  \frac{F}{Q^2}\le
  T^{-\eta},\qquad
- \eta:=\frac{\lambda-2}{3}+\kappa>0.
+ \eta:=\kappa>0.
 \tag{14}
 \]
 Thus for the fixed constant \(C\) implicit in (13), one has
@@ -266,21 +267,91 @@ mean-value theorem on fixed compact supports,
  \ll \frac{G}{\sqrt U F}=Q^{-3/2}.
 \tag{18}
 \]
-For fixed \((g,h,u)\), monotonicity in \(v\) and (17) leave at most
-\[
- O\!\left(1+\frac{U}{F}\right)
-\tag{19}
-\]
-integer choices for \(v\). There are \(O(G^2U)\) choices of
-\((g,h,u)\), hence
+The direct monotonicity count gives
 \[
  \mathcal E_X
  \ll_\varepsilon T^\varepsilon
  \left(G^2U+\frac{G^2U^2}{F}\right).
+\tag{19}
+\]
+When \(F\le U\), its first term is no larger than its second. It remains
+to remove the first term when \(F>U\), equivalently \(G>P^3\).
+
+Partition the range of \(\Delta_g(u)\) into intervals of length
+\(\asymp Q^{-3/2}\), and fix one with center \(d\). Exact inversion gives
+\[
+ u=f_\delta(g):=\frac14\left(\frac g\delta+\delta\right)^2
+ =\frac{g^2}{4\delta^2}+\frac g2+\frac{\delta^2}{4},
+ \qquad \delta=\Delta_g(u).
 \tag{20}
 \]
-This count uses the exact square-root difference (16); it does not replace
-it by the first term of a Taylor expansion at the fine spacing scale.
+On the fixed dyadic supports, \(d\asymp G/\sqrt U\) and
+\[
+ \left|\partial_\delta f_\delta(g)\right|
+ \ll \frac{U^{3/2}}G.
+\]
+Consequently every integer pair in this interval necessarily satisfies
+\[
+ \left\|\frac{g^2}{4d^2}+\frac g2+\frac{d^2}{4}\right\|
+ \ll \frac{U^{3/2}}{GQ^{3/2}}
+ =:\theta=\frac{P^3}{G}.
+\tag{21}
+\]
+Here \(\|\cdot\|\) denotes distance to the nearest integer. The fixed
+center \(d\) is used only to enlarge the set through this necessary
+condition; no oscillatory phase has been approximated.
+
+If \(G\ll P^3\), elementary interval counting gives at most
+\(O(G(1+P^3/G))=O(P^3)\) pairs in the bin. Otherwise take
+\(K\asymp\theta^{-1}=G/P^3\). The
+Erdős--Turán inequality applied to (21) gives, for the occupancy \(N_d\),
+\[
+ N_d\ll \theta G+\frac GK+
+ \sum_{1\le h\le K}\frac1h
+ \left|\sum_{g\asymp G}
+ e\!\left(h\left(\frac{g^2}{4d^2}+\frac g2+\frac{d^2}{4}\right)\right)
+ \right|.
+\tag{22}
+\]
+The second derivative of the phase in the inner sum is
+\(h/(2d^2)\asymp hU/G^2\). The standard second-derivative estimate,
+uniformly for \(1\le h\le K\), therefore gives
+\[
+ \left|\sum_{g\asymp G} e(hf_d(g))\right|
+ \ll \sqrt{hU}+\frac G{\sqrt{hU}}.
+\tag{23}
+\]
+The linear parity term \(g/2\) and the constant \(d^2/4\) have been
+retained exactly and do not affect this derivative. Summing (23) in
+(22) yields
+\[
+ N_d\ll P^3+\sqrt{\frac{UG}{P^3}}+\frac G{\sqrt U}.
+\tag{24}
+\]
+Every nonempty block has \(G\ll U\). Since
+\[
+ q=\frac\lambda5<\frac{29}{70}<\frac5{12}<\frac49,
+\]
+one has \(U\ll P^{9/2}\) and \(U\ll P^6\). Thus both final terms in
+(24) are \(O(P^3)\). Pairs satisfying (18) occupy either the same or one
+of only constantly many neighboring intervals. There are
+\(O_\varepsilon(T^\varepsilon GU)\) weighted outer points, so
+\[
+ \boxed{\quad
+ \mathcal E_X\ll_\varepsilon T^\varepsilon GUP^3
+ =T^\varepsilon\frac{G^2U^2}{F}.
+ \quad}
+\tag{25}
+\]
+This proof uses the exact square-root difference (16). The
+Erdős--Turán and second-derivative steps are written analysis and are not
+formalized in Lean.
+
+The discrepancy inequality in (22) is the classical Erdős--Turán
+inequality; it also follows directly by majorizing the interval in (21)
+with a Fejér polynomial. The form of the van der Corput estimate used in
+(23) is Theorem 2.2 of S. W. Graham and G. Kolesnik,
+[*Van der Corput's Method of Exponential Sums*](https://beckassets.blob.core.windows.net/product/readingsample/666252/9780521339278_excerpt_001.pdf).
 
 ## Resulting Gram range
 
@@ -291,9 +362,9 @@ Restoring the stationary prefactor in the dual form gives
  \frac{Q^2}{F}\sqrt{F\mathcal E_X\mathcal E_Y}
  \ll_\varepsilon T^\varepsilon
  Q\sqrt{F\mathcal E_X}.
-\tag{21}
+\tag{26}
 \]
-Using \(G=PF/Q\) and \(U=P^2Q\), (20)--(21), and the total error (8)
+Using \(G=PF/Q\), \(U=P^2Q\), (25)--(26), and the total error (8)
 yield
 \[
  \boxed{\quad
@@ -301,101 +372,96 @@ yield
  \ll_\varepsilon T^\varepsilon
  \left(
  \frac{F}{Q^2}
- +\frac{F^{3/2}}{P Q^{5/2}}
  +\frac1{Q^3}
  \right).
  \quad}
-\tag{22}
+\tag{27}
 \]
 
-Define
+For comparison, define the superseded unit-spacing endpoint
 \[
  f_*=\frac{2p+5q}{3}=\frac{2+q}{3}.
-\tag{23}
+\tag{28}
 \]
-For fixed \(\kappa>0\), the stationary expansion is uniform on
+For fixed \(\kappa>0\), alias integrality (13)--(15) and the stationary
+expansion are uniform on the longer range
 \[
- Q\le F\le T^{f_*-\kappa}.
-\tag{24}
+ Q\le F\le Q^2T^{-\kappa}=T^{2q-\kappa}.
+\tag{29}
 \]
 At \(F\asymp Q\), the dual length \(L\asymp1\) and there are only
 \(O(1)\) transition modes. The same uniform compact-parameter two-term
 expansion and its \(Q^2F^{-3}\) remainder give (8) there. A trivial bound for
 those modes would be too large after summing the outer tuples. Modes outside
 the stationary rectangle are included in the nonstationary argument above.
-The second term in (22) saves \(T^{-3\kappa/2}\). Since
-\[
- 2q-f_*=\frac{q-2p}{3}=\frac{\lambda-2}{3},
-\tag{25}
-\]
-the first term saves
-\(T^{-(\lambda-2)/3-\kappa}\). Thus the Gram saving is
-\[
- \delta_G=min\!\left\{
- \frac{3\kappa}{2},\frac{\lambda-2}{3}+\kappa
- \right\},
-\tag{26}
-\]
+The first term in (27) saves \(T^{-\kappa}\), so set
+\(\delta_G=\kappa\).
 The remainder term saves \(T^{-3q}\). This is only a saving for the signed
-Gram contribution in (24). The
+Gram contribution in (29). The
 frequency restriction is imposed after squaring and therefore defines no
 linear subsum. Only after every remaining Gram block is controlled may a
 complete Gram saving be converted to a square-root scale for the original
 sum.
 
-The new endpoint lies strictly between the previous transition and the
-square-root-kernel barrier:
+The previous endpoint lies strictly between the old transition and the
+new alias-integrality endpoint:
 \[
  \frac{3q}{2}<f_*<2q
  \qquad(2<\lambda<29/14).
-\tag{27}
+\tag{30}
 \]
-The band in (24) is nonempty whenever
+The band in (29) is nonempty whenever
 \[
-0<\kappa<f_*-q.
-\tag{28}
+0<\kappa<q.
+\tag{31}
 \]
+It extends strictly beyond the old endpoint whenever additionally
+\(\kappa<2q-f_*=(\lambda-2)/3\).
 To assemble the lower transition, choose a low-range margin \(\rho\) with
 \[
  0<\rho<q/2.
-\tag{29}
+\tag{32}
 \]
 The preceding full-rank Gram note controls
 \(F\le Q^{3/2}T^{-\rho}\), while
 \[
  Q<Q^{3/2}T^{-\rho}
 \]
-by (29). Hence the two written estimates overlap and cover every nonzero
-dyadic Gram block through \(F\le T^{f_*-\kappa}\). Summing the logarithmic
+by (32). Hence the two written estimates overlap and cover every nonzero
+dyadic Gram block through \(F\le Q^2T^{-\kappa}\). Summing the logarithmic
 number of nonzero blocks preserves the saving
 \[
  \min\!\left\{2\rho,\delta_G,3q\right\}.
-\tag{30}
+\tag{33}
 \]
 The diagonal block has relative size \(P^{-1}=T^{-p}\), so the complete
 prefix including \(g=0\) has saving
 \[
  \min\!\left\{p,2\rho,\delta_G,3q\right\}.
-\tag{31}
+\tag{34}
 \]
 This still does not define a linear subsum or control the joint high range
-\(F>T^{f_*-\kappa}\).
+\(F>Q^2T^{-\kappa}\).
 
 ## Formal status and remaining checks
 
 [ActualMobiusDoubleQDualSpacingSaving.lean](../../formalization/BuildingBlocks/ActualMobiusDoubleQDualSpacingSaving.lean)
-checks the exponent algebra in (22)--(31), including both Gram-ratio
-savings, the \(Q^{-3}\) remainder, the stationary window, and its overlap
-with the full-rank range.
+checks the exponent algebra for (24), (27), and (29)--(34), including the
+quadratic-occupancy margins, the \(Q^{-3}\) remainder, the stationary
+window, and its overlap with the full-rank range.
 It does not
 formalize the stationary transform, inert
-separation, the two spacing counts, or the Bombieri--Iwaniec double large
+separation, the two spacing counts, the Erdős--Turán/second-derivative
+argument, or the Bombieri--Iwaniec double large
 sieve.
 
-Two independent audits have verified the written stationary-symbol proof,
+Two independent audits have verified the sharpened outer-spacing proof,
+including the exact bin inversion, fixed-center uniformity, the transition
+at \(G\asymp P^3\), the exponential-sum estimate, and every exponent
+inequality. Earlier independent audits verified the stationary-symbol proof,
 including uniformity at smooth support boundaries, the weighted Fourier
 separations, the summed nonstationary remainders, both spacing energies, and
 the prefactor and overlap ledger. The result remains written analysis rather
 than a Lean formalization, and it depends on the stated inherited inert packet
 bounds and imported one-\(Q\) hard-endpoint estimate. No claim for the remaining
-range \(F>T^{f_*-\kappa}\) is made here.
+range \(F>Q^2T^{-\kappa}\) is made here.

@@ -8,6 +8,13 @@ open BuildingBlocks.ActualMobiusDoubleQDualSpacingSaving
 #check unit_interval_ratio_exponent
 #check unit_interval_balances_at_endpoint
 #check endpoint_below_two_q
+#check alias_endpoint_eq
+#check quadratic_occupancy_middle_margin
+#check quadratic_occupancy_last_margin
+#check quadratic_occupancy_middle_gap
+#check quadratic_occupancy_last_gap
+#check alias_endpoint_margin_saving
+#check sharpened_window_nonempty
 #check endpoint_above_three_halves_q
 #check public_range_extension
 #check first_term_endpoint_saving
@@ -25,6 +32,13 @@ open BuildingBlocks.ActualMobiusDoubleQDualSpacingSaving
 #print axioms unit_interval_ratio_exponent
 #print axioms unit_interval_balances_at_endpoint
 #print axioms endpoint_below_two_q
+#print axioms alias_endpoint_eq
+#print axioms quadratic_occupancy_middle_margin
+#print axioms quadratic_occupancy_last_margin
+#print axioms quadratic_occupancy_middle_gap
+#print axioms quadratic_occupancy_last_gap
+#print axioms alias_endpoint_margin_saving
+#print axioms sharpened_window_nonempty
 #print axioms endpoint_above_three_halves_q
 #print axioms public_range_extension
 #print axioms first_term_endpoint_saving

@@ -16,6 +16,7 @@ def p (lambda : ℝ) : ℝ := 1 - 2 * lambda / 5
 def q (lambda : ℝ) : ℝ := lambda / 5
 def middleEndpoint (lambda : ℝ) : ℝ :=
   (2 * p lambda + 5 * q lambda) / 3
+def aliasEndpoint (lambda : ℝ) : ℝ := 2 * q lambda
 
 theorem physical_scale (lambda : ℝ) :
     p lambda + 2 * q lambda = 1 := by
@@ -45,6 +46,48 @@ theorem unit_interval_balances_at_endpoint (lambda : ℝ) :
 theorem endpoint_below_two_q {lambda : ℝ} (hlambda : 2 < lambda) :
     middleEndpoint lambda < 2 * q lambda := by
   simp [middleEndpoint, p, q]
+  linarith
+
+/-- The sharpened quadratic occupancy removes the unit-interval term, so
+the remaining Gram ratio reaches the alias endpoint `2q`. -/
+theorem alias_endpoint_eq (lambda : ℝ) :
+    aliasEndpoint lambda = 2 * q lambda := rfl
+
+/-- The first nontrivial term in the quadratic occupancy estimate is at
+most `T^(1/2)`, and is below `P^3` in the complete lambda range. -/
+theorem quadratic_occupancy_middle_margin {lambda : ℝ}
+    (hhigh : lambda < 29 / 14) :
+    (1 : ℝ) / 2 < 3 * p lambda := by
+  simp [p]
+  linarith
+
+/-- The last quadratic occupancy term is at most `sqrt U`, of exponent
+`p + q/2`, and is also below `P^3`. -/
+theorem quadratic_occupancy_last_margin {lambda : ℝ}
+    (hhigh : lambda < 29 / 14) :
+    p lambda + q lambda / 2 < 3 * p lambda := by
+  simp [p, q]
+  linarith
+
+theorem quadratic_occupancy_middle_gap (lambda : ℝ) :
+    3 * p lambda - (1 : ℝ) / 2 = (25 - 12 * lambda) / 10 := by
+  simp [p]
+  ring
+
+theorem quadratic_occupancy_last_gap (lambda : ℝ) :
+    3 * p lambda - (p lambda + q lambda / 2) =
+      2 - 9 * lambda / 10 := by
+  simp [p, q]
+  ring
+
+theorem alias_endpoint_margin_saving (lambda kappa : ℝ) :
+    2 * q lambda - (aliasEndpoint lambda - kappa) = kappa := by
+  simp [aliasEndpoint]
+
+theorem sharpened_window_nonempty {lambda kappa : ℝ}
+    (hmargin : kappa < q lambda) :
+    q lambda < aliasEndpoint lambda - kappa := by
+  simp [aliasEndpoint]
   linarith
 
 theorem endpoint_above_three_halves_q {lambda : ℝ}

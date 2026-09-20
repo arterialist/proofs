@@ -110,13 +110,16 @@ retains the outer product differences through a second Poisson transform.
 With \(F=QG/P\), it proves
 \[
 \frac{|\mathcal J_G^\chi|}{P^3Q^3}\ll_\varepsilon T^\varepsilon
-\left(\frac{F}{Q^2}+\frac{F^{3/2}}{P Q^{5/2}}+\frac1{Q^3}\right)
+\left(\frac{F}{Q^2}+\frac1{Q^3}\right)
 \]
-for \(Q\le F\le T^{(2p+5q)/3-\kappa}\). This controls every smooth signed
-Gram block up to that endpoint after overlap with the lower full-rank
-estimate. Blocks above the endpoint remain open. Since the \(F\)-partition
-is introduced after squaring, this result does not yet bound a linear
-subsum or move the complete Möbius-prefix endpoint.
+for \(Q\le F\le Q^2T^{-\kappa}\). Exact inversion of
+\(\sqrt u-\sqrt{u-g}\), followed by Erdős--Turán and the quadratic
+second-derivative estimate, removes the earlier unit-spacing term. This
+controls every smooth signed Gram block up to the alias-integrality endpoint
+after overlap with the lower full-rank estimate. Blocks with
+\(F>Q^2T^{-\kappa}\) remain open. Since the \(F\)-partition is introduced
+after squaring, this result does not yet bound a linear subsum or move the
+complete Möbius-prefix endpoint.
 
 The unconditional
 [free-factor pruning](building-blocks/weil-and-spectral/actual-mobius-tail-free-factor-pruning.md)
