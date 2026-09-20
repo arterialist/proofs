@@ -1,6 +1,6 @@
 # Actual local zero-circle residues and compact Mellin analyticity: Lean 4 formalization
 
-**Status:** machine-checked in Lean 4.24.0.
+**Status:** machine-checked in Lean 4.24.0. This is a provisional first-Lean record for the combined xi/zeta, compact-Mellin, and finite-history package. It is not the first formalization of the weighted argument principle.
 Lean modules:
 - [formalization/BuildingBlocks/ActualZeroCircleResidues.lean](../formalization/BuildingBlocks/ActualZeroCircleResidues.lean)
 - [formalization/BuildingBlocks/CompactPhysicalMellinAnalytic.lean](../formalization/BuildingBlocks/CompactPhysicalMellinAnalytic.lean)
@@ -12,13 +12,9 @@ Companion note:
 Attribution: Arterialist RH research team, September 2026.
 Foundational axioms: standard Lean 4 foundations only (`[propext, Classical.choice, Quot.sound]`), zero custom axioms.
 
-The bounded search for this exact combined package covered Mathlib's residue
-and complex-analysis APIs, the public KeyAIGit `ecdlp-lean-verification`
-repository, the public Li-criterion Lean repository, and the
-`PrimeNumberTheoremAnd` index. No matching public formalization of the
-multiplicity-bearing zero-circle, compact Mellin, and finite-history package
-was found there as of September 2026. This is provisional best-knowledge
-evidence for the stated scope, not a worldwide priority claim.
+Li and Paulson formalized the weighted argument principle in Isabelle in 2016. Their theorem `argument_principle` covers analytic weights, winding numbers, zeros, and poles, and therefore subsumes the general weighted residue mechanism used here. See [Li and Paulson, Section 4, pages 9-13](https://www.cl.cam.ac.uk/~lp15/papers/Formath/Residue-theorem.pdf).
+
+A bounded search found no matching Lean package that combines the actual xi/zeta instantiations, compact physical Mellin weights, and finite prime-history comparison. The provisional claim concerns that Lean API and combination only. It is not a claim of worldwide priority for zero-circle residues or the argument principle.
 
 ## Statement
 

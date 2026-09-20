@@ -41,8 +41,9 @@ In particular, the negative index of inertia of the complete discretized Weil fo
   Fourier matrix of Weil's functional and showed that *if RH is false with only finitely many off-line zeros*,
   the negative index equals half the number of exceptional zeros.
 - **The successor-cell result:** Proves an **unconditional upper bound** on the negative index of the
-  complete physical discretization $Q_N$. Even if RH were entirely false with infinitely many off-line
-  zeros, the fraction of nonpositive directions in the physical space tends to zero at a
-  stretched-exponential rate $\exp(-c\sqrt{\log N \log\log N})$.
+  specified discretization $Q_N$. The fraction of nonpositive directions in that finite-dimensional
+  space tends to zero at the stretched-exponential rate
+  $\exp(-c\sqrt{\log N \log\log N})$. This statement does not bound off-line zeta zeros or establish
+  positivity of the full Weil form.
 
 Full proof: [building-blocks/weil-and-spectral/compact-weil-successor-cell-negative-index-stretched-exponential.md](../building-blocks/weil-and-spectral/compact-weil-successor-cell-negative-index-stretched-exponential.md).

@@ -10,20 +10,18 @@ defensible search evidence are preserved as [formalization
 records](../formalization/records/) or subject [building blocks](../building-blocks/).
 
 Before the September 2026 cleanup this catalog contained 355 report pages.
-It now contains **6 retained records**. The count is generated from the
+It now contains **5 retained records**. The count is generated from the
 Markdown files in this directory, excluding this README.
 
 ## Retained records
 
 1. [Actual critical sign criterion: Mellin continuation and pole obstruction](actual-critical-sign-criterion.md)
-   - Lean formalization of the exact eventual-sign implication to RH, with the sign premise left explicit and a named Mathlib/Isabelle/AFP/Coq search scope.
+   - Lean formalization of the exact eventual-sign implication to RH. The sign premise remains unproved.
 2. [Actual local zero-circle residues and compact Mellin analyticity](actual-zero-circle-residues.md)
-   - Lean formalization of multiplicity-bearing local residue extraction, compact Mellin analyticity, and the finite-history comparison package.
-3. [Exact zero-charge pair kernel expansion and terminal prime trace](exact-zero-charge-pair-kernel-expansion-and-terminal-prime-trace.md)
-   - Lean formalization of the exact zero-charge kernel expansion and terminal prime-packet identities, with a bounded public-library search and no mathematical-priority claim.
-4. [Finite arithmetic Weil prime margin and even-power classification](finite-weil-norm-preserving-counterexample-and-even-power-classification.md)
-   - Lean checks the finite prime window, rational margin, and exhaustive even-power classification; it does not claim to formalize the surrounding analytic argument.
-5. [Literal physical theta kernel: parity, positivity, and moments](literal-physical-theta-kernel.md)
-   - Lean formalization of the exact literal-kernel parity, positivity, and all-exponential-moments package, with a dated Mathlib/GitHub/literature search scope.
-6. [Prime-seed compound Poisson semigroup and uniform Bernstein exponent](prime-seed-compound-poisson-semigroup-and-bernstein-exponent.md)
-   - Lean formalization of the literal all-prime jump-profile semigroup and Bernstein exponent package, with its bounded search scope and classical ingredients stated.
+   - A specific Lean package for zero-circle residue extraction, compact Mellin analyticity, and finite scattering histories. Li and Paulson formalized the general weighted argument principle in Isabelle in 2016, so this is not a worldwide first for weighted residues.
+3. [Literal physical theta kernel: parity, positivity, and moments](literal-physical-theta-kernel.md)
+   - Lean formalization of the literal differentiated theta-kernel package. Classical theta and zeta formalizations already exist.
+4. [Prime-seed compound Poisson semigroup and uniform Bernstein exponent](prime-seed-compound-poisson-semigroup-and-bernstein-exponent.md)
+   - Lean formalization of the specialized all-prime jump profile. The abstract compound-Poisson theory is classical.
+5. [Explicit zeta zero-free region through height 7.465](explicit-zeta-zero-free-region-to-7-465.md)
+   - An unconditional Lean theorem for $\operatorname{Re}(s)>1/2$ and $0<\operatorname{Im}(s)\le 7.465$. The mathematical zero-free range is classical and vastly weaker than published computations; the provisional claim concerns this exact Lean theorem only.

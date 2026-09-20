@@ -1,18 +1,12 @@
-# Evidence-backed unique contributions
+# Candidate original results
 
-This directory retains only specific mathematical results that meet the audit
-rule: an exact statement, a proof or certificate, clear provenance, and a
-bounded source comparison supporting a provisional best-knowledge frontier
-claim. Conditional RH criteria, routine wrappers, scalar algebra, finite-only
-checks, renamed hypotheses, and duplicate reports are documented under
-[formalization records](../formalization/records/) or the subject
-[building blocks](../building-blocks/).
+This directory contains specialized results that survived the repository audit as plausible original mathematics. Each report has an exact statement, proof or certificate evidence, provenance, and a bounded source comparison. None has been certified as an improvement to the global frontier on RH. Publication priority remains unresolved where the report says so. Conditional RH criteria, routine wrappers, scalar algebra, finite checks, renamed hypotheses, and duplicate reports belong under [formalization records](../formalization/records/) or the subject [building blocks](../building-blocks/).
 
 Before the September 2026 cleanup this catalog contained 299 report pages.
-It now contains **7 retained reports**. The count is generated from the
+It now contains **7 candidate reports**. The count is generated from the
 Markdown files in this directory, excluding this README.
 
-## Retained reports
+## Candidate reports
 
 1. [Exact regular-source Möbius floor-inverse obstruction below exponent two-thirds](exact-regular-source-mobius-floor-inverse-obstruction-via-banach-steinhaus.md)
    - A proved fixed-source obstruction for every fixed $r<2/3$, with a checked Lean artifact and bounded source comparison. It makes no endpoint or sharpness claim.

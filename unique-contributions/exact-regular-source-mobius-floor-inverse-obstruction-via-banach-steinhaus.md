@@ -8,13 +8,13 @@
 
 ## 1. Executive Summary and Mathematical Statement
 
-In the analysis of boundary sources $f : \mathbb{N} \to \mathbb{R}$ governing the critical zeros of the Riemann zeta function, an essential question is whether imposing regularity—specifically, square-root growth $|f(q)| \le \sqrt{q}$ and 1-Lipschitz bounded first differences $|f(q+1) - f(q)| \le 1$—suffices to force its floor Möbius inverse:
+This project uses boundary sources $f : \mathbb{N} \to \mathbb{R}$ as model inputs for floor Möbius inversion. The theorem asks whether imposing regularity—specifically, square-root growth $|f(q)| \le \sqrt{q}$ and 1-Lipschitz bounded first differences $|f(q+1) - f(q)| \le 1$—suffices to force its floor Möbius inverse:
 $$
 M(f, N) = \sum_{d=1}^N \mu(d) f\left(\left\lfloor \frac{N}{d} \right\rfloor\right)
 $$
 to obey an asymptotic bound $|M(f, N)| \le C N^r$ for some sublinear exponent $r$.
 
-This contribution proves:
+The theorem proves:
 
 1. **Existence of a regular counterexample sequence for each fixed $r < 2/3$:**  
    For every exponent $r < 2/3$, there exists a fixed sequence $f : \mathbb{N} \to \mathbb{R}$ satisfying:
@@ -42,6 +42,8 @@ This contribution proves:
    By the uniform boundedness principle on the complete Banach space $\mathcal{X}$, non-uniform boundedness of operator norms implies the existence of a single, universal element $p \in \mathcal{X}$ whose trajectory $\{T_N(p)\}_{N \in \mathbb{N}}$ is unbounded, producing the desired fixed counterexample $f$.
 
 ---
+
+This is an obstruction for a model class of regular sources. It does not describe the actual Möbius function, improve a Mertens bound, or constrain zeta zeros.
 
 ## 2. Mathematical Proof
 

@@ -2,7 +2,7 @@
 
 Counting moves from $n$ to $n+1$. Factorization describes the same number through primes. This repository studies how those two structures meet, especially how a new prime affects later composite numbers and the error in counting primes.
 
-Some results prove that a particular bound would imply the Riemann hypothesis (RH); they do not prove the bound. The recent Lean zero-free result covers $\operatorname{Re}(s)>1/2$ and $0<\operatorname{Im}(s)\le 7.465$. The high-frequency operator interfaces still require unproved estimates. Each result states whether it is written mathematics, a Lean theorem, or a finite computation. The public novelty catalogs retain only evidence-backed entries: 7 unique-contribution reports and 6 first-formalization records after the September 2026 cleanup. Demoted statements remain in [formalization records](formalization/records/) or the subject building blocks.
+Some results prove that a particular bound would imply the Riemann hypothesis (RH); they do not prove the bound. The recent Lean zero-free result covers $\operatorname{Re}(s)>1/2$ and $0<\operatorname{Im}(s)\le 7.465$. The high-frequency operator interfaces still require unproved estimates. Each result states whether it is written mathematics, a Lean theorem, or a finite computation. A September 2026 audit found no verified theorem here that improves the global mathematical frontier toward RH. The repository still contains seven specialized results with plausible originality and five provisional first-Lean packages. These labels record bounded searches, not worldwide priority. Demoted statements remain in [formalization records](formalization/records/) or the subject building blocks.
 
 ## Start reading
 
@@ -20,9 +20,9 @@ Some results prove that a particular bound would imply the Riemann hypothesis (R
 | [Building blocks](building-blocks/) | Research notes by subject, with proofs, conditional results, and counterexamples. |
 | [Formalization](formalization/) | Lean 4 theorem modules and verification files. |
 | [Certificates](certificates/) | Scripts for finite calculations cited by notes. |
-| [Unique contributions](unique-contributions/) | 7 retained reports with exact statements, proof or certificate evidence, provenance, and bounded source comparisons. |
-| [First formalizations](first-formalizations/) | 6 retained Lean records with no-`sorry` artifacts and bounded public search scopes. |
-| [Formalization records](formalization/records/) | 372 demoted claim pages preserved as documentation without novelty or firstness claims. |
+| [Candidate original results](unique-contributions/) | 7 specialized reports with exact statements, proof or certificate evidence, and bounded source comparisons. None is currently certified as a global RH-frontier advance. |
+| [First formalizations](first-formalizations/) | 5 provisional Lean records with no-`sorry` artifacts and bounded public search scopes. |
+| [Formalization records](formalization/records/) | 374 demoted claim pages preserved as documentation without novelty or firstness claims. |
 | [Reviews](reviews/) | Literature comparisons and audits of published arguments. |
 
 The [long catalog](building-blocks/catalog.md) has detailed cross-references. [Adding work](CONTRIBUTING.md) explains how to record a result and its proof status.

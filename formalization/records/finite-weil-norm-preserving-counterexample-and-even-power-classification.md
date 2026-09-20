@@ -1,6 +1,8 @@
 # Finite arithmetic Weil prime margin and even-power classification
 
-## Summary & Verification Status
+## Summary and verification status
+
+**Classification:** finite formalization record. These certificates check explicit arithmetic cases. They do not formalize the Weil criterion or establish a first formalization of its analytic argument.
 
 This is a formalization record for the finite arithmetic certificates used by
 the written norm-preserving comparison argument. Lean checks the selected
@@ -10,8 +12,8 @@ phase selection, gamma asymptotics, or the full Weil-form comparison, so this
 page alone does not prove the analytic counterexample.
 
 - **Lean Modules:**
-  - [`formalization/BuildingBlocks/FiniteWeilPrimeCertificate.lean`](../formalization/BuildingBlocks/FiniteWeilPrimeCertificate.lean)
-  - [`formalization/BuildingBlocks/FiniteWeilEvenPowerCertificate.lean`](../formalization/BuildingBlocks/FiniteWeilEvenPowerCertificate.lean)
+  - [`FiniteWeilPrimeCertificate.lean`](../BuildingBlocks/FiniteWeilPrimeCertificate.lean)
+  - [`FiniteWeilEvenPowerCertificate.lean`](../BuildingBlocks/FiniteWeilEvenPowerCertificate.lean)
 - **Primary Verified Theorems:**
   - `BuildingBlocks.FiniteWeilPrimeCertificate.prime_10007`: $\operatorname{Nat.Prime}(10007)$
   - `BuildingBlocks.FiniteWeilPrimeCertificate.selected_primes`: Primality of all 24 selected integers in $[9695, 10319]$
@@ -45,10 +47,4 @@ page alone does not prove the analytic counterexample.
 
 ## Search scope and attribution
 
-The finite arithmetic statements are elementary consequences of primality,
-integer inequalities, and rational arithmetic. A targeted search of Mathlib,
-the public KeyAIGit `ecdlp-lean-verification` repository, the public
-Li-criterion Lean repository, and the `PrimeNumberTheoremAnd` index found no
-matching theorem package. This is a provisional formalization priority
-statement only, to the best of that search. It makes no claim that the
-underlying arithmetic is mathematically new.
+The finite arithmetic statements are elementary consequences of primality, integer inequalities, and rational arithmetic. The audit classified them as checked certificates supporting a written argument, not as a first formalization of the Weil criterion or a mathematical contribution by themselves.
