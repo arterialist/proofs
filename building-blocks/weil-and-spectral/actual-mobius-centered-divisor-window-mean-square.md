@@ -176,13 +176,22 @@ as boundary terms and derivative integrals of products of sharp partial
 sums of \(E_\theta\) and \(E_{\theta'}\). Average those terms in \(C\)
 before taking the derivative integrals. Equation (11a), uniformly for every
 partial-window length \(O(H)\), bounds each averaged product by
-\(O_K(BB'H\log(2Q))\). The normalized first derivatives cost \(H^{-1}\),
-the mixed derivative costs \(H^{-2}\), and their integration ranges have
-lengths \(O(H)\) and area \(O(H^2)\). Thus every tile costs
-\(O_K(BB'H\log(2Q))\), uniformly in \(H,V,Q\).
+\(O_K(BB'[H\log(2Q)+H^2Q^2/X])\). The normalized first derivatives cost
+\(H^{-1}\), the mixed derivative costs \(H^{-2}\), and their integration
+ranges have lengths \(O(H)\) and area \(O(H^2)\). Thus the Abel constants
+remain uniform in \(H,V,Q,X\).
 
-Applying (11a) tile by tile gives, for every interval of \(X\asymp Q^3\)
-consecutive centers,
+Applying (11a) tile by tile gives the uniform finite-interval form
+
+\[
+ \frac1X\int_{C_0}^{C_0+X}
+ |\mathcal R_{H,V}(C)|\,dC
+ \ll_K BB'\left(
+ V\log(2Q)+\frac{VH Q^2}{X}\right).
+ \tag{11c0}
+\]
+
+In particular, for every interval of \(X\asymp Q^3\) consecutive centers,
 
 \[
  \boxed{
@@ -311,6 +320,62 @@ sum obeys the same bound. Since
 both the exceptional proportion and the simultaneous high-block bound save
 a fixed power throughout \(2<\lambda<29/14\).
 
+## Uniform local-center tradeoff
+
+The boundary term in (11c0) also quantifies how densely the simultaneous
+good centers occur. Let the original center \(N\) vary in any interval of
+length \(Y\) contained in a fixed dyadic range \(N\asymp Q^5\). For fixed
+\(q,r\asymp Q\), the corresponding \(C=N/(qr)\) interval has length
+\(X\asymp Y/Q^2\). After summing \(q,r\) and applying the normalization in
+(17), (11c0) gives, uniformly in the initial point,
+
+\[
+ \boxed{
+ \frac1Y\int_{N_0}^{N_0+Y}\mathcal A_F(N)\,dN
+ \ll_\varepsilon T^\varepsilon\left(
+ \frac1P+\frac{Q^5}{P^2Y}\right).}
+ \tag{21}
+\]
+
+Fix \(0<\sigma\le1\) and take
+
+\[
+ Y=\frac{Q^5}{P^{2-\sigma}}.
+ \tag{22}
+\]
+
+Then the right side of (21) is
+\(O_\varepsilon(T^\varepsilon P^{-\sigma})\). Markov's inequality and the
+same union over \(\mathfrak F_T\) show that, outside a subset of this
+particular interval of relative measure
+
+\[
+ \ll_\varepsilon T^\varepsilon P^{-\sigma/2},
+ \tag{23}
+\]
+
+all dyadic high blocks simultaneously satisfy
+
+\[
+ \mathcal A_F(N)
+ \ll_\varepsilon T^\varepsilon P^{-\sigma/2}.
+ \tag{24}
+\]
+
+For epsilon smaller than \(\sigma(1-2\lambda/5)/2\), the exceptional
+proportion tends to zero. Thus every interval of the length (22) inside the
+dyadic center range contains a positive-measure set of centers good for all
+high scales. The limiting exponent identity behind (21)--(24) is
+
+\[
+ (5q-2p)-\bigl(5q-(2-\sigma)p\bigr)=-\sigma p.
+ \tag{25}
+\]
+
+This is a local density theorem, not a value at an independently prescribed
+center. Letting \(\sigma\) tend to zero approaches intervals of length
+\(Q^5/P^2\), but simultaneously removes the fixed-power saving.
+
 This identifies both the gain and its limit. The product kernel occupies a
 diagonal strip of difference width \(H\) and center width
 \(V=Q^3/F\ge H\). Tiling it into \(H\)-scale boxes makes (10) the correct
@@ -326,7 +391,8 @@ checks (5), the bounds (7)--(8), and the exponents (14)--(16) and (20). Its
 finds only propext, Classical.choice, and Quot.sound. Lean does not
 formalize the congruence averaging in (3), the gcd sum in (9), or the
 finite-interval and smooth-kernel estimates (11)--(11e), Markov's inequality,
-or the dyadic union in (18)--(19).
+or the dyadic unions in (18)--(19) and (23)--(24). Lean also checks the local
+length and gain identity (25).
 
 ## Literature boundary
 

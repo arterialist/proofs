@@ -110,6 +110,33 @@ theorem almostAllHighScaleSaves {lambda : ℝ} (hlambda : lambda < 5 / 2) :
   rw [almostAllHighScaleExponent_eq]
   linarith
 
+/-- The T-exponent of the local N-window Q^5 / P^(2-sigma). -/
+def localCenterLengthExponent (lambda sigma : ℝ) : ℝ :=
+  5 * q lambda - (2 - sigma) * p lambda
+
+/-- At the local window length Q^5 / P^(2-sigma), the normalized boundary
+term Q^5 / (P^2 Y) has exponent -sigma*p. -/
+theorem localBoundaryGainExponent (lambda sigma : ℝ) :
+    (5 * q lambda - 2 * p lambda) -
+        localCenterLengthExponent lambda sigma = -sigma * p lambda := by
+  simp [localCenterLengthExponent]
+  ring
+
+/-- Markov at the square root of the local mean gain leaves
+-sigma*p/2. -/
+def localAlmostAllExponent (lambda sigma : ℝ) : ℝ :=
+  -sigma * p lambda / 2
+
+theorem localAlmostAllSaves {lambda sigma : ℝ}
+    (hlambda : lambda < 5 / 2) (hsigma : 0 < sigma) :
+    localAlmostAllExponent lambda sigma < 0 := by
+  have hp : 0 < p lambda := by
+    simp [p]
+    linarith
+  have hprod : 0 < sigma * p lambda := mul_pos hsigma hp
+  simp [localAlmostAllExponent]
+  linarith
+
 end
 
 end BuildingBlocks.ActualMobiusCenteredDivisorWindow
@@ -124,3 +151,5 @@ end BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.averagedResidualSaves
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.almostAllHighScaleExponent_eq
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.almostAllHighScaleSaves
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.localBoundaryGainExponent
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.localAlmostAllSaves

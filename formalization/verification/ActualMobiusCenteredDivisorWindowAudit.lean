@@ -12,6 +12,8 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #check averagedResidualSaves
 #check almostAllHighScaleExponent_eq
 #check almostAllHighScaleSaves
+#check localBoundaryGainExponent
+#check localAlmostAllSaves
 
 #print axioms balancedResidueDefect
 #print axioms remainderDefectBounds
@@ -23,6 +25,8 @@ open BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms averagedResidualSaves
 #print axioms almostAllHighScaleExponent_eq
 #print axioms almostAllHighScaleSaves
+#print axioms localBoundaryGainExponent
+#print axioms localAlmostAllSaves
 
 open Lean in
 run_cmd do
