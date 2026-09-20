@@ -124,6 +124,31 @@ identified with a complete product-indexed family of transformed histories.
 Therefore (4) does not locate a first irreversible loss at that Cauchy step
 and does not by itself supply a signed estimate for its Gram matrix.
 
+The two valid orders of operation must not be mixed.  The transformed row is
+
+\[
+ \sum_m\mu(m)\frac{H}{m\sqrt N}\sum_{k\ne0}e(-kN/m)
+ \left[\log(N/m)\widehat G_T(kH/m)+\widehat Q_T(kH/m)\right].
+ \tag{11}
+\]
+
+Its reciprocal denominator is the divisor \(m\), not the product \(d=mr\).
+Completing the fibers before Poisson summation gives (9), with no reciprocal
+\(k\)-sum.  Summing the fixed \(k\)-kernel in (11) first is Poisson inversion
+and also returns (9).  Consequently
+
+\[
+ \sum_k\sum_d\Lambda(d)W_k(d/D)e(-kN/d)
+ \tag{12}
+\]
+
+is not a rearrangement of the actual packet: it takes \(\Lambda(d)\) from
+the first order and the reciprocal phase from the second while incorrectly
+replacing \(m\) by \(d\).  For \(d=p\), the only nonzero real history is
+\((m,r)=(1,p)\); the history with denominator \(p\) has logarithmic weight
+\(\log 1=0\).  Thus a twist chosen to align \(e(-kN/p)\) aligns an absent
+prime-fiber term and says nothing about the fixed physical packet.
+
 ## What the identity does and does not supply
 
 Equation (6) constrains the aggregate of a complete real divisor history.
@@ -133,3 +158,5 @@ the original actual-\(\Lambda\) packet in (9), so the identity gives no new
 upper bound. Retaining transformed oscillation while proving a useful
 complete Hermitian cross-sum estimate remains an open analytic problem; the
 finite identity and its Lean formalization do not prove such an estimate.
+The fixed-kernel resummation above is exactly Poisson inversion followed by
+(9), so it supplies no additional estimate.
