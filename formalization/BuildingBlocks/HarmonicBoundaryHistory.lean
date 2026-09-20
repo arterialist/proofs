@@ -71,6 +71,47 @@ theorem integerError_eq_harmonicBoundary_history (N : ℕ) :
   rw [Finset.sum_sub_distrib]
   ring
 
+/-- Finite summation by parts turns a present-value-minus-history expression
+into a positive ramp applied to the signed successor transitions. -/
+theorem neg_mul_add_history_eq_transition_sum (B : ℕ → ℝ) (N : ℕ) :
+    -(N : ℝ) * B N + ∑ k ∈ Finset.range N, B k =
+      ∑ k ∈ Finset.range N,
+        ((k + 1 : ℕ) : ℝ) * (B k - B (k + 1)) := by
+  induction N with
+  | zero => simp
+  | succ N ih =>
+      rw [Finset.sum_range_succ, Finset.sum_range_succ, ← ih]
+      push_cast
+      ring
+
+/-- The actual integer prime error is a deterministic factorial drift plus
+a nonnegative ramp of the signed harmonic-boundary transitions. -/
+theorem integerError_eq_harmonicBoundary_transition_sum (N : ℕ) :
+    integerError N = factorialPrimeDrift N +
+      ∑ k ∈ Finset.range N,
+        ((k + 1 : ℕ) : ℝ) *
+          (harmonicMangoldtBoundary k - harmonicMangoldtBoundary (k + 1)) := by
+  rw [integerError_eq_harmonicBoundary_history]
+  rw [← neg_mul_add_history_eq_transition_sum harmonicMangoldtBoundary N]
+  ring
+
+/-- Substitution of the exact successor law exposes every actual von Mangoldt
+jump and the smooth logarithmic clock inside the transition representation. -/
+theorem integerError_eq_primeTransition_sum (N : ℕ) :
+    integerError N = factorialPrimeDrift N +
+      ∑ k ∈ Finset.range N,
+        ((k + 1 : ℕ) : ℝ) *
+          (ArithmeticFunction.vonMangoldt (k + 1) / ((k + 1 : ℕ) : ℝ) -
+            (Real.log ((k + 1 : ℕ) : ℝ) - Real.log (k : ℝ))) := by
+  rw [integerError_eq_harmonicBoundary_transition_sum]
+  apply congrArg (fun z : ℝ => factorialPrimeDrift N + z)
+  apply Finset.sum_congr rfl
+  intro k hk
+  rw [show harmonicMangoldtBoundary k - harmonicMangoldtBoundary (k + 1) =
+      -(harmonicMangoldtBoundary (k + 1) - harmonicMangoldtBoundary k) by ring,
+    harmonicMangoldtBoundary_succ]
+  ring
+
 /-- Balazard's finite cutoff inequality is exactly nonnegativity of the
 harmonic boundary used in the history formula. -/
 theorem harmonicMangoldtBoundary_nonneg_of_balazardBoundAt
@@ -173,11 +214,32 @@ theorem coarseTerminalMassFinite_eq_harmonicBoundary_history
   rw [coarseTerminalMassFinite_eq_discreteDyadicTerminalMass hX,
     discreteDyadicTerminalMass_eq_boundary_history]
 
+/-- Exact transition form of the literal dyadic terminal channel. The nested
+ramps are nonnegative; their arithmetic increments retain both signs. -/
+theorem coarseTerminalMassFinite_eq_harmonicBoundary_transitions
+    {X : ℕ} (hX : 1 ≤ X) :
+    coarseTerminalMassFinite X =
+      (∑ k ∈ Finset.Ico X (2 * X),
+        (factorialPrimeDrift k +
+          ∑ j ∈ Finset.range k,
+            ((j + 1 : ℕ) : ℝ) *
+              (harmonicMangoldtBoundary j -
+                harmonicMangoldtBoundary (j + 1)))) -
+        (X : ℝ) / 2 := by
+  rw [coarseTerminalMassFinite_eq_discreteDyadicTerminalMass hX]
+  unfold discreteDyadicTerminalMass
+  apply congrArg (fun z : ℝ => z - (X : ℝ) / 2)
+  apply Finset.sum_congr rfl
+  intro k hk
+  exact integerError_eq_harmonicBoundary_transition_sum k
+
 #print axioms psi_eq_harmonicPrimeMass_abel
 #print axioms integerError_eq_harmonicBoundary_history
 #print axioms harmonicMangoldtBoundary_succ
+#print axioms integerError_eq_harmonicBoundary_transition_sum
 #print axioms discreteDyadicTerminalMass_eq_boundary_history
 #print axioms coarseTerminalMassFinite_eq_harmonicBoundary_history
+#print axioms coarseTerminalMassFinite_eq_harmonicBoundary_transitions
 
 end
 

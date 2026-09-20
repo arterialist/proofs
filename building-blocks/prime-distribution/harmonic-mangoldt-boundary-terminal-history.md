@@ -70,6 +70,18 @@ Substitution of $A=\log-B$ into (4) yields the exact history formula
 The negative current boundary value and the positive accumulated history
 must remain together. Positivity of $B$ does not sign their difference.
 
+Finite summation by parts gives the equivalent transition form
+
+\[
+-NB(N)+\sum_{k=0}^{N-1}B(k)
+=\sum_{k=0}^{N-1}(k+1)\bigl(B(k)-B(k+1)\bigr).                  \tag{6a}
+\]
+
+Combining this with the exact jump law (2) rewrites the prime error using the
+actual von Mangoldt jumps and the smooth logarithmic clock. The ramp weights
+are nonnegative, but the transitions have both signs; this identity supplies
+no positivity or cancellation estimate by itself.
+
 ## 3. The literal dyadic terminal mass
 
 For a positive integer $X$, the continuous terminal channel is
@@ -129,10 +141,14 @@ verifies:
 - `harmonicMangoldtBoundary_succ`, the exact jump law (2);
 - `psi_eq_harmonicPrimeMass_abel`, the Abel identity (4);
 - `integerError_eq_harmonicBoundary_history`, equation (6);
+- `integerError_eq_harmonicBoundary_transition_sum`, equation (6a), and
+  `integerError_eq_primeTransition_sum`, its exact von Mangoldt form;
 - `primePrimitiveArea_nat_eq_sum_integerError`, the exact half-cell formula;
 - `coarseTerminalMassFinite_eq_discreteDyadicTerminalMass`, equality of
   (7) and the previously formalized continuous terminal channel;
 - `coarseTerminalMassFinite_eq_harmonicBoundary_history`, equation (9);
+- `coarseTerminalMassFinite_eq_harmonicBoundary_transitions`, the exact
+  transition expansion of the terminal channel;
 - the implications from `BalazardBoundAt` to $B(N)\ge0$ and, with the
   elementary lower estimate for $A(N)$, $B(N)\in[0,1]$.
 
