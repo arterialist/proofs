@@ -343,6 +343,166 @@ Indeed, the exact contribution of the positive modes \(j\le J_X\) to
  \tag{14}
 \]
 
+### Joint dispersion audit
+
+Write
+
+\[
+ \mathcal L_J(X)=\sum_{1\le j\le J}\frac{|C_j(X)|^2}{j^2},
+ \qquad
+ C_j(X)=\frac{X}{2\pi i j}B_j(X)-M.
+ \tag{14a}
+\]
+
+There is no need to separate the empirically unstable \(M\) cross term.
+Equations (6)--(7) give the exact identities
+
+\[
+ C_j(X)=\int_X^{2X}E(x)\bigl(e(-jx/X)-1\bigr)\,dx
+ =2\pi i j\widehat P(j),
+ \tag{14b}
+\]
+
+and hence
+
+\[
+ \boxed{
+ \mathcal L_J(X)=4\pi^2\sum_{1\le j\le J}|\widehat P(j)|^2.}
+ \tag{14c}
+\]
+
+Equivalently, this is the positive dispersion form
+
+\[
+ \mathcal L_J(X)=
+ \int_X^{2X}\!\int_X^{2X}E(x)E(y)
+ \sum_{j=1}^{J}\frac{
+ (e(-jx/X)-1)(e(jy/X)-1)}{j^2}\,dx\,dy.
+ \tag{14d}
+\]
+
+For the full spectrum, Parseval gives
+
+\[
+ \mathcal L_\infty(X)=2\pi^2\left\{
+ \frac1X\int_0^X|P(u)|^2\,du-|\mu|^2\right\}.
+ \tag{14e}
+\]
+
+Thus the joint sum is literally the low-frequency part of the primitive
+variance. In particular,
+
+\[
+ S_X=X\left\{\frac{M^2}{2}+2|Z|^2
+ +\frac1{\pi^2}\mathcal L_\infty(X)\right\}.
+ \tag{14f}
+\]
+
+This proves the precise relationship to `CoarsePrimitiveBound`: the full
+joint estimate together with the two zero modes is exactly that bound,
+not an independent large-sieve mechanism. The truncated sum remains a
+proper positive part, with (9) controlling its complement.
+
+The strongest safe unconditional estimate obtained from the current PNT
+error is, for every fixed \(\delta>0\),
+
+\[
+ \boxed{
+ \mathcal L_{J_X}(X)
+ \ll_\delta X^4\exp[-2(d-\delta)\Phi(X)].}
+ \tag{14g}
+\]
+
+Indeed, (4d) gives \(|M|\ll_\delta X^2e^{-(d-\delta)\Phi(X)}\), and the
+same pointwise PNT estimate in (14b) gives the identical bound for each
+\(|C_j|\). Since \(\sum j^{-2}<\infty\), summing through \(J_X\) costs no
+power of \(J_X\). This argument loses the cancellation inside each
+\(C_j\), then loses all correlation between different \(j\). It retains
+all prime powers and both endpoints.
+
+The ordinary large sieve does not improve the exponent. To see the exact
+loss, put \(D=A_0(X)-X\). Complete discrete Fourier orthogonality on the
+\(X\) integers \(X<n\le2X\) gives
+
+\[
+\begin{aligned}
+ \sum_{j=1}^{X-1}|B_j(X)|^2
+ ={}&X\sum_{X<n\le2X}\Lambda(n)^2-A_0(X)^2
+ +(X-1)D^2\\
+ &-2D\bigl(X\Lambda(2X)-A_0(X)\bigr).
+ \tag{14h}
+\end{aligned}
+\]
+
+Chebyshev's bound and \(\Lambda(n)\le\log(2X)\) therefore give
+
+\[
+ \sum_{j=1}^{X-1}|B_j(X)|^2
+ \ll X^2\log X+XD^2+X|D|\log X.
+ \tag{14i}
+\]
+
+This is also the scale delivered by the large sieve: the frequency
+spacing is \(1/X\), so its constant is the interval length plus the inverse
+spacing, \(X+X\), with no factor \(J/X\) for retaining only the first
+\(J\) frequencies. Moreover, expanding (14a) exactly gives
+
+\[
+\begin{aligned}
+ \mathcal L_J(X)={}&
+ \frac{X^2}{4\pi^2}\sum_{j\le J}\frac{|B_j(X)|^2}{j^4}
+ +M^2\sum_{j\le J}\frac1{j^2}\\
+ &-\frac{XM}{\pi}\sum_{j\le J}\frac{\operatorname{Im}B_j(X)}{j^3}.
+ \tag{14j}
+\end{aligned}
+\]
+
+The last line is the observed cross term. Cauchy--Schwarz reduces (14j)
+to the separated estimate and discards precisely the possible
+cancellation. Fourier orthogonality controls the first square in (14j),
+but gives no sign or asymptotic for the last line. After a split at
+\(K<J_X\), (14i) improves only the range \(j>K\); the positive range
+\(j\le K\), beginning with \(j=1\), retains (14g).
+
+This first mode is a fast falsifier for any claimed averaging gain. Since
+
+\[
+ \frac{|C_1(X)|^2}{1^2}\le\mathcal L_{J_X}(X),
+ \tag{14k}
+\]
+
+an estimate \(\mathcal L_{J_X}(X)\ll X^{4-\eta}\) would already prove
+\(|C_1(X)|\ll X^{2-\eta/2}\). No averaging over the remaining modes can
+prove that inequality. In the explicit formula a zero \(\rho\) enters
+\(C_j\) at the scale
+
+\[
+ -\frac{X^{\rho+1}}{\rho}H_j(\rho),\qquad
+ H_j(s)=\int_1^2u^s\bigl(e(-ju)-1\bigr)\,du.
+ \tag{14l}
+\]
+
+The kernel vanishes at both endpoints but does not change the power
+\(X^{\Re\rho+1}\). If \(\Re s>0\) and every \(H_j(s)\) vanished, all
+positive Fourier coefficients of \(u^s\) on \([1,2]\) would equal its
+nonzero mean. This contradicts the Riemann--Lebesgue lemma, so some fixed
+\(j\) has \(H_j(s)\ne0\). A uniform fixed strip
+\(\Re\rho\le1-\theta\), with \(0<\theta<1/2\), would give the genuinely
+weaker-than-RH benchmark
+
+\[
+ \mathcal L_{J_X}(X)\ll_\varepsilon X^{4-2\theta+\varepsilon}.
+ \tag{14m}
+\]
+
+No such fixed strip is known. The target exponent \(X^{3+\varepsilon}\)
+corresponds to \(\theta=1/2\), the RH boundary. A joint
+large-sieve/dispersion calculation therefore supplies no unconditional
+fixed exponent improvement over (14g): at the principal arc it either
+returns the primitive variance (14e), discards the crucial cross term in
+(14j), or asks for a fixed zero-free strip or square-root prime-error
+input.
+
 Thus (13) is the exact phase-sensitive low-frequency input at this cutoff.
 A simpler phase-free sufficient condition is
 
