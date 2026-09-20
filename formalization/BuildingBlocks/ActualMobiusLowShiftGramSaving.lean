@@ -1,7 +1,7 @@
 import Mathlib
 
 /-!
-# Exponent ledger for the smooth determinant-shift estimate
+# Exponent ledger for the smooth-Gram determinant saving
 
 This module checks only the scale and exponent algebra in
 actual-mobius-low-shift-gram-saving.md. It does not formalize the K = 3
@@ -70,9 +70,7 @@ theorem high_range_gram_saving (lambda kappa : ℝ) :
       3 * kappa / 2 := by
   ring
 
-/-- Square-root scale of the controlled Gram contribution. This does not
-bound the original sum until the remaining Gram blocks are controlled. -/
-theorem high_range_square_root_scale_saving (lambda kappa : ℝ) :
+theorem high_range_conditional_sqrt_scale (lambda kappa : ℝ) :
     ((3 * p lambda + 4 * q lambda) -
         (3 * p lambda + 4 * q lambda - 3 * kappa / 2)) / 2 =
       3 * kappa / 4 := by
@@ -106,8 +104,8 @@ theorem high_saving_below_middle {lambda kappa : ℝ}
     3 * kappa / 2 < q lambda / 2 := by
   linarith
 
-/-- The public endpoint-error saving q/2 is also stronger than the
-square-root scale saving 3kappa/4. -/
+/-- Algebraic comparison only: the public endpoint-error saving q/2 is
+stronger than the conditional square-root scale 3kappa/4. -/
 theorem endpoint_error_stronger {lambda kappa : ℝ}
     (hlow : 2 < lambda) (hkappa : kappa < q lambda / 3) :
     3 * kappa / 4 < q lambda / 2 := by
@@ -141,7 +139,7 @@ theorem canonical_gram_saving (lambda : ℝ) :
     3 * (q lambda / 6) / 2 = q lambda / 4 := by
   ring
 
-theorem canonical_square_root_scale_saving (lambda : ℝ) :
+theorem canonical_conditional_sqrt_scale (lambda : ℝ) :
     3 * (q lambda / 6) / 4 = q lambda / 8 := by
   ring
 

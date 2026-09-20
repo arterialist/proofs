@@ -104,6 +104,20 @@ so the lemma does not give \(\rho>0\) or extend the complete prefix. It too
 is a prime-prime subcomponent estimate; it does not transfer to the
 unrestricted integer free factors in the exact contact sum.
 
+For the unrestricted integer contact, the
+[smooth double-\(Q\) Gram estimate](building-blocks/weil-and-spectral/actual-mobius-double-q-dual-spacing-saving.md)
+retains the outer product differences through a second Poisson transform.
+With \(F=QG/P\), it proves
+\[
+\frac{|\mathcal J_G^\chi|}{P^3Q^3}\ll_\varepsilon T^\varepsilon
+\left(\frac{F}{Q^2}+\frac{F^{3/2}}{P Q^{5/2}}+\frac1{Q^3}\right)
+\]
+for \(Q\le F\le T^{(2p+5q)/3-\kappa}\). This controls every smooth signed
+Gram block up to that endpoint after overlap with the lower full-rank
+estimate. Blocks above the endpoint remain open. Since the \(F\)-partition
+is introduced after squaring, this result does not yet bound a linear
+subsum or move the complete Möbius-prefix endpoint.
+
 The unconditional
 [free-factor pruning](building-blocks/weil-and-spectral/actual-mobius-tail-free-factor-pruning.md)
 instead keeps the original sum

@@ -1,4 +1,4 @@
-# Smooth determinant-shift estimate in the one-\(Q\) Gram kernel
+# Smooth-Gram saving below the large determinant range
 
 **Status:** unconditional written estimate, 20 September 2026. The Lean
 companion checks only the scale and exponent algebra. The history
@@ -251,34 +251,22 @@ Consequently all nonzero dyadic shifts in (25) satisfy
  T^\varepsilon P^3Q^4T^{-3\kappa/2}.
 \tag{26}
 \]
-Summing the logarithmically many blocks in (26) gives
-\[
- \sum_{\substack{H\ \mathrm{dyadic}\\
- H\le P Q^{4/3}T^{-\kappa}}}
- |\mathcal G_H|
- \ll_\varepsilon
- T^\varepsilon P^3Q^4T^{-3\kappa/2}.
-\tag{27}
-\]
-After multiplication by \(Q/P\) in (7) and a square root, this part of
-the absolute Gram upper bound has scale
-\[
- T^\varepsilon P Q^{5/2}T^{-3\kappa/4}.
-\tag{28}
-\]
-This is not a separately defined subsum of \(\mathcal S_{\mathrm{lead}}\).
-It does not bound the full sum until the remaining Gram blocks are
-controlled.
+This is a bound for a signed dyadic contribution to the Gram expansion.
+The condition on \(h\) is imposed only after squaring, so it does not
+define a linear subsum of \(\mathcal S_{\mathrm{lead}}\). If every
+remaining Gram block were bounded at the same relative scale, (7) would
+convert the complete Gram saving \(T^{-3\kappa/2}\) to the square-root
+scale \(T^{-3\kappa/4}\). No such complete conclusion is asserted here.
 
 The upper range in (25) lies strictly above \(PQ\), since
 \[
  \frac{P Q^{4/3}T^{-\kappa}}{PQ}
  =T^{q_0/3-\kappa}>1.
-\tag{29}
+\tag{28}
 \]
 It therefore also lies above \(P^3\) by (2). The canonical choice
 \(\kappa=q_0/6\) gives upper shift \(P Q^{7/6}\), Gram saving
-\(Q^{-1/4}\), and square-root scale saving \(Q^{-1/8}\).
+\(Q^{-1/4}\), and conditional square-root scale \(Q^{-1/8}\).
 
 No cancellation between different determinant shifts is used. Each
 dyadic block is bounded by (18), and the logarithmic number of blocks is
@@ -291,31 +279,25 @@ Using (13) and the trivial smooth \(n\)-sum,
  |\mathcal G_0|
  \ll_\varepsilon T^\varepsilon P^2Q^3
  =T^\varepsilon P^3Q^4(PQ)^{-1}.
-\tag{30}
+\tag{29}
 \]
-After multiplication by \(Q/P\) in (7) and a square root, the diagonal
-has scale
-\[
- T^\varepsilon P^{1/2}Q^2
- =T^\varepsilon P Q^{5/2}(PQ)^{-1/2}
-\tag{31}
-\]
-in the absolute Gram upper bound.
+Thus the diagonal Gram contribution is below its target by \((PQ)^{-1}\).
 
 The number of coefficient histories and separator pieces is
 \(T^\varepsilon\). The public one-\(Q\) endpoint assigns hard endpoints
 before smoothing; its endpoint errors save \(Q^{-1/2}=T^{-q_0/2}\)
-relative to (8). This is stronger than the square-root scale in (28), since
-\(3\kappa/4<q_0/4<q_0/2\). Lower stationary terms have smaller inert
-amplitudes. These losses do not change (27)--(28).
+relative to (8). These are independent linear endpoint errors, not pieces
+of a determinant-restricted linear sum. Lower stationary terms have
+smaller inert amplitudes.
 
 The estimate stops at \(H=P Q^{4/3}T^{-\kappa}\). The margin in (23)
 vanishes at \(H\asymp P Q^{4/3}\). Completing the endpoint power saving
 requires a separate estimate for the remaining large determinant range.
 
 [ActualMobiusLowShiftGramSaving.lean](../../formalization/BuildingBlocks/ActualMobiusLowShiftGramSaving.lean)
-checks the three range exponents, the parameterized saving in (26)--(28),
-the strict extension above \(PQ\) and \(P^3\), and the canonical choice
+checks the three range exponents, the parameterized Gram saving in (26),
+the corresponding conditional square-root scale, the strict extension
+above \(PQ\) and \(P^3\), and the canonical choice
 \(\kappa=q_0/6\). Its
 [axiom audit](../../formalization/verification/ActualMobiusLowShiftGramSavingAudit.lean)
 checks every declaration in the module. Lean does not formalize the

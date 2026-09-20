@@ -10,7 +10,7 @@ open BuildingBlocks.ActualMobiusLowShiftGramSaving
 #check middle_range_gram_gap
 #check high_endpoint_bound_exponent
 #check high_range_gram_saving
-#check high_range_square_root_scale_saving
+#check high_range_conditional_sqrt_scale
 #check high_endpoint_above_pq_gap
 #check high_endpoint_above_pq
 #check high_endpoint_above_p_cubed
@@ -21,7 +21,7 @@ open BuildingBlocks.ActualMobiusLowShiftGramSaving
 #check canonical_kappa_lt_third
 #check canonical_upper_exponent
 #check canonical_gram_saving
-#check canonical_square_root_scale_saving
+#check canonical_conditional_sqrt_scale
 
 #print axioms physical_scale
 #print axioms q_pos
@@ -31,7 +31,7 @@ open BuildingBlocks.ActualMobiusLowShiftGramSaving
 #print axioms middle_range_gram_gap
 #print axioms high_endpoint_bound_exponent
 #print axioms high_range_gram_saving
-#print axioms high_range_square_root_scale_saving
+#print axioms high_range_conditional_sqrt_scale
 #print axioms high_endpoint_above_pq_gap
 #print axioms high_endpoint_above_pq
 #print axioms high_endpoint_above_p_cubed
@@ -42,7 +42,7 @@ open BuildingBlocks.ActualMobiusLowShiftGramSaving
 #print axioms canonical_kappa_lt_third
 #print axioms canonical_upper_exponent
 #print axioms canonical_gram_saving
-#print axioms canonical_square_root_scale_saving
+#print axioms canonical_conditional_sqrt_scale
 
 open Lean in
 run_cmd do

@@ -48,9 +48,7 @@ theorem parameterized_gram_saving (lambda kappa : ℝ) :
       2 * kappa := by
   ring
 
-/-- Square-root scale of the controlled nonzero Gram blocks. This does not
-bound a linear subsum before the complementary Gram blocks are controlled. -/
-theorem parameterized_square_root_scale_saving (lambda kappa : ℝ) :
+theorem parameterized_conditional_sqrt_scale (lambda kappa : ℝ) :
     ((3 * p lambda + 3 * q lambda) -
         (3 * p lambda + 3 * q lambda - 2 * kappa)) / 2 =
       kappa := by
@@ -111,7 +109,7 @@ theorem canonical_gram_saving (lambda : ℝ) :
     2 * (q lambda / 4) = q lambda / 2 := by
   ring
 
-theorem canonical_square_root_scale_saving (lambda : ℝ) :
+theorem canonical_conditional_sqrt_scale (lambda : ℝ) :
     q lambda / 4 = q lambda / 4 := rfl
 
 end

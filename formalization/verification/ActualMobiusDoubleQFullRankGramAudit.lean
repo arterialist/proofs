@@ -7,7 +7,7 @@ open BuildingBlocks.ActualMobiusDoubleQFullRankGram
 #check outer_count_exponent
 #check high_endpoint_exponent
 #check parameterized_gram_saving
-#check parameterized_square_root_scale_saving
+#check parameterized_conditional_sqrt_scale
 #check reciprocal_q_saving
 #check middle_term_saving
 #check uniform_saving_from_kappa_lt_half
@@ -18,14 +18,14 @@ open BuildingBlocks.ActualMobiusDoubleQFullRankGram
 #check canonical_g_exponent
 #check canonical_h_exponent
 #check canonical_gram_saving
-#check canonical_square_root_scale_saving
+#check canonical_conditional_sqrt_scale
 
 #print axioms physical_scale
 #print axioms double_cauchy_gram_target_exponent
 #print axioms outer_count_exponent
 #print axioms high_endpoint_exponent
 #print axioms parameterized_gram_saving
-#print axioms parameterized_square_root_scale_saving
+#print axioms parameterized_conditional_sqrt_scale
 #print axioms reciprocal_q_saving
 #print axioms middle_term_saving
 #print axioms uniform_saving_from_kappa_lt_half
@@ -36,7 +36,7 @@ open BuildingBlocks.ActualMobiusDoubleQFullRankGram
 #print axioms canonical_g_exponent
 #print axioms canonical_h_exponent
 #print axioms canonical_gram_saving
-#print axioms canonical_square_root_scale_saving
+#print axioms canonical_conditional_sqrt_scale
 
 open Lean in
 run_cmd do

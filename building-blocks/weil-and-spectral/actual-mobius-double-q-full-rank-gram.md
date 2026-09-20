@@ -4,8 +4,7 @@
 20 September 2026. The Lean companion checks only the scale and exponent
 algebra. The double Cauchy step, determinant count, two-dimensional
 Poisson summation, and uniform oscillatory-integral estimate remain written
-mathematics. This note is not yet a published theorem and does not imply
-the Riemann hypothesis.
+mathematics. This estimate does not imply the Riemann hypothesis.
 
 ## Double weighted Cauchy
 
@@ -211,54 +210,31 @@ then every term in (19) is
  T^\varepsilon P^3Q^3T^{-2\kappa}.
 \tag{22}
 \]
-Summing the logarithmically many nonzero blocks in (22) gives
-\[
- \sum_{\substack{G\ \mathrm{dyadic}\\
- F=QG/P\le Q^{3/2}T^{-\kappa}}}
- |\mathcal J_G|
- \ll_\varepsilon
- T^\varepsilon P^3Q^3T^{-2\kappa}.
-\tag{23}
-\]
-After multiplication by \(Q^2/P\) in (5) and a square root, this part of
-the absolute Gram upper bound has scale
-\[
- T^\varepsilon P Q^{5/2}T^{-\kappa}.
-\tag{24}
-\]
-The difference \(g\) is created only after expanding the Gram form, so
-there is no corresponding linear subsum of
-\(\mathcal S_{\mathrm{lead}}\). The remaining Gram blocks must still be
-controlled before (24) yields a bound for the full sum.
+This is a signed Gram-block estimate. The restriction on \(g\) is imposed
+only after squaring and does not define a linear subsum of
+\(\mathcal S_{\mathrm{lead}}\). If all remaining Gram blocks had the same
+relative saving, (5) would convert \(T^{-2\kappa}\) to the square-root
+scale \(T^{-\kappa}\); this note does not assert that complete bound.
 
-The hard-endpoint pieces were already separated before the smoothing that
-leads to (12). Their public saving is \(Q^{-1/2}=T^{-q_0/2}\), which is
-strictly stronger than the square-root scale \(T^{-\kappa}\) in (24) because
-\(\kappa<q_0/2\).
+The hard-endpoint pieces are independent linear errors separated in the
+public one-\(Q\) endpoint theorem before the smoothing that leads to (12).
+Their saving remains \(Q^{-1/2}=T^{-q_0/2}\); it is not used to turn the
+partial Gram estimate (22) into a linear-sum estimate.
 
 For \(g=0\), (9) and the trivial \(Q^2\) kernel give
 \[
  \mathcal J_0\ll_\varepsilon T^\varepsilon P^2Q^3,
-\tag{25}
+\tag{24}
 \]
 below the target by \(P^{-1}\).
-
-After adjoining the diagonal to the nonzero blocks in (23), the combined
-absolute Gram contribution has saving
-\[
- T^{-\min(2\kappa,p)},
-\]
-and square-root scale saving \(T^{-\min(\kappa,p/2)}\). This still does
-not define a linear subsum.
 
 The canonical choice \(\kappa=q_0/4\) reaches
 \[
  F\le Q^{5/4},\qquad |g|\le P Q^{1/4},
-\tag{26}
+\tag{25}
 \]
-with nonzero-block Gram saving \(Q^{-1/2}\) and square-root scale saving
-\(Q^{-1/4}\). After adjoining the diagonal, the square-root scale saving
-is \(T^{-\min(q_0/4,p/2)}\).
+with Gram saving \(Q^{-1/2}\) and conditional square-root scale
+\(Q^{-1/4}\).
 In the determinant notation \(h\asymp Qg\), this corresponds to
 \(H\le P Q^{5/4}\).
 
