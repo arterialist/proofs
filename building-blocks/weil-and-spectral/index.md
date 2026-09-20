@@ -59,6 +59,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A smooth determinant-shift estimate in the one-Q Gram kernel](actual-mobius-low-shift-gram-saving.md)
 - [Double-Q weighted Cauchy and the full-rank Gram kernel](actual-mobius-double-q-full-rank-gram.md)
 - [Joint outer/alias spacing in the smooth double-Q Gram](actual-mobius-double-q-dual-spacing-saving.md)
+- [Fourfold completion of the high double-Q Gram block](actual-mobius-double-q-fourfold-resonance-bound.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
 - [Center averaging of the exact reciprocal Möbius packet](actual-mobius-reciprocal-center-average-saving.md)
 - [Arbitrary logarithmic saving in the critical Möbius window](actual-mobius-critical-window-log-saving.md)
