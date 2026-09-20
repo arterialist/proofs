@@ -1,0 +1,9 @@
+import BuildingBlocks.ActualMobiusHistoryCrossSum
+
+open BuildingBlocks.ActualMobiusHistoryCrossSum
+
+#print axioms sum_historyPiece_eq_divisorLogHistory
+#print axioms sum_historyPiece_eq_vonMangoldt
+#print axioms ordered_cross_eq_total_sq_sub_sq
+#print axioms ordered_history_cross_sum
+#print axioms ordered_history_cross_sum_of_vonMangoldt_eq_zero

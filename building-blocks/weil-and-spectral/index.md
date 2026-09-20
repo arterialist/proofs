@@ -61,6 +61,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Joint outer/alias spacing in the smooth double-Q Gram](actual-mobius-double-q-dual-spacing-saving.md)
 - [Fourfold completion of the high double-Q Gram block](actual-mobius-double-q-fourfold-resonance-bound.md)
 - [Additive Fourier saving for the critical localized divisor box](actual-mobius-localized-divisor-fourier-saving.md)
+- [Ordered cross sums of localized Möbius histories](actual-mobius-complete-history-cross-sum.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
 - [Center averaging of the exact reciprocal Möbius packet](actual-mobius-reciprocal-center-average-saving.md)
 - [Arbitrary logarithmic saving in the critical Möbius window](actual-mobius-critical-window-log-saving.md)
