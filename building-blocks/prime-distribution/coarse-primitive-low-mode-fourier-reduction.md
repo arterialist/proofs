@@ -1167,46 +1167,56 @@ claim is made that Lean currently connects these Fourier formulas to
 
 ## Selberg identity at the literal first additive mode
 
-For real (yge1), define the endpoint-exact mode
-[
- B_1(y)=sum_{y<nle2y}Lambda(n)(e(-n/y)-1)+y.
-]
-Apply (Lambdalog+Lambda*Lambda=mu*log^2) with
-(w_X(n)=(e(-n/X)-1)1_{X<nle2X}). Put
-[
- R_X=sum_{X<nle2X}Lambda(n)log(n/X)w_X(n),quad
- G_X=sum_{X<nle2X}(mu*log^2)(n)w_X(n).
-]
-Finite divisor grouping, with (ale X) because (Lambda(b)=0) for
-(b<2), gives the exact identity
-[
- oxed{log X,B_1(X)+sum_{ale X}Lambda(a)B_1(X/a)
- =G_X-R_X+Xlog X+Xsum_{ale X}rac{Lambda(a)}a.}
-	ag{28}
-]
-Both interval endpoints and the added (+y) normalization are displayed;
-there is no discarded boundary term.
+For real \(y\ge1\), define the endpoint-exact mode
+\[
+ B_1(y)=\sum_{y<n\le2y}\Lambda(n)(e(-n/y)-1)+y.
+\]
+Apply
+\(\Lambda\log+\Lambda*\Lambda=\mu*\log^2\) with
+\(w_X(n)=(e(-n/X)-1)\mathbf1_{X<n\le2X}\). Put
+\[
+ R_X=\sum_{X<n\le2X}\Lambda(n)\log(n/X)w_X(n),\qquad
+ G_X=\sum_{X<n\le2X}(\mu*\log^2)(n)w_X(n).
+\]
+Finite divisor grouping gives the exact identity
+\[
+ \boxed{
+ \log X\,B_1(X)+\sum_{a\le X}\Lambda(a)B_1(X/a)
+ =G_X-R_X+X\log X+X\sum_{a\le X}\frac{\Lambda(a)}a.}
+\tag{28}
+\]
+The restriction \(a\le X\) is exact: for \(a>X\), the inner interval can
+contain only \(b=1\), and \(\Lambda(1)=0\). Both endpoints and every
+added \(+y\) normalization are retained.
 
-This does not give coercivity. After division by (Xlog X), the positive
-self-coupling weights have total mass
-[
- rac1{log X}sum_{ale X}rac{Lambda(a)}a=1+o(1).
-]
-Moreover (Re(e(-n/X)-1)le0) signs only the real part of the raw
-(Lambda*Lambda) sum; the imaginary part changes sign, and the complex
-quantity (B_1) has no resulting norm inequality. Taking absolute values
-in (28) therefore has contraction constant one and separates main terms
-of size (Xlog X) that must first cancel.
+This identity does not give a contraction. Set \(b(y)=B_1(y)/y\). After
+division by \(X\log X\), the coefficient of \(b(X/a)\) is
+\(\Lambda(a)/(a\log X)\), and
+\[
+ \frac1{\log X}\sum_{a\le X}\frac{\Lambda(a)}a=1+o(1).
+\]
+Moreover \(\Re(e(-n/X)-1)\le0\) signs only the real part of the raw
+\((\Lambda*\Lambda)\) sum. Its imaginary part changes sign, so positivity
+supplies no coercive inequality for the complex mode. Taking absolute values
+in (28) has asymptotic mass one and also separates terms of size
+\(X\log X\) whose main parts cancel.
 
 A completely multiplicative unit twist preserves the convolution algebra
-but can rotate the imaginary component, falsifying any coercivity claimed
-from positivity alone. A single explicit-formula zero contributes
-(X^ho) times the nonzero multiplier
-(int_1^2u^ho(e(-u)-1),du/ho). Thus a fixed-power estimate
-(|B_1(X)|ll X^{1-delta+arepsilon}) obtained by separating zero modes
-already requires the fixed strip (Rehole1-delta). Selberg's twisted
-identity is compatible with that mode and merely redistributes it between
-(28)'s terms. Small prime-power endpoints and locally computable large
-prime or composite tests can falsify missing terms, but cannot establish
-the asymptotic bound; record Mersenne inputs require symbolic or modular
-streaming evaluation. The identity supplies no unconditional power gain.
+while rotating the imaginary component. It therefore falsifies coercivity
+based only on coefficient magnitudes and positivity. The explicit formula
+makes the analytic obstruction equally visible. For
+\[
+ w(u)=(e(-u)-1)\mathbf1_{1<u\le2},\qquad
+ \widehat w(s)=\int_1^2w(u)u^{s-1}\,du,
+\]
+a zero \(\rho\) contributes a term proportional to
+\(-X^\rho\widehat w(\rho)\). Whenever \(\widehat w(\rho)\ne0\), a proof of
+\(|B_1(X)|\ll_\varepsilon X^{1-\delta+\varepsilon}\) that separates this
+zero mode already has to exclude \(\Re\rho>1-\delta\). No claim is made
+that \(\widehat w\) is nonzero at every zeta zero.
+
+Thus the twisted Selberg identity redistributes the first additive mode but
+provides no unconditional power gain. Small prime-power endpoint checks and
+locally computable large-prime or composite tests can falsify missing terms;
+they cannot establish the asymptotic estimate. Record Mersenne inputs require
+symbolic, modular, or streaming evaluation.
