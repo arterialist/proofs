@@ -140,34 +140,60 @@ finite Mellin separators, bounded-variation endpoint removal, and both
 residual orientations cost \(T^\varepsilon\). Choosing
 \(\varepsilon<\kappa-2\eta\) absorbs those losses.
 
-## Proposed unconditional input and primary-source comparison
+## Unconditional inputs tested against the required saving
 
-The plausible input is a weighted incomplete Kloosterman-fraction estimate
-after three exact operations: split by \(c=(N,ab)\), detect the interval
-\(0<s<gq/P\) by finite Fourier completion, and apply additive reciprocity
-to the resulting reduced fractions. The estimate must retain the actual
-coefficient \(A(ga)\overline{A(gb)}\) and prove (8), uniformly in the
-integer center and every endpoint interval.
+A direct Kloosterman-fraction completion does not currently lead to (8).
+The obstruction already appears in the full all-unit contact sum. For
+coprime \(q,r\), additive reciprocity gives
 
-This is a finite exponential-sum statement and is strictly weaker than RH.
-There are unconditional primary-source estimates in the right family.
-Duke, Friedlander and Iwaniec bound bilinear forms
-\(\sum\alpha_m\beta_n e(a\bar m/n)\), including a balanced-range theorem
-and smooth weights, in
-[*Bilinear forms with Kloosterman fractions*](https://www.math.ucla.edu/~wdduke/preprints/bilinear.pdf),
-Theorems 1--3 and their weighted corollary. Bettin and Chandee prove a
-stronger trilinear estimate for
-\(\sum\alpha_m\beta_n\nu_h e(\vartheta h\bar m/n)\) in
-[*Trilinear forms with Kloosterman fractions*](https://arxiv.org/abs/1502.00769),
-Theorem 1.
+\[
+ e\!\left(\frac{kN}{qr}\right)
+ =e\!\left(\frac{kN\overline q}{r}
+            +\frac{kN\overline r}{q}\right).
+ \tag{11}
+\]
 
-Neither theorem can be inserted into (3) as written. Here the modulus
-\(q=ab/(N,ab)\) depends jointly on both reduced denominators, the gcd split
-depends on the fixed center, the cutoff length \(gq/P\) moves with the
-summation variables, and the Möbius-divisor weight is not yet separated
-into the coefficient norms required by those theorems. A valid application
-must first produce the published Kloosterman-fraction shape without paying
-back the required factor \(Q\). That transformation is the analytic gap.
+Bettin and Chandee's unconditional Theorem 1 in
+[*Trilinear forms with Kloosterman fractions*](https://arxiv.org/abs/1502.00769)
+controls one separated inverse phase. The second inverse phase in (11)
+still depends on all three variables. It cannot be put into their
+coefficient sequences or into the smooth perturbation allowed by their
+Remark 1. The same issue prevents a direct application of the earlier
+Duke--Friedlander--Iwaniec bilinear bounds. The detailed calculation is in
+the [critical all-unit alias audit](actual-mobius-critical-semiprime-alias-dispersion.md#5-check-against-available-primary-estimates).
+
+The fractional-part estimates of Saffari and Vaughan also miss this scale.
+Their [Theorem 1](https://www.numdam.org/article/AIF_1977__27_2_1_0.pdf)
+for \(\{x/n\}\) has error \(O(x^{1/3}y^{-1}\log x)\) when \(n\le y\).
+Here a fixed \(k,r\) gives \(x\asymp kN/r\asymp P Q^3\) and
+\(y\asymp Q\). Hence
+
+\[
+ \frac{x^{1/3}}y\asymp P^{1/3},
+ \tag{12}
+\]
+
+which grows at every critical \(\lambda\). This theorem does not give a
+vanishing discrepancy in the required block.
+
+The missing unconditional input must use the collective \(q\ne q'\)
+aliases or the determinant-weighted product resonances. It must save a
+fixed power beyond the \(Q/P\) multiplicity of admissible nonzero
+differences. In the high Gram block, the best written fourfold completion
+has the [normalized bound](actual-mobius-double-q-fourfold-resonance-bound.md#result-and-remaining-obstruction)
+
+\[
+ T^\varepsilon\left(
+   \frac Q{P^2}+\frac{P Q^3}{F^2}+\frac1Q
+ \right),
+ \qquad F>Q^2T^{-\kappa}.
+ \tag{13}
+\]
+
+Its first term is \(Q/P^2=T^{\lambda-2}>1\) throughout (5). Any new
+estimate must remove that loss while retaining the signed arithmetic
+coefficients and the endpoint intervals. Such a finite exponential-sum
+estimate would be weaker than RH, but no cited theorem supplies it.
 
 ## Fast falsifier for unit-density arguments
 
@@ -177,7 +203,7 @@ and a range with
 \[
  1\le \frac{gq}{P}<q,
  \quad\text{equivalently}\quad
- \frac Pq\le g<P.                                   \tag{11}
+ \frac Pq\le g<P.                                   \tag{14}
 \]
 
 Every integer \(1\le s<gq/P\) is then automatically coprime to \(q\).
