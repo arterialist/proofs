@@ -12,6 +12,14 @@ Companion note:
 Attribution: Arterialist RH research team, September 2026.
 Foundational axioms: standard Lean 4 foundations only (`[propext, Classical.choice, Quot.sound]`), zero custom axioms.
 
+The bounded search for this exact combined package covered Mathlib's residue
+and complex-analysis APIs, the public KeyAIGit `ecdlp-lean-verification`
+repository, the public Li-criterion Lean repository, and the
+`PrimeNumberTheoremAnd` index. No matching public formalization of the
+multiplicity-bearing zero-circle, compact Mellin, and finite-history package
+was found there as of September 2026. This is provisional best-knowledge
+evidence for the stated scope, not a worldwide priority claim.
+
 ## Statement
 
 Let $f: \mathbb{C} \to \mathbb{C}$ be an analytic function with a zero of order $m \ge 0$ at $s \in \mathbb{C}$.

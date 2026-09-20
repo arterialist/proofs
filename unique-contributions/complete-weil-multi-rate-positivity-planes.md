@@ -7,6 +7,16 @@
 **Validated Python/Arb Certificate:** [`certificates/three_rate_weil_xi_signs.py`](../certificates/three_rate_weil_xi_signs.py)
 **Scope:** a fixed two- or three-rate family; no claim is made for arbitrary tests or for a resolution of RH.
 
+## Source comparison and provenance
+
+The arithmetic normalization and the finite-rate determinant statement were
+checked against Bombieri's short-support positivity paper, Suzuki's 2026
+screw-function comparison, and the Platt--Trudgian zero certification used for
+the finite-height input. The search found no identical two-/three-rate
+determinant package with this complete-prime normalization. The comparison is
+bounded and dated September 2026; it supports only the exact finite-rate claim
+stated here and makes no absolute priority claim.
+
 ---
 
 ## 1. Result and scope

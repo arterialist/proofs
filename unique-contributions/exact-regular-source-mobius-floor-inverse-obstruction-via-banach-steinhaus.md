@@ -1,7 +1,7 @@
-# Contribution 271: Exact Regular Source Möbius Floor-Inverse Obstruction via Banach-Steinhaus
+# Exact regular-source Möbius floor-inverse obstruction below exponent two-thirds
 
 **Date:** 19 September 2026  
-**Primary Source Documents:** [`formalization/BuildingBlocks/RegularSource.lean`](../../formalization/BuildingBlocks/RegularSource.lean), [`building-blocks/prime-distribution/regular-source-mobius-obstruction.md`](../../building-blocks/prime-distribution/regular-source-mobius-obstruction.md)  
+**Primary Source Documents:** [`formalization/BuildingBlocks/RegularSource.lean`](../formalization/BuildingBlocks/RegularSource.lean), [`building-blocks/prime-distribution/regular-source-mobius-obstruction.md`](../building-blocks/prime-distribution/regular-source-mobius-obstruction.md)  
 **Classification:** Analytic Number Theory / Functional Analysis / Banach Spaces / Uniform Boundedness Principle / Möbius Inversion / Squarefree Density / Formalized Mathematics
 
 ---
@@ -16,7 +16,7 @@ to obey an asymptotic bound $|M(f, N)| \le C N^r$ for some sublinear exponent $r
 
 This contribution proves:
 
-1. **Existence of Regular Counterexample Sequence for all $r < 2/3$:**  
+1. **Existence of a regular counterexample sequence for each fixed $r < 2/3$:**  
    For every exponent $r < 2/3$, there exists a fixed sequence $f : \mathbb{N} \to \mathbb{R}$ satisfying:
    - Square-root growth: $|f(q)| \le \sqrt{q}$ for all $q \in \mathbb{N}$,
    - 1-Lipschitz bounded first differences: $|f(q+1) - f(q)| \le 1$ for all $q \in \mathbb{N}$,
@@ -100,8 +100,11 @@ Zero custom axioms, zero `sorry`.
 
 ---
 
-## 4. Literature Context and Target Venues
+## 4. Literature comparison and scope
 
-- **Prior Literature:** Floor-sum asymptotics, arithmetic functions with smooth weights, and applications of the uniform boundedness principle to divergent Fourier/Dirichlet series (Tenenbaum 2015, Rudin 1991). Priority for the exact result and its formalization is provisional; no exhaustive search is documented.
-- **Advancement:** Establishes the sharp lower obstruction boundary $r = 2/3$ for floor Möbius inversion on Lipschitz sources.
-- **Target Venues:** *Bulletin of the London Mathematical Society* or *Journal of Functional Analysis*.
+- **Prior Literature:** Floor-sum asymptotics and smooth Möbius weights were
+  compared with Tenenbaum (2015), the Hildebrand criterion, and the public
+  formalization inventories listed in the audit ledger. That targeted search
+  found no exact formalized fixed-source obstruction with the displayed
+  square-root and Lipschitz hypotheses. The comparison is provisional and
+  makes no endpoint or sharpness claim at $r=2/3$.

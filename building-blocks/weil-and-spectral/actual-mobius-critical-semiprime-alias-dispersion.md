@@ -348,8 +348,11 @@ Hence
 
 For the actual unrestricted integer \(q\)-sum, equal reduced fractions can
 have multiplicity \(O(P)\); the corresponding weaker majorant is
-\(T^\varepsilon P^2Q^2\|R\|_2^2\). This is the relevant scale for the full
-all-unit contact split and does not give the saving below.
+\(T^\varepsilon P^2Q^2\|R\|_2^2\), hence \(T^\varepsilon P^2Q^4\) after
+(26). Relative to the displayed \(q=q'\) target \(P Q^5\), this still
+saves a factor \(P/Q<1\) in the stated range \(P<Q\). It does not recover
+the stronger prime-only \(P Q^4\) bound. The full all-unit contact split
+still requires control of the cross-\(q\) Gram terms in (7).
 
 For (14), fixed divisor bounds and the standard fixed divisor-moment bound
 give

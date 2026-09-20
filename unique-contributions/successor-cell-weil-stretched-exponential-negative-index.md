@@ -6,6 +6,12 @@ To the best of our knowledge, an unconditional upper bound on the negative index
 inertia for physical-space discretizations of the complete Weil quadratic form has not
 previously appeared in the literature.
 
+The source comparison covered Bombieri's 2000 finite/infinite-dimensional Weil
+truncation results and the recent Galerkin comparison cited in the audit ledger.
+No matching quantitative successor-cell estimate was located in that bounded
+search. The statement is therefore a provisional best-knowledge comparison for
+this specific discretization and rate, not a claim about all Weil truncations.
+
 ## Statement
 
 Let $S_N = \operatorname{span}\{ \mathbf{1}_{I_n} : 1 \le n \le N \}$ be the $N$-dimensional

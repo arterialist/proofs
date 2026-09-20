@@ -10,6 +10,13 @@ To the best of our knowledge, the strict concavity $\phi_{\rm nat}''(s) < 0$ and
 third derivative $\phi_{\rm nat}'''(s) > 0$ for the Mellin interpolant ratio of the complete
 Riemann theta kernel have not appeared previously in the literature.
 
+The bounded source comparison covers the DLMF theta/Mellin identities, the
+Planat--Solé Laguerre-expression results, and public theta formalization
+inventories as of September 2026. No exact match for this normalized ratio and
+the simultaneous second- and third-derivative signs was found. This is an
+honest best-knowledge statement about that search, not an absolute priority
+claim and not an all-order complete-monotonicity claim.
+
 ## Statement
 
 Let $\Phi(u) = \sum_{n=1}^\infty (4\pi^2 n^4 e^{9u/2} - 6\pi n^2 e^{5u/2}) e^{-\pi n^2 e^{2u}}$ be the

@@ -2,6 +2,11 @@
 
 [BuildingBlocks.lean](BuildingBlocks.lean) imports the theorem modules. The [verification folder](verification/) contains the audit files and supporting build records. Import names remain under `BuildingBlocks`; the Lake source directory is `formalization`.
 
+The [demoted research records](records/) preserve statement and attribution
+pages that no longer meet the public first-formalization or unique-contribution
+evidence threshold. They document available building blocks without making a
+priority claim.
+
 From the repository root, run `lake exe cache get` and `lake build`. To check the axiom audit directly, run `lake env lean formalization/verification/Audit.lean`.
 
 Compiled Lean theorems should be read with their hypotheses. In particular, a theorem deriving RH from an arithmetic bound does not establish that bound.

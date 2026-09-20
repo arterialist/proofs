@@ -10,7 +10,12 @@ Certificates:
 Attribution: Arterialist RH research team, September 2026.
 Literature context:
 In sieve theory and the additive theory of primes (Goldbach, twin primes), sequences are classically pre-sieved by removing multiples of small primes before applying combinatorial or bilinear sieves. In operator-theoretic number theory, positive semidefinite completion is applied to bounding distinct-pair convolution energies $\sum_{j, k \in S} a_j a_k R_h(j-k) \ge c P_1^2 - \lambda_* P_2$.
-Literature searches reveal that combining semidefinite positive matrix completion with presieved arithmetic residues is entirely novel to this repository.
+A targeted comparison on 20 September 2026 covered presieved sieve kernels,
+finite positive-semidefinite completion arguments, and the cited Goldbach and
+twin-prime literature. It found no exact match for the finite cubic kernel,
+primorial masked character obstruction, and certified nonuniform repair stated
+below. This bounded comparison supports only the displayed finite result and
+does not claim a universal matrix-completion theorem or absolute priority.
 
 ## Statement
 

@@ -11,6 +11,16 @@ inequality for increasing functions of distinct prime valuations under the arith
 distribution. The product inequality is obtained from the finite divisibility comparison below; it is
 not a claim of full negative association for arbitrary increasing functions of grouped coordinates.
 
+## Source comparison and scope
+
+A targeted comparison on 20 September 2026 covered the finite-grid and power-sum
+literature, Gao's upper-orthant power-sum inequalities (Corollary 2.3), and the
+arithmetic negative-dependence references cited in the subject note. No exact
+match for this cutoff law, its strict covariance identity, and the stated
+individual-coordinate upper-orthant inequality was found in those sources. This
+is a bounded, best-knowledge comparison; it does not claim priority for general
+negative association, which this page explicitly does not assert.
+
 ## Statement
 
 For any real $x > 1$, define the arithmetic causal ramp probability distribution on $\{n \in \mathbb{N} : n < x\}$:
