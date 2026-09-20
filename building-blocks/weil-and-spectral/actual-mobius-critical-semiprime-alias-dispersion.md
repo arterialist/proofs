@@ -1,7 +1,8 @@
 # The critical semiprime alias-dispersion target
 
-**Status.** This is a private unconditional written mean-square estimate,
-phase audit, and literature comparison, 20 September 2026. The exponent identities are formalized in
+**Status.** This note gives an unconditional reduction of the critical
+semiprime shell, a written mean-square estimate for its diagonal prime
+fiber, and a comparison with the analytic estimates used below. The exponent identities are formalized in
 [`ActualMobiusCriticalSemiprimeAliasDispersion.lean`](../../formalization/BuildingBlocks/ActualMobiusCriticalSemiprimeAliasDispersion.lean).
 The continuous mean-value and sampling argument below is written
 mathematics. No prefix extension or Riemann-hypothesis result is claimed.

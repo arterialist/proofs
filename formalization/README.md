@@ -8,6 +8,11 @@ Compiled Lean theorems should be read with their hypotheses. In particular, a th
 
 The exponent and support algebra for the complete three-factor Möbius prefix extension is in [ActualMobiusK3BottomSlice.lean](BuildingBlocks/ActualMobiusK3BottomSlice.lean), with its declaration and axiom audit in [ActualMobiusK3BottomSliceAudit.lean](verification/ActualMobiusK3BottomSliceAudit.lean). The external Robert--Sargos and Bordellès estimates remain written analytic inputs.
 
+[`ActualMobiusCriticalSemiprimeAliasDispersion.lean`](BuildingBlocks/ActualMobiusCriticalSemiprimeAliasDispersion.lean)
+checks the scale, normalization, and exponent identities in the critical
+semiprime alias reduction. Its companion declaration and axiom audit is
+[`ActualMobiusCriticalSemiprimeAliasDispersionAudit.lean`](verification/ActualMobiusCriticalSemiprimeAliasDispersionAudit.lean).
+
 [`ActualMobiusCriticalPrimeFiberSampling.lean`](BuildingBlocks/ActualMobiusCriticalPrimeFiberSampling.lean)
 checks the exponent ledger for the unconditional written sampling estimate
 on the critical diagonal prime fiber. Its companion audit is
