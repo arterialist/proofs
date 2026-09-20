@@ -67,6 +67,20 @@ The existing exact terminal formula may be used for \(M\):
 
 The coefficient of \(n=2X\) in (4) is literally zero.
 
+The centered mode has an equally finite arithmetic form:
+
+\[
+ \boxed{
+ Z=\frac{X^2}{12}
+ +\frac1{2X}\sum_{X<n\le2X}
+ (n-X)(n-2X)\Lambda(n).}
+ \tag{4a}
+\]
+
+Here the constant \(\psi(X)\) disappears because its centered weight has
+integral zero. The coefficient at \(n=2X\) again vanishes literally, and
+every proper prime power in the block remains in the sum.
+
 ## Exact prime twist in every nonzero mode
 
 For \(j\in\mathbb Z\setminus\{0\}\), define
