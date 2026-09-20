@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact certificate for an asymptotic zeta zero-free constant < 48.0712269117."""
+"""Exact certificate for an asymptotic zeta zero-free constant < 48.0712256382."""
 from fractions import Fraction as F
 import json
 
@@ -18,7 +18,8 @@ def coefficients(rows):
 b_opt=coefficients(OPT_ROWS)
 # Normalized Fejer kernel |sum_{j=0}^K exp(ijx)|^2/(K+1).
 b_fejer=[F(1)]+[F(2*(K+1-k),K+1) for k in range(1,K+1)]
-bk=[F(1,10**9)*b_fejer[k]+F(10**9-1,10**9)*b_opt[k] for k in range(K+1)]
+repair_den=50_000_000_000
+bk=[F(1,repair_den)*b_fejer[k]+F(repair_den-1,repair_den)*b_opt[k] for k in range(K+1)]
 assert bk[0]==1
 assert all(x>0 for x in bk[1:])
 assert bk[1]>1
@@ -43,20 +44,20 @@ def root_bounds(x):
     assert sl>0 and cl>0
     return sl*sl-b1+b1*x*cl/su, su*su-b1+b1*x*cu/sl
 
-lo=F(1132674386730249,10**15); hi=F(22653487734605,2*10**13)
+lo=F(1132674386860969,10**15); hi=F(1132674386860970,10**15)
 assert 0<lo<hi<F(3,2) and hi*hi<2
 flo=root_bounds(lo); fhi=root_bounds(hi)
 assert flo[0]>0 and fhi[1]<0
 cos_hi_lower,_=cos_bounds(hi)
-target=F(480712269117,10**10)
+target=F(240356128191,5_000_000_000)
 lhs=F(9,16)*b*b*(b+1)*B*B
 rhs=target**3*cos_hi_lower**6
 assert lhs<rhs
 print(json.dumps({
- "degree":K,"sum_of_squares_factors":len(OPT_ROWS),"fejer_weight":"1e-9",
+ "degree":K,"sum_of_squares_factors":len(OPT_ROWS),"fejer_weight":"2e-11",
  "all_bk_positive":True,"b1_gt_1":True,
  "minimum_bk_index":min(range(1,K+1),key=lambda k:bk[k]),
  "minimum_bk_decimal":format(float(min(bk[1:])),".17g"),
- "theta_bracket":["1.132674386730249","1.132674386730250"],
- "R_strictly_below":"48.0712269117",
+ "theta_bracket":["1.132674386860969","1.132674386860970"],
+ "R_strictly_below":"48.0712256382",
  "exact_cube_margin_decimal":format(float(rhs-lhs),".17g")},indent=2))

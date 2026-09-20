@@ -15,10 +15,11 @@ $$
 for all sufficiently large $|t|$ whenever
 
 $$
-\sigma\geq1-\frac{1}{48.0712269117(\log |t|)^{2/3}(\log\log |t|)^{1/3}}.
+\sigma\geq1-\frac{1}{48.0712256382(\log |t|)^{2/3}(\log\log |t|)^{1/3}}.
 $$
 
-This improves the previously published asymptotic constant $48.0718$.
+This improves the previously published asymptotic constant $48.0718$ and the
+preceding exact certificate $48.0712269117$.
 
 ## Certificate
 
@@ -33,10 +34,17 @@ $$
 It forms
 
 $$
-P(x)=10^{-9}P_{\mathrm{Fej\acute er}}(x)+(1-10^{-9})P_{\mathrm{opt}}(x),
+P(x)=\frac1{5\cdot10^{10}}P_{\mathrm{Fej\acute er}}(x)+\left(1-\frac1{5\cdot10^{10}}\right)P_{\mathrm{opt}}(x).
 $$
 
-where $P_{\mathrm{Fej\acute er}}(x)=|\sum_{j=0}^{110}e^{ijx}|^2/111$. Both components are globally nonnegative and normalized by $b_0=1$. The Fejér component makes every cosine coefficient strictly positive. Exact rational autocorrelations then verify $b_k>0$ for every $1\leq k\leq110$ and $b_1>b_0$. Thus every polynomial admissibility condition is established without numerical sampling.
+where $P_{\mathrm{Fej\acute er}}(x)=|\sum_{j=0}^{110}e^{ijx}|^2/111$. Both components are globally nonnegative and normalized by $b_0=1$. The exact active constraint is $b_{84}$.  The least Fejér weight that makes every coefficient nonnegative is
+
+$$
+\frac{1760327262146008531}{90000000003070359975852980902}
+=1.9559191800955\ldots\times10^{-11}.
+$$
+
+The chosen rational weight $2\times10^{-11}$ is strictly larger, so the Fejér component makes every cosine coefficient strictly positive. Exact rational autocorrelations then verify $b_k>0$ for every $1\leq k\leq110$ and $b_1>b_0$. Thus every polynomial admissibility condition is established without numerical sampling.
 
 Let $b=\sum_{k=1}^{110}b_k$, and let $\theta\in(0,\pi/2)$ be the unique solution of
 
@@ -47,7 +55,7 @@ $$
 Alternating Taylor bounds with rational arithmetic certify
 
 $$
-1.132674386730249<\theta<1.132674386730250.
+1.132674386860969<\theta<1.132674386860970.
 $$
 
 Uniqueness follows because
@@ -73,15 +81,16 @@ $$
 R_2^3=\frac9{16}\frac{b^2(b+1)B^2}{\cos^6\theta}.
 $$
 
-The script proves the resulting rational upper-bound comparison with $48.0712269117^3$ exactly. The polynomial's numerical objective is approximately $48.071226911675126$; this decimal is explanatory and is not used by the certificate.
+The script proves the resulting rational upper-bound comparison with $48.0712256382^3$ exactly. The polynomial's numerical objective is approximately $48.071225638145779$; this decimal is explanatory and is not used by the certificate.
 
-Run:
+Run both independent exact reconstructions:
 
 ```console
 python3 certificate.py
+python3 audit.py
 ```
 
-No third-party package is required.
+The audit parses the factor rows from `certificate.py` as syntax and never executes the candidate. It independently rebuilds the autocorrelations, active repair threshold, theta enclosure, cubed comparison, and reduced costs. No third-party package is required.
 
 ## Sources
 
