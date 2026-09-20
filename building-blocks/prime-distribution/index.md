@@ -58,6 +58,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Largest-prime squarefree packet core](largest-prime-squarefree-packets-formalization.md)
 - [Late-age transfer to the actual prime-history boundary](late-age-prime-boundary-transfer.md)
 - [Coherent energy of complete late-prime packets](late-prime-packet-energy.md)
+- [The live zero-mean packet does not control coarse primitive energy](live-packet-coarse-primitive-bridge-obstruction.md)
 - [Completed late-prime packets retain a macroscopic field](macroscopic-late-prime-completion.md)
 - [A finite transfer from Mertens quotients to the prime error](mertens-prime-transfer.md)
 - [The stabilized odd-Möbius prefix below a prime admission](odd-mobius-stabilized-prefix.md)
