@@ -403,8 +403,8 @@ joint estimate together with the two zero modes is exactly that bound,
 not an independent large-sieve mechanism. The truncated sum remains a
 proper positive part, with (9) controlling its complement.
 
-The strongest safe unconditional estimate obtained from the current PNT
-error is, for every fixed \(\delta>0\),
+A safe unconditional estimate obtained from the cited PNT error is, for
+every fixed \(\delta>0\),
 
 \[
  \boxed{
@@ -413,12 +413,12 @@ error is, for every fixed \(\delta>0\),
  \tag{14g}
 \]
 
-Indeed, (4d) gives \(|M|\ll_\delta X^2e^{-(d-\delta)\Phi(X)}\), and the
-same pointwise PNT estimate in (14b) gives the identical bound for each
-\(|C_j|\). Since \(\sum j^{-2}<\infty\), summing through \(J_X\) costs no
-power of \(J_X\). This argument loses the cancellation inside each
-\(C_j\), then loses all correlation between different \(j\). It retains
-all prime powers and both endpoints.
+Indeed, the same pointwise PNT estimate used to prove (4d) gives
+\(|M|\ll_\delta X^2e^{-(d-\delta)\Phi(X)}\); applied in (14b), it gives
+the identical bound for each \(|C_j|\). Since \(\sum j^{-2}<\infty\),
+summing through \(J_X\) costs no power of \(J_X\). This argument loses the
+cancellation inside each \(C_j\), then loses all correlation between
+different \(j\). It retains all prime powers and both endpoints.
 
 The ordinary large sieve does not improve the exponent. To see the exact
 loss, put \(D=A_0(X)-X\). Complete discrete Fourier orthogonality on the
