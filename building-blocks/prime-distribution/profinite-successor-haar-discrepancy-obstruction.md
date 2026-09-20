@@ -456,63 +456,70 @@ only exact existing full bound remains the elementary $O(X^5)$ bound
 (23). This closes the proposed $U_X$ construction rather than producing
 another coordinate decomposition.
 
-## Projecting the two affine directions is already an RH-scale estimate
+## Projection removes the affine terms but retains off-line zero modes
 
-Let (w_d=-mu(d)log d), (b_d=(B_d(m))_{1le mle X}), and let
-(phi_1(m)=m,phi_2(m)=A_m). With
-[
- K_{d,e}=langle b_d,b_eangle,qquad
- C_{d,i}=langle b_d,phi_iangle,qquad
- G_{i,j}=langlephi_i,phi_jangle,
-]
-the Gram matrix (G) is positive definite and the exact residual quadratic
-form is
-[
- oxed{|(I-Pi_X)V_X|_2^2
- =sum_{d,ele2X}w_dw_eK_{d,e}
- -(C^Tw)^*G^{-1}(C^Tw).}
-	ag{24}
-]
-This retains the actual (mu(d)mu(e)) signs before the positive
-orthogonal projection.
+Let
+\[
+ w_d=-\mu(d)\log d,\qquad
+ b_d=(B_d(m))_{1\le m\le X},
+\]
+and put \(\phi_1(m)=m,\phi_2(m)=A_m\). Define
+\[
+ K_{d,e}=\langle b_d,b_e\rangle,\qquad
+ C_{d,i}=\langle b_d,\phi_i\rangle,\qquad
+ G_{i,j}=\langle\phi_i,\phi_j\rangle.
+\]
+The Gram matrix \(G\) is positive definite. If \(\Pi_X\) is orthogonal
+projection onto \(\operatorname{span}\{\phi_1,\phi_2\}\), then
+\[
+ \boxed{
+ \|(I-\Pi_X)V_X\|_2^2
+ =\sum_{d,e\le2X}w_dw_eK_{d,e}
+ -(C^{\mathsf T}w)^*G^{-1}(C^{\mathsf T}w).}
+\tag{24}
+\]
+This exact positive quadratic form retains the signs
+\(\mu(d)\mu(e)\) before projection.
 
-Equation (9) gives the more decisive identity
-[
- oxed{(I-Pi_X)V_X=(I-Pi_X)P_X,}
-	ag{25}
-]
-because both remaining terms in (9) belong to
-(operatorname{span}{m,A_m}). Thus the proposed estimate is a bound for
-the actual prime primitive after removing only two fixed polynomial
-moments.
+Equation (9) gives the finite identity
+\[
+ \boxed{(I-\Pi_X)V_X=(I-\Pi_X)P_X,}
+\tag{25}
+\]
+because the other terms in (9) belong to
+\(\operatorname{span}\{m,A_m\}\). Thus projection removes the two explicit
+affine directions, rather than creating a complement to the indefinite
+hyperbolic form.
 
-For a zero (ho), scale (m=Xv). Its response in (25) is a nonzero
-constant times
-[
- X^{ho+1}(I-Pi)igl((1+v)^{ho+1}-1igr),qquad0le vle1,
-	ag{26}
-]
-where (Pi) projects onto the limiting span of (v) and
-(v(2+v)/2). The residual in (26) is not zero: otherwise the analytic
-function ((1+v)^{ho+1}-1) would be a polynomial of degree at most two,
-which for a nontrivial zero would force (ho+1in{1,2}). Its squared
-sample norm therefore has scale (X^{2Reho+3}) with a positive
-(ho)-dependent coefficient.
+There is a precise modewise obstruction. For a zeta zero \(\rho\), scale
+\(m=Xv\). Its primitive profile has the form
+\[
+ X^{\rho+1}(I-\Pi)
+ \bigl((1+v)^{\rho+1}-1\bigr),\qquad0\le v\le1,
+\tag{26}
+\]
+up to a nonzero \(\rho\)-dependent factor, where \(\Pi\) projects onto the
+limiting span of \(v\) and \(v(2+v)/2\). This residual is nonzero. Otherwise
+the analytic function \((1+v)^{\rho+1}-1\) would be a polynomial of degree
+at most two, which for a nontrivial zero would force
+\(\rho+1\in\{1,2\}\). Its squared sample norm therefore has scale
+\(X^{2\Re\rho+3}\), with a positive coefficient depending on \(\rho\).
 
-Consequently
-[
- |(I-Pi_X)V_X|_2^2ll_arepsilon X^{4+arepsilon}
-	ag{27}
-]
-is an RH-scale assertion: the same dyadic Mellin continuation argument as
-in the coarse-energy criterion, with the two projected polynomial moments
-contributing only explicit entire or polar terms, excludes every zero with
-(Reho>1/2); the functional equation then gives RH. No unconditional
-input strictly weaker than RH is known to prove (27).
+Consequently a proof of
+\[
+ \|(I-\Pi_X)V_X\|_2^2\ll_\varepsilon X^{4+\varepsilon}
+\tag{27}
+\]
+by separating zero modes or taking their absolute values would already
+need to exclude every off-line mode. This calculation does not prove that
+(27) alone implies RH: the projection depends on \(X\), and (27) omits the
+two polynomial moments needed by the coarse Mellin-continuation argument.
+Those moments cannot be declared entire or harmless without a separate
+bound.
 
-The coherent unit-coefficient block near (d=X) gives the advertised fast
-falsifier: its cutoff profile is not contained in the two-dimensional
-polynomial span, so its projected squared norm remains a positive constant
-times (X^5). Hence orthogonal projection alone gives no power; any proof
-of (27) must use the actual Möbius signs before Cauchy, at precisely RH
-strength. This closes the projected-residual route.
+Projection alone also gives no uniform saving. For unit coefficients on
+\(d\in[0.9X,X]\), rescaling \(m=Xv\) produces a nonpolynomial cutoff
+profile. Its distance from the two-dimensional limiting polynomial span is
+positive, so the projected squared norm is \(cX^5+o(X^5)\) for some
+\(c>0\). Any proof of (27) must therefore use the actual Möbius signs
+before Cauchy. No such unconditional estimate is proved here.
