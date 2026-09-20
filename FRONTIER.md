@@ -154,8 +154,12 @@ The
 [reciprocal short-shift reduction](building-blocks/weil-and-spectral/actual-mobius-reciprocal-short-shift-reduction.md)
 expands the primitive \(t=1\) Poisson-mode mean square into its exact
 two-point kernel. Its zero-resonance branch is coherent for
-\(|h|\lesssim D/T\), but absolute summation already bounds that entire
-branch by \(T^\varepsilon D^3/N\). At the endpoint, the choice
+\(|h|\lesssim D/T\). Absolute summation bounds this core by
+\(T^\varepsilon D^3/N\); on the remaining zero-branch range
+\(D/T<|h|\lesssim D^2/N\), the geometric bound
+\(D^2/(N|h|)\) gives the same total after harmonic summation. Thus the
+entire nearest-integer-zero branch is \(O(T^\varepsilon D^3/N)\).
+At the endpoint, the choice
 \(\rho=(\lambda-1)/2\) lies above the strict correlation threshold and
 below the absolute-bound ceiling by the same margin
 \((\lambda+1)/10\). Thus the zero branch needs no Chowla cancellation;

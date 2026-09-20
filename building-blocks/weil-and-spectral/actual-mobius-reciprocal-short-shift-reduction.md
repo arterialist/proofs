@@ -222,34 +222,62 @@ threshold exponent is also the length of the coherent shift interval:
 \tag{15}
 \]
 
-The coherence scale alone does not make this branch an obstruction.  The
-geometric kernel is at most (L), there are (O(H)) shifts with
-(H=D/T), and for both coefficients in (1)--(2) the divisor bound gives
-(|A(n)|\ll_\varepsilon T^\varepsilon).  Therefore absolute summation of
-the entire zero-resonance branch gives
+The coherence scale alone does not make the nearest-integer-zero branch an
+obstruction.  Put \(H=D/T\).  For both coefficients in (1)--(2), the
+divisor bound gives \(|A(n)|\ll_\varepsilon T^\varepsilon\).  On the
+coherent core \(0<|h|\lesssim H\), the geometric kernel is at most \(L\),
+so absolute summation gives
+
+\[
+ T^\varepsilon D\sum_{0<|h|\lesssim H}L
+ \ll T^\varepsilon LHD
+ =T^\varepsilon\frac{D^3}{N}.
+\tag{15a}
+\]
+
+There is also a noncoherent tail in the same zero branch.  As long as the
+nearest integer remains zero, one has \(|h|\lesssim D^2/N\); for
+\(H<|h|\lesssim D^2/N\), equations (6) and (9a) give
+
+\[
+ \left|K_{\mathcal K}\!\left(\frac{Nh}{n(n+h)}\right)\right|
+ \ll \frac{D^2}{N|h|}.
+\tag{15b}
+\]
+
+Harmonic summation therefore gives
+
+\[
+ T^\varepsilon D
+ \sum_{H<|h|\lesssim D^2/N}\frac{D^2}{N|h|}
+ \ll T^\varepsilon\frac{D^3}{N};
+\tag{15c}
+\]
+
+the logarithm is absorbed into \(T^\varepsilon\).  Combining (15a) and
+(15c) controls the entire nearest-integer-zero branch:
 
 \[
  \boxed{
  \mathcal E_{0}
- \ll_\varepsilon T^\varepsilon LHD
- =T^\varepsilon\frac{D^3}{N}.}
- \tag{15a}
+ \ll_\varepsilon T^\varepsilon\frac{D^3}{N}.}
+ \tag{15d}
 \]
 
-This includes hard interval endpoints: they can only shorten the (n)- or
-(h)-ranges.  To place (15a) under the second term of (11), it suffices
+This includes hard interval endpoints: they can only shorten the \(n\)- or
+\(h\)-ranges.  To place (15d) under the second term of (11), it suffices
 that
 
 \[
  \rho<\lambda-d.
- \tag{15b}
+ \tag{15e}
 \]
 
-At (d=d_*), choose
+At \(d=d_*\), choose
 
 \[
  \rho_0=\frac{\lambda-1}{2}.
- \tag{15c}
+ \tag{15f}
 \]
 
 The two available margins are exactly equal:
@@ -258,12 +286,12 @@ The two available margins are exactly equal:
  \rho_0-(d_*-1)
  = (\lambda-d_*)-\rho_0
  =\frac{\lambda+1}{10}>0.
- \tag{15d}
+ \tag{15g}
 \]
 
 Thus, for example, every fixed
-(0<\eta<(\lambda+1)/20) satisfies the strict requirement
-(\rho_0>d_*-1+2\eta), after leaving the usual (T^\varepsilon) room.
+\(0<\eta<(\lambda+1)/20\) satisfies the strict requirement
+\(\rho_0>d_*-1+2\eta\), after leaving the usual \(T^\varepsilon\) room.
 No signed Möbius correlation estimate is needed for the zero-resonance
 branch.  The unresolved terms are the nonzero integer-resonance branches
 of the complete kernel.
