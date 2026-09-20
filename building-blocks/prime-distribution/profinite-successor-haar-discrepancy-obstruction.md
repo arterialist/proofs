@@ -364,12 +364,21 @@ the matching part of \(a_{2X}\). If
 \(-\int_X^{X+m}W_X(t)\,dt\), with the usual step-function convention.
 This is the requested moving-interval form, including both endpoints.
 
-No published unconditional short-interval mean-square theorem for
-\(\mu\) gives a fixed power for \(\sum_{m\le X}|H_X(m)|^2\). Results that
-average over the interval's starting point do not control this fixed-start,
-nested family, and deleting their exceptional starting points is not
-available here. Applying the classical zero-free-region bound to the
-weighted sums in (20) reproduces only a Vinogradov--Korobov saving.
+The standard unconditional short-interval mean-square input does not give a
+fixed power here. Corollary 1.1 of Matomäki and Radziwiłł,
+[*Multiplicative functions in short intervals II*](https://arxiv.org/abs/2007.04290),
+compares a normalized short sum with its long mean at tolerance \(\eta\),
+outside \(O(Xh^{-\eta^\kappa})\) starting points in its general form. In the
+full-support case its stronger conclusion requires
+\(\eta\ge(\log h)^{-1/300}\), and the exceptional set is bounded by
+\(O(X(h^{-\eta/15}+X^{-\eta^4/10^{16}}))\). A fixed power saving in the
+present energy would require polynomially small relative tolerance, outside
+that stronger range; in the general estimate it makes
+\(h^{-\eta^\kappa}=1-o(1)\). The present intervals also have one fixed
+starting point and are nested, which removes the averaging in that theorem.
+Applying the
+classical zero-free-region bound to (20) reproduces only a
+Vinogradov--Korobov saving.
 
 There is also a precise analytic obstruction. The Dirichlet series of the
 weight in (20) is
