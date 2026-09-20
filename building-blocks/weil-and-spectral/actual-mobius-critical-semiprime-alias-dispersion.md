@@ -246,6 +246,31 @@ depends jointly on \(k,q,r\); it is neither a separated coefficient nor the
 smooth perturbation allowed by their Remark 1. Thus reciprocity alone does
 not put (13) under their theorem.
 
+The Hermitian estimate in Dong--Robles--Zeindler,
+[*Bilinear forms with Kloosterman fractions and applications*, Theorem 1.8](https://arxiv.org/abs/2601.00292),
+does not remove this obstruction.  If \(u=\overline q\pmod r\) and
+\(v=\overline r\pmod q\), additive reciprocity says for some integer
+\(\ell\) that
+
+\[
+ \frac ur+\frac vq=\ell+\frac1{qr}.
+\tag{17a}
+\]
+
+Consequently its antisymmetric Hermitian phase is
+
+\[
+ \frac ur-\frac vq
+ =2\frac ur-\ell-\frac1{qr}.
+\tag{17b}
+\]
+
+The theorem therefore controls a modular-inverse phase with an ordinary
+reciprocal perturbation.  The phase in (13) is the symmetric ordinary
+reciprocal term itself, with no remaining modular-inverse oscillation to
+which that theorem can be applied.  The exact algebra in (17a)--(17b) is
+Lean-checked; no estimate from Dong--Robles--Zeindler is claimed here.
+
 At this stage the remaining analytic task is sharply isolated: prove a
 power saving in (13), or in the full signed alias form (7), without replacing
 the nonzero aliases by their separate absolute spacing counts. The next
@@ -348,11 +373,12 @@ Hence
 
 For the actual unrestricted integer \(q\)-sum, equal reduced fractions can
 have multiplicity \(O(P)\); the corresponding weaker majorant is
-\(T^\varepsilon P^2Q^2\|R\|_2^2\), hence \(T^\varepsilon P^2Q^4\) after
-(26). Relative to the displayed \(q=q'\) target \(P Q^5\), this still
-saves a factor \(P/Q<1\) in the stated range \(P<Q\). It does not recover
-the stronger prime-only \(P Q^4\) bound. The full all-unit contact split
-still requires control of the cross-\(q\) Gram terms in (7).
+\(T^\varepsilon P^2Q^2\|R\|_2^2\). After (26) this is
+\(T^\varepsilon P^2Q^4\), which is below the sector target \(PQ^5\) by
+the factor \(P/Q<1\). This does not recover the stronger prime-only
+\(P Q^4\) bound, and it does not control the full all-unit contact split:
+that expansion contains the cross-\(q\) Gram from Section 7, whereas this
+sampling argument bounds one common-coefficient reciprocal family.
 
 For (14), fixed divisor bounds and the standard fixed divisor-moment bound
 give

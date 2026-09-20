@@ -107,6 +107,28 @@ theorem reciprocalCoherenceScale {D T N h : ℝ} (hD : D ≠ 0) (hN : N ≠ 0) :
     (D * T / N) * (N * h / D ^ 2) = T * h / D := by
   field_simp
 
+/-- Exact real form of additive reciprocity.  The integer `ell` records the
+whole turn discarded by the additive character.  For the standard inverse
+representatives, `u` is an inverse of `q` modulo `r` and `v` is an inverse
+of `r` modulo `q`. -/
+theorem additiveReciprocityExact {q r u v ell : ℝ}
+    (hq : q ≠ 0) (hr : r ≠ 0)
+    (hbezout : q * u + r * v = 1 + ell * q * r) :
+    u / r + v / q = ell + 1 / (q * r) := by
+  field_simp
+  nlinarith
+
+/-- Under additive reciprocity, the antisymmetric Hermitian phase is twice
+one Kloosterman fraction minus the ordinary reciprocal perturbation (up to
+an integer).  It is therefore not the symmetric reciprocal phase itself. -/
+theorem hermitianReciprocityExact {q r u v ell : ℝ}
+    (hq : q ≠ 0) (hr : r ≠ 0)
+    (hbezout : q * u + r * v = 1 + ell * q * r) :
+    u / r - v / q = 2 * (u / r) - ell - 1 / (q * r) := by
+  rw [show v / q = ell + 1 / (q * r) - u / r by
+    linarith [additiveReciprocityExact hq hr hbezout]]
+  ring
+
 /-- At the current endpoint, the off-diagonal power required by the
 reciprocal second moment is (2λ-3)/5, before the requested final margin. -/
 theorem endpointCorrelationThreshold (lambda : ℝ) :
