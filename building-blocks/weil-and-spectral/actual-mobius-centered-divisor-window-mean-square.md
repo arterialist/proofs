@@ -4,8 +4,9 @@
 The exact residue-class defect and critical exponent ledger are Lean-checked.
 The divisor covariance expansion and finite-interval averaging remain written
 mathematics. This gives a fixed-power estimate for the genuine high
-product-resonance kernel after averaging the real packet center. It does not
-prove the required prescribed-center estimate or the Riemann hypothesis.
+product-resonance kernel after averaging the real packet center, and a
+simultaneous almost-all-center saving for every dyadic high block. It does
+not prove the required prescribed-center estimate or the Riemann hypothesis.
 
 ## Centered restricted-divisor coefficient
 
@@ -271,20 +272,61 @@ Equivalently, multiplying (11e) by the Fourier-integral scale
 \(M=P^2F/Q^2\) and dividing by the Gram target \(P^3Q^3\) gives the
 normalized real-center average \(O_\varepsilon(T^\varepsilon/P)\).
 
+The estimate also holds simultaneously across the high dyadic partition.
+Let \(\mathfrak F_T\) be the dyadic values in
+\(Q^2\le F\le T^{1-\kappa}\), so
+\(|\mathfrak F_T|=O(\log T)\), and set
+
+\[
+ \mathcal A_F(N)=
+ \frac{P^2F/Q^2}{P^3Q^3}\,|\mathcal R_F(N)|.
+ \tag{17}
+\]
+
+For every fixed \(\varepsilon>0\), apply (11e) with a smaller epsilon,
+then use Markov's inequality and take the union over
+\(F\in\mathfrak F_T\). Outside a set \(\mathcal E_T\) satisfying
+
+\[
+ \frac{\operatorname{meas}(\mathcal E_T)}{Q^5}
+ \ll_\varepsilon T^\varepsilon P^{-1/2},
+ \tag{18}
+\]
+
+one has, simultaneously for every \(F\in\mathfrak F_T\),
+
+\[
+ \mathcal A_F(N)\ll_\varepsilon T^\varepsilon P^{-1/2}.
+ \tag{19}
+\]
+
+The logarithmic number of blocks is absorbed by epsilon renaming, so their
+sum obeys the same bound. Since
+
+\[
+ P^{-1/2}=T^{-(1-2\lambda/5)/2},
+ \tag{20}
+\]
+
+both the exceptional proportion and the simultaneous high-block bound save
+a fixed power throughout \(2<\lambda<29/14\).
+
 This identifies both the gain and its limit. The product kernel occupies a
 diagonal strip of difference width \(H\) and center width
 \(V=Q^3/F\ge H\). Tiling it into \(H\)-scale boxes makes (10) the correct
-one-window estimate. The theorem controls the simultaneous \(q,r\) sum only
-after a real-center average. It does not give the bound at a prescribed
-\(N\) and does not supply a simultaneous statement for all scales. Those
-are the remaining steps.
+one-window estimate. The theorem controls the simultaneous \(q,r\) sum in
+mean over the real center and, by (18)--(19), at almost every center for all
+dyadic high scales at once. It does not give the bound at a prescribed
+\(N\). That translation, together with the separate endpoint and tail
+pieces outside this high block, remains open.
 
 [ActualMobiusCenteredDivisorWindow.lean](../../formalization/BuildingBlocks/ActualMobiusCenteredDivisorWindow.lean)
-checks (5), the bounds (7)--(8), and the exponents (14)--(16). Its
+checks (5), the bounds (7)--(8), and the exponents (14)--(16) and (20). Its
 [axiom audit](../../formalization/verification/ActualMobiusCenteredDivisorWindowAudit.lean)
 finds only propext, Classical.choice, and Quot.sound. Lean does not
 formalize the congruence averaging in (3), the gcd sum in (9), or the
-finite-interval and smooth-kernel estimates (11)--(11e).
+finite-interval and smooth-kernel estimates (11)--(11e), Markov's inequality,
+or the dyadic union in (18)--(19).
 
 ## Literature boundary
 

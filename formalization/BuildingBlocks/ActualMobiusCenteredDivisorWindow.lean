@@ -97,6 +97,19 @@ theorem averagedResidualSaves {lambda : ℝ} (hlambda : lambda < 5 / 2) :
   simp [p]
   linarith
 
+/-- Markov at the square root of the averaged P^(-1) gain leaves the
+simultaneous almost-all-center exponent -p/2. -/
+def almostAllHighScaleExponent (lambda : ℝ) : ℝ := -p lambda / 2
+
+theorem almostAllHighScaleExponent_eq (lambda : ℝ) :
+    almostAllHighScaleExponent lambda = -(1 - 2 * lambda / 5) / 2 := by
+  simp [almostAllHighScaleExponent, p]
+
+theorem almostAllHighScaleSaves {lambda : ℝ} (hlambda : lambda < 5 / 2) :
+    almostAllHighScaleExponent lambda < 0 := by
+  rw [almostAllHighScaleExponent_eq]
+  linarith
+
 end
 
 end BuildingBlocks.ActualMobiusCenteredDivisorWindow
@@ -109,3 +122,5 @@ end BuildingBlocks.ActualMobiusCenteredDivisorWindow
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.twoWindowExponent
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.averagedResidualExponent
 #print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.averagedResidualSaves
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.almostAllHighScaleExponent_eq
+#print axioms BuildingBlocks.ActualMobiusCenteredDivisorWindow.almostAllHighScaleSaves
