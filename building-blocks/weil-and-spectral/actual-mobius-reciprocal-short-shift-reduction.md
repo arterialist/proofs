@@ -225,8 +225,8 @@ threshold exponent is also the length of the coherent shift interval:
 The coherence scale alone does not make the nearest-integer-zero branch an
 obstruction.  Put \(H=D/T\).  For both coefficients in (1)--(2), the
 divisor bound gives \(|A(n)|\ll_\varepsilon T^\varepsilon\).  On the
-coherent core \(0<|h|\lesssim H\), the geometric kernel is at most \(L\),
-so absolute summation gives
+coherent core \(0<|h|\lesssim H\), the geometric kernel satisfies
+\(|K_{\mathcal K}|\leq\#\mathcal K\ll L\), so absolute summation gives
 
 \[
  T^\varepsilon D\sum_{0<|h|\lesssim H}L
@@ -296,6 +296,73 @@ No signed Möbius correlation estimate is needed for the zero-resonance
 branch.  The unresolved terms are the nonzero integer-resonance branches
 of the complete kernel.
 
+## Exact nonzero resonances at integer centers
+
+There is a further exact restriction when the packet center \(N\) is a
+positive integer.  Suppose \(m>n\), write
+
+\[
+ n=ga,\qquad m=gb,\qquad (a,b)=1,
+ \tag{15h}
+\]
+
+and assume the two reciprocal phases agree exactly, so that
+
+\[
+ N\left(\frac1n-\frac1m\right)=\ell\in\mathbb Z_{>0}.
+ \tag{15i}
+\]
+
+Clearing denominators gives
+
+\[
+ N(b-a)=\ell gab.
+ \tag{15j}
+\]
+
+Since \((ab,b-a)=1\), equation (15j) forces
+
+\[
+ \boxed{ab\mid N.}
+ \tag{15k}
+\]
+
+Writing \(N=abc\) and cancelling \(ab\) in (15j) also gives
+
+\[
+ c(b-a)=\ell g,\qquad\text{hence}\qquad g\mid c(b-a).
+ \tag{15l}
+\]
+
+The standard divisor bound now counts only \(T^\varepsilon\) exact
+off-diagonal resonant pairs in the dyadic range: there are
+\(T^\varepsilon\) choices of the ordered coprime factor pair \(ab\mid N\),
+and, for each, \(T^\varepsilon\) choices of \(g\mid c(b-a)\).  All
+quantities are bounded by a fixed power of \(T\).  The divisor-bounded
+coefficients in (1)--(2) and
+\(|K_{\mathcal K}|\leq\#\mathcal K\ll L\) therefore give
+
+\[
+ \boxed{\mathcal E_{\mathrm{exact},\ne0}
+ \ll_\varepsilon T^\varepsilon L,}
+ \tag{15m}
+\]
+
+which is below the diagonal \(T^\varepsilon LD\).  The Lean companion
+formalizes the coprimality and divisibility implication (15k).  The divisor
+count and (15m) are written applications of the classical divisor bound.
+
+This does not bound the near-resonant pairs with
+
+\[
+ 0<\left\|N\left(\frac1n-\frac1m\right)\right\|\lesssim L^{-1},
+ \tag{15n}
+\]
+
+which form the remaining pointwise obstruction.  It also makes no claim
+for a nonintegral real center.  Any use of integer centers in the final
+zero-detection argument would require a separate transfer theorem.
+
 ## Published inputs and their boundary
 
 Basak, Robles and Zaharescu,
@@ -347,6 +414,7 @@ conclusion is a typical-interval saving tending to zero, not the power
 Therefore none of these results proves (11).  Equation (15a) already
 controls the complete zero-resonance branch without cancellation.  The
 remaining sufficient input is a power-saving estimate for the nonzero
-integer-resonance branches, or an estimate which cancels the complete
-off-diagonal at once.  No two-point Chowla input is required for the branch
-isolated in (10).
+**near-resonance** branches, or an estimate which cancels the complete
+off-diagonal at once.  At integer centers, (15k)--(15m) already remove the
+exact nonzero resonances.  No two-point Chowla input is required for the
+branch isolated in (10).

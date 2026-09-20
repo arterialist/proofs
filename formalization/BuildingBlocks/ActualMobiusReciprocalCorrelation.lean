@@ -185,4 +185,28 @@ theorem zeroBranch_supports_final_margin {lambda eta : ℝ}
   have hgap := zeroBranchRho_lower_margin lambda
   linarith
 
+/-- Two coprime reduced denominators are jointly coprime to their positive
+difference. This is the arithmetic input for exact reciprocal resonances. -/
+theorem coprime_product_difference {a b : ℕ} (hab : Nat.Coprime a b)
+    (hle : a ≤ b) : Nat.Coprime (a * b) (b - a) := by
+  have ha : Nat.Coprime a (b - a) :=
+    (Nat.coprime_sub_self_right hle).2 hab
+  have hb : Nat.Coprime b (b - a) :=
+    (Nat.coprime_self_sub_right hle).2 hab.symm
+  exact ha.mul_left hb
+
+/-- At an integer center, an exact reciprocal resonance between reduced
+denominators `a` and `b` forces their product to divide the center. The
+displayed hypothesis is what remains after writing `n = g*a`, `m = g*b`
+in `N*(1/n-1/m) = ell`. -/
+theorem exact_resonance_reduced_product_dvd_center
+    {N a b ell g : ℕ} (hab : Nat.Coprime a b) (hle : a ≤ b)
+    (hres : N * (b - a) = ell * g * (a * b)) : a * b ∣ N := by
+  have hdvd : a * b ∣ N * (b - a) := by
+    refine ⟨ell * g, ?_⟩
+    calc
+      N * (b - a) = ell * g * (a * b) := hres
+      _ = a * b * (ell * g) := by ac_rfl
+  exact (coprime_product_difference hab hle).dvd_of_dvd_mul_right hdvd
+
 end BuildingBlocks.ActualMobiusReciprocalCorrelation

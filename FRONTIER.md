@@ -162,8 +162,12 @@ entire nearest-integer-zero branch is \(O(T^\varepsilon D^3/N)\).
 At the endpoint, the choice
 \(\rho=(\lambda-1)/2\) lies above the strict correlation threshold and
 below the absolute-bound ceiling by the same margin
-\((\lambda+1)/10\). Thus the zero branch needs no Chowla cancellation;
-the nonzero integer-resonance branches remain open. After normalization,
+\((\lambda+1)/10\). Thus the zero branch needs no Chowla cancellation.
+For an integer center, an exact nonzero resonance between
+\(n=ga\) and \(m=gb\), with \((a,b)=1\), forces \(ab\mid N\) and
+\(g\mid (N/ab)(b-a)\). The divisor bound makes all such exact pairs
+negligible. The nonzero near-resonance branches remain open, as does any
+transfer from integer to prescribed real centers. After normalization,
 the diagonal also requires \(\eta<(3\lambda-2)/10\). The finite
 expansion, diagonal, reciprocal gap, coherence scale, and zero-branch
 exponent margins are Lean-compiled; no estimate for the complete nonzero
