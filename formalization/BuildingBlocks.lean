@@ -77,6 +77,7 @@ import BuildingBlocks.PrimePhaseFactorization
 import BuildingBlocks.HarmonicPrimePhase
 import BuildingBlocks.HarmonicPrimeWeights
 import BuildingBlocks.HarmonicPrimeWeightBound
+import BuildingBlocks.HarmonicBoundaryHistory
 import BuildingBlocks.PrimeSeedMass
 import BuildingBlocks.PrimeSeedSquare
 import BuildingBlocks.PrimeSeedDelay

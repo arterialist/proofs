@@ -47,6 +47,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [The coherent all-prime energy remainder for the actual source at two](full-prime-two-relative-energy-tail.md)
 - [Möbius–divisor blocks over the full range of divisor lengths](global-divisor-blocks.md)
 - [Haar prime energy: boundary completion and Fourier costs](haar-prime-energy-completion.md)
+- [The terminal prime error as a harmonic-boundary history](harmonic-mangoldt-boundary-terminal-history.md)
 - [Harmonic--endpoint cross term: exact friable reduction and metric obstruction](harmonic-endpoint-cross-term-friable-audit.md)
 - [Harmonic phase resolution and the actual weighted prime flow](harmonic-prime-laplacian-flow.md)
 - [Integrating prime channels before taking the norm triangle](integrated-prime-channel-triangle.md)
