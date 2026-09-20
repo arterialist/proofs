@@ -116,8 +116,20 @@ for \(Q\le F\le Q^2T^{-\kappa}\). Exact inversion of
 \(\sqrt u-\sqrt{u-g}\), followed by Erdős--Turán and the quadratic
 second-derivative estimate, removes the earlier unit-spacing term. This
 controls every smooth signed Gram block up to the alias-integrality endpoint
-after overlap with the lower full-rank estimate. Blocks with
-\(F>Q^2T^{-\kappa}\) remain open. Since the \(F\)-partition is introduced
+after overlap with the lower full-rank estimate.  For the canonical all-unit
+residual, the
+[fourfold high-block completion](building-blocks/weil-and-spectral/actual-mobius-double-q-fourfold-resonance-bound.md)
+then reverses the alias transform, applies the \(B\)-process in the two
+\(PQ\)-variables, and completes the two smooth \(P\)-variables.  For
+\(Q^2\le F\le T^{1-\kappa}\), it proves
+\[
+\frac{|\mathcal J_G|}{P^3Q^3}\ll_\varepsilon T^\varepsilon
+\left(\frac Q{P^2}+\frac{PQ^3}{F^2}+\frac1Q\right).
+\]
+The main ratio is \(Q/P^2=T^{\lambda-2}>1\).  Thus it sharply reduces the
+high-block loss but does not control those blocks.  It also identifies the
+remaining loss with nonzero product-resonance differences of width \(Q/P\).
+Since the \(F\)-partition is introduced
 after squaring, this result does not yet bound a linear subsum or move the
 complete Möbius-prefix endpoint.
 
