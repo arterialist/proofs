@@ -48,7 +48,7 @@ Balazard's inequality therefore gives
 There is also a matching elementary upper envelope. Edgewise,
 
 \[
- 2\left|\operatorname{Re}igl(g(n)\overline{g(dn)}\bigr)\right|
+ 2\left|\operatorname{Re}\bigl(g(n)\overline{g(dn)}\bigr)\right|
  \le |g(n)|^2+|g(dn)|^2.                                          \tag{5}
 \]
 
