@@ -128,7 +128,7 @@ Consequently (4c) gives the direct pointwise-PNT baseline:
 \]
 
 The constant \(d\) uses the exact
-[degree-90 zero-free-region certificate](../../unique-contributions/asymptotic-zeta-zero-free-48-07125/README.md),
+[degree-110 zero-free-region certificate](../../unique-contributions/asymptotic-zeta-zero-free-48-0712269117/README.md),
 which refines Bellotti's
 [Vinogradov--Korobov region](https://arxiv.org/abs/2306.10680),
 through Johnston's
