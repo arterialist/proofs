@@ -455,3 +455,64 @@ only exact existing full bound remains the elementary $O(X^5)$ bound
 (up to logarithms), while the proposed fixed-power exponent is precisely
 (23). This closes the proposed $U_X$ construction rather than producing
 another coordinate decomposition.
+
+## Projecting the two affine directions is already an RH-scale estimate
+
+Let (w_d=-mu(d)log d), (b_d=(B_d(m))_{1le mle X}), and let
+(phi_1(m)=m,phi_2(m)=A_m). With
+[
+ K_{d,e}=langle b_d,b_eangle,qquad
+ C_{d,i}=langle b_d,phi_iangle,qquad
+ G_{i,j}=langlephi_i,phi_jangle,
+]
+the Gram matrix (G) is positive definite and the exact residual quadratic
+form is
+[
+ oxed{|(I-Pi_X)V_X|_2^2
+ =sum_{d,ele2X}w_dw_eK_{d,e}
+ -(C^Tw)^*G^{-1}(C^Tw).}
+	ag{24}
+]
+This retains the actual (mu(d)mu(e)) signs before the positive
+orthogonal projection.
+
+Equation (9) gives the more decisive identity
+[
+ oxed{(I-Pi_X)V_X=(I-Pi_X)P_X,}
+	ag{25}
+]
+because both remaining terms in (9) belong to
+(operatorname{span}{m,A_m}). Thus the proposed estimate is a bound for
+the actual prime primitive after removing only two fixed polynomial
+moments.
+
+For a zero (ho), scale (m=Xv). Its response in (25) is a nonzero
+constant times
+[
+ X^{ho+1}(I-Pi)igl((1+v)^{ho+1}-1igr),qquad0le vle1,
+	ag{26}
+]
+where (Pi) projects onto the limiting span of (v) and
+(v(2+v)/2). The residual in (26) is not zero: otherwise the analytic
+function ((1+v)^{ho+1}-1) would be a polynomial of degree at most two,
+which for a nontrivial zero would force (ho+1in{1,2}). Its squared
+sample norm therefore has scale (X^{2Reho+3}) with a positive
+(ho)-dependent coefficient.
+
+Consequently
+[
+ |(I-Pi_X)V_X|_2^2ll_arepsilon X^{4+arepsilon}
+	ag{27}
+]
+is an RH-scale assertion: the same dyadic Mellin continuation argument as
+in the coarse-energy criterion, with the two projected polynomial moments
+contributing only explicit entire or polar terms, excludes every zero with
+(Reho>1/2); the functional equation then gives RH. No unconditional
+input strictly weaker than RH is known to prove (27).
+
+The coherent unit-coefficient block near (d=X) gives the advertised fast
+falsifier: its cutoff profile is not contained in the two-dimensional
+polynomial span, so its projected squared norm remains a positive constant
+times (X^5). Hence orthogonal projection alone gives no power; any proof
+of (27) must use the actual Möbius signs before Cauchy, at precisely RH
+strength. This closes the projected-residual route.
