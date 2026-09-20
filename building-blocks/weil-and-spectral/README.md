@@ -16,5 +16,6 @@ Weil forms, Suzuki operators, Connes models, and prime-shift spectral tests.
 - [The balanced Möbius-tail hard shell](actual-mobius-tail-balanced-hard-shell.md)
 - [The critical semiprime alias-dispersion reduction](actual-mobius-critical-semiprime-alias-dispersion.md)
 - [Sampling saving on the critical prime fiber](actual-mobius-critical-prime-fiber-sampling-saving.md)
+- [A dual row bound on the critical prime fiber](actual-mobius-critical-dual-k-row-entry.md)
 
-[Browse all 159 indexed notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.
+[Browse all 162 indexed notes](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.

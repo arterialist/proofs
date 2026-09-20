@@ -88,6 +88,14 @@ divisor-square norm of the collapsed coefficient. Cauchy in the coherent
 \(q\)-sum spends exactly this gain, and the \(q\ne q'\) nonzero-alias
 correlation remains unbounded. The theorem therefore removes the diagonal
 residual but does not move the complete Möbius-prefix endpoint.
+The [dual row-entry estimate](building-blocks/weil-and-spectral/actual-mobius-critical-dual-k-row-entry.md)
+gives the independent uniform bound
+\(\mathcal G(k,k')\ll T^\varepsilon Q^3\sqrt P\) after the complementary
+coefficient is removed by \(TT^*\). This improves the direct
+\(Q^{7/2+\varepsilon}\) benchmark,
+but Schur's test gives \(P^{3/2}Q^3\) and still loses \(\sqrt P\). The
+complementary Möbius coefficient has already disappeared from this matrix,
+so the lemma does not give \(\rho>0\) or extend the complete prefix.
 
 The unconditional
 [free-factor pruning](building-blocks/weil-and-spectral/actual-mobius-tail-free-factor-pruning.md)

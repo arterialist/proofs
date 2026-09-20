@@ -19,4 +19,10 @@ on the critical diagonal prime fiber. Its companion audit is
 [`ActualMobiusCriticalPrimeFiberSamplingAudit.lean`](verification/ActualMobiusCriticalPrimeFiberSamplingAudit.lean);
 the analytic Hilbert inequality and sampling proof remain written mathematics.
 
+[`ActualMobiusCriticalDualKRow.lean`](BuildingBlocks/ActualMobiusCriticalDualKRow.lean)
+checks the exponent and determinant-line ledgers for the written dual row-entry
+bound. Its companion audit is
+[`ActualMobiusCriticalDualKRowAudit.lean`](verification/ActualMobiusCriticalDualKRowAudit.lean);
+the second derivative and stationary-phase estimates remain written mathematics.
+
 The same applies to records and interfaces: an explicit `h_rh`, `sys`, or `evaluator` argument remains a premise, and defining a scalar or finite-dimensional model with operator or Fredholm terminology does not construct the corresponding analytic operator. In the imported threshold chain, the unconditional cumulative zero-free theorem currently reaches height `1493 / 200 = 7.465`; extensions above that height use supplied slab or high-frequency evaluation hypotheses. The imported proper-cofactor algebra does not include a proved signed cofactor estimate.
