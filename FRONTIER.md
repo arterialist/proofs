@@ -169,8 +169,17 @@ For an integer center, an exact nonzero resonance between
 negligible; both divisibility statements are Lean-checked. Every nonzero
 near-resonance residual is a multiple of \(\gcd(N,ab)\), so the part with
 residual smaller than this gcd collapses to the exact branch; both residual
-orientations are Lean-checked. The surviving near-resonance branches remain
-open, as does any
+orientations are Lean-checked. After writing
+\(N=cN'\), \(ab=cq\), and \(r=cs\) with \(c=\gcd(N,ab)\), the residual
+quotient also satisfies \((s,q)=1\); both normalized orientations and the
+gcd cancellation are Lean-checked. This unit condition alone supplies no
+power saving: for prime \(q\) and \(1\le s<q\), it removes no residuals.
+At the critical scales \(N=Q^5\), \(D=Q^3\), and \(L=P\), the current
+absolute survivor bound is \(T^\varepsilon P Q^6\), while a usable estimate
+must beat \(P Q^5\) by a fixed power of \(T\). The
+[survivor audit](building-blocks/weil-and-spectral/actual-mobius-unit-residual-survivor-audit.md)
+records the exact sum, exponent window, Kloosterman-fraction comparison, and
+fast falsifier. The surviving near-resonance branches remain open, as does any
 transfer from integer to prescribed real centers. After normalization,
 the diagonal also requires \(\eta<(3\lambda-2)/10\). The finite
 expansion, diagonal, reciprocal gap, coherence scale, and zero-branch

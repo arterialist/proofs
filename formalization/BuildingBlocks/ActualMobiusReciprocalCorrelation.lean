@@ -280,4 +280,118 @@ theorem lowerResidual_eq_zero_of_lt_gcd
   Nat.eq_zero_of_dvd_of_lt
     (gcd_center_reducedProduct_dvd_lowerResidual hres) hr
 
+/-- In a normalized upper near-resonance equation, a center quotient and a
+reduced difference which are both coprime to the denominator quotient force
+the residual quotient to be coprime to it as well. -/
+theorem normalizedUpperResidual_coprime
+    {Nred difference ell g q s : ℕ}
+    (hNq : Nat.Coprime Nred q) (hdq : Nat.Coprime difference q)
+    (hres : Nred * difference = ell * g * q + s) :
+    Nat.Coprime s q := by
+  have hproduct : Nat.Coprime (Nred * difference) q := hNq.mul_left hdq
+  have hsum : Nat.Coprime (ell * g * q + s) q := by
+    rw [← hres]
+    exact hproduct
+  have hphase : q ∣ ell * g * q :=
+    dvd_mul_of_dvd_right (dvd_refl q) (ell * g)
+  exact ((Nat.coprime_add_iff_right hphase).mp hsum.symm).symm
+
+/-- The corresponding unit-residual statement for a normalized lower
+near-resonance equation. -/
+theorem normalizedLowerResidual_coprime
+    {Nred difference ell g q s : ℕ}
+    (hNq : Nat.Coprime Nred q) (hdq : Nat.Coprime difference q)
+    (hres : Nred * difference + s = ell * g * q) :
+    Nat.Coprime s q := by
+  have hproduct : Nat.Coprime (Nred * difference) q := hNq.mul_left hdq
+  let d := q.gcd s
+  have hdq' : d ∣ q := Nat.gcd_dvd_left q s
+  have hds : d ∣ s := Nat.gcd_dvd_right q s
+  have hphase : d ∣ ell * g * q :=
+    dvd_mul_of_dvd_right hdq' (ell * g)
+  rw [← hres] at hphase
+  have hproductDvd : d ∣ Nred * difference := by
+    apply (Nat.dvd_add_iff_right hds).mpr
+    simpa [Nat.add_comm] using hphase
+  have hself : Nat.Coprime d d :=
+    Nat.Coprime.of_dvd hproductDvd hdq' hproduct
+  have hd : d = 1 := hself.eq_one_of_dvd (dvd_refl d)
+  rw [Nat.coprime_iff_gcd_eq_one, Nat.gcd_comm]
+  exact hd
+
+/-- Divide an upper residual equation by `gcd N (a*b)`. For coprime reduced
+denominators, the residual quotient is a unit modulo the surviving
+denominator quotient. -/
+theorem upperResidualQuotient_coprime
+    {N a b ell g r s : ℕ}
+    (hN : 0 < N) (hab : Nat.Coprime a b) (hle : a ≤ b)
+    (hr : r = N.gcd (a * b) * s)
+    (hres : N * (b - a) = ell * g * (a * b) + r) :
+    Nat.Coprime s ((a * b) / N.gcd (a * b)) := by
+  let c := N.gcd (a * b)
+  let Nred := N / c
+  let q := (a * b) / c
+  have hc : 0 < c := Nat.gcd_pos_of_pos_left (a * b) hN
+  have hNc : N = c * Nred := by
+    calc
+      N = (N / N.gcd (a * b)) * N.gcd (a * b) :=
+        (Nat.div_mul_cancel (Nat.gcd_dvd_left N (a * b))).symm
+      _ = c * Nred := by simp only [c, Nred, Nat.mul_comm]
+  have habc : a * b = c * q := by
+    calc
+      a * b = ((a * b) / N.gcd (a * b)) * N.gcd (a * b) :=
+        (Nat.div_mul_cancel (Nat.gcd_dvd_right N (a * b))).symm
+      _ = c * q := by simp only [c, q, Nat.mul_comm]
+  change r = c * s at hr
+  have hnormalized : Nred * (b - a) = ell * g * q + s := by
+    apply Nat.eq_of_mul_eq_mul_left hc
+    calc
+      c * (Nred * (b - a)) = N * (b - a) := by rw [hNc]; ac_rfl
+      _ = ell * g * (a * b) + r := hres
+      _ = c * (ell * g * q + s) := by rw [habc, hr]; ring
+  have hNq : Nat.Coprime Nred q := Nat.coprime_div_gcd_div_gcd hc
+  have hqprod : q ∣ a * b := ⟨c, by rw [habc]; ac_rfl⟩
+  have hdq : Nat.Coprime (b - a) q :=
+    Nat.Coprime.of_dvd (dvd_refl (b - a)) hqprod
+      (coprime_product_difference hab hle).symm
+  exact normalizedUpperResidual_coprime hNq hdq hnormalized
+
+/-- The quotient residual is also a unit for the lower orientation of the
+integer near-resonance equation. -/
+theorem lowerResidualQuotient_coprime
+    {N a b ell g r s : ℕ}
+    (hN : 0 < N) (hab : Nat.Coprime a b) (hle : a ≤ b)
+    (hr : r = N.gcd (a * b) * s)
+    (hres : N * (b - a) + r = ell * g * (a * b)) :
+    Nat.Coprime s ((a * b) / N.gcd (a * b)) := by
+  let c := N.gcd (a * b)
+  let Nred := N / c
+  let q := (a * b) / c
+  have hc : 0 < c := Nat.gcd_pos_of_pos_left (a * b) hN
+  have hNc : N = c * Nred := by
+    calc
+      N = (N / N.gcd (a * b)) * N.gcd (a * b) :=
+        (Nat.div_mul_cancel (Nat.gcd_dvd_left N (a * b))).symm
+      _ = c * Nred := by simp only [c, Nred, Nat.mul_comm]
+  have habc : a * b = c * q := by
+    calc
+      a * b = ((a * b) / N.gcd (a * b)) * N.gcd (a * b) :=
+        (Nat.div_mul_cancel (Nat.gcd_dvd_right N (a * b))).symm
+      _ = c * q := by simp only [c, q, Nat.mul_comm]
+  change r = c * s at hr
+  have hnormalized : Nred * (b - a) + s = ell * g * q := by
+    apply Nat.eq_of_mul_eq_mul_left hc
+    calc
+      c * (Nred * (b - a) + s) = N * (b - a) + r := by
+        rw [hNc, hr]
+        ring
+      _ = ell * g * (a * b) := hres
+      _ = c * (ell * g * q) := by rw [habc]; ac_rfl
+  have hNq : Nat.Coprime Nred q := Nat.coprime_div_gcd_div_gcd hc
+  have hqprod : q ∣ a * b := ⟨c, by rw [habc]; ac_rfl⟩
+  have hdq : Nat.Coprime (b - a) q :=
+    Nat.Coprime.of_dvd (dvd_refl (b - a)) hqprod
+      (coprime_product_difference hab hle).symm
+  exact normalizedLowerResidual_coprime hNq hdq hnormalized
+
 end BuildingBlocks.ActualMobiusReciprocalCorrelation

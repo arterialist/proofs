@@ -63,6 +63,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Additive Fourier saving for the critical localized divisor box](actual-mobius-localized-divisor-fourier-saving.md)
 - [Ordered cross sums of localized Möbius histories](actual-mobius-complete-history-cross-sum.md)
 - [Reciprocal mean square as an actual short-shift Möbius correlation](actual-mobius-reciprocal-short-shift-reduction.md)
+- [Unit-residual survivor audit at the critical Möbius scales](actual-mobius-unit-residual-survivor-audit.md)
 - [Center averaging of the exact reciprocal Möbius packet](actual-mobius-reciprocal-center-average-saving.md)
 - [Arbitrary logarithmic saving in the critical Möbius window](actual-mobius-critical-window-log-saving.md)
 - [A partial global Möbius partition reduction with a long free factor](actual-mobius-global-long-free-factor-reduction.md)

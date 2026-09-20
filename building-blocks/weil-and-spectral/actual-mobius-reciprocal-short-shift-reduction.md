@@ -1,7 +1,7 @@
 # Reciprocal mean square as an actual short-shift Möbius correlation
 
-**Status:** exact finite reduction, absolute zero-resonance bound, and
-literature boundary, 20 September 2026. The finite mean-square expansion,
+**Status:** exact finite reduction, absolute zero-resonance bound, normalized
+integer residual structure, and literature boundary, 20 September 2026. The finite mean-square expansion,
 its diagonal, the exact reciprocal phase gap, the coherence scale, and the
 zero-resonance endpoint exponent identities are
 formalized and axiom-audited in
@@ -389,6 +389,41 @@ the shared factor \(g\), is shorter than the mode interval collapse to the
 already counted exact branch. The divisibility statements (15o)--(15p), for
 both signs of the residual, are Lean-verified. No coprimality hypothesis is
 required for these necessary conditions.
+
+The surviving residual has one more exact restriction. Put
+
+\[
+ c=\gcd(N,ab),\qquad N=cN',\qquad ab=cq,\qquad r=cs.
+ \tag{15q.1}
+\]
+
+Then \((N',q)=1\). Since \((a,b)=1\), one also has
+\((b-a,q)=1\). Cancelling \(c\) in either equation in (15n) gives
+
+\[
+ N'(b-a)=\ell gq+s,
+ \qquad\text{or}\qquad
+ N'(b-a)+s=\ell gq.
+ \tag{15q.2}
+\]
+
+Reduction modulo \(q\) now proves
+
+\[
+ \boxed{(s,q)=1.}                                      \tag{15q.3}
+\]
+
+Both orientations, including the cancellation by the positive gcd, are
+Lean-verified as `upperResidualQuotient_coprime` and
+`lowerResidualQuotient_coprime`. The normalized intermediate statements
+are `normalizedUpperResidual_coprime` and
+`normalizedLowerResidual_coprime`.
+
+This unit condition does not itself save a power. If \(q\) is prime and
+\(1\le s<q\), every possible residual in that interval already satisfies
+\((s,q)=1\). The separate
+[survivor audit](actual-mobius-unit-residual-survivor-audit.md) records the
+critical-scale target and the missing cancellation estimate.
 
 This still does not bound all near-resonant pairs with
 
