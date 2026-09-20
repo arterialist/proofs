@@ -67,4 +67,59 @@ theorem coarsePrefix_eq_area_sub {X t : ℝ} (hX : 1 ≤ X) (ht : 1 ≤ t) :
   change (∫ x in X..t, primeErrorReal x) = _
   linarith
 
+/-- The prime-power part of the literal terminal mass on `[X,2X]`. -/
+noncomputable def dyadicTerminalPrimeMass (X : ℕ) : ℝ :=
+  (X : ℝ) * psi X +
+    ∑ n ∈ Finset.Ioc X (2 * X),
+      (((2 * X : ℕ) : ℝ) - (n : ℝ)) * ArithmeticFunction.vonMangoldt n
+
+/-- The literal finite terminal mass on the dyadic block `[X,2X]`.
+Every prime power at both integer endpoints is retained; the coefficient
+of the upper endpoint is zero. -/
+noncomputable def coarseTerminalMassFinite (X : ℕ) : ℝ :=
+  dyadicTerminalPrimeMass X - 3 * (X : ℝ) ^ 2 / 2
+
+/-- Exact finite formula for the terminal/scaling channel missing from a
+zero-mean local packet. -/
+theorem coarsePrefix_nat_double_eq_terminalMassFinite
+    {X : ℕ} (hX : 1 ≤ X) :
+    coarsePrefix (X : ℝ) (2 * (X : ℝ)) = coarseTerminalMassFinite X := by
+  have hsplit (f : ℕ → ℝ) :
+      (∑ n ∈ Finset.Icc 1 (2 * X), f n) =
+        (∑ n ∈ Finset.Icc 1 X, f n) +
+          ∑ n ∈ Finset.Ioc X (2 * X), f n := by
+    have hdisj : Disjoint (Finset.Icc 1 X) (Finset.Ioc X (2 * X)) := by
+      rw [Finset.disjoint_left]
+      intro n hnIcc hnIoc
+      simp only [Finset.mem_Icc] at hnIcc
+      simp only [Finset.mem_Ioc] at hnIoc
+      omega
+    calc
+      (∑ n ∈ Finset.Icc 1 (2 * X), f n) =
+          ∑ n ∈ Finset.Icc 1 X ∪ Finset.Ioc X (2 * X), f n := by
+            apply Finset.sum_congr
+            · ext n
+              simp only [Finset.mem_Icc, Finset.mem_union, Finset.mem_Ioc]
+              omega
+            · intro n hn
+              rfl
+      _ = _ := Finset.sum_union hdisj
+  have hXreal : (1 : ℝ) ≤ (X : ℝ) := by exact_mod_cast hX
+  have h2Xreal : (1 : ℝ) ≤ 2 * (X : ℝ) := by linarith
+  have hfloor : ⌊2 * (X : ℝ)⌋₊ = 2 * X := by
+    have hcast : 2 * (X : ℝ) = ((2 * X : ℕ) : ℝ) := by norm_num
+    rw [hcast, Nat.floor_natCast]
+  rw [coarsePrefix_eq_area_sub hXreal h2Xreal]
+  unfold primePrimitiveArea coarseTerminalMassFinite dyadicTerminalPrimeMass
+  rw [Nat.floor_natCast, hfloor]
+  rw [psi_eq_sum_Icc, psi_eq_sum_Icc]
+  rw [hsplit (fun n => ArithmeticFunction.vonMangoldt n)]
+  rw [hsplit (fun n => (n : ℝ) * ArithmeticFunction.vonMangoldt n)]
+  simp_rw [sub_mul]
+  rw [Finset.sum_sub_distrib, ← Finset.mul_sum]
+  push_cast
+  ring
+
+#print axioms coarsePrefix_nat_double_eq_terminalMassFinite
+
 end BuildingBlocks

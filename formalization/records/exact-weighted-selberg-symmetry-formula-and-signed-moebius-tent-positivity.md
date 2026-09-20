@@ -1,7 +1,7 @@
 # Contribution 148: Exact Weighted Selberg Symmetry Formula and Signed Möbius Tent Positivity
 
-**Date:** 19 September 2026  
-**Primary Source Documents:** [`formalization/BuildingBlocks/SelbergTent.lean`](../../formalization/BuildingBlocks/SelbergTent.lean), [`building-blocks/selberg/selberg-tent.md`](../../building-blocks/selberg/selberg-tent.md)  
+**Date:** 19 September 2026
+**Primary Source Documents:** [`formalization/BuildingBlocks/SelbergTent.lean`](../../formalization/BuildingBlocks/SelbergTent.lean), [`building-blocks/prime-distribution/prime-filter-selberg-identities.md`](../../building-blocks/prime-distribution/prime-filter-selberg-identities.md)
 **Classification:** Analytic Number Theory / Sieve Methods / Weighted Selberg Identities / Triangular Tent Smoothing / Signed Möbius Sums / Unconditional Positivity
 
 ---
@@ -12,21 +12,26 @@ In the theory of the Selberg symmetry formula, applying smoothed cutoff weights�
 
 This contribution proves:
 
-1. **Exact Finite Weighted Selberg Symmetry Identity:**  
+1. **Exact Finite Weighted Selberg Symmetry Identity:**
    For any integer truncation $N \ge 1$ and an arbitrary weight function $w: \mathbb{N} \to \mathbb{R}$:
    $$
    \sum_{n=1}^N w(n) \Lambda(n) \log n + \sum_{a=1}^N \Lambda(a) \sum_{b=1}^{\lfloor N/a \rfloor} w(ab) \Lambda(b) = \sum_{d=1}^N \mu(d) \sum_{q=1}^{\lfloor N/d \rfloor} w(dq) \log^2 q.
    $$
-2. **Exact Triangular Tent Symmetry Identity:**  
+2. **Exact Triangular Tent Symmetry Identity:**
    Specializing to the linear tent weight $w(n) = N - n$:
    $$
    \sum_{n=1}^N (N - n) \Lambda(n) \log n + \sum_{a=1}^N \sum_{b=1}^{\lfloor N/a \rfloor} (N - ab) \Lambda(a) \Lambda(b) = \sum_{d=1}^N \mu(d) \sum_{q=1}^{\lfloor N/d \rfloor} (N - dq) \log^2 q.
    $$
-3. **Unconditional Positivity of the Signed Möbius Tent Sum:**  
+3. **Unconditional Positivity of the Signed Möbius Tent Sum:**
    Despite the pseudo-random sign oscillation of the Möbius function $\mu(d) \in \{-1, 0, 1\}$, the signed double sum is unconditionally non-negative for all integers $N \ge 1$:
    $$
    0 \le \sum_{d=1}^N \mu(d) \sum_{q=1}^{\lfloor N/d \rfloor} (N - dq) \log^2 q.
    $$
+4. **Dyadic Terminal-Mass Balance:**
+   The weight equal to (X) below (X) and (2X-n) above (X)
+   identifies the actual dyadic terminal mass. Its ordered
+   (Lambda*\Lambda) term is nonnegative, yielding the exact one-sided
+   constraint recorded in the source note.
 
 ---
 
@@ -100,6 +105,16 @@ theorem selberg_moebius_tent_nonneg (N : ℕ) :
     0 ≤ ∑ d ∈ Finset.Icc 1 N, (ArithmeticFunction.moebius d : ℝ) *
       ∑ q ∈ Finset.Icc 1 (N / d),
         ((N : ℝ) - (d * q : ℕ)) * Real.log (q : ℝ) ^ 2
+
+theorem selberg_dyadic_terminal_mass_le_signed_readout (X : ℕ) :
+    Real.log (X : ℝ) *
+          (coarseTerminalMassFinite X + 3 * (X : ℝ) ^ 2 / 2) +
+        (∑ n ∈ Finset.Icc 1 (2 * X),
+          dyadicTerminalWeight X n * ArithmeticFunction.vonMangoldt n *
+            (Real.log (n : ℝ) - Real.log (X : ℝ))) ≤
+      ∑ d ∈ Finset.Icc 1 (2 * X), (ArithmeticFunction.moebius d : ℝ) *
+        ∑ q ∈ Finset.Icc 1 (2 * X / d),
+          dyadicTerminalWeight X (d * q) * Real.log (q : ℝ) ^ 2
 ```
 Axioms audit confirms strict dependence on:
 ```
@@ -111,6 +126,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Selberg's lambda-squared method and smoothed sieve weights (Selberg 1947, Bombieri 1976). While the positivity of $\Lambda_2 * 1$ is well-known in principle, machine formalization of the exact finite weighted identity for arbitrary weights and the unconditional positivity of the signed Möbius tent sum in Lean 4 is novel.
-- **Advancement:** Establishes the exact weighted Selberg identity and unconditional non-negativity of the signed Möbius tent sum in Lean 4.
+- **Prior Literature:** Selberg's lambda-squared method and smoothed sieve weights (Selberg 1947, Bombieri 1976). No priority claim is made for these identities, the positivity argument, or their formalization.
+- **Advancement:** Machine verification of the exact weighted Selberg identities, signed Möbius tent positivity, and the source-specific dyadic terminal-mass balance used in this repository.
 - **Target Venues:** *Integers* or *Journal of Number Theory*.

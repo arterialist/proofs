@@ -20,6 +20,20 @@ X P_X(2X)^2\le2S_X,\qquad
 \left(\int_X^{2X}|P_X(t)|\,dt\right)^2\le XS_X.
 ```
 
+For an integer $X\ge1$, the terminal mass is also the exact finite
+actual-prime expression
+
+```math
+P_X(2X)=X\psi(X)
+ +\sum_{X<n\le2X}(2X-n)\Lambda(n)-\frac32X^2.
+```
+
+Every prime power is retained. The lower endpoint is included through
+(X\psi(X)), while the inclusive upper endpoint has its literal zero
+coefficient. `coarsePrefix_nat_double_eq_terminalMassFinite` verifies this
+identity without an asymptotic remainder. It supplies no estimate for the
+displayed signed quantity.
+
 These squared inequalities also hold at $`X=0`$.
 
 ## Test functions and Mellin blocks
@@ -52,7 +66,7 @@ The terminal term is retained. The proof establishes local integrability and rig
 
 ## Use and scope
 
-The test estimate converts a bound on $`S_X`$ into bounds for smooth weighted prime-error integrals while preserving the terminal mass. The module proves no growth estimate for $`S_X`$, no convergence of an infinite Mellin series, and no implication from a global coarse-energy hypothesis to RH. The results are finite applications of established integration theory; no mathematical novelty or first-formalization claim is made.
+The test estimate converts a bound on $`S_X`$ into bounds for smooth weighted prime-error integrals while preserving the terminal mass. The modules prove no growth estimate for $`S_X`$, no bound for the exact finite terminal expression, no convergence of an infinite Mellin series, and no implication from a global coarse-energy hypothesis to RH. The results are finite applications of established integration theory and summation; no mathematical novelty or first-formalization claim is made.
 
 The [written dyadic-energy criterion](coarse-energy-rh-criterion.md) explains the conditional connection to RH. Its infinite-series argument is separate from this finite formalization.
 

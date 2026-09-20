@@ -1,4 +1,5 @@
 import BuildingBlocks.SelbergIdentity
+import BuildingBlocks.PrimePrimitiveFormula
 
 open scoped BigOperators
 
@@ -86,5 +87,132 @@ theorem selberg_moebius_tent_nonneg (N : ℕ) :
   apply mul_nonneg _ (selbergWeight_nonneg n)
   apply sub_nonneg.mpr
   exact_mod_cast (Finset.mem_Icc.mp hn).2
+
+/-- The exact triangular weight whose von Mangoldt readout is the prime
+part of the coarse dyadic terminal mass. -/
+def dyadicTerminalWeight (X n : ℕ) : ℝ :=
+  if n ≤ X then (X : ℝ) else ((2 * X : ℕ) : ℝ) - (n : ℝ)
+
+theorem dyadicTerminalWeight_nonneg_of_le {X n : ℕ} (hn : n ≤ 2 * X) :
+    0 ≤ dyadicTerminalWeight X n := by
+  unfold dyadicTerminalWeight
+  split_ifs
+  · exact Nat.cast_nonneg X
+  · apply sub_nonneg.mpr
+    exact_mod_cast hn
+
+/-- The triangular Selberg readout retains the old-prime block, the open
+lower endpoint, and the zero-weight upper endpoint exactly. -/
+theorem dyadicTerminalWeight_prime_sum (X : ℕ) :
+    (∑ n ∈ Finset.Icc 1 (2 * X),
+      dyadicTerminalWeight X n * ArithmeticFunction.vonMangoldt n) =
+        dyadicTerminalPrimeMass X := by
+  have hdisj : Disjoint (Finset.Icc 1 X) (Finset.Ioc X (2 * X)) := by
+    rw [Finset.disjoint_left]
+    intro n hnIcc hnIoc
+    simp only [Finset.mem_Icc] at hnIcc
+    simp only [Finset.mem_Ioc] at hnIoc
+    omega
+  have hsplit (f : ℕ → ℝ) :
+      (∑ n ∈ Finset.Icc 1 (2 * X), f n) =
+        (∑ n ∈ Finset.Icc 1 X, f n) +
+          ∑ n ∈ Finset.Ioc X (2 * X), f n := by
+    calc
+      (∑ n ∈ Finset.Icc 1 (2 * X), f n) =
+          ∑ n ∈ Finset.Icc 1 X ∪ Finset.Ioc X (2 * X), f n := by
+            apply Finset.sum_congr
+            · ext n
+              simp only [Finset.mem_Icc, Finset.mem_union, Finset.mem_Ioc]
+              omega
+            · intro n hn
+              rfl
+      _ = _ := Finset.sum_union hdisj
+  rw [hsplit]
+  unfold dyadicTerminalPrimeMass
+  congr 1
+  · rw [psi_eq_sum_Icc, Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro n hn
+    simp only [dyadicTerminalWeight, if_pos (Finset.mem_Icc.mp hn).2]
+  · apply Finset.sum_congr rfl
+    intro n hn
+    simp only [dyadicTerminalWeight, if_neg (not_le.mpr (Finset.mem_Ioc.mp hn).1)]
+
+/-- Splitting `log n` at `log X` isolates the exact terminal channel and
+retains the complete logarithmic deviation. -/
+theorem dyadicTerminalWeight_log_decomposition (X : ℕ) :
+    (∑ n ∈ Finset.Icc 1 (2 * X),
+      dyadicTerminalWeight X n * ArithmeticFunction.vonMangoldt n *
+        Real.log (n : ℝ)) =
+      Real.log (X : ℝ) * dyadicTerminalPrimeMass X +
+        ∑ n ∈ Finset.Icc 1 (2 * X),
+          dyadicTerminalWeight X n * ArithmeticFunction.vonMangoldt n *
+            (Real.log (n : ℝ) - Real.log (X : ℝ)) := by
+  rw [← dyadicTerminalWeight_prime_sum X]
+  rw [Finset.mul_sum, ← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro n hn
+  ring
+
+/-- Exact source-specific balance for the missing dyadic terminal channel.
+The ordered `Λ * Λ` term is nonnegative because the triangular weight is
+nonnegative on the displayed range, but no estimate for the signed Möbius
+or logarithmic-deviation terms is asserted. -/
+theorem selberg_dyadic_terminal_mass_balance (X : ℕ) :
+    Real.log (X : ℝ) *
+          (coarseTerminalMassFinite X + 3 * (X : ℝ) ^ 2 / 2) +
+        (∑ n ∈ Finset.Icc 1 (2 * X),
+          dyadicTerminalWeight X n * ArithmeticFunction.vonMangoldt n *
+            (Real.log (n : ℝ) - Real.log (X : ℝ))) +
+        (∑ a ∈ Finset.Icc 1 (2 * X), ArithmeticFunction.vonMangoldt a *
+          ∑ b ∈ Finset.Icc 1 (2 * X / a),
+            dyadicTerminalWeight X (a * b) * ArithmeticFunction.vonMangoldt b) =
+      ∑ d ∈ Finset.Icc 1 (2 * X), (ArithmeticFunction.moebius d : ℝ) *
+        ∑ q ∈ Finset.Icc 1 (2 * X / d),
+          dyadicTerminalWeight X (d * q) * Real.log (q : ℝ) ^ 2 := by
+  have hmass : coarseTerminalMassFinite X + 3 * (X : ℝ) ^ 2 / 2 =
+      dyadicTerminalPrimeMass X := by
+    unfold coarseTerminalMassFinite
+    ring
+  rw [hmass, ← dyadicTerminalWeight_log_decomposition]
+  exact selberg_weighted_identity (2 * X) (dyadicTerminalWeight X)
+
+/-- The complete ordered two-prime term in the terminal balance is
+nonnegative, with every factor pair and prime power retained. -/
+theorem selberg_dyadic_terminal_convolution_nonneg (X : ℕ) :
+    0 ≤ ∑ a ∈ Finset.Icc 1 (2 * X), ArithmeticFunction.vonMangoldt a *
+      ∑ b ∈ Finset.Icc 1 (2 * X / a),
+        dyadicTerminalWeight X (a * b) * ArithmeticFunction.vonMangoldt b := by
+  apply Finset.sum_nonneg
+  intro a ha
+  apply mul_nonneg ArithmeticFunction.vonMangoldt_nonneg
+  apply Finset.sum_nonneg
+  intro b hb
+  apply mul_nonneg
+  · apply dyadicTerminalWeight_nonneg_of_le
+    simpa [mul_comm] using
+      (Nat.le_div_iff_mul_le (Finset.mem_Icc.mp ha).1).mp
+        (Finset.mem_Icc.mp hb).2
+  · exact ArithmeticFunction.vonMangoldt_nonneg
+
+/-- Dropping only the proved nonnegative ordered-prime term gives an exact
+unconditional one-sided constraint on the terminal channel. The right side
+and logarithmic deviation remain signed. -/
+theorem selberg_dyadic_terminal_mass_le_signed_readout (X : ℕ) :
+    Real.log (X : ℝ) *
+          (coarseTerminalMassFinite X + 3 * (X : ℝ) ^ 2 / 2) +
+        (∑ n ∈ Finset.Icc 1 (2 * X),
+          dyadicTerminalWeight X n * ArithmeticFunction.vonMangoldt n *
+            (Real.log (n : ℝ) - Real.log (X : ℝ))) ≤
+      ∑ d ∈ Finset.Icc 1 (2 * X), (ArithmeticFunction.moebius d : ℝ) *
+        ∑ q ∈ Finset.Icc 1 (2 * X / d),
+          dyadicTerminalWeight X (d * q) * Real.log (q : ℝ) ^ 2 := by
+  have hbal := selberg_dyadic_terminal_mass_balance X
+  have hpos := selberg_dyadic_terminal_convolution_nonneg X
+  linarith
+
+#print axioms dyadicTerminalWeight_prime_sum
+#print axioms selberg_dyadic_terminal_mass_balance
+#print axioms selberg_dyadic_terminal_mass_le_signed_readout
 
 end BuildingBlocks

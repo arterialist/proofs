@@ -1,7 +1,7 @@
 # Contribution 151: Exact Prime Error Primitive Area and First-Order Riesz Representation
 
-**Date:** 19 September 2026  
-**Primary Source Documents:** [`formalization/BuildingBlocks/PrimePrimitiveFormula.lean`](../../formalization/BuildingBlocks/PrimePrimitiveFormula.lean), [`building-blocks/prime/prime-primitive-formula.md`](../../building-blocks/prime/prime-primitive-formula.md)  
+**Date:** 19 September 2026
+**Primary Source Documents:** [`formalization/BuildingBlocks/PrimePrimitiveFormula.lean`](../../formalization/BuildingBlocks/PrimePrimitiveFormula.lean), [`building-blocks/prime-distribution/coarse-primitive.md`](../../building-blocks/prime-distribution/coarse-primitive.md)
 **Classification:** Analytic Number Theory / Chebyshev Error Primitives / Abel Summation / First Riesz Means / Step-Function Integrals
 
 ---
@@ -12,26 +12,34 @@ In analytic number theory, the continuous integral of the discontinuous prime-co
 
 This contribution proves:
 
-1. **Exact Step-Function Abel Integration:**  
+1. **Exact Step-Function Abel Integration:**
    For any real number $x \ge 1$:
    $$
    \int_1^x \psi(\lfloor t \rfloor) dt = x \psi(\lfloor x \rfloor) - \sum_{n=1}^{\lfloor x \rfloor} n \Lambda(n).
    $$
-2. **First-Order Riesz Mean Representation:**  
+2. **First-Order Riesz Mean Representation:**
    The prime primitive area function $\psi_1(x)$ defined by $x \psi(\lfloor x \rfloor) - \sum_{n \le \lfloor x \rfloor} n \Lambda(n) - \frac{x^2 - 1}{2}$ is identically equal to the classical first-order Riesz sum:
    $$
    \psi_1(x) = \sum_{n=1}^{\lfloor x \rfloor} (x - n)\Lambda(n) - \frac{x^2 - 1}{2}.
    $$
-3. **Exact Primitive Integral of the Prime Error:**  
+3. **Exact Primitive Integral of the Prime Error:**
    For all real $x \ge 1$, without any prime-error hypotheses or asymptotic remainders:
    $$
    \int_1^x (\psi(t) - t) dt = \psi_1(x) = \sum_{n=1}^{\lfloor x \rfloor} (x - n)\Lambda(n) - \frac{x^2 - 1}{2}.
    $$
-4. **Finite Coarse Prefix Decomposition:**  
+4. **Finite Coarse Prefix Decomposition:**
    For any $1 \le X \le t$:
    $$
    \int_X^t E(u) du = \psi_1(t) - \psi_1(X).
    $$
+5. **Exact Dyadic Terminal Channel:**
+   For every integer (X\ge1),
+   $$
+   \int_X^{2X}E(u)\,du
+   =X\psi(X)+\sum_{X<n\le2X}(2X-n)\Lambda(n)-\frac32X^2.
+   $$
+   This retains every prime power and both endpoints. It is an identity,
+   not a bound at the scale required by `CoarsePrimitiveBound`.
 
 ---
 
@@ -85,6 +93,15 @@ theorem integral_primeErrorReal_eq_area {x : ℝ} (hx : 1 ≤ x) :
 
 theorem coarsePrefix_eq_area_sub {X t : ℝ} (hX : 1 ≤ X) (ht : 1 ≤ t) :
     coarsePrefix X t = primePrimitiveArea t - primePrimitiveArea X
+
+theorem coarsePrefix_nat_double_eq_terminalMassFinite
+    {X : ℕ} (hX : 1 ≤ X) :
+    coarsePrefix (X : ℝ) (2 * (X : ℝ)) =
+      (X : ℝ) * psi X +
+        ∑ n ∈ Finset.Ioc X (2 * X),
+          (((2 * X : ℕ) : ℝ) - (n : ℝ)) *
+            ArithmeticFunction.vonMangoldt n -
+        3 * (X : ℝ) ^ 2 / 2
 ```
 Axioms audit confirms strict dependence on:
 ```
@@ -96,6 +113,6 @@ Zero custom axioms, zero `sorry`.
 
 ## 4. Literature Context and Target Venues
 
-- **Prior Literature:** Ingham's Prime Number Theory (1932), Montgomery-Vaughan's Multiplicative Number Theory (2007). Continuous primitives of the Chebyshev step error are standard, but establishing exact closed-form algebraic representations in Lean 4 without error terms is novel.
-- **Advancement:** Complete machine verification of the exact finite arithmetic Riesz mean identity for prime error primitives in Lean 4.
+- **Prior Literature:** Ingham's *Prime Number Theory* (1932) and Montgomery–Vaughan's *Multiplicative Number Theory* (2007). Continuous primitives and finite Abel summation for the Chebyshev error are standard. No priority claim is made for these identities or their formalization.
+- **Advancement:** Machine verification of the exact finite arithmetic Riesz mean and dyadic terminal-mass identities used by this repository's coarse-energy bridge.
 - **Target Venues:** *American Mathematical Monthly* or *Expositiones Mathematicae*.

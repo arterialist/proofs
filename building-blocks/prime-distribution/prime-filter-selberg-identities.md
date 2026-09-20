@@ -98,6 +98,52 @@ D_2(n)=\sum_{\substack{d\mid n\\(d,n/d)=1}}\Lambda(d)\Lambda(n/d)\ge0
 
 is proved in [SelbergDistinctPrimes](../../formalization/BuildingBlocks/SelbergDistinctPrimes.lean). It gives the distinct-prime tent by subtracting $\sum_{n\le N}(N-n)P_2(n)$ from $\mathcal N(N)$; see [DistinctPrimeTent](../../formalization/BuildingBlocks/DistinctPrimeTent.lean). These are multiplicative-convolution identities, not covariance signs under a probability law.
 
+## The exact dyadic terminal channel
+
+For an integer $X\ge1$, define
+
+\[
+w_X(n)=
+\begin{cases}
+X,&n\le X,\\
+2X-n,&X<n\le2X.
+\end{cases}
+\]
+
+The finite readout is
+
+\[
+\sum_{n\le2X}w_X(n)\Lambda(n)
+=X\psi(X)+\sum_{X<n\le2X}(2X-n)\Lambda(n)
+=P_X(2X)+\frac32X^2.                                  \tag{4}
+\]
+
+Applying the arbitrary-weight Selberg identity and splitting
+(\log n=\log X+\log(n/X)) gives
+
+\[
+\begin{aligned}
+ &(\log X)\left(P_X(2X)+\frac32X^2\right)
+ +\sum_{n\le2X}w_X(n)\Lambda(n)\log(n/X)\\
+ &\quad+\sum_{ab\le2X}w_X(ab)\Lambda(a)\Lambda(b)
+ =\sum_{dq\le2X}\mu(d)w_X(dq)\log^2q.                 \tag{5}
+\end{aligned}
+\]
+
+Every factor pair and prime power is retained. Since $w_X(ab)\ge0$,
+the ordered two-prime term is nonnegative. Dropping only that term yields
+
+\[
+(\log X)\left(P_X(2X)+\frac32X^2\right)
+ +\sum_{n\le2X}w_X(n)\Lambda(n)\log(n/X)
+ \le\sum_{dq\le2X}\mu(d)w_X(dq)\log^2q.               \tag{6}
+\]
+
+`selberg_dyadic_terminal_mass_balance` and
+`selberg_dyadic_terminal_mass_le_signed_readout` verify (5) and (6) in
+Lean. The logarithmic-deviation and Möbius readouts remain signed; no
+$X^{3/2+\varepsilon}$ terminal estimate follows from these identities.
+
 There is a useful exact additive interpolation. On the cell $N\le x\le N+1$, put
 
 ```math
@@ -112,6 +158,6 @@ f_N(x)=xA_N+B_N-x^2C_N+\frac{x^2}{2}\log x+\frac{x^2-1}{4}.
 
 The cells join continuously. The derivative jump at $N+1$ is $D_2(N+1)-2\Lambda(N+1)$, and $f_N''(x)=\log x+2-2C_N$. Thus prime powers contribute downward slope jumps; other jumps are nonnegative. These statements are in [DistinctPrimeDynamics](../../formalization/BuildingBlocks/DistinctPrimeDynamics.lean). They do not determine the eventual sign of the joined function.
 
-The arithmetic antecedent is [Selberg's elementary prime-number-theorem identity (1949)](https://www.math.lsu.edu/~mahlburg/teaching/handouts/2014-7230/Selberg-ElemPNT1949.pdf). [SelbergIdentity](../../formalization/BuildingBlocks/SelbergIdentity.lean), [SelbergTent](../../formalization/BuildingBlocks/SelbergTent.lean), [SmoothPrimeReadout](../../formalization/BuildingBlocks/SmoothPrimeReadout.lean), and [WeightedPrimePowers](../../formalization/BuildingBlocks/WeightedPrimePowers.lean) give the finite Möbius, smoothing and prime-power steps used here. The analytic tools are finite summation, the fundamental theorem of calculus and Cauchy–Schwarz. No mathematical originality or first-formalization claim is made.
+The arithmetic antecedent is [Selberg's elementary prime-number-theorem identity (1949)](https://www.math.lsu.edu/~mahlburg/teaching/handouts/2014-7230/Selberg-ElemPNT1949.pdf). [SelbergIdentity](../../formalization/BuildingBlocks/SelbergIdentity.lean), [SelbergTent](../../formalization/BuildingBlocks/SelbergTent.lean), [SmoothPrimeReadout](../../formalization/BuildingBlocks/SmoothPrimeReadout.lean), and [WeightedPrimePowers](../../formalization/BuildingBlocks/WeightedPrimePowers.lean) give the finite Möbius, smoothing and prime-power steps used here. [PrimePrimitiveFormula](../../formalization/BuildingBlocks/PrimePrimitiveFormula.lean) identifies the terminal mass in (4). The analytic tools are finite summation, the fundamental theorem of calculus and Cauchy–Schwarz. No mathematical originality or first-formalization claim is made.
 
 All linked modules use Lean 4.24.0 and the repository's pinned mathlib. Their extracted sources compile independently against those dependencies. The companion's measure notation explains the finite expression; the finite-expression and reflection theorems, rather than a general signed-measure API, are what the linked Lean sources formalize.
