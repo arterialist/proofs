@@ -1164,3 +1164,49 @@ modules. Equations (1)--(17), including Parseval, exact cell integration,
 and the bounded-variation tail, are written mathematics in this note. No
 claim is made that Lean currently connects these Fourier formulas to
 `coarsePrimitiveSquare`.
+
+## Selberg identity at the literal first additive mode
+
+For real (yge1), define the endpoint-exact mode
+[
+ B_1(y)=sum_{y<nle2y}Lambda(n)(e(-n/y)-1)+y.
+]
+Apply (Lambdalog+Lambda*Lambda=mu*log^2) with
+(w_X(n)=(e(-n/X)-1)1_{X<nle2X}). Put
+[
+ R_X=sum_{X<nle2X}Lambda(n)log(n/X)w_X(n),quad
+ G_X=sum_{X<nle2X}(mu*log^2)(n)w_X(n).
+]
+Finite divisor grouping, with (ale X) because (Lambda(b)=0) for
+(b<2), gives the exact identity
+[
+ oxed{log X,B_1(X)+sum_{ale X}Lambda(a)B_1(X/a)
+ =G_X-R_X+Xlog X+Xsum_{ale X}rac{Lambda(a)}a.}
+	ag{28}
+]
+Both interval endpoints and the added (+y) normalization are displayed;
+there is no discarded boundary term.
+
+This does not give coercivity. After division by (Xlog X), the positive
+self-coupling weights have total mass
+[
+ rac1{log X}sum_{ale X}rac{Lambda(a)}a=1+o(1).
+]
+Moreover (Re(e(-n/X)-1)le0) signs only the real part of the raw
+(Lambda*Lambda) sum; the imaginary part changes sign, and the complex
+quantity (B_1) has no resulting norm inequality. Taking absolute values
+in (28) therefore has contraction constant one and separates main terms
+of size (Xlog X) that must first cancel.
+
+A completely multiplicative unit twist preserves the convolution algebra
+but can rotate the imaginary component, falsifying any coercivity claimed
+from positivity alone. A single explicit-formula zero contributes
+(X^ho) times the nonzero multiplier
+(int_1^2u^ho(e(-u)-1),du/ho). Thus a fixed-power estimate
+(|B_1(X)|ll X^{1-delta+arepsilon}) obtained by separating zero modes
+already requires the fixed strip (Rehole1-delta). Selberg's twisted
+identity is compatible with that mode and merely redistributes it between
+(28)'s terms. Small prime-power endpoints and locally computable large
+prime or composite tests can falsify missing terms, but cannot establish
+the asymptotic bound; record Mersenne inputs require symbolic or modular
+streaming evaluation. The identity supplies no unconditional power gain.
