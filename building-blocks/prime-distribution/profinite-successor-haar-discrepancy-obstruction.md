@@ -408,3 +408,50 @@ block. A fixed-power estimate would require new cancellation among the
 zero modes, equivalently a new signed mean-square theorem for the nested
 weighted Möbius Riesz means in (20). Existing residue orthogonality,
 large-sieve estimates and short-interval Möbius theorems do not supply it.
+
+## Why the hyperbolic quadratic saving has no vector complement
+
+The quantity in (19) is a scalar quadratic contribution, not a prefix
+vector. Consequently an expression (U_X=P_X-Q_<) is not defined. This is
+not repaired by choosing square roots blockwise: the hyperbolic mask
+(mathbf1_{dele X}) is not positive semidefinite. Indeed, choose integers
+(e<\sqrt X<d) with (dele X<d^2). On the two coordinates (e,d), its
+matrix is
+\[
+ \begin{pmatrix}1&1\\1&0\end{pmatrix},
+\]
+which has determinant (-1). Thus the signed sum of all (DEle X)
+blocks can be negative and cannot equal (|Q_<|_2^2) for any canonical
+vector (Q_<). The cross terms that create the saving in (19) prevent the
+proposed vector subtraction.
+
+There is also a decisive obstruction for every legitimate replacement.
+If one chooses an actual vector decomposition (P_X=V_X+U_X) with
+\[
+ \sum_{mle X}|V_X(m)|^2\ll X^{4+\varepsilon}
+\]
+and proves
+\[
+ \sum_{mle X}|U_X(m)|^2\ll X^{5-\delta+\varepsilon},
+\]
+then the exact triangle inequality gives
+\[
+ \sum_{mle X}|P_X(m)|^2
+ \le2sum_{mle X}|V_X(m)|^2+2sum_{mle X}|U_X(m)|^2
+ \ll X^{5-\min(\delta,1)+\varepsilon}.
+\tag{23}
+\]
+The partial-power proposition in the coarse-energy note then excludes all
+zeta zeros with
+\(Re\rho>1-\min(\delta,1)/2\). Hence a bound for a genuine fully
+recombined complement is already the corresponding fixed zero-free
+half-plane theorem. It cannot follow from an input advertised as strictly
+weaker merely by the present decomposition.
+
+The (2\times2) matrix above is the fast coherent-model falsifier: even a
+unit coefficient on each selected modulus makes the below-hyperbola form
+indefinite, so treating (19) as energy silently discards cross terms. The
+only exact existing full bound remains the elementary (O(X^5)) bound
+(up to logarithms), while the proposed fixed-power exponent is precisely
+(23). This closes the proposed (U_X) construction rather than producing
+another coordinate decomposition.
