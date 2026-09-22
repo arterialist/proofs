@@ -372,3 +372,154 @@ At a nonreal point the gamma function is finite and nonzero. The nonreal zero of
 There is a publicly accessible [numerical precursor](https://computoergosum.com/principia/run-2026-09.html) reporting $M_C$ zeros near $-7.9941822570\pm2.9377670686i$ and three further conjugate pairs. It explicitly describes double-precision calculations without interval certification. Those observations are not used in the proof here; the certificate establishes a Laguerre-inequality violation rather than enclosing one of the reported zeros. The page’s displayed date does not establish mathematical priority.
 
 Csordas’s [2003 chapter, *Complex Zero Decreasing Sequences and the Riemann Hypothesis II*, pp. 121–134](https://link.springer.com/chapter/10.1007/978-1-4757-3741-7_9), treats this Mellin problem in §3. Its available publisher preview mentions Proposition 1, multiplier/complex-zero-decreasing conditions and a numerical Example 1. The full text was unavailable for this comparison, so overlap with its precise conclusions remains unresolved. No first-proof or originality claim is made. The recurrence and zero-propagation methods also have direct predecessors in KPS §5.2.6 and Patie–Savov; they are not claimed as new methods.
+
+## Alternative direct Pick-sign certificate
+
+A second certificate tests the Pick sign itself at one nonreal point. It
+provides a shorter computational route to the exclusion of the natural
+interpolation. It does not strengthen the complete Bernstein exclusion above.
+The uniqueness argument in "Moment identification for any Bernstein candidate"
+is still needed to exclude other complete Bernstein interpolations of the
+same integer data.
+
+Use a rescaled kernel and moment integral
+
+$$
+q(x)=\frac{\Phi(x/2)}{2\pi}
+=\sum_{n\geq1}n^2(2\pi n^2e^x-3)e^{5x/4-\pi n^2e^x},
+\qquad m(s)=\int_0^\infty x^{2s}q(x)\,dx.
+$$
+
+The moment integral initially converges for $\Re s>-1/2$. Its meromorphic
+continuation defines
+
+$$
+\phi(s)=2(2s-1)\frac{m(s-1)}{m(s)}.
+$$
+
+Substitution $x=2u$ gives
+$M(2s)=2\pi\,2^{-2s}m(s)$, so
+$\phi_{\mathrm{nat}}(s)=4\phi(s)$. The certificate encloses
+
+$$
+-0.406130<\Im\phi(-29/4+i/2)<-0.406129<0.
+$$
+
+A Pick function is analytic on the upper half-plane with nonnegative
+imaginary part there. This negative sign therefore excludes both $\phi$
+and $\phi_{\mathrm{nat}}$ from the Pick class. The denominator is
+nonzero at the specified point, as established by the integral enclosure
+below. This additional certificate has no Lean formalization and makes no
+priority claim.
+
+### Convergent-integral formula
+
+Define polynomials with rational coefficients by
+
+$$
+P_0(y)=2y-3,\qquad
+P_{k+1}(y)=(5/4-y)P_k(y)+yP_k'(y).
+$$
+
+Termwise differentiation, justified by the Gaussian decay of the summands,
+gives
+
+$$
+q^{(18)}(x)=\sum_{n\geq1}n^2P_{18}(\pi n^2e^x)
+                            e^{5x/4-\pi n^2e^x}.
+$$
+
+Put $s_0=-29/4+i/2$ and
+
+$$
+I(s)=\int_0^\infty x^{2s+18}q^{(18)}(x)\,dx.
+$$
+
+Eighteen integrations by parts first give, for $\Re s>-1/2$,
+
+$$
+m(s)=\frac{I(s)}{\prod_{j=1}^{18}(2s+j)}.
+$$
+
+The right side continues meromorphically to $\Re s>-19/2$.
+The integral defining $I(s)$ converges there because the derivative is
+bounded near zero and decays faster than any exponential at infinity.
+Consequently,
+
+$$
+\phi(s_0)=\frac{(2s_0+17)(2s_0+18)}{s_0}
+                    \frac{I(s_0-1)}{I(s_0)}.
+$$
+
+Both integrals on the right converge ordinarily. Their powers of $x$
+have real parts $3/2$ and $7/2$, respectively.
+
+### Explicit tails
+
+Write $P_{18}(y)=\sum_j c_jy^j$. Exact rational arithmetic verifies
+
+$$
+C=\sum_j|c_j|[2(j+2)]^{j+2}<10^{60}.
+$$
+
+For $x\geq0$ and $y=\pi n^2e^x$,
+$n^2e^{5x/4}y^j\leq y^{j+2}$. Also
+$y^ke^{-y/2}\leq(2k)^k$ for $k>0$. Therefore
+
+$$
+|q^{(18)}(x)|\leq C\sum_{n\geq1}e^{-\pi n^2e^x/2}<C.
+$$
+
+The certificate integrates only $1\leq n\leq12$ and
+$\delta\leq x\leq8$, where $\delta=10^{-40}$.
+For either exponent $a=3/2$ or $a=7/2$, the omitted lower integral is
+bounded by
+
+$$
+C\int_0^\delta x^a\,dx
+\leq \frac{C\delta^{5/2}}{5/2}<10^{-40}.
+$$
+
+On the finite interval, $\int_0^8x^a\,dx<3000$. Since consecutive
+squares starting at $13^2$ differ by at least 27, the omitted modes
+contribute at most
+
+$$
+3000C\sum_{n\geq13}e^{-\pi n^2/2}
+\leq \frac{3000C e^{-169\pi/2}}{1-e^{-27\pi/2}}<10^{-51}.
+$$
+
+For $x\geq8$, $x^a\leq e^x$. Substitution $v=e^x$ bounds the
+upper tail by
+
+$$
+C\sum_{n\geq1}\frac{2}{\pi n^2}e^{-\pi n^2e^8/2}
+\leq\frac{2C}{\pi}\frac{e^{-b}}{1-e^{-3b}}<10^{-100},
+\qquad b=\pi e^8/2.
+$$
+
+These are bounds for absolute complex errors, since the imaginary powers
+of positive $x$ have modulus one. Adding a rectangle of radius
+$10^{-35}$ in each coordinate to each computed integral encloses all
+omitted contributions. The script checks the displayed numerical tail
+bounds with ball arithmetic before dividing the integral enclosures.
+
+### Reproducing the direct certificate
+
+The [certificate script](../../certificates/theta_moment_ratio_pick_obstruction.py)
+requires Python and `python-flint==0.9.0`. From the repository root, run
+
+```sh
+python -m pip install python-flint==0.9.0
+python certificates/theta_moment_ratio_pick_obstruction.py
+```
+
+The default precision is 180 bits. A second run can use `--precision 256`.
+The final check requires the whole imaginary-part enclosure to lie strictly
+between the rational endpoints in the statement. An inconclusive enclosure
+or a failed tail bound raises an error. The integration callback propagates
+Arb's analyticity flag to the complex logarithm.
+
+The computation relies on Python's exact rational arithmetic and the
+correctness of the Arb implementation used by python-flint. It is not a
+kernel-checked formal proof.
