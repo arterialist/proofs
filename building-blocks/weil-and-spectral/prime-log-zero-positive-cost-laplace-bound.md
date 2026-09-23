@@ -172,15 +172,18 @@ margin.
 
 ## Scope
 
-The theorem controls bilateral Laplace loading by the positive cost \(E(B)\).
-That cost has fourth-order polynomial growth in frequency. It is much
-stronger than the signed archimedean term in Weil's criterion, whose
-multiplier is neither positive nor strong enough to dominate \(E(B)\).
-The result therefore does not prove Weil positivity or the Riemann
-hypothesis. It rules out bounded-complete-cost counterexamples throughout
-the open critical strip and isolates the remaining problem: relate the
-signed Weil form to a coercive positive quantity without assuming the
-desired positivity.
+The theorem controls bilateral Laplace loading for kernels satisfying
+\(B(\log p)=0\) by the positive cost \(E(B)\). For a pole-null test
+\(f=(\partial_x^2-1/4)H\) with \(B=H*\widetilde H\), the actual
+archimedean Weil term has spectral multiplier
+\((t^2+1/4)^2[\Re\psi(1/4+it/2)-\log\pi]\). It has the same leading
+\(t^4\log|t|\) growth as \(E(B)\), but is signed at low frequencies;
+the theorem supplies no comparison between them. There is also a distinct
+constraint gap: vanishing of the Weil prime term requires
+\(C_f(\log p^k)=0\), where
+\(C_f=(\partial_u^2-1/4)^2B\). This does not imply the hypothesis
+\(B(\log p)=0\). Consequently the theorem applies to a restricted
+class of kernels and does not establish Weil positivity or RH.
 
 ## References
 
