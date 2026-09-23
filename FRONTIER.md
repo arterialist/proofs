@@ -1,12 +1,13 @@
 # Current RH research status
 
-Updated 20 September 2026. Counting by $n\mapsto n+1$ and multiplicative factorization motivate the arithmetic objects here. The remaining problem is a quantitative bound for their complete signed error. An identity describing that error is not such a bound.
+Updated 24 September 2026. Counting by $n\mapsto n+1$ and multiplicative factorization motivate the arithmetic objects here. The remaining problem is a quantitative bound for their complete signed error. An identity describing that error is not such a bound.
 
 ## Checked results and their scope
 
 - [Bounded-height zero exclusion](formalization/BuildingBlocks/RiemannZetaRatioSurplus.lean) proves in Lean that $\zeta(s)\ne0$ when $\operatorname{Re}(s)>1/2$ and $0<\operatorname{Im}(s)\le7.465$. This is formalization progress on a classically known zero-free range.
 - The [completed-zeta decomposition](formalization/BuildingBlocks/RiemannZetaPoleDominanceTheorem.lean) and [reflection identities](formalization/BuildingBlocks/RiemannZetaDisplacementReflectionAntisymmetry.lean) are exact identities. They do not establish an additional high-frequency zero-free region.
 - [RH criteria and consequences](formalization/BuildingBlocks/RiemannZetaMasterGrandUnification.lean) organize equivalent predicates and conditional implications. The high-frequency Fredholm/trace interfaces still require the decisive estimates as fields. No instance supplying those estimates has been established by these modules.
+- The [critical sign criterion](formalization/BuildingBlocks/ActualCriticalSignCriterion.lean) verifies one conditional implication in Lean: eventual nonpositivity of the actual arithmetic observable $W(x)$ implies RH. The reverse direction and an unconditional sign bound have not been established here.
 
 ## Signed prime remainder
 
