@@ -284,4 +284,11 @@ is claimed. The figures and eigenfunction matches in
 [Connes--Consani, Section 3](https://arxiv.org/html/2106.01715)
 are numerical; they do not bound this Weil-operator residual.
 Connes's Fact 6.4 controls the Fourier transform of $k_\lambda$,
-not the norm in (11). The required all-scale estimate remains open.
+not the norm in (11). This note supplies no uniform all-scale estimate.
+
+The later [all-scale raw-vector analysis](connes-raw-prolate-residual-gap-obstruction.md)
+establishes the endpoint lower bound and a polynomially uniform upper-collar
+modulus along $\lambda^2=N+1/2$. Together with an actual two-vector bound
+on $E_1$, it shows that the particular residual-to-gap quotient in (3)
+cannot tend to zero for this unsmoothed vector. That result does not rule
+out a Temple estimate or another route to the ground eigenvector.

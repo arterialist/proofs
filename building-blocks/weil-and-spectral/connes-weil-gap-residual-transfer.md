@@ -159,8 +159,10 @@ Rayleigh-only argument replacing $R_\lambda-E_0$ in (2) by
 $R_\lambda$ for **all** windows assumes $E_0\ge0$, the very
 all-window Weil positivity at issue.
 
-This diagnostic leaves a residual-based route logically open. It
-specifies the source-exact quantities and rates that route would need;
-none is certified here. It proves no simplicity, evenness, Weil
+The [raw-vector analysis](connes-raw-prolate-residual-gap-obstruction.md)
+subsequently rules out the particular $r_\lambda/(E_1-R_\lambda)$
+transfer in (3)--(6) for Connes's unsmoothed two-mode vector along a
+cofinal sequence. The Temple condition and other trial vectors remain
+logically open. This diagnostic proves no simplicity, evenness, Weil
 positivity, or RH statement. The inequalities are written spectral
 mathematics, not Lean formalizations.

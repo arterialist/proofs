@@ -9,8 +9,10 @@ poles, and every prime power retained. The two vectors have a
 uniformly positive Gram matrix. The companion
 [prolate ODE estimate](connes-prolate-weighted-fourier-tail-ode.md)
 supplies the weighted Fourier-tail input below and gives the resulting
-one-sided upper bound for the first excited Weil eigenvalue. A positive
-Weil gap and control of Connes's specific trial vector remain open.
+one-sided upper bound for the first excited Weil eigenvalue. The
+[raw-vector residual analysis](connes-raw-prolate-residual-gap-obstruction.md)
+also bounds Connes's two-mode Rayleigh quotient in magnitude. A positive
+Weil gap and ground-eigenvector comparison remain open.
 
 ## Exact two-constraint candidates
 
@@ -476,10 +478,11 @@ $e=k_\lambda-k^\sharp$, the exact comparison is
  \tag{15}
 \]
 
-Controlling (15) requires $e$ in a Weil form norm at the required
-scale, as well as a lower bound on the actual Rayleigh quotient
-$R_\lambda=Q(k_\lambda)/\|k_\lambda\|_2^2$ if one wants an upper
-bound on $E_1-R_\lambda$. The two-vector bound (13) alone does not
-give the positive gap or the residual comparison required in
-[the spectral transfer diagnostic](connes-weil-gap-residual-transfer.md).
+The [raw-vector residual analysis](connes-raw-prolate-residual-gap-obstruction.md)
+controls (15) in the full Weil form and proves
+$|R_\lambda|\le\operatorname{poly}(c)e^{-2c}$. It also rules out the
+specific operator-residual-to-gap comparison of
+[the spectral transfer diagnostic](connes-weil-gap-residual-transfer.md)
+for this unsmoothed vector on a cofinal sequence. A positive gap,
+Temple estimate, or direct ground-eigenvector comparison remains open.
 These are written analytic reductions, not Lean formalizations.
