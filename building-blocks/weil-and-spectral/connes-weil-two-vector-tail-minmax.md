@@ -6,9 +6,11 @@ global radical vectors. The argument below makes a two-vector min--max
 version precise. It bounds the *full* Weil form of each truncated
 radical vector by a weighted Fourier tail, with the gamma term, both
 poles, and every prime power retained. The two vectors have a
-uniformly positive Gram matrix. The weighted Fourier-tail estimate
-needed to bound the first excited Weil eigenvalue at the prolate
-exponential scale remains open.
+uniformly positive Gram matrix. The companion
+[prolate ODE estimate](connes-prolate-weighted-fourier-tail-ode.md)
+supplies the weighted Fourier-tail input below and gives the resulting
+one-sided upper bound for the first excited Weil eigenvalue. A positive
+Weil gap and control of Connes's specific trial vector remain open.
 
 ## Exact two-constraint candidates
 
@@ -395,8 +397,9 @@ $d=\log n$ is at most
 $e^{-Pd/2}\mathcal T_P(g)^2$, giving the displayed complete
 logarithmic derivative. The condition $P>1$ makes both the pole
 integral and prime series finite. The weight and derivative in
-(H1) remain to be established for the smoothed prolate vectors;
-unweighted concentration leakage is insufficient. For an
+(H1) are supplied for a specified Gevrey smoothing by the
+[prolate ODE estimate](connes-prolate-weighted-fourier-tail-ode.md);
+unweighted concentration leakage alone is insufficient. For an
 individual raw zero-extended prolate $p_j$, the nonzero endpoint
 value produces the leading boundary term
 $[p_j(\lambda)e^{2\pi i\lambda v}
@@ -428,16 +431,17 @@ $E_1(a)\le
 2C_P^{(2)}\zeta(s_P)^2
 (\mathcal A_P(h_1)^2+\mathcal A_P(h_2)^2)/g_a$.
 By (G9), the denominator $g_a$ is already bounded below
-independently of $c$. Thus $\epsilon_i\le c^K e^{-c}$ for a fixed
-$K$ would imply $E_1(a)\le\operatorname{poly}(c)e^{-2c}$.
-Alternatively, (H3) gives the same conclusion if
-$\mathcal A_P(h_i)\le\operatorname{poly}(c)e^{-c}$ for one fixed
-$P>1$. These weighted Fourier-tail inputs remain unproved. The
-$L^2$ prolate leakage and the oscillator convergence used for
-(G9) do not control the weighted supremum and derivative in
-(11). Endpoint smoothing must also preserve the proposed
-$e^{-c}$ scale after normalizing the determinant coefficients
-in (2). The compressed finite-Fourier relation in (1) is not a
+independently of $c$. The companion
+[prolate ODE estimate](connes-prolate-weighted-fourier-tail-ode.md)
+proves $D_M(h_i)\le Cc^K e^{-c}$ for the normalized exact triples
+with a specified Gevrey endpoint cutoff. Inserting it in (12)--(13)
+gives $E_1(a)\le\operatorname{poly}(c)e^{-2c}$ for the *actual*
+compact Weil operator. For the weighted $L^2$ route, choose
+$2M>P+1$; direct integration of (H1) gives
+$\mathcal A_P(h_i)^2\le\lambda D_M(h_i)^2/(2M-P-1)$ and the same
+one-sided bound. This does not give $E_1>0$, a lower bound on the
+Weil gap, or control of Connes's separate two-mode Rayleigh
+quotient. The compressed finite-Fourier relation in (1) is not a
 global Fourier eigenrelation, so inversion parity is only
 approximate.
 
