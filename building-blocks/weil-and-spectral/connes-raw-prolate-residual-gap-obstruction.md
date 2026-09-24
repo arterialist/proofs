@@ -47,6 +47,12 @@ Consequently at every sufficiently large member of (3), either $R\ge E_1$, or
 \]
 Thus the raw vector cannot satisfy the residual-to-gap transfer in [the gap note](connes-weil-gap-residual-transfer.md), equations (3)--(6), at all large scales. The required ratio does not even tend to zero along (3). Nothing here proves that the actual angle to the ground eigenspace is large. The form-angle alternative and a smoother trial vector are not excluded. Nor does (4) exclude the weaker Temple condition $r^2/(E_1-R)\to0$.
 
+The [companion operator estimate](connes-raw-prolate-squared-residual-scale.md)
+sharpens (4) to $r\ge C^{-1}c^{-K}e^{-c}$ on (3) and gives
+$r\le Cc^Ke^{-c}$ for all large $c$. In the second case of (5),
+the lower bound for the ratio accordingly strengthens to
+$C^{-1}c^{-K}e^c$. This still does not decide Temple's quotient.
+
 In the proof below, $\operatorname{poly}(c)$ always means $Cc^K$ with fixed constants independent of $\lambda$. Constants may change between estimates. No differentiated asymptotic of a concentration eigenvalue is used.
 
 ## 1. Exterior energy also gives an endpoint lower bound
