@@ -360,6 +360,11 @@ each has scale \(X^2\log X\), and their density main terms must cancel before
 the prime error is visible. Recovering a fixed contraction would require a
 new signed correlation between \(M(X/a)\) and the positive weights
 \(\Lambda(a)/a\); the Selberg identity itself supplies no such sign.
+The [terminal coupling sign audit](terminal-selberg-coupling-sign-obstruction.md)
+rules out the simplest proposed sign: the coupling in (4n) is
+asymptotic to a negative constant times \(X^2\), while \(M(X)\)
+has both signs infinitely often. Thus it does not eventually oppose
+the terminal mass.
 
 The linearized explicit-formula mode is a direct falsifier. Up to an
 irrelevant nonzero scalar, take \(R_\rho(x)=x^\rho\), with
