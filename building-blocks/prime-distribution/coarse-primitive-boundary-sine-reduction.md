@@ -141,7 +141,7 @@ Combining (7) and (14), the modes above \(K\) contribute
  \ll X^{5+o(1)}K^{-4}.
  \tag{15}
 \]
-At \(K=\lceil X^{1/4}\rceil\), this is
+At \(K=\lfloor X^{1/4}\rfloor\), this is
 \(O_\varepsilon(X^{4+\varepsilon})\). The \(X^{o(1)}\) loss in (14) and
 (15) comes from the cited theorem and has not been removed.
 
