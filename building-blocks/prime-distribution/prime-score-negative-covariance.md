@@ -203,6 +203,11 @@ E_x\exp\!\left(\sum_{p\in S}t_pm_p(n)\right)
 \tag{9}
 $$
 
+The full prime-power score version of (9) is kernel-checked in
+[`ActualPrimeExponentialMoment.lean`](../../formalization/BuildingBlocks/ActualPrimeExponentialMoment.lean)
+for each finite prime set, nonnegative coefficients, and the complete
+active cutoff support.
+
 This gives the usual exponential-moment upper comparison with independent variables having the same one-prime marginals. It is a bound for functions of individual coordinates; grouping several coordinates into one increasing function requires a stronger assertion, which fails below.
 
 ## Negative association fails in the full law
