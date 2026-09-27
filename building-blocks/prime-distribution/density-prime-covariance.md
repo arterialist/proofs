@@ -28,7 +28,7 @@ $$
 \tag{2}
 $$
 
-In the full two-history formula this covariance enters with a minus sign. It is therefore a positive contribution that needs compensation, not a negative correction that supplies the missing sign of $W$. The [cross-prime covariance theorem](prime-score-negative-covariance.md) supplies its separate pairwise sign. Their [combined balance](combined-prime-density-covariance.md) still leaves an unsigned remainder. This finite-sum proof is not formalized in Lean; no priority claim is made.
+In the full two-history formula this covariance enters with a minus sign. It is therefore a positive contribution that needs compensation, not a negative correction that supplies the missing sign of $W$. The [cross-prime covariance theorem](prime-score-negative-covariance.md) supplies its separate pairwise sign. Their [combined balance](combined-prime-density-covariance.md) still leaves an unsigned remainder. The [Lean finite-cutoff formalization](../../formalization/BuildingBlocks/DensityPrimeCovarianceFinite.lean) checks the actual full-score cofactor identity (6), the covariance gap (7), and the strict sign conditional on the stated monotonicity of $\beta$. The independent proof below that $\beta$ increases for every real cutoff is not yet formalized in Lean. No priority claim is made.
 
 ## The cutoff density mean strictly increases
 
@@ -163,4 +163,4 @@ $$
 
 Every displayed term is strictly positive. The sum is nonempty exactly when $x>p$, proving (1). Summing (7) over all actual prime powers proves (2). This retains repeated prime powers and the complete cutoff dependence.
 
-The scores and density term are derived from the complete measure identity in [prime allocation](prime-allocation-critical-identity.md). The certificate uses Python's standard library only. Run `python3 certificates/cutoff_density_monotonicity.py` from the repository root without `-O`; the monotonicity beyond the finite starting cases is the analytic induction above.
+The scores and density term are derived from the complete measure identity in [prime allocation](prime-allocation-critical-identity.md). The Lean module retains every active prime power by setting its finite score cutoff to $J=N$ and identifies the original integer-valued mixed moment with the cofactor expression; its conditional sign theorem names both the non-strict and strict mean comparisons. The certificate uses Python's standard library only. Run `python3 certificates/cutoff_density_monotonicity.py` from the repository root without `-O`; the monotonicity beyond the finite starting cases is the analytic induction above.
