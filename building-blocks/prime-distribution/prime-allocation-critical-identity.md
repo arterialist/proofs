@@ -1,6 +1,6 @@
 # Prime allocation and the complete critical arithmetic identity
 
-This written proof constructs the full cutoff law from independent negative-binomial Euler factors, then derives the complete signed second-moment identity. Independence is used before weighting and for allocations conditional on the whole product; it is not asserted for total prime exponents after weighting. No Lean formalization or priority claim is made.
+This written proof constructs the full cutoff law from independent negative-binomial Euler factors, then derives the complete signed second-moment identity. Independence is used before weighting and for allocations conditional on the whole product; it is not asserted for total prime exponents after weighting. The finite divisor-response bridge is formalized in Lean below; the full prime-color identity (22) is not yet formalized. No priority claim is made.
 
 All identities below hold for every real $x>1$. Every measure pairing is
 restricted by the kernel $K_x(a,b)=(x-ab)_+$, so only finitely many atoms
@@ -372,6 +372,15 @@ $$
 
 This is an exact identity for the original $W$, not a change of its
 diagonal or density normalization.
+
+The finite bridge from the literal original $W$ to its complete divisor
+response and its expectation under the actual cutoff law is kernel-checked in
+[`PrimeHistoryDivisorResponse.lean`](../../formalization/BuildingBlocks/PrimeHistoryDivisorResponse.lean).
+The full von Mangoldt divisor row is identified with every prime-power score
+in [`PrimeScoreDivisorIdentity.lean`](../../formalization/BuildingBlocks/PrimeScoreDivisorIdentity.lean).
+The remaining pointwise identification of the distinct-prime divisor row
+with $S(n)^2-\sum_p m_p(n)^2$ is still a written, unformalized step. Thus the
+displayed prime-color form (22) is not yet claimed as a kernel-checked theorem.
 
 Write
 
