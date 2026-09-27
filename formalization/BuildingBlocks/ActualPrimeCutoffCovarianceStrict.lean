@@ -8,7 +8,8 @@ finite-grid ratio inequality is proved by decreasing increment ratios;
 that inequality yields increasing integer-dilation weights on all real
 cutoffs, including support seams. The cofactor covariance identity then
 gives strict negativity for every pair of distinct active primes, retaining
-all prime powers.
+all prime powers. The covariance is zero before either prime enters the
+cutoff.
 
 This is an unconditional arithmetic sign, not the combined two-history
 sign needed for the Riemann hypothesis.
@@ -746,3 +747,70 @@ end
 end BuildingBlocks.ActualPrimeCutoffCovarianceStrict
 
 #print axioms BuildingBlocks.ActualPrimeCutoffCovarianceStrict.fullCovariance_neg_grid_integrated
+
+
+namespace BuildingBlocks.ActualPrimeCutoffCovarianceStrict
+
+open BuildingBlocks.ActualPrimeCutoffCovarianceFinite
+
+noncomputable section
+
+private theorem fullPrimeScore_zero_of_lt {p n : ℕ}
+    (hnp : n < p) : fullPrimeScore p n = 0 := by
+  simp [fullPrimeScore, Nat.factorization_eq_zero_of_lt hnp]
+
+private theorem weighted_score_zero_of_cutoff {x : ℝ} {p n : ℕ}
+    (hxp : x ≤ (p : ℝ)) :
+    cutoffWeight x n * fullPrimeScore p n = 0 := by
+  by_cases hnx : (n : ℝ) < x
+  · have hnp : n < p := by exact_mod_cast (lt_of_lt_of_le hnx hxp)
+    rw [fullPrimeScore_zero_of_lt hnp]
+    ring
+  · simp [cutoffWeight, hnx]
+
+private theorem fullScoreMean_zero_of_cutoff {N p : ℕ} {x : ℝ}
+    (hxp : x ≤ (p : ℝ)) : fullScoreMean N p x = 0 := by
+  unfold fullScoreMean
+  have hs : (∑ n ∈ Finset.Icc 1 N,
+      cutoffWeight x n * fullPrimeScore p n) = 0 := by
+    apply Finset.sum_eq_zero
+    intro n hn
+    exact weighted_score_zero_of_cutoff hxp
+  rw [hs]
+  simp
+
+private theorem fullCrossMoment_zero_left {N p q : ℕ} {x : ℝ}
+    (hxp : x ≤ (p : ℝ)) : fullCrossMoment N p q x = 0 := by
+  unfold fullCrossMoment
+  have hs : (∑ n ∈ Finset.Icc 1 N,
+      cutoffWeight x n * fullPrimeScore p n * fullPrimeScore q n) = 0 := by
+    apply Finset.sum_eq_zero
+    intro n hn
+    rw [weighted_score_zero_of_cutoff hxp]
+    ring
+  rw [hs]
+  simp
+
+/-- The full prime-power cross covariance vanishes when either score is
+inactive on the actual cutoff support. No prime hypothesis is needed. -/
+theorem fullCovariance_zero_before_either_prime
+    {N p q : ℕ} {x : ℝ}
+    (h : x ≤ (p : ℝ) ∨ x ≤ (q : ℝ)) :
+    fullCrossMoment N p q x -
+      fullScoreMean N p x * fullScoreMean N q x = 0 := by
+  rcases h with hxp | hxq
+  · rw [fullCrossMoment_zero_left hxp, fullScoreMean_zero_of_cutoff hxp]
+    ring
+  · have hcross : fullCrossMoment N p q x = fullCrossMoment N q p x := by
+      unfold fullCrossMoment
+      congr 1
+      apply Finset.sum_congr rfl
+      intro n hn
+      ring
+    rw [hcross, fullCrossMoment_zero_left hxq, fullScoreMean_zero_of_cutoff hxq]
+    ring
+
+end
+end BuildingBlocks.ActualPrimeCutoffCovarianceStrict
+
+#print axioms BuildingBlocks.ActualPrimeCutoffCovarianceStrict.fullCovariance_zero_before_either_prime
