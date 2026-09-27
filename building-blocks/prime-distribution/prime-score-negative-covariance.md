@@ -165,6 +165,14 @@ $$
 
 If $x\le\prod_i a_i$, the left side is zero. Otherwise its exact product expression is $\prod_iD_{a_i}(x/\prod_{j<i}a_j)$, and cutoff monotonicity bounds each factor. The empty product is one. When the $a_i$ are pairwise coprime, the left side is their joint divisibility probability.
 
+The actual finite-cutoff version of (7), including factors equal to one,
+the empty family, and inactive support, is kernel-checked in
+[`formalization/BuildingBlocks/ActualCutoffDivisibilityProduct.lean`](../../formalization/BuildingBlocks/ActualCutoffDivisibilityProduct.lean).
+Its `originalProbability_list_prod_le` theorem identifies each term with
+the original cutoff-event probability and assumes $1<x\le N+1$ so the
+finite sum contains the full active support. This formalization does not
+assert the signed Weil or RH bound.
+
 Let $S$ be a finite set of distinct primes and let $f_p:\mathbb N_0\to[0,\infty)$ be increasing. On the finite support of the actual law,
 
 $$
