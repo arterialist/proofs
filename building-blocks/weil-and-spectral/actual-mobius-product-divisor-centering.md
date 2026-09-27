@@ -26,8 +26,10 @@ After the exact \(m,m'\) transforms, put
  \tag{2}
 \]
 
-The physical phase is exactly \(-C_0z\).  Poisson summation in \(k,k'\)
-introduces \(A=\ell n\) and \(A'=\ell'n'\).  A separated component has the
+The physical phase is exactly \(-C_0z\). With the convention
+\(\sum_j f(j)=\sum_m\int f(t)e(-mt)\,dt\), the stationary Poisson modes in
+\(k,k'\) are \((-\ell,+\ell')\). Put \(A=\ell n\) for the \(k/n\) side and
+\(A'=\ell'n'\) for the \(k'/n'\) side. A separated component has the
 form
 
 \[
@@ -40,11 +42,15 @@ where
 \[
  \begin{aligned}
  I(A,A')=\iint K(s,z)e\!\left(
-  -C_0z-A(s-z/2)+A'(s+z/2)\right)\,ds\,dz,\\
+  -C_0z+A(s+z/2)-A'(s-z/2)\right)\,ds\,dz,\\
  d_\theta(A)=\sum_{n\mid A}\theta(n/Q).
  \end{aligned}
  \tag{4}
 \]
+The [Lean phase identity](../../formalization/BuildingBlocks/ActualMobiusFourfoldPhase.lean)
+checks this orientation with \(A\) attached to the \(k/n\) side and \(A'\) to
+the \(k'/n'\) side. Exchanging \(A\) and \(A'\) also requires exchanging their
+divisor coefficient families when the two separated components differ.
 
 Here \(K\) is smooth and compactly supported, and the sums defining
 \(d_\theta\) retain only the finite support \(n\asymp Q\).  The whole
@@ -64,8 +70,8 @@ On the support,
 
 Thus, for large \(T\), both \(s-z/2\) and \(s+z/2\) lie strictly between
 zero and one.  Summing (4) over the full \(A\)-lattice inserts the Dirac
-comb at \(s-z/2\in\mathbb Z\), which misses the support.  Summing over
-\(A'\) gives the same conclusion at \(s+z/2\).  Absolute rapid decay of
+comb at \(s+z/2\in\mathbb Z\), which misses the support.  Summing over
+\(A'\) gives the same conclusion at \(s-z/2\).  Absolute rapid decay of
 the Fourier coefficients justifies the rearrangements, so
 
 \[

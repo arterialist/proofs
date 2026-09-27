@@ -152,13 +152,16 @@ Then
  \left|\frac{\partial(k,k')}{\partial(s,z)}\right|=nn'\asymp Q^2.
 \tag{16}
 \]
-Poisson summation in the smooth \(k,k'\)-variables gives integer modes
-\(-\ell,+\ell'\).  In the coordinates (15), their phase is
+With the convention \(\sum_j f(j)=\sum_m\int f(t)e(-mt)\,dt\), Poisson
+summation in the smooth \(k,k'\)-variables gives integer modes
+\(-\ell,+\ell'\). Since \(k/n=s+z/2\) and \(k'/n'=s-z/2\), their phase is
 \[
- -(\ell n-\ell'n')s
+ +(\ell n-\ell'n')s
  -\left(C_0-\frac{\ell n+\ell'n'}2\right)z.
 \tag{17}
 \]
+The oriented algebra in (17), with each mode attached to its original
+\(k/n\) or \(k'/n'\) side, is [checked in Lean](../../formalization/BuildingBlocks/ActualMobiusFourfoldPhase.lean).
 Repeated integration by parts leaves only \(\ell,\ell'\asymp Q^2\) with
 \[
  |\ell n-\ell'n'|\ll \frac QP,
