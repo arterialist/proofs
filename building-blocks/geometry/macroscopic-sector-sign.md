@@ -58,6 +58,8 @@ Substituting it into $A(y)$, grouping the first double sum by $m=db$ and retaini
 $$
 A(y)=\sum_{m<y}\rho_y(m)\left[S(m)-1-\frac{y/m-1}{2}\right].
 $$
+The finite identity and its all-real Volterra integral form are formalized in
+[ActualPrimeErrorBridge.lean](../../formalization/BuildingBlocks/ActualPrimeErrorBridge.lean).
 Indeed the density contribution at $m$ is exactly
 $\sqrt m[(y/m)^2-1]/2=\rho_y(m)[1+(y/m-1)/2]$.
 Summing the state identity over $m$ and then over the unique largest prime proves (1). Terms at the cutoff have zero weight. This derivation retains both parts of the carrier and every prime power in the cofactor.
