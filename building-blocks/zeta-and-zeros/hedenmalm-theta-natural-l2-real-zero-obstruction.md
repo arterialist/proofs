@@ -1,10 +1,11 @@
-# The natural theta pullback is not symmetric on the real-zero span
+# Bounded theta pullback metrics fail on the real-zero span
 
-**Status.** This is an unconditional obstruction to one choice of inner
-product in [Hedenmalm's theta pencil](https://arxiv.org/html/2606.17494),
-not a zero-free theorem or progress toward the Riemann hypothesis. It concerns
-the standard Haar-space pairing on $L^2((0,\infty),dt/t)$. It leaves open
-other choices of the target inner product in the paper's Definition 4.2.1.
+**Status.** This is an unconditional obstruction to the standard Haar-space
+pairing and every bounded positive-definite target metric on
+$L^2((0,\infty),dt/t)$ in
+[Hedenmalm's theta pencil](https://arxiv.org/html/2606.17494). It is not a
+zero-free theorem or progress toward the Riemann hypothesis. The paper's
+unbounded or otherwise non-$L^2$ target inner products remain open.
 
 In the logarithmic coordinate $x=\log t$, write
 
@@ -109,8 +110,24 @@ $\alpha^2Au_\alpha$ converge to the same nonzero vector $ip'K$.
 Their Gram matrix is asymptotically rank one, whereas pair symmetry
 would require vectors for distinct real zeros to be orthogonal.
 
+**Corollary (bounded target obstruction).** Let $T$ be a bounded,
+self-adjoint, nonnegative operator on $L^2(\mathbb R,dx)$, and replace
+$q_A$ by $q_T(u,v)=\langle TAu,Av\rangle_2$. If Hedenmalm's pair
+symmetry holds on the finite span of the actual real-zero eigenfunctions,
+then $T(p'K)=0$. In particular, no bounded injective positive target
+operator can supply that symmetry.
+
+*Proof.* For distinct real zeros $\alpha,\beta$, equation (4) and pair
+symmetry give $\langle TAu_\alpha,Au_\beta\rangle_2=0$. Choose distinct
+positive real zeros $\alpha_n\to\infty$ and put
+$w_n=\alpha_n^2Au_{\alpha_n}$. By (6), $w_n\to g=ip'K\ne0$ in $L^2$.
+For fixed $n$, let $m\to\infty$ in
+$\langle Tw_n,w_m\rangle_2=0$, and then let $n\to\infty$. Boundedness
+gives $\langle Tg,g\rangle_2=0$. Since $T$ is nonnegative, $Tg=0$,
+and hence $T(p'K)=0$. ∎
+
 This result sharpens the [full-core obstruction](hedenmalm-theta-full-core-metric-obstruction.md)
-for this particular $L^2$ pullback: the failure occurs already on a
-two-dimensional subspace of actual zero eigenfunctions. It does not rule
-out a different sesquilinear form on the finite zero span, and it proves no
-new statement about the location of zeta zeros.
+in a different direction: bounded positive-definite target metrics fail
+already on the finite real-zero span, without imposing symmetry on a
+form core. A degenerate bounded form or a genuinely unbounded target
+metric is not excluded. Nothing here locates zeta zeros.
