@@ -1,6 +1,6 @@
 # Prime allocation and the complete critical arithmetic identity
 
-This written proof constructs the full cutoff law from independent negative-binomial Euler factors, then derives the complete signed second-moment identity. Independence is used before weighting and for allocations conditional on the whole product; it is not asserted for total prime exponents after weighting. The finite divisor-response bridge is formalized in Lean below; the full prime-color identity (22) is not yet formalized. No priority claim is made.
+This proof constructs the full cutoff law from independent negative-binomial Euler factors, then derives the complete signed second-moment identity. Independence is used before weighting and for allocations conditional on the whole product; it is not asserted for total prime exponents after weighting. The complete finite prime-color identity (22) and its conditional RH implication are formalized in Lean below. The required eventual sign remains open. No priority claim is made.
 
 All identities below hold for every real $x>1$. Every measure pairing is
 restricted by the kernel $K_x(a,b)=(x-ab)_+$, so only finitely many atoms
@@ -379,8 +379,18 @@ response and its expectation under the actual cutoff law is kernel-checked in
 The full von Mangoldt divisor row is identified with every prime-power score
 in [`PrimeScoreDivisorIdentity.lean`](../../formalization/BuildingBlocks/PrimeScoreDivisorIdentity.lean).
 The remaining pointwise identification of the distinct-prime divisor row
-with $S(n)^2-\sum_p m_p(n)^2$ is still a written, unformalized step. Thus the
-displayed prime-color form (22) is not yet claimed as a kernel-checked theorem.
+with $S(n)^2-\sum_p m_p(n)^2$ is kernel-checked in
+[`PrimePairDivisorIdentity.lean`](../../formalization/BuildingBlocks/PrimePairDivisorIdentity.lean).
+Its finite bijection counts each ordered pair of positive powers of distinct
+primes exactly once, including both orientations, and excludes the same-prime
+terms. The assembly in
+[`PrimeColorSignBridge.lean`](../../formalization/BuildingBlocks/PrimeColorSignBridge.lean)
+proves (22) for every real $x>1$, including integer cutoff endpoints.
+The same module proves that eventual nonpositivity of this *actual*
+prime-color expectation implies mathlib's `RiemannHypothesis`. That sign is an
+explicit open hypothesis; the identity and implication do not establish it.
+The Lean axiom audit for these results lists only `propext`, `Classical.choice`,
+and `Quot.sound`.
 
 Write
 
