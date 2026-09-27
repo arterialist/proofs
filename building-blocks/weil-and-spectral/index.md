@@ -89,6 +89,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A continuum counterphase for the actual signed cocycle](continuum-scattering-counterphase.md)
 - [Complete dyadic Weil comparison with large finite histories](dyadic-full-weil-large-history-repair.md)
 - [Exact one-prime positive and negative contributions](exact-prime-scattering-fibers.md)
+- [Positive two-packet spaces at every prime-power scale](actual-prime-power-two-packet-positive-cones.md)
 - [What the factorial successor clock changes in the prime operator](factorial-successor-clock-prime-operator-audit.md)
 - [Actual finite scattering histories need not increase the full Weil form](finite-history-full-weil-monotonicity-obstruction.md)
 - [RH from a supplied universal evaluator, reflection, and real-axis nonvanishing](zeta-universal-rh-bridge.md)
