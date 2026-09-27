@@ -86,12 +86,15 @@ This is a genuine uniform positive inequality on `span_R{g}+V`. Since `||cg+v||Â
 
 The [Arb certificate](../../certificates/actual_weil_radius_one_carrier1058_band.py)
 encloses every logarithm, square root, and cosine in the complete five-power
-comb on `[1048,1068]` and checks the displayed numerical margins. The
-conditional scalar Schur and Cauchy reduction is kernel checked in
+comb on `[1048,1068]` and checks the displayed numerical margins. The exact
+`log n<2` prime-power list and its weighted von Mangoldt row are kernel checked
+in [ActualWeilPrimeList.lean](../../formalization/BuildingBlocks/ActualWeilPrimeList.lean).
+The conditional scalar Schur and Cauchy reduction is kernel checked in
 [ActualWeilRankOneSchur.lean](../../formalization/BuildingBlocks/ActualWeilRankOneSchur.lean).
 Lean includes a fifth slot for the `n=7` mixed term, but assumes its
 identification with the actual arithmetic row. The named analytic hypotheses
 include (4)â€“(7); the Weil formula, Binet estimate, smooth carrier construction,
-spectral leakage, and prime-row normalization remain written arguments. Those
+spectral leakage, and identification of the finite row with the Weil multiplier
+remain written arguments. Those
 steps were checked independently. The theorem applies only to the displayed
 restricted subspace; it does not imply positivity on all compact supports or RH.

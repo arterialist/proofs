@@ -23,6 +23,7 @@ for j in range(400):
     if value.upper() > largest.upper():
         largest, largest_cell = value, j
 
+assert largest < arb("2.60")
 print("largest Arb interval upper:", largest.upper())
 print("cell:", largest_cell)
 

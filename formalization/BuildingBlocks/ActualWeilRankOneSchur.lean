@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import BuildingBlocks.ActualWeilPrimeList
 
 /-!
 Algebraic audit of the radius-one rank-one Schur argument.
