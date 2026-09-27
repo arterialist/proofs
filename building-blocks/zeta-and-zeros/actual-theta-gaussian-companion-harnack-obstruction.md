@@ -65,3 +65,31 @@ $$
 For completeness, (4) also follows from the Herglotz representation: each positive-measure term $y/(x^2+y^2)$ is at least $1/y$ times its value at $y=1$, and the nonnegative linear term strengthens the bound. Equations (2)–(3) instead give $y\operatorname{Im}q_c(iy)=yR_c(y)\to0$, a contradiction. $\square$
 
 The obstruction is global and uses the actual completed theta kernel. It does not assert a real-zero boundary failure for every $c$, nor does it locate any nonreal zero of Xi. It closes this particular fixed-Gaussian odd-companion construction; it supplies no unconditional estimate of a signed Weil form or the prime error.
+
+## A decay threshold for other odd companions
+
+The same obstruction has a wider exact form. Let $v:[0,\infty)\to\mathbb R$ be locally bounded and satisfy $v(u)=o(e^{-2u})$. Define
+
+$$
+B_v(z)=\int_0^\infty v(u)\Phi(u)\sin(zu)\,du.
+$$
+
+Then $A-iB_v$ cannot satisfy the strict Hermite–Biehler inequality. To see the critical decay scale, write $D(y)=A(iy)=\xi(y+1/2)/2$ by the functional equation. For $s=y+1/2$ and sufficiently large $y$, the gamma recurrence gives the exact ratio
+
+$$
+\frac{D(y-2)}{D(y)}
+=\frac{\xi(s-2)}{\xi(s)}
+=\frac{2\pi(s-3)}{s(s-1)}\frac{\zeta(s-2)}{\zeta(s)}
+=\frac{2\pi+o(1)}{y}. \tag{5}
+$$
+
+Because $e^{-2u}\cosh(yu)\le\cosh((y-2)u)$, equation (5) bounds the tilted average of $e^{-2u}$ by $(2\pi+o(1))/y$. Given $\eta>0$, choose $U$ with $|v(u)|\le\eta e^{-2u}$ for $u\ge U$. The contribution of this tail to $\operatorname{Im}(B_v(iy)/A(iy))$ is at most $\eta(2\pi+o(1))/y$. The contribution of $[0,U]$ is $O_U(e^{Uy}/D(y))=o(1/y)$: positivity of $\Phi$ on any interval above $U$ makes $D(y)$ grow faster than $e^{Uy}$. Letting $\eta\to0$ gives $y\operatorname{Im}(B_v(iy)/A(iy))\to0$. A strict Pick quotient would instead obey (4); if its imaginary part at $i$ were nonpositive, strict Pick would already fail. This proves the claim even for sign-changing $v$.
+
+The endpoint of this argument is sharp as a growth test. If $v(u)=e^{-2u}$, the same computation, with $\sinh$ in place of $\cosh$, gives
+
+$$
+y\frac{\int_0^\infty e^{-2u}\Phi(u)\sinh(yu)\,du}{D(y)}
+\longrightarrow 2\pi.
+$$
+
+The difference between this numerator and $D(y-2)$ is uniformly bounded, while $D(y)\to\infty$. Thus the Harnack contradiction does not exclude weights at the $e^{-2u}$ threshold or slower decay; it provides no positive Hermite–Biehler result for them.
