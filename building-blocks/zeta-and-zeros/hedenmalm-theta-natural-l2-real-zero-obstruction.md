@@ -1,4 +1,4 @@
-# Bounded theta pullback metrics fail on the real-zero span
+# No bounded injective $L^2$ metric symmetrizes the theta pencil
 
 **Status.** This is an unconditional obstruction to the standard Haar-space
 pairing and every bounded positive-definite target metric on
