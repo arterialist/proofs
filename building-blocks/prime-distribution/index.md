@@ -22,6 +22,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A dyadic primitive-energy criterion for RH](coarse-energy-rh-criterion.md)
 - [Finite primitive-energy bounds for the prime error](coarse-primitive.md)
 - [Low additive modes of the coarse prime primitive](coarse-primitive-low-mode-fourier-reduction.md)
+- [A third-height-power bound for the actual connected prime-error modes](connected-low-mode-third-height-power.md)
 - [Combined prime and density covariance at every cutoff](combined-prime-density-covariance.md)
 - [No nonzero compact smooth seed has a finite-Lp bare prime action](compact-bare-prime-action-finite-lp-exclusion.md)
 - [Complete arithmetic correlation from literal compact support](complete-arithmetic-correlation-support.md)
