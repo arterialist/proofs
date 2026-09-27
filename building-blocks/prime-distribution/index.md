@@ -4,6 +4,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 
 - [Abel-smoothed Mertens bounds and the RH criterion](abel-mertens-rh-criterion.md)
 - [A stronger global signed bound for the actual prime-error convolution](actual-prime-error-convolution-global-cesaro-gain.md)
+- [A zero-cluster bound for the actual Eq. 22 prime-error residual](actual-eq22-zero-cluster-bound.md)
 - [A local signed average gain for the actual prime-error convolution](actual-prime-error-convolution-local-average-gain.md)
 - [The phase current in the actual prime-error entropy identity](actual-prime-phase-current-entropy-reversal.md)
 - [The actual short-time source norm as a signed psi correlation](actual-short-time-psi-correlation.md)
