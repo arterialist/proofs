@@ -113,8 +113,7 @@ private theorem T_mono_pos {m N : ℕ} (hm : 1 ≤ m) (hmN : m ≤ N) :
       exact ih.trans (T_succ_gt (hm.trans hmn)).le
 
 /-- The entire dilation comparison (3) follows formally from the strict
-finite-grid step (2). The step itself is a named input until its strict
-Jensen coupling is formalized. -/
+finite-grid step (2), proved later in this module by increment ratios. -/
 theorem finiteGrid_dilation_of_step
     (hstep : ∀ n, 1 ≤ n → T (n+1) / ((n+2 : ℕ) : ℝ) < T n / ((n+1 : ℕ) : ℝ))
     {a m N : ℕ} (ha : 2 ≤ a) (hm : 1 ≤ m)
@@ -197,8 +196,8 @@ private theorem Ffixed_piece {N a : ℕ} {x : ℝ}
   have hne : (a : ℝ) ≠ 0 := haR.ne'
   field_simp
 
-/-- Equation (4), in its finite-cell strict-comparison form. Its only
-unproved arithmetic input is the explicitly named grid step (2). -/
+/-- Equation (4), in its finite-cell strict-comparison form. Its arithmetic
+input is the explicitly named grid step (2), discharged below. -/
 theorem Ffixed_strict_cell_of_step
     (hstep : ∀ n, 1 ≤ n → T (n+1) / ((n+2 : ℕ) : ℝ) < T n / ((n+1 : ℕ) : ℝ))
     {N a : ℕ} {x y : ℝ} (ha : 2 ≤ a) (haN : a ≤ N)
