@@ -1,11 +1,11 @@
 # No bounded injective $L^2$ metric symmetrizes the theta pencil
 
 **Status.** This is an unconditional obstruction to the standard Haar-space
-pairing and every bounded positive-definite target metric on
-$L^2((0,\infty),dt/t)$ in
+pairing, the standard $H^s$ pairing for every fixed integer $s\ge0$,
+and bounded positive-definite target metrics on each of these spaces in
 [Hedenmalm's theta pencil](https://arxiv.org/html/2606.17494). It is not a
 zero-free theorem or progress toward the Riemann hypothesis. The paper's
-unbounded or otherwise non-$L^2$ target inner products remain open.
+more singular target inner products remain open.
 
 In the logarithmic coordinate $x=\log t$, write
 
@@ -126,8 +126,28 @@ $\langle Tw_n,w_m\rangle_2=0$, and then let $n\to\infty$. Boundedness
 gives $\langle Tg,g\rangle_2=0$. Since $T$ is nonnegative, $Tg=0$,
 and hence $T(p'K)=0$. ∎
 
+**Finite Sobolev orders.** The same obstruction holds if the target is
+$H^s(\mathbb R)$ for any fixed integer $s\ge0$, or if its pairing is
+induced by a bounded positive injective operator on $H^s$. Indeed, repeat
+the integration by parts underlying (5) with $N\ge s+4$ terms. For the tail
+$J_N$, repeated differentiation of its defining integral gives
+
+\[
+ J_N^{(k)}=(-i\alpha)^kJ_N+
+ \sum_{j=0}^{k-1}(-i\alpha)^{k-1-j}K^{(N+j)}.
+\]
+
+The two-sided envelope (3), with the double-exponential theta tails,
+then gives $\|AJ_N\|_{H^s}=O_s(|\alpha|^{s+1})$; derivatives of $p$
+grow at most exponentially in $|x|$. The longer expansion therefore
+upgrades (6) to
+$\alpha^2Au_\alpha=ip'K+O_{H^s}(|\alpha|^{-1})$.
+The orthogonality-limit proof of the corollary applies in $H^s$.
+
 This result sharpens the [full-core obstruction](hedenmalm-theta-full-core-metric-obstruction.md)
 in a different direction: bounded positive-definite target metrics fail
 already on the finite real-zero span, without imposing symmetry on a
-form core. A degenerate bounded form or a genuinely unbounded target
-metric is not excluded. Nothing here locates zeta zeros.
+form core. Degenerate bounded forms, unbounded or spatially weighted
+metrics that are not continuous on any fixed $H^s$, and forms defined
+only on the finite zero span are not excluded. Nothing here locates zeta
+zeros.
