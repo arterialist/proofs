@@ -107,6 +107,13 @@ the repository's `coarseTerminalMassFinite`. This formalization keeps
 the exact terminal expression
 `2X psi(2X) - X psi(X) - sum_{X<n<=2X} n Lambda(n) - 3X^2/2`;
 replacing its first two terms by `X psi(2X)` would be false.
+[`ConnectedLowModeEnergy.lean`](../../formalization/BuildingBlocks/ConnectedLowModeEnergy.lean)
+identifies the literal connected mode with that complete prime-power row and
+kernel-checks the transfer from an explicitly named, uniform pointwise
+third-height analytic input to the finite energy inequality (4), for every
+block length `J`. It also verifies the exact exponent comparison for a
+growing block. The analytic input is a hypothesis in Lean; this module does
+not formalize or prove the first-Riesz formula or zero-sum estimate.
 The first-Riesz formula (5), the zero-free/density estimate (10), and
 the integration in (6)--(9) remain written analytic arguments; the Lean
 theorems make no zero-estimate or RH claim. An independent audit checked
