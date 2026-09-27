@@ -99,11 +99,19 @@ The finitely many low zeros have a fixed power saving and are harmless. Equation
 
 The exact finite prime-power weighted integral is kernel checked in
 [`ConnectedLowModeFinite.lean`](../../formalization/BuildingBlocks/ConnectedLowModeFinite.lean).
-Its analytic specialization to the exponential weight and the first-Riesz
-formula (5), the zero-free/density estimate (10), and the integration in
-(6)--(9) remain written arguments; the Lean theorem makes no analytic or
-RH claim. An independent audit checked the Riesz normalization, endpoints,
-third height power, and comparison with the existing `c_M` bound.
+[`ConnectedDyadicLowMode.lean`](../../formalization/BuildingBlocks/ConnectedDyadicLowMode.lean)
+now also kernel-checks the integer-dyadic specialization (2): the
+exponential endpoint phases, the complete finite Mangoldt block,
+the density integral, and the identification of the terminal mass with
+the repository's `coarseTerminalMassFinite`. This formalization keeps
+the exact terminal expression
+`2X psi(2X) - X psi(X) - sum_{X<n<=2X} n Lambda(n) - 3X^2/2`;
+replacing its first two terms by `X psi(2X)` would be false.
+The first-Riesz formula (5), the zero-free/density estimate (10), and
+the integration in (6)--(9) remain written analytic arguments; the Lean
+theorems make no zero-estimate or RH claim. An independent audit checked
+the Riesz normalization, endpoints, third height power, and comparison
+with the existing `c_M` bound.
 
 As a normalization falsifier only, a separate finite sieve evaluated (1)
 by analytic integration on unit cells and (2) by the complete prime-power
