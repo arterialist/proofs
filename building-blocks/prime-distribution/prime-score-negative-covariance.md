@@ -186,6 +186,15 @@ $$
 \tag{8}
 $$
 
+Equation (8) is kernel-checked for every finite prime set and every
+nonnegative increasing coordinate function on the active valuation range in
+[`ActualPrimeOrthantMoment.lean`](../../formalization/BuildingBlocks/ActualPrimeOrthantMoment.lean).
+The proof combines the unconditional [divisibility product inequality](../../formalization/BuildingBlocks/ActualCutoffDivisibilityProduct.lean)
+with the [finite upper-orthant transfer](../../formalization/BuildingBlocks/ActualCutoffOrthantMoments.lean).
+It uses the original cutoff weights, retains all prime-power thresholds,
+and includes zero thresholds and the empty prime set. The moment bound
+does not determine the sign of the complete two-history remainder.
+
 In particular, for nonnegative $t_p$,
 
 $$
