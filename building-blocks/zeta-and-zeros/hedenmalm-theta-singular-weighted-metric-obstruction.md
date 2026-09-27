@@ -69,7 +69,13 @@ The evenness of the theta kernel and the zero condition imply
  q_w(u_\alpha,u_\alpha)=2\int_0^\infty|h_\alpha'(x)|^2\,dx. \tag{4}
 \]
 
-The explicit theta series gives, as \(x\to+\infty\),
+The actual theta series is
+\[
+ K(x)=\pi e^{9x/2}\sum_{n\ge1}n^2
+       (2\pi n^2-3e^{-2x})e^{-\pi n^2e^{2x}}.
+\]
+Its \(n=1\) term dominates with a double-exponentially small relative
+remainder. Thus, as \(x\to+\infty\),
 
 \[
  p(x)=2\pi e^{2x}-\frac92+O(e^{-2x}),\qquad
