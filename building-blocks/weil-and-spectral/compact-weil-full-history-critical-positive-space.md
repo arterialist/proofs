@@ -160,10 +160,13 @@ The bracket is at least $\log c-C$ for one constant $C$,
 proving (2). In fact (12) retains a nonnegative fraction of the
 complete divisor-history energy and the boundary potential.
 
-This is a written proof. The finite real identity in (6) has a
-[Lean formalization](../../formalization/BuildingBlocks/CompactWeilDivisorEnergyFinite.lean);
-the transfer (5), gamma and pole estimates, Balazard input, and
-complex extension are not Lean-formalized. As $N\to\infty$, the
+This is a written proof. The finite real and complex identities in (6) have a
+[Lean formalization](../../formalization/BuildingBlocks/CompactWeilDivisorEnergyFinite.lean).
+The [finite complex moment transfer](../../formalization/BuildingBlocks/CompactWeilMomentTransferFinite.lean)
+formalizes (5), including both profiles and every von Mangoldt prime power,
+under an explicit hypothesis $\psi(x)\le C_\psi x$. The analytic proof of
+that Chebyshev bound, the gamma and pole estimates, and Balazard's input
+are not formalized by this module. As $N\to\infty$, the
 packets have width $O(N^{-1})$ while their centers near any fixed
 spatial point are spaced $\asymp N^{-1/2}$. Thus these positive
 spaces do not approximate arbitrary compact tests, and (2) does not
