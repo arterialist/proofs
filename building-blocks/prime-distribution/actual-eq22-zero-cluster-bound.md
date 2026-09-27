@@ -337,10 +337,14 @@ The [Lean module](../../formalization/BuildingBlocks/ActualEq22Residual.lean)
 checks the literal finite cofactor reindexing, including all prime powers
 and zero endpoint weights, and the all-real Volterra reduction that defines
 \(C\). It also checks the centered convolution identities under explicitly
-named symbol-map hypotheses. Its proofs use only Lean's standard logical
-axioms. Mellin inversion, the zero-free and density inputs, the contour
-estimate (17), and the conditional RH implication (21) are written analysis
-and are not Lean theorems.
+named symbol-map hypotheses. The separate
+[scalar optimization module](../../formalization/BuildingBlocks/ActualEq22ScalarOptimization.lean)
+kernel-checks the sharp minimum of the near and far leading costs in
+(15)--(16), including the exact relation \(c_M=2^{2/5}d\). These proofs use
+only Lean's standard logical axioms. Mellin inversion, the zero-free and
+density inputs, the uniform asymptotic reduction to the scalar cost, the
+contour estimate (17), and the conditional RH implication (21) are written
+analysis and are not Lean theorems.
 
 The constant \(c_M\) already occurs in bounds for other Riesz moments.
 The statement here applies it to the literal signed Eq. 22 residual and
