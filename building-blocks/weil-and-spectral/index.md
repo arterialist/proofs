@@ -56,6 +56,8 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Sampling saving on the critical prime fiber](actual-mobius-critical-prime-fiber-sampling-saving.md)
 - [A dual row bound on the critical prime fiber](actual-mobius-critical-dual-k-row-entry.md)
 - [One-Q Poisson recovery at the all-unit endpoint](actual-mobius-critical-one-q-poisson-endpoint.md)
+- [A maximal real-center mean square for the displayed all-unit row](actual-mobius-all-unit-real-center-maximal-mean-square.md)
+- [Two missing low modes in the prime-packet to coarse-energy transfer](actual-prime-packet-low-mode-transfer-obstruction.md)
 - [A smooth determinant-shift estimate in the one-Q Gram kernel](actual-mobius-low-shift-gram-saving.md)
 - [Double-Q weighted Cauchy and the full-rank Gram kernel](actual-mobius-double-q-full-rank-gram.md)
 - [Joint outer/alias spacing in the smooth double-Q Gram](actual-mobius-double-q-dual-spacing-saving.md)
