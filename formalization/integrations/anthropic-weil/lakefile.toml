@@ -1,0 +1,16 @@
+name = "AnthropicWeilIntegration"
+version = "0.1.0"
+defaultTargets = ["ActualWeil"]
+
+[leanOptions]
+relaxedAutoImplicit = false
+
+[[require]]
+name = "Zeta23"
+git = "https://github.com/anthropics/formal-math.git"
+rev = "fbdc36bbf17d20af3fd0447c6d1a8a02773c9844"
+subDir = "zeta23"
+
+[[lean_lib]]
+name = "ActualWeil"
+roots = ["ActualWeil"]

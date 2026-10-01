@@ -1,0 +1,24 @@
+Actual Weil explicit-formula convention adapter
+
+This standalone package is released under the Apache License, Version 2.0.
+It reuses the zeta23 formalization from anthropics/formal-math at commit
+fbdc36bbf17d20af3fd0447c6d1a8a02773c9844 through a pinned Git dependency.
+The upstream proof sources are not vendored in this package.
+
+Zeta23: Copyright 2026 Anthropic, PBC; Apache License, Version 2.0.
+The mathematics formalized there is attributed to Levent Alpöge and Ralph
+Furman, “More than two thirds of the zeta zeros are simple and on the
+critical line,” arXiv:2608.13637. The upstream project attributes its Lean
+code to Claude (Anthropic), with the paper authors directing and reviewing
+the formalization and Eric Easley orchestrating it.
+
+The pinned Zeta23 checkout's NOTICE identifies the files under
+`Zeta23/FromPNTPlus/` adapted from PrimeNumberTheoremAnd, Copyright the
+PrimeNumberTheoremAnd contributors; Apache License, Version 2.0. The checkout
+also preserves applicable Mathlib source notices. Lake fetches the remaining
+dependencies as separate packages; this integration does not vendor their
+source trees. See the pinned dependency for their individual notices and
+licences.
+
+The convention adapter in ActualWeil.lean is an additional wrapper. It does
+not claim a new explicit formula, zero-proportion theorem, or RH proof.

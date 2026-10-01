@@ -256,3 +256,9 @@ zero-extension compression does not bound a short over a free
 complement. Positivity on all compact tests, the repository's stronger
 prime-error bounds, and an unconditional kernel-checked RH proof
 remain open.
+
+The later [actual-zeta explicit-formula integration](actual-zeta-explicit-formula-source-adapter.md)
+provides the complete arithmetic--spectral identity for compact complex
+\(C^2\) tests in a separate Lean 4.33 package. The cell identity and
+integral coercivity proofs above still require formalization; this
+Lean 4.24 module does not import the integration.
