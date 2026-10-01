@@ -1,0 +1,34 @@
+{
+  "scope": "Exact scalar corners; the uniform analytic reduction is a written proof.",
+  "arithmetic": "Fractions and checked integer root enclosures; decimals are diagnostic only.",
+  "entry": {
+    "integer_prefix_lower": 649999,
+    "sigma_cone": "22/15 + (t/4) log M",
+    "time_range": "all real t >= 0",
+    "height_range": "all imaginary parts",
+    "euler_lower_corner": "883/2000",
+    "low_error_corner": "1233/3920",
+    "high_error_corner": "59/625",
+    "rational_margin": "7977/245000",
+    "claimed_floor": "3/100",
+    "diagnostic_euler_lower": 0.44152013333344564,
+    "diagnostic_complete_margin": 0.032637652834339115
+  },
+  "large": {
+    "log_prefix_lower": 100,
+    "sigma_cone": "61/50 + (t/4) log M",
+    "time_range": "all real t >= 0",
+    "height_range": "all imaginary parts",
+    "rational_margin": "24771/242000",
+    "surplus_over_one_tenth": "571/242000",
+    "claimed_floor": "1/10"
+  },
+  "cold": {
+    "integer_prefix_lower": 649999,
+    "sigma_lower": "61/50",
+    "height_range": "all imaginary parts",
+    "claimed_floor": "13/500",
+    "diagnostic_complete_margin": 0.026346822953753412
+  },
+  "rh_status": "These bounds do not constrain critical-strip zeta zeros or prove RH."
+}

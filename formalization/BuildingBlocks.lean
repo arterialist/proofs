@@ -1,4 +1,7 @@
 import BuildingBlocks.ZetaPole
+import BuildingBlocks.FiniteZetaHeatPrefix
+import BuildingBlocks.IntegerWeilCollarCompression
+import BuildingBlocks.PrimeGraphDegreeVariance
 import BuildingBlocks.FloorCorrection
 import BuildingBlocks.HyperbolaProduct
 import BuildingBlocks.RegularSource

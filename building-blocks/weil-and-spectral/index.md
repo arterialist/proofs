@@ -2,6 +2,7 @@
 
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
+- [Integer endpoint collars have no arithmetic self-correlation](integer-endpoint-collar-compression.md)
 - [The full archimedean row and radical projection for the actual core](actual-core-Weil-arch-row-radical-projection.md)
 - [An explicit two-source Weil family for the actual coherent core](actual-core-explicit-weil-cross-family.md)
 - [The actual coherent core as a signed screw-increment observation](actual-core-screw-increment-readout.md)

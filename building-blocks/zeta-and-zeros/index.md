@@ -2,6 +2,7 @@
 
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
+- [Uniform denominators for heated finite zeta prefixes](finite-zeta-heat-prefix-bounds.md)
 - [Integer quadrature and the Mellin kernel of the actual Abel feedback](actual-Abel-feedback-Mellin-kernel.md)
 - [The actual W criterion: a positive successor primitive, cumulative comparison, and oscillation](actual-W-positive-primitive-analysis.md)
 - [Actual gamma factor, completed-zeta boundary and entire xi](actual-completed-zeta-boundary-and-xi.md)
