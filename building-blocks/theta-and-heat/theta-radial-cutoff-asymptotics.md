@@ -82,6 +82,12 @@ and, for every fixed finite $B>0$, uniformly over $0\le y\le B/\log X$,
 
 The quotient in (4) is $(L_k/L_1)^2$ at $y=0$. All errors are uniform in real $x$ with $|x|\to\infty$; no avoidance of Bessel zeros is required. Neither formula establishes the sign of its finite sum.
 
+The [subconvex magnitude theorem](theta-radial-subconvex-magnitude.md) bounds
+the complete normalized sum by
+$C_\varepsilon(2+|x|)^{(13/21)(1/2-y)+\varepsilon}$, uniformly for every
+real $x$ and $0\le y\le1/2$, including its continuous definition at zero.
+It uses Bourgain's actual-zeta bound and supplies no sign or RH conclusion.
+
 ## Uniform incomplete Mellin control
 
 Put $R=2\pi k$ and

@@ -146,6 +146,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Positive radial weights do not make the arithmetic coefficient positive](theta-radial-arithmetic-sign.md)
 - [High-frequency laws for the actual theta radial cutoff](theta-radial-cutoff-asymptotics.md)
 - [Positivity of the actual theta radial weights](theta-radial-positivity.md)
+- [A subconvex magnitude bound for the complete theta radial sum](theta-radial-subconvex-magnitude.md)
 - [Zero modes hidden by the exact theta radical smoothing](theta-radical-convolution-zero-mode-obstruction.md)
 - [A rational upper enclosure for the radius-two value J(3)](theta-radius-two-J3-rational-upper.md)
 - [A compact triangular Rayleigh certificate at radius two](theta-radius-two-compact-rayleigh-certificate.md)
