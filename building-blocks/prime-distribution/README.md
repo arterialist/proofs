@@ -8,5 +8,6 @@ Möbius sums, prime counting, covariance, and explicit error estimates.
 - [A dyadic primitive-energy criterion for RH](coarse-energy-rh-criterion.md)
 - [Exact negative cross-prime covariance under the actual cutoff law](prime-score-negative-covariance.md)
 - [Strict density-prime covariance under the full cutoff law](density-prime-covariance.md)
+- [Gaussian recovery of the complete critical numerator](gaussian-recovery-complete-critical-numerator.md)
 
 [Browse the subject index](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.

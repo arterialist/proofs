@@ -34,6 +34,12 @@ constant steps. The [Lean module](../../formalization/BuildingBlocks/ActualEq22R
 checks the exact finite cofactor/Volterra reduction and the centered
 convolution algebra; it does not formalize the analytic contour estimate.
 
+The [Gaussian recovery estimate](gaussian-recovery-complete-critical-numerator.md)
+quantifies recovery of the literal full numerator from a logarithmic
+Gaussian average, including every integer seam. Its arithmetic coefficient
+bound is checked in Lean; the integral recovery argument remains written
+analysis. It supplies no stronger global signed upper for this row.
+
 ## Proof
 
 Put
