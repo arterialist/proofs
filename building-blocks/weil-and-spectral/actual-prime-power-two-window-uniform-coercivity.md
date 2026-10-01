@@ -116,3 +116,9 @@ The Fourier and digamma integral argument and full Weil-form
 identification are written above, not formalized in Lean. The uniform
 bound applies only to these two windows; sums across distinct scales
 have additional cross rows, and no density or RH conclusion follows.
+
+The later [short-interval gamma estimate](actual-weil-single-window-coercivity.md)
+improves (2) from \(4/3\) to \(19/12\) on the same width range. It gives
+the stronger complete two-window constant \(67/84\) for the same prime
+powers and global pole nulls, also for arbitrary complex packet profiles.
+That note states the additional variance bound and its formal boundary.

@@ -1,4 +1,5 @@
 import BuildingBlocks.ZetaPole
+import BuildingBlocks.ActualWeilSingleWindowCoercivity
 import BuildingBlocks.FiniteZetaHeatPrefix
 import BuildingBlocks.IntegerWeilCollarCompression
 import BuildingBlocks.PrimeGraphDegreeVariance
