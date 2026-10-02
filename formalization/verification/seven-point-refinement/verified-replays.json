@@ -1,0 +1,82 @@
+{
+  "source": {
+    "repository": "https://github.com/uwe-schwarz/zeta-simple-zeros-673026",
+    "commit": "e2453c1cafc1387ef553fe6bee74d1f5223ba801",
+    "verifier_sha256": "9ef7c092a3c52c06058bac434375a1c012949d86d00588c043be672f955c2772"
+  },
+  "scope": "Global Arb certificate F6 >= 382623/100000000 for every nonnegative real six-gap vector; no Lean closure or RH conclusion.",
+  "comparison": {
+    "deterministic_fields_including_verifier_hash": 20,
+    "all_match": true,
+    "elapsed_seconds_excluded": true,
+    "shared_implementation_and_arb": true,
+    "same_host": true
+  },
+  "replays": [
+    {
+      "python": "3.13.12",
+      "python_flint": "0.9.0",
+      "exit_code": 0,
+      "report": {
+        "certificate": "seven-point",
+        "details": {
+          "interval_pruned": 285258,
+          "pressure_pruned": 3166,
+          "second_derivative_table_sha256": "02589f9acbab9808a303f85cf14f5e98bcb6f30265a5542f9ccca5f9fe8c3b97",
+          "subcell_tangent_pruned": 1773,
+          "surviving_gap_components_cells": "[3807,4780];[7218,9373];[10560,44945]",
+          "surviving_gap_components_count": 3,
+          "tangent_pruned": 201975,
+          "terminal_subcell_max_depth": 20
+        },
+        "elapsed_seconds": 94.28485345800004,
+        "grid": 4000,
+        "initial_boxes": 729,
+        "kernel_table_sha256": "5a1f95f754a83ba05f37692d4bda69bf3fa5d3752af902826bfc4cffd31428b9",
+        "maximum_depth": 65,
+        "nodes": 980069,
+        "precision_bits": 128,
+        "pruned": 490399,
+        "splits": 489670,
+        "target": "F6 >= 382623/100000000",
+        "verified": true
+      }
+    },
+    {
+      "python": "3.12.12",
+      "python_flint": "0.9.0",
+      "exit_code": 0,
+      "report": {
+        "certificate": "seven-point",
+        "details": {
+          "interval_pruned": 285258,
+          "pressure_pruned": 3166,
+          "second_derivative_table_sha256": "02589f9acbab9808a303f85cf14f5e98bcb6f30265a5542f9ccca5f9fe8c3b97",
+          "subcell_tangent_pruned": 1773,
+          "surviving_gap_components_cells": "[3807,4780];[7218,9373];[10560,44945]",
+          "surviving_gap_components_count": 3,
+          "tangent_pruned": 201975,
+          "terminal_subcell_max_depth": 20
+        },
+        "elapsed_seconds": 105.94544304199985,
+        "grid": 4000,
+        "initial_boxes": 729,
+        "kernel_table_sha256": "5a1f95f754a83ba05f37692d4bda69bf3fa5d3752af902826bfc4cffd31428b9",
+        "maximum_depth": 65,
+        "nodes": 980069,
+        "precision_bits": 128,
+        "pruned": 490399,
+        "splits": 489670,
+        "target": "F6 >= 382623/100000000",
+        "verified": true
+      }
+    }
+  ],
+  "constant": {
+    "block_size": 279,
+    "target_numerator": 382623,
+    "target_denominator": 100000000,
+    "downward_decimal": "0.6730266625438475",
+    "status": "Directed Arb arithmetic and reviewed written deduction; improved actual-zeta theorem is not kernel checked."
+  }
+}

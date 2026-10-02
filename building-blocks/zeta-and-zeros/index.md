@@ -31,3 +31,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Archimedean Logarithmic Derivative and Analytic Vanishing Order Duality](archimedean-logarithmic-derivative-and-analytic-vanishing-order-duality.md)
 - [Critical Gamma Norm Identity and Lorentzian Majorization Bound](critical-gamma-norm-identity-and-lorentzian-majorization-bound.md)
 - [Critical Transform Off-Line Zeta Zero Double-Pole Obstruction](critical-transform-off-line-zeta-zero-double-pole-obstruction.md)
+
+## Verified finite refinement support
+
+- [Finite spectral envelope and reproduced seven-point certificate](seven-point-refinement-certificate-and-spectral-envelope.md)

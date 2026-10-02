@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-03",
+  "scope": "Checked supporting finite mathematics; no full improved actual-zeta Lean theorem or RH result.",
+  "lean": {
+    "version": "4.24.0",
+    "mathlib": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+    "default_build": {
+      "exit_code": 0,
+      "jobs": 8030
+    },
+    "audit": {
+      "exit_code": 0,
+      "declarations": 6,
+      "exact_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "module_sha256": "f48e8f7391c99fe028f0cea28ba1de0446ff108117a01c73c56e89e432ad7f6e",
+    "audit_sha256": "83358eb8f86d3749c3d14b4d66e435d3a297880722100f84776ad39b4fb0be30"
+  },
+  "controller": {
+    "sha256": "d77ff3789b49b457e161525dba72aa942833a48300eb286340337826987cec7a",
+    "integration": {
+      "exit_code": 0,
+      "jobs_exit_code": [
+        0,
+        0,
+        0
+      ],
+      "python": "3.12.12",
+      "python_flint": "0.9.0",
+      "global_certificate": true,
+      "source_verified": true,
+      "chosen_constant_verified": true,
+      "deterministic_fields_including_source_hash": 20
+    },
+    "boundary_checks": {
+      "passed": 26,
+      "accepted_saved_reports": 4,
+      "rejected_negative_fixtures": 22,
+      "extra_global_runs": 0
+    }
+  },
+  "mathematical_reviews": {
+    "written_chain": true,
+    "global_interval_coverage": true,
+    "formal_scalar_statement": true,
+    "complete_lean_zeta_claim": false,
+    "numerical_record_claim": false,
+    "full_F_W_coarse_RH_bound": false
+  }
+}

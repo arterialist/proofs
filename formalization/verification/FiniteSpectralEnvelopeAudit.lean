@@ -1,0 +1,8 @@
+import BuildingBlocks.FiniteSpectralEnvelope
+
+#print axioms BuildingBlocks.FiniteSpectralEnvelope.excess_pos_energy_bound
+#print axioms BuildingBlocks.FiniteSpectralEnvelope.upper_branch_le_energy
+#print axioms BuildingBlocks.FiniteSpectralEnvelope.defect_ge_envelope
+#print axioms BuildingBlocks.FiniteSpectralEnvelope.envelope_monotone
+#print axioms BuildingBlocks.FiniteSpectralEnvelope.envelope_one_lipschitz
+#print axioms BuildingBlocks.FiniteSpectralEnvelope.defect_add_cost_ge_envelope
