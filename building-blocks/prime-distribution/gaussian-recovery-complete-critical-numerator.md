@@ -225,6 +225,11 @@ logarithmic size and the \(\sqrt\tau\) term also remains in (3a).
 
 ## Connection and limits
 
+The [long tilted Gaussian average](long-gaussian-complete-critical-numerator.md)
+has an unconditional pole-and-saddle asymptotic at
+\(\tau=3\log x/2\). Recovering the original numerator from that different
+average requires an additional estimate that remains unproved.
+
 The estimate quantifies recovery of the original source. For example,
 \(\tau_x=x^{-1/4}\) makes its error
 \(O(x^{7/4}\log^2(2x))\). A uniform signed upper bound of that order

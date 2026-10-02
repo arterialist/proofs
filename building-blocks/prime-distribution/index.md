@@ -8,6 +8,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [A zero-cluster bound for the actual Eq. 22 prime-error residual](actual-eq22-zero-cluster-bound.md)
 - [Gaussian recovery of the complete critical numerator](gaussian-recovery-complete-critical-numerator.md)
 - [Sign of the complete prime-history derivative jumps](complete-prime-history-jump-sign.md)
+- [A long Gaussian average of the complete critical numerator](long-gaussian-complete-critical-numerator.md)
 - [A local signed average gain for the actual prime-error convolution](actual-prime-error-convolution-local-average-gain.md)
 - [The phase current in the actual prime-error entropy identity](actual-prime-phase-current-entropy-reversal.md)
 - [The actual short-time source norm as a signed psi correlation](actual-short-time-psi-correlation.md)

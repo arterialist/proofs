@@ -1,5 +1,6 @@
 import BuildingBlocks.ZetaPole
 import BuildingBlocks.FullPrimeHistoryJumpBound
+import BuildingBlocks.LongGaussianSourceAlgebra
 import BuildingBlocks.ThetaRadialMagnitudeAlgebra
 import BuildingBlocks.ActualWeilSingleWindowCoercivity
 import BuildingBlocks.FiniteZetaHeatPrefix
