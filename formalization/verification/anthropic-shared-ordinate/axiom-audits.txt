@@ -1,0 +1,133 @@
+'ShiftedJordanAudit.cancellation_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanAudit.retained_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanAudit.uniform_retained_of_local_simple_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+Zeta23.zeta_reflect_zero (ρ : ℂ) : Zeta23.IsNontrivialZero ρ → Zeta23.IsNontrivialZero (Zeta23.reflect ρ)
+Zeta23.zeta_mult_reflect (ρ : ℂ) : Zeta23.IsNontrivialZero ρ → Zeta23.zeroMult (Zeta23.reflect ρ) = Zeta23.zeroMult ρ
+Zeta23.zerosIn_finite (T₁ T₂ : ℝ) : (Zeta23.zerosIn T₁ T₂).Finite
+Zeta23.zetaSeam : Zeta23.ZetaSeam
+
+'ShiftedJordanCommonAudit.common_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.common_good_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.good_unique_nontrivial_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.good_all_shifts_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.uniform_common_good_of_local_simple_density' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+'ShiftedJordanPoleAudit.shifted_ratio_order_at_retained_simple_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShiftedJordanPoleAudit.retained_simple_derivative_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanPoleAudit.shifted_ratio_order_on_critical_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+riemannZeta_residue_one : Tendsto (fun s => (s - 1) * riemannZeta s) (nhdsWithin 1 {1}ᶜ) (nhds 1)
+riemannZeta_ne_zero_of_one_lt_re {s : ℂ} (hs : 1 < s.re) : riemannZeta s ≠ 0
+
+'ShiftedJordanCommonAudit.good_all_shifts_simple_poles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.uniform_common_simple_poles_of_local_simple_density' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+'ShiftedJordanCommonAudit.local_deletion_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.eulerDeletion_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.eulerDeletion_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.depleted_ratio_simple_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.good_all_shifts_all_finite_deletions_simple_poles' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Zeta23.thmB₀_mult (ε : ℝ) :
+  ε > 0 → ∃ T₀, ∀ T ≥ T₀, (2 / 3 - ε) * ↑(Zeta23.Ncount T (2 * T)) ≤ ↑(Zeta23.N0simple T (2 * T))
+'Zeta23.thmB₀_mult' depends on axioms: [propext, Classical.choice, Quot.sound]
+ShiftedJordanCommonAudit.uniform_common_good_flat_two_thirds (ε : ℝ) :
+  ε > 0 →
+    ∃ T₀,
+      ∀ T ≥ T₀,
+        (1 / 2 - ε) * ↑(Zeta23.Ncount T (2 * T)) ≤ ↑(good T (2 * T)).card ∧
+          ∀ ρ ∈ good T (2 * T),
+            (∀ (σ : ℂ), Zeta23.IsNontrivialZero σ → σ.im = ρ.im → σ = ρ) ∧
+              ∀ (a : ℝ), 0 < a → a < 1 / 2 → riemannZeta (ρ - ↑a) ≠ 0
+theorem ShiftedJordanCommonAudit.uniform_common_good_flat_two_thirds : ∀ ε > 0,
+  ∃ T₀,
+    ∀ T ≥ T₀,
+      (1 / 2 - ε) * ↑(Zeta23.Ncount T (2 * T)) ≤ ↑(good T (2 * T)).card ∧
+        ∀ ρ ∈ good T (2 * T),
+          (∀ (σ : ℂ), Zeta23.IsNontrivialZero σ → σ.im = ρ.im → σ = ρ) ∧
+            ∀ (a : ℝ), 0 < a → a < 1 / 2 → riemannZeta (ρ - ↑a) ≠ 0 :=
+have hcoef :=
+  Mathlib.Meta.NormNum.isNNRat_eq_true
+    (Mathlib.Meta.NormNum.isNNRat_div
+      (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+        (Mathlib.Meta.NormNum.IsNat.to_isNNRat
+          (Mathlib.Meta.NormNum.IsInt.to_isNat
+            (Mathlib.Meta.NormNum.isInt_sub (Eq.refl HSub.hSub)
+              (Mathlib.Meta.NormNum.IsNat.to_isInt
+                (Mathlib.Meta.NormNum.IsNNRat.to_isNat
+                  (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                    (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 3)))
+                    (Mathlib.Meta.NormNum.isNNRat_div
+                      (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                        (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2)))
+                        (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                          (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 3))))
+                        (Eq.refl (Nat.mul 2 1)) (Eq.refl 3)))
+                    (Eq.refl (Nat.mul 3 2)) (Eq.refl 3))))
+              (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+              (Eq.refl (Int.ofNat 1)))))
+        (Mathlib.Meta.NormNum.isNNRat_inv_pos
+          (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2))))
+        (Eq.refl (Nat.mul 1 1)) (Eq.refl 2)))
+    (Mathlib.Meta.NormNum.isNNRat_div
+      (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+        (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+        (Mathlib.Meta.NormNum.isNNRat_inv_pos
+          (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2))))
+        (Eq.refl (Nat.mul 1 1)) (Eq.refl 2)));
+Eq.mp
+  (forall_congr fun ε =>
+    implies_congr (Eq.refl (ε > 0))
+      (congrArg Exists
+        (funext fun T₀ =>
+          forall_congr fun T =>
+            implies_congr (Eq.refl (T ≥ T₀))
+              (congrFun'
+                (congrArg And
+                  (congrFun'
+                    (congrArg LE.le
+                      (congrFun' (congrArg HMul.hMul (congrFun' (congrArg HSub.hSub hcoef) ε))
+                        ↑(Zeta23.Ncount T (2 * T))))
+                    ↑(good T (2 * T)).card))
+                (∀ ρ ∈ good T (2 * T),
+                  (∀ (σ : ℂ), Zeta23.IsNontrivialZero σ → σ.im = ρ.im → σ = ρ) ∧
+                    ∀ (a : ℝ), 0 < a → a < 1 / 2 → riemannZeta (ρ - ↑a) ≠ 0)))))
+  (uniform_common_good_of_local_simple_density (2 / 3) Zeta23.thmB₀_mult)
+'ShiftedJordanCommonAudit.uniform_common_good_flat_two_thirds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Zeta23.ThmD.thmD₀_simple_mult (ε : ℝ) :
+  ε > 0 → ∃ T₀, ∀ T ≥ T₀, (Zeta23.ThmD.HD 1 - ε) * ↑(Zeta23.Ncount T (2 * T)) ≤ ↑(Zeta23.N0simple T (2 * T))
+'Zeta23.ThmD.thmD₀_simple_mult' depends on axioms: [propext, Classical.choice, Quot.sound]
+ShiftedJordanCommonAudit.uniform_common_good_optimized_HD_one (ε : ℝ) :
+  ε > 0 →
+    ∃ T₀,
+      ∀ T ≥ T₀,
+        ((3 * Zeta23.ThmD.HD 1 - 1) / 2 - ε) * ↑(Zeta23.Ncount T (2 * T)) ≤ ↑(good T (2 * T)).card ∧
+          ∀ ρ ∈ good T (2 * T),
+            (∀ (σ : ℂ), Zeta23.IsNontrivialZero σ → σ.im = ρ.im → σ = ρ) ∧
+              ∀ (a : ℝ), 0 < a → a < 1 / 2 → riemannZeta (ρ - ↑a) ≠ 0
+theorem ShiftedJordanCommonAudit.uniform_common_good_optimized_HD_one : ∀ ε > 0,
+  ∃ T₀,
+    ∀ T ≥ T₀,
+      ((3 * Zeta23.ThmD.HD 1 - 1) / 2 - ε) * ↑(Zeta23.Ncount T (2 * T)) ≤ ↑(good T (2 * T)).card ∧
+        ∀ ρ ∈ good T (2 * T),
+          (∀ (σ : ℂ), Zeta23.IsNontrivialZero σ → σ.im = ρ.im → σ = ρ) ∧
+            ∀ (a : ℝ), 0 < a → a < 1 / 2 → riemannZeta (ρ - ↑a) ≠ 0 :=
+uniform_common_good_of_local_simple_density (Zeta23.ThmD.HD 1) Zeta23.ThmD.thmD₀_simple_mult
+'ShiftedJordanCommonAudit.uniform_common_good_optimized_HD_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Zeta23.ThmD.HD_one : Zeta23.ThmD.HD 1 = 3 / 2 - (√2)⁻¹ * (Real.cos (√2)⁻¹ / Real.sin (√2)⁻¹)
+'Zeta23.ThmD.HD_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.thmD₀_simple_mult' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShiftedJordanCommonAudit.uniform_common_optimized_all_poles' depends on axioms: [propext, Classical.choice, Quot.sound]

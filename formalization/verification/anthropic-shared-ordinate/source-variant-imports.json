@@ -1,0 +1,121 @@
+[
+  {
+    "new_imports": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.GCongr",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.Push",
+      "Mathlib.Tactic.FunProp"
+    ],
+    "old": "import Mathlib",
+    "original_line": 7,
+    "path": "Zeta23/MV/Spacing.lean"
+  },
+  {
+    "new_imports": [
+      "Mathlib.Data.Matrix.Basic",
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.Analysis.Real.Pi.Bounds",
+      "Mathlib.Analysis.SumIntegralComparisons",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.GCongr",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.Push",
+      "Mathlib.Tactic.FunProp"
+    ],
+    "old": "import Mathlib",
+    "original_line": 47,
+    "path": "Zeta23/PrimeSideA/Defs.lean"
+  },
+  {
+    "new_imports": [
+      "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Analysis.Fourier.Convolution",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.GCongr",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.Push",
+      "Mathlib.Tactic.FunProp"
+    ],
+    "old": "import Mathlib",
+    "original_line": 14,
+    "path": "Zeta23/Taper/Decay.lean"
+  },
+  {
+    "new_imports": [
+      "Mathlib.Analysis.Fourier.Convolution",
+      "Mathlib.Analysis.Fourier.Inversion",
+      "Mathlib.Analysis.Fourier.FourierTransformDeriv",
+      "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.GCongr",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.Push",
+      "Mathlib.Tactic.FunProp"
+    ],
+    "old": "import Mathlib",
+    "original_line": 27,
+    "path": "Zeta23/Taper/Fourier.lean"
+  },
+  {
+    "new_imports": [
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts",
+      "Mathlib.Analysis.Calculus.ContDiff.Deriv",
+      "Mathlib.Analysis.Calculus.Deriv.Support",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.GCongr",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.Push",
+      "Mathlib.Tactic.FunProp"
+    ],
+    "old": "import Mathlib",
+    "original_line": 6,
+    "path": "Zeta23/Taper/Norms.lean"
+  },
+  {
+    "new_imports": [
+      "Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv",
+      "Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds",
+      "Mathlib.Analysis.SpecialFunctions.Sqrt",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.Analysis.Real.Pi.Bounds",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.GCongr",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.Push",
+      "Mathlib.Tactic.FunProp"
+    ],
+    "old": "import Mathlib",
+    "original_line": 19,
+    "path": "Zeta23/ThmD/Functional.lean"
+  }
+]

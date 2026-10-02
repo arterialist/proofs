@@ -1,0 +1,75 @@
+{
+  "source_pin": "fbdc36bbf17d20af3fd0447c6d1a8a02773c9844",
+  "mathlib_pin": "51e6992efd06126df61a496bebf8f49482a4e129",
+  "compiler": "Lean (version 4.33.0-rc2, arm64-apple-darwin24.6.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "source_object_provider": "prepared import-only source variant; see source-variant-manifest.json",
+  "endpoint_olean_sha256": "977aef98c754b64b8c4a04cf0f5648a59c83a6f1e6918ab230cd451f974b88a9",
+  "modules": [
+    {
+      "module": "ShiftedJordanCount",
+      "source_sha256": "19a610fda4333735374380da4b9ee83febe5badfc3a32611692fe5d860608112",
+      "olean_sha256": "435a2830240af838be698da27dbb2c41bb81348f21214657c6b9891461b9ab1d",
+      "log_sha256": "e0d46da7eab8604fccd8553f837ae4a2b9d527e433d090d5bb8b928087d55a08",
+      "exit_code": 0,
+      "printed_axiom_audits": 3
+    },
+    {
+      "module": "CommonCount",
+      "source_sha256": "040149a09aed3edd91c47016336ed93536e514b8fb71144bdb5465b6a15f6adf",
+      "olean_sha256": "5cd865d3a9b567c45ee37bd78bf50d104b5afb4e290af71221683ee840db24d1",
+      "log_sha256": "1a09b0fbfb7b2af02e299e9310cfff734e118789a2b440b004fe97d4333c4c57",
+      "exit_code": 0,
+      "printed_axiom_audits": 5
+    },
+    {
+      "module": "ShiftedJordanPole",
+      "source_sha256": "f2ffba61a52a9e4d26ab710aaf84a58dbf4f45a72529fd7dd111ea49742c4ce9",
+      "olean_sha256": "7ada6452ed100125d319bcb3d3a036f5c9977166d9c0ca845ba47d423018ca18",
+      "log_sha256": "6a7fd71dcce6fbc046a97f823cbd493f2b0fc9282e95c2fb031c44d25912c0a7",
+      "exit_code": 0,
+      "printed_axiom_audits": 3
+    },
+    {
+      "module": "CommonPoles",
+      "source_sha256": "dc2401cbdfc26e81272d457fe08043a61e1d04a4e0c70cb5c0057554e3cf3633",
+      "olean_sha256": "de5c7b716130961917e9e0a59775c864c04aaaf6524047d07aa8161661cf606b",
+      "log_sha256": "5ec4dd040074623d96c60f085e922dee7121ca081431c8d2933a8d9c2a74b688",
+      "exit_code": 0,
+      "printed_axiom_audits": 2
+    },
+    {
+      "module": "CoprimePoles",
+      "source_sha256": "26d3669b1006e78c1647ab3e886f97eb9f2a5474e1d843f21156ad17f1714628",
+      "olean_sha256": "5c33affdf7367035ccf520c864da91e044a588bc314e14112b06f20908beef6b",
+      "log_sha256": "53d19e289b116851315165c9c6ee9b0f49436f504aabbd22f2b8a5f1253f20bb",
+      "exit_code": 0,
+      "printed_axiom_audits": 5
+    },
+    {
+      "module": "ShiftedJordanFlatDensity",
+      "source_sha256": "24628f8de77dcd70c6ed1752ccd5c867f7ae7d9a08679dc091c2d1d09b76300d",
+      "olean_sha256": "08e2eedf95d63fda3d0cc80d60d926af1bb404b7ea5dfcf44c546f588dddcca2",
+      "log_sha256": "b2ecaa8c5de9594c455105ab47cbeeec141d587e067abf2104dd19e8df031e02",
+      "exit_code": 0,
+      "printed_axiom_audits": 2
+    },
+    {
+      "module": "ShiftedJordanOptimizedDensity",
+      "source_sha256": "983862da55010a4976df4625eda1ac0d30fb942191491ea7bf98d06a112e8c2f",
+      "olean_sha256": "f8bdf725b6bce16bb71459a14f7772ea66c8b0631d120941587f905669a04e50",
+      "log_sha256": "3a59e4988881ab92b4e99029897dc362b801b2f04d8ac4bcdb7c403a257b52a9",
+      "exit_code": 0,
+      "printed_axiom_audits": 2
+    },
+    {
+      "module": "CommonDensityPoles",
+      "source_sha256": "b2a825f91437f61068cf72b8cb90e44e47facf519fa981bf074905c322daed58",
+      "olean_sha256": "b5db59ce3e058fb91033222a6bfea163ccc50bbe4cf2048dab9abb31c8205333",
+      "log_sha256": "621a01f5e3275bb0509dfef40f8ac54f650e566c7552b06a1a776a9e10e2300d",
+      "exit_code": 0,
+      "printed_axiom_audits": 3
+    }
+  ],
+  "scope": "companion-module checks against the prepared dependency provider",
+  "upstream_build_and_variant_provenance": "separate, as documented in README.md"
+}

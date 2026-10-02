@@ -2,6 +2,7 @@
 
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
+- [A common set of zeta zeros surviving every small horizontal shift](shared-ordinate-zeros-and-shifted-zeta-poles.md)
 - [Uniform denominators for heated finite zeta prefixes](finite-zeta-heat-prefix-bounds.md)
 - [Integer quadrature and the Mellin kernel of the actual Abel feedback](actual-Abel-feedback-Mellin-kernel.md)
 - [The actual W criterion: a positive successor primitive, cumulative comparison, and oscillation](actual-W-positive-primitive-analysis.md)
