@@ -696,3 +696,5 @@ import BuildingBlocks.ActualMobiusCenteredDivisorWindow
 import BuildingBlocks.ActualMobiusAllUnitRealCenterScale
 
 import BuildingBlocks.FiniteSpectralEnvelope
+
+import BuildingBlocks.ActualMobiusLargePrimeSector

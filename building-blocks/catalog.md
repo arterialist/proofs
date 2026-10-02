@@ -1469,3 +1469,7 @@ The [angularly collective transfer obstruction](theta-and-heat/angularly-collect
 ## Checked seven-point refinement support
 
 The [finite spectral-envelope and seven-point certificate note](zeta-and-zeros/seven-point-refinement-certificate-and-spectral-envelope.md) proves the full real-vector envelope and span-cost transfer in Lean 4.24, and records two independently replayed global Arb certificates at 382623/100000000. It includes the reviewed written simple-critical zero-proportion deduction and its provenance; the improved actual-zeta theorem is not kernel checked, and the full signed RH estimate remains open.
+
+## Signed largest-prime Möbius moments
+
+The [signed largest-prime moment note](prime-distribution/signed-largest-prime-mobius-convolution-moments.md) proves, in reviewed written analysis, an explicit negative main term for every fixed Möbius convolution order and fixed positive largest-prime power, together with complete signed cofactor convergence in ℓ¹. The exact absolute-weight comparison has the same power and logarithmic order. [ActualMobiusLargePrimeSector.lean](../formalization/BuildingBlocks/ActualMobiusLargePrimeSector.lean) kernel-checks the full weighted large-prime-sector bijection and complementary partition for actual μ*μ, without a squarefree-cofactor or supplied-label premise. All prime powers, the unit and cutoff seams are retained. The PNT, Euler-product and infinite asymptotic steps remain written; no effective uniform onset, priority claim, full signed RH bound or RH-frontier advance is asserted.

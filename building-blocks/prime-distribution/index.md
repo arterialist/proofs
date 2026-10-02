@@ -127,6 +127,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [Signed friable endpoint extension: source audit](signed-friable-endpoint-literature-audit.md)
 - [Bellotti 2025 v1 density proof: convolution source audit](bellotti-2025-density-proof-source-audit.md)
 - [A signed prime-form estimate with a certified local bath](signed-prime-bath.md)
+- [Signed largest-prime moments of Möbius convolution powers](signed-largest-prime-mobius-convolution-moments.md)
 - [Signed smooth energy at the exact log-squared horizon](signed-smooth-exact-horizon-energy.md)
 - [Uniform second-logarithmic divisor envelope](simultaneous-second-log-divisor-envelope.md)
 - [Small-prime grouping and its centered arithmetic source](small-prime-grouping.md)

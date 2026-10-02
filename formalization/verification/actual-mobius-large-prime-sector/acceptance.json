@@ -1,0 +1,170 @@
+{
+  "date": "2026-10-03",
+  "scope": "Finite actual mu*mu large-prime-sector weighted bijection and complete partition; general signed moments and cofactor limits remain written analysis, with no RH-frontier bound.",
+  "parameters": {
+    "finite": "every natural cutoff N and every real weight f",
+    "written_analytic": "every fixed integer k>=1 and every fixed real beta>0, as real X tends to infinity",
+    "effective_onset": false,
+    "growing_parameter_uniformity": false
+  },
+  "lean": {
+    "version": "4.24.0",
+    "mathlib": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+    "default_build": {
+      "exit_code": 0,
+      "jobs": 8031
+    },
+    "audit": {
+      "exit_code": 0,
+      "declarations": 16,
+      "warnings": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "exact_declaration_axioms": [
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.quotient_lt_of_large_prime",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.quotient_pos_of_prime_dvd",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.large_prime_coprime_quotient",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.large_prime_coefficient",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.prime_divisor_le_large_prime",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.large_prime_unique",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.pairProduct_mem_largeSector",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.pairProduct_injective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.pairProduct_surjective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.pair_coefficient",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.weighted_large_sector_reindex",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.weighted_complete_partition",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.unit_not_largeSector",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.unit_mem_smallSector",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.sectors_zero",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "BuildingBlocks.ActualMobiusLargePrimeSector.sectors_one",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    "module_sha256": "612a73cf90eb9b9a2fa140f486cd4505cdb44597e08d8331e0e9e7d51b7e6fa5",
+    "audit_sha256": "60a2381d7a7b3d57468fe8281ca50c546fd62242475976d3be4fcdf8b1b7af29",
+    "audit_output_sha256": "fb4a49e13749d84854adc351b8148f91d447c1944ec5baee6569ca1b94169edd",
+    "coefficient_source_sha256": "a84b90f2de7245bb2c434559692cf06898984458e11f1123fa7de2c362d6cadf"
+  },
+  "mathematical_reviews": {
+    "finite_statement": true,
+    "general_signed_moment": true,
+    "best_absolute_comparison": true,
+    "signed_countable_l1_limit": true,
+    "independent_written_reviewers": 2,
+    "general_analytic_theorem_kernel_checked": false,
+    "full_F_W_coarse_RH_bound": false,
+    "mathematical_priority_claim": false
+  }
+}

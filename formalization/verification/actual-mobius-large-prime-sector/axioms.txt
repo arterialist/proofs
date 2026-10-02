@@ -1,0 +1,40 @@
+'BuildingBlocks.ActualMobiusLargePrimeSector.quotient_lt_of_large_prime' depends on axioms: [propext, Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.quotient_pos_of_prime_dvd' depends on axioms: [propext, Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.large_prime_coprime_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.large_prime_coefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.prime_divisor_le_large_prime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.large_prime_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.pairProduct_mem_largeSector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.pairProduct_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.pairProduct_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.pair_coefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.weighted_large_sector_reindex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.weighted_complete_partition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.unit_not_largeSector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.unit_mem_smallSector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.sectors_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualMobiusLargePrimeSector.sectors_one' depends on axioms: [propext, Classical.choice, Quot.sound]
