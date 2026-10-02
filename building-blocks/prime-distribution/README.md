@@ -9,5 +9,6 @@ Möbius sums, prime counting, covariance, and explicit error estimates.
 - [Exact negative cross-prime covariance under the actual cutoff law](prime-score-negative-covariance.md)
 - [Strict density-prime covariance under the full cutoff law](density-prime-covariance.md)
 - [Gaussian recovery of the complete critical numerator](gaussian-recovery-complete-critical-numerator.md)
+- [Sign of the complete prime-history derivative jumps](complete-prime-history-jump-sign.md)
 
 [Browse the subject index](index.md). The [long catalog](../catalog.md) has summaries and links across subjects.

@@ -6,6 +6,7 @@ term proportional to \(\sqrt\tau\).
 The estimate uses the actual von Mangoldt divisor identity. It retains all
 prime powers, integer cofactors and the unit origin. The estimate does not
 provide the stronger signed upper bound needed for RH.
+For recovery of an upper bound, the error needs only one logarithm.
 
 ## Object and full range
 
@@ -54,6 +55,15 @@ polynomially shrinking windows relevant to recovering a prime-error power
 bound. Taking the minimum of these two valid estimates preserves the
 first-derivative estimate over the rest of the stated range.
 
+On the same full range, there is also the stronger **one-sided** estimate
+\[
+ \boxed{F(x)\le T_\tau F(x)+
+ C(\tau x^2+\sqrt\tau\,x)\log(2x).}
+ \tag{3a}
+\]
+The constant is absolute. Equation (3a) improves recovery of signed upper
+bounds; it does not replace the absolute value bound (3).
+
 ## Arithmetic birth bound
 
 The seed is continuous, \(U'(1+)=1\), and its derivative jump at an integer
@@ -88,6 +98,15 @@ Thus no divisor-count loss or short-interval prime estimate is needed.
 The logarithmic identity ties the generator weights to the ordinary
 integer's numerical size. Positivity of arbitrary generator weights alone
 does not supply this bound.
+
+For the negative part, nonnegativity of \(b\) gives the sharper bound
+\[
+ J_n\ge n^{-1/2}-2\log n,\qquad n\ge1.
+ \tag{5a}
+\]
+The complete [jump sign classification](complete-prime-history-jump-sign.md)
+identifies every negative coefficient, including the prime-power exceptions.
+Equation (3a) needs only (5a).
 
 Chebyshev's elementary bound \(\psi(t)\ll t\) and partial summation give
 \(\sum_{a\le t}\Lambda(a)/a\ll\log(2t)\) and
@@ -166,6 +185,24 @@ Equations (5) and (8) now bound the atomic part by
 \(O((\tau x^2+\sqrt\tau\,x)\log^2(2x))\), proving (3).
 Both infinite Gaussian tails and the unit-origin atom have been included.
 
+For (3a), keep the regular contribution in (8) with its bound
+\(O(\tau x^2\log(2x))\), and discard the nonnegative atoms when bounding
+\(F-T_\tau F\) from above. Equation (5a) bounds each remaining atom by
+\(2n\log n\). Replace \(g\) by
+\(g_1(t)=t\log(2t)e^{-\log^2(t/x)/(4\tau)}\).
+Its logarithmic derivative is
+\(1+1/\log(2t)-\log(t/x)/(2\tau)\), so the same unimodal
+sum-integral argument gives
+\[
+ \sum_{n\ge1}g_1(n)\ll
+ (\sqrt\tau\,x^2+x)\log(2x).
+\]
+For its integral, use \(\log(2xe^v)\le\log(2x)+|v|\) on
+\(v\ge-\log x\), and then the whole-line Gaussian moments.
+Multiplying by the kernel factor \(\sqrt\tau\) proves (3a), uniformly
+over its stated full range. No prime-count estimate in a short interval
+or omission of a Gaussian tail is used.
+
 ## Why the seam term remains
 
 For every fixed integer \(n\ge2\), the exact kernel identity gives
@@ -183,6 +220,8 @@ For distinct large primes of comparable size, \(n=pq\) has
  =(\tfrac12+o(1))\log^2(pq).
 \]
 The seam contribution can therefore have the order retained in (3).
+At a prime, \(J_p=p^{-1/2}-2\log p\), so the negative seam has
+logarithmic size and the \(\sqrt\tau\) term also remains in (3a).
 
 ## Connection and limits
 
@@ -195,28 +234,30 @@ That smoothed-source bound has not been proved.
 For the existing RH-scale target, fix \(1\le\alpha<2\) and \(\eta>0\),
 and take
 \[
- \tau_x=x^{-1/2}\log^{\alpha-2-\eta}(2x).
+ \tau_x=x^{-1/2}\log^{\alpha-1-\eta}(2x).
 \]
-Equation (3) gives
-\(|T_{\tau_x}F(x)-F(x)|=o(x^{3/2}\log^\alpha(2x))\).
+This lies in \((0,1]\) eventually. Equation (3a) gives the one-sided
+recovery
+\(F(x)\le T_{\tau_x}F(x)+o(x^{3/2}\log^\alpha(2x))\).
 If a uniform signed upper of that scale were proved for the smoothed
 source, the same bound would hold for \(N_{\rm full}\). The known diagonal
 asymptotic would then imply eventual nonpositivity of
 \(W=N_{\rm full}-Z\mathcal D\), which is consumed by the
 [kernel-checked critical-sign theorem](../zeta-and-zeros/actual-critical-sign-criterion.md).
 The additional signed input is unproved; this conditional deduction is not
-an RH result. A varying \(\tau_x\) is used here through (3), not through
+an RH result. A varying \(\tau_x\) is used here through (3a), not through
 an assumed fixed Mellin multiplier.
 
 The [Lean coefficient module](../../formalization/BuildingBlocks/FullPrimeHistoryJumpBound.lean)
-checks seven finite arithmetic declarations, including (5), with every
-divisor and prime power and \(J_1=1\). The connection of that literal
+checks the finite arithmetic declarations, including (5), (5a) and the
+exact prime coefficient, with every divisor and prime power and \(J_1=1\).
+The connection of that literal
 coefficient to the continuum derivative, the Chebyshev estimates, the
 distributional Gaussian identity, moment and sum-integral estimates,
 and the asymptotic recovery deduction remain written analysis. The full
-inequality (3) has not been formalized in Lean.
+inequalities (3) and (3a) have not been formalized in Lean.
 
-All seven audited declarations use only `propext`, `Classical.choice` and
+All audited declarations use only `propext`, `Classical.choice` and
 `Quot.sound`, with no placeholders or custom axioms. Check the module from
 the repository root with `lake build BuildingBlocks.FullPrimeHistoryJumpBound`.
 

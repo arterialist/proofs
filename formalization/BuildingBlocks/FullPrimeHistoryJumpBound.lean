@@ -3,6 +3,7 @@ import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
 
 /-!
 A finite unconditional bound for the literal full-prime-history coefficient.
@@ -127,6 +128,42 @@ theorem fullJump_bound {n : ℕ} (hn : 1 ≤ n) :
 theorem fullJump_one : fullJump 1 = 1 := by
   simp [fullJump, convolution]
 
+theorem fullJump_lower {n : ℕ} (hn : 1 ≤ n) :
+    1 / Real.sqrt (n : ℝ) - 2 * Real.log (n : ℝ) ≤ fullJump n := by
+  let A := ∑ a ∈ n.divisors, Real.sqrt (a : ℝ) * convolution a
+  let B := ∑ a ∈ n.divisors, Real.sqrt (a : ℝ) * ArithmeticFunction.vonMangoldt a
+  have hA0 : 0 ≤ A := Finset.sum_nonneg fun a _ =>
+    mul_nonneg (Real.sqrt_nonneg _) (convolution_nonneg a)
+  have hB := weighted_vonMangoldt_divisors_bound hn
+  change B ≤ Real.sqrt (n : ℝ) * Real.log (n : ℝ) at hB
+  have hs : 0 < Real.sqrt (n : ℝ) := Real.sqrt_pos.mpr (by exact_mod_cast hn)
+  have he : fullJump n = (1 + A - 2 * B) / Real.sqrt (n : ℝ) := by
+    simp only [fullJump, A, B, mul_sub, Finset.sum_sub_distrib, mul_left_comm,
+      ← Finset.mul_sum]
+    ring
+  rw [he]
+  apply (le_div_iff₀ hs).mpr
+  rw [sub_mul, div_mul_cancel₀ _ hs.ne']
+  nlinarith
+
+theorem convolution_prime {p : ℕ} (hp : p.Prime) : convolution p = 0 := by
+  rw [convolution, ArithmeticFunction.mul_apply]
+  rw [Nat.sum_divisorsAntidiagonal (fun a b =>
+    ArithmeticFunction.vonMangoldt a * ArithmeticFunction.vonMangoldt b)]
+  rw [hp.divisors]
+  simp [Nat.div_self hp.pos]
+
+theorem fullJump_prime {p : ℕ} (hp : p.Prime) :
+    fullJump p = 1 / Real.sqrt (p : ℝ) - 2 * Real.log (p : ℝ) := by
+  have hs : Real.sqrt (p : ℝ) ≠ 0 :=
+    (Real.sqrt_pos.mpr (by exact_mod_cast hp.pos)).ne'
+  have hc1 : convolution 1 = 0 := by simp [convolution]
+  simp only [fullJump, hp.divisors]
+  simp [hc1, convolution_prime hp,
+    ArithmeticFunction.vonMangoldt_apply_prime hp]
+  field_simp
+  ring
+
 #print axioms convolution_nonneg
 #print axioms sum_convolution_divisors
 #print axioms sum_convolution_divisors_le_log_sq
@@ -134,6 +171,9 @@ theorem fullJump_one : fullJump 1 = 1 := by
 #print axioms weighted_vonMangoldt_divisors_bound
 #print axioms fullJump_bound
 #print axioms fullJump_one
+#print axioms fullJump_lower
+#print axioms convolution_prime
+#print axioms fullJump_prime
 
 end
 end BuildingBlocks.FullPrimeHistoryJumpBound
