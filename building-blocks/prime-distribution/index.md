@@ -2,6 +2,7 @@
 
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
+- [Uniform comparison of real-order Jordan and von Mangoldt coefficients](real-order-jordan-von-mangoldt-comparison.md)
 - [A uniform degree-variance bound for the prime-generator cutoff graph](prime-generator-cutoff-degree-variance.md)
 - [Abel-smoothed Mertens bounds and the RH criterion](abel-mertens-rh-criterion.md)
 - [A stronger global signed bound for the actual prime-error convolution](actual-prime-error-convolution-global-cesaro-gain.md)
