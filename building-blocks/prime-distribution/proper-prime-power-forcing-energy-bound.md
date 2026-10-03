@@ -36,7 +36,7 @@ Consequently, for **every real \(\eta>0\)** on the same full range,
 \tag{2}
 \]
 
-This is an unconditional inequality, using elementary integer counting and finite factorial/Chebyshev bounds. It assumes no PNT, zero-free estimate, RH, prime independence or supplied energy bound. The [complete Lean forcing companion](../../formalization/BuildingBlocks/ActualProperPrimePowerForcing.lean) proves (1)–(2), their absolute-row versions, actual row completeness, energy allocation, finite Cauchy, geometric coefficients, logarithmic tails and Young absorption. Its [verification record](../../formalization/verification/actual-proper-prime-power-forcing/README.md) covers all 87 declarations. The separate [geometry](../../formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean) and [causal trace](../../formalization/BuildingBlocks/ActualPrimeErrorCausalTrace.lean) supply the actual window and sampling proofs. The complete work balance and substitution in (5) remain written.
+This is an unconditional inequality, using elementary integer counting and finite factorial/Chebyshev bounds. It assumes no PNT, zero-free estimate, RH, prime independence or supplied energy bound. The [complete Lean forcing companion](../../formalization/BuildingBlocks/ActualProperPrimePowerForcing.lean) proves (1)–(2), their absolute-row versions, actual row completeness, energy allocation, finite Cauchy, geometric coefficients, logarithmic tails and Young absorption. Its [verification record](../../formalization/verification/actual-proper-prime-power-forcing/README.md) covers all 87 declarations. The separate [geometry](../../formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean) and [causal trace](../../formalization/BuildingBlocks/ActualPrimeErrorCausalTrace.lean) supply the actual window and sampling proofs. The [complete work companion](../../formalization/BuildingBlocks/ActualPrimeWorkBalance.lean) also kernel-checks the exact continuous balance, literal prime/proper split and absorbed inequality (5). Its [verification record](../../formalization/verification/actual-prime-work-balance/README.md) audits all 39 declarations, including the exact log-prime readout in (5).
 
 Both displayed bounds also hold with the left side replaced by the sum of the absolute values of **all** its summands. The proof takes no cancellation between proper powers. Any additional coefficients of modulus at most one are therefore admissible without a new price.
 
@@ -122,11 +122,11 @@ For the canonical center \(c=1+\gamma\), grouping all windows into a single over
 For the actual center \(c=1+\gamma\), let
 \[
 U_\sigma(Y)=\sum_{p\le Y}(\log p)p^{1-2\sigma}z_c(p^-)
--\int_1^Y t^{1-2\sigma}z_c(t)dt.
+-\int_1^Y [\psi(t)-t+c]t^{-2\sigma}dt.
 \]
-This ordinary-prime bracket retains the **full \(\psi\) history** and continuous density. It is distinct from replacing that history by \(\theta\). The complete predictable work splits exactly as \(A_\sigma=U_\sigma+P_{\sigma,c}\). Its full jump balance and (2) yield
+This ordinary-prime bracket retains the **full \(\psi\) history** and continuous density. It is distinct from replacing that history by \(\theta\). The complete predictable work splits exactly as \(A_\sigma=U_\sigma+P_{\sigma,c}\). The exact full jump balance and literal prime/proper splitting are kernel checked by the [work companion](../../formalization/BuildingBlocks/ActualPrimeWorkBalance.lean). Its native Young consumer proves
 \[
-\tfrac12Y^{2-2\sigma}z_c(Y)^2+(\sigma-\eta)E_{\sigma,c}(Y)
+\tfrac12Y^{-2\sigma}[\psi(Y)-Y+c]^2+(\sigma-\eta)E_{\sigma,c}(Y)
 \le\tfrac12\gamma^2+U_\sigma(Y)
 +(3000+144/\eta)\log^2(2Y)
 +\tfrac12\sum_{n\le Y}\Lambda(n)^2n^{-2\sigma}.
@@ -140,4 +140,4 @@ A separately proved sufficient subpower upper on this complete ordinary-prime br
 
 Separate GPT-6.1 Sol/xhigh agent contexts independently reconstructed the sampling, exponent allocation, arithmetic inputs, all-real parameter range, constants and complete-work substitution. The coordinator reconstructed the proof. These are disclosed mathematical checks, not a human referee report.
 
-The native companions now prove the full finite forcing inequalities (1)–(2), including their absolute-row versions, for the stated complete parameter range. All 87 new audited declarations use only standard Lean axioms; 85 use `propext`, `Classical.choice`, `Quot.sound`, one uses `propext`, `Quot.sound`, and one uses only `propext`. The actual finite mass bounds were already formalized. The full predictable jump/work balance and its substitution in (5), the older fixed-strict-\(\sigma\) cutoff-independent refinement, and the extension to bounded complex phase multipliers remain written. This closes formal coverage of the existing inequality; it supplies no new stronger arithmetic bound. No full ordinary-prime upper, eventual \(W\) sign, coarse criterion premise or RH proof is claimed.
+The native companions now prove the full finite forcing inequalities (1)–(2), including their absolute-row versions, for the stated complete parameter range. All 87 new audited declarations use only standard Lean axioms; 85 use `propext`, `Classical.choice`, `Quot.sound`, one uses `propext`, `Quot.sound`, and one uses only `propext`. The actual finite mass bounds were already formalized. The exact continuous work balance, actual support partition, unique finite row reindexing and (5) are also native in the separate work companion. Its balance and split hold for every real fixed center and every real \(\sigma\), with real \(Y\ge1\); the absorbed inequality uses the stated \(\sigma\ge1/2\) and \(\eta>0\). The older fixed-strict-\(\sigma\) cutoff-independent refinement and the extension to bounded complex phase multipliers remain written. This closes formal coverage of the existing inequality; it supplies no new stronger arithmetic bound. No full ordinary-prime upper, eventual \(W\) sign, coarse criterion premise or RH proof is claimed.

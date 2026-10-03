@@ -1,0 +1,447 @@
+{
+  "date": "2026-10-03 MYT",
+  "status": "PASS",
+  "kernel_scope": "Complete actual continuous work balance, literal ordinary/proper split, composed prime-log dictionary and absorbed ordinary-prime consumer only",
+  "component_namespaces": {
+    "BuildingBlocks.ActualContinuousWorkBalance": 23,
+    "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer": 16
+  },
+  "theorem_count": 39,
+  "rows_in_source_order": [
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.psi_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.psi_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.squareJump_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.squareJump_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_square_jump",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.squareJump_prefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_lambda_prefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.finite_abel_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.powerWeight_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.linearWeight_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.baselineStorage_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.powerWeight_continuousOn",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.powerWeightDerivative_continuousOn",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.linearWeightDerivative_continuousOn",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.baselineStorageDerivative_continuousOn",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_square_abel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_linear_abel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_baseline_ftc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_density_work_intervalIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_unnormalized_energy_intervalIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.derivative_combination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_predictable_work_balance_unrestricted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualContinuousWorkBalance.actual_predictable_work_balance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.mem_ordinaryPrimes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.mem_properIntegers",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.proper_iff_primePow_nonprime",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_lambda_zero_outside_prime_or_proper",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_lambda_prime_proper_split",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_proper_weighted_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.work_atom_normalization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_proper_rows_eq_existing_force",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_all_work_rows_eq_prime_plus_proper",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_complete_work_split",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_complete_work_split_literal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_balance_in_work_notation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer_literal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.ordinaryWork_eq_log_prime_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer_log_literal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_exact_standard_three": true,
+  "public_math_source_preserved_after_namespace_comments_and_moved_inspections": true,
+  "producer_source_sha256": "e059926bda81b88e777d512043f9622ab27af57230f2f759560633879aa51864",
+  "producer_manifest_sha256": "a7bf61a564a6fc1f08c0bd494dbe6ef1436473738fa94af1b200d44998346afc",
+  "producer_proof_prefix_sha256": "4d70e579024f26cfb9a8667aa7a997517d93adc76e9100f8654363aaf18f55ac",
+  "producer_original23_and37_preserved_with_14_and22_bindings": true,
+  "producer_saved_lint_warnings": 9,
+  "producer_and_public_lints_are_not_proof_premises_or_custom_axioms": true,
+  "domains": {
+    "balance_and_split": "every fixed real c, every real sigma, every real Y>=1",
+    "absorbed_consumer": "every fixed real c, sigma>=1/2, every real Y>=1, every eta>0",
+    "log_dictionary": "finite algebraic equality for every real c,sigma,Y; no analytic interpretation belowY1 asserted"
+  },
+  "final_analytic_evaluator_support_dictionary_integrability_upper_norm_premises": [],
+  "ordinary_work_independently_Nat_Prime_filtered_full_psi_and_same_density": true,
+  "all_actual_prime_powers_predictable_atoms_inclusive_real_terminal_unit_and_Jhalf_paid": true,
+  "complete_support_partition_unique_all_degree_bijection_and_normalization_internal": true,
+  "final_targets": [
+    "BuildingBlocks.ActualContinuousWorkBalance.actual_predictable_work_balance_unrestricted",
+    "BuildingBlocks.ActualContinuousWorkBalance.actual_predictable_work_balance",
+    "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_complete_work_split",
+    "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_complete_work_split_literal",
+    "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer",
+    "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer_literal",
+    "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.ordinaryWork_eq_log_prime_sum",
+    "BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer_log_literal"
+  ],
+  "full_build": {
+    "exit_code": 0,
+    "command": "lake build",
+    "cwd": "repository root",
+    "log_sha256": "435cd88c5a84def8dc5063141bbc026a03be4b0429fee8f2ceea271e08ae5ace",
+    "bytes": 759960,
+    "jobs": 8057,
+    "log_file": "research-local/agent-results/20261003-root/continuous-work-publication-review/root-full-build.log"
+  },
+  "public_audit": {
+    "exit_code": 0,
+    "command": "lake env lean formalization/verification/ActualPrimeWorkBalanceAudit.lean",
+    "cwd": "repository root",
+    "log_sha256": "73713924f6e874032b6ed5ae92a09451b9ebb08171b6b5842065a11ad2fff6cb",
+    "bytes": 10823
+  },
+  "pinned_lean": "v4.24.0",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "bindings": {
+    "formalization/BuildingBlocks/ActualPrimeWorkBalance.lean": {
+      "sha256": "f354a9e89206130c4070100b2fa00ac8cc3b769a8ed4320e274ff85a65785bbe",
+      "bytes": 26839
+    },
+    "formalization/verification/ActualPrimeWorkBalanceAudit.lean": {
+      "sha256": "c621b2136427ab688040fe4bf7082b9a70c8ba105bb1695b511ff25ddd051041",
+      "bytes": 4174
+    },
+    "formalization/verification/actual-prime-work-balance/axioms.txt": {
+      "sha256": "73713924f6e874032b6ed5ae92a09451b9ebb08171b6b5842065a11ad2fff6cb",
+      "bytes": 10823
+    },
+    "formalization/verification/actual-prime-work-balance/README.md": {
+      "sha256": "decca4719e46607235842ceb649be54e8be86fa24786b85e4e2fc1ae89461c57",
+      "bytes": 4115
+    },
+    "building-blocks/prime-distribution/proper-prime-power-forcing-energy-bound.md": {
+      "sha256": "cf8d90fa6eb89f0762c97e75005b3a776e2c6d0745e1b08626df98adde6bc3b1",
+      "bytes": 10837
+    },
+    "formalization/BuildingBlocks/ActualProperPrimePowerForcing.lean": {
+      "sha256": "4f56d579400c5389970506929e71ef9d0f075a625d3fa12ceef1c56a9eba8430",
+      "bytes": 57561
+    },
+    "formalization/BuildingBlocks/ActualPrimeErrorCausalTrace.lean": {
+      "sha256": "623c49f04629db3b57fe056bd25ab125dc6a0a08e7873e1ab5b94d6dca0d3a02",
+      "bytes": 14064
+    },
+    "formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean": {
+      "sha256": "30c6ec01a320ddc402c3c944a249e80e371beb1bfe9d925982b9196b76252719",
+      "bytes": 8695
+    },
+    "formalization/BuildingBlocks/CoarsePrimitive.lean": {
+      "sha256": "452d0dbc1089c616c65b2c3d063cb7c124aab345af375ce673e85d47b4e057f9",
+      "bytes": 12742
+    },
+    "formalization/BuildingBlocks/CoarsePrimeBounds.lean": {
+      "sha256": "3636c6563d5c43aabdd249734871094921179964741024418010d71cdf242065",
+      "bytes": 8453
+    },
+    "formalization/verification/actual-prime-power-window-geometry/acceptance.json": {
+      "sha256": "723095cff8adda8e9c2ac90a14a42deac4769ede95c29a3817a9ef8c87f08de7",
+      "bytes": 9195
+    },
+    "formalization/verification/actual-prime-error-causal-trace/acceptance.json": {
+      "sha256": "76455b971a97c663fc4c6ee6b78611b35f300bcc2fa82b84af4f024fc444139e",
+      "bytes": 7957
+    },
+    "formalization/verification/actual-proper-prime-power-forcing/acceptance.json": {
+      "sha256": "d76f3f3fd5370c4c52e4a05b0ba5bf4d79c272b7323922c8619d8a47882cf4f2",
+      "bytes": 24741
+    },
+    "lean-toolchain": {
+      "sha256": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+      "bytes": 25
+    },
+    "lake-manifest.json": {
+      "sha256": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+      "bytes": 3513
+    },
+    "lakefile.toml": {
+      "sha256": "9d4ece18e13250823446204637f1e83a9df876c1c83a13396c1fee1acfaee57d",
+      "bytes": 273
+    }
+  },
+  "unformalized": [
+    "fixed-strict-sigma infinite-tail refinement",
+    "bounded complex phase consequence"
+  ],
+  "unproved": [
+    "independent ordinary-prime/full-psi or corrected-density signed upper",
+    "stronger complete energy/prime-error/coarse/W premise",
+    "RH"
+  ],
+  "new_stronger_arithmetic_upper": false,
+  "rh_frontier_progress": false,
+  "source_snapshot_parent": "4a49c51f4865bd28d460af24ec52be310271ef70"
+}

@@ -151,10 +151,10 @@
     "exit_code": 0,
     "command": "lake build",
     "cwd": "repository root",
-    "log_sha256": "1775a957b54117f1501989f5ae4be37a54545d95a26c778556436a47ed2a986a",
-    "bytes": 758129,
-    "jobs": 8056,
-    "log_file": "research-local/agent-results/20261003-root/proper-power-force-publication-review/root-full-build.log"
+    "log_sha256": "435cd88c5a84def8dc5063141bbc026a03be4b0429fee8f2ceea271e08ae5ace",
+    "bytes": 759960,
+    "jobs": 8057,
+    "log_file": "research-local/agent-results/20261003-root/continuous-work-publication-review/root-full-build.log"
   },
   "public_audit": {
     "command": "lake env lean formalization/verification/ActualPrimeErrorCausalTraceAudit.lean",
@@ -178,12 +178,12 @@
       "bytes": 2894
     },
     "formalization/verification/actual-prime-error-causal-trace/README.md": {
-      "sha256": "b155369b6f74c45f70afdadd267f13f2cbe6cca90a115ab77195da164b605f2b",
-      "bytes": 2732
+      "sha256": "42bf835184f751fdcc15ce4fc606dc8c84e37f7d4c4292801eeb221118475184",
+      "bytes": 2832
     },
     "building-blocks/prime-distribution/proper-prime-power-forcing-energy-bound.md": {
-      "sha256": "0cf24b1e7b339642a0fd3338b550ed83ecbd6b2689f5a6b62f4a1d15dfae75c9",
-      "bytes": 10101
+      "sha256": "cf8d90fa6eb89f0762c97e75005b3a776e2c6d0745e1b08626df98adde6bc3b1",
+      "bytes": 10837
     },
     "formalization/BuildingBlocks/CoarsePrimitive.lean": {
       "sha256": "452d0dbc1089c616c65b2c3d063cb7c124aab345af375ce673e85d47b4e057f9",
@@ -206,12 +206,12 @@
       "bytes": 3513
     },
     "formalization/verification/actual-prime-power-window-geometry/README.md": {
-      "sha256": "eff03189553b99f2b209421427d3b945e88b0c5744234d5abdfed80950ddb5e0",
-      "bytes": 2660
+      "sha256": "3153331d824269c5807272a7d6ee49190b8297b7c2003ff4d65d5681a297b990",
+      "bytes": 2760
     },
     "formalization/verification/actual-prime-power-window-geometry/acceptance.json": {
-      "sha256": "c8b0c04cf57efb31769b28fdf6a4c690a89db4512b1b25f50fc1082fe317a4a6",
-      "bytes": 9125
+      "sha256": "723095cff8adda8e9c2ac90a14a42deac4769ede95c29a3817a9ef8c87f08de7",
+      "bytes": 9195
     }
   },
   "internally_discharged": [
@@ -222,7 +222,6 @@
     "interval Cauchy and exact real-power coefficients"
   ],
   "unformalized": [
-    "complete predictable-work jump/energy balance and substitution",
     "older fixed-strict-sigma cutoff-independent infinite-tail refinement",
     "bounded complex phase extension of the absolute-row bound"
   ],
@@ -233,5 +232,6 @@
   ],
   "producer_manifest_original_geometry_source_binding_at_parent": "4c69629cd99b7d6908f035d3263d013c1c9fe890",
   "geometry_header_only_changed_after_original_private_acceptance": true,
-  "additional_complete_forcing_verification": "formalization/verification/actual-proper-prime-power-forcing/acceptance.json"
+  "additional_complete_forcing_verification": "formalization/verification/actual-proper-prime-power-forcing/acceptance.json",
+  "additional_complete_work_verification": "formalization/verification/actual-prime-work-balance/acceptance.json"
 }

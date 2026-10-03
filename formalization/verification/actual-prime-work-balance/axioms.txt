@@ -1,0 +1,175 @@
+'BuildingBlocks.ActualContinuousWorkBalance.psi_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.psi_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.squareJump_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.squareJump_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_square_jump' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.squareJump_prefix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_lambda_prefix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.finite_abel_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.powerWeight_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.linearWeight_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.baselineStorage_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.powerWeight_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.powerWeightDerivative_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.linearWeightDerivative_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.baselineStorageDerivative_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_square_abel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_linear_abel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_baseline_ftc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_density_work_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_unnormalized_energy_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.derivative_combination' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_predictable_work_balance_unrestricted' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualContinuousWorkBalance.actual_predictable_work_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.mem_ordinaryPrimes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.mem_properIntegers' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.proper_iff_primePow_nonprime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_lambda_zero_outside_prime_or_proper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_lambda_prime_proper_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_proper_weighted_reindex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.work_atom_normalization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_proper_rows_eq_existing_force' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_all_work_rows_eq_prime_plus_proper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_complete_work_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_complete_work_split_literal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_balance_in_work_notation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer_literal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.ordinaryWork_eq_log_prime_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer_log_literal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.ActualContinuousWorkBalance.actual_predictable_work_balance_unrestricted (c sigma Y : ℝ) (hY : 1 ≤ Y) :
+  1 / 2 * Y ^ (-2 * sigma) * (BuildingBlocks.CoarsePrimitive.psi ⌊Y⌋₊ - Y + c) ^ 2 +
+      sigma * ∫ (t : ℝ) in 1..Y, ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma) =
+    (c - 1) ^ 2 / 2 +
+        (∑ n ∈ Finset.Icc 2 ⌊Y⌋₊,
+            ArithmeticFunction.vonMangoldt n * ↑n ^ (-2 * sigma) *
+              (BuildingBlocks.CoarsePrimitive.psi (n - 1) - ↑n + c) -
+          ∫ (t : ℝ) in 1..Y, (BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) * t ^ (-2 * sigma)) +
+      1 / 2 * ∑ n ∈ Finset.Icc 2 ⌊Y⌋₊, ArithmeticFunction.vonMangoldt n ^ 2 * ↑n ^ (-2 * sigma)
+BuildingBlocks.ActualContinuousWorkBalance.actual_predictable_work_balance (c sigma Y : ℝ) (hsigma : 1 / 2 ≤ sigma)
+  (hY : 1 ≤ Y) :
+  1 / 2 * Y ^ (-2 * sigma) * (BuildingBlocks.CoarsePrimitive.psi ⌊Y⌋₊ - Y + c) ^ 2 +
+      sigma * ∫ (t : ℝ) in 1..Y, ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma) =
+    (c - 1) ^ 2 / 2 +
+        (∑ n ∈ Finset.Icc 2 ⌊Y⌋₊,
+            ArithmeticFunction.vonMangoldt n * ↑n ^ (-2 * sigma) *
+              (BuildingBlocks.CoarsePrimitive.psi (n - 1) - ↑n + c) -
+          ∫ (t : ℝ) in 1..Y, (BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) * t ^ (-2 * sigma)) +
+      1 / 2 * ∑ n ∈ Finset.Icc 2 ⌊Y⌋₊, ArithmeticFunction.vonMangoldt n ^ 2 * ↑n ^ (-2 * sigma)
+BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_complete_work_split {Y : ℝ} (hY : 1 ≤ Y) (c sigma : ℝ) :
+  BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.predictableWork c sigma Y -
+      BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.ordinaryWork c sigma Y =
+    BuildingBlocks.ActualProperPrimePowerForcing.signedProperPowerForce c sigma Y
+BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_complete_work_split_literal {Y : ℝ} (hY : 1 ≤ Y) (c sigma : ℝ) :
+  (∑ n ∈ Finset.Icc 2 ⌊Y⌋₊,
+          ArithmeticFunction.vonMangoldt n * ↑n ^ (-2 * sigma) * (BuildingBlocks.CoarsePrimitive.psi (n - 1) - ↑n + c) -
+        ∫ (t : ℝ) in 1..Y, (BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) * t ^ (-2 * sigma)) -
+      (∑ n ∈ Finset.Icc 2 ⌊Y⌋₊ with Nat.Prime n,
+          ArithmeticFunction.vonMangoldt n * ↑n ^ (-2 * sigma) * (BuildingBlocks.CoarsePrimitive.psi (n - 1) - ↑n + c) -
+        ∫ (t : ℝ) in 1..Y, (BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) * t ^ (-2 * sigma)) =
+    BuildingBlocks.ActualProperPrimePowerForcing.signedProperPowerForce c sigma Y
+BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer {Y : ℝ} (hY : 1 ≤ Y)
+  (c sigma eta : ℝ) (hsigma : 1 / 2 ≤ sigma) (heta : 0 < eta) :
+  BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.terminalStorage c sigma Y +
+      (sigma - eta) * BuildingBlocks.ActualProperPowerEnergyAllocation.fullEnergy c sigma Y ≤
+    (c - 1) ^ 2 / 2 + BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.ordinaryWork c sigma Y +
+        (3000 + 144 / eta) * Real.log (2 * Y) ^ 2 +
+      BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.diagonal sigma Y / 2
+BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer_literal {Y : ℝ} (hY : 1 ≤ Y)
+  (c sigma eta : ℝ) (hsigma : 1 / 2 ≤ sigma) (heta : 0 < eta) :
+  1 / 2 * Y ^ (-2 * sigma) * (BuildingBlocks.CoarsePrimitive.psi ⌊Y⌋₊ - Y + c) ^ 2 +
+      (sigma - eta) *
+        ∫ (t : ℝ) in 1..Y, ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma) ≤
+    (c - 1) ^ 2 / 2 +
+          (∑ n ∈ Finset.Icc 2 ⌊Y⌋₊ with Nat.Prime n,
+              ArithmeticFunction.vonMangoldt n * ↑n ^ (-2 * sigma) *
+                (BuildingBlocks.CoarsePrimitive.psi (n - 1) - ↑n + c) -
+            ∫ (t : ℝ) in 1..Y, (BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) * t ^ (-2 * sigma)) +
+        (3000 + 144 / eta) * Real.log (2 * Y) ^ 2 +
+      1 / 2 * ∑ n ∈ Finset.Icc 2 ⌊Y⌋₊, ArithmeticFunction.vonMangoldt n ^ 2 * ↑n ^ (-2 * sigma)
+BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.ordinaryWork_eq_log_prime_sum (c sigma Y : ℝ) :
+  BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.ordinaryWork c sigma Y =
+    ∑ p ∈ BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.ordinaryPrimes Y,
+        Real.log ↑p * ↑p ^ (1 - 2 * sigma) * ((BuildingBlocks.CoarsePrimitive.psi (p - 1) - ↑p + c) / ↑p) -
+      BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.densityWork c sigma Y
+BuildingBlocks.ActualOrdinaryPrimeWorkConsumer.actual_ordinary_prime_energy_consumer_log_literal {Y : ℝ} (hY : 1 ≤ Y)
+  (c sigma eta : ℝ) (hsigma : 1 / 2 ≤ sigma) (heta : 0 < eta) :
+  1 / 2 * Y ^ (-2 * sigma) * (BuildingBlocks.CoarsePrimitive.psi ⌊Y⌋₊ - Y + c) ^ 2 +
+      (sigma - eta) *
+        ∫ (t : ℝ) in 1..Y, ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma) ≤
+    (c - 1) ^ 2 / 2 +
+          (∑ p ∈ Finset.Icc 2 ⌊Y⌋₊ with Nat.Prime p,
+              Real.log ↑p * ↑p ^ (1 - 2 * sigma) * ((BuildingBlocks.CoarsePrimitive.psi (p - 1) - ↑p + c) / ↑p) -
+            ∫ (t : ℝ) in 1..Y, (BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) * t ^ (-2 * sigma)) +
+        (3000 + 144 / eta) * Real.log (2 * Y) ^ 2 +
+      1 / 2 * ∑ n ∈ Finset.Icc 2 ⌊Y⌋₊, ArithmeticFunction.vonMangoldt n ^ 2 * ↑n ^ (-2 * sigma)

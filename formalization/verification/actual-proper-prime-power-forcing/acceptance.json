@@ -774,10 +774,10 @@
     "exit_code": 0,
     "command": "lake build",
     "cwd": "repository root",
-    "log_sha256": "1775a957b54117f1501989f5ae4be37a54545d95a26c778556436a47ed2a986a",
-    "bytes": 758129,
-    "jobs": 8056,
-    "log_file": "research-local/agent-results/20261003-root/proper-power-force-publication-review/root-full-build.log"
+    "log_sha256": "435cd88c5a84def8dc5063141bbc026a03be4b0429fee8f2ceea271e08ae5ace",
+    "bytes": 759960,
+    "jobs": 8057,
+    "log_file": "research-local/agent-results/20261003-root/continuous-work-publication-review/root-full-build.log"
   },
   "public_audit": {
     "exit_code": 0,
@@ -802,12 +802,12 @@
       "bytes": 16150
     },
     "formalization/verification/actual-proper-prime-power-forcing/README.md": {
-      "sha256": "198591bbffcc3ed583296cba4ebe06e7280b02acf36552821dbc7665deeca83e",
-      "bytes": 3871
+      "sha256": "4d4928153280729c47e01c1178aef8cca356ad3e911f018ae206cd8ecf48bd2d",
+      "bytes": 3974
     },
     "building-blocks/prime-distribution/proper-prime-power-forcing-energy-bound.md": {
-      "sha256": "0cf24b1e7b339642a0fd3338b550ed83ecbd6b2689f5a6b62f4a1d15dfae75c9",
-      "bytes": 10101
+      "sha256": "cf8d90fa6eb89f0762c97e75005b3a776e2c6d0745e1b08626df98adde6bc3b1",
+      "bytes": 10837
     },
     "formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean": {
       "sha256": "30c6ec01a320ddc402c3c944a249e80e371beb1bfe9d925982b9196b76252719",
@@ -834,12 +834,12 @@
       "bytes": 7547
     },
     "formalization/verification/actual-prime-power-window-geometry/acceptance.json": {
-      "sha256": "c8b0c04cf57efb31769b28fdf6a4c690a89db4512b1b25f50fc1082fe317a4a6",
-      "bytes": 9125
+      "sha256": "723095cff8adda8e9c2ac90a14a42deac4769ede95c29a3817a9ef8c87f08de7",
+      "bytes": 9195
     },
     "formalization/verification/actual-prime-error-causal-trace/acceptance.json": {
-      "sha256": "c7987977c39bf1c5cd260e5b870655e7349b743c4e3b7be10d49d1422fce77d3",
-      "bytes": 7915
+      "sha256": "76455b971a97c663fc4c6ee6b78611b35f300bcc2fa82b84af4f024fc444139e",
+      "bytes": 7957
     },
     "lean-toolchain": {
       "sha256": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
@@ -855,7 +855,6 @@
     }
   },
   "unformalized": [
-    "complete predictable-work jump/energy balance and substitution",
     "older fixed-strict-sigma cutoff-independent infinite-tail refinement",
     "bounded complex phase extension of the absolute-row bound"
   ],
@@ -865,5 +864,6 @@
     "RH"
   ],
   "new_stronger_arithmetic_bound": false,
-  "rh_frontier_progress": false
+  "rh_frontier_progress": false,
+  "additional_complete_work_verification": "formalization/verification/actual-prime-work-balance/acceptance.json"
 }
