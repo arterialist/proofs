@@ -2,6 +2,7 @@
 
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
+- [An exact-log bound for the complete prime-error row](complete-prime-error-exact-log-vk-bound.md)
 - [An explicit bound for low Möbius cofactor energy](mobius-low-cofactor-energy-explicit-bound.md)
 - [Real-order Jordan summatory errors: a source audit](real-order-jordan-summatory-error-audit.md)
 - [Uniform comparison of real-order Jordan and von Mangoldt coefficients](real-order-jordan-von-mangoldt-comparison.md)

@@ -1,0 +1,44 @@
+'BuildingBlocks.ActualFullCenteredMellin.N_eq_V_add_T' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.T_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.N_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.T_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.N_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.hasMellin_N' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.hasMellin_T' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.N_eq_real_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.T_eq_real_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.fullNumerator_eq_Icc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.allocation_eq_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.W_eq_fullNumerator_sub_allocation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.fullNumerator_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.allocation_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.fullNumerator_eq_real_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.allocation_eq_real_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.fullNumerator_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.allocation_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.hasMellin_fullNumerator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.hasMellin_allocation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.integrableOn_fullNumerator_Ioi_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.integral_fullNumerator_Ioi_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.integrableOn_allocation_Ioi_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellin.integral_allocation_Ioi_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

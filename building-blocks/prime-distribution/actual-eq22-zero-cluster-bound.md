@@ -34,6 +34,10 @@ constant steps. The [Lean module](../../formalization/BuildingBlocks/ActualEq22R
 checks the exact finite cofactor/Volterra reduction and the centered
 convolution algebra; it does not formalize the analytic contour estimate.
 
+The [exact-log refinement](complete-prime-error-exact-log-vk-bound.md) removes
+the arbitrary fixed leading loss and adds two diverging smaller-scale savings
+for these same complete objects. Its contour estimate remains written analysis.
+
 The [Gaussian recovery estimate](gaussian-recovery-complete-critical-numerator.md)
 quantifies recovery of the literal full numerator from a logarithmic
 Gaussian average, including every integer seam. Its arithmetic coefficient

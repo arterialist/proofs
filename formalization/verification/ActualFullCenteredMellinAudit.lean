@@ -1,0 +1,26 @@
+import BuildingBlocks.ActualFullCenteredMellin
+
+#print axioms BuildingBlocks.ActualFullCenteredMellin.N_eq_V_add_T
+#print axioms BuildingBlocks.ActualFullCenteredMellin.T_zero
+#print axioms BuildingBlocks.ActualFullCenteredMellin.N_zero
+#print axioms BuildingBlocks.ActualFullCenteredMellin.T_real
+#print axioms BuildingBlocks.ActualFullCenteredMellin.N_real
+#print axioms BuildingBlocks.ActualFullCenteredMellin.hasMellin_N
+#print axioms BuildingBlocks.ActualFullCenteredMellin.hasMellin_T
+#print axioms BuildingBlocks.ActualFullCenteredMellin.N_eq_real_cutoff
+#print axioms BuildingBlocks.ActualFullCenteredMellin.T_eq_real_cutoff
+#print axioms BuildingBlocks.ActualFullCenteredMellin.fullNumerator_eq_Icc
+#print axioms BuildingBlocks.ActualFullCenteredMellin.allocation_eq_Icc
+#print axioms BuildingBlocks.ActualFullCenteredMellin.W_eq_fullNumerator_sub_allocation
+#print axioms BuildingBlocks.ActualFullCenteredMellin.fullNumerator_real
+#print axioms BuildingBlocks.ActualFullCenteredMellin.allocation_real
+#print axioms BuildingBlocks.ActualFullCenteredMellin.fullNumerator_eq_real_sum
+#print axioms BuildingBlocks.ActualFullCenteredMellin.allocation_eq_real_sum
+#print axioms BuildingBlocks.ActualFullCenteredMellin.fullNumerator_zero
+#print axioms BuildingBlocks.ActualFullCenteredMellin.allocation_zero
+#print axioms BuildingBlocks.ActualFullCenteredMellin.hasMellin_fullNumerator
+#print axioms BuildingBlocks.ActualFullCenteredMellin.hasMellin_allocation
+#print axioms BuildingBlocks.ActualFullCenteredMellin.integrableOn_fullNumerator_Ioi_one
+#print axioms BuildingBlocks.ActualFullCenteredMellin.integral_fullNumerator_Ioi_one
+#print axioms BuildingBlocks.ActualFullCenteredMellin.integrableOn_allocation_Ioi_one
+#print axioms BuildingBlocks.ActualFullCenteredMellin.integral_allocation_Ioi_one
