@@ -1,0 +1,128 @@
+{
+  "status": "public_full_build_and_axiom_audit_pass",
+  "date": "2026-10-03",
+  "toolchain": "leanprover/lean4:v4.24.0",
+  "compiler_commit": "797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+  "mathlib_pin": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "files": {
+    "formalization/BuildingBlocks/ActualMobiusCoprimeHarmonic.lean": "194dab8e61c6bf8584921948ed9d3a9fdbc1856c517b8ffb577fbb0a99d4691b",
+    "formalization/verification/ActualMobiusCoprimeHarmonicAudit.lean": "c61bfe5ebde9d97b346c17205c26e1f59fb1a3d3ec1764f27272be00b88e1579",
+    "building-blocks/prime-distribution/mobius-low-cofactor-energy-explicit-bound.md": "afbe8d2f8739356892fc0ec8b090f03bc715bab3cb3f0442fe07c01220449635",
+    "formalization/verification/actual-mobius-coprime-harmonic/README.md": "4d066ddee11918e99a30df5f08c541dc7b63429008a12d8286ad969de5d174b8",
+    "formalization/verification/actual-mobius-coprime-harmonic/axioms.txt": "e2d87290a13a8de871844f6ed0acec7f2679e30794476365fa6ba4a9ce2c23a9"
+  },
+  "build": {
+    "command": "lake build",
+    "exit_code": 0,
+    "jobs": 8032,
+    "log_sha256": "dcea886ad5a7ae691479d37fd0a90226e384be977233c0e5a32e5d68b6d2a4f1",
+    "public_leaf_built": true,
+    "umbrella_built": true
+  },
+  "audit": {
+    "command": "lake env lean formalization/verification/ActualMobiusCoprimeHarmonicAudit.lean",
+    "exit_code": 0,
+    "warnings": 0,
+    "declarations": [
+      {
+        "name": "BuildingBlocks.ActualMobiusCoprimeHarmonic.moebius_mul_eq_zero_of_not_coprime",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "BuildingBlocks.ActualMobiusCoprimeHarmonic.multipleHarmonic_reindex",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "BuildingBlocks.ActualMobiusCoprimeHarmonic.multipleHarmonic_eq_coprime",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "BuildingBlocks.ActualMobiusCoprimeHarmonic.multipleHarmonicReal_eq_coprime",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "BuildingBlocks.ActualMobiusCoprimeHarmonic.multipleHarmonic_zero",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "BuildingBlocks.ActualMobiusCoprimeHarmonic.coprimeHarmonic_zero",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "BuildingBlocks.ActualMobiusCoprimeHarmonic.multipleHarmonic_eq_zero_of_not_squarefree",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "BuildingBlocks.ActualMobiusCoprimeHarmonic.lowCofactorEnergy_le_of_source_estimates",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    ]
+  },
+  "literature_inputs": {
+    "source": "Ramare--Zuniga-Alterman, On a Mobius double sum",
+    "version": "arXiv:2603.25961v3",
+    "date": "2026-07-01",
+    "lemmas": [
+      "2.6",
+      "4.5(iii)",
+      "4.13"
+    ],
+    "upstream_computational_verification_reproduced": false
+  },
+  "scope": {
+    "unconditional_actual_coprime_reindex": true,
+    "all_natural_cutoffs_and_positive_labels": true,
+    "nonsquarefree_and_zero_cutoffs_retained": true,
+    "all_real_cutoff_dictionary": true,
+    "conditional_norm_range": "Every real X,D with 1 <= D <= X / 10^12",
+    "analytic_hypotheses": [
+      "SourcePointwiseEstimate",
+      "SourceRootMeanEstimate D",
+      "SourceLogMeanEstimate D"
+    ],
+    "analytic_hypotheses_discharged_in_Lean": false,
+    "written_unconditional_corollary_from_literature": true,
+    "square_root_slice": "Every real X >= 10^24, D=sqrt(X), E(X,D) < 6.3e-6",
+    "continuous_logarithm_and_monotonicity_proof_kernel_checked": false,
+    "independent_agent_mathematical_and_source_reviews_pass": true,
+    "root_mathematical_and_source_inspection_pass": true,
+    "originality_claim": false,
+    "full_signed_F_D_coarse_W_bound": false,
+    "RH_frontier_progress": false,
+    "RH_proof": false,
+    "goal_complete": false
+  },
+  "foreign_tracked_bytes_preserved": true
+}
