@@ -2,6 +2,7 @@
 
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
+- [Ordered prime words: a weighted squarefree bound and the actual inverse](ordered-prime-word-squarefree-bound.md)
 - [Positive division weights for the actual Abel feedback](actual-Abel-factorial-division-positivity.md)
 - [Actual long-clock cofactor row as a positive cumulative-source average](actual-clocked-cofactor-row-positive-average.md)
 - [An elementary-tail certificate for a negative renewal frequency](actual-renewal-memory-negative-cosine.md)

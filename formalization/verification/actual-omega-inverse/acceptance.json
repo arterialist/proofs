@@ -1,0 +1,301 @@
+{
+  "date": "2026-10-03 MYT",
+  "status": "PASS",
+  "scope": "Canonical actual arithmetic inverse and complete cofactor identities kernel checked; weighted/analytic results independently checked written support only. No stronger signed RH bound.",
+  "namespace": "BuildingBlocks.ActualOmegaInverse",
+  "theorem_count": 28,
+  "rows_in_source_order": [
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.primeIndicator_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.primeIndicator_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.primeIndicator_apply_prime",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.omegaPlusOne_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.omegaPlusOne_apply_prime",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.omegaPlusOne_apply_prime_pow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.inverseValue_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.inverseValue_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.inverseValue_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.actualInverse_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.actualInverse_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.actualInverse_recurrence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.actualInverse_mul_omegaPlusOne",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.omegaPlusOne_mul_actualInverse",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.actualInverse_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.actualInverse_apply_prime",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.actualInverse_apply_prime_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.omega_eq_zeta_mul_primeIndicator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.omegaPlusOne_eq_zeta_mul_unit_add_primeIndicator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.actualInverse_mul_unit_add_primeIndicator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.inverseSummatory_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.inverseSummatory_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.mertens_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.mertens_eq_inverseSummatory_add_primeCofactors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.G_div_natCast",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.M_eq_G_add_primeCofactors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.G_eq_zero_of_lt_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualOmegaInverse.M_eq_zero_of_lt_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_rows_exact_standard_three": true,
+  "source_body_matches_frozen_private_after_namespace_header_only": true,
+  "producer_source_sha256": "7c918b3e89d8bc201182d44490259f8e44545bcb3c6e3c50ea2acf35764e1835",
+  "full_build": {
+    "command": "lake build",
+    "cwd": "repository root",
+    "exit_code": 0,
+    "jobs": 8053,
+    "log_sha256": "3a185133bd457094f4f8d1f9acb96cba1633273f9caca61fcd7a2669e1b8297d"
+  },
+  "public_audit": {
+    "command": "lake env lean formalization/verification/ActualOmegaInverseAudit.lean",
+    "cwd": "repository root",
+    "exit_code": 0
+  },
+  "pinned_lean": "4.24.0",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "bindings": {
+    "formalization/BuildingBlocks/ActualOmegaInverse.lean": {
+      "sha256": "6128c2c5bac8e4dde9817e2e387085f53deecfa6fd44d36d20e1f0b0683a8d37",
+      "bytes": 9727
+    },
+    "formalization/verification/ActualOmegaInverseAudit.lean": {
+      "sha256": "e51fabfdbc960263bb39b4598a8e64ccbc1a4af171ded78e2af932e49d47aef4",
+      "bytes": 2712
+    },
+    "formalization/verification/actual-omega-inverse/axioms.txt": {
+      "sha256": "1c1665403a63cc68862ffabab8bb3d308d4612f739348f585f5195ea9a44173a",
+      "bytes": 5018
+    },
+    "formalization/verification/actual-omega-inverse/README.md": {
+      "sha256": "ff3ce7cb7fd6a2e613b1ac7a816897f461b6e3e48b1ac231bcc69152fc29120e",
+      "bytes": 2432
+    },
+    "formalization/BuildingBlocks/HyperbolaProduct.lean": {
+      "sha256": "bd09299dfce5138ed92cfa9ca6740237dfd3a5ef469b29a051907b5ac7a22462",
+      "bytes": 5872
+    },
+    "lean-toolchain": {
+      "sha256": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+      "bytes": 25
+    },
+    "lake-manifest.json": {
+      "sha256": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+      "bytes": 3513
+    },
+    "building-blocks/factorial-and-renewal/ordered-prime-word-squarefree-bound.md": {
+      "sha256": "e568a9a4f6d18f08201e93a72a938eff7b8ea2b89b11f53c9ca96fbfc20a5fad",
+      "bytes": 11260
+    },
+    "reviews/papers/schmidt-factorial-word-normalization-audit.md": {
+      "sha256": "a0ff6e7ffdcf1264d9a047dc44b2e74180bc0f8acf554914efdbbb7d76a22295",
+      "bytes": 5933
+    }
+  },
+  "written_not_kernel_checked": [
+    "factorial-word C identification and positive g convolution",
+    "squarefree and low-Omega weighted inequalities",
+    "factorial integral, Tonelli, full product tails",
+    "all-real word-growth and convergence abscissae",
+    "Kronecker, Rouche and auxiliary poles"
+  ],
+  "not_proved": [
+    "stronger signed Mertens/prime-error/energy upper",
+    "eventual W sign",
+    "RH criterion premise",
+    "RH"
+  ]
+}

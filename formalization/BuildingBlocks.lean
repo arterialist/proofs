@@ -703,3 +703,4 @@ import BuildingBlocks.ActualFullCenteredMellin
 import BuildingBlocks.ActualFullCenteredMellinInversion
 import BuildingBlocks.ActualEq22OriginalMellin
 import BuildingBlocks.ActualFullPerronTruncation
+import BuildingBlocks.ActualOmegaInverse

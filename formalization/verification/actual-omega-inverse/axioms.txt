@@ -1,0 +1,66 @@
+'BuildingBlocks.ActualOmegaInverse.primeIndicator_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.primeIndicator_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.primeIndicator_apply_prime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.omegaPlusOne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.omegaPlusOne_apply_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.omegaPlusOne_apply_prime_pow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.inverseValue_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.inverseValue_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.inverseValue_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.actualInverse_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.actualInverse_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.actualInverse_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.actualInverse_mul_omegaPlusOne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.omegaPlusOne_mul_actualInverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.actualInverse_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.actualInverse_apply_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.actualInverse_apply_prime_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.omega_eq_zeta_mul_primeIndicator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.omegaPlusOne_eq_zeta_mul_unit_add_primeIndicator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.actualInverse_mul_unit_add_primeIndicator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.inverseSummatory_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.inverseSummatory_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.mertens_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.mertens_eq_inverseSummatory_add_primeCofactors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.G_div_natCast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.M_eq_G_add_primeCofactors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.G_eq_zero_of_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualOmegaInverse.M_eq_zero_of_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+BuildingBlocks.ActualOmegaInverse.actualInverse_mul_omegaPlusOne :
+  BuildingBlocks.ActualOmegaInverse.actualInverse * BuildingBlocks.ActualOmegaInverse.omegaPlusOne = 1
+BuildingBlocks.ActualOmegaInverse.actualInverse_one : BuildingBlocks.ActualOmegaInverse.actualInverse 1 = 1
+BuildingBlocks.ActualOmegaInverse.actualInverse_apply_prime {p : ℕ} (hp : Nat.Prime p) :
+  BuildingBlocks.ActualOmegaInverse.actualInverse p = -2
+BuildingBlocks.ActualOmegaInverse.actualInverse_apply_prime_sq {p : ℕ} (hp : Nat.Prime p) :
+  BuildingBlocks.ActualOmegaInverse.actualInverse (p ^ 2) = 2
+BuildingBlocks.ActualOmegaInverse.actualInverse_mul_unit_add_primeIndicator :
+  BuildingBlocks.ActualOmegaInverse.actualInverse * (1 + BuildingBlocks.ActualOmegaInverse.primeIndicator) =
+    ArithmeticFunction.moebius
+BuildingBlocks.ActualOmegaInverse.mertens_eq_inverseSummatory_add_primeCofactors (N : ℕ) :
+  BuildingBlocks.ActualOmegaInverse.mertens N =
+    BuildingBlocks.ActualOmegaInverse.inverseSummatory N +
+      ∑ p ∈ BuildingBlocks.ActualOmegaInverse.primesUpTo N, BuildingBlocks.ActualOmegaInverse.inverseSummatory (N / p)
+BuildingBlocks.ActualOmegaInverse.M_eq_G_add_primeCofactors (x : ℝ) :
+  BuildingBlocks.ActualOmegaInverse.M x =
+    BuildingBlocks.ActualOmegaInverse.G x +
+      ∑ p ∈ BuildingBlocks.ActualOmegaInverse.primesUpTo ⌊x⌋₊, BuildingBlocks.ActualOmegaInverse.G (x / ↑p)
+BuildingBlocks.ActualOmegaInverse.G_eq_zero_of_lt_one {x : ℝ} (hx : x < 1) : BuildingBlocks.ActualOmegaInverse.G x = 0
+BuildingBlocks.ActualOmegaInverse.M_eq_zero_of_lt_one {x : ℝ} (hx : x < 1) : BuildingBlocks.ActualOmegaInverse.M x = 0
