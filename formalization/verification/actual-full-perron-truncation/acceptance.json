@@ -1,0 +1,280 @@
+{
+  "status": "PASS",
+  "date": "2026-10-03",
+  "scope": "Unconditional finite-height approximation of the literal complete a1 numerator on its absolute initial Perron line",
+  "source_path": "formalization/BuildingBlocks/ActualFullPerronTruncation.lean",
+  "source_sha256": "b7716bcb72a8089a51256f3595f15f635e215d7ba4df4fd8a6036b2ababbbc87",
+  "audit_source_path": "formalization/verification/ActualFullPerronTruncationAudit.lean",
+  "audit_source_sha256": "8066c532459e5967b03866e23c9b91d24ed18cee4d549479b35f4a2379d7d85b",
+  "audit_output_path": "formalization/verification/actual-full-perron-truncation/axioms.txt",
+  "audit_output_sha256": "a06581d266921e0ffdda361ce86da383776cc5e6f97fa68b8619609a76e7c752",
+  "audit_exit_code": 0,
+  "public_theorem_count": 26,
+  "axiom_rows": [
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.integral_sub_setIntegral_eq_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.norm_integral_sub_setIntegral_le_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.integral_sub_integral_Icc_eq_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.norm_integral_sub_integral_Icc_le_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.intervalIntegral_eq_integral_Icc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.symmetric_intervalIntegral_eq_integral_Icc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.integral_sub_symmetric_interval_eq_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.norm_integral_sub_symmetric_interval_le_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.scaled_residual_eq_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.norm_scaled_residual_le_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.norm_perron_normalized_residual_le_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.fullNumerator_truncation_residual_eq_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationInterval.fullNumerator_truncation_residual_le_compl",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.weight_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.integrable_weight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.positive_tail_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.negative_tail_eq_positive_tail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.complement_Icc_eq_tails",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.integral_complement_Icc_eq_twice_positive_tail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.two_tail_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.two_tail_le_of_one_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.PerronTruncationTail.two_tail_le_literal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullPerronTruncation.verticalAllowance_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullPerronTruncation.integral_norm_perron_complement_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullPerronTruncation.fullNumerator_truncation_error_le_of_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullPerronTruncation.fullNumerator_truncation_error_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_rows_exact_standard_three": true,
+  "root_full_build": {
+    "exit_code": 0,
+    "jobs": 8052,
+    "log": "research-local/agent-results/20261003-root/perron-truncation-coordinator-review/publication/root-full-build.log",
+    "tail": [
+      " Quot.sound]",
+      "info: formalization/BuildingBlocks/RiemannZetaDisplacementDecayBound.lean:119:0: 'BuildingBlocks.RiemannZetaDisplacementDecayBound.offline_zero_free_of_bounds' depends on axioms: [propext,",
+      " Classical.choice,",
+      " Quot.sound]",
+      "\u2714 [8050/8052] Built BuildingBlocks.ActualFullPerronTruncation (17s)",
+      "\u2714 [8051/8052] Built BuildingBlocks (16s)",
+      "Build completed successfully (8052 jobs)."
+    ]
+  },
+  "lean_version": "4.24.0",
+  "compiler_commit": "797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "domain": {
+    "primary": "every real c>2,x>0,T>0",
+    "specialization": "every real c>2,x>0,T>=1"
+  },
+  "allowance": "x^c * ActualFullCenteredMellinVertical.verticalAllowance(c-1)/(pi*T)",
+  "complete_arithmetic_object_retained": true,
+  "both_tails_and_endpoints_paid": true,
+  "caller_supplies_only_numeric_domain": true,
+  "proof_body_equal_to_accepted_private_source": true,
+  "private_source_sha256": "606f672c5b007977820aaf8250583d6604b2d04b2cffc0e2d8c268473d5d7489",
+  "independent_checks": {
+    "private_producer_and_separate_final_replay": true,
+    "coordinator_owned_private_replay": true,
+    "public_normalized_proof_and_statement_comparison": true,
+    "separate_public_mathematical_challenge": true,
+    "separate_public_primary_source_and_scope_review": true,
+    "root_current_full_build_and_complete_axiom_audit": true
+  },
+  "approximation_inequality_kernel_checked": true,
+  "stronger_global_arithmetic_upper_proved": false,
+  "global_contour_upper_kernel_checked": false,
+  "eventual_W_sign_proved": false,
+  "RH_proved": false,
+  "boundary_c_2_claim": false,
+  "T_zero_claim": false,
+  "uniform_c_to_2_allowance_claim": false,
+  "eventual_onset_required": false,
+  "priority_claim": false,
+  "actual_kernel_tail_optimality_claim": false,
+  "file_hashes": {
+    "formalization/BuildingBlocks/ActualFullPerronTruncation.lean": "b7716bcb72a8089a51256f3595f15f635e215d7ba4df4fd8a6036b2ababbbc87",
+    "formalization/verification/ActualFullPerronTruncationAudit.lean": "8066c532459e5967b03866e23c9b91d24ed18cee4d549479b35f4a2379d7d85b",
+    "formalization/verification/actual-full-perron-truncation/axioms.txt": "a06581d266921e0ffdda361ce86da383776cc5e6f97fa68b8619609a76e7c752",
+    "formalization/verification/actual-full-perron-truncation/README.md": "b5110d2773aaaf781f0c320a6b66416616737ca0ca8a6cf45790ced5a33a8692",
+    "building-blocks/prime-distribution/actual-full-perron-truncation-bound.md": "d28b54bd6ee13c4a8a097c3396c76df9560a904fcbccef79df32237d66931e90",
+    "building-blocks/prime-distribution/index.md": "ed8071765a196b78f0cf46358655c2f893ef1e5ac857526a47501b3260740208",
+    "formalization/BuildingBlocks/ActualFullCenteredMellinInversion.lean": "43a447e2058f5828fc3d542769c1269f83c598391b3ef59c8c802a4ebfeab1f3",
+    "formalization/BuildingBlocks/ActualFullCenteredMellin.lean": "62e02388eec65c7ad92ed737031a19e61fb680bdfb0e15bc230953694e6156b8"
+  }
+}

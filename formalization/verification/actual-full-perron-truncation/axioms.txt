@@ -1,0 +1,74 @@
+'BuildingBlocks.PerronTruncationInterval.integral_sub_setIntegral_eq_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.norm_integral_sub_setIntegral_le_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.integral_sub_integral_Icc_eq_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.norm_integral_sub_integral_Icc_le_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.intervalIntegral_eq_integral_Icc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.symmetric_intervalIntegral_eq_integral_Icc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.integral_sub_symmetric_interval_eq_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.norm_integral_sub_symmetric_interval_le_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.scaled_residual_eq_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.norm_scaled_residual_le_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.norm_perron_normalized_residual_le_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.fullNumerator_truncation_residual_eq_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationInterval.fullNumerator_truncation_residual_le_compl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationTail.weight_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.PerronTruncationTail.integrable_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.PerronTruncationTail.positive_tail_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.PerronTruncationTail.negative_tail_eq_positive_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationTail.complement_Icc_eq_tails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.PerronTruncationTail.integral_complement_Icc_eq_twice_positive_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.PerronTruncationTail.two_tail_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.PerronTruncationTail.two_tail_le_of_one_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.PerronTruncationTail.two_tail_le_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualFullPerronTruncation.verticalAllowance_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullPerronTruncation.integral_norm_perron_complement_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullPerronTruncation.fullNumerator_truncation_error_le_of_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullPerronTruncation.fullNumerator_truncation_error_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.ActualFullPerronTruncation.fullNumerator_truncation_error_le_of_pos {c x T : ℝ} (hc : 2 < c) (hx : 0 < x)
+  (hT : 0 < T) :
+  ‖BuildingBlocks.ActualFullCenteredMellin.fullNumerator x -
+        (1 / (2 * Real.pi)) • ∫ (t : ℝ) in -T..T, BuildingBlocks.ActualFullCenteredMellinInversion.perronKernel c x t‖ ≤
+    x ^ c * BuildingBlocks.ActualFullCenteredMellinVertical.verticalAllowance (c - 1) / (Real.pi * T)
+BuildingBlocks.ActualFullPerronTruncation.fullNumerator_truncation_error_le {c x T : ℝ} (hc : 2 < c) (hx : 0 < x)
+  (hT : 1 ≤ T) :
+  ‖BuildingBlocks.ActualFullCenteredMellin.fullNumerator x -
+        (1 / (2 * Real.pi)) • ∫ (t : ℝ) in -T..T, BuildingBlocks.ActualFullCenteredMellinInversion.perronKernel c x t‖ ≤
+    x ^ c * BuildingBlocks.ActualFullCenteredMellinVertical.verticalAllowance (c - 1) / (Real.pi * T)
