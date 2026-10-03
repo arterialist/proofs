@@ -36,7 +36,7 @@ Consequently, for **every real \(\eta>0\)** on the same full range,
 \tag{2}
 \]
 
-This is an unconditional written proof, using elementary integer counting and finite factorial/Chebyshev bounds. It assumes no PNT, zero-free estimate, RH, prime independence or supplied energy bound. The [Lean geometry companion](../../formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean) checks window support, same-exponent disjointness, unique actual rows and the necessary distinction between different exponents. The integral trace and forcing inequalities remain written; their [verification record](../../formalization/verification/actual-prime-power-window-geometry/README.md) states that boundary explicitly.
+This is an unconditional written proof, using elementary integer counting and finite factorial/Chebyshev bounds. It assumes no PNT, zero-free estimate, RH, prime independence or supplied energy bound. The [Lean geometry companion](../../formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean) checks window support, same-exponent disjointness, unique actual rows and the necessary distinction between different exponents. The [actual causal-trace companion](../../formalization/BuildingBlocks/ActualPrimeErrorCausalTrace.lean) also proves the literal sampling inequality (3), including its actual jumps, square and weighted integrability, interval Cauchy and exact normalization. The final forcing inequalities (1)–(2) remain written; the [geometry record](../../formalization/verification/actual-prime-power-window-geometry/README.md) and [trace record](../../formalization/verification/actual-prime-error-causal-trace/README.md) distinguish their scopes.
 
 Both displayed bounds also hold with the left side replaced by the sum of the absolute values of **all** its summands. The proof takes no cancellation between proper powers. Any additional coefficients of modulus at most one are therefore admissible without a new price.
 
@@ -44,7 +44,7 @@ The estimate prices all repeated-generator atoms by an arbitrarily small fractio
 
 ## Causal sampling from the actual integer clock
 
-For \(n=p^k\ge4\), use the left window
+For every integer \(n\ge4\), including each proper power \(n=p^k\), use the left window
 \[
 I_n=[n-\sqrt n,n].
 \]
@@ -59,7 +59,7 @@ The center cancels before division. Averaging this inequality, applying interval
 V_n=\int_{I_n}z_c(t)^2t^{1-2\sigma}dt.
 \tag{3}
 \]
-The post-jump endpoint is a singleton of zero measure. It is not substituted for the pre-jump atom. There is no future window or uncharged point trace.
+The native proof also pays the closed endpoint directly: at \(t=n\), the predictable numerator minus the inclusive numerator equals \(-\Lambda(n)\), which obeys the same coarse window allowance. The inclusive integral field is not substituted for the pre-jump force value. The local weighted integral is proved integrable, and its interval notation agrees with the displayed closed-window integral up to null endpoints. There is no future window or uncharged point trace.
 
 ## Group by exponent before taking the energy norm
 
@@ -138,4 +138,4 @@ A separately proved sufficient subpower upper on this complete ordinary-prime br
 
 Separate GPT-6.1 Sol/xhigh agent contexts independently reconstructed the sampling, exponent allocation, arithmetic inputs, all-real parameter range, constants and complete-work substitution. The coordinator reconstructed the proof. These are disclosed mathematical checks, not a human referee report.
 
-The native companion covers finite integer/prime-power geometry only. Staircase sampling, interval Cauchy, integral summation, infinite exponent allocation, logarithmic tail integrals, the final forcing inequality and its energy substitution remain written and unformalized. The finite mass bounds cited above were already formalized. No full ordinary-prime upper, eventual \(W\) sign, coarse criterion premise or RH proof is claimed.
+The native companions cover finite integer/prime-power geometry and the actual causal trace (3). The trace includes internally proved actual staircase increments, center cancellation, measurability, square and weighted integrability, interval Cauchy and real-power normalization, for every natural \(n\ge4\), every real center and every \(\sigma\ge1/2\). Energy allocation and finite Cauchy across the prime rows, infinite exponent allocation, logarithmic tail integrals, the final forcing inequality and its energy substitution remain written and unformalized. The finite mass bounds cited above were already formalized. No full ordinary-prime upper, eventual \(W\) sign, coarse criterion premise or RH proof is claimed.

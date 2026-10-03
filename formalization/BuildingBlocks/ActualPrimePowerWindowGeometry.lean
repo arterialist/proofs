@@ -3,9 +3,10 @@ import Mathlib.Data.Nat.Prime.Int
 import Mathlib.Tactic
 
 /-!
-Finite actual prime-power left-window geometry only. The complete proper-power
-trace, Cauchy inequality, geometric sums and logarithmic bounds remain written.
-No analytic upper, ordinary-prime work bound, criterion or RH theorem is supplied.
+Finite actual prime-power left-window geometry only. The local actual staircase
+trace and interval Cauchy are proved separately in ActualPrimeErrorCausalTrace.
+Full proper-power aggregation, geometric sums and logarithmic tails remain written;
+no ordinary-prime signed upper, criterion premise or RH theorem is supplied.
 -/
 
 open Set

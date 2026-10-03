@@ -1,0 +1,236 @@
+{
+  "date": "2026-10-03 MYT",
+  "status": "PASS",
+  "kernel_scope": "Literal actual causal trace, actual jumps, internally proved integrability/Cauchy and exact weighted normalization only",
+  "namespace": "BuildingBlocks.ActualPrimeErrorCausalTrace",
+  "theorem_count": 16,
+  "rows_in_source_order": [
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.psi_increment_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.centeredError_intervalIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.centeredError_measurable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.causal_difference_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.centeredError_abs_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.centeredError_sq_intervalIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.energyDensity_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.energyDensity_intervalIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.interval_abs_integral_sq_le_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.windowEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.energyDensity_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.unnormalized_square_integral_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.normalization_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.normalized_remainder_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.actual_causal_trace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimeErrorCausalTrace.actual_causal_trace_literal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "only_standard_axioms": true,
+  "all_exact_standard_three": true,
+  "public_mathematical_source_matches_private_after_namespace_and_comments_only": true,
+  "producer_source_sha256": "b6be2619a609ef4416959ea735ce0d5aee257d7eeb2b7bb1e304b61dde0b8568",
+  "producer_proof_prefix_sha256": "cec1a345d7d0c3469a7dcfe2a11587a4fe1e9c858ebd96a84657333a06e8a690",
+  "producer_manifest_sha256": "3bf3b8bdb4ddc166d60e424eda35f9f8784785f78c87bddce99c23b0c7e1290e",
+  "producer_manifest_original_public_note_binding_at_parent": "4c69629cd99b7d6908f035d3263d013c1c9fe890",
+  "domains": {
+    "n": "every natural n >= 4",
+    "c": "every real",
+    "sigma": "every real sigma >= 1/2"
+  },
+  "target_analytic_premises": [],
+  "full_build": {
+    "exit_code": 0,
+    "jobs": 8055,
+    "log_sha256": "3e81abbbc8225e8941f1f644cc7aafd6284f7230d870cdcae22199caa9d865e3",
+    "log_file": "research-local/agent-results/20261003-root/actual-causal-trace-publication-review/root-full-build-after-scope-comment.log",
+    "command": "lake build",
+    "cwd": "repository root"
+  },
+  "public_audit": {
+    "command": "lake env lean formalization/verification/ActualPrimeErrorCausalTraceAudit.lean",
+    "cwd": "repository root",
+    "exit_code": 0,
+    "log_sha256": "96a87dbea9a7ddb438d013793205f18f027b8666000dc2349a7dad6a56db44f6"
+  },
+  "pinned_lean": "v4.24.0",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "bindings": {
+    "formalization/BuildingBlocks/ActualPrimeErrorCausalTrace.lean": {
+      "sha256": "623c49f04629db3b57fe056bd25ab125dc6a0a08e7873e1ab5b94d6dca0d3a02",
+      "bytes": 14064
+    },
+    "formalization/verification/ActualPrimeErrorCausalTraceAudit.lean": {
+      "sha256": "b6977986ce149b5188496bb1a1fa731113cd7a78792f2c4ae0a69d7f91e19981",
+      "bytes": 1520
+    },
+    "formalization/verification/actual-prime-error-causal-trace/axioms.txt": {
+      "sha256": "96a87dbea9a7ddb438d013793205f18f027b8666000dc2349a7dad6a56db44f6",
+      "bytes": 2894
+    },
+    "formalization/verification/actual-prime-error-causal-trace/README.md": {
+      "sha256": "1a319bf1856f39ddbdc506ebe444a9d0405c951885b261394bdc1923c100521f",
+      "bytes": 2597
+    },
+    "building-blocks/prime-distribution/proper-prime-power-forcing-energy-bound.md": {
+      "sha256": "f50c4c71af00554fceb832e812ff376e2de05769192a00b8cce7e30e834c0af8",
+      "bytes": 9455
+    },
+    "formalization/BuildingBlocks/CoarsePrimitive.lean": {
+      "sha256": "452d0dbc1089c616c65b2c3d063cb7c124aab345af375ce673e85d47b4e057f9",
+      "bytes": 12742
+    },
+    "formalization/BuildingBlocks/CoarsePrimeBounds.lean": {
+      "sha256": "3636c6563d5c43aabdd249734871094921179964741024418010d71cdf242065",
+      "bytes": 8453
+    },
+    "formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean": {
+      "sha256": "e4d257f99b17dc3a4d03d616aa06a64545b62c137dc2baad3e5fe0084650e3ac",
+      "bytes": 8666
+    },
+    "lean-toolchain": {
+      "sha256": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+      "bytes": 25
+    },
+    "lake-manifest.json": {
+      "sha256": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+      "bytes": 3513
+    },
+    "formalization/verification/actual-prime-power-window-geometry/README.md": {
+      "sha256": "0799f0c791f37810eb0609593e7b01e42de78d116919d28a79864109f63dcb0a",
+      "bytes": 2678
+    },
+    "formalization/verification/actual-prime-power-window-geometry/acceptance.json": {
+      "sha256": "e0280c5a5bc915ca0fb4cb523b70e74ef243f958aa1bea821f086a7868107251",
+      "bytes": 8799
+    }
+  },
+  "internally_discharged": [
+    "literal actual psi and floor source",
+    "all actual Mangoldt increments and center cancellation",
+    "prebirth value retained at closed endpoint",
+    "finite square and weighted integrability",
+    "interval Cauchy and exact real-power coefficients"
+  ],
+  "unformalized": [
+    "same-exponent finite energy allocation and prime-row Cauchy",
+    "geometric degree allocation and logarithmic tails",
+    "24/3000 aggregate forcing and Young absorption",
+    "complete analytic energy substitution"
+  ],
+  "unproved": [
+    "ordinary-prime complete signed upper",
+    "stronger complete prime-error/coarse/W premise",
+    "RH"
+  ],
+  "producer_manifest_original_geometry_source_binding_at_parent": "4c69629cd99b7d6908f035d3263d013c1c9fe890",
+  "geometry_header_only_changed_after_original_private_acceptance": true
+}

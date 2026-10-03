@@ -212,11 +212,12 @@
   "producer_source_sha256": "5179f68652df7a980c8515cbc990cc2527abdef9d4a41ecde74d9d7627954985",
   "accepted_written_proof_sha256": "521a1d8e389d390bb34a74826b1b6f05ceaf31a2c6694f0af04cfab8e0bad81e",
   "full_build": {
-    "command": "lake build",
-    "cwd": "repository root",
     "exit_code": 0,
-    "jobs": 8054,
-    "log_sha256": "2cdd6b94983c6a766eda7d5710c7fc6978415d5c3c0b87ee419a34d0edfe1856"
+    "jobs": 8055,
+    "log_sha256": "3e81abbbc8225e8941f1f644cc7aafd6284f7230d870cdcae22199caa9d865e3",
+    "log_file": "research-local/agent-results/20261003-root/actual-causal-trace-publication-review/root-full-build-after-scope-comment.log",
+    "command": "lake build",
+    "cwd": "repository root"
   },
   "public_audit": {
     "command": "lake env lean formalization/verification/ActualPrimePowerWindowGeometryAudit.lean",
@@ -227,8 +228,8 @@
   "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
   "bindings": {
     "formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean": {
-      "sha256": "cabbd80ed3b37647c39edfc9de9596f93898167cd755d65fc6196e02a14b257f",
-      "bytes": 8587
+      "sha256": "e4d257f99b17dc3a4d03d616aa06a64545b62c137dc2baad3e5fe0084650e3ac",
+      "bytes": 8666
     },
     "formalization/verification/ActualPrimePowerWindowGeometryAudit.lean": {
       "sha256": "af01d52b2b1989cba5a39c6ce523f6c56663d8879a0891de1b90f38db02cccea",
@@ -239,12 +240,12 @@
       "bytes": 5064
     },
     "formalization/verification/actual-prime-power-window-geometry/README.md": {
-      "sha256": "a92e76a3bf0b6a45598789630e76ece396fb58fd04b44df34d9a5366e172a85e",
-      "bytes": 2529
+      "sha256": "0799f0c791f37810eb0609593e7b01e42de78d116919d28a79864109f63dcb0a",
+      "bytes": 2678
     },
     "building-blocks/prime-distribution/proper-prime-power-forcing-energy-bound.md": {
-      "sha256": "1bb176b53f7d2e478e84c68b02cea892b22b63e30df8bcb40a27fc726dd362c5",
-      "bytes": 8462
+      "sha256": "f50c4c71af00554fceb832e812ff376e2de05769192a00b8cce7e30e834c0af8",
+      "bytes": 9455
     },
     "formalization/BuildingBlocks/PrimeSignedAverage.lean": {
       "sha256": "4aece0bfed24130b283bf5168d591b15cb0bb362f6923bc7009ac12f4fbf75f6",
@@ -272,7 +273,6 @@
     }
   },
   "unformalized": [
-    "actual staircase sampling and finite interval Cauchy",
     "integral summation and infinite exponent allocation",
     "24/3000 full proper-power analytic inequality",
     "logarithmic tails, Young and complete energy substitution"
@@ -281,5 +281,8 @@
     "independent ordinary-prime forcing upper",
     "stronger complete signed prime-error/coarse/W bound",
     "RH"
-  ]
+  ],
+  "additional_trace_verification": "formalization/verification/actual-prime-error-causal-trace/acceptance.json",
+  "module_header_scope_clarification_only": true,
+  "header_change_imports_statements_proofs_unchanged": true
 }

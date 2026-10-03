@@ -1,0 +1,56 @@
+'BuildingBlocks.ActualPrimeErrorCausalTrace.psi_increment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.centeredError_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.centeredError_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.causal_difference_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.centeredError_abs_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.centeredError_sq_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.energyDensity_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.energyDensity_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.interval_abs_integral_sq_le_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.windowEnergy_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.energyDensity_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.unnormalized_square_integral_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.normalization_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.normalized_remainder_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.actual_causal_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimeErrorCausalTrace.actual_causal_trace_literal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.ActualPrimeErrorCausalTrace.actual_causal_trace {n : ℕ} (hn : 4 ≤ n) (c sigma : ℝ)
+  (hsigma : 1 / 2 ≤ sigma) :
+  |BuildingBlocks.ActualPrimeErrorCausalTrace.preError c n / ↑n| ≤
+    ↑n ^ (sigma - 3 / 4) * √(BuildingBlocks.ActualPrimeErrorCausalTrace.windowEnergy c sigma n) +
+      ↑n ^ (-1 / 2) * (1 + Real.log ↑n)
+BuildingBlocks.ActualPrimeErrorCausalTrace.actual_causal_trace_literal {n : ℕ} (hn : 4 ≤ n) (c sigma : ℝ)
+  (hsigma : 1 / 2 ≤ sigma) :
+  |(BuildingBlocks.CoarsePrimitive.psi (n - 1) - ↑n + c) / ↑n| ≤
+    ↑n ^ (sigma - 3 / 4) *
+        √(∫ (t : ℝ) in ↑n - √↑n..↑n,
+            ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma)) +
+      ↑n ^ (-1 / 2) * (1 + Real.log ↑n)
