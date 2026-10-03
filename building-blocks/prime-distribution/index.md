@@ -3,6 +3,7 @@
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
 - [An exact-log bound for the complete prime-error row](complete-prime-error-exact-log-vk-bound.md)
+- [An absorbable forcing bound for all proper prime powers](proper-prime-power-forcing-energy-bound.md)
 - [A quantitative Perron truncation bound for the complete numerator](actual-full-perron-truncation-bound.md)
 - [An explicit bound for low Möbius cofactor energy](mobius-low-cofactor-energy-explicit-bound.md)
 - [Real-order Jordan summatory errors: a source audit](real-order-jordan-summatory-error-audit.md)

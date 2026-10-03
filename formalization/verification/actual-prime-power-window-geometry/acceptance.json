@@ -1,0 +1,285 @@
+{
+  "date": "2026-10-03 MYT",
+  "status": "PASS",
+  "kernel_scope": "Finite actual prime-power window geometry, support, unique rows and overlap only",
+  "written_scope": "Full actual proper-power force, absolute-sum version and Young absorption for every real center c, sigma>=1/2, Y>=1, eta>0",
+  "namespace": "BuildingBlocks.ActualPrimePowerWindowGeometry",
+  "theorem_count": 25,
+  "rows_in_source_order": [
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.four_le_pow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.four_le_prime_pow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.one_le_window_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.leftWindow_subset_one_to_n",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.leftWindow_subset_real_cutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.pow_eq_mul_pred_pow",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.pow_add_pred_pow_le_pow",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.pow_add_pred_pow_lt_pow",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.sqrt_pow_le_pred_pow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.earlier_pow_le_later_window_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.earlier_pow_lt_later_window_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.ordered_closed_windows_disjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.prime_closed_windows_disjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.ordered_windows_disjoint_interiors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.distinct_windows_disjoint_interiors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.prime_power_window_subset_cutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.prime_power_representation_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.actual_proper_prime_power_unique_row",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.actual_proper_prime_power_four_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.no_actual_proper_prime_power_before_four",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.window_four",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.seven_mem_window_eight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.seven_mem_window_nine",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.actual_different_exponents_overlap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualPrimePowerWindowGeometry.different_exponents_not_disjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "std3_rows": 22,
+  "std2_rows": 3,
+  "only_standard_axioms": true,
+  "source_declarations_counted_by_line_anchored_parser": true,
+  "source_math_bodies_match_private_after_namespace_only": true,
+  "producer_source_sha256": "5179f68652df7a980c8515cbc990cc2527abdef9d4a41ecde74d9d7627954985",
+  "accepted_written_proof_sha256": "521a1d8e389d390bb34a74826b1b6f05ceaf31a2c6694f0af04cfab8e0bad81e",
+  "full_build": {
+    "command": "lake build",
+    "cwd": "repository root",
+    "exit_code": 0,
+    "jobs": 8054,
+    "log_sha256": "2cdd6b94983c6a766eda7d5710c7fc6978415d5c3c0b87ee419a34d0edfe1856"
+  },
+  "public_audit": {
+    "command": "lake env lean formalization/verification/ActualPrimePowerWindowGeometryAudit.lean",
+    "cwd": "repository root",
+    "exit_code": 0
+  },
+  "pinned_lean": "4.24.0",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "bindings": {
+    "formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean": {
+      "sha256": "cabbd80ed3b37647c39edfc9de9596f93898167cd755d65fc6196e02a14b257f",
+      "bytes": 8587
+    },
+    "formalization/verification/ActualPrimePowerWindowGeometryAudit.lean": {
+      "sha256": "af01d52b2b1989cba5a39c6ce523f6c56663d8879a0891de1b90f38db02cccea",
+      "bytes": 2783
+    },
+    "formalization/verification/actual-prime-power-window-geometry/axioms.txt": {
+      "sha256": "75a3335bd113849228c53e0d0be785e83eaf494dd0a807c10fa558b6a6d842e8",
+      "bytes": 5064
+    },
+    "formalization/verification/actual-prime-power-window-geometry/README.md": {
+      "sha256": "a92e76a3bf0b6a45598789630e76ece396fb58fd04b44df34d9a5366e172a85e",
+      "bytes": 2529
+    },
+    "building-blocks/prime-distribution/proper-prime-power-forcing-energy-bound.md": {
+      "sha256": "1bb176b53f7d2e478e84c68b02cea892b22b63e30df8bcb40a27fc726dd362c5",
+      "bytes": 8462
+    },
+    "formalization/BuildingBlocks/PrimeSignedAverage.lean": {
+      "sha256": "4aece0bfed24130b283bf5168d591b15cb0bb362f6923bc7009ac12f4fbf75f6",
+      "bytes": 6983
+    },
+    "formalization/BuildingBlocks/PrimeIncrementEnergyAbel.lean": {
+      "sha256": "16cb64ac77f96008ab276dfbf15083b7142e648aa981cdac4c36fe5d7e92ec9e",
+      "bytes": 7547
+    },
+    "formalization/BuildingBlocks/CoarsePrimeBounds.lean": {
+      "sha256": "3636c6563d5c43aabdd249734871094921179964741024418010d71cdf242065",
+      "bytes": 8453
+    },
+    "formalization/BuildingBlocks/DivisorForcingBound.lean": {
+      "sha256": "3977a3ea33ceab752db34f0b626e6b209df1d4edbaddca7309706a64cae5e5c7",
+      "bytes": 12071
+    },
+    "lean-toolchain": {
+      "sha256": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+      "bytes": 25
+    },
+    "lake-manifest.json": {
+      "sha256": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+      "bytes": 3513
+    }
+  },
+  "unformalized": [
+    "actual staircase sampling and finite interval Cauchy",
+    "integral summation and infinite exponent allocation",
+    "24/3000 full proper-power analytic inequality",
+    "logarithmic tails, Young and complete energy substitution"
+  ],
+  "unproved": [
+    "independent ordinary-prime forcing upper",
+    "stronger complete signed prime-error/coarse/W bound",
+    "RH"
+  ]
+}

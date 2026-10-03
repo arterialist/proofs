@@ -1,0 +1,86 @@
+BuildingBlocks.ActualPrimePowerWindowGeometry.prime_power_window_subset_cutoff {p k : ℕ} {Y : ℝ} (hp : Nat.Prime p)
+  (hk : 2 ≤ k) (hY : ↑(p ^ k) ≤ Y) : BuildingBlocks.ActualPrimePowerWindowGeometry.leftWindow (p ^ k) ⊆ Set.Icc 1 Y
+BuildingBlocks.ActualPrimePowerWindowGeometry.distinct_windows_disjoint_interiors {p q k : ℕ} (hpq : p ≠ q)
+  (hk : 2 ≤ k) :
+  Disjoint (BuildingBlocks.ActualPrimePowerWindowGeometry.windowInterior (p ^ k))
+    (BuildingBlocks.ActualPrimePowerWindowGeometry.windowInterior (q ^ k))
+BuildingBlocks.ActualPrimePowerWindowGeometry.actual_proper_prime_power_unique_row {n : ℕ}
+  (hn : BuildingBlocks.ActualPrimePowerWindowGeometry.ActualProperPrimePower n) :
+  ∃! row, Nat.Prime row.1 ∧ 2 ≤ row.2 ∧ row.1 ^ row.2 = n
+BuildingBlocks.ActualPrimePowerWindowGeometry.no_actual_proper_prime_power_before_four {Y : ℝ} (hY : Y < 4) :
+  ¬∃ n, BuildingBlocks.ActualPrimePowerWindowGeometry.ActualProperPrimePower n ∧ ↑n ≤ Y
+BuildingBlocks.ActualPrimePowerWindowGeometry.prime_closed_windows_disjoint {p q k : ℕ} (hp : Nat.Prime p)
+  (hq : Nat.Prime q) (hpq : p ≠ q) (hk : 2 ≤ k) :
+  Disjoint (BuildingBlocks.ActualPrimePowerWindowGeometry.leftWindow (p ^ k))
+    (BuildingBlocks.ActualPrimePowerWindowGeometry.leftWindow (q ^ k))
+BuildingBlocks.ActualPrimePowerWindowGeometry.actual_different_exponents_overlap :
+  BuildingBlocks.ActualPrimePowerWindowGeometry.ActualProperPrimePower 8 ∧
+    BuildingBlocks.ActualPrimePowerWindowGeometry.ActualProperPrimePower 9 ∧
+      7 ∈
+        BuildingBlocks.ActualPrimePowerWindowGeometry.windowInterior (2 ^ 3) ∩
+          BuildingBlocks.ActualPrimePowerWindowGeometry.windowInterior (3 ^ 2)
+'BuildingBlocks.ActualPrimePowerWindowGeometry.four_le_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.four_le_prime_pow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.one_le_window_left' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.leftWindow_subset_one_to_n' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.leftWindow_subset_real_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.pow_eq_mul_pred_pow' depends on axioms: [propext, Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.pow_add_pred_pow_le_pow' depends on axioms: [propext, Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.pow_add_pred_pow_lt_pow' depends on axioms: [propext, Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.sqrt_pow_le_pred_pow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.earlier_pow_le_later_window_left' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.earlier_pow_lt_later_window_left' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.ordered_closed_windows_disjoint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.prime_closed_windows_disjoint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.ordered_windows_disjoint_interiors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.distinct_windows_disjoint_interiors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.prime_power_window_subset_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.prime_power_representation_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.actual_proper_prime_power_unique_row' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.actual_proper_prime_power_four_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.no_actual_proper_prime_power_before_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.window_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.seven_mem_window_eight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.seven_mem_window_nine' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.actual_different_exponents_overlap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualPrimePowerWindowGeometry.different_exponents_not_disjoint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
