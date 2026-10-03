@@ -1,0 +1,308 @@
+{
+  "status": "PASS",
+  "source_sha256": "43a447e2058f5828fc3d542769c1269f83c598391b3ef59c8c802a4ebfeab1f3",
+  "audit_source_sha256": "57a8124b7451482b38fffaf55d218a17898f127bfe03d53ae8eeccaa52df0c1d",
+  "audit_output_path": "formalization/verification/actual-full-centered-mellin-inversion/axioms.txt",
+  "audit_output_sha256": "9417c321fd28fb885fcc1908ab83c06a6a0faa267f8691fdfa5014c68a84ce7d",
+  "audit_exit_code": 0,
+  "public_theorem_count": 32,
+  "axiom_rows": [
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.absMass_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.norm_LSeries_le_absMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.norm_negative_logDeriv_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.norm_zeta_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.norm_centered_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.norm_denominator_ge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.norm_fullFactor_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.analyticAt_fullFactor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.continuous_fullFactor_vertical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.integrable_fullFactor_vertical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.mellin_fullNumerator_vertical_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinVertical.verticalIntegrable_fullNumerator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.continuous_tent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.continuous_rieszCutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.continuous_etaKernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.continuous_etaSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.continuous_baseline",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.continuous_N",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.continuous_fullNumerator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.fullNumerator_mellin_convergent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.mellin_fullNumerator_vertical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.mellinInv_fullNumerator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.norm_perronKernel_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.integrable_perronKernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.mellinInv_kernel_eq_perron_neg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.integrable_mellinInv_kernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.mellinInv_eq_perron",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.fullNumerator_eq_perron",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.perronFactor_eq_fullFactor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.perronKernel_eq_closed_form",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.fullNumerator_eq_closed_perron",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualFullCenteredMellinInversion.integrable_closed_perron",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "root_full_build": {
+    "exit_code": 0,
+    "log": "research-local/agent-results/20261003-root/actual-full-mellin-inversion-test/root-full-build.log",
+    "tail": [
+      "info: formalization/BuildingBlocks/RamanujanThetaFunctions.lean:55:0: 'BuildingBlocks.RamanujanThetaFunctions.phi_sq_sub_sq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "info: formalization/BuildingBlocks/RamanujanThetaFunctions.lean:56:0: 'BuildingBlocks.RamanujanThetaFunctions.phi_sq_sub_sq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "\u2714 [8032/8034] Built BuildingBlocks.ActualFullCenteredMellinInversion (15s)",
+      "\u2714 [8033/8034] Built BuildingBlocks (16s)",
+      "Build completed successfully (8034 jobs)."
+    ]
+  },
+  "actual_inverse_kernel_checked": true,
+  "analytic_upper_kernel_checked": false,
+  "RH_proved": false,
+  "date": "2026-10-03",
+  "lean_version": "4.24.0",
+  "compiler_commit": "797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "scope": "Actual full-numerator initial inverse and absolute Perron reconstruction; not the a=0 residual or contour upper",
+  "domain": {
+    "c": "every real c>2",
+    "x": "every real x>0"
+  },
+  "effective_onset_claim": false,
+  "priority_claim": false,
+  "source_bound": true,
+  "file_hashes": {
+    "formalization/BuildingBlocks/ActualFullCenteredMellinInversion.lean": "43a447e2058f5828fc3d542769c1269f83c598391b3ef59c8c802a4ebfeab1f3",
+    "formalization/verification/ActualFullCenteredMellinInversionAudit.lean": "57a8124b7451482b38fffaf55d218a17898f127bfe03d53ae8eeccaa52df0c1d",
+    "formalization/verification/actual-full-centered-mellin-inversion/axioms.txt": "9417c321fd28fb885fcc1908ab83c06a6a0faa267f8691fdfa5014c68a84ce7d",
+    "formalization/verification/actual-full-centered-mellin-inversion/README.md": "6c6496ca51b3adc8a8443d597c68791a8cec863890733516497b18d8b0062cfc",
+    "building-blocks/prime-distribution/complete-prime-error-exact-log-vk-bound.md": "003d86068797e7df9de6d02bdd574314e3d990da12fc38d2e73a6f017bcf2b38",
+    "building-blocks/prime-distribution/actual-eq22-zero-cluster-bound.md": "3027998ff75a9501e49127e7fbf638cc07cba3290de8226d90679b6a03125032"
+  },
+  "independent_checks": {
+    "component_producers": true,
+    "separate_complete_prototype_challenge": true,
+    "source_scope_review": true,
+    "separate_RH_Agent_1_readonly_audit": true,
+    "root_public_kernel_audit": true
+  }
+}

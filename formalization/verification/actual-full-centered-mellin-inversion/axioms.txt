@@ -1,0 +1,96 @@
+'BuildingBlocks.ActualFullCenteredMellinVertical.absMass_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.norm_LSeries_le_absMass' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.norm_negative_logDeriv_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.norm_zeta_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.norm_centered_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.norm_denominator_ge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.norm_fullFactor_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.analyticAt_fullFactor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.continuous_fullFactor_vertical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.integrable_fullFactor_vertical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.mellin_fullNumerator_vertical_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinVertical.verticalIntegrable_fullNumerator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.continuous_tent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.continuous_rieszCutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.continuous_etaKernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.continuous_etaSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.continuous_baseline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.continuous_N' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.continuous_fullNumerator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.fullNumerator_mellin_convergent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.mellin_fullNumerator_vertical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.mellinInv_fullNumerator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.norm_perronKernel_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.integrable_perronKernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.mellinInv_kernel_eq_perron_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.integrable_mellinInv_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.mellinInv_eq_perron' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.fullNumerator_eq_perron' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.perronFactor_eq_fullFactor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.perronKernel_eq_closed_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.fullNumerator_eq_closed_perron' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualFullCenteredMellinInversion.integrable_closed_perron' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -67,7 +67,7 @@ H_a(s)=\frac{\zeta(s-1/2)}{s(s-1)}[g(s)+a]^2,
 \]
 The parameters \(a=0\) and \(a=1\) correspond to \(C\) and \(N_{\rm full}\). Initially \(\Re s>2\), inversion is absolutely convergent. The point \(s=2\) is removable. The zero-derived poles are \(1+\rho\); the full cofactor multiplier \(\zeta(s-1/2)\) is retained. Real integer seams cause no exceptional cutoffs because the Riesz weights vanish there.
 
-Choose a fixed sufficiently large \(Q_0\), beyond the onset of (4), the range of (5), and with \(2A_0u(4Q_0)\le1/32\). Set \(Q_j=2^jQ_0\) and change the contour's clearance coefficient to
+Choose a fixed sufficiently large \(Q_0\), with \(Q_0/2\) beyond the onset of (4), \(Q_0\ge3\cdot10^{12}\), and \(2A_0u(4Q_0)\le1/32\). Set \(Q_j=2^jQ_0\) and change the contour's clearance coefficient to
 \[
 A_1(x)=A_0(1-R^{-2}),\qquad
 \eta_j=A_1(x)u(4Q_j),\qquad
@@ -151,5 +151,14 @@ Thus (3) improves the complete signed allowance for \(|W+\Delta|\). It supplies 
 The [native Lean 4.24 companion](../../formalization/BuildingBlocks/ActualFullCenteredMellin.lean) proves the actual core and aggregate Mellin identities, absolute convergence, support below one, real-valuedness, the all-real cofactor dictionary and the exact split (14). `N_eq_real_cutoff` retains the literal ordered Mangoldt convolution and baseline; `fullNumerator_eq_Icc` retains every cofactor; `W_eq_fullNumerator_sub_allocation` uses the existing actual criterion object. The full numerator identity has domain Re(s)>1, while the complete proper-power allocation identity has domain Re(s)>1/2. No analytic upper estimate is assumed or proved in this module.
 
 The [public axiom audit](../../formalization/verification/ActualFullCenteredMellinAudit.lean) prints all 24 public theorem dependencies. Its independent root replay agrees exactly with the producer replay; every row uses only `propext`, `Classical.choice` and `Quot.sound`. The required full repository `lake build` passed. The [verification record](../../formalization/verification/actual-full-centered-mellin/README.md) binds the source, toolchain and audit evidence.
+
+The [inverse companion](../../formalization/BuildingBlocks/ActualFullCenteredMellinInversion.lean) additionally proves reconstruction of the literal \(N_{\rm full}\) for **every** real \(c>2\) and \(x>0\), including all birth seams:
+\[
+N_{\rm full}(x)=\frac1{2\pi}\int_{\mathbb R}x^{c+it}H_1(c+it)\,dt,
+\quad
+H_1(z)=\frac{\zeta(z-1/2)}{z(z-1)}
+\left[\frac1{z-2}+\frac{\zeta'}{\zeta}(z-1)+1\right]^2.
+\]
+The continuity and vertical absolute-integrability hypotheses of Mathlib's Mellin inversion theorem are discharged internally. The same module proves the literal Perron integrand is absolutely integrable. Its [separate verification record](../../formalization/verification/actual-full-centered-mellin-inversion/README.md) covers all 32 public theorem axiom rows and the required repository build. This closes the initial \(a=1\) inversion used in (6); the \(a=0\) Eq22 inversion and subsequent contour deformation remain written. No \(c=2\) boundary extension is claimed.
 
 The new contour estimate, exact-log expansion, zero-free and density inputs, and same-prime asymptotic remain written mathematics. The [independent analytic audit](../../reviews/papers/complete-prime-error-exact-log-bound-audit.md) checks every contour piece and the stated limits. No unconditional kernel proof of (3), effective constant or onset, whole-source proof replay, or novelty claim is supplied.

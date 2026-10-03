@@ -38,6 +38,8 @@ The [exact-log refinement](complete-prime-error-exact-log-vk-bound.md) removes
 the arbitrary fixed leading loss and adds two diverging smaller-scale savings
 for these same complete objects. Its contour estimate remains written analysis.
 
+The [native inverse companion](../../formalization/BuildingBlocks/ActualFullCenteredMellinInversion.lean) now proves absolute Mellin--Perron reconstruction for the complete `a=1` row at every real `c>2,x>0`, with continuity and vertical integrability proved internally. The `a=0` residual inversion and the zero-cluster contour argument remain written analysis.
+
 The [Gaussian recovery estimate](gaussian-recovery-complete-critical-numerator.md)
 quantifies recovery of the literal full numerator from a logarithmic
 Gaussian average, including every integer seam. Its arithmetic coefficient
@@ -96,7 +98,7 @@ It gives
 Bellotti's displayed denominator by itself gives
 `d=0.212579202120942...` and `2^(2/5)d=0.280499938864373...`.
 
-Fix `A_1<A_0`, put `L=log x`, and choose a fixed large dyadic `Q_0`.  Let
+Fix `A_1<A_0`, put `L=log x`, and choose a fixed large dyadic `Q_0` with `Q_0/2` beyond the onset in (3).  Let
 `H=Q_J` be the first member of `Q_j=2^jQ_0` with
 `Q_J>=exp(K Phi(x))`; then `H<2exp(K Phi(x))`.  For `0<=j<J`, set
 \[
@@ -351,8 +353,9 @@ named symbol-map hypotheses. The separate
 [scalar optimization module](../../formalization/BuildingBlocks/ActualEq22ScalarOptimization.lean)
 kernel-checks the sharp minimum of the near and far leading costs in
 (15)--(16), including the exact relation \(c_M=2^{2/5}d\). These proofs use
-only Lean's standard logical axioms. Mellin inversion, the zero-free and
-density inputs, the uniform asymptotic reduction to the scalar cost, the
+only Lean's standard logical axioms. The `a=0` residual Mellin identification
+and inversion, subsequent contour deformation, the zero-free and density inputs, the
+uniform asymptotic reduction to the scalar cost, the
 contour estimate (17), and the conditional RH implication (21) are written
 analysis and are not Lean theorems.
 
