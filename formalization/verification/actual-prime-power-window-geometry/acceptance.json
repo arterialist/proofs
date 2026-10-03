@@ -2,7 +2,7 @@
   "date": "2026-10-03 MYT",
   "status": "PASS",
   "kernel_scope": "Finite actual prime-power window geometry, support, unique rows and overlap only",
-  "written_scope": "Full actual proper-power force, absolute-sum version and Young absorption for every real center c, sigma>=1/2, Y>=1, eta>0",
+  "written_scope": "Complete work substitution and fixed-strict-sigma refinement; the full finite forcing bound is native in its companion",
   "namespace": "BuildingBlocks.ActualPrimePowerWindowGeometry",
   "theorem_count": 25,
   "rows_in_source_order": [
@@ -213,11 +213,12 @@
   "accepted_written_proof_sha256": "521a1d8e389d390bb34a74826b1b6f05ceaf31a2c6694f0af04cfab8e0bad81e",
   "full_build": {
     "exit_code": 0,
-    "jobs": 8055,
-    "log_sha256": "3e81abbbc8225e8941f1f644cc7aafd6284f7230d870cdcae22199caa9d865e3",
-    "log_file": "research-local/agent-results/20261003-root/actual-causal-trace-publication-review/root-full-build-after-scope-comment.log",
     "command": "lake build",
-    "cwd": "repository root"
+    "cwd": "repository root",
+    "log_sha256": "1775a957b54117f1501989f5ae4be37a54545d95a26c778556436a47ed2a986a",
+    "bytes": 758129,
+    "jobs": 8056,
+    "log_file": "research-local/agent-results/20261003-root/proper-power-force-publication-review/root-full-build.log"
   },
   "public_audit": {
     "command": "lake env lean formalization/verification/ActualPrimePowerWindowGeometryAudit.lean",
@@ -228,8 +229,8 @@
   "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
   "bindings": {
     "formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean": {
-      "sha256": "e4d257f99b17dc3a4d03d616aa06a64545b62c137dc2baad3e5fe0084650e3ac",
-      "bytes": 8666
+      "sha256": "30c6ec01a320ddc402c3c944a249e80e371beb1bfe9d925982b9196b76252719",
+      "bytes": 8695
     },
     "formalization/verification/ActualPrimePowerWindowGeometryAudit.lean": {
       "sha256": "af01d52b2b1989cba5a39c6ce523f6c56663d8879a0891de1b90f38db02cccea",
@@ -240,12 +241,12 @@
       "bytes": 5064
     },
     "formalization/verification/actual-prime-power-window-geometry/README.md": {
-      "sha256": "0799f0c791f37810eb0609593e7b01e42de78d116919d28a79864109f63dcb0a",
-      "bytes": 2678
+      "sha256": "eff03189553b99f2b209421427d3b945e88b0c5744234d5abdfed80950ddb5e0",
+      "bytes": 2660
     },
     "building-blocks/prime-distribution/proper-prime-power-forcing-energy-bound.md": {
-      "sha256": "f50c4c71af00554fceb832e812ff376e2de05769192a00b8cce7e30e834c0af8",
-      "bytes": 9455
+      "sha256": "0cf24b1e7b339642a0fd3338b550ed83ecbd6b2689f5a6b62f4a1d15dfae75c9",
+      "bytes": 10101
     },
     "formalization/BuildingBlocks/PrimeSignedAverage.lean": {
       "sha256": "4aece0bfed24130b283bf5168d591b15cb0bb362f6923bc7009ac12f4fbf75f6",
@@ -273,9 +274,9 @@
     }
   },
   "unformalized": [
-    "integral summation and infinite exponent allocation",
-    "24/3000 full proper-power analytic inequality",
-    "logarithmic tails, Young and complete energy substitution"
+    "complete predictable-work jump/energy balance and substitution",
+    "older fixed-strict-sigma cutoff-independent infinite-tail refinement",
+    "bounded complex phase extension of the absolute-row bound"
   ],
   "unproved": [
     "independent ordinary-prime forcing upper",
@@ -284,5 +285,8 @@
   ],
   "additional_trace_verification": "formalization/verification/actual-prime-error-causal-trace/acceptance.json",
   "module_header_scope_clarification_only": true,
-  "header_change_imports_statements_proofs_unchanged": true
+  "header_change_imports_statements_proofs_unchanged": true,
+  "additional_complete_forcing_verification": "formalization/verification/actual-proper-prime-power-forcing/acceptance.json",
+  "additional_header_scope_clarification_at_parent": "ea994ad3eadd6d87bb304b3e599d2f7b6e7a62ec",
+  "additional_header_change_imports_statements_proofs_unchanged": true
 }

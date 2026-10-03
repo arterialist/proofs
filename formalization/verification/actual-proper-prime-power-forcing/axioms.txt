@@ -1,0 +1,307 @@
+'BuildingBlocks.ActualProperPowerEnergyAllocation.mem_primeBases' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.base_le_power' depends on axioms: [propext, Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.exponent_le_power' depends on axioms: [propext]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.mem_primeBases_iff_real_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_exponent_le_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_row_vonMangoldt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases_subset_square' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases_eq_empty_of_lt_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases_eq_empty_of_exponent_gt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_full_enumeration_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.centeredError_abs_le_full' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.centeredError_sq_full_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.energyDensity_full_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.energyDensity_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.fullEnergy_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.rowInterval_subset_full' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.rowIntervals_pairwise_disjoint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.windowEnergy_eq_rowIntegral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_grade_energy_allocation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.trace_coefficient_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_grade_trace_cauchy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_grade_absolute_force_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.primeHarmonicSecondMass_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.gradeCoefficient_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_row_coefficient_decay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_grade_coefficient_decay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.primeHarmonicSecondMass_le_native' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.primeHarmonicSecondMass_le_nine_log_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.sqrt_primeHarmonicSecondMass_le_three_log' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.gradeGeometricRatio_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.gradeGeometricRatio_fourth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.gradeGeometricRatio_le_seven_eighths' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.finite_geometric_grade_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.finite_geometric_grade_le_eight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.sqrt_geometricDecay_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_all_grade_coefficients_le_twenty_four_log' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPowerEnergyAllocation.actual_full_absolute_force_le_with_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.log_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.weight_le_envelope' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.envelope_intervalIntegrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.rpow_half_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.potentialOne_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.potentialTwo_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.envelopeOne_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.envelopeTwo_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.weight_le_intervalIntegral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.finite_telescoping_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.potentialOne_nonpos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.potentialTwo_nonpos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.finite_log_tail_le_six' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.finite_log_sq_tail_le_twenty_six' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.finite_geometric_tail_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.finite_weighted_geometric_tail_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.finite_geometric_tail_le_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualLogarithmicTailBounds.finite_weighted_geometric_tail_le_twenty_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.rawRemainderRow_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.gradeRemainder_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.power_rpow_half' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_remainder_row_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_grade_remainder_le_integer_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_le_three_quarters' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_pow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_cube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.harmonicBaseMass_le_native' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.native_harmonicMass_le_seventeen_log_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.rawRemainderRow_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_square_grade_remainder_le_masses' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_square_grade_remainder_le_thirty_five_log_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.rawRemainderRow_eq_geometric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.finite_rawRemainder_high_degrees' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_high_grade_remainder_le_648' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.all_grade_remainders_le_square_add_high' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_all_grade_remainders_le_three_thousand_log_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_full_absolute_force_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.abs_signedProperPowerForce_le_fullAbsoluteForce' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_signed_proper_power_force_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.finite_energy_young' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_full_absolute_force_young' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_signed_proper_power_force_young' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.signedProperPowerForce_eq_actualLambda_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_proper_power_force_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_proper_power_force_young' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.fullAbsoluteForce_eq_actualLambda_abs_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_absolute_rows_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_absolute_rows_young' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.ActualProperPrimePowerForcing.actual_full_absolute_force_bound {Y : ℝ} (hY : 1 ≤ Y) (c sigma : ℝ)
+  (hsigma : 1 / 2 ≤ sigma) :
+  BuildingBlocks.ActualProperPowerEnergyAllocation.fullAbsoluteForce c sigma Y ≤
+    24 * Real.log (2 * Y) * √(BuildingBlocks.ActualProperPowerEnergyAllocation.fullEnergy c sigma Y) +
+      3000 * Real.log (2 * Y) ^ 2
+BuildingBlocks.ActualProperPrimePowerForcing.actual_signed_proper_power_force_bound {Y : ℝ} (hY : 1 ≤ Y) (c sigma : ℝ)
+  (hsigma : 1 / 2 ≤ sigma) :
+  |BuildingBlocks.ActualProperPrimePowerForcing.signedProperPowerForce c sigma Y| ≤
+    24 * Real.log (2 * Y) * √(BuildingBlocks.ActualProperPowerEnergyAllocation.fullEnergy c sigma Y) +
+      3000 * Real.log (2 * Y) ^ 2
+BuildingBlocks.ActualProperPrimePowerForcing.actual_full_absolute_force_young {Y : ℝ} (hY : 1 ≤ Y) (c sigma eta : ℝ)
+  (hsigma : 1 / 2 ≤ sigma) (heta : 0 < eta) :
+  BuildingBlocks.ActualProperPowerEnergyAllocation.fullAbsoluteForce c sigma Y ≤
+    eta * BuildingBlocks.ActualProperPowerEnergyAllocation.fullEnergy c sigma Y +
+      (3000 + 144 / eta) * Real.log (2 * Y) ^ 2
+BuildingBlocks.ActualProperPrimePowerForcing.actual_signed_proper_power_force_young {Y : ℝ} (hY : 1 ≤ Y)
+  (c sigma eta : ℝ) (hsigma : 1 / 2 ≤ sigma) (heta : 0 < eta) :
+  |BuildingBlocks.ActualProperPrimePowerForcing.signedProperPowerForce c sigma Y| ≤
+    eta * BuildingBlocks.ActualProperPowerEnergyAllocation.fullEnergy c sigma Y +
+      (3000 + 144 / eta) * Real.log (2 * Y) ^ 2
+BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_proper_power_force_bound {Y : ℝ} (hY : 1 ≤ Y) (c sigma : ℝ)
+  (hsigma : 1 / 2 ≤ sigma) :
+  |∑ k ∈ Finset.Icc 2 ⌊Y⌋₊,
+        ∑ p ∈ BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases Y k,
+          ArithmeticFunction.vonMangoldt (p ^ k) * ↑(p ^ k) ^ (1 - 2 * sigma) *
+            ((BuildingBlocks.CoarsePrimitive.psi (p ^ k - 1) - ↑(p ^ k) + c) / ↑(p ^ k))| ≤
+    24 * Real.log (2 * Y) *
+        √(∫ (t : ℝ) in 1..Y, ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma)) +
+      3000 * Real.log (2 * Y) ^ 2
+BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_proper_power_force_young {Y : ℝ} (hY : 1 ≤ Y)
+  (c sigma eta : ℝ) (hsigma : 1 / 2 ≤ sigma) (heta : 0 < eta) :
+  |∑ k ∈ Finset.Icc 2 ⌊Y⌋₊,
+        ∑ p ∈ BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases Y k,
+          ArithmeticFunction.vonMangoldt (p ^ k) * ↑(p ^ k) ^ (1 - 2 * sigma) *
+            ((BuildingBlocks.CoarsePrimitive.psi (p ^ k - 1) - ↑(p ^ k) + c) / ↑(p ^ k))| ≤
+    (eta * ∫ (t : ℝ) in 1..Y, ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma)) +
+      (3000 + 144 / eta) * Real.log (2 * Y) ^ 2
+BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_absolute_rows_bound {Y : ℝ} (hY : 1 ≤ Y) (c sigma : ℝ)
+  (hsigma : 1 / 2 ≤ sigma) :
+  ∑ k ∈ Finset.Icc 2 ⌊Y⌋₊,
+      ∑ p ∈ BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases Y k,
+        |ArithmeticFunction.vonMangoldt (p ^ k) * ↑(p ^ k) ^ (1 - 2 * sigma) *
+            ((BuildingBlocks.CoarsePrimitive.psi (p ^ k - 1) - ↑(p ^ k) + c) / ↑(p ^ k))| ≤
+    24 * Real.log (2 * Y) *
+        √(∫ (t : ℝ) in 1..Y, ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma)) +
+      3000 * Real.log (2 * Y) ^ 2
+BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_absolute_rows_young {Y : ℝ} (hY : 1 ≤ Y) (c sigma eta : ℝ)
+  (hsigma : 1 / 2 ≤ sigma) (heta : 0 < eta) :
+  ∑ k ∈ Finset.Icc 2 ⌊Y⌋₊,
+      ∑ p ∈ BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases Y k,
+        |ArithmeticFunction.vonMangoldt (p ^ k) * ↑(p ^ k) ^ (1 - 2 * sigma) *
+            ((BuildingBlocks.CoarsePrimitive.psi (p ^ k - 1) - ↑(p ^ k) + c) / ↑(p ^ k))| ≤
+    (eta * ∫ (t : ℝ) in 1..Y, ((BuildingBlocks.CoarsePrimitive.psi ⌊t⌋₊ - t + c) / t) ^ 2 * t ^ (1 - 2 * sigma)) +
+      (3000 + 144 / eta) * Real.log (2 * Y) ^ 2

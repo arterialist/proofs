@@ -706,3 +706,4 @@ import BuildingBlocks.ActualFullPerronTruncation
 import BuildingBlocks.ActualOmegaInverse
 import BuildingBlocks.ActualPrimePowerWindowGeometry
 import BuildingBlocks.ActualPrimeErrorCausalTrace
+import BuildingBlocks.ActualProperPrimePowerForcing

@@ -1,0 +1,869 @@
+{
+  "date": "2026-10-03 MYT",
+  "status": "PASS",
+  "kernel_scope": "Complete finite actual proper-power forcing, sum of absolute rows and Young absorption, with all row/energy/tail premises internally discharged",
+  "namespace": "BuildingBlocks.ActualProperPrimePowerForcing",
+  "component_namespaces": {
+    "BuildingBlocks.ActualProperPowerEnergyAllocation": 37,
+    "BuildingBlocks.ActualLogarithmicTailBounds": 18,
+    "BuildingBlocks.ActualProperPrimePowerForcing": 32
+  },
+  "theorem_count": 87,
+  "rows_in_source_order": [
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.mem_primeBases",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.base_le_power",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.exponent_le_power",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.mem_primeBases_iff_real_cutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_exponent_le_cutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_row_vonMangoldt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases_subset_square",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases_eq_empty_of_lt_four",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.primeBases_eq_empty_of_exponent_gt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_full_enumeration_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.centeredError_abs_le_full",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.centeredError_sq_full_intervalIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.energyDensity_full_intervalIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.energyDensity_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.fullEnergy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.rowInterval_subset_full",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.rowIntervals_pairwise_disjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.windowEnergy_eq_rowIntegral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_grade_energy_allocation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.trace_coefficient_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_grade_trace_cauchy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_grade_absolute_force_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.primeHarmonicSecondMass_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.gradeCoefficient_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_row_coefficient_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_grade_coefficient_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.primeHarmonicSecondMass_le_native",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.primeHarmonicSecondMass_le_nine_log_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.sqrt_primeHarmonicSecondMass_le_three_log",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.gradeGeometricRatio_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.gradeGeometricRatio_fourth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.gradeGeometricRatio_le_seven_eighths",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.finite_geometric_grade_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.finite_geometric_grade_le_eight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.sqrt_geometricDecay_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_all_grade_coefficients_le_twenty_four_log",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPowerEnergyAllocation.actual_full_absolute_force_le_with_remainder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.log_comparison",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.weight_le_envelope",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.envelope_intervalIntegrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.rpow_half_div",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.potentialOne_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.potentialTwo_hasDerivAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.envelopeOne_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.envelopeTwo_integral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.weight_le_intervalIntegral",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.finite_telescoping_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.potentialOne_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.potentialTwo_nonpos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.finite_log_tail_le_six",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.finite_log_sq_tail_le_twenty_six",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.finite_geometric_tail_remainder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.finite_weighted_geometric_tail_remainder",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.finite_geometric_tail_le_four",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualLogarithmicTailBounds.finite_weighted_geometric_tail_le_twenty_four",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.rawRemainderRow_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.gradeRemainder_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.power_rpow_half",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_remainder_row_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_grade_remainder_le_integer_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_le_three_quarters",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_pow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.primeBaseRatio_cube",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.harmonicBaseMass_le_native",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.native_harmonicMass_le_seventeen_log_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.rawRemainderRow_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_square_grade_remainder_le_masses",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_square_grade_remainder_le_thirty_five_log_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.rawRemainderRow_eq_geometric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.finite_rawRemainder_high_degrees",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_high_grade_remainder_le_648",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.all_grade_remainders_le_square_add_high",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_all_grade_remainders_le_three_thousand_log_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_full_absolute_force_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.abs_signedProperPowerForce_le_fullAbsoluteForce",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_signed_proper_power_force_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.finite_energy_young",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_full_absolute_force_young",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_signed_proper_power_force_young",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.signedProperPowerForce_eq_actualLambda_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_proper_power_force_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_proper_power_force_young",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.fullAbsoluteForce_eq_actualLambda_abs_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_absolute_rows_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_absolute_rows_young",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "profile_counts": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "count": 85
+    },
+    {
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "count": 1
+    },
+    {
+      "axioms": [
+        "propext"
+      ],
+      "count": 1
+    }
+  ],
+  "only_standard_axiom_subsets": true,
+  "public_mathematical_source_matches_private_after_namespace_comments_only": true,
+  "producer_source_sha256": "cba6dcc2e4b36560cee317b0e5eed58700b261790a590d87b30d007d0a4880a0",
+  "producer_proof_prefix_sha256": "c26b20202988c0d4a37b73eaf75cb11f54d427b26d37e74e5042472a0d0aaed9",
+  "producer_manifest_sha256": "bb7b0ab6e77f6606730a879dcb035cde1af7b3a03de1a8cd41354a282de45bcf",
+  "producer_original_public_note_and_geometry_bindings_at_parent": "ea994ad3eadd6d87bb304b3e599d2f7b6e7a62ec",
+  "producer_original_parent_snapshots_verified_before_public_annotations": true,
+  "domains": {
+    "c": "EVERY real center fixed throughout each history",
+    "sigma": "EVERY real sigma>=1/2",
+    "Y": "EVERY realY>=1",
+    "eta": "EVERY realeta>0 for Young targets"
+  },
+  "target_analytic_evaluator_tail_remainder_energy_premises": [],
+  "native_coverage": [
+    "complete Nat.Prime/base-power row set and exact real cutoff",
+    "all finite degrees via k<=p^k",
+    "actual Lambda(p^k)=logp and literal preError/psi source",
+    "global actual square and weighted integrability",
+    "closed same-degree windows/Ioc allocation",
+    "prime-row finite Cauchy and ALL-grade24log coefficient",
+    "square-grade harmonic/native second-mass payment",
+    "higher-grade finite geometric and complete prime-to-integer comparison",
+    "finite6/26 logarithmic tails",
+    "entire3000log\u00b2 remainder",
+    "signed and sum-of-absolute-rows bounds",
+    "Young144/eta with actualenergy nonnegativity internally discharged"
+  ],
+  "native_remainder_budget": {
+    "square_grade": "35log\u00b2(2Y)",
+    "higher_grades": "648<=2592log\u00b2(2Y)",
+    "total_before_public_constant": "2627log\u00b2(2Y)<=3000log\u00b2(2Y)"
+  },
+  "final_targets": [
+    "BuildingBlocks.ActualProperPrimePowerForcing.actual_full_absolute_force_bound",
+    "BuildingBlocks.ActualProperPrimePowerForcing.actual_signed_proper_power_force_bound",
+    "BuildingBlocks.ActualProperPrimePowerForcing.actual_full_absolute_force_young",
+    "BuildingBlocks.ActualProperPrimePowerForcing.actual_signed_proper_power_force_young",
+    "BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_proper_power_force_bound",
+    "BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_proper_power_force_young",
+    "BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_absolute_rows_bound",
+    "BuildingBlocks.ActualProperPrimePowerForcing.actual_lambda_absolute_rows_young"
+  ],
+  "full_build": {
+    "exit_code": 0,
+    "command": "lake build",
+    "cwd": "repository root",
+    "log_sha256": "1775a957b54117f1501989f5ae4be37a54545d95a26c778556436a47ed2a986a",
+    "bytes": 758129,
+    "jobs": 8056,
+    "log_file": "research-local/agent-results/20261003-root/proper-power-force-publication-review/root-full-build.log"
+  },
+  "public_audit": {
+    "exit_code": 0,
+    "command": "lake env lean formalization/verification/ActualProperPrimePowerForcingAudit.lean",
+    "cwd": "repository root",
+    "log_sha256": "ef86e019cd6be74aa8b6e10289fa5783710159d1aff9f7cbf2fae82fd9f8e5eb",
+    "bytes": 16150
+  },
+  "pinned_lean": "v4.24.0",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "bindings": {
+    "formalization/BuildingBlocks/ActualProperPrimePowerForcing.lean": {
+      "sha256": "4f56d579400c5389970506929e71ef9d0f075a625d3fa12ceef1c56a9eba8430",
+      "bytes": 57561
+    },
+    "formalization/verification/ActualProperPrimePowerForcingAudit.lean": {
+      "sha256": "e22bed98853252734f00c91b6573d6b664091460cc2ea5f181c4b4f0a1713c9e",
+      "bytes": 8598
+    },
+    "formalization/verification/actual-proper-prime-power-forcing/axioms.txt": {
+      "sha256": "ef86e019cd6be74aa8b6e10289fa5783710159d1aff9f7cbf2fae82fd9f8e5eb",
+      "bytes": 16150
+    },
+    "formalization/verification/actual-proper-prime-power-forcing/README.md": {
+      "sha256": "198591bbffcc3ed583296cba4ebe06e7280b02acf36552821dbc7665deeca83e",
+      "bytes": 3871
+    },
+    "building-blocks/prime-distribution/proper-prime-power-forcing-energy-bound.md": {
+      "sha256": "0cf24b1e7b339642a0fd3338b550ed83ecbd6b2689f5a6b62f4a1d15dfae75c9",
+      "bytes": 10101
+    },
+    "formalization/BuildingBlocks/ActualPrimePowerWindowGeometry.lean": {
+      "sha256": "30c6ec01a320ddc402c3c944a249e80e371beb1bfe9d925982b9196b76252719",
+      "bytes": 8695
+    },
+    "formalization/BuildingBlocks/ActualPrimeErrorCausalTrace.lean": {
+      "sha256": "623c49f04629db3b57fe056bd25ab125dc6a0a08e7873e1ab5b94d6dca0d3a02",
+      "bytes": 14064
+    },
+    "formalization/BuildingBlocks/CoarsePrimitive.lean": {
+      "sha256": "452d0dbc1089c616c65b2c3d063cb7c124aab345af375ce673e85d47b4e057f9",
+      "bytes": 12742
+    },
+    "formalization/BuildingBlocks/CoarsePrimeBounds.lean": {
+      "sha256": "3636c6563d5c43aabdd249734871094921179964741024418010d71cdf242065",
+      "bytes": 8453
+    },
+    "formalization/BuildingBlocks/PrimeSignedAverage.lean": {
+      "sha256": "4aece0bfed24130b283bf5168d591b15cb0bb362f6923bc7009ac12f4fbf75f6",
+      "bytes": 6983
+    },
+    "formalization/BuildingBlocks/PrimeIncrementEnergyAbel.lean": {
+      "sha256": "16cb64ac77f96008ab276dfbf15083b7142e648aa981cdac4c36fe5d7e92ec9e",
+      "bytes": 7547
+    },
+    "formalization/verification/actual-prime-power-window-geometry/acceptance.json": {
+      "sha256": "c8b0c04cf57efb31769b28fdf6a4c690a89db4512b1b25f50fc1082fe317a4a6",
+      "bytes": 9125
+    },
+    "formalization/verification/actual-prime-error-causal-trace/acceptance.json": {
+      "sha256": "c7987977c39bf1c5cd260e5b870655e7349b743c4e3b7be10d49d1422fce77d3",
+      "bytes": 7915
+    },
+    "lean-toolchain": {
+      "sha256": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+      "bytes": 25
+    },
+    "lake-manifest.json": {
+      "sha256": "e80a75a857521637fced3ffb73aaaf85acaffd9d7811e21b09440693df8df104",
+      "bytes": 3513
+    },
+    "lakefile.toml": {
+      "sha256": "9d4ece18e13250823446204637f1e83a9df876c1c83a13396c1fee1acfaee57d",
+      "bytes": 273
+    }
+  },
+  "unformalized": [
+    "complete predictable-work jump/energy balance and substitution",
+    "older fixed-strict-sigma cutoff-independent infinite-tail refinement",
+    "bounded complex phase extension of the absolute-row bound"
+  ],
+  "unproved": [
+    "independent ordinary-prime/full-psi and square-density signed upper",
+    "stronger complete prime-error/coarse/W premise",
+    "RH"
+  ],
+  "new_stronger_arithmetic_bound": false,
+  "rh_frontier_progress": false
+}

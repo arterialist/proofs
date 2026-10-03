@@ -5,8 +5,9 @@ import Mathlib.Tactic
 /-!
 Finite actual prime-power left-window geometry only. The local actual staircase
 trace and interval Cauchy are proved separately in ActualPrimeErrorCausalTrace.
-Full proper-power aggregation, geometric sums and logarithmic tails remain written;
-no ordinary-prime signed upper, criterion premise or RH theorem is supplied.
+Full proper-power aggregation and finite tails are proved in the companion
+ActualProperPrimePowerForcing. This leaf supplies no ordinary-prime signed
+upper, criterion premise or RH theorem.
 -/
 
 open Set
