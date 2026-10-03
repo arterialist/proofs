@@ -216,7 +216,7 @@
     "formalization/verification/ActualFullCenteredMellinAudit.lean": "52c32a81f9d347b81bce1d77a64fd397a14c412ecac3cde54b6b0b2e283fdf09",
     "formalization/verification/actual-full-centered-mellin/axioms.txt": "0190553fa741112ef1c17ca2f34baa312e2f329619f85cc7db44a07530b7091f",
     "formalization/verification/actual-full-centered-mellin/README.md": "835999cd2c09916bae62ed5fe1859ca6c63e830d498528289439f3ec477ff781",
-    "building-blocks/prime-distribution/complete-prime-error-exact-log-vk-bound.md": "003d86068797e7df9de6d02bdd574314e3d990da12fc38d2e73a6f017bcf2b38",
+    "building-blocks/prime-distribution/complete-prime-error-exact-log-vk-bound.md": "b0ebbcf67e16a001a8ccd52e665a3d2a30e017fc645c9d847b16bd54697f5bb4",
     "reviews/papers/complete-prime-error-exact-log-bound-audit.md": "02cc76a927ade14ed7d1031e00397b40b0df777e1dcb4da7d2a1f554bdf69372"
   },
   "independent_checks": {
@@ -228,6 +228,10 @@
   },
   "documentation_update": {
     "date": "2026-10-03",
-    "reason": "Clarify fixed base-height onset and link the separately checked initial inverse/Perron companion; original 24 forward declarations, source and axiom evidence unchanged."
+    "reason": "Link the separately checked original Eq22 a0 identification and initial inversion; the original native source, declarations and axiom evidence are unchanged.",
+    "previous_update": {
+      "date": "2026-10-03",
+      "reason": "Clarify fixed base-height onset and link the separately checked initial inverse/Perron companion; original 24 forward declarations, source and axiom evidence unchanged."
+    }
   }
 }

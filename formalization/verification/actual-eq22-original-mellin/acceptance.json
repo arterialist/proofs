@@ -1,0 +1,745 @@
+{
+  "status": "PASS",
+  "date": "2026-10-03",
+  "scope": "Literal original Eq22 arithmetic identification, forward Mellin and absolute initial Perron inversion",
+  "lean_version": "4.24.0",
+  "compiler_commit": "797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+  "mathlib_revision": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "domain": {
+    "original_identification": "every real cutoff, including the empty region below one",
+    "physical_corrected_row": "every real x>=1",
+    "forward_Mellin": "every complex s with Re(s)>1",
+    "inverse_Perron": "every real c>2,x>0",
+    "Tnormalized_variant": "every real c>2,x>=1",
+    "probability_interpretation": "x>1"
+  },
+  "public_modules": [
+    {
+      "path": "formalization/BuildingBlocks/ActualEq22PairDilation.lean",
+      "sha256": "41217f735f03f33a4b14b5e466f80a2adb183c1b4a63211d345dfcfd598d0de4",
+      "normalized_proof_equal": true,
+      "theorem_count": 9
+    },
+    {
+      "path": "formalization/BuildingBlocks/ActualEq22ForwardMellin.lean",
+      "sha256": "07192e9bcf3ddeaeeddb42bb5f43cc46e3e00ea9e7a0037e37f87170c0f34d90",
+      "normalized_proof_equal": true,
+      "theorem_count": 33
+    },
+    {
+      "path": "formalization/BuildingBlocks/ActualEq22ArithmeticIdentity.lean",
+      "sha256": "1b81bd298b00727b64ffc77b725e25d4ebce6b5337bedc84ebedb1dd09916daa",
+      "normalized_proof_equal": true,
+      "theorem_count": 11
+    },
+    {
+      "path": "formalization/BuildingBlocks/ActualEq22MellinInversion.lean",
+      "sha256": "de00422c4a02e02dea210f6e306d9f87439a77edfcfd544e6f84604f463d86db",
+      "normalized_proof_equal": true,
+      "theorem_count": 18
+    },
+    {
+      "path": "formalization/BuildingBlocks/ActualEq22OriginalMellin.lean",
+      "sha256": "9db430c0985987dfc6e8809d9087a9a17b941e695d27d477cf2cb3dff98fdb02",
+      "normalized_proof_equal": true,
+      "theorem_count": 8
+    }
+  ],
+  "audit_source_path": "formalization/verification/ActualEq22OriginalMellinAudit.lean",
+  "audit_source_sha256": "8d6ad23d1f0091cfbff5b71a6cb6657927e7b263de719d51e158a7605d79ee3a",
+  "audit_output_path": "formalization/verification/actual-eq22-original-mellin/axioms.txt",
+  "audit_output_sha256": "d85d5966aa144a4a6049fa763178557217ecb7bb27851e08d0909c8784e59f91",
+  "audit_exit_code": 0,
+  "public_theorem_count": 79,
+  "all_public_theorems_audited": true,
+  "exact_standard_three_count": 79,
+  "axiom_rows": [
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.weightedLambda_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.weightedLambda_zeta",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.pair_divisor_assoc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.scoreMass_stable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.cutoff_score_dilation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.divisor_sum_eq_cutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.score_dilation_eq_full_pair",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.TnumOn_eq_DnumOn_sub_full_pair",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22PairDilation.Tnum_eq_Dnum_sub_full_pair",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.countBaseline_eq_step",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.countBaseline_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.countBaseline_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.Acore_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.Zcore_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.continuous_countBaseline",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.continuous_Acore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.continuous_Zcore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.continuous_criticalCutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.continuous_A",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.continuous_Z",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.continuous_C",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.hasMellin_countBaseline",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.hasMellin_Acore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.hasMellin_A",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.hasMellin_Zcore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.hasMellin_Z",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.hasMellin_C",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.centered_add_one_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.hasMellin_C_a0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.Acore_eq_Jfinite",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.criticalCutoff_eq_Icc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.A_eq_actual_Aold",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.Z_eq_actual_Z",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.C_eq_corrected_actual_row",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.criticalCutoff_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.A_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.Z_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.C_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.Acore_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.A_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.Z_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ForwardMellin.C_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.cofactor_row",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.baseline_scalar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.fullNumerator_eq_sample",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.Aold_eq_score_sub_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.fullNumerator_eq_six_rows",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.literal_identity_of_native_pair_row",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.literal_identity_with_pair_defect",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.literal_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.literal_normalized_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.complex_literal_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22ArithmeticIdentity.literal_eq_forwardC",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.norm_centered_add_one_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.norm_fullFactor0_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.analyticAt_fullFactor0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.continuous_fullFactor0_vertical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.integrable_fullFactor0_vertical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.mellin_C_vertical_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.verticalIntegrable_C",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.C_mellin_convergent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.mellinInv_C",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.norm_perronKernel0_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.integrable_perronKernel0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.mellinInv_kernel_eq_perron0_neg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.integrable_mellinInv_C_kernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.C_eq_perron",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.perronFactor0_eq_fullFactor0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.perronKernel0_eq_closed_form",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.C_eq_closed_perron",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22MellinInversion.integrable_closed_perron0",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22OriginalMellin.original_eq_forward",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22OriginalMellin.continuous_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22OriginalMellin.hasMellin_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22OriginalMellin.verticalIntegrable_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22OriginalMellin.mellinInv_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22OriginalMellin.original_eq_closed_perron",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22OriginalMellin.original_closed_perron_integrable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "BuildingBlocks.ActualEq22OriginalMellin.original_normalized_eq_closed_perron",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "root_full_build": {
+    "exit_code": 0,
+    "jobs": 8051,
+    "log": "research-local/agent-results/20261003-root/a0-coordinator-review/publication/root-final-full-build.log",
+    "tail": [
+      "warning: formalization/BuildingBlocks/ActualEq22ForwardMellin.lean:321:27: unused variable `y`",
+      "",
+      "Note: This linter can be disabled with `set_option linter.unusedVariables false`",
+      "\u2714 [8047/8051] Built BuildingBlocks.ActualEq22ArithmeticIdentity (2.5s)",
+      "\u2714 [8048/8051] Built BuildingBlocks.ActualEq22MellinInversion (2.8s)",
+      "\u2714 [8049/8051] Built BuildingBlocks.ActualEq22OriginalMellin (2.2s)",
+      "\u2714 [8050/8051] Built BuildingBlocks (14s)",
+      "Build completed successfully (8051 jobs)."
+    ]
+  },
+  "proof_bodies_equal_to_accepted_private_sources": true,
+  "private_selected_audit_count": 56,
+  "independent_checks": {
+    "private_component_proofs_and_five_module_replay": true,
+    "fresh_peer_heldout_original_object_review": true,
+    "root_normalized_statement_and_proof_comparison": true,
+    "separate_public_mathematical_challenge": true,
+    "separate_public_source_and_scope_review": true,
+    "root_current_full_build_and_complete_public_axiom_audit": true
+  },
+  "original_object_kernel_checked": true,
+  "initial_forward_inverse_kernel_checked": true,
+  "analytic_upper_kernel_checked": false,
+  "stronger_arithmetic_bound_proved": false,
+  "eventual_W_sign_proved": false,
+  "RH_proved": false,
+  "boundary_c_2_claim": false,
+  "uniform_c_to_2_allowance_claim": false,
+  "effective_onset_claim": false,
+  "priority_claim": false,
+  "file_hashes": {
+    "formalization/BuildingBlocks/ActualEq22PairDilation.lean": "41217f735f03f33a4b14b5e466f80a2adb183c1b4a63211d345dfcfd598d0de4",
+    "formalization/BuildingBlocks/ActualEq22ForwardMellin.lean": "07192e9bcf3ddeaeeddb42bb5f43cc46e3e00ea9e7a0037e37f87170c0f34d90",
+    "formalization/BuildingBlocks/ActualEq22ArithmeticIdentity.lean": "1b81bd298b00727b64ffc77b725e25d4ebce6b5337bedc84ebedb1dd09916daa",
+    "formalization/BuildingBlocks/ActualEq22MellinInversion.lean": "de00422c4a02e02dea210f6e306d9f87439a77edfcfd544e6f84604f463d86db",
+    "formalization/BuildingBlocks/ActualEq22OriginalMellin.lean": "9db430c0985987dfc6e8809d9087a9a17b941e695d27d477cf2cb3dff98fdb02",
+    "formalization/verification/ActualEq22OriginalMellinAudit.lean": "8d6ad23d1f0091cfbff5b71a6cb6657927e7b263de719d51e158a7605d79ee3a",
+    "formalization/verification/actual-eq22-original-mellin/axioms.txt": "d85d5966aa144a4a6049fa763178557217ecb7bb27851e08d0909c8784e59f91",
+    "formalization/verification/actual-eq22-original-mellin/README.md": "4d377dd8c23d4eee2ab1b6a8dfc469cf2a57aa4e2af686204ee0d12ce03df118",
+    "building-blocks/prime-distribution/actual-eq22-zero-cluster-bound.md": "321bf2230836a5cd397b7d252adb8826f51ba47ec31d983b659ee9e16e4e21d3",
+    "building-blocks/prime-distribution/complete-prime-error-exact-log-vk-bound.md": "b0ebbcf67e16a001a8ccd52e665a3d2a30e017fc645c9d847b16bd54697f5bb4",
+    "formalization/verification/actual-full-centered-mellin-inversion/README.md": "eec7ce7530cc36fb42c8aa149b65fc8e750f56675053de65acb6322d85e7bf92",
+    "formalization/verification/actual-full-centered-mellin-inversion/acceptance.json": "67261a33a35c3085ea708a7a88ef5f2e74ed81ae5105e6648aca465b10c0b851",
+    "formalization/verification/actual-full-centered-mellin/acceptance.json": "9202183a9783bb7daefe1c5dcf7cb19dfd7fd27ce288c46ee72e45820881fc62"
+  },
+  "audit_header_update": {
+    "reason": "Distinguish the existing written upper from open stronger/sign estimates; declarations unchanged",
+    "previous_audit_source_sha256": "5349e6bb4b2274902d722138a103bf996e93e435586a1c889471375f580bfd54",
+    "transcript_unchanged": true
+  }
+}

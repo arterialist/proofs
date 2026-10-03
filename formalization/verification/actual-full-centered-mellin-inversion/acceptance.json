@@ -294,9 +294,9 @@
     "formalization/BuildingBlocks/ActualFullCenteredMellinInversion.lean": "43a447e2058f5828fc3d542769c1269f83c598391b3ef59c8c802a4ebfeab1f3",
     "formalization/verification/ActualFullCenteredMellinInversionAudit.lean": "57a8124b7451482b38fffaf55d218a17898f127bfe03d53ae8eeccaa52df0c1d",
     "formalization/verification/actual-full-centered-mellin-inversion/axioms.txt": "9417c321fd28fb885fcc1908ab83c06a6a0faa267f8691fdfa5014c68a84ce7d",
-    "formalization/verification/actual-full-centered-mellin-inversion/README.md": "6c6496ca51b3adc8a8443d597c68791a8cec863890733516497b18d8b0062cfc",
-    "building-blocks/prime-distribution/complete-prime-error-exact-log-vk-bound.md": "003d86068797e7df9de6d02bdd574314e3d990da12fc38d2e73a6f017bcf2b38",
-    "building-blocks/prime-distribution/actual-eq22-zero-cluster-bound.md": "3027998ff75a9501e49127e7fbf638cc07cba3290de8226d90679b6a03125032"
+    "formalization/verification/actual-full-centered-mellin-inversion/README.md": "eec7ce7530cc36fb42c8aa149b65fc8e750f56675053de65acb6322d85e7bf92",
+    "building-blocks/prime-distribution/complete-prime-error-exact-log-vk-bound.md": "b0ebbcf67e16a001a8ccd52e665a3d2a30e017fc645c9d847b16bd54697f5bb4",
+    "building-blocks/prime-distribution/actual-eq22-zero-cluster-bound.md": "321bf2230836a5cd397b7d252adb8826f51ba47ec31d983b659ee9e16e4e21d3"
   },
   "independent_checks": {
     "component_producers": true,
@@ -304,5 +304,9 @@
     "source_scope_review": true,
     "separate_RH_Agent_1_readonly_audit": true,
     "root_public_kernel_audit": true
+  },
+  "documentation_update": {
+    "date": "2026-10-03",
+    "reason": "Link the separately checked original Eq22 a0 identification and initial inversion; the original native source, declarations and axiom evidence are unchanged."
   }
 }

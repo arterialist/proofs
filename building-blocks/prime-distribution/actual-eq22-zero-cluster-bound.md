@@ -38,7 +38,7 @@ The [exact-log refinement](complete-prime-error-exact-log-vk-bound.md) removes
 the arbitrary fixed leading loss and adds two diverging smaller-scale savings
 for these same complete objects. Its contour estimate remains written analysis.
 
-The [native inverse companion](../../formalization/BuildingBlocks/ActualFullCenteredMellinInversion.lean) now proves absolute Mellin--Perron reconstruction for the complete `a=1` row at every real `c>2,x>0`, with continuity and vertical integrability proved internally. The `a=0` residual inversion and the zero-cluster contour argument remain written analysis.
+The [full-row inverse companion](../../formalization/BuildingBlocks/ActualFullCenteredMellinInversion.lean) proves absolute Mellin--Perron reconstruction for the complete `a=1` row at every real `c>2,x>0`. The [original-residual companion](../../formalization/BuildingBlocks/ActualEq22OriginalMellin.lean) identifies the literal `Rnum-Tnum` with its actual `a=0` Mellin readout at every real cutoff and proves its initial inversion on the same `c>2,x>0` domain. Both companions discharge continuity and vertical integrability internally. The zero-cluster contour estimate remains written analysis.
 
 The [Gaussian recovery estimate](gaussian-recovery-complete-critical-numerator.md)
 quantifies recovery of the literal full numerator from a logarithmic
@@ -353,8 +353,13 @@ named symbol-map hypotheses. The separate
 [scalar optimization module](../../formalization/BuildingBlocks/ActualEq22ScalarOptimization.lean)
 kernel-checks the sharp minimum of the near and far leading costs in
 (15)--(16), including the exact relation \(c_M=2^{2/5}d\). These proofs use
-only Lean's standard logical axioms. The `a=0` residual Mellin identification
-and inversion, subsequent contour deformation, the zero-free and density inputs, the
+only Lean's standard logical axioms.
+
+The [native original-residual companion](../../formalization/BuildingBlocks/ActualEq22OriginalMellin.lean) now also proves the actual `a=0` forward Mellin identity for every complex `s` with `Re s>1`, and absolute initial Perron inversion for every real `c>2,x>0`. Its original object is the complex cast of the existing `Rnum-Tnum`, independently of the transform. The complete ordered-pair reassociation discharges the physical identification; every prime power, cofactor, unit correction and real birth seam is retained. `original_eq_forward` includes the empty region below one, and `continuous_original` proves aggregate continuity at every real point. The normalized `Tnum=Tnormalized` version has `x>=1`; the probability interpretation above retains `x>1`. No blanket continuity at zero is claimed for every totalized core.
+
+The [verification record](../../formalization/verification/actual-eq22-original-mellin/README.md) covers all public theorem declarations in the five native modules, with the source-bound audit transcript and required repository build. The final actual targets have no supplied symbol map, evaluator, arithmetic upper, unknown-zero, physical-identification or integrability premise.
+
+Subsequent contour deformation, the zero-free and density inputs, the
 uniform asymptotic reduction to the scalar cost, the
 contour estimate (17), and the conditional RH implication (21) are written
 analysis and are not Lean theorems.

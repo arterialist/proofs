@@ -1,0 +1,206 @@
+'BuildingBlocks.ActualEq22PairDilation.weightedLambda_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22PairDilation.weightedLambda_zeta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22PairDilation.pair_divisor_assoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22PairDilation.scoreMass_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22PairDilation.cutoff_score_dilation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22PairDilation.divisor_sum_eq_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22PairDilation.score_dilation_eq_full_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22PairDilation.TnumOn_eq_DnumOn_sub_full_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22PairDilation.Tnum_eq_Dnum_sub_full_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.countBaseline_eq_step' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.countBaseline_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.countBaseline_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.Acore_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.Zcore_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.continuous_countBaseline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.continuous_Acore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.continuous_Zcore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.continuous_criticalCutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.continuous_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.continuous_Z' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.continuous_C' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.hasMellin_countBaseline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.hasMellin_Acore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.hasMellin_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.hasMellin_Zcore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.hasMellin_Z' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.hasMellin_C' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.centered_add_one_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.hasMellin_C_a0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.Acore_eq_Jfinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.criticalCutoff_eq_Icc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.A_eq_actual_Aold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.Z_eq_actual_Z' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.C_eq_corrected_actual_row' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.criticalCutoff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.A_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.Z_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.C_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.Acore_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.A_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.Z_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ForwardMellin.C_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.cofactor_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.baseline_scalar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.fullNumerator_eq_sample' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.Aold_eq_score_sub_mass' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.fullNumerator_eq_six_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.literal_identity_of_native_pair_row' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.literal_identity_with_pair_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.literal_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.literal_normalized_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.complex_literal_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22ArithmeticIdentity.literal_eq_forwardC' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.norm_centered_add_one_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.norm_fullFactor0_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.analyticAt_fullFactor0' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.continuous_fullFactor0_vertical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.integrable_fullFactor0_vertical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.mellin_C_vertical_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.verticalIntegrable_C' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.C_mellin_convergent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.mellinInv_C' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.norm_perronKernel0_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.integrable_perronKernel0' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.mellinInv_kernel_eq_perron0_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.integrable_mellinInv_C_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.C_eq_perron' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.perronFactor0_eq_fullFactor0' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.perronKernel0_eq_closed_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.C_eq_closed_perron' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22MellinInversion.integrable_closed_perron0' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22OriginalMellin.original_eq_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22OriginalMellin.continuous_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22OriginalMellin.hasMellin_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22OriginalMellin.verticalIntegrable_original' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22OriginalMellin.mellinInv_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BuildingBlocks.ActualEq22OriginalMellin.original_eq_closed_perron' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22OriginalMellin.original_closed_perron_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BuildingBlocks.ActualEq22OriginalMellin.original_normalized_eq_closed_perron' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BuildingBlocks.ActualEq22PairDilation.Tnum_eq_Dnum_sub_full_pair (x : ℝ) :
+  BuildingBlocks.ActualEq22Residual.Tnum x =
+    BuildingBlocks.ActualVolterraIdentity.Dnum x -
+      ∑ n ∈ Finset.Icc 1 ⌊x⌋₊,
+        BuildingBlocks.ActualPrimeCutoffCovarianceFinite.cutoffWeight x n *
+          ∑ m ∈ n.divisors, √↑m * (ArithmeticFunction.vonMangoldt * ArithmeticFunction.vonMangoldt) m
+BuildingBlocks.ActualEq22ArithmeticIdentity.literal_identity_of_native_pair_row {x : ℝ} (hx : 1 ≤ x)
+  (hpair :
+    BuildingBlocks.ActualEq22Residual.Tnum x =
+      BuildingBlocks.ActualVolterraIdentity.Dnum x -
+        ∑ n ∈ Finset.Icc 1 ⌊x⌋₊,
+          BuildingBlocks.ActualPrimeCutoffCovarianceFinite.cutoffWeight x n *
+            BuildingBlocks.ActualEq22ArithmeticIdentity.P n) :
+  BuildingBlocks.ActualEq22ArithmeticIdentity.C_literal x =
+    (BuildingBlocks.ActualFullCenteredMellin.fullNumerator x).re + 2 * BuildingBlocks.ActualPrimeErrorBridge.Aold x +
+      BuildingBlocks.ActualVolterraIdentity.Z x
+BuildingBlocks.ActualEq22ArithmeticIdentity.literal_identity {x : ℝ} (hx : 1 ≤ x) :
+  BuildingBlocks.ActualEq22ArithmeticIdentity.C_literal x =
+    (BuildingBlocks.ActualFullCenteredMellin.fullNumerator x).re + 2 * BuildingBlocks.ActualPrimeErrorBridge.Aold x +
+      BuildingBlocks.ActualVolterraIdentity.Z x
+BuildingBlocks.ActualEq22ArithmeticIdentity.literal_normalized_identity {x : ℝ} (hx : 1 ≤ x) :
+  BuildingBlocks.ActualVolterraIdentity.Rnum x - BuildingBlocks.ActualEq22Residual.Tnormalized x =
+    (BuildingBlocks.ActualFullCenteredMellin.fullNumerator x).re + 2 * BuildingBlocks.ActualPrimeErrorBridge.Aold x +
+      BuildingBlocks.ActualVolterraIdentity.Z x
+BuildingBlocks.ActualEq22ArithmeticIdentity.literal_eq_forwardC {x : ℝ} (hx : 1 ≤ x) :
+  ↑(BuildingBlocks.ActualEq22ArithmeticIdentity.C_literal x) = BuildingBlocks.ActualEq22ForwardMellin.C x
+BuildingBlocks.ActualEq22OriginalMellin.original (x : ℝ) : ℂ
+BuildingBlocks.ActualEq22OriginalMellin.original_eq_forward :
+  BuildingBlocks.ActualEq22OriginalMellin.original = BuildingBlocks.ActualEq22ForwardMellin.C
+BuildingBlocks.ActualEq22OriginalMellin.continuous_original :
+  Continuous BuildingBlocks.ActualEq22OriginalMellin.original
+BuildingBlocks.ActualEq22OriginalMellin.hasMellin_original {s : ℂ} (hs : 1 < s.re) :
+  HasMellin BuildingBlocks.ActualEq22OriginalMellin.original (-s - 1)
+    (riemannZeta (s + 1 / 2) * (1 / (s - 1) + deriv riemannZeta s / riemannZeta s) ^ 2 / (s * (s + 1)))
+BuildingBlocks.ActualEq22OriginalMellin.verticalIntegrable_original (c : ℝ) (hc : 2 < c) :
+  Complex.VerticalIntegrable (mellin BuildingBlocks.ActualEq22OriginalMellin.original) (-c) MeasureTheory.volume
+BuildingBlocks.ActualEq22OriginalMellin.mellinInv_original {c x : ℝ} (hc : 2 < c) (hx : 0 < x) :
+  mellinInv (-c) (mellin BuildingBlocks.ActualEq22OriginalMellin.original) x =
+    BuildingBlocks.ActualEq22OriginalMellin.original x
+BuildingBlocks.ActualEq22OriginalMellin.original_eq_closed_perron {c x : ℝ} (hc : 2 < c) (hx : 0 < x) :
+  BuildingBlocks.ActualEq22OriginalMellin.original x =
+    (1 / (2 * Real.pi)) •
+      ∫ (t : ℝ),
+        ↑x ^ (↑c + ↑t * Complex.I) * BuildingBlocks.ActualEq22MellinInversion.perronFactor0 (↑c + ↑t * Complex.I)
+BuildingBlocks.ActualEq22OriginalMellin.original_closed_perron_integrable {c x : ℝ} (hc : 2 < c) (hx : 0 < x) :
+  MeasureTheory.Integrable
+    (fun t => ↑x ^ (↑c + ↑t * Complex.I) * BuildingBlocks.ActualEq22MellinInversion.perronFactor0 (↑c + ↑t * Complex.I))
+    MeasureTheory.volume
+BuildingBlocks.ActualEq22OriginalMellin.original_normalized_eq_closed_perron {c x : ℝ} (hc : 2 < c) (hx : 1 ≤ x) :
+  ↑(BuildingBlocks.ActualVolterraIdentity.Rnum x - BuildingBlocks.ActualEq22Residual.Tnormalized x) =
+    (1 / (2 * Real.pi)) •
+      ∫ (t : ℝ),
+        ↑x ^ (↑c + ↑t * Complex.I) * BuildingBlocks.ActualEq22MellinInversion.perronFactor0 (↑c + ↑t * Complex.I)
