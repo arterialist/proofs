@@ -33,9 +33,11 @@ The key arithmetic identity is
 \(\lfloor\lfloor r/a\rfloor/b\rfloor=\lfloor r/(ab)\rfloor\).
 An intermediate label discarded beyond \(N\) cannot return under
 another left dilation. In particular \(R_p^k=R_{p^k}\), and every
-\(R_d\) with \(d>1\) is nilpotent. Equation (2) is a relation of
-the **compressed left shifts**; their adjoints need not satisfy the
-same product rule. Each \(R_d\) is a contraction, with its exact
+\(R_d\) with \(d>1\) is nilpotent. Taking adjoints in the
+commuting relation (2) gives \(R_a^*R_b^*=R_{ab}^*\).
+These weighted adjoints have a different action from the forward
+floor shifts; uncompressed reverse translations need not preserve
+the cell space. Each \(R_d\) is a contraction, with its exact
 terminal-column loss given in the successor-cell refinement note.
 
 For \(s\in\mathbb C\), define the finite entire matrix
