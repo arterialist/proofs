@@ -1,0 +1,6 @@
+.lake/
+audit-results/
+__pycache__/
+*.olean
+*.olean.*
+*.ilean

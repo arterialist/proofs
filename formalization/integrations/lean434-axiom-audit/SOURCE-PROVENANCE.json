@@ -1,0 +1,45 @@
+{
+  "upstream_release": "v4.34.1",
+  "upstream_repository": "https://github.com/leanprover/lean4",
+  "license": "Apache-2.0",
+  "original_author": "Leonardo de Moura",
+  "copyright": "Copyright (c) 2020 Microsoft Corporation. All rights reserved.",
+  "sources": [
+    {
+      "upstream_path": "src/Lean/Util/CollectAxioms.lean",
+      "url": "https://github.com/leanprover/lean4/blob/v4.34.1/src/Lean/Util/CollectAxioms.lean",
+      "bytes": 6702,
+      "sha256": "64f340d42f18c51ee83527f03fa69cc26415dd71dcf7fe71031b7760be90007d"
+    },
+    {
+      "upstream_path": "src/Lean/Environment.lean",
+      "url": "https://github.com/leanprover/lean4/blob/v4.34.1/src/Lean/Environment.lean",
+      "bytes": 137725,
+      "sha256": "ee364e4788ce0560c87f621eeb3c4c3dfec62e8db4e15e099fd80e6adc533b86"
+    },
+    {
+      "upstream_path": "src/Lean/Declaration.lean",
+      "url": "https://github.com/leanprover/lean4/blob/v4.34.1/src/Lean/Declaration.lean",
+      "bytes": 21161,
+      "sha256": "fcb928c1686f0655279a790f92bd61f8c0d6df3be51a5eccaa2880de058e5e24"
+    },
+    {
+      "upstream_path": "src/Lean/Expr.lean",
+      "url": "https://github.com/leanprover/lean4/blob/v4.34.1/src/Lean/Expr.lean",
+      "bytes": 87215,
+      "sha256": "b9a91d9d170201c2a3622b9c55d694466f54e0e1b8f6068a2d296ff98650169c"
+    },
+    {
+      "upstream_path": "LICENSE",
+      "url": "https://github.com/leanprover/lean4/blob/v4.34.1/LICENSE",
+      "bytes": 9160,
+      "sha256": "8b28515ffffc5c0fe2807d8ae3735b00b324d9b7ce807dd63ff6ac8922fbce7e"
+    }
+  ],
+  "reviewed_prototype_sha256": "397a5ea6c89a5cfbad5be044e716d15679b77356adf4c1d0c3a008c9afe192b6",
+  "public_adaptation_changes": [
+    "Explicit root-module prefix, default BuildingBlocks; recursive traversal unchanged.",
+    "Generic selected-module and dependency-body logging.",
+    "Standalone helper-first core fixture runner with positive and fail-closed assertions."
+  ]
+}

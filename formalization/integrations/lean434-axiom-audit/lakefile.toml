@@ -1,0 +1,6 @@
+name = "lean434_axiom_audit"
+version = "0.1.0"
+defaultTargets = ["UncachedBodyAudit"]
+
+[[lean_lib]]
+name = "UncachedBodyAudit"

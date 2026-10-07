@@ -1,0 +1,87 @@
+{
+  "frozen_utc": "2026-10-07T16:09:02.683638+00:00",
+  "status": "Repaired snapshot held for independent delta review; no Git action or publication.",
+  "scope": "This new integration directory and tiny core-only/nonexecuting selection tests.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 61,
+      "sha256": "00ca59f3874b31caf0b498eaea0b589d6c009815a7a3b8514505031a3046a02a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 9160,
+      "sha256": "8b28515ffffc5c0fe2807d8ae3735b00b324d9b7ce807dd63ff6ac8922fbce7e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5888,
+      "sha256": "648ecdb7601b1497d0aa3857f5017278816aa665e8fb9d52bfd673eecb22f9f2"
+    },
+    {
+      "path": "SOURCE-PROVENANCE.json",
+      "bytes": 1917,
+      "sha256": "db54bda818dfc4c9544c0e6e0e301a207d2477eaed70398f140bcd4bd7cd0183"
+    },
+    {
+      "path": "UncachedBodyAudit.lean",
+      "bytes": 7197,
+      "sha256": "53895a0066e9c23e9c72f71b689cd48cc38f8d589d43b280208dd58a4e049987"
+    },
+    {
+      "path": "core-fixtures.json",
+      "bytes": 4110,
+      "sha256": "f742823dff572219632adec36534382875a09d20362811527a2c82dcd1635ca8"
+    },
+    {
+      "path": "lakefile.toml",
+      "bytes": 127,
+      "sha256": "f3453de06ec73b3ef0d11784bfb0a49be1aff9c470d888734a2e80f2239cc76a"
+    },
+    {
+      "path": "lean-toolchain",
+      "bytes": 25,
+      "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+    },
+    {
+      "path": "run_core_fixtures.py",
+      "bytes": 14381,
+      "sha256": "84a7859164e6ee479d0ae0c80e72368895e59be9e044ab0af7f7cb3f6165029e"
+    },
+    {
+      "path": "test_compiler_guard.py",
+      "bytes": 7900,
+      "sha256": "a6223c0413f905df9828e756a6e29dbc255eed43b3be45c9312fe424d62990d3"
+    }
+  ],
+  "excluded_from_self_hash": "SOURCE-FREEZE.json",
+  "supersedes_original_freeze_sha256": "f109849f93fb71252317a4e1c3e3af04d6fbd3b497b98a880bdd906cf05d83cd",
+  "original_snapshot_preserved_privately": true,
+  "collector_source_unchanged_from_original_public_snapshot": true,
+  "collector_sha256": "53895a0066e9c23e9c72f71b689cd48cc38f8d589d43b280208dd58a4e049987",
+  "executed_receipts": [
+    {
+      "kind": "core-fixtures",
+      "path": "audit-results/20261007T160753Z-fab46f63/receipt.json",
+      "bytes": 27769,
+      "sha256": "fb84a8d27dd88ec6ffebd1b8b4e96bef8061f12e1e50a8d661fb48234b3dcc7d"
+    },
+    {
+      "kind": "nonexecuting-compiler-guard",
+      "path": "audit-results/compiler-guard-20261007T160753Z-167fdf87/receipt.json",
+      "bytes": 4366,
+      "sha256": "ccb325303686b8e1fe38760d608567777522480f19418c0445986767473d4dc7"
+    }
+  ],
+  "all_11_core_audit_cases_passed": true,
+  "core_command_record_count": 18,
+  "all_14_nonexecuting_compiler_guard_cases_passed": true,
+  "collector_compiled_first_after_version_gate": true,
+  "compiler_guard_limits": "Rejects recognized elan shims; explicitly supplied native executables still require caller trust; no arbitrary-wrapper authentication.",
+  "root_source_and_configuration_preservation_checks": 66,
+  "all_root_preservation_checks_passed": true,
+  "lake_config_executed": false,
+  "installs_or_cache_or_mathlib_builds": false,
+  "kernel_replay_performed": false,
+  "rh_proof_compilation_performed": false
+}
