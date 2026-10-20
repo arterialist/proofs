@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Forward deduction from the arithmetic sign criterion $\forall^{\mathrm{ev}} x, \operatorname{Re}(W(x)) \le 0$ provides zero unconditional progress toward RH because the premise carries full RH analytical depth and is parity-blocked, while formalization attempts suffer dependency bitrot in upstream arithmetic modules and resort to isolated shadowed nominal types.
-Count: 15
+Count: 16
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -22,6 +22,7 @@ Count: 15
 | 13 | explorer_L00_N14_geometric_support_redundancy | Severed connection to ActualCriticalSignCriterion and duplicated existing machine-verified theorems from RiemannZetaMasterGrandUnification into a disjoint namespace due to a 1-line Mathlib syntax rename. |
 | 14 | explorer_L00_N16_support_height_duality_sign_functor | Superficial 1-line composition rhConsequences_of_RH ∘ RiemannHypothesis_of_eventually_nonpos while partition collapse fails for H > 7.465 and negative heights lack 0 ≤ H guard. |
 | 15 | explorer_L00_N17_reflection_duality_mellin_bridge | 1-line syntactic composition while ActualCriticalSignCriterion transitively pulls in 6 broken upstream files (FloorMellin, CriticalMultipleMellin, SamePrimeDirichlet, etc.). |
+| 16 | explorer_L00_N23_actual_sign_spectral_grand_bridge | Proposing to bypass SamePrimeDirichlet.lean while proving a grand bridge from ActualCriticalSignCriterion achieved 0 errors in prototype only by omitting W(x) entirely and privately duplicating definitions in an orphaned namespace, reproducing existing machine-verified theorems in RiemannZetaMasterGrandUnification.lean. |
 
 
 

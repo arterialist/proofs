@@ -2,7 +2,7 @@
 
 Type: theorem
 Confidence: high
-Source: Candidates 0, 1, 2, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19 (Level 0)
+Source: Candidates 0, 1, 2, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23 (Level 0)
 Relevant to: Connecting autonomous frequency partition predicates to geometric off-line zero support sets across arbitrary heights $H \in \mathbb{R}$.
 
 ## Statement
