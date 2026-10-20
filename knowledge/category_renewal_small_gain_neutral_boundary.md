@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Proving stability for the causal renewal equation $(\mathcal{Z}b)(v) = f(v)$ fails because every critical-line zero has transfer function $T(i\gamma) = -1$ (neutral boundary contact), ruling out strict small-gain bounds $\|\mathcal{T}\| < 1$, while high-frequency modes cancel damping on the first cell.
-Count: 7
+Count: 9
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -14,3 +14,5 @@ Count: 7
 | 5 | node_06_renewal_high_frequency_cancellation | Centered Euler discrepancy $J(u) - \ell$ changes sign (limiting values $-1/12$ and $+1/24$), and high-frequency modes $e^{i\omega v}$ cancel nominal damping on the first cell $T < \log 2$. |
 | 6 | node_13_passivity_negativity_and_forcing_resonance | Preconditioned Euler discrepancy Fourier transform $M(\omega) < 0$ on $\omega \in [10, 14]$ ($M(12) \approx -0.05516$), destroying passivity, while forcing residue at zeta zeros is $-\Gamma(\rho) \ne 0$. |
 | 7 | node_L02_N01_feedback_neutral_boundary_passivity_loss | Renewal operator formulation $(\mathcal{Z}b)(v) = f(v)$ fails small-gain contraction because transfer function $T(i\gamma) = -1$ at every zeta zero, while preconditioned kernel Fourier transform $M(\omega)$ violates passivity on $\omega \in [10, 14]$ ($M(12) \approx -0.05516 < 0$). |
+| 8 | explore_merger_L02_N05_carleman_fredholm_neutral_contact | Backup Route 1 proposing Carleman-Fredholm resolvent determinants $\det_2(I - K(s))$ is blocked because critical-line zeros $\rho = 1/2 + i\gamma$ act as neutral boundary contact points where $T(i\gamma) = -1$, precluding uniform contraction $\|K(s)\|_{S_2} < 1$ as $\operatorname{Re}(s) \to 1/2^+$. |
+| 9 | explore_merger_L02_N07_herglotz_neutral_boundary_circularity | Backup Route 2 Herglotz dispersion $H_C(z) = i\xi'/\xi$ is circular with RH and hits the renewal small-gain neutral boundary contact $T(i\gamma) = -1$ at critical zeros. |

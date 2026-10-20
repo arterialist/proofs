@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Extrapolating eventual nonpositivity $\forall x > A, W(x) \le 0$ from finite numerical testing ($x \le 3000$) is mathematically invalid because off-critical zero excursions are suppressed until astronomical scales ($x > 10^{39}$).
-Count: 25
+Count: 27
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -32,4 +32,5 @@ Count: 25
 | 23 | node_L01_N08_N11_crossover_instability_under_off_critical_zeros | Near the crossover point $x \approx 184.31$, $W(185) = -22.58$ is highly unstable: an off-critical zero at $\beta=0.55, \gamma_1 \approx 14.13$ adds $+59.72$ at $x=185$, flipping $W(185)$ positive to $+37.14$, while remaining completely masked ($< 0.8\%$) at $x \ge 1000$. |
 | 24 | node_L02_N01_N06_crossover_instability_under_zeros | Near $x \approx 184.31$, negativity is structurally fragile: an off-critical zero at $\beta=0.55, \gamma \approx 14.1347$ adds $+59.72$ to $W(185) = -22.58$, flipping it positive ($+37.14$), proving finite window testing cannot certify unconditional nonpositivity. |
 | 25 | node_L02_N03_platt_trudgian_high_frequency_blindness | Rigorous verification on $[185, 20000]$ is completely blind to potential RH violations above the Platt-Trudgian height $3 \times 10^{12}$: spectral suppression $|\rho(\rho+1)|^{-1} < 10^{-25}$ keeps excursions $< 10^{-24}$ across the entire computational domain, delaying crossover to $x > 10^{263.5}$ for $\beta=0.60$ and $x > 10^{533.1}$ for $\beta=0.55$. |
-
+| 26 | explore_merger_L02_N01_interval_arithmetic_extrapolation_barrier | Backup Route 1 proposing compact interval arithmetic on $[7.465, T_0]$ cannot prove the unbounded target HighFrequencyZeroFree(7.465) without tail bounds, while the ratio deficit bound is wrong-sided by 6.68x at $\gamma_1$. |
+| 27 | explore_merger_L02_N04_jensen_d4_finite_extrapolation | Proposing to test the degree-4 Jensen polynomial $J_4^0(X)$ (solved in 1986) cannot extrapolate to $d \ge 5$, while descending GORZ shift $n \ge n_0(d)$ to $n=0$ for all $d$ carries 100% of the unsolved depth of RH. |

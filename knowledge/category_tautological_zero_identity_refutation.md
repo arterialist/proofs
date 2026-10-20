@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 9
+Count: 11
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -16,3 +16,5 @@ Count: 9
 | 7 | explore_merger_L01_N08_dissipation_coordinate_tautology | Backup Route 2 dissipation kernel $D(s, x) = 0$ reduces to the coordinate identity $t(2\sigma - 1) = 0 \iff \sigma = 1/2$, which definitionally assumes $\sigma=1/2$ rather than proving it from spectral or operator mechanics. |
 | 8 | explore_merger_L01_N09_conjugate_dissipation_cancellation | Claiming off-line zeros produce net positive physical dissipation $D(s, x) > 0$ along $\mathbb{R}$ fails because Schwarz reflection pairs zeros $s, \bar{s}$, forcing $D(s, x) + D(\bar{s}, x) \equiv 0$ identically on $\mathbb{R}$. |
 | 9 | explore_merger_L01_N10_theta_mellin_quartic_collapse | Attempting to refute off-line zeros via theta-Mellin barrier $1/|s(s-1)|^2 \le 0.05$ fails because the algebraic bound decays quartically $O(\gamma^{-4})$, reversing direction at $\gamma > 2.11$ such that at $\gamma_1 \approx 14.135$ the required bound is $2.5 \times 10^{-5} \ll 0.05$, leaving hypothetical zeros completely unconstrained. |
+| 10 | explore_merger_L02_N00_rolle_transverse_vanishing | Boundary Cauchy-Riemann transversality difference $J_{\text{true}}(t) - \text{Pole}(t) = -t\Xi'(t)/(2(t^2+1/4))$ vanishes identically at the Rolle extremum $t_* \approx 15.585709$ ($\Xi'(t_*)=0$), failing to obstruct off-line zeros in $(7.465, 16]$. |
+| 11 | explore_merger_L02_N02_hadamard_real_dispersion_pole_cancellation | Backup Route 1 claim that off-line zeros produce an uncompensated transverse barrier in $\operatorname{Re}(\xi'/\xi)$ is refuted because the regular term $R(s) = \xi'/\xi - \zeta'/\zeta$ is holomorphic and bounded ($|R| \approx 0.893$), meaning poles of $\xi'/\xi$ and $\zeta'/\zeta$ cancel identically. |

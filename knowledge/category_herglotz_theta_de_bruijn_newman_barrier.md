@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Deducing Herglotz-Nevanlinna property, real-rootedness, or spectral reality from qualitative kernel positivity/decay or heuristic Sturm-Liouville differential realizations fails due to the Rodgers-Tao de Bruijn-Newman barrier ($\Lambda \ge 0$) and formal non-self-adjointness with Weyl asymptotic growth mismatches.
-Count: 8
+Count: 10
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -15,3 +15,5 @@ Count: 8
 | 6 | explore_merger_L01_N00_herglotz_dispersion_circularity | Deducing zero-freeness from Herglotz-Nevanlinna positivity $\operatorname{Im}(-Xi'/Xi) > 0$ on $\mathbb{C}^+$ is circularly equivalent to RH, while prime-sum representations diverge at the neutral boundary $\operatorname{Re}(s)=1/2$ due to the Selberg parity barrier. |
 | 7 | explore_merger_L01_N04_simplicity_not_equivalent_to_rh | Equivalence between RH and real zero simplicity on $[0, 1/2]$ is refuted by polynomial heat solution $H_t(z) = z^2 - 2t$ (satisfying $\partial_t H_t = -\partial_{zz} H_t$ with $\Lambda = 0$, but developing a double root at $t=0$), proving simplicity is strictly stronger than RH, while multi-particle lattice screening fails because pairwise attraction $-2/\delta$ diverges and overwhelms the bounded lattice field. |
 | 8 | explore_merger_L01_N06_log_derivative_not_herglotz | Backup route claiming $-\zeta'(s)/\zeta(s)$ is a Herglotz function mapping the upper half-plane to itself is mathematically false: $\operatorname{Im}(-\zeta'/\zeta)$ is strictly negative across large regions of the upper half-plane (e.g. $-0.929$ at $1.5+0.5i$ and $-4.699$ at $0.6+14i$), and simple poles at zeros prevent energy positivity. |
+| 9 | explore_merger_L02_N01_hadamard_phase_envelope_sign_inversion | Backup Route 2 claim that Hadamard product $\operatorname{Re}(\xi'/\xi) = \sum_\rho (\sigma-\beta)/((\sigma-\beta)^2 + (t-\gamma)^2) > 0$ on $\sigma > 1/2$ fails because any off-line zero $\beta_0 > 1/2$ contributes strictly negative summands (diverging to $-\infty$ as $\sigma \to \beta_0^-$), requiring RH to deduce positivity. |
+| 10 | explore_merger_L02_N03_jensen_polynomial_asymptotic_shift_descent | Backup Route 2 Pólya-Schur route via Griffin-Ono-Rolen-Zagier (2019) holds only asymptotically for large shifts $n \ge n_0(d)$; descending to shift $n=0$ carries full open RH depth for degree $d \ge 4$, while `ActualArchimedeanFactor.lean` lacks Taylor coefficients of $\Xi$. |

@@ -1,20 +1,20 @@
 # Knowledge Index
 
-## Failed Approach Categories (167 entries in 13 categories)
+## Failed Approach Categories (181 entries in 13 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 31 | Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
 | termwise_arithmetic_positivity | 11 | Individual arithmetic summands in $W(x)$ are strictly positive at composite integers (e.g. $n=36$) | category_termwise_arithmetic_positivity.md |
-| finite_numerical_extrapolation | 25 | Numerical testing on $x \le 20000$ is completely blind to off-critical zero excursions ($x > 10^{35}$ or $x > 10^{263.5}$) | category_finite_numerical_extrapolation.md |
+| finite_numerical_extrapolation | 27 | Numerical testing on $x \le 20000$ is completely blind to off-critical zero excursions ($x > 10^{35}$ or $x > 10^{263.5}$) | category_finite_numerical_extrapolation.md |
 | unshifted_multiplier_pole_cancellation | 2 | Unshifted $d^1$ aggregation introduces $\zeta(s)$ factor, canceling double poles for multiplicities $m \ge 2$ | category_unshifted_multiplier_pole_cancellation.md |
 | goldbach_hard_wall_divergence | 6 | Positive majorants for Goldbach spectral continuation diverge at $\sigma \le 2$ ($c \le 1$), and $c_4^{(3)} < 0$ | category_goldbach_hard_wall_divergence.md |
-| renewal_small_gain_neutral_boundary | 7 | Causal renewal transfer function has neutral boundary contact $T(i\gamma) = -1$ at every critical zero | category_renewal_small_gain_neutral_boundary.md |
+| renewal_small_gain_neutral_boundary | 9 | Causal renewal transfer function has neutral boundary contact $T(i\gamma) = -1$ at every critical zero | category_renewal_small_gain_neutral_boundary.md |
 | unsmoothed_comparison_oscillation | 6 | Unsmoothed comparison differences $W_b - W$ oscillate indefinitely due to critical-line zero poles | category_unsmoothed_comparison_oscillation.md |
 | perron_contour_divergence | 16 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
 | conditional_sign_premise_circularity | 23 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
-| threshold_partition_sub_unit_degeneracy | 18 | Parametric threshold partitions $H \le 1$ are mathematically static because $|t| \le 1$ is already unconditionally zero-free, while extension to $H > 1$ fails without unformalized certificates | category_threshold_partition_sub_unit_degeneracy.md |
-| tautological_zero_identity_refutation | 9 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail because at actual zeros equality holds tautologically, while along 1D nodal curves $\operatorname{Im}(\xi)=0$ phase equality holds identically | category_tautological_zero_identity_refutation.md |
-| herglotz_theta_de_bruijn_newman_barrier | 8 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
+| threshold_partition_sub_unit_degeneracy | 24 | Parametric threshold partitions $H \le 1$ are mathematically static because $|t| \le 1$ is already unconditionally zero-free, while extension to $H > 1$ fails without unformalized certificates | category_threshold_partition_sub_unit_degeneracy.md |
+| tautological_zero_identity_refutation | 11 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail because at actual zeros equality holds tautologically, while along 1D nodal curves $\operatorname{Im}(\xi)=0$ phase equality holds identically | category_tautological_zero_identity_refutation.md |
+| herglotz_theta_de_bruijn_newman_barrier | 10 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
 | weil_quadratic_autocorrelation_positivity_fallacy | 5 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
 
 ## Theorems
@@ -61,6 +61,7 @@
 | reference_vinogradov_korobov_zero_free_p1.md | high | Vinogradov-Korobov (1958): Zero-free bound $O(x^2 \exp(-c(\log x)^{3/5}))$ diverges vs drift by $x^{1/2-o(1)}$ |
 | reference_titchmarsh_zeta_zero_spacing_p1.md | high | Titchmarsh (1986) Section 9.3: Zero-spacing lemma $|T_k - \gamma| \gg 1/\log T_k$ for horizontal Perron contour shifts |
 | reference_rodgers_tao_newman_conjecture_p1.md | high | Rodgers & Tao (2020): Proof of Newman's conjecture $\Lambda \ge 0$, establishing the de Bruijn-Newman barrier |
+| reference_griffin_ono_rolen_zagier_jensen_polynomials_p1.md | high | Griffin, Ono, Rolen, Zagier (2019) Thm 1: Asymptotic hyperbolicity of shifted Jensen polynomials $J_d^{n, \Xi}(X)$ for $n \ge n_0(d)$ |
 
 ## Node Directions
 ### Iteration 1, Round 1
