@@ -2,7 +2,7 @@
 
 Type: theorem
 Confidence: high
-Source: Candidates 0, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23 (Level 0)
+Source: Candidates 0, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 (Level 0)
 Relevant to: Proving unconditional equivalence between unilateral right-half zero-freeness, unilateral left-half zero-freeness, and the Riemann Hypothesis without bilateral conjunctions.
 
 ## Statement

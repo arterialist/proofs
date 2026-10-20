@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Forward deduction from the arithmetic sign criterion $\forall^{\mathrm{ev}} x, \operatorname{Re}(W(x)) \le 0$ provides zero unconditional progress toward RH because the premise carries full RH analytical depth and is parity-blocked, while formalization attempts suffer dependency bitrot in upstream arithmetic modules and resort to isolated shadowed nominal types.
-Count: 16
+Count: 19
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -23,6 +23,9 @@ Count: 16
 | 14 | explorer_L00_N16_support_height_duality_sign_functor | Superficial 1-line composition rhConsequences_of_RH ∘ RiemannHypothesis_of_eventually_nonpos while partition collapse fails for H > 7.465 and negative heights lack 0 ≤ H guard. |
 | 15 | explorer_L00_N17_reflection_duality_mellin_bridge | 1-line syntactic composition while ActualCriticalSignCriterion transitively pulls in 6 broken upstream files (FloorMellin, CriticalMultipleMellin, SamePrimeDirichlet, etc.). |
 | 16 | explorer_L00_N23_actual_sign_spectral_grand_bridge | Proposing to bypass SamePrimeDirichlet.lean while proving a grand bridge from ActualCriticalSignCriterion achieved 0 errors in prototype only by omitting W(x) entirely and privately duplicating definitions in an orphaned namespace, reproducing existing machine-verified theorems in RiemannZetaMasterGrandUnification.lean. |
+| 17 | explorer_L00_N24_bilateral_support_grand_confinement | Claimed machine-verified grand consequence ingestion rhConsequences_of_eventually_nonpos was omitted from verified artifact due to broken upstream dependencies, while formal reflection used isolated shadow definitions disconnected from canonical building blocks. |
+| 18 | explorer_L00_N30_sign_confinement_bridge_isolation | Prototype achieved exit code 0 only by completely omitting repository imports, locally redefining shadow copies of support sets in a private namespace, and trivializing every theorem to assume h_rh : RiemannHypothesis, reproducing existing 1-line compositions rhConsequences_of_RH ∘ RiemannHypothesis_of_eventually_nonpos. |
+| 19 | explorer_L00_N31_unified_spectral_mellin_bridge | Falsely claimed an 'exact, bidirectional bridge' when only the forward implication eventually_nonpos → RH is formalized and reverse is open; propositional contrapositive of RH reduction was rhetorically styled as an 'unconditional sharp oscillation obstruction' that reduces to False → False under RH. |
 
 
 
