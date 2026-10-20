@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Parametric threshold partitions $H \le 1$ are mathematically static because $|t| \le 1$ is already unconditionally zero-free, refuting identical zeros for all $H \le 1$; while extending equivalence to $H > 1$ fails unconditionally without external unformalized low-frequency certificates.
-Count: 24
+Count: 28
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -31,3 +31,7 @@ Count: 24
 | 22 | explore_merger_L02_N03_high_frequency_mechanism_vacuum | Primary route reduces RH to HighFrequencyZeroFree(7.465) where slab [0, 7.465] contains 0 non-trivial zeros, while the strategy provides zero forward operator or analytical bound on the open high-frequency domain. |
 | 23 | explore_merger_L02_N05_ghost_duality_and_super_7465_breakdown | Partition collapse strictly breaks for $H > 7.465$ without unproved low-frequency certificates, while claimed verified stratum declarations are ghost claims absent from the codebase. |
 | 24 | explore_merger_L02_N06_ghost_stratum_and_unbuildable_deficit | Stratum slicing declarations are unmerged ghost claims absent from UnilateralOfflineSupportBridge.lean, and ratio deficit bounds reverse at $\gamma_* \approx 7.490337$. |
+| 25 | explore_merger_L03_N00_empty_reduction_shell_h0_7465 | Primary route reduces RH to HighFrequencyZeroFree(7.465) where slab [-7.465, 7.465] contains zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$), leaving 100% of non-trivial zeros in the open high-frequency slice with zero forward proof engine. |
+| 26 | explore_merger_L03_N01_spectral_vacuity_and_ratio_reversal | Reducing RH to HighFrequencyZeroFree(7.465) eliminates zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$) while ratio deficit bounds reverse sign at $\gamma_* \approx 7.490337$, leaving the primary route as an empty reduction shell. |
+| 27 | explore_merger_L03_N02_non_extensibility_super_7465_breakdown | Partition collapse strictly breaks for $H > 7.465$ without external low-frequency certificates (mock zero at $0.75+10i$ for $H=14$), while $H \le 7.465$ eliminates zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$). |
+| 28 | explore_merger_L03_N03_spectral_vacuity_barrier_high_freq | Primary route reduces RH to HighFrequencyZeroFree(7.465) where the slab contains zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$), leaving 100% of the non-trivial zero spectrum unresolved and creating an unbridgeable dead zone on $(7.465, 16]$. |

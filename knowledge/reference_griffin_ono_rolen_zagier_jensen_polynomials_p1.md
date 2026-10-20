@@ -2,7 +2,7 @@
 
 Type: reference
 Confidence: high
-Source: explore_merger_L02_N03, explore_falser_L02_N03
+Source: explore_merger_L02_N03, explore_falser_L02_N03, explore_merger_L03_N00, L03_N01, L03_N02, L03_N03, explore_falser_L03_N00, L03_N01, L03_N02, L03_N03
 Relevant to: Pólya-Schur theory, Jensen polynomials, real-rootedness of completed zeta function, and de Bruijn-Newman parameter bounds
 
 ## Bibliographic Info
@@ -27,5 +27,5 @@ associated with the Taylor coefficients $\gamma_\Xi(k)$ of the completed Riemann
 - Provides a potential discrete algebraic bridge to RH that bypasses continuous backward heat flow PDEs and Calogero-Moser multi-particle ODEs.
 
 ## Caveats
-- **Asymptotic Shift Gap**: The theorem proves hyperbolicity only for sufficiently large shifts $n \ge n_0(d)$. The Riemann Hypothesis requires hyperbolicity at shift $n = 0$. For degree $d \ge 4$, descending from $n \ge n_0(d)$ to $n = 0$ remains open and carries the full analytical depth of the Riemann Hypothesis.
-- **Missing Lean 4 Formalization**: Mathlib 4 currently contains no infrastructure for Jensen polynomials or high-order Taylor coefficients of $\Xi(\sqrt{x})$; repository file `ActualArchimedeanFactor.lean` contains only Archimedean log-derivatives and zero polynomial root certificates.
+- **Solved Low-Degree Regimes vs Open Asymptotic Gap**: Hyperbolicity of $J_d^0(X)$ for $d \le 3$ was proved by Craven, Csordas, and Varga (1986), and for $d = 4$ by Csordas, Norfolk, and Varga (1986). Testing low degrees ($d \le 4$) is a 40-year-old solved problem that provides zero deduction for $d \ge 5$. For all degrees $d \ge 5$, descending from the asymptotic regime $n \ge n_0(d)$ to $n = 0$ carries 100% of the unsolved analytical depth of the Riemann Hypothesis.
+- **Missing Lean 4 Formalization**: Mathlib 4 currently contains zero infrastructure for Jensen polynomials, Taylor coefficients of $\Xi$, or the Laguerre-Pólya class; repository file `ActualArchimedeanFactor.lean` contains only Archimedean log-derivatives and zero polynomial root certificates.

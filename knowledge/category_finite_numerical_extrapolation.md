@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Extrapolating eventual nonpositivity $\forall x > A, W(x) \le 0$ from finite numerical testing ($x \le 3000$) is mathematically invalid because off-critical zero excursions are suppressed until astronomical scales ($x > 10^{39}$).
-Count: 27
+Count: 30
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -34,3 +34,6 @@ Count: 27
 | 25 | node_L02_N03_platt_trudgian_high_frequency_blindness | Rigorous verification on $[185, 20000]$ is completely blind to potential RH violations above the Platt-Trudgian height $3 \times 10^{12}$: spectral suppression $|\rho(\rho+1)|^{-1} < 10^{-25}$ keeps excursions $< 10^{-24}$ across the entire computational domain, delaying crossover to $x > 10^{263.5}$ for $\beta=0.60$ and $x > 10^{533.1}$ for $\beta=0.55$. |
 | 26 | explore_merger_L02_N01_interval_arithmetic_extrapolation_barrier | Backup Route 1 proposing compact interval arithmetic on $[7.465, T_0]$ cannot prove the unbounded target HighFrequencyZeroFree(7.465) without tail bounds, while the ratio deficit bound is wrong-sided by 6.68x at $\gamma_1$. |
 | 27 | explore_merger_L02_N04_jensen_d4_finite_extrapolation | Proposing to test the degree-4 Jensen polynomial $J_4^0(X)$ (solved in 1986) cannot extrapolate to $d \ge 5$, while descending GORZ shift $n \ge n_0(d)$ to $n=0$ for all $d$ carries 100% of the unsolved depth of RH. |
+| 28 | explore_merger_L03_N00_jensen_finite_extrapolation_fallacy | Proposing to test low-degree Jensen polynomials (solved for $d \le 4$ in 1986) cannot extrapolate to $d \ge 5$, while descending GORZ shifts to $n=0$ for all $d$ carries 100% of RH depth with zero Mathlib infrastructure. |
+| 29 | explore_merger_L03_N01_jensen_degree_five_discriminant_extrapolation | Proposing to symbolically compute degree-5 Jensen discriminants cannot prove hyperbolicity for all $d \ge 5$, while descending to $n=0$ carries full RH depth. |
+| 30 | explore_merger_L03_N03_jensen_finite_degree_extrapolation_barrier | Testing small-degree Jensen polynomials $J_4^0(X)$ provides zero mathematical deduction for $d \ge 5$, committing the finite numerical extrapolation fallacy while descending to $n=0$ carries full RH depth. |

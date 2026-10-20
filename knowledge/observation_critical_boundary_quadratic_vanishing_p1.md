@@ -2,7 +2,7 @@
 
 Type: observation
 Confidence: high
-Source: Candidate 25 (Level 0 falser report), explore_merger_L02_N00, explore_merger_L02_N01, explore_falser_L02_N00
+Source: Candidate 25 (Level 0 falser report), explore_merger_L02_N00, explore_merger_L02_N01, explore_falser_L02_N00, explore_merger_L03_N00, L03_N01, L03_N02, L03_N03, explore_falser_L03_N00, L03_N01, L03_N02, L03_N03
 Relevant to: Coordinate disparity methods, completed zeta modular Mellin integrals, displacement rigidity, and intermediate ratio deficit bounds on the critical strip
 
 ## Statement
