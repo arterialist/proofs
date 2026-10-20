@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (139 entries in 13 categories)
+## Failed Approach Categories (167 entries in 13 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 31 | Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
@@ -11,11 +11,11 @@
 | renewal_small_gain_neutral_boundary | 7 | Causal renewal transfer function has neutral boundary contact $T(i\gamma) = -1$ at every critical zero | category_renewal_small_gain_neutral_boundary.md |
 | unsmoothed_comparison_oscillation | 6 | Unsmoothed comparison differences $W_b - W$ oscillate indefinitely due to critical-line zero poles | category_unsmoothed_comparison_oscillation.md |
 | perron_contour_divergence | 16 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
-| conditional_sign_premise_circularity | 19 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
-| threshold_partition_sub_unit_degeneracy | 5 | Parametric threshold partitions $H \le 1$ are mathematically static because $|t| \le 1$ is already unconditionally zero-free, while extension to $H > 1$ fails without unformalized certificates | category_threshold_partition_sub_unit_degeneracy.md |
-| tautological_zero_identity_refutation | 4 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail because at actual zeros equality holds tautologically, while along 1D nodal curves $\operatorname{Im}(\xi)=0$ phase equality holds identically | category_tautological_zero_identity_refutation.md |
-| herglotz_theta_de_bruijn_newman_barrier | 4 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
-| weil_quadratic_autocorrelation_positivity_fallacy | 3 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
+| conditional_sign_premise_circularity | 23 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
+| threshold_partition_sub_unit_degeneracy | 18 | Parametric threshold partitions $H \le 1$ are mathematically static because $|t| \le 1$ is already unconditionally zero-free, while extension to $H > 1$ fails without unformalized certificates | category_threshold_partition_sub_unit_degeneracy.md |
+| tautological_zero_identity_refutation | 9 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail because at actual zeros equality holds tautologically, while along 1D nodal curves $\operatorname{Im}(\xi)=0$ phase equality holds identically | category_tautological_zero_identity_refutation.md |
+| herglotz_theta_de_bruijn_newman_barrier | 8 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
+| weil_quadratic_autocorrelation_positivity_fallacy | 5 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
 
 ## Theorems
 | File | Confidence | Summary |
@@ -49,6 +49,7 @@
 | observation_completed_zeta_nodal_phase_matching_p1.md | high | Phase ratio equality $\Theta_{\mathrm{int}} = \Theta_{\mathrm{alg}}$ holds identically along continuous 1D nodal curves $\operatorname{Im}(\xi)=0$ throughout the strip and at all actual zeros |
 | observation_chirped_wavepacket_support_exit_p1.md | high | Stationary phase point $x_{\mathrm{stat}}(T) \to 1/(2\eta) > w$ exits support for $T > T_{\mathrm{exit}}$, extinguishing zero coupling super-polynomially ($< 5\times 10^{-14}$ at $T=500$) |
 | observation_symmetrized_resolvent_off_critical_pole_collapse_p1.md | high | Reflection-invariant mapping $z(s) = s(1-s)$ collapses Herglotz positivity under off-critical poles ($\operatorname{Im}(F) \to -\infty$), while finite critical-zero sampling is blind to off-critical poles |
+| observation_conjugate_zero_dissipation_cancellation_p1.md | high | Complex conjugate zero pair dissipation kernels cancel identically on the real axis ($D(s, x) + D(\bar{s}, x) \equiv 0$), precluding symmetric resolvent energy signatures |
 
 ## References
 | File | Confidence | Summary |

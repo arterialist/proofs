@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Deducing Herglotz-Nevanlinna property, real-rootedness, or spectral reality from qualitative kernel positivity/decay or heuristic Sturm-Liouville differential realizations fails due to the Rodgers-Tao de Bruijn-Newman barrier ($\Lambda \ge 0$) and formal non-self-adjointness with Weyl asymptotic growth mismatches.
-Count: 4
+Count: 8
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -11,3 +11,7 @@ Count: 4
 | 2 | explorer_L00_N20_herglotz_phase_monotonicity | Claimed normal derivative positivity $\partial_d u|_{d=0} > 0$ assumes real Hadamard factorization (circular with RH); an off-line zero $\rho_0 = 1/2+\delta+i\gamma_0$ contributes a negative defect $-1/\delta^2$ (e.g. $-100.0$ for $\delta=0.1$) completely overwhelming background curvature (+0.24) to give net negative $-99.76$, while tilted theta Fourier interlacing is definitionally equivalent to $\xi(1/2+d+it)=0$. |
 | 3 | explorer_L00_N22_debruijn_newman_calogero_moser | Backward heat flow $\partial_t H_t = -\partial_{zz} H_t$ down to $t=0$ requires non-vanishing zero spacing $\inf_{j\ne k} |z_j - z_k| > 0$ which is false for all $t$ because zero density $N(T) \sim (T/2\pi)\log T$ forces $\delta(T) \to 0$, while the claimed 2-particle collapse threshold $\Delta x_0 \ge \sqrt{2}$ ignores infinite-lattice screening forces and is violated by 19% of the first 100 zeta zeros. |
 | 4 | explorer_L00_N29_symmetrized_resolvent_herglotz | Reducing RH to Herglotz positivity of $F(z) = -\Xi_*'(z)/\Xi_*(z)$ on $\mathbb{C}^+$ is circularly equivalent to RH as poles of $\zeta'/\zeta$ in $\sigma > 1/2$ mirror off-line zeros; code probe had fatal sign inversion ($\operatorname{Im}(F) = -0.000587 < 0$ on $\mathbb{C}^-$, not $>0$); and finite 99-zero sampling is blind to off-critical poles (which drop $\operatorname{Im}(F)$ to $-999.6$). |
+| 5 | explore_merger_L01_N02_rodgers_tao_reversed_inequality | Backup route claims Rodgers-Tao (2020) proved $\Lambda \le 0$ to deduce real-rootedness, but Rodgers-Tao proved Newman's conjecture $\Lambda \ge 0$ (the exact opposite inequality), which provides zero information about zero reality. |
+| 6 | explore_merger_L01_N00_herglotz_dispersion_circularity | Deducing zero-freeness from Herglotz-Nevanlinna positivity $\operatorname{Im}(-Xi'/Xi) > 0$ on $\mathbb{C}^+$ is circularly equivalent to RH, while prime-sum representations diverge at the neutral boundary $\operatorname{Re}(s)=1/2$ due to the Selberg parity barrier. |
+| 7 | explore_merger_L01_N04_simplicity_not_equivalent_to_rh | Equivalence between RH and real zero simplicity on $[0, 1/2]$ is refuted by polynomial heat solution $H_t(z) = z^2 - 2t$ (satisfying $\partial_t H_t = -\partial_{zz} H_t$ with $\Lambda = 0$, but developing a double root at $t=0$), proving simplicity is strictly stronger than RH, while multi-particle lattice screening fails because pairwise attraction $-2/\delta$ diverges and overwhelms the bounded lattice field. |
+| 8 | explore_merger_L01_N06_log_derivative_not_herglotz | Backup route claiming $-\zeta'(s)/\zeta(s)$ is a Herglotz function mapping the upper half-plane to itself is mathematically false: $\operatorname{Im}(-\zeta'/\zeta)$ is strictly negative across large regions of the upper half-plane (e.g. $-0.929$ at $1.5+0.5i$ and $-4.699$ at $0.6+14i$), and simple poles at zeros prevent energy positivity. |

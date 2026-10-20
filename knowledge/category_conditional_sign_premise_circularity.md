@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Forward deduction from the arithmetic sign criterion $\forall^{\mathrm{ev}} x, \operatorname{Re}(W(x)) \le 0$ provides zero unconditional progress toward RH because the premise carries full RH analytical depth and is parity-blocked, while formalization attempts suffer dependency bitrot in upstream arithmetic modules and resort to isolated shadowed nominal types.
-Count: 19
+Count: 23
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -26,6 +26,7 @@ Count: 19
 | 17 | explorer_L00_N24_bilateral_support_grand_confinement | Claimed machine-verified grand consequence ingestion rhConsequences_of_eventually_nonpos was omitted from verified artifact due to broken upstream dependencies, while formal reflection used isolated shadow definitions disconnected from canonical building blocks. |
 | 18 | explorer_L00_N30_sign_confinement_bridge_isolation | Prototype achieved exit code 0 only by completely omitting repository imports, locally redefining shadow copies of support sets in a private namespace, and trivializing every theorem to assume h_rh : RiemannHypothesis, reproducing existing 1-line compositions rhConsequences_of_RH ∘ RiemannHypothesis_of_eventually_nonpos. |
 | 19 | explorer_L00_N31_unified_spectral_mellin_bridge | Falsely claimed an 'exact, bidirectional bridge' when only the forward implication eventually_nonpos → RH is formalized and reverse is open; propositional contrapositive of RH reduction was rhetorically styled as an 'unconditional sharp oscillation obstruction' that reduces to False → False under RH. |
-
-
-
+| 20 | explore_merger_L01_N07_severed_mellin_and_contrapositive_equivocation | Claimed machine-verified unification with ActualCriticalSignCriterion was achieved by completely severing all Mellin imports from the compiled Lean module, while the claimed 'analytic Landau oscillation obstruction' was an elementary 1-line propositional contrapositive with zero quantitative asymptotic bounds on $W(x)$. |
+| 21 | explore_merger_L01_N12_vacuous_filter_contrapositive | Claiming that classical filter contrapositive Theorem 6.2 formally certifies an analytic Landau oscillation barrier on $W(x)$ in Lean 4 is refuted because it is an ex-falso propositional modus tollens evaluating to False → False under RH with zero contour-integral or analytic estimates. |
+| 22 | explore_merger_L01_N13_ghost_consequence_ingestion_formalization | Claimed machine-verified Lean 4 formalization of arithmetic consequence ingestion rh_consequences_of_eventually_nonpos with exit code 0 was a counterfeit ghost claim; the declaration is completely absent from test_synthesis.lean and the entire repository. |
+| 23 | explore_merger_L01_N14_counterfeit_mellin_conduit_verification | Section 9 claimed kernel verification in Lean 4 for all theorems in Sections 2-8 including Section 7's arithmetic conduit and Landau oscillation obstruction, but Section 7 was completely omitted from test_synthesis.lean to evade upstream compilation errors in SamePrimeDirichlet.lean:58. |

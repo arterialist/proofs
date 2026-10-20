@@ -1,8 +1,8 @@
-# High-Frequency Support Slice Equivalence
+# Stratified Support-Height Duality and Slice Equivalence
 
 Type: theorem
 Confidence: high
-Source: Candidates 0, 1, 2, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 (Level 0)
+Source: Candidates 0, 1, 2, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 (Level 0), explore_merger_L01_N12, explore_merger_L01_N13, explore_merger_L01_N14
 Relevant to: Connecting autonomous frequency partition predicates to geometric off-line zero support sets across arbitrary heights $H \in \mathbb{R}$.
 
 ## Statement
@@ -11,8 +11,13 @@ $$\mathcal{Z}_{\mathrm{nontriv}} := \{s \in \mathbb{C} \mid \zeta(s) = 0 \wedge 
 $$\mathrm{RightOfflineSupport} := \{s \in \mathcal{Z}_{\mathrm{nontriv}} \mid \operatorname{Re}(s) > 1/2\}.$$
 For any real height threshold $H \in \mathbb{R}$, define the predicate:
 $$\mathrm{HighFrequencyZeroFree}(H) :\equiv \forall s \in \mathbb{C},\, \zeta(s) = 0 \implies s \ne 1 \implies H < |\operatorname{Im}(s)| \implies \operatorname{Re}(s) > 1/2 \implies \bot.$$
-Then for every $H \in \mathbb{R}$, the high-frequency zero-free predicate is logically and set-theoretically equivalent to the emptiness of the high-frequency right off-line support slice:
-$$\mathrm{HighFrequencyZeroFree}(H) \iff \{s \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(s)|\} = \emptyset.$$
+Then for every $H \in \mathbb{R}$, the following three assertions are logically and set-theoretically equivalent:
+1. $\mathrm{HighFrequencyZeroFree}(H)$.
+2. $\{s \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(s)|\} = \emptyset$.
+3. $\forall s \in \mathrm{RightOfflineSupport},\, |\operatorname{Im}(s)| \le H$.
+
+Furthermore, under the premise $\mathrm{LowFrequencyZeroFree}(H)$, the low-frequency slab $\{s \in \mathrm{RightOfflineSupport} \mid |\operatorname{Im}(s)| \le H\} = \emptyset$, collapsing the equivalence to:
+$$\mathrm{RightOfflineSupport} = \emptyset \iff \mathrm{HighFrequencyZeroFree}(H).$$
 
 ## Proof
 1. **Right Half-Plane Trivial Zero Annihilation**:
@@ -22,28 +27,24 @@ $$\mathrm{HighFrequencyZeroFree}(H) \iff \{s \in \mathrm{RightOfflineSupport} \m
    $$\forall s \in \mathbb{C},\, \operatorname{Re}(s) > 1/2 \implies \neg \exists n \in \mathbb{N},\, s = -2(n+1).$$
    In Lean 4, this is verified via `Nat.cast_nonneg` and `linarith`.
 
-2. **Forward Implication ($\implies$)**:
-   Assume $\mathrm{HighFrequencyZeroFree}(H)$. Let $s \in \{z \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(z)|\}$.
-   By definition of $\mathrm{RightOfflineSupport}$, $\zeta(s) = 0$, $s \ne 1$, and $\operatorname{Re}(s) > 1/2$.
-   Moreover, $H < |\operatorname{Im}(s)|$.
-   Instantiating $\mathrm{HighFrequencyZeroFree}(H)$ at $s$ with these conditions yields $\bot$.
-   Thus no element can belong to the slice, proving $\{s \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(s)|\} = \emptyset$.
+2. **Duality Chain (1) $\implies$ (3) $\implies$ (2) $\implies$ (1)**:
+   - (1) $\implies$ (3): Assume $\mathrm{HighFrequencyZeroFree}(H)$ and let $s \in \mathrm{RightOfflineSupport}$. If $|\operatorname{Im}(s)| > H$, then (1) gives $\bot$. Hence $|\operatorname{Im}(s)| \le H$.
+   - (3) $\implies$ (2): If $s \in \mathrm{RightOfflineSupport}$ with $|\operatorname{Im}(s)| > H$, (3) gives $|\operatorname{Im}(s)| \le H$, violating irreflexivity of $<$ on $\mathbb{R}$. Thus the slice is empty.
+   - (2) $\implies$ (1): If $s$ satisfies $\zeta(s) = 0$, $s \ne 1$, $\operatorname{Re}(s) > 1/2$, and $|\operatorname{Im}(s)| > H$, then $s \in \{w \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(w)|\} = \emptyset \implies \bot$. Hence $\mathrm{HighFrequencyZeroFree}(H)$ holds.
 
-3. **Reverse Implication ($\impliedby$)**:
-   Assume $\{s \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(s)|\} = \emptyset$.
-   Let $s \in \mathbb{C}$ satisfy $\zeta(s) = 0$, $s \ne 1$, $H < |\operatorname{Im}(s)|$, and $\operatorname{Re}(s) > 1/2$.
-   By Step 1, $\operatorname{Re}(s) > 1/2 \implies \neg \exists n \in \mathbb{N},\, s = -2(n+1)$.
-   Thus $s \in \mathcal{Z}_{\mathrm{nontriv}}$, and since $\operatorname{Re}(s) > 1/2$, $s \in \mathrm{RightOfflineSupport}$.
-   Since also $H < |\operatorname{Im}(s)|$, we have $s \in \{z \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(z)|\}$.
-   By assumption this set is empty, so $s \in \emptyset \implies \bot$.
-   Hence $\mathrm{HighFrequencyZeroFree}(H)$ holds. $\blacksquare$
+3. **Partition Collapse**:
+   $\mathrm{RightOfflineSupport} = \{s \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(s)|\} \cup \{s \in \mathrm{RightOfflineSupport} \mid |\operatorname{Im}(s)| \le H\}$.
+   If $\mathrm{LowFrequencyZeroFree}(H)$ holds, any $s \in \mathrm{RightOfflineSupport}$ with $|\operatorname{Im}(s)| \le H$ satisfies $\operatorname{Re}(s) \le 1/2$, contradicting $\operatorname{Re}(s) > 1/2$.
+   Thus the lower slab is empty, and $\mathrm{RightOfflineSupport} = \emptyset \iff \mathrm{HighFrequencyZeroFree}(H)$. $\blacksquare$
 
 ## Hypotheses / Conditions
-- No unproved analytic hypotheses.
-- Depends purely on elementary real arithmetic on $\operatorname{Re}(s)$ and basic set theory.
+- No unproved analytic hypotheses for the 3-way duality.
+- Partition collapse requires $\mathrm{LowFrequencyZeroFree}(H)$, which is unconditionally satisfied across $(-\infty, 7.465]$ (vacuously for $H < 0$, and via `cumulative_zero_free_base_seven_forty_six_five` for $0 \le H \le 7.465$).
 
 ## How It Applies
-Bridges the functional partition predicates $\mathrm{HighFrequencyZeroFree}(H)$ used in spectral grand unification with the set-theoretic geometric support framework $\mathrm{RightOfflineSupport}$. It allows reformulating frequency-localized zero-freeness as slice emptiness for any height $H$.
+Bridges the functional partition predicates $\mathrm{HighFrequencyZeroFree}(H)$ used in spectral grand unification with the set-theoretic geometric support framework $\mathrm{RightOfflineSupport}$. It allows reformulating frequency-localized zero-freeness as ordinate boundedness or slice emptiness for any height $H$.
 
 ## Caveats
-This equivalence is exact and universal, but proving $\{s \in \mathrm{RightOfflineSupport} \mid H < |\operatorname{Im}(s)|\} = \emptyset$ for $H > 1$ remains as difficult as proving $\mathrm{HighFrequencyZeroFree}(H)$. It provides an architectural translation dictionary rather than an analytical shortcut.
+1. **Analytical Vacuity for $H \le 7.465$**: Because the first non-trivial zero is at $\gamma_1 \approx 14.135 > 7.465$, the high-frequency slice contains 100% of all non-trivial off-line zeros. Proving $\mathrm{HighFrequencyZeroFree}(H)$ for $H \le 7.465$ is identical in difficulty to proving the full Riemann Hypothesis.
+2. **Breakdown for $H > 7.465$**: For any asymptotic height $H > 7.465$ where high-frequency operator methods operate, partition collapse strictly fails without unproved low-frequency zero-free certificates.
+

@@ -2,7 +2,7 @@
 
 Type: observation
 Confidence: high
-Source: Candidate 29 (Level 0 falser report)
+Source: Candidate 29 (Level 0 falser report), Candidate L01_N06, explore_falser_L01_N06
 Relevant to: Invariant quadratic spectral parameter $z(s) = s(1-s)$, resolvent expansions, and Herglotz-Pick dispersion relations
 
 ## Statement
@@ -17,8 +17,12 @@ For any Herglotz function, Schwarz reflection $F(\bar{z}) = \overline{F(z)}$ for
 
 3. While critical zeros produce a strictly negative imaginary field on $\mathbb{C}^-$ (e.g. $-0.0005868$ at $z = 100.1875 - 5.0i$), a single hypothetical off-critical zero $\rho_0 = \beta_0 + i\gamma_0$ with $\beta_0 > 1/2, \gamma_0 > 0$ introduces a pole in $\Xi_*(z)$ at $\bar{\lambda}_0 = z(\bar{\rho}_0) \in \mathbb{C}^+$ with residue $-m$. Evaluating near this pole at $z = \bar{\lambda}_0 - i\epsilon \in \mathbb{C}^+$ yields $\operatorname{Im}(F(z)) \to -\infty$, completely collapsing Herglotz positivity.
 
+4. The uncompleted logarithmic derivative $-\zeta'(s)/\zeta(s)$ is **not** a Herglotz/Pick function:
+Attempting to treat $-\zeta'(s)/\zeta(s)$ as a Herglotz function mapping the upper half-plane to itself is mathematically false. In the half-plane of absolute convergence $\operatorname{Re}(s) > 1$:
+$$\operatorname{Im}\left(-\frac{\zeta'(s)}{\zeta(s)}\right) = -\sum_{n=1}^\infty \frac{\Lambda(n)}{n^\sigma} \sin(t \log n),$$
+which takes strictly negative values for small $t > 0$. Furthermore, near critical zeros $\rho_n = 1/2 + i\gamma_n$, $-\zeta'/\zeta$ has simple poles with residue $-1$, causing $\operatorname{Im}(-\zeta'/\zeta)$ to diverge to $-\infty$ on neighborhoods in the upper half-plane.
+
 ## Evidence
-Adversarial falser code execution on Candidate 29 evaluated:
 1. Exact evaluation of $F(z)$ on $\mathbb{C}^-$ at $s = 0.75 + 10.0i$ ($z = 100.1875 - 5.0i$, $\operatorname{Im}(z) = -5.0$):
    - Analytic formula: $F(z) = 0.02953185 - 0.00058684 i$
    - 99-zero resolvent sum: $F_{99}(z) = 0.02640150 - 0.00058676 i$
@@ -29,10 +33,16 @@ Adversarial falser code execution on Candidate 29 evaluated:
      - Background field from critical zeros: $+0.0199 + 0.3539 i$
      - Off-critical pole contribution: $-1000.0 i$
      - Total imaginary part: $\operatorname{Im}(F(z_{\mathrm{probe}})) = -999.646 < 0$.
+3. Numerical falsification of Herglotz property for $-\zeta'(s)/\zeta(s)$ (mpmath, 25 dps):
+   - At $s = 1.5 + 0.5i$ (inside $\operatorname{Re}(s) > 1$): $\operatorname{Im}(-\zeta'/\zeta) = -0.928515 < 0$.
+   - At $s = 2.0 + 3.0i$ (inside $\operatorname{Re}(s) > 1$): $\operatorname{Im}(-\zeta'/\zeta) = -0.050953 < 0$.
+   - At $s = 0.6 + 1.0i$: $\operatorname{Im}(-\zeta'/\zeta) = -0.646862 < 0$.
+   - At $s = 0.6 + 14.0i$: $\operatorname{Im}(-\zeta'/\zeta) = -4.699338 < 0$.
 
 ## Implications
-1. Herglotz positivity of $F(z)$ on $\mathbb{C}^+$ is strictly equivalent to the Riemann Hypothesis; proving Herglotz positivity directly from $F(z) = -1/z - \frac{1}{2s-1}[\frac{1}{2}\log\pi - \frac{1}{2}\psi(s/2) - \zeta'/ \zeta]$ requires proving that $\zeta'/\zeta$ has no poles in $\sigma > 1/2$, which is circularly equivalent to RH.
+1. Herglotz positivity of $F(z)$ on $\mathbb{C}^+$ is strictly equivalent to the Riemann Hypothesis; proving Herglotz positivity directly from $F(z)$ requires proving that $\zeta'/\zeta$ has no poles in $\sigma > 1/2$, which is circularly equivalent to RH.
 2. Numerical testing over finite sets of critical zeros trivially produces Herglotz signs because $\lambda_n \in \mathbb{R}$, demonstrating extreme blindness to hypothetical off-critical poles.
+3. Proving RH via Herglotz/Pick mapping of $-\zeta'(s)/\zeta(s)$ is completely blocked because $-\zeta'/\zeta$ fails Herglotz sign definiteness across the upper half-plane.
 
 ## Caveats
 The quadratic mapping $z(s) = s(1-s)$ is a 2-to-1 conformal branched covering ramified at $s = 1/2$ ($z = 1/4$).
