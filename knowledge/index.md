@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (104 entries in 8 categories)
+## Failed Approach Categories (139 entries in 13 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 31 | Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
@@ -11,6 +11,11 @@
 | renewal_small_gain_neutral_boundary | 7 | Causal renewal transfer function has neutral boundary contact $T(i\gamma) = -1$ at every critical zero | category_renewal_small_gain_neutral_boundary.md |
 | unsmoothed_comparison_oscillation | 6 | Unsmoothed comparison differences $W_b - W$ oscillate indefinitely due to critical-line zero poles | category_unsmoothed_comparison_oscillation.md |
 | perron_contour_divergence | 16 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
+| conditional_sign_premise_circularity | 19 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
+| threshold_partition_sub_unit_degeneracy | 5 | Parametric threshold partitions $H \le 1$ are mathematically static because $|t| \le 1$ is already unconditionally zero-free, while extension to $H > 1$ fails without unformalized certificates | category_threshold_partition_sub_unit_degeneracy.md |
+| tautological_zero_identity_refutation | 4 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail because at actual zeros equality holds tautologically, while along 1D nodal curves $\operatorname{Im}(\xi)=0$ phase equality holds identically | category_tautological_zero_identity_refutation.md |
+| herglotz_theta_de_bruijn_newman_barrier | 4 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
+| weil_quadratic_autocorrelation_positivity_fallacy | 3 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
 
 ## Theorems
 | File | Confidence | Summary |
@@ -24,6 +29,8 @@
 | theorem_secular_constructive_resonance_p1.md | high | Self-convolution of off-critical zero modes produces exact secular resonance $\frac{1}{2}t e^{(\beta-1/2)t}\cos(\gamma t)$, amplifying oscillations |
 | theorem_riesz_smoothing_double_pole_persistence_p1.md | high | Riesz smoothing preserves off-critical double poles with non-zero residue $\frac{m^2 \zeta(\rho+1/2)}{(\rho-1)^{k+1} \rho(\rho+1)}$ |
 | theorem_central_window_pole_isolation_p1.md | high | Central window $|t| \le 1$ around $t=0$ pole of $\zeta(s+1/2)$ integrates to $O(x^{3/2}\log\log x) = o(x^{3/2}\log x)$ |
+| theorem_bilateral_offline_reflection_duality_p1.md | high | Involutive functional reflection $s \mapsto 1-s$ bijectively pairs LeftOfflineSupport and RightOfflineSupport, proving LeftOfflineSupport = ∅ ↔ RightOfflineSupport = ∅ ↔ RH while avoiding trivial zeros ($2n+3 \ge 3$) |
+| theorem_high_frequency_slice_support_identity_p1.md | high | Set-theoretic identity HighFrequencyZeroFree(H) ↔ {s ∈ RightOfflineSupport | H < |s.im|} = ∅ for all $H \in \mathbb{R}$, yielding continuum threshold equivalence across $[0, 7.465]$ |
 
 ## Observations
 | File | Confidence | Summary |
@@ -32,6 +39,16 @@
 | observation_distinct_prime_convolution_support_p1.md | high | $c(n) \ge 0$ vanishes on all prime powers and on $\omega(n) \ge 3$; strictly positive iff $\omega(n) = 2$ |
 | observation_composite_bracket_positivity_density_p1.md | high | Divisor bracket $\mathcal{B}(n, 200) > 0$ on 88 of 199 integers (44.2%), disproving termwise cone nonpositivity |
 | observation_off_critical_crossover_horizons_p1.md | high | Off-critical excursions masked ($< 10^{-24}$) on $x \le 20000$; crossover requires $x > 10^{35}$ (low height) or $x > 10^{263.5}$ (Platt-Trudgian zeros) |
+| observation_displacement_rigidity_strip_boundary_p1.md | high | Displacement numerator $P(d) = 2d(1/4-d^2)$ strictly positive on critical strip interior $0 < d < 1/2$, zero on boundaries $d \in \{0, 1/2\}$, and negative for $d > 1/2$ |
+| observation_subunit_threshold_static_degeneracy_p1.md | high | Sub-unit frequency partitions $H \le 1$ are mathematically static because $|t| \le 1$ is unconditionally zero-free, refuting identical zeros for all $H \le 1$ |
+| observation_mathlib_zeta_one_nonzero_junk_value_p1.md | high | Mathlib 4 convention sets riemannZeta 1 = 0, creating a non-zero junk value requiring explicit $s \ne 1$ hypotheses to avoid false zero detections |
+| observation_resolvent_positive_zero_interference_p1.md | high | Real-zero interference in rational resolvents cancels off-line negative wells for small displacements, precluding local negative dissipation signatures |
+| observation_weil_autocorrelation_quadruplet_positivity_p1.md | high | Autocorrelation test functions $\Phi = f * \tilde{f}$ force strictly positive quadruplet cross-terms $2\operatorname{Re}(\hat{g}_+\overline{\hat{g}_-}) > 0$, refuting negative energy extraction |
+| observation_calogero_moser_lattice_screening_p1.md | high | Multi-particle Calogero-Moser zero repulsion undergoes lattice screening and zero spacing infimum decays to 0, refuting isolated 2-particle collision thresholds |
+| observation_critical_boundary_quadratic_vanishing_p1.md | high | Real coordinate disparity vanishes quadratically $O((\beta-1/2)^2)$ at critical line zeros, and ratio deficit reverses at $\gamma \approx 7.49$ due to $O(1/\gamma)$ vs $O(1/\gamma^4)$ decay |
+| observation_completed_zeta_nodal_phase_matching_p1.md | high | Phase ratio equality $\Theta_{\mathrm{int}} = \Theta_{\mathrm{alg}}$ holds identically along continuous 1D nodal curves $\operatorname{Im}(\xi)=0$ throughout the strip and at all actual zeros |
+| observation_chirped_wavepacket_support_exit_p1.md | high | Stationary phase point $x_{\mathrm{stat}}(T) \to 1/(2\eta) > w$ exits support for $T > T_{\mathrm{exit}}$, extinguishing zero coupling super-polynomially ($< 5\times 10^{-14}$ at $T=500$) |
+| observation_symmetrized_resolvent_off_critical_pole_collapse_p1.md | high | Reflection-invariant mapping $z(s) = s(1-s)$ collapses Herglotz positivity under off-critical poles ($\operatorname{Im}(F) \to -\infty$), while finite critical-zero sampling is blind to off-critical poles |
 
 ## References
 | File | Confidence | Summary |
@@ -42,6 +59,7 @@
 | reference_johnston_yang_explicit_pnt_p1.md | high | Johnston & Yang (2023) Thm 1.1: Explicit PNT bounds $O(x^2 \exp(-c\sqrt{\log x}))$ cannot close tail drift |
 | reference_vinogradov_korobov_zero_free_p1.md | high | Vinogradov-Korobov (1958): Zero-free bound $O(x^2 \exp(-c(\log x)^{3/5}))$ diverges vs drift by $x^{1/2-o(1)}$ |
 | reference_titchmarsh_zeta_zero_spacing_p1.md | high | Titchmarsh (1986) Section 9.3: Zero-spacing lemma $|T_k - \gamma| \gg 1/\log T_k$ for horizontal Perron contour shifts |
+| reference_rodgers_tao_newman_conjecture_p1.md | high | Rodgers & Tao (2020): Proof of Newman's conjecture $\Lambda \ge 0$, establishing the de Bruijn-Newman barrier |
 
 ## Node Directions
 ### Iteration 1, Round 1
