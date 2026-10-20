@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Forward deduction from the arithmetic sign criterion $\forall^{\mathrm{ev}} x, \operatorname{Re}(W(x)) \le 0$ provides zero unconditional progress toward RH because the premise carries full RH analytical depth and is parity-blocked, while formalization attempts suffer dependency bitrot in upstream arithmetic modules and resort to isolated shadowed nominal types.
-Count: 13
+Count: 15
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -20,5 +20,8 @@ Count: 13
 | 11 | explorer_L00_N12_bilateral_reflection_sign_confinement | Tautological sign plumbing composing existing theorems rhConsequences_of_RH ∘ RiemannHypothesis_of_eventually_nonpos while upstream source nodes fail compilation due to SamePrimeDirichlet.lean and FloorMellin. |
 | 12 | explorer_L00_N13_unilateral_reflection_definitional_chain | Goal displacement redefining unconditional RH proof mandate to verifying 15 biconditionals between unproved conjectures in UnilateralOfflineSupportBridge.lean while relying on parity-blocked sign hypothesis. |
 | 13 | explorer_L00_N14_geometric_support_redundancy | Severed connection to ActualCriticalSignCriterion and duplicated existing machine-verified theorems from RiemannZetaMasterGrandUnification into a disjoint namespace due to a 1-line Mathlib syntax rename. |
+| 14 | explorer_L00_N16_support_height_duality_sign_functor | Superficial 1-line composition rhConsequences_of_RH ∘ RiemannHypothesis_of_eventually_nonpos while partition collapse fails for H > 7.465 and negative heights lack 0 ≤ H guard. |
+| 15 | explorer_L00_N17_reflection_duality_mellin_bridge | 1-line syntactic composition while ActualCriticalSignCriterion transitively pulls in 6 broken upstream files (FloorMellin, CriticalMultipleMellin, SamePrimeDirichlet, etc.). |
+
 
 
