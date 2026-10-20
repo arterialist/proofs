@@ -30,7 +30,7 @@
 | theorem_riesz_smoothing_double_pole_persistence_p1.md | high | Riesz smoothing preserves off-critical double poles with non-zero residue $\frac{m^2 \zeta(\rho+1/2)}{(\rho-1)^{k+1} \rho(\rho+1)}$ |
 | theorem_central_window_pole_isolation_p1.md | high | Central window $|t| \le 1$ around $t=0$ pole of $\zeta(s+1/2)$ integrates to $O(x^{3/2}\log\log x) = o(x^{3/2}\log x)$ |
 | theorem_bilateral_offline_reflection_duality_p1.md | high | Involutive functional reflection $s \mapsto 1-s$ bijectively pairs LeftOfflineSupport and RightOfflineSupport, proving LeftOfflineSupport = ∅ ↔ RightOfflineSupport = ∅ ↔ RH while avoiding trivial zeros ($2n+3 \ge 3$) |
-| theorem_high_frequency_slice_support_identity_p1.md | high | Set-theoretic identity HighFrequencyZeroFree(H) ↔ {s ∈ RightOfflineSupport | H < |s.im|} = ∅ for all $H \in \mathbb{R}$, yielding continuum threshold equivalence across $[0, 7.465]$ |
+| theorem_high_frequency_slice_support_identity_p1.md | high | Stratified Support-Height Duality: HighFrequencyZeroFree(H) ↔ {s ∈ RightOfflineSupport | H < |s.im|} = ∅ ↔ ∀ s ∈ RightOfflineSupport, |s.im| ≤ H for all $H \in \mathbb{R}$ |
 
 ## Observations
 | File | Confidence | Summary |
@@ -40,7 +40,7 @@
 | observation_composite_bracket_positivity_density_p1.md | high | Divisor bracket $\mathcal{B}(n, 200) > 0$ on 88 of 199 integers (44.2%), disproving termwise cone nonpositivity |
 | observation_off_critical_crossover_horizons_p1.md | high | Off-critical excursions masked ($< 10^{-24}$) on $x \le 20000$; crossover requires $x > 10^{35}$ (low height) or $x > 10^{263.5}$ (Platt-Trudgian zeros) |
 | observation_displacement_rigidity_strip_boundary_p1.md | high | Displacement numerator $P(d) = 2d(1/4-d^2)$ strictly positive on critical strip interior $0 < d < 1/2$, zero on boundaries $d \in \{0, 1/2\}$, and negative for $d > 1/2$ |
-| observation_subunit_threshold_static_degeneracy_p1.md | high | Sub-unit frequency partitions $H \le 1$ are mathematically static because $|t| \le 1$ is unconditionally zero-free, refuting identical zeros for all $H \le 1$ |
+| observation_subunit_threshold_static_degeneracy_p1.md | high | Low-frequency partitions $H \le 7.465$ are mathematically static because $|t| \le 7.465$ contains zero zeros, while for $H > 7.465$ collapse strictly fails |
 | observation_mathlib_zeta_one_nonzero_junk_value_p1.md | high | Mathlib 4 convention sets riemannZeta 1 = 0, creating a non-zero junk value requiring explicit $s \ne 1$ hypotheses to avoid false zero detections |
 | observation_resolvent_positive_zero_interference_p1.md | high | Real-zero interference in rational resolvents cancels off-line negative wells for small displacements, precluding local negative dissipation signatures |
 | observation_weil_autocorrelation_quadruplet_positivity_p1.md | high | Autocorrelation test functions $\Phi = f * \tilde{f}$ force strictly positive quadruplet cross-terms $2\operatorname{Re}(\hat{g}_+\overline{\hat{g}_-}) > 0$, refuting negative energy extraction |
