@@ -2,15 +2,20 @@
 
 Type: observation
 Confidence: high
-Source: explore_merger_L01_N08, explore_merger_L01_N09, explore_falser_L01_N09
+Source: explore_merger_L01_N08, explore_merger_L01_N09, explore_falser_L01_N09, explore_merger_L04_N00, explore_falser_L04_N00
 Relevant to: Dissipation-based, resolvent-based, and Herglotz/spectral operator refutation strategies of off-line zeros
 
 ## Statement
-For any hypothetical off-line zero $s = \sigma + it$ with $\sigma \in (1/2, 1)$ and $t \in \mathbb{R}$, Riemann's functional equation and Schwarz reflection force zeros of $\xi(s)$ to occur in conjugate pairs $\{s, \bar{s}\} = \{\sigma + it, \sigma - it\}$ (and quadruplets with $1-s, 1-\bar{s}$). For any standard resolvent or Cauchy dissipation kernel $D(s, x) := \operatorname{Im}\left(\frac{1}{x - s}\right) = \frac{t}{(x - \sigma)^2 + t^2}$ on the real axis $x \in \mathbb{R}$, the sum over the conjugate pair cancels identically:
+For any hypothetical off-line zero $s = \sigma + it$ with $\sigma \in (1/2, 1)$ and $t \in \mathbb{R}$, Riemann's functional equation and Schwarz reflection force zeros of $\xi(s)$ to occur in conjugate pairs $\{s, \bar{s}\} = \{\sigma + it, \sigma - it\}$ (and quadruplets with $1-s, 1-\bar{s}$).
+1. For any standard linear resolvent dissipation kernel $D(s, x) := \operatorname{Im}\left(\frac{1}{x - s}\right) = \frac{t}{(x - \sigma)^2 + t^2}$ on the real axis $x \in \mathbb{R}$, the sum over the conjugate pair cancels identically:
 $$D(s, x) + D(\bar{s}, x) = \frac{t}{(x - \sigma)^2 + t^2} + \frac{-t}{(x - \sigma)^2 + (-t)^2} \equiv 0 \quad \text{for all } x \in \mathbb{R}.$$
+
+2. In the reflection-invariant quadratic spectral parameter $z(s) := s(1-s)$, since $z(\bar{s}) = \bar{s}(1 - \bar{s}) = \overline{s(1 - s)} = \overline{z(s)}$, the characteristic resolvent sum:
+$$\mathcal{D}(s, x) + \mathcal{D}(\bar{s}, x) := \operatorname{Im}\left(\frac{1}{z(s) - x}\right) + \operatorname{Im}\left(\frac{1}{z(\bar{s}) - x}\right) = \operatorname{Im}\left(\frac{2(\operatorname{Re}(z(s)) - x)}{|z(s) - x|^2}\right) \equiv 0 \quad \text{for all } x \in \mathbb{R}.$$
 
 ## Evidence
 - Symbolically exact identity: $\operatorname{Im}\left(\frac{1}{x-s} + \frac{1}{x-\bar{s}}\right) = \operatorname{Im}\left(\frac{2x - 2\sigma}{(x-\sigma)^2 + t^2}\right) = 0$ since $x, \sigma, t \in \mathbb{R}$.
+- In `explore_merger_L04_N00` / `explore_falser_L04_N00`, SymPy confirmed $\operatorname{Im}\left(\frac{1}{z(s)-x} + \frac{1}{z(\bar{s})-x}\right) = 0$ identically on $\mathbb{R}$ for real $\sigma, t, x$.
 - Falser report for `explore_merger_L01_N09` verified this algebraic cancellation, showing that the candidate's claim of positive physical dissipation $D(s, x) > 0$ on $\mathbb{R}$ failed to account for the pairing of roots $\rho$ and $\bar{\rho}$.
 - In `explore_merger_L01_N08`, the candidate's attempted coordinate dissipation kernel $D(s, x) = t(2\sigma - 1)$ similarly reduced to an uninformative coordinate condition that vanishes identically under symmetrization.
 

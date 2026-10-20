@@ -2,7 +2,7 @@
 
 Type: theorem
 Confidence: high
-Source: Candidates 0, 1, 2, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 (Level 0), explore_merger_L01_N12 through N14, explore_merger_L02_N00 through N07, explore_merger_L03_N00, L03_N01, L03_N02, L03_N03
+Source: Candidates 0, 1, 2, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 (Level 0), explore_merger_L01_N12 through N14, explore_merger_L02_N00 through N07, explore_merger_L03_N00, L03_N01, L03_N02, L03_N03, explore_merger_L04_N00
 Relevant to: Connecting autonomous frequency partition predicates to geometric off-line zero support sets across arbitrary heights $H \in \mathbb{R}$.
 
 ## Statement

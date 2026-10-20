@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Extrapolating eventual nonpositivity $\forall x > A, W(x) \le 0$ from finite numerical testing ($x \le 3000$) is mathematically invalid because off-critical zero excursions are suppressed until astronomical scales ($x > 10^{39}$).
-Count: 30
+Count: 31
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -37,3 +37,4 @@ Count: 30
 | 28 | explore_merger_L03_N00_jensen_finite_extrapolation_fallacy | Proposing to test low-degree Jensen polynomials (solved for $d \le 4$ in 1986) cannot extrapolate to $d \ge 5$, while descending GORZ shifts to $n=0$ for all $d$ carries 100% of RH depth with zero Mathlib infrastructure. |
 | 29 | explore_merger_L03_N01_jensen_degree_five_discriminant_extrapolation | Proposing to symbolically compute degree-5 Jensen discriminants cannot prove hyperbolicity for all $d \ge 5$, while descending to $n=0$ carries full RH depth. |
 | 30 | explore_merger_L03_N03_jensen_finite_degree_extrapolation_barrier | Testing small-degree Jensen polynomials $J_4^0(X)$ provides zero mathematical deduction for $d \ge 5$, committing the finite numerical extrapolation fallacy while descending to $n=0$ carries full RH depth. |
+| 31 | explore_merger_L04_N00_jensen_degree_shift_extrapolation | Backup Route 1 proposes proving RH by descending Griffin-Ono-Rolen-Zagier Jensen polynomial hyperbolicity from $n \ge n_0(d)$ to shift $n=0$ for all $d \ge 1$ via low-degree discriminant testing, which cannot extrapolate from $d \le 4$ (solved in 1986) to $d \ge 5$ and carries full RH depth with zero Lean 4 library support. |

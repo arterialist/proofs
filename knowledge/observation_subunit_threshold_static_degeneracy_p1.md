@@ -2,7 +2,7 @@
 
 Type: observation
 Confidence: high
-Source: Candidates 5, 6, 7 (Level 0), explore_merger_L01_N00 through N14, explore_merger_L02_N00 through N06, explore_merger_L03_N00, L03_N01, L03_N02, L03_N03, explore_falser_L03_N00, L03_N01, L03_N02, L03_N03
+Source: Candidates 5, 6, 7 (Level 0), explore_merger_L01_N00 through N14, explore_merger_L02_N00 through N06, explore_merger_L03_N00, L03_N01, L03_N02, L03_N03, explore_falser_L03_N00, L03_N01, L03_N02, L03_N03, explore_merger_L04_N00, explore_falser_L04_N00
 Relevant to: Autonomous grand partition, support-height duality, and threshold synthesis strategies parameterizing $\mathrm{HighFrequencyZeroFree}(H)$.
 
 ## Statement

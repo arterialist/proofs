@@ -2,7 +2,7 @@
 
 Type: reference
 Confidence: high
-Source: Candidate 15 (Level 0), Candidate L01_N02, explore_falser_L01_N02
+Source: Candidate 15 (Level 0), Candidate L01_N02, explore_falser_L01_N02, explore_merger_L04_N00, explore_falser_L04_N00
 Relevant to: Ruling out proofs of real-rootedness or Herglotz-Nevanlinna properties for Fourier/Mellin transforms of theta kernels based purely on qualitative positivity, monotonicity, or decay; auditing de Bruijn-Newman parameter claims.
 
 ## Bibliographic Info
@@ -32,3 +32,4 @@ Because $\Lambda \ge 0$, any proof technique that relies solely on qualitative p
 ## Caveats
 1. The theorem establishes $\Lambda \ge 0$. Polymath15 established $\Lambda \le 0.22$. The Riemann Hypothesis is equivalent to $\Lambda \le 0$, which would imply $\Lambda = 0$.
 2. **Reversed Inequality Caution**: Citing Rodgers-Tao (2020) as proving $\Lambda \le 0$ to deduce zero-freeness (as attempted in Candidate L01_N02) is a fatal sign-bound reversal: Rodgers-Tao proved the lower bound $\Lambda \ge 0$, which guarantees non-real zeros for $t < 0$ and provides zero evidence that all zeros of $H_0(z)$ are real.
+3. **Real Zero Simplicity Counterexample**: The claim that RH is equivalent to real zero simplicity is refuted by the exact polynomial solution $H_t(z) = z^2 - 2t$, which satisfies $\partial_t H_t = -\partial_{zz} H_t$ and has all real roots for all $t \ge 0$ (so $\Lambda = 0$), but at $t = 0$ develops a double root at $z = 0$ ($H_0(0) = 0, H_0'(0) = 0$). Simplicity is strictly stronger than RH and cannot be deduced from $\Lambda = 0$.

@@ -2,7 +2,7 @@
 
 Type: reference
 Confidence: high
-Source: explore_merger_L02_N03, explore_falser_L02_N03, explore_merger_L03_N00, L03_N01, L03_N02, L03_N03, explore_falser_L03_N00, L03_N01, L03_N02, L03_N03
+Source: explore_merger_L02_N03, explore_falser_L02_N03, explore_merger_L03_N00, L03_N01, L03_N02, L03_N03, explore_falser_L03_N00, L03_N01, L03_N02, L03_N03, explore_merger_L04_N00, explore_falser_L04_N00
 Relevant to: Pólya-Schur theory, Jensen polynomials, real-rootedness of completed zeta function, and de Bruijn-Newman parameter bounds
 
 ## Bibliographic Info
