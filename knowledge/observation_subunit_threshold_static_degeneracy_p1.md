@@ -2,7 +2,7 @@
 
 Type: observation
 Confidence: high
-Source: Candidates 5, 7 (Level 0), explore_falser_L00_N05, explore_falser_L00_N07
+Source: Candidates 5, 6, 7 (Level 0), explore_falser_L00_N05, explore_falser_L00_N06, explore_falser_L00_N07
 Relevant to: Autonomous grand partition and threshold synthesis strategies parameterizing $\mathrm{HighFrequencyZeroFree}(H)$.
 
 ## Statement
