@@ -1,9 +1,9 @@
 # Knowledge Index
 
-## Failed Approach Categories (261 entries in 14 categories)
+## Failed Approach Categories (288 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
-| sieve_parity_barrier | 32 | Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
+| sieve_parity_barrier | 33 | Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
 | termwise_arithmetic_positivity | 12 | Individual arithmetic summands in $W(x)$ are strictly positive at composite integers (e.g. $n=36$) | category_termwise_arithmetic_positivity.md |
 | finite_numerical_extrapolation | 33 | Numerical testing on $x \le 20000$ is completely blind to off-critical zero excursions ($x > 10^{35}$ or $x > 10^{263.5}$), and low-degree Jensen polynomial testing ($d \le 4$) cannot extrapolate to $d \ge 5$ | category_finite_numerical_extrapolation.md |
 | unshifted_multiplier_pole_cancellation | 2 | Unshifted $d^1$ aggregation introduces $\zeta(s)$ factor, canceling double poles for multiplicities $m \ge 2$ | category_unshifted_multiplier_pole_cancellation.md |
@@ -13,10 +13,11 @@
 | perron_contour_divergence | 16 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
 | conditional_sign_premise_circularity | 23 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
 | threshold_partition_sub_unit_degeneracy | 29 | Parametric threshold partitions $H \le 7.465$ are spectrally vacuous because slab contains zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$), while ratio deficit reverses sign at 7.49 and collapse breaks for $H > 7.465$ | category_threshold_partition_sub_unit_degeneracy.md |
-| tautological_zero_identity_refutation | 20 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
-| herglotz_theta_de_bruijn_newman_barrier | 51 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
+| tautological_zero_identity_refutation | 26 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
+| herglotz_theta_de_bruijn_newman_barrier | 58 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
 | weil_quadratic_autocorrelation_positivity_fallacy | 8 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
 | nyman_beurling_dilation_approximation | 7 | Approximating the indicator $\chi_{(0, 1)}$ by fractional part dilations $\rho_\alpha$ hits an $L^2$ distance barrier $\Omega(\delta)$ without collective prime phase cancellation, and descending Báez-Duarte sums to finite dimensions is circular with RH | category_nyman_beurling_dilation_approximation.md |
+| carleman_nevanlinna_boundary_divergence | 19 | Conformal Carleman, Poisson-Jensen, and Nevanlinna-Riesz potential balances fail because Stirling critical decay produces $-\pi/(4|\theta|)$ boundary divergence and real-axis growth drives residuals to $+\infty$, destroying Nevanlinna class membership | category_carleman_nevanlinna_boundary_divergence.md |
 
 ## Theorems
 | File | Confidence | Summary |
@@ -40,6 +41,7 @@
 | theorem_littlewood_carleman_corner_singularity_cancellation_p1.md | high | Under correct signed contour orientation $-I_{\text{horiz}}$, logarithmic corner singularities $+ \frac{\gamma_n m_n}{\pi}\log(1/|T-\gamma_n|)$ cancel identically with vertical boundary limits across all critical zeros |
 | theorem_master_logarithmic_derivative_conformal_coupling_p1.md | high | Exact chain rule $\xi'/\xi = (2s-1)F(z(s))$ with coordinate decomposition $\operatorname{Re}(\xi'/\xi) = 2(\sigma-1/2)\operatorname{Re}(F) - 2t\operatorname{Im}(F)$ and critical line vanishing |
 | theorem_master_polarization_logarithmic_derivative_identity_p1.md | high | De Branges companion modulus asymmetry $|E_+|^2 - |E_+^\sharp|^2 = -4|\xi(s)|^2 \operatorname{Re}(\xi'(s)/\xi(s))$, equating contractivity to $\operatorname{Re}(\xi'/\xi) > 0$ |
+| theorem_conformal_reciprocal_zero_trace_identity_p1.md | high | Symmetrized completed xi satisfies order 1/2 genus 0 Hadamard canonical product with exact reciprocal zero trace $-\Xi_*'(0)/\Xi_*(0) = \sum 1/\lambda_n = 1 + \gamma_0/2 - \log(2\sqrt{\pi}) \approx 0.023096$ |
 
 ## Observations
 | File | Confidence | Summary |
@@ -81,6 +83,14 @@
 | observation_mollified_mobius_neutral_constraint_failure_p1.md | high | Regularized arithmetic weights $c_k = -\mu(k)(1-\log k/\log N)^2$ fail neutral constraint $\sum c_k/k = 0$ completely ($+0.38$ at $N=100$), blowing up $H^2$ norm of Mellin transform |
 | observation_li_coefficient_strict_convexity_p1.md | high | Li coefficients have strictly convex second differences ($\Delta^2 \lambda_1 \approx +0.046 > 0$), mathematically refuting positive Laplace-Stieltjes measure representations |
 | observation_discrete_weil_gap_heisenberg_leakage_p1.md | high | Localized Weil test vectors of bandwidth $w \asymp 1/\log T$ leak $> 60.2\%$ into adjacent critical zeros by Heisenberg uncertainty |
+| observation_davenport_heilbronn_conformal_analytic_blindness_p1.md | high | Order-1/2 genus-0 entire functions $\Xi_*(z)$ admit Davenport-Heilbronn counterexamples $f_a(s)$ with identical functional equations, real axis positivity, and moments yet possessing infinitely many off-line zeros, proving complex-analytic mechanisms cannot establish RH without Euler products |
+| observation_disk_uniformization_nevanlinna_class_failure_p1.md | high | Pullbacks $g(w) = \xi(1/(1+w))$ fail Nevanlinna bounded characteristic class membership ($g \notin \mathcal{N}(\mathbb{D})$) due to logarithmic divergence $-\frac{\pi}{4}\log T \to -\infty$ from critical-line Stirling decay $\exp(-\pi t/4)$, invalidating standard Nevanlinna-Riesz/Blaschke factorizations |
+| observation_cauchy_riemann_boundary_nodal_alternation_blindness_p1.md | high | Boundary nodal origination alternation $\lim_{\alpha \to 0^+} \operatorname{Im}(\xi)/\alpha = -\Xi'(\beta)$ is a universal Cauchy-Riemann property along symmetry line that coexists with interior orthogonal nodal intersections and off-line zeros (degree-8 polynomial counterexample) |
+| observation_schwarz_reflection_carleman_integrand_annihilation_p1.md | high | Off-axis Carleman boundary integrand $\log|\Xi_*(x-i\varepsilon)/\Xi_*(x+i\varepsilon)| \equiv 0$ vanishes identically by Schwarz reflection for real entire functions, while physical clearance to the critical line contracts as $\varepsilon/(2t) \to 0$, causing contours to crash into critical zeros |
+| observation_dyadic_mellin_ibp_high_frequency_amplification_p1.md | high | Dyadic Mellin integration by parts introduces $|s+1| \approx |t|$ in the numerator, amplifying high frequencies rather than regularizing by $1/|s|$, while primitive $L^2$ energy regularization hits Selberg's parity floor $\Omega(X^5/\log^{2A} X) \gg X^4$ |
+| observation_conformal_parabolic_horn_bound_violation_p1.md | high | In conformal coordinates $z=s(1-s)$, the parabolic horn upper bound $x < y^2 + 1/4$ is violated by $t^2(1-4\delta^2) - \delta^2 > 0$ across 100% of non-trivial zeros for $t > 0.289$, exceeding the horn boundary by 181.8 at $\gamma_1$ and $9 \times 10^{24}$ at $3 \times 10^{12}$ |
+| observation_poisson_jensen_zero_conjugation_invariance_p1.md | high | Boundary modulus data $|F(x)|$ along the real axis is strictly invariant under zero conjugation $\lambda \leftrightarrow \bar{\lambda}$ ($|x-\lambda| = |x-\bar{\lambda}|$), preventing real-boundary Poisson-Jensen integrals from unilaterally distinguishing zeros in $\mathbb{C}^-$ from $\mathbb{C}^+$ |
+| observation_green_defect_cubic_frequency_decay_p1.md | high | Conformal half-plane Dirichlet Green defect $G(\lambda_0, z_0)$ at fixed evaluation pole decays cubically as $O(\gamma_0^{-3})$ due to quadratic horizontal separation $u_0 \approx \gamma_0^2$ vs linear vertical distance $v_0 = \gamma_0(2\beta_0-1)$, collapsing to $1.59 \times 10^{-10}$ at $\gamma_0=1000$ and drowned out by $O(\log \gamma)$ Selberg fluctuations |
 
 ## References
 | File | Confidence | Summary |

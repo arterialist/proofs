@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Combinatorial sieve methods (Vaughan, Heath-Brown, Turán-Kubilius) cannot achieve critical-scale $x^{1/2}$ power savings on prime convolutions without inputting an analytic zero-free region, rendering unconditional arithmetic bounds circular with RH.
-Count: 32
+Count: 33
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -39,5 +39,7 @@ Count: 32
 | 30 | node_L03_N00_N04_level3_merger_circularity_deadlock | All five Level-3 merger nodes retained Frontier 1 as primary route while admitting eventual nonpositivity is an undecomposable fatal blocker of full RH depth (ready_for_decomposition: false), attempting to evade the unconditional proof debt by pivoting to formalize the conditional converse (RH $\implies W(x) \le 0$) in Lean 4 without required Mathlib 4 analytic machinery. |
 | 31 | node_L04_N00_circular_equivalence_barrier_and_primary_route_paralysis | Master merger L04_N00 retained Frontier 1 as primary route despite unanimous child rejections, admitting eventual nonpositivity is an undecomposable fatal blocker of full RH depth (ready_for_decomposition: false); sieves hit Selberg's parity barrier with wrong-sided $+2.612\varepsilon x^2$ defects, and substituting conditional converse formalization in Lean 4 leaves the forward unconditional debt 100% open. |
 | 32 | explorer_r2_L00_N28_connes_consani_semilocal_transport | Monotone quantile transport between atomic prime measures $\mu_X$ and continuous densities encounters an insurmountable $\Omega(X^{1/4})$ mass-discrepancy barrier ($\sqrt{M_X \cdot J_X} \sim X^{1/4}$), precluding trace-norm subpower decay $\mathcal{N}(X) = O_\epsilon(X^\epsilon)$ without collective prime phase cancellation (carrying 100% of RH depth); projection identity $\Delta(u) = P(I-u^*Pu)P$ is mathematically false on $(I-P)L^2$; and arithmetic amplitude lacks analytic continuation into critical strip. |
+| 33 | explorer_r3_L00_N11 | Dyadic second-primitive $L^2$ energy regularization $S_X \le C X^{4+\varepsilon}$ (CoarsePrimitiveBound) cannot be proved by bilinear or combinatorial prime decompositions due to Selberg's parity barrier floor on $e(x)$, which forces $P_X(t) = \Omega(X^2/\log^A X)$ and $S_X = \Omega(X^5/\log^{2A} X) \gg X^4$; and summation by parts on dyadic Mellin blocks introduces an explicit $|s+1|$ factor in the numerator, amplifying high frequencies linearly by $|t|$ rather than regularizing by $1/|s|$. |
+
 
 
