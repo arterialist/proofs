@@ -2,7 +2,7 @@
 
 Type: observation
 Confidence: high
-Source: Candidate 29 (Level 0 falser report), Candidate L01_N06, explore_falser_L01_N06, explore_merger_L02_N01, explore_merger_L02_N02, explore_falser_L02_N01, explore_falser_L02_N02
+Source: Candidate 29 (Level 0 falser report), Candidate L01_N06, explore_falser_L01_N06, explore_merger_L02_N01, explore_merger_L02_N02, explore_falser_L02_N01, explore_falser_L02_N02; Aggregator and Falser r2_L04_N00 (Level 4 Root)
 Relevant to: Invariant quadratic spectral parameter $z(s) = s(1-s)$, resolvent expansions, Hadamard product phase envelopes, and Herglotz-Pick dispersion relations
 
 ## Statement
@@ -38,6 +38,7 @@ is holomorphic and bounded across the critical strip ($|R(0.7 + 14.135i)| \appro
      - Background field from critical zeros: $+0.0199 + 0.3539 i$
      - Off-critical pole contribution: $-1000.0 i$
      - Total imaginary part: $\operatorname{Im}(F(z_{\mathrm{probe}})) = -999.646 < 0$.
+   - Synthetic off-line zero probe in Aggregator and Falser r2_L04_N00: for $\rho_0 = 0.65 + 14.135i$ ($\lambda_0 \approx 200.018 - 4.240i \in \mathbb{C}^-$), evaluating at $z = \lambda_0 + i\varepsilon$ confirms that the pole term $\operatorname{Im}(1/(\lambda_0 - z)) = +1/\varepsilon \to +\infty$ evaluates to $+10, +100, +1000, +10000$ for $\varepsilon \in \{0.1, 0.01, 0.001, 0.0001\}$, violently destroying Herglotz phase rigidity in $\mathbb{C}^-$.
 3. Numerical falsification of Herglotz property for $-\zeta'(s)/\zeta(s)$ (mpmath, 25 dps):
    - At $s = 1.5 + 0.5i$: $\operatorname{Im}(-\zeta'/\zeta) = -0.928515 < 0$.
    - At $s = 0.6 + 14.0i$: $\operatorname{Im}(-\zeta'/\zeta) = -4.699338 < 0$.

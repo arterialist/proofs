@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Attempting to prove $W(x) \le 0$ by establishing that each individual summand in the arithmetic expansion of $W(x)$ is nonpositive fails because composite divisor brackets are strictly positive.
-Count: 11
+Count: 12
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -18,3 +18,5 @@ Count: 11
 | 9 | node_L01_N06_composite_bracket_density_failure | Divisor bracket at $n=36, x=72$ equals $+1.9102 > 0$, and 105 of 139 composite integers (75.54%) in $[2, 200]$ have positive brackets at $x=2n$, proving termwise nonpositivity is mathematically unachievable. |
 | 10 | node_L01_N12_composite_bracket_universal_positivity | In the divisor expansion $W(x) = B_*(x) + \sum_{n \le x} \frac{x-n}{\sqrt{n}} [L(n)^2 - Q(n) - (1+x/n)L(n)]$, 139 of 139 (100.0%) composite numbers with $\ge 2$ prime factors up to $n=200$ have strictly positive brackets at $x=2n$ (e.g. $+31.82$ at $n=120$), refuting termwise nonpositivity. |
 | 11 | node_L02_N06_composite_bracket_density_barrier | Termwise nonpositivity of divisor brackets is false at 105 of 139 composite numbers $\le 200$ (75.54%), confirming that negativity of $W(x)$ is an inherently collective spectral phenomenon requiring massive arithmetic cancellation between prime powers and composites. |
+| 12 | explore_merger_r2_L01_N07 | Li coefficient arithmetic formula $\lambda_n = \sum_{j=1}^n \binom{n}{j} b_j$ suffers catastrophic alternating binomial cancellation ($10^{26.6}$ at $n=100$, $10^{146}$ at $n=500$), precluding termwise bounds, while proposed positive Laplace-Stieltjes measure is refuted by strict convexity ($\Delta^2 \lambda_1 = +0.04604 > 0$). |
+
