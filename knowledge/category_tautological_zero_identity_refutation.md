@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 245
+Count: 248
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -252,3 +252,6 @@ Count: 245
 | 243 | explorer_r76_L00_N00 | Kudla–Rapoport special cycles and Deligne–Beilinson regulators on Picard modular surfaces decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 244 | explore_merger_r76_L04_N00 | Root strategy card reduction to Picard modular surfaces, complexity-19 T-variety polyhedral cones, E7 GGP periods, and CY27 shifted symplectic stacks avoids Pitfalls 001-163, but hits Picard modular surface Kudla–Rapoport frequency decoupling, complexity-19 polyhedral Euler product decoupling, and E7 period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 245 | gate_merger_r76_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Picard modular surfaces and complexity-19 T-varieties avoid Pitfalls 001-163, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 246 | explorer_r77_L00_N00 | Gross–Kohnen–Zagier Heegner points, Deligne–Beilinson regulators, and Archimedean Green functions on quaternionic Shimura curves decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 247 | explore_merger_r77_L04_N00 | Root strategy card reduction to quaternionic Shimura curves, complexity-20 T-variety polyhedral cones, E8 GGP periods, and CY28 shifted symplectic stacks avoids Pitfalls 001-165, but hits quaternionic Shimura curve Gross–Kohnen–Zagier frequency decoupling, complexity-20 polyhedral Euler product decoupling, and E8 period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 248 | gate_merger_r77_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while quaternionic Shimura curves and complexity-20 T-varieties avoid Pitfalls 001-165, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
