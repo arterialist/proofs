@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 152
+Count: 155
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -159,3 +159,6 @@ Count: 152
 | 150 | explorer_r45_L00_N00 | Motivic homotopy theory and A1-Euler characteristics evaluate quadratic forms in the Grothendieck-Witt ring GW(k) and stable homotopy groups that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 151 | explore_merger_r45_L04_N00 | Root strategy card reduction to motivic homotopy stacks, horospherical moment polytopes, orthogonal Gan-Gross-Prasad periods, and Gaiotto-Rapcak corner VOAs avoids Pitfalls 001-101, but hits motivic homotopy frequency decoupling, horospherical Euler product decoupling, and orthogonal period central value decoupling carrying 100% of Millennium RH analytical depth. |
 | 152 | gate_merger_r45_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while motivic homotopy theory and horospherical geometry avoid Pitfalls 001-101, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 153 | explorer_r46_L00_N00 | Motivic fundamental groups and motivic multiple zeta values evaluate periods of mixed Tate motives restricted to discrete integer weight vectors that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 154 | explore_merger_r46_L04_N00 | Root strategy card reduction to motivic fundamental groups, group compactifications, Sp(2n) Arthur packets, and logarithmic triplet VOAs avoids Pitfalls 001-103, but hits motivic integer weight decoupling, group compactification Euler product decoupling, and symplectic Arthur packet decoupling carrying 100% of Millennium RH analytical depth. |
+| 155 | gate_merger_r46_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while motivic fundamental groups and group compactifications avoid Pitfalls 001-103, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
