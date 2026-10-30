@@ -79,7 +79,12 @@ theorem bracketKernel_nonpos_of_mem_second_quarter {d γ u : ℝ}
   have h_du2 : 0 ≤ d * u / 2 := by
     have : 0 ≤ d * u := mul_nonneg hd hu_pos
     linarith
-  have h_sinh_nonneg : 0 ≤ Real.sinh (d * u / 2) := Real.sinh_nonneg_iff.mpr h_du2
+  have h_sinh_nonneg : 0 ≤ Real.sinh (d * u / 2) := by
+    rw [Real.sinh_eq]
+    have h_exp : Real.exp (-(d * u / 2)) ≤ Real.exp (d * u / 2) := by
+      apply Real.exp_le_exp.mpr
+      linarith
+    linarith
   have h_arg_ge : π / 2 ≤ γ * u / 2 := by
     calc π / 2 = γ * (π / γ) / 2 := by
            have : γ * (π / γ) = π := mul_div_cancel₀ π (ne_of_gt hγ_pos)
