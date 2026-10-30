@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 188
+Count: 191
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -195,3 +195,6 @@ Count: 188
 | 186 | explorer_r57_L00_N00 | Picard modular special cycles evaluate algebraic cycle classes on unitary Shimura surfaces and discrete arithmetic degrees that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 187 | explore_merger_r57_L04_N00 | Root strategy card reduction to Picard modular special cycles, horospherical Fano colored polytopes, Shalika models, and CY8 Spin(7) derived sheaves avoids Pitfalls 001-125, but hits Picard modular cycle frequency decoupling, horospherical colored polytope Euler product decoupling, and Shalika period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 188 | gate_merger_r57_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Picard modular cycles and horospherical Fano varieties avoid Pitfalls 001-125, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 189 | explorer_r58_L00_N00 | Heegner points on quaternionic Shimura curves evaluate arithmetic heights of CM points and central derivatives L'(1/2) that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 190 | explore_merger_r58_L04_N00 | Root strategy card reduction to quaternionic Shimura curve Heegner points, spherical Fano Okounkov cones, Ginzburg–Rallis models, and CY9 derived sheaves avoids Pitfalls 001-127, but hits Quaternionic Heegner height decoupling, spherical Okounkov Euler product decoupling, and Ginzburg–Rallis noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 191 | gate_merger_r58_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while quaternionic Shimura curves and spherical Fano varieties avoid Pitfalls 001-127, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
