@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 53
+Count: 56
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -60,3 +60,6 @@ Count: 53
 | 51 | explorer_r12_L00_N00 | Ihara-Tsfasman-Vladut limits govern asymptotic tower growth as $[K:\mathbb{Q}] \to \infty$ with zero mathematical leverage on the single base field $\mathbb{Q}$ ($n=1$); tight bounds on Euler-Kronecker invariants $\gamma_K$ circularly presuppose GRH. |
 | 52 | explore_merger_r12_L04_N00 | Root strategy card reduction to Euler-Kronecker tower invariants, Beltrami extremal length on slit surfaces, quantum cohomology Givental $J$-functions, and sub-Riemannian Heisenberg sub-Laplacians avoids Pitfalls 001-035, but hits base field isolation, zero-capacity puncture blindness, and continuous central spectrum carrying 100% of Millennium RH analytical depth. |
 | 53 | gate_merger_r12_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while tower invariant and sub-Riemannian geometric methods avoid Pitfalls 001-035, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 54 | explorer_r13_L00_N00 | Arithmetic topology knot-prime analogies on $\operatorname{Spec}(\mathbb{Z})$ yield discrete topological invariants (Reidemeister torsion, Alexander polynomials) that lack an Archimedean metric or vertical analytic continuation engine along $s = 1/2 + it$. |
+| 55 | explore_merger_r13_L04_N00 | Root strategy card reduction to arithmetic knot torsions, Ruelle-Mayer transfer operators, Patterson-Sullivan conformal densities, and Hitchin fibrations avoids Pitfalls 001-037, but hits metric absence, transfer operator eigenvalue 1 blindness, and $\mathbb{F}_1$ collapse carrying 100% of Millennium RH analytical depth. |
+| 56 | gate_merger_r13_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while topological and thermodynamic transfer methods avoid Pitfalls 001-037, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
