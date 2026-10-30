@@ -1,5 +1,7 @@
 import BuildingBlocks.ActualCriticalGrowthCriterion
 import BuildingBlocks.ActualCriticalLowerExcursion
+import BuildingBlocks.ActualCriticalMajorantCriterion
+import BuildingBlocks.ActualCriticalLogMajorant
 import Lean.Util.CollectAxioms
 
 /-!
@@ -10,6 +12,8 @@ theorem. The `#check` lines print the full statements, so the conditional hypoth
 
 open BuildingBlocks.ActualCriticalGrowthCriterion
 open BuildingBlocks.ActualCriticalLowerExcursion
+open BuildingBlocks.ActualCriticalMajorantCriterion
+open BuildingBlocks.ActualCriticalLogMajorant
 
 #check RiemannHypothesis_of_growth_after
 #print axioms RiemannHypothesis_of_growth_after
@@ -29,11 +33,19 @@ open BuildingBlocks.ActualCriticalLowerExcursion
 #check frequently_lower_excursion
 #print axioms frequently_lower_excursion
 
+#check RiemannHypothesis_of_majorant
+#print axioms RiemannHypothesis_of_majorant
+#check RiemannHypothesis_of_log_growth_after
+#print axioms RiemannHypothesis_of_log_growth_after
+#check RiemannHypothesis_of_eventually_log_growth
+#print axioms RiemannHypothesis_of_eventually_log_growth
+
 open Lean in
 run_cmd do
   let env ← getEnv
   let targets : List Name := [`BuildingBlocks.ActualCriticalGrowthCriterion,
-    `BuildingBlocks.ActualCriticalLowerExcursion]
+    `BuildingBlocks.ActualCriticalLowerExcursion, `BuildingBlocks.ActualCriticalMajorantCriterion,
+    `BuildingBlocks.ActualCriticalLogMajorant]
   let selected := env.constants.toList.filter fun (name, _) =>
     match env.getModuleIdxFor? name with
     | none => false
