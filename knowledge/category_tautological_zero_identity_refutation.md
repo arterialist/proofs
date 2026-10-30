@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 125
+Count: 128
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -132,3 +132,6 @@ Count: 125
 | 123 | explorer_r36_L00_N00 | ADHM instanton moduli parameterize finite-dimensional algebraic symplectic reductions that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 124 | explore_merger_r36_L04_N00 | Root strategy card reduction to Ward twistor instanton moduli, log delta stability of pairs, log de Rham-Witt complexes, and elliptic KZB connections avoids Pitfalls 001-083, but hits ADHM instanton frequency decoupling, log delta Euler product decoupling, and log de Rham-Witt prime decoupling carrying 100% of Millennium RH analytical depth. |
 | 125 | gate_merger_r36_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while twistor instanton and log delta stability avoid Pitfalls 001-083, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 126 | explorer_r37_L00_N00 | Amplituhedron differential forms evaluate kinematic rational functions of spinor-helicity variables that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 127 | explore_merger_r37_L04_N00 | Root strategy card reduction to positive Grassmannian amplituhedron geometry, normalized volume functionals, filtered syntomic complexes, and Felder dynamical quantum groups avoids Pitfalls 001-085, but hits amplituhedron kinematic decoupling, normalized volume Euler product decoupling, and filtered syntomic prime decoupling carrying 100% of Millennium RH analytical depth. |
+| 128 | gate_merger_r37_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while amplituhedron geometry and normalized volume stability avoid Pitfalls 001-085, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
