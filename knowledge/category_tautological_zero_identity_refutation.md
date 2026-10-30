@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 266
+Count: 269
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -273,3 +273,6 @@ Count: 266
 | 264 | explorer_r83_L00_N00 | Parahoric boundary degenerations, Harder–Kottwitz boundary cohomology vanishing, Deligne–Beilinson regulators, and Archimedean Green functions on Sp(4) Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 265 | explore_merger_r83_L04_N00 | Root strategy card reduction to Sp(4) parahoric Shimura varieties, complexity-26 T-variety polyhedral cones, E6 x F4 GGP periods, and CY34 shifted symplectic stacks avoids Pitfalls 001-177, but hits Sp(4) parahoric boundary degeneration frequency decoupling, complexity-26 polyhedral Euler product decoupling, and E6 x F4 period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 266 | gate_merger_r83_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Sp(4) parahoric Shimura varieties and complexity-26 T-varieties avoid Pitfalls 001-177, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 267 | explorer_r84_L00_N00 | Kottwitz–Rapoport stratification invariants, Deligne–Beilinson regulators, and Archimedean Green functions on GU(1,2) Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 268 | explore_merger_r84_L04_N00 | Root strategy card reduction to GU(1,2) Shimura varieties, complexity-27 T-variety polyhedral cones, E7 x E6 GGP periods, and CY35 shifted symplectic stacks avoids Pitfalls 001-179, but hits GU(1,2) Shimura variety Kottwitz–Rapoport stratification frequency decoupling, complexity-27 polyhedral Euler product decoupling, and E7 x E6 period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 269 | gate_merger_r84_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while GU(1,2) Shimura varieties and complexity-27 T-varieties avoid Pitfalls 001-179, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
