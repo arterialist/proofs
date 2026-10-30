@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 131
+Count: 134
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -138,3 +138,6 @@ Count: 131
 | 129 | explorer_r38_L00_N00 | Twistor Dirac operators and arithmetic index pairings evaluate topological characteristic numbers and harmonic spinor dimensions that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 130 | explore_merger_r38_L04_N00 | Root strategy card reduction to arithmetic twistor Dirac harmonic pairings, Tian's alpha-invariants on log Fano pairs, Kato log crystalline Hodge complexes, and elliptic quantum affine algebras avoids Pitfalls 001-087, but hits twistor Dirac index frequency decoupling, Tian alpha Euler product decoupling, and log crystalline prime decoupling carrying 100% of Millennium RH analytical depth. |
 | 131 | gate_merger_r38_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while twistor spin Dirac and Tian alpha stability avoid Pitfalls 001-087, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 132 | explorer_r39_L00_N00 | Deligne-Illusie Hodge-de Rham degeneration over W_2(k) operates in characteristic p via pure algebraic decomposition of de Rham complexes that decouple across primes and lack Archimedean vertical transcendental continuity off Re(s)=1/2. |
+| 133 | explore_merger_r39_L04_N00 | Root strategy card reduction to Deligne-Illusie Frobenius liftability over W_2(k), logarithmic Ding stability functionals, Mazur's Eisenstein ideals in Hecke algebras, and higher-genus VOA conformal blocks avoids Pitfalls 001-089, but hits Deligne-Illusie prime decoupling, logarithmic Ding Euler product decoupling, and Mazur Eisenstein level-p decoupling carrying 100% of Millennium RH analytical depth. |
+| 134 | gate_merger_r39_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while characteristic p Hodge theory and logarithmic Ding stability avoid Pitfalls 001-089, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
