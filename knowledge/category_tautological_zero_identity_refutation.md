@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 269
+Count: 272
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -276,3 +276,6 @@ Count: 269
 | 267 | explorer_r84_L00_N00 | Kottwitz–Rapoport stratification invariants, Deligne–Beilinson regulators, and Archimedean Green functions on GU(1,2) Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 268 | explore_merger_r84_L04_N00 | Root strategy card reduction to GU(1,2) Shimura varieties, complexity-27 T-variety polyhedral cones, E7 x E6 GGP periods, and CY35 shifted symplectic stacks avoids Pitfalls 001-179, but hits GU(1,2) Shimura variety Kottwitz–Rapoport stratification frequency decoupling, complexity-27 polyhedral Euler product decoupling, and E7 x E6 period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 269 | gate_merger_r84_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while GU(1,2) Shimura varieties and complexity-27 T-varieties avoid Pitfalls 001-179, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 270 | explorer_r85_L00_N00 | Siegel–Eisenstein distributions, boundary residues, Deligne–Beilinson regulators, and Archimedean Green functions on GSp(6) Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 271 | explore_merger_r85_L04_N00 | Root strategy card reduction to GSp(6) Shimura varieties, complexity-28 T-variety polyhedral cones, E8 x E7 GGP periods, and CY36 shifted symplectic stacks avoids Pitfalls 001-181, but hits GSp(6) Siegel modular variety Siegel–Eisenstein distribution frequency decoupling, complexity-28 polyhedral Euler product decoupling, and E8 x E7 period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 272 | gate_merger_r85_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while GSp(6) Shimura varieties and complexity-28 T-varieties avoid Pitfalls 001-181, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
