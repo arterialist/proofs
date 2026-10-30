@@ -73,7 +73,7 @@ theorem unit_step_le_shortEnergy {H : ℝ → ℝ} (hH : Measurable H) :
 
 theorem unit_step_le_energy {H : ℝ → ℝ} (hH : Measurable H) :
     increment H 1 ≤ 4 * energy H :=
-  (unit_step_le_shortEnergy hH).trans (mul_le_mul_left' le_self_add 4)
+  (unit_step_le_shortEnergy hH).trans (mul_le_mul_right le_self_add 4)
 
 /-- Finite mixed energy forces the actual unit increment into L², even for
 sources with infinite unweighted L² norm. -/

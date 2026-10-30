@@ -50,13 +50,15 @@ run_cmd do
     | some idx => env.header.moduleNames[idx.toNat]! == target
   if selected.isEmpty then
     throwError "No declarations found for the K=3 prefix module"
-  let audit : Lean.CollectAxioms.M Unit := do
-    for (name, _) in selected do
-      Lean.CollectAxioms.collect name
-  let (_, state) := (audit.run env).run {}
+  let mut axs : NameSet := {}
+  for (name, _) in selected do
+    let a ← Lean.collectAxioms name
+    for x in a do
+      axs := axs.insert x
+  let axList := axs.toList
   let allowed := #[`propext, `Classical.choice, `Quot.sound]
-  unless state.axioms.all (fun name => allowed.contains name) do
-    throwError m!"Unexpected axiom dependency: {state.axioms}"
+  unless axList.all (fun name => allowed.contains name) do
+    throwError m!"Unexpected axiom dependency: {axList}"
   logInfo m!"K3 PREFIX DECLARATION COUNT {selected.length}"
-  logInfo m!"K3 PREFIX TRANSITIVE AXIOMS {state.axioms}"
+  logInfo m!"K3 PREFIX TRANSITIVE AXIOMS {axList}"
   logInfo "K3 PREFIX AXIOM AUDIT PASSED"

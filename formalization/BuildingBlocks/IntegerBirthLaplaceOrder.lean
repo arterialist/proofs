@@ -30,7 +30,7 @@ private theorem moment_integrable {t : ℝ} (ht : 0 < t) :
     Integrable (fun u : ℝ => Real.exp (-t*u)*u) μ := by
   have hh := integrableOn_rpow_mul_exp_neg_mul_rpow (p := 1) (s := 1)
     (by norm_num) (by norm_num) ht
-  simpa only [Real.rpow_one, mul_comm] using hh
+  simpa only [Real.rpow_one, mul_comm, IntegrableOn] using hh
 
 private theorem dominated_integrable {t : ℝ} (ht : 0 < t) (n : ℕ) {F : ℝ → ℝ}
     (hF : Measurable F) (hbound : ∀ u, 0 ≤ u → ‖F u‖ ≤ (boundConstant*u)*birthWeight n) :

@@ -28,14 +28,16 @@ run_cmd do
     | none => false
     | some idx => env.header.moduleNames[idx.toNat]! ==
         `BuildingBlocks.ActualMobiusCriticalWindowSaving
-  let audit : Lean.CollectAxioms.M Unit := do
-    for (name, _) in selected do
-      Lean.CollectAxioms.collect name
-  let (_, state) := (audit.run env).run {}
+  let mut axs : NameSet := {}
+  for (name, _) in selected do
+    let a ← Lean.collectAxioms name
+    for x in a do
+      axs := axs.insert x
+  let axList := axs.toList
   let allowed := #[`propext, `Classical.choice, `Quot.sound]
   if selected.isEmpty then throwError "No module constants selected"
-  unless state.axioms.all (fun name => allowed.contains name) do
-    throwError m!"Unexpected axiom dependency: {state.axioms}"
+  unless axList.all (fun name => allowed.contains name) do
+    throwError m!"Unexpected axiom dependency: {axList}"
   logInfo m!"Module constants audited, including generated declarations: {selected.length}"
-  logInfo m!"Full transitive axiom union: {state.axioms}"
+  logInfo m!"Full transitive axiom union: {axList}"
   logInfo "ACTUAL MOBIUS CRITICAL WINDOW AXIOM AUDIT PASSED"

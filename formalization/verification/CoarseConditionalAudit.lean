@@ -22,14 +22,16 @@ run_cmd do
     | none => false
     | some idx => (`BuildingBlocks).isPrefixOf env.header.moduleNames[idx.toNat]!
   unless !selected.isEmpty do throwError "Empty local audit scope"
-  let audit : Lean.CollectAxioms.M Unit := do
-    for (name, _) in selected do
-      Lean.CollectAxioms.collect name
-  let (_, state) := (audit.run env).run {}
+  let mut axs : NameSet := {}
+  for (name, _) in selected do
+    let a ← Lean.collectAxioms name
+    for x in a do
+      axs := axs.insert x
+  let axList := axs.toList
   let allowed := #[`propext, `Classical.choice, `Quot.sound]
-  unless state.axioms.all (fun a => allowed.contains a) do
-    throwError m!"Unexpected transitive axiom: {state.axioms}"
-  logInfo m!"FULL_TRANSITIVE_AXIOM_UNION {state.axioms}"
+  unless axList.all (fun a => allowed.contains a) do
+    throwError m!"Unexpected transitive axiom: {axList}"
+  logInfo m!"FULL_TRANSITIVE_AXIOM_UNION {axList}"
   logInfo m!"AUDITED_LOCAL_CONSTANT_COUNT {selected.length}"
   for (name, _) in selected do
     logInfo m!"AUDITED {name}"

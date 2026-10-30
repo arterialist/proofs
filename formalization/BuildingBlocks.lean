@@ -721,3 +721,4 @@ import BuildingBlocks.RiemannHypothesisTarget
 import BuildingBlocks.HighFrequencyReductionBridge
 import BuildingBlocks.ActualCriticalGrowthCriterion
 import BuildingBlocks.ActualCriticalLowerExcursion
+import BuildingBlocks.ActualCriticalMajorantCriterion

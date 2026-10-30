@@ -264,7 +264,8 @@ theorem filtered_diagonal_eq_tau {s : ℝ} (hs : 0 ≤ s) : L0 (diagonal s) s = 
       (primeBlock_memLp (Finset.mem_filter.mp hp).2 s)
   unfold diagonal
   rw [L0_sum _ _ _ hi]
-  simpa only [primesAt, Finset.sum_filter, conv] using actual_tau_calibration hs
+  unfold conv
+  simpa only [primesAt, Finset.sum_filter] using actual_tau_calibration hs
 
 /-- The full filtered actual-source expansion, with ordered distinct primes and both mixed orders. -/
 theorem filtered_source_distinct {s : ℝ} (hs : 0 ≤ s) :

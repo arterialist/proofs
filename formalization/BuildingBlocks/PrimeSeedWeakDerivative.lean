@@ -45,8 +45,9 @@ theorem seed_cell_weak_derivative {L : ℝ} (hL : 0 < L) (j : ℕ)
 theorem seed_test_product_integrable {L : ℝ} (hL : 0 < L) {φ : ℝ → ℝ}
     (hm : AEStronglyMeasurable φ volume) (hb : ∃ M, ∀ v, |φ v| ≤ M) :
     Integrable (fun v => seed L v * φ v) := by
+  obtain ⟨M, hM⟩ := hb
   have hi := (integrable_seed_and_integral hL).1.bdd_mul hm
-    (by simpa only [Real.norm_eq_abs] using hb)
+    (Filter.Eventually.of_forall fun v => by simpa only [Real.norm_eq_abs] using hM v)
   simpa only [mul_comm] using hi
 
 theorem summable_weighted_clock {L : ℝ} (hL : 0 < L) (a : ℝ) {φ : ℝ → ℝ}

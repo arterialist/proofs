@@ -70,7 +70,7 @@ theorem coarsePrefix_first_moment {T : ℝ} (hT : 1 ≤ T) :
     have hh := (hasDerivAt_pow 2 t).inv (pow_ne_zero 2 ht0)
     have hh' : HasDerivAt (fun u : ℝ => (u ^ 2)⁻¹)
         (-(2 * t) / (t ^ 2) ^ 2) t := by
-      simpa using hh
+      simpa [Pi.inv_def] using hh
     convert hh'.hasDerivWithinAt using 1
     field_simp
     <;> ring

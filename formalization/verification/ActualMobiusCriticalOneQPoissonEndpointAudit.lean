@@ -30,12 +30,15 @@ run_cmd do
     | some idx => env.header.moduleNames[idx.toNat]! == target
   if selected.isEmpty then
     throwError "No declarations found for the one-Q Poisson endpoint module"
-  let audit : Lean.CollectAxioms.M Unit := do
-    for (name, _) in selected do Lean.CollectAxioms.collect name
-  let (_, state) := (audit.run env).run {}
+  let mut axs : NameSet := {}
+  for (name, _) in selected do
+    let a ← Lean.collectAxioms name
+    for x in a do
+      axs := axs.insert x
+  let axList := axs.toList
   let allowed := #[`propext, `Classical.choice, `Quot.sound]
-  unless state.axioms.all (fun name => allowed.contains name) do
-    throwError m!"Unexpected axiom dependency: {state.axioms}"
+  unless axList.all (fun name => allowed.contains name) do
+    throwError m!"Unexpected axiom dependency: {axList}"
   logInfo m!"ONE-Q POISSON ENDPOINT DECLARATION COUNT {selected.length}"
-  logInfo m!"ONE-Q POISSON ENDPOINT TRANSITIVE AXIOMS {state.axioms}"
+  logInfo m!"ONE-Q POISSON ENDPOINT TRANSITIVE AXIOMS {axList}"
   logInfo "ONE-Q POISSON ENDPOINT AXIOM AUDIT PASSED"
