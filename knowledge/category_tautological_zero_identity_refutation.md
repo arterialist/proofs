@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 119
+Count: 122
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -126,3 +126,6 @@ Count: 119
 | 117 | explorer_r34_L00_N00 | Chas-Sullivan loop products evaluate algebraic intersection theory on free loop spaces LM yielding graded Z-modules invariant under continuous vertical frequency shifts t = Im(s), providing zero transverse coercivity off Re(s)=1/2. |
 | 118 | explore_merger_r34_L04_N00 | Root strategy card reduction to Chas-Sullivan string topology, non-Archimedean Mabuchi energy, Hyodo-Kato cohomology, and affine Grassmannian slices avoids Pitfalls 001-079, but hits Chas-Sullivan frequency decoupling, Mabuchi energy Euler product decoupling, and Hyodo-Kato prime decoupling carrying 100% of Millennium RH analytical depth. |
 | 119 | gate_merger_r34_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while string topology and non-Archimedean Mabuchi energy avoid Pitfalls 001-079, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 120 | explorer_r35_L00_N00 | Contact invariants on standard contact spheres evaluate classical rotation numbers and Conley-Zehnder indices that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 121 | explore_merger_r35_L04_N00 | Root strategy card reduction to Boothby-Wang contact dynamics, valuative Ding stability, Fontaine-Messing syntomic cohomology, and Reshetikhin-Turaev invariants avoids Pitfalls 001-081, but hits contact rotation decoupling, Ding delta Euler product decoupling, and Fontaine-Messing prime decoupling carrying 100% of Millennium RH analytical depth. |
+| 122 | gate_merger_r35_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while contact dynamics and valuative Ding stability avoid Pitfalls 001-081, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
