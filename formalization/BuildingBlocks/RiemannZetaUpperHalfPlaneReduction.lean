@@ -1,11 +1,9 @@
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.NumberTheory.LSeries.RiemannZeta
 import BuildingBlocks.Scope
-import BuildingBlocks.CriticalTransformRH
-import BuildingBlocks.UniversalSchwarzRHBridge
+import BuildingBlocks.ActualArchimedeanFactor
 import BuildingBlocks.RiemannZetaGlobalSchwarzReflection
 import BuildingBlocks.RiemannZetaRealAxisUnconditional
-import BuildingBlocks.ActualArchimedeanFactor
 
 /-!
 # Upper Half-Plane Reduction of the Riemann Hypothesis
@@ -50,10 +48,8 @@ namespace BuildingBlocks.RiemannZetaUpperHalfPlaneReduction
 open Complex
 open BuildingBlocks
 open BuildingBlocks.ActualArchimedeanFactor
-open BuildingBlocks.UniversalSchwarzRHBridge
 open BuildingBlocks.RiemannZetaGlobalSchwarzReflection
 open BuildingBlocks.RiemannZetaRealAxisUnconditional
-open BuildingBlocks.CriticalTransformRH
 
 noncomputable section
 

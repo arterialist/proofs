@@ -5,12 +5,6 @@ Authors: Arterialist RH Research Team
 -/
 import Mathlib.NumberTheory.LSeries.RiemannZeta
 import BuildingBlocks.RiemannZetaUpperHalfPlaneReduction
-import BuildingBlocks.RiemannZetaHyperbolicMellinObstruction
-import BuildingBlocks.RiemannZetaModularMellinInversion
-import BuildingBlocks.RiemannZetaGrandIntermediateIntegration
-import BuildingBlocks.RiemannZetaThresholdFredholmBridge
-import BuildingBlocks.RiemannZetaHighFrequencyFredholmElimination
-import BuildingBlocks.RiemannZetaFredholmCarrierCoercivity
 
 /-!
 # Module 316: Riemann Zeta Real-Imaginary Disparity and High-Frequency Obstruction
@@ -50,11 +44,6 @@ All declarations depend strictly on standard Lean 4 foundational axioms:
 
 open Complex Real
 open BuildingBlocks.RiemannZetaUpperHalfPlaneReduction
-open BuildingBlocks.RiemannZetaHyperbolicMellinObstruction
-open BuildingBlocks.RiemannZetaGrandIntermediateIntegration
-open BuildingBlocks.RiemannZetaThresholdFredholmBridge
-open BuildingBlocks.RiemannZetaHighFrequencyFredholmElimination
-open BuildingBlocks.RiemannZetaFredholmCarrierCoercivity
 
 namespace BuildingBlocks.RiemannZetaRealImaginaryDisparity
 
