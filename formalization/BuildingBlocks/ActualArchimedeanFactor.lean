@@ -5,11 +5,16 @@ import Mathlib.Analysis.Analytic.Order
 import Mathlib.Analysis.Complex.CauchyIntegral
 import Mathlib.NumberTheory.LSeries.Dirichlet
 import Mathlib.NumberTheory.LSeries.Nonvanishing
-import BuildingBlocks.ChargeFrozenFourier
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
 namespace BuildingBlocks.ActualArchimedeanFactor
+
+theorem real_cpow_eq_exp_log {x : ℝ} (hx : 0 < x) (z : ℂ) :
+    (x : ℂ) ^ z = Complex.exp (z * (Real.log x : ℂ)) := by
+  rw [Complex.cpow_def_of_ne_zero (by exact_mod_cast hx.ne'), ← Complex.ofReal_log hx.le]
+  congr 1
+  ring
 
 theorem gamma_half_regular (s : ℂ) (hs : 0 < s.re) :
     Complex.Gamma (s / 2) ≠ 0 ∧ DifferentiableAt ℂ Complex.Gamma (s / 2) := by
@@ -25,8 +30,7 @@ theorem gamma_factor_exponential :
     Complex.Gammaℝ = fun s : ℂ =>
       Complex.exp ((-s / 2) * (Real.log Real.pi : ℂ)) * Complex.Gamma (s / 2) := by
   funext s
-  rw [Complex.Gammaℝ_def,
-    BuildingBlocks.ChargeFrozenFourier.real_cpow_eq_exp_log Real.pi_pos]
+  rw [Complex.Gammaℝ_def, real_cpow_eq_exp_log Real.pi_pos]
 
 theorem gamma_factor_log_derivative (s : ℂ) (hs : 0 < s.re) :
     logDeriv Complex.Gammaℝ s = -(Real.log Real.pi : ℂ) / 2 +
@@ -39,7 +43,7 @@ theorem gamma_factor_log_derivative (s : ℂ) (hs : 0 < s.re) :
     simpa only [neg_div, Pi.neg_apply, id_eq] using
       ((hasDerivAt_id s).neg.div_const (2 : ℂ)).mul_const (Real.log Real.pi : ℂ)
   have he := hl.cexp
-  rw [gamma_factor_exponential, logDeriv_mul
+  rw [gamma_factor_exponential, logDeriv_fun_mul
     (f := fun w : ℂ => Complex.exp ((-w / 2) * (Real.log Real.pi : ℂ)))
     (g := fun w : ℂ => Complex.Gamma (w / 2)) s
     (Complex.exp_ne_zero ((-s / 2) * (Real.log Real.pi : ℂ))) hgn
@@ -132,7 +136,7 @@ theorem completed_zeta_prime_boundary (s : ℂ) (hs : 1 < s.re) :
   have hlog : logDeriv completedRiemannZeta s =
       logDeriv (fun w => Complex.Gammaℝ w * riemannZeta w) s := by
     rw [logDeriv_apply, logDeriv_apply, he.deriv_eq, he.eq_of_nhds]
-  rw [hlog, logDeriv_mul (f := Complex.Gammaℝ) (g := riemannZeta) s hgn hzn hgd hzd,
+  rw [hlog, logDeriv_fun_mul (f := Complex.Gammaℝ) (g := riemannZeta) s hgn hzn hgd hzd,
     gamma_factor_log_derivative s hs0]
   have hp := zeta_prime_series s hs
   rw [← hp]
@@ -251,7 +255,7 @@ theorem xi_prime_boundary (s : ℂ) (hs : 1 < s.re) :
     field_simp
   have hl : logDeriv xi s = logDeriv (fun w => q w * completedRiemannZeta w) s := by
     rw [logDeriv_apply, logDeriv_apply, he.deriv_eq, he.eq_of_nhds]
-  rw [hl, logDeriv_mul (f := q) (g := completedRiemannZeta) s hqn hcn
+  rw [hl, logDeriv_fun_mul (f := q) (g := completedRiemannZeta) s hqn hcn
     hq.differentiableAt (differentiableAt_completedZeta hs0 hs1), hlq,
     completed_zeta_prime_boundary s hs]
   ring
@@ -272,8 +276,8 @@ theorem analytic_log_derivative_order (f : ℂ → ℂ) (s : ℂ)
   have hdg : ∀ᶠ w in nhds s, DifferentiableAt ℂ g w :=
     hg.eventually_analyticAt.mono (fun _ h => h.differentiableAt)
   have hws : ∀ᶠ w in nhdsWithin s {s}ᶜ, w ≠ s := by
-    simpa only [Set.mem_compl_iff, Set.mem_singleton_iff] using
-      (self_mem_nhdsWithin : ∀ᶠ w : ℂ in nhdsWithin s ({s} : Set ℂ)ᶜ, w ∈ ({s} : Set ℂ)ᶜ)
+    filter_upwards [self_mem_nhdsWithin] with w hw
+    exact hw
   have hmodel : (fun w => (w - s) * logDeriv f w) =ᶠ[nhdsWithin s {s}ᶜ]
       (fun w => (analyticOrderNatAt f s : ℂ) + (w - s) * logDeriv g w) := by
     filter_upwards [hl.filter_mono nhdsWithin_le_nhds,
@@ -282,7 +286,7 @@ theorem analytic_log_derivative_order (f : ℂ → ℂ) (s : ℂ)
     have hb : HasDerivAt (fun v : ℂ => v - s) 1 w := (hasDerivAt_id w).sub_const s
     have hbl : logDeriv (fun v : ℂ => v - s) w = 1 / (w - s) := by
       rw [logDeriv_apply, hb.deriv]
-    rw [hlw, logDeriv_mul (f := fun v => (v - s) ^ analyticOrderNatAt f s)
+    rw [hlw, logDeriv_fun_mul (f := fun v => (v - s) ^ analyticOrderNatAt f s)
       (g := g) w (pow_ne_zero _ (sub_ne_zero.mpr hsw)) hgw
       (hb.differentiableAt.pow _) hdgw,
       logDeriv_fun_pow hb.differentiableAt, hbl]
