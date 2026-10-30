@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 263
+Count: 266
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -270,3 +270,6 @@ Count: 263
 | 261 | explorer_r82_L00_N00 | Picard–Lefschetz vanishing cycles and monodromy, Deligne–Beilinson regulators, and Archimedean Green functions on U(2,1) Picard modular surfaces decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 262 | explore_merger_r82_L04_N00 | Root strategy card reduction to U(2,1) Picard surfaces, complexity-25 T-variety polyhedral cones, F4 x Spin(9) GGP periods, and CY33 shifted symplectic stacks avoids Pitfalls 001-175, but hits U(2,1) Picard surface Picard–Lefschetz monodromy frequency decoupling, complexity-25 polyhedral Euler product decoupling, and F4 x Spin(9) period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 263 | gate_merger_r82_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while U(2,1) Picard surfaces and complexity-25 T-varieties avoid Pitfalls 001-175, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 264 | explorer_r83_L00_N00 | Parahoric boundary degenerations, Harder–Kottwitz boundary cohomology vanishing, Deligne–Beilinson regulators, and Archimedean Green functions on Sp(4) Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 265 | explore_merger_r83_L04_N00 | Root strategy card reduction to Sp(4) parahoric Shimura varieties, complexity-26 T-variety polyhedral cones, E6 x F4 GGP periods, and CY34 shifted symplectic stacks avoids Pitfalls 001-177, but hits Sp(4) parahoric boundary degeneration frequency decoupling, complexity-26 polyhedral Euler product decoupling, and E6 x F4 period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 266 | gate_merger_r83_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Sp(4) parahoric Shimura varieties and complexity-26 T-varieties avoid Pitfalls 001-177, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
