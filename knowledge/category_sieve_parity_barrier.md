@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Combinatorial sieve methods (Vaughan, Heath-Brown, Turán-Kubilius) cannot achieve critical-scale $x^{1/2}$ power savings on prime convolutions without inputting an analytic zero-free region, rendering unconditional arithmetic bounds circular with RH.
-Count: 33
+Count: 34
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -43,3 +43,4 @@ Count: 33
 
 
 
+| 34 | explore_merger_r3_L01_N11 | Forward proof of CoarsePrimitiveBound $S_{2^k} \le C (2^k)^{4+\varepsilon}$ for Chebyshev prime error is strictly obstructed by Selberg's sieve parity barrier floor $S_X = \Omega(X^5 / \log^{2A} X) \gg X^4$, preventing multiplicative arithmetic methods from saving the required power of $X$. |

@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 26
+Count: 29
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -33,3 +33,6 @@ Count: 26
 | 24 | explorer_r3_L00_N18 | Symmetrized conformal order-1/2 genus-0 Hausdorff-Stieltjes spectral moment duality commits a non-additive determinant fallacy: combining an off-line pair ($\rho = 0.8 \pm 30i$) with real critical zeros leaves Hankel determinant strictly positive $\det(H_2) = +2.59 \times 10^{-10} > 0$ because real zeros dominate low-order moments; Converse Turán counterexample $f(t)=(t^2-1)(t^2+4)$ maps to real roots $z \in \mathbb{R}$, yielding zero Hankel obstruction $-4v^2|\mu|^2 = 0$; and moment conditions $H_N \ge 0, 4H_N - H_N^{(1)} \ge 0$ only characterize support in $(-\infty, 4]$, omitting the indispensable Stieltjes condition $H_N^{(1)} \ge 0$ for $[0, 4]$. |
 | 25 | explorer_r3_L00_N26 | Weil quadratic functional positive semi-definiteness $W(g * \tilde{g}) \ge 0$ directly from the prime sum and Archimedean integral carries 100% RH depth and has zero forward engine; candidate test vector breaks reality conditions and compact support; and Heisenberg spectral uncertainty (> 60.2% leakage) forces flanking critical zeros to cancel out > 96% of negative cross-terms. |
 | 26 | explorer_r3_L00_N27 | Buffered lower half-plane Poisson-Carleman boundary integral $\int_{\partial \Omega_\delta} \log|\Xi_*| d\omega$ matches the interior value plus the Green's defect $\log|\Xi_*(z_0)| + \sum G(\lambda_k, z_0)$ identically by the Poisson-Jensen identity, yielding zero contradiction; order-1/2 Phragmén-Lindelöf bounds are invariant under off-line zeros; and the Green's defect decays cubically as $O(\gamma_0^{-3})$, vanishing to $1.59 \times 10^{-10}$ at $\gamma_0=1000$. |
+| 27 | explore_merger_r3_L01_N00 | Symmetrized completed xi boundary integral on $\mathbb{C}^-$ is an exact residue tautology matching the Littlewood residue sum identically for all hypothetical zero distributions, providing zero forward leverage to prove $\sum g_\Omega = 0$. |
+| 28 | explore_merger_r3_L01_N06 | Infinite Hausdorff-Stieltjes moment semi-definiteness on $[0, 4]$ carries 100% of Millennium RH depth, while low-order Hankel determinants $H_N \ge 0$ for $N \le 2$ suffer from Haselgrove scale blindness, remaining positive even in the presence of off-line zeros ($+1.47 \times 10^{-22} > 0$). |
+| 29 | explore_merger_r3_L01_N13 | Conformal slit-domain Green-Poisson balance equation $\sum g_\Omega(0, \lambda_k) = \frac{4}{\pi}\int_0^\infty \dots$ is a functional identity holding for all entire functions, where the boundary integral automatically absorbs the zero defect. |

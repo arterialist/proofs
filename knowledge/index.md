@@ -1,11 +1,11 @@
 # Knowledge Index
 
-## Failed Approach Categories (288 entries in 15 categories)
+## Failed Approach Categories (302 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
-| sieve_parity_barrier | 33 | Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
+| sieve_parity_barrier | 34 \| Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
 | termwise_arithmetic_positivity | 12 | Individual arithmetic summands in $W(x)$ are strictly positive at composite integers (e.g. $n=36$) | category_termwise_arithmetic_positivity.md |
-| finite_numerical_extrapolation | 33 | Numerical testing on $x \le 20000$ is completely blind to off-critical zero excursions ($x > 10^{35}$ or $x > 10^{263.5}$), and low-degree Jensen polynomial testing ($d \le 4$) cannot extrapolate to $d \ge 5$ | category_finite_numerical_extrapolation.md |
+| finite_numerical_extrapolation | 34 \| Numerical testing on $x \le 20000$ is completely blind to off-critical zero excursions ($x > 10^{35}$ or $x > 10^{263.5}$), and low-degree Jensen polynomial testing ($d \le 4$) cannot extrapolate to $d \ge 5$ | category_finite_numerical_extrapolation.md |
 | unshifted_multiplier_pole_cancellation | 2 | Unshifted $d^1$ aggregation introduces $\zeta(s)$ factor, canceling double poles for multiplicities $m \ge 2$ | category_unshifted_multiplier_pole_cancellation.md |
 | goldbach_hard_wall_divergence | 6 | Positive majorants for Goldbach spectral continuation diverge at $\sigma \le 2$ ($c \le 1$), and $c_4^{(3)} < 0$ | category_goldbach_hard_wall_divergence.md |
 | renewal_small_gain_neutral_boundary | 16 | Causal renewal transfer function has neutral boundary contact $T(i\gamma) = -1$ at every critical zero, destroying uniform operator contraction and resolvent coercivity | category_renewal_small_gain_neutral_boundary.md |
@@ -13,11 +13,11 @@
 | perron_contour_divergence | 16 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
 | conditional_sign_premise_circularity | 23 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
 | threshold_partition_sub_unit_degeneracy | 29 | Parametric threshold partitions $H \le 7.465$ are spectrally vacuous because slab contains zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$), while ratio deficit reverses sign at 7.49 and collapse breaks for $H > 7.465$ | category_threshold_partition_sub_unit_degeneracy.md |
-| tautological_zero_identity_refutation | 26 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
+| tautological_zero_identity_refutation | 29 \| Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
 | herglotz_theta_de_bruijn_newman_barrier | 58 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
 | weil_quadratic_autocorrelation_positivity_fallacy | 8 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
 | nyman_beurling_dilation_approximation | 7 | Approximating the indicator $\chi_{(0, 1)}$ by fractional part dilations $\rho_\alpha$ hits an $L^2$ distance barrier $\Omega(\delta)$ without collective prime phase cancellation, and descending Báez-Duarte sums to finite dimensions is circular with RH | category_nyman_beurling_dilation_approximation.md |
-| carleman_nevanlinna_boundary_divergence | 19 | Conformal Carleman, Poisson-Jensen, and Nevanlinna-Riesz potential balances fail because Stirling critical decay produces $-\pi/(4|\theta|)$ boundary divergence and real-axis growth drives residuals to $+\infty$, destroying Nevanlinna class membership | category_carleman_nevanlinna_boundary_divergence.md |
+| carleman_nevanlinna_boundary_divergence | 22 | Conformal Carleman, Poisson-Jensen, and Nevanlinna-Riesz potential balances fail because Stirling critical decay produces $-\pi/(4|\theta|)$ boundary divergence and real-axis growth drives residuals to $+\infty$, destroying Nevanlinna class membership | category_carleman_nevanlinna_boundary_divergence.md |
 
 ## Theorems
 | File | Confidence | Summary |
@@ -107,6 +107,9 @@
 | reference_baez_duarte_nyman_beurling_criterion_p1.md | high | Báez-Duarte (2003): Sequential Nyman-Beurling criterion on fractional parts in $L^2(0, 1)$ converging at rate $\sum \rho^{-2}$ |
 | reference_li_criterion_positivity_p1.md | high | Li (1997): Positivity of coefficients $\lambda_n = \sum_\rho [1 - (1-1/\rho)^n]$ is equivalent to the Riemann Hypothesis |
 | reference_laguerre_polya_class_invariants_p1.md | high | Pólya & Schur (1914), Craven & Csordas (1989): Invariant differential operators, Laguerre inequalities, and the Laguerre-Pólya class $\mathcal{LP}$ |
+
+| observation_stirling_critical_line_logarithmic_divergence_p1.md | high | Critical-line Stirling decay $\log|\Xi(t)| \sim -(\pi/4)t$ forces logarithmic divergence $-0.25 \log T$ of the Carleman/Poisson-Jensen boundary integral along $[1/4, \infty)$ |
+| observation_green_poisson_residue_tautology_p1.md | high | Green-Poisson potential defect identities on slit domains are exact functional tautologies ($X \equiv X$) automatically absorbing off-line zero defects without excluding zeros |
 
 ## Node Directions
 ### Iteration 1, Round 1

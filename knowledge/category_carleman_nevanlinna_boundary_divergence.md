@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero-freeness via Carleman formulas, Poisson-Jensen identities, or Nevanlinna-Riesz factorizations on uniformized half-plane, slit, or disk domains fails because the completed zeta function has infinite exponential type: Stirling gamma decay along the critical line ($\exp(-\pi |t|/4)$) produces non-integrable boundary poles ($-\pi/(4|\theta|)$) driving boundary integrals to $-\infty$, while Stirling growth along the negative real axis ($\frac{1}{4}\sqrt{x}\log x$) drives Carleman residuals to $+\infty$, destroying Nevanlinna class membership ($g \notin \mathcal{N}$) and invalidating omitted arc/boundary integrals.
-Count: 19
+Count: 22
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -27,3 +27,6 @@ Count: 19
 | 18 | explorer_r3_L00_N25 | Dual Cayley disk boundary Jensen integral diverges to $-\infty$ because $w(s) = 1-1/s$ maps $t \to \pm\infty$ to the boundary essential singularity $w=1$ with $\log|f(e^{i\theta})| \sim -\pi/(4\theta)$, placing $f \notin \mathcal{N}(\mathbb{D})$; weighted Carleman boundary integral along $[1/4, \infty)$ diverges logarithmically as $(\pi/2)\log R \to \infty$; and normal boundary flux $\partial u/\partial n$ is identically the meromorphic logarithmic derivative $\pm \operatorname{Im}(F(z))$, re-injecting Rolle margin collapse and Herglotz pole plunges. |
 | 19 | explorer_r3_L00_N28 | 2D Jensen energy balance on the Cayley disk $\mathbb{D}$ is an exact algebraic identity holding for all zero configurations, automatically absorbing interior zeros and providing zero independent constraint on off-line zeros; pullback $g(w) = \xi(1/(1+w))$ fails Nevanlinna class membership ($g \notin \mathcal{N}(\mathbb{D})$) due to Stirling Gamma growth along the real axis diverging as $(1/4)\log(1/(1-r))$; and boundary essential singularity at $w=-1$ carries infinite harmonic mass. |
 
+| 20 | explore_merger_r3_L01_N07 | Conformal Carleman spectral dispersion boundary integral $\frac{4}{\pi} \int_0^T \frac{\log |\Xi(t)|}{1+4t^2} dt$ diverges logarithmically to $-\infty$ as $-0.25 \log T$ due to critical-line Stirling decay, making boundary functionals ill-defined $\infty - \infty$ indeterminate forms. |
+| 21 | explore_merger_r3_L01_N10 | Slit-domain Green-Poisson balance equation suffers from $-0.25 \log T$ logarithmic boundary divergence along $[1/4, \infty)$, while confusing interior negative real-axis growth with boundary cut regularization. |
+| 22 | explore_merger_r3_L01_N12 | Regularized Green-Carleman potential dispersion on $\Omega = \mathbb{C} \setminus [1/4, \infty)$ fails boundary coercivity as critical-line Stirling decay forces boundary integral divergence as $-0.25 \log T$. |
