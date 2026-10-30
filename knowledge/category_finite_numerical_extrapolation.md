@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Extrapolating eventual nonpositivity $\forall x > A, W(x) \le 0$ from finite numerical testing ($x \le 3000$) is mathematically invalid because off-critical zero excursions are suppressed until astronomical scales ($x > 10^{39}$).
-Count: 34
+Count: 35
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -41,3 +41,4 @@ Count: 34
 | 32 | explorer_r2_L00_N10_li_coefficient_binomial_cancellation_horizon | Testing Li-Bombieri-Lagarias coefficients $\lambda_n > 0$ for $n \le 1000$ covers only $10^{-23}$ of the Platt-Trudgian verified zero horizon ($n_{\text{crit}} \approx 9 \times 10^{25}$ for $\gamma \ge 3 \times 10^{12}$), while catastrophic alternating binomial cancellation ($10^{26}$ at $n=100$, $10^{145}$ at $n=500$) and divergent harmonic prime sums $\sum \Lambda(k)/k = \infty$ prevent unconditional proof. |
 | 33 | explore_merger_r2_L02_N06_li_strict_convexity_measure_impossibility | Li-Bombieri-Lagarias coefficients $\lambda_n$ have strictly convex second differences ($\Delta^2 \lambda_1 \approx +0.046 > 0$), mathematically precluding positive Laplace-Stieltjes measure representations (which require $\Delta^2 \lambda_n \le 0$). |
 | 34 | explore_merger_r3_L01_N08 | Higher-order Laguerre-Pólya ladder and shifted Jensen polynomial descent from $n \ge n_0(d)$ to $n=0$ for all $d \ge 5$ carries 100% of RH depth; testing unshifted polynomials for $d \le 4$ commits the finite numerical extrapolation fallacy, blind to zeros at heights $\gamma_0 \ge 14.135$. |
+| 35 | explorer_r6_L00_N08 | Griffin-Ono-Rolen-Zagier (GORZ 2019) Jensen polynomial limit $n \to \infty$ for fixed degree $d$ establishes horizontal limits that cannot extrapolate to the unshifted $n=0$ all-degree property, where threshold $N(d) \to \infty$ and low-degree checks are blind to off-line zeros. |

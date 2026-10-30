@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (311 entries in 15 categories)
+## Failed Approach Categories (314 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 34 \| Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
@@ -97,6 +97,9 @@
 
 | observation_conrey_li_de_branges_obstruction_persistence_p1.md | high | Completed xi functions cannot generate classical de Branges spaces without violating Hermite-Biehler contractivity |
 | observation_weil_prime_positivity_circularity_p1.md | high | Deducing Weil functional positivity directly from prime sums requires square-root prime error bounds equivalent to RH |
+
+| observation_gorz_jensen_polynomial_horizontal_limit_barrier_p1.md | high | GORZ horizontal limits for fixed degree Jensen polynomials cannot extrapolate to all degrees at unshifted origin $n=0$ |
+| observation_gue_pair_correlation_offline_invariance_p1.md | high | GUE level repulsion and pair correlation are statistical bulk properties that are invariant under sparse off-line zeros |
 
 ## References
 | File | Confidence | Summary |
