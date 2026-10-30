@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 92
+Count: 95
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -99,3 +99,6 @@ Count: 92
 | 90 | explorer_r25_L00_N00 | Courant algebroids and generalized complex structures over arithmetic schemes evaluate differential-geometric symmetries that decouple from transcendental complex oscillations $t = \operatorname{Im}(s)$ and possess zero transverse coercivity off $\operatorname{Re}(s)=1/2$. |
 | 91 | explore_merger_r25_L04_N00 | Root strategy card reduction to arithmetic Courant algebroids, Fukaya homological mirror symmetry, Krasner hyperfields, and monstrous moonshine avoids Pitfalls 001-061, but hits differential symmetry decoupling, mirror symmetry period decoupling, and hyperfield addition phase obliteration carrying 100% of Millennium RH analytical depth. |
 | 92 | gate_merger_r25_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while generalized complex and mirror symmetry methods avoid Pitfalls 001-061, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 93 | explorer_r26_L00_N00 | Nakajima quiver varieties parameterize stable linear representations whose algebraic cohomology realizes Kac-Moody representations but decouples from continuous transcendental vertical frequencies $t = \operatorname{Im}(s)$ with zero transverse coercivity off $\operatorname{Re}(s)=1/2$. |
+| 94 | explore_merger_r26_L04_N00 | Root strategy card reduction to Nakajima quiver varieties, matrix factorizations, tropical moduli of curves, and conformal nets avoids Pitfalls 001-063, but hits quiver algebraic decoupling, matrix factorization period decoupling, and tropical cone decoupling carrying 100% of Millennium RH analytical depth. |
+| 95 | gate_merger_r26_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while quiver variety and matrix factorization methods avoid Pitfalls 001-063, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
