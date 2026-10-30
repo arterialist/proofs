@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 140
+Count: 143
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -147,3 +147,6 @@ Count: 140
 | 138 | explorer_r41_L00_N00 | Geometric Satake equivalence and Mirkovic-Vilonen cycles parameterize finite-dimensional algebraic representations of the dual group G^vee that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 139 | explore_merger_r41_L04_N00 | Root strategy card reduction to geometric Satake perverse sheaves on affine Grassmannians Gr_G, Sasaki-Einstein metrics and log K-stability, arithmetic fundamental lemma orbital derivatives, and deformed W-algebras avoids Pitfalls 001-093, but hits geometric Satake frequency decoupling, Sasaki-Einstein Euler product decoupling, and arithmetic fundamental lemma prime decoupling carrying 100% of Millennium RH analytical depth. |
 | 140 | gate_merger_r41_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while geometric Satake duality and Sasaki-Einstein contact geometry avoid Pitfalls 001-093, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 141 | explorer_r42_L00_N00 | Geometric Langlands D-modules and Hitchin spectral curves parameterize algebraic coherent sheaves and flat connections over algebraic curves that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 142 | explore_merger_r42_L04_N00 | Root strategy card reduction to geometric Langlands D-modules, Perelman W-entropy Kahler-Ricci solitons, arithmetic Gan-Gross-Prasad periods, and super-Yangian Baxter Q-operators avoids Pitfalls 001-095, but hits geometric Langlands frequency decoupling, Perelman W-entropy Euler product decoupling, and Gan-Gross-Prasad central symmetry confinement carrying 100% of Millennium RH analytical depth. |
+| 143 | gate_merger_r42_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while geometric Langlands D-modules and Perelman W-entropy gradient flows avoid Pitfalls 001-095, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
