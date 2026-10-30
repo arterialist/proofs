@@ -79,7 +79,8 @@ theorem hasDerivAt_antiF (x : ℝ) :
   have hd_sq : HasDerivAt (fun y : ℝ => (y - 1)^2) (2 * (x - 1)) x := by
     have h1 : HasDerivAt (fun y : ℝ => y - 1) 1 x := (hasDerivAt_id x).sub_const 1
     have h2 := h1.pow 2
-    simpa using h2
+    convert h2 using 1
+    ring
   have hd_lin : HasDerivAt (fun y : ℝ => y - 1) 1 x := (hasDerivAt_id x).sub_const 1
   have hd_poly : HasDerivAt (fun y : ℝ => (1 / Real.pi) * (y - 1)^2 + (2 / Real.pi^2) * (y - 1) + (2 / Real.pi^3))
       ((1 / Real.pi) * (2 * (x - 1)) + (2 / Real.pi^2) * 1) x := by
@@ -110,9 +111,10 @@ theorem hasDerivAt_antiF (x : ℝ) :
 /-- Derivative of `antiG` equals $(x - 1)^2 e^{-\pi x}$. -/
 theorem hasDerivAt_antiG (x : ℝ) :
     HasDerivAt antiG ((x - 1)^2 * Real.exp (-Real.pi * x)) x := by
-  unfold antiG
   have h := (hasDerivAt_antiF x).neg
-  simpa using h
+  have h_antiG : (-antiF) = antiG := by ext y; rfl
+  rw [h_antiG] at h
+  exact h.congr_deriv (by ring)
 
 /-! ### 3. Asymptotic Vanishing at Infinity -/
 
@@ -250,7 +252,7 @@ theorem low_freq_free_of_majorant_bound {s : ℂ} (hβ : 1 / 2 < s.re) (hβ1 : s
 
 /-- A global majorant bound on $\operatorname{normImRatio}$ by the improper integral
 discharges the `MellinEnergyEnvelope`. -/
-def envelope_of_majorant_bound
+theorem envelope_of_majorant_bound
     (h_bound : ∀ s : ℂ, (1 : ℝ) / 2 < s.re → s.re ≤ 1 → 0 < s.im → s.im ≤ 1 →
       normImRatio s ≤ ∫ x in Ioi (1 : ℝ), (x - 1)^2 * Real.exp (-Real.pi * x)) :
     MellinEnergyEnvelope where

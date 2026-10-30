@@ -183,7 +183,7 @@ theorem integrableOn_mellin_f_modif (s : ℂ) :
     IntegrableOn (fun x : ℝ => (x : ℂ) ^ (s / 2 - 1) * (real_f_modif x : ℂ)) (Ioi (0 : ℝ)) := by
   let P := hurwitzEvenFEPair 0
   have hm : HasMellin P.toStrongFEPair.f (s / 2) (P.toStrongFEPair.Λ (s / 2)) :=
-    P.toStrongFEPair.hasMellin (s / 2)
+    P.isStrongFEPair_toStrongFEPair.hasMellin (s / 2)
   have hc : MellinConvergent P.toStrongFEPair.f (s / 2) := hm.1
   have h_int_c : IntegrableOn (fun x : ℝ => (x : ℂ) ^ (s / 2 - 1) • P.f_modif x) (Ioi 0) := hc
   have h_mul : IntegrableOn (fun x : ℝ => (x : ℂ) ^ (s / 2 - 1) * P.f_modif x) (Ioi 0) := by

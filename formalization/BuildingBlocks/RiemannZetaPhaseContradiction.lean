@@ -3,8 +3,11 @@ Copyright (c) 2026 Formalized Riemann Hypothesis Project. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Analytic Number Theory & Formal Methods Groups
 -/
-import Mathlib
-import Mathlib.NumberTheory.LSeries.Dirichlet
+import Mathlib.Analysis.Complex.Basic
+import Mathlib.NumberTheory.LSeries.RiemannZeta
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 import BuildingBlocks.RiemannZetaGlobalSchwarzReflection
 import BuildingBlocks.RiemannZetaOffLineZeroLocalization
 import BuildingBlocks.RiemannZetaHyperbolicMellinObstruction

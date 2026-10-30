@@ -93,7 +93,6 @@ theorem powerDiff_le_slope {x : ℝ} (hx : 1 ≤ x) {β : ℝ}
     (fun b _ => (hasDerivAt_powerDiff x hx_pos b).continuousAt.continuousWithinAt)
     (fun b _ => hasDerivAt_powerDiff x hx_pos b)
   rcases h_mvt with ⟨c, ⟨hc1, hc2⟩, h_slope⟩
-  dsimp only at h_slope
   have hc_ge : 1 / 2 ≤ c := le_of_lt hc1
   have hc_le : c ≤ 1 := le_trans (le_of_lt hc2) hβ2
   have h_deriv_le : (x ^ (c / 2 - 1) + x ^ ((1 - c) / 2 - 1)) * (Real.log x / 2) ≤ Real.log x :=

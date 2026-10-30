@@ -55,7 +55,7 @@ lemma norm_primeRatio_le {σ : ℝ} (p : Nat.Primes) {s : ℂ}
 
 lemma prime_rpow_le_two {σ : ℝ} (hσ : 0 ≤ σ) (p : Nat.Primes) :
     (p : ℝ)^(-σ) ≤ (2 : ℝ)^(-σ) := by
-  exact Real.rpow_le_rpow_of_exponent_nonpos (by norm_num)
+  exact Real.rpow_le_rpow_of_nonpos (by norm_num)
     (by exact_mod_cast p.property.two_le) (by linarith)
 
 lemma two_rpow_lt_one {σ : ℝ} (hσ : 0 < σ) :
