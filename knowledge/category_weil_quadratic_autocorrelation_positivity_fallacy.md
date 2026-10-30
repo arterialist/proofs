@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Claiming that dilated chirped wavepacket evaluations of the Weil explicit formula extract negative quadruplet pairing energy $-2b T^{2d}$ from hypothetical off-line zeros fails because autocorrelation test functions $\Phi = f * \tilde{f}$ have strictly positive Fourier transform on the real axis and their quadruplet cross-terms have identical stationary phase, forcing strictly positive (+) energy contributions across all parameter regimes; furthermore, tuning carrier frequency $T$ to a fixed zero ordinate fixes $T$, whereas taking $T \to \infty$ for power dominance causes zero coupling to decay super-polynomially ($O(T^{-N})$) by non-stationary phase.
-Count: 8
+Count: 9
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -15,3 +15,4 @@ Count: 8
 | 6 | explorer_r2_L00_N07_discrete_weil_hyperbolic_scaling_mismatch | Claiming off-line zero pairs inject an uncancelable hyperbolic trace defect $\lambda_+ \approx 2d_0^2\log^2 T$ into the discrete Weil matrix that overwhelms the CUE pair ceiling slack $\Delta \cdot N(T, 2T)$ suffers an asymptotic scaling inversion: the ratio $\frac{2d_0^2\log^2 T}{\Delta T\log T} \sim O(\frac{\log T}{T})$ vanishes to $0$ as $T \to \infty$ ($1.36 \times 10^{-10}$ at $T = 3\times 10^{12}$), allowing sparse off-line zeros to evade the ceiling, while Sylvester's law of inertia gives only an upper bound $n_+(Q) \le p$ which cannot force $p = 0$. |
 | 7 | explore_merger_r2_L01_N09 | Discrete Weil spectral excision fails because searching $\operatorname{bad}(T, 2T) \subset S(T, 2T)$ misses off-line zeros in critical-line gaps; trace bound $\eta \le \Delta/(2\bar{d}^2)$ is an upper bound that is vacuous ($\ge 1$) for $\bar{d} \le 0.0683$ and never forces $\eta=0$; and 1D form factor in `CeilingLaw256.lean` does not bound discrete matrix trace. |
 | 8 | explore_merger_r2_L03_N03_localized_weil_gap_uncertainty_leakage | Attempting to isolate gap off-line zeros in the discrete Weil explicit formula with test vectors of bandwidth $w \asymp 1/\log T$ is blocked by the Heisenberg uncertainty principle, causing $> 60.2\%$ spectral leakage into adjacent critical zeros, while discrete Weil form positivity carries full RH depth. |
+| 9 | explorer_r5_L00_N00 | Weil quadratic functional positivity $\mathcal{W}(f * \tilde{f}) \ge 0$ directly from arithmetic prime sums requires $O(x^{1/2+\varepsilon})$ prime error bounds (100% RH depth), while Connes adèlic scaling trace formula diverges on the non-compact adèlic ray without unproved regularization. |

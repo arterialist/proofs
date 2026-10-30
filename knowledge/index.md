@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (308 entries in 15 categories)
+## Failed Approach Categories (311 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 34 \| Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
@@ -15,7 +15,7 @@
 | threshold_partition_sub_unit_degeneracy | 29 | Parametric threshold partitions $H \le 7.465$ are spectrally vacuous because slab contains zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$), while ratio deficit reverses sign at 7.49 and collapse breaks for $H > 7.465$ | category_threshold_partition_sub_unit_degeneracy.md |
 | tautological_zero_identity_refutation | 29 \| Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
 | herglotz_theta_de_bruijn_newman_barrier | 58 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
-| weil_quadratic_autocorrelation_positivity_fallacy | 8 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
+| weil_quadratic_autocorrelation_positivity_fallacy | 9 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
 | nyman_beurling_dilation_approximation | 7 | Approximating the indicator $\chi_{(0, 1)}$ by fractional part dilations $\rho_\alpha$ hits an $L^2$ distance barrier $\Omega(\delta)$ without collective prime phase cancellation, and descending Báez-Duarte sums to finite dimensions is circular with RH | category_nyman_beurling_dilation_approximation.md |
 | carleman_nevanlinna_boundary_divergence | 22 | Conformal Carleman, Poisson-Jensen, and Nevanlinna-Riesz potential balances fail because Stirling critical decay produces $-\pi/(4|\theta|)$ boundary divergence and real-axis growth drives residuals to $+\infty$, destroying Nevanlinna class membership | category_carleman_nevanlinna_boundary_divergence.md |
 
@@ -94,6 +94,9 @@
 
 | observation_euler_product_continuation_barrier_p1.md | high | Termwise analytic continuation of Euler product Dirichlet series $\log \zeta(s)$ across $\operatorname{Re}(s)=1/2$ carries 100% of Millennium RH analytical depth |
 | observation_automorphic_scattering_unitary_coercivity_tautology_p1.md | high | Eisenstein scattering matrix unitarity $|\Phi(1/2+it)| = 1$ is an exact functional symmetry providing zero forward coercivity off the critical line |
+
+| observation_conrey_li_de_branges_obstruction_persistence_p1.md | high | Completed xi functions cannot generate classical de Branges spaces without violating Hermite-Biehler contractivity |
+| observation_weil_prime_positivity_circularity_p1.md | high | Deducing Weil functional positivity directly from prime sums requires square-root prime error bounds equivalent to RH |
 
 ## References
 | File | Confidence | Summary |
