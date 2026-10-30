@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (317 entries in 15 categories)
+## Failed Approach Categories (320 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 34 \| Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
@@ -10,7 +10,7 @@
 | goldbach_hard_wall_divergence | 6 | Positive majorants for Goldbach spectral continuation diverge at $\sigma \le 2$ ($c \le 1$), and $c_4^{(3)} < 0$ | category_goldbach_hard_wall_divergence.md |
 | renewal_small_gain_neutral_boundary | 17 | Causal renewal transfer function has neutral boundary contact $T(i\gamma) = -1$ at every critical zero, destroying uniform operator contraction and resolvent coercivity | category_renewal_small_gain_neutral_boundary.md |
 | unsmoothed_comparison_oscillation | 6 | Unsmoothed comparison differences $W_b - W$ oscillate indefinitely due to critical-line zero poles | category_unsmoothed_comparison_oscillation.md |
-| perron_contour_divergence | 16 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
+| perron_contour_divergence \| 17 \| Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
 | conditional_sign_premise_circularity | 23 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
 | threshold_partition_sub_unit_degeneracy | 29 | Parametric threshold partitions $H \le 7.465$ are spectrally vacuous because slab contains zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$), while ratio deficit reverses sign at 7.49 and collapse breaks for $H > 7.465$ | category_threshold_partition_sub_unit_degeneracy.md |
 | tautological_zero_identity_refutation | 29 \| Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
@@ -103,6 +103,9 @@
 
 | observation_berry_keating_continuous_spectrum_discretization_barrier_p1.md | high | Berry-Keating xp dilation Hamiltonian has continuous spectrum; boundary discretization breaks self-adjointness or encodes zeros circularly |
 | observation_bost_connes_complex_continuation_barrier_p1.md | high | Bost-Connes KMS thermal equilibrium is restricted to real temperatures beta > 0 and cannot constrain complex zeros in the critical strip |
+
+| observation_vinogradov_exponential_sum_logarithmic_barrier_p1.md | high | Vinogradov-Korobov exponential sum methods and decoupling inequalities are mathematically restricted to logarithmic zero-free regions shrinking to zero width |
+| observation_ultrametric_phase_obliteration_p1.md | high | Non-Archimedean valuations satisfy $|p^{it}|_p = 1$ and tropical geometry replaces addition with max, completely destroying imaginary phase interference |
 
 ## References
 | File | Confidence | Summary |

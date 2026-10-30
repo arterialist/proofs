@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Shifting the Mellin/Perron inversion contour across the critical strip without ordinate-avoiding sequences encounters zero singularities where $|G(1/2+\varepsilon+it)|^2 \asymp \log^2 x$ diverges, or attempts to cross the convergence boundary $\Re s = 1/2$ of the prime-square series $H(s)$.
-Count: 16
+Count: 17
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -25,3 +25,4 @@ Count: 16
 | 16 | node_L04_N00_converse_analytic_infrastructure_and_simple_pole_gap | Section 7's conditional converse contour shift to $\Re s = 1/2 + 1/\log x$ requires Selberg zero-spacing ordinates and Hadamard factorization absent from Mathlib 4, and fails to bound simple-pole residues $a_{-1}$ (which are 1.83x to 2.81x larger than $a_{-2}$ across $\rho_1 \dots \rho_5$) without unproved bounds on negative moments of $|\zeta'(\rho)|$. |
 
 
+| 17 | explorer_r8_L00_N16 | Vinogradov-Korobov exponential sum bounds and Bourgain-Demeter-Guth decoupling are structurally restricted to logarithmic zero-free regions $\sigma \ge 1 - c/(\log |t|)^{2/3}$ that shrink to zero width as $|t| \to \infty$, strictly incapable of shifting contours across the critical strip or penetrating to any fixed line $\sigma > 1/2 + \delta$. |
