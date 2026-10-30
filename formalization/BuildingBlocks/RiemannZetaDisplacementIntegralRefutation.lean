@@ -201,6 +201,25 @@ theorem refute_zero_of_integral_gt_decay {s : ℂ}
   rw [← displacementFunctional_eq_half_integral s] at h_gt
   exact refute_zero_of_displacementFunctional_gt_decay hsr hsr_le hsim h_gt
 
+/-- Obstruction to non-positivity refutation:
+At any putative zero in the critical strip interior, the displacement integral cannot be non-positive. -/
+theorem not_displacement_integral_nonpos_of_zero {s : ℂ}
+    (hsr : 1 / 2 < s.re) (hsr_lt : s.re < 1) (hsim : 0 < s.im) (hz : riemannZeta s = 0) :
+    ¬ ((1 / 2 : ℝ) * ∫ x in Ioi (1 : ℝ), disparityPointKernel s x * real_f_modif x ≤ 0) := by
+  intro h_le
+  have h_pos := displacement_integral_pos_of_zero hsr hsr_lt hsim hz
+  linarith
+
+/-- Obstruction to residual mismatch refutation:
+At any putative zero in the critical strip, the displacement integral cannot differ from the residual. -/
+theorem not_displacement_integral_ne_residual_of_zero {s : ℂ}
+    (hsr : 1 / 2 < s.re) (hsim : 0 < s.im) (hz : riemannZeta s = 0) :
+    ¬ ((1 / 2 : ℝ) * ∫ x in Ioi (1 : ℝ), disparityPointKernel s x * real_f_modif x ≠
+        displacementResidual (s.re - 1 / 2) s) := by
+  intro h_ne
+  have h_eq := displacement_integral_eq_residual_of_zero hsr hsim hz
+  exact h_ne h_eq
+
 /-! ### Section 5: Displacement Refutation Systems and Master Equivalence -/
 
 /-- A displacement integral refutation system packages a refutation certificate for candidate zeros
@@ -279,6 +298,8 @@ theorem displacement_refutation_system_equivalence :
 #print axioms refute_zero_of_integral_nonpos
 #print axioms refute_zero_of_integral_ne_residual
 #print axioms refute_zero_of_integral_gt_decay
+#print axioms not_displacement_integral_nonpos_of_zero
+#print axioms not_displacement_integral_ne_residual_of_zero
 #print axioms DisplacementIntegralRefutationSystem.toContradictionSystem
 #print axioms RiemannHypothesis_of_displacement_integral_system
 #print axioms DisplacementIntegralMismatchSystem.toContradictionSystem

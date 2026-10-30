@@ -38,10 +38,12 @@ This module establishes the exact integral representation of the algebraic displ
    - `displacement_integral_pos_of_zero`: At any interior candidate zero ($1/2 < \operatorname{Re}(s) < 1$), the displacement integral is strictly positive.
    - `displacement_integral_le_decay_of_zero`: Proves the quartic decay bound $\le \frac{d}{2t^4}$ at candidate zeros.
 
-4. **Constructive Zero Refutation Criteria**:
+4. **Constructive Zero Refutation Criteria & Obstruction Theorems**:
    - `refute_zero_of_integral_nonpos`: If $\frac{1}{2}\int_1^\infty \mathcal{D}(s, x) f_{\text{modif}}(x) \, dx \le 0$, then $\zeta(s) \ne 0$.
    - `refute_zero_of_integral_ne_residual`: If the integral differs from the algebraic residual $R(d, s)$, then $\zeta(s) \ne 0$.
    - `refute_zero_of_integral_gt_decay`: If the integral exceeds $\frac{d}{2t^4}$, then $\zeta(s) \ne 0$.
+   - `not_displacement_integral_nonpos_of_zero`: Proves $\neg (\text{Integral} \le 0)$ at every candidate zero in the critical strip interior, ruling out non-positivity as an actual zero refuter.
+   - `not_displacement_integral_ne_residual_of_zero`: Proves $\neg (\text{Integral} \ne R(d, s))$ at every candidate zero in the critical strip, demonstrating the algebraic exactness of the residual identity.
 
 5. **Displacement Refutation Systems and Master RH Equivalence**:
    - `DisplacementIntegralRefutationSystem.toContradictionSystem`: Converts an integral nonpositivity certificate into a `HighFrequencyContradictionSystem`.
@@ -69,6 +71,8 @@ All declarations have been machine-checked in Lean 4.34.1 with 0 `sorry`, 0 `sor
 | `refute_zero_of_integral_nonpos` | $\text{Integral} \le 0 \implies \zeta(s) \ne 0$ | `[propext, Classical.choice, Quot.sound]` |
 | `refute_zero_of_integral_ne_residual` | $\text{Integral} \ne R(d, s) \implies \zeta(s) \ne 0$ | `[propext, Classical.choice, Quot.sound]` |
 | `refute_zero_of_integral_gt_decay` | $\text{Integral} > \frac{d}{2t^4} \implies \zeta(s) \ne 0$ | `[propext, Classical.choice, Quot.sound]` |
+| `not_displacement_integral_nonpos_of_zero` | $\zeta(s) = 0 \implies \neg (\text{Integral} \le 0)$ | `[propext, Classical.choice, Quot.sound]` |
+| `not_displacement_integral_ne_residual_of_zero` | $\zeta(s) = 0 \implies \neg (\text{Integral} \ne R(d, s))$ | `[propext, Classical.choice, Quot.sound]` |
 | `DisplacementIntegralRefutationSystem.toContradictionSystem` | $\text{DisplacementIntegralRefutationSystem} \implies \text{HighFrequencyContradictionSystem}$ | `[propext, Classical.choice, Quot.sound]` |
 | `RiemannHypothesis_of_displacement_integral_system` | $\text{DisplacementIntegralRefutationSystem} \implies \text{RiemannHypothesis}$ | `[propext, Classical.choice, Quot.sound]` |
 | `DisplacementIntegralMismatchSystem.toContradictionSystem` | $\text{DisplacementIntegralMismatchSystem} \implies \text{HighFrequencyContradictionSystem}$ | `[propext, Classical.choice, Quot.sound]` |
