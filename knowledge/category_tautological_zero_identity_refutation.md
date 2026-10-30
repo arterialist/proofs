@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 29
+Count: 31
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -36,3 +36,5 @@ Count: 29
 | 27 | explore_merger_r3_L01_N00 | Symmetrized completed xi boundary integral on $\mathbb{C}^-$ is an exact residue tautology matching the Littlewood residue sum identically for all hypothetical zero distributions, providing zero forward leverage to prove $\sum g_\Omega = 0$. |
 | 28 | explore_merger_r3_L01_N06 | Infinite Hausdorff-Stieltjes moment semi-definiteness on $[0, 4]$ carries 100% of Millennium RH depth, while low-order Hankel determinants $H_N \ge 0$ for $N \le 2$ suffer from Haselgrove scale blindness, remaining positive even in the presence of off-line zeros ($+1.47 \times 10^{-22} > 0$). |
 | 29 | explore_merger_r3_L01_N13 | Conformal slit-domain Green-Poisson balance equation $\sum g_\Omega(0, \lambda_k) = \frac{4}{\pi}\int_0^\infty \dots$ is a functional identity holding for all entire functions, where the boundary integral automatically absorbs the zero defect. |
+| 30 | explore_merger_r3_L04_N00 | Root strategy card reduction to $\forall z \in \mathbb{C}^-, \Xi_*(z) \ne 0$ is an exact bidirectional equivalence carrying 100% of Millennium RH depth; potential-theoretic balance equations are exact residue tautologies ($X \equiv X$) holding for all entire functions of order $< 1$, providing zero forward leverage without circularly assuming RH. |
+| 31 | gate_merger_r3_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, restart_exploration) because the root strategy establishes an exact Lean 4 reduction but lacks an operational forward engine, barred by the Tautological Residue Identity, Stirling Boundary Divergence, and Davenport-Heilbronn Blindness. |

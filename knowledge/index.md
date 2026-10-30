@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (302 entries in 15 categories)
+## Failed Approach Categories (304 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 34 \| Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
