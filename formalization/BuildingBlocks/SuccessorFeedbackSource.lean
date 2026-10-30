@@ -48,9 +48,9 @@ theorem iterate_charge_integrable {H : ℝ → ℝ} (hH : Measurable H)
   apply hd.mono'
     (measurable_kernel.mul ((by fun_prop : Measurable (fun v : ℝ => exp (v / 2))).mul hm)).aestronglyMeasurable
   exact Eventually.of_forall (fun v => by
-    rw [norm_mul, Real.norm_eq_abs]
-    change |kernel v| * |exp (v / 2) * H (exp v + j)| ≤ 2 * M * exp (-v / 2)
-    rw [abs_mul, abs_of_pos (exp_pos _)]
+    dsimp only [Pi.mul_apply]
+    rw [Real.norm_eq_abs]
+    rw [abs_mul, abs_mul, abs_of_pos (exp_pos _)]
     calc
       _ ≤ (2 * exp (-v)) * (exp (v / 2) * M) :=
         mul_le_mul (kernel_abs_le_exp v)

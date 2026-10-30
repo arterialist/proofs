@@ -47,7 +47,8 @@ theorem squareJump_prefix (N : ℕ) :
 
 theorem actual_lambda_prefix (N : ℕ) :
     (∑ n ∈ Finset.Icc 0 N, ArithmeticFunction.vonMangoldt n) = psi N := by
-  have hs : Finset.Icc 0 N = Finset.range (N + 1) := by ext n; simp; omega
+  have hs : Finset.Icc 0 N = Finset.range (N + 1) := by
+    ext n; simp only [Finset.mem_Icc, Finset.mem_range]; omega
   rw [hs, psi]
 
 theorem finite_abel_positive {Y : ℝ} (hY : 1 ≤ Y)
@@ -105,14 +106,20 @@ theorem powerWeight_hasDerivAt (sigma : ℝ) {t : ℝ} (ht : 0 < t) :
 
 theorem linearWeight_hasDerivAt (c sigma : ℝ) {t : ℝ} (ht : 0 < t) :
     HasDerivAt (linearWeight c sigma) (linearWeightDerivative c sigma t) t := by
-  convert ((hasDerivAt_const t c).sub (hasDerivAt_id t)).mul
-    (powerWeight_hasDerivAt sigma ht) using 1 <;> simp [linearWeight, linearWeightDerivative]
+  have h := ((hasDerivAt_const t c).fun_sub (hasDerivAt_id' t)).fun_mul
+    (powerWeight_hasDerivAt sigma ht)
+  refine h.congr_deriv ?_
+  unfold linearWeightDerivative
+  ring
 
 theorem baselineStorage_hasDerivAt (c sigma : ℝ) {t : ℝ} (ht : 0 < t) :
     HasDerivAt (baselineStorage c sigma) (baselineStorageDerivative c sigma t) t := by
-  convert (((hasDerivAt_const t c).sub (hasDerivAt_id t)).pow 2).mul
-    (powerWeight_hasDerivAt sigma ht) using 1 <;>
-    simp [baselineStorage, baselineStorageDerivative] <;> ring
+  have h := (((hasDerivAt_const t c).fun_sub (hasDerivAt_id' t)).pow 2).fun_mul
+    (powerWeight_hasDerivAt sigma ht)
+  refine h.congr_deriv ?_
+  unfold baselineStorageDerivative
+  simp only [Pi.pow_apply, Nat.reduceSub, pow_one, Nat.cast_ofNat]
+  ring
 
 theorem powerWeight_continuousOn {Y : ℝ} (hY : 1 ≤ Y) (sigma : ℝ) :
     ContinuousOn (powerWeight sigma) (Icc 1 Y) := by

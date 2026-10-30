@@ -69,7 +69,7 @@ theorem finiteJumpLaw_domination {μ ν : Measure ℝ} [IsFiniteMeasure μ]
     congr 1
     rw [← mul_div_assoc, ← mul_assoc, he]
   rw [← mul_assoc, hw]
-  exact mul_le_mul_left' (jumpPower_mono h n A) _
+  exact mul_le_mul_right (jumpPower_mono h n A) _
 
 /-- A common positive subprobability gives a uniform event bound. -/
 theorem probability_event_bound_of_domination {μ ν : Measure ℝ}
@@ -85,7 +85,7 @@ theorem probability_event_bound_of_domination {μ ν : Measure ℝ}
   have hn := measureReal_add_measureReal_compl (μ := ν) hA
   have hma := measureReal_nonneg (μ := μ) (s := A)
   have hmc := measureReal_nonneg (μ := μ) (s := Aᶜ)
-  simp only [measureReal_univ_eq_one] at hm hn
+  simp only [probReal_univ] at hm hn
   have ha := hd A
   have hb := hd Aᶜ
   apply abs_le.mpr

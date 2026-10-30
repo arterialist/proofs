@@ -28,8 +28,7 @@ theorem cutoff_mass {R : ℝ} (hR : 1 ≤ R) :
   have hi : Ioi (0 : ℝ) ∩ Iic (Real.log R) = Ioc 0 (Real.log R) := by ext v; simp
   rw [hi, ← intervalIntegral.integral_of_le hl]
   have hd (v : ℝ) : HasDerivAt (fun v : ℝ => 2 * Real.exp (v / 2)) (Real.exp (v / 2)) v := by
-    convert (((hasDerivAt_id v).div_const 2).exp.const_mul 2) using 1
-    norm_num [id_eq]
+    refine (((hasDerivAt_id' v).div_const 2).exp.const_mul 2).congr_deriv ?_
     ring
   rw [intervalIntegral.integral_eq_sub_of_hasDerivAt
     (fun v _ => hd v) ((by fun_prop : Continuous (fun v : ℝ => Real.exp (v / 2))).intervalIntegrable _ _)]
@@ -65,6 +64,7 @@ theorem kernel_growth_integrable :
     IntegrableOn (fun v => kernel v * Real.exp (v / 2)) (Ioi (0 : ℝ)) := by
   apply (reference_integrable.const_mul 2).mono' ((measurable_kernel.mul (by fun_prop)).aestronglyMeasurable)
   exact Eventually.of_forall (fun v => by
+    show ‖kernel v * Real.exp (v / 2)‖ ≤ 2 * Real.exp (-v / 2)
     rw [norm_mul, Real.norm_eq_abs, Real.norm_eq_abs, abs_of_pos (Real.exp_pos _)]
     calc
       _ ≤ (2 * Real.exp (-v)) * Real.exp (v / 2) := mul_le_mul_of_nonneg_right (kernel_abs_le_exp v) (Real.exp_pos _).le
@@ -109,7 +109,7 @@ theorem original_defect_growth : defect (fun v : ℝ => Real.exp (v / 2)) = 0 :=
     tendsto_atTop_mono (fun R => le_add_of_nonneg_left (Real.sqrt_nonneg (R - 1))) hs
   have hz : Tendsto (fun R : ℝ => defect (cutoff R)) atTop (𝓝 0) := by
     have hinv : Tendsto (fun R : ℝ => -(Real.sqrt (R - 1) + Real.sqrt R)⁻¹) atTop (𝓝 0) := by
-      simpa only [neg_zero] using hden.inv_tendsto_atTop.neg
+      simpa only [neg_zero, Pi.inv_apply] using hden.inv_tendsto_atTop.neg
     apply hinv.congr'
     filter_upwards [eventually_ge_atTop (2 : ℝ)] with R hR
     rw [cutoff_defect hR]

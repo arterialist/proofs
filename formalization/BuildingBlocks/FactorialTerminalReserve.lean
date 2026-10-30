@@ -61,7 +61,6 @@ theorem terminal_lcm_fiber (N k : ℕ) (hN : 0 < N) (hk : k ∣ N) :
   have hinv := hi.mp hc
   have hkpos : 0 < k := Nat.pos_of_dvd_of_pos hk hN
   have hf := hinv k hkpos hk
-  dsimp only at hf
   rw [← hf]
   calc
     (∑ x ∈ k.divisorsAntidiagonal,

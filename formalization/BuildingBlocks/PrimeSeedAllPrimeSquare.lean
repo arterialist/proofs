@@ -233,7 +233,6 @@ theorem integrable_allPrimeSeed_div_age : Integrable (fun v => allPrimeSeed v / 
   refine ⟨(measurable_allPrimeSeed.div measurable_id).aestronglyMeasurable, ?_⟩
   rw [hasFiniteIntegral_iff_ofReal (Filter.Eventually.of_forall allPrimeSeed_div_age_nonneg)]
   have he := congrArg (fun μ : Measure ℝ => μ univ) allPrimeLevyMeasure_eq_withDensity
-  dsimp only at he
   rw [withDensity_apply _ MeasurableSet.univ] at he
   simp only [setLIntegral_univ] at he
   rw [← he]

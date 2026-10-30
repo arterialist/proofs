@@ -23,7 +23,7 @@ theorem arrival_product_integrable (n m : ℕ) :
   simp only [Nat.cast_one, one_mul] at hi
   have h := ((hi n m).sub (hi n (m - 1))).sub
     ((hi (n - 1) m).sub (hi (n - 1) (m - 1)))
-  change Integrable _ (volume.restrict (Set.Ioi 0))
+  change Integrable _ (volume.restrict (Set.Ioi 0)) at h ⊢
   convert h using 1
   funext t
   simp only [arrival_response, Pi.sub_apply]
@@ -41,7 +41,8 @@ theorem selected_pairs_integrable (N : ℕ) (P : ℕ → ℕ → Prop) [Decidabl
   apply integrable_finset_sum
   intro e he
   by_cases h : P d e
-  · simpa only [h, if_true] using arrival_product_integrable d e
+  · simp only [h, if_true]
+    exact arrival_product_integrable d e
   · simp only [h, if_false, zero_mul]
     exact integrableOn_zero
 

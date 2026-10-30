@@ -1,5 +1,6 @@
 import BuildingBlocks.IntegerCarryPrimitiveBounds
 import Mathlib.Analysis.Calculus.ContDiff.Basic
+import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
 open MeasureTheory Set
 
@@ -13,7 +14,8 @@ theorem phase_integrationByParts_local (r a b : ℝ) (hr : 0 < r) (g g' : ℝ �
       primitiveFormula r b * g b - primitiveFormula r a * g a -
         ∫ x in a..b, primitiveFormula r x * g' x := by
   have hi := (phase_intervalIntegrable r a b).mul_continuousOn hg
-  have hj := ((primitiveFormula_continuous r).continuousOn.mul hg').intervalIntegrable (μ := volume)
+  have hj : IntervalIntegrable (fun x => primitiveFormula r x * g' x) volume a b :=
+    ((primitiveFormula_continuous r).continuousOn.mul hg').intervalIntegrable (μ := volume)
   have hs : (∫ x in a..b, phase r x * g x + primitiveFormula r x * g' x) =
       primitiveFormula r b * g b - primitiveFormula r a * g a := by
     apply intervalIntegral.integral_eq_sub_of_hasDeriv_right
