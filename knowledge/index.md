@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (353 entries in 15 categories)
+## Failed Approach Categories (356 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 34 | Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
@@ -13,7 +13,7 @@
 | perron_contour_divergence | 17 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
 | conditional_sign_premise_circularity | 23 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
 | threshold_partition_sub_unit_degeneracy | 29 | Parametric threshold partitions $H \le 7.465$ are spectrally vacuous because slab contains zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$), while ratio deficit reverses sign at 7.49 and collapse breaks for $H > 7.465$ | category_threshold_partition_sub_unit_degeneracy.md |
-| tautological_zero_identity_refutation | 74 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
+| tautological_zero_identity_refutation | 77 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
 | herglotz_theta_de_bruijn_newman_barrier | 58 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
 | weil_quadratic_autocorrelation_positivity_fallacy | 9 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
 | nyman_beurling_dilation_approximation | 8 | Approximating the indicator $\chi_{(0, 1)}$ by fractional part dilations $\rho_\alpha$ hits an $L^2$ distance barrier $\Omega(\delta)$ without collective prime phase cancellation, and descending Báez-Duarte sums to finite dimensions is circular with RH | category_nyman_beurling_dilation_approximation.md |
@@ -131,6 +131,8 @@
 | observation_tropical_amoeba_phase_linearization_blindness_p1.md | high | Tropical amoebas and Ronkin potentials linearize complex modulus, eliminating oscillatory phase interferences and proving blind to isolated off-critical zero excursions in the critical strip |
 | observation_anabelian_profinite_rigidity_vacuum_p1.md | high | Grothendieck anabelian reconstruction operates on pro-finite fundamental groups, recovering schemes algebraically but lacking continuous analytic metrics to constrain vertical complex zeros |
 | observation_chromatic_homotopy_height_decoupling_p1.md | high | Chromatic filtration layers classify formal group laws by discrete height, operating as stable topological invariants completely decoupled from Archimedean vertical oscillation frequencies |
+| observation_motivic_integration_arc_rationality_decoupling_p1.md | high | Denef-Loeser motivic zeta functions evaluate geometric arcs yielding rational functions of algebraic origin that decouple from transcendental vertical frequencies |
+| observation_contact_homology_reeb_orbit_bubbling_divergence_p1.md | high | Contact homology for arithmetic Reeb flows encounters holomorphic building bubbling in symplectization as actions $\log p \to \infty$, breaking Fredholm index control |
 
 ## References
 | File | Confidence | Summary |
