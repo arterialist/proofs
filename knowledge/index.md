@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (374 entries in 15 categories)
+## Failed Approach Categories (377 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 34 | Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
@@ -13,7 +13,7 @@
 | perron_contour_divergence | 17 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
 | conditional_sign_premise_circularity | 23 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
 | threshold_partition_sub_unit_degeneracy | 29 | Parametric threshold partitions $H \le 7.465$ are spectrally vacuous because slab contains zero non-trivial zeros ($\gamma_1 \approx 14.135 > 7.465$), while ratio deficit reverses sign at 7.49 and collapse breaks for $H > 7.465$ | category_threshold_partition_sub_unit_degeneracy.md |
-| tautological_zero_identity_refutation | 95 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
+| tautological_zero_identity_refutation | 98 | Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
 | herglotz_theta_de_bruijn_newman_barrier | 58 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
 | weil_quadratic_autocorrelation_positivity_fallacy | 9 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
 | nyman_beurling_dilation_approximation | 8 | Approximating the indicator $\chi_{(0, 1)}$ by fractional part dilations $\rho_\alpha$ hits an $L^2$ distance barrier $\Omega(\delta)$ without collective prime phase cancellation, and descending Báez-Duarte sums to finite dimensions is circular with RH | category_nyman_beurling_dilation_approximation.md |
@@ -148,6 +148,9 @@
 
 | observation_nakajima_quiver_variety_algebraic_decoupling_p1.md | high | Nakajima quiver varieties parameterize algebraic representations that decouple from transcendental complex frequencies of zeta(s) |
 | observation_matrix_factorization_singularity_period_decoupling_p1.md | high | Matrix factorizations categorize isolated hypersurface singularities, evaluating local residue invariants decoupled from prime Euler products |
+
+| observation_f1_monoid_scheme_combinatorial_vacuity_p1.md | high | Schemes over F_1 strip away addition, leaving combinatorial monoid invariants blind to complex zeros of zeta(s) |
+| observation_closed_string_field_theory_moduli_decoupling_p1.md | high | Closed string field theory vertices evaluate moduli integrations that decouple from non-trivial zeros of zeta(s) |
 
 ## References
 | File | Confidence | Summary |
