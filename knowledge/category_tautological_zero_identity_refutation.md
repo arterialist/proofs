@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 224
+Count: 227
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -231,3 +231,6 @@ Count: 224
 | 222 | explorer_r69_L00_N00 | Ihara power series and Galois actions on Shimura curve étale fundamental groups evaluate pro-nilpotent representations that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 223 | explore_merger_r69_L04_N00 | Root strategy card reduction to Shimura curve étale fundamental group Galois structures, complexity-12 T-variety polyhedral cones, Jacquet–Rallis unitary periods, and CY20 shifted symplectic stacks avoids Pitfalls 001-149, but hits Shimura curve étale fundamental group frequency decoupling, complexity-12 polyhedral Euler product decoupling, and Jacquet–Rallis period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 224 | gate_merger_r69_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Shimura curve fundamental groups and complexity-12 T-varieties avoid Pitfalls 001-149, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 225 | explorer_r70_L00_N00 | Arakelov arithmetic intersection pairings and smooth Archimedean Green currents on Shimura curves decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 226 | explore_merger_r70_L04_N00 | Root strategy card reduction to Shimura curve Arakelov Chow groups, complexity-13 T-variety polyhedral cones, Gan–Gross–Prasad orthogonal periods, and CY21 shifted symplectic stacks avoids Pitfalls 001-151, but hits Shimura curve Arakelov Chow frequency decoupling, complexity-13 polyhedral Euler product decoupling, and GGP period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 227 | gate_merger_r70_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Shimura curve Arakelov Chow groups and complexity-13 T-varieties avoid Pitfalls 001-151, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
