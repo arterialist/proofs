@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 197
+Count: 200
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -204,3 +204,6 @@ Count: 197
 | 195 | explorer_r60_L00_N00 | Minimal representations on E8 evaluate exceptional root lattice theta series that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 196 | explore_merger_r60_L04_N00 | Root strategy card reduction to E8 exceptional minimal representations, complexity-3 T-variety polyhedral fans, spin Bessel models, and CY11 derived stacks avoids Pitfalls 001-131, but hits E8 minimal orbit frequency decoupling, complexity-3 polyhedral Euler product decoupling, and spin Bessel noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 197 | gate_merger_r60_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while E8 exceptional representations and complexity-3 T-varieties avoid Pitfalls 001-131, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 198 | explorer_r61_L00_N00 | Kim's non-abelian Chabauty method evaluates unipotent Selmer variety obstruction loci that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 199 | explore_merger_r61_L04_N00 | Root strategy card reduction to Kim non-abelian Chabauty Selmer varieties, complexity-4 T-variety polyhedral fans, Jacquet–Rallis unitary distinction, and CY12 shifted Poisson stacks avoids Pitfalls 001-133, but hits Kim Selmer frequency decoupling, complexity-4 polyhedral Euler product decoupling, and Jacquet–Rallis noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 200 | gate_merger_r61_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Kim Selmer varieties and complexity-4 T-varieties avoid Pitfalls 001-133, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
