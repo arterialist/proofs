@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 206
+Count: 209
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -213,3 +213,6 @@ Count: 206
 | 204 | explorer_r63_L00_N00 | Deligne–Lusztig varieties and Frobenius character sheaves evaluate algebraic eigenvalues that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 205 | explore_merger_r63_L04_N00 | Root strategy card reduction to Deligne–Lusztig character sheaves, complexity-6 T-variety polyhedral cones, Gelfand–Graev periods, and CY14 shifted symplectic stacks avoids Pitfalls 001-137, but hits Deligne–Lusztig Frobenius frequency decoupling, complexity-6 polyhedral Euler product decoupling, and Gelfand–Graev period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 206 | gate_merger_r63_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Deligne–Lusztig varieties and complexity-6 T-varieties avoid Pitfalls 001-137, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 207 | explorer_r64_L00_N00 | Non-abelian Hodge theory and parabolic Higgs moduli evaluate holomorphic bundle invariants that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 208 | explore_merger_r64_L04_N00 | Root strategy card reduction to non-abelian Hodge twistor D-modules, complexity-7 T-variety polyhedral cones, Rankin–Cohen differential operators, and CY15 shifted symplectic stacks avoids Pitfalls 001-139, but hits non-abelian Hodge frequency decoupling, complexity-7 polyhedral Euler product decoupling, and Rankin–Cohen period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 209 | gate_merger_r64_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while non-abelian Hodge twistors and complexity-7 T-varieties avoid Pitfalls 001-139, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
