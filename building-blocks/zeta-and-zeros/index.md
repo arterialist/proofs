@@ -8,6 +8,7 @@ Titles link to the individual notes. A note may contain a proof, a conditional c
 - [The actual W criterion: a positive successor primitive, cumulative comparison, and oscillation](actual-W-positive-primitive-analysis.md)
 - [Actual gamma factor, completed-zeta boundary and entire xi](actual-completed-zeta-boundary-and-xi.md)
 - [A formal eventual-sign implication for the critical arithmetic sum](actual-critical-sign-criterion.md)
+- [One-sided growth criteria for the actual critical sum, and its unconditional lower excursions](actual-critical-growth-criterion-and-lower-excursions.md)
 - [Structural boundary of the critical sign criterion (Frontier 1)](critical-sign-criterion-structural-boundary.md)
 - [Bidirectional critical-sign equivalence and the triple-pole drift origin](bidirectional-critical-sign-equivalence-and-drift-origin.md)
 - [Actual local zero-circle residues and complete history comparison](actual-zero-circle-residues.md)

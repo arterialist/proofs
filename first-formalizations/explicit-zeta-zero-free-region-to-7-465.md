@@ -1,6 +1,6 @@
 # Explicit zeta zero-free region through height 7.465
 
-**Status:** machine-checked in Lean 4.24.0, provisional first-Lean record for this exact explicit region.
+**Status:** machine-checked in Lean 4.34.1 (Mathlib `d13f23b7`), provisional first-Lean record for this exact explicit region.
 
 Lean module: [`RiemannZetaRatioSurplus.lean`](../formalization/BuildingBlocks/RiemannZetaRatioSurplus.lean)
 
