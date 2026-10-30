@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 158
+Count: 161
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -165,3 +165,6 @@ Count: 158
 | 156 | explorer_r47_L00_N00 | Motivic Galois groups and polylogarithmic motivic complexes evaluate algebraic Lie algebras graded by discrete integer weights that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 157 | explore_merger_r47_L04_N00 | Root strategy card reduction to motivic Galois Lie algebras, toric Sasakian MSY volume minimization, metaplectic Whittaker periods, and critical level CDOs avoids Pitfalls 001-105, but hits motivic Galois weight decoupling, MSY volume Euler product decoupling, and metaplectic cover decoupling carrying 100% of Millennium RH analytical depth. |
 | 158 | gate_merger_r47_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while motivic Galois theory and toric Sasakian MSY geometry avoid Pitfalls 001-105, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 159 | explorer_r48_L00_N00 | Fontaine–Mazur geometric Galois representations and p-adic Hodge–Tate weights evaluate discrete p-adic Frobenius eigenvalues that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 160 | explore_merger_r48_L04_N00 | Root strategy card reduction to Fontaine–Mazur Galois representations, singular del Pezzo valuative delta invariants, exceptional G_2 Arthur packets, and Costello–Gaiotto boundary VOAs avoids Pitfalls 001-107, but hits Fontaine–Mazur frequency decoupling, del Pezzo valuative Euler product decoupling, and G_2 Arthur packet decoupling carrying 100% of Millennium RH analytical depth. |
+| 161 | gate_merger_r48_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Fontaine–Mazur p-adic Hodge theory and singular del Pezzo valuative geometry avoid Pitfalls 001-107, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
