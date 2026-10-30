@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 56
+Count: 59
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -63,3 +63,6 @@ Count: 56
 | 54 | explorer_r13_L00_N00 | Arithmetic topology knot-prime analogies on $\operatorname{Spec}(\mathbb{Z})$ yield discrete topological invariants (Reidemeister torsion, Alexander polynomials) that lack an Archimedean metric or vertical analytic continuation engine along $s = 1/2 + it$. |
 | 55 | explore_merger_r13_L04_N00 | Root strategy card reduction to arithmetic knot torsions, Ruelle-Mayer transfer operators, Patterson-Sullivan conformal densities, and Hitchin fibrations avoids Pitfalls 001-037, but hits metric absence, transfer operator eigenvalue 1 blindness, and $\mathbb{F}_1$ collapse carrying 100% of Millennium RH analytical depth. |
 | 56 | gate_merger_r13_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while topological and thermodynamic transfer methods avoid Pitfalls 001-037, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 57 | explorer_r14_L00_N00 | Metric quantum graph Laplacians require unitary vertex scattering matrices to preserve self-adjointness, which strictly precludes generating the non-unitary arithmetic damping $p^{-1/2}$; periodic orbit expansions diverge beyond Heisenberg time. |
+| 58 | explore_merger_r14_L04_N00 | Root strategy card reduction to arithmetic quantum graphs, soliton hierarchies, Borcherds products, and PT-symmetric metric operators avoids Pitfalls 001-039, but hits scattering unitarity damping barriers, singular theta divisors, and metric positivity circularity carrying 100% of Millennium RH analytical depth. |
+| 59 | gate_merger_r14_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while quantum graph and pseudo-Hermitian methods avoid Pitfalls 001-039, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
