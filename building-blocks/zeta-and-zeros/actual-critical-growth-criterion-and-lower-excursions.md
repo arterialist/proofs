@@ -1,8 +1,8 @@
 # One-sided growth criteria for the actual critical sum, and its unconditional lower excursions
 
-**Status.** Three Lean 4 theorems, machine-checked under Lean 4.34.1 and Mathlib `d13f23b7` with only `propext`, `Classical.choice`, `Quot.sound`. Two are conditional implications toward RH with an explicitly weaker premise than the existing sign criterion. One is unconditional.
+**Status.** Seven Lean 4 theorems, machine-checked under Lean 4.34.1 and Mathlib `d13f23b7` with only `propext`, `Classical.choice`, `Quot.sound`. Five are conditional implications toward RH with an explicitly weaker premise than the existing sign criterion. Two are unconditional.
 
-Lean modules: [`ActualCriticalGrowthCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalGrowthCriterion.lean), [`ActualCriticalLowerExcursion.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerExcursion.lean), [`ActualCriticalMajorantCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalMajorantCriterion.lean), [`ActualCriticalLogMajorant.lean`](../../formalization/BuildingBlocks/ActualCriticalLogMajorant.lean). Audit: [`ActualCriticalGrowthExcursionAudit.lean`](../../formalization/verification/ActualCriticalGrowthExcursionAudit.lean).
+Lean modules: [`ActualCriticalGrowthCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalGrowthCriterion.lean), [`ActualCriticalLowerExcursion.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerExcursion.lean), [`ActualCriticalMajorantCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalMajorantCriterion.lean), [`ActualCriticalLogMajorant.lean`](../../formalization/BuildingBlocks/ActualCriticalLogMajorant.lean), [`ActualCriticalLowerMajorant.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerMajorant.lean). Audit: [`ActualCriticalGrowthExcursionAudit.lean`](../../formalization/verification/ActualCriticalGrowthExcursionAudit.lean).
 
 ## Objects
 
@@ -26,6 +26,10 @@ $W(x) = \sum_{d \le x} \sqrt{d}\, V(x/d)$ is the actual critical sum of [the sig
 5. **Main-term majorant** (`RiemannHypothesis_of_log_growth_after`). For every real $C$ and $A \ge 1$:
    $$\bigl(\forall x > A,\; W(x) \le C\,x^{3/2}\log^2 x\bigr) \implies \text{RiemannHypothesis}.$$
    Here $F(s) = C A^{1/2-s}\bigl((\log A)^2/(s-\tfrac12) + 2\log A/(s-\tfrac12)^2 + 2/(s-\tfrac12)^3\bigr)$, computed from the explicit antiderivative $-C x^{1/2-s}\bigl((\log x)^2/(s-\tfrac12)+2\log x/(s-\tfrac12)^2+2/(s-\tfrac12)^3\bigr)$ on the half-line. The premise is now at the exact scale of the RH main term $-\tfrac16 x^{3/2}\log^2 x$.
+
+6. **Abstract lower criterion** (`RiemannHypothesis_of_lower_majorant`). For any majorant datum $g$ as in theorem 4, $(\forall x > A,\; -g(x) \le W(x)) \implies \text{RiemannHypothesis}$.
+
+7. **Abstract unconditional exclusion** (`not_eventually_lower_majorant`). If moreover $(\sigma - 1/2)F(\sigma)$ stays bounded as $\sigma \to 1/2^+$, i.e. the tail transform of $g$ has at most a simple pole at $1/2$, then the premise of theorem 6 fails for some $x > A$. Theorem 3 is the instance $g = C x^{3/2}$. So the scale that separates the two one-sided questions is the pole order of the majorant's transform at $s = 1/2$: a simple pole (order $x^{3/2}$) is excluded unconditionally on the lower side, while the upper side at the triple-pole scale $x^{3/2}\log^2 x$ is RH.
 
 A byproduct is `riemannZeta_half_ne_zero`: $\zeta(1/2) \ne 0$, obtained from the repository's unconditional bound $\operatorname{Re}\Lambda_0(\sigma) < 2$ on $(1/2,1)$ and continuity of $\Lambda_0$.
 

@@ -724,3 +724,4 @@ import BuildingBlocks.ActualCriticalLowerExcursion
 import BuildingBlocks.ActualCriticalMajorantCriterion
 import BuildingBlocks.RiemannHypothesisResolution
 import BuildingBlocks.ActualCriticalLogMajorant
+import BuildingBlocks.ActualCriticalLowerMajorant

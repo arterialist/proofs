@@ -35,7 +35,7 @@ lake build
 lake env lean formalization/verification/Audit.lean
 ```
 
-The project uses Lean 4.34.1 and Mathlib revision `d13f23b7`, pinned in [lake-manifest.json](lake-manifest.json). Read axiom reports together with the theorem's full hypotheses. A theorem can use only standard foundational axioms while still assuming RH or an unproved estimate.
+The project uses Lean 4.34.1 and Mathlib revision `d13f23b7`, pinned in [lake-manifest.json](lake-manifest.json). The port to that Mathlib is in progress: the RH-chain modules and the growth criteria build, and [the build status snapshot](formalization/verification/build-status-2026-10-31.md) lists the registered modules that still fail, grouped by the module that blocks them. Read axiom reports together with the theorem's full hypotheses. A theorem can use only standard foundational axioms while still assuming RH or an unproved estimate.
 
 Unreviewed calculations, source copies, and private research context live in the ignored `research-local/` directory of a local checkout. They are separate from the published notes and formalizations.
 
