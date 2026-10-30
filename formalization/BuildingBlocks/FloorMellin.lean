@@ -183,7 +183,7 @@ theorem zeta_eq_floorMellin {s : ℂ} (hs : 0 < s.re) (hne : s ≠ 1) :
     (fun z hz => ((zeta_analytic_off_pole z hz.2).sub
       (analyticAt_id.div (analyticAt_id.sub analyticAt_const)
         (sub_ne_zero.mpr hz.2))).add (analyticAt_id.mul (floorMellin_analytic z hz.1)))
-    (fun z hz => by dsimp only; rw [zeta_eq_floorMellin_initial hz]; ring)
+    (fun z hz => by rw [zeta_eq_floorMellin_initial hz]; ring)
     s hs hne
   linear_combination hh
 
