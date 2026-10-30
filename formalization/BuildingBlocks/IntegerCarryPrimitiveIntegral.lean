@@ -43,8 +43,9 @@ theorem unitPrimitive_hasDerivWithinAt_right (x : ℝ) :
     HasDerivWithinAt unitPrimitive (bernoulliOne x) (Ioi x) x := by
   have hf := fract_hasDerivWithinAt_right x
   convert ((hf.pow 2).sub hf).div_const 2 using 1
-  simp only [bernoulliOne]
-  ring
+  · rfl
+  · simp only [bernoulliOne]
+    ring
 
 theorem primitiveFormula_hasDerivWithinAt_right (r x : ℝ) (hr : 0 < r) :
     HasDerivWithinAt (primitiveFormula r) (phase r x) (Ioi x) x := by
@@ -55,8 +56,9 @@ theorem primitiveFormula_hasDerivWithinAt_right (r x : ℝ) (hr : 0 < r) :
   have h1 := ((unitPrimitive_hasDerivWithinAt_right (r * x)).comp x
     ((hasDerivAt_id x).const_mul r).hasDerivWithinAt hm).div_const r
   convert h0.sub h1 using 1
-  simp only [phase]
-  field_simp
+  · rfl
+  · simp only [phase]
+    field_simp
 
 /-- Full interval identity, including all corners and the real-scale initial trace. -/
 theorem phase_integral_eq_sub (r a b : ℝ) (hr : 0 < r) :

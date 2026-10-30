@@ -29,8 +29,9 @@ theorem primeLogError_complex_memLp_two (u v : ℝ) :
     MemLp (fun t => (primeLogError t : ℂ)) 2 (volume.restrict (Ioc u v)) := by
   apply (memLp_two_iff_integrable_sq_norm
     primeLogError_complex_measurable.aestronglyMeasurable).mpr
-  simpa only [Complex.norm_real, Real.norm_eq_abs, sq_abs] using
+  have h : Integrable (fun t => primeLogError t ^ 2) (volume.restrict (Ioc u v)) :=
     (primeLogError_sq_intervalIntegrable u v).1
+  simpa only [Complex.norm_real, Real.norm_eq_abs, sq_abs] using h
 
 /-- The actual continuous response is locally square integrable after
 complexification. -/

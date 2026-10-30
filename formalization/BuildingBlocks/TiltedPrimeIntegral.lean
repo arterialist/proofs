@@ -32,7 +32,7 @@ theorem psi_div_sq_integral {x : ℝ} (hx : 1 ≤ x) :
     (fun t ht => (hasDerivAt_inv (by linarith [ht.1] : t ≠ 0)).differentiableAt) hdi
   have hs : ∀ M : ℕ, (∑ n ∈ Finset.Icc 0 M, ArithmeticFunction.vonMangoldt n) = psi M := by
     intro M
-    have hi : Finset.Icc 0 M = Finset.range (M + 1) := by ext n; simp; omega
+    have hi : Finset.Icc 0 M = Finset.range (M + 1) := by ext n; simp
     rw [hi, psi]
   simp only [hs] at hh
   rw [Finset.Icc_eq_cons_Ioc (Nat.zero_le ⌊x⌋₊), Finset.sum_cons] at hh

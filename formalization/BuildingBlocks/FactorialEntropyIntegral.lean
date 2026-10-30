@@ -107,10 +107,11 @@ theorem quotient_hasDerivAt (a b t : ℝ) (ht : 0 < t) :
     congr 1
     ring
   convert h using 1
-  unfold derivativeRow integrand numerator
-  rw [he]
-  dsimp only [id_eq, Pi.mul_apply]
-  field_simp
+  · rfl
+  · unfold derivativeRow integrand numerator
+    rw [he]
+    dsimp only [id_eq, Pi.mul_apply]
+    field_simp
 
 theorem derivativeRow_integrable (a b : ℝ) (ha : 0 < a) (hb : 0 < b) :
     IntegrableOn (derivativeRow a b) (Ioi 0) := by

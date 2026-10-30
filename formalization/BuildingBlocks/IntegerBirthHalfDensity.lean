@@ -29,11 +29,12 @@ private theorem positive_primitive_deriv {j : ℕ} (hj : 0 < j) {x : ℝ} (hx : 
   have hh := (((Real.hasDerivAt_arctan (Real.sqrt x / Real.sqrt j)).comp x
     ((Real.hasDerivAt_sqrt hx.ne').div_const (Real.sqrt j))).div_const (Real.sqrt j))
   convert hh using 1
-  unfold halfDensity
-  rw [div_pow, Real.sq_sqrt hx.le, Real.sq_sqrt hjr.le]
-  field_simp
-  rw [Real.sq_sqrt hjr.le]
-  ring
+  · rfl
+  · unfold halfDensity
+    rw [div_pow, Real.sq_sqrt hx.le, Real.sq_sqrt hjr.le]
+    field_simp
+    rw [Real.sq_sqrt hjr.le]
+    ring
 
 private theorem zero_primitive_deriv {x : ℝ} (hx : 0 < x) :
     HasDerivAt (fun x : ℝ => -(1 / Real.sqrt x)) (halfDensity 0 x) x := by
@@ -57,7 +58,7 @@ theorem halfDensity_integrable (j : ℕ) {a : ℝ} (ha : 0 < a) :
   · apply integrableOn_Ioi_deriv_of_nonneg'
       (fun x hx => zero_primitive_deriv (ha.trans_le hx))
       (fun x hx => halfDensity_nonnegative 0 (ha.trans hx))
-    simpa only [one_div, neg_zero] using sqrt_atTop.inv_tendsto_atTop.neg
+    simpa only [one_div, neg_zero, Pi.inv_apply] using sqrt_atTop.inv_tendsto_atTop.neg
   · apply integrableOn_Ioi_deriv_of_nonneg'
       (fun x hx => positive_primitive_deriv hj (ha.trans_le hx))
       (fun x hx => halfDensity_nonnegative j (ha.trans hx))
@@ -71,7 +72,7 @@ theorem halfDensity_integral_zero {a : ℝ} (ha : 0 < a) :
     (fun x hx => zero_primitive_deriv (ha.trans_le hx))
     (fun x hx => halfDensity_nonnegative 0 (ha.trans hx))
     (show Tendsto (fun x : ℝ => -(1/Real.sqrt x)) atTop (𝓝 0) from
-      by simpa only [one_div, neg_zero] using sqrt_atTop.inv_tendsto_atTop.neg)
+      by simpa only [one_div, neg_zero, Pi.inv_apply] using sqrt_atTop.inv_tendsto_atTop.neg)
   simpa using hh
 
 /-- Evaluation of the actual positive-clock half-density tail. -/

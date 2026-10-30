@@ -43,7 +43,7 @@ theorem finite_coefficient_limit (n : ℕ) (u : ℝ) :
   have hc : Continuous (fun v : ℝ => (ArithmeticFunction.moebius n : ℝ) * (1 - Real.exp (-v) - v)) := by
     fun_prop
   have h := (hc.tendsto (1 / (n : ℝ) * u)).comp hl
-  simpa only [finiteCoefficient, coefficient, one_div_mul_eq_div] using h
+  simpa only [finiteCoefficient, coefficient, one_div_mul_eq_div, Function.comp_def] using h
 
 theorem finite_coefficient_bound (N n : ℕ) (hN : 0 < N) (u : ℝ) (hu : 0 ≤ u) :
     ‖finiteCoefficient N n u‖ ≤ (u^2 / 2) * ((n : ℝ)^2)⁻¹ := by

@@ -84,16 +84,18 @@ theorem fullSeedSum_hasDerivAt (u : ℝ) : HasDerivAt fullSeedSum (fullSlope u) 
   have he : fullSeedSum = fun v => 2 * seedSum v - exp (v / 2) :=
     funext fullSeedSum_decomposition
   rw [he]
-  convert h1.sub h2 using 1
-  dsimp [fullSlope]
-  ring
+  convert h1.fun_sub h2 using 1
+  · rfl
+  · dsimp [fullSlope]
+    ring
 
 theorem fullSlope_hasDerivAt (u : ℝ) : HasDerivAt fullSlope (fullCurvature u) u := by
   have h1 := (slopeSum_hasDerivAt u).const_mul (2 : ℝ)
   have h2 := (((hasDerivAt_id u).div_const (2 : ℝ)).exp).div_const (2 : ℝ)
-  convert h1.sub h2 using 1
-  dsimp [fullSlope, fullCurvature]
-  ring
+  convert h1.fun_sub h2 using 1
+  · rfl
+  · dsimp [fullCurvature]
+    ring
 
 theorem fullSeed_differential_identity (u : ℝ) :
     fullCurvature u - fullSeedSum u / 4 = 2 * phi u := by

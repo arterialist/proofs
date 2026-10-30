@@ -15,12 +15,14 @@ theorem lag_lift_memLp {H : ℝ → ℝ} (hH : MemLp H 2 volume) :
 
 theorem lag_backward_memLp {H : ℝ → ℝ} (hH : MemLp H 2 volume) :
     MemLp (fun z : ℝ × ℝ => H (z.2 - z.1)) 2 gradientMeasure := by
+  unfold gradientMeasure
   simpa only [Function.comp_def, sub_eq_add_neg, add_comm] using
     (lag_lift_memLp hH).comp_measurePreserving
       (measurePreserving_prod_neg_add lagMeasure volume)
 
 theorem lag_forward_memLp {H : ℝ → ℝ} (hH : MemLp H 2 volume) :
     MemLp (fun z : ℝ × ℝ => H (z.2 + z.1)) 2 gradientMeasure := by
+  unfold gradientMeasure
   simpa only [Function.comp_def, add_comm] using
     (lag_lift_memLp hH).comp_measurePreserving
       (measurePreserving_prod_add lagMeasure volume)

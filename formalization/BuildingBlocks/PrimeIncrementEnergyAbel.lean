@@ -177,6 +177,6 @@ theorem prime_energy_upper_abel {N : ℕ} (hN : 1 ≤ N) :
       (Real.log (N : ℝ) ^ 2 / 2 +
         (4 * Real.log 2 + 1 / 2) * Real.log (N : ℝ) + 3) :=
   (prime_energy_upper N).trans
-    (add_le_add_left (primeIncrementEnergy_le_abel hN) _)
+    (add_le_add_right (primeIncrementEnergy_le_abel hN) _)
 
 end BuildingBlocks

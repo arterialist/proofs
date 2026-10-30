@@ -77,13 +77,13 @@ theorem kernel_product_integrable {f g : ℝ → ℝ} {θ η : ℝ}
   · intro x hx
     obtain ⟨hf0, hf1, hft⟩ := hfb x hx.1
     obtain ⟨hg0, hg1, hgt⟩ := hgb x hx.1
-    rw [abs_of_nonneg (mul_nonneg hf0 hg0)]
+    rw [Pi.mul_apply, abs_of_nonneg (mul_nonneg hf0 hg0)]
     nlinarith
   · intro x hx
     have hx0 : 0 < x := lt_trans (by norm_num : (0 : ℝ) < 1) hx
     obtain ⟨hf0, hf1, hft⟩ := hfb x hx0
     obtain ⟨hg0, hg1, hgt⟩ := hgb x hx0
-    rw [abs_of_nonneg (mul_nonneg hf0 hg0)]
+    rw [Pi.mul_apply, abs_of_nonneg (mul_nonneg hf0 hg0)]
     have hh := mul_le_mul hft hgt hg0 (hf0.trans hft)
     convert hh using 1
     ring
@@ -108,8 +108,10 @@ theorem fractionKernel_gram_eq {θ η : ℝ} (hθ : 0 < θ) (hη : 0 < η) :
     intro y hy
     have hh := ((hasDerivAt_id y).inv (ne_of_gt hy)).const_mul (θ * η)
     convert hh.hasDerivWithinAt using 1
-    dsimp [f, f']
-    ring
+    · funext z
+      simp only [f, id_eq, Pi.inv_apply, div_eq_mul_inv]
+    · simp only [f', id_eq]
+      ring
   have himage : f '' Set.Ioi (0 : ℝ) = Set.Ioi 0 := by
     ext x
     constructor

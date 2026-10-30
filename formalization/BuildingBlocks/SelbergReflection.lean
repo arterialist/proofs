@@ -172,7 +172,7 @@ theorem selbergCenteredArea_reflection {N : ℕ} (hN : 1 ≤ N) :
     rw [uIcc_of_le hNr] at ht
     linarith [ht.1]
   have hiE : IntervalIntegrable (fun a => primeErrorReal a / a^2) volume 1 N := by
-    simpa only [div_eq_mul_inv] using
+    simpa only [div_eq_mul_inv, Pi.inv_apply, Pi.pow_apply, id_eq] using
       (primeErrorReal_intervalIntegrable 1 (N : ℝ)).mul_continuousOn
         ((continuousOn_id.pow 2).inv₀ (fun t ht => pow_ne_zero _ (hz t ht)))
   have hiQ := primeError_reflected_birthMoment_integrable hN

@@ -16,6 +16,7 @@ lemma reciprocal_intervalIntegrable {t : ℝ} (ht : 0 ≤ t) :
   intro x hx
   rw [uIcc_of_le ht] at hx
   have hx0 : 0 ≤ x := hx.1
+  show (2 : ℝ) + x ≠ 0
   positivity
 
 lemma reciprocal_primitive {t : ℝ} (ht : 0 ≤ t) :
@@ -73,7 +74,7 @@ lemma logarithmic_layercake_le {μ : Measure ℝ} {H A R : ℝ}
         apply lintegral_mono_ae
         filter_upwards [ae_restrict_mem measurableSet_Ioc] with t ht
         rw [ENNReal.ofReal_mul hH]
-        exact mul_le_mul_right' ((hb t ht.1).trans (min_le_left _ _)) _
+        exact mul_le_mul_left ((hb t ht.1).trans (min_le_left _ _)) _
       _ = _ := by
         rw [← ofReal_integral_eq_lintegral_ofReal hi0]
         · rw [← intervalIntegral.integral_of_le hR.le,
@@ -90,7 +91,7 @@ lemma logarithmic_layercake_le {μ : Measure ℝ} {H A R : ℝ}
         have ht0 : 0 < t := hR.trans ht
         calc
           _ ≤ ENNReal.ofReal (2*A/t) * ENNReal.ofReal (1/(2+t)) :=
-            mul_le_mul_right' ((hb t ht0).trans (min_le_right _ _)) _
+            mul_le_mul_left ((hb t ht0).trans (min_le_right _ _)) _
           _ = ENNReal.ofReal ((2*A/t)*(1/(2+t))) := (ENNReal.ofReal_mul (by positivity)).symm
           _ ≤ _ := by
             apply ENNReal.ofReal_le_ofReal

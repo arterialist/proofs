@@ -27,7 +27,8 @@ theorem integrable_seed_div_age {L : ℝ} (hL : 0 < L) :
     Integrable (fun v => seed L v / v) := by
   have hi := (integrable_seed_and_integral hL).1
   have hm : AEStronglyMeasurable (fun v => seed L v / v) volume := by
-    simpa only [div_eq_mul_inv] using hi.aestronglyMeasurable.mul
+    simp only [div_eq_mul_inv]
+    exact hi.aestronglyMeasurable.mul
       (measurable_inv : Measurable (fun v : ℝ => v⁻¹)).aestronglyMeasurable
   apply (hi.div_const L).mono' hm
   exact Filter.Eventually.of_forall (fun v => by
