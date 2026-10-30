@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 65
+Count: 68
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -72,3 +72,6 @@ Count: 65
 | 63 | explorer_r16_L00_N00 | Scholze's tilting functor $(-)\flat$ and perfectoid adic spaces operate purely locally at single primes $p$, decoupling across distinct primes and lacking Archimedean metric glue to constrain vertical zeros along $s = 1/2 + it$. |
 | 64 | explore_merger_r16_L04_N00 | Root strategy card reduction to perfectoid tilting, Langlands functoriality, Connes adèle class traces, and Bridgeland stability avoids Pitfalls 001-043, but hits local prime decoupling, functorial off-line zero preservation, and trace deficit circularity carrying 100% of Millennium RH analytical depth. |
 | 65 | gate_merger_r16_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while perfectoid and non-commutative geometric methods avoid Pitfalls 001-043, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 66 | explorer_r17_L00_N00 | Berkovich skeletal reduction trees provide non-Archimedean potential theory locally at single primes $p$, decoupling across distinct primes and remaining invariant under continuous vertical frequency shifts $t = \operatorname{Im}(s)$. |
+| 67 | explore_merger_r17_L04_N00 | Root strategy card reduction to Berkovich potential theory, arithmetic Floer homology, motivic homotopy spectra, and non-abelian Hodge covers avoids Pitfalls 001-045, but hits local tree decoupling, Floer energy bubbling divergence, and motivic stability blindness carrying 100% of Millennium RH analytical depth. |
+| 68 | gate_merger_r17_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while non-Archimedean and symplectic topological methods avoid Pitfalls 001-045, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
