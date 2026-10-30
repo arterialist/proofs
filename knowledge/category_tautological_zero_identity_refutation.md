@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 233
+Count: 236
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -240,3 +240,6 @@ Count: 233
 | 231 | explorer_r72_L00_N00 | Beilinson Eisenstein symbols and cuspidal unipotent fundamental group Galois actions on Shimura curves decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 232 | explore_merger_r72_L04_N00 | Root strategy card reduction to cuspidal Eisenstein symbols, complexity-15 T-variety polyhedral cones, G2 GGP periods, and CY23 shifted symplectic stacks avoids Pitfalls 001-155, but hits cuspidal Eisenstein symbol frequency decoupling, complexity-15 polyhedral Euler product decoupling, and G2 period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 233 | gate_merger_r72_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while cuspidal Eisenstein symbols and complexity-15 T-varieties avoid Pitfalls 001-155, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 234 | explorer_r73_L00_N00 | Siegel Eisenstein symbols and unipotent fundamental group Galois actions on Siegel modular threefolds decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 235 | explore_merger_r73_L04_N00 | Root strategy card reduction to Siegel modular fundamental groups, complexity-16 T-variety polyhedral cones, Spin(7) GGP periods, and CY24 shifted symplectic stacks avoids Pitfalls 001-157, but hits Siegel modular fundamental group frequency decoupling, complexity-16 polyhedral Euler product decoupling, and Spin(7) period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 236 | gate_merger_r73_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Siegel modular fundamental groups and complexity-16 T-varieties avoid Pitfalls 001-157, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
