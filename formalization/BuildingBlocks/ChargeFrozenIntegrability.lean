@@ -51,8 +51,11 @@ theorem integrable_fourier_integrand (N : ℕ) (ξ : ℝ) :
   apply (integrable_causalSource N).ofReal.bdd_mul
   · exact (by fun_prop : Continuous (fun v : ℝ =>
       Complex.exp (-Complex.I * (ξ : ℂ) * (v : ℂ)))).aestronglyMeasurable
-  · refine ⟨1, fun v => ?_⟩
-    simp [Complex.norm_exp, Complex.mul_re, Complex.mul_im]
+  · filter_upwards [] with v
+    have hre : (-Complex.I * (ξ : ℂ) * (v : ℂ)).re = 0 := by
+      simp [Complex.mul_re, Complex.mul_im, Complex.neg_re,
+        Complex.I_re, Complex.I_im, Complex.ofReal_re, Complex.ofReal_im]
+    rw [Complex.norm_exp, hre, Real.exp_zero]
 
 #print axioms source_abs_le
 #print axioms integrable_causalSource

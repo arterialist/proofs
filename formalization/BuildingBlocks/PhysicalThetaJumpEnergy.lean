@@ -112,13 +112,16 @@ theorem continuous_energy_abs_contract (h : ℝ → ℝ) :
     continuousEnergy (fun u => |h u|) ≤ continuousEnergy h := by
   apply lintegral_mono
   intro a
-  exact mul_le_mul_left' (edge_mass_abs_contract h a) _
+  dsimp only
+  gcongr
+  exact edge_mass_abs_contract h a
 
 theorem prime_energy_abs_contract (h : ℝ → ℝ) :
     primeEnergy (fun u => |h u|) ≤ primeEnergy h := by
   apply ENNReal.tsum_le_tsum
   intro n
-  exact mul_le_mul_left' (edge_mass_abs_contract h (log n.val)) _
+  gcongr
+  exact edge_mass_abs_contract h (log n.val)
 
 theorem jump_energy_abs_contract (h : ℝ → ℝ) :
     jumpEnergy (fun u => |h u|) ≤ jumpEnergy h :=

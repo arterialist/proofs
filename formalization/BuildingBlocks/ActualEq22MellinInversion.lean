@@ -26,9 +26,11 @@ noncomputable def fullFactor0 (s : ℂ) : ℂ :=
 
 theorem norm_centered_add_one_le {s : ℂ} (hs : 1 < s.re) :
     ‖LogDerivativePole.centeredZetaLogDerivative s + 1‖ ≤ coreAllowance0 s.re := by
-  exact (norm_add_le _ _).trans (by
-    simpa only [norm_one, coreAllowance0] using
-      add_le_add_right (norm_centered_le hs) 1)
+  have h := norm_centered_le hs
+  have h1 := norm_add_le (LogDerivativePole.centeredZetaLogDerivative s) 1
+  simp only [norm_one] at h1
+  unfold coreAllowance0
+  linarith
 
 theorem norm_fullFactor0_le {s : ℂ} (hs : 1 < s.re) :
     ‖fullFactor0 s‖ ≤ verticalAllowance0 s.re / (1 + s.im ^ 2) := by
@@ -127,7 +129,7 @@ theorem mellinInv_C {c x : ℝ} (hc : 2 < c) (hx : 0 < x) :
     mellinInv (-c) (mellin ActualEq22ForwardMellin.C) x = ActualEq22ForwardMellin.C x := by
   have hf : MellinConvergent ActualEq22ForwardMellin.C ((-c : ℝ) : ℂ) := by
     simpa only [Complex.ofReal_neg] using C_mellin_convergent hc
-  exact mellin_inversion (-c) ActualEq22ForwardMellin.C hx hf (verticalIntegrable_C c hc)
+  exact mellinInv_mellin_eq (-c) ActualEq22ForwardMellin.C hx hf (verticalIntegrable_C c hc)
     ActualEq22ForwardMellin.continuous_C.continuousAt
 
 noncomputable def perronKernel0 (c x t : ℝ) : ℂ :=
@@ -244,4 +246,9 @@ theorem integrable_closed_perron0 {c x : ℝ} (hc : 2 < c) (hx : 0 < x) :
   filter_upwards with t
   exact perronKernel0_eq_closed_form hc x t
 
+#print axioms mellinInv_C
+#print axioms C_eq_perron
+#print axioms C_eq_closed_perron
+
 end BuildingBlocks.ActualEq22MellinInversion
+

@@ -55,8 +55,12 @@ theorem constant_killed_energy_positive {R c : ℝ} (hR : 0 < R) (hc : c ≠ 0) 
     apply ENNReal.ofReal_pos.mpr
     rw [ArithmeticFunction.vonMangoldt_apply_prime Nat.prime_two]
     exact div_pos ha (sqrt_pos.mpr (by norm_num))
-  have hp : 0 < primeEnergy (killedExtension R (fun _ => c)) :=
-    lt_of_lt_of_le (ENNReal.mul_pos hcoeff.ne' he.ne') (ENNReal.le_tsum (⟨2, by norm_num⟩ : {n : ℕ // 2 ≤ n}))
+  have hp : 0 < primeEnergy (killedExtension R (fun _ => c)) := by
+    unfold primeEnergy
+    have hterm := ENNReal.le_tsum (f := fun (n : {n : ℕ // 2 ≤ n}) =>
+      ENNReal.ofReal (Λ n.val / sqrt n.val) * edgeMass (killedExtension R (fun _ => c)) (log n.val))
+      ⟨2, by norm_num⟩
+    exact lt_of_lt_of_le (ENNReal.mul_pos hcoeff.ne' he.ne') hterm
   exact lt_of_lt_of_le hp (le_add_left le_rfl)
 
 #print axioms crossing_interval

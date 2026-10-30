@@ -11,10 +11,10 @@ theorem shifted_source_aestronglyMeasurable (R : ℝ) (ψ : ℝ → ℝ)
     AEStronglyMeasurable (fun v => source R ψ (shift side n.val v)) := by
   have hs := source_aestronglyMeasurable R ψ hψ
   cases side
-  · simpa [shift, sub_eq_add_neg] using
+  · simpa [shift, sub_eq_add_neg, Function.comp_def] using
       hs.comp_quasiMeasurePreserving
         (measurePreserving_add_right (volume : Measure ℝ) (-log n.val)).quasiMeasurePreserving
-  · simpa [shift] using hs.comp_quasiMeasurePreserving
+  · simpa [shift, Function.comp_def] using hs.comp_quasiMeasurePreserving
       (measurePreserving_add_right (volume : Measure ℝ) (log n.val)).quasiMeasurePreserving
 
 theorem arrival_term_aestronglyMeasurable (R : ℝ) (ψ : ℝ → ℝ)
@@ -33,7 +33,8 @@ theorem prime_arrival_aestronglyMeasurable (R P : ℝ) (ψ : ℝ → ℝ)
     exact Finset.aestronglyMeasurable_sum s
       (fun n _ => arrival_term_aestronglyMeasurable R ψ hψ n)
   · filter_upwards [prime_arrival_absolutely_summable_ae R P ψ hP hbound] with v hv
-    simpa only [primeArrival, Finset.sum_apply] using hv.of_norm.hasSum
+    simp only [Finset.sum_apply]
+    exact hv.of_norm.hasSum
 
 theorem prime_mass_nonneg : 0 ≤ primeMass := by
   apply tsum_nonneg

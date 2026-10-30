@@ -54,7 +54,7 @@ theorem profile_intervalIntegrable {H : ℝ → ℝ} (hH : Measurable H)
   rw [intervalIntegrable_iff] at he ⊢
   have hm : Measurable (fun v : ℝ => H (exp v + j)) :=
     hH.comp (measurable_exp.add_const _)
-  have hi := he.bdd_mul' hm.aestronglyMeasurable
+  have hi := he.bdd_mul hm.aestronglyMeasurable
     (Eventually.of_forall (fun v => by simpa only [Real.norm_eq_abs] using hb (exp v + j) (by positivity)))
   apply hi.congr
   exact Eventually.of_forall (fun v => by
@@ -67,7 +67,7 @@ theorem kernel_profile_intervalIntegrable {H : ℝ → ℝ} (hH : Measurable H)
       volume a b := by
   have hi := profile_intervalIntegrable hH hb j a b
   rw [intervalIntegrable_iff] at hi ⊢
-  exact hi.bdd_mul' measurable_kernel.aestronglyMeasurable
+  exact hi.bdd_mul measurable_kernel.aestronglyMeasurable
     (Eventually.of_forall (fun v => by simpa only [Real.norm_eq_abs] using kernel_abs_le v))
 
 theorem weighted_profile_intervalIntegrable {H : ℝ → ℝ} (hH : Measurable H)
@@ -78,7 +78,7 @@ theorem weighted_profile_intervalIntegrable {H : ℝ → ℝ} (hH : Measurable H
   have hi := profile_intervalIntegrable hH hb j a b
   rw [intervalIntegrable_iff_integrableOn_Ioc_of_le hab] at hi ⊢
   have hm : Measurable weight := by unfold weight; fun_prop
-  apply hi.bdd_mul' (c := 2) hm.aestronglyMeasurable
+  apply hi.bdd_mul (c := 2) hm.aestronglyMeasurable
   filter_upwards [ae_restrict_mem (μ := volume) measurableSet_Ioc] with v hv
   have hw := weight_bounds (ha.trans hv.1.le)
   simpa only [Real.norm_eq_abs, abs_of_nonneg hw.1] using hw.2
@@ -201,7 +201,7 @@ theorem profile_relative_charge {H : ℝ → ℝ} (hH : Measurable H)
     have hh := tendsto_exp_neg_atTop_nhds_zero.comp
       ((tendsto_div_const_atTop_of_pos (by norm_num : (0 : ℝ) < 2)).mpr
         (tendsto_id : Tendsto (fun R : ℝ => R) atTop atTop))
-    simpa only [Function.comp_def, neg_div, mul_zero] using hh.const_mul (4 * M)
+    simpa only [Function.comp_def, id, neg_div, mul_zero] using hh.const_mul (4 * M)
   have hz : Tendsto (fun R : ℝ =>
       (∫ v in 0..R, successor (successor^[j] (MixedEnergy.physicalLift H)) v -
         successor^[j] (MixedEnergy.physicalLift H) v) -

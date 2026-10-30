@@ -166,7 +166,10 @@ theorem hasMellin_A {s : ℂ} (hs : 1 < s.re) :
   have h := CriticalMultipleMellin.hasMellin_cutoffSum
     (by linarith : (1 : ℝ) / 2 < s.re)
     (fun x hx => Acore_zero hx) (hasMellin_Acore hs)
-  convert h using 1
+  have hA : A = CriticalMultipleMellin.cutoffSum Acore := rfl
+  rw [hA]
+  refine ⟨h.1, ?_⟩
+  rw [h.2]
   ring
 
 theorem hasMellin_Zcore {s : ℂ} (hs : 0 < s.re) :
@@ -177,7 +180,10 @@ theorem hasMellin_Z {s : ℂ} (hs : (1 : ℝ) / 2 < s.re) :
     HasMellin Z (-s - 1) (riemannZeta (s + 1 / 2) / (s * (s + 1))) := by
   have h := CriticalMultipleMellin.hasMellin_cutoffSum hs
     (fun x hx => Zcore_zero hx) (hasMellin_Zcore (by linarith : 0 < s.re))
-  convert h using 1
+  have hZ : Z = CriticalMultipleMellin.cutoffSum Zcore := rfl
+  rw [hZ]
+  refine ⟨h.1, ?_⟩
+  rw [h.2]
   ring
 
 theorem hasMellin_C {s : ℂ} (hs : 1 < s.re) :
@@ -229,7 +235,9 @@ private theorem rieszCutoff_eq_Icc (c : ℕ → ℂ) {x : ℝ} (hx : 0 ≤ x) :
     simp only [Finset.mem_Icc] at hn
     exact ⟨n - 1, Finset.mem_range.mpr (by omega), by omega⟩
   · intro j hj
-    have hjn : j + 1 ≤ ⌊x⌋₊ := by simpa only [Finset.mem_range] using hj
+    have hjn : j + 1 ≤ ⌊x⌋₊ := by
+      simp only [Finset.mem_range] at hj
+      omega
     have hjx : (j : ℝ) + 1 ≤ x := by
       have hcast : (j : ℝ) + 1 ≤ (⌊x⌋₊ : ℝ) := by exact_mod_cast hjn
       exact hcast.trans (Nat.floor_le hx)

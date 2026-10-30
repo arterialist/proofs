@@ -79,12 +79,13 @@ theorem prime_filter_bound (v : ℕ → ℝ) (hv : ∀ m, 0 ≤ v m)
       have hpow : state v n ^ h ≤ (47 / 80 : ℝ) ^ h := by gcongr
       simp only [hp, ↓reduceIte, sub_zero]
       exact ⟨pow_nonneg hnonneg _, hpow⟩
+  have hcard : (Icc 2 N).card = N - 1 := by rw [Nat.card_Icc]; omega
   have hsum :
       0 ≤ ∑ n ∈ Icc 2 N,
         (state v n ^ h - if n.Prime then (1 : ℝ) else 0) ∧
       (∑ n ∈ Icc 2 N,
         (state v n ^ h - if n.Prime then (1 : ℝ) else 0)) ≤
-          (Icc 2 N).card * (47 / 80 : ℝ) ^ h := by
+          ((N - 1 : ℕ) : ℝ) * (47 / 80 : ℝ) ^ h := by
     constructor
     · apply sum_nonneg
       intro n hn
@@ -97,8 +98,9 @@ theorem prime_filter_bound (v : ℕ → ℝ) (hv : ∀ m, 0 ≤ v m)
               intro n hn
               exact (hterm n hn).2
         _ = (Icc 2 N).card * (47 / 80 : ℝ) ^ h := by simp
+        _ = ((N - 1 : ℕ) : ℝ) * (47 / 80 : ℝ) ^ h := by rw [hcard]
   simp only [sum_sub_distrib, primeCount] at hsum ⊢
-  simpa only [Nat.card_Icc, Nat.cast_sub, Nat.cast_add, Nat.cast_one] using hsum
+  exact hsum
 
 /-- A full ordered additive packet, with both addends at least two. -/
 def pairPacket (v : ℕ → ℝ) (k h : ℕ) : ℝ :=

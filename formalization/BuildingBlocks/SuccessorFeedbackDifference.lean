@@ -49,7 +49,7 @@ theorem physicalError_succ_abs_le {y : ℝ} (hy : 0 < y) :
     nlinarith [mul_le_mul_of_nonneg_right hc (by positivity : 0 ≤ y + 1)]
   have hl : ArithmeticFunction.vonMangoldt (⌊y⌋₊ + 1) ≤ log (y + 1) :=
     ArithmeticFunction.vonMangoldt_le_log.trans
-      (log_le_log (by positivity) (by exact_mod_cast add_le_add_right (Nat.floor_le hy.le) 1))
+      (log_le_log (by positivity) (by push_cast; linarith [Nat.floor_le hy.le]))
   have hh := div_le_div_of_nonneg_right hl (by positivity : 0 ≤ y + 1)
   calc
     _ ≤ ArithmeticFunction.vonMangoldt (⌊y⌋₊ + 1) / (y + 1) +

@@ -23,7 +23,7 @@ def weightedLambda : ArithmeticFunction ℝ :=
 theorem weightedLambda_mul (n : ℕ) :
     (weightedLambda * weightedLambda) n = Real.sqrt (n : ℝ) *
       (ArithmeticFunction.vonMangoldt * ArithmeticFunction.vonMangoldt) n := by
-  simp only [ArithmeticFunction.mul_apply, weightedLambda, ArithmeticFunction.coe_mk]
+  rw [ArithmeticFunction.mul_apply, ArithmeticFunction.mul_apply]
   rw [Finset.mul_sum]
   apply Finset.sum_congr rfl
   intro p hp
@@ -31,6 +31,8 @@ theorem weightedLambda_mul (n : ℕ) :
   have hroot : Real.sqrt (n : ℝ) = Real.sqrt (p.1 : ℝ) * Real.sqrt (p.2 : ℝ) := by
     rw [← hprod, Nat.cast_mul, Real.sqrt_mul (Nat.cast_nonneg p.1)]
   rw [hroot]
+  change (Real.sqrt (p.1 : ℝ) * ArithmeticFunction.vonMangoldt p.1) *
+      (Real.sqrt (p.2 : ℝ) * ArithmeticFunction.vonMangoldt p.2) = _
   ring
 
 theorem weightedLambda_zeta (n : ℕ) :

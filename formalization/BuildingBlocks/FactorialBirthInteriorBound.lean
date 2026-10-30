@@ -23,10 +23,14 @@ theorem beta_le_half (t : ℝ) (ht : 0 ≤ t) : beta t ≤ t / 2 := by
       (fun y : ℝ => y - 2 + (y + 2) * Real.exp (-y))
       (1 - (x + 1) * Real.exp (-x)) x := by
     intro x
-    convert ((hasDerivAt_id x).sub (hasDerivAt_const x (2 : ℝ))).add
+    have hG : (fun y : ℝ => y - 2 + (y + 2) * Real.exp (-y)) =
+        ((id - fun _ : ℝ => (2 : ℝ)) + (id + fun _ : ℝ => (2 : ℝ)) * (Real.exp ∘ (-id))) := by
+      ext y; rfl
+    rw [hG]
+    refine (((hasDerivAt_id x).sub (hasDerivAt_const x (2 : ℝ))).add
       (((hasDerivAt_id x).add (hasDerivAt_const x (2 : ℝ))).mul
-        ((hasDerivAt_id x).neg.exp)) using 1
-    simp only [Pi.add_apply, id_eq, Pi.neg_apply]
+        ((hasDerivAt_id x).neg.exp))).congr_deriv ?_
+    dsimp only [Pi.add_apply, Pi.mul_apply, Pi.sub_apply, id_eq, Pi.neg_apply]
     ring
   have hmono := monotone_of_hasDerivAt_nonneg hd (by
     intro x
@@ -109,6 +113,7 @@ theorem interior_energy_linear (N : ℕ) : |interiorEnergy N| ≤ 5 * (N : ℝ) 
     simpa [measureReal_def] using h
   have hir : IntegrableOn (fun t : ℝ => (N : ℝ) / t ^ 2) (Set.Ioi 1) := by
     have h := integrableOn_Ioi_rpow_of_lt (a := (-2 : ℝ)) (c := 1) (by norm_num) (by norm_num)
+    unfold IntegrableOn
     simpa [Real.rpow_neg, Real.rpow_two, div_eq_mul_inv] using h.const_mul (N : ℝ)
   have htail : |∫ t : ℝ in Set.Ioi 1, interiorRow N t| ≤ (N : ℝ) := by
     have hnorm := norm_integral_le_integral_norm (μ := volume.restrict (Set.Ioi (1 : ℝ)))

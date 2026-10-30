@@ -42,7 +42,7 @@ private theorem ae_nonneg_of_le {μ : Measure ℝ} (h : μ ≤ allPrimeLevyMeasu
     ∀ᵐ v ∂μ, (0 : ℝ) ≤ v := by
   have hh := allPrimeLevyMeasure_ae_nonneg
   rw [ae_iff] at hh ⊢
-  exact le_antisymm ((h _).trans_eq hh) (zero_le _)
+  exact le_antisymm ((h _).trans_eq hh) zero_le
 
 private theorem tail_le_all (P : ℕ) : primeTailLevyMeasure P ≤ allPrimeLevyMeasure := by
   rw [← levyMeasure_primesBelow_add_tail P]

@@ -59,7 +59,7 @@ theorem cutoff_seed_square_error_tendsto :
 theorem cutoff_seed_sqrt_error_tendsto :
     Tendsto (fun P : ℕ => sqrt (∫ v,
       (allPrimeSeed v - finitePrimeSeed (primesBelow P) v) ^ 2)) atTop (𝓝 0) := by
-  simpa using (Real.continuous_sqrt.tendsto 0).comp cutoff_seed_square_error_tendsto
+  simpa [Function.comp_def] using (Real.continuous_sqrt.tendsto 0).comp cutoff_seed_square_error_tendsto
 
 theorem cutoff_memory_error_bound (P : ℕ) {f : ℝ → ℝ}
     (hf : MemLp f 2 (volume.restrict (Ioi (0 : ℝ)))) (v : ℝ) :

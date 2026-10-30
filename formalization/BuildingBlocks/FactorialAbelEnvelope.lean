@@ -31,12 +31,18 @@ private theorem abel_identity (c b : ℕ → ℝ) (N : ℕ) :
 theorem weight_derivative (a x : ℝ) (hx : 0 < x) :
     HasDerivAt (weight a) (1 - (1 + a / x) * Real.exp (-(a / x))) x := by
   have harg : HasDerivAt (fun y : ℝ => -(a / y)) (a / x^2) x := by
-    convert ((hasDerivAt_const x a).div (hasDerivAt_id x) hx.ne').neg using 1
-    simp only [id_eq]
+    have hG : (fun y : ℝ => -(a / y)) = -((fun _ => a) / id) := by ext y; rfl
+    rw [hG]
+    refine ((hasDerivAt_const x a).div (hasDerivAt_id x) hx.ne').neg.congr_deriv ?_
+    dsimp only [id_eq]
     ring
   unfold weight
-  convert (hasDerivAt_id x).mul ((hasDerivAt_const x (1 : ℝ)).sub harg.exp) using 1
-  simp only [id_eq, Pi.sub_apply]
+  have hW : (fun y : ℝ => y * (1 - Real.exp (-(a / y)))) =
+      id * ((fun _ => (1 : ℝ)) - (fun y => Real.exp (-(a / y)))) := by
+    ext y; rfl
+  rw [hW]
+  refine ((hasDerivAt_id x).mul ((hasDerivAt_const x (1 : ℝ)).sub harg.exp)).congr_deriv ?_
+  dsimp only [id_eq, Pi.sub_apply]
   field_simp
   ring
 

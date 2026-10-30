@@ -157,10 +157,11 @@ theorem original_defect_source {N : ℕ} (hN : 2 ≤ N) :
       (Ioi (0 : ℝ)) := by
     have hb := integrable_kernel_mul (birthPull_integrable n 0)
     simp_rw [← beta_eq_birthPull n] at hb
+    unfold IntegrableOn
     simpa only [mul_left_comm] using hb.const_mul (ArithmeticFunction.vonMangoldt n)
   have hs : IntegrableOn (fun v => ∑ n ∈ Finset.Icc 2 N,
       kernel v * (ArithmeticFunction.vonMangoldt n * beta n v)) (Ioi (0 : ℝ)) :=
-    integrable_finset_sum _ (fun n _ => hi n)
+    integrable_finsetSum _ (fun n _ => hi n)
   have he : (∫ v in Ioi (0 : ℝ), kernel v * source N v) =
       ∫ v in Ioi (0 : ℝ), ((∑ n ∈ Finset.Icc 2 N,
         kernel v * (ArithmeticFunction.vonMangoldt n * beta n v)) -
@@ -174,7 +175,7 @@ theorem original_defect_source {N : ℕ} (hN : 2 ≤ N) :
       (Ioi (0 : ℝ)) := hs.sub ChargeDensityEvaluation.kernel_growth_integrable
   rw [he, integral_add hsub
     (kernel_tail_integrable N), integral_sub hs ChargeDensityEvaluation.kernel_growth_integrable,
-    integral_finset_sum _ (fun n _ => hi n)]
+    integral_finsetSum _ (fun n _ => hi n)]
   have hg : (1 / 2 : ℝ) * (∫ v in Ioi (0 : ℝ), kernel v * Real.exp (v / 2)) = 0 :=
     ChargeDensityEvaluation.original_defect_growth
   rw [mul_add, mul_sub, Finset.mul_sum, hg, sub_zero]

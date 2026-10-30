@@ -33,7 +33,7 @@ theorem allPrimeLevyMeasure_ae_nonneg :
   rw [ae_iff]
   simp only [not_le]
   change allPrimeLevyMeasure (Set.Iio 0) = 0
-  apply le_antisymm ?_ (zero_le _)
+  apply le_antisymm ?_ zero_le
   exact (measure_mono (Set.Iio_subset_Iio (log_pos (by norm_num)).le)).trans_eq
     allPrimeLevyMeasure_initial_gap
 
@@ -45,7 +45,7 @@ theorem conv_initial_gap {μ ν : Measure ℝ} [IsFiniteMeasure μ] [IsFiniteMea
     {a b : ℝ} (hμ : μ (Set.Iio a) = 0) (hν : ν (Set.Iio b) = 0) :
     (μ ∗ ν) (Set.Iio (a + b)) = 0 := by
   rw [Measure.conv, Measure.map_apply (by fun_prop) measurableSet_Iio]
-  apply le_antisymm ?_ (zero_le _)
+  apply le_antisymm ?_ zero_le
   calc
     (μ.prod ν) ((fun z : ℝ × ℝ => z.1 + z.2) ⁻¹' Set.Iio (a + b)) ≤
         (μ.prod ν) ((Set.Iio a ×ˢ Set.univ) ∪ (Set.univ ×ˢ Set.Iio b)) := by
@@ -84,7 +84,7 @@ theorem finiteJumpLaw_initial_region {μ : Measure ℝ} [IsFiniteMeasure μ] {L 
       have hn' : (1 : ℝ) ≤ n := by exact_mod_cast (Nat.one_le_iff_ne_zero.mpr hn)
       nlinarith
     have hz : jumpPower μ n A = 0 := by
-      apply le_antisymm ?_ (zero_le _)
+      apply le_antisymm ?_ zero_le
       exact (measure_mono (hAL.trans (Set.Iio_subset_Iio hge))).trans_eq
         (jumpPower_initial_gap hμ n)
     simp [Measure.smul_apply, hz]

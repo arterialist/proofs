@@ -166,8 +166,18 @@ theorem continuous_arrival_core_bound {R v P : ℝ} (ψ : ℝ → ℝ)
     (by norm_num : (0 : ℝ) ≤ 3 / 2)
   have h2 := mul_le_mul_of_nonneg_left (add_le_add_right h (2 / (1 - exp (-2))))
     (mul_nonneg (by norm_num : (0 : ℝ) ≤ 2) (mul_nonneg hP tailConstant_nonneg))
-  exact (continuous_arrival_mass_bound ψ hv hP hψ hbound).trans
-    (by convert h2 using 1; unfold coreMajorant; ring)
+  have h_comm1 : 2 * (P * tailConstant) * (3 / 2 * boundaryLog ((R - |v|) / 2) + 2 / (1 - exp (-2))) =
+      2 * (P * tailConstant) * (2 / (1 - exp (-2)) + 3 / 2 * boundaryLog ((R - |v|) / 2)) := by ring
+  have h_comm2 : 2 * (P * tailConstant) * (2 / (1 - exp (-2)) + 3 / 2 * (boundaryLog (R - v) + boundaryLog (R + v) + log 2)) =
+      coreMajorant R (2 * (P * tailConstant)) (3 / 2 * log 2 + 2 / (1 - exp (-2))) v := by
+    unfold coreMajorant
+    ring
+  have h_bound : ‖continuousArrival R ψ v‖ ≤
+      2 * (P * tailConstant) * (2 / (1 - exp (-2)) + 3 / 2 * boundaryLog ((R - |v|) / 2)) := by
+    have hb := continuous_arrival_mass_bound ψ hv hP hψ hbound
+    rwa [← h_comm1]
+  rw [← h_comm2]
+  exact h_bound.trans h2
 
 theorem continuous_arrival_core_square_integrable {R P : ℝ} (ψ : ℝ → ℝ)
     (hR : 0 < R) (hP : 0 ≤ P) (hψ : AEStronglyMeasurable ψ)

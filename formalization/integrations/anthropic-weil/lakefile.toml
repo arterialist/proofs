@@ -2,15 +2,131 @@ name = "AnthropicWeilIntegration"
 version = "0.1.0"
 defaultTargets = ["ActualWeil"]
 
-[leanOptions]
-relaxedAutoImplicit = false
+# Local common stack; bypass the upstream Zeta23 package configuration.
 
 [[require]]
+name = "Cli"
+scope = "leanprover"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/Cli"
+# Retained revision: e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204
+
+[[require]]
+name = "LeanSearchClient"
+scope = "leanprover-community"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/LeanSearchClient"
+# Retained revision: ddf04cf3949fa556442341e87d47f9f6e6074707
+
+[[require]]
+name = "Qq"
+scope = "leanprover-community"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/Qq"
+# Retained revision: 6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259
+
+[[require]]
+name = "aesop"
+scope = "leanprover-community"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/aesop"
+# Retained revision: 355695d523e41d0554926416cba2a2b3544fbbc9
+
+[[require]]
+name = "batteries"
+scope = "leanprover-community"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/batteries"
+# Retained revision: f2effa3d803fda822b1f97b806c47cf2adfbcbc2
+
+[[require]]
+name = "importGraph"
+scope = "leanprover-community"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/importGraph"
+# Retained revision: e928b72544873815af278d38681b31c0293588e3
+
+[[require]]
+name = "mathlib"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/mathlib"
+# Retained revision: d13f23b723b8a846827a245b89c10fc7d3f11612
+
+[[require]]
+name = "plausible"
+scope = "leanprover-community"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/plausible"
+# Retained revision: 118aa17ee84656b8bd727fef7c458ee8c833385c
+
+[[require]]
+name = "proofwidgets"
+scope = "leanprover-community"
+path = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261007-openai-math/kernel-verification/workspace/.lake/packages/proofwidgets"
+# Retained revision: 106ff4fafc74ef4ac99d81dbf3ab399118f497a5
+
+[[lean_lib]]
 name = "Zeta23"
-git = "https://github.com/anthropics/formal-math.git"
-rev = "fbdc36bbf17d20af3fd0447c6d1a8a02773c9844"
-subDir = "zeta23"
+srcDir = "/Users/arterialist/Projects/proofs/research-local/agent-results/20261008-one-lean/zeta23-port/source/zeta23"
+roots = ["Zeta23"]
+globs = [
+  "Zeta23.Analytic.RectangleLogDeriv",
+  "Zeta23.Analytic.Stirling",
+  "Zeta23.Assembly.Inputs",
+  "Zeta23.Defs",
+  "Zeta23.Defs.Counting",
+  "Zeta23.ExplicitFormula",
+  "Zeta23.ExplicitFormula.Bridge",
+  "Zeta23.FromPNTPlus.Auxiliary",
+  "Zeta23.FromPNTPlus.EulerMaclaurin",
+  "Zeta23.FromPNTPlus.Fourier",
+  "Zeta23.FromPNTPlus.Mathlib.Analysis.SpecialFunctions.Log.Basic",
+  "Zeta23.FromPNTPlus.Rectangle",
+  "Zeta23.FromPNTPlus.ResidueCalcOnRectangles",
+  "Zeta23.FromPNTPlus.Sobolev",
+  "Zeta23.FromPNTPlus.StrongPNTPrefix",
+  "Zeta23.FromPNTPlus.Tactic.AdditiveCombination",
+  "Zeta23.FromPNTPlus.ZetaBounds",
+  "Zeta23.GammaFacts",
+  "Zeta23.GammaFacts.Complete",
+  "Zeta23.GammaFacts.IntMu",
+  "Zeta23.GammaFacts.Mu",
+  "Zeta23.GammaFacts.Series",
+  "Zeta23.GammaFacts.StirlingVert",
+  "Zeta23.Hypotheses",
+  "Zeta23.LinAlg",
+  "Zeta23.LinAlg.HermitianPosPart",
+  "Zeta23.LinAlg.Inertia",
+  "Zeta23.LinAlg.PosIndex",
+  "Zeta23.LinAlg.RankTrace",
+  "Zeta23.LinAlg.Sylvester",
+  "Zeta23.LinAlg.VonNeumann",
+  "Zeta23.LinAlg.Weyl",
+  "Zeta23.Poisson.PaperFT",
+  "Zeta23.Prelude.InstancePriorities",
+  "Zeta23.RvM.CountByIntegral",
+  "Zeta23.RvM.Halving",
+  "Zeta23.RvM.LocalCount",
+  "Zeta23.RvM.ZetaGrowth",
+  "Zeta23.Statement",
+  "Zeta23.Statement.Seam",
+  "Zeta23.Statement.SeamClosed",
+  "Zeta23.Tail",
+  "Zeta23.Tail.Basic",
+  "Zeta23.Tail.Count",
+  "Zeta23.Tail.Grid",
+  "Zeta23.Tail.RankOne",
+  "Zeta23.WeilEF.Contour",
+  "Zeta23.WeilEF.FullLine",
+  "Zeta23.WeilEF.FullLineAssembly",
+  "Zeta23.WeilEF.GammaRBracket",
+  "Zeta23.WeilEF.GoodHeights",
+  "Zeta23.WeilEF.Horizontal",
+  "Zeta23.WeilEF.Landau",
+  "Zeta23.WeilEF.Main",
+  "Zeta23.WeilEF.VerticalLine",
+  "Zeta23.WeilEF.XiLogDeriv",
+  "Zeta23.WeilEF.ZeroSumLimit",
+  "Zeta23.WeilEF.ZeroSummability",
+  "Zeta23.ZetaReflect",
+]
+leanOptions = { autoImplicit = true, relaxedAutoImplicit = false, pp.unicode.fun = true }
 
 [[lean_lib]]
 name = "ActualWeil"
+srcDir = "."
 roots = ["ActualWeil"]
+globs = ["ActualWeil"]
+leanOptions = { autoImplicit = true, relaxedAutoImplicit = false }

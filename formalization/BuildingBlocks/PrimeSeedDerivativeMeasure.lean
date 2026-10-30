@@ -1,6 +1,7 @@
 import BuildingBlocks.PrimeSeedWeakDerivative
 import BuildingBlocks.PrimeSeedAllPrimeLevy
 import Mathlib.MeasureTheory.VectorMeasure.Basic
+import Mathlib.MeasureTheory.VectorMeasure.Operations
 
 /-! The finite positive and negative measures of the literal seed derivative. -/
 

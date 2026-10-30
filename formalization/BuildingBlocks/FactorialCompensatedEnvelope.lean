@@ -23,7 +23,7 @@ theorem actual_response_mixed (N : ℕ) (hN : 0 < N) (t : ℝ) (ht : 0 ≤ t) :
   rw [FactorialOriginNeutralization.response_linear_neutralization N hN t]
   apply (abs_add_le _ _).trans
   rw [abs_of_nonneg ht]
-  apply add_le_add_left
+  gcongr
   apply (abs_sum_le_sum_abs _ _).trans
   unfold mixedBudget
   apply sum_le_sum
@@ -82,7 +82,7 @@ theorem mixed_budget_head (N : ℕ) (hN : 0 < N) (a : ℝ) (hNa : (N : ℝ) ≤ 
 /-- Inverse-square tail beyond a positive integer cut, with its exact endpoint. -/
 theorem inverse_square_tail_sum (k N : ℕ) (hk : 0 < k) (hkN : k ≤ N) :
     (∑ n ∈ Icc (k + 1) N, ((n : ℝ)^2)⁻¹) ≤ (k : ℝ)⁻¹ := by
-  have he : Icc (k + 1) N = Ioc k N := by ext n; simp; omega
+  have he : Icc (k + 1) N = Ioc k N := by ext n; simp
   rw [he]
   apply (sum_Ioc_inv_sq_le_sub (α := ℝ) hk.ne' hkN).trans
   exact sub_le_self _ (by positivity)
@@ -150,10 +150,13 @@ theorem mixed_budget_log (N : ℕ) (a : ℝ) (ha : 0 ≤ a) :
 theorem actual_response_log (N : ℕ) (hN : 0 < N) (t : ℝ) (ht : 0 ≤ t) :
     |FactorialBinaryCarry.response N t| ≤
       (N : ℝ) * t * (3 + max 0 (Real.log ((N : ℝ) * t))) := by
-  have h := (actual_response_mixed N hN t ht).trans
-    (add_le_add_left (mixed_budget_log N ((N : ℝ) * t) (by positivity)) t)
+  have ha := actual_response_mixed N hN t ht
+  have hm := mixed_budget_log N ((N : ℝ) * t) (by positivity)
   have hn : (1 : ℝ) ≤ N := by exact_mod_cast hN
-  nlinarith
+  have ht_le : t ≤ (N : ℝ) * t := by
+    calc t = 1 * t := by ring
+    _ ≤ (N : ℝ) * t := by gcongr
+  linarith
 
 end BuildingBlocks.FactorialCompensatedEnvelope
 #print axioms BuildingBlocks.FactorialCompensatedEnvelope.remainder_min

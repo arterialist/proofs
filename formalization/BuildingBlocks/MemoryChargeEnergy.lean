@@ -34,6 +34,7 @@ theorem decaying_functional_bound {d f : ℝ → ℝ} {M : ℝ} (hM : 0 ≤ M)
     ring
   have hi := reference_memLp.integrable_mul hf.norm
   have hdom : IntegrableOn (fun u => M * (exp (-u / 2) * |g u|)) (Ioi (0 : ℝ)) := by
+    unfold IntegrableOn
     simpa only [Pi.mul_def, Real.norm_eq_abs] using hi.const_mul M
   have hb : ∀ᵐ u ∂(volume.restrict (Ioi (0 : ℝ))),
       |d u * f u| ≤ M * (exp (-u / 2) * |g u|) := by
@@ -41,8 +42,9 @@ theorem decaying_functional_bound {d f : ℝ → ℝ} {M : ℝ} (hM : 0 ≤ M)
     rw [abs_mul, he]
     exact (mul_le_mul_of_nonneg_right (hbound u hu) (abs_nonneg _)).trans_eq (by ring)
   have hint : IntegrableOn (fun u => d u * f u) (Ioi (0 : ℝ)) := by
-    apply hdom.mono' (hd.mul hmf.aestronglyMeasurable)
-    simpa only [Real.norm_eq_abs] using hb
+    refine hdom.mono' (hd.mul hmf.aestronglyMeasurable) ?_
+    filter_upwards [hb] with u hu
+    rwa [Real.norm_eq_abs]
   refine ⟨hint, ?_⟩
   have hcs := MixedEnergy.integral_mul_abs_le_sqrt reference_memLp hf.norm
   simp only [Real.norm_eq_abs, sq_abs, reference_square_integral, sqrt_one, one_mul] at hcs
@@ -56,8 +58,10 @@ theorem decaying_functional_bound {d f : ℝ → ℝ} {M : ℝ} (hM : 0 ≤ M)
   calc
     _ ≤ ∫ u in Ioi (0 : ℝ), |d u * f u| := by
       simpa only [Real.norm_eq_abs] using norm_integral_le_integral_norm (fun u => d u * f u)
-    _ ≤ ∫ u in Ioi (0 : ℝ), M * (exp (-u / 2) * |g u|) :=
-      integral_mono_ae hint.norm hdom (by simpa only [Real.norm_eq_abs] using hb)
+    _ ≤ ∫ u in Ioi (0 : ℝ), M * (exp (-u / 2) * |g u|) := by
+      refine integral_mono_ae hint.norm hdom ?_
+      filter_upwards [hb] with u hu
+      exact hu
     _ = M * ∫ u in Ioi (0 : ℝ), exp (-u / 2) * |g u| := integral_const_mul _ _
     _ ≤ _ := mul_le_mul_of_nonneg_left hcs' hM
 

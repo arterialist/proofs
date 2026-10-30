@@ -53,7 +53,8 @@ theorem edge_mass_add_bound {h g : ℝ → ℝ} (hh : Measurable h) (a : ℝ) :
 theorem continuous_energy_add_bound {h g : ℝ → ℝ} (hh : Measurable h) :
     continuousEnergy (fun u => h u + g u) ≤ 2 * (continuousEnergy h + continuousEnergy g) := by
   have hk : Measurable kernel := by unfold kernel; fun_prop
-  have hm := hk.ennreal_ofReal.mul (edge_mass_measurable hh)
+  have hm : Measurable (fun a => ENNReal.ofReal (kernel a) * edgeMass h a) :=
+    hk.ennreal_ofReal.mul (edge_mass_measurable hh)
   unfold continuousEnergy
   calc
     _ ≤ ∫⁻ a : ℝ in Set.Ioi 0,
@@ -61,8 +62,11 @@ theorem continuous_energy_add_bound {h g : ℝ → ℝ} (hh : Measurable h) :
           ENNReal.ofReal (kernel a) * edgeMass g a) := by
       apply lintegral_mono
       intro a
-      have hs := mul_le_mul_left' (edge_mass_add_bound (g := g) hh a) (ENNReal.ofReal (kernel a))
-      simpa only [mul_add, mul_assoc, mul_left_comm] using hs
+      have hb := edge_mass_add_bound (g := g) hh a
+      have hs : ENNReal.ofReal (kernel a) * edgeMass (fun u => h u + g u) a ≤
+          ENNReal.ofReal (kernel a) * (2 * (edgeMass h a + edgeMass g a)) := by
+        gcongr
+      exact hs.trans_eq (by rw [mul_left_comm (ENNReal.ofReal (kernel a)) 2, mul_add])
     _ = _ := by
       rw [lintegral_const_mul' _ _ (by norm_num : (2 : ℝ≥0∞) ≠ ∞),
         lintegral_add_left hm]
@@ -76,9 +80,13 @@ theorem prime_energy_add_bound {h g : ℝ → ℝ} (hh : Measurable h) :
         ENNReal.ofReal (ArithmeticFunction.vonMangoldt n.val / Real.sqrt n.val) * edgeMass g (Real.log n.val)) := by
       apply ENNReal.tsum_le_tsum
       intro n
-      have hs := mul_le_mul_left' (edge_mass_add_bound (g := g) hh (Real.log n.val))
-        (ENNReal.ofReal (ArithmeticFunction.vonMangoldt n.val / Real.sqrt n.val))
-      simpa only [mul_add, mul_assoc, mul_left_comm] using hs
+      have hb := edge_mass_add_bound (g := g) hh (Real.log n.val)
+      have hs : ENNReal.ofReal (ArithmeticFunction.vonMangoldt n.val / Real.sqrt n.val) *
+          edgeMass (fun u => h u + g u) (Real.log n.val) ≤
+        ENNReal.ofReal (ArithmeticFunction.vonMangoldt n.val / Real.sqrt n.val) *
+          (2 * (edgeMass h (Real.log n.val) + edgeMass g (Real.log n.val))) := by
+        gcongr
+      exact hs.trans_eq (by rw [mul_left_comm (ENNReal.ofReal _) 2, mul_add])
     _ = _ := by rw [ENNReal.tsum_mul_left, ENNReal.summable.tsum_add ENNReal.summable]
 
 theorem jump_energy_add_bound {h g : ℝ → ℝ} (hh : Measurable h) :
@@ -94,7 +102,7 @@ theorem killed_extension_measurable {h : ℝ → ℝ} (hh : Measurable h) (R : �
     Measurable (killedExtension R h) := by
   have hm : MeasurableSet {u : ℝ | R < |u|} :=
     measurableSet_lt measurable_const continuous_abs.measurable
-  simpa only [killedExtension, Set.indicator] using hh.indicator hm
+  exact Measurable.ite hm hh measurable_const
 
 theorem killed_energy_add_bound {h g : ℝ → ℝ} (hh : Measurable h) (R : ℝ) :
     killedEnergy R (fun u => h u + g u) ≤ 2 * (killedEnergy R h + killedEnergy R g) := by
@@ -115,9 +123,8 @@ theorem exterior_hilbert_energy_add_bound (R : ℝ) (h g : ExteriorGroundSpace R
   have hH : Measurable H := hm.stronglyMeasurable_mk.measurable
   have heq : (fun u : ℝ => h u) =ᵐ[exteriorNu R] H := hm.ae_eq_mk
   have hsum : (fun u : ℝ => (h + g) u) =ᵐ[exteriorNu R] (fun u => H u + g u) := by
-    have ha : (fun u : ℝ => (h + g) u) =ᵐ[exteriorNu R] (fun u => h u + g u) := by
-      simpa only [Pi.add_apply] using Lp.coeFn_add h g
-    exact ha.trans (heq.add Filter.EventuallyEq.rfl)
+    filter_upwards [Lp.coeFn_add h g, heq] with u hu hueq
+    rw [hu, Pi.add_apply, hueq]
   have hb := killed_energy_add_bound (g := fun u : ℝ => g u) hH R
   rw [← killed_energy_exterior_nu_ae_congr heq] at hb
   unfold exteriorHilbertEnergy

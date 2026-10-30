@@ -59,7 +59,6 @@ theorem cutoff_mass_difference (P : ℕ) :
         (primeTailLevyMeasure P Set.univ).toReal := by
   have h := congrArg (fun μ : Measure ℝ => (μ Set.univ).toReal)
     (levyMeasure_primesBelow_add_tail P)
-  dsimp only at h
   rw [Measure.add_apply, ENNReal.toReal_add (measure_ne_top _ _) (measure_ne_top _ _)] at h
   change (levyMeasure (primesBelow P) Set.univ).toReal +
     (primeTailLevyMeasure P Set.univ).toReal =

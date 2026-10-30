@@ -65,7 +65,8 @@ theorem killed_energy_zero (R : ℝ) : killedEnergy R (fun _ : ℝ => 0) = 0 := 
 theorem exterior_hilbert_energy_smul (R c : ℝ) (h : ExteriorGroundSpace R) :
     exteriorHilbertEnergy R (c • h) = ENNReal.ofReal (c ^ 2) * exteriorHilbertEnergy R h := by
   have hh : (fun u : ℝ => (c • h) u) =ᵐ[exteriorNu R] (fun u => c * h u) := by
-    simpa only [Pi.smul_apply, smul_eq_mul] using Lp.coeFn_smul c h
+    filter_upwards [Lp.coeFn_smul c h] with u hu
+    rw [hu, Pi.smul_apply, smul_eq_mul]
   rw [exteriorHilbertEnergy, killed_energy_exterior_nu_ae_congr hh, killed_energy_homogeneous]
   rfl
 
