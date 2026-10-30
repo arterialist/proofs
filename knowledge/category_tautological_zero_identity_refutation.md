@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 155
+Count: 158
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -162,3 +162,6 @@ Count: 155
 | 153 | explorer_r46_L00_N00 | Motivic fundamental groups and motivic multiple zeta values evaluate periods of mixed Tate motives restricted to discrete integer weight vectors that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 154 | explore_merger_r46_L04_N00 | Root strategy card reduction to motivic fundamental groups, group compactifications, Sp(2n) Arthur packets, and logarithmic triplet VOAs avoids Pitfalls 001-103, but hits motivic integer weight decoupling, group compactification Euler product decoupling, and symplectic Arthur packet decoupling carrying 100% of Millennium RH analytical depth. |
 | 155 | gate_merger_r46_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while motivic fundamental groups and group compactifications avoid Pitfalls 001-103, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 156 | explorer_r47_L00_N00 | Motivic Galois groups and polylogarithmic motivic complexes evaluate algebraic Lie algebras graded by discrete integer weights that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 157 | explore_merger_r47_L04_N00 | Root strategy card reduction to motivic Galois Lie algebras, toric Sasakian MSY volume minimization, metaplectic Whittaker periods, and critical level CDOs avoids Pitfalls 001-105, but hits motivic Galois weight decoupling, MSY volume Euler product decoupling, and metaplectic cover decoupling carrying 100% of Millennium RH analytical depth. |
+| 158 | gate_merger_r47_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while motivic Galois theory and toric Sasakian MSY geometry avoid Pitfalls 001-105, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
