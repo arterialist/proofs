@@ -34,7 +34,7 @@ theorem causalFilter_cross_integral {T rate : ℝ} {f r : ℝ → ℝ}
   rw [heq, intervalIntegral.integral_sub (hrf.const_mul 2)
       (hr2.const_mul (2 * rate)), intervalIntegral.integral_const_mul,
     intervalIntegral.integral_const_mul] at h
-  simp only [hr0, zero_pow (by decide : (2 : ℕ) ≠ 0), sub_zero] at h
+  simp only [Pi.pow_apply, hr0, zero_pow (by decide : (2 : ℕ) ≠ 0), sub_zero] at h
   linarith
 
 /-- Exact dissipated energy; no boundedness or arithmetic error estimate is

@@ -1,5 +1,5 @@
 import BuildingBlocks.PostBranchDoubleAbelFinite
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Tactic
 
 /-! Exact finite actual Möbius packet at the first post-branch primorial. -/

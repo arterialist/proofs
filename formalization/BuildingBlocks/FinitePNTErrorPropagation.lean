@@ -32,7 +32,7 @@ theorem abs_partialSummationError_le
               |w hi * E hi + ∑ n ∈ Ico lo hi, E n * (w n - w (n + 1))| := abs_add_le _ _
         _ ≤ |-w lo * E (lo - 1)| +
               (|w hi * E hi| + |∑ n ∈ Ico lo hi, E n * (w n - w (n + 1))|) :=
-            add_le_add_left (abs_add_le _ _) _
+            add_le_add_right (abs_add_le _ _) _
         _ = _ := by ring
     _ ≤ |w lo| * B (lo - 1) + |w hi| * B hi +
         ∑ n ∈ Ico lo hi, B n * |w n - w (n + 1)| := by

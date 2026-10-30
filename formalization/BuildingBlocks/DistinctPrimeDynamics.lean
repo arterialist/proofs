@@ -84,12 +84,13 @@ theorem hasDerivAt_cell (N : ℕ) {x : ℝ} (hx : x ≠ 0) :
     HasDerivAt (cell N) (slope N x) x := by
   have hi := hasDerivAt_id x
   have hp : HasDerivAt (fun u : ℝ => u ^ 2) (2 * x) x := by
-    convert hi.pow 2 using 1
+    convert hasDerivAt_pow 2 x using 1
     norm_num
   have h := ((((hi.mul_const (pairMass N)).add_const (mixedMoment N)).sub
     (hp.mul_const (mangoldtMass N))).add
       ((hp.div_const 2).mul (Real.hasDerivAt_log hx))).add (hp.div_const 4)
   convert h.sub_const (1 / 4 : ℝ) using 1
+  · rfl
   dsimp [cell, slope]
   field_simp
   ring
@@ -101,6 +102,7 @@ theorem hasDerivAt_slope (N : ℕ) {x : ℝ} (hx : x ≠ 0) :
     (hi.mul_const (2 * mangoldtMass N))).add
       (hi.mul (Real.hasDerivAt_log hx))).add hi
   convert h using 1
+  · rfl
   dsimp [slope]
   field_simp
   ring

@@ -1,6 +1,6 @@
 import BuildingBlocks.ActualVolterraIdentity
 import BuildingBlocks.PrimeScoreDivisorIdentity
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Tactic
 
 /-! Exact finite all-prime-power cofactor reindexing for Eq22, plus abstract centered convolution algebra. The convolution symbol laws require a named ring homomorphism and named Mellin identities; this file supplies no analytic inversion or RH bound. -/

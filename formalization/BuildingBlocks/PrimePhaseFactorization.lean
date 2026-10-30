@@ -24,7 +24,7 @@ private lemma unit_phase_pow_bound (z : ℂ) (hz : ‖z‖ = 1) (m : ℕ) :
     calc
       ‖1 - z ^ (m + 1)‖ ≤ ‖1 - z‖ + ‖1 - z ^ m‖ := by
         rw [pow_succ']; exact unit_phase_mul_bound z (z ^ m) hz
-      _ ≤ ‖1 - z‖ + (m : ℝ) * ‖1 - z‖ := add_le_add_left ih _
+      _ ≤ ‖1 - z‖ + (m : ℝ) * ‖1 - z‖ := add_le_add_right ih _
       _ = ((m + 1 : ℕ) : ℝ) * ‖1 - z‖ := by simp only [Nat.cast_add, Nat.cast_one]; ring
 
 /-- Finite unit phases with their full natural multiplicities. -/

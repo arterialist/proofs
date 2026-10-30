@@ -68,8 +68,8 @@ theorem quotient_kernel_zero (s : Finset ℕ) :
       ∀ q ∈ s, c q = 0 := by
   classical
   induction s using Finset.induction_on_max with
-  | h0 => simp
-  | @step a s hmax ih =>
+  | empty => simp
+  | @insert a s hmax ih =>
     have ha : a ∉ s := by
       intro h
       have hlt := hmax a h

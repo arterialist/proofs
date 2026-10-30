@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Misc
 import Mathlib.NumberTheory.Harmonic.EulerMascheroni
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Tactic.Linarith

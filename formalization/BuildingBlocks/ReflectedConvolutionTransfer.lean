@@ -103,7 +103,7 @@ private theorem reflected_memLp_two {T : ℝ} (hT : 0 ≤ T)
     MemLp (fun t => f (T - t)) 2 (volume.restrict (Ioc 0 T)) := by
   have hi : IntervalIntegrable (fun t => ‖f t‖ ^ 2) volume 0 T :=
     (intervalIntegrable_iff_integrableOn_Ioc_of_le hT).mpr
-      ((memLp_two_iff_integrable_sq_norm hf.1).mp hf)
+      ((memLp_two_iff_integrable_sq_norm hf.aestronglyMeasurable).mp hf)
   have hr : IntervalIntegrable (fun t => ‖f (T - t)‖ ^ 2) volume 0 T := by
     simpa only [sub_self, sub_zero] using (hi.comp_sub_left T).symm
   apply (memLp_two_iff_integrable_sq_norm

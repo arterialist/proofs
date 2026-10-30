@@ -1,7 +1,7 @@
 import BuildingBlocks.Model
 import BuildingBlocks.Target
 import Mathlib.NumberTheory.EulerProduct.DirichletLSeries
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 
 open Filter
 open scoped Topology BigOperators

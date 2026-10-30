@@ -30,7 +30,7 @@ theorem analytic_log_derivative_regular_part (f : ℂ → ℂ) (s : ℂ)
   have hb : HasDerivAt (fun v : ℂ => v - s) 1 w := (hasDerivAt_id w).sub_const s
   have hbl : logDeriv (fun v : ℂ => v - s) w = 1 / (w - s) := by
     rw [logDeriv_apply, hb.deriv]
-  rw [hlw, logDeriv_mul (f := fun v => (v - s) ^ analyticOrderNatAt f s)
+  rw [hlw, logDeriv_fun_mul (f := fun v => (v - s) ^ analyticOrderNatAt f s)
     (g := g) w (pow_ne_zero _ (sub_ne_zero.mpr hsw)) hgw
     (hb.differentiableAt.pow _) hdgw, logDeriv_fun_pow hb.differentiableAt, hbl]
   simp only [mul_one_div]

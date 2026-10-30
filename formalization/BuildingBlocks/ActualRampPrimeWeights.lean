@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Tactic
 

@@ -47,7 +47,7 @@ theorem prime_factor_product_le_square (P : Finset ℕ)
   have hsq : (∏ p ∈ P, ((p : ℤ) ^ 2)) = ((∏ p ∈ P, (p : ℤ)) : ℤ) ^ 2 := by
     rw [prod_pow]
   rw [← hsq]
-  exact prod_le_prod (fun p hp => hnonneg p hp)
+  exact prod_le_prod₀ (fun p hp => hnonneg p hp)
     (fun p hp => prime_local_factor_le_square (hP p hp))
 
 /-- The factor product is nonnegative as well. -/

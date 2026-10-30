@@ -3,6 +3,8 @@ import Mathlib.Topology.Algebra.Order.Floor
 import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.Calculus.Deriv.Mul
+import Mathlib.Analysis.Calculus.Deriv.Add
+import Mathlib.Analysis.Calculus.Deriv.Comp
 
 open Filter Set
 open scoped Topology
@@ -26,9 +28,7 @@ theorem fract_hasDerivAt (x : ℝ) (hx : x ≠ (⌊x⌋ : ℝ)) :
 theorem unitPrimitive_hasDerivAt (x : ℝ) (hx : x ≠ (⌊x⌋ : ℝ)) :
     HasDerivAt unitPrimitive (bernoulliOne x) x := by
   have hf := fract_hasDerivAt x hx
-  convert ((hf.pow 2).sub hf).div_const 2 using 1
-  simp only [bernoulliOne]
-  ring
+  exact (((hf.pow 2).sub hf).div_const 2).congr_deriv (by simp only [bernoulliOne]; ring)
 
 theorem primitiveFormula_continuous (r : ℝ) : Continuous (primitiveFormula r) := by
   have hi : Continuous (fun x : ℝ => r * x) := continuous_const.mul continuous_id
@@ -42,9 +42,7 @@ theorem primitiveFormula_hasDerivAt (r x : ℝ) (hr : r ≠ 0)
   have h0 := (unitPrimitive_hasDerivAt x hx).const_mul r
   have h1 := ((unitPrimitive_hasDerivAt (r * x) hrx).comp x
     ((hasDerivAt_id x).const_mul r)).div_const r
-  convert h0.sub h1 using 1
-  simp only [phase]
-  field_simp
+  exact (h0.sub h1).congr_deriv (by simp only [phase]; field_simp)
 
 #print axioms unitPrimitive_continuous
 #print axioms fract_hasDerivAt

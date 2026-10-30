@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Misc
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Positivity
 

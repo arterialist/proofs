@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 import Mathlib.Topology.Algebra.Order.Floor
@@ -247,7 +247,7 @@ theorem coarsePrime_test_bound {X K : ℝ} (hX : 0 < X) (hK : 0 ≤ K)
     _ ≤ |coarsePrefix X (2 * X)| * ‖w (2 * X)‖ +
         K * ∫ x in X..(2 * X), |coarsePrefix X x| := by
       simpa only [norm_mul, Complex.norm_real, Real.norm_eq_abs] using
-        add_le_add_left hnorm ‖(coarsePrefix X (2 * X) : ℂ) * w (2 * X)‖
+        add_le_add (le_refl ‖(coarsePrefix X (2 * X) : ℂ) * w (2 * X)‖) hnorm
     _ ≤ _ := add_le_add
       (mul_le_mul_of_nonneg_right (coarse_terminal_mass_le_sqrt hX) (norm_nonneg _))
       (mul_le_mul_of_nonneg_left (coarsePrefix_abs_integral_le_sqrt hX.le) hK)

@@ -34,7 +34,7 @@ theorem completed_log_derivative_corrections (s : ℂ) (hs0 : s ≠ 0) (hs1 : s 
   have hl : logDeriv xi s = logDeriv (fun w => q w * completedRiemannZeta w) s := by
     rw [logDeriv_apply, logDeriv_apply, he.deriv_eq, he.eq_of_nhds]
   have hsum : logDeriv xi s = 1 / s + 1 / (s - 1) + logDeriv completedRiemannZeta s := by
-    rw [hl, logDeriv_mul (f := q) (g := completedRiemannZeta) s hqn hcn
+    rw [hl, logDeriv_fun_mul (f := q) (g := completedRiemannZeta) s hqn hcn
       hq.differentiableAt (differentiableAt_completedZeta hs0 hs1), hlq]
   rw [hsum]
   ring

@@ -1,5 +1,6 @@
 import Mathlib.Analysis.Complex.ExponentialBounds
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
+import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 import Mathlib.Tactic
 
 set_option maxHeartbeats 2000000

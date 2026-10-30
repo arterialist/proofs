@@ -263,7 +263,7 @@ theorem normalizedReciprocalSampling_le (P Q F K : ℝ)
     (1 / P) * (1 + F / Q ^ 2) =
         1 / P + (F / Q ^ 2) / P := by ring
     _ ≤ 1 / P + (P * K) / P := by
-      exact add_le_add_left (div_le_div_of_nonneg_right hband hP.le) _
+      exact add_le_add_right (div_le_div_of_nonneg_right hband hP.le) _
     _ = 1 / P + K := by field_simp
 
 def p (lambda : ℝ) : ℝ := 1 - 2 * lambda / 5

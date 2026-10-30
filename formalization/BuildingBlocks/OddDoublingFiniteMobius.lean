@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Data.Nat.Prime.Basic
 import Mathlib.Data.Nat.Squarefree
 import Mathlib.Algebra.Ring.GeomSum

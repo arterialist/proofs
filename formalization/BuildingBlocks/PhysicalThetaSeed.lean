@@ -16,14 +16,14 @@ noncomputable def curvature (n : ℕ) (u : ℝ) : ℝ :=
 theorem argument_hasDerivAt (n : ℕ) (u : ℝ) :
     HasDerivAt (argument n) (2 * argument n u) u := by
   have h := (((hasDerivAt_id u).const_mul (2 : ℝ)).exp).const_mul (π * (n : ℝ) ^ 2)
-  convert h using 1
+  refine h.congr_deriv ?_
   dsimp [argument]
   ring
 
 theorem seed_hasDerivAt (n : ℕ) (u : ℝ) : HasDerivAt (seed n) (slope n u) u := by
   have h1 := ((hasDerivAt_id u).div_const (2 : ℝ)).exp
   have h2 := (argument_hasDerivAt n u).neg.exp
-  convert h1.mul h2 using 1
+  refine (h1.mul h2).congr_deriv ?_
   dsimp [seed, slope]
   ring
 
@@ -32,7 +32,7 @@ theorem slope_hasDerivAt (n : ℕ) (u : ℝ) :
   have h1 := (hasDerivAt_const u (1 / 2 : ℝ)).sub
     ((argument_hasDerivAt n u).const_mul (2 : ℝ))
   have h2 := seed_hasDerivAt n u
-  convert h1.mul h2 using 1
+  refine (h1.mul h2).congr_deriv ?_
   dsimp [slope, curvature]
   ring
 

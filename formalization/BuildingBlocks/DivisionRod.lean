@@ -99,7 +99,7 @@ theorem prefix_product_le_next_left
     (hsep : ∀ i < n, (rods i).right < (rods (i + 1)).left) :
     (∏ i ∈ Finset.range n, (rods i).ratio) ≤ (rods n).left := by
   cases n with
-  | zero => simpa using (rods 0).left_pos
+  | zero => simp only [Finset.range_zero, Finset.prod_empty]; exact (rods 0).left_pos
   | succ n =>
       exact le_trans
         (ordered_prefix_product_le_last rods n (fun i hi => hsep i (by omega)))

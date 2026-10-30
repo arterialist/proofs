@@ -36,7 +36,7 @@ theorem integral_psi_floor_eq_finite {x : ℝ} (hx : 1 ≤ x) :
     intro N
     have hset : Finset.Icc 0 N = Finset.range (N + 1) := by
       ext n
-      simp
+      simp only [Finset.mem_Icc, Finset.mem_range]
       omega
     rw [hset, psi]
   simp only [hs, deriv_id, id_eq, one_mul] at hab

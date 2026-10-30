@@ -115,7 +115,7 @@ theorem exponential_memLp {x : ℝ} (hx : 0 < x) :
     MemLp (fun t : ℝ => Real.exp (-x * t)) 2 (volume.restrict (Ioi 0)) := by
   have hc : Continuous (fun t : ℝ => Real.exp (-x * t)) := by fun_prop
   apply (memLp_two_iff_integrable_sq hc.aestronglyMeasurable.restrict).mpr
-  simpa [pow_two] using exponential_pair_integrable hx hx
+  simpa [pow_two, IntegrableOn] using exponential_pair_integrable hx hx
 
 noncomputable def birth (x : Ici (1 : ℝ)) : Lp ℝ 2 (volume.restrict (Ioi (0 : ℝ))) :=
   (exponential_memLp (x := (x : ℝ))

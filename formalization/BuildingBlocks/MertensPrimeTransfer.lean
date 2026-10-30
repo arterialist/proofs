@@ -56,7 +56,7 @@ theorem centeredDivisorCoefficient_harmonic_bound {K : ℕ} (hK : 1 ≤ K) :
           unfold centeredDivisorCoefficient
           have hh := (abs_add_le (Real.log k - k.divisors.card)
             (2 * Real.eulerMascheroniConstant)).trans
-              (add_le_add_right (abs_sub (Real.log (k : ℝ)) (k.divisors.card : ℝ)) _)
+              (add_le_add_left (abs_sub (Real.log (k : ℝ)) (k.divisors.card : ℝ)) _)
           rw [abs_of_nonneg (Real.log_nonneg hk1), abs_of_nonneg (show (0 : ℝ) ≤ (k.divisors.card : ℝ) by positivity),
             abs_of_nonneg (by positivity : 0 ≤ 2 * Real.eulerMascheroniConstant)] at hh
           linarith
@@ -65,7 +65,7 @@ theorem centeredDivisorCoefficient_harmonic_bound {K : ℕ} (hK : 1 ≤ K) :
           ∑ k ∈ Finset.Icc 1 K, (k.divisors.card : ℝ) / k := by
         simp only [Finset.sum_add_distrib, harmonic_eq_sum_Icc, Rat.cast_sum,
           Rat.cast_inv, Rat.cast_natCast, Finset.mul_sum, div_eq_mul_inv]
-      _ ≤ _ := add_le_add_left (divisorCard_harmonic_bound K) _
+      _ ≤ _ := add_le_add_right (divisorCard_harmonic_bound K) _
   have hH0 : (0 : ℝ) ≤ harmonic K := by
     simp only [harmonic_eq_sum_Icc, Rat.cast_sum, Rat.cast_inv, Rat.cast_natCast]
     exact Finset.sum_nonneg (fun _ _ => by positivity)

@@ -1,5 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 import Mathlib.Tactic
 

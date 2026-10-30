@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Tactic
 
 /-! The finite prime reflection algebra for the odd weak theta-ground row.

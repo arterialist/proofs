@@ -32,7 +32,7 @@ theorem logDeriv_of_factorization {f u : ℂ → ℂ} {ρ : ℂ} {m : ℕ}
   have heq : logDeriv f z = logDeriv (fun w => (w - ρ) ^ m * u w) z := by
     simp only [logDeriv_apply]
     rw [hfz, hdfz]
-  rw [heq, logDeriv_mul (f := fun w : ℂ => (w - ρ) ^ m) (g := u) z
+  rw [heq, logDeriv_fun_mul (f := fun w : ℂ => (w - ρ) ^ m) (g := u) z
     (pow_ne_zero m hz0) huz0 (by fun_prop) huz.differentiableAt]
   have hp : logDeriv (fun w : ℂ => (w - ρ) ^ m) z = (m : ℂ) / (z - ρ) := by
     rw [logDeriv_fun_pow (by fun_prop)]

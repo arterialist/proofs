@@ -56,7 +56,7 @@ lemma continuousOn_tau : ContinuousOn tau (Set.Ioi 0) := by
   unfold tau
   exact continuousAt_id.mul
     (((continuousAt_id.add continuousAt_const).log (by
-      simpa only [id_eq, add_comm] using (ne_of_gt (by linarith : 0 < x + 1)))).sub
+      simpa only [Pi.add_apply, id_eq] using (ne_of_gt (by linarith : 0 < x + 1)))).sub
       (continuousAt_log hx'.ne'))
 
 theorem strictMonoOn_tau : StrictMonoOn tau (Set.Ioi 0) := by
@@ -107,8 +107,7 @@ theorem sum_kappa_through (N : ℕ) :
   unfold tauNat tau
   push_cast
   rw [Real.log_div (by positivity : (N : ℝ) + 2 ≠ 0)
-    (by positivity : (N : ℝ) + 1 ≠ 0)]
-  ring
+    (by positivity : (N : ℝ) + 1 ≠ 0), show (N : ℝ) + 1 + 1 = (N : ℝ) + 2 by ring]
 
 lemma tau_eq_mul_log_one_add_inv {x : ℝ} (hx : 0 < x) :
     tau x = x * Real.log (1 + 1 / x) := by

@@ -71,7 +71,7 @@ theorem endpoint_increment_error_le
             exact le_trans (abs_add_le _ _)
               (add_le_add
                 (le_trans (abs_add_le _ _)
-                  (add_le_add_right (abs_add_three _ _ _) _))
+                  (add_le_add_left (abs_add_three _ _ _) _))
                 (le_refl _))
     _ = 2 * |inner ℝ Z W| + 2 * |inner ℝ D E| +
           2 * |inner ℝ D W| + 2 * |inner ℝ E W| + ‖W‖ ^ 2 := by

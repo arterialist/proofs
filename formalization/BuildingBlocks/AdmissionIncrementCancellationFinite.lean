@@ -55,7 +55,7 @@ theorem increment_error_le
                 ((-2 * inner ℝ U R) + (-2 * inner ℝ (F - U) V) +
                   (-2 * inner ℝ R V)) + ‖V‖ ^ 2 by ring]
             exact le_trans (abs_add_le _ _)
-              (add_le_add_right (abs_add_three _ _ _) _)
+              (add_le_add_left (abs_add_three _ _ _) _)
     _ = 2 * |inner ℝ U R| + 2 * |inner ℝ (F - U) V| +
           2 * |inner ℝ R V| + ‖V‖ ^ 2 := by
             rw [abs_mul, abs_mul, abs_mul]

@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Algebra.BigOperators.Intervals
 import Mathlib.Tactic
 import Mathlib.Algebra.Ring.Parity

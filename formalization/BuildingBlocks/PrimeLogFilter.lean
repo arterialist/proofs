@@ -44,6 +44,7 @@ theorem primeLogResponse_hasDerivWithinAt_right (t : ℝ) :
     ring
   have hd := he.hasDerivWithinAt.mul hc
   convert hd using 1
+  · rfl
   dsimp [primeLogError, primeLogResponse, Function.comp_def]
   rw [← hexp]
   ring

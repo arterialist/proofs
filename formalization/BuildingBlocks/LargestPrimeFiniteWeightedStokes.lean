@@ -50,7 +50,7 @@ theorem integral_tailStep_Ioi {t : ℝ} (ht : 0 ≤ t) :
       by_cases hty : t ≤ y
       · have hy0 : 0 ≤ y := ht.trans hty
         have hypos : 0 < y := by
-          change Ioi (0 : ℝ) y
+          change y ∈ Ioi (0 : ℝ)
           rw [hy]
           exact hy0
         simp [tailStep, hty, hypos]

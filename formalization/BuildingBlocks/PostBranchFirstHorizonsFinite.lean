@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 
 /-!
 # Actual rough-source clocks X = 2,3,4,5

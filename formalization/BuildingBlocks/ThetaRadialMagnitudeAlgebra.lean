@@ -73,7 +73,7 @@ private theorem second_product_norm_bound {p p1 p2 z z1 z2 : ℂ} {P Z L : ℝ}
   calc
     _ ≤ ‖p2 * z + 2 * p1 * z1‖ + ‖p * z2‖ := norm_add_le _ _
     _ ≤ (‖p2 * z‖ + ‖2 * p1 * z1‖) + ‖p * z2‖ :=
-      add_le_add_right (norm_add_le _ _) _
+      add_le_add_left (norm_add_le _ _) _
     _ ≤ ((P * L ^ 2) * Z + 2 * ((P * L) * (Z * L))) + P * (Z * L ^ 2) :=
       add_le_add
         (add_le_add (product_norm_bound (by positivity) hp2 hz) hmid)

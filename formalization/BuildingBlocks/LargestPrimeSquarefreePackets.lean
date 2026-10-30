@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 
 /-!
 # Finite squarefree packets indexed by a supplied largest-prime map

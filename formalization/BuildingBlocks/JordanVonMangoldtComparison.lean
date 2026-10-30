@@ -5,7 +5,7 @@ proved here. These declarations do not bound the centered terminal itself
 or establish the coarse-energy RH premise.
 -/
 
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 import BuildingBlocks.PrimePrimitiveFormula

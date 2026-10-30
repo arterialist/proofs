@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Misc
 
 /-!
 # Finite first-branch collapse for mixed endpoint terms

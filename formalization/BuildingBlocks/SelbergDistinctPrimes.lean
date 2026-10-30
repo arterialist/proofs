@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import BuildingBlocks.SmoothPrimeReadout
 
 open scoped BigOperators

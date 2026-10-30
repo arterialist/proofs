@@ -1,6 +1,6 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.Complex.ExponentialBounds
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import BuildingBlocks.GoldbachEvenPhaseCenterFinite
 set_option maxHeartbeats 2000000
 set_option maxRecDepth 4000

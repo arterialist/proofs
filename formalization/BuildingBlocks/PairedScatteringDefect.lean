@@ -3,6 +3,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Algebra.Ring.GeomSum
 import Mathlib.Analysis.Complex.Trigonometric
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.LinearCombination

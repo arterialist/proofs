@@ -105,7 +105,7 @@ theorem causal_anchor_one_div {H : ℝ → ℝ} (hH : Measurable H)
   filter_upwards [ae_restrict_mem measurableSet_Ioi] with x hx
   have hM : 0 < max (1 : ℝ) (x - 1) := lt_of_lt_of_le (by norm_num) (le_max_left _ _)
   have hMx : max (1 : ℝ) (x - 1) ≤ x := max_le hx.le (by linarith)
-  apply mul_le_mul_left'
+  apply mul_le_mul_right
   apply ENNReal.ofReal_le_ofReal
   exact one_div_le_one_div_of_le hM hMx
 

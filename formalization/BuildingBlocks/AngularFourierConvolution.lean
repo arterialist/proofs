@@ -36,9 +36,10 @@ theorem transform_convolution {f g : ℝ → ℂ} (hf : Integrable f) (hg : Inte
   have hi := hf.convolution_integrand (ContinuousLinearMap.mul ℂ ℂ) hg
   have hw : Integrable (fun p : ℝ × ℝ =>
       phase ξ p.1 * (f p.2 * g (p.1 - p.2))) (volume.prod volume) := by
-    apply hi.bdd_mul
+    apply hi.bdd_mul (c := 1)
     · exact (by unfold phase; fun_prop : Continuous (fun p : ℝ × ℝ => phase ξ p.1)).aestronglyMeasurable
-    · exact ⟨1, fun p => by simp [phase, Complex.norm_exp, Complex.mul_re, Complex.mul_im]⟩
+    · exact Filter.Eventually.of_forall
+        (fun p => by simp [phase, Complex.norm_exp, Complex.mul_re, Complex.mul_im])
   calc
     _ = ∫ h : ℝ, ∫ v : ℝ, phase ξ h * (f v * g (h - v)) := by
       unfold transform
@@ -66,6 +67,7 @@ theorem transform_reflect (f : ℝ → ℂ) (ξ : ℝ) :
     transform (fun x : ℝ => f (-x)) ξ = transform f (-ξ) := by
   calc
     _ = ∫ x : ℝ, phase ξ (-x) * f x := by
+      unfold transform
       simpa using (Measure.integral_comp_mul_left
         (fun x : ℝ => phase ξ x * f (-x)) (-1)).symm
     _ = _ := by simp_rw [phase_reflect]; rfl
@@ -90,7 +92,7 @@ open scoped FourierTransform
 
 theorem transform_eq_mathlib (f : ℝ → ℂ) (ξ : ℝ) :
     transform f ξ = 𝓕 f (ξ / (2 * Real.pi)) := by
-  rw [Real.fourierIntegral_real_eq_integral_exp_smul]
+  rw [Real.fourier_real_eq_integral_exp_smul]
   apply integral_congr_ae
   filter_upwards [] with v
   simp only [smul_eq_mul]

@@ -53,7 +53,9 @@ theorem closed_atom_intervalIntegrable {D : ℝ → ℝ} (hD : Continuous D)
   have hi : IntervalIntegrable D volume a b := hD.intervalIntegrable a b
   have hind : IntervalIntegrable ((Ici t).indicator D) volume a b :=
     ⟨hi.1.indicator measurableSet_Ici, hi.2.indicator measurableSet_Ici⟩
-  simpa only [Set.indicator, mem_Ici] using hind
+  convert hind using 1
+  funext x
+  simp only [Set.indicator_apply, mem_Ici]
 
 theorem psiFinite_derivative_integral {F D : ℝ → ℝ} (N : ℕ)
     (hD : Continuous D) (hderiv : ∀ x, HasDerivAt F (D x) x) :

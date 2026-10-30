@@ -1,5 +1,5 @@
 import BuildingBlocks.ActualPrimeExponentialMoment
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 
 open BuildingBlocks.ActualPrimeCutoffCovarianceFinite
 

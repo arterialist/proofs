@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 
 /-!
 # Finite Haar decomposition and the coarse-mode obstruction

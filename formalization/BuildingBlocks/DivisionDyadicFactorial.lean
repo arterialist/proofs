@@ -108,7 +108,7 @@ theorem dyadicFactorial_average_lt {n : ℕ} (hn : 1 ≤ n) :
   have h := dyadicFactorialDeficit_gt hn
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   unfold dyadicFactorialDeficit at h
-  apply (mul_lt_mul_right hnpos).mp
+  apply (mul_lt_mul_iff_left₀ hnpos).mp
   rw [sub_mul, div_mul_cancel₀ _ (ne_of_gt hnpos)]
   nlinarith
 

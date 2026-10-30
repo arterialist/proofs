@@ -48,7 +48,7 @@ theorem log_stirlingSeq_upper {n : ℕ} (hn : n ≠ 0) :
   have hm : Monotone f := by
     apply monotone_nat_of_le_succ
     intro k
-    have hb := Stirling.log_stirlingSeq_sub_log_stirlingSeq_succ k
+    have hb := Stirling.log_stirlingSeq_sub_log_stirlingSeq_succ (k + 1)
     have hk : (0 : ℝ) ≤ k := Nat.cast_nonneg k
     have hr : (1 : ℝ) / (4 * ((k : ℝ) + 1) ^ 2) ≤
         1 / (2 * ((k : ℝ) + 1)) - 1 / (2 * ((k : ℝ) + 2)) := by

@@ -37,8 +37,8 @@ theorem norm_negative_logDeriv_le {s : ℂ} (hs : 1 < s.re) :
     ‖-logDeriv riemannZeta s‖ ≤ absMass mangoldt s.re := by
   have he : -logDeriv riemannZeta s = LSeries mangoldt s := by
     rw [logDeriv_apply]
-    simpa only [mangoldt, neg_div] using
-      (ArithmeticFunction.LSeries_vonMangoldt_eq_deriv_riemannZeta_div hs).symm
+    unfold mangoldt
+    rw [ArithmeticFunction.LSeries_vonMangoldt_eq_deriv_riemannZeta_div hs, neg_div]
   rw [he]
   exact norm_LSeries_le_absMass (ArithmeticFunction.LSeriesSummable_vonMangoldt hs)
 
@@ -75,7 +75,7 @@ theorem norm_centered_le {s : ℂ} (hs : 1 < s.re) :
     calc
       ‖(1 : ℂ) + 1 / (s - 1)‖ ≤ ‖(1 : ℂ)‖ + ‖1 / (s - 1)‖ := norm_add_le _ _
       _ ≤ 1 + 1 / (s.re - 1) := by
-        simpa only [norm_one, norm_div] using add_le_add_left hinv 1
+        simpa only [norm_one, norm_div] using add_le_add_right hinv 1
   unfold LogDerivativePole.centeredZetaLogDerivative coreAllowance
   exact (norm_sub_le _ _).trans (by
     have hp := norm_negative_logDeriv_le hs
@@ -316,7 +316,7 @@ theorem mellinInv_fullNumerator {c x : ℝ} (hc : 2 < c) (hx : 0 < x) :
       ActualFullCenteredMellin.fullNumerator x := by
   have hf : MellinConvergent ActualFullCenteredMellin.fullNumerator ((-c : ℝ) : ℂ) := by
     simpa only [Complex.ofReal_neg] using fullNumerator_mellin_convergent hc
-  exact mellin_inversion (-c) ActualFullCenteredMellin.fullNumerator hx
+  exact mellinInv_mellin_eq (-c) ActualFullCenteredMellin.fullNumerator hx
     hf (verticalIntegrable_fullNumerator c hc)
     continuous_fullNumerator.continuousAt
 

@@ -7,7 +7,7 @@ Written source: ../../building-blocks/weil-and-spectral/actual-mobius-tail-balan
 This file formalizes only the finite Dirichlet-convolution identities and
 prime-power values. It contains no analytic energy estimate.
 -/
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Tactic.Ring
 
 namespace BuildingBlocks.ActualMobiusConvolution

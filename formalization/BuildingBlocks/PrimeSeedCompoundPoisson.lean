@@ -1,5 +1,5 @@
 import BuildingBlocks.PrimeSeedLevy
-import Mathlib.Probability.Distributions.Poisson
+import Mathlib.Probability.Distributions.Poisson.Basic
 import Mathlib.MeasureTheory.Group.Convolution
 
 /-! A compound Poisson probability law for the actual finite-prime jump measure.

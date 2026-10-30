@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 
 /-!
 # Complete prime-power cofactor budget and its geometric shadow
@@ -11,7 +11,7 @@ oscillation and all analytic estimates remain written mathematics.
 
 namespace BuildingBlocks.MonotoneCofactorCovarianceFinite
 
-open scoped ArithmeticFunction BigOperators
+open scoped ArithmeticFunction ArithmeticFunction.zeta BigOperators
 
 noncomputable section
 

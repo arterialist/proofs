@@ -1,5 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
+import Mathlib.Analysis.Calculus.Deriv.Pow
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
 /-!
 # Positivity of the twice-corrected factorial-clock density
@@ -23,31 +25,30 @@ private def witnessTwo (x : ℝ) : ℝ :=
 
 private theorem deriv_witness (x : ℝ) : deriv witness x = witnessOne x := by
   have hp : HasDerivAt (fun y : ℝ => y ^ 2 - 6 * y + 12) (2 * x - 6) x := by
-    convert ((hasDerivAt_id x).pow 2 |>.sub ((hasDerivAt_id x).const_mul 6) |>.add_const 12) using 1
-    all_goals simp only [id_eq]
+    convert ((hasDerivAt_id' x).fun_pow 2 |>.fun_sub ((hasDerivAt_id' x).const_mul 6) |>.add_const 12) using 1
     all_goals ring
   have he : HasDerivAt (fun y : ℝ => Real.exp y - 1) (Real.exp x) x :=
     (Real.hasDerivAt_exp x).sub_const 1
   have hl : HasDerivAt (fun y : ℝ => 12 * y) 12 x := by
-    convert (hasDerivAt_id x).const_mul 12 using 1
+    convert (hasDerivAt_id' x).const_mul 12 using 1
     all_goals simp only [mul_one]
-  have h := (hp.mul he).sub hl
+  have h := (hp.fun_mul he).fun_sub hl
   have hh : HasDerivAt witness (witnessOne x) x := by
     convert h using 1
-    dsimp [witnessOne]
-    ring
+    · rfl
+    · dsimp [witnessOne]
+      ring
   exact hh.deriv
 
 private theorem deriv_witnessOne (x : ℝ) :
     deriv witnessOne x = witnessTwo x := by
   have hp : HasDerivAt (fun y : ℝ => y ^ 2 - 4 * y + 6) (2 * x - 4) x := by
-    convert ((hasDerivAt_id x).pow 2 |>.sub ((hasDerivAt_id x).const_mul 4) |>.add_const 6) using 1
-    all_goals simp only [id_eq]
+    convert ((hasDerivAt_id' x).fun_pow 2 |>.fun_sub ((hasDerivAt_id' x).const_mul 4) |>.add_const 6) using 1
     all_goals ring
   have hl : HasDerivAt (fun y : ℝ => 2 * y + 6) 2 x := by
-    convert (hasDerivAt_id x).const_mul 2 |>.add_const 6 using 1
+    convert (hasDerivAt_id' x).const_mul 2 |>.add_const 6 using 1
     all_goals simp only [mul_one]
-  have h := (hp.mul (Real.hasDerivAt_exp x)).sub hl
+  have h := (hp.fun_mul (Real.hasDerivAt_exp x)).fun_sub hl
   have hh : HasDerivAt witnessOne (witnessTwo x) x := by
     convert h using 1
     · funext y
@@ -60,13 +61,13 @@ private theorem deriv_witnessOne (x : ℝ) :
 private theorem deriv_witnessTwo (x : ℝ) :
     deriv witnessTwo x = x ^ 2 * Real.exp x := by
   have hp : HasDerivAt (fun y : ℝ => y ^ 2 - 2 * y + 2) (2 * x - 2) x := by
-    convert ((hasDerivAt_id x).pow 2 |>.sub ((hasDerivAt_id x).const_mul 2) |>.add_const 2) using 1
-    all_goals simp only [id_eq]
+    convert ((hasDerivAt_id' x).fun_pow 2 |>.fun_sub ((hasDerivAt_id' x).const_mul 2) |>.add_const 2) using 1
     all_goals ring
-  have h := (hp.mul (Real.hasDerivAt_exp x)).sub_const 2
+  have h := (hp.fun_mul (Real.hasDerivAt_exp x)).sub_const 2
   have hh : HasDerivAt witnessTwo (x ^ 2 * Real.exp x) x := by
     convert h using 1
-    ring
+    · rfl
+    · ring
   exact hh.deriv
 
 private theorem witnessTwo_pos {x : ℝ} (hx : 0 < x) : 0 < witnessTwo x := by

@@ -173,7 +173,7 @@ theorem weightedDeficit_le_interior_of_angularConsumer {X : ℕ} (hX : 1 ≤ X)
     (hpartition : ∀ N ∈ Icc 3 X, FareyGapPartition N)
     (hconsumer : AngularConsumerInequality X) :
     weightedDeficit X ≤ interiorInteraction X (Nat.sqrt X) + boundaryError X + birthBudget X :=
-  hconsumer.trans (add_le_add_right
+  hconsumer.trans (add_le_add_left
     (oldInteraction_le_interior_add_boundaryError hX hi hneighbor hpartition) _)
 
 end

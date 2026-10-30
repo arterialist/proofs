@@ -62,8 +62,9 @@ private theorem integral_exp_half_sub (a b c : ℝ) :
   apply intervalIntegral.integral_eq_sub_of_hasDerivAt
   · intro v _
     convert ((((hasDerivAt_id v).div_const 2).sub_const c).exp.const_mul 2) using 1
-    norm_num
-    ring
+    · simp only [id_eq]
+    · simp only [id_eq]
+      ring
   · exact (continuous_exp.comp ((continuous_id.div_const 2).sub continuous_const)).intervalIntegrable _ _
 
 /-- Exact unweighted mass of one complete prime-clock interval. -/
@@ -130,6 +131,7 @@ theorem hasSum_weighted_cell_integrals {L : ℝ} (hL : 0 < L) :
   · funext j
     rw [weighted_cell_integral, pow_add]
     ring
+  · rw [div_eq_mul_inv]
 
 /-- The unweighted normalization at the actual prime clock is `2/p`.
 Primality is unnecessary for this single-clock identity. -/

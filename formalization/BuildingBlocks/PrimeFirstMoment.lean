@@ -67,7 +67,7 @@ theorem coarsePrefix_first_moment {T : ℝ} (hT : 1 ≤ T) :
       HasDerivWithinAt (fun t : ℝ => (t ^ 2)⁻¹) (-2 / t ^ 3) (Ioi t) t := by
     intro t ht
     have ht0 : t ≠ 0 := hz t ⟨ht.1.le, ht.2.le⟩
-    have hh := ((hasDerivAt_id t).pow 2).inv (pow_ne_zero 2 ht0)
+    have hh := (hasDerivAt_pow 2 t).inv (pow_ne_zero 2 ht0)
     have hh' : HasDerivAt (fun u : ℝ => (u ^ 2)⁻¹)
         (-(2 * t) / (t ^ 2) ^ 2) t := by
       simpa using hh

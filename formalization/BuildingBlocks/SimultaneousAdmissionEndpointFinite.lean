@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
 /-!
@@ -156,7 +156,7 @@ theorem card_divisors_primeProduct (Q : Finset ℕ)
   have hP : P ≠ 0 := by
     dsimp [P]
     exact Finset.prod_ne_zero_iff.mpr fun p hp => (hprime p hp).ne_zero
-  have hpair : Q.toSet.Pairwise (Function.onFun IsRelPrime id) := by
+  have hpair : (Q : Set ℕ).Pairwise (Function.onFun IsRelPrime id) := by
     intro p hp q hq hpq
     exact Nat.coprime_iff_isRelPrime.mp
       ((Nat.coprime_primes (hprime p hp) (hprime q hq)).2 hpq)

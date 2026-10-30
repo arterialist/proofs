@@ -142,7 +142,7 @@ theorem primeIncrementEnergy_le_reciprocal {N : ℕ} (hN : 1 ≤ N) :
         ArithmeticFunction.vonMangoldt n / (n : ℝ)) + (harmonic N : ℝ) := by
       simp only [Finset.sum_add_distrib, ← Finset.mul_sum, harmonic_eq_sum_Icc,
         Rat.cast_sum, Rat.cast_inv, Rat.cast_natCast]
-    _ ≤ _ := add_le_add_left (harmonic_le_one_add_log N) _
+    _ ≤ _ := add_le_add_right (harmonic_le_one_add_log N) _
 
 /-- An elementary bound for the diagonal term. The signed drift remains
 uncontrolled. -/
@@ -157,7 +157,7 @@ theorem primeIncrementEnergy_le_log_square {N : ℕ} (hN : 1 ≤ N) :
 theorem prime_energy_upper_log_square {N : ℕ} (hN : 1 ≤ N) :
     discretePrimeErrorEnergy N ≤
       2 * primeErrorDrift N + (2 * Real.log (N : ℝ) ^ 2 + 1 + Real.log (N : ℝ)) :=
-  (prime_energy_upper N).trans (add_le_add_left (primeIncrementEnergy_le_log_square hN) _)
+  (prime_energy_upper N).trans (add_le_add_right (primeIncrementEnergy_le_log_square hN) _)
 
 theorem prime_error_boundary_upper (N : ℕ) :
     integerError N ^ 2 / ((N : ℝ) + 1) ≤ 2 * primeErrorDrift N + primeIncrementEnergy N := by

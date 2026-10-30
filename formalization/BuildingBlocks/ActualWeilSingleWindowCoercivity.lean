@@ -2,6 +2,7 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Complex.ExponentialBounds
 import Mathlib.Analysis.Real.Pi.Bounds
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import Mathlib.NumberTheory.Harmonic.EulerMascheroni
 import Mathlib.Tactic
@@ -26,7 +27,8 @@ private theorem exp_neg_le_quadratic (x : ℝ) (hx : 0 ≤ x) :
     convert (((hasDerivAt_const y (1 : ℝ)).sub (hasDerivAt_id y)).add
       (((hasDerivAt_id y).pow 2).div_const 2)).sub
       ((Real.hasDerivAt_exp (-y)).comp y (hasDerivAt_id y).neg) using 1
-    simp [id]
+    · rfl
+    · simp [id]
   have hm : MonotoneOn f (Ici 0) :=
     monotoneOn_of_hasDerivWithinAt_nonneg (convex_Ici 0)
       (by dsimp [f]; fun_prop)
@@ -219,8 +221,8 @@ private theorem polarCoefficient_monotone :
   · intro w
     convert (((Real.hasDerivAt_sinh (w / 2)).comp w
       ((hasDerivAt_id w).div_const 2)).const_mul 2).sub (hasDerivAt_id w) using 1
-    dsimp
-    ring
+    · rfl
+    · ring
   · intro w
     change 0 ≤ Real.cosh (w / 2) - 1
     linarith [Real.one_le_cosh (w / 2)]

@@ -22,7 +22,7 @@ theorem weighted_vonMangoldt_abel {N : ℕ} (hN : 1 ≤ N) (r : ℝ) :
   have hderiv : ∀ x ∈ Set.Icc (1 : ℝ) (N : ℝ),
       deriv (fun x : ℝ => x ^ (-r)) x = -r * x ^ (-r - 1) := by
     intro x hx
-    exact Real.deriv_rpow_const (Or.inl (by linarith [hx.1]))
+    exact Real.deriv_rpow_const x (-r)
   have hdi : IntegrableOn (deriv (fun x : ℝ => x ^ (-r))) (Set.Icc 1 (N : ℝ)) := by
     apply (integrableOn_congr_fun hderiv measurableSet_Icc).mpr
     apply ContinuousOn.integrableOn_Icc
@@ -32,7 +32,7 @@ theorem weighted_vonMangoldt_abel {N : ℕ} (hN : 1 ≤ N) (r : ℝ) :
     (fun x hx => (Real.hasDerivAt_rpow_const (p := -r) (Or.inl (by linarith [hx.1]))).differentiableAt) hdi
   have hs : ∀ M : ℕ, (∑ n ∈ Finset.Icc 0 M, ArithmeticFunction.vonMangoldt n) = psi M := by
     intro M
-    have hi : Finset.Icc 0 M = Finset.range (M + 1) := by ext n; simp; omega
+    have hi : Finset.Icc 0 M = Finset.range (M + 1) := by ext n; simp
     rw [hi, psi]
   simp only [hs] at hh
   rw [Finset.Icc_eq_cons_Ioc (Nat.zero_le N), Finset.sum_cons] at hh

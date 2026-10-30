@@ -24,7 +24,7 @@ theorem coarsePrime_finiteMellin_differentiable {X : ℝ} (hX : 0 < X) :
     dsimp [D]; fun_prop
   have hder (x : ℝ) (s : ℂ) : HasDerivAt (fun z => W z x) (D s x) s := by
     convert ((((hasDerivAt_id s).add_const 1).neg).const_mul (L x)).cexp using 1
-    simp [D]
+    all_goals simp [W, D, add_comm]
   have hwi (s : ℂ) : IntervalIntegrable (fun x => primeErrorReal x • W s x)
       volume X (2 * X) :=
     (primeErrorReal_intervalIntegrable X (2 * X)).smul_continuousOn (hW s).continuousOn
@@ -52,7 +52,7 @@ theorem coarsePrime_finiteMellin_differentiable {X : ℝ} (hX : 0 < X) :
     (F := fun s x => primeErrorReal x • W s x)
     (F' := fun s x => primeErrorReal x • D s x)
     (bound := fun x => ‖primeErrorReal x‖ * C)
-    (x₀ := s) (ε := 1) (by norm_num)
+    (x₀ := s) (s := Metric.ball s 1) (Metric.ball_mem_nhds s zero_lt_one)
     (Filter.Eventually.of_forall (fun z => by
       simpa [uIoc_of_le (by linarith : X ≤ 2 * X)] using (hwi z).aestronglyMeasurable))
     (hwi s) (by simpa [uIoc_of_le (by linarith : X ≤ 2 * X)] using (hdi s).aestronglyMeasurable)

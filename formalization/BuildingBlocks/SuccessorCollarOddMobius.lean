@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Tactic
 import BuildingBlocks.OddDoublingFiniteMobius
 import BuildingBlocks.HyperbolaProduct

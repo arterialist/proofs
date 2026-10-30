@@ -137,7 +137,8 @@ lemma positive_geometric_sum_le (N : ℕ) {r : ℝ} (hr0 : 0 ≤ r) (hr1 : r < 1
   have hg := (hasSum_geometric_of_lt_one hr0 hr1).mul_left r
   have hg' : HasSum (fun i : ℕ => r ^ (1+i)) (r / (1-r)) := by
     convert hg using 1
-    simp [pow_succ, pow_add, mul_comm]
+    · simp [pow_succ, pow_add, mul_comm]
+    · rw [div_eq_mul_inv]
   rw [Finset.sum_Ico_eq_sum_range]
   exact (hg'.summable.sum_le_tsum _ (fun i hi => pow_nonneg hr0 _)).trans_eq hg'.tsum_eq
 

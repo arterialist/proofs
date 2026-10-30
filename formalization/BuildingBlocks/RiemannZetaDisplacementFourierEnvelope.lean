@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Complex
 import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Analysis.Calculus.Deriv.Mul
@@ -76,10 +77,10 @@ theorem hasDerivAt_boundaryProfile (d t u : ℝ) :
     simpa using (hasDerivAt_id' u).mul_const (t / 2)
   have h_sh : HasDerivAt (fun x ↦ 2 * sinh (d * x / 2)) (2 * ((d / 2) * cosh (d * u / 2))) u := by
     have := (hasDerivAt_sinh (d * u / 2)).comp u h_lin_d
-    simpa [mul_comm] using this.const_mul 2
+    exact (this.const_mul 2).congr_deriv (by ring)
   have h_cs : HasDerivAt (fun x ↦ cos (t * x / 2)) (-(t / 2) * sin (t * u / 2)) u := by
     have := (hasDerivAt_cos (t * u / 2)).comp u h_lin_t
-    simpa [mul_comm] using this
+    exact this.congr_deriv (by ring)
   have h_prod := h_sh.mul h_cs
   change HasDerivAt (fun x ↦ boundaryProfile d t x)
     (2 * (d / 2 * cosh (d * u / 2)) * cos (t * u / 2) + 2 * sinh (d * u / 2) * (-(t / 2) * sin (t * u / 2))) u at h_prod

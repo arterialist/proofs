@@ -1,5 +1,6 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Calculus.ContDiff.Basic
+import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 import Mathlib.Tactic
 
@@ -105,14 +106,16 @@ private theorem trapWeight_hasDerivAt (a b t : ℝ) :
 private theorem trapSlope_hasDerivAt (a b t : ℝ) :
     HasDerivAt (trapSlope a b) (-1) t := by
   unfold trapSlope
-  convert (hasDerivAt_const t ((a + b) / 2)).sub (hasDerivAt_id t) using 1 <;> ring_nf
+  convert (hasDerivAt_const t ((a + b) / 2)).sub (hasDerivAt_id t) using 1
+  · rfl
+  · ring_nf
 
 private theorem trap_cell_identity (G : ℝ → ℝ) (hG : ContDiff ℝ 2 G)
     (a b : ℝ) :
     (b - a) / 2 * (G a + G b) - ∫ t in a..b, G t =
       ∫ t in a..b, trapWeight a b t * deriv (deriv G) t := by
   have hG1 : ContDiff ℝ 1 G := hG.of_le (by norm_num)
-  have hGtwo : ContDiff ℝ (1 + 1) G := by simpa using hG
+  have hGtwo : ContDiff ℝ (1 + 1) G := by rw [one_add_one_eq_two]; exact hG
   have hD : ContDiff ℝ 1 (deriv G) := hGtwo.deriv'
   have hDD : Continuous (deriv (deriv G)) := hD.continuous_deriv_one
   let F : ℝ → ℝ := fun t => trapWeight a b t * deriv G t - trapSlope a b t * G t
@@ -146,7 +149,7 @@ private theorem trap_cell_bound (G : ℝ → ℝ) (hG : ContDiff ℝ 2 G)
     |(b - a) / 2 * (G a + G b) - ∫ t in a..b, G t| ≤
       (b - a) ^ 2 / 4 * ∫ t in a..b, |deriv (deriv G) t| := by
   rw [trap_cell_identity G hG a b]
-  have hGtwo : ContDiff ℝ (1 + 1) G := by simpa using hG
+  have hGtwo : ContDiff ℝ (1 + 1) G := by rw [one_add_one_eq_two]; exact hG
   have hD : ContDiff ℝ 1 (deriv G) := hGtwo.deriv'
   have hDD : Continuous (deriv (deriv G)) := hD.continuous_deriv_one
   have hwi : IntervalIntegrable
@@ -199,7 +202,7 @@ theorem finite_trapezoid_cells (G : ℝ → ℝ) (hG : ContDiff ℝ 2 G)
       hG.continuous.intervalIntegrable _ _
     have hgj : IntervalIntegrable G volume ((N : ℝ) * δ) (((N + 1 : ℕ) : ℝ) * δ) :=
       hG.continuous.intervalIntegrable _ _
-    have hGtwo : ContDiff ℝ (1 + 1) G := by simpa using hG
+    have hGtwo : ContDiff ℝ (1 + 1) G := by rw [one_add_one_eq_two]; exact hG
     have hD : ContDiff ℝ 1 (deriv G) := hGtwo.deriv'
     have hDD : Continuous (deriv (deriv G)) := hD.continuous_deriv_one
     have hdi : IntervalIntegrable (fun t => |deriv (deriv G) t|) volume

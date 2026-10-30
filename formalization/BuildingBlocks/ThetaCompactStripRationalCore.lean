@@ -150,7 +150,7 @@ lemma explicit_payment_margin :
     exact lt_of_lt_of_le htiny this
   rw [show 5 * (10 : ℝ) ^ 503 / 4 =
       (10 : ℝ) ^ 503 + (10 : ℝ) ^ 503 / 4 by ring]
-  exact add_lt_add_left htiny' _
+  exact add_lt_add_right htiny' _
 
 /-- Direct explicit payment, with the theta logarithmic-rate evaluation kept as
 an analytic named hypothesis. -/

@@ -16,7 +16,7 @@ theorem exists_narrow_bump {delta : ℝ} (hd : 0 < delta) :
       (∀ v, kappa v ≠ 0 → -delta < v ∧ v < delta) := by
   have hn : Set.Ioo (-delta) delta ∈ nhds (0 : ℝ) :=
     IsOpen.mem_nhds isOpen_Ioo ⟨by linarith, hd⟩
-  obtain ⟨kappa, hs, hc, hdif, hvals, hzero⟩ := exists_smooth_tsupport_subset hn
+  obtain ⟨kappa, hs, hc, hdif, hvals, hzero⟩ := exists_contDiff_tsupport_subset (n := ⊤) hn
   refine ⟨kappa, hc, hdif, ?_, hzero, ?_⟩
   · intro v
     exact hvals ⟨v, rfl⟩

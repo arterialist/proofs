@@ -79,7 +79,6 @@ theorem primeTransport_delta_eigenvector_ne_zero (k : ℕ) (hk : k ≠ 0) :
   intro he
   have h := congrArg (fun f : ArithmeticFunction ℝ =>
     (ArithmeticFunction.zeta : ArithmeticFunction ℝ) * f) he
-  dsimp only at h
   rw [← mul_assoc, ArithmeticFunction.coe_zeta_mul_coe_moebius, one_mul, mul_zero] at h
   have hh := congrArg (fun f : ArithmeticFunction ℝ => f k) h
   simp [arithmeticDelta_apply] at hh
@@ -122,7 +121,6 @@ theorem primeTransport_eigenvalues (lam : ℝ) :
       intro hz
       have hh := congrArg (fun g : ArithmeticFunction ℝ =>
         (ArithmeticFunction.moebius : ArithmeticFunction ℝ) * g) hz
-      dsimp only at hh
       rw [← mul_assoc, ArithmeticFunction.coe_moebius_mul_coe_zeta, one_mul, mul_zero] at hh
       exact hf hh
     obtain ⟨k, hk⟩ : ∃ k : ℕ, ((ArithmeticFunction.zeta : ArithmeticFunction ℝ) * f) k ≠ 0 := by

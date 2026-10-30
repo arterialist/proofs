@@ -37,8 +37,11 @@ theorem primeErrorReal_kernel_integrable_unconditional {s : ℂ} (hs : 1 < s.re)
     apply (integrableOn_Ioi_cpow_of_lt hneg zero_lt_one).congr_fun _ measurableSet_Ioi
     intro x hx
     exact (linear_kernel_eq (by change 1 < x at hx; linarith)).symm
-  simpa only [primeErrorReal, Complex.ofReal_sub, sub_mul] using
-    (primePsi_kernel_integrable_unconditional hs).sub hl
+  have hi := (primePsi_kernel_integrable_unconditional hs).sub hl
+  change IntegrableOn (fun x : ℝ =>
+    (psi ⌊x⌋₊ : ℂ) * (x : ℂ) ^ (-(s + 1)) - (x : ℂ) * (x : ℂ) ^ (-(s + 1)))
+    (Ioi 1) at hi
+  simpa only [primeErrorReal, Complex.ofReal_sub, sub_mul] using hi
 
 theorem coarse_dyadic_Ioc_union :
     (⋃ k : ℕ, Ioc ((2 : ℝ)^k) ((2 : ℝ)^(k + 1))) = Ioi 1 := by

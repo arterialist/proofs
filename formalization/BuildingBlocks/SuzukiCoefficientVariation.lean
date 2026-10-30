@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Tactic
 import BuildingBlocks.CoarsePrimitive
@@ -53,7 +53,7 @@ theorem coefficient_hasDerivAt_zero (n : ℕ) :
     intro d hd
     convert (((hasDerivAt_id (0 : ℝ)).mul_const
       (Real.log (n / d : ℕ) - Real.log d)).exp).const_mul
-        (ArithmeticFunction.moebius d : ℝ) using 1;
+        (ArithmeticFunction.moebius d : ℝ) using 1 <;>
       simp [mul_comm]
   have hfirst := divisor_log_quotient n
   have hsecond :
@@ -122,7 +122,7 @@ theorem coefficient_hasDerivAt (n : ℕ) (w : ℝ) :
   intro d hd
   convert (((hasDerivAt_id w).mul_const
     (Real.log (n / d : ℕ) - Real.log d)).exp).const_mul
-      (ArithmeticFunction.moebius d : ℝ) using 1;
+      (ArithmeticFunction.moebius d : ℝ) using 1 <;>
     simp [mul_comm]
 
 theorem coefficientSlope_hasDerivAt_zero (n : ℕ) :

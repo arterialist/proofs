@@ -6,7 +6,7 @@ Finite endpoint correction from complementary divisors and Möbius inversion.
 Immediate source snapshot and classical attribution: ../verification/hyperbola-endpoint.json.
 Imported mathlib dependencies retain their Apache 2.0 license.
 -/
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Data.Nat.Sqrt
 import Mathlib.Order.Interval.Finset.Nat
 import Mathlib.Tactic.Linarith

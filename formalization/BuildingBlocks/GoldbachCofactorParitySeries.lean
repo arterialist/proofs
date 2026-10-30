@@ -156,7 +156,8 @@ theorem cofactor_eq_antidiagonal (k : ℕ) :
       ∑ p ∈ Finset.antidiagonal k, Λ (p.1 + 2) * q (p.2 + 2) := by
   have hQ : Q (k + 4) =
       ∑ m ∈ Finset.Icc 2 (k + 2), Λ m * q (k + 4 - m) := by
-    simpa only [Q, q, show k + 4 - 2 = k + 2 by omega] using
+    simpa only [Q, q, BuildingBlocks.GoldbachCofactorSuccessorFinite.cofactorConvolution,
+      show k + 4 - 2 = k + 2 by omega] using
       (BuildingBlocks.GoldbachCofactorSuccessorFinite.cofactorConvolution_eq_signed
         (k + 4)).symm
   rw [hQ, Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk]

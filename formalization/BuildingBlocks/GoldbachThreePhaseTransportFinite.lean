@@ -178,11 +178,11 @@ theorem weightedComplex_re (N : ℕ) (p : ℕ → ℕ → ℝ) (θ : ℝ) :
       oddReference q.1 * weight q.2 *
         cos ((padicValNat 3 q.2 : ℝ) * θ) +
       oddReference q.1 * oddReference q.2 := by
-    dsimp [z]
-    convert complex_centered_pair_re (weight q.1) (weight q.2)
+    dsimp only [z, threeComplexPhase]
+    exact complex_centered_pair_re (weight q.1) (weight q.2)
         (oddReference q.1) (oddReference q.2)
         ((padicValNat 3 q.1 : ℝ) * θ)
-        ((padicValNat 3 q.2 : ℝ) * θ) using 1
+        ((padicValNat 3 q.2 : ℝ) * θ)
   rw [hz]
   ring
 

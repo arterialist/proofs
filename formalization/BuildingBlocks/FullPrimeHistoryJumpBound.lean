@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum

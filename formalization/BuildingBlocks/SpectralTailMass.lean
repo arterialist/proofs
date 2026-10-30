@@ -10,6 +10,7 @@ lemma reciprocal_square_integrable {t : ℝ} (ht : 0 < t) :
     IntegrableOn (fun x : ℝ => 1 / x ^ 2) (Ioi t) := by
   have hi := integrableOn_Ioi_rpow_of_lt (by norm_num : (-2 : ℝ) < -1) ht
   refine hi.congr_fun (fun x hx => ?_) measurableSet_Ioi
+  show x ^ (-2 : ℝ) = 1 / x ^ 2
   rw [Real.rpow_neg (le_of_lt (ht.trans hx)), Real.rpow_two]
   simp
 

@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Data.Nat.Sqrt
 import Mathlib.Data.Real.Basic
 import Mathlib.Order.Interval.Finset.Nat

@@ -1,6 +1,6 @@
 import Mathlib.Analysis.Normed.Operator.BanachSteinhaus
 import Mathlib.Topology.ContinuousMap.Bounded.Normed
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Data.Nat.Squarefree
 import Mathlib.Data.Real.Sqrt
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
@@ -144,7 +144,7 @@ theorem squarefulWindow_card_bound {M N : ℕ} (hMN : M ≤ N) :
 
 theorem squarefreeWindow_card_lower {M N : ℕ} (hMN : M ≤ N) :
     ((N : ℝ) - M) / 4 - N.sqrt ≤ ((squarefreeWindow M N).card : ℝ) := by
-  have hh := Finset.filter_card_add_filter_neg_card_eq_card
+  have hh := Finset.card_filter_add_card_filter_not
     (s := Finset.Ioc M N) Squarefree
   have hc : ((squarefreeWindow M N).card : ℝ) + ((squarefulWindow M N).card : ℝ) =
       (N : ℝ) - M := by
@@ -547,17 +547,15 @@ theorem sourceDifferenceConstraint_apply (q : ℕ) (p : SeqPair) :
   rfl
 
 noncomputable def regularSourceSpace : Submodule ℝ SeqPair :=
-  ⨅ q : ℕ, LinearMap.ker (sourceDifferenceConstraint q)
+  ⨅ q : ℕ, (sourceDifferenceConstraint q).ker
 
 noncomputable def regularSourceNormedSpace : NormedSpace ℝ regularSourceSpace :=
   Submodule.normedSpace regularSourceSpace
 
-attribute [local instance] regularSourceNormedSpace
-
 theorem mem_regularSourceSpace (p : SeqPair) : p ∈ regularSourceSpace ↔
     ∀ q : ℕ, Real.sqrt (q + 1 : ℕ) * p.1 (q + 1) - Real.sqrt q * p.1 q = p.2 q := by
   simp only [regularSourceSpace, Submodule.mem_iInf, LinearMap.mem_ker,
-    sourceDifferenceConstraint_apply]
+    ContinuousLinearMap.coe_coe, sourceDifferenceConstraint_apply]
   constructor <;> intro h q <;> have hh := h q <;> linarith
 
 theorem regularSourceSpace_isClosed : IsClosed (regularSourceSpace : Set SeqPair) := by

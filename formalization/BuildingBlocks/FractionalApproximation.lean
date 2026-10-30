@@ -102,11 +102,11 @@ theorem reciprocalError_abs_bound (N : ℕ) (y : ℝ) :
     apply (Finset.abs_sum_le_sum_abs _ _).trans
     apply Finset.sum_le_sum
     intro q hq
-    rw [abs_mul, abs_of_nonneg (Int.fract_nonneg _)]
+    rw [abs_mul, abs_of_nonneg (Int.fract_nonneg ((q : ℝ) * y))]
     exact mul_le_of_le_one_right (abs_nonneg _) (Int.fract_lt_one _).le
   have hh := (abs_add_le (1 + ∑ q ∈ Finset.Icc 1 N,
       (quotientCoefficient N q : ℝ) * Int.fract ((q : ℝ) * y)) (-Int.fract y)).trans
-    (add_le_add_right (abs_add_le _ _) _)
+    (add_le_add_left (abs_add_le _ _) _)
   simp only [abs_one, abs_neg, abs_of_nonneg (Int.fract_nonneg y), ← sub_eq_add_neg] at hh
   dsimp [reciprocalError]
   linarith [Int.fract_lt_one y]

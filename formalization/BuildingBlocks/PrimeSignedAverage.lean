@@ -83,7 +83,7 @@ theorem prime_energy_upper_chebyshev {N : ℕ} (hN : 1 ≤ N) :
     discretePrimeErrorEnergy N ≤ 2 * primeErrorDrift N +
       (Real.log (N : ℝ) ^ 2 + (4 * Real.log 2 + 1) * Real.log (N : ℝ) + 1) :=
   (prime_energy_upper N).trans
-    (add_le_add_left (primeIncrementEnergy_le_chebyshev hN) _)
+    (add_le_add_right (primeIncrementEnergy_le_chebyshev hN) _)
 
 theorem logarithmicPrimeMass_sub_harmonic_bounds {N : ℕ} (hN : 1 ≤ N) :
     -2 ≤ logarithmicPrimeMass N - (harmonic N : ℝ) ∧

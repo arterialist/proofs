@@ -74,8 +74,10 @@ theorem energy_continuousOn {f : ℝ → ℝ} {s : ℝ} (hs : 0 ≤ s)
     (hf : MemLp f 2 (volume.restrict (Icc 0 s))) :
     ContinuousOn (energy f) (Icc 0 s) := by
   have hi : IntegrableOn (fun u => f u ^ 2) (uIcc 0 s) := by
-    simpa [uIcc_of_le hs] using hf.integrable_sq
-  simpa [energy, uIcc_of_le hs] using intervalIntegral.continuousOn_primitive_interval hi
+    rw [uIcc_of_le hs]
+    exact hf.integrable_sq
+  rw [← uIcc_of_le hs]
+  exact intervalIntegral.continuousOn_primitive_interval hi
 
 theorem filtered_energy_integrable {f : ℝ → ℝ} {s : ℝ} (hs : 0 ≤ s)
     (hf : MemLp f 2 (volume.restrict (Icc 0 s))) :

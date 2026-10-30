@@ -1,7 +1,7 @@
 import Mathlib.Data.Nat.ChineseRemainder
 import Mathlib.Data.Int.ModEq
 import Mathlib.NumberTheory.Padics.PadicVal.Basic
-import Mathlib.Data.Real.Archimedean
+import Mathlib.Algebra.Order.Archimedean.Real.Basic
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 import Mathlib.Tactic.Linarith
@@ -117,7 +117,7 @@ theorem exists_first_representative (r Q : ℤ) (hQ : 0 < Q) (X : ℝ) :
       linarith
     have hkj : k ≤ j := Int.ceil_le.mpr hjr
     rw [hj]
-    exact add_le_add_left (mul_le_mul_of_nonneg_left hkj hQ.le) r
+    exact add_le_add_right (mul_le_mul_of_nonneg_left hkj hQ.le) r
 
 /-- Positive actual integers and positive shifted values with the exact prescribed
 depths, within one CRT modulus of any admissible real cutoff. -/
@@ -143,7 +143,7 @@ theorem exists_positive_exact_depths_above
   · intro p hp
     refine ⟨?_, hr n hnr p hp⟩
     have ht : (0 : ℝ) < (n : ℝ) + (h p : ℝ) :=
-      lt_of_lt_of_le (hshift p hp) (add_le_add_right hnX _)
+      lt_of_lt_of_le (hshift p hp) (add_le_add_left hnX _)
     exact_mod_cast ht
 
 end BuildingBlocks.ExactPrimePowerCRT

@@ -20,9 +20,7 @@ lemma hasDerivAt_envelope {A h : ℝ} (hA : 0 ≤ A) (hh : 0 < h) :
     ring
   have hd' : HasDerivAt (fun x : ℝ => x * Real.log (1 + A / x))
       (Real.log (1 + A / h) - A / (A + h)) h := by
-    convert hd using 1
-    simp only [Pi.div_apply, id_eq]
-    exact he.symm
+    exact hd.congr_deriv he
   convert (hasDerivAt_id h).add hd' using 1
   · funext x
     simp only [envelope, Pi.add_apply, id_eq]

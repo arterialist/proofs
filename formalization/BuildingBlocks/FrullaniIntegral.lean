@@ -46,7 +46,6 @@ theorem ordered_frullani (a b : ℝ) (ha : 0 < a) (hab : a ≤ b) :
   rw [← uIoc_of_le hab] at hi
   have hs := intervalIntegral_integral_swap
     (f := fun x t : ℝ => Real.exp (-x * t)) hi
-  dsimp only at hs
   have hleft : (∫ x in a..b, ∫ t in Ioi 0, Real.exp (-x * t)) =
       ∫ x in a..b, 1 / x := by
     apply intervalIntegral.integral_congr

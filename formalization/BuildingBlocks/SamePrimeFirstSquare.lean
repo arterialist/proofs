@@ -75,11 +75,10 @@ theorem first_square_term_le {v : ℝ} (hv : Real.log 4 ≤ v) : term 2 2 v ≤ 
         (s := Finset.Icc 2 ⌊Real.exp v⌋₊)
         (f := fun p => if p.Prime then ∑ m ∈ Finset.Icc 2 ⌊Real.exp v⌋₊, term p m v else 0)
         (a := 2) (fun p _ => by
-          dsimp only
           split_ifs
           · exact Finset.sum_nonneg (fun m _ => term_nonneg p m v)
           · exact le_rfl) hpMem
-      simpa using hh
+      rwa [if_pos Nat.prime_two] at hh
 
 /-- Strict activation occurs immediately after log four. -/
 theorem s_pos_of_log_four_lt {v : ℝ} (hv : Real.log 4 < v) : 0 < s v :=

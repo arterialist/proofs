@@ -1,6 +1,6 @@
 import BuildingBlocks.HyperbolaProduct
-import Mathlib.NumberTheory.ArithmeticFunction
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 

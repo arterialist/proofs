@@ -77,7 +77,8 @@ theorem signedCore_quadratic_decomposition
     rfl
   rw [hmatrix]
   unfold quadratic
-  repeat' rw [Matrix.add_mulVec, dotProduct_add]
+  erw [Matrix.add_mulVec, dotProduct_add, Matrix.add_mulVec, dotProduct_add,
+    Matrix.add_mulVec, dotProduct_add, Matrix.add_mulVec, dotProduct_add]
 
 /-- The scalar certificate in equation (18). `low` and `next` are rigorous
 lower enclosures; no sign is built into this definition. -/

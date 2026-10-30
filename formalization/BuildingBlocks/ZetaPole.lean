@@ -6,7 +6,7 @@ See ../../building-blocks/catalog.md for mathematical sources and verification.
 import Mathlib.Analysis.Analytic.IsolatedZeros
 import Mathlib.Analysis.Calculus.LogDeriv
 import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Analysis.NormedSpace.Connected
+import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.NumberTheory.Harmonic.EulerMascheroni
 import Mathlib.NumberTheory.LSeries.Dirichlet
 
@@ -46,6 +46,7 @@ theorem analytic_logDerivative_principal_part {f : ℂ → ℂ} {ρ : ℂ}
     rw [hm, pow_zero, one_smul, hzero] at hh
     exact hg0 hh.symm
   have he' : f =ᶠ[𝓝 ρ] (fun z => (z - ρ) ^ m * g z) := by
+    change ∀ᶠ z in 𝓝 ρ, f z = (z - ρ) ^ m * g z
     simpa only [smul_eq_mul] using he
   refine ⟨m, Nat.pos_of_ne_zero hm, fun z => deriv g z / g z, hg.deriv.div hg hg0, ?_⟩
   filter_upwards [he'.filter_mono nhdsWithin_le_nhds,
@@ -54,7 +55,7 @@ theorem analytic_logDerivative_principal_part {f : ℂ → ℂ} {ρ : ℂ}
     hg.continuousAt.eventually_ne hg0 |>.filter_mono nhdsWithin_le_nhds,
     self_mem_nhdsWithin] with z hval hderiv hgz hgnz hz
   rw [hval, hderiv]
-  change logDeriv (fun w => (w - ρ) ^ m * g w) z = _
+  change logDeriv ((fun w : ℂ => (w - ρ) ^ m) * g) z = _
   rw [logDeriv_mul (f := fun w : ℂ => (w - ρ) ^ m) (g := g) z
     (pow_ne_zero m (sub_ne_zero.mpr hz)) hgnz
     (by fun_prop) hgz.differentiableAt,

@@ -13,9 +13,8 @@ theorem exponential_remainder_bound (v : ℝ) (hv : 0 ≤ v) :
       (fun y : ℝ => 1 - y + y^2 / 2 - Real.exp (-y))
       (x - 1 + Real.exp (-x)) x := by
     intro x
-    convert (((hasDerivAt_const x (1 : ℝ)).sub (hasDerivAt_id x)).add
-      (((hasDerivAt_id x).pow 2).div_const 2)).sub ((hasDerivAt_id x).neg.exp) using 1
-    simp only [id_eq, Pi.neg_apply]
+    convert (((hasDerivAt_const x (1 : ℝ)).fun_sub (hasDerivAt_id' x)).fun_add
+      (((hasDerivAt_id' x).fun_pow 2).div_const 2)).fun_sub ((hasDerivAt_id' x).fun_neg.exp) using 1
     ring
   have hmono := monotone_of_hasDerivAt_nonneg hd (by
     intro x
@@ -80,7 +79,7 @@ theorem response_abs_quadratic (N : ℕ) (hN : 0 < N) (t : ℝ) (ht : 0 ≤ t) :
     _ ≤ t + ∑ n ∈ Icc 1 N, |(ArithmeticFunction.moebius n : ℝ)| *
         (((N / n : ℕ) : ℝ) * t)^2 / 2 := by
       rw [abs_of_nonneg ht]
-      apply add_le_add_left
+      apply add_le_add_right
       apply (abs_sum_le_sum_abs _ _).trans
       apply sum_le_sum
       intro n hn
@@ -97,7 +96,7 @@ theorem response_abs_quadratic (N : ℕ) (hN : 0 < N) (t : ℝ) (ht : 0 ≤ t) :
       intro n hn
       ring
     _ ≤ t + (t^2 / 2) * (2 * (N : ℝ)^2) :=
-      add_le_add_left (mul_le_mul_of_nonneg_left (quotient_square_budget N) (by positivity)) _
+      add_le_add_right (mul_le_mul_of_nonneg_left (quotient_square_budget N) (by positivity)) _
     _ = _ := by ring
 
 /-- Uniform in every actual horizon, on the scaled clock u/N. -/
@@ -115,10 +114,9 @@ theorem weight_le_half_inverse (t : ℝ) (ht : 0 < t) :
       (fun y : ℝ => y - 2 + (y + 2) * Real.exp (-y))
       (1 - (x + 1) * Real.exp (-x)) x := by
     intro x
-    convert ((hasDerivAt_id x).sub (hasDerivAt_const x (2 : ℝ))).add
-      (((hasDerivAt_id x).add (hasDerivAt_const x (2 : ℝ))).mul
-        ((hasDerivAt_id x).neg.exp)) using 1
-    simp only [Pi.add_apply, id_eq, Pi.neg_apply]
+    convert ((hasDerivAt_id' x).fun_sub (hasDerivAt_const x (2 : ℝ))).fun_add
+      (((hasDerivAt_id' x).fun_add (hasDerivAt_const x (2 : ℝ))).fun_mul
+        ((hasDerivAt_id' x).fun_neg.exp)) using 1
     ring
   have hmono := monotone_of_hasDerivAt_nonneg hd (by
     intro x
@@ -174,10 +172,9 @@ theorem origin_polynomial_integral (N : ℕ) (U : ℝ) (hU : 0 ≤ U) :
       (fun y : ℝ => y^2 / (4 * (N : ℝ)^2) + y^3 / (3 * N) + y^4 / 8)
       (x / (2 * (N : ℝ)^2) + x^2 / N + x^3 / 2) x := by
     intro x
-    convert ((((hasDerivAt_id x).pow 2).div_const (4 * (N : ℝ)^2)).add
-      (((hasDerivAt_id x).pow 3).div_const (3 * (N : ℝ)))).add
-      (((hasDerivAt_id x).pow 4).div_const 8) using 1
-    simp only [id_eq]
+    convert ((((hasDerivAt_id' x).fun_pow 2).div_const (4 * (N : ℝ)^2)).fun_add
+      (((hasDerivAt_id' x).fun_pow 3).div_const (3 * (N : ℝ)))).fun_add
+      (((hasDerivAt_id' x).fun_pow 4).div_const 8) using 1
     ring
   have hp : Continuous (fun u : ℝ => u / (2 * (N : ℝ)^2) + u^2 / N + u^3 / 2) := by fun_prop
   rw [← intervalIntegral.integral_of_le hU,

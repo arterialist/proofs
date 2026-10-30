@@ -1,6 +1,6 @@
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.Analysis.Analytic.IsolatedZeros
-import Mathlib.Analysis.NormedSpace.Connected
+import Mathlib.Analysis.Normed.Module.Connected
 
 open Set Filter
 open scoped Topology

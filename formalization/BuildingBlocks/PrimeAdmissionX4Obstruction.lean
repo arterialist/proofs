@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import BuildingBlocks.KappaCoefficientPositivity
 import BuildingBlocks.LargestPrimeSquarefreePackets
 import BuildingBlocks.PrimeAdmissionEnergyFlux

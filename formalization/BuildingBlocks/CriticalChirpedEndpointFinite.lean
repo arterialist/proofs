@@ -1,6 +1,6 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Tactic
 
 /-!
@@ -48,7 +48,7 @@ theorem one_location (C F : ℝ → ℂ) (r D : ℝ)
   have hFTC : (∫ d in (0 : ℝ)..D,
       -(((Real.exp (-d / 2) : ℝ) : ℂ) * C (r - d))) = G D - G 0 :=
     intervalIntegral.integral_eq_sub_of_hasDerivAt
-      (fun d _ => hG d) (by simpa using hInt.neg)
+      (fun d _ => hG d) hInt.neg
   calc
     (∫ d in (0 : ℝ)..D, ((Real.exp (-d / 2) : ℝ) : ℂ) * C (r - d)) =
         -(∫ d in (0 : ℝ)..D,
@@ -127,7 +127,6 @@ theorem actual_cross_cutoff_stable (N M : ℕ) (C : ℝ → ℂ)
       have hlog : D + w < Real.log (n : ℝ) :=
         (Real.lt_log_iff_exp_lt hnpos).mpr hNn
       have hy : w ≤ Real.log (n : ℝ) - d := by linarith
-      dsimp
       rw [hC _ hy, mul_zero])
   exact hsum.symm
 
@@ -251,12 +250,10 @@ theorem actual_cross_finite_collar (N : ℕ) (C F : ℝ → ℂ)
         intro hh
         exact hnot (Finset.mem_filter.mpr ⟨hn, hh⟩)
       rcases le_or_gt (Real.log (n : ℝ) - D) (-w) with hle | hgt
-      · dsimp
-        rw [hleft _ hle, mul_zero]
+      · rw [hleft _ hle, mul_zero]
       · rcases lt_or_ge (Real.log (n : ℝ) - D) w with hlt | hge
         · exact False.elim (hnot' ⟨hgt, hlt⟩)
-        · dsimp
-          rw [hright _ hge, mul_zero])
+        · rw [hright _ hge, mul_zero])
   exact hsum.symm
 
 /-- The same exact collar with literal exponential endpoints, as in the

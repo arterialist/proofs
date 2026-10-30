@@ -117,7 +117,7 @@ theorem product_defect_bound {ι : Type*} (s : Finset ι) (d : ι → ℂ) :
 theorem product_defect_exp_bound {ι : Type*} (s : Finset ι) (d : ι → ℂ) :
     ‖(∏ i ∈ s, (1 - d i)) - 1‖ ≤ Real.exp (∑ i ∈ s, ‖d i‖) - 1 := by
   have hp : (∏ i ∈ s, (1 + ‖d i‖)) ≤ ∏ i ∈ s, Real.exp ‖d i‖ := by
-    apply Finset.prod_le_prod
+    apply Finset.prod_le_prod₀
     · intro i _
       positivity
     · intro i _
@@ -298,7 +298,7 @@ theorem actual_block_bound (s : Finset ℕ) (hs : ∀ p ∈ s, 2 ≤ p)
   calc
     _ = ∏ p ∈ s, ‖paired p z M‖ := norm_prod _ _
     _ ≤ ∏ _p ∈ s, (3 : ℝ) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro p _
         exact norm_nonneg _
       · intro p hp

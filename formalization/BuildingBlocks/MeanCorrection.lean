@@ -85,7 +85,8 @@ theorem meanCorrectedDual_zero_above_one {N : ℕ} (hN : 2 ≤ N) {x : ℝ} (hx 
 
 theorem boundaryCorrection_abs_le (y : ℝ) : |boundaryCorrection y| ≤ 3 := by
   have hh := abs_add_le (Int.fract (2 * y)) (-2 * Int.fract y)
-  simp only [abs_mul, abs_neg, abs_of_nonneg (Int.fract_nonneg _)] at hh
+  simp only [abs_mul, abs_neg, abs_of_nonneg (Int.fract_nonneg (2 * y)),
+    abs_of_nonneg (Int.fract_nonneg y)] at hh
   norm_num at hh
   dsimp [boundaryCorrection]
   simp only [← sub_eq_add_neg] at hh

@@ -1,7 +1,7 @@
 import BuildingBlocks.LocalAnalytic
 import BuildingBlocks.ZetaPole
 import Mathlib.Analysis.Complex.CauchyIntegral
-import Mathlib.Analysis.NormedSpace.Connected
+import Mathlib.Analysis.Normed.Module.Connected
 
 open Filter Set
 open scoped Topology

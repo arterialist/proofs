@@ -20,7 +20,7 @@ theorem primeErrorReal_sq_intervalIntegrable (a b : ℝ) :
   have hi := hip2.sub
     (hip.mul_continuousOn
       (show ContinuousOn (fun t : ℝ => 2*t) (uIcc a b) by fun_prop))
-  have hj := hi.add ((continuous_id.pow 2).intervalIntegrable a b)
+  have hj := hi.add ((continuous_id.fun_pow 2).intervalIntegrable a b)
   convert hj using 1
   funext t
   unfold primeErrorReal
@@ -44,7 +44,7 @@ theorem coarsePrefix_square_weighted_parts {T : ℝ} (hT : 1 ≤ T) :
       HasDerivWithinAt (fun u : ℝ => (u^3)⁻¹) (-3 / t^4) (Ioi t) t := by
     intro t ht
     have ht0 : t ≠ 0 := hz t ⟨ht.1.le, ht.2.le⟩
-    have hh := ((hasDerivAt_id t).pow 3).inv (pow_ne_zero 3 ht0)
+    have hh := ((hasDerivAt_id t).fun_pow 3).fun_inv (pow_ne_zero 3 ht0)
     have hh' : HasDerivAt (fun u : ℝ => (u^3)⁻¹)
         (-(3*t^2)/(t^3)^2) t := by simpa using hh
     convert hh'.hasDerivWithinAt using 1
@@ -58,8 +58,8 @@ theorem coarsePrefix_square_weighted_parts {T : ℝ} (hT : 1 ≤ T) :
     funext t
     ring
   have h := intervalIntegral.integral_smul_deriv_eq_deriv_smul_of_hasDeriv_right
-    ((coarsePrefix_continuous 1).pow 2).continuousOn hv
-    (fun t _ => by simpa using (coarsePrefix_hasDerivWithinAt_right 1 t).pow 2)
+    ((coarsePrefix_continuous 1).fun_pow 2).continuousOn hv
+    (fun t _ => by simpa using (coarsePrefix_hasDerivWithinAt_right 1 t).fun_pow 2)
     hd hf' hv'.intervalIntegrable
   have hzero : coarsePrefix 1 1 = 0 := by simp [coarsePrefix]
   simp only [smul_eq_mul, hzero, zero_pow (by decide : (2 : ℕ) ≠ 0),
@@ -84,7 +84,7 @@ theorem primePrimitive_weighted_contraction_identity {T : ℝ} (hT : 1 ≤ T) :
   have hiE : IntervalIntegrable (fun t => primeErrorReal t ^ 2 / t^2) volume 1 T := by
     simpa only [div_eq_mul_inv] using
       (primeErrorReal_sq_intervalIntegrable 1 T).mul_continuousOn
-        ((continuousOn_id.pow 2).inv₀ (fun t ht => pow_ne_zero _ (hz t ht)))
+        ((continuousOn_pow 2).fun_inv₀ (fun t ht => pow_ne_zero _ (hz t ht)))
   have hiC : IntervalIntegrable
       (fun t => 2 * coarsePrefix 1 t * primeErrorReal t / t^3) volume 1 T := by
     have hc : ContinuousOn (fun t => 2 * coarsePrefix 1 t / t^3) (uIcc 1 T) :=

@@ -1,6 +1,6 @@
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Eval
 import Mathlib.RingTheory.RootsOfUnity.Complex
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
@@ -35,7 +35,7 @@ theorem root_chord_lower_bound {z : ℂ} {n : ℕ} (hn : 0 < n)
           ring
         _ ≤ ‖1 - z ^ j‖ + ‖z ^ j * (1 - z)‖ := norm_add_le _ _
         _ = ‖1 - z ^ j‖ + ‖1 - z‖ := by simp [norm_pow, hznorm]
-        _ ≤ (j : ℝ) * ‖1 - z‖ + ‖1 - z‖ := add_le_add_right ih _
+        _ ≤ (j : ℝ) * ‖1 - z‖ + ‖1 - z‖ := add_le_add_left ih _
         _ = ((j + 1 : ℕ) : ℝ) * ‖1 - z‖ := by push_cast; ring
   have hs : ∑ j ∈ Finset.range n, z ^ j = 0 := by
     rw [geom_sum_eq hz, hzpow, sub_self, zero_div]

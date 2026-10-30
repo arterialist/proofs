@@ -22,7 +22,8 @@ theorem analytic_nonzero_of_deriv_eq_mul {f a : ℂ → ℂ} {z₀ : ℂ}
     exact hg0 hh.symm
   obtain ⟨n, rfl⟩ := Nat.exists_eq_succ_of_ne_zero hm
   have heq : f =ᶠ[𝓝 z₀] (fun z => (z - z₀) ^ (n + 1) * g z) := by
-    simpa only [smul_eq_mul] using hfac
+    change ∀ᶠ z in 𝓝 z₀, f z = (z - z₀) ^ (n + 1) * g z
+    simpa only [smul_eq_mul, Nat.succ_eq_add_one] using hfac
   let q : ℂ → ℂ := fun z =>
     (n + 1 : ℂ) * g z + (z - z₀) * deriv g z - a z * (z - z₀) * g z
   have hqa : AnalyticAt ℂ q z₀ :=
@@ -42,6 +43,7 @@ theorem analytic_nonzero_of_deriv_eq_mul {f a : ℂ → ℂ} {z₀ : ℂ}
         a z * ((z - z₀) ^ (n + 1) * g z) := by
       calc
         _ = deriv (fun w => (w - z₀) ^ (n + 1) * g w) z := by
+          change _ = deriv ((fun w : ℂ => w - z₀) ^ (n + 1) * g) z
           simpa using hd.deriv.symm
         _ = deriv f z := he'.symm
         _ = a z * ((z - z₀) ^ (n + 1) * g z) := by rw [ho, he]

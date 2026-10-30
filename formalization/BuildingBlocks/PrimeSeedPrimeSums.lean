@@ -31,9 +31,7 @@ theorem summable_prime_seed_square_integrals :
   have hs : Summable (fun n : ℕ => 1 / (n : ℝ) ^ 2) :=
     summable_one_div_nat_pow.mpr (by decide)
   have ht := hs.subtype Nat.Prime
-  convert ht using 1
-  funext p
-  exact integral_prime_seed_square (prime_one_lt p)
+  exact ht.congr (fun p => (integral_prime_seed_square (prime_one_lt p)).symm)
 
 /-- Every finite aggregate retains all the powers of every admitted prime. -/
 theorem integral_finset_prime_seed (S : Finset Nat.Primes) :

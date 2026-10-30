@@ -1,4 +1,4 @@
-import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Tactic
 
@@ -67,7 +67,10 @@ theorem hasDerivAt_truncatedMobiusExp (N : ℕ) (t : ℝ) :
     HasDerivAt (truncatedMobiusExp N) (truncatedMobiusDerivative N t) t := by
   induction N with
   | zero =>
-      simpa [truncatedMobiusDerivative] using (hasDerivAt_const (x := t) (c := (0 : ℝ)))
+      have h0 : truncatedMobiusDerivative 0 t = 0 := by
+        simp [truncatedMobiusDerivative]
+      rw [h0]
+      exact hasDerivAt_const t (0 : ℝ)
   | succ N ih =>
       have hlin : HasDerivAt (fun x : ℝ => -((N + 1 : ℕ) : ℝ) * x)
           (-((N + 1 : ℕ) : ℝ)) t := by
@@ -82,7 +85,9 @@ theorem hasDerivAt_truncatedMobiusExp (N : ℕ) (t : ℝ) :
       rw [hd]
       change HasDerivAt (fun x => truncatedMobiusExp N x + mobiusReal (N + 1) *
         Real.exp (-((N + 1 : ℕ) : ℝ) * x)) _ t
-      convert ih.add hterm using 1 <;> ring
+      convert ih.add hterm using 1
+      · rfl
+      · ring
 
 /-- Absolute derivative bound for every finite truncation. No infinite-series
 or analytic-continuation step is used. -/

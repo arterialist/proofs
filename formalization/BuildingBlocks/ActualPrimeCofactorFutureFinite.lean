@@ -1,5 +1,5 @@
 import BuildingBlocks.HyperbolaProduct
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 import Mathlib.Tactic
 
 /-!
