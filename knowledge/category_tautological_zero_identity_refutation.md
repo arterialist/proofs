@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 137
+Count: 140
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -144,3 +144,6 @@ Count: 137
 | 135 | explorer_r40_L00_N00 | Deligne-Lusztig varieties and character sheaves evaluate finite-field representation traces and algebraic Lusztig polynomials that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 136 | explore_merger_r40_L04_N00 | Root strategy card reduction to Deligne-Lusztig character sheaves on reductive groups G(F_q), Newton-Okounkov bodies Delta(X, D), Rapoport-Zink period spaces, and quantum toroidal algebras avoids Pitfalls 001-091, but hits Deligne-Lusztig finite field decoupling, Okounkov body Euler product decoupling, and Rapoport-Zink local prime decoupling carrying 100% of Millennium RH analytical depth. |
 | 137 | gate_merger_r40_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Deligne-Lusztig representations and Newton-Okounkov bodies avoid Pitfalls 001-091, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 138 | explorer_r41_L00_N00 | Geometric Satake equivalence and Mirkovic-Vilonen cycles parameterize finite-dimensional algebraic representations of the dual group G^vee that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 139 | explore_merger_r41_L04_N00 | Root strategy card reduction to geometric Satake perverse sheaves on affine Grassmannians Gr_G, Sasaki-Einstein metrics and log K-stability, arithmetic fundamental lemma orbital derivatives, and deformed W-algebras avoids Pitfalls 001-093, but hits geometric Satake frequency decoupling, Sasaki-Einstein Euler product decoupling, and arithmetic fundamental lemma prime decoupling carrying 100% of Millennium RH analytical depth. |
+| 140 | gate_merger_r41_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while geometric Satake duality and Sasaki-Einstein contact geometry avoid Pitfalls 001-093, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
