@@ -95,7 +95,7 @@ theorem primeSource_le_direct_add_log (v : ℕ → ℝ)
         v 1 * ArithmeticFunction.vonMangoldt n +
           v 2 * (∑ m ∈ n.divisors.erase 1,
             ArithmeticFunction.vonMangoldt (n / m)) :=
-        add_le_add_left htail _
+        by gcongr
       _ = v 2 * Real.log (n : ℝ) +
             (v 1 - v 2) * ArithmeticFunction.vonMangoldt n := by
         rw [hlogs]

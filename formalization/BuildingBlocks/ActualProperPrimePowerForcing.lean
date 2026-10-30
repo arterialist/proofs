@@ -311,7 +311,7 @@ theorem actual_grade_absolute_force_le {Y : ℝ} (hY : 1 ≤ Y)
       _ = _ := by rw [he1, he2]
   have hsum := Finset.sum_le_sum hterm
   rw [Finset.sum_add_distrib] at hsum
-  exact hsum.trans (add_le_add_right (actual_grade_trace_cauchy hY c sigma hk) _)
+  exact hsum.trans (add_le_add (actual_grade_trace_cauchy hY c sigma hk) le_rfl)
 
 theorem primeHarmonicSecondMass_nonneg (Y : ℝ) :
     0 ≤ primeHarmonicSecondMass Y := by
@@ -531,8 +531,9 @@ theorem actual_full_absolute_force_le_with_remainder {Y : ℝ} (hY : 1 ≤ Y)
     exact actual_grade_absolute_force_le hY c sigma hsigma (Finset.mem_Icc.mp hk).1
   have hsum := Finset.sum_le_sum hterm
   rw [Finset.sum_add_distrib, ← Finset.sum_mul] at hsum
-  exact hsum.trans (add_le_add_right (mul_le_mul_of_nonneg_right
-    (actual_all_grade_coefficients_le_twenty_four_log hY sigma hsigma) (Real.sqrt_nonneg _)) _)
+  apply hsum.trans
+  gcongr
+  exact actual_all_grade_coefficients_le_twenty_four_log hY sigma hsigma
 
 end BuildingBlocks.ActualProperPowerEnergyAllocation
 
@@ -614,12 +615,15 @@ theorem potentialOne_hasDerivAt {t : ℝ} (ht : 0 < t) :
   have hr := Real.hasDerivAt_rpow_const (x := t) (p := -(1 : ℝ) / 2) (Or.inl ht.ne')
   have hl := (Real.hasDerivAt_log ht.ne').add_const 3
   convert (hr.const_mul (-2)).mul hl using 1
-  unfold envelope
-  norm_num only [pow_one]
-  have hrel : t ^ (-(1 : ℝ) / 2) * t⁻¹ = t ^ (-(3 : ℝ) / 2) := by
-    simpa only [div_eq_mul_inv] using rpow_half_div ht
-  norm_num only at hrel
-  linear_combination 2 * hrel
+  · ext s
+    unfold potentialOne
+    dsimp
+  · unfold envelope
+    norm_num only [pow_one]
+    have hrel : t ^ (-(1 : ℝ) / 2) * t⁻¹ = t ^ (-(3 : ℝ) / 2) := by
+      simpa only [div_eq_mul_inv] using rpow_half_div ht
+    norm_num only at hrel
+    linear_combination 2 * hrel
 
 theorem potentialTwo_hasDerivAt {t : ℝ} (ht : 0 < t) :
     HasDerivAt potentialTwo (envelope 2 t) t := by
@@ -627,12 +631,15 @@ theorem potentialTwo_hasDerivAt {t : ℝ} (ht : 0 < t) :
   have hl := Real.hasDerivAt_log ht.ne'
   have hpoly := ((hl.pow 2).add (hl.const_mul 6)).add_const 13
   convert (hr.const_mul (-2)).mul hpoly using 1
-  unfold envelope
-  norm_num only [Pi.add_apply, Pi.pow_apply, Nat.cast_ofNat, Nat.reduceSub, pow_one]
-  have hrel : t ^ (-(1 : ℝ) / 2) * t⁻¹ = t ^ (-(3 : ℝ) / 2) := by
-    simpa only [div_eq_mul_inv] using rpow_half_div ht
-  norm_num only at hrel
-  linear_combination 4 * Real.log t * hrel + 12 * hrel
+  · ext s
+    unfold potentialTwo
+    dsimp
+  · unfold envelope
+    norm_num only [Pi.add_apply, Pi.pow_apply, Nat.cast_ofNat, Nat.reduceSub, pow_one]
+    have hrel : t ^ (-(1 : ℝ) / 2) * t⁻¹ = t ^ (-(3 : ℝ) / 2) := by
+      simpa only [div_eq_mul_inv] using rpow_half_div ht
+    norm_num only at hrel
+    linear_combination 4 * Real.log t * hrel + 12 * hrel
 
 theorem envelopeOne_integral {a b : ℝ} (ha : 1 ≤ a) (hab : a ≤ b) :
     (∫ t in a..b, envelope 1 t) = potentialOne b - potentialOne a := by
@@ -1026,8 +1033,9 @@ theorem actual_full_absolute_force_bound {Y : ℝ} (hY : 1 ≤ Y)
     fullAbsoluteForce c sigma Y ≤
       24 * Real.log (2 * Y) * Real.sqrt (fullEnergy c sigma Y) +
         3000 * Real.log (2 * Y) ^ 2 := by
-  exact (actual_full_absolute_force_le_with_remainder hY c sigma hsigma).trans
-    (add_le_add_left (actual_all_grade_remainders_le_three_thousand_log_sq hY sigma hsigma) _)
+  apply (actual_full_absolute_force_le_with_remainder hY c sigma hsigma).trans
+  gcongr
+  exact actual_all_grade_remainders_le_three_thousand_log_sq hY sigma hsigma
 
 theorem abs_signedProperPowerForce_le_fullAbsoluteForce (c sigma Y : ℝ) :
     |signedProperPowerForce c sigma Y| ≤ fullAbsoluteForce c sigma Y := by
@@ -1069,9 +1077,14 @@ theorem actual_full_absolute_force_young {Y : ℝ} (hY : 1 ≤ Y)
     fullAbsoluteForce c sigma Y ≤
       eta * fullEnergy c sigma Y + (3000 + 144 / eta) * Real.log (2 * Y) ^ 2 := by
   have hb := actual_full_absolute_force_bound hY c sigma hsigma
-  have hy := finite_energy_young (fullEnergy c sigma Y) (Real.log (2 * Y)) eta
-    (fullEnergy_nonneg hY c sigma) heta
-  have h := hb.trans (add_le_add_right hy (3000 * Real.log (2 * Y) ^ 2))
+  have hy : 24 * Real.log (2 * Y) * Real.sqrt (fullEnergy c sigma Y) ≤
+      eta * fullEnergy c sigma Y + 144 * Real.log (2 * Y) ^ 2 / eta :=
+    finite_energy_young (fullEnergy c sigma Y) (Real.log (2 * Y)) eta
+      (fullEnergy_nonneg hY c sigma) heta
+  have h : fullAbsoluteForce c sigma Y ≤
+      (eta * fullEnergy c sigma Y + 144 * Real.log (2 * Y) ^ 2 / eta) + 3000 * Real.log (2 * Y) ^ 2 := by
+    apply hb.trans
+    gcongr
   convert h using 1; ring
 
 theorem actual_signed_proper_power_force_young {Y : ℝ} (hY : 1 ≤ Y)

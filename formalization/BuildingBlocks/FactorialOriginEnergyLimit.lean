@@ -41,7 +41,9 @@ theorem scaled_weight_limit (u : ℝ) (hu : 0 < u) :
   have h' : Tendsto
       (fun N : ℕ => ((Real.exp (u / N) - 1 - u / N) / (u / N)^2) /
         ((Real.exp (u / N) - 1) / (u / N)) / u) atTop (nhds (1 / (2 * u))) := by
-    simpa only [div_one, div_mul_eq_div_div] using h
+    have h_nhds : (1 / (2 : ℝ) / 1) / u = 1 / (2 * u) := by ring
+    rw [← h_nhds]
+    simpa only [div_one, div_mul_eq_div_div, Pi.div_apply] using h
   apply h'.congr'
   filter_upwards [eventually_ge_atTop 1] with N hN
   have hn : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)

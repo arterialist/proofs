@@ -69,7 +69,10 @@ theorem kernel_gap_bound (h : ℕ) (hh : 3 ≤ h) :
     have hg' : IntegrableOn (fun t : ℝ => t * Real.exp (-((h - 2 : ℕ) : ℝ) * t)) (Set.Ioi 0) := by
       simpa only [Real.rpow_one] using hg
     have hd := hg'.div_const 2
-    simpa only [mul_div_assoc, div_mul_eq_mul_div] using hd
+    have heq : (fun t : ℝ => t / 2 * Real.exp (-((h - 2 : ℕ) : ℝ) * t)) =
+        (fun t : ℝ => (t * Real.exp (-((h - 2 : ℕ) : ℝ) * t)) / 2) := by funext t; ring
+    rw [heq]
+    exact hd
   have hm := Real.integral_rpow_mul_exp_neg_mul_Ioi (a := 2) (by norm_num) ha
   have hg : Real.Gamma 2 = 1 := by norm_num
   norm_num [Real.rpow_two, hg] at hm

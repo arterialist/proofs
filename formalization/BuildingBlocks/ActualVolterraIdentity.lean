@@ -50,8 +50,12 @@ private theorem primitiveB_hasDerivAt {a y : ℝ} (ha : 0 < a) (hy : 0 < y) :
     · simp only [Pi.pow_apply, id_eq]
       field_simp
       ring
-  convert (hlog.add hinv).sub hinv2 using 1 <;>
-    simp only [kernelB] <;> field_simp <;> nlinarith [hsq]
+  convert (hlog.add hinv).sub hinv2 using 1
+  · rfl
+  · unfold kernelB
+    field_simp
+    rw [hsq]
+    ring
 
 private theorem integral_kernelB {a x : ℝ} (ha : 0 < a) (hax : a ≤ x) :
     (∫ y in a..x, kernelB a y) = primitiveB a x - primitiveB a a := by

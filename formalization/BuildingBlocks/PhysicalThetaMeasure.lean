@@ -90,8 +90,7 @@ theorem physical_square_lintegral (ψ : ℝ → ℝ) :
 theorem physical_mass_memLp_dictionary (ψ : ℝ → ℝ) (hψ : AEStronglyMeasurable ψ nu) :
     MemLp ψ 2 nu ↔
       (∫⁻ v, ENNReal.ofReal (physicalWeight v * (phi v * ψ v) ^ 2)) ≠ ∞ := by
-  have hm : AEStronglyMeasurable (fun v => ψ v ^ 2) nu := by
-    simpa only [Pi.pow_apply] using hψ.pow 2
+  have hm : AEStronglyMeasurable (fun v => ψ v ^ 2) nu := hψ.pow 2
   rw [memLp_two_iff_integrable_sq hψ,
     ← lintegral_ofReal_ne_top_iff_integrable hm
       (Filter.Eventually.of_forall (fun v => sq_nonneg (ψ v))),

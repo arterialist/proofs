@@ -14,9 +14,10 @@ theorem exp_image_Ioi (a : ℝ) : exp '' Ioi a = Ioi (exp a) := by
   · rintro ⟨v, hv, rfl⟩
     exact exp_lt_exp.mpr hv
   · intro hx
-    have hp : 0 < x := lt_trans (exp_pos a) hx
+    have hx_lt : exp a < x := mem_Ioi.mp hx
+    have hp : 0 < x := lt_trans (exp_pos a) hx_lt
     refine ⟨log x, ?_, exp_log hp⟩
-    exact exp_lt_exp.mp (by simpa only [exp_log hp] using hx)
+    exact exp_lt_exp.mp (by simpa only [exp_log hp] using hx_lt)
 
 theorem physicalLift_mul (H G : ℝ → ℝ) (v : ℝ) :
     physicalLift H v * physicalLift G v = exp v * (H (exp v) * G (exp v)) := by

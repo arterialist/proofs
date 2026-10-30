@@ -61,7 +61,7 @@ theorem actual_lcm_ghost (N k : ℕ) (hN : 0 < N) (hk : k ∣ N) (t : ℝ) :
   have hinv := hi.mp (fun m hm hmem => fiber_divisor_sum N m hN hmem t)
   have hkpos : 0 < k := Nat.pos_of_dvd_of_pos hk hN
   have hf := hinv k hkpos hk
-  dsimp only at hf
+  try dsimp only at hf
   rw [← hf]
   simp_rw [ghost_double_clock]
   calc

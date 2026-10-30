@@ -57,7 +57,8 @@ theorem actualBaseline_norm_le_unit (N : ℕ) {t : ℝ} (ht : 0 < t) (hN : 0 < N
     _ ≤ ‖1 - exp (-t)‖ + ‖movingInverseTest t N‖ := norm_add_le _ _
     _ ≤ (1 - exp (-t)) + inverseCoefficientBudget N * (1 - exp (-t)) * ((N : ℝ) - 1) := by
       rw [Real.norm_eq_abs, abs_of_nonneg hu]
-      exact add_le_add_left (movingInverseTest_norm_le_unit N ht hN) _
+      gcongr
+      exact movingInverseTest_norm_le_unit N ht hN
     _ = _ := by ring
 
 theorem centeredTest_measurable_clock (x : ℝ) : Measurable (fun t => centeredTest t x) := by

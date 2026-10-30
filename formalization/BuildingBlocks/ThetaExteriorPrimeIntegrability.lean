@@ -44,7 +44,8 @@ theorem complete_exterior_prime_integrals_continuous_test
         ((∫ v, ‖exteriorWeight R psi v • z (shift true n.val v)‖) +
          (∫ v, ‖exteriorWeight R psi v • z (shift false n.val v)‖))) := by
   have hi : Integrable (exteriorWeight R psi) := by
-    simpa only [zero_mul, Real.exp_zero, one_mul, exteriorWeight] using
+    change Integrable (fun u => if R < |u| then phi u * psi u else 0)
+    simpa only [zero_mul, Real.exp_zero, one_mul] using
       bounded_exterior_ground_moment_integrable 0 R psi P hpsi hbound
   apply complete_exterior_prime_integrals R psi P hp hpsi hbound z beta C hb hC hz
   intro side n

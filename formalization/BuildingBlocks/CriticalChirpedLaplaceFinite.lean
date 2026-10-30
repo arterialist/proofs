@@ -296,7 +296,7 @@ theorem prime_dirichlet_polynomial_tendsto_zeta (s : ℂ) (hs : 1 < s.re) :
   have hlim := hsum.hasSum.tendsto_sum_nat
   have hlim' := hlim.comp (Filter.tendsto_add_atTop_nat 1)
   have hzeta := ActualArchimedeanFactor.zeta_prime_series s hs
-  simpa only [polynomial_eq_range, Function.comp_apply, primeDirichletTerm, hzeta]
+  simpa only [polynomial_eq_range, Function.comp_apply, Function.comp_def, primeDirichletTerm, hzeta]
     using hlim'
 
 #print axioms prime_dirichlet_polynomial_tendsto_zeta
@@ -334,7 +334,7 @@ theorem finite_cross_laplace_tendsto_logderiv (C : ℝ → ℂ)
           omega)
       have hnle : (n : ℝ) ≤ (N : ℝ) := by
         exact_mod_cast (Finset.mem_Icc.mp hn).2
-      exact add_le_add_right (Real.log_le_log hnpos hnle) w
+      linarith [Real.log_le_log hnpos hnle]
     simpa only [primeDirichletPolynomial, primeDirichletTerm] using
       (actual_cross_laplace_dirichlet_finite N C z w
         (Real.log (N : ℝ) + w) hw hR hC hleft hright)

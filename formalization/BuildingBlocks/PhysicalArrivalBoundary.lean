@@ -15,8 +15,11 @@ theorem source_aestronglyMeasurable (R : ℝ) (ψ : ℝ → ℝ)
     (hψ : AEStronglyMeasurable ψ) : AEStronglyMeasurable (source R ψ) := by
   have hm : MeasurableSet {v : ℝ | R < |v|} :=
     measurableSet_lt measurable_const continuous_abs.measurable
-  simpa [source, Set.indicator] using
-    (BuildingBlocks.PhysicalThetaUniform.phi_continuous.aestronglyMeasurable.mul hψ).indicator hm
+  have h_ind : source R ψ = {v : ℝ | R < |v|}.indicator (BuildingBlocks.PhysicalThetaSeries.phi * ψ) := by
+    ext v
+    simp [source, Set.indicator]
+  rw [h_ind]
+  exact (BuildingBlocks.PhysicalThetaUniform.phi_continuous.aestronglyMeasurable.mul hψ).indicator hm
 
 theorem continuous_arrival_aestronglyMeasurable (R : ℝ) (ψ : ℝ → ℝ)
     (hψ : AEStronglyMeasurable ψ) : AEStronglyMeasurable (continuousArrival R ψ) := by
@@ -112,7 +115,8 @@ theorem core_majorant_square_integrable {R : ℝ} (hR : 0 < R) (M c : ℝ) :
       9 * (a ^ 2 + b ^ 2 + c ^ 2) := by
     nlinarith [sq_nonneg a, sq_nonneg b, sq_nonneg c]
   have h := mul_le_mul_of_nonneg_left h2 (sq_nonneg M)
-  simpa only [coreMajorant, pow_two, mul_assoc, mul_left_comm, mul_comm] using h
+  dsimp [a, b] at h
+  simpa only [coreMajorant, pow_two, mul_assoc, mul_left_comm, mul_comm, Pi.add_apply] using h
 
 #print axioms core_majorant_square_integrable
 

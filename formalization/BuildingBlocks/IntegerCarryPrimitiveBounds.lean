@@ -33,7 +33,7 @@ theorem primitiveFormula_nat_nonpos (m : ℕ) (x : ℝ) (hm : 0 < m) :
   have hjm : j + 1 ≤ (m : ℝ) := by
     have hh : (m : ℝ) * Int.fract x < (m : ℝ) := by
       nlinarith [Int.fract_lt_one x]
-    have hi := (Int.floor_le_sub_one_iff (z := (m : ℤ))).mpr hh
+    have hi : ⌊(m : ℝ) * Int.fract x⌋ < (m : ℤ) := Int.floor_lt.mpr hh
     dsimp [j]
     exact_mod_cast (by omega : ⌊(m : ℝ) * Int.fract x⌋ + 1 ≤ (m : ℤ))
   have hdec : j + s = (m : ℝ) * Int.fract x := by

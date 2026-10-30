@@ -729,3 +729,5 @@ import BuildingBlocks.RiemannZetaPerronBounds
 import BuildingBlocks.RiemannZetaChebyshevFluctuationBound
 import BuildingBlocks.RiemannZetaCubicFluctuationBound
 import BuildingBlocks.ActualCriticalSharpConstant
+import BuildingBlocks.RiemannZetaPerronHolomorphy
+import BuildingBlocks.RiemannZetaExtendedRatioDeficit

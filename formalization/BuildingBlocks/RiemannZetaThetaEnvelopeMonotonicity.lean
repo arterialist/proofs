@@ -49,7 +49,7 @@ theorem hasDerivAt_gaussianMode (n : ℕ) (u : ℝ) :
     simpa using (hasDerivAt_id' u).mul_const (1 / 4)
   have h_e1 : HasDerivAt (fun x ↦ exp (x / 4)) ((1 / 4) * exp (u / 4)) u := by
     have := (hasDerivAt_exp (u / 4)).comp u h_lin
-    simpa [mul_comm] using this
+    simpa [mul_comm, Function.comp_def] using this
   have h_arg : HasDerivAt (fun x ↦ - Real.pi * ((n + 1 : ℝ) ^ 2) * exp x)
       (- Real.pi * ((n + 1 : ℝ) ^ 2) * exp u) u := by
     have h : (fun x ↦ - Real.pi * ((n + 1 : ℝ) ^ 2) * exp x) =
@@ -59,7 +59,7 @@ theorem hasDerivAt_gaussianMode (n : ℕ) (u : ℝ) :
   have h_e2 : HasDerivAt (fun x ↦ exp (- Real.pi * ((n + 1 : ℝ) ^ 2) * exp x))
       ((- Real.pi * ((n + 1 : ℝ) ^ 2) * exp u) * exp (- Real.pi * ((n + 1 : ℝ) ^ 2) * exp u)) u := by
     have := (hasDerivAt_exp (- Real.pi * ((n + 1 : ℝ) ^ 2) * exp u)).comp u h_arg
-    simpa [mul_comm] using this
+    simpa [mul_comm, Function.comp_def] using this
   have h_prod := h_e1.mul h_e2
   unfold gaussianMode
   have h_alg : (1 / 4) * exp (u / 4) * exp (-Real.pi * (↑n + 1) ^ 2 * exp u) +
@@ -116,10 +116,10 @@ theorem hasDerivAt_envelopeW (d : ℝ) {K K' K'' : ℝ → ℝ} {u : ℝ}
     simpa using (hasDerivAt_id' u).mul_const (d / 2)
   have h_cosh : HasDerivAt (fun x ↦ cosh (d * x / 2)) ((d / 2) * sinh (d * u / 2)) u := by
     have := (hasDerivAt_cosh (d * u / 2)).comp u h_lin
-    simpa [mul_comm] using this
+    simpa [mul_comm, Function.comp_def] using this
   have h_sinh : HasDerivAt (fun x ↦ sinh (d * x / 2)) ((d / 2) * cosh (d * u / 2)) u := by
     have := (hasDerivAt_sinh (d * u / 2)).comp u h_lin
-    simpa [mul_comm] using this
+    simpa [mul_comm, Function.comp_def] using this
   have h_term1 := (hK.const_mul d).mul h_cosh
   have h_term2 := (hK'.const_mul 2).mul h_sinh
   have h_diff := h_term1.sub h_term2

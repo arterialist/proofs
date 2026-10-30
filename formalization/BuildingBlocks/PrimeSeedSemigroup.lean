@@ -61,7 +61,7 @@ theorem poissonPMF_add_antidiagonal (r s : ℝ≥0) (n : ℕ) :
 
 private theorem tsum_pair_antidiagonal (F : ℕ × ℕ → ℝ≥0∞) :
     (∑' k, F k) = ∑' n : ℕ, ∑ k ∈ Finset.antidiagonal n, F k := by
-  rw [← Finset.sigmaAntidiagonalEquivProd.tsum_eq F, ENNReal.tsum_sigma']
+  rw [← Equiv.tsum_eq Finset.HasAntidiagonal.sigmaAntidiagonalEquivProd F, ENNReal.tsum_sigma']
   apply tsum_congr
   intro n
   rw [tsum_fintype]

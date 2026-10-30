@@ -135,8 +135,9 @@ theorem difference_integral_norm_le {n j : ℕ} (hn : 2 ≤ n) :
     one_div_le_one_div_of_le (mul_pos (lower_pos n j) hsa)
       (mul_le_mul_of_nonneg_right (by linarith) hsa.le)
   calc
-    _ ≤ 1/(lower n j*Real.sqrt (lower n j))+1/(lower n j*Real.sqrt (lower n j)) := add_le_add_right hfirst _
-    _ = _ := by ring
+    _ ≤ 1/(lower n j*Real.sqrt (lower n j))+1/(lower n j*Real.sqrt (lower n j)) := by
+      gcongr
+    _ = 2 / (lower n j * Real.sqrt (lower n j)) := by ring
 
 /-- Uniform polynomial clock bound with the summable actual birth weight n^(-3/2). -/
 theorem difference_integral_norm_birth_bound {n j : ℕ} (hn : 2 ≤ n) :

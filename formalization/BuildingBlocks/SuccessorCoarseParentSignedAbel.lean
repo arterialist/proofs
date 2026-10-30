@@ -151,7 +151,10 @@ theorem actual_prime_discrepancy_Ioc_inv_sqrt_bound
       2 * B / Real.sqrt (a + 1 : ℕ) := by
   have h := actual_prime_discrepancy_inv_sqrt_bound
     (lo := a + 1) (hi := b) (by omega) (by omega) hB
-    (by simpa only [Nat.add_sub_cancel_left] using hE)
+    (by
+      intro n hn
+      rw [Nat.add_sub_cancel] at hn
+      exact hE n hn)
   simpa only [Icc_add_one_left_eq_Ioc] using h
 
 /-- Once the cutoff lies below the strict child threshold, the actual

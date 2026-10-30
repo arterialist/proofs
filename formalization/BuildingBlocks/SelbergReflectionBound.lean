@@ -33,7 +33,8 @@ private theorem reciprocal_deriv {T : ℝ} (_hT : 1 ≤ T) :
   intro t ht
   have htp : t ≠ 0 := by linarith [ht.1]
   convert ((hasDerivAt_const t T).div (hasDerivAt_id t) htp).hasDerivWithinAt using 1
-  simp
+  · rfl
+  · dsimp [id]; ring
 
 private theorem reciprocal_injOn {T : ℝ} (hT : 1 ≤ T) :
     InjOn (fun t : ℝ => T / t) (Icc 1 T) := by
@@ -114,7 +115,7 @@ theorem primePrimitive_quotient_sq_integrable {T : ℝ} (hT : 1 ≤ T) :
     rw [uIcc_of_le hT] at ht
     linarith [ht.1]
   have hiE : IntervalIntegrable (fun t => primeErrorReal t^2/t^2) volume 1 T := by
-    simpa only [div_eq_mul_inv] using
+    simpa only [div_eq_mul_inv, Pi.inv_apply, Pi.pow_apply, id_eq] using
       (primeErrorReal_sq_intervalIntegrable 1 T).mul_continuousOn
         ((continuousOn_id.pow 2).inv₀ (fun t ht => pow_ne_zero _ (hz t ht)))
   have hiC : IntervalIntegrable
@@ -146,7 +147,7 @@ theorem selberg_reflection_integrable {N : ℕ} (hN : 1 ≤ N) :
     rw [uIcc_of_le hNr] at ht
     linarith [ht.1]
   have hiE : IntervalIntegrable (fun a => primeErrorReal a/a^2) volume 1 N := by
-    simpa only [div_eq_mul_inv] using
+    simpa only [div_eq_mul_inv, Pi.inv_apply, Pi.pow_apply, id_eq] using
       (primeErrorReal_intervalIntegrable 1 (N : ℝ)).mul_continuousOn
         ((continuousOn_id.pow 2).inv₀ (fun t ht => pow_ne_zero _ (hz t ht)))
   have hi := (((primeError_reflected_birthMoment_integrable hN).sub
@@ -175,7 +176,7 @@ theorem selbergCenteredArea_sq_le_filtered {N : ℕ} (hN : 1 ≤ N) :
     rw [uIcc_of_le hNr] at ht
     linarith [ht.1]
   have hiF : IntervalIntegrable (fun t => (primeErrorReal t/t)^2) volume 1 N := by
-    simpa only [div_pow, div_eq_mul_inv, mul_pow, inv_pow, id_eq] using
+    simpa only [div_pow, div_eq_mul_inv, mul_pow, inv_pow, id_eq, Pi.inv_apply, Pi.pow_apply] using
       (primeErrorReal_sq_intervalIntegrable 1 (N : ℝ)).mul_continuousOn
         ((continuousOn_id.pow 2).inv₀ (fun t ht => pow_ne_zero _ (hz t ht)))
   have hiG := reciprocal_square_integrable hNr (primePrimitive_quotient_sq_integrable hNr)
