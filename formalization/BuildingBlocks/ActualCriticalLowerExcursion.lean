@@ -434,6 +434,11 @@ theorem frequently_lower_excursion (C : ℝ) :
   obtain ⟨x, hx, hW⟩ := exists_lower_excursion C B
   exact ⟨x, hx.le, hW⟩
 
+/-- In particular `W` is not eventually nonnegative: it takes negative values beyond every `B`. -/
+theorem exists_negative_value (B : ℝ) : ∃ x : ℝ, B < x ∧ (ActualCriticalMellin.W x).re < 0 := by
+  obtain ⟨x, hx, hW⟩ := exists_lower_excursion 0 B
+  exact ⟨x, hx, by simpa using hW⟩
+
 end BuildingBlocks.ActualCriticalLowerExcursion
 
 #print axioms BuildingBlocks.ActualCriticalLowerExcursion.riemannZeta_half_ne_zero

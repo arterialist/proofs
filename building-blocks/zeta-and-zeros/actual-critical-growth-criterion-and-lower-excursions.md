@@ -2,7 +2,7 @@
 
 **Status.** Three Lean 4 theorems, machine-checked under Lean 4.34.1 and Mathlib `d13f23b7` with only `propext`, `Classical.choice`, `Quot.sound`. Two are conditional implications toward RH with an explicitly weaker premise than the existing sign criterion. One is unconditional.
 
-Lean modules: [`ActualCriticalGrowthCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalGrowthCriterion.lean), [`ActualCriticalLowerExcursion.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerExcursion.lean). Audit: [`ActualCriticalGrowthExcursionAudit.lean`](../../formalization/verification/ActualCriticalGrowthExcursionAudit.lean).
+Lean modules: [`ActualCriticalGrowthCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalGrowthCriterion.lean), [`ActualCriticalLowerExcursion.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerExcursion.lean), [`ActualCriticalMajorantCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalMajorantCriterion.lean), [`ActualCriticalLogMajorant.lean`](../../formalization/BuildingBlocks/ActualCriticalLogMajorant.lean). Audit: [`ActualCriticalGrowthExcursionAudit.lean`](../../formalization/verification/ActualCriticalGrowthExcursionAudit.lean).
 
 ## Objects
 
@@ -20,6 +20,12 @@ $W(x) = \sum_{d \le x} \sqrt{d}\, V(x/d)$ is the actual critical sum of [the sig
 3. **Unconditional lower excursions** (`not_eventually_lower_growth`, `exists_lower_excursion`). For every real $C$ and every $B$, there is $x > B$ with
    $$W(x) < -C\,x^{3/2}.$$
    Equivalently $\liminf_{x\to\infty} W(x)/x^{3/2} = -\infty$. In particular the premise of theorem 2 never holds, and $W$ is not eventually nonnegative.
+
+4. **Abstract majorant criterion** (`RiemannHypothesis_of_majorant`). Let $g$ be measurable and let $F$ be analytic on $\operatorname{Re} s > 1/2$ with $F(s) = \int_A^\infty g(x)\,x^{-s-2}\,dx$ for $\operatorname{Re} s > 1$. Then $(\forall x > A,\; W(x) \le g(x)) \implies \text{RiemannHypothesis}$. Theorem 1 is the instance $g = C x^{3/2}$.
+
+5. **Main-term majorant** (`RiemannHypothesis_of_log_growth_after`). For every real $C$ and $A \ge 1$:
+   $$\bigl(\forall x > A,\; W(x) \le C\,x^{3/2}\log^2 x\bigr) \implies \text{RiemannHypothesis}.$$
+   Here $F(s) = C A^{1/2-s}\bigl((\log A)^2/(s-\tfrac12) + 2\log A/(s-\tfrac12)^2 + 2/(s-\tfrac12)^3\bigr)$, computed from the explicit antiderivative $-C x^{1/2-s}\bigl((\log x)^2/(s-\tfrac12)+2\log x/(s-\tfrac12)^2+2/(s-\tfrac12)^3\bigr)$ on the half-line. The premise is now at the exact scale of the RH main term $-\tfrac16 x^{3/2}\log^2 x$.
 
 A byproduct is `riemannZeta_half_ne_zero`: $\zeta(1/2) \ne 0$, obtained from the repository's unconditional bound $\operatorname{Re}\Lambda_0(\sigma) < 2$ on $(1/2,1)$ and continuity of $\Lambda_0$.
 
@@ -40,9 +46,9 @@ So the real part tends to $-\infty$, contradicting nonnegativity. No explicit fo
 
 ## What this does and does not say
 
-The two conditional criteria are strictly stronger theorems than the sign criterion, since their premises are weaker. They are still of RH strength: under RH the main term of $W$ is $-\tfrac16 x^{3/2}\log^2 x$, so the upper premise is expected to hold with every $C \ge 0$, while a zero with $\operatorname{Re}\rho > 1/2$ forces excursions of size $x^{\operatorname{Re}\rho + 1}$ of both signs and violates both premises. Nothing here proves either premise.
+The conditional criteria are strictly stronger theorems than the sign criterion, since their premises are weaker. They are still of RH strength: under RH the main term of $W$ is $-\tfrac16 x^{3/2}\log^2 x$, so the upper premise is expected to hold with every $C \ge 0$, while a zero with $\operatorname{Re}\rho > 1/2$ forces excursions of size $x^{\operatorname{Re}\rho + 1}$ of both signs and violates both premises. Nothing here proves either premise.
 
-The unconditional theorem shows an asymmetry: lower excursions of $W$ beyond every multiple of $x^{3/2}$ exist unconditionally, while upper excursions beyond some multiple of $x^{3/2}$ exist if and only if RH fails (the "only if" direction is theorem 1; the "if" direction is the standard explicit-formula argument and is not formalized here). The sign criterion's open premise is therefore exactly a one-sided upper bound; its lower side carries no information.
+The unconditional theorem shows an asymmetry: lower excursions of $W$ beyond every multiple of $x^{3/2}$ exist unconditionally, while upper excursions beyond some multiple of $x^{3/2}\log^2 x$ exist if and only if RH fails (the "only if" direction is theorem 5; the "if" direction is the standard explicit-formula argument and is not formalized here). The sign criterion's open premise is therefore exactly a one-sided upper bound; its lower side carries no information.
 
 ## Parameter ranges
 
