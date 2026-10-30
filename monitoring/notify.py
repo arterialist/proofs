@@ -53,7 +53,7 @@ def dispatch(title, summary, bounds, severity="CRITICAL", kind="BREAKTHROUGH", l
         print(f"[Warning] Could not reach running server on port {PORT}: {e}")
         print("Writing directly to breakthroughs.json and opening Google Chrome...")
 
-        # Direct file fallback
+        # Direct file fallback (headless mode; browser monitor is disabled)
         base_dir = os.path.dirname(os.path.abspath(__file__))
         data_file = os.path.join(base_dir, "breakthroughs.json")
         try:
@@ -67,12 +67,6 @@ def dispatch(title, summary, bounds, severity="CRITICAL", kind="BREAKTHROUGH", l
             print("[Success] Written to breakthroughs.json")
         except Exception as fe:
             print(f"[Error] Failed to write directly: {fe}")
-
-        # Open in Chrome
-        try:
-            subprocess.run(["open", "-a", "Google Chrome", f"http://{HOST}:{PORT}"], check=False)
-        except Exception:
-            pass
 
 
 if __name__ == "__main__":
