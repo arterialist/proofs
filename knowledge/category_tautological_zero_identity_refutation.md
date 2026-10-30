@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 128
+Count: 131
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -135,3 +135,6 @@ Count: 128
 | 126 | explorer_r37_L00_N00 | Amplituhedron differential forms evaluate kinematic rational functions of spinor-helicity variables that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 127 | explore_merger_r37_L04_N00 | Root strategy card reduction to positive Grassmannian amplituhedron geometry, normalized volume functionals, filtered syntomic complexes, and Felder dynamical quantum groups avoids Pitfalls 001-085, but hits amplituhedron kinematic decoupling, normalized volume Euler product decoupling, and filtered syntomic prime decoupling carrying 100% of Millennium RH analytical depth. |
 | 128 | gate_merger_r37_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while amplituhedron geometry and normalized volume stability avoid Pitfalls 001-085, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 129 | explorer_r38_L00_N00 | Twistor Dirac operators and arithmetic index pairings evaluate topological characteristic numbers and harmonic spinor dimensions that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 130 | explore_merger_r38_L04_N00 | Root strategy card reduction to arithmetic twistor Dirac harmonic pairings, Tian's alpha-invariants on log Fano pairs, Kato log crystalline Hodge complexes, and elliptic quantum affine algebras avoids Pitfalls 001-087, but hits twistor Dirac index frequency decoupling, Tian alpha Euler product decoupling, and log crystalline prime decoupling carrying 100% of Millennium RH analytical depth. |
+| 131 | gate_merger_r38_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while twistor spin Dirac and Tian alpha stability avoid Pitfalls 001-087, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
