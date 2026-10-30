@@ -727,3 +727,5 @@ import BuildingBlocks.ActualCriticalLogMajorant
 import BuildingBlocks.ActualCriticalLowerMajorant
 import BuildingBlocks.RiemannZetaPerronBounds
 import BuildingBlocks.RiemannZetaChebyshevFluctuationBound
+import BuildingBlocks.RiemannZetaCubicFluctuationBound
+import BuildingBlocks.ActualCriticalSharpConstant

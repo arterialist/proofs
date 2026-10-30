@@ -1,8 +1,8 @@
 # One-sided growth criteria for the actual critical sum, and its unconditional lower excursions
 
-**Status.** Seven Lean 4 theorems, machine-checked under Lean 4.34.1 and Mathlib `d13f23b7` with only `propext`, `Classical.choice`, `Quot.sound`. Five are conditional implications toward RH with an explicitly weaker premise than the existing sign criterion. Two are unconditional.
+**Status.** Eight Lean 4 theorems, machine-checked under Lean 4.34.1 and Mathlib `d13f23b7` with only `propext`, `Classical.choice`, `Quot.sound`. Five are conditional implications toward RH with an explicitly weaker premise than the existing sign criterion. Two are unconditional. One reduces the sharp constant to a classical prime-sum asymptotic.
 
-Lean modules: [`ActualCriticalGrowthCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalGrowthCriterion.lean), [`ActualCriticalLowerExcursion.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerExcursion.lean), [`ActualCriticalMajorantCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalMajorantCriterion.lean), [`ActualCriticalLogMajorant.lean`](../../formalization/BuildingBlocks/ActualCriticalLogMajorant.lean), [`ActualCriticalLowerMajorant.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerMajorant.lean). Audit: [`ActualCriticalGrowthExcursionAudit.lean`](../../formalization/verification/ActualCriticalGrowthExcursionAudit.lean).
+Lean modules: [`ActualCriticalGrowthCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalGrowthCriterion.lean), [`ActualCriticalLowerExcursion.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerExcursion.lean), [`ActualCriticalMajorantCriterion.lean`](../../formalization/BuildingBlocks/ActualCriticalMajorantCriterion.lean), [`ActualCriticalLogMajorant.lean`](../../formalization/BuildingBlocks/ActualCriticalLogMajorant.lean), [`ActualCriticalLowerMajorant.lean`](../../formalization/BuildingBlocks/ActualCriticalLowerMajorant.lean), [`ActualCriticalSharpConstant.lean`](../../formalization/BuildingBlocks/ActualCriticalSharpConstant.lean). Audit: [`ActualCriticalGrowthExcursionAudit.lean`](../../formalization/verification/ActualCriticalGrowthExcursionAudit.lean).
 
 ## Objects
 
@@ -30,6 +30,8 @@ $W(x) = \sum_{d \le x} \sqrt{d}\, V(x/d)$ is the actual critical sum of [the sig
 6. **Abstract lower criterion** (`RiemannHypothesis_of_lower_majorant`). For any majorant datum $g$ as in theorem 4, $(\forall x > A,\; -g(x) \le W(x)) \implies \text{RiemannHypothesis}$.
 
 7. **Abstract unconditional exclusion** (`not_eventually_lower_majorant`). If moreover $(\sigma - 1/2)F(\sigma)$ stays bounded as $\sigma \to 1/2^+$, i.e. the tail transform of $g$ has at most a simple pole at $1/2$, then the premise of theorem 6 fails for some $x > A$. Theorem 3 is the instance $g = C x^{3/2}$. So the scale that separates the two one-sided questions is the pole order of the majorant's transform at $s = 1/2$: a simple pole (order $x^{3/2}$) is excluded unconditionally on the lower side, while the upper side at the triple-pole scale $x^{3/2}\log^2 x$ is RH.
+
+8. **The sharp constant, reduced to the double pole of $H$** (`not_eventually_lower_log_growth_of_HDoublePole`). Assume the classical asymptotic $(2\sigma-1)^2\,H(\sigma) \to 1$ as $\sigma \to 1/2^+$ (equivalently $\sum_p (\log p)^2 p^{-2\sigma} \sim (2\sigma-1)^{-2}$; this is the one input not yet formalized, and it follows from the Laurent expansion of $\zeta'/\zeta$ at $1$). Then for every $C < 1/6$ the bound $-C x^{3/2}\log^2 x \le W(x)$ fails for arbitrarily large $x$, i.e. $\liminf W(x)/(x^{3/2}\log^2 x) \le -1/6$. The constant $1/6 = \tfrac12\cdot\tfrac43\cdot\tfrac14$ is the RH main-term constant, so under RH the liminf equals $-1/6$ and the theorem is sharp.
 
 A byproduct is `riemannZeta_half_ne_zero`: $\zeta(1/2) \ne 0$, obtained from the repository's unconditional bound $\operatorname{Re}\Lambda_0(\sigma) < 2$ on $(1/2,1)$ and continuity of $\Lambda_0$.
 
