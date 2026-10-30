@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 212
+Count: 215
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -219,3 +219,6 @@ Count: 212
 | 210 | explorer_r65_L00_N00 | Kato's logarithmic Hodge structures and log de Rham cohomology evaluate nilpotent monodromy operators that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 211 | explore_merger_r65_L04_N00 | Root strategy card reduction to Kato log Hodge monodromy structures, complexity-8 T-variety polyhedral cones, Gross–Prasad SO(5)xSO(4) periods, and CY16 shifted symplectic stacks avoids Pitfalls 001-141, but hits log Hodge frequency decoupling, complexity-8 polyhedral Euler product decoupling, and Gross–Prasad period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 212 | gate_merger_r65_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Kato log Hodge structures and complexity-8 T-varieties avoid Pitfalls 001-141, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 213 | explorer_r66_L00_N00 | Deligne–Beilinson cohomology and Arakelov Green functions on Shimura curves evaluate discrete Néron–Tate heights that decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 214 | explore_merger_r66_L04_N00 | Root strategy card reduction to Deligne–Beilinson Shimura curves, complexity-9 T-variety polyhedral cones, Waldspurger toric periods, and CY17 shifted symplectic stacks avoids Pitfalls 001-143, but hits Shimura curve Arakelov height frequency decoupling, complexity-9 polyhedral Euler product decoupling, and Waldspurger period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 215 | gate_merger_r66_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Deligne–Beilinson Shimura curves and complexity-9 T-varieties avoid Pitfalls 001-143, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
