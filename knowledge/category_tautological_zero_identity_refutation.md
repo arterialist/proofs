@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 44
+Count: 47
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -51,3 +51,6 @@ Count: 44
 | 42 | explorer_r9_L00_N08 | Automorphic converse theorems (Weil, Cogdell-Piatetski-Shapiro) characterize automorphy from twist functional equations, but automorphy is strictly insufficient to exclude off-line zeros (Davenport-Heilbronn functions have modular functional equations but infinitely many off-line zeros), leaving an unbridged analytical gap in the critical strip. |
 | 43 | explore_merger_r9_L04_N00 | Root strategy card reduction to Gutzwiller trace invariants, automorphic converse twist families, rigid analytic spaces, and Polyakov determinants avoids Pitfalls 001-029, but hits Heisenberg resummation divergence and converse non-coercivity carrying 100% of Millennium RH analytical depth. |
 | 44 | gate_merger_r9_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while semiclassical chaos and modular converse frameworks avoid Pitfalls 001-029, establishing coercive bounds on periodic orbit resummation or off-line scattering resonances leaves a fatal analytical debt. |
+| 45 | explorer_r10_L00_N00 | Circular unitary ensemble (CUE) moments and OPUC Verblunsky coefficients describe Haar-averaged statistical properties that are invariant under sparse off-line zero excursions; constructing unitary CMV operators circularly assumes an a priori unimodular measure, lacking arithmetic leverage to exclude off-line zeros. |
+| 46 | explore_merger_r10_L04_N00 | Root strategy card reduction to CUE characteristic polynomial moments, dynamical Artin-Mazur zetas, higher-rank Langlands scattering, and Toeplitz operators avoids Pitfalls 001-031, but hits ensemble averaging blindness and essential spectrum collapse carrying 100% of Millennium RH analytical depth. |
+| 47 | gate_merger_r10_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while random matrix, dynamical, and higher-rank automorphic frameworks avoid Pitfalls 001-031, establishing coercive bounds on individual zeros leaves an open fatal analytical debt. |
