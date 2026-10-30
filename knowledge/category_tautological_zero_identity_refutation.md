@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 281
+Count: 284
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -288,3 +288,6 @@ Count: 281
 | 279 | explorer_r88_L00_N00 | Siegel theta characteristics, modular forms, Deligne–Beilinson regulators, and Archimedean Green functions on Sp(2n) Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 280 | explore_merger_r88_L04_N00 | Root strategy card reduction to Sp(2n) Shimura varieties, complexity-31 T-variety polyhedral cones, E8 x Sp(4) GGP periods, and CY39 shifted symplectic stacks avoids Pitfalls 001-187, but hits Sp(2n) symplectic Shimura variety Siegel theta frequency decoupling, complexity-31 polyhedral Euler product decoupling, and E8 x Sp(4) period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 281 | gate_merger_r88_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Sp(2n) Shimura varieties and complexity-31 T-varieties avoid Pitfalls 001-187, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 282 | explorer_r89_L00_N00 | Kuga–Satake abelian varieties, Clifford algebra spin representations, Deligne–Beilinson regulators, and Archimedean Green functions on SO(3,n) Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 283 | explore_merger_r89_L04_N00 | Root strategy card reduction to SO(3,n) Shimura varieties, complexity-32 T-variety polyhedral cones, E8 x SO(9) GGP periods, and CY40 shifted symplectic stacks avoids Pitfalls 001-189, but hits SO(3,n) orthogonal Shimura variety Kuga–Satake frequency decoupling, complexity-32 polyhedral Euler product decoupling, and E8 x SO(9) period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 284 | gate_merger_r89_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while SO(3,n) Shimura varieties and complexity-32 T-varieties avoid Pitfalls 001-189, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
