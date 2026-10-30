@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 251
+Count: 254
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -258,3 +258,6 @@ Count: 251
 | 249 | explorer_r78_L00_N00 | Minimal nilpotent orbits, Deligne–Beilinson regulators, and Archimedean Green functions on exceptional E6 Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 250 | explore_merger_r78_L04_N00 | Root strategy card reduction to exceptional E6 Shimura varieties, complexity-21 T-variety polyhedral cones, Sp(2n) x SO(2n+1) GGP periods, and CY29 shifted symplectic stacks avoids Pitfalls 001-167, but hits exceptional E6 Shimura variety minimal orbit frequency decoupling, complexity-21 polyhedral Euler product decoupling, and Sp(2n) x SO(2n+1) period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 251 | gate_merger_r78_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while exceptional E6 Shimura varieties and complexity-21 T-varieties avoid Pitfalls 001-167, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 252 | explorer_r79_L00_N00 | Quaternionic discrete series representations, Deligne–Beilinson regulators, and Archimedean Green functions on exceptional E7 Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 253 | explore_merger_r79_L04_N00 | Root strategy card reduction to exceptional E7 Shimura varieties, complexity-22 T-variety polyhedral cones, U(n) x SO(2n) GGP periods, and CY30 shifted symplectic stacks avoids Pitfalls 001-169, but hits exceptional E7 Shimura variety quaternionic discrete series frequency decoupling, complexity-22 polyhedral Euler product decoupling, and U(n) x SO(2n) period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 254 | gate_merger_r79_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while exceptional E7 Shimura varieties and complexity-22 T-varieties avoid Pitfalls 001-169, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
