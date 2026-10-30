@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 275
+Count: 278
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -282,3 +282,6 @@ Count: 275
 | 273 | explorer_r86_L00_N00 | Hermitian symmetric boundary strata, Deligne–Beilinson regulators, and Archimedean Green functions on U(3,3) unitary Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 274 | explore_merger_r86_L04_N00 | Root strategy card reduction to U(3,3) Shimura varieties, complexity-29 T-variety polyhedral cones, E8 x F4 GGP periods, and CY37 shifted symplectic stacks avoids Pitfalls 001-183, but hits U(3,3) unitary Shimura variety Hermitian boundary stratification frequency decoupling, complexity-29 polyhedral Euler product decoupling, and E8 x F4 period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 275 | gate_merger_r86_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while U(3,3) Shimura varieties and complexity-29 T-varieties avoid Pitfalls 001-183, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 276 | explorer_r87_L00_N00 | Borcherds singular theta lifts, infinite product expansions of automorphic forms, Deligne–Beilinson regulators, and Archimedean Green functions on SO(2,n) Shimura varieties decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 277 | explore_merger_r87_L04_N00 | Root strategy card reduction to SO(2,n) Shimura varieties, complexity-30 T-variety polyhedral cones, E8 x SO(8) GGP periods, and CY38 shifted symplectic stacks avoids Pitfalls 001-185, but hits SO(2,n) orthogonal Shimura variety Borcherds product frequency decoupling, complexity-30 polyhedral Euler product decoupling, and E8 x SO(8) period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 278 | gate_merger_r87_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while SO(2,n) Shimura varieties and complexity-30 T-varieties avoid Pitfalls 001-185, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
