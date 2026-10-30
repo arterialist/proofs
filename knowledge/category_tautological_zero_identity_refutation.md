@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 47
+Count: 50
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -54,3 +54,6 @@ Count: 47
 | 45 | explorer_r10_L00_N00 | Circular unitary ensemble (CUE) moments and OPUC Verblunsky coefficients describe Haar-averaged statistical properties that are invariant under sparse off-line zero excursions; constructing unitary CMV operators circularly assumes an a priori unimodular measure, lacking arithmetic leverage to exclude off-line zeros. |
 | 46 | explore_merger_r10_L04_N00 | Root strategy card reduction to CUE characteristic polynomial moments, dynamical Artin-Mazur zetas, higher-rank Langlands scattering, and Toeplitz operators avoids Pitfalls 001-031, but hits ensemble averaging blindness and essential spectrum collapse carrying 100% of Millennium RH analytical depth. |
 | 47 | gate_merger_r10_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while random matrix, dynamical, and higher-rank automorphic frameworks avoid Pitfalls 001-031, establishing coercive bounds on individual zeros leaves an open fatal analytical debt. |
+| 48 | explorer_r11_L00_N00 | Deninger's arithmetic cohomology and foliated dynamical flow on Spec(Z) remain unconstructed; regularizing the transverse Lefschetz trace encounters ultraviolet singularities that circularly require the non-vanishing of zeta(s) in Re(s) > 1/2. |
+| 49 | explore_merger_r11_L04_N00 | Root strategy card reduction to Deninger foliated flows, Nevanlinna-Pick interpolation matrices, modular symbol Eisenstein periods, and validated interval enclosures avoids Pitfalls 001-033, but hits conjectural site construction and Haselgrove scale blindness carrying 100% of Millennium RH analytical depth. |
+| 50 | gate_merger_r11_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while arithmetic cohomological and validated enclosure frameworks avoid Pitfalls 001-033, establishing unconditional coercivity without unconstructed sites or infinite-scale extrapolation leaves an open fatal debt. |
