@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 167
+Count: 170
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -174,3 +174,6 @@ Count: 167
 | 165 | explorer_r50_L00_N00 | Grothendieck's period conjecture and motivic Galois torsors evaluate algebraic cycle period integrals that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 166 | explore_merger_r50_L04_N00 | Root strategy card reduction to Grothendieck period torsors, hyperkähler quiver moment map reductions, GSpin endoscopic character identities, and Feigin–Tipunin logarithmic VOAs avoids Pitfalls 001-111, but hits Grothendieck period torsor decoupling, hyperkähler quiver metric decoupling, and GSpin Arthur–Kottwitz decoupling carrying 100% of Millennium RH analytical depth. |
 | 167 | gate_merger_r50_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Grothendieck period theory and hyperkähler quiver geometry avoid Pitfalls 001-111, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 168 | explorer_r51_L00_N00 | Ihara's universal power series and pro-l algebraic fundamental groups evaluate discrete cyclotomic Galois characters that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 169 | explore_merger_r51_L04_N00 | Root strategy card reduction to Ihara universal power series, boundary value problems for Abreu's equation on Delzant moment polytopes, Kudla–Rapoport special cycles on GU(1, n-1), and quantum Hamiltonian reductions avoids Pitfalls 001-113, but hits Ihara pro-l frequency decoupling, Abreu equation Euler product decoupling, and Kudla–Rapoport special cycle decoupling carrying 100% of Millennium RH analytical depth. |
+| 170 | gate_merger_r51_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Ihara pro-l Galois theory and Abreu moment polytope geometry avoid Pitfalls 001-113, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
