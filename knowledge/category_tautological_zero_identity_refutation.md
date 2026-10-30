@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 227
+Count: 230
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -234,3 +234,6 @@ Count: 227
 | 225 | explorer_r70_L00_N00 | Arakelov arithmetic intersection pairings and smooth Archimedean Green currents on Shimura curves decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 226 | explore_merger_r70_L04_N00 | Root strategy card reduction to Shimura curve Arakelov Chow groups, complexity-13 T-variety polyhedral cones, Gan–Gross–Prasad orthogonal periods, and CY21 shifted symplectic stacks avoids Pitfalls 001-151, but hits Shimura curve Arakelov Chow frequency decoupling, complexity-13 polyhedral Euler product decoupling, and GGP period noncoercivity carrying 100% of Millennium RH analytical depth. |
 | 227 | gate_merger_r70_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while Shimura curve Arakelov Chow groups and complexity-13 T-varieties avoid Pitfalls 001-151, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 228 | explorer_r71_L00_N00 | Deligne associators and Goncharov motivic iterated integrals on punctured elliptic curves decouple completely from continuous vertical transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 229 | explore_merger_r71_L04_N00 | Root strategy card reduction to punctured elliptic curve motivic fundamental groups, complexity-14 T-variety polyhedral cones, metaplectic GGP periods, and CY22 shifted symplectic stacks avoids Pitfalls 001-153, but hits punctured elliptic curve fundamental group frequency decoupling, complexity-14 polyhedral Euler product decoupling, and metaplectic GGP period noncoercivity carrying 100% of Millennium RH analytical depth. |
+| 230 | gate_merger_r71_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while punctured elliptic curve fundamental groups and complexity-14 T-varieties avoid Pitfalls 001-153, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
