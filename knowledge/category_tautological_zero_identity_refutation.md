@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 101
+Count: 104
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -108,3 +108,6 @@ Count: 101
 | 99 | explorer_r28_L00_N00 | Coadjoint orbits parameterize highest weight representations whose modular characters represent 2D CFT partition functions that decouple from the microscopic complex zero distribution of $\zeta(s)$ due to Davenport-Heilbronn modular independence. |
 | 100 | explore_merger_r28_L04_N00 | Root strategy card reduction to loop group coadjoint orbits, non-geometric flux compactifications, local Shtukas, and resurgent transseries avoids Pitfalls 001-067, but hits loop group modular decoupling, non-geometric flux prime vacuum, and resurgence Stokes sheet connection carrying 100% of Millennium RH analytical depth. |
 | 101 | gate_merger_r28_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while loop group symplectic and resurgence methods avoid Pitfalls 001-067, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 102 | explorer_r29_L00_N00 | Arithmetic Chern-Simons partition functions evaluate hyperbolic volume and Chern-Simons invariants Vol(M) + i CS(M) that decouple from continuous Archimedean vertical oscillation frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 103 | explore_merger_r29_L04_N00 | Root strategy card reduction to arithmetic Chern-Simons 3D gravity, non-commutative Hodge polarizations, Berkovich Hitchin fibrations, and wild Langlands avoids Pitfalls 001-069, but hits Chern-Simons hyperbolic volume decoupling, non-commutative Hodge period decoupling, and wild inertia local representation decoupling carrying 100% of Millennium RH analytical depth. |
+| 104 | gate_merger_r29_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while arithmetic 3-manifold topology and categorical Hodge methods avoid Pitfalls 001-069, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
