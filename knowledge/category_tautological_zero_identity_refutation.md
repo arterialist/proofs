@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 68
+Count: 71
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -75,3 +75,6 @@ Count: 68
 | 66 | explorer_r17_L00_N00 | Berkovich skeletal reduction trees provide non-Archimedean potential theory locally at single primes $p$, decoupling across distinct primes and remaining invariant under continuous vertical frequency shifts $t = \operatorname{Im}(s)$. |
 | 67 | explore_merger_r17_L04_N00 | Root strategy card reduction to Berkovich potential theory, arithmetic Floer homology, motivic homotopy spectra, and non-abelian Hodge covers avoids Pitfalls 001-045, but hits local tree decoupling, Floer energy bubbling divergence, and motivic stability blindness carrying 100% of Millennium RH analytical depth. |
 | 68 | gate_merger_r17_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while non-Archimedean and symplectic topological methods avoid Pitfalls 001-045, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 69 | explorer_r18_L00_N00 | Fontaine period rings and $p$-adic Hodge comparison isomorphisms classify local Galois representations at single primes $p$, with crystalline Frobenius eigenvalues $\phi$ possessing zero continuous vertical analytic control along $s = 1/2 + it$ across the Archimedean continuum. |
+| 70 | explore_merger_r18_L04_N00 | Root strategy card reduction to Fontaine period rings, tropical amoeba Ronkin potentials, QUE eigenfunction equidistribution, and categorical geometric Langlands avoids Pitfalls 001-047, but hits local Frobenius decoupling, tropical phase linearization blindness, and QUE asymptotic blindness carrying 100% of Millennium RH analytical depth. |
+| 71 | gate_merger_r18_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while $p$-adic Hodge and tropical geometric methods avoid Pitfalls 001-047, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
