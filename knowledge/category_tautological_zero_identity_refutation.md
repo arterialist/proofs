@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 80
+Count: 83
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -87,3 +87,6 @@ Count: 80
 | 78 | explorer_r21_L00_N00 | Tabuada's non-commutative motives and Kontsevich dg-categories linearize algebras into additive categories where cyclic homology computes algebraic pairings, possessing zero continuous Archimedean vertical analytic control or transverse coercivity off $\operatorname{Re}(s)=1/2$. |
 | 79 | explore_merger_r21_L04_N00 | Root strategy card reduction to Tabuada non-commutative motives, Clausen-Scholze liquid vector spaces, modular surface Selberg dynamics, and arithmetic Dijkgraaf-Witten invariants avoids Pitfalls 001-053, but hits additive linearization, condensed Frechet neutrality, and continuous scattering masking carrying 100% of Millennium RH analytical depth. |
 | 80 | gate_merger_r21_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while non-commutative and condensed mathematical methods avoid Pitfalls 001-053, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 81 | explorer_r22_L00_N00 | Buium's arithmetic differential calculus defines operators $\delta_p(x) = (x - x^p)/p$ strictly on $p$-adic rings measuring arithmetic variation locally at single primes $p$, with zero Archimedean vertical analytic continuation or transverse coercivity over $s = 1/2 + it$. |
+| 82 | explore_merger_r22_L04_N00 | Root strategy card reduction to Buium arithmetic jet spaces, Khovanov knot homologies, Mumford curve uniformization, and Mulmuley-Sohoni GCT avoids Pitfalls 001-055, but hits local derivation decoupling, discrete grading blindness, and Schottky period disconnect carrying 100% of Millennium RH analytical depth. |
+| 83 | gate_merger_r22_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while arithmetic differential and categorified knot methods avoid Pitfalls 001-055, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
