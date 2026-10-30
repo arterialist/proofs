@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Proving stability for the causal renewal equation $(\mathcal{Z}b)(v) = f(v)$ fails because every critical-line zero has transfer function $T(i\gamma) = -1$ (neutral boundary contact), ruling out strict small-gain bounds $\|\mathcal{T}\| < 1$, while high-frequency modes cancel damping on the first cell.
-Count: 16
+Count: 17
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -23,3 +23,4 @@ Count: 16
 | 14 | explore_merger_L04_N00_dissipative_operator_forbidden_bound_neutral_contact | Backup Route 2 posits a phantom dissipative operator $A$ on $L^2([7.465, \infty))$ with forbidden unproved resolvent bounds $\operatorname{Re}\langle(s-A)u, u\rangle \ge (\sigma-1/2)\|u\|^2$, which is blocked by neutral boundary contact at critical-line zeros where the resolvent diverges as $\sigma \to 1/2^+$. |
 | 15 | explorer_r2_L00_N15_automorphic_scattering_neutral_contact | Lax-Phillips dissipativity $\|e^{Bt}\| \le 1$ only constrains spectrum to $\operatorname{Re}(z) \le 0$ leaving anomalous strip $-1/4 < \operatorname{Re}(z) < 0$ inside the dissipative half-plane ($e^{-\sigma_0 t} \le 1$), while an affine coordinate shift $z=(s-1)/2$ merely maps critical zeros to neutral boundary contact points $\operatorname{Re}(z) = -1/4$ where the resolvent blows up. |
 | 16 | explorer_r2_L00_N21_automorphic_scattering_selberg_pole_fabrication | Fabricates $\phi(s) = \xi(2s-1)/\xi(2s)$ by dropping $s/(s-1)$; the true Selberg scattering matrix $\phi(s) = \frac{s}{s-1}\frac{\xi(2s-1)}{\xi(2s)}$ has a simple pole at $s=1$ with residue $3/\pi \approx 0.9549$, disproving holomorphy and inner contraction ($|\phi(1.1)| \approx 10.41, |\phi(1.5)| \approx 2.74$); and inner function contraction $|\Phi| \le 1$ does not restrict interior zeros (Blaschke products permit off-midline zeros). |
+| 17 | explorer_r4_L00_N24 | Proving self-adjointness or critical spectral purity for causal smoothing operators on $L^2(\mathbb{R}_+)$ is logically equivalent to the Riemann Hypothesis, hitting neutral boundary contact at all critical-line zeros where the resolvent $(s - A)^{-1}$ diverges as $\operatorname{Re}(s) \to 1/2^+$. |

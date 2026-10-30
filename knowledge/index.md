@@ -1,14 +1,14 @@
 # Knowledge Index
 
-## Failed Approach Categories (304 entries in 15 categories)
+## Failed Approach Categories (308 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 34 \| Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
-| termwise_arithmetic_positivity | 12 | Individual arithmetic summands in $W(x)$ are strictly positive at composite integers (e.g. $n=36$) | category_termwise_arithmetic_positivity.md |
+| termwise_arithmetic_positivity | 13 | Individual arithmetic summands in $W(x)$ are strictly positive at composite integers (e.g. $n=36$) | category_termwise_arithmetic_positivity.md |
 | finite_numerical_extrapolation | 34 \| Numerical testing on $x \le 20000$ is completely blind to off-critical zero excursions ($x > 10^{35}$ or $x > 10^{263.5}$), and low-degree Jensen polynomial testing ($d \le 4$) cannot extrapolate to $d \ge 5$ | category_finite_numerical_extrapolation.md |
 | unshifted_multiplier_pole_cancellation | 2 | Unshifted $d^1$ aggregation introduces $\zeta(s)$ factor, canceling double poles for multiplicities $m \ge 2$ | category_unshifted_multiplier_pole_cancellation.md |
 | goldbach_hard_wall_divergence | 6 | Positive majorants for Goldbach spectral continuation diverge at $\sigma \le 2$ ($c \le 1$), and $c_4^{(3)} < 0$ | category_goldbach_hard_wall_divergence.md |
-| renewal_small_gain_neutral_boundary | 16 | Causal renewal transfer function has neutral boundary contact $T(i\gamma) = -1$ at every critical zero, destroying uniform operator contraction and resolvent coercivity | category_renewal_small_gain_neutral_boundary.md |
+| renewal_small_gain_neutral_boundary | 17 | Causal renewal transfer function has neutral boundary contact $T(i\gamma) = -1$ at every critical zero, destroying uniform operator contraction and resolvent coercivity | category_renewal_small_gain_neutral_boundary.md |
 | unsmoothed_comparison_oscillation | 6 | Unsmoothed comparison differences $W_b - W$ oscillate indefinitely due to critical-line zero poles | category_unsmoothed_comparison_oscillation.md |
 | perron_contour_divergence | 16 | Perron inversion contour shifts diverge along zero ordinates or hit $H(s)$ convergence boundary | category_perron_contour_divergence.md |
 | conditional_sign_premise_circularity | 23 | Forward deduction from eventual nonpositivity of $W(x)$ carries full RH depth, while formalization attempts suffer dependency bitrot and rely on isolated shadow types | category_conditional_sign_premise_circularity.md |
@@ -91,6 +91,9 @@
 | observation_conformal_parabolic_horn_bound_violation_p1.md | high | In conformal coordinates $z=s(1-s)$, the parabolic horn upper bound $x < y^2 + 1/4$ is violated by $t^2(1-4\delta^2) - \delta^2 > 0$ across 100% of non-trivial zeros for $t > 0.289$, exceeding the horn boundary by 181.8 at $\gamma_1$ and $9 \times 10^{24}$ at $3 \times 10^{12}$ |
 | observation_poisson_jensen_zero_conjugation_invariance_p1.md | high | Boundary modulus data $|F(x)|$ along the real axis is strictly invariant under zero conjugation $\lambda \leftrightarrow \bar{\lambda}$ ($|x-\lambda| = |x-\bar{\lambda}|$), preventing real-boundary Poisson-Jensen integrals from unilaterally distinguishing zeros in $\mathbb{C}^-$ from $\mathbb{C}^+$ |
 | observation_green_defect_cubic_frequency_decay_p1.md | high | Conformal half-plane Dirichlet Green defect $G(\lambda_0, z_0)$ at fixed evaluation pole decays cubically as $O(\gamma_0^{-3})$ due to quadratic horizontal separation $u_0 \approx \gamma_0^2$ vs linear vertical distance $v_0 = \gamma_0(2\beta_0-1)$, collapsing to $1.59 \times 10^{-10}$ at $\gamma_0=1000$ and drowned out by $O(\log \gamma)$ Selberg fluctuations |
+
+| observation_euler_product_continuation_barrier_p1.md | high | Termwise analytic continuation of Euler product Dirichlet series $\log \zeta(s)$ across $\operatorname{Re}(s)=1/2$ carries 100% of Millennium RH analytical depth |
+| observation_automorphic_scattering_unitary_coercivity_tautology_p1.md | high | Eisenstein scattering matrix unitarity $|\Phi(1/2+it)| = 1$ is an exact functional symmetry providing zero forward coercivity off the critical line |
 
 ## References
 | File | Confidence | Summary |

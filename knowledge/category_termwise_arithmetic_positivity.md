@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Attempting to prove $W(x) \le 0$ by establishing that each individual summand in the arithmetic expansion of $W(x)$ is nonpositive fails because composite divisor brackets are strictly positive.
-Count: 12
+Count: 13
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -20,3 +20,4 @@ Count: 12
 | 11 | node_L02_N06_composite_bracket_density_barrier | Termwise nonpositivity of divisor brackets is false at 105 of 139 composite numbers $\le 200$ (75.54%), confirming that negativity of $W(x)$ is an inherently collective spectral phenomenon requiring massive arithmetic cancellation between prime powers and composites. |
 | 12 | explore_merger_r2_L01_N07 | Li coefficient arithmetic formula $\lambda_n = \sum_{j=1}^n \binom{n}{j} b_j$ suffers catastrophic alternating binomial cancellation ($10^{26.6}$ at $n=100$, $10^{146}$ at $n=500$), precluding termwise bounds, while proposed positive Laplace-Stieltjes measure is refuted by strict convexity ($\Delta^2 \lambda_1 = +0.04604 > 0$). |
 
+| 13 | explore_merger_r4_L01_N00 | Euler product Dirichlet series termwise continuation across $\operatorname{Re}(s)=1/2$ encounters logarithmic branch singularities at hypothetical off-line zeros, carrying 100% of Millennium RH analytical depth and precluding termwise coercive bounds without circularity. |
