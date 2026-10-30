@@ -1,6 +1,6 @@
 # Knowledge Index
 
-## Failed Approach Categories (314 entries in 15 categories)
+## Failed Approach Categories (317 entries in 15 categories)
 | Pattern | Count | Summary | File |
 |---------|-------|---------|------|
 | sieve_parity_barrier | 34 \| Sieve/bilinear identities hit parity barrier and cannot save $x^{1/2}$ on prime convolutions | category_sieve_parity_barrier.md |
@@ -16,7 +16,7 @@
 | tautological_zero_identity_refutation | 29 \| Refutation criteria claiming disparity between $\Lambda_0(s)$ and $-1/(s(s-1))$ fail at actual zeros and along nodal curves, while subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude off-line zeros | category_tautological_zero_identity_refutation.md |
 | herglotz_theta_de_bruijn_newman_barrier | 58 | Herglotz/Pick positivity of $-\Xi_*'/\Xi_*$ carries full RH depth as off-line poles collapse positivity, while backward heat flow hits Rodgers-Tao barrier $\Lambda \ge 0$ and non-vanishing zero spacing fails | category_herglotz_theta_de_bruijn_newman_barrier.md |
 | weil_quadratic_autocorrelation_positivity_fallacy | 9 | Dilated chirped wavepackets on Weil explicit formula cannot extract negative quadruplet energy because stationary phase exits support for $T > T_{\mathrm{exit}}$ and autocorrelation cross-terms are positive | category_weil_quadratic_autocorrelation_positivity_fallacy.md |
-| nyman_beurling_dilation_approximation | 7 | Approximating the indicator $\chi_{(0, 1)}$ by fractional part dilations $\rho_\alpha$ hits an $L^2$ distance barrier $\Omega(\delta)$ without collective prime phase cancellation, and descending Báez-Duarte sums to finite dimensions is circular with RH | category_nyman_beurling_dilation_approximation.md |
+| nyman_beurling_dilation_approximation \| 8 \| Approximating the indicator $\chi_{(0, 1)}$ by fractional part dilations $\rho_\alpha$ hits an $L^2$ distance barrier $\Omega(\delta)$ without collective prime phase cancellation, and descending Báez-Duarte sums to finite dimensions is circular with RH | category_nyman_beurling_dilation_approximation.md |
 | carleman_nevanlinna_boundary_divergence | 22 | Conformal Carleman, Poisson-Jensen, and Nevanlinna-Riesz potential balances fail because Stirling critical decay produces $-\pi/(4|\theta|)$ boundary divergence and real-axis growth drives residuals to $+\infty$, destroying Nevanlinna class membership | category_carleman_nevanlinna_boundary_divergence.md |
 
 ## Theorems
@@ -100,6 +100,9 @@
 
 | observation_gorz_jensen_polynomial_horizontal_limit_barrier_p1.md | high | GORZ horizontal limits for fixed degree Jensen polynomials cannot extrapolate to all degrees at unshifted origin $n=0$ |
 | observation_gue_pair_correlation_offline_invariance_p1.md | high | GUE level repulsion and pair correlation are statistical bulk properties that are invariant under sparse off-line zeros |
+
+| observation_berry_keating_continuous_spectrum_discretization_barrier_p1.md | high | Berry-Keating xp dilation Hamiltonian has continuous spectrum; boundary discretization breaks self-adjointness or encodes zeros circularly |
+| observation_bost_connes_complex_continuation_barrier_p1.md | high | Bost-Connes KMS thermal equilibrium is restricted to real temperatures beta > 0 and cannot constrain complex zeros in the critical strip |
 
 ## References
 | File | Confidence | Summary |

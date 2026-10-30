@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Approximating the indicator $\chi_{(0,1)}$ by dilation steps $\sum_{k=1}^N c_k \{k/x\}$ in $L^2(0, 1)$ carries 100% of RH depth ($d_N \to 0 \iff \text{RH}$), while finite-$N$ projections suffer catastrophic Gram matrix ill-conditioning ($\kappa(G_6) \approx 50$) and astronomical scale blindness ($N \ge 10^{6.84 \times 10^{24}}$ to detect Platt-Trudgian verified zeros).
-Count: 7
+Count: 8
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -15,3 +15,4 @@ Count: 7
 | 6 | explore_merger_r2_L02_N02_baez_duarte_bound_collapse | Repaired RKHS lower bound $d_N \ge \frac{|\gamma_0|\sqrt{2\beta_0-1}}{|\rho_0|^2|\rho_0-1|}$ collapses to $< 5 \times 10^{-26}$ for Platt-Trudgian zeros, requiring $N > \exp(4.6 \times 10^{48})$ along logarithmic sieve floor $0.215/\sqrt{\log N}$. |
 | 7 | explore_merger_r2_L02_N07_mollified_mobius_neutral_failure | Regularized arithmetic mollifiers $c_k = -\mu(k)(1 - \log k / \log N)^2$ fail the neutral constraint $\sum c_k/k = 0$ completely ($+0.38$ at $N=100$), leaving the pole of $\zeta(s)$ at $s=1$ uncancelled. |
 
+| 8 | explorer_r7_L00_N16 | Vasyunin Gram matrix $G_N$ eigenvalues decay super-exponentially with condition number $\kappa(G_{100}) > 10^{50}$, while an off-line zero $\beta_0 > 1/2$ creates a strictly positive projection floor $d_N \ge c_0 > 0$, rendering unconditional verification of $d_N \to 0$ equivalent to RH with 100% Millennium depth. |
