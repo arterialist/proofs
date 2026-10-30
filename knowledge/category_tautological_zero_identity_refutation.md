@@ -2,7 +2,7 @@
 
 Type: failed_approach_category
 Pattern: Formulating zero refutation criteria using inequalities that are strictly contradicted by algebraic identities satisfied at actual zeros (such as $\Lambda_0(s) = -1/(s(s-1))$), rendering the refutation premise mutually exclusive with being a zero and tautologically incapable of excluding hypothetical zeros without independent external bounds.
-Count: 143
+Count: 146
 
 ## Entries
 | # | Original File | One-line Summary |
@@ -150,3 +150,6 @@ Count: 143
 | 141 | explorer_r42_L00_N00 | Geometric Langlands D-modules and Hitchin spectral curves parameterize algebraic coherent sheaves and flat connections over algebraic curves that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
 | 142 | explore_merger_r42_L04_N00 | Root strategy card reduction to geometric Langlands D-modules, Perelman W-entropy Kahler-Ricci solitons, arithmetic Gan-Gross-Prasad periods, and super-Yangian Baxter Q-operators avoids Pitfalls 001-095, but hits geometric Langlands frequency decoupling, Perelman W-entropy Euler product decoupling, and Gan-Gross-Prasad central symmetry confinement carrying 100% of Millennium RH analytical depth. |
 | 143 | gate_merger_r42_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while geometric Langlands D-modules and Perelman W-entropy gradient flows avoid Pitfalls 001-095, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
+| 144 | explorer_r43_L00_N00 | Derived Azumaya algebras and non-commutative Brauer-Severi schemes parameterize formal algebraic deformations and twisted coherent sheaves that decouple from continuous transcendental frequencies t = Im(s) with zero transverse coercivity off Re(s)=1/2. |
+| 145 | explore_merger_r43_L04_N00 | Root strategy card reduction to derived Azumaya algebras, orbifold Sasaki polyhedral cone metrics, Arthur-Kottwitz endoscopic transfer, and 3D mirror symmetry difference equations avoids Pitfalls 001-097, but hits derived Azumaya frequency decoupling, orbifold Sasaki Euler product decoupling, and endoscopic transfer local field decoupling carrying 100% of Millennium RH analytical depth. |
+| 146 | gate_merger_r43_L02_N00 | Gate Review Panel ([8, 5, 1]) unanimously blocks decomposition (should_decompose: false, recommended_action: restart_exploration) because while derived Azumaya algebra and orbifold Sasaki cone geometry avoid Pitfalls 001-097, establishing unconditional coercivity without circular zero-location assumptions leaves an open fatal debt. |
