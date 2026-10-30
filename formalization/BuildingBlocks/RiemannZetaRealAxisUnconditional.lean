@@ -82,7 +82,7 @@ theorem integrableOn_mellinIntegrand (σ : ℝ) :
     IntegrableOn (mellinIntegrand σ) (Ioi (0 : ℝ)) := by
   let P := hurwitzEvenFEPair 0
   have hm : HasMellin P.toStrongFEPair.f ((σ : ℂ) / 2) (P.toStrongFEPair.Λ ((σ : ℂ) / 2)) :=
-    P.toStrongFEPair.hasMellin ((σ : ℂ) / 2)
+    P.isStrongFEPair_toStrongFEPair.hasMellin ((σ : ℂ) / 2)
   have hc : MellinConvergent P.toStrongFEPair.f ((σ : ℂ) / 2) := hm.1
   have h_int_c : IntegrableOn (fun x : ℝ => (x : ℂ) ^ ((σ : ℂ) / 2 - 1) • P.f_modif x) (Ioi 0) := hc
   have h_re : IntegrableOn (fun x : ℝ => ((x : ℂ) ^ ((σ : ℂ) / 2 - 1) • P.f_modif x).re) (Ioi 0) :=
