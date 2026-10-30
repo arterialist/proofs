@@ -53,7 +53,9 @@ theorem etaSum_eq_Icc {x : ℝ} (hx : 0 ≤ x) :
     simp only [Finset.mem_Icc] at hn
     exact ⟨n-1, Finset.mem_range.mpr (by omega), by omega⟩
   · intro j hj
-    have hjn : j+1 ≤ ⌊x⌋₊ := by simpa only [Finset.mem_range] using hj
+    have hjn : j + 1 ≤ ⌊x⌋₊ := by
+      simp only [Finset.mem_range] at hj
+      omega
     have hjx : (j : ℝ)+1 ≤ x := by
       have hcast : (j : ℝ)+1 ≤ (⌊x⌋₊ : ℝ) := by exact_mod_cast hjn
       exact hcast.trans (Nat.floor_le hx)

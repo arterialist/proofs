@@ -41,9 +41,11 @@ theorem tsum_kernel (c : ℕ → ℂ) (s : ℂ) (x : ℝ) :
 
 theorem kernel_integrable (c : ℕ → ℂ) {s : ℂ} (hs : 0 < s.re) (n : ℕ) :
     IntegrableOn (kernel c s n) (Ioi 0) := by
-  have h := hasMellin_weighted_tent (show (0 : ℝ) < n + 1 by positivity) hs (c (n + 1))
-  simpa only [MellinConvergent, kernel, smul_eq_mul,
-    show (-s - 1) - 1 = -s - 2 by ring] using h.1
+  have h := (hasMellin_weighted_tent (show (0 : ℝ) < n + 1 by positivity) hs (c (n + 1))).1
+  rw [MellinConvergent] at h
+  have h_pow : (-s - 1) - 1 = -s - 2 := by ring
+  rw [h_pow] at h
+  exact h
 
 theorem integral_kernel (c : ℕ → ℂ) {s : ℂ} (hs : 0 < s.re) (n : ℕ) :
     (∫ x : ℝ in Ioi 0, kernel c s n x) =
@@ -90,8 +92,10 @@ theorem hasMellin_cutoffSum (c : ℕ → ℂ) {s : ℂ} (hs : 0 < s.re)
   have hint := SummableIntegrals.integrable_tsum_of_summable_integral_norm hF hnorm
   rw [heq] at hint
   constructor
-  · simpa only [MellinConvergent, smul_eq_mul,
-      show (-s - 1) - 1 = -s - 2 by ring] using hint
+  · rw [MellinConvergent]
+    have h_pow : (-s - 1) - 1 = -s - 2 := by ring
+    rw [h_pow]
+    exact hint
   · have hswap := integral_tsum_of_summable_integral_norm hF hnorm
     rw [heq] at hswap
     unfold mellin

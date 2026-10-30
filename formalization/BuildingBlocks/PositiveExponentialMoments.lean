@@ -19,7 +19,7 @@ theorem lintegral_exp_eq_tsum {τ : α → ℝ} {w : α → ℝ≥0∞}
       ∑' k : ℕ, ∫⁻ x, w x * ENNReal.ofReal ((t * τ x)^k / k.factorial) ∂μ := by
   have he (x : α) : ENNReal.ofReal (Real.exp (t * τ x)) =
       ∑' k : ℕ, ENNReal.ofReal ((t * τ x)^k / k.factorial) := by
-    have hs := NormedSpace.expSeries_div_hasSum_exp (𝕂 := ℝ) (t * τ x)
+    have hs := NormedSpace.expSeries_div_hasSum_exp (t * τ x)
     rw [← Real.exp_eq_exp_ℝ] at hs
     rw [← hs.tsum_eq]
     exact ENNReal.ofReal_tsum_of_nonneg (fun k => div_nonneg (pow_nonneg (mul_nonneg ht (hτ0 x)) k) (by positivity)) hs.summable

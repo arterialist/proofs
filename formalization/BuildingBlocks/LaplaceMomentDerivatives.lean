@@ -64,11 +64,23 @@ theorem integrable_integrand {τ : α → ℝ} (hτ : Measurable τ)
 omit [MeasurableSpace α] in
 theorem hasDerivAt_integrand (τ : α → ℝ) (k : ℕ) (z : ℂ) (x : α) :
     HasDerivAt (fun w => integrand τ k w x) (-integrand τ (k+1) z x) z := by
-  have h := ((((hasDerivAt_id z).neg).mul_const (τ x : ℂ)).cexp).const_mul
-    ((τ x : ℂ)^k)
-  convert h using 1
-  simp only [integrand, pow_succ, Pi.neg_apply, id_eq]
-  ring
+  have h1 : HasDerivAt (fun w : ℂ => -w * (τ x : ℂ)) (-(τ x : ℂ)) z := by
+    have h : HasDerivAt (fun w : ℂ => w * -(τ x : ℂ)) (1 * -(τ x : ℂ)) z :=
+      (hasDerivAt_id z).mul_const (-(τ x : ℂ))
+    have heq : (fun w : ℂ => -w * (τ x : ℂ)) = (fun w : ℂ => w * -(τ x : ℂ)) := by
+      ext w; ring
+    rw [heq]
+    convert h using 1
+    ring
+  have h2 := h1.cexp
+  have h3 := h2.const_mul ((τ x : ℂ)^k)
+  have heq2 : (fun w => integrand τ k w x) = (fun w => (τ x : ℂ)^k * Complex.exp (-w * (τ x : ℂ))) := rfl
+  rw [heq2]
+  have heq3 : (τ x : ℂ)^k * (Complex.exp (-z * (τ x : ℂ)) * -(τ x : ℂ)) = -integrand τ (k+1) z x := by
+    simp only [integrand, pow_succ']
+    ring
+  rw [← heq3]
+  exact h3
 
 /-- Differentiation at an interior point follows from one lower convergent
 real parameter; its derivative is the next actual moment with a minus sign. -/
@@ -95,9 +107,11 @@ theorem hasDerivAt_moment {τ : α → ℝ} (hτ : Measurable τ)
   have hdiff : ∀ᵐ x ∂μ, ∀ w ∈ Metric.ball z δ,
       HasDerivAt (fun u => integrand τ k u x) (-integrand τ (k+1) w x) w :=
     Filter.Eventually.of_forall fun x w _ => hasDerivAt_integrand τ k w x
-  have h := hasDerivAt_integral_of_dominated_loc_of_deriv_le hd hmeas
+  have h := hasDerivAt_integral_of_dominated_loc_of_deriv_le (Metric.ball_mem_nhds z hd) hmeas
     (integrable_integrand hτ hτ0 hb hz k) hdmeas hbound (hb.const_mul C) hdiff
-  simpa only [moment, integral_neg] using h.2
+  have h2 := h.2
+  rw [integral_neg] at h2
+  exact h2
 
 /-- All derivative orders are obtained by differentiation on the open
 half-plane of convergence, rather than by postulating moment identities. -/

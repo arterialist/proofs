@@ -78,8 +78,11 @@ theorem hasMellin_W {s : ℂ} (hs : 1 < s.re) :
   have h := CriticalMultipleMellin.hasMellin_cutoffSum
     (show (1 : ℝ)/2 < s.re by linarith)
     (fun x hx => V_zero hx) (ActualCenteredMellin.hasMellin_V hs)
-  convert h using 1
-  simp only [CriticalTransformPoles.transform, ShiftedZetaMultiplier.M]
+  have hW : W = CriticalMultipleMellin.cutoffSum (fun x => V x) := rfl
+  rw [hW]
+  refine ⟨h.1, ?_⟩
+  rw [h.2]
+  unfold CriticalTransformPoles.transform ShiftedZetaMultiplier.M
   ring
 
 /-- Filling the removable value at one leaves the proved Mellin formula
@@ -107,7 +110,7 @@ theorem integral_W_Ioi_one {s : ℂ} (hs : 1 < s.re) :
       CriticalTransformPoles.transform s := by
   have he : (∫ x : ℝ in Ioi 0, (x : ℂ)^(-s-2) * W x) =
       ∫ x : ℝ in Ioi 1, (x : ℂ)^(-s-2) * W x := by
-    apply setIntegral_eq_of_subset_of_forall_diff_eq_zero measurableSet_Ioi
+    apply setIntegral_eq_of_subset_of_forall_sdiff_eq_zero measurableSet_Ioi
       (Ioi_subset_Ioi (by norm_num : (0 : ℝ) ≤ 1))
     intro x hx
     rw [W_zero (le_of_not_gt hx.2), mul_zero]

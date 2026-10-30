@@ -92,7 +92,7 @@ private theorem rieszCutoff_eq_Icc (c : ℕ → ℂ) {x : ℝ} (hx : 0 ≤ x) :
     simp only [Finset.mem_Icc] at hn
     exact ⟨n - 1, Finset.mem_range.mpr (by omega), by omega⟩
   · intro j hj
-    have hjn : j + 1 ≤ ⌊x⌋₊ := by simpa only [Finset.mem_range] using hj
+    have hjn : j + 1 ≤ ⌊x⌋₊ := by simp only [Finset.mem_range] at hj; omega
     have hjx : (j : ℝ) + 1 ≤ x := by
       have hcast : (j : ℝ) + 1 ≤ (⌊x⌋₊ : ℝ) := by exact_mod_cast hjn
       exact hcast.trans (Nat.floor_le hx)
@@ -223,7 +223,10 @@ theorem hasMellin_fullNumerator {s : ℂ} (hs : 1 < s.re) :
   have h := CriticalMultipleMellin.hasMellin_cutoffSum
     (show (1 : ℝ) / 2 < s.re by linarith)
     (fun x hx => N_zero hx) (hasMellin_N hs)
-  convert h using 1
+  have hF : fullNumerator = CriticalMultipleMellin.cutoffSum (fun x => ActualCenteredMellin.N x) := rfl
+  rw [hF]
+  refine ⟨h.1, ?_⟩
+  rw [h.2]
   ring
 
 theorem hasMellin_allocation {s : ℂ} (hs : (1 : ℝ) / 2 < s.re) :
@@ -231,7 +234,10 @@ theorem hasMellin_allocation {s : ℂ} (hs : (1 : ℝ) / 2 < s.re) :
       (riemannZeta (s + 1 / 2) * SamePrimeDirichlet.H s / (s * (s + 1))) := by
   have h := CriticalMultipleMellin.hasMellin_cutoffSum hs
     (fun x hx => T_zero hx) (hasMellin_T hs)
-  convert h using 1
+  have hA : allocation = CriticalMultipleMellin.cutoffSum (fun x => ActualCenteredMellin.T x) := rfl
+  rw [hA]
+  refine ⟨h.1, ?_⟩
+  rw [h.2]
   ring
 
 theorem integrableOn_fullNumerator_Ioi_one {s : ℂ} (hs : 1 < s.re) :
@@ -248,7 +254,7 @@ theorem integral_fullNumerator_Ioi_one {s : ℂ} (hs : 1 < s.re) :
         (s * (s + 1)) := by
   have he : (∫ x : ℝ in Ioi 0, (x : ℂ) ^ (-s - 2) * fullNumerator x) =
       ∫ x : ℝ in Ioi 1, (x : ℂ) ^ (-s - 2) * fullNumerator x := by
-    apply setIntegral_eq_of_subset_of_forall_diff_eq_zero measurableSet_Ioi
+    apply setIntegral_eq_of_subset_of_forall_sdiff_eq_zero measurableSet_Ioi
       (Ioi_subset_Ioi (by norm_num : (0 : ℝ) ≤ 1))
     intro x hx
     rw [fullNumerator_zero (le_of_not_gt hx.2), mul_zero]
@@ -269,7 +275,7 @@ theorem integral_allocation_Ioi_one {s : ℂ} (hs : (1 : ℝ) / 2 < s.re) :
       riemannZeta (s + 1 / 2) * SamePrimeDirichlet.H s / (s * (s + 1)) := by
   have he : (∫ x : ℝ in Ioi 0, (x : ℂ) ^ (-s - 2) * allocation x) =
       ∫ x : ℝ in Ioi 1, (x : ℂ) ^ (-s - 2) * allocation x := by
-    apply setIntegral_eq_of_subset_of_forall_diff_eq_zero measurableSet_Ioi
+    apply setIntegral_eq_of_subset_of_forall_sdiff_eq_zero measurableSet_Ioi
       (Ioi_subset_Ioi (by norm_num : (0 : ℝ) ≤ 1))
     intro x hx
     rw [allocation_zero (le_of_not_gt hx.2), mul_zero]

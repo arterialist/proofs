@@ -43,7 +43,8 @@ theorem hasMellin_scaled {f : ℝ → ℂ} {s m : ℂ} (hf : HasMellin f (-s - 1
     simpa only [div_eq_mul_inv, mul_comm] using
       (MellinConvergent.comp_mul_left (f := f) (s := -s - 1) (inv_pos.mpr hd)).2 hf.1
   constructor
-  · simpa only [scaled, smul_eq_mul] using hc.const_smul (Real.sqrt d : ℂ)
+  · have h_smul := hc.const_smul (Real.sqrt d : ℂ)
+    exact h_smul
   · change mellin (fun x => (Real.sqrt d : ℂ) • f (x / d)) (-s - 1) = _
     rw [mellin_const_smul]
     have he : mellin (fun x => f (x / d)) (-s - 1) =
@@ -125,9 +126,11 @@ theorem hasMellin_cutoffSum {f : ℝ → ℂ} {s m : ℂ} (hs : (1 : ℝ) / 2 < 
     HasMellin (cutoffSum f) (-s - 1) (riemannZeta (s + 1 / 2) * m) := by
   have hF : ∀ n : ℕ, IntegrableOn (integrand (scaled f (n + 1)) s) (Ioi 0) := by
     intro n
-    simpa only [MellinConvergent, integrand, smul_eq_mul,
-      show (-s - 1) - 1 = -s - 2 by ring] using
-      (hasMellin_scaled hf (show (0 : ℝ) < n + 1 by positivity)).1
+    have h_sc := (hasMellin_scaled hf (show (0 : ℝ) < n + 1 by positivity)).1
+    rw [MellinConvergent] at h_sc
+    have h_pow : (-s - 1) - 1 = -s - 2 := by ring
+    rw [h_pow] at h_sc
+    exact h_sc
   have hp : Summable (fun n : ℕ => (n + 1 : ℝ) ^ (-s.re - 1 / 2)) := by
     simpa only [Nat.cast_add, Nat.cast_one] using
       (summable_nat_add_iff 1).2 (Real.summable_nat_rpow.2 (by linarith : -s.re - 1 / 2 < -1))
@@ -143,8 +146,10 @@ theorem hasMellin_cutoffSum {f : ℝ → ℂ} {s m : ℂ} (hs : (1 : ℝ) / 2 < 
   have hint := SummableIntegrals.integrable_tsum_of_summable_integral_norm hF hnorm
   rw [heq] at hint
   constructor
-  · simpa only [MellinConvergent, integrand, smul_eq_mul,
-      show (-s - 1) - 1 = -s - 2 by ring] using hint
+  · rw [MellinConvergent]
+    have h_pow : (-s - 1) - 1 = -s - 2 := by ring
+    rw [h_pow]
+    exact hint
   · have hswap := integral_tsum_of_summable_integral_norm hF hnorm
     rw [heq] at hswap
     change (∫ x : ℝ in Ioi 0, (x : ℂ) ^ ((-s - 1) - 1) * cutoffSum f x) = _
