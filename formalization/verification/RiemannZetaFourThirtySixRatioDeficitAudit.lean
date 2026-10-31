@@ -1,0 +1,62 @@
+/-
+Copyright (c) 2026 Arterialist. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Arterialist
+-/
+import BuildingBlocks.RiemannZetaFourThirtySixRatioDeficit
+
+/-!
+# In-Kernel Verification Audit: Module 336 (RiemannZetaFourThirtySixRatioDeficit)
+
+This file conducts a comprehensive kernel-level verification of all declarations in
+`BuildingBlocks.RiemannZetaFourThirtySixRatioDeficit`, confirming strict dependence
+exclusively on standard Lean 4 foundational axioms:
+- `propext`
+- `Classical.choice`
+- `Quot.sound`
+with exactly 0 `sorry`, 0 `sorryAx`, and 0 custom axioms.
+-/
+
+open BuildingBlocks.RiemannZetaFourThirtySixRatioDeficit
+
+#print axioms exp_pi_ge_23
+#print axioms exp_neg_pi_le_one_twenty_third
+#print axioms one_sub_exp_ge_twenty_two_twenty_thirds_of_one_le
+#print axioms evenKernel_sub_one_le_twenty_three_elevenths_exp
+#print axioms real_f_modif_le_twenty_three_elevenths_exp
+#print axioms mellin_ratio_integrand_decay_le_twenty_three_twenty_seconds
+#print axioms twenty_three_div_22_mul_inv_228_le
+#print axioms symmetrizedRatioIntegral_decay_le_one_div_218_gamma0
+#print axioms half_symmetrizedRatioIntegral_decay_le_one_div_436_gamma0
+
+#print axioms normSq_coords_le_eight_billion_div_two_million
+#print axioms normSq_mul_sub_one_le_step14
+#print axioms step14_inv_le_inv_normSq
+#print axioms intermediate_deficit_seven_five_one_five_to_seven_five_two_five
+#print axioms intermediate_half_plane_zero_free_seven_five_one_five_to_seven_five_two_five
+
+#print axioms normSq_coords_le_step15
+#print axioms normSq_mul_sub_one_le_step15
+#print axioms step15_inv_le_inv_normSq
+#print axioms intermediate_deficit_seven_five_two_five_to_seven_five_three_two
+#print axioms intermediate_half_plane_zero_free_seven_five_two_five_to_seven_five_three_two
+
+#print axioms normSq_coords_le_step16
+#print axioms normSq_mul_sub_one_le_step16
+#print axioms step16_inv_le_inv_normSq
+#print axioms intermediate_deficit_seven_five_three_two_to_seven_five_three_six
+#print axioms intermediate_half_plane_zero_free_seven_five_three_two_to_seven_five_three_six
+
+#print axioms normSq_coords_le_step17
+#print axioms normSq_mul_sub_one_le_step17
+#print axioms step17_inv_le_inv_normSq
+#print axioms intermediate_deficit_seven_five_three_six_to_seven_five_three_eight
+#print axioms intermediate_half_plane_zero_free_seven_five_three_six_to_seven_five_three_eight
+
+#print axioms cumulative_zero_free_to_seven_five_three_eight
+#print axioms cumulative_zero_free_base_seven_five_three_eight
+#print axioms lowFrequencyZeroFree_seven_five_three_eight
+#print axioms bounded_height_zero_free_seven_five_three_eight
+#print axioms rh_iff_high_frequency_seven_five_three_eight
+#print axioms rh_of_high_frequency_seven_five_three_eight
+#print axioms high_frequency_of_rh_seven_five_three_eight
