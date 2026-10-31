@@ -7,6 +7,8 @@ import BuildingBlocks.ActualCriticalSharpConstant
 import BuildingBlocks.PrimePowerLogSeries
 import BuildingBlocks.ActualCriticalHDoublePole
 import BuildingBlocks.ActualCriticalUpperSharpConstant
+import BuildingBlocks.CriticalTransformContinuationZeroFree
+import BuildingBlocks.ActualCriticalZeroFreeCriterion
 import Lean.Util.CollectAxioms
 
 /-!
@@ -23,6 +25,8 @@ open BuildingBlocks.ActualCriticalLowerMajorant
 open BuildingBlocks.ActualCriticalSharpConstant
 open BuildingBlocks.ActualCriticalHDoublePole
 open BuildingBlocks.ActualCriticalUpperSharpConstant
+open BuildingBlocks.CriticalTransformContinuationZeroFree
+open BuildingBlocks.ActualCriticalZeroFreeCriterion
 
 #check RiemannHypothesis_of_growth_after
 #print axioms RiemannHypothesis_of_growth_after
@@ -95,3 +99,24 @@ run_cmd do
   logInfo m!"GROWTH/EXCURSION DECLARATION COUNT {selected.length}"
   logInfo m!"GROWTH/EXCURSION TRANSITIVE AXIOMS {axList}"
   logInfo "GROWTH/EXCURSION AXIOM AUDIT PASSED: standard foundational axioms only, zero custom axioms, zero sorry"
+
+/-! ### Level `θ`: zero-free half-planes and oscillation -/
+
+#check zeroFree_of_holomorphic_continuation
+#print axioms zeroFree_of_holomorphic_continuation
+#check zeroFree_of_majorant
+#print axioms zeroFree_of_majorant
+#check zeroFree_of_lower_majorant
+#print axioms zeroFree_of_lower_majorant
+#check zeroFree_of_power_growth
+#print axioms zeroFree_of_power_growth
+#check zeroFree_of_power_lower_growth
+#print axioms zeroFree_of_power_lower_growth
+#check zeroFree_le_of_power_growth
+#print axioms zeroFree_le_of_power_growth
+#check oscillation_of_zero
+#print axioms oscillation_of_zero
+#check log_oscillation_of_not_RH
+#print axioms log_oscillation_of_not_RH
+#check power_oscillation_of_not_RH
+#print axioms power_oscillation_of_not_RH

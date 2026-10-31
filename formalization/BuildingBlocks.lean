@@ -736,3 +736,5 @@ import BuildingBlocks.RiemannZetaCauchyResidueShift
 import BuildingBlocks.PrimePowerLogSeries
 import BuildingBlocks.ActualCriticalHDoublePole
 import BuildingBlocks.ActualCriticalUpperSharpConstant
+import BuildingBlocks.CriticalTransformContinuationZeroFree
+import BuildingBlocks.ActualCriticalZeroFreeCriterion

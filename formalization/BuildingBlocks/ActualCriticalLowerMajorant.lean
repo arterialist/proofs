@@ -28,20 +28,20 @@ namespace BuildingBlocks.ActualCriticalLowerMajorant
 open ActualCriticalMeasure MellinCompactCorrection ActualCriticalGrowthCriterion
   ActualCriticalMajorantCriterion ActualCriticalLowerExcursion
 
-variable {A : ℝ}
+variable {θ A : ℝ}
 
 /-- The nonnegative tail `(g x + W x) 1_{x > A}`. -/
-noncomputable def lowerTail (D : MajorantData A) (x : ℝ) : ℂ :=
+noncomputable def lowerTail (D : MajorantData θ A) (x : ℝ) : ℂ :=
   tailPart (gC D) A x + tailPart ActualCriticalMellin.W A x
 
-theorem lowerTail_eq (D : MajorantData A) (x : ℝ) :
+theorem lowerTail_eq (D : MajorantData θ A) (x : ℝ) :
     lowerTail D x = tailPart (gC D) A x - negativeWTail A x := by
   simp only [lowerTail, negativeWTail, sub_neg_eq_add]
 
-theorem lowerTail_im (D : MajorantData A) (x : ℝ) : (lowerTail D x).im = 0 := by
+theorem lowerTail_im (D : MajorantData θ A) (x : ℝ) : (lowerTail D x).im = 0 := by
   by_cases hx : A < x <;> simp [lowerTail, tailPart, gC, hx, ActualCriticalMellin.W_real]
 
-theorem lowerTail_re_nonneg (D : MajorantData A)
+theorem lowerTail_re_nonneg (D : MajorantData θ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) (x : ℝ) :
     0 ≤ (lowerTail D x).re := by
   by_cases hx : A < x
@@ -51,13 +51,13 @@ theorem lowerTail_re_nonneg (D : MajorantData A)
     linarith
   · simp [lowerTail, tailPart, hx]
 
-theorem lowerTail_ofReal (D : MajorantData A) (x : ℝ) :
+theorem lowerTail_ofReal (D : MajorantData θ A) (x : ℝ) :
     lowerTail D x = ((lowerTail D x).re : ℂ) := by
   apply Complex.ext
   · rfl
   · simp [lowerTail_im]
 
-theorem measurable_lowerTail (D : MajorantData A) : Measurable (lowerTail D) := by
+theorem measurable_lowerTail (D : MajorantData θ A) : Measurable (lowerTail D) := by
   have h : lowerTail D = fun x => tailPart (gC D) A x - negativeWTail A x := by
     funext x
     exact lowerTail_eq D x
@@ -66,24 +66,24 @@ theorem measurable_lowerTail (D : MajorantData A) : Measurable (lowerTail D) := 
   refine Measurable.indicator ?_ measurableSet_Ioi
   exact Complex.measurable_ofReal.comp D.measurable_g
 
-noncomputable def lowerDensity (D : MajorantData A) (x : ℝ) : ℝ≥0∞ :=
+noncomputable def lowerDensity (D : MajorantData θ A) (x : ℝ) : ℝ≥0∞ :=
   ENNReal.ofReal (x ^ (-2 : ℝ) * (lowerTail D x).re)
 
-theorem measurable_lowerDensity (D : MajorantData A) : Measurable (lowerDensity D) :=
+theorem measurable_lowerDensity (D : MajorantData θ A) : Measurable (lowerDensity D) :=
   ((measurable_id.pow measurable_const).mul
     (Complex.measurable_re.comp (measurable_lowerTail D))).ennreal_ofReal
 
-noncomputable def lowerMeasure (D : MajorantData A) : Measure ℝ :=
+noncomputable def lowerMeasure (D : MajorantData θ A) : Measure ℝ :=
   (volume.restrict (Ioi 1)).withDensity (lowerDensity D)
 
-theorem lowerDensity_toReal (D : MajorantData A)
+theorem lowerDensity_toReal (D : MajorantData θ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     {x : ℝ} (hx : 0 ≤ x) :
     (lowerDensity D x).toReal = x ^ (-2 : ℝ) * (lowerTail D x).re := by
   unfold lowerDensity
   exact ENNReal.toReal_ofReal (mul_nonneg (Real.rpow_nonneg hx _) (lowerTail_re_nonneg D hlow x))
 
-theorem lower_density_smul_exp (D : MajorantData A)
+theorem lower_density_smul_exp (D : MajorantData θ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     {x : ℝ} (hx : 1 < x) (s : ℂ) :
     (lowerDensity D x).toReal • Complex.exp (-s * (time x : ℂ)) =
@@ -104,7 +104,7 @@ theorem lower_density_smul_exp (D : MajorantData A)
   congr 2
   ring
 
-theorem lower_moment_eq_integral (D : MajorantData A)
+theorem lower_moment_eq_integral (D : MajorantData θ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) (s : ℂ) :
     LaplaceMomentDerivatives.moment (lowerMeasure D) time 0 s =
       ∫ x : ℝ in Ioi 1, (x : ℂ) ^ (-s - 2) * lowerTail D x := by
@@ -116,7 +116,7 @@ theorem lower_moment_eq_integral (D : MajorantData A)
   intro x hx
   exact lower_density_smul_exp D hlow hx s
 
-theorem lower_moment_eq_F_add_filled_sub_initial (D : MajorantData A) (hA : 1 ≤ A)
+theorem lower_moment_eq_F_add_filled_sub_initial (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     {s : ℂ} (hs : 1 < s.re) :
     LaplaceMomentDerivatives.moment (lowerMeasure D) time 0 s =
@@ -135,7 +135,7 @@ theorem lower_moment_eq_F_add_filled_sub_initial (D : MajorantData A) (hA : 1 �
     (hasMellin_negativeWTail hA hs).2]
   ring
 
-lemma norm_lower_kernel (D : MajorantData A)
+lemma norm_lower_kernel (D : MajorantData θ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     (σ : ℝ) {x : ℝ} (hx : 1 < x) :
     ‖(x : ℂ) ^ (-(σ : ℂ) - 2) * lowerTail D x‖ = x ^ (-σ - 2) * (lowerTail D x).re := by
@@ -144,7 +144,7 @@ lemma norm_lower_kernel (D : MajorantData A)
   rw [Complex.norm_real, Real.norm_of_nonneg (lowerTail_re_nonneg D hlow x)]
   norm_num
 
-lemma lower_density_exp_eq_enorm (D : MajorantData A)
+lemma lower_density_exp_eq_enorm (D : MajorantData θ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     (σ : ℝ) {x : ℝ} (hx : 1 < x) :
     lowerDensity D x * ENNReal.ofReal (Real.exp (-σ * time x)) =
@@ -158,7 +158,7 @@ lemma lower_density_exp_eq_enorm (D : MajorantData A)
     _ = (x ^ (-2 : ℝ) * Real.exp (-σ * Real.log x)) * (lowerTail D x).re := by ring
     _ = _ := by rw [ActualCriticalMeasure.real_weight_identity (zero_lt_one.trans hx)]
 
-theorem lower_laplace_mass_eq_norm (D : MajorantData A)
+theorem lower_laplace_mass_eq_norm (D : MajorantData θ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) (σ : ℝ) :
     LaplaceConvergenceAbscissa.mass (lowerMeasure D) time σ =
       ∫⁻ x : ℝ in Ioi 1, ‖(x : ℂ) ^ (-(σ : ℂ) - 2) * lowerTail D x‖ₑ := by
@@ -170,7 +170,7 @@ theorem lower_laplace_mass_eq_norm (D : MajorantData A)
   filter_upwards [ae_restrict_mem measurableSet_Ioi] with x hx
   exact lower_density_exp_eq_enorm D hlow σ hx
 
-theorem lower_laplace_integrable (D : MajorantData A) (hA : 1 ≤ A)
+theorem lower_laplace_integrable (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     {σ : ℝ} (hσ : 1 < σ) :
     Integrable (fun x => Real.exp (-σ * time x)) (lowerMeasure D) := by
@@ -186,48 +186,48 @@ theorem lower_laplace_integrable (D : MajorantData A) (hA : 1 ≤ A)
   rw [lower_laplace_mass_eq_norm D hlow σ]
   exact hasFiniteIntegral_iff_enorm.mp hi.2
 
-theorem lower_convergenceSet_nonempty (D : MajorantData A) (hA : 1 ≤ A)
+theorem lower_convergenceSet_nonempty (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) :
     (LaplaceConvergenceAbscissa.convergenceSet (lowerMeasure D) time).Nonempty := by
   refine ⟨2, ?_⟩
   exact (LaplaceConvergenceAbscissa.integrable_iff_mem (lowerMeasure D) time measurable_time 2).1
     (lower_laplace_integrable D hA hlow (by norm_num))
 
-noncomputable def lowerTransform (D : MajorantData A) (s : ℂ) : ℂ :=
+noncomputable def lowerTransform (D : MajorantData θ A) (s : ℂ) : ℂ :=
   D.F s + (CriticalTransformPoles.filledTransform s -
     mellin (initialPart ActualCriticalMellin.W A) (-s - 1))
 
-theorem lowerTransform_analyticAt_real (D : MajorantData A) {σ : ℝ} (hσ : (1 : ℝ) / 2 < σ) :
+theorem lowerTransform_analyticAt_real (D : MajorantData θ A) {σ : ℝ} (hσ : θ < σ) :
     AnalyticAt ℂ (lowerTransform D) (σ : ℂ) :=
   (D.analytic_F (σ : ℂ) (by simpa using hσ)).add
-    ((CriticalTransformRealAxis.analyticAt_filledTransform_real hσ).sub
+    ((CriticalTransformRealAxis.analyticAt_filledTransform_real (D.half_le.trans_lt hσ)).sub
       ((MellinCompactCorrection.differentiable_W_initialPart A).analyticAt (σ : ℂ)))
 
-theorem lowerTransform_eq_laplace (D : MajorantData A) (hA : 1 ≤ A)
+theorem lowerTransform_eq_laplace (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     {s : ℂ} (hs : 1 < s.re) :
     lowerTransform D s = LaplaceMomentDerivatives.moment (lowerMeasure D) time 0 s :=
   (lower_moment_eq_F_add_filled_sub_initial D hA hlow hs).symm
 
-theorem lower_finite_abscissa_le_half (D : MajorantData A) (hA : 1 ≤ A)
+theorem lower_finite_abscissa_le_half (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     (hbdd : BddBelow (LaplaceConvergenceAbscissa.convergenceSet (lowerMeasure D) time)) :
-    sInf (LaplaceConvergenceAbscissa.convergenceSet (lowerMeasure D) time) ≤ (1 : ℝ) / 2 := by
+    sInf (LaplaceConvergenceAbscissa.convergenceSet (lowerMeasure D) time) ≤ θ := by
   by_contra hle
   have hhalf := lt_of_not_ge hle
   have hne := lower_convergenceSet_nonempty D hA hlow
   have ht : ∀ᵐ x ∂lowerMeasure D, 0 ≤ time x := Eventually.of_forall time_nonneg
   have hL := LaplaceConvergenceAnalytic.analyticOnNhd_above_inf measurable_time ht hne hbdd
   obtain ⟨R, hR, hF, heq⟩ := RealAxisAnalyticContinuation.exists_right_disk_agreement
-    (F := lowerTransform D) (β := (1 : ℝ) / 2) (B := 1)
+    (F := lowerTransform D) (β := θ) (B := 1)
     (fun σ hσ => lowerTransform_analyticAt_real D hσ) hL
     (fun σ hσ => lowerTransform_eq_laplace D hA hlow (s := (σ : ℂ)) (by simpa using hσ)) hhalf
   exact LandauSingularity.finite_abscissa_singular measurable_time ht hne hbdd hR hF heq
 
-theorem lower_laplace_analyticOnNhd_above_half (D : MajorantData A) (hA : 1 ≤ A)
+theorem lower_laplace_analyticOnNhd_above_half (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) :
     AnalyticOnNhd ℂ (LaplaceMomentDerivatives.moment (lowerMeasure D) time 0)
-      {s : ℂ | (1 : ℝ) / 2 < s.re} := by
+      {s : ℂ | θ < s.re} := by
   have ht : ∀ᵐ x ∂lowerMeasure D, 0 ≤ time x := Eventually.of_forall time_nonneg
   by_cases hbdd : BddBelow (LaplaceConvergenceAbscissa.convergenceSet (lowerMeasure D) time)
   · apply (LaplaceConvergenceAnalytic.analyticOnNhd_above_inf
@@ -237,18 +237,18 @@ theorem lower_laplace_analyticOnNhd_above_half (D : MajorantData A) (hA : 1 ≤ 
   · exact (LaplaceConvergenceAnalytic.analyticOnNhd_of_not_bddBelow
       measurable_time ht hbdd).mono (subset_univ _)
 
-noncomputable def lowerContinuation (D : MajorantData A) (s : ℂ) : ℂ :=
+noncomputable def lowerContinuation (D : MajorantData θ A) (s : ℂ) : ℂ :=
   LaplaceMomentDerivatives.moment (lowerMeasure D) time 0 s - D.F s +
     mellin (initialPart ActualCriticalMellin.W A) (-s - 1)
 
-theorem lowerContinuation_analyticOnNhd (D : MajorantData A) (hA : 1 ≤ A)
+theorem lowerContinuation_analyticOnNhd (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) :
-    AnalyticOnNhd ℂ (lowerContinuation D) {s : ℂ | (1 : ℝ) / 2 < s.re} := by
+    AnalyticOnNhd ℂ (lowerContinuation D) {s : ℂ | θ < s.re} := by
   intro s hs
   exact ((lower_laplace_analyticOnNhd_above_half D hA hlow s hs).sub (D.analytic_F s hs)).add
     ((MellinCompactCorrection.differentiable_W_initialPart A).analyticAt s)
 
-theorem lowerContinuation_eq_filledTransform (D : MajorantData A) (hA : 1 ≤ A)
+theorem lowerContinuation_eq_filledTransform (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re)
     {s : ℂ} (hs : 1 < s.re) :
     lowerContinuation D s = CriticalTransformPoles.filledTransform s := by
@@ -256,18 +256,26 @@ theorem lowerContinuation_eq_filledTransform (D : MajorantData A) (hA : 1 ≤ A)
   rw [lower_moment_eq_F_add_filled_sub_initial D hA hlow hs]
   ring
 
-/-- **Abstract lower criterion.** `-g(x) ≤ Re W(x)` for all `x > A` implies RH, for any
-majorant datum `g`. -/
-theorem RiemannHypothesis_of_lower_majorant (D : MajorantData A) (hA : 1 ≤ A)
+/-- **Abstract lower zero-free criterion at level `θ`.** `-g(x) ≤ Re W(x)` for all `x > A`
+excludes every zero with `Re ρ > θ`, for any majorant datum `g` at level `θ`. -/
+theorem zeroFree_of_lower_majorant (D : MajorantData θ A) (hA : 1 ≤ A)
     (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) :
-    RiemannHypothesis :=
-  CriticalTransformContinuationRH.RiemannHypothesis_of_holomorphic_continuation
+    ∀ ρ : ℂ, θ < ρ.re → riemannZeta ρ ≠ 0 :=
+  CriticalTransformContinuationZeroFree.zeroFree_of_holomorphic_continuation D.half_le
     (lowerContinuation_analyticOnNhd D hA hlow)
     (fun _ hs => lowerContinuation_eq_filledTransform D hA hlow hs)
 
+/-- **Abstract lower criterion.** `-g(x) ≤ Re W(x)` for all `x > A` implies RH, for any
+majorant datum `g` at level `1/2`. -/
+theorem RiemannHypothesis_of_lower_majorant (D : MajorantData (1 / 2) A) (hA : 1 ≤ A)
+    (hlow : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) :
+    RiemannHypothesis :=
+  CriticalTransformRH.noRightZeros_implies_RiemannHypothesis
+    (fun s hs _ => zeroFree_of_lower_majorant D hA hlow s hs)
+
 /-! ### Unconditional exclusion when the transform has at most a simple pole at `1/2` -/
 
-theorem lower_moment_re_nonneg (D : MajorantData A) (σ : ℝ) :
+theorem lower_moment_re_nonneg (D : MajorantData θ A) (σ : ℝ) :
     0 ≤ (LaplaceMomentDerivatives.moment (lowerMeasure D) time 0 (σ : ℂ)).re := by
   unfold LaplaceMomentDerivatives.moment LaplaceMomentDerivatives.integrand
   simp only [pow_zero, one_mul]
@@ -283,7 +291,7 @@ theorem lower_moment_re_nonneg (D : MajorantData A) (σ : ℝ) :
 
 /-- **Abstract unconditional exclusion.** If `(σ - 1/2) F(σ)` is bounded as `σ → 1/2⁺`, the lower
 bound `-g(x) ≤ Re W(x)` fails for some `x > A`. -/
-theorem not_eventually_lower_majorant (D : MajorantData A) (hA : 1 ≤ A) {K : ℝ}
+theorem not_eventually_lower_majorant (D : MajorantData (1 / 2) A) (hA : 1 ≤ A) {K : ℝ}
     (hK : ∀ᶠ σ : ℝ in 𝓝[>] ((1 : ℝ) / 2), ‖((σ - 1 / 2 : ℝ) : ℂ) * D.F (σ : ℂ)‖ ≤ K) :
     ¬ (∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re) := by
   intro hlow

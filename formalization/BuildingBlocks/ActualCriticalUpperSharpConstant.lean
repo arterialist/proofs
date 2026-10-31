@@ -27,9 +27,9 @@ open ActualCriticalMeasure MellinCompactCorrection ActualCriticalGrowthCriterion
   ActualCriticalMajorantCriterion ActualCriticalLowerExcursion ActualCriticalLogMajorant
   ActualCriticalSharpConstant ActualCriticalHDoublePole
 
-variable {A : ℝ}
+variable {θ A : ℝ}
 
-theorem growth_moment_re_nonneg (D : MajorantData A) (σ : ℝ) :
+theorem growth_moment_re_nonneg (D : MajorantData θ A) (σ : ℝ) :
     0 ≤ (LaplaceMomentDerivatives.moment (growthMeasure D) time 0 (σ : ℂ)).re := by
   unfold LaplaceMomentDerivatives.moment LaplaceMomentDerivatives.integrand
   simp only [pow_zero, one_mul]
@@ -48,7 +48,7 @@ theorem growth_moment_re_nonneg (D : MajorantData A) (σ : ℝ) :
 theorem not_eventually_upper_log_growth {C : ℝ} (hA : 1 ≤ A) (hC : C < -(1 / 6)) :
     ¬ (∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ C * x ^ ((3 : ℝ) / 2) * (Real.log x) ^ 2) := by
   intro hgrow
-  set D : MajorantData A := logData C hA with hD
+  set D : MajorantData (1 / 2) A := logData C hA with hD
   have hgrow' : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x := hgrow
   have hJ := ActualCriticalMajorantCriterion.continuation_analyticOnNhd D hA hgrow'
   have heq : ∀ s : ℂ, 1 < s.re →

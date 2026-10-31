@@ -84,7 +84,7 @@ theorem not_eventually_lower_log_growth_of_HDoublePole (hH : HDoublePole) {C A :
     (hA : 1 ≤ A) (hC : C < 1 / 6) :
     ¬ (∀ x : ℝ, A < x → -(C * x ^ ((3 : ℝ) / 2) * (Real.log x) ^ 2) ≤ (ActualCriticalMellin.W x).re) := by
   intro hlow
-  set D : MajorantData A := logData C hA with hD
+  set D : MajorantData (1 / 2) A := logData C hA with hD
   have hlow' : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re := hlow
   have hJ := ActualCriticalLowerMajorant.lowerContinuation_analyticOnNhd D hA hlow'
   have heq : ∀ s : ℂ, 1 < s.re →

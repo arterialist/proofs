@@ -1,17 +1,21 @@
 import BuildingBlocks.ActualCriticalGrowthCriterion
+import BuildingBlocks.CriticalTransformContinuationZeroFree
 
 /-!
 # Majorant criterion for the actual critical sum
 
-Abstract form of the one-sided growth criterion. A *majorant datum* on the cutoff `A` is a
-real function `g` together with a function `F` analytic on `Re s > 1/2` that agrees with the
-tail Mellin integral `∫_A^∞ g(x) x^{-s-2} dx` on `Re s > 1`. Then
+Abstract form of the one-sided growth criterion. A *majorant datum* at level `θ ≥ 1/2` on the
+cutoff `A` is a real function `g` together with a function `F` analytic on `Re s > θ` that
+agrees with the tail Mellin integral `∫_A^∞ g(x) x^{-s-2} dx` on `Re s > 1`. Then
 
-  `(∀ x > A, Re W(x) ≤ g(x)) → RiemannHypothesis`.
+  `(∀ x > A, Re W(x) ≤ g(x)) → ∀ ρ, θ < Re ρ → ζ ρ ≠ 0`,
+
+and at level `θ = 1/2` this is the Riemann hypothesis.
 
 The proof is the Landau argument of `ActualCriticalGrowthCriterion` with the positive measure
 `(g(x) - W(x)) x^{-2} dx` on `x > A`; the only property of the majorant that the argument uses
-is the analytic continuation `F` of its tail transform past the line `Re s = 1`.
+is the analytic continuation `F` of its tail transform past the line `Re s = 1`, and the level
+`θ` to which it continues is exactly the level of the zero-free half-plane obtained.
 
 The power majorant `g(x) = C x^{3/2}` is recovered as the instance `powerData`.
 -/
@@ -23,32 +27,35 @@ namespace BuildingBlocks.ActualCriticalMajorantCriterion
 
 open ActualCriticalMeasure MellinCompactCorrection ActualCriticalGrowthCriterion
 
-/-- A majorant with an analytic continuation of its tail Mellin transform past `Re s = 1`. -/
-structure MajorantData (A : ℝ) where
+/-- A majorant with an analytic continuation of its tail Mellin transform to `Re s > θ`,
+where `θ ≥ 1/2`. -/
+structure MajorantData (θ A : ℝ) where
   /-- The majorant. -/
   g : ℝ → ℝ
   measurable_g : Measurable g
   /-- The continuation of the tail transform. -/
   F : ℂ → ℂ
-  analytic_F : AnalyticOnNhd ℂ F {s : ℂ | (1 : ℝ) / 2 < s.re}
+  /-- The level is at least `1/2` (below `1/2` the transform of `W` itself is not understood). -/
+  half_le : (1 : ℝ) / 2 ≤ θ
+  analytic_F : AnalyticOnNhd ℂ F {s : ℂ | θ < s.re}
   integrable_kernel : ∀ s : ℂ, 1 < s.re →
     IntegrableOn (fun x : ℝ => (x : ℂ) ^ (-s - 2) * (g x : ℂ)) (Ioi A)
   integral_kernel : ∀ s : ℂ, 1 < s.re →
     (∫ x : ℝ in Ioi A, (x : ℂ) ^ (-s - 2) * (g x : ℂ)) = F s
 
-variable {A : ℝ}
+variable {θ A : ℝ}
 
 /-- The complex-valued majorant. -/
-noncomputable def gC (D : MajorantData A) (x : ℝ) : ℂ := (D.g x : ℂ)
+noncomputable def gC (D : MajorantData θ A) (x : ℝ) : ℂ := (D.g x : ℂ)
 
 /-- The nonnegative tail `(g x - W x) 1_{x > A}`. -/
-noncomputable def growthTail (D : MajorantData A) (x : ℝ) : ℂ :=
+noncomputable def growthTail (D : MajorantData θ A) (x : ℝ) : ℂ :=
   tailPart (gC D) A x + negativeWTail A x
 
-theorem growthTail_im (D : MajorantData A) (x : ℝ) : (growthTail D x).im = 0 := by
+theorem growthTail_im (D : MajorantData θ A) (x : ℝ) : (growthTail D x).im = 0 := by
   by_cases hx : A < x <;> simp [growthTail, tailPart, gC, hx, negativeWTail_im]
 
-theorem growthTail_re_nonneg (D : MajorantData A)
+theorem growthTail_re_nonneg (D : MajorantData θ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x) (x : ℝ) :
     0 ≤ (growthTail D x).re := by
   by_cases hx : A < x
@@ -58,36 +65,36 @@ theorem growthTail_re_nonneg (D : MajorantData A)
     linarith
   · simp [growthTail, tailPart, negativeWTail, hx]
 
-theorem growthTail_ofReal (D : MajorantData A) (x : ℝ) :
+theorem growthTail_ofReal (D : MajorantData θ A) (x : ℝ) :
     growthTail D x = ((growthTail D x).re : ℂ) := by
   apply Complex.ext
   · rfl
   · simp [growthTail_im]
 
-theorem measurable_growthTail (D : MajorantData A) : Measurable (growthTail D) := by
+theorem measurable_growthTail (D : MajorantData θ A) : Measurable (growthTail D) := by
   unfold growthTail tailPart gC
   refine Measurable.add ?_ (measurable_negativeWTail A)
   refine Measurable.indicator ?_ measurableSet_Ioi
   exact Complex.measurable_ofReal.comp D.measurable_g
 
-noncomputable def growthDensity (D : MajorantData A) (x : ℝ) : ℝ≥0∞ :=
+noncomputable def growthDensity (D : MajorantData θ A) (x : ℝ) : ℝ≥0∞ :=
   ENNReal.ofReal (x ^ (-2 : ℝ) * (growthTail D x).re)
 
-theorem measurable_growthDensity (D : MajorantData A) : Measurable (growthDensity D) :=
+theorem measurable_growthDensity (D : MajorantData θ A) : Measurable (growthDensity D) :=
   ((measurable_id.pow measurable_const).mul
     (Complex.measurable_re.comp (measurable_growthTail D))).ennreal_ofReal
 
-noncomputable def growthMeasure (D : MajorantData A) : Measure ℝ :=
+noncomputable def growthMeasure (D : MajorantData θ A) : Measure ℝ :=
   (volume.restrict (Ioi 1)).withDensity (growthDensity D)
 
-theorem growthDensity_toReal (D : MajorantData A)
+theorem growthDensity_toReal (D : MajorantData θ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     {x : ℝ} (hx : 0 ≤ x) :
     (growthDensity D x).toReal = x ^ (-2 : ℝ) * (growthTail D x).re := by
   unfold growthDensity
   exact ENNReal.toReal_ofReal (mul_nonneg (Real.rpow_nonneg hx _) (growthTail_re_nonneg D hgrow x))
 
-theorem density_smul_exp (D : MajorantData A)
+theorem density_smul_exp (D : MajorantData θ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     {x : ℝ} (hx : 1 < x) (s : ℂ) :
     (growthDensity D x).toReal • Complex.exp (-s * (time x : ℂ)) =
@@ -108,7 +115,7 @@ theorem density_smul_exp (D : MajorantData A)
   congr 2
   ring
 
-theorem moment_eq_integral (D : MajorantData A)
+theorem moment_eq_integral (D : MajorantData θ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x) (s : ℂ) :
     LaplaceMomentDerivatives.moment (growthMeasure D) time 0 s =
       ∫ x : ℝ in Ioi 1, (x : ℂ) ^ (-s - 2) * growthTail D x := by
@@ -120,7 +127,7 @@ theorem moment_eq_integral (D : MajorantData A)
   intro x hx
   exact density_smul_exp D hgrow hx s
 
-theorem integral_majorant_tail (D : MajorantData A) (hA : 1 ≤ A) {s : ℂ} (hs : 1 < s.re) :
+theorem integral_majorant_tail (D : MajorantData θ A) (hA : 1 ≤ A) {s : ℂ} (hs : 1 < s.re) :
     (∫ x : ℝ in Ioi 1, (x : ℂ) ^ (-s - 2) * tailPart (gC D) A x) = D.F s := by
   rw [← D.integral_kernel s hs]
   have h1 : (∫ x : ℝ in Ioi A, (x : ℂ) ^ (-s - 2) * (D.g x : ℂ)) =
@@ -135,7 +142,7 @@ theorem integral_majorant_tail (D : MajorantData A) (hA : 1 ≤ A) {s : ℂ} (hs
   have hxA : ¬ A < x := by have := hx.2; simp only [mem_Ioi, not_lt] at this; linarith
   simp [tailPart, hxA]
 
-theorem integrableOn_majorant_tail (D : MajorantData A) (hA : 1 ≤ A) {s : ℂ} (hs : 1 < s.re) :
+theorem integrableOn_majorant_tail (D : MajorantData θ A) (hA : 1 ≤ A) {s : ℂ} (hs : 1 < s.re) :
     IntegrableOn (fun x : ℝ => (x : ℂ) ^ (-s - 2) * tailPart (gC D) A x) (Ioi 1) := by
   have hi := D.integrable_kernel s hs
   have heq : (fun x : ℝ => (x : ℂ) ^ (-s - 2) * tailPart (gC D) A x) =
@@ -152,7 +159,7 @@ theorem integrableOn_majorant_tail (D : MajorantData A) (hA : 1 ≤ A) {s : ℂ}
     exact hi
   exact (integrable_indicator_iff measurableSet_Ioi).mpr hres
 
-theorem moment_eq_F_add_initial_sub_filled (D : MajorantData A) (hA : 1 ≤ A)
+theorem moment_eq_F_add_initial_sub_filled (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     {s : ℂ} (hs : 1 < s.re) :
     LaplaceMomentDerivatives.moment (growthMeasure D) time 0 s =
@@ -170,7 +177,7 @@ theorem moment_eq_F_add_initial_sub_filled (D : MajorantData A) (hA : 1 ≤ A)
   rw [hsplit, integral_majorant_tail D hA hs, integral_negativeWTail_kernel hA s,
     (hasMellin_negativeWTail hA hs).2]
 
-lemma norm_growth_kernel (D : MajorantData A)
+lemma norm_growth_kernel (D : MajorantData θ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     (σ : ℝ) {x : ℝ} (hx : 1 < x) :
     ‖(x : ℂ) ^ (-(σ : ℂ) - 2) * growthTail D x‖ = x ^ (-σ - 2) * (growthTail D x).re := by
@@ -179,7 +186,7 @@ lemma norm_growth_kernel (D : MajorantData A)
   rw [Complex.norm_real, Real.norm_of_nonneg (growthTail_re_nonneg D hgrow x)]
   norm_num
 
-lemma density_exp_eq_enorm (D : MajorantData A)
+lemma density_exp_eq_enorm (D : MajorantData θ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     (σ : ℝ) {x : ℝ} (hx : 1 < x) :
     growthDensity D x * ENNReal.ofReal (Real.exp (-σ * time x)) =
@@ -193,7 +200,7 @@ lemma density_exp_eq_enorm (D : MajorantData A)
     _ = (x ^ (-2 : ℝ) * Real.exp (-σ * Real.log x)) * (growthTail D x).re := by ring
     _ = _ := by rw [ActualCriticalMeasure.real_weight_identity (zero_lt_one.trans hx)]
 
-theorem laplace_mass_eq_norm (D : MajorantData A)
+theorem laplace_mass_eq_norm (D : MajorantData θ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x) (σ : ℝ) :
     LaplaceConvergenceAbscissa.mass (growthMeasure D) time σ =
       ∫⁻ x : ℝ in Ioi 1, ‖(x : ℂ) ^ (-(σ : ℂ) - 2) * growthTail D x‖ₑ := by
@@ -205,7 +212,7 @@ theorem laplace_mass_eq_norm (D : MajorantData A)
   filter_upwards [ae_restrict_mem measurableSet_Ioi] with x hx
   exact density_exp_eq_enorm D hgrow σ hx
 
-theorem laplace_integrable (D : MajorantData A) (hA : 1 ≤ A)
+theorem laplace_integrable (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     {σ : ℝ} (hσ : 1 < σ) :
     Integrable (fun x => Real.exp (-σ * time x)) (growthMeasure D) := by
@@ -221,48 +228,48 @@ theorem laplace_integrable (D : MajorantData A) (hA : 1 ≤ A)
   rw [laplace_mass_eq_norm D hgrow σ]
   exact hasFiniteIntegral_iff_enorm.mp hi.2
 
-theorem convergenceSet_nonempty (D : MajorantData A) (hA : 1 ≤ A)
+theorem convergenceSet_nonempty (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x) :
     (LaplaceConvergenceAbscissa.convergenceSet (growthMeasure D) time).Nonempty := by
   refine ⟨2, ?_⟩
   exact (LaplaceConvergenceAbscissa.integrable_iff_mem (growthMeasure D) time measurable_time 2).1
     (laplace_integrable D hA hgrow (by norm_num))
 
-noncomputable def growthTransform (D : MajorantData A) (s : ℂ) : ℂ :=
+noncomputable def growthTransform (D : MajorantData θ A) (s : ℂ) : ℂ :=
   D.F s + (mellin (initialPart ActualCriticalMellin.W A) (-s - 1) -
     CriticalTransformPoles.filledTransform s)
 
-theorem growthTransform_analyticAt_real (D : MajorantData A) {σ : ℝ} (hσ : (1 : ℝ) / 2 < σ) :
+theorem growthTransform_analyticAt_real (D : MajorantData θ A) {σ : ℝ} (hσ : θ < σ) :
     AnalyticAt ℂ (growthTransform D) (σ : ℂ) :=
   (D.analytic_F (σ : ℂ) (by simpa using hσ)).add
     (((MellinCompactCorrection.differentiable_W_initialPart A).analyticAt (σ : ℂ)).sub
-      (CriticalTransformRealAxis.analyticAt_filledTransform_real hσ))
+      (CriticalTransformRealAxis.analyticAt_filledTransform_real (D.half_le.trans_lt hσ)))
 
-theorem growthTransform_eq_laplace (D : MajorantData A) (hA : 1 ≤ A)
+theorem growthTransform_eq_laplace (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     {s : ℂ} (hs : 1 < s.re) :
     growthTransform D s = LaplaceMomentDerivatives.moment (growthMeasure D) time 0 s :=
   (moment_eq_F_add_initial_sub_filled D hA hgrow hs).symm
 
-theorem finite_abscissa_le_half (D : MajorantData A) (hA : 1 ≤ A)
+theorem finite_abscissa_le_half (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     (hbdd : BddBelow (LaplaceConvergenceAbscissa.convergenceSet (growthMeasure D) time)) :
-    sInf (LaplaceConvergenceAbscissa.convergenceSet (growthMeasure D) time) ≤ (1 : ℝ) / 2 := by
+    sInf (LaplaceConvergenceAbscissa.convergenceSet (growthMeasure D) time) ≤ θ := by
   by_contra hle
   have hhalf := lt_of_not_ge hle
   have hne := convergenceSet_nonempty D hA hgrow
   have ht : ∀ᵐ x ∂growthMeasure D, 0 ≤ time x := Eventually.of_forall time_nonneg
   have hL := LaplaceConvergenceAnalytic.analyticOnNhd_above_inf measurable_time ht hne hbdd
   obtain ⟨R, hR, hF, heq⟩ := RealAxisAnalyticContinuation.exists_right_disk_agreement
-    (F := growthTransform D) (β := (1 : ℝ) / 2) (B := 1)
+    (F := growthTransform D) (β := θ) (B := 1)
     (fun σ hσ => growthTransform_analyticAt_real D hσ) hL
     (fun σ hσ => growthTransform_eq_laplace D hA hgrow (s := (σ : ℂ)) (by simpa using hσ)) hhalf
   exact LandauSingularity.finite_abscissa_singular measurable_time ht hne hbdd hR hF heq
 
-theorem laplace_analyticOnNhd_above_half (D : MajorantData A) (hA : 1 ≤ A)
+theorem laplace_analyticOnNhd_above_half (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x) :
     AnalyticOnNhd ℂ (LaplaceMomentDerivatives.moment (growthMeasure D) time 0)
-      {s : ℂ | (1 : ℝ) / 2 < s.re} := by
+      {s : ℂ | θ < s.re} := by
   have ht : ∀ᵐ x ∂growthMeasure D, 0 ≤ time x := Eventually.of_forall time_nonneg
   by_cases hbdd : BddBelow (LaplaceConvergenceAbscissa.convergenceSet (growthMeasure D) time)
   · apply (LaplaceConvergenceAnalytic.analyticOnNhd_above_inf
@@ -272,19 +279,19 @@ theorem laplace_analyticOnNhd_above_half (D : MajorantData A) (hA : 1 ≤ A)
   · exact (LaplaceConvergenceAnalytic.analyticOnNhd_of_not_bddBelow
       measurable_time ht hbdd).mono (subset_univ _)
 
-noncomputable def continuation (D : MajorantData A) (s : ℂ) : ℂ :=
+noncomputable def continuation (D : MajorantData θ A) (s : ℂ) : ℂ :=
   D.F s + mellin (initialPart ActualCriticalMellin.W A) (-s - 1) -
     LaplaceMomentDerivatives.moment (growthMeasure D) time 0 s
 
-theorem continuation_analyticOnNhd (D : MajorantData A) (hA : 1 ≤ A)
+theorem continuation_analyticOnNhd (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x) :
-    AnalyticOnNhd ℂ (continuation D) {s : ℂ | (1 : ℝ) / 2 < s.re} := by
+    AnalyticOnNhd ℂ (continuation D) {s : ℂ | θ < s.re} := by
   intro s hs
   exact ((D.analytic_F s hs).add
     ((MellinCompactCorrection.differentiable_W_initialPart A).analyticAt s)).sub
     (laplace_analyticOnNhd_above_half D hA hgrow s hs)
 
-theorem continuation_eq_filledTransform (D : MajorantData A) (hA : 1 ≤ A)
+theorem continuation_eq_filledTransform (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x)
     {s : ℂ} (hs : 1 < s.re) :
     continuation D s = CriticalTransformPoles.filledTransform s := by
@@ -292,22 +299,32 @@ theorem continuation_eq_filledTransform (D : MajorantData A) (hA : 1 ≤ A)
   rw [moment_eq_F_add_initial_sub_filled D hA hgrow hs]
   ring
 
-/-- **Majorant criterion.** If `Re W(x) ≤ g(x)` for all `x > A`, where the tail Mellin
-transform of `g` continues analytically to `Re s > 1/2`, then the Riemann hypothesis holds. -/
-theorem RiemannHypothesis_of_majorant (D : MajorantData A) (hA : 1 ≤ A)
+/-- **Zero-free criterion at level `θ`.** If `Re W(x) ≤ g(x)` for all `x > A`, where the tail
+Mellin transform of `g` continues analytically to `Re s > θ`, then `ζ` has no zero with
+`Re ρ > θ`. -/
+theorem zeroFree_of_majorant (D : MajorantData θ A) (hA : 1 ≤ A)
     (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x) :
-    RiemannHypothesis :=
-  CriticalTransformContinuationRH.RiemannHypothesis_of_holomorphic_continuation
+    ∀ ρ : ℂ, θ < ρ.re → riemannZeta ρ ≠ 0 :=
+  CriticalTransformContinuationZeroFree.zeroFree_of_holomorphic_continuation D.half_le
     (continuation_analyticOnNhd D hA hgrow)
     (fun _ hs => continuation_eq_filledTransform D hA hgrow hs)
+
+/-- **Majorant criterion.** If `Re W(x) ≤ g(x)` for all `x > A`, where the tail Mellin
+transform of `g` continues analytically to `Re s > 1/2`, then the Riemann hypothesis holds. -/
+theorem RiemannHypothesis_of_majorant (D : MajorantData (1 / 2) A) (hA : 1 ≤ A)
+    (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x) :
+    RiemannHypothesis :=
+  CriticalTransformRH.noRightZeros_implies_RiemannHypothesis
+    (fun s hs _ => zeroFree_of_majorant D hA hgrow s hs)
 
 /-! ### The power majorant as an instance -/
 
 /-- The datum for `g(x) = C x^{3/2}`. -/
-noncomputable def powerData (C : ℝ) {A : ℝ} (hA : 0 < A) : MajorantData A where
+noncomputable def powerData (C : ℝ) {A : ℝ} (hA : 0 < A) : MajorantData (1 / 2) A where
   g := fun x => C * x ^ ((3 : ℝ) / 2)
   measurable_g := measurable_const.mul (measurable_id.pow_const _)
   F := majorantTransform C A
+  half_le := le_rfl
   analytic_F := by
     intro s hs
     have hne : s ≠ 1 / 2 := by

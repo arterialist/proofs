@@ -248,10 +248,11 @@ theorem logF_analyticAt {C A : ℝ} (hA : 0 < A) {s : ℂ} (hs : s ≠ 1 / 2) :
   exact analyticAt_const.mul (hpow.mul hP)
 
 /-- The majorant datum for `C x^{3/2} log² x`. -/
-noncomputable def logData (C : ℝ) {A : ℝ} (hA : 1 ≤ A) : MajorantData A where
+noncomputable def logData (C : ℝ) {A : ℝ} (hA : 1 ≤ A) : MajorantData (1 / 2) A where
   g := logMajorant C
   measurable_g := measurable_logMajorant C
   F := logF C A
+  half_le := le_rfl
   analytic_F := by
     intro s hs
     have hne : s ≠ 1 / 2 := by
