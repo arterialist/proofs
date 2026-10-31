@@ -1,0 +1,10 @@
+import BuildingBlocks.RiemannZetaMellinIntegralDomination
+
+/-!
+# In-Kernel Axiom Audit for Sine Suppression in Mellin Integral Domination
+-/
+
+#print axioms BuildingBlocks.RiemannZetaMellinIntegralDomination.sin_div_gamma_le_half_log
+#print axioms BuildingBlocks.RiemannZetaMellinIntegralDomination.product_ratio_sine_suppressed
+#print axioms BuildingBlocks.RiemannZetaMellinIntegralDomination.mellin_ratio_integrand_sine_suppressed
+#print axioms BuildingBlocks.RiemannZetaMellinIntegralDomination.mellin_ratio_integrand_decay_le_quadratic

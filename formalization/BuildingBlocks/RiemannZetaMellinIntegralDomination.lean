@@ -4,10 +4,13 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Arterialist
 -/
 import Mathlib.Analysis.Calculus.MeanValue
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 import Mathlib.MeasureTheory.Integral.Bochner.FundThmCalculus
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 import BuildingBlocks.RiemannZetaTrigonometricDecomposition
+import BuildingBlocks.RiemannZetaKernelPositivity
+import BuildingBlocks.RiemannZetaGlobalSchwarzReflection
 import BuildingBlocks.RiemannZetaOffLineZeroLocalization
 import BuildingBlocks.RiemannZetaHyperbolicMellinObstruction
 import BuildingBlocks.RiemannZetaPhaseContradiction
@@ -66,6 +69,8 @@ No ad hoc axioms or unproven hypotheses are introduced.
 open Real Complex MeasureTheory Set Filter Topology
 open BuildingBlocks.RiemannZetaTrigonometricDecomposition
 open BuildingBlocks.RiemannZetaOffLineZeroLocalization
+open BuildingBlocks.RiemannZetaKernelPositivity
+open BuildingBlocks.RiemannZetaGlobalSchwarzReflection
 open BuildingBlocks.RiemannZetaHyperbolicMellinObstruction
 open BuildingBlocks.RiemannZetaPhaseContradiction
 open BuildingBlocks.RiemannZetaMellinEnergyIntegral
@@ -120,6 +125,86 @@ theorem powerDiff_div_le_half_log {x : ℝ} (hx : 1 ≤ x) {β : ℝ}
     rw [h1, mul_div_mul_left (Real.log x) 2 (ne_of_gt h_sub_pos)]
     ring
   linarith
+
+/-- Pointwise Sine Suppression: $\frac{\sin((\gamma / 2) \log x)}{\gamma} \le \frac{1}{2} \log x$ for $x \ge 1$ and $\gamma > 0$. -/
+theorem sin_div_gamma_le_half_log {γ x : ℝ} (hγ : 0 < γ) (hx : 1 ≤ x) :
+    Real.sin ((γ / 2) * Real.log x) / γ ≤ (1 / 2) * Real.log x := by
+  have h_log_nonneg : 0 ≤ Real.log x := Real.log_nonneg hx
+  have h_arg_nonneg : 0 ≤ (γ / 2) * Real.log x := by positivity
+  have h_sin_le := Real.sin_le h_arg_nonneg
+  have h_div := div_le_div_of_nonneg_right h_sin_le hγ.le
+  have h_alg : ((γ / 2) * Real.log x) / γ = (1 / 2) * Real.log x := by
+    calc ((γ / 2) * Real.log x) / γ
+      _ = (γ * ((1 / 2) * Real.log x)) / γ := by ring
+      _ = (1 / 2) * Real.log x := mul_div_cancel_left₀ _ (ne_of_gt hγ)
+  rwa [h_alg] at h_div
+
+/-- Sharp Sine-Suppressed Product Ratio Bound:
+$$\frac{\operatorname{powerDiff}(\beta, x) \sin((\gamma / 2) \log x)}{(2\beta - 1)\gamma} \le \frac{1}{4} (x - 1)^2.$$ -/
+theorem product_ratio_sine_suppressed {β γ x : ℝ} (hx : 1 ≤ x)
+    (hβ1 : 1 / 2 < β) (hβ2 : β ≤ 1) (hγ : 0 < γ) :
+    (powerDiff β x * Real.sin ((γ / 2) * Real.log x)) / ((2 * β - 1) * γ) ≤
+      (1 / 4) * (x - 1)^2 := by
+  have hx_pos : 0 < x := zero_lt_one.trans_le hx
+  have h_pd := powerDiff_div_le_half_log hx hβ1 hβ2
+  have h_sin := sin_div_gamma_le_half_log hγ hx
+  have h_split : (powerDiff β x * Real.sin ((γ / 2) * Real.log x)) / ((2 * β - 1) * γ) =
+      (powerDiff β x / (2 * β - 1)) * (Real.sin ((γ / 2) * Real.log x) / γ) := mul_div_mul_comm _ _ _ _
+  rw [h_split]
+  rcases le_or_gt (Real.sin ((γ / 2) * Real.log x)) 0 with h_sin_nonpos | h_sin_pos
+  · have h_pd_nonneg : 0 ≤ powerDiff β x := powerDiff_nonneg (le_of_lt hβ1) hx
+    have h_denom_pos : 0 < 2 * β - 1 := by linarith
+    have h_pd_div_nonneg : 0 ≤ powerDiff β x / (2 * β - 1) :=
+      div_nonneg h_pd_nonneg (le_of_lt h_denom_pos)
+    have h_sin_div_nonpos : Real.sin ((γ / 2) * Real.log x) / γ ≤ 0 :=
+      div_nonpos_of_nonpos_of_nonneg h_sin_nonpos hγ.le
+    have h_prod_nonpos : (powerDiff β x / (2 * β - 1)) * (Real.sin ((γ / 2) * Real.log x) / γ) ≤ 0 :=
+      mul_nonpos_of_nonneg_of_nonpos h_pd_div_nonneg h_sin_div_nonpos
+    have h_quad_nonneg : 0 ≤ (1 / 4 : ℝ) * (x - 1)^2 := by positivity
+    exact h_prod_nonpos.trans h_quad_nonneg
+  · have h_denom_pos : 0 < 2 * β - 1 := by linarith
+    have h_pd_div_nonneg : 0 ≤ powerDiff β x / (2 * β - 1) :=
+      div_nonneg (powerDiff_nonneg (le_of_lt hβ1) hx) (le_of_lt h_denom_pos)
+    have h_sin_div_nonneg : 0 ≤ Real.sin ((γ / 2) * Real.log x) / γ :=
+      div_nonneg (le_of_lt h_sin_pos) hγ.le
+    have h_log_nonneg : 0 ≤ Real.log x := Real.log_nonneg hx
+    have h_half_log_nonneg : 0 ≤ (1 / 2 : ℝ) * Real.log x := by positivity
+    have h_prod := mul_le_mul h_pd h_sin h_sin_div_nonneg h_half_log_nonneg
+    have h_log_le : Real.log x ≤ x - 1 := Real.log_le_sub_one_of_pos hx_pos
+    have h_log_sq : (Real.log x)^2 ≤ (x - 1)^2 := by
+      nlinarith [h_log_le, h_log_nonneg]
+    have h_alg : ((1 / 2) * Real.log x) * ((1 / 2) * Real.log x) = (1 / 4) * (Real.log x)^2 := by ring
+    rw [h_alg] at h_prod
+    have h_step : (1 / 4 : ℝ) * (Real.log x)^2 ≤ (1 / 4) * (x - 1)^2 := by
+      nlinarith [h_log_sq]
+    exact h_prod.trans h_step
+
+/-- Sharp Sine-Suppressed Mellin Ratio Integrand Majorization:
+$$\frac{\operatorname{mellinTrigIntegrandIm}(s, x)}{(2\operatorname{Re}(s) - 1)\operatorname{Im}(s)} \le \frac{1}{4} (x - 1)^2 \operatorname{real\_f\_modif}(x).$$ -/
+theorem mellin_ratio_integrand_sine_suppressed {s : ℂ} {x : ℝ}
+    (hx : 1 ≤ x) (hsr1 : 1 / 2 < s.re) (hsr2 : s.re ≤ 1) (hsim : 0 < s.im) :
+    mellinTrigIntegrandIm s x / ((2 * s.re - 1) * s.im) ≤
+      (1 / 4) * (x - 1)^2 * real_f_modif x := by
+  have hx_pos : 0 < x := zero_lt_one.trans_le hx
+  have h_kernel_im : (cpowTrigKernel s x).im = powerDiff s.re x * Real.sin ((s.im / 2) * Real.log x) :=
+    cpowTrigKernel_im_eq_powerDiff_mul_sin hx_pos
+  have h_bound := product_ratio_sine_suppressed hx hsr1 hsr2 hsim
+  unfold mellinTrigIntegrandIm
+  rw [h_kernel_im]
+  have h_split : (powerDiff s.re x * Real.sin ((s.im / 2) * Real.log x) * real_f_modif x) /
+      ((2 * s.re - 1) * s.im) =
+      ((powerDiff s.re x * Real.sin ((s.im / 2) * Real.log x)) / ((2 * s.re - 1) * s.im)) *
+      real_f_modif x := by ring
+  rw [h_split]
+  have h_f_nonneg : 0 ≤ real_f_modif x := real_f_modif_nonneg x
+  exact mul_le_mul_of_nonneg_right h_bound h_f_nonneg
+
+/-- Quadratic Mellin ratio integrand decay bound matching the Milestone 1 contract. -/
+theorem mellin_ratio_integrand_decay_le_quadratic {s : ℂ} {x : ℝ}
+    (hx : 1 ≤ x) (hre : 1 / 2 < s.re) (hre1 : s.re ≤ 1) (him : 0 < s.im) :
+    mellinTrigIntegrandIm s x / ((2 * s.re - 1) * s.im) ≤
+      (1 / 4 : ℝ) * (x - 1)^2 * real_f_modif x :=
+  mellin_ratio_integrand_sine_suppressed hx hre hre1 him
 
 /-! ### Subsection 2: Unconditional Pointwise Majorization -/
 
@@ -243,6 +328,10 @@ open BuildingBlocks.RiemannZetaMellinIntegralDomination
 
 #print axioms powerDiff_le_slope
 #print axioms powerDiff_div_le_half_log
+#print axioms sin_div_gamma_le_half_log
+#print axioms product_ratio_sine_suppressed
+#print axioms mellin_ratio_integrand_sine_suppressed
+#print axioms mellin_ratio_integrand_decay_le_quadratic
 #print axioms mellin_ratio_integrand_unconditional_le
 #print axioms symmetrizedRatioIntegral_le_majorant
 #print axioms symmetrizedRatioIntegral_le_one_tenth
