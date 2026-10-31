@@ -64,3 +64,30 @@ python3 tests/run_e2e_tests.py
 ```
 - **Monolithic Build Targets**: 100% clean compilation across all targets.
 - **Axiomatic Discipline**: Strict standard foundational axioms only: `[propext, Classical.choice, Quot.sound]`. Exactly 0 `sorry`, 0 `sorryAx`, 0 custom axioms.
+
+---
+
+## 4. Assessment of the claimed advance (added 31 October 2026, 12:40)
+
+The theorems above are kernel-checked and correct. The advance they record is from height
+$7.46818$ to $7.46820$, that is $2\times 10^{-5}$, and it is the last such step this method can
+take with its present majorant.
+
+- The refutation uses the majorant $\tfrac12\operatorname{symmetrizedRatioIntegral}(s)\le 1/(424\,t)$
+  against $1/|s(s-1)|^2$, and on a band of heights $(a,b]$ it needs
+  $1/(424\,a) < \min 1/|s(s-1)|^2 = 1/(b^4+b^2)$. The ceiling is therefore the root of
+  $424\,t = t^4 + t^2$, which is $t^* = 7.4682019561\ldots$. The present record stands
+  $1.96\times 10^{-6}$ below it. No further module of this form can pass $t^*$.
+- Any majorant whatsoever for this method fails past the first turning point of
+  $\Lambda(1/2+it)$ after the first zero, near $t \approx 15.38$; see FRONTIER.md and
+  `certificates/ratio_deficit_sign_ceiling.py`.
+- Every height below the first zero $t_1 = 14.1347$ is classically zero-free, and the Riemann
+  hypothesis is verified computationally to $3\cdot 10^{12}$ (Platt and Trudgian). Nothing in
+  this module changes the mathematical frontier; it is formalization of a known range, as the
+  repository's own `first-formalizations/explicit-zeta-zero-free-region-to-7-465.md` states.
+- The "Master Equivalence Reduction" $\mathrm{RH} \iff \mathrm{HighFrequencyZeroFree}(37341/5000)$ is a
+  restatement: it packages the bounded-height result with the reflection symmetry, and the
+  high-frequency predicate is RH above that height.
+
+Further compute on this family of modules is not progress toward RH.
+

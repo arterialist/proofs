@@ -6,6 +6,7 @@ import BuildingBlocks.ActualCriticalLowerMajorant
 import BuildingBlocks.ActualCriticalSharpConstant
 import BuildingBlocks.PrimePowerLogSeries
 import BuildingBlocks.ActualCriticalHDoublePole
+import BuildingBlocks.ActualCriticalUpperSharpConstant
 import Lean.Util.CollectAxioms
 
 /-!
@@ -21,6 +22,7 @@ open BuildingBlocks.ActualCriticalLogMajorant
 open BuildingBlocks.ActualCriticalLowerMajorant
 open BuildingBlocks.ActualCriticalSharpConstant
 open BuildingBlocks.ActualCriticalHDoublePole
+open BuildingBlocks.ActualCriticalUpperSharpConstant
 
 #check RiemannHypothesis_of_growth_after
 #print axioms RiemannHypothesis_of_growth_after
@@ -62,6 +64,11 @@ open BuildingBlocks.ActualCriticalHDoublePole
 #check exists_sharp_lower_excursion
 #print axioms exists_sharp_lower_excursion
 
+#check not_eventually_upper_log_growth
+#print axioms not_eventually_upper_log_growth
+#check two_sided_sharp_constant
+#print axioms two_sided_sharp_constant
+
 open Lean in
 run_cmd do
   let env ← getEnv
@@ -69,7 +76,7 @@ run_cmd do
     `BuildingBlocks.ActualCriticalLowerExcursion, `BuildingBlocks.ActualCriticalMajorantCriterion,
     `BuildingBlocks.ActualCriticalLogMajorant, `BuildingBlocks.ActualCriticalLowerMajorant,
     `BuildingBlocks.ActualCriticalSharpConstant, `BuildingBlocks.PrimePowerLogSeries,
-    `BuildingBlocks.ActualCriticalHDoublePole]
+    `BuildingBlocks.ActualCriticalHDoublePole, `BuildingBlocks.ActualCriticalUpperSharpConstant]
   let selected := env.constants.toList.filter fun (name, _) =>
     match env.getModuleIdxFor? name with
     | none => false
