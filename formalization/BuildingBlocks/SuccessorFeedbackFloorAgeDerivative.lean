@@ -59,7 +59,7 @@ theorem floorErrorPrimitive_hasDerivAt {z : ℂ} (hz : 0 < z.re) {y : ℝ} (hy :
   have h := intervalIntegral.integral_hasDerivAt_right (floorError_intervalIntegrable hz hy.le)
     (measurable_floorWeightError z).aestronglyMeasurable.stronglyMeasurableAtFilter
     (floorWeightError_continuousAt (by linarith) hyn z)
-  simpa only [floorErrorPrimitive] using h.comp_sub_const y 1
+  exact h.comp_sub_const y 1
 
 /-- The literal endpoint and complete integral correction, away from the
 integer corners of the floor kernel. -/

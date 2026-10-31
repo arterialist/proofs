@@ -29,9 +29,10 @@ theorem packet_apply (L : ℝ) (eta : ℝ → ℂ) (c : ℤ →₀ ℂ) (v : ℝ
 
 theorem translateCoefficients_apply (d k : ℤ) (c : ℤ →₀ ℂ) :
     translateCoefficients d c k = c (k - d) := by
-  have h := Finsupp.mapDomain_apply (show Function.Injective (fun j : ℤ => j + d) by
-    intro i j hij; exact add_right_cancel hij) c (k - d)
-  simpa [translateCoefficients] using h
+  have hinj : Function.Injective (fun j : ℤ => j + d) := fun i j hij => add_right_cancel hij
+  have h := Finsupp.mapDomain_apply_of_injective hinj c (k - d)
+  rw [sub_add_cancel] at h
+  exact h
 
 theorem historyCoefficients_apply (r : ℝ) (M : ℕ) (c : ℤ →₀ ℂ) (k : ℤ) :
     historyCoefficients r M c k = historyCoefficient r M c k := by

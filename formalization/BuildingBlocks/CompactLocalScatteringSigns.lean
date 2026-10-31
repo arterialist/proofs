@@ -223,9 +223,12 @@ theorem compact_amplification_special {r : ℝ} (hr : 0 < r) (hr1 : r < 1)
     rw [mul_pow, hc]
     push_cast
     ring
+  have hc' : (starRingEnd ℂ) (phase theta) = (⟨Real.cos theta, -Real.sin theta⟩ : ℂ) := by
+    apply Complex.ext <;> simp [phase]
   have hu : Complex.normSq ((1 - (r : ℂ) * phase theta) /
       (1 - (r : ℂ) * (starRingEnd ℂ) (phase theta))) = 1 := by
-    simpa [phase] using scattering_phase_unit hr hr1 theta
+    rw [hc', phase]
+    exact scattering_phase_unit hr hr1 theta
   change 1 < Complex.normSq (compactPhase r theta M)
   rw [compact_phase_factorization hr hr1, map_mul, hu, one_mul, he]
   exact amplification_phase hr hr1 M theta

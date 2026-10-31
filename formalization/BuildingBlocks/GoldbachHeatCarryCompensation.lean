@@ -17,8 +17,9 @@ theorem common_heat_phase_integral (X : ℝ) (hX : 1 ≤ X) :
     apply (intervalIntegrable_const (c := (1 / 2 : ℝ))).mono_fun' hm.aestronglyMeasurable
     exact Filter.Eventually.of_forall (fun x => by simpa [Real.norm_eq_abs] using bernoulliOne_abs_le x)
   have hi := hb.mul_continuousOn (heatEnergyWeight_continuousOn.mono hs)
-  have hj := (unitPrimitive_continuous.continuousOn.mul
-    (heatEnergyWeightDerivative_continuousOn.mono hs)).intervalIntegrable (μ := volume)
+  have hj : IntervalIntegrable (fun x => unitPrimitive x * heatEnergyWeightDerivative x) volume 1 X :=
+    (unitPrimitive_continuous.continuousOn.mul
+      (heatEnergyWeightDerivative_continuousOn.mono hs)).intervalIntegrable (μ := volume)
   have he : (∫ x in (1 : ℝ)..X, bernoulliOne x * heatEnergyWeight x +
       unitPrimitive x * heatEnergyWeightDerivative x) = unitPrimitive X * heatEnergyWeight X -
       unitPrimitive 1 * heatEnergyWeight 1 := by
@@ -46,8 +47,9 @@ theorem heat_carry_compensation (r X : ℝ) (hr : 0 < r) (hX : 1 ≤ X) :
     rw [uIcc_of_le hX]
     intro x hx
     exact lt_of_lt_of_le zero_lt_one hx.1
-  have hg := (unitPrimitive_continuous.continuousOn.mul
-    (heatEnergyWeightDerivative_continuousOn.mono hs)).intervalIntegrable (μ := volume)
+  have hg : IntervalIntegrable (fun x => unitPrimitive x * heatEnergyWeightDerivative x) volume 1 X :=
+    (unitPrimitive_continuous.continuousOn.mul
+      (heatEnergyWeightDerivative_continuousOn.mono hs)).intervalIntegrable (μ := volume)
   have hh := ((unitPrimitive_continuous.comp ((continuous_const (y := r)).mul continuous_id)).continuousOn.mul
     (heatEnergyWeightDerivative_continuousOn.mono hs)).intervalIntegrable (μ := volume)
   change IntervalIntegrable (fun x => unitPrimitive (r * x) * heatEnergyWeightDerivative x)

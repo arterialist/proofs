@@ -15,18 +15,28 @@ private theorem smoothWeight_age_derivative {z : ℂ} (hz : 0 < z.re)
   have hz0 : z ≠ 0 := by intro h; simp [h] at hz
   have h := (hasDerivAt_ofReal_cpow_const
     (show t + 1 ≠ 0 by linarith) (neg_ne_zero.mpr hz0)).scomp t ((hasDerivAt_id t).add_const 1)
-  convert h using 1 <;> simp [smoothPowerCharge]
+  convert h using 1
+  · ext u; rfl
+  · simp [smoothPowerCharge]
 
 private theorem smoothRoot_age_derivative {y t : ℝ} (ht : t ≤ y - 1) :
     HasDerivAt (fun u : ℝ => ((2 * (sqrt (y - u) - 1) : ℝ) : ℂ))
       (-(1 / sqrt (y - t) : ℝ) : ℂ) t := by
   have h := ((((hasDerivAt_id t).const_sub y).sqrt
     (show y - t ≠ 0 by linarith)).sub_const 1).const_mul 2
-  convert h.ofReal_comp using 1
-  simp only [id_eq]
-  push_cast
-  field_simp
-  <;> ring
+  have hd_eq : (2 * (-1 / (2 * sqrt (y - id t))) : ℝ) = -(1 / sqrt (y - t)) := by
+    dsimp only [id_eq]
+    have hs : sqrt (y - t) ≠ 0 := Real.sqrt_ne_zero'.mpr (by linarith)
+    field_simp
+  have h1 : HasDerivAt (fun u : ℝ => ((2 * (sqrt (y - u) - 1) : ℝ) : ℂ))
+      (↑(-(1 / sqrt (y - t)))) t := by
+    have hG : (fun y_1 => ((2 * (sqrt (y - id y_1) - 1) : ℝ) : ℂ)) =
+        (fun u => ((2 * (sqrt (y - u) - 1) : ℝ) : ℂ)) := by ext; rfl
+    rw [← hG]
+    exact (h.congr_deriv hd_eq).ofReal_comp
+  have h2 : (↑(-(1 / sqrt (y - t))) : ℂ) = (-(1 / sqrt (y - t) : ℝ) : ℂ) := by
+    push_cast; rfl
+  exact h1.congr_deriv h2
 
 theorem rootPrimitiveConvolution_eq_finite (f : ℝ → ℂ) (y : ℝ) :
     rootPrimitiveConvolution f y = ∫ t in Ioc (0 : ℝ) (y - 1),
@@ -112,5 +122,8 @@ theorem smoothAbelKernel_hasDerivAt {z : ℂ} (hz : 0 < z.re) {y : ℝ} (hy : 1 
   apply h.congr_of_eventuallyEq
   filter_upwards [eventually_gt_nhds hy] with x hx
   exact smoothAbelKernel_eq_rootPrimitive hz hx.le
+
+#print axioms smoothAbelKernel_eq_rootPrimitive
+#print axioms smoothAbelKernel_hasDerivAt
 
 end BuildingBlocks.SuccessorFeedback

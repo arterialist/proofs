@@ -24,7 +24,7 @@ theorem unit_cpow_integral {s : ℂ} (hs : 0 < s.re) :
 theorem clock_unit_integrable {s : ℂ} (hs : 0 < s.re) :
     IntegrableOn (fun t : ℝ => (t : ℂ) ^ (s - 1) * (clockError t : ℂ)) (Ioc 0 1) := by
   apply (integrableOn_Ioc_iff_integrableOn_Ioo).mpr
-  have hi := (clockMellinError_convergent hs).mono_set (Ioo_subset_Ioi_self (b := (1 : ℝ)))
+  have hi := (clockMellinError_convergent hs).mono_set (Ioo_subset_Ioi_self : Ioo (0 : ℝ) 1 ⊆ Ioi 0)
   apply hi.congr_fun _ measurableSet_Ioo
   intro t ht
   simp [clockErrorProfile, ht, smul_eq_mul]
@@ -41,7 +41,7 @@ noncomputable def abelTransform (s : ℂ) : ℂ :=
 theorem abelTransform_integrable {s : ℂ} (hs : (1 : ℝ) / 2 < s.re) :
     IntegrableOn (fun t : ℝ => (t : ℂ) ^ (s - 1) *
       (generatingFunction (1 - t) : ℂ)) (Ioc 0 1) := by
-  have hg := (gammaDriver_integrable hs).mono_set (Ioc_subset_Ioi_self (b := (1 : ℝ)))
+  have hg := (gammaDriver_integrable hs).mono_set (Ioc_subset_Ioi_self : Ioc (0 : ℝ) 1 ⊆ Ioi 0)
   have hp := (unit_cpow_integrable (by linarith : 0 < s.re)).mul_const (driver 0 : ℂ)
   have hc := clock_unit_integrable (by linarith : 0 < s.re)
   apply ((hg.add hp).sub hc).congr
@@ -57,7 +57,7 @@ theorem gammaDriver_unit_integral {s : ℂ} (hs : (1 : ℝ) / 2 < s.re) :
   have hi := gammaDriver_integrable hs
   have hu := setIntegral_union (show Disjoint (Ioc (0 : ℝ) 1) (Ioi 1) from
       disjoint_left.mpr (fun _ hx hy => not_lt_of_ge hx.2 hy)) measurableSet_Ioi
-    (hi.mono_set (Ioc_subset_Ioi_self (b := (1 : ℝ))))
+    (hi.mono_set (Ioc_subset_Ioi_self : Ioc (0 : ℝ) 1 ⊆ Ioi 0))
     (hi.mono_set (Ioi_subset_Ioi (by norm_num : (0 : ℝ) ≤ 1)))
   rw [Ioc_union_Ioi_eq_Ioi (by norm_num : (0 : ℝ) ≤ 1),
     gammaDriver_integral hs, ← exponentialMellinTail_eq_integral] at hu
@@ -66,7 +66,7 @@ theorem gammaDriver_unit_integral {s : ℂ} (hs : (1 : ℝ) / 2 < s.re) :
 theorem abelTransform_eq {s : ℂ} (hs : (1 : ℝ) / 2 < s.re) :
     abelTransform s = Complex.Gamma s * unshiftedDirichlet s - exponentialMellinTail s +
       (driver 0 : ℂ) / s - clockMellinError s := by
-  have hg := (gammaDriver_integrable hs).mono_set (Ioc_subset_Ioi_self (b := (1 : ℝ)))
+  have hg := (gammaDriver_integrable hs).mono_set (Ioc_subset_Ioi_self : Ioc (0 : ℝ) 1 ⊆ Ioi 0)
   have hp := (unit_cpow_integrable (by linarith : 0 < s.re)).mul_const (driver 0 : ℂ)
   have hc := clock_unit_integrable (by linarith : 0 < s.re)
   have he : (fun t : ℝ => (t : ℂ) ^ (s - 1) * (generatingFunction (1 - t) : ℂ)) =

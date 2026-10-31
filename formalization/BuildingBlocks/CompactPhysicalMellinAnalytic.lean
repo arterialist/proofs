@@ -18,7 +18,11 @@ theorem physical_mellin_hasDerivAt {f : ℝ → ℂ} (hf : Continuous f)
   have hd : ∀ w v, HasDerivAt (fun u => F u v) (F' w v) w := by
     intro w v
     dsimp [F, F']
-    simpa only [one_mul] using ((hasDerivAt_id w).mul_const (v : ℂ)).cexp.const_mul (f v)
+    have h1 : HasDerivAt (fun u : ℂ => u * (v : ℂ)) (v : ℂ) w := by
+      simpa using (hasDerivAt_id w).mul_const (v : ℂ)
+    have h2 := h1.cexp
+    have h3 := h2.const_mul (f v)
+    exact h3
   have hc : Continuous (fun p : ℂ × ℝ => ‖F' p.1 p.2‖) := by
     dsimp [F']
     fun_prop
@@ -47,7 +51,8 @@ theorem physical_mellin_hasDerivAt {f : ℝ → ℂ} (hf : Continuous f)
     Filter.Eventually.of_forall (fun v w _ => hd w v)
   have main := hasDerivAt_integral_of_dominated_loc_of_deriv_le
     (μ := volume.restrict (tsupport f)) (F := F) (F' := F') (bound := fun _ => C)
-    (x₀ := z) (ε := 1) zero_lt_one hm hmi hm' hb hbi hdi
+    (x₀ := z) (s := Metric.ball z 1) (Metric.ball_mem_nhds z zero_lt_one)
+    hm hmi hm' hb hbi hdi
   have he : (fun w => ∫ v : ℝ in tsupport f, F w v) =
       BuildingBlocks.FullComplexHistoryMellin.mellin f := by
     funext w

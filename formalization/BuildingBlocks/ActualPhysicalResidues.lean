@@ -123,9 +123,8 @@ theorem weighted_simple_pole_coefficient (F : ℂ → ℂ) (s : ℂ) (hF : Conti
     Filter.Tendsto (fun w => (w - s) * (F w / (w - s))) (nhdsWithin s {s}ᶜ)
       (nhds (F s)) := by
   have hn : ∀ᶠ w in nhdsWithin s {s}ᶜ, w ≠ s := by
-    simpa only [Set.mem_compl_iff, Set.mem_singleton_iff] using
-      (self_mem_nhdsWithin : ∀ᶠ w in nhdsWithin s ({s} : Set ℂ)ᶜ,
-        w ∈ ({s} : Set ℂ)ᶜ)
+    filter_upwards [self_mem_nhdsWithin] with w hw
+    exact hw
   have he : (fun w => (w - s) * (F w / (w - s))) =ᶠ[nhdsWithin s {s}ᶜ] F := by
     filter_upwards [hn] with w hw
     exact mul_div_cancel₀ _ (sub_ne_zero.mpr hw)

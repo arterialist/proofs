@@ -10,7 +10,7 @@ and the newly exposed coefficient at the upper cutoff.
 namespace BuildingBlocks.CenteredGoldbachSuccessorHeatFinite
 
 open scoped BigOperators Interval
-open Finset Real
+open Finset Real MeasureTheory
 open BuildingBlocks.GoldbachHeat
 open BuildingBlocks.CenteredGoldbachHeatScaleIncrementFinite
 
@@ -179,23 +179,21 @@ theorem shiftedShell_sub_original (Y : ℕ) (T : ℝ) :
       2 * crossShell Y T + variationShell Y T := by
   rw [finiteHeatScaleIncrement_eq_integral]
   unfold shiftedShell crossShell variationShell
-  have hD := continuous_finiteHeat centeredCoefficient Y
-  have hV := continuous_finiteHeat successorDifference Y
-  have hS : Continuous (fun t : ℝ =>
-      (shiftedFiniteHeat centeredCoefficient Y t) ^ 2) := by
-    have heq : (fun t : ℝ => (shiftedFiniteHeat centeredCoefficient Y t) ^ 2) =
-        fun t : ℝ => (finiteHeat centeredCoefficient Y t + differenceFiniteHeat Y t) ^ 2 := by
-      funext t
-      rw [shiftedFiniteHeat_eq_add]
-    rw [heq]
-    exact (hD.add hV).pow 2
-  rw [← intervalIntegral.integral_sub (hS.intervalIntegrable _ _)
-    ((hD.pow 2).intervalIntegrable _ _)]
+  have hS_cont : Continuous (fun t : ℝ => shiftedFiniteHeat centeredCoefficient Y t ^ 2) := by
+    dsimp only [shiftedFiniteHeat]
+    fun_prop
+  have hD_cont : Continuous (fun t : ℝ => finiteHeat centeredCoefficient Y t ^ 2) := by
+    dsimp only [finiteHeat]
+    fun_prop
+  have hDV_cont : Continuous (fun t : ℝ => 2 * (finiteHeat centeredCoefficient Y t * differenceFiniteHeat Y t)) := by
+    dsimp only [differenceFiniteHeat, finiteHeat]
+    fun_prop
+  have hV_cont : Continuous (fun t : ℝ => differenceFiniteHeat Y t ^ 2) := by
+    dsimp only [differenceFiniteHeat, finiteHeat]
+    fun_prop
+  rw [← intervalIntegral.integral_sub (hS_cont.intervalIntegrable (μ := volume) _ _) (hD_cont.intervalIntegrable (μ := volume) _ _)]
   rw [← intervalIntegral.integral_const_mul]
-  dsimp only [differenceFiniteHeat]
-  rw [← intervalIntegral.integral_add
-    ((continuous_const.mul (hD.mul hV)).intervalIntegrable _ _)
-    ((hV.pow 2).intervalIntegrable _ _)]
+  rw [← intervalIntegral.integral_add (hDV_cont.intervalIntegrable (μ := volume) _ _) (hV_cont.intervalIntegrable (μ := volume) _ _)]
   congr 1
   funext t
   rw [shiftedFiniteHeat_eq_add]

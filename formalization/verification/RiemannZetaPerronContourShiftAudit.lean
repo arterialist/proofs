@@ -1,0 +1,23 @@
+import BuildingBlocks.RiemannZetaPerronContourShift
+
+open BuildingBlocks.RiemannZetaPerronContourShift
+
+#print axioms perron_integral_eq_fullNumerator
+#print axioms perron_contour_invariance
+#print axioms fullNumerator_re_eq
+#print axioms fullNumerator_re_le_vertical_family
+#print axioms W_re_le_vertical_family
+#print axioms eventually_fullNumerator_re_le_vertical_family
+#print axioms EventualSubquadraticGrowth
+#print axioms PerronLogGrowth
+#print axioms RiemannHypothesis_of_eventualSubquadraticGrowth
+#print axioms RiemannHypothesis_of_perronLogGrowth
+#print axioms analyticOnNhd_filledTransform_of_eventualSubquadraticGrowth
+#print axioms target_of_eventualSubquadraticGrowth
+#print axioms target_of_perronLogGrowth
+#print axioms offline_residue_dominance
+#print axioms offline_residue_gap_pos
+#print axioms not_eventualSubquadraticGrowth_of_offline_zero
+#print axioms not_perronLogGrowth_of_offline_zero
+#print axioms RiemannHypothesis_iff_no_offline_double_poles
+#print axioms RiemannHypothesis_of_highFrequencyContradictionSystem

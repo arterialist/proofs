@@ -75,9 +75,11 @@ theorem packet_moment_zero {eta : ℝ → ℂ} (hh : Continuous eta)
       rw [complexMoment_translate, hm, zero_mul, mul_zero]
     simp only [hz, Finset.sum_const_zero]
   · intro j _
-    simpa only [mul_assoc] using
-      (weighted_integrable (hh.comp (continuous_id.sub continuous_const))
-        (shifted_compact hc _) s).const_mul (c j)
+    have hc_eta : Continuous (fun v : ℝ => eta (v - (j : ℝ) * L)) :=
+      hh.comp (continuous_sub_right _)
+    have hcomp : HasCompactSupport (fun v : ℝ => eta (v - (j : ℝ) * L)) :=
+      shifted_compact hc _
+    simpa only [mul_assoc] using (weighted_integrable hc_eta hcomp s).const_mul (c j)
 
 theorem exists_prime_smooth_pole_null_amplification (p : ℕ) (hp : p.Prime)
     (M : ℕ) (hM : 1 ≤ M) :

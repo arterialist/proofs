@@ -69,11 +69,12 @@ theorem continuousAt_complexCorrelation_zero {N : ℕ} (hN : 2 ≤ N) :
 the full autocorrelation, inversion at zero and the angular-frequency Jacobian. -/
 theorem mass_eq_physical_norm {N : ℕ} (hN : 2 ≤ N) :
     mass N = (2 * Real.pi) * ∫ v : ℝ, (causalSource N v) ^ 2 := by
-  have hi := (integrable_complexCorrelation N).fourier_inversion
+  have hi := (integrable_complexCorrelation N).fourierInv_fourier_eq
     (integrable_fourier_complexCorrelation hN) (continuousAt_complexCorrelation_zero hN)
   have hzero : 𝓕⁻ (𝓕 (complexCorrelation N)) (0 : ℝ) =
       ∫ y : ℝ, 𝓕 (complexCorrelation N) y := by
-    simp [Real.fourierIntegralInv, VectorFourier.fourierIntegral]
+    rw [Real.fourierInv_eq']
+    simp [Real.inner_apply]
   rw [hzero] at hi
   simp_rw [mathlib_fourier_complexCorrelation] at hi
   rw [integral_complex_ofReal] at hi

@@ -75,6 +75,7 @@ theorem generatingFunction_continuousAt {r : ℝ} (hr : |r| < 1) :
     intro j x hx
     have hxR : |x| ≤ R := (show |x| < R by
       simpa only [Metric.mem_ball, dist_zero_right, Real.norm_eq_abs] using hx).le
+    dsimp only [Pi.mul_apply, Pi.pow_apply, id]
     rw [norm_mul, Real.norm_eq_abs, Real.norm_eq_abs, abs_pow]
     exact mul_le_mul (driver_abs_le j) (pow_le_pow_left₀ (abs_nonneg x) hxR j)
       (by positivity) (by positivity)
@@ -174,5 +175,18 @@ theorem clockMellinError_analyticOnNhd :
     AnalyticOnNhd ℂ clockMellinError {s : ℂ | 0 < s.re} := by
   apply DifferentiableOn.analyticOnNhd _ (isOpen_lt continuous_const Complex.continuous_re)
   exact fun s hs => (clockMellinError_differentiableAt hs).differentiableWithinAt
+
+#print axioms generatingFunction_difference_bound
+#print axioms exp_clock_reciprocal_bound
+#print axioms clockError_bound
+#print axioms generatingFunction_continuousAt
+#print axioms clockError_continuousOn
+#print axioms measurable_clockErrorProfile
+#print axioms clockErrorProfile_norm_bound
+#print axioms clockErrorProfile_integrable
+#print axioms clockMellinError_differentiableAt
+#print axioms clockMellinError_convergent
+#print axioms clockMellinError_eq_integral
+#print axioms clockMellinError_analyticOnNhd
 
 end BuildingBlocks.SuccessorFeedback

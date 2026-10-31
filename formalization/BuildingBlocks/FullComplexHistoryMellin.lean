@@ -70,9 +70,10 @@ theorem finite_translate_mellin {ι : Type*} (s : Finset ι) (c : ι → ℂ)
         ring
       _ = _ := by simp only [mellin]
   · intro i _
-    simpa only [mul_assoc] using
-      (weighted_integrable (hh.comp (continuous_id.sub continuous_const))
-        (BuildingBlocks.CompactScatteringRegularity.shifted_compact hc _) z).const_mul (c i)
+    have hcf : Continuous (fun v : ℝ => f (v - d i)) := by fun_prop
+    have hcomp : HasCompactSupport (fun v : ℝ => f (v - d i)) :=
+      BuildingBlocks.CompactScatteringRegularity.shifted_compact hc _
+    simpa only [mul_assoc] using (weighted_integrable hcf hcomp z).const_mul (c i)
 
 theorem mellin_const_mul (a : ℂ) (f : ℝ → ℂ) (z : ℂ) :
     mellin (fun v => a * f v) z = a * mellin f z := by

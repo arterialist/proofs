@@ -24,7 +24,7 @@ theorem gammaKernel_integrable {z : ℂ} (hz : 0 < z.re) {r : ℝ} (hr : 0 < r) 
   have hi : IntegrableOn (fun t : ℝ => t ^ (z.re - 1) * exp (-(r * t))) (Ioi 0) := by
     simpa only [Real.rpow_one, neg_mul] using
       (integrableOn_rpow_mul_exp_neg_mul_rpow (p := 1) (s := z.re - 1)
-        (by linarith) le_rfl hr)
+        (by linarith) (by norm_num) hr)
   apply hi.mono'
   · apply ContinuousOn.aestronglyMeasurable _ measurableSet_Ioi
     apply ContinuousOn.mul

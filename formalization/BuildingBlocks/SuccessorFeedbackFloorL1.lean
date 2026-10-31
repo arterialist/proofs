@@ -98,18 +98,21 @@ private theorem rootDerivative_convolution_norm_bound {f : ℝ → ℂ} (hf : In
     rootDerivative_complex_integrable
   have hr := hf.norm.integrable_convolution (L := ContinuousLinearMap.mul ℝ ℝ)
     clippedRootDerivative_integrable.norm
+  simp only [Real.norm_eq_abs] at hr
   have hi := integral_convolution (ContinuousLinearMap.mul ℝ ℝ) hf.norm
     clippedRootDerivative_integrable.norm
-  change (∫ y : ℝ, ∫ t : ℝ, ‖f t‖ * ‖clippedRootDerivative (y - t)‖) =
-    (∫ t : ℝ, ‖f t‖) * ∫ y : ℝ, ‖clippedRootDerivative y‖ at hi
-  simp only [Real.norm_eq_abs, clippedRootDerivative_integral_norm, mul_one] at hi
+  simp only [Real.norm_eq_abs, clippedRootDerivative_integral_norm, ContinuousLinearMap.mul_apply', mul_one] at hi
+  change (∫ y : ℝ, ‖convolution f (fun x => (clippedRootDerivative x : ℂ)) (ContinuousLinearMap.mul ℂ ℂ) volume y‖) ≤ _
   calc
-    _ ≤ ∫ y : ℝ, ∫ t : ℝ, ‖f t‖ * |clippedRootDerivative (y - t)| := by
-      apply integral_mono_ae hc.norm hr
-      filter_upwards with y
-      simpa only [norm_mul, Complex.norm_real, Real.norm_eq_abs] using
-        (norm_integral_le_integral_norm (fun t : ℝ => f t * (clippedRootDerivative (y - t) : ℂ)))
-    _ = _ := hi
+    (∫ y : ℝ, ‖convolution f (fun x => (clippedRootDerivative x : ℂ)) (ContinuousLinearMap.mul ℂ ℂ) volume y‖)
+      ≤ ∫ y : ℝ, convolution (fun a => ‖f a‖) (fun a => |clippedRootDerivative a|) (ContinuousLinearMap.mul ℝ ℝ) volume y := by
+        apply integral_mono_ae hc.norm hr
+        filter_upwards with y
+        rw [convolution_def, convolution_def]
+        dsimp only [ContinuousLinearMap.mul_apply']
+        simpa only [norm_mul, Complex.norm_real, Real.norm_eq_abs] using
+          (norm_integral_le_integral_norm (fun t : ℝ => f t * (clippedRootDerivative (y - t) : ℂ)))
+    _ = ∫ t : ℝ, ‖f t‖ := hi
 
 /-- The total L¹ cost is at most twice the literal discretization error.
 This bound uses the complete tail kernel, rather than a finite age cutoff. -/

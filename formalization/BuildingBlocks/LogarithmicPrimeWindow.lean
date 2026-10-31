@@ -45,7 +45,8 @@ theorem window_hasDerivAt {R D : ℝ → ℝ} {s x : ℝ} (hx : 0 < x)
       _ = _ := by rw [hpow]; ring
   change HasDerivAt (fun x => x ^ (-(1 : ℝ) / 2) * R (Real.log x - s)) _ x
   convert hm using 1
-  exact he.symm
+  · rfl
+  · exact he.symm
 
 /-- The lower endpoint lies outside the original correlation support. -/
 theorem window_one_eq_zero {R : ℝ → ℝ} {s d : ℝ}
@@ -468,8 +469,9 @@ theorem frozen_kernel_integrable {R D : ℝ → ℝ} {d : ℝ}
   have hb := (hnc.isCompact_range hk.norm).bddAbove
   obtain ⟨B, hB⟩ := hb
   have hi := (BuildingBlocks.ChargeFrozenIntegrability.integrable_causalSource C).bdd_mul
+    (c := B)
     (hk.comp (continuous_id.sub continuous_const)).aestronglyMeasurable
-    ⟨B, fun v => hB ⟨v - s, rfl⟩⟩
+    (Filter.Eventually.of_forall (fun v => hB ⟨v - s, rfl⟩))
   change MeasureTheory.Integrable (fun v : ℝ => sourceKernel R D (v - s) *
     BuildingBlocks.ChargeFrozenSource.causalSource C v) at hi
   exact hi.congr (Filter.Eventually.of_forall (fun v => mul_comm _ _))

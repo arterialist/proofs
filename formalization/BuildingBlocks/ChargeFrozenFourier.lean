@@ -157,7 +157,11 @@ theorem integrable_beta_fourier {n : ℕ} (hn : 0 < n) (ξ : ℝ) :
   apply hb.ofReal.bdd_mul
   · exact (by fun_prop : Continuous (fun v : ℝ =>
       Complex.exp (-Complex.I * (ξ : ℂ) * (v : ℂ)))).aestronglyMeasurable
-  · exact ⟨1, fun v => by simp [Complex.norm_exp, Complex.mul_re, Complex.mul_im]⟩
+  · filter_upwards [] with v
+    have hre : (-Complex.I * (ξ : ℂ) * (v : ℂ)).re = 0 := by
+      simp [Complex.mul_re, Complex.mul_im, Complex.neg_re,
+        Complex.I_re, Complex.I_im, Complex.ofReal_re, Complex.ofReal_im]
+    rw [Complex.norm_exp, hre, Real.exp_zero]
 
 theorem integrable_centering_fourier {N : ℕ} (hN : 1 ≤ N) (ξ : ℝ) :
     Integrable (fun v : ℝ => Complex.exp (-Complex.I * (ξ : ℂ) * (v : ℂ)) *
@@ -198,8 +202,8 @@ theorem causalSource_fourier_integral {N : ℕ} (hN : 2 ≤ N) (ξ : ℝ) :
         (Complex.exp (-Complex.I * (ξ : ℂ) * (v : ℂ)) * (beta n v : ℂ))) := by
     intro n hn
     exact (integrable_beta_fourier (by have := (Finset.mem_Icc.mp hn).1; omega) ξ).const_mul _
-  rw [hf, integral_sub (integrable_finset_sum _ ha)
-    (integrable_centering_fourier (by omega) ξ), integral_finset_sum _ ha,
+  rw [hf, integral_sub (integrable_finsetSum _ ha)
+    (integrable_centering_fourier (by omega) ξ), integral_finsetSum _ ha,
     centering_fourier_integral (by omega)]
   congr 1
   apply Finset.sum_congr rfl

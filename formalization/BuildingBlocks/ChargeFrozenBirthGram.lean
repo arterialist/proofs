@@ -98,6 +98,8 @@ theorem birth_gram_integral {m N : ℕ} (hm : 2 ≤ m) (hmN : m < N) (hN : 2 ≤
   rw [hz, zero_add, integral_Ioc_eq_integral_Ioo]
   have hnexp : (∫ v in a..b, Real.exp (-v)) = Real.exp (-a) - Real.exp (-b) := by
     have hd (v : ℝ) : HasDerivAt (fun v : ℝ => -Real.exp (-v)) (Real.exp (-v)) v := by
+      have hG : (fun v : ℝ => -Real.exp (-v)) = (-Real.exp ∘ Neg.neg) := by ext; rfl
+      rw [hG]
       simpa using ((Real.hasDerivAt_exp (-v)).comp v (hasDerivAt_id v).neg).neg
     have hi : IntervalIntegrable (fun v : ℝ => Real.exp (-v)) volume a b :=
       (by fun_prop : Continuous (fun v : ℝ => Real.exp (-v))).intervalIntegrable _ _

@@ -1,4 +1,5 @@
 import BuildingBlocks.ChargeFrozenLogMoment
+import Mathlib.Analysis.Fourier.FourierTransform
 import Mathlib.Analysis.Fourier.Inversion
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.Topology.Algebra.Indicator
@@ -41,7 +42,7 @@ theorem memLp_complexSource {N : ℕ} (hN : 2 ≤ N) :
 /-- Mathlib uses exp(-2π i v y); the existing literal hat uses exp(-i ξ v). -/
 theorem hat_eq_mathlib_fourier (N : ℕ) (ξ : ℝ) :
     hat N ξ = 𝓕 (complexSource N) (ξ / (2 * Real.pi)) := by
-  rw [Real.fourierIntegral_real_eq_integral_exp_smul]
+  rw [Real.fourier_real_eq_integral_exp_smul]
   apply integral_congr_ae
   filter_upwards [] with v
   simp only [complexSource, smul_eq_mul]
@@ -74,7 +75,9 @@ theorem ae_continuous_indicator_Ici {f : ℝ → ℝ} (hf : Continuous f) (c : �
     ∀ᵐ v : ℝ, ContinuousAt ((Ici c).indicator f) v := by
   filter_upwards [compl_mem_ae_iff.mpr (measure_singleton c)] with v hv
   apply hf.continuousOn.continuousAt_indicator
-  simpa only [frontier_Ici] using hv
+  rw [frontier_Ici]
+  intro h
+  exact hv h
 
 theorem ae_continuous_causalSource {N : ℕ} (hN : 2 ≤ N) :
     ∀ᵐ v : ℝ, ContinuousAt (causalSource N) v := by
@@ -105,8 +108,8 @@ theorem ae_continuous_causalSource {N : ℕ} (hN : 2 ≤ N) :
     induction s using Finset.induction_on with
     | empty => simpa using (continuousAt_const : ContinuousAt (fun _ : ℝ => (0 : ℝ)) v)
     | @insert n s hn ih =>
-      simpa only [Finset.sum_insert hn] using
-        (continuousAt_const.mul (hv n)).add ih
+      simp_rw [Finset.sum_insert hn]
+      exact ((hv n).const_mul (ArithmeticFunction.vonMangoldt n)).add ih
   exact (hsum _).sub hvc
 
 theorem source_abs_le_constant (N : ℕ) (v : ℝ) :

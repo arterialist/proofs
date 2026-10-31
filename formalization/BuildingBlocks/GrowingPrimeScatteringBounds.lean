@@ -391,7 +391,7 @@ theorem actual_block_low_high_comparison {ι : Type*} (s : Finset ℕ)
     apply tsum_of_norm_bounded ((hw.subtype low).hasSum.mul_left E)
     intro i
     rw [norm_mul]
-    exact mul_le_mul_of_nonneg_right (hlow i i.property) (norm_nonneg _)
+    exact mul_le_mul_of_nonneg_right (hlow i.val i.property) (norm_nonneg _)
   have hh := actual_block_weighted_tsum_comparison s hs
     (fun i : ↑(lowᶜ) => z i) (fun i : ↑(lowᶜ) => weight i)
     (fun i => hz i) M (hw.subtype lowᶜ)

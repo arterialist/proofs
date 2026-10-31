@@ -70,8 +70,7 @@ theorem centeredHeat_eq_prime_sub_density {t : ℝ} (ht : 0 < t) :
     centeredHeat t = primeHeat t - 1 / (exp t - 1) := by
   unfold centeredHeat primeHeat
   simp only [centeredCoefficient, sub_mul, one_mul]
-  rw [tsum_sub (primeHeat_summable ht) (densityHeat_hasSum ht).summable,
-    (densityHeat_hasSum ht).tsum_eq]
+  exact ((primeHeat_summable ht).hasSum.sub (densityHeat_hasSum ht)).tsum_eq
 
 theorem finiteHeat_tendsto {a : ℕ → ℝ} {t : ℝ}
     (ha : Summable (fun n : ℕ => a (n + 1) * exp (-(((n + 1 : ℕ) : ℝ) * t)))) :

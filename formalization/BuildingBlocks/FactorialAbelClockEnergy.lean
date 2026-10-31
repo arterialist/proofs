@@ -54,8 +54,9 @@ theorem critical_clock_energy (N : ℕ) (hN : 0 < N) :
 theorem boundary_band_bound (N : ℕ) (T : ℝ) (hT : 0 ≤ T) :
     (∫ t : ℝ in Set.Ioc 0 T, boundaryRow N t) ≤
       9 * (N : ℝ)^2 * T^2 / 4 + (N : ℝ) * T / 4 := by
-  exact (actual_boundary_band_upper N T hT).trans
-    (add_le_add_right (energy_band_bound N T hT) _)
+  have h1 := actual_boundary_band_upper N T hT
+  have h2 := energy_band_bound N T hT
+  linarith
 
 /-- Linear signed boundary budget through the actual inverse-square-root clock. -/
 theorem critical_clock_boundary (N : ℕ) (hN : 0 < N) :
@@ -64,12 +65,12 @@ theorem critical_clock_boundary (N : ℕ) (hN : 0 < N) :
   have hnR : (0 : ℝ) < N := by exact_mod_cast hN
   have hs := Real.sq_sqrt hnR.le
   have hsp := Real.sqrt_pos.mpr hnR
-  have h := (actual_boundary_band_upper N (1 / Real.sqrt (N : ℝ)) (by positivity)).trans
-    (add_le_add_right (critical_clock_energy N hN) _)
+  have h1 := actual_boundary_band_upper N (1 / Real.sqrt (N : ℝ)) (by positivity)
+  have h2 := critical_clock_energy N hN
   have he : (N : ℝ) * (1 / Real.sqrt (N : ℝ)) = Real.sqrt (N : ℝ) := by
     field_simp
     nlinarith
-  simpa only [he] using h
+  linarith
 
 /-- Complete integer dyad: an absolute positive horizon-square budget. -/
 theorem dyadic_square_budget (X : ℕ) :
@@ -133,8 +134,9 @@ theorem dyadic_critical_boundary (X : ℕ) (hX : 0 < X) :
       apply sum_congr rfl
       intro N hN
       ring
-    _ ≤ 9 * (X : ℝ)^2 / 2 + (T / 4) * ((X : ℝ) * (3 * (X : ℝ) - 1) / 2) :=
-      add_le_add_right (dyadic_critical_energy X hX) _
+    _ ≤ 9 * (X : ℝ)^2 / 2 + (T / 4) * ((X : ℝ) * (3 * (X : ℝ) - 1) / 2) := by
+      have h := dyadic_critical_energy X hX
+      linarith
     _ = _ := by dsimp [T]; ring
 
 end BuildingBlocks.FactorialAbelClockEnergy

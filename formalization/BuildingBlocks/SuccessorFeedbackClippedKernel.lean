@@ -101,7 +101,7 @@ theorem clippedConvolution_hasDerivAt {f : ℝ → ℂ} (hf : IntegrableOn f (Io
     (F := fun x t : ℝ => f t * (clippedRoot (x - t) : ℂ))
     (F' := fun t : ℝ => f t * (clippedRootDerivative (y - t) : ℂ))
     (μ := volume.restrict (Ioi (0 : ℝ))) (bound := fun t : ℝ => ‖f t‖)
-    (show (0 : ℝ) < 1 by norm_num)
+    (Metric.ball_mem_nhds y zero_lt_one)
     (Eventually.of_forall (fun x => (clippedConvolution_integrable hf x).aestronglyMeasurable))
     (clippedConvolution_integrable hf y)
     (hf.aestronglyMeasurable.mul
@@ -122,6 +122,7 @@ theorem clippedConvolution_hasDerivAt {f : ℝ → ℂ} (hf : IntegrableOn f (Io
     filter_upwards [ae_restrict_of_ae hne] with t ht
     have hn : y - t ≠ 1 := by intro he; apply ht; linarith
     have hd := ((clippedRoot_hasDerivAt hn).comp y ((hasDerivAt_id y).sub_const t)).ofReal_comp
+    change HasDerivAt (fun x => (clippedRoot (x - t) : ℂ)) _ y at hd
     simpa only [mul_one] using hd.const_mul (f t)
 
 /-- The actual floor error satisfies the integrability prerequisite; no

@@ -51,15 +51,20 @@ theorem floorAbelIntegrand_hasDerivAt (z : ℂ) (y t : ℝ) :
     HasDerivAt (fun w => floorAbelIntegrand w y t)
       (floorAbelParameterDerivative z y t) z := by
   have hn : (0 : ℝ) < ⌊t⌋₊ + 1 := by positivity
+  have heq : ((⌊t⌋₊ + 1 : ℕ) : ℂ) = ((⌊t⌋₊ + 1 : ℝ) : ℂ) := by push_cast; rfl
+  have hlog : Complex.log (((⌊t⌋₊ + 1 : ℕ) : ℂ)) = ((log (⌊t⌋₊ + 1 : ℝ) : ℝ) : ℂ) := by
+    rw [heq, ← Complex.ofReal_log hn.le]
   have h := ((hasDerivAt_id z).neg.const_cpow
     (c := ((⌊t⌋₊ + 1 : ℕ) : ℂ))
     (Or.inl (by exact_mod_cast (Nat.succ_ne_zero ⌊t⌋₊)))).mul_const
       (((y - t) ^ (-(1 / 2 : ℝ)) : ℝ) : ℂ)
-  convert h using 1
-  simp only [floorAbelParameterDerivative, floorAbelIntegrand, floorWeight, Pi.neg_apply, id_eq]
-  rw [show ((⌊t⌋₊ + 1 : ℕ) : ℂ) = ((⌊t⌋₊ + 1 : ℝ) : ℂ) by push_cast; rfl,
-    ← Complex.ofReal_log hn.le]
-  ring
+  have hd : floorAbelParameterDerivative z y t =
+      ((⌊t⌋₊ + 1 : ℕ) : ℂ) ^ (-id z) * Complex.log ((⌊t⌋₊ + 1 : ℕ) : ℂ) * (-1) *
+        (((y - t) ^ (-(1 / 2 : ℝ)) : ℝ) : ℂ) := by
+    simp only [floorAbelParameterDerivative, floorAbelIntegrand, floorWeight, Pi.neg_apply, id_eq, hlog]
+    ring
+  rw [hd]
+  exact h
 
 theorem floorAbelParameterDerivative_measurable (z : ℂ) (y : ℝ) :
     Measurable (floorAbelParameterDerivative z y) := by
@@ -84,7 +89,7 @@ theorem floorAbelKernel_differentiableAt {z : ℂ} (hz : 0 < z.re) (y : ℝ) :
     (F' := fun w t => floorAbelParameterDerivative w y t)
     (μ := volume.restrict (Icc (0 : ℝ) (y - 1)))
     (bound := fun _ : ℝ => log y)
-    (show 0 < z.re / 2 by linarith)
+    (Metric.ball_mem_nhds z (by linarith : 0 < z.re / 2))
     (Eventually.of_forall (fun w => (floorAbelIntegrand_measurable w y).aestronglyMeasurable))
     (floorAbelIntegrand_integrable hz.le y)
     (floorAbelParameterDerivative_measurable z y).aestronglyMeasurable

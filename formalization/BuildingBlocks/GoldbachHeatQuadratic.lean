@@ -22,7 +22,7 @@ private theorem heatPair_integrable {s : ℝ} (hs : 0 < s) {m n : ℕ}
   have hr : 0 < (m : ℝ) + n := by exact_mod_cast (by omega : 0 < m + n)
   have hi : IntegrableOn (fun t : ℝ => t ^ (s - 1) * exp (-(((m : ℝ) + n) * t))) (Ioi 0) := by
     simpa only [rpow_one, neg_mul] using
-      (integrableOn_rpow_mul_exp_neg_mul_rpow (p := 1) (s := s - 1) (by linarith) le_rfl hr)
+      (integrableOn_rpow_mul_exp_neg_mul_rpow (p := 1) (s := s - 1) (by linarith) zero_lt_one hr)
   exact hi.const_mul (a m * a n)
 
 theorem finiteHeat_square_expansion (a : ℕ → ℝ) (N : ℕ) (s t : ℝ) :

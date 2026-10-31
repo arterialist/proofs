@@ -14,9 +14,14 @@ noncomputable def heatEnergyWeightDerivative (x : ℝ) : ℝ :=
 theorem heatEnergyWeight_hasDerivAt {x : ℝ} (hx : 0 < x) :
     HasDerivAt heatEnergyWeight (heatEnergyWeightDerivative x) x := by
   have hh := (criticalHeatProfile_hasDerivAt (log x)).comp x (hasDerivAt_log (ne_of_gt hx))
-  convert (hh.pow 2).div (hasDerivAt_id x) (ne_of_gt hx) using 1
+  have hdiv := (hh.pow 2).div (hasDerivAt_id x) (ne_of_gt hx)
+  have heq : heatEnergyWeight = (criticalHeatProfile ∘ log) ^ 2 / id := by
+    ext y
+    rfl
+  rw [heq]
+  refine hdiv.congr_deriv ?_
   unfold heatEnergyWeightDerivative
-  simp only [id_eq, Function.comp_apply, Pi.pow_apply]
+  simp only [id_eq, Function.comp_apply, Pi.pow_apply, Pi.mul_apply, Pi.div_apply]
   field_simp
   ring
 

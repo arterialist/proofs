@@ -15,9 +15,10 @@ theorem criticalHeatProfile_hasDerivAt (v : ℝ) :
   have ho := ((hasDerivAt_id v).neg.div_const 2).exp
   have hh := (mixedCenteredHeat_hasDerivAt (exp_pos (-v))).comp v hi
   convert ho.mul hh using 1
-  unfold criticalHeatProfileDerivative
-  simp only [id_eq, Pi.neg_apply, Function.comp_apply]
-  ring
+  · rfl
+  · unfold criticalHeatProfileDerivative
+    simp only [id_eq, Pi.neg_apply, Function.comp_apply]
+    ring
 
 theorem criticalHeatProfile_continuous (v : ℝ) : ContinuousAt criticalHeatProfile v :=
   (criticalHeatProfile_hasDerivAt v).continuousAt

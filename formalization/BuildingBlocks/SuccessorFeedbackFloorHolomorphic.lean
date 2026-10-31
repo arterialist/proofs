@@ -23,11 +23,12 @@ theorem floorWeightError_hasDerivAt (z : ℂ) {t : ℝ} (ht : 0 ≤ t) :
       ((hasDerivAt_id z).neg.const_cpow (c := ((t + 1 : ℝ) : ℂ))
         (Or.inl (by exact_mod_cast hb.ne')))
   convert h using 1
-  simp only [floorWeightError, floorErrorParameterDerivative, floorWeight,
-    Pi.neg_apply, id_eq]
-  rw [show ((⌊t⌋₊ + 1 : ℕ) : ℂ) = ((⌊t⌋₊ + 1 : ℝ) : ℂ) by push_cast; rfl,
-    ← Complex.ofReal_log hn.le, ← Complex.ofReal_log hb.le]
-  ring
+  · ext w; rfl
+  · simp only [floorWeightError, floorErrorParameterDerivative, floorWeight,
+      Pi.neg_apply, id_eq]
+    rw [show ((⌊t⌋₊ + 1 : ℕ) : ℂ) = ((⌊t⌋₊ + 1 : ℝ) : ℂ) by push_cast; rfl,
+      ← Complex.ofReal_log hn.le, ← Complex.ofReal_log hb.le]
+    ring
 
 theorem floorErrorParameterDerivative_measurable (z : ℂ) :
     Measurable (floorErrorParameterDerivative z) := by
@@ -76,7 +77,7 @@ noncomputable def floorErrorPairing (b : ℝ → ℂ) (z : ℂ) : ℂ :=
 theorem floorErrorPairing_integrable {b : ℝ → ℂ} (hb : Measurable b)
     {M : ℝ} (hM : ∀ t, ‖b t‖ ≤ M) {z : ℂ} (hz : 0 < z.re) :
     IntegrableOn (fun t => floorWeightError z t * b t) (Ioi (0 : ℝ)) := by
-  exact ((floorWeightError_integrable hz).bdd_mul' hb.aestronglyMeasurable
+  exact ((floorWeightError_integrable hz).bdd_mul hb.aestronglyMeasurable
     (Eventually.of_forall hM)).congr (Eventually.of_forall (fun t => mul_comm _ _))
 
 theorem floorErrorPairing_differentiableAt {b : ℝ → ℂ} (hb : Measurable b)
@@ -93,7 +94,7 @@ theorem floorErrorPairing_differentiableAt {b : ℝ → ℂ} (hb : Measurable b)
     (F' := fun w t => floorErrorParameterDerivative w t * b t)
     (μ := volume.restrict (Ioi (0 : ℝ)))
     (bound := fun t => (C * M) * (t + 1) ^ (-(z.re / 2) - 1))
-    (show 0 < z.re / 4 by linarith)
+    (Metric.ball_mem_nhds z (by linarith : 0 < z.re / 4))
     (Eventually.of_forall (fun w => ((measurable_floorWeightError w).mul hb).aestronglyMeasurable))
     (floorErrorPairing_integrable hb hM hz)
     ((floorErrorParameterDerivative_measurable z).mul hb).aestronglyMeasurable

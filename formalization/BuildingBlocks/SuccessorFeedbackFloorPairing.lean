@@ -18,7 +18,7 @@ private theorem root_complex_integrable :
 private theorem bracketTail_integrable {g : ℝ → ℂ} (hg : Measurable g)
     {M : ℝ} (hb : ∀ x, ‖g x‖ ≤ M) (t : ℝ) :
     Integrable (fun x : ℝ => g (x + t) * (clippedRootDerivative x : ℂ)) :=
-  root_complex_integrable.bdd_mul' (hg.comp (measurable_id.add_const t)).aestronglyMeasurable
+  root_complex_integrable.bdd_mul (hg.comp (measurable_id.add_const t)).aestronglyMeasurable
     (Eventually.of_forall (fun x => hb (x + t)))
 
 theorem floorSourceBracket_bound {g : ℝ → ℂ} (hg : Measurable g)
@@ -60,12 +60,12 @@ theorem floorAgeError_pairing {z : ℂ} (hz : 0 < z.re) {g : ℝ → ℂ}
   have hp := hf.convolution_integrand (ContinuousLinearMap.mul ℂ ℂ) hk
   change Integrable (fun p : ℝ × ℝ => f p.2 * k (p.1 - p.2)) at hp
   have hgp : Integrable (fun p : ℝ × ℝ => g p.1 * (f p.2 * k (p.1 - p.2))) :=
-    hp.bdd_mul' (hg.comp measurable_fst).aestronglyMeasurable
+    hp.bdd_mul (hg.comp measurable_fst).aestronglyMeasurable
       (Eventually.of_forall (fun p => hb p.1))
   have hshift : Integrable (fun y : ℝ => g y * f (y - 1)) :=
-    (hf.comp_sub_right 1).bdd_mul' hg.aestronglyMeasurable (Eventually.of_forall hb)
+    (hf.comp_sub_right 1).bdd_mul hg.aestronglyMeasurable (Eventually.of_forall hb)
   have htail : Integrable (fun y : ℝ => g y * ∫ t : ℝ, f t * k (y - t)) :=
-    hc.bdd_mul' hg.aestronglyMeasurable (Eventually.of_forall hb)
+    hc.bdd_mul hg.aestronglyMeasurable (Eventually.of_forall hb)
   have he : (∫ y : ℝ, g y * f (y - 1)) = ∫ t : ℝ, f t * g (t + 1) := by
     have hs := integral_add_right_eq_self (μ := volume) (fun y : ℝ => g y * f (y - 1)) 1
     simp only [add_sub_cancel_right] at hs
@@ -84,7 +84,7 @@ theorem floorAgeError_pairing {z : ℂ} (hz : 0 < z.re) {g : ℝ → ℂ}
     filter_upwards with x
     ring
   have hleft : Integrable (fun t : ℝ => f t * g (t + 1)) := by
-    exact (hf.bdd_mul' (hg.comp (measurable_id.add_const 1)).aestronglyMeasurable
+    exact (hf.bdd_mul (hg.comp (measurable_id.add_const 1)).aestronglyMeasurable
       (Eventually.of_forall (fun t => hb (t + 1)))).congr
         (Eventually.of_forall (fun t => mul_comm _ _))
   have hright : Integrable (fun t : ℝ => f t * ∫ x : ℝ, g (x + t) * k x) := by
@@ -170,16 +170,15 @@ theorem floorSourceBracket_eq (g : ℝ → ℂ) (t : ℝ) :
 
 theorem actual_floorAgeError_pairing_integrable {z : ℂ} (hz : 0 < z.re) :
     Integrable (fun y : ℝ => (physicalError y : ℂ) * floorAgeError z y) := by
-  apply (floorAgeError_integrable hz).bdd_mul'
-    (Complex.measurable_ofReal.comp measurable_physicalError).aestronglyMeasurable
-    (c := 4 * log 2 + 1)
-  filter_upwards with y
-  simpa only [Function.comp_apply, Complex.norm_real, Real.norm_eq_abs] using
-    physicalError_abs_le_global y
+  have hb : ∀ᵐ y, ‖(physicalError y : ℂ)‖ ≤ 4 * log 2 + 1 := by
+    filter_upwards with y
+    simpa only [Complex.norm_real, Real.norm_eq_abs] using physicalError_abs_le_global y
+  exact (floorAgeError_integrable hz).bdd_mul
+    (Complex.measurable_ofReal.comp measurable_physicalError).aestronglyMeasurable hb
 
 theorem actual_floorBracket_integrable {z : ℂ} (hz : 0 < z.re) :
     IntegrableOn (fun t => floorWeightError z t * actualFloorBracket t) (Ioi (0 : ℝ)) := by
-  exact ((floorWeightError_integrable hz).bdd_mul'
+  exact ((floorWeightError_integrable hz).bdd_mul
     actualFloorBracket_measurable.aestronglyMeasurable
     (Eventually.of_forall actualFloorBracket_bound)).congr
       (Eventually.of_forall (fun t => mul_comm _ _))

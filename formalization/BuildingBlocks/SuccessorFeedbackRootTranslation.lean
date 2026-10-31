@@ -42,11 +42,37 @@ private theorem rootTailPrimitive_hasDerivAt {t : ℝ} (ht : 0 ≤ t)
       (1 / sqrt (x - t) - 1 / sqrt x) x := by
   have hx0 : 0 < x := by linarith
   have hxt : 0 < x - t := by linarith
-  have h := (((hasDerivAt_id x).sub_const t).sqrt hxt.ne').sub (hasDerivAt_sqrt hx0.ne')
-  convert h.const_mul 2 using 1
-  simp only [id_eq, mul_one]
-  field_simp
-  <;> ring
+  have hd_sub : HasDerivAt (id - fun _ => t) (1 - 0) x := (hasDerivAt_id x).sub (hasDerivAt_const x t)
+  have hd : HasDerivAt (fun y => y - t) 1 x := by
+    have hG : (fun y => y - t) = (id - fun _ => t) := by ext; rfl
+    rw [hG]
+    simpa only [sub_zero] using hd_sub
+  have hs : HasDerivAt sqrt (1 / (2 * sqrt (x - t))) (x - t) := hasDerivAt_sqrt hxt.ne'
+  have h1_comp := hs.comp x hd
+  have h1 : HasDerivAt (fun y => sqrt (y - t)) (1 / (2 * sqrt (x - t))) x := by
+    have hG : (fun y => sqrt (y - t)) = (sqrt ∘ fun y => y - t) := by ext; rfl
+    rw [hG]
+    simpa only [mul_one] using h1_comp
+  have h2 : HasDerivAt sqrt (1 / (2 * sqrt x)) x := hasDerivAt_sqrt hx0.ne'
+  have h3_sub := h1.sub h2
+  have h3 : HasDerivAt (fun y => sqrt (y - t) - sqrt y)
+      (1 / (2 * sqrt (x - t)) - 1 / (2 * sqrt x)) x := by
+    have hG : (fun y => sqrt (y - t) - sqrt y) = ((fun y => sqrt (y - t)) - sqrt) := by ext; rfl
+    rw [hG]
+    exact h3_sub
+  have h4_const := h3.const_mul 2
+  have h4 : HasDerivAt (fun y => 2 * (sqrt (y - t) - sqrt y))
+      (2 * (1 / (2 * sqrt (x - t)) - 1 / (2 * sqrt x))) x := by
+    have hG : (fun y => 2 * (sqrt (y - t) - sqrt y)) = (fun _ => (2 : ℝ)) * (fun y => sqrt (y - t) - sqrt y) := by ext; rfl
+    rw [hG]
+    exact h4_const
+  have heq : 2 * (1 / (2 * sqrt (x - t)) - 1 / (2 * sqrt x)) =
+      1 / sqrt (x - t) - 1 / sqrt x := by
+    have hxt_ne : sqrt (x - t) ≠ 0 := (sqrt_pos.mpr hxt).ne'
+    have hx_ne : sqrt x ≠ 0 := (sqrt_pos.mpr hx0).ne'
+    field_simp
+  rw [← heq]
+  exact h4
 
 private theorem rootTail_nonneg {t : ℝ} (ht : 0 ≤ t) {x : ℝ} (hx : t + 1 < x) :
     0 ≤ 1 / sqrt (x - t) - 1 / sqrt x := by

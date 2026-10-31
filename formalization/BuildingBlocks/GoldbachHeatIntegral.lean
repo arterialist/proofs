@@ -17,7 +17,7 @@ noncomputable def pairHeat (s : ℝ) (p : ℕ × ℕ) (t : ℝ) : ℝ :=
 theorem pairHeat_integrable {s : ℝ} (hs : 0 < s) (p : ℕ × ℕ) :
     IntegrableOn (pairHeat s p) (Ioi (0 : ℝ)) := by
   have hi := integrableOn_rpow_mul_exp_neg_mul_rpow (p := 1) (s := s - 1)
-    (b := (((p.1 + 1 : ℕ) : ℝ) + ((p.2 + 1 : ℕ) : ℝ))) (by linarith) le_rfl (by positivity)
+    (b := (((p.1 + 1 : ℕ) : ℝ) + ((p.2 + 1 : ℕ) : ℝ))) (by linarith) zero_lt_one (by positivity)
   simp only [rpow_one, neg_mul] at hi
   exact hi.const_mul _
 

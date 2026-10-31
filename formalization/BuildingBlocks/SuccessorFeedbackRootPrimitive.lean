@@ -87,7 +87,7 @@ theorem rootPrimitiveConvolution_hasDerivAt {f : ℝ → ℂ}
     (F := fun x t : ℝ => f t * (causalRootPrimitive (x - t) : ℂ))
     (F' := fun t : ℝ => f t * (causalRoot (y - t) : ℂ))
     (μ := volume.restrict (Ioi (0 : ℝ))) (bound := fun t : ℝ => ‖f t‖)
-    (show (0 : ℝ) < 1 by norm_num)
+    univ_mem
     (Eventually.of_forall (fun x => (rootPrimitiveConvolution_integrable hf x).aestronglyMeasurable))
     (rootPrimitiveConvolution_integrable hf y)
     (hf.aestronglyMeasurable.mul
@@ -105,8 +105,13 @@ theorem rootPrimitiveConvolution_hasDerivAt {f : ℝ → ℂ}
     exact mul_le_mul_of_nonneg_left hd (norm_nonneg _)
   · have hne : ∀ᵐ t : ℝ, t ≠ y - 1 := by rw [ae_iff]; simp
     filter_upwards [ae_restrict_of_ae hne] with t ht
-    have hd := ((causalRootPrimitive_hasDerivAt (show y - t ≠ 1 by intro h; apply ht; linarith)).comp
-      y ((hasDerivAt_id y).sub_const t)).ofReal_comp
-    simpa only [mul_one] using hd.const_mul (f t)
+    have h1 := causalRootPrimitive_hasDerivAt (show y - t ≠ 1 by intro h; apply ht; linarith)
+    have h2 := (hasDerivAt_id y).sub_const t
+    have hd := (h1.comp y h2).ofReal_comp
+    have hmul := hd.const_mul (f t)
+    convert hmul using 1
+    · ext x
+      simp only [Function.comp_apply, id_eq]
+    · simp only [mul_one]
 
 end BuildingBlocks.SuccessorFeedback

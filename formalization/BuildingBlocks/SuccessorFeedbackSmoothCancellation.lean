@@ -37,7 +37,9 @@ theorem smoothPowerCharge_integral {z : ℂ} (hz : 0 < z.re) :
     have h' := (hasDerivAt_ofReal_cpow_const
       (show t + 1 ≠ 0 by linarith [ht.out]) (neg_ne_zero.mpr hz0)).scomp
       t ((hasDerivAt_id t).add_const 1)
-    convert h'.neg using 1 <;> simp [smoothPowerCharge, mul_assoc]
+    convert h'.neg using 1
+    · ext u; rfl
+    · simp only [smoothPowerCharge, one_smul, neg_mul, neg_neg]
   have ht : Tendsto (fun t : ℝ => -((t + 1 : ℝ) : ℂ) ^ (-z)) atTop (𝓝 0) := by
     have hr : Tendsto (fun t : ℝ => (t + 1) ^ (-z.re)) atTop (𝓝 0) :=
       (tendsto_rpow_neg_atTop hz).comp (tendsto_atTop_add_const_right atTop 1 tendsto_id)
@@ -75,7 +77,7 @@ theorem smoothRootDerivative_eq_difference {z : ℂ} (hz : 0 < z.re) (y : ℝ) :
       (Ioi (0 : ℝ)) := by
     have hm : Measurable (fun t : ℝ => (causalRoot (y - t) : ℂ)) :=
       Complex.measurable_ofReal.comp (causalRoot_measurable.comp (measurable_const.sub measurable_id))
-    exact (hq.bdd_mul' hm.aestronglyMeasurable
+    exact (Integrable.bdd_mul hq hm.aestronglyMeasurable
       (Eventually.of_forall (fun t => by
         simpa only [Complex.norm_real, Real.norm_eq_abs] using causalRoot_abs_le_one (y - t)))).congr
       (Eventually.of_forall (fun t => mul_comm _ _))
@@ -136,11 +138,15 @@ theorem smoothRootDerivative_integral {z : ℂ} (hz : 1 / 2 < z.re) :
 
 theorem actual_smoothRootDerivative_pairing_integrable {z : ℂ} (hz : 1 / 2 < z.re) :
     Integrable (fun y : ℝ => (physicalError y : ℂ) * smoothRootDerivative z y) := by
-  apply (smoothRootDerivative_integrable hz).bdd_mul'
+  have hm : AEStronglyMeasurable (fun y : ℝ => (physicalError y : ℂ)) volume :=
     (Complex.measurable_ofReal.comp measurable_physicalError).aestronglyMeasurable
-    (c := 4 * log 2 + 1)
-  filter_upwards with y
-  simpa only [Function.comp_apply, Complex.norm_real, Real.norm_eq_abs] using
-    physicalError_abs_le_global y
+  have hb : ∀ᵐ y ∂volume, ‖(physicalError y : ℂ)‖ ≤ 4 * log 2 + 1 := by
+    filter_upwards with y
+    simpa only [Function.comp_apply, Complex.norm_real, Real.norm_eq_abs] using
+      physicalError_abs_le_global y
+  exact Integrable.bdd_mul (smoothRootDerivative_integrable hz) hm hb
+
+#print axioms smoothRootDerivative_integral
+#print axioms actual_smoothRootDerivative_pairing_integrable
 
 end BuildingBlocks.SuccessorFeedback

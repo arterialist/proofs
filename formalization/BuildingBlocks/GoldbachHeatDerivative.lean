@@ -77,9 +77,10 @@ theorem mixedCenteredHeat_hasDerivAt {t : ℝ} (ht : 0 < t) :
   have hi := (hasDerivAt_const t (1 : ℝ)).div (hasDerivAt_id t) (ne_of_gt ht)
   have hb := ((hasDerivAt_const t (1 : ℝ)).add hi).mul (hasDerivAt_id t).neg.exp
   convert (primeHeat_hasDerivAt ht).sub hb using 1
-  unfold mixedCenteredHeatDerivative
-  simp only [id_eq, Pi.add_apply, Pi.div_apply, Pi.neg_apply]
-  ring
+  · rfl
+  · unfold mixedCenteredHeatDerivative
+    simp only [id_eq, Pi.add_apply, Pi.div_apply, Pi.neg_apply]
+    ring
 
 theorem mixedCenteredHeatDerivative_continuousOn_Ici {ε : ℝ} (hε : 0 < ε) :
     ContinuousOn mixedCenteredHeatDerivative (Ici ε) := by
