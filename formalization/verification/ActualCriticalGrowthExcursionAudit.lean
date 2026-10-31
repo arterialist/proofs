@@ -11,6 +11,8 @@ import BuildingBlocks.CriticalTransformContinuationZeroFree
 import BuildingBlocks.ActualCriticalZeroFreeCriterion
 import BuildingBlocks.ActualCriticalSharpOscillation
 import BuildingBlocks.ActualCriticalSecondOrder
+import BuildingBlocks.SamePrimeContinuation
+import BuildingBlocks.ActualCriticalLineAmplitude
 import Lean.Util.CollectAxioms
 
 /-!
@@ -31,6 +33,8 @@ open BuildingBlocks.CriticalTransformContinuationZeroFree
 open BuildingBlocks.ActualCriticalZeroFreeCriterion
 open BuildingBlocks.ActualCriticalSharpOscillation
 open BuildingBlocks.ActualCriticalSecondOrder
+open BuildingBlocks.SamePrimeContinuation
+open BuildingBlocks.ActualCriticalLineAmplitude
 
 #check RiemannHypothesis_of_growth_after
 #print axioms RiemannHypothesis_of_growth_after
@@ -139,6 +143,8 @@ run_cmd do
 #print axioms zeroFree_ge_of_power_lower_growth
 #check sharp_oscillation_of_zero
 #print axioms sharp_oscillation_of_zero
+#check exact_power_oscillation_of_not_RH
+#print axioms exact_power_oscillation_of_not_RH
 
 /-! ### The second-order constant `c₁ = 8/9 - γ/3` -/
 
@@ -152,3 +158,22 @@ run_cmd do
 #print axioms not_eventually_lower_second_order
 #check second_order_two_sided
 #print axioms second_order_two_sided
+#check c₁_bounds
+#print axioms c₁_bounds
+
+/-! ### Continuation of the same-prime series and zeros on the line -/
+
+#check Hext_eq_H
+#print axioms Hext_eq_H
+#check Hext_analyticAt_line
+#print axioms Hext_analyticAt_line
+#check Fext_pole
+#print axioms Fext_pole
+#check norm_coeff_le_of_upper
+#print axioms norm_coeff_le_of_upper
+#check norm_coeff_le_of_lower
+#print axioms norm_coeff_le_of_lower
+#check line_amplitude
+#print axioms line_amplitude
+#check multiplicity_bound_of_upper
+#print axioms multiplicity_bound_of_upper

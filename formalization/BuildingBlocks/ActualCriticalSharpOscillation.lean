@@ -434,4 +434,14 @@ theorem sharp_oscillation_of_zero {ρ : ℂ} (hz : riemannZeta ρ = 0) (hρ : (1
     exact zeroFree_boundary_of_power_lower_growth hρ hβ1 (A := max 1 B) (le_max_left _ _)
       (fun x hx => h x (lt_of_le_of_lt (le_max_right _ _) hx)) ρ rfl hz
 
+/-- **Dichotomy at the exact exponent.** If RH fails, there is `β > 1/2` (the real part of any
+off-line zero) such that for every `C`, `Re W(x) > C x^{1+β}` and `Re W(x) < -C x^{1+β}` for
+arbitrarily large `x`. -/
+theorem exact_power_oscillation_of_not_RH (h : ¬ RiemannHypothesis) :
+    ∃ β : ℝ, (1 : ℝ) / 2 < β ∧ ∀ C : ℝ,
+      (∃ᶠ x : ℝ in atTop, C * x ^ (1 + β) < (ActualCriticalMellin.W x).re) ∧
+      (∃ᶠ x : ℝ in atTop, (ActualCriticalMellin.W x).re < -(C * x ^ (1 + β))) := by
+  obtain ⟨ρ, hρ, hz⟩ := exists_right_zero_of_not_RH h
+  exact ⟨ρ.re, hρ, fun C => sharp_oscillation_of_zero hz hρ C⟩
+
 end BuildingBlocks.ActualCriticalSharpOscillation

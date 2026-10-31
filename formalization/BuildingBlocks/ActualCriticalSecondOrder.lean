@@ -557,6 +557,13 @@ theorem c₁_eq : c₁ = -m₀ / 4 := by
   unfold c₁ m₀
   ring
 
+/-- Numerically, `2/3 < c₁ < 13/18`, from Mathlib's bounds `1/2 < γ < 2/3`. -/
+theorem c₁_bounds : 2 / 3 < c₁ ∧ c₁ < 13 / 18 := by
+  unfold c₁
+  have h1 := Real.one_half_lt_eulerMascheroniConstant
+  have h2 := Real.eulerMascheroniConstant_lt_two_thirds
+  constructor <;> linarith
+
 /-- `(Re m(σ) · (σ-1/2)² Re H(σ) - 1/3)/(σ - 1/2) → m₀/4`. -/
 theorem tendsto_T2 :
     Tendsto (fun σ : ℝ => ((m σ).re * ((σ - 1 / 2) ^ 2 * (H (σ : ℂ)).re) - 1 / 3) / (σ - 1 / 2))
@@ -572,12 +579,14 @@ theorem tendsto_T2 :
   field_simp
   ring
 
-/-- **Upper second-order exclusion.** For `C < c₁` and `A ≥ 1`, the bound
-`Re W(x) ≤ -(1/6) x^{3/2} log² x + C x^{3/2} log x` fails for some `x > A`. -/
-theorem not_eventually_upper_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : C < c₁) :
-    ¬ (∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤
-        -(1 / 6) * x ^ ((3 : ℝ) / 2) * (Real.log x) ^ 2 + C * x ^ ((3 : ℝ) / 2) * Real.log x) := by
-  intro hgrow
+/-- Under the upper bound `Re W(x) ≤ -(1/6) x^{3/2} log² x + C x^{3/2} log x` for `x > A`, the
+Laplace transform `L` of the positive measure satisfies `(σ-1/2)² L(σ) → C + m₀/4`. -/
+theorem tendsto_sq_upper_moment {C A : ℝ} (hA : 1 ≤ A)
+    (hgrow : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤
+        -(1 / 6) * x ^ ((3 : ℝ) / 2) * (Real.log x) ^ 2 + C * x ^ ((3 : ℝ) / 2) * Real.log x) :
+    Tendsto (fun σ : ℝ => (σ - 1 / 2) ^ 2 * (LaplaceMomentDerivatives.moment
+      (growthMeasure (addData (logData (-(1 / 6)) hA) (log1Data C hA))) time 0 (σ : ℂ)).re)
+      (𝓝[>] ((1 : ℝ) / 2)) (𝓝 (C + m₀ / 4)) := by
   set D : MajorantData (1 / 2) A := addData (logData (-(1 / 6)) hA) (log1Data C hA) with hD
   have hgrow' : ∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤ D.g x := fun x hx => hgrow x hx
   have hJ := ActualCriticalMajorantCriterion.continuation_analyticOnNhd D hA hgrow'
@@ -646,7 +655,9 @@ theorem not_eventually_upper_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : C < c
     ((((σ - 1 / 2 : ℝ) : ℂ)) ^ 2 * logF (-(1 / 6)) A (σ : ℂ)).re + 1 / 3 / d σ
   let T4 : ℝ → ℝ := fun σ => ((((σ - 1 / 2 : ℝ) : ℂ)) ^ 2 * log1F C A (σ : ℂ)).re
   let T5 : ℝ → ℝ := fun σ => d σ ^ 2 * (I (σ : ℂ)).re
-  have hineq : ∀ᶠ σ : ℝ in 𝓝[>] ((1 : ℝ) / 2), 0 ≤ T3 σ + T4 σ + T5 σ - T1 σ + T2 σ := by
+  have hev : ∀ᶠ σ : ℝ in 𝓝[>] ((1 : ℝ) / 2), T3 σ + T4 σ + T5 σ - T1 σ + T2 σ =
+      (σ - 1 / 2) ^ 2 *
+        (LaplaceMomentDerivatives.moment (growthMeasure D) time 0 (σ : ℂ)).re := by
     filter_upwards [hIoo] with σ hσI
     have h1 : 1 / 2 < σ := hσI.1
     have h2 : σ < 1 := hσI.2
@@ -666,11 +677,6 @@ theorem not_eventually_upper_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : C < c
         ShiftedZetaMultiplier.M (σ : ℂ) * (G (σ : ℂ) ^ 2 - H (σ : ℂ)) := by
       rw [CriticalTransformPoles.filledTransform_eq_of_ne hσ1]
       rfl
-    have hnn : 0 ≤ (((σ - 1 / 2 : ℝ) : ℂ) *
-        LaplaceMomentDerivatives.moment (growthMeasure D) time 0 (σ : ℂ)).re := by
-      rw [Complex.re_ofReal_mul]
-      exact mul_nonneg hd0.le (growth_moment_re_nonneg D σ)
-    rw [hmom, hfill] at hnn
     have hDF : D.F = fun s => logF (-(1 / 6)) A s + log1F C A s := rfl
     have hexpand : ((σ - 1 / 2 : ℝ) : ℂ) *
         (D.F (σ : ℂ) + I (σ : ℂ) -
@@ -681,11 +687,17 @@ theorem not_eventually_upper_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : C < c
       rw [hDF]
       unfold m
       ring
-    rw [hexpand] at hnn
-    simp only [Complex.sub_re, Complex.add_re] at hnn
     have hmH : (m σ * H (σ : ℂ)).re = (m σ).re * (H (σ : ℂ)).re := by
       rw [Complex.mul_re, H_im σ h1, mul_zero, sub_zero]
-    rw [hmH] at hnn
+    have hL : (((σ - 1 / 2 : ℝ) : ℂ) *
+        LaplaceMomentDerivatives.moment (growthMeasure D) time 0 (σ : ℂ)).re =
+        (((σ - 1 / 2 : ℝ) : ℂ) * logF (-(1 / 6)) A (σ : ℂ)).re +
+          (((σ - 1 / 2 : ℝ) : ℂ) * log1F C A (σ : ℂ)).re +
+          (((σ - 1 / 2 : ℝ) : ℂ) * I (σ : ℂ)).re -
+          (m σ * G (σ : ℂ) ^ 2).re + (m σ).re * (H (σ : ℂ)).re := by
+      rw [hmom, hfill, hexpand]
+      simp only [Complex.sub_re, Complex.add_re]
+      rw [hmH]
     have hT3 : T3 σ = (σ - 1 / 2) * (((σ - 1 / 2 : ℝ) : ℂ) * logF (-(1 / 6)) A (σ : ℂ)).re +
         1 / 3 / (σ - 1 / 2) := by
       simp only [T3, d]
@@ -713,8 +725,8 @@ theorem not_eventually_upper_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : C < c
       rw [hT3, hT4, hT5, hT2]
       simp only [T1, d]
       ring
-    rw [hsum]
-    exact mul_nonneg hd0.le hnn
+    rw [hsum, ← hL, Complex.re_ofReal_mul]
+    ring
   have hd_tendsto : Tendsto d (𝓝[>] ((1 : ℝ) / 2)) (𝓝 0) := by
     have : Tendsto (fun σ : ℝ => σ - 1 / 2) (𝓝 ((1 : ℝ) / 2)) (𝓝 ((1 : ℝ) / 2 - 1 / 2)) :=
       (continuous_id.sub continuous_const).continuousAt.tendsto
@@ -759,17 +771,33 @@ theorem not_eventually_upper_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : C < c
   have htot : Tendsto (fun σ => T3 σ + T4 σ + T5 σ - T1 σ + T2 σ) (𝓝[>] ((1 : ℝ) / 2))
       (𝓝 (0 + C + 0 - 0 + m₀ / 4)) :=
     (((hT3.add hT4).add hT5).sub hT1).add hT2
-  have hge : 0 ≤ 0 + C + 0 - 0 + m₀ / 4 := ge_of_tendsto htot hineq
+  rw [show ((0 : ℝ) + C + 0 - 0 + m₀ / 4) = C + m₀ / 4 by ring] at htot
+  exact htot.congr' hev
+
+/-- **Upper second-order exclusion.** For `C < c₁` and `A ≥ 1`, the bound
+`Re W(x) ≤ -(1/6) x^{3/2} log² x + C x^{3/2} log x` fails for some `x > A`. -/
+theorem not_eventually_upper_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : C < c₁) :
+    ¬ (∀ x : ℝ, A < x → (ActualCriticalMellin.W x).re ≤
+        -(1 / 6) * x ^ ((3 : ℝ) / 2) * (Real.log x) ^ 2 + C * x ^ ((3 : ℝ) / 2) * Real.log x) := by
+  intro hgrow
+  have h := tendsto_sq_upper_moment hA hgrow
+  have hnn : ∀ᶠ σ : ℝ in 𝓝[>] ((1 : ℝ) / 2), 0 ≤ (σ - 1 / 2) ^ 2 *
+      (LaplaceMomentDerivatives.moment
+        (growthMeasure (addData (logData (-(1 / 6)) hA) (log1Data C hA))) time 0 (σ : ℂ)).re :=
+    Filter.Eventually.of_forall (fun σ => mul_nonneg (sq_nonneg _) (growth_moment_re_nonneg _ σ))
+  have hge := ge_of_tendsto h hnn
   rw [c₁_eq] at hC
   linarith
 
-/-- **Lower second-order exclusion.** For `c₁ < C` and `A ≥ 1`, the bound
-`-(1/6) x^{3/2} log² x + C x^{3/2} log x ≤ Re W(x)` fails for some `x > A`. -/
-theorem not_eventually_lower_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : c₁ < C) :
-    ¬ (∀ x : ℝ, A < x →
+/-- Under the lower bound `-(1/6) x^{3/2} log² x + C x^{3/2} log x ≤ Re W(x)` for `x > A`, the
+Laplace transform `L` of the positive measure satisfies `(σ-1/2)² L(σ) → -m₀/4 - C`. -/
+theorem tendsto_sq_lower_moment {C A : ℝ} (hA : 1 ≤ A)
+    (hlow : ∀ x : ℝ, A < x →
         -(1 / 6) * x ^ ((3 : ℝ) / 2) * (Real.log x) ^ 2 + C * x ^ ((3 : ℝ) / 2) * Real.log x ≤
-          (ActualCriticalMellin.W x).re) := by
-  intro hlow
+          (ActualCriticalMellin.W x).re) :
+    Tendsto (fun σ : ℝ => (σ - 1 / 2) ^ 2 * (LaplaceMomentDerivatives.moment
+      (lowerMeasure (addData (logData (1 / 6) hA) (log1Data (-C) hA))) time 0 (σ : ℂ)).re)
+      (𝓝[>] ((1 : ℝ) / 2)) (𝓝 (-m₀ / 4 - C)) := by
   set D : MajorantData (1 / 2) A := addData (logData (1 / 6) hA) (log1Data (-C) hA) with hD
   have hlow' : ∀ x : ℝ, A < x → -(D.g x) ≤ (ActualCriticalMellin.W x).re := by
     intro x hx
@@ -843,7 +871,9 @@ theorem not_eventually_lower_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : c₁ 
     ((((σ - 1 / 2 : ℝ) : ℂ)) ^ 2 * logF (1 / 6) A (σ : ℂ)).re - 1 / 3 / d σ
   let T4 : ℝ → ℝ := fun σ => ((((σ - 1 / 2 : ℝ) : ℂ)) ^ 2 * log1F (-C) A (σ : ℂ)).re
   let T5 : ℝ → ℝ := fun σ => d σ ^ 2 * (I (σ : ℂ)).re
-  have hineq : ∀ᶠ σ : ℝ in 𝓝[>] ((1 : ℝ) / 2), 0 ≤ T1 σ - T2 σ + T3 σ + T4 σ - T5 σ := by
+  have hev : ∀ᶠ σ : ℝ in 𝓝[>] ((1 : ℝ) / 2), T1 σ - T2 σ + T3 σ + T4 σ - T5 σ =
+      (σ - 1 / 2) ^ 2 *
+        (LaplaceMomentDerivatives.moment (lowerMeasure D) time 0 (σ : ℂ)).re := by
     filter_upwards [hIoo] with σ hσI
     have h1 : 1 / 2 < σ := hσI.1
     have h2 : σ < 1 := hσI.2
@@ -863,11 +893,6 @@ theorem not_eventually_lower_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : c₁ 
         ShiftedZetaMultiplier.M (σ : ℂ) * (G (σ : ℂ) ^ 2 - H (σ : ℂ)) := by
       rw [CriticalTransformPoles.filledTransform_eq_of_ne hσ1]
       rfl
-    have hnn : 0 ≤ (((σ - 1 / 2 : ℝ) : ℂ) *
-        LaplaceMomentDerivatives.moment (lowerMeasure D) time 0 (σ : ℂ)).re := by
-      rw [Complex.re_ofReal_mul]
-      exact mul_nonneg hd0.le (lower_moment_re_nonneg D σ)
-    rw [hmom, hfill] at hnn
     have hDF : D.F = fun s => logF (1 / 6) A s + log1F (-C) A s := rfl
     have hexpand : ((σ - 1 / 2 : ℝ) : ℂ) *
         (ShiftedZetaMultiplier.M (σ : ℂ) * (G (σ : ℂ) ^ 2 - H (σ : ℂ)) + D.F (σ : ℂ) - I (σ : ℂ)) =
@@ -878,11 +903,17 @@ theorem not_eventually_lower_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : c₁ 
       rw [hDF]
       unfold m
       ring
-    rw [hexpand] at hnn
-    simp only [Complex.sub_re, Complex.add_re] at hnn
     have hmH : (m σ * H (σ : ℂ)).re = (m σ).re * (H (σ : ℂ)).re := by
       rw [Complex.mul_re, H_im σ h1, mul_zero, sub_zero]
-    rw [hmH] at hnn
+    have hL : (((σ - 1 / 2 : ℝ) : ℂ) *
+        LaplaceMomentDerivatives.moment (lowerMeasure D) time 0 (σ : ℂ)).re =
+        (m σ * G (σ : ℂ) ^ 2).re - (m σ).re * (H (σ : ℂ)).re +
+          (((σ - 1 / 2 : ℝ) : ℂ) * logF (1 / 6) A (σ : ℂ)).re +
+          (((σ - 1 / 2 : ℝ) : ℂ) * log1F (-C) A (σ : ℂ)).re -
+          (((σ - 1 / 2 : ℝ) : ℂ) * I (σ : ℂ)).re := by
+      rw [hmom, hfill, hexpand]
+      simp only [Complex.sub_re, Complex.add_re]
+      rw [hmH]
     have hT3 : T3 σ = (σ - 1 / 2) * (((σ - 1 / 2 : ℝ) : ℂ) * logF (1 / 6) A (σ : ℂ)).re -
         1 / 3 / (σ - 1 / 2) := by
       simp only [T3, d]
@@ -910,8 +941,8 @@ theorem not_eventually_lower_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : c₁ 
       rw [hT3, hT4, hT5, hT2]
       simp only [T1, d]
       ring
-    rw [hsum]
-    exact mul_nonneg hd0.le hnn
+    rw [hsum, ← hL, Complex.re_ofReal_mul]
+    ring
   have hd_tendsto : Tendsto d (𝓝[>] ((1 : ℝ) / 2)) (𝓝 0) := by
     have : Tendsto (fun σ : ℝ => σ - 1 / 2) (𝓝 ((1 : ℝ) / 2)) (𝓝 ((1 : ℝ) / 2 - 1 / 2)) :=
       (continuous_id.sub continuous_const).continuousAt.tendsto
@@ -956,7 +987,22 @@ theorem not_eventually_lower_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : c₁ 
   have htot : Tendsto (fun σ => T1 σ - T2 σ + T3 σ + T4 σ - T5 σ) (𝓝[>] ((1 : ℝ) / 2))
       (𝓝 (0 - m₀ / 4 + 0 + -C - 0)) :=
     (((hT1.sub hT2).add hT3).add hT4).sub hT5
-  have hge : 0 ≤ 0 - m₀ / 4 + 0 + -C - 0 := ge_of_tendsto htot hineq
+  rw [show ((0 : ℝ) - m₀ / 4 + 0 + -C - 0) = -m₀ / 4 - C by ring] at htot
+  exact htot.congr' hev
+
+/-- **Lower second-order exclusion.** For `c₁ < C` and `A ≥ 1`, the bound
+`-(1/6) x^{3/2} log² x + C x^{3/2} log x ≤ Re W(x)` fails for some `x > A`. -/
+theorem not_eventually_lower_second_order {C A : ℝ} (hA : 1 ≤ A) (hC : c₁ < C) :
+    ¬ (∀ x : ℝ, A < x →
+        -(1 / 6) * x ^ ((3 : ℝ) / 2) * (Real.log x) ^ 2 + C * x ^ ((3 : ℝ) / 2) * Real.log x ≤
+          (ActualCriticalMellin.W x).re) := by
+  intro hlow
+  have h := tendsto_sq_lower_moment hA hlow
+  have hnn : ∀ᶠ σ : ℝ in 𝓝[>] ((1 : ℝ) / 2), 0 ≤ (σ - 1 / 2) ^ 2 *
+      (LaplaceMomentDerivatives.moment
+        (lowerMeasure (addData (logData (1 / 6) hA) (log1Data (-C) hA))) time 0 (σ : ℂ)).re :=
+    Filter.Eventually.of_forall (fun σ => mul_nonneg (sq_nonneg _) (lower_moment_re_nonneg _ σ))
+  have hge := ge_of_tendsto h hnn
   rw [c₁_eq] at hC
   linarith
 
