@@ -9,6 +9,7 @@ import BuildingBlocks.ActualCriticalHDoublePole
 import BuildingBlocks.ActualCriticalUpperSharpConstant
 import BuildingBlocks.CriticalTransformContinuationZeroFree
 import BuildingBlocks.ActualCriticalZeroFreeCriterion
+import BuildingBlocks.ActualCriticalSharpOscillation
 import Lean.Util.CollectAxioms
 
 /-!
@@ -27,6 +28,7 @@ open BuildingBlocks.ActualCriticalHDoublePole
 open BuildingBlocks.ActualCriticalUpperSharpConstant
 open BuildingBlocks.CriticalTransformContinuationZeroFree
 open BuildingBlocks.ActualCriticalZeroFreeCriterion
+open BuildingBlocks.ActualCriticalSharpOscillation
 
 #check RiemannHypothesis_of_growth_after
 #print axioms RiemannHypothesis_of_growth_after
@@ -120,3 +122,18 @@ run_cmd do
 #print axioms log_oscillation_of_not_RH
 #check power_oscillation_of_not_RH
 #print axioms power_oscillation_of_not_RH
+
+/-! ### The boundary line: sharp oscillation at the exact exponent -/
+
+#check no_zero_on_boundary
+#print axioms no_zero_on_boundary
+#check zeroFree_boundary_of_power_growth
+#print axioms zeroFree_boundary_of_power_growth
+#check zeroFree_boundary_of_power_lower_growth
+#print axioms zeroFree_boundary_of_power_lower_growth
+#check zeroFree_ge_of_power_growth
+#print axioms zeroFree_ge_of_power_growth
+#check zeroFree_ge_of_power_lower_growth
+#print axioms zeroFree_ge_of_power_lower_growth
+#check sharp_oscillation_of_zero
+#print axioms sharp_oscillation_of_zero
