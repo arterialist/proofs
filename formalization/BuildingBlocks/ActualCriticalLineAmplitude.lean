@@ -143,8 +143,7 @@ theorem tendsto_sq_Fext {ρ : ℂ} (hz : riemannZeta ρ = 0) (hρ : ρ.re = 1 / 
   rw [hord, hcoeff] at ht
   refine ⟨m, hm, horder, (ht.comp (tendsto_add_ofReal_punctured ρ)).congr' ?_⟩
   filter_upwards with ε
-  simp only [Function.comp_apply, Pi.pow_apply, smul_eq_mul, add_sub_cancel_left,
-    WithTop.untop₀_coe, neg_neg]
+  simp only [Function.comp_apply, smul_eq_mul, WithTop.untop₀_coe, neg_neg]
   norm_num
 
 /-! ### The quarter-plane through a non-real point -/
