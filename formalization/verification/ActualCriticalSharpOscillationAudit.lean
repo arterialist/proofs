@@ -1,0 +1,10 @@
+import BuildingBlocks.ActualCriticalSharpOscillation
+
+open BuildingBlocks.ActualCriticalSharpOscillation
+
+#print axioms norm_moment_le_re_moment
+#print axioms zeroFree_boundary_of_power_growth
+#print axioms zeroFree_boundary_of_power_lower_growth
+#print axioms zeroFree_ge_of_power_growth
+#print axioms zeroFree_ge_of_power_lower_growth
+#print axioms sharp_oscillation_of_zero
