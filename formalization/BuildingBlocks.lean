@@ -739,3 +739,4 @@ import BuildingBlocks.ActualCriticalUpperSharpConstant
 import BuildingBlocks.CriticalTransformContinuationZeroFree
 import BuildingBlocks.ActualCriticalZeroFreeCriterion
 import BuildingBlocks.ActualCriticalSharpOscillation
+import BuildingBlocks.ActualCriticalSecondOrder

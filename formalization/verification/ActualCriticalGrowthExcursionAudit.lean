@@ -10,6 +10,7 @@ import BuildingBlocks.ActualCriticalUpperSharpConstant
 import BuildingBlocks.CriticalTransformContinuationZeroFree
 import BuildingBlocks.ActualCriticalZeroFreeCriterion
 import BuildingBlocks.ActualCriticalSharpOscillation
+import BuildingBlocks.ActualCriticalSecondOrder
 import Lean.Util.CollectAxioms
 
 /-!
@@ -29,6 +30,7 @@ open BuildingBlocks.ActualCriticalUpperSharpConstant
 open BuildingBlocks.CriticalTransformContinuationZeroFree
 open BuildingBlocks.ActualCriticalZeroFreeCriterion
 open BuildingBlocks.ActualCriticalSharpOscillation
+open BuildingBlocks.ActualCriticalSecondOrder
 
 #check RiemannHypothesis_of_growth_after
 #print axioms RiemannHypothesis_of_growth_after
@@ -137,3 +139,16 @@ run_cmd do
 #print axioms zeroFree_ge_of_power_lower_growth
 #check sharp_oscillation_of_zero
 #print axioms sharp_oscillation_of_zero
+
+/-! ### The second-order constant `c₁ = 8/9 - γ/3` -/
+
+#check hasDerivAt_mA
+#print axioms hasDerivAt_mA
+#check tendsto_H_second
+#print axioms tendsto_H_second
+#check not_eventually_upper_second_order
+#print axioms not_eventually_upper_second_order
+#check not_eventually_lower_second_order
+#print axioms not_eventually_lower_second_order
+#check second_order_two_sided
+#print axioms second_order_two_sided
