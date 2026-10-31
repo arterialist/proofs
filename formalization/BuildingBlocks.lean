@@ -734,3 +734,4 @@ import BuildingBlocks.RiemannZetaExtendedRatioDeficit
 import BuildingBlocks.RiemannZetaPerronContourShift
 import BuildingBlocks.RiemannZetaCauchyResidueShift
 import BuildingBlocks.PrimePowerLogSeries
+import BuildingBlocks.ActualCriticalHDoublePole
