@@ -24,4 +24,4 @@ Markdown files in this directory, excluding this README.
 4. [Prime-seed compound Poisson semigroup and uniform Bernstein exponent](prime-seed-compound-poisson-semigroup-and-bernstein-exponent.md)
    - Lean formalization of the specialized all-prime jump profile. The abstract compound-Poisson theory is classical.
 5. [Explicit zeta zero-free region through height 7.465](explicit-zeta-zero-free-region-to-7-465.md)
-   - An unconditional Lean theorem for $\operatorname{Re}(s)>1/2$ and $0<\operatorname{Im}(s)\le 7.465$. The mathematical zero-free range is classical and vastly weaker than published computations; the provisional claim concerns this exact Lean theorem only.
+   - An unconditional Lean theorem for $\mathrm{Re}(s) > 1/2$ and $0 < \mathrm{Im}(s) \le 7.465$. The mathematical zero-free range is classical and vastly weaker than published computations; the provisional claim concerns this exact Lean theorem only.
