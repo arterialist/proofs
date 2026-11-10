@@ -190,45 +190,45 @@ A nonnegative almost periodic function with mean value $0$ vanishes, so $a=0$. $
 
 Theorems 2 to 4 leave open every perturbation that is not a measure of finite total variation plus finitely many terms $e^{\eta u}u^j$ times a uniformly almost periodic function. Examples: a sum over infinitely many zeros with coefficients that are not summable, infinitely many distinct growth rates, a density such as $c/(1+u)$, or atoms displaced by amounts whose total is infinite. Formally, by the explicit formula, $\mu_\Lambda-2\cosh(u/2)\,du$ is itself a sum over all zeros with every coefficient equal to $1$, up to an integrable term. Under RH that sum has no growth; it converges only as a distribution and is not a density.
 
-**Theorem 5 (a change of slowly growing total variation; unconditional).** Let $(m,\mu)$ be an admissible system of conductor $q\le1$, or more generally let $(m,\mu,q)$ be a $\Xi$-admissible triple with $q\le1$. Let $\kappa=\mu-\mu_\Lambda$ on $(0,\infty)$ and suppose
+**Theorem 5 (a change whose total variation has mean density zero; unconditional).** Let $(m,\mu)$ be an admissible system of conductor $q\le1$, or more generally let $(m,\mu,q)$ be a $\Xi$-admissible triple with $q\le1$. Let $\kappa=\mu-\mu_\Lambda$ on $(0,\infty)$, let $|\kappa|$ be its total variation measure, and suppose
 
 $$
-\int_{(0,\infty)}\frac{d|\kappa|(u)}{1+u}<\infty ,
+|\kappa|((0,T])=o(T)\qquad(T\to\infty).
 $$
 
-where $|\kappa|$ is the total variation measure. Then $q=1$ and $\mu=\mu_\Lambda$. For an admissible system, RH holds and $m$ is the counting measure of the ordinates.
+Then $q=1$ and $\mu=\mu_\Lambda$. For an admissible system, RH holds and $m$ is the counting measure of the ordinates.
 
-The hypothesis holds when $|\kappa|((0,T])=O(T^{1-\delta})$ for some $\delta>0$, and in particular when $\kappa$ has finite total variation, which is Theorem 2. It allows the system to differ from the true primes at infinitely many places with infinite total change. It does not contain Theorems 3 and 4, where $|\kappa|((0,T])$ grows at least linearly.
+The hypothesis holds when $\kappa$ has finite total variation, which is Theorem 2, when $|\kappa|((0,T])=O(T^{1-\delta})$ or $O(T/\log T)$, and when $\int d|\kappa|(u)/(1+u)<\infty$. It allows the system to differ from the true primes at infinitely many places with infinite total change. It does not contain Theorems 3 and 4 with $b\ne0$, where $|\kappa|((0,T])$ grows at least linearly. For scale, $\mu_\Lambda((0,T])$ grows like $2e^{T/2}$.
 
-*Proof.* Let $\theta=\log(1/q)\ge0$ and let $\kappa_s$ be the even extension of $\kappa$ to $\mathbb R\setminus\{0\}$. The hypothesis makes $\kappa_s$ a tempered measure. As in the proofs of Theorems 2 and 3, identity (1) gives a finite nonnegative measure $M=\Xi^2m$ with
+*Proof.* Let $\theta=\log(1/q)\ge0$, let $\kappa_s$ be the even extension of $\kappa$ to $\mathbb R\setminus\{0\}$ and $V(r)=|\kappa_s|([-r,r])=o(r)$. So $\kappa_s$ is a tempered measure. As in the proofs of Theorems 2 and 3, identity (1) gives a finite nonnegative measure $M=\Xi^2m$ with
 
 $$
 \hat M(x)=-(\Psi*\kappa_s)(x)-\theta\Psi(x)\qquad(x\in\mathbb R).
 $$
 
-Write $\hat\kappa_s$ for the Fourier transform of $\kappa_s$ as a tempered distribution, with the convention $\hat f(t)=\int f(u)e^{itu}du$. Since $\Psi$ is a Schwartz function with $\hat\Psi=\Xi^2$, taking Fourier transforms gives the identity of tempered distributions
+The right side is real and even, so $M$ is symmetric. Write $\hat\kappa_s$ for the Fourier transform of $\kappa_s$ as a tempered distribution, with the convention $\hat f(t)=\int f(u)e^{itu}du$. Since $\Psi$ is a Schwartz function with $\hat\Psi=\Xi^2$, taking Fourier transforms gives the identity of tempered distributions
 
 $$
 2\pi M=\Xi^2\,T,\qquad T:=-\hat\kappa_s-\theta .
 $$
 
-Let $Z$ be the set of real zeros of $\Xi$, a discrete set. On the open set $\mathbb R\setminus Z$ the function $\Xi^2$ is smooth and positive, so there $T$ equals the nonnegative measure $\nu_0=2\pi M/\Xi^2$.
+Let $Z$ be the set of real zeros of $\Xi$, a discrete set. On the open set $\mathbb R\setminus Z$ the function $\Xi^2$ is smooth and positive, and $M=\Xi^2m$, so there $T$ equals $2\pi m$. Let $\nu$ be the measure $\nu(A)=2\pi\,m(A\setminus Z)$. It is nonnegative, locally finite and tempered, because $m$ is, and $T=\nu$ on $\mathbb R\setminus Z$.
 
-*An estimate.* For a test function $\chi$ and $\gamma\in\mathbb R$, $\varepsilon\in(0,1]$, put $\chi_\varepsilon(t)=\chi((t-\gamma)/\varepsilon)$. Its transform is $\varepsilon e^{i\gamma u}\hat\chi(\varepsilon u)$, so
-
-$$
-|\langle\hat\kappa_s,\chi_\varepsilon\rangle|\le\varepsilon\int|\hat\chi(\varepsilon u)|\,d|\kappa_s|(u),\qquad |\langle T,\chi_\varepsilon\rangle|\le\varepsilon\int|\hat\chi(\varepsilon u)|\,d|\kappa_s|(u)+\theta\varepsilon\!\int|\chi| . \tag{3}
-$$
-
-Since $|\hat\chi(v)|\le C(1+|v|)^{-2}$, we have $\varepsilon|\hat\chi(\varepsilon u)|\le C'/(1+|u|)$ for $\varepsilon\le1$, and $\varepsilon|\hat\chi(\varepsilon u)|\to0$ for each $u$. By the hypothesis and dominated convergence, the right side of (3) tends to $0$ as $\varepsilon\to0$. Also $\sum_{k\ge0}2^{-k}|\hat\chi(2^{-k}u)|\le C''/(1+|u|)$: for $|u|\le1$ bound each term by $C2^{-k}$; for $|u|>1$ the terms with $2^{-k}\le1/|u|$ sum to at most $2C/|u|$, and the others are at most $C2^{k}/u^2$ and sum to at most $2C/|u|$. So
+*An estimate.* For a test function $\chi$ supported in $[-1,1]$, $\gamma\in\mathbb R$ and $\varepsilon\in(0,1]$, put $\chi_\varepsilon(t)=\chi((t-\gamma)/\varepsilon)$. Its transform is $\varepsilon e^{i\gamma u}\hat\chi(\varepsilon u)$, so
 
 $$
-\sum_{k\ge0}\bigl|\langle T,\chi_{\varepsilon_02^{-k}}\rangle\bigr|<\infty\qquad\text{for every }\varepsilon_0\in(0,1]. \tag{4}
+|\langle T,\chi_\varepsilon\rangle|\le\varepsilon\int|\hat\chi(\varepsilon u)|\,d|\kappa_s|(u)+\theta\,\varepsilon\!\int|\chi| . \tag{3}
 $$
 
-*$\nu_0$ has finite mass near each zero.* Fix $\gamma\in Z$ and $\varepsilon_0\le1$ such that $\gamma$ is the only point of $Z$ within $2\varepsilon_0$ of $\gamma$. Take $\chi\ge0$ smooth, supported in $\{\tfrac12\le|s|\le2\}$, with $\chi\ge1$ on $\{\tfrac34\le|s|\le\tfrac32\}$. The support of $\chi_\varepsilon$ avoids $Z$ for $\varepsilon\le\varepsilon_0$, so $\nu_0(\{\tfrac34\varepsilon\le|t-\gamma|\le\tfrac32\varepsilon\})\le\langle T,\chi_\varepsilon\rangle$. The annuli for $\varepsilon=\varepsilon_02^{-k}$ cover $0<|t-\gamma|\le\tfrac32\varepsilon_0$, so by (4) $\nu_0$ has finite mass there. Let $\nu$ be the nonnegative measure on $\mathbb R$ that equals $\nu_0$ off $Z$ and gives no mass to $Z$. It is locally finite.
+The right side tends to $0$ as $\varepsilon\to0$. Indeed $|\hat\chi(v)|\le g(|v|)$ with $g(r)=C(1+r)^{-2}$, and integration by parts gives $\int g(\varepsilon|u|)\,d|\kappa_s|(u)=\int_0^\infty V(r)\,\varepsilon|g'(\varepsilon r)|\,dr$, the boundary term vanishing because $V(r)=o(r)$. Given $\delta>0$ there is $C_\delta$ with $V(r)\le\delta r+C_\delta$, so
 
-*$T=\nu$.* Near $\gamma$ the distribution $S=T-\nu$ is supported at the point $\gamma$, so $S=\sum_{k\le K}c_k\delta_\gamma^{(k)}$ there. For a test function $\chi$ supported in $[-1,1]$ and $\varepsilon\le\varepsilon_0$, $\langle S,\chi_\varepsilon\rangle=\sum_{k\le K}c_k(-1)^k\varepsilon^{-k}\chi^{(k)}(0)$. On the other hand $\langle T,\chi_\varepsilon\rangle\to0$ by (3), and $|\langle\nu,\chi_\varepsilon\rangle|\le\sup|\chi|\cdot\nu(\{0<|t-\gamma|\le\varepsilon\})\to0$. So $\sum_kc_k(-1)^k\varepsilon^{-k}\chi^{(k)}(0)\to0$ as $\varepsilon\to0$ for every such $\chi$. Choosing $\chi$ with $\chi^{(K)}(0)\ne0$ gives $c_K=0$ when $K\ge1$, and by descent all $c_k$ with $k\ge1$ vanish; then $\chi(0)\ne0$ gives $c_0=0$. Hence $T=\nu$ near every point of $Z$, and so on $\mathbb R$. In particular $T$ is a nonnegative tempered distribution, that is, $\nu$ is a tempered measure and $\langle T,f\rangle=\int f\,d\nu\ge0$ for every Schwartz function $f\ge0$.
+$$
+\varepsilon\int g(\varepsilon|u|)\,d|\kappa_s|(u)\le\delta\int_0^\infty w\,|g'(w)|\,dw+\varepsilon\,C_\delta\,g(0),
+$$
+
+and the limit superior is at most $\delta\int_0^\infty w|g'(w)|dw$ for every $\delta$.
+
+*$T=\nu$.* Fix $\gamma\in Z$ and $\varepsilon_0\le1$ such that $\gamma$ is the only point of $Z$ with $|t-\gamma|\le\varepsilon_0$. On $|t-\gamma|<\varepsilon_0$ the distribution $S=T-\nu$ is supported at the point $\gamma$, so $S=\sum_{k\le K}c_k\delta_\gamma^{(k)}$ there. For $\chi$ as above and $\varepsilon<\varepsilon_0$, $\langle S,\chi_\varepsilon\rangle=\sum_{k\le K}c_k(-1)^k\varepsilon^{-k}\chi^{(k)}(0)$. On the other hand $\langle T,\chi_\varepsilon\rangle\to0$ by (3), and $|\langle\nu,\chi_\varepsilon\rangle|\le\sup|\chi|\cdot\nu(\{0<|t-\gamma|\le\varepsilon\})\to0$ because $\nu$ is locally finite and gives no mass to $\gamma$. So the polynomial $\sum_kc_k(-1)^k\chi^{(k)}(0)\,\varepsilon^{-k}$ in $1/\varepsilon$ tends to $0$ as $\varepsilon\to0$, hence vanishes identically, for every such $\chi$. Choosing $\chi$ with $\chi^{(k)}(0)\ne0$ gives $c_k=0$ for each $k$. Hence $T=\nu$ near every point of $Z$, and so on $\mathbb R$. Both are tempered and they agree on $C_c^\infty$, so $\langle T,f\rangle=\int f\,d\nu\ge0$ for every Schwartz function $f\ge0$.
 
 *Conclusion.* Take $\psi\in C_c^\infty$ real, even, nonnegative, not zero, supported in $(-\tfrac12\log2,\tfrac12\log2)$, and $\varphi=\psi*\psi$. Then $\hat\varphi=\hat\psi^2\ge0$ is a Schwartz function, and
 
@@ -236,19 +236,19 @@ $$
 0\le\int\hat\varphi\,d\nu=\langle T,\hat\varphi\rangle=-\langle\hat\kappa_s,\hat\varphi\rangle-\theta\!\int\hat\varphi=-2\pi\int\varphi\,d\kappa_s-2\pi\,\theta\,\varphi(0).
 $$
 
-On $(0,\log2)$ the measure $\mu_\Lambda$ vanishes, so $\kappa=\mu\ge0$ there, and $\varphi\ge0$ is supported in $(-\log2,\log2)$. So the right side is at most $0$. Hence $\theta\varphi(0)=0$, which gives $\theta=0$, and $\int\hat\psi^2d\nu=0$, so $\nu$ is carried by the real zeros of $\hat\psi$, a discrete set that does not contain $0$. Replacing $\psi$ by $\psi(\cdot/c)$ with $c$ slightly less than $1$ moves those zeros to $1/c$ times themselves; for all but countably many $c$ the two zero sets are disjoint. So $\nu=0$, $T=0$, $\hat\kappa_s=0$ and $\kappa=0$. For an admissible system the last paragraph of the proof of Theorem 2 applies. $\qquad\blacksquare$
+On $(0,\log2)$ the measure $\mu_\Lambda$ vanishes, so $\kappa=\mu\ge0$ there, and $\varphi\ge0$ is supported in $(-\log2,\log2)$. So the right side is at most $0$. Hence $\theta\varphi(0)=0$, which gives $\theta=0$, and $\int\hat\psi^2d\nu=0$, so $\nu$ is carried by the real zeros of $\hat\psi$, a discrete set that does not contain $0$. Replacing $\psi$ by $\psi(\cdot/c)$ with $c<1$ multiplies those zeros by $1/c$; for all but countably many $c$ the two zero sets are disjoint. So $\nu=0$, $T=0$, $\hat\kappa_s=0$ and $\kappa=0$. For an admissible system the last paragraph of the proof of Theorem 2 applies. $\qquad\blacksquare$
 
-The proof of Theorem 2 is the special case in which $\hat\kappa_s$ is a continuous function, so that nothing can hide at the zeros of $\Xi$. Here the decay hypothesis does that work: a change that grows more slowly than $u$ cannot produce a delta function or a pole of $\hat\kappa_s$ at a real frequency.
+The proof of Theorem 2 is the special case in which $\hat\kappa_s$ is a continuous function, so that nothing can hide at the zeros of $\Xi$. Here the growth hypothesis does that work: when $|\kappa|$ has mean density zero, $\hat\kappa_s$ cannot contain a delta function or a derivative of one at a real frequency. Weaker singularities, such as a logarithmic one, are allowed and do no harm. The first version of this theorem assumed $\int d|\kappa|/(1+u)<\infty$; its referee found no error and pointed out that $T=2\pi m$ off the zeros, which shortens the proof and lets the hypothesis be weakened to the present one.
 
 **Corollary 9 (Theorems 3 to 5 combined).** Let $(m,\mu,q)$ be a $\Xi$-admissible triple with $q\le1$, for example an admissible system. Suppose that on $(0,\infty)$
 
 $$
-\mu-\mu_\Lambda=\kappa_0+b(u)\,du,\qquad\int_{(0,\infty)}\frac{d|\kappa_0|(u)}{1+u}<\infty ,
+\mu-\mu_\Lambda=\kappa_0+b(u)\,du,\qquad|\kappa_0|((0,T])=o(T),
 $$
 
 with $b$ as in Theorem 4, a finite sum of terms $e^{\eta_iu}u^{j_i}a_i(u)$ with uniformly almost periodic $a_i$. Then $b=0$, $\kappa_0=0$, $q=1$ and $\mu=\mu_\Lambda$.
 
-*Proof.* The proofs of Theorems 3 and 4 used the finiteness of $\kappa_1$ in three places. Each survives with $\kappa_0$, by two consequences of the hypothesis. First, $|\kappa_0|((0,T])=o(T)$: for every $A$, $|\kappa_0|((0,T])\le|\kappa_0|((0,A])+(1+T)\int_{(A,\infty)}d|\kappa_0|/(1+u)$. Second, $(\Psi*\kappa_{0,s})(x)=o(|x|)$ as $|x|\to\infty$ and its mean over $[-T,T]$ tends to $0$. For the first claim split the integral at $|u-x|\le|x|/2$: that part is at most $\sup\Psi\cdot|\kappa_0|([\tfrac x2,\tfrac{3x}2])\le\sup\Psi\,(1+\tfrac{3x}2)\int_{[x/2,\infty)}d|\kappa_0|/(1+u)=o(x)$ for $x>0$, and the rest is at most $\sup_{|v|>|x|/2}\Psi(v)(1+3|v|)\cdot\int d|\kappa_{0,s}|/(1+|u|)\to0$. For the mean, $\frac1{2T}\int_{-T}^{T}|\Psi*\kappa_{0,s}|\,dx\le\frac1{2T}\bigl[\|\Psi\|_1|\kappa_{0,s}|([-2T,2T])+\int_{|u|>2T}\bigl(\int_{|v|>|u|/2}\Psi\bigr)d|\kappa_{0,s}|(u)\bigr]\to0$.
+*Proof.* The proofs of Theorems 3 and 4 used the finiteness of $\kappa_1$ in three places. Each survives with $\kappa_0$. Put $V(r)=|\kappa_{0,s}|([-r,r])=o(r)$. We need one fact: $(\Psi*\kappa_{0,s})(x)=o(|x|)$ as $|x|\to\infty$, and its mean over $[-T,T]$ tends to $0$. For the first part split the integral at $|u-x|\le|x|/2$. That part is at most $\sup\Psi\cdot V(\tfrac32|x|)=o(|x|)$. The rest is at most $\sum_{k\ge|x|/2-1}\sup_{|v|\ge k}\Psi(v)\cdot V(|x|+k+1)$, which tends to $0$ because $\Psi$ decays faster than every power and $V(r)=O(1+r)$. For the mean, $\frac1{2T}\int_{-T}^{T}|\Psi*\kappa_{0,s}|\,dx\le\frac1{2T}\bigl[\|\Psi\|_1V(2T)+\int_{|u|>2T}\bigl(\int_{|v|>|u|/2}\Psi\bigr)d|\kappa_{0,s}|(u)\bigr]\to0$, the last integral being finite for the same reason.
 
 *The positivity steps.* As before, $\int_Bb^-\,du\le|\kappa_0|(B)$ for bounded Borel sets $B$. Suppose the leading coefficient $a$ of $b$ (or $b$ itself when $b$ is almost periodic) takes a negative value $-\delta$. Almost periods are relatively dense, so for large $T$ the interval $[1,T]$ contains at least $cT$ disjoint intervals of a fixed length $2\eta_0$ on each of which $b<-\delta/4$, with $c>0$ fixed. Then $|\kappa_0|((0,T])\ge cT\eta_0\delta/2$, which contradicts $|\kappa_0|((0,T])=o(T)$.
 
@@ -457,7 +457,7 @@ The first zeta zeros are at $14.1347$, $21.0220$, $25.0109$, $30.4249$. So in th
 
 Conjecture A implies Conjecture B: a system of conductor $q<1$ gives, by Remark 2, a system of conductor $1$ with the same $\mu$ and zero measure $m+c\,dt$, $c>0$; Conjecture A makes $\mu=\mu_\Lambda$, and then, as at the end of the proof of Theorem 2, $m+c\,dt$ would be the purely atomic measure $\nu$.
 
-Evidence: the tables in section 5, where the allowed room shrinks by a factor between $8$ and $125$ for every four degrees, and Theorems 2 to 5 with Corollary 9, which prove both conjectures for systems that differ from the true primes by a measure with finite integral against $1/(1+u)$, plus a finite sum of almost periodic densities with polynomial and exponential factors. By the argument that ends the proof of Theorem 2, Conjecture A implies
+Evidence: the tables in section 5, where the allowed room shrinks by a factor between $8$ and $125$ for every four degrees, and Theorems 2 to 5 with Corollary 9, which prove both conjectures for systems that differ from the true primes by a measure whose total variation has mean density zero, plus a finite sum of almost periodic densities with polynomial and exponential factors. By the argument that ends the proof of Theorem 2, Conjecture A implies
 
 $$
 \text{RH}\iff\text{there exists an admissible system of conductor }1 .
