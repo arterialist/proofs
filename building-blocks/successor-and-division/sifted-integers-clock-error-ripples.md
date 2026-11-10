@@ -158,6 +158,18 @@ $$
 
 The Riemann hypothesis with simple zeros gives a long-run mean square of $(\psi(x)-x)/\sqrt x$ equal to $2+\gamma-\log4\pi\approx0.0462$, which corresponds to $0.0462\,x/\log^2x$ for the prime count. [sieve_ripple_energy_count.py](../../certificates/prime-birth/sieve_ripple_energy_count.py) confirms the two constants in the count ($0.461X$ against $0.4664X$ for the weighted sum at $X=10^8$, and $a=0.060885$ against $0.060960$). On the single windows $[X/2,X]$ the measured mean of $(\psi(x)-x)^2/x$ is $0.040$ at $X=10^7$ and $0.034$ at $X=10^8$.
 
+### The same count across the sieve range
+
+[rough_numbers_ripple_count.py](../../certificates/prime-birth/rough_numbers_ripple_count.py) deletes all primes up to $N$ and compares the variance of the detrended $R$ on $[X,2X]$ with $V(c)=\frac{a^2}{12}\sum_{q\le cx}\prod_{p\mid q}\frac{p+1}{p-1}$ over squarefree $N$-smooth $q$, at $x=1.5X$, for $X$ up to $6.5\times10^7$. Here $u=\log x/\log N$, and $u<2$ is the range where the survivors are primes.
+
+| $N$ | range of $u$ | measured variance, smallest to largest | measured$/V(\tfrac12)$, smallest to largest |
+| --- | --- | --- | --- |
+| 30 | 2.15 to 5.41 | 1.13 to 12.2 | 0.84 to 1.28 |
+| 100 | 1.59 to 4.00 | 1.40 to 215 | 0.44 to 1.49 |
+| 1000 | 1.26 to 2.66 | 2.47 to 4131 | 0.73 to 1.78 |
+
+The count with $c=\tfrac12$ stays within a factor of about $2$ of the measurement while the variance changes by a factor of more than $1000$. For $N=100$ the ratio drifts down to about $0.5$ for $u>3$. These are single windows with a cubic trend removed, so the ratios carry window noise.
+
 So counting ripples independently gives the size that the Riemann hypothesis predicts for the fluctuation of the primes, with a constant within about $6\%$ of the long-run value. This is a comparison of two numbers. It is not a derivation, and the agreement of the constants may be a coincidence. If the Riemann hypothesis fails, the true fluctuation exceeds $x^{1/2+\delta}$ infinitely often and the sawtooth terms with $dd'>x$ must then add coherently. Theorem 2 controls those terms only when $\mathcal D$ is sparse.
 
 ## Sources and priority
