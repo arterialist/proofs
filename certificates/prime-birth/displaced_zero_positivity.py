@@ -8,16 +8,21 @@ Heuristic to test: functions supported in an interval of length L have Fourier t
 L/(2 pi) points per unit length, and the zeros near T0 have log(T0/2 pi)/(2 pi) per unit length, so the pair should stay
 invisible until L is near log(T0 / 2 pi).
 
-Outcome, 10 November 2026. First L (step 0.25) with an eigenvalue below -1e-9, next to log(T0/2 pi):
-  T0 = 49:   1.75 (delta 0.1), 1.75 (delta 0.3);  log = 2.05
-  T0 = 100:  2.75, 2.50;  log = 2.77
-  T0 = 200:  3.50, 3.25;  log = 3.46
-  T0 = 401:  4.25, 3.50;  log = 4.16
-  T0 = 801:  4.75, 4.25;  log = 4.85
-  T0 = 1600: 5.50, 4.50;  log = 5.54
+Outcome, 10 November 2026. First L with an eigenvalue below -1e-9 (L in steps of 0.125), next to log(T0/2 pi):
+   T0      delta=0.05   0.1     0.2     0.3     0.45   | log(T0/2 pi)
+   100       2.750     2.750   2.625   2.500   2.375   | 2.77
+   200       3.500     3.500   3.375   3.250   2.875   | 3.46
+   401       4.250     4.125   3.875   3.500   3.125   | 4.16
+   801       4.875     4.750   4.500   4.125   3.750   | 4.85
+   1600      5.500     5.375   5.125   4.500   3.875   | 5.54
+   2500      5.875     5.375   4.750   4.375   4.000   | 5.99
 Past the threshold the negative eigenvalue is of order delta and grows with L. Below it the form is positive to
-double precision. Reading: positivity for support length L, which uses the primes below e^L, tests RH only up to height
-about 2 pi e^L. This is a numerical observation on a synthetic zero set, with a 1e-9 detection floor. It is not a theorem."""
+double precision. Reading: a pair close to the line (delta 0.05) becomes visible when L reaches log(T0/2 pi), that is
+when the primes below T0/2 pi are in. A pair far from the line is caught earlier, and its threshold grows more slowly
+with T0. So positivity at support length L is not just "RH up to height 2 pi e^L": it also excludes zeros far from the
+line at greater heights. Numerical observation on a synthetic zero set with a 1e-9 detection floor. Not a theorem.
+(The printed loop below uses steps of 0.25 and two values of delta; the table above came from the same functions.)
+"""
 import numpy as np, sys
 import mirror as m
 def rs_Z(t):

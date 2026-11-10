@@ -14,9 +14,9 @@ Validation at L = 1.5, K = 2: the diagonal from the formula exceeds the sum over
 260 by 0.0127 to 0.0128 in every entry, which is the size of the omitted tail (estimate 0.017).
 Smallest eigenvalue: 0.94 (L=0.5), 0.30 (L=1), 0.017 (L=1.5), 4.1e-5 (L=2), 7.6e-10 (L=2.5), 3e-16 (L=3),
 numerical zero (L=3.5, K=62), then two negative eigenvalues: -0.73, -0.69 (L=4, K=70), -1.33, -1.32 (L=4.5, K=79),
--1.85, -1.85 (L=5, K=88). So this form looks positive, with the same fast decay as the zeta form, until 33 coefficients
+-1.85, -1.85 (L=5, K=88), -2.71, -2.65 (L=5.5, K=96), -3.66, -3.60 (L=6, K=105). So this form looks positive, with the same fast decay as the zeta form, until 33 coefficients
 are in, and fails once 54 are in. Positivity at short support does not distinguish a function that satisfies RH from
-one that violates it at height 85. The threshold agrees with displaced_zero_positivity.py: L near
+one that violates it at height 85 (real part 0.8085). The threshold agrees with displaced_zero_positivity.py: L near
 log(5 * 85.7 / 2 pi) = 4.2, less a margin that grows with the distance of the zero from the line."""
 import numpy as np, sys, time
 from scipy.integrate import quad

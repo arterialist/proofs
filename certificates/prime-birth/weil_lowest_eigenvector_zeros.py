@@ -13,6 +13,8 @@ Outcome, 10 November 2026. Distance from the first zeta zeros to the nearest zer
   L=2.0, K=10, primes 2..7:    1.0e-17, 3.5e-14, 6.8e-12, 5.1e-8, 1.1e-5, 0.11.   Smallest eigenvalue 1.0e-21.
   L=2.0, K=14, primes 2..7:    2.2e-21, 3.4e-18, 2.9e-16, 2.4e-13, 4.9e-12, 9.8e-10, 1.7e-7, 4.8e-6, 0.055.
                                Three smallest eigenvalues 3.7e-25, 3.3e-22, 1.7e-19.
+  L=2.6, K=14, primes 2..13:   1.9e-28, 4.3e-24, 3.5e-21, 3.1e-16, 1.8e-13, 4.1e-7, 0.012, 0.2.
+                               Three smallest eigenvalues 5.2e-33, 4.7e-30, 2.6e-27.
 The values still move with K, so they describe this finite basis and not the limit of all test functions."""
 import mpmath as mp, sys, time
 mp.mp.dps = 60

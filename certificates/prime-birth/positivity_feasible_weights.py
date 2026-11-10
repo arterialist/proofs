@@ -22,6 +22,7 @@ nothing and proves nothing about RH.
                       x=3 in [0.6299, 0.6387];  x=3.5 at most 0.036.  (13 Newton stalls; treat as lower bounds on widths.)
    L = 2.0, K = 40:   x=1.5 at most 7.0e-6;  x=2 in [0.490084, 0.490154];  x=2.5 at most 4.0e-4;
                       x=3 in [0.6328, 0.6350];  x=3.5 at most 7.8e-3;  x=4 in [0.328, 0.354] (true 0.347).
+                      x=5 in [0.660, 0.730] (true 0.720);  x=6 at most 0.012.  (58 Newton stalls; same caveat.)
    So positivity plus nonnegativity locates the prime powers 2, 3, 4 and excludes weight at 1.5, 2.5, 3.5, with
    accuracy that improves as the support grows and degrades toward e^L."""
 import numpy as np, sys, time

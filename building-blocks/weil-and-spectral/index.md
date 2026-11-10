@@ -2,6 +2,7 @@
 
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
+- [Weil positivity forces the primes one at a time: computations and a conditional rigidity lemma](weil-positivity-forces-the-primes.md)
 - [Actual-zeta explicit formula in Fourier and Laplace conventions](actual-zeta-explicit-formula-source-adapter.md)
 - [Explicit short-interval bounds for the complete Weil form](actual-weil-single-window-coercivity.md)
 - [Integer endpoint collars have no arithmetic self-correlation](integer-endpoint-collar-compression.md)
