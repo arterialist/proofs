@@ -1,6 +1,6 @@
 # Systems that satisfy Weil positivity compared with the primes, through kernels built from $\Xi^2$
 
-**Status.** Theorems 1 and 2 and Corollaries 1 to 7 are **unconditional**. Theorems 1 and 2 and Corollaries 1 to 4 are proved here in full from the classical explicit formula; Corollaries 5, 5a, 6 and 7 add interval-arithmetic certificates of explicit kernels (Python, not a proof assistant). They are statements about arbitrary "admissible systems" (Definition 1). The true primes form an admissible system if and only if the Riemann hypothesis holds, so nothing here proves or bounds anything about zeros of $\zeta$. Section 5.1 holds the numbers certified by interval arithmetic. Sections 5.2 to 5.4 are 50-digit computations whose sign conditions are imposed at finitely many points; they are not certified. An independent review on 10 November 2026 rederived Theorems 1 and 2, Corollaries 1 to 4 and the derivations in section 5, and a separate audit examined the certificate script and the proof of Corollary 5; their corrections are incorporated. The degree-16 kernel of Proposition 5(b) and Corollary 6 were added after those reviews. Two further reviews the same day checked them: the first examined the degree-16 version of Corollary 6, the second the degree-24 version, the exact Sturm positivity check and the new assertions in the script. Neither found a false statement; their repairs to the proof text and to the script are incorporated. Corollaries 5a and 7 and the remark at the end of section 3 were added after the second of these, and a third review checked them: it found no error in Corollaries 5a and 7 or in the script, confirmed the new kernels' prime sums by an independent quadrature, and corrected one false sentence in the remark. Section 6 states two conjectures and what would follow from them. No Lean formalization. No literature search was done for Theorems 1 and 2; the method is the classical one of Odlyzko's discriminant bounds with one twist (test functions that vanish at every zero), and may well be known.
+**Status.** Theorems 1 to 3 and Corollaries 1 to 7 are **unconditional**. Theorems 1 to 3 and Corollaries 1 to 4 are proved here in full from the classical explicit formula; Corollaries 5, 5a, 6 and 7 add interval-arithmetic certificates of explicit kernels (Python, not a proof assistant). They are statements about arbitrary "admissible systems" (Definition 1). The true primes form an admissible system if and only if the Riemann hypothesis holds, so nothing here proves or bounds anything about zeros of $\zeta$. Section 5.1 holds the numbers certified by interval arithmetic. Sections 5.2 to 5.4 are 50-digit computations whose sign conditions are imposed at finitely many points; they are not certified. An independent review on 10 November 2026 rederived Theorems 1 and 2, Corollaries 1 to 4 and the derivations in section 5, and a separate audit examined the certificate script and the proof of Corollary 5; their corrections are incorporated. The degree-16 kernel of Proposition 5(b) and Corollary 6 were added after those reviews. Two further reviews the same day checked them: the first examined the degree-16 version of Corollary 6, the second the degree-24 version, the exact Sturm positivity check and the new assertions in the script. Neither found a false statement; their repairs to the proof text and to the script are incorporated. Corollaries 5a and 7 and the remark at the end of section 3 were added after the second of these, and a third review checked them: it found no error in Corollaries 5a and 7 or in the script, confirmed the new kernels' prime sums by an independent quadrature, and corrected one false sentence in the remark. Section 6 states two conjectures and what would follow from them. No Lean formalization. No literature search was done for Theorems 1 and 2; the method is the classical one of Odlyzko's discriminant bounds with one twist (test functions that vanish at every zero), and may well be known.
 
 ## 1. Admissible systems
 
@@ -115,6 +115,38 @@ In particular, if RH fails, no admissible system of conductor at most $1$ differ
 On $(0,\log2)$ the measure $\mu_\Lambda$ vanishes, so $\rho=-\mu\le0$ there. Take $\psi\in C_c^\infty$ real, even, nonnegative, not zero, supported in $(-\tfrac12\log2,\tfrac12\log2)$, and $\varphi=\psi*\psi$. Then $\int\hat\varphi\,\hat\rho_s\,dt=2\pi\int\varphi\,d\rho_s\le0$, while $\int\hat\varphi\,\hat\rho_s\ge\theta\int\hat\varphi=2\pi\theta\varphi(0)\ge0$. So $\theta\varphi(0)=0$, which gives $\theta=0$, and then $\hat\varphi\hat\rho_s\equiv0$ with $\hat\varphi=\hat\psi^2$, whose zeros are isolated. So $\hat\rho_s\equiv0$ and $\rho=0$.
 
 Now (ADM) with $\mu=\mu_\Lambda$ and $q=1$ says $W(h_g)=\int|\hat g|^2dm\ge0$ for all $g\in C_c^\infty$, which is Weil's criterion. Then (EF) gives $\int|\hat g|^2dm=\int|\hat g|^2d\nu$ for all such $g$, and by polarisation and density $m=\nu$. $\qquad\blacksquare$
+
+**Theorem 3 (a finite change plus an almost periodic density; unconditional).** Let $(m,\mu)$ be an admissible system of conductor $q\le1$, or more generally let $(m,\mu,q)$ be a $\Xi$-admissible triple with $q\le1$ (remark at the end of section 3). Suppose that on $(0,\infty)$
+
+$$
+\mu-\mu_\Lambda=\kappa_1+b(u)\,du ,
+$$
+
+where $\kappa_1$ is a signed measure of finite total variation and $b$ is a real function on $\mathbb R$ that is uniformly almost periodic in the sense of Bohr, for example $b(u)=\sum_k\bigl(c_k\cos(\lambda_ku)+s_k\sin(\lambda_ku)\bigr)$ with real $\lambda_k$ and $\sum_k(|c_k|+|s_k|)<\infty$. Then $b=0$, $\kappa_1=0$, $q=1$ and $\mu=\mu_\Lambda$. For an admissible system it follows that RH holds and $m$ is the counting measure of the ordinates.
+
+So positivity excludes every bounded oscillating density, whatever its frequencies. This covers the densities $\sum_\gamma c_\gamma\cos(\gamma u)$ over real zeros with $\sum|c_\gamma|<\infty$, which identity (1) cannot see. It does not cover the unbounded perturbations $u\sin(\gamma u)$ of the remark, nor those attached to zeros off the line, which grow exponentially.
+
+*Proof.* Let $\theta=\log(1/q)\ge0$ and $\rho=\mu_\Lambda-\mu=-\kappa_1-b\,du$. Let $\kappa_{1,s}$ be the even extension of $\kappa_1$ to $\mathbb R\setminus\{0\}$ and $\beta(u)=b(|u|)$. As in the proofs of Corollary 4 and Theorem 2, identity (1) with $E=1+ce^{iaz}$ shows that $M=\Xi^2m$ is a finite nonnegative measure and that for every real $x$
+
+$$
+\hat M(x)=\int\Xi(t)^2e^{itx}\,dm(t)=\int\bigl(\Psi(u-x)+\Psi(u+x)\bigr)\,d\rho(u)-\theta\Psi(x)=-(\Psi*\kappa_{1,s})(x)-(\Psi*\beta)(x)-\theta\Psi(x).
+$$
+
+All integrals converge because $\Psi$ is bounded and integrable, $\kappa_1$ is finite and $b$ is bounded. This step uses (1) only.
+
+*Step 1: the mean of $b$ is at most $0$.* For a finite measure $M$, $\frac1{2T}\int_{-T}^{T}\hat M(x)\,dx=\int\frac{\sin(Tt)}{Tt}\,dM(t)\to M(\{0\})\ge0$ as $T\to\infty$, by dominated convergence. On the right side, $\Psi*\kappa_{1,s}$ and $\Psi$ are integrable, so their means over $[-T,T]$ tend to $0$. For the remaining term, $\frac1{2T}\int_{-T}^{T}(\Psi*\beta)(x)\,dx=\int\Psi(y)\Bigl[\frac1{2T}\int_{-T-y}^{T-y}b(|v|)\,dv\Bigr]dy$. The inner average is bounded by $\sup|b|$ and, for each fixed $y$, tends to the mean value $\mathcal M(b)=\lim_{T\to\infty}\frac1T\int_0^Tb$, which exists for an almost periodic function. By dominated convergence the mean of $\Psi*\beta$ is $\mathcal M(b)\int\Psi=\Xi(0)^2\mathcal M(b)$. Hence $M(\{0\})=-\Xi(0)^2\mathcal M(b)$, and since $\Xi(0)=\xi(\tfrac12)\ne0$, $\mathcal M(b)\le0$.
+
+*Step 2: $b\ge0$.* Let $N=\{\log n:n\ge2\}$, a countable set, and let $B\subset(0,\infty)$ be a bounded Borel set. Since $\mu\ge0$ and $\mu_\Lambda(B\setminus N)=0$, we get $0\le\mu(B\setminus N)=\kappa_1(B\setminus N)+\int_Bb\,du$, the last integral being unchanged by removing the null set $N$. With $B=\{u\in[U,U+L]:b(u)<0\}$ and $b^-=\max(-b,0)$ this gives
+
+$$
+\int_U^{U+L}b^-(u)\,du\le|\kappa_1|([U,U+L])\longrightarrow0\qquad(U\to\infty)
+$$
+
+for every fixed $L$, because $\kappa_1$ has finite total variation. Now $b^-$ is nonnegative and uniformly almost periodic. If $b^-(u_0)=\delta>0$ for some $u_0$, uniform continuity gives $\eta>0$ with $b^->\delta/2$ on $[u_0-\eta,u_0+\eta]$, and almost periodicity gives arbitrarily large $\tau$ with $\sup_u|b^-(u+\tau)-b^-(u)|<\delta/4$. Then $\int_{u_0+\tau-\eta}^{u_0+\tau+\eta}b^-\ge\eta\delta/2$ for arbitrarily large $\tau$, which contradicts the limit above with $L=2\eta$. So $b^-=0$.
+
+*Step 3.* A nonnegative almost periodic function with mean value at most $0$ vanishes identically, by the same recurrence argument. So $b=0$, $\mu-\mu_\Lambda=\kappa_1$ has finite total variation, and the first two paragraphs of the proof of Theorem 2, which use only (1) and the signs of $m$ and $\mu$, give $q=1$ and $\mu=\mu_\Lambda$. For an admissible system the last paragraph of that proof gives RH and $m=\nu$. $\qquad\blacksquare$
+
+The two ingredients are different in kind. Step 1 is spectral: the measure $\Xi^2m$ cannot have negative mass at frequency $0$, where $\Xi$ does not vanish. Step 2 is arithmetic only in the weakest sense: the true prime measure is purely atomic, so it cannot hide a negative density.
 
 ## 5. Numbers
 
@@ -317,7 +349,7 @@ The first zeta zeros are at $14.1347$, $21.0220$, $25.0109$, $30.4249$. So in th
 
 Conjecture A implies Conjecture B: a system of conductor $q<1$ gives, by Remark 2, a system of conductor $1$ with the same $\mu$ and zero measure $m+c\,dt$, $c>0$; Conjecture A makes $\mu=\mu_\Lambda$, and then, as at the end of the proof of Theorem 2, $m+c\,dt$ would be the purely atomic measure $\nu$.
 
-Evidence: the tables in section 5, where the allowed room shrinks by a factor between $8$ and $125$ for every four degrees, and Theorem 2, which proves both conjectures for systems that differ from the true primes by a finite amount. By the argument that ends the proof of Theorem 2, Conjecture A implies
+Evidence: the tables in section 5, where the allowed room shrinks by a factor between $8$ and $125$ for every four degrees, and Theorems 2 and 3, which prove both conjectures for systems that differ from the true primes by a finite amount, or by a finite amount plus an almost periodic density. By the argument that ends the proof of Theorem 2, Conjecture A implies
 
 $$
 \text{RH}\iff\text{there exists an admissible system of conductor }1 .
