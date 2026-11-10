@@ -63,6 +63,10 @@ u1 = iv.mpf(first_neg) / N
 print(f"h >= 0 on [0, {dn(u1.a):.6f}];  h >= {dn(hmin.a):.6f} on [0, 1]")
 mass = (-iv.mpf(up(W0.b))) / (2 * (-iv.mpf(dn(hmin.a))))
 print(f"CERTIFIED: if mu >= 0 and W0(h) - 2 int h dmu >= 0, then mu((u1, 1)) >= {dn(mass.a):.6f} with u1 = {dn(u1.a):.6f},")
-print(f"           that is, mass at least {dn(mass.a):.4f} on x = e^u between {dn(iv.exp(iv.mpf(dn(u1.a))).a):.4f} and e = 2.7183")
-print(f"for comparison (not part of the proof): log 2 = {float(mp.log(2)):.5f}, the true weight of 2 is log 2/sqrt 2 = {float(mp.log(2)/mp.sqrt(2)):.5f},")
-print(f"           and W0(h) - 2 h(log 2) log 2/sqrt 2 = {float(mp.mpf(W0.mid) - 2 * mp.mpf(h(iv.log(2)).mid) * mp.log(2) / mp.sqrt(2)):+.5f}")
+print(f"           that is, mass at least {math.floor(dn(mass.a) * 1e4) / 1e4:.4f} on x = e^u between {math.floor(dn(iv.exp(iv.mpf(dn(u1.a))).a) * 1e4) / 1e4:.4f} and e < 2.7183")
+W0pt = (-4 * (2 * mp.pi) ** 2 * (mp.cosh(0.5) - 1) / ((2 * mp.pi) ** 2 + 0.25) ** 2 - (mp.euler + mp.log(mp.pi)) / 2
+        + 2 * mp.quad(lambda u: (mp.exp(-2 * u) / 2 - mp.exp(-u / 2) * (0.5 * (1 - u) * mp.cos(2 * mp.pi * u) + mp.sin(2 * mp.pi * u) / (4 * mp.pi))) / (1 - mp.exp(-2 * u)), mp.linspace(0, 1, 9))
+        - mp.log(1 - mp.exp(-2)) / 2)
+hl2 = 0.5 * (1 - mp.log(2)) * mp.cos(2 * mp.pi * mp.log(2)) + mp.sin(2 * mp.pi * mp.log(2)) / (4 * mp.pi)
+print(f"for comparison (ordinary quadrature, not part of the proof): W0(h) = {float(W0pt):.7f}, h(log 2) = {float(hl2):.6f},")
+print(f"           and with the true prime 2: W0(h) - 2 h(log 2) log 2/sqrt 2 = {float(W0pt - 2 * hl2 * mp.log(2) / mp.sqrt(2)):+.5f}")

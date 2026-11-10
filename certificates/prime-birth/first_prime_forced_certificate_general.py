@@ -14,19 +14,20 @@ powers q = p^k < e^L, and the conclusion is about a nonnegative measure mu' supp
 if W0(h) - known - 2 int h dmu' >= 0 then mu' has mass at least |W0(h) - known|/(2 max|h^-|) where h < 0 there.
 Usage: python3 first_prime_forced_certificate_general.py L c1,c2,... [mesh ratio, default 1.001] [d, default 1e-4] [known primes p1,p2,...]
 
-Outcome, 10 November 2026.
-  L = 1, c = (1), ratio 1.005, d = 0.001:  W0(h) in [-0.125721, -0.107629]; mass >= 0.2152 between 1.3295 and e.
+Outcome, 10 November 2026 (all printed bounds rounded outward).
+  L = 1, c = (1), ratio 1.005, d = 0.001:  W0(h) in [-0.125721, -0.107629]; mass >= 0.2152 between 1.3294 and 2.7183.
      (agrees with first_prime_forced_certificate.py)
-  L = 0.8, c = (1, 0.192, 0.103), ratio 1.0005, d = 0.0001 (17979 subintervals, about 30 s):
+  L = 0.8, c = (1, 0.192, 0.103), ratio 1.0005, d = 0.0001 (about 30 s):
      W0(h) in [-0.016499, -0.014629];  h >= 0 on [0, 0.249359];  h >= -0.202793;
-     mass >= 0.0360 at positions between 1.2832 and e^0.8 = 2.2255.
+     mass >= 0.0360 at positions between 1.2832 and e^0.8 < 2.2256.
 With known primes (ratio 1.0005 or 1.001, d = 0.0001); "W" is W0(h) minus the known primes' contribution:
   known 2, L = 1.25, c = (0.521, 1, 0.318):  W in [-0.147558, -0.141107]; above log 2, h >= 0 outside (0.758874, 1.25)
-     and h >= -0.401919; remaining mass >= 0.1755 between x = 2.1359 and 3.4903.
+     and h >= -0.401919; remaining mass >= 0.1755 between x = 2.1358 and 3.4904.
   known 2, 3 (and 4), L = 1.75, c = (0.396, 0.749, 1):  W in [-0.164271, -0.137134]; above log 3, h >= 0 outside
-     (1.210736, 1.75) and h >= -0.642174; remaining mass >= 0.1068 between x = 3.3560 and 5.7546.
+     (1.210736, 1.75) and h >= -0.642174; remaining mass >= 0.1067 between x = 3.3559 and 5.7547.
   known 2, 3, 5 (and 4), L = 2.05, c = (0.262, 0.514, 0.749, 1, 0.772):  W in [-0.268578, -0.187416]; above log 5,
-     h >= 0 outside (1.631696, 2.05) and h >= -1.130037; remaining mass >= 0.0829 between x = 5.1125 and 7.7679.
+     h >= 0 outside (1.631696, 2.05) and h >= -1.130037; remaining mass >= 0.0829 between x = 5.1125 and 7.7680.
+An independent review on the same day rederived the closed forms and reran every case.
 Unconditional statements about the pole and archimedean functional. They say nothing about RH."""
 import sys, math
 from mpmath import iv, mp
@@ -52,18 +53,18 @@ gf = lambda v: sum(cf[j] * mp.sin(2 * mp.pi * (j + 1) * v / Lf) for j in range(J
 for u0 in (0.0, 0.3 * Lf, 0.69 * Lf, 0.95 * Lf):
     direct = mp.quad(lambda v: gf(v) * gf(v - u0), [u0, Lf]); closed = mp.mpf(h(iv.mpf(u0)).mid)
     assert abs(direct - closed) < 1e-10, (u0, direct, closed)
-pts = [D0]; top = float(L.b)
-while pts[-1] < top: pts.append(min(pts[-1] * RATIO, top))
+pts = [D0]; top = float(L.a)                                        # interior mesh points are exact binary floats below L
+while pts[-1] * RATIO < top: pts.append(pts[-1] * RATIO)
 d = iv.mpf(pts[0])
 I = iv.mpf([-1, 1]) * (iv.mpf("2.5") * h0 + G * d) / (2 * (1 - d)) * d
 for lo, hi in zip(pts[:-1], pts[1:]): I += (iv.mpf(hi) - iv.mpf(lo)) * F(iv.mpf([lo, hi]))
-I += iv.mpf(["-1e-20", "1e-20"])                                      # the mesh ends within 1e-29 of L; F is bounded near L
+last = iv.mpf(pts[-1]); I += (L - last) * F(iv.mpf([last.a, L.b]))  # last cell [pts[-1], L], with L as an interval
 S = sum(c[j] * w[j] / (w[j] * w[j] + iv.mpf(1) / 4) for j in range(J))
 pole = -4 * ((iv.exp(L / 2) + iv.exp(-L / 2)) / 2 - 1) * S * S
 W0 = pole - (gamma + iv.log(pi)) * h0 + 2 * I - h0 * iv.log(1 - iv.exp(-2 * L))
 dn = lambda x: math.floor(float(iv.mpf(x).a) * 1e6 - 1) / 1e6
 up = lambda x: math.ceil(float(iv.mpf(x).b) * 1e6 + 1) / 1e6
-print(f"L = {Ls}, coefficients {cs}, {len(pts)-1} subintervals;  h(0) = |g|^2 in [{dn(h0.a):.6f}, {up(h0.b):.6f}]")
+print(f"L = {Ls}, coefficients {cs}, {len(pts)} subintervals;  h(0) = |g|^2 in [{dn(h0.a):.6f}, {up(h0.b):.6f}]")
 print(f"W0(h) in [{dn(W0.a):.6f}, {up(W0.b):.6f}]")
 W = W0; ustart = iv.mpf(0)
 for p in KNOWN:
@@ -89,4 +90,5 @@ mass = (-iv.mpf(up(W.b))) / (2 * (-iv.mpf(dn(hmin.a))))
 where = f"above log {max(KNOWN)}" if KNOWN else "on (0, L]"
 print(f"{where}: h >= 0 outside ({dn(u1.a):.6f}, {up(u2.b):.6f});  h >= {dn(hmin.a):.6f}")
 print(f"CERTIFIED: the functional is negative on this g. If the remaining measure is >= 0 and the functional with it is >= 0 on g,")
-print(f"           it has mass at least {dn(mass.a):.4f} at positions x = e^u between {dn(iv.exp(iv.mpf(dn(u1.a))).a):.4f} and {up(iv.exp(iv.mpf(up(u2.b))).b):.4f}")
+f4d = lambda x: math.floor(x * 1e4) / 1e4; f4u = lambda x: math.ceil(x * 1e4) / 1e4      # 4 decimals, rounded outward
+print(f"           it has mass at least {f4d(dn(mass.a)):.4f} at positions x = e^u between {f4d(dn(iv.exp(iv.mpf(dn(u1.a))).a)):.4f} and {f4u(up(iv.exp(iv.mpf(up(u2.b))).b)):.4f}")

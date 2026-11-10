@@ -57,9 +57,8 @@ if __name__ == "__main__":
     direct = np.zeros_like(Q)
     for a, j in enumerate(idx):
         for b, k in enumerate(idx):
-            direct[a, b] = 2 * sum((gh(j, g, L) * np.conj(gh(k, g, L))).real + 0j if j == k else
-                                   (gh(j, g, L) * np.conj(gh(k, g, L)) + gh(j, -g, L) * np.conj(gh(k, -g, L))) / 2 for g in zs)
-    print("validation, L=2, K=2: explicit-formula matrix vs partial sum over the first 300 zeros (tail of the sum is about 0.01)")
+            direct[a, b] = sum(gh(j, g, L) * np.conj(gh(k, g, L)) + gh(j, -g, L) * np.conj(gh(k, -g, L)) for g in zs)
+    print("validation, L=2, K=2: explicit-formula matrix vs partial sum over the first 300 zeros (tail of the sum is about 0.003)")
     print("  diagonal, formula:", np.round(np.diag(Q).real, 4)); print("  diagonal, zeros  :", np.round(np.diag(direct).real, 4))
     print("  max |off-diagonal difference|:", float(np.abs(Q - direct)[~np.eye(len(idx), dtype=bool)].max()))
     print("  Hermitian defect:", float(np.abs(Q - Q.conj().T).max()), " eigenvalues:", np.round(np.linalg.eigvalsh((Q + Q.conj().T) / 2), 6))
