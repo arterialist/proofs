@@ -100,9 +100,10 @@ METHOD AND WHY IT IS RIGOROUS
      sup |h| beyond the lattice.
   6. Floating point. The correlation sums over the lattice are done with numpy
      in double precision, on centre and radius data converted outward from the
-     interval enclosures. A sum of n <= 21510 products has rounding error at
-     most (n + 11) 2^-53 < 2.5e-12 times the sum of the absolute values of the
-     terms. The script adds 1e-11 times that sum, the propagated radii, a
+     interval enclosures. A sum of n products has rounding error at most
+     (n + 11) 2^-53 times the sum of the absolute values of the terms. Here
+     n <= 2K + 9, and the factor is below 2.5e-12 for h0 = 2^-12 and below
+     1e-11 for h0 = 2^-14 (asserted). The script adds 1e-11 times that sum, the propagated radii, a
      relative 1e-9 on the whole error budget, and an absolute 1e-290 that
      covers underflow. The final combinations with alpha_r, the interpolation
      and the prime sums are done in interval arithmetic.
@@ -122,13 +123,21 @@ The run takes about 46 seconds. An optional first argument m sets h0 = 2^-m;
 m = 10 runs in about 6 seconds and gives the same decisions for R = 4 and
 R = 6 with wider enclosures, but the window facts for U2, L2, U3, L3, G23 and
 the positivity of G23 need m = 12. An optional second argument selects the
-kernel set: "deg16" (default, everything listed under OUTCOME up to G23) or
-"deg24" (the four degree-24 window kernels, with R = 4 rerun as a check):
+kernel set: "deg16" (default, everything listed under OUTCOME up to G23),
+"deg24" (the four degree-24 window kernels at 2 and 3, with R = 4 rerun as a
+check), or "deg24b" (the degree-24 conductor kernel R=12 and the window
+kernels at 4 and 5; these need m = 14 and about 8 minutes):
 
   python3 certificates/prime-birth/xi_kernel_conductor_certificate.py 12 deg24
+  python3 certificates/prime-birth/xi_kernel_conductor_certificate.py 14 deg24b
+
+Decimals printed with six places for cell endpoints are for orientation and
+are not rounded outward; the exact endpoints are the fractions j/2^m printed
+next to them or in the FACT lines.
 
 The exit code is 0 only if R = 4 is certified positive, every kernel of the
-set passes the Sturm check (C0), and every window fact holds. An optional
+set passes the Sturm check (C0), and every FACT line holds (window facts,
+wide-window minima, negative sets). An optional
 third argument is a file name; the lattice tables are saved there for
 xi_kernel_window_design_mixed.py.
 
@@ -183,8 +192,7 @@ OUTCOME (run on 10 November 2026, h0 = 2^-12)
        0.19524, 0.061994, 0.0088836, 2.3809e-6, 2.4492e-5, 0.0019933, 0.00048511.
   (C4) T_10 = 1.731e-116, T_11 = 7.534e-115, then decreasing (full table in
        the output), sup_{u>=6} |h(u)| <= 5.678e-1034.
-  With h0 = 2^-13 (argument 13; needs the assertion on the rounding pad
-  relaxed to 5e-12, which the 1e-11 pad still covers) the same kernel gives
+  With h0 = 2^-13 (argument 13) the same kernel gives
   the tighter 2 sum ... <= 1.5521710886e-5.
 
   Window kernels U2 and L2 (added later the same day, after the audit; they go
@@ -235,17 +243,49 @@ OUTCOME (run on 10 November 2026, h0 = 2^-12)
   derivative orders up to 18, gives the same (C2) and (C3) as above.
   In both sets the script now also prints (C0) and asserts the window facts.
 
+  Kernel set "deg24b" (arguments 14 deg24b; about 7 minutes; h0 = 2^-14).
+  Designed by xi_kernel_window_design_mixed.py with the floor adapted to
+  this lattice. (C0) holds for all five kernels.
+  R=12 (conductor kernel; its only negative coefficient is alpha_11, and
+       alpha_11^2 < 4 alpha_10 alpha_12, so w >= alpha_0 = 2.2533247628513):
+       h(0) in [0.9999999999857, 1.000000000014]; h > 0 on [0, 4];
+       2 sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 2.0105745357e-8
+       (the part n > 60 is at most 2 * 1.17e-95 and is included);
+       lower bounds on [0.1k, 0.1(k+1)], k = 0..9: 0.91094, 0.68548, 0.41727,
+       0.19524, 0.06178, 0.0087971, 8.9751e-9, 2.3034e-5, 0.0018342,
+       0.00040949; T_10 = 2.972e-107, T_11 = 1.023e-93, then decreasing;
+       sup_{u>=6} |h(u)| <= 3.078e-1006.
+  U4x: h > 0 on [0, 4]; h >= 1.0029556 on every cell covering [1.33, 1.45];
+       h >= 0.96130419 on every cell covering [1.32, 1.46], that is on
+       [21626/16384, 23921/16384];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 0.34986548997 + 1.4e-90.
+  L4x: h > 0 on every cell of [0, 4] outside [22005/16384, 23920/16384];
+       h >= -0.9970468 on the cells covering [1.32, 1.46];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= -0.34219675724 + 2.0e-90.
+  U5x: h > 0 on [0, 4]; h >= 1.0029401 on every cell covering [1.55, 1.67];
+       h >= 0.98540235 on every cell covering [1.54, 1.68], that is on
+       [25231/16384, 27526/16384];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 0.72582477207 + 3.2e-90.
+  L5x: h > 0 on every cell of [0, 4] outside [25490/16384, 27526/16384];
+       h >= -0.99704895 on the cells covering [1.54, 1.68];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= -0.7080662645 + 8.5e-90.
+  For the four window kernels: T_10 <= 2.2e-101, T_11 <= 7.4e-88, T_k
+  decreasing from k = 11, sup_{u>=6} |h(u)| <= 2.3e-1000.
+
   An independent audit on 10 November 2026 rederived the bounds of steps 1
   to 5, traced the indices, and compared about 4000 internal enclosures with
   separately computed values; it found no error. Its two small repairs (the
   last partial cell of [0, 1.2], and an assertion that V is a lattice point)
   are applied.
 
-  Comparison with the independent non-rigorous values quoted for these
-  kernels: all agree with the enclosures except Psi(log 5), quoted as
-  8.980973e-09, which lies below the enclosure
-  [8.980982629e-9, 8.981078656e-9] by a relative 1.1e-6. A separate 30-digit
-  quadrature gives 8.98099444e-9. The quoted statement that the minimum of
+  Comparison with independent non-rigorous values: all agree with the
+  enclosures. The reference values for Psi(log n), n = 2..5, were at first
+  quoted with seven digits (2.415804e-02, 2.853575e-04, 1.861007e-06,
+  8.980973e-09). Those were truncated or less accurate than quoted and fall
+  outside the enclosures at h0 = 2^-14 (the last one already at 2^-12, by a
+  relative 1.1e-6). They are replaced by a separate 40-digit quadrature
+  (0.0241580456835, 2.85357571820e-4, 1.86100835582e-6, 8.98099444090e-9),
+  which lies inside the enclosures at 2^-12 and 2^-14. The quoted statement that the minimum of
   h/h(0) on [0, 1.2] is about 2.96e-4 near log 2 (R = 4) does not hold; see
   (C3).
 """
@@ -271,14 +311,14 @@ K = int(V_NUM * NH)
 assert K == V_NUM * NH            # the truncation point V must be a lattice point
 U_NUM = Fraction(41, 10)       # u-lattice covers [0, U_NUM] at least
 J = int(math.ceil(U_NUM * NH)) + 1
-assert (2 * K + 20) * 2.0 ** -53 < 2.5e-12   # keeps the 1e-11 rounding pad valid
+assert (2 * K + 20) * 2.0 ** -53 < 1e-11     # keeps the 1e-11 rounding pad valid (step 6)
 N0 = 60                        # prime powers up to N0 are treated numerically
 U_REPORT = 3                   # the T_k table starts here
 U_POS_CAP = 4                  # positivity is tested up to here
 U_FAR = 6                      # closed-form bound beyond here
 
 KERNEL_SET = sys.argv[2] if len(sys.argv) > 2 else "deg16"
-assert KERNEL_SET in ("deg16", "deg24")
+assert KERNEL_SET in ("deg16", "deg24", "deg24b")
 
 KERNELS_DEG16 = {
     "R=4": ["2.27942", "0.0506854", "0.000783157", "2.13792e-6", "7.48483e-8"],
@@ -318,16 +358,54 @@ KERNELS_DEG24 = {
             "9.74292856392e-14", "3.46377308518e-17", "1.00548959248e-18",
             "-6.48721190745e-22", "2.59234619911e-24"],
 }
-KERNELS = KERNELS_DEG16 if KERNEL_SET == "deg16" else KERNELS_DEG24
+# Degree-24 kernels designed for the lattice 2^-14 (argument 14): a conductor
+# kernel R=12 with h(0) = 1, and window kernels for the prime power 4 and the
+# prime 5, which are large at 0 (h(0) up to 8e5).
+KERNELS_DEG24B = {
+    "R=4": KERNELS_DEG16["R=4"],
+    "R=12": ["2.2533247628513", "0.052601935780267", "0.00069067755589746",
+             "5.6824278951991e-6", "3.7050224481787e-8", "1.5096779768099e-10",
+             "7.8069040375988e-13", "1.6916291126143e-15", "6.6175890594125e-18",
+             "1.7814538484869e-21", "7.2162316492053e-23", "-4.7865261319421e-26",
+             "1.8766583625281e-28"],
+    "U4x": ["190681.124736", "4450.9333875", "58.6264778213", "0.472901409431",
+            "0.00325809112635", "1.20684820475e-5", "6.8927379044e-8", "1.26408570425e-10",
+            "5.84975977704e-13", "-7.05190927958e-17", "7.76171441216e-18",
+            "-5.61998054945e-21", "2.09148799615e-23"],
+    "L4x": ["445795.599596", "10407.930988", "136.485901704", "1.13232887511",
+            "0.00721414307374", "3.05580774052e-5", "1.51866547074e-7", "3.51929424823e-10",
+            "1.2823383607e-12", "6.06281156174e-16", "1.25796319949e-17", "-7.69960541418e-21",
+            "3.20678736332e-23"],
+    "U5x": ["486812.653277", "11361.6665745", "149.711469093", "1.20134451235",
+            "0.0086832227389", "2.50932519719e-5", "1.98811743246e-7", "3.85628939704e-10",
+            "1.34354453659e-12", "-7.24698160566e-16", "1.77999356407e-17",
+            "-1.46378104802e-20", "5.03012669563e-23"],
+    "L5x": ["1769307.53664", "41308.17621", "541.901183246", "4.48818621766",
+            "0.0284507296492", "0.000125743515132", "5.85466548847e-7", "1.31248007696e-9",
+            "5.20928889959e-12", "2.90937070773e-15", "5.32364672616e-17",
+            "-3.02717541814e-20", "1.35503905803e-22"],
+}
+KERNELS = {"deg16": KERNELS_DEG16, "deg24": KERNELS_DEG24, "deg24b": KERNELS_DEG24B}[KERNEL_SET]
 WINDOWS = {"U2": (Fraction(63, 100), Fraction(76, 100)), "L2": (Fraction(62, 100), Fraction(77, 100)),
            "U3": (Fraction(104, 100), Fraction(116, 100)), "L3": (Fraction(103, 100), Fraction(117, 100)),
            "G23": (Fraction(80, 100), Fraction(100, 100)),
            "U2x": (Fraction(63, 100), Fraction(76, 100)), "L2x": (Fraction(62, 100), Fraction(77, 100)),
-           "U3x": (Fraction(104, 100), Fraction(116, 100)), "L3x": (Fraction(103, 100), Fraction(117, 100))}
-LOWER_KERNELS = ("L2", "L3", "L2x", "L3x")       # required: h >= -1 on the window cells, h > 0 elsewhere
+           "U3x": (Fraction(104, 100), Fraction(116, 100)), "L3x": (Fraction(103, 100), Fraction(117, 100)),
+           "U4x": (Fraction(133, 100), Fraction(145, 100)), "L4x": (Fraction(132, 100), Fraction(146, 100)),
+           "U5x": (Fraction(155, 100), Fraction(167, 100)), "L5x": (Fraction(154, 100), Fraction(168, 100))}
+LOWER_KERNELS = ("L2", "L3", "L2x", "L3x", "L4x", "L5x")       # required: h >= -1 on the window cells, h > 0 elsewhere
 # For an upper kernel, also report its minimum over the (wider) window of the
 # matching lower kernel; this gives a two-sided bound on one and the same window.
-WIDE = {"U2": WINDOWS["L2"], "U2x": WINDOWS["L2x"], "U3": WINDOWS["L3"], "U3x": WINDOWS["L3x"]}
+# For a lower kernel: an interval with ends on the lattice 2^-12 or 2^-14.
+# Required: every cell of [0, 4] that is not inside it has a positive lower bound.
+NEG = {"L2x": (Fraction(2646, 4096), Fraction(3154, 4096)), "L3x": (Fraction(4325, 4096), Fraction(4793, 4096)),
+       "L4x": (Fraction(22005, 16384), Fraction(23920, 16384)),
+       "L5x": (Fraction(25490, 16384), Fraction(27526, 16384))}
+# Required lower bounds for an upper kernel on the cells covering the wide window.
+WIDE_MIN = {"U2x": Fraction("0.9880328"), "U3x": Fraction("0.9766870"),
+            "U4x": Fraction("0.9613041"), "U5x": Fraction("0.9854023")}
+WIDE = {"U2": WINDOWS["L2"], "U2x": WINDOWS["L2x"], "U3": WINDOWS["L3"], "U3x": WINDOWS["L3x"],
+        "U4x": WINDOWS["L4x"], "U5x": WINDOWS["L5x"]}
 RM = max(len(a) for a in KERNELS.values()) - 1   # largest r in any kernel
 TOP = RM + 6                                     # highest derivative order evaluated
 
@@ -698,8 +776,8 @@ def main():
     print("Psi(0) in %s" % ss(psi[0], 13))
     e = encl(iv.mpf(1) / 20, psi, psi_curv)
     print("Psi(0.05) in %s" % ss(e, 12))
-    ref = {1: "0.319751811962", 2: "2.415804e-02", 3: "2.853575e-04",
-           4: "1.861007e-06", 5: "8.980973e-09"}
+    ref = {1: "0.319751811962", 2: "0.0241580456835", 3: "2.85357571820e-4",
+           4: "1.86100835582e-6", 5: "8.98099444090e-9"}
     for n in range(1, 6):
         e = psi[0] if n == 1 else encl(iv.log(n), psi, psi_curv)
         print("  Psi(log %d) in %s   %s"
@@ -726,6 +804,11 @@ def main():
               "L2x": ("560.552342", "-0.00174833"),
               "U3x": ("4266.37188", "0.000298563"),
               "L3x": ("16143.1309", "-7.81549e-5"),
+              "U4x": ("84625.5714", "8.26448e-6"),
+              "L4x": ("197843.811", "-3.46333e-6"),
+              "U5x": ("216048.844", "6.715e-6"),
+              "L5x": ("785217.473", "-1.80756e-6"),
+              "R=12": ("1.000000000", "1.60334e-8"),
               }
     jtest = U_POS_CAP * NH
     assert jtest <= J
@@ -743,6 +826,14 @@ def main():
               % (afr[0] > 0, sum(1 for a in afr if a < 0), nroots, w_pos))
         if not w_pos:
             failed.append(name + " (C0)")
+        negs = [i for i, a in enumerate(afr) if a < 0]
+        if len(negs) == 1 and 2 <= negs[0] <= len(afr) - 2:
+            i = negs[0]
+            hand = afr[i] ** 2 < 4 * afr[i - 1] * afr[i + 1]
+            print("     by hand: the only negative coefficient is alpha_%d, and alpha_%d^2 < "
+                  "4 alpha_%d alpha_%d is %s; if True, alpha_%d s^%d + alpha_%d s^%d + "
+                  "alpha_%d s^%d >= 0 for s >= 0, hence w(t) >= alpha_0 for every real t"
+                  % (i, i, i - 1, i + 1, hand, i - 1, i - 1, i, i, i + 1, i + 1))
         alpha = [frac_iv(Fraction(s)) for s in astr]
         absal = [abs(a) for a in alpha]
         R = len(alpha) - 1
@@ -821,9 +912,25 @@ def main():
             if name in WIDE:
                 xa, xb = WIDE[name]
                 ka, kb = math.floor(xa * NH), math.ceil(xb * NH)
+                xmin = min(low[j] for j in range(ka, kb))
                 print("     WIDE WINDOW: min of cell lower bounds over the cells covering "
                       "[%s, %s], that is over [%d/%d, %d/%d]: %s"
-                      % (xa, xb, ka, NH, kb, NH, sd(min(low[j] for j in range(ka, kb)), 8)))
+                      % (xa, xb, ka, NH, kb, NH, sd(xmin, 8)))
+                if name in WIDE_MIN:
+                    x_ok = xmin >= mp.mpf(WIDE_MIN[name].numerator) / WIDE_MIN[name].denominator
+                    print("     WIDE WINDOW FACT (that minimum is at least %s): %s"
+                          % (float(WIDE_MIN[name]), "HOLDS" if x_ok else "FAILS"))
+                    if not x_ok:
+                        failed.append(name + " wide window")
+            if name in NEG:
+                na, nb = NEG[name]
+                und = [j for j in range(jtest)
+                       if not low[j] > 0 and not (j >= na * NH and j + 1 <= nb * NH)]
+                print("     NEGATIVE SET FACT (every cell of [0, %d] not inside [%s, %s] has a "
+                      "positive lower bound): %s; the cells without one are %d..%d of width 1/%d"
+                      % (U_POS_CAP, na, nb, "HOLDS" if not und else "FAILS", bad[0], bad[-1], NH))
+                if und:
+                    failed.append(name + " negative set")
         j12 = math.ceil(Fraction(12, 10) * NH)
         jmin = min(range(j12), key=lambda jj: low[jj])
         print("     smallest cell lower bound of h on [0, 1.2]: %s on [%.6f, %.6f]; "

@@ -21,7 +21,14 @@ Usage: python3 xi_kernel_window_design_mixed.py UA UB K1 K2 UMAX DIG MARG PAD R 
 Used on 10 November 2026:
    window at 2:  0.63 0.76 0.3 0.002 3.0 12 1e-4 0.01 12 0.001 ul   and then the same with  <log> 3
    window at 3:  1.04 1.16 3 0.02 3.0 12 1e-3 0.01 12 0.001 ul      and then the same with  <log> 3
-Outcome (uncertified design values): at 2, upper 0.4902354691 and lower 0.4900151766; at 3, upper 0.6368912377 and
+   window at 4:  1.33 1.45 3 0.02 3.0 12 1e-3 0.01 12 0.001 ul      and then  1.33 1.45 3 0.02 3.0 12 3e-3 0.01 12 0.001 ul <log> 0.25
+   window at 5:  1.55 1.67 3 0.02 3.0 12 1e-3 0.01 12 0.001 ul      and then  1.55 1.67 3 0.02 3.0 12 3e-3 0.01 12 0.001 ul <log> 0.25
+   conductor:    0 0 1e-8 1e-8 3.0 14 0 0 12 1e-5 c                 and then  0 0 1e-10 1e-10 3.0 14 0 0 12 1e-5 c <log> 0.25
+The kind "c" designs a conductor kernel: h_w(0) >= 1, h_w >= floor, minimise int h_w dmu_Lambda; it prints
+B = 2 int h_w dmu_Lambda / h_w(0). FAC = 0.25 aims at the lattice 2^-14, where the chord term is 16 times smaller than
+in the 2^-12 tables; FAC = 3 aims at the lattice 2^-12.
+Outcome (uncertified design values): at 4, upper 0.3496929688 and lower 0.3425994508; at 5, upper 0.7253837528 and
+lower 0.7096644163; conductor B = 1.603339848e-8 (with FAC = 3 instead: 1.73590491e-7). At 2, upper 0.4902354691 and lower 0.4900151766; at 3, upper 0.6368912377 and
 lower 0.6308324811. The certified values are in the docstring of the certificate script.
 """
 import mpmath as mp, numpy as np, sys
@@ -36,7 +43,7 @@ ERRTAB = {}
 if PREV:
     import re
     _t = open(PREV).read(); _A = np.load("lattice_tables.npz")["A"]; _NH = 4096; _c8 = (1.0 / _NH) ** 2 / 8
-    for _kind, _blk in ((1, _t.split("UPPER kernel")[1].split("LOWER kernel")[0]), (-1, _t.split("LOWER kernel")[1])):
+    for _kind, _blk in (((0, _t.split("CONDUCTOR kernel")[1]),) if "CONDUCTOR kernel" in _t else ((1, _t.split("UPPER kernel")[1].split("LOWER kernel")[0]), (-1, _t.split("LOWER kernel")[1]))):
         _al = [abs(float(x.strip().strip("'"))) for x in re.search(r"alpha \(coefficients of t\^\(2i\)\): \[(.*?)\]", _blk).group(1).split(",")]
         ERRTAB[_kind] = _c8 * sum(a * _A[r + 1] for r, a in enumerate(_al))
 def extra(kind, u):
@@ -107,12 +114,14 @@ def sturm_positive(coefs):
     return coefs[0] > 0 and var(at0) - var(atinf) == 0
 def design(kind):
     inJ = (lambda u: UA <= u <= UB) if kind > 0 else (lambda u: UA - PAD < u < UB + PAD)
+    if kind == 0: inJ = lambda u: False
     fcache = {}
     def floor(u):
         if u not in fcache: fcache[u] = floor0(u) + extra(kind, u)
         return fcache[u]
     tgt = (lambda u: (1 + MARG) if inJ(u) else floor(u)) if kind > 0 else (lambda u: -(1 - MARG) if inJ(u) else floor(u))
-    pts = sorted(set(u for u in us if u <= UMAX) | {UA, UB, UA - PAD, UB + PAD})
+    if kind == 0: tgt = lambda u: mp.mpf(1) if u == 0 else floor(u)       # conductor kernel: h(0) >= 1, h >= floor
+    pts = sorted(set(u for u in us if u <= UMAX) | ({UA, UB, UA - PAD, UB + PAD} if kind != 0 else {mp.mpf(0)}))
     for it in range(30):
         rows = [[-x for x in S(u)] for u in pts] + trows; rhs = [-tgt(u) for u in pts] + trhs
         x = refined(objS, rows, rhs)
@@ -141,10 +150,11 @@ def design(kind):
     alpha = [Fraction(mp.nstr(co_[i], DIG + 5)) / Fraction(10) ** (2 * i) for i in range(R + 1)]       # exact coefficients of t^(2i) = s^i with s = t^2
     ok = sturm_positive(alpha)
     a_, b_ = (UA, UB) if kind > 0 else (UA - PAD, UB + PAD)
-    print(f"{'UPPER' if kind > 0 else 'LOWER'} kernel, degree {2*R}, window u in [{mp.nstr(a_, 4)}, {mp.nstr(b_, 4)}]")
+    print(f"{'UPPER' if kind > 0 else 'LOWER' if kind < 0 else 'CONDUCTOR'} kernel, degree {2*R}, window u in [{mp.nstr(a_, 4)}, {mp.nstr(b_, 4)}]")
+    if kind == 0: print(f"   B = 2 int h dmu_Lambda / h(0) = {mp.nstr(2 * val / k(mp.mpf(0)), 10)}")
     print("   alpha (coefficients of t^(2i)):", [mp.nstr(v / mp.mpf(10) ** (2 * i), DIG) for i, v in enumerate(co_)])
     print(f"   int h dmu_Lambda = {mp.nstr(val, 12)}  => " + (f"mu(window) <= {mp.nstr(val, 10)}" if kind > 0 else f"mu(window) >= {mp.nstr(-val, 10)}") + f";  h(0) = {mp.nstr(k(mp.mpf(0)), 10)}")
     print(f"   scan: smallest margin inside the window {mp.nstr(wJ, 3)} (MARG = {mp.nstr(MARG, 2)});  smallest ratio to the floor outside {mp.nstr(wO, 3)}")
     print(f"   Sturm (exact rationals): w(t) > 0 for all real t: {ok}", flush=True)
 for ch in KINDS:
-    design(+1 if ch == "u" else -1)
+    design({"u": 1, "l": -1, "c": 0}[ch])
