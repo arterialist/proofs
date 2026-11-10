@@ -32,7 +32,7 @@ Three remarks.
 2. If $(m,\mu)$ is admissible of conductor $q$ and $q'\ge q$, then $(m+\frac{\log(q'/q)}{2\pi}dt,\ \mu)$ is admissible of conductor $q'$. So the set of conductors that admit a system is an up-set.
 3. The definition does not mention the primes or the zeros of $\zeta$.
 4. Asking for a measure $m$ is the same as asking for positivity. If the functional $h_g\mapsto W_0(h_g)+(\log q)h_g(0)-\int(h_g+h_g(-\cdot))\,d\mu$ is nonnegative for all $g\in C_c^\infty$, then by the Bochner-Schwartz theorem it is given by a tempered nonnegative measure $m$, and (ADM) extends from $C_c^\infty$ to $\mathcal G$ by truncating $g$ and dominated convergence. So "admissible system" and "a nonnegative prime measure for which Weil's functional is nonnegative" mean the same thing. The measure $m$ is determined by $(\mu,q)$ and is automatically even.
-5. Admissible systems exist for large conductor, unconditionally: $m=\frac1{2\pi}(\Omega(t)+\log q)\,dt$ and $\mu=2\cosh(u/2)\,du$ satisfy (ADM) identically, and $m\ge0$ as soon as $\log q\ge-\Omega(0)=\log\pi-\psi(\tfrac14)$, that is $q\ge8\pi e^{\gamma_E+\pi/2}=215.33$. With Remark 2 and Corollary 5 below, the set of conductors that admit a system is a half-line whose left end lies between $0.99933$ and $215.33$, and under RH it is at most $1$. Admissible triples $(m,\mu,\log q)$ form a convex set.
+5. Admissible systems exist for large conductor, unconditionally: $m=\frac1{2\pi}(\Omega(t)+\log q)\,dt$ and $\mu=2\cosh(u/2)\,du$ satisfy (ADM) identically, and $m\ge0$ as soon as $\log q\ge-\Omega(0)=\log\pi-\psi(\tfrac14)$, that is $q\ge8\pi e^{\gamma_E+\pi/2}=215.33$. With Remark 2 and Corollary 5 below, the set of conductors that admit a system is a half-line whose left end lies between $0.999984$ and $215.33$, and under RH it is at most $1$. Admissible triples $(m,\mu,\log q)$ form a convex set.
 
 ## 2. Kernels that do not see the zeros
 
@@ -116,24 +116,32 @@ Now (ADM) with $\mu=\mu_\Lambda$ and $q=1$ says $W(h_g)=\int|\hat g|^2dm\ge0$ fo
 
 ### 5.1 Certified by interval arithmetic
 
-The script [xi_kernel_conductor_certificate.py](../../certificates/prime-birth/xi_kernel_conductor_certificate.py) encloses the quantities below with interval arithmetic (series tails bounded in closed form, composite Simpson with a rigorous error term on a lattice of step $2^{-12}$, a chord bound with local curvature between lattice points, and explicit padding for the floating-point sums). It was written by a separate agent from a specification and its header explains each step. It uses the evenness of $\Phi$ as an input.
+The script [xi_kernel_conductor_certificate.py](../../certificates/prime-birth/xi_kernel_conductor_certificate.py) encloses the quantities below with interval arithmetic: series tails bounded in closed form, composite Simpson with a rigorous error term on a lattice of step $2^{-12}$, a chord bound with local curvature between lattice points, and explicit padding for the floating-point sums. A separate agent wrote it from a specification, and another audited it on 10 November 2026: the audit rederived every bound, traced the indices, compared about 4000 internal enclosures with independently computed values, rechecked the proof of Corollary 5 below, and found no error. The script uses the evenness of $\Phi$ as an input. Nothing here is machine-checked in a proof assistant.
 
 **Proposition 5 (certified constants).**
 
 (a) $\Psi(0)\ge0.3197518119$ and $\varepsilon_\Psi\le0.0240444325$. Hence, by Corollary 1 with $w=1$, every admissible system has conductor $q\ge\exp(-0.0751971736)>0.92756$.
 
-(b) Let $w_8(t)=2.27942+0.0506854\,t^2+0.000783157\,t^4+2.13792\cdot10^{-6}\,t^6+7.48483\cdot10^{-8}\,t^8$ and $h=h_{w_8}$. Then $h(u)>0$ for $0\le u\le4$, $1.00000097\le h(0)\le1.00000098$, $2\int h\,d\mu_\Lambda\le0.00066991458$, $\sup|h|$ on $[3+0.1k,\,3.1+0.1k]$ is at most $T_k$ with $T_{10}=8.47\cdot10^{-127}$ and $T_k$ decreasing, and $|h(u)|\le b(u)$ for $u\ge2$ with an explicit decreasing $b$, $b(6)\le1.37\cdot10^{-1060}$. On the cells $[0,0.4]$, $[0,0.5]$, $[0,0.6]$ the function $h$ is at least $0.20173$, $0.066292$, $0.01067$.
+(b) Let
+$$w_{16}(t)=2.25482059+0.0524395214\,t^2+6.98139727\cdot10^{-4}t^4+5.51936758\cdot10^{-6}t^6+3.87866857\cdot10^{-8}t^8+1.31919267\cdot10^{-10}t^{10}+9.53422988\cdot10^{-13}t^{12}+1.16486515\cdot10^{-17}t^{16}$$
+and $h=h_{w_{16}}$. All coefficients are nonnegative, so $w_{16}\ge2.25482059$ on $\mathbb R$. The script certifies: $h(u)>0$ for $0\le u\le4$; $0.99999999950\le h(0)\le0.99999999954$; $2\int h\,d\mu_\Lambda\le1.5566428\cdot10^{-5}$; $h\ge0.19524$ on $[0,0.4]$, $h\ge0.061994$ on $[0,0.5]$, $h\ge0.0088836$ on $[0,0.6]$, $h\ge0.0019933$ on $[0.8,0.9]$, $h\ge0.00048511$ on $[0.8,1]$; $\sup|h|$ on $[3+0.1k,\,3.1+0.1k]$ is at most $T_k$ with $T_{10}=1.74\cdot10^{-116}$, $T_{11}=7.54\cdot10^{-115}$ and $T_k$ decreasing from there to $k=29$; and for $u\ge2$, $|h(u)|\le b(u)$ with
+$$b(u)=\sum_r\alpha_rD_r^2\,e^{(2r+4.5)u}\,e^{-2\pi e^u}\Bigl(u+\frac1{2\pi e^u-2r-4.5}\Bigr),$$
+$D_r$ the constants of the script, $b$ decreasing, $b(6)\le5.7\cdot10^{-1034}$.
+
+(c) The same statements hold for the kernel of degree $8$, $w_8(t)=2.27942+0.0506854\,t^2+0.000783157\,t^4+2.13792\cdot10^{-6}t^6+7.48483\cdot10^{-8}t^8$, with $2\int h\,d\mu_\Lambda\le6.6991458\cdot10^{-4}$. This is the kernel the audit examined in detail; the kernel of (b) was added afterwards and goes through the same code.
 
 **Corollary 5 (unconditional, certified).** For every admissible system $(m,\mu)$ of conductor $q$:
 
-1. $q\ge\exp(-0.00066992)>0.99933$.
-2. If $q\le1$: $\int w_8\,\Xi^2\,dm\le0.00066992$ and $\int\Xi^2\,dm\le0.000294$. With Corollary 4 (for $q=1$), the true and the system's prime measures, both smoothed by $\Psi$, differ by at most $0.000294$ at every position. For comparison $\Psi(0)=0.3198$.
-3. If $q\le1$: the prime measure has mass at most $0.00167$ on $x\le e^{0.4}=1.4918$, at most $0.00506$ on $x\le e^{0.5}=1.6487$, and at most $0.0314$ on $x\le e^{0.6}=1.8221$.
+1. $q\ge\exp(-1.5567\cdot10^{-5})>0.999984$.
+2. If $q\le1$: $\int w_{16}\,\Xi^2\,dm\le1.5567\cdot10^{-5}$ and $\int\Xi^2\,dm\le6.91\cdot10^{-6}$. For $q=1$, by Corollary 4, $|R(a)|\le6.91\cdot10^{-6}$ for every $a$, where $R(a)=\int(\Psi(u-a)+\Psi(u+a))\,d(\mu_\Lambda-\mu)(u)$ is the symmetrised difference of the two prime measures smoothed by $\Psi$. For scale, $\Psi(0)=0.3198$.
+3. If $q\le1$: the prime measure has mass at most $3.99\cdot10^{-5}$ on $x\le e^{0.4}=1.4918$, at most $1.26\cdot10^{-4}$ on $x\le e^{0.5}=1.6487$, at most $8.77\cdot10^{-4}$ on $x\le e^{0.6}=1.8221$, at most $0.00391$ on $2.2256\le x\le2.4596$, and at most $0.0161$ on $2.2256\le x\le2.7182$.
 
-*Proof.* Part 1 is trivial if $q>1$, so let $q\le1$ and $\theta=\log(1/q)\ge0$. Identity (1) for $w_8$ reads $\int w_8\Xi^2dm+2\int h\,d\mu=2\int h\,d\mu_\Lambda-\theta h(0)$. Since $h>0$ on $[0,4]$,
+With the degree-$8$ kernel alone the corresponding numbers are $q>0.99933$, $\int\Xi^2dm\le2.94\cdot10^{-4}$, and mass at most $0.00167$, $0.00506$, $0.0314$ on $x\le1.4918$, $1.6487$, $1.8221$.
+
+*Proof.* Part 1 is trivial if $q>1$, so let $q\le1$ and $\theta=\log(1/q)\ge0$. Write $w$ for $w_{16}$ or $w_8$ and $h=h_w$, $w(t)=\sum_r\alpha_rt^{2r}$. Identity (1) reads $\int w\Xi^2dm+2\int h\,d\mu=2\int h\,d\mu_\Lambda-\theta h(0)$. Since $h>0$ on $[0,4]$,
 
 $$
-\theta\,h(0)+\int w_8\Xi^2\,dm+2\int_{(0,4]}h\,d\mu\ \le\ 2\int h\,d\mu_\Lambda+2\int_{(4,\infty)}|h|\,d\mu. \tag{2}
+\theta\,h(0)+\int w\,\Xi^2\,dm+2\int_{(0,4]}h\,d\mu\ \le\ 2\int h\,d\mu_\Lambda+2\int_{(4,\infty)}|h|\,d\mu. \tag{2}
 $$
 
 *The last term.* By Corollary 2 with $E=1+e^{iaz}$, whose kernel is $2\Psi+\Psi(\cdot-a)+\Psi(\cdot+a)\ge\Psi(\cdot-a)$, for every real $a$
@@ -142,11 +150,15 @@ $$
 \int\Psi(u-a)\,d\mu(u)\le C(a):=\varepsilon_\Psi+\int\bigl(\Psi(u-a)+\Psi(u+a)\bigr)\,d\mu_\Lambda(u).
 $$
 
-Since $\Psi''=-M_1$, $|M_1|\le M_1(0)$ and $\alpha_1M_1(0)\le h(0)$ (all $\alpha_r\ge0$ and $M_r(0)=\|\Phi^{(r)}\|_2^2\ge0$), we get $M_1(0)\le19.74$ and $\Psi(v)\ge\Psi(0)-19.74\,v^2/2\ge0.295$ for $|v|\le0.05$. So $\mu([a-0.05,a+0.05])\le C(a)/0.295$. To bound $C(a)$ for $a\ge4$ use $\Psi\le\Psi(0)$ and, for $|v|\ge2$, $\Psi(v)\le2\,\Xi(0)\sup_{s\ge|v|/2}\Phi(s)\le40\,e^{9|v|/4}e^{-\pi e^{|v|}}$, which follows from $\Phi(s)\le4\pi^2e^{9s/2}\sum_nn^4e^{-\pi n^2e^{2s}}\le40e^{9s/2}e^{-\pi e^{2s}}$ for $s\ge1$. The terms with $|\log n-a|<2$ contribute at most $\Psi(0)\sum_{n<e^{a+2}}(\log n)n^{-1/2}\le\Psi(0)(a+2)\,2e^{(a+2)/2}$, and all other terms contribute less than $10^{-5}(a+2)e^{a/2}$. Hence $C(a)\le1.75\,(a+2)e^{a/2}$ and $\mu([a-0.05,a+0.05])\le6\,(a+2)e^{a/2}$ for $a\ge4$. Summing over the cells $[3+0.1k,3.1+0.1k]$, $k\ge10$, with $T_k$ for $k\le29$ and with $b$ beyond $u=6$, where $b(u+0.1)\le e^{-260}b(u)$, gives $\int_{(4,\infty)}|h|\,d\mu\le10^{-120}$.
+Since $\Psi''=-M_1$, $|M_1|\le M_1(0)$ and $\alpha_1M_1(0)\le h(0)$ (all $\alpha_r\ge0$ and $M_r(0)=\|\Phi^{(r)}\|_2^2\ge0$), we get $M_1(0)\le19.74$ for either kernel and $\Psi(v)\ge\Psi(0)-19.74\,v^2/2\ge0.295$ for $|v|\le0.05$. So $\mu([a-0.05,a+0.05])\le C(a)/0.295$.
 
-*Conclusions.* Drop the second and third terms on the left of (2): $\theta\le(0.00066991458+10^{-119})/1.00000097<0.00066992$. Drop the first and third: $\int w_8\Xi^2dm<0.00066992$, and $w_8\ge2.27942$ on the real line gives $\int\Xi^2dm<0.000294$. Drop the first two and restrict to $J\subset(0,4]$: $\mu(J)\le0.00033496/\min_Jh$, which gives part 3. $\qquad\blacksquare$
+To bound $C(a)$ for $a\ge4$ use $\Psi\le\Psi(0)$ and, for $|v|\ge2$, $\Psi(v)\le2\,\Xi(0)\sup_{s\ge|v|/2}\Phi(s)\le40\,e^{9|v|/4}e^{-\pi e^{|v|}}$, which follows from $\Phi(s)\le4\pi^2e^{9s/2}\sum_nn^4e^{-\pi n^2e^{2s}}\le39.5\,e^{9s/2}e^{-\pi e^{2s}}$ for $s\ge1$, a decreasing bound. The terms of $\int\Psi(u-a)\,d\mu_\Lambda$ with $|\log n-a|<2$ contribute at most $\Psi(0)\sum_{n<e^{a+2}}(\log n)n^{-1/2}\le\Psi(0)(a+2)\,2e^{(a+2)/2}\le1.7384\,(a+2)e^{a/2}$. The terms with $n\le e^{a-2}$ contribute at most $40e^{4.5}e^{-\pi e^2}\cdot2a\,e^{(a-2)/2}\le2.2\cdot10^{-7}(a+2)e^{a/2}$. The terms with $n\ge e^{a+2}$ have a decreasing summand and, by comparison with an integral, contribute at most $4\cdot10^{-8}(a+2)e^{a/2}$. The terms of $\int\Psi(u+a)\,d\mu_\Lambda$ are below $e^{-300}$. With $\varepsilon_\Psi\le0.0241\le0.00055\,(a+2)e^{a/2}$ this gives $C(a)\le1.75\,(a+2)e^{a/2}$ and $\mu([a-0.05,a+0.05])\le6\,(a+2)e^{a/2}$ for $a\ge4$.
 
-Part 3 says, rigorously and with no hypothesis on the zeros of $\zeta$, that a system satisfying Weil positivity with Riemann's archimedean factor and conductor at most $1$ has almost no generalized primes below $1.65$.
+Now sum over the cells $[3+0.1k,3.1+0.1k]$, $k\ge10$, whose centres are $a_k=3.05+0.1k$. For $10\le k\le29$ use $T_k$: the sum is at most $6\cdot7.95\cdot e^{2.975}\sum_{k\ge10}T_k\le10^{-110}$. Beyond $u=6$ use $b$: since $2r+4.5\le20.5$, $b(u+0.1)/b(u)\le e^{2.05}\cdot1.02\cdot\exp(-2\pi e^6(e^{0.1}-1))\le e^{-260}$ for $u\ge6$, so the cells beyond $6$ contribute at most $10^3\,b(6)$. Hence $\int_{(4,\infty)}|h|\,d\mu\le10^{-109}$.
+
+*Conclusions.* For $w_{16}$: drop the second and third terms on the left of (2) to get $\theta\le(1.5566428\cdot10^{-5}+10^{-108})/0.9999999995<1.5567\cdot10^{-5}$. Drop the first and third: $\int w_{16}\Xi^2dm<1.5567\cdot10^{-5}$, and $w_{16}\ge2.25482059$ gives $\int\Xi^2dm<6.91\cdot10^{-6}$. Drop the first two and restrict to $J\subset(0,4]$: $\mu(J)\le7.7833\cdot10^{-6}/\min_Jh$, which gives part 3. The numbers for $w_8$ follow in the same way from (c). $\qquad\blacksquare$
+
+Part 3 says, rigorously and with no hypothesis on the zeros of $\zeta$, that a system satisfying Weil positivity with Riemann's archimedean factor and conductor at most $1$ has almost no generalized primes below $1.8$ or between $2.23$ and $2.72$. Part 1 says its conductor cannot be smaller than $1$ by more than $1.6\cdot10^{-5}$.
 
 **A warning from the same script.** It also examined a kernel of degree $12$ that I had obtained from a linear program with sign conditions on a grid of step $0.004$, and it certified that this kernel is negative, by about $10^{-9}$, on an interval of length $0.0015$ near $u=1.4712$ that the grid stepped over. The tables in sections 5.2 to 5.4 were first computed on that fixed grid. Section 5.2 is now recomputed with constraints added adaptively where the kernel dips (a cutting-plane method), and the two sets of values are shown side by side. Sections 5.3 and 5.4 still use the fixed grid.
 
@@ -169,7 +181,7 @@ Here $w$ is an even polynomial of the stated degree with $h_w(0)=1$, and the lin
 | $28$ | $1.35\cdot10^{-10}$ | $1.28\cdot10^{-10}$ | $2,\ 3,\ 4,\ 5,\ 7,\ 8.09,\ 9.34$ |
 | $32$ | $1.08\cdot10^{-12}$ | $1.00\cdot10^{-12}$ | |
 
-The cutting-plane values are a few percent above the fixed-grid ones. They are still computations: the sign of $h_w$ beyond $x=24.5$ and below $x=1.05$ is not checked, $w\ge0$ is checked only on the grid of $t$, and the final kernels have sampled values as low as $-10^{-3}B$. On the grid the kernels are close to $1$ below $x=1.05$, so the restriction to prime measures supported in $x\ge1.05$ is probably not needed, but it is a hypothesis of these rows. The degree-$0$ row and, to within its stated enclosure, a degree-$8$ kernel with a safety margin ($B\le6.7\cdot10^{-4}$) are certified in section 5.1. The bound barely changes when the lower end $1.05$ is replaced by $1.001$, $1.2$, $1.5$ or $1.9$ (fixed-grid runs). The optimal kernels place their zeros at the prime powers, in order.
+The cutting-plane values are a few percent above the fixed-grid ones. They are still computations: the sign of $h_w$ beyond $x=24.5$ and below $x=1.05$ is not checked, $w\ge0$ is checked only on the grid of $t$, and the final kernels have sampled values as low as $-10^{-3}B$. On the grid the kernels are close to $1$ below $x=1.05$, so the restriction to prime measures supported in $x\ge1.05$ is probably not needed, but it is a hypothesis of these rows. Three kernels are certified in section 5.1: degree $0$, a degree-$8$ kernel with a safety margin ($B\le6.7\cdot10^{-4}$), and a degree-$16$ kernel with nonnegative coefficients and a safety margin ($B\le1.56\cdot10^{-5}$, against the uncertified optimum $3.59\cdot10^{-6}$ for that degree). The bound barely changes when the lower end $1.05$ is replaced by $1.001$, $1.2$, $1.5$ or $1.9$ (fixed-grid runs). The optimal kernels place their zeros at the prime powers, in order.
 
 In every row $w\ge2.25$ on the grid of $t$ and $h_w(0)=1$, so Corollary 3 also bounds the total mass of $\Xi^2m$: for conductor $1$, $\int\Xi^2\,dm\le B(w)/2.25$, about $5\cdot10^{-13}$ at degree $32$. By Corollary 4 this is also a bound for $\sup_a|R(a)|$: in this computation the prime measure of any admissible system of conductor $1$, smoothed by $\Psi$, agrees with the smoothed true prime measure to within $5\cdot10^{-13}$ at every position.
 

@@ -23,6 +23,10 @@ with the decimal coefficients alpha_r below read as exact rationals:
   R = 4: alpha = [2.27942, 0.0506854, 0.000783157, 2.13792e-6, 7.48483e-8]
   R = 6: alpha = [2.258739, 0.05216107, 0.0007103534, 4.97466e-6, 4.918306e-8,
                   0, 1.584807e-12]
+  R = 8: alpha = [2.25482059, 0.0524395214, 0.000698139727, 5.51936758e-6,
+                  3.87866857e-8, 1.31919267e-10, 9.53422988e-13, 0, 1.16486515e-17]
+         (added after the first two; designed by cutting planes with all
+         coefficients nonnegative and a margin above the R = 4 kernel)
 
 Lambda is the von Mangoldt function (Lambda(p^k) = log p, otherwise 0).
 
@@ -128,8 +132,8 @@ OUTCOME (run on 10 November 2026, h0 = 2^-12)
        (the part n > 60 is at most 2 * 6.928e-137 and is included)
        that sum divided by h(0) in [0.00066980623055, 0.00066991392948]
   (C3) h(u) > 0 for every real u in [0, 4]. On [0, 1.2] the infimum of
-       h(u)/h(0) lies in [2.1901419e-6, 2.1964066e-6] and is attained in the
-       cell [1.126221, 1.126465]. It is not attained near log 2: on
+       h(u)/h(0) lies in [2.1901419e-6, 2.1964066e-6] and the minimiser lies in
+       [1.125977, 1.126953]. It is not near log 2: on
        [0.6, 0.8] one has h >= 2.8635e-4.
   (C4) T_0..T_10 (lattice): 5.429e-38, 3.344e-43, 4.918e-49, 1.594e-55,
        9.002e-63, 7.666e-71, 8.513e-80, 8.964e-90, 7.852e-101, 3.867e-113,
@@ -150,6 +154,27 @@ OUTCOME (run on 10 November 2026, h0 = 2^-12)
        h > 0 is certified on [0, 1.470459] and on [1.472168, 4].
   (C4) T_0 = 1.809e-34, T_10 = 2.107e-121, T_29 = 1.308e-943 (full table in
        the output), sup_{u>=6} |h(u)| <= 1.203e-1047.
+
+  Kernel R = 8 (added later the same day; h0 = 2^-12)
+  (C2) h(0) in [0.9999999995084, 0.9999999995367]
+       2 sum_{n>=2} Lambda(n) n^(-1/2) h(log n)
+           in [1.5453049306e-5, 1.5566427933e-5]
+       that sum divided by h(0) in [1.5453049313e-5, 1.5566427941e-5]
+  (C3) h(u) > 0 for every real u in [0, 4]. On [0, 1.2] the infimum of
+       h(u)/h(0) lies in [1.1752581e-7, 1.2786779e-7], near u = 1.1007.
+       Lower bounds on [0.1k, 0.1(k+1)], k = 0..9: 0.91111, 0.68538, 0.41759,
+       0.19524, 0.061994, 0.0088836, 2.3809e-6, 2.4492e-5, 0.0019933, 0.00048511.
+  (C4) T_10 = 1.731e-116, T_11 = 7.534e-115, then decreasing (full table in
+       the output), sup_{u>=6} |h(u)| <= 5.678e-1034.
+  With h0 = 2^-13 (argument 13; needs the assertion on the rounding pad
+  relaxed to 5e-12, which the 1e-11 pad still covers) the same kernel gives
+  the tighter 2 sum ... <= 1.5521710886e-5.
+
+  An independent audit on 10 November 2026 rederived the bounds of steps 1
+  to 5, traced the indices, and compared about 4000 internal enclosures with
+  separately computed values; it found no error. Its two small repairs (the
+  last partial cell of [0, 1.2], and an assertion that V is a lattice point)
+  are applied.
 
   Comparison with the independent non-rigorous values quoted for these
   kernels: all agree with the enclosures except Psi(log 5), quoted as
@@ -178,6 +203,7 @@ if len(sys.argv) > 1:
 NH = 1 << LOG2_NH              # h0 = 1/NH
 V_NUM = Fraction(21, 8)        # v-lattice covers [0, V_NUM + h0]
 K = int(V_NUM * NH)
+assert K == V_NUM * NH            # the truncation point V must be a lattice point
 U_NUM = Fraction(41, 10)       # u-lattice covers [0, U_NUM] at least
 J = int(math.ceil(U_NUM * NH)) + 1
 assert (2 * K + 20) * 2.0 ** -53 < 2.5e-12   # keeps the 1e-11 rounding pad valid
@@ -190,6 +216,8 @@ KERNELS = {
     "R=4": ["2.27942", "0.0506854", "0.000783157", "2.13792e-6", "7.48483e-8"],
     "R=6": ["2.258739", "0.05216107", "0.0007103534", "4.97466e-6",
             "4.918306e-8", "0", "1.584807e-12"],
+    "R=8": ["2.25482059", "0.0524395214", "0.000698139727", "5.51936758e-6", "3.87866857e-8",
+            "1.31919267e-10", "9.53422988e-13", "0", "1.16486515e-17"],
 }
 RM = max(len(a) for a in KERNELS.values()) - 1   # largest r in any kernel
 TOP = RM + 6                                     # highest derivative order evaluated
@@ -539,7 +567,8 @@ def main():
               ("1.6", "4.56475e-5"), ("2.0", "4.49673e-9"), ("2.6", "3.86134e-22"),
               ("3.0", "5.42823e-38")]
     refs_k = {"R=4": ("1.00000097083", "0.00066985551"),
-              "R=6": ("0.999999995562", "8.3460966e-5")}
+              "R=6": ("0.999999995562", "8.3460966e-5"),
+              "R=8": ("0.99999999952207", "1.5505961e-5")}
     jtest = U_POS_CAP * NH
     assert jtest <= J
     summary = {}
@@ -597,7 +626,7 @@ def main():
                      jn, NH, jn / NH, ss(hv[jn], 8)))
             summary[name] = ("h is NOT nonnegative: h(%d/%d) <= %s < 0 certified"
                              % (jn, NH, su(HI(hv[jn]), 6)))
-        j12 = int(Fraction(12, 10) * NH)
+        j12 = math.ceil(Fraction(12, 10) * NH)
         jmin = min(range(j12), key=lambda jj: low[jj])
         print("     smallest cell lower bound of h on [0, 1.2]: %s on [%.6f, %.6f]; "
               "h at the left end of that cell in %s"
