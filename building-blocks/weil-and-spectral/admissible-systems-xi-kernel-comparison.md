@@ -1,6 +1,6 @@
 # Systems that satisfy Weil positivity compared with the primes, through kernels built from $\Xi^2$
 
-**Status.** Theorems 1 to 4 and Corollaries 1 to 8 are **unconditional**. Theorems 1 to 4 and Corollaries 1 to 4 and 8 are proved here in full from the classical explicit formula; Corollaries 5, 5a, 6 and 7 add interval-arithmetic certificates of explicit kernels (Python, not a proof assistant). They are statements about arbitrary "admissible systems" (Definition 1). The true primes form an admissible system if and only if the Riemann hypothesis holds, so nothing here proves or bounds anything about zeros of $\zeta$. Section 5.1 holds the numbers certified by interval arithmetic. Sections 5.2 to 5.4 are 50-digit computations whose sign conditions are imposed at finitely many points; they are not certified. An independent review on 10 November 2026 rederived Theorems 1 and 2, Corollaries 1 to 4 and the derivations in section 5, and a separate audit examined the certificate script and the proof of Corollary 5; their corrections are incorporated. The degree-16 kernel of Proposition 5(b) and Corollary 6 were added after those reviews. Two further reviews the same day checked them: the first examined the degree-16 version of Corollary 6, the second the degree-24 version, the exact Sturm positivity check and the new assertions in the script. Neither found a false statement; their repairs to the proof text and to the script are incorporated. Corollaries 5a and 7 and the remark at the end of section 3 were added after the second of these, and a third review checked them: it found no error in Corollaries 5a and 7 or in the script, confirmed the new kernels' prime sums by an independent quadrature, and corrected one false sentence in the remark. Theorems 3 and 4 and Corollary 8 were added after that and refereed separately, with no error found; the referees' repairs to the wording and to two small gaps in the proofs are incorporated. Section 6 states two conjectures and what would follow from them. No Lean formalization. No literature search was done for Theorems 1 and 2; the method is the classical one of Odlyzko's discriminant bounds with one twist (test functions that vanish at every zero), and may well be known.
+**Status.** Theorems 1 to 5 and Corollaries 1 to 8 are **unconditional**. Theorems 1 to 5 and Corollaries 1 to 4 and 8 are proved here in full from the classical explicit formula; Corollaries 5, 5a, 6 and 7 add interval-arithmetic certificates of explicit kernels (Python, not a proof assistant). They are statements about arbitrary "admissible systems" (Definition 1). The true primes form an admissible system if and only if the Riemann hypothesis holds, so nothing here proves or bounds anything about zeros of $\zeta$. Section 5.1 holds the numbers certified by interval arithmetic. Sections 5.2 to 5.4 are 50-digit computations whose sign conditions are imposed at finitely many points; they are not certified. An independent review on 10 November 2026 rederived Theorems 1 and 2, Corollaries 1 to 4 and the derivations in section 5, and a separate audit examined the certificate script and the proof of Corollary 5; their corrections are incorporated. The degree-16 kernel of Proposition 5(b) and Corollary 6 were added after those reviews. Two further reviews the same day checked them: the first examined the degree-16 version of Corollary 6, the second the degree-24 version, the exact Sturm positivity check and the new assertions in the script. Neither found a false statement; their repairs to the proof text and to the script are incorporated. Corollaries 5a and 7 and the remark at the end of section 3 were added after the second of these, and a third review checked them: it found no error in Corollaries 5a and 7 or in the script, confirmed the new kernels' prime sums by an independent quadrature, and corrected one false sentence in the remark. Theorems 3 and 4 and Corollary 8 were added after that and refereed separately, with no error found; the referees' repairs to the wording and to two small gaps in the proofs are incorporated. Section 6 states two conjectures and what would follow from them. No Lean formalization. No literature search was done for Theorems 1 and 2; the method is the classical one of Odlyzko's discriminant bounds with one twist (test functions that vanish at every zero), and may well be known.
 
 ## 1. Admissible systems
 
@@ -189,6 +189,56 @@ by a quantity that tends to $0$, by dominated convergence. So $(\Psi*\beta)(x)=e
 A nonnegative almost periodic function with mean value $0$ vanishes, so $a=0$. $\qquad\blacksquare$
 
 Theorems 2 to 4 leave open every perturbation that is not a measure of finite total variation plus finitely many terms $e^{\eta u}u^j$ times a uniformly almost periodic function. Examples: a sum over infinitely many zeros with coefficients that are not summable, infinitely many distinct growth rates, a density such as $c/(1+u)$, or atoms displaced by amounts whose total is infinite. Formally, by the explicit formula, $\mu_\Lambda-2\cosh(u/2)\,du$ is itself a sum over all zeros with every coefficient equal to $1$, up to an integrable term. Under RH that sum has no growth; it converges only as a distribution and is not a density.
+
+**Theorem 5 (a change of slowly growing total variation; unconditional).** Let $(m,\mu)$ be an admissible system of conductor $q\le1$, or more generally let $(m,\mu,q)$ be a $\Xi$-admissible triple with $q\le1$. Let $\kappa=\mu-\mu_\Lambda$ on $(0,\infty)$ and suppose
+
+$$
+\int_{(0,\infty)}\frac{d|\kappa|(u)}{1+u}<\infty ,
+$$
+
+where $|\kappa|$ is the total variation measure. Then $q=1$ and $\mu=\mu_\Lambda$. For an admissible system, RH holds and $m$ is the counting measure of the ordinates.
+
+The hypothesis holds when $|\kappa|((0,T])=O(T^{1-\delta})$ for some $\delta>0$, and in particular when $\kappa$ has finite total variation, which is Theorem 2. It allows the system to differ from the true primes at infinitely many places with infinite total change. It does not contain Theorems 3 and 4, where $|\kappa|((0,T])$ grows at least linearly.
+
+*Proof.* Let $\theta=\log(1/q)\ge0$ and let $\kappa_s$ be the even extension of $\kappa$ to $\mathbb R\setminus\{0\}$. The hypothesis makes $\kappa_s$ a tempered measure. As in the proofs of Theorems 2 and 3, identity (1) gives a finite nonnegative measure $M=\Xi^2m$ with
+
+$$
+\hat M(x)=-(\Psi*\kappa_s)(x)-\theta\Psi(x)\qquad(x\in\mathbb R).
+$$
+
+Write $\hat\kappa_s$ for the Fourier transform of $\kappa_s$ as a tempered distribution, with the convention $\hat f(t)=\int f(u)e^{itu}du$. Since $\Psi$ is a Schwartz function with $\hat\Psi=\Xi^2$, taking Fourier transforms gives the identity of tempered distributions
+
+$$
+2\pi M=\Xi^2\,T,\qquad T:=-\hat\kappa_s-\theta .
+$$
+
+Let $Z$ be the set of real zeros of $\Xi$, a discrete set. On the open set $\mathbb R\setminus Z$ the function $\Xi^2$ is smooth and positive, so there $T$ equals the nonnegative measure $\nu_0=2\pi M/\Xi^2$.
+
+*An estimate.* For a test function $\chi$ and $\gamma\in\mathbb R$, $\varepsilon\in(0,1]$, put $\chi_\varepsilon(t)=\chi((t-\gamma)/\varepsilon)$. Its transform is $\varepsilon e^{i\gamma u}\hat\chi(\varepsilon u)$, so
+
+$$
+|\langle\hat\kappa_s,\chi_\varepsilon\rangle|\le\varepsilon\int|\hat\chi(\varepsilon u)|\,d|\kappa_s|(u),\qquad |\langle T,\chi_\varepsilon\rangle|\le\varepsilon\int|\hat\chi(\varepsilon u)|\,d|\kappa_s|(u)+\theta\varepsilon\!\int|\chi| . \tag{3}
+$$
+
+Since $|\hat\chi(v)|\le C(1+|v|)^{-2}$, we have $\varepsilon|\hat\chi(\varepsilon u)|\le C'/(1+|u|)$ for $\varepsilon\le1$, and $\varepsilon|\hat\chi(\varepsilon u)|\to0$ for each $u$. By the hypothesis and dominated convergence, the right side of (3) tends to $0$ as $\varepsilon\to0$. Also $\sum_{k\ge0}2^{-k}|\hat\chi(2^{-k}u)|\le C''/(1+|u|)$: for $|u|\le1$ bound each term by $C2^{-k}$; for $|u|>1$ the terms with $2^{-k}\le1/|u|$ sum to at most $2C/|u|$, and the others are at most $C2^{k}/u^2$ and sum to at most $2C/|u|$. So
+
+$$
+\sum_{k\ge0}\bigl|\langle T,\chi_{\varepsilon_02^{-k}}\rangle\bigr|<\infty\qquad\text{for every }\varepsilon_0\in(0,1]. \tag{4}
+$$
+
+*$\nu_0$ has finite mass near each zero.* Fix $\gamma\in Z$ and $\varepsilon_0\le1$ such that $\gamma$ is the only point of $Z$ within $2\varepsilon_0$ of $\gamma$. Take $\chi\ge0$ smooth, supported in $\{\tfrac12\le|s|\le2\}$, with $\chi\ge1$ on $\{\tfrac34\le|s|\le\tfrac32\}$. The support of $\chi_\varepsilon$ avoids $Z$ for $\varepsilon\le\varepsilon_0$, so $\nu_0(\{\tfrac34\varepsilon\le|t-\gamma|\le\tfrac32\varepsilon\})\le\langle T,\chi_\varepsilon\rangle$. The annuli for $\varepsilon=\varepsilon_02^{-k}$ cover $0<|t-\gamma|\le\tfrac32\varepsilon_0$, so by (4) $\nu_0$ has finite mass there. Let $\nu$ be the nonnegative measure on $\mathbb R$ that equals $\nu_0$ off $Z$ and gives no mass to $Z$. It is locally finite.
+
+*$T=\nu$.* Near $\gamma$ the distribution $S=T-\nu$ is supported at the point $\gamma$, so $S=\sum_{k\le K}c_k\delta_\gamma^{(k)}$ there. For a test function $\chi$ supported in $[-1,1]$ and $\varepsilon\le\varepsilon_0$, $\langle S,\chi_\varepsilon\rangle=\sum_{k\le K}c_k(-1)^k\varepsilon^{-k}\chi^{(k)}(0)$. On the other hand $\langle T,\chi_\varepsilon\rangle\to0$ by (3), and $|\langle\nu,\chi_\varepsilon\rangle|\le\sup|\chi|\cdot\nu(\{0<|t-\gamma|\le\varepsilon\})\to0$. So $\sum_kc_k(-1)^k\varepsilon^{-k}\chi^{(k)}(0)\to0$ as $\varepsilon\to0$ for every such $\chi$. Choosing $\chi$ with $\chi^{(K)}(0)\ne0$ gives $c_K=0$ when $K\ge1$, and by descent all $c_k$ with $k\ge1$ vanish; then $\chi(0)\ne0$ gives $c_0=0$. Hence $T=\nu$ near every point of $Z$, and so on $\mathbb R$. In particular $T$ is a nonnegative tempered distribution, that is, $\nu$ is a tempered measure and $\langle T,f\rangle=\int f\,d\nu\ge0$ for every Schwartz function $f\ge0$.
+
+*Conclusion.* Take $\psi\in C_c^\infty$ real, even, nonnegative, not zero, supported in $(-\tfrac12\log2,\tfrac12\log2)$, and $\varphi=\psi*\psi$. Then $\hat\varphi=\hat\psi^2\ge0$ is a Schwartz function, and
+
+$$
+0\le\int\hat\varphi\,d\nu=\langle T,\hat\varphi\rangle=-\langle\hat\kappa_s,\hat\varphi\rangle-\theta\!\int\hat\varphi=-2\pi\int\varphi\,d\kappa_s-2\pi\,\theta\,\varphi(0).
+$$
+
+On $(0,\log2)$ the measure $\mu_\Lambda$ vanishes, so $\kappa=\mu\ge0$ there, and $\varphi\ge0$ is supported in $(-\log2,\log2)$. So the right side is at most $0$. Hence $\theta\varphi(0)=0$, which gives $\theta=0$, and $\int\hat\psi^2d\nu=0$, so $\nu$ is carried by the real zeros of $\hat\psi$, a discrete set that does not contain $0$. Replacing $\psi$ by $\psi(\cdot/c)$ with $c$ slightly less than $1$ moves those zeros to $1/c$ times themselves; for all but countably many $c$ the two zero sets are disjoint. So $\nu=0$, $T=0$, $\hat\kappa_s=0$ and $\kappa=0$. For an admissible system the last paragraph of the proof of Theorem 2 applies. $\qquad\blacksquare$
+
+The proof of Theorem 2 is the special case in which $\hat\kappa_s$ is a continuous function, so that nothing can hide at the zeros of $\Xi$. Here the decay hypothesis does that work: a change that grows more slowly than $u$ cannot produce a delta function or a pole of $\hat\kappa_s$ at a real frequency.
 
 ## 5. Numbers
 
