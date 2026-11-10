@@ -3,6 +3,7 @@
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
 - [Weil positivity and the forcing of prime mass: certified intervals, computations, and conditional rigidity](weil-positivity-forces-the-primes.md)
+- [Systems that satisfy Weil positivity compared with the primes, through kernels built from Xi squared](admissible-systems-xi-kernel-comparison.md)
 - [Actual-zeta explicit formula in Fourier and Laplace conventions](actual-zeta-explicit-formula-source-adapter.md)
 - [Explicit short-interval bounds for the complete Weil form](actual-weil-single-window-coercivity.md)
 - [Integer endpoint collars have no arithmetic self-correlation](integer-endpoint-collar-compression.md)
