@@ -13,6 +13,10 @@ Outcome, 10 November 2026, x0 = 1.05, UMAX = 3.2. Degree of w : B(w):
 In every case the smallest grid value of h_w/h_w(0) is below 1e-50 in absolute value and min w = +2.3.
 The kernel vanishes on the grid at pairs of neighbouring points near x = 2, 3, 4, 5, 7, 8, 9 (in that order as the
 degree grows). Degree 32 was not resolved by the double-precision solver.
+Caveats found in review: at UMAX = 3.2 the degree-0 and degree-4 kernels are below the 1e-50 noise floor of the table
+for x above about 20, so those two LPs must be run with UMAX = 2.5 (then B = 0.0751971 and 0.00619232). The fixed grid
+lets the kernels dip to about -1e-6 between grid points near u = log 2, so none of these values is a valid bound; see
+xi_kernel_conductor_cutting_plane.py for the corrected values, which are 0.1 to 6 percent larger.
 """
 import mpmath as mp, numpy as np, pickle, sys
 from scipy.optimize import linprog

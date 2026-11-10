@@ -11,6 +11,9 @@ R = 4, KAPPA = 0.004, UMAX = 3.0, DIG = 6:  alpha = [2.27942, 0.0506854, 0.00078
    h(0) = 1.00000097083, B = 6.6985551e-4 (q >= 0.99933037), smallest h/h(0) on [0, 1.2] about 2.96e-4 near u = log 2.
 R = 6, KAPPA = 0.0005, UMAX = 3.0, DIG = 7:  alpha = [2.258739, 0.05216107, 0.0007103534, 4.97466e-6, 4.918306e-8, 0, 1.584807e-12],
    h(0) = 0.999999995562, B = 8.3460966e-5 (q >= 0.99991654).
+   WARNING: xi_kernel_conductor_certificate.py certifies that this R = 6 kernel is NEGATIVE (about -9.6e-10) near
+   u = 1.4712, between the grid points used here. It is not a valid kernel for Corollary 1. The R = 4 kernel is
+   certified positive on [0, 4].
 """
 import mpmath as mp, numpy as np, pickle, sys
 from scipy.optimize import linprog
