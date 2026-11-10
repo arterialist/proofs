@@ -50,6 +50,14 @@ $$
 
 On the real line $\hat h_g=|E|^2\Xi^2$. Write $w=|E|^2$ and $h_w=h_g$. For $E=1$, $h_w=\Psi$. For $E$ a real polynomial in $z^2$ times powers of $z$, $w$ is an even polynomial, $h_w$ is real and even, and $h_w=\sum_r\alpha_rM_r$ with $w(t)=\sum_r\alpha_rt^{2r}$ and $M_r(u)=\int\Phi^{(r)}(v)\Phi^{(r)}(v-u)\,dv$.
 
+For an even polynomial $w$, (K) can be written without primes on one side. Since $\Xi(\pm\tfrac i2)=\xi(0)=\tfrac12$, the pole term is $\tfrac12w(\tfrac i2)$ with $w(\tfrac i2)=\sum_r\alpha_r(-\tfrac14)^r$, so
+
+$$
+2\sum_n\frac{\Lambda(n)}{\sqrt n}\,h_w(\log n)=h_w(0)\cdot\frac{\pi\,w(\tfrac i2)+\int w\,\Xi^2\,\Omega\,dt}{\int w\,\Xi^2\,dt}. \tag{K'}
+$$
+
+[xi_kernel_identity_check.py](../../certificates/prime-birth/xi_kernel_identity_check.py) evaluates the right side of (K') by quadrature for $w=1$ and for the kernels of degree $8$ and $12$ used in section 5, and it agrees with the left side, computed separately from a kernel table and a list of prime powers, to nine digits.
+
 The script [xi_kernel_check_conventions.py](../../certificates/prime-birth/xi_kernel_check_conventions.py) checks the normalisations on $g$ with $\hat g=\Xi$: the two sides of the linear analogue of (K), $W_0(\Phi)$ and $2\sum_n\Lambda(n)n^{-1/2}\Phi(\log n)$, both equal $0.00268921591077$.
 
 ## 3. The comparison theorem
