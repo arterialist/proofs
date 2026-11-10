@@ -2,6 +2,8 @@
 
 Put each research note in the closest [subject folder](building-blocks/). Add its title to that folder's `index.md` and link any Lean file or certificate that supports it. Keep the claim, assumptions, and proof status near the start of the note. Say explicitly when an RH implication depends on an unproved estimate.
 
+A Lean theorem counts as a result only when its statement has no hypothesis beyond the ranges of its variables. A theorem that takes a bound, a "system", a "certificate", a "witness" or a "deficit" as a hypothesis is a conditional implication, and its title, commit message and note must say so. Zero `sorry`, standard axioms and a clean build do not change this. Run `lake env lean formalization/verification/ConditionalAudit.lean` before describing any theorem as a proof of the Riemann hypothesis or of an equivalent statement. It lists every such theorem with its hypotheses.
+
 Lean modules belong in [formalization/BuildingBlocks](formalization/BuildingBlocks/). Add a new import to [BuildingBlocks.lean](formalization/BuildingBlocks.lean) and run `lake build`. Scripts for finite checks belong in [certificates](certificates/); paper audits belong in [reviews/papers](reviews/papers/).
 
 Use [unique contributions](unique-contributions/) or [first formalizations](first-formalizations/) only when the entry gives a specific comparison with earlier work. A bounded search supports a provisional priority judgment, not certainty that no earlier version exists.

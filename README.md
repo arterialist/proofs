@@ -2,7 +2,13 @@
 
 Counting moves from $n$ to $n+1$. Factorization describes the same number through primes. This repository studies how those two structures meet, especially how a new prime affects later composite numbers and the error in counting primes.
 
-Some results prove that a particular bound would imply the Riemann hypothesis (RH); they do not prove the bound. The recent Lean zero-free result covers $\mathrm{Re}(s) > 1/2$ and $0 < \mathrm{Im}(s) \le 7.465$. The high-frequency operator interfaces still require unproved estimates. Each result states whether it is written mathematics, a Lean theorem, or a finite computation. A September 2026 audit found no verified theorem here that improves the global mathematical frontier toward RH. The repository still contains seven specialized results with plausible originality and five provisional first-Lean packages. These labels record bounded searches, not worldwide priority. Demoted statements remain in [formalization records](formalization/records/) or the subject building blocks.
+## Status
+
+The Riemann hypothesis (RH) is not proved here.
+
+- **Proved in Lean with no hypotheses.** [UnconditionalResults.lean](formalization/BuildingBlocks/UnconditionalResults.lean) restates every such result in one file. The main ones are that $\zeta(s)\ne0$ for $\mathrm{Re}(s)>1/2$ and $0<\mathrm{Im}(s)\le7.538$, which is a classically known range, and a family of unconditional oscillation theorems for the arithmetic observable $W(x)$ with the exact constants $-1/6$ and $8/9-\gamma/3$.
+- **Conditional.** Every Lean declaration here that concludes RH, or a statement proved equivalent to it, takes a hypothesis. The [conditionality audit](formalization/verification/conditional-audit.md) lists all 370 of them with their hypotheses and finds none without one. Some earlier commit messages describe such theorems as proofs of RH. They are implications.
+- **Written mathematics and finite computations** are labelled as such in each note. A September 2026 audit found no verified theorem here that improves the global mathematical frontier toward RH.
 
 ## Start reading
 
@@ -22,8 +28,9 @@ Some results prove that a particular bound would imply the Riemann hypothesis (R
 | [Certificates](certificates/) | Scripts for finite calculations cited by notes. |
 | [Candidate original results](unique-contributions/) | 7 specialized reports with exact statements, proof or certificate evidence, and bounded source comparisons. None is currently certified as a global RH-frontier advance. |
 | [First formalizations](first-formalizations/) | 5 provisional Lean records with no-`sorry` artifacts and bounded public search scopes. |
-| [Formalization records](formalization/records/) | 374 demoted claim pages preserved as documentation without novelty or firstness claims. |
+| [Formalization records](formalization/records/) | Demoted claim pages preserved as documentation without novelty or firstness claims. |
 | [Reviews](reviews/) | Literature comparisons and audits of published arguments. |
+| [Knowledge](knowledge/) | Categories of failed approaches met in this project, with the references they rest on. |
 
 The [long catalog](building-blocks/catalog.md) has detailed cross-references. [Adding work](CONTRIBUTING.md) explains how to record a result and its proof status.
 
@@ -33,6 +40,7 @@ The [long catalog](building-blocks/catalog.md) has detailed cross-references. [A
 lake exe cache get
 lake build
 lake env lean formalization/verification/Audit.lean
+lake env lean formalization/verification/ConditionalAudit.lean
 ```
 
 The project uses Lean 4.34.1 and Mathlib revision `d13f23b7`, pinned in [lake-manifest.json](lake-manifest.json). The port to that Mathlib is in progress: the RH-chain modules and the growth criteria build, and [the build status snapshot](formalization/verification/build-status-2026-10-31.md) lists the registered modules that still fail, grouped by the module that blocks them. Read axiom reports together with the theorem's full hypotheses. A theorem can use only standard foundational axioms while still assuming RH or an unproved estimate.

@@ -9,6 +9,8 @@ priority claim.
 
 From the repository root, run `lake exe cache get` and `lake build`. To check the axiom audit directly, run `lake env lean formalization/verification/Audit.lean`.
 
+[UnconditionalResults.lean](BuildingBlocks/UnconditionalResults.lean) restates in one file the theorems that hold with no hypothesis beyond variable ranges. `lake env lean formalization/verification/ConditionalAudit.lean` regenerates [conditional-audit.md](verification/conditional-audit.md), the list of every declaration that concludes RH or a registered equivalent, with its hypotheses.
+
 Compiled Lean theorems should be read with their hypotheses. In particular, a theorem deriving RH from an arithmetic bound does not establish that bound.
 
 The exponent and support algebra for the complete three-factor Möbius prefix extension is in [ActualMobiusK3BottomSlice.lean](BuildingBlocks/ActualMobiusK3BottomSlice.lean), with its declaration and axiom audit in [ActualMobiusK3BottomSliceAudit.lean](verification/ActualMobiusK3BottomSliceAudit.lean). The external Robert--Sargos and Bordellès estimates remain written analytic inputs.
@@ -35,4 +37,4 @@ formalizes the exact convolution identity for the distinct-prime Selberg
 weight and its finite divisor-sum form. The accompanying note records why
 this adjacent identity is not the coefficient of the critical Vaughan packet.
 
-The same applies to records and interfaces: an explicit `h_rh`, `sys`, or `evaluator` argument remains a premise, and defining a scalar or finite-dimensional model with operator or Fredholm terminology does not construct the corresponding analytic operator. In the imported threshold chain, the unconditional cumulative zero-free theorem currently reaches height `1493 / 200 = 7.465`; extensions above that height use supplied slab or high-frequency evaluation hypotheses. The imported proper-cofactor algebra does not include a proved signed cofactor estimate.
+The same applies to records and interfaces: an explicit `h_rh`, `sys`, or `evaluator` argument remains a premise, and defining a scalar or finite-dimensional model with operator or Fredholm terminology does not construct the corresponding analytic operator. In the imported threshold chain, the unconditional cumulative zero-free theorem currently reaches height `3769 / 500 = 7.538` (`cumulative_zero_free_to_seven_five_three_eight` in `RiemannZetaFourThirtySixRatioDeficit`); extensions above that height, including the `8.05` statements in `RiemannZetaEightZeroBounds`, use supplied deficit, slab or high-frequency hypotheses that nothing discharges. The imported proper-cofactor algebra does not include a proved signed cofactor estimate.
