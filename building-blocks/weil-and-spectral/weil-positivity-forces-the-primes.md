@@ -129,8 +129,33 @@ The script [explicit_formula_double_positivity_lp.py](../../certificates/prime-b
 | $200$, $2.5$, $1.9$ | $2.8\cdot10^{-4}$ | $14.12{:}0.99$, $20.91{:}0.97$, $24.78{:}0.91$, $30.25{:}0.92$, $32.79{:}1.04$ | $2.003{:}0.477$, $3.008{:}0.631$, $4.047{:}0.344$, $5.035{:}0.692$ |
 | $400$, $3$, $1.9$ | $8\cdot10^{-5}$ | $14.13{:}1.00$, $20.99{:}0.98$, $30.40{:}0.95$, $32.98{:}0.90$, $43.25{:}0.97$, $49.63{:}1.00$ | $2.000{:}0.490$, $3.002{:}0.635$ |
 | $400$, $3$, $1.5$ | $8\cdot10^{-5}$ | $14.13{:}1.00$, $20.99{:}0.99$, $30.41{:}0.96$, $32.92{:}0.98$, $43.19{:}0.98$, $48.00{:}0.94$ | $2.000{:}0.485$, $3.002{:}0.628$ |
+| $800$, $3.5$, $1.5$ | $1\cdot10^{-5}$ | $14.13{:}1.00$, $21.00{:}0.99$, $25.14{:}0.86$, $32.98{:}0.92$, $43.34{:}0.95$, $47.97{:}0.89$ | $2.000{:}0.487$, $3.000{:}0.629$ |
 
-The true values are zeros at $14.13$, $21.02$, $25.01$, $30.42$, $32.94$, $37.59$, $40.92$, $43.33$, $48.01$, $49.77$ and weights $0.490$, $0.634$, $0.347$, $0.720$ at $2,3,4,5$. With a condition $x_0$ between $1.2$ and $1.9$ the solution has masses close to $1$ near the first zeros and prime-side peaks at $2$, $3$, $4$, $5$ with roughly the right weights. The total mass on the zero side below $T$ agrees with the zero-counting formula ($79.19$ against $79.2$ for $T=200$, $201.64$ against $201.6$ for $T=400$). In the last row the mass within $0.016$ of $\log 6$, $\log 10$, $\log 12$, $\log 14$, $\log 15$ is $10^{-4}$, $1.6\cdot10^{-3}$, $1.6\cdot10^{-3}$, $10^{-4}$, $10^{-4}$. Without the condition (first row) the solution is a different atomic measure and a smooth competitor does almost as well, so the condition near $x=1$ is what selects the primes. This matches the role of the hypothesis "$d\ge0$ near $0$" in Proposition 1. Propositions 1 and 2 say that, under RH, the true pair of measures cannot be changed by a finite amount on either side; they do not exclude other solutions that differ from it by an infinite amount.
+The true values are zeros at $14.13$, $21.02$, $25.01$, $30.42$, $32.94$, $37.59$, $40.92$, $43.33$, $48.01$, $49.77$ and weights $0.490$, $0.634$, $0.347$, $0.720$ at $2,3,4,5$. With a condition $x_0$ between $1.2$ and $1.9$ the solution has masses close to $1$ near the first zeros and prime-side peaks at $2$, $3$, $4$, $5$ with roughly the right weights. The total mass on the zero side below $T$ agrees with the zero-counting formula ($79.19$ against $79.2$ for $T=200$, $201.64$ against $201.6$ for $T=400$). In the last row the mass within $0.016$ of $\log 6$, $\log 10$, $\log 12$, $\log 14$, $\log 15$ is $10^{-4}$, $1.6\cdot10^{-3}$, $1.6\cdot10^{-3}$, $10^{-4}$, $10^{-4}$. Without the condition (first row) the solution is a different atomic measure and a smooth competitor does almost as well, so the condition near $x=1$ is what brings the minimal-$s$ solution close to the zeta data. This matches the role of the hypothesis "$d\ge0$ near $0$" in Proposition 1. Propositions 1 and 2 say that, under RH, the true pair of measures cannot be changed by a finite amount on either side; they do not exclude other solutions that differ from it by an infinite amount.
+
+**A consequence of RH that mentions neither primes nor zeros.** Let $W_0(h)=\int h(u)\,2\cosh(u/2)\,du+\frac1{2\pi}\int\hat h(t)\bigl(\operatorname{Re}\psi(\tfrac14+\tfrac{it}2)-\log\pi\bigr)dt$ be the pole and archimedean part of the explicit formula, for $h$ real, even, smooth and compactly supported. If RH holds, then
+
+$$
+W_0(h)\ge0\quad\text{whenever}\quad \hat h(t)\ge0\ \text{for all real }t\quad\text{and}\quad h(u)\ge0\ \text{for }|u|\ge\log2 .
+$$
+
+Indeed the explicit formula gives $W_0(h)=\sum_\gamma\hat h(\gamma)+2\sum_n\Lambda(n)n^{-1/2}h(\log n)$, the ordinates are real under RH, and every $\log n$ in the second sum is at least $\log2$. The linear program above is the dual of this inequality: a function $h$ in that cone with $W_0(h)<0$ is exactly a certificate that no pair of nonnegative measures exists, and it would disprove RH. The function $h_g$ with $W_0(h_g)<0$ found in section 3 at $L=0.8$ is not in the cone: only $n=2$ enters there and the form with the prime $2$ included is positive in the computation, so $h_g(\log2)<0$. Whether the inequality on this cone implies RH is the uniqueness question for the continuous problem, which is open here.
+
+**How much of this is forced.** The table shows one solution, the one with the smallest $s$. [explicit_formula_double_positivity_lp_ranges.py](../../certificates/prime-birth/explicit_formula_double_positivity_lp_ranges.py) fixes the tolerance at $2s^*$ ($T=200$, $U=2.5$, $x_0=1.5$) and computes the smallest and largest mass that any solution can put in a window.
+
+| window | smallest | largest | true |
+|---|---|---|---|
+| zero side, $t<13$ | $0$ | $0.054$ | $0$ |
+| zero side, $[13.6,14.6)$ | $0.522$ | $1.008$ | $1$ |
+| zero side, $[15.2,20)$ | $0$ | $0.559$ | $0$ |
+| zero side, $[20.5,21.5)$ | $0$ | $1.082$ | $1$ |
+| zero side, $[24.5,25.5)$ | $0$ | $1.092$ | $1$ |
+| prime side, $x\in[1.9,2.1)$ | $0.447$ | $0.494$ | $0.490$ |
+| prime side, $x\in[2.2,2.8)$ | $0$ | $0.129$ | $0$ |
+
+So at this size the constraints pin the weight of the prime $2$ to within ten percent, exclude zero-side mass below height $13$, and force at least half of a unit mass near the first zero. They do not force the second and later zeros: once the tolerance is doubled, the windows around them can be emptied. The agreement of the higher zeros in the table is a property of the minimal-$s$ solution.
+
+**Negative result in degree two.** The same program with the Gamma factor $\Gamma(s)$, conductor $4$ or $3$ and a simple pole, which are the data of the Dedekind zeta functions of $\mathbb Q(i)$ and $\mathbb Q(\sqrt{-3})$, does not return those fields' primes and zeros at $(T,U)=(200,2.5)$, $(300,3)$ or $(400,4.5)$. For conductor $4$ at $(400,4.5)$ the zero-side clusters are at $5.73$, $7.98$, $9.44$, $10.58$, $12.81$ against the true $6.02$, $10.24$, $12.99$, $14.13$, and the prime-side mass is $0.044$ at $2$ and $0.017$ at $5$ against the true $0.490$ and $1.440$. For conductor $3$ a few features are near the truth and most are not. One plausible reason is that nonnegativity of the total prime measure is a much weaker constraint when the measure is a sum of two parts, one of which is signed. Whatever the reason, the degree-one outcome is not evidence of a general mechanism.
 
 Limits of this computation. The third zero comes out split ($24.8$ and $25.6$ or $25.8$) and the accuracy degrades with height, since $U=3$ only involves prime powers below $20$. $s$ is small and positive, not zero, because zeros above $T$ are replaced by a smooth density. Minimising $s$ is one choice of objective; no uniqueness theorem is proved for the continuous problem, and Proposition 1 covers only finite changes and assumes RH. One web search on 10 November 2026 found no paper doing this computation, which is not a claim of novelty.
 
