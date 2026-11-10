@@ -126,7 +126,7 @@ the positivity of G23 need m = 12. An optional second argument selects the
 kernel set: "deg16" (default, everything listed under OUTCOME up to G23),
 "deg24" (the four degree-24 window kernels at 2 and 3, with R = 4 rerun as a
 check), or "deg24b" (the degree-24 conductor kernel R=12 and the window
-kernels at 4 and 5; these need m = 14 and about 8 minutes):
+kernels at 4 and 5; these need m = 14 and about 7.5 minutes):
 
   python3 certificates/prime-birth/xi_kernel_conductor_certificate.py 12 deg24
   python3 certificates/prime-birth/xi_kernel_conductor_certificate.py 14 deg24b
@@ -136,8 +136,9 @@ are not rounded outward; the exact endpoints are the fractions j/2^m printed
 next to them or in the FACT lines.
 
 The exit code is 0 only if R = 4 is certified positive, every kernel of the
-set passes the Sturm check (C0), and every FACT line holds (window facts,
-wide-window minima, negative sets). An optional
+set passes the Sturm check (C0), the hand criterion holds wherever it is
+printed, and every FACT line holds (window facts, wide-window minima,
+negative sets). An optional
 third argument is a file name; the lattice tables are saved there for
 xi_kernel_window_design_mixed.py.
 
@@ -243,7 +244,7 @@ OUTCOME (run on 10 November 2026, h0 = 2^-12)
   derivative orders up to 18, gives the same (C2) and (C3) as above.
   In both sets the script now also prints (C0) and asserts the window facts.
 
-  Kernel set "deg24b" (arguments 14 deg24b; about 7 minutes; h0 = 2^-14).
+  Kernel set "deg24b" (arguments 14 deg24b; about 7.5 minutes; h0 = 2^-14).
   Designed by xi_kernel_window_design_mixed.py with the floor adapted to
   this lattice. (C0) holds for all five kernels.
   R=12 (conductor kernel; its only negative coefficient is alpha_11, and
@@ -834,6 +835,8 @@ def main():
                   "4 alpha_%d alpha_%d is %s; if True, alpha_%d s^%d + alpha_%d s^%d + "
                   "alpha_%d s^%d >= 0 for s >= 0, hence w(t) >= alpha_0 for every real t"
                   % (i, i, i - 1, i + 1, hand, i - 1, i - 1, i, i, i + 1, i + 1))
+            if not hand:
+                failed.append(name + " hand criterion")
         alpha = [frac_iv(Fraction(s)) for s in astr]
         absal = [abs(a) for a in alpha]
         R = len(alpha) - 1
@@ -928,7 +931,8 @@ def main():
                        if not low[j] > 0 and not (j >= na * NH and j + 1 <= nb * NH)]
                 print("     NEGATIVE SET FACT (every cell of [0, %d] not inside [%s, %s] has a "
                       "positive lower bound): %s; the cells without one are %d..%d of width 1/%d"
-                      % (U_POS_CAP, na, nb, "HOLDS" if not und else "FAILS", bad[0], bad[-1], NH))
+                      % (U_POS_CAP, na, nb, "HOLDS" if not und else "FAILS",
+                         bad[0] if bad else -1, bad[-1] if bad else -1, NH))
                 if und:
                     failed.append(name + " negative set")
         j12 = math.ceil(Fraction(12, 10) * NH)
