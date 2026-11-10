@@ -31,7 +31,13 @@ With known primes (ratio 1.0005 or 1.001, d = 0.0001); "W" is W0(h) minus the kn
      above log 7, h >= 0 outside (2.056873, 2.5) and h >= -1.978347; remaining mass >= 0.0389 between x = 7.8214 and 12.1826.
   known 2, 3, 5, 7, 11 (and 4, 8, 9), L = 2.68, c = (0.233, 0.459, 0.670, 0.857, 1):  W in [-0.255932, -0.148844];
      above log 11, h >= 0 outside (2.397794, 2.68) and h >= -1.205473; remaining mass >= 0.0617 between x = 11 and 14.5852.
-An independent review on the same day rederived the closed forms and reran the cases up to L = 2.05; the last two
+  known primes to 13 (and 4, 8, 9, 16), L = 2.93, c = (0.238, 0.466, 0.673, 0.846, 0.963, 0.980, 1), ratio 1.0003:
+     W in [-0.307194, -0.213092]; above log 13, h >= 0 outside (2.564920, 2.93) and h >= -2.808533;
+     remaining mass >= 0.0379 between x = 13 and 18.7277.
+  known primes to 17 (and 4, 8, 9, 16), L = 3.03, c = (0.175, 0.347, 0.514, 0.672, 0.823, 1, 0.338), ratio 1.0003:
+     W in [-0.153067, -0.096856]; above log 17, h >= 0 outside (2.833200, 3.03) and h >= -1.034131;
+     remaining mass >= 0.0468 between x = 17 and 20.6973.
+An independent review on the same day rederived the closed forms and reran the cases up to L = 2.05; the last four
 rows were added after it.
 Unconditional statements about the pole and archimedean functional. They say nothing about RH."""
 import sys, math
