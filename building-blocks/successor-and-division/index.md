@@ -3,6 +3,7 @@
 Titles link to the individual notes. A note may contain a proof, a conditional criterion, a counterexample, or an open estimate.
 
 - [Coherent mean removal in the actual successor quadrature](actual-coherent-successor-quadrature-refinement.md)
+- [Deleting primes from the integers: the counting error is a sum of ripples](sifted-integers-clock-error-ripples.md)
 - [Positive quadrature from the actual integer birth cusps](actual-integer-birth-positive-quadrature.md)
 - [Exact carry refinement on the diagonal integer orbit](actual-prefix-refinement.md)
 - [The actual compensated-successor primitive](actual-source-successor-primitive.md)
