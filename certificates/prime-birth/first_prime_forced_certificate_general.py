@@ -9,7 +9,10 @@ and h(0) = (L/2) sum c_j^2. The functional without primes is
 Near 0: the numerator n of F has n(0) = 0 and |n'| <= 2.5 h(0) + G d on [0, d], G = (L/2) sum c_j^2 w_j^2 >= |h''|,
 and 1 - e^{-2u} >= 2u(1 - u), so |F| <= (2.5 h(0) + G d)/(2 (1 - d)) on [0, d].
 If mu >= 0 and W0(h) - 2 int h dmu >= 0 then mu({h < 0}) >= |W0(h)|/(2 max|h^-|), and {h < 0} lies in (u1, L).
-Usage: python3 first_prime_forced_certificate_general.py L c1,c2,... [mesh ratio, default 1.001] [d, default 1e-4]
+With a list of known primes p1,p2,... the script subtracts their true contribution 2 sum (log p/sqrt q) h(log q) over the
+powers q = p^k < e^L, and the conclusion is about a nonnegative measure mu' supported above log(largest known prime):
+if W0(h) - known - 2 int h dmu' >= 0 then mu' has mass at least |W0(h) - known|/(2 max|h^-|) where h < 0 there.
+Usage: python3 first_prime_forced_certificate_general.py L c1,c2,... [mesh ratio, default 1.001] [d, default 1e-4] [known primes p1,p2,...]
 
 Outcome, 10 November 2026.
   L = 1, c = (1), ratio 1.005, d = 0.001:  W0(h) in [-0.125721, -0.107629]; mass >= 0.2152 between 1.3295 and e.
@@ -17,10 +20,18 @@ Outcome, 10 November 2026.
   L = 0.8, c = (1, 0.192, 0.103), ratio 1.0005, d = 0.0001 (17979 subintervals, about 30 s):
      W0(h) in [-0.016499, -0.014629];  h >= 0 on [0, 0.249359];  h >= -0.202793;
      mass >= 0.0360 at positions between 1.2832 and e^0.8 = 2.2255.
+With known primes (ratio 1.0005 or 1.001, d = 0.0001); "W" is W0(h) minus the known primes' contribution:
+  known 2, L = 1.25, c = (0.521, 1, 0.318):  W in [-0.147558, -0.141107]; above log 2, h >= 0 outside (0.758874, 1.25)
+     and h >= -0.401919; remaining mass >= 0.1755 between x = 2.1359 and 3.4903.
+  known 2, 3 (and 4), L = 1.75, c = (0.396, 0.749, 1):  W in [-0.164271, -0.137134]; above log 3, h >= 0 outside
+     (1.210736, 1.75) and h >= -0.642174; remaining mass >= 0.1068 between x = 3.3560 and 5.7546.
+  known 2, 3, 5 (and 4), L = 2.05, c = (0.262, 0.514, 0.749, 1, 0.772):  W in [-0.268578, -0.187416]; above log 5,
+     h >= 0 outside (1.631696, 2.05) and h >= -1.130037; remaining mass >= 0.0829 between x = 5.1125 and 7.7679.
 Unconditional statements about the pole and archimedean functional. They say nothing about RH."""
 import sys, math
 from mpmath import iv, mp
 iv.dps = 30
+KNOWN = [int(v) for v in sys.argv[5].split(",")] if len(sys.argv) > 5 else []
 Ls = sys.argv[1]; cs = sys.argv[2].split(","); RATIO = float(sys.argv[3]) if len(sys.argv) > 3 else 1.001; D0 = float(sys.argv[4]) if len(sys.argv) > 4 else 1e-4
 L = iv.mpf(Ls); c = [iv.mpf(x) for x in cs]; J = len(c); pi = iv.pi
 w = [2 * pi * (j + 1) / L for j in range(J)]
@@ -54,14 +65,28 @@ dn = lambda x: math.floor(float(iv.mpf(x).a) * 1e6 - 1) / 1e6
 up = lambda x: math.ceil(float(iv.mpf(x).b) * 1e6 + 1) / 1e6
 print(f"L = {Ls}, coefficients {cs}, {len(pts)-1} subintervals;  h(0) = |g|^2 in [{dn(h0.a):.6f}, {up(h0.b):.6f}]")
 print(f"W0(h) in [{dn(W0.a):.6f}, {up(W0.b):.6f}]")
-if up(W0.b) >= 0: print("NOT certified: the upper bound is not negative"); sys.exit(1)
-N = 20000; hmin = iv.mpf(0); first_neg = None
+W = W0; ustart = iv.mpf(0)
+for p in KNOWN:
+    q = p
+    while iv.log(iv.mpf(q)).b < L.a:
+        W = W - 2 * iv.log(iv.mpf(p)) / iv.sqrt(iv.mpf(q)) * h(iv.log(iv.mpf(q))); q *= p
+    assert not (iv.log(iv.mpf(q)).a <= L.b and iv.log(iv.mpf(q)).b >= L.a), "a prime power sits at e^L"
+if KNOWN:
+    ustart = iv.log(iv.mpf(max(KNOWN)))
+    print(f"with the known primes {KNOWN} and their powers below e^L subtracted: W(h) in [{dn(W.a):.6f}, {up(W.b):.6f}]")
+if up(W.b) >= 0: print("NOT certified: the upper bound is not negative"); sys.exit(1)
+N = 20000; hmin = iv.mpf(0); first_neg = None; last_neg = None
 for k in range(N):
-    X = L * iv.mpf([iv.mpf(k) / N, iv.mpf(k + 1) / N]); X = iv.mpf([X.a, X.b]); v = h(X)
+    X = L * iv.mpf([iv.mpf(k) / N, iv.mpf(k + 1) / N]); X = iv.mpf([X.a, X.b])
+    if X.b <= ustart.a: continue                                    # cells at or below the largest known prime carry no mass of mu'
+    v = h(X)
     if v.a < hmin.a: hmin = iv.mpf(v.a)
-    if v.a < 0 and first_neg is None: first_neg = k
-u1 = L * iv.mpf(first_neg) / N
-mass = (-iv.mpf(up(W0.b))) / (2 * (-iv.mpf(dn(hmin.a))))
-print(f"h >= 0 on [0, {dn(u1.a):.6f}];  h >= {dn(hmin.a):.6f} on [0, L]")
-print(f"CERTIFIED: W0(h) < 0. If mu >= 0 and W0(h) - 2 int h dmu >= 0, then mu(({dn(u1.a):.6f}, {Ls})) >= {dn(mass.a):.6f},")
-print(f"           that is, mass at least {dn(mass.a):.4f} at positions x = e^u between {dn(iv.exp(iv.mpf(dn(u1.a))).a):.4f} and e^L = {up(iv.exp(L).b):.4f}")
+    if v.a < 0:
+        if first_neg is None: first_neg = k
+        last_neg = k + 1
+u1 = L * iv.mpf(first_neg) / N; u2 = L * iv.mpf(last_neg) / N
+mass = (-iv.mpf(up(W.b))) / (2 * (-iv.mpf(dn(hmin.a))))
+where = f"above log {max(KNOWN)}" if KNOWN else "on (0, L]"
+print(f"{where}: h >= 0 outside ({dn(u1.a):.6f}, {up(u2.b):.6f});  h >= {dn(hmin.a):.6f}")
+print(f"CERTIFIED: the functional is negative on this g. If the remaining measure is >= 0 and the functional with it is >= 0 on g,")
+print(f"           it has mass at least {dn(mass.a):.4f} at positions x = e^u between {dn(iv.exp(iv.mpf(dn(u1.a))).a):.4f} and {up(iv.exp(iv.mpf(up(u2.b))).b):.4f}")

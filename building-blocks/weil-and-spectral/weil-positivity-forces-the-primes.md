@@ -1,6 +1,6 @@
 # Weil positivity forces the primes one at a time: computations and a conditional rigidity lemma
 
-**Status.** Proposition 3 is **unconditional**; its proof is a short argument plus an interval-arithmetic computation. Propositions 1 and 2 are proved below in full and are **conditional on the Riemann hypothesis**. They are elementary and probably known; no literature search was done for them. Sections 3 to 7 are numerical computations with the true primes on finite sets of test functions, in double precision or at 60 digits. They are not proofs. Nothing here proves positivity of Weil's functional for any support length, and nothing here proves or bounds anything about zeros of $\zeta$. Section 6 reproduces a phenomenon reported by Connes, Consani and Moscovici. No Lean formalization.
+**Status.** Propositions 3 and 4 are **unconditional**; their proofs are a short argument plus interval-arithmetic computations. Propositions 1 and 2 are proved below in full and are **conditional on the Riemann hypothesis**. They are elementary and probably known; no literature search was done for them. Sections 3 to 7 are numerical computations with the true primes on finite sets of test functions, in double precision or at 60 digits. They are not proofs. Nothing here proves positivity of Weil's functional for any support length, and nothing here proves or bounds anything about zeros of $\zeta$. Section 6 reproduces a phenomenon reported by Connes, Consani and Moscovici. No Lean formalization.
 
 ## 1. Setting
 
@@ -91,6 +91,18 @@ Consequently, if $\mu$ is a nonnegative Borel measure on $(0,\infty)$, finite on
 The same method with $L=0.8$ and $g(u)=\sin\theta+0.192\sin2\theta+0.103\sin3\theta$, $\theta=2\pi u/0.8$, on $[0,0.8]$ gives $W_0(h_g)\in[-0.016499,-0.014629]$, $h_g\ge0$ on $[0,0.2493]$ and $h_g\ge-0.2028$, so under the same hypothesis for this $g$ the measure has mass at least $0.036$ between $x=1.283$ and $x=e^{0.8}=2.2255$ ([first_prime_forced_certificate_general.py](../../certificates/prime-birth/first_prime_forced_certificate_general.py)). The interval for the position narrows and the bound on the mass weakens as $L$ decreases toward $\log 2$.
 
 The function $g$ is continuous and piecewise smooth, not in $C_c^\infty$. If the functional with $\mu$ is nonnegative on smooth test functions supported in $[0,1]$, the inequality for this $g$ follows by approximation; that step is routine and is not written out here. The only prime power between $1.329$ and $e$ is $2$, with weight $\log2/\sqrt2=0.490$, and for the true primes $W_0(h_g)-2h_g(\log2)\cdot0.490=+0.009$. In words: a system with Riemann's Gamma factor and a simple pole whose Weil functional is nonnegative must have a generalized prime below $e$, of weight at least $0.215$ if it has only one there. This says nothing about RH.
+
+**Proposition 4 (unconditional; interval arithmetic; the next three steps).** Let $P$ be $\{2\}$, $\{2,3\}$ or $\{2,3,5\}$, let $\mu_P=\sum(\log p/\sqrt q)\,\delta_{\log q}$ over the powers $q=p^k$ of the primes $p\in P$, and let $\mu'$ be a nonnegative Borel measure supported in $(\log\max P,\infty)$ and finite on bounded sets. With $g=\sum_jc_j\sin(2\pi ju/L)$ on $[0,L]$ as in the table, if $W_0(h_g)-2\int h_g\,d(\mu_P+\mu')\ge0$ then $\mu'$ has at least the stated mass at positions $x=e^u$ in the stated interval.
+
+| $P$ | $L$ | $(c_1,c_2,\dots)$ | $W_0(h_g)-2\int h_g\,d\mu_P$ lies in | mass of $\mu'$ at least | for $x$ between |
+|---|---|---|---|---|---|
+| $\{2\}$ | $1.25$ | $(0.521,\,1,\,0.318)$ | $[-0.147558,\,-0.141107]$ | $0.1755$ | $2.1359$ and $3.4903$ |
+| $\{2,3\}$ | $1.75$ | $(0.396,\,0.749,\,1)$ | $[-0.164271,\,-0.137134]$ | $0.1068$ | $3.3560$ and $5.7546$ |
+| $\{2,3,5\}$ | $2.05$ | $(0.262,\,0.514,\,0.749,\,1,\,0.772)$ | $[-0.268578,\,-0.187416]$ | $0.0829$ | $5.1125$ and $7.7679$ |
+
+*Proof.* Same argument as Proposition 3, with the closed form of $h_g$ for a sine polynomial and the enclosures printed by [first_prime_forced_certificate_general.py](../../certificates/prime-birth/first_prime_forced_certificate_general.py), which also certifies that $h_g\ge0$ above $\log\max P$ outside the interval and gives the lower bound for $h_g$ used for the mass. $\qquad\blacksquare$
+
+In the second and third rows $\mu_P$ contains the atom at $4$. The true prime powers in the three intervals that are not already in $\mu_P$ are $3$, then $5$, then $7$. The certificates do not locate the mass inside the interval: the third one does not exclude mass at $6$. Sharper localisation is what the computations below indicate, and it is not proved.
 
 The remaining statements in this section are computations, not proofs.
 
