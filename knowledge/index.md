@@ -52,336 +52,96 @@
 | observation_off_critical_crossover_horizons_p1.md | high | Off-critical excursions masked ($< 10^{-24}$) on $x \le 20000$; crossover requires $x > 10^{35}$ (low height) or $x > 10^{263.5}$ (Platt-Trudgian zeros) |
 | observation_displacement_rigidity_strip_boundary_p1.md | high | Displacement numerator $P(d) = 2d(1/4-d^2)$ strictly positive on critical strip interior $0 < d < 1/2$, zero on boundaries $d \in \{0, 1/2\}$, and negative for $d > 1/2$ |
 | observation_subunit_threshold_static_degeneracy_p1.md | high | Low-frequency partitions $H \le 7.465$ are mathematically static because $|t| \le 7.465$ contains zero zeros, while for $H > 7.465$ collapse strictly fails |
-| observation_mathlib_zeta_one_nonzero_junk_value_p1.md | high | Mathlib 4 convention sets riemannZeta 1 = 0, creating a non-zero junk value requiring explicit $s \ne 1$ hypotheses to avoid false zero detections |
-| observation_resolvent_positive_zero_interference_p1.md | high | Real-zero interference in rational resolvents cancels off-line negative wells for small displacements, precluding local negative dissipation signatures |
-| observation_weil_autocorrelation_quadruplet_positivity_p1.md | high | Autocorrelation test functions $\Phi = f * \tilde{f}$ force strictly positive quadruplet cross-terms $2\operatorname{Re}(\hat{g}_+\overline{\hat{g}_-}) > 0$, refuting negative energy extraction |
-| observation_calogero_moser_lattice_screening_p1.md | high | Multi-particle Calogero-Moser zero repulsion undergoes lattice screening and zero spacing infimum decays to 0, refuting isolated 2-particle collision thresholds |
-| observation_critical_boundary_quadratic_vanishing_p1.md | high | Real coordinate disparity vanishes quadratically $O((\beta-1/2)^2)$ at critical line zeros, and ratio deficit reverses at $\gamma \approx 7.49$ due to $O(1/\gamma)$ vs $O(1/\gamma^4)$ decay |
-| observation_completed_zeta_nodal_phase_matching_p1.md | high | Phase ratio equality $\Theta_{\mathrm{int}} = \Theta_{\mathrm{alg}}$ holds identically along continuous 1D nodal curves $\operatorname{Im}(\xi)=0$ throughout the strip and at all actual zeros |
-| observation_chirped_wavepacket_support_exit_p1.md | high | Stationary phase point $x_{\mathrm{stat}}(T) \to 1/(2\eta) > w$ exits support for $T > T_{\mathrm{exit}}$, extinguishing zero coupling super-polynomially ($< 5\times 10^{-14}$ at $T=500$) |
-| observation_symmetrized_resolvent_off_critical_pole_collapse_p1.md | high | Reflection-invariant mapping $z(s) = s(1-s)$ collapses Herglotz positivity under off-critical poles ($\operatorname{Im}(F) \to -\infty$), while finite critical-zero sampling is blind to off-critical poles |
-| observation_conjugate_zero_dissipation_cancellation_p1.md | high | Complex conjugate zero pair dissipation kernels cancel identically on the real axis ($D(s, x) + D(\bar{s}, x) \equiv 0$), precluding symmetric resolvent energy signatures |
-| observation_subconvexity_zero_exclusion_boundary_restriction_p1.md | high | Subconvexity bounds on $\operatorname{Re}(s)=1/2$ cannot exclude zeros across $1/2 < \operatorname{Re}(s) < 1$; critical-line growth bounds are restricted to 1D boundaries |
-| observation_turan_discriminant_off_line_concavity_p1.md | high | Off-line zero quadruplet $\tau_0 \pm \delta_0 \pm i\gamma_0$ forces Turán discriminant $T(\Xi)(\gamma_0) \approx -2\Xi(\gamma_0)^2/\delta_0^2 < 0$, creating a concave plunge |
-| observation_archimedean_boundary_phase_cancellation_p1.md | high | Archimedean phase well cancels identically to zero on the critical boundary $\operatorname{Re}(s)=1/2$, while normal derivative $\frac{d}{d\sigma}A(1/2, t) \sim -1/(4t^2) < 0$ is wrong-sided |
-| observation_phragmen_lindelof_offline_zero_invariance_p1.md | high | Radial Phragmén-Lindelöf growth indicator $h(\theta)$ of entire $\Xi(z)$ is asymptotically blind to off-line zeros ($O(r^{-1/2}\log r) \to 0$), precluding radial ray detection |
-| observation_suzuki_smooth_jordan_density_zero_moment_p1.md | high | Smooth Jordan totient density $k_\omega(t)$ in Suzuki's arithmetic Hankel operator satisfies zero-moment cancellation $\int_0^1 t^\omega k_\omega(t)dt \equiv 0$, leaving only oscillatory Chebyshev prime error |
-| observation_laguerre_turan_converse_sufficiency_failure_p1.md | high | Converse to Laguerre's and Turán's theorems is false: even polynomials can have strictly positive invariants $L(f) > 0, T(f) > 0$ on $\mathbb{R}$ while possessing off-line zeros (refuted by $(x^2-1)(x^2+4)$) |
-| observation_offline_zero_adjacent_root_defect_overpowering_p1.md | high | Adjacent critical-line zeros overpower off-line quadruplet defects $+1/\delta^2 \gg 2/\delta_0^2$ (e.g. $+999,800$ vs $-200$) in second-order invariants when carrier distance $|\tau_0 - \gamma_n| < \delta_0/\sqrt{2}$ |
-| observation_selberg_scattering_residue_pole_at_one_p1.md | high | Selberg trace formula continuous scattering determinant $\Phi(s)$ on $\operatorname{PSL}(2, \mathbb{Z})\backslash \mathbb{H}$ has a pole at $s=1$ from Eisenstein series, obstructing causal resolvent bounded inversion on $[1/2, 1]$ |
-| observation_finite_canonical_system_infinite_exponential_type_mismatch_p1.md | high | Riemann xi function $\Xi(z)$ has infinite exponential type ($(1/r)\log|\Xi(-ir)| \sim (1/2)\log r \to \infty$), mathematically precluding its realization as monodromy transfer of any finite Krein canonical system |
-| observation_glm_spectral_measure_quadratic_pole_divergence_p1.md | high | Continuous spectral measure $d\rho(t) = dt/(\pi |\Xi_0(t)|^2)$ has non-integrable quadratic poles $(t-\gamma_n)^{-2}$ at all critical zeros (prefactor $\sim 5.23 \times 10^5$), causing GLM kernel $F(x, y)$ to diverge wildly |
-| observation_semilocal_quantile_transport_mass_barrier_p1.md | high | Monotone quantile transport between atomic prime measures $\mu_X$ and continuous densities encounters an insurmountable $\Omega(X^{1/4})$ mass-discrepancy barrier, precluding subpower trace-norm decay without collective phase cancellation |
-| observation_unimodular_hankel_norm_vacuity_p1.md | high | Nehari's theorem implies Hankel norm bound $\|H_\Theta\| \le 1$ holds vacuously for all unimodular boundary symbols; innerness requires $\|H_\Theta\| = 0$ |
-| observation_krein_metric_negativity_and_pick_blindness_p1.md | high | Finite Pick matrices are blind to distant off-line zeros, and reproducing kernel negativity $K(z,z) < 0$ collapses de Branges Hilbert spaces into Krein spaces admitting complex eigenvalues |
-| observation_riemann_kernel_normalization_and_moment_alternation_p1.md | high | Riemann kernel prefactor is 4 ($\int_0^\infty \Phi = \xi(1/2)/4$), and moment sign alternation $(-1)^m c_m > 0$ fails to exclude complex zeros (counterexample $w^2-2w+2$) |
-| observation_automorphic_quadruplet_reflection_invariance_p1.md | high | Off-line zero quadruplets preserve reflection symmetry $P_{\mathcal{Q}}(w) = P_{\mathcal{Q}}(1-w)$ and scattering relation $\phi(s)\phi(1-s) \equiv 1$ identically, precluding symmetry-breaking refutations |
-| observation_polarization_decomposition_sign_competition_p1.md | high | $\operatorname{Re}(F(z)) < 0$ near critical zeros creates opposing drag $2(\sigma-1/2)\operatorname{Re}(F) < 0$ against transverse positivity, refuting componentwise reinforcement |
-| observation_upper_half_plane_resolvent_semicircle_variety_p1.md | high | Resolvent imaginary part for off-line zero pairs is negative inside semicircle $|w-\lambda_\delta| < 2t\delta$, which is consistent with ambient Krein space geometry |
-| observation_boundary_rolle_coercivity_margin_collapse_p1.md | high | At intermediate Rolle points $x_*$ between critical zeros on $[1/4, \infty)$, $\operatorname{Im}(F(x_*-i\epsilon)) \to 0$ linearly as $\epsilon \to 0$, destroying uniform boundary coercivity |
-| observation_littlewood_midgap_horizontal_leakage_barrier_p1.md | high | Mid-gap horizontal contour leakage $I_{\text{horiz}} \approx 1.58$ in Littlewood-Carleman slab identity dwarfs maximum zero displacement ($0.5$), blocking $\mathcal{D}_{\text{offline}} = 0$ deduction |
-| observation_mollified_mobius_neutral_constraint_failure_p1.md | high | Regularized arithmetic weights $c_k = -\mu(k)(1-\log k/\log N)^2$ fail neutral constraint $\sum c_k/k = 0$ completely ($+0.38$ at $N=100$), blowing up $H^2$ norm of Mellin transform |
-| observation_li_coefficient_strict_convexity_p1.md | high | Li coefficients have strictly convex second differences ($\Delta^2 \lambda_1 \approx +0.046 > 0$), mathematically refuting positive Laplace-Stieltjes measure representations |
-| observation_discrete_weil_gap_heisenberg_leakage_p1.md | high | Localized Weil test vectors of bandwidth $w \asymp 1/\log T$ leak $> 60.2\%$ into adjacent critical zeros by Heisenberg uncertainty |
-| observation_davenport_heilbronn_conformal_analytic_blindness_p1.md | high | Order-1/2 genus-0 entire functions $\Xi_*(z)$ admit Davenport-Heilbronn counterexamples $f_a(s)$ with identical functional equations, real axis positivity, and moments yet possessing infinitely many off-line zeros, proving complex-analytic mechanisms cannot establish RH without Euler products |
-| observation_disk_uniformization_nevanlinna_class_failure_p1.md | high | Pullbacks $g(w) = \xi(1/(1+w))$ fail Nevanlinna bounded characteristic class membership ($g \notin \mathcal{N}(\mathbb{D})$) due to logarithmic divergence $-\frac{\pi}{4}\log T \to -\infty$ from critical-line Stirling decay $\exp(-\pi t/4)$, invalidating standard Nevanlinna-Riesz/Blaschke factorizations |
-| observation_cauchy_riemann_boundary_nodal_alternation_blindness_p1.md | high | Boundary nodal origination alternation $\lim_{\alpha \to 0^+} \operatorname{Im}(\xi)/\alpha = -\Xi'(\beta)$ is a universal Cauchy-Riemann property along symmetry line that coexists with interior orthogonal nodal intersections and off-line zeros (degree-8 polynomial counterexample) |
-| observation_schwarz_reflection_carleman_integrand_annihilation_p1.md | high | Off-axis Carleman boundary integrand $\log|\Xi_*(x-i\varepsilon)/\Xi_*(x+i\varepsilon)| \equiv 0$ vanishes identically by Schwarz reflection for real entire functions, while physical clearance to the critical line contracts as $\varepsilon/(2t) \to 0$, causing contours to crash into critical zeros |
 | observation_dyadic_mellin_ibp_high_frequency_amplification_p1.md | high | Dyadic Mellin integration by parts introduces $|s+1| \approx |t|$ in the numerator, amplifying high frequencies rather than regularizing by $1/|s|$, while primitive $L^2$ energy regularization hits Selberg's parity floor $\Omega(X^5/\log^{2A} X) \gg X^4$ |
-| observation_conformal_parabolic_horn_bound_violation_p1.md | high | In conformal coordinates $z=s(1-s)$, the parabolic horn upper bound $x < y^2 + 1/4$ is violated by $t^2(1-4\delta^2) - \delta^2 > 0$ across 100% of non-trivial zeros for $t > 0.289$, exceeding the horn boundary by 181.8 at $\gamma_1$ and $9 \times 10^{24}$ at $3 \times 10^{12}$ |
-| observation_poisson_jensen_zero_conjugation_invariance_p1.md | high | Boundary modulus data $|F(x)|$ along the real axis is strictly invariant under zero conjugation $\lambda \leftrightarrow \bar{\lambda}$ ($|x-\lambda| = |x-\bar{\lambda}|$), preventing real-boundary Poisson-Jensen integrals from unilaterally distinguishing zeros in $\mathbb{C}^-$ from $\mathbb{C}^+$ |
-| observation_green_defect_cubic_frequency_decay_p1.md | high | Conformal half-plane Dirichlet Green defect $G(\lambda_0, z_0)$ at fixed evaluation pole decays cubically as $O(\gamma_0^{-3})$ due to quadratic horizontal separation $u_0 \approx \gamma_0^2$ vs linear vertical distance $v_0 = \gamma_0(2\beta_0-1)$, collapsing to $1.59 \times 10^{-10}$ at $\gamma_0=1000$ and drowned out by $O(\log \gamma)$ Selberg fluctuations |
 
-| observation_euler_product_continuation_barrier_p1.md | high | Termwise analytic continuation of Euler product Dirichlet series $\log \zeta(s)$ across $\operatorname{Re}(s)=1/2$ carries 100% of Millennium RH analytical depth |
-| observation_automorphic_scattering_unitary_coercivity_tautology_p1.md | high | Eisenstein scattering matrix unitarity $|\Phi(1/2+it)| = 1$ is an exact functional symmetry providing zero forward coercivity off the critical line |
 
-| observation_conrey_li_de_branges_obstruction_persistence_p1.md | high | Completed xi functions cannot generate classical de Branges spaces without violating Hermite-Biehler contractivity |
-| observation_weil_prime_positivity_circularity_p1.md | high | Deducing Weil functional positivity directly from prime sums requires square-root prime error bounds equivalent to RH |
 
-| observation_gorz_jensen_polynomial_horizontal_limit_barrier_p1.md | high | GORZ horizontal limits for fixed degree Jensen polynomials cannot extrapolate to all degrees at unshifted origin $n=0$ |
-| observation_gue_pair_correlation_offline_invariance_p1.md | high | GUE level repulsion and pair correlation are statistical bulk properties that are invariant under sparse off-line zeros |
 
-| observation_berry_keating_continuous_spectrum_discretization_barrier_p1.md | high | Berry-Keating xp dilation Hamiltonian has continuous spectrum; boundary discretization breaks self-adjointness or encodes zeros circularly |
-| observation_bost_connes_complex_continuation_barrier_p1.md | high | Bost-Connes KMS thermal equilibrium is restricted to real temperatures beta > 0 and cannot constrain complex zeros in the critical strip |
 
-| observation_vinogradov_exponential_sum_logarithmic_barrier_p1.md | high | Vinogradov-Korobov exponential sum methods and decoupling inequalities are mathematically restricted to logarithmic zero-free regions shrinking to zero width |
-| observation_ultrametric_phase_obliteration_p1.md | high | Non-Archimedean valuations satisfy $|p^{it}|_p = 1$ and tropical geometry replaces addition with max, completely destroying imaginary phase interference |
 
-| observation_gutzwiller_semiclassical_trace_divergence_p1.md | high | Gutzwiller semiclassical trace formula diverges beyond Heisenberg time, continuous Eisenstein scattering disrupts discrete quantization, and orbit resummation circularly reconstructs Euler product branch cuts |
-| observation_modular_converse_non_coercivity_p1.md | high | Modular converse theorems establish automorphy from twist functional equations, but automorphy is strictly insufficient to exclude off-line zeros |
 
-| observation_cue_ensemble_averaging_rigidity_gap_p1.md | high | CUE random matrix moments describe ensemble averages invariant under off-line zero shifts, and CMV unitary operators circularly assume a unimodular measure |
-| observation_toeplitz_infinite_winding_essential_spectrum_p1.md | high | Divergent Riemann-Siegel phase winding causes the essential spectrum of Toeplitz operators with symbol zeta/zeta_bar to fill the unit disk, destroying Fredholm index stability |
 
-| observation_deninger_foliated_flow_regularization_divergence_p1.md | high | Deninger arithmetic cohomology space on Spec(Z) remains unconstructed, and transverse Lefschetz trace regularizations encounter ultraviolet divergences |
-| observation_modular_symbol_discrete_critical_integer_restriction_p1.md | high | Modular symbols and Eichler-Shimura cohomology evaluate L-functions strictly at discrete critical integers, possessing zero continuous interpolation mechanism |
-| observation_ihara_tower_base_isolation_gap_p1.md | high | Euler-Kronecker invariants and Ihara-Tsfasman-Vladut limits govern asymptotic tower growth as $[K:\mathbb{Q}] \to \infty$ with zero leverage on the base field $\mathbb{Q}$, circularly presupposing GRH |
-| observation_beltrami_dilatation_distortion_floor_p1.md | high | Quasiconformal extremal length on slit surfaces has logarithmic capacity zero at isolated zero punctures; Beltrami deformations produce small dilatations $O(\delta_0)$ absorbed by slit capacity |
-| observation_arithmetic_topology_archimedean_metric_gap_p1.md | high | Arithmetic topology knot-prime analogies provide discrete topological invariants but lack an Archimedean Riemannian metric or analytic continuation along $s = 1/2 + it$ |
-| observation_ruelle_mayer_nuclear_spectral_boundary_p1.md | high | Mayer transfer operator $\mathcal{L}_s$ on the Gauss map is nuclear for $\operatorname{Re}(s) > 1/2$, but compactness and $R(\mathcal{L}_s) \le 1$ cannot rule out isolated eigenvalues at 1 |
-| observation_quantum_graph_scattering_unitarity_barrier_p1.md | high | Metric quantum graph Laplacians require unitary scattering matrices, precluding non-unitary prime damping $p^{-1/2}$ while orbit expansions diverge |
-| observation_pt_symmetric_metric_positivity_circularity_p1.md | high | Constructing a positive definite metric operator $\eta > 0$ for PT-symmetric Hamiltonians circularly presupposes spectral reality, collapsing under off-line zeros |
-| observation_beilinson_regulator_discrete_integer_boundary_p1.md | high | Beilinson-Deligne regulators evaluate motivic cohomology strictly at discrete integer arguments $s \in \mathbb{Z}$, lacking vertical interpolation onto $s = 1/2 + it$ |
-| observation_arakelov_green_current_vertical_decoupling_p1.md | high | Gillet-Soulé Arakelov Green currents and curvature forms decouple from vertical imaginary phases $t$, while intersection positivity is confined to boundary divisors |
-| observation_perfectoid_tilting_local_prime_decoupling_p1.md | high | Scholze's tilting functor is purely local and $p$-adic, decoupling across distinct primes and lacking Archimedean glue along $s = 1/2 + it$ |
-| observation_connes_adele_trace_deficit_circularity_p1.md | high | Connes' adèle class trace deficit $D(f) \ge 0$ is mathematically equivalent to Weil quadratic positivity, circularly requiring RH |
-| observation_berkovich_skeleton_prime_decoupling_p1.md | high | Berkovich skeletal reduction trees decouple across distinct primes and are invariant under vertical frequency shifts $t = \operatorname{Im}(s)$ |
-| observation_symplectic_floer_energy_bubbling_barrier_p1.md | high | Hamiltonian Floer homology pseudoholomorphic curve energy diverges as prime periods $\log p \to \infty$, collapsing via cylinder bubbling |
-| observation_fontaine_period_ring_local_frobenius_decoupling_p1.md | high | Fontaine period rings and $p$-adic Hodge comparison isomorphisms operate locally at single primes $p$, with crystalline Frobenius eigenvalues $\phi$ possessing zero continuous vertical analytic control along $s = 1/2 + it$ across the Archimedean continuum |
-| observation_tropical_amoeba_phase_linearization_blindness_p1.md | high | Tropical amoebas and Ronkin potentials linearize complex modulus, eliminating oscillatory phase interferences and proving blind to isolated off-critical zero excursions in the critical strip |
-| observation_anabelian_profinite_rigidity_vacuum_p1.md | high | Grothendieck anabelian reconstruction operates on pro-finite fundamental groups, recovering schemes algebraically but lacking continuous analytic metrics to constrain vertical complex zeros |
-| observation_chromatic_homotopy_height_decoupling_p1.md | high | Chromatic filtration layers classify formal group laws by discrete height, operating as stable topological invariants completely decoupled from Archimedean vertical oscillation frequencies |
-| observation_motivic_integration_arc_rationality_decoupling_p1.md | high | Denef-Loeser motivic zeta functions evaluate geometric arcs yielding rational functions of algebraic origin that decouple from transcendental vertical frequencies |
-| observation_contact_homology_reeb_orbit_bubbling_divergence_p1.md | high | Contact homology for arithmetic Reeb flows encounters holomorphic building bubbling in symplectization as actions $\log p \to \infty$, breaking Fredholm index control |
-| observation_noncommutative_motives_additive_linearization_vacuum_p1.md | high | Tabuada non-commutative motives linearize dg-categories into additive invariants that decouple from continuous Archimedean frequencies, possessing zero transverse coercivity |
-| observation_condensed_mathematics_frechet_isomorphism_neutrality_p1.md | high | Condensed mathematics and liquid vector spaces reproduce classical Fréchet topology of entire functions, providing zero alteration or constraint on root distributions |
-| observation_buium_calculus_local_derivation_decoupling_p1.md | high | Buium arithmetic derivations operate strictly locally on $p$-adic rings, possessing zero continuous Archimedean vertical analytic continuation |
-| observation_categorified_knot_homology_discrete_grading_blindness_p1.md | high | Categorified knot homology yields discrete bigraded $\mathbb{Z}$-modules that decouple completely from continuous complex oscillation frequencies of Dirichlet series |
-| observation_kudla_special_cycle_fourier_noncoercivity_p1.md | high | Kudla special cycle generating series evaluate discrete intersection numbers that decouple from continuous vertical analytic oscillations |
-| observation_shifted_symplectic_derived_stack_algebraic_decoupling_p1.md | high | Shifted symplectic derived stacks yield stable algebraic invariants completely decoupled from transcendental complex oscillations of zeta(s) |
 
-| observation_nonarchimedean_theta_degeneracy_decoupling_p1.md | high | Non-Archimedean theta degenerations on Siegel moduli boundaries evaluate period lattices that decouple from Archimedean spectral properties |
-| observation_kontsevich_soibelman_wall_crossing_combinatorial_invariance_p1.md | high | Kontsevich-Soibelman wall-crossing formulas are combinatorial Lie algebra identities decoupled from continuous root distributions of zeta(s) |
 
-| observation_courant_algebroid_differential_symmetry_decoupling_p1.md | high | Arithmetic Courant algebroids and generalized complex structures evaluate differential symmetries decoupled from complex oscillations of zeta(s) |
-| observation_homological_mirror_symmetry_period_decoupling_p1.md | high | Homological mirror symmetry Picard-Fuchs periods evaluate geometric variations decoupled from prime Euler product zeros |
 
-| observation_nakajima_quiver_variety_algebraic_decoupling_p1.md | high | Nakajima quiver varieties parameterize algebraic representations that decouple from transcendental complex frequencies of zeta(s) |
-| observation_matrix_factorization_singularity_period_decoupling_p1.md | high | Matrix factorizations categorize isolated hypersurface singularities, evaluating local residue invariants decoupled from prime Euler products |
 
-| observation_f1_monoid_scheme_combinatorial_vacuity_p1.md | high | Schemes over F_1 strip away addition, leaving combinatorial monoid invariants blind to complex zeros of zeta(s) |
-| observation_closed_string_field_theory_moduli_decoupling_p1.md | high | Closed string field theory vertices evaluate moduli integrations that decouple from non-trivial zeros of zeta(s) |
 
-| observation_loop_group_coadjoint_orbit_modular_decoupling_p1.md | high | Affine loop group coadjoint orbits evaluate modular characters that decouple from microscopic complex zeros of zeta(s) |
-| observation_nongeometric_flux_compactification_prime_vacuum_p1.md | high | Non-geometric string flux compactifications evaluate moduli minima decoupled from arithmetic prime Euler products |
 
-| observation_arithmetic_chern_simons_hyperbolic_volume_decoupling_p1.md | high | Arithmetic Chern-Simons partition functions evaluate hyperbolic volumes decoupled from Archimedean vertical oscillations |
-| observation_noncommutative_hodge_polarization_period_decoupling_p1.md | high | Non-commutative Hodge structures compute categorical period pairings that decouple from prime Euler products |
 
-| observation_rigid_automorphic_drinfeld_symmetric_space_decoupling_p1.md | high | Rigid automorphic forms on Drinfeld p-adic symmetric spaces decouple across primes and lack Archimedean continuation |
-| observation_character_variety_goldman_bracket_algebraic_decoupling_p1.md | high | Character varieties and Goldman symplectic brackets decouple from continuous complex zero distributions of zeta(s) |
 
-| observation_chiral_voa_shimura_curve_modular_decoupling_p1.md | high | Chiral VOAs on Shimura curves evaluate modular correlation functions decoupled from complex zeros of zeta(s) |
-| observation_essential_skeleton_polyhedral_phase_decoupling_p1.md | high | Essential skeletons of degenerating Calabi-Yaus evaluate polyhedral complexes decoupled from Archimedean oscillations |
 
-| observation_twistor_holomorphic_chern_simons_instanton_decoupling_p1.md | high | Twistor holomorphic Chern-Simons actions evaluate classical instanton charges decoupled from complex zeros of zeta(s) |
-| observation_nonarchimedean_donaldson_k_stability_decoupling_p1.md | high | Non-Archimedean Donaldson functionals evaluate algebraic Futaki invariants decoupled from prime Euler products |
 
-| observation_fedosov_star_product_characteristic_class_decoupling_p1.md | high | Fedosov star products and trace formulas evaluate characteristic classes decoupled from complex zeros of zeta(s) |
-| observation_rapoport_zink_local_period_prime_decoupling_p1.md | high | Rapoport-Zink non-Archimedean period spaces decouple across distinct primes and lack Archimedean continuation |
 
-| observation_chas_sullivan_string_topology_frequency_decoupling_p1.md | high | Chas-Sullivan string topology on free loop spaces decouples from continuous complex frequencies of zeta(s) |
-| observation_nonarchimedean_mabuchi_energy_euler_product_decoupling_p1.md | high | Non-Archimedean Mabuchi energy functionals decouple from prime Euler product zero distributions |
 
-| observation_contact_sphere_boothby_wang_rotation_decoupling_p1.md | high | Contact sphere Boothby-Wang invariants evaluate rotation numbers decoupled from complex zeros of zeta(s) |
-| observation_valuative_ding_delta_invariant_euler_product_decoupling_p1.md | high | Valuative Ding delta invariants evaluate birational thresholds decoupled from prime Euler products |
 
-| observation_ward_twistor_adhm_instanton_frequency_decoupling_p1.md | high | Ward twistor ADHM instanton moduli decouple from continuous complex frequencies of zeta(s) |
-| observation_logarithmic_delta_invariant_euler_product_decoupling_p1.md | high | Logarithmic delta invariants delta(X, B) evaluate birational thresholds decoupled from prime Euler products |
 
-| observation_amplituhedron_positive_grassmannian_kinematic_decoupling_p1.md | high | Amplituhedron positive Grassmannian forms decouple from continuous complex frequencies of zeta(s) |
-| observation_normalized_volume_functional_euler_product_decoupling_p1.md | high | Normalized volume functionals evaluate local algebraic multiplicity thresholds decoupled from prime Euler products |
 
-| observation_twistor_dirac_spinor_index_frequency_decoupling_p1.md | high | Twistor Dirac harmonic spinor pairings decouple from continuous complex frequencies of zeta(s) |
-| observation_tian_alpha_invariant_euler_product_decoupling_p1.md | high | Tian's alpha invariants evaluate global log canonical thresholds decoupled from prime Euler products |
 
-| observation_deligne_illusie_frobenius_splitting_prime_decoupling_p1.md | high | Deligne-Illusie Frobenius splitting over W_2(k) decouples from Archimedean complex frequencies of zeta(s) |
-| observation_logarithmic_ding_tropical_k_moduli_euler_product_decoupling_p1.md | high | Logarithmic Ding tropical K-moduli evaluate divisor thresholds decoupled from prime Euler products |
 
-| observation_deligne_lusztig_character_sheaf_finite_field_decoupling_p1.md | high | Deligne-Lusztig character sheaves evaluate finite-field traces decoupled from continuous frequencies of zeta(s) |
-| observation_okounkov_body_toric_degeneration_euler_product_decoupling_p1.md | high | Newton-Okounkov bodies evaluate convex polyhedral volumes decoupled from prime Euler products |
 
-| observation_geometric_satake_mirkovic_vilonen_frequency_decoupling_p1.md | high | Geometric Satake perverse sheaves evaluate dual representations decoupled from frequencies of zeta(s) |
-| observation_sasaki_einstein_log_k_stability_euler_product_decoupling_p1.md | high | Sasaki-Einstein contact invariants evaluate transverse Ricci metrics decoupled from prime Euler products |
 
-| observation_geometric_langlands_hitchin_spectral_frequency_decoupling_p1.md | high | Geometric Langlands Hitchin spectral curves evaluate algebraic connections decoupled from frequencies of zeta(s) |
-| observation_perelman_w_entropy_kahler_ricci_euler_product_decoupling_p1.md | high | Perelman W-entropy gradient flows evaluate Riemannian Ricci metrics decoupled from prime Euler products |
 
-| observation_derived_azumaya_brauer_severi_frequency_decoupling_p1.md | high | Derived Azumaya algebras evaluate formal twisted sheaves decoupled from frequencies of zeta(s) |
-| observation_orbifold_sasaki_polyhedral_cone_euler_product_decoupling_p1.md | high | Orbifold Sasaki cone metrics evaluate transverse contact volumes decoupled from prime Euler products |
 
-| observation_perverse_nori_motive_realization_frequency_decoupling_p1.md | high | Perverse Nori motives evaluate discrete Tannakian representations decoupled from frequencies of zeta(s) |
-| observation_spherical_variety_wonderful_compactification_euler_product_decoupling_p1.md | high | Spherical variety Newton-Okounkov cones evaluate colored fan geometry decoupled from prime Euler products |
 
-| observation_motivic_homotopy_a1_euler_frequency_decoupling_p1.md | high | Motivic homotopy A1-Euler characteristics evaluate quadratic forms decoupled from frequencies of zeta(s) |
-| observation_horospherical_moment_polytope_euler_product_decoupling_p1.md | high | Horospherical moment polytopes evaluate Duistermaat-Heckman measures decoupled from prime Euler products |
 
-| observation_motivic_fundamental_group_discrete_integer_decoupling_p1.md | high | Motivic fundamental groups evaluate mixed Tate periods restricted to discrete integers decoupled from frequencies of zeta(s) |
-| observation_group_compactification_asymptotically_flat_cone_euler_product_decoupling_p1.md | high | Group compactifications evaluate asymptotically flat volume ratios decoupled from prime Euler products |
 
-| observation_motivic_galois_graded_lie_algebra_weight_decoupling_p1.md | high | Motivic Galois Lie algebras evaluate discrete integer weight filtrations decoupled from frequencies of zeta(s) |
-| observation_martelli_sparks_yau_volume_euler_product_decoupling_p1.md | high | Toric Sasakian MSY volume minimization evaluates Reeb cone volumes decoupled from prime Euler products |
 
-| observation_fontaine_mazur_galois_representation_frequency_decoupling_p1.md | high | Fontaine-Mazur Galois representations evaluate discrete p-adic Frobenius eigenvalues decoupled from frequencies of zeta(s) |
-| observation_singular_del_pezzo_valuative_euler_product_decoupling_p1.md | high | Singular del Pezzo valuative invariants evaluate algebraic log discrepancies decoupled from prime Euler products |
 
-| observation_bloch_kato_motivic_cohomology_discrete_grading_decoupling_p1.md | high | Bloch-Kato motivic cohomology evaluates discrete integer-graded cycle groups decoupled from frequencies of zeta(s) |
-| observation_toric_cy_cone_sasaki_einstein_euler_product_decoupling_p1.md | high | Toric CY Sasaki-Einstein volume minimization evaluates Reeb cone volumes decoupled from prime Euler products |
 
-| observation_grothendieck_period_conjecture_discrete_torsor_decoupling_p1.md | high | Grothendieck period conjecture evaluates algebraic period integrals decoupled from frequencies of zeta(s) |
-| observation_hyperkahler_quiver_metric_euler_product_decoupling_p1.md | high | Toric hyperkähler quiver metrics evaluate moment map reductions decoupled from prime Euler products |
 
-| observation_ihara_power_series_pro_ell_frequency_decoupling_p1.md | high | Ihara universal power series evaluate discrete cyclotomic Galois characters decoupled from frequencies of zeta(s) |
-| observation_abreu_equation_moment_polytope_euler_product_decoupling_p1.md | high | Abreu equation moment polytope boundary solutions evaluate convex potentials decoupled from prime Euler products |
 
-| observation_beilinson_flach_motivic_frequency_decoupling_p1.md | high | Beilinson-Flach motivic classes evaluate discrete algebraic periods decoupled from frequencies of zeta(s) |
-| observation_fano_complete_intersection_alpha_euler_product_decoupling_p1.md | high | Fano complete intersection alpha-invariants evaluate algebraic singularity thresholds decoupled from prime Euler products |
 
-| observation_deligne_one_motive_discrete_period_decoupling_p1.md | high | Deligne 1-motive periods evaluate discrete algebraic pairings decoupled from frequencies of zeta(s) |
-| observation_fano_threefold_k_moduli_wall_crossing_euler_product_decoupling_p1.md | high | Fano 3-fold K-moduli wall crossing evaluates algebraic divisor volumes decoupled from prime Euler products |
 
-| observation_deligne_ihara_lie_algebra_discrete_grading_decoupling_p1.md | high | Deligne-Ihara Lie algebra coderivations evaluate discrete Lie brackets decoupled from frequencies of zeta(s) |
-| observation_singular_del_pezzo_klt_volume_euler_product_decoupling_p1.md | high | Singular del Pezzo klt volume minimizers evaluate local divisor valuations decoupled from prime Euler products |
 
-| observation_hirzebruch_zagier_cycle_discrete_fourier_decoupling_p1.md | high | Hirzebruch-Zagier cycles evaluate discrete Fourier coefficients decoupled from frequencies of zeta(s) |
-| observation_complexity_one_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-one T-variety polyhedral fans evaluate convex cone volumes decoupled from prime Euler products |
 
-| observation_humbert_surface_siegel_modular_frequency_decoupling_p1.md | high | Humbert surfaces evaluate algebraic cycle classes decoupled from frequencies of zeta(s) |
-| observation_bott_samelson_moment_graph_euler_product_decoupling_p1.md | high | Bott-Samelson moment graphs evaluate equivariant root hyperplanes decoupled from prime Euler products |
 
-| observation_picard_modular_surface_cycle_frequency_decoupling_p1.md | high | Picard modular special cycles evaluate algebraic cycle classes decoupled from frequencies of zeta(s) |
-| observation_horospherical_fano_colored_polytope_euler_product_decoupling_p1.md | high | Horospherical Fano colored polytopes evaluate modified DH measures decoupled from prime Euler products |
 
-| observation_quaternionic_shimura_curve_heegner_height_decoupling_p1.md | high | Quaternionic Shimura curve Heegner points evaluate CM heights decoupled from frequencies of zeta(s) |
-| observation_spherical_fano_okounkov_euler_product_decoupling_p1.md | high | Spherical Fano Newton-Okounkov bodies evaluate convex volumes decoupled from prime Euler products |
 
-| observation_exceptional_shimura_variety_cycle_frequency_decoupling_p1.md | high | Exceptional Shimura variety special cycles evaluate cycle classes decoupled from frequencies of zeta(s) |
-| observation_complexity_two_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-two T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_e8_exceptional_minimal_orbit_frequency_decoupling_p1.md | high | E8 minimal representations evaluate orbit invariants decoupled from frequencies of zeta(s) |
-| observation_complexity_three_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-three T-varieties evaluate polyhedral fan volumes decoupled from prime Euler products |
 
-| observation_kim_nonabelian_chabauty_selmer_frequency_decoupling_p1.md | high | Kim's non-abelian Chabauty method evaluates Selmer varieties decoupled from frequencies of zeta(s) |
-| observation_complexity_four_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-four T-varieties evaluate polyhedral fan volumes decoupled from prime Euler products |
 
-| observation_higher_chow_regulator_discrete_grading_decoupling_p1.md | high | Higher Chow regulator maps evaluate algebraic cycle classes decoupled from frequencies of zeta(s) |
-| observation_complexity_five_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-five T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_deligne_lusztig_frobenius_weight_frequency_decoupling_p1.md | high | Deligne–Lusztig varieties evaluate Frobenius eigenvalues decoupled from frequencies of zeta(s) |
-| observation_complexity_six_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-six T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_nonabelian_hodge_higgs_moduli_frequency_decoupling_p1.md | high | Non-abelian Hodge Higgs moduli evaluate holomorphic invariants decoupled from frequencies of zeta(s) |
-| observation_complexity_seven_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-seven T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_log_hodge_monodromy_frequency_decoupling_p1.md | high | Kato log Hodge structures evaluate nilpotent monodromy operators decoupled from frequencies of zeta(s) |
-| observation_complexity_eight_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-eight T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_shimura_curve_arakelov_height_frequency_decoupling_p1.md | high | Shimura curve Arakelov heights evaluate Archimedean Green functions decoupled from frequencies of zeta(s) |
-| observation_complexity_nine_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-nine T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_absolute_hodge_cycle_tannakian_frequency_decoupling_p1.md | high | Deligne absolute Hodge cycles evaluate Tannakian representations decoupled from frequencies of zeta(s) |
-| observation_complexity_ten_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-ten T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_deligne_illusie_cy3_frobenius_frequency_decoupling_p1.md | high | Deligne–Illusie CY3 Frobenius splittings evaluate char p actions decoupled from frequencies of zeta(s) |
-| observation_complexity_eleven_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-eleven T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_shimura_curve_etale_fundamental_group_frequency_decoupling_p1.md | high | Shimura curve fundamental groups evaluate pro-nilpotent Galois representations decoupled from frequencies of zeta(s) |
-| observation_complexity_twelve_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twelve T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_arakelov_chow_group_green_current_frequency_decoupling_p1.md | high | Shimura curve Arakelov Chow groups evaluate smooth Green currents decoupled from frequencies of zeta(s) |
-| observation_complexity_thirteen_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirteen T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_punctured_elliptic_curve_fundamental_group_frequency_decoupling_p1.md | high | Punctured elliptic curve fundamental groups evaluate Deligne associators decoupled from frequencies of zeta(s) |
-| observation_complexity_fourteen_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-fourteen T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_cuspidal_eisenstein_symbol_frequency_decoupling_p1.md | high | Cuspidal Eisenstein symbols evaluate boundary regulators decoupled from frequencies of zeta(s) |
-| observation_complexity_fifteen_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-fifteen T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_siegel_modular_fundamental_group_frequency_decoupling_p1.md | high | Siegel modular fundamental groups evaluate boundary regulators decoupled from frequencies of zeta(s) |
-| observation_complexity_sixteen_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-sixteen T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_moduli_of_curves_fundamental_group_frequency_decoupling_p1.md | high | Moduli of curves fundamental groups evaluate Johnson homomorphisms decoupled from frequencies of zeta(s) |
-| observation_complexity_seventeen_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-seventeen T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_hilbert_modular_surface_hirzebruch_zagier_frequency_decoupling_p1.md | high | Hilbert modular surfaces evaluate Hirzebruch–Zagier cycles decoupled from frequencies of zeta(s) |
-| observation_complexity_eighteen_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-eighteen T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_picard_modular_surface_kudla_rapoport_frequency_decoupling_p1.md | high | Picard modular surfaces evaluate Kudla–Rapoport special cycles decoupled from frequencies of zeta(s) |
-| observation_complexity_nineteen_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-nineteen T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_quaternionic_shimura_curve_gross_kohnen_zagier_frequency_decoupling_p1.md | high | Quaternionic Shimura curves evaluate Gross–Kohnen–Zagier cycles decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_exceptional_e6_shimura_variety_minimal_orbit_frequency_decoupling_p1.md | high | Exceptional E6 Shimura varieties evaluate minimal orbit cycles decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_one_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-one T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_exceptional_e7_shimura_variety_quaternionic_series_frequency_decoupling_p1.md | high | Exceptional E7 Shimura varieties evaluate quaternionic series cycles decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_two_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-two T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_exceptional_e8_shimura_variety_noncompact_real_form_frequency_decoupling_p1.md | high | Exceptional E8 Shimura varieties evaluate non-compact real forms decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_three_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-three T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_exceptional_f4_shimura_variety_cayley_dickson_frequency_decoupling_p1.md | high | Exceptional F4 Shimura varieties evaluate Cayley Dickson real forms decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_four_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-four T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_u21_picard_surface_monodromy_frequency_decoupling_p1.md | high | U(2,1) Picard surfaces evaluate Picard–Lefschetz monodromy decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_five_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-five T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_sp4_parahoric_shimura_variety_boundary_frequency_decoupling_p1.md | high | Sp(4) Shimura varieties evaluate parahoric boundary degenerations decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_six_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-six T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gu12_shimura_variety_kottwitz_rapoport_frequency_decoupling_p1.md | high | GU(1,2) Shimura varieties evaluate Kottwitz–Rapoport stratifications decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_seven_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-seven T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gsp6_shimura_variety_siegel_eisenstein_frequency_decoupling_p1.md | high | GSp(6) Shimura varieties evaluate Siegel–Eisenstein distributions decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_eight_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-eight T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_u33_shimura_variety_hermitian_boundary_frequency_decoupling_p1.md | high | U(3,3) Shimura varieties evaluate Hermitian boundary stratifications decoupled from frequencies of zeta(s) |
-| observation_complexity_twenty_nine_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-twenty-nine T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_so2n_shimura_variety_borcherds_product_frequency_decoupling_p1.md | high | SO(2,n) Shimura varieties evaluate Borcherds automorphic products decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_sp2n_shimura_variety_siegel_theta_frequency_decoupling_p1.md | high | Sp(2n) Shimura varieties evaluate Siegel theta characteristics decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_one_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-one T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_so3n_shimura_variety_kuga_satake_frequency_decoupling_p1.md | high | SO(3,n) Shimura varieties evaluate Kuga–Satake abelian varieties and Clifford algebra spin representations decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_two_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-two T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin2n_shimura_variety_kuga_satake_frequency_decoupling_p1.md | high | GSpin(2,n) Shimura varieties evaluate Kuga–Satake periods decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_three_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-three T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin1n_shimura_variety_hyperbolic_monodromy_frequency_decoupling_p1.md | high | GSpin(1,n) Shimura varieties evaluate hyperbolic monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_four_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-four T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin3n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(3,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_five_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-five T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin4n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(4,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_six_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-six T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin5n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(5,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_seven_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-seven T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin6n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(6,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_eight_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-eight T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin7n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(7,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_thirty_nine_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-thirty-nine T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin8n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(8,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_forty_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-forty T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin9n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(9,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_forty_one_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-forty-one T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin10n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(10,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_forty_two_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-forty-two T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin11n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(11,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_forty_three_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-forty-three T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin12n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(12,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_forty_four_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-forty-four T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin13n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(13,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_forty_five_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-forty-five T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin14n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(14,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_forty_six_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-forty-six T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
-| observation_gspin15n_shimura_variety_kuga_satake_monodromy_frequency_decoupling_p1.md | high | GSpin(15,n) Shimura varieties evaluate Kuga–Satake monodromy systems decoupled from frequencies of zeta(s) |
-| observation_complexity_forty_seven_t_variety_polyhedral_euler_product_decoupling_p1.md | high | Complexity-forty-seven T-varieties evaluate polyhedral cone volumes decoupled from prime Euler products |
 
 ## References
 | File | Confidence | Summary |
@@ -399,8 +159,6 @@
 | reference_li_criterion_positivity_p1.md | high | Li (1997): Positivity of coefficients $\lambda_n = \sum_\rho [1 - (1-1/\rho)^n]$ is equivalent to the Riemann Hypothesis |
 | reference_laguerre_polya_class_invariants_p1.md | high | Pólya & Schur (1914), Craven & Csordas (1989): Invariant differential operators, Laguerre inequalities, and the Laguerre-Pólya class $\mathcal{LP}$ |
 
-| observation_stirling_critical_line_logarithmic_divergence_p1.md | high | Critical-line Stirling decay $\log|\Xi(t)| \sim -(\pi/4)t$ forces logarithmic divergence $-0.25 \log T$ of the Carleman/Poisson-Jensen boundary integral along $[1/4, \infty)$ |
-| observation_green_poisson_residue_tautology_p1.md | high | Green-Poisson potential defect identities on slit domains are exact functional tautologies ($X \equiv X$) automatically absorbing off-line zero defects without excluding zeros |
 
 ## Node Directions
 ### Iteration 1, Round 1
