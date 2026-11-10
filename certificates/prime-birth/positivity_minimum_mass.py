@@ -11,7 +11,11 @@ EPS = 1e-7, 81 seconds, 9 Newton stalls. Minimum total weight 1.957 (the true me
 feasible but is not the minimiser). Positions with weight above 0.1: exactly 2.00, 3.00, 4.00, 5.00, with weights
 0.4886, 0.6098, 0.2576, 0.3770 (true 0.4901, 0.6343, 0.3466, 0.7198). The remaining 0.22 is spread over 31 positions,
 the largest 0.05 at 4.34. The weights are biased low and get worse toward e^L, where the constraint is loose and the
-objective rewards removing mass. A computation on finitely many test functions. It proves nothing about RH."""
+objective rewards removing mass. Second run: L = 2.0 (numbers below 7.39), K = 40, grid 1.06, ..., 7.38 (317 positions), 201 seconds, 8 stalls.
+Minimum total weight 2.560 (true 2.926). Positions with weight above 0.03: exactly 2.00, 3.00, 4.00, 5.00, 7.00, with
+weights 0.4887, 0.5997, 0.2741, 0.6172, 0.3481 (true 0.4901, 0.6343, 0.3466, 0.7198, 0.7355). Nothing above 1e-4 within
+0.02 of 6. The remaining 0.23 is spread over 56 positions, the largest 0.023 at 2.98.
+A computation on finitely many test functions. It proves nothing about RH."""
 import numpy as np, sys, time
 import weil_form as weil
 L, K = float(sys.argv[1]), int(sys.argv[2])
