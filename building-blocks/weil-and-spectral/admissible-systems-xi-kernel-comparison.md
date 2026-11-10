@@ -152,6 +152,23 @@ For conductor $1$, with kernels of degree $28$ and the same grid conditions ([xi
 
 Read as a statement, subject to the certification caveats: any system that satisfies Weil positivity with Riemann's archimedean factor, a simple pole and a nonnegative prime measure supported in $x\ge1.05$ has prime mass between $0.4901289$ and $0.4901291$ in $[1.9,2.1]$, at most $2\cdot10^{-6}$ in $[2.1,2.9]$, and between $0.634278$ and $0.634285$ in $[2.9,3.1]$. This uses no hypothesis on the zeros of $\zeta$ and does not assume that the earlier primes are known. The companion note's Propositions 3 and 4 assumed the earlier primes exactly and gave lower bounds near $0.1$ to $0.2$.
 
+### 5.4 Computed, not certified: the zero measure away from the zeta zeros
+
+By Corollary 3, if $w\ge0$, $h_w\ge0$ on the support of $\mu$, and $\Xi(t)^2w(t)\ge1$ on an interval $I$ of the $t$ axis, then $m(I)\le2\int h_w\,d\mu_\Lambda$. With kernels of degree $28$ and the same grid conditions ([xi_kernel_zero_side_bounds.py](../../certificates/prime-birth/xi_kernel_zero_side_bounds.py)):
+
+| interval $I$ of $t$ (no zeta zero inside) | upper bound for $m(I)$ |
+|---|---|
+| $[0,\,10]$ | $3.4\cdot10^{-9}$ |
+| $[0,\,13]$ | $1.1\cdot10^{-7}$ |
+| $[0,\,13.9]$ | $3.8\cdot10^{-6}$ |
+| $[14.4,\,15]$ | $3.8\cdot10^{-6}$ |
+| $[15,\,20]$ | $4.3\cdot10^{-6}$ |
+| $[15,\,20.8]$ | $1.4\cdot10^{-4}$ |
+| $[22,\,24]$ | $4.6\cdot10^{-5}$ |
+| $[26,\,29]$ | $2.9\cdot10^{-4}$ |
+
+The first zeta zeros are at $14.1347$, $21.0220$, $25.0109$, $30.4249$. So in this computation the zero measure of any admissible system of conductor $1$ has almost no mass below $13.9$, between $14.4$ and $20.8$, and so on: it can only sit near the ordinates of the zeta zeros. As noted in section 7, the method gives no lower bound for the mass at those ordinates.
+
 ## 6. Two conjectures and what they would give
 
 **Conjecture A (completeness).** If $(m,\mu)$ is an admissible system of conductor $1$, then $\mu=\mu_\Lambda$.

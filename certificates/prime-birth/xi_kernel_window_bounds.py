@@ -32,7 +32,7 @@ K, ug, PP, Pt, tm, x0, UMAX = C.K, C.ug, C.PP, C.Pt, C.tm, C.x0, C.UMAX
 D1 = int(sys.argv[4]); D = int(sys.argv[5])
 B1, a1, hmin1, wmin1, touch1, tag1 = C.solve(D1)
 beta1 = B1                                                # h1(0) = 1
-print(f"certificate kernel: degree {2*D1}, B1 = {mp.nstr(B1, 6)}, smallest grid value {mp.nstr(hmin1, 2)}")
+if __name__ == "__main__": print(f"certificate kernel: degree {2*D1}, B1 = {mp.nstr(B1, 6)}, smallest grid value {mp.nstr(hmin1, 2)}")
 a1f = np.array([float(x) for x in a1]); w1 = Pt[:D1 + 1, tm].T @ a1f
 V = Pt[:D + 1, tm].T
 objK = [mp.fsum(w * K[mp.log(n)][k] for n, w in PP) for k in range(D + 1)]
@@ -71,9 +71,10 @@ def lower(lo, hi):
     res = polished([-x for x in objK] + [beta1 / 2], rows, rhs, D + 2)
     return None if res is None else (-res[0], res[1], res[2])
 def truth(lo, hi): return sum(float(w) for n, w in PP if lo <= n <= hi)
-print(f"windows of x; kernels of degree {2*D}; prime measure assumed supported in x >= {x0}; kernel signs imposed on a grid up to x = {float(mp.exp(UMAX)):.1f}")
-print("   window        | true mass  | lower bound  (violation) | upper bound  (violation)")
-for lo, hi in [(x0, 1.9), (1.9, 2.1), (1.99, 2.01), (2.1, 2.9), (2.9, 3.1), (3.1, 3.9), (3.9, 4.1), (4.1, 4.9), (4.9, 5.1), (5.1, 6.9), (6.9, 7.1), (7.1, 7.9), (7.9, 8.1)]:
-    lb = lower(lo, hi); ub = upper(lo, hi)
-    f = lambda v: "      failed            " if v is None else f"{mp.nstr(v[0], 9):>12s} ({mp.nstr(v[1], 1):>7s})"
-    print(f"   [{lo:4.2f}, {hi:4.2f}]  | {truth(lo, hi):10.7f} | {f(lb)} | {f(ub)}", flush=True)
+if __name__ == "__main__":
+    print(f"windows of x; kernels of degree {2*D}; prime measure assumed supported in x >= {x0}; kernel signs imposed on a grid up to x = {float(mp.exp(UMAX)):.1f}")
+    print("   window        | true mass  | lower bound  (violation) | upper bound  (violation)")
+    for lo, hi in [(x0, 1.9), (1.9, 2.1), (1.99, 2.01), (2.1, 2.9), (2.9, 3.1), (3.1, 3.9), (3.9, 4.1), (4.1, 4.9), (4.9, 5.1), (5.1, 6.9), (6.9, 7.1), (7.1, 7.9), (7.9, 8.1)]:
+        lb = lower(lo, hi); ub = upper(lo, hi)
+        f = lambda v: "      failed            " if v is None else f"{mp.nstr(v[0], 9):>12s} ({mp.nstr(v[1], 1):>7s})"
+        print(f"   [{lo:4.2f}, {hi:4.2f}]  | {truth(lo, hi):10.7f} | {f(lb)} | {f(ub)}", flush=True)
