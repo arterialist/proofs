@@ -170,6 +170,18 @@ OUTCOME (run on 10 November 2026, h0 = 2^-12)
   relaxed to 5e-12, which the 1e-11 pad still covers) the same kernel gives
   the tighter 2 sum ... <= 1.5521710886e-5.
 
+  Window kernels U2 and L2 (added later the same day, after the audit; they go
+  through the same code, plus a short block that reports cell bounds inside
+  and outside a window; h0 = 2^-12). Both have nonnegative coefficients
+  (degree 16); they are designed by xi_kernel_window_design.py and
+  xi_kernel_window_design_lower.py.
+  U2: h > 0 on [0, 4]; h >= 1.0000875 on every cell covering [0.63, 0.76];
+      sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 0.49119789231 + 1.2e-114.
+  L2: h >= -0.99992559 on the cells covering [0.62, 0.77], that is on
+      [2539/4096, 3154/4096] = [0.619873, 0.770020]; h > 0 on every other
+      cell of [0, 4]; sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= -0.48717835675
+      + 3.9e-114.
+
   An independent audit on 10 November 2026 rederived the bounds of steps 1
   to 5, traced the indices, and compared about 4000 internal enclosures with
   separately computed values; it found no error. Its two small repairs (the
@@ -218,7 +230,12 @@ KERNELS = {
             "4.918306e-8", "0", "1.584807e-12"],
     "R=8": ["2.25482059", "0.0524395214", "0.000698139727", "5.51936758e-6", "3.87866857e-8",
             "1.31919267e-10", "9.53422988e-13", "0", "1.16486515e-17"],
+    "U2": ["192.7779014", "3.959614914", "0.06592039741", "0.0005995292912", "4.954190381e-6",
+           "1.738108178e-8", "1.390956481e-10", "0", "1.762076328e-15"],
+    "L2": ["1220.800154", "28.93268369", "0.3723188798", "0.002872879735", "1.940677066e-5",
+           "6.551462272e-8", "4.621451718e-10", "0", "5.605901241e-15"],
 }
+WINDOWS = {"U2": (Fraction(63, 100), Fraction(76, 100)), "L2": (Fraction(62, 100), Fraction(77, 100))}
 RM = max(len(a) for a in KERNELS.values()) - 1   # largest r in any kernel
 TOP = RM + 6                                     # highest derivative order evaluated
 
@@ -568,7 +585,8 @@ def main():
               ("3.0", "5.42823e-38")]
     refs_k = {"R=4": ("1.00000097083", "0.00066985551"),
               "R=6": ("0.999999995562", "8.3460966e-5"),
-              "R=8": ("0.99999999952207", "1.5505961e-5")}
+              "R=8": ("0.99999999952207", "1.5505961e-5"),
+              "U2": ("85.69761078", "0.011463450"), "L2": ("541.4080838", "-0.0017997323")}
     jtest = U_POS_CAP * NH
     assert jtest <= J
     summary = {}
@@ -626,6 +644,19 @@ def main():
                      jn, NH, jn / NH, ss(hv[jn], 8)))
             summary[name] = ("h is NOT nonnegative: h(%d/%d) <= %s < 0 certified"
                              % (jn, NH, su(HI(hv[jn]), 6)))
+        if name in WINDOWS:
+            wa, wb = WINDOWS[name]
+            ja_in, jb_in = math.ceil(wa * NH), math.floor(wb * NH)          # cells inside [wa, wb]
+            ja_out, jb_out = math.floor(wa * NH), math.ceil(wb * NH)        # cells covering [wa, wb]
+            print("     WINDOW [%s, %s]: min of cell lower bounds over cells inside it, [%d/%d, %d/%d]: %s"
+                  % (wa, wb, ja_in, NH, jb_in, NH, sd(min(low[j] for j in range(ja_in, jb_in)), 8)))
+            print("     WINDOW: min of cell lower bounds over cells covering it, [%d/%d, %d/%d]: %s"
+                  % (ja_out, NH, jb_out, NH, sd(min(low[j] for j in range(ja_out, jb_out)), 8)))
+            outside = [j for j in range(jtest) if (j < ja_out or j >= jb_out)]
+            badout = [j for j in outside if not low[j] > 0]
+            print("     WINDOW: cells outside [%d/%d, %d/%d] and inside [0, %d] without a positive lower bound: %d%s"
+                  % (ja_out, NH, jb_out, NH, U_POS_CAP, len(badout),
+                     "" if not badout else " (first at u = %.6f, last at u = %.6f)" % (badout[0] / NH, badout[-1] / NH)))
         j12 = math.ceil(Fraction(12, 10) * NH)
         jmin = min(range(j12), key=lambda jj: low[jj])
         print("     smallest cell lower bound of h on [0, 1.2]: %s on [%.6f, %.6f]; "

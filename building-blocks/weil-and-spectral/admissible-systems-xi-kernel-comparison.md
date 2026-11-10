@@ -1,6 +1,6 @@
 # Systems that satisfy Weil positivity compared with the primes, through kernels built from $\Xi^2$
 
-**Status.** Theorems 1 and 2 and Corollaries 1 to 4 are **unconditional** and proved here in full from the classical explicit formula. They are statements about arbitrary "admissible systems" (Definition 1). The true primes form an admissible system if and only if the Riemann hypothesis holds, so nothing here proves or bounds anything about zeros of $\zeta$. Section 5.1 holds the numbers certified by interval arithmetic. Sections 5.2 to 5.4 are 50-digit computations whose sign conditions are imposed at finitely many points; they are not certified. An independent review on 10 November 2026 rederived Theorems 1 and 2, the corollaries and the derivations in section 5, and its corrections are incorporated; it did not examine the certificate script. Section 6 states two conjectures and what would follow from them. No Lean formalization. No literature search was done for Theorems 1 and 2; the method is the classical one of Odlyzko's discriminant bounds with one twist (test functions that vanish at every zero), and may well be known.
+**Status.** Theorems 1 and 2 and Corollaries 1 to 6 are **unconditional**. Theorems 1 and 2 and Corollaries 1 to 4 are proved here in full from the classical explicit formula; Corollaries 5 and 6 add interval-arithmetic certificates of explicit kernels (Python, not a proof assistant). They are statements about arbitrary "admissible systems" (Definition 1). The true primes form an admissible system if and only if the Riemann hypothesis holds, so nothing here proves or bounds anything about zeros of $\zeta$. Section 5.1 holds the numbers certified by interval arithmetic. Sections 5.2 to 5.4 are 50-digit computations whose sign conditions are imposed at finitely many points; they are not certified. An independent review on 10 November 2026 rederived Theorems 1 and 2, Corollaries 1 to 4 and the derivations in section 5, and a separate audit examined the certificate script and the proof of Corollary 5; their corrections are incorporated. The degree-16 kernel of Proposition 5(b) and Corollary 6 were added after those reviews and use the audited code. Section 6 states two conjectures and what would follow from them. No Lean formalization. No literature search was done for Theorems 1 and 2; the method is the classical one of Odlyzko's discriminant bounds with one twist (test functions that vanish at every zero), and may well be known.
 
 ## 1. Admissible systems
 
@@ -159,6 +159,26 @@ Now sum over the cells $[3+0.1k,3.1+0.1k]$, $k\ge10$, whose centres are $a_k=3.0
 *Conclusions.* For $w_{16}$: drop the second and third terms on the left of (2) to get $\theta\le(1.5566428\cdot10^{-5}+10^{-108})/0.9999999995<1.5567\cdot10^{-5}$. Drop the first and third: $\int w_{16}\Xi^2dm<1.5567\cdot10^{-5}$, and $w_{16}\ge2.25482059$ gives $\int\Xi^2dm<6.91\cdot10^{-6}$. Drop the first two and restrict to $J\subset(0,4]$: $\mu(J)\le7.7833\cdot10^{-6}/\min_Jh$, which gives part 3. The numbers for $w_8$ follow in the same way from (c). $\qquad\blacksquare$
 
 Part 3 says, rigorously and with no hypothesis on the zeros of $\zeta$, that a system satisfying Weil positivity with Riemann's archimedean factor and conductor at most $1$ has almost no generalized primes below $1.8$ or between $2.23$ and $2.72$. Part 1 says its conductor cannot be smaller than $1$ by more than $1.6\cdot10^{-5}$.
+
+**Corollary 6 (the prime 2 is forced with its weight; unconditional, certified).** For every admissible system $(m,\mu)$ of conductor $q\le1$, with $x=e^u$:
+
+1. the prime measure has mass at most $0.49120$ on $1.8777\le x\le2.1382$;
+2. the prime measure has mass at least $0.48717$ on $1.8586\le x\le2.1601$.
+
+The true prime measure has mass $\log2/\sqrt2=0.490129$ at $x=2$ and no other mass in either interval. No gap is assumed and nothing is assumed about other primes.
+
+*Proof.* Two more kernels with nonnegative coefficients, of degree $16$, with coefficients of $t^{2i}$, $i=0,\dots,8$:
+
+- $w_U$: $192.7779014$, $3.959614914$, $0.06592039741$, $5.995292912\cdot10^{-4}$, $4.954190381\cdot10^{-6}$, $1.738108178\cdot10^{-8}$, $1.390956481\cdot10^{-10}$, $0$, $1.762076328\cdot10^{-15}$;
+- $w_L$: $1220.800154$, $28.93268369$, $0.3723188798$, $2.872879735\cdot10^{-3}$, $1.940677066\cdot10^{-5}$, $6.551462272\cdot10^{-8}$, $4.621451718\cdot10^{-10}$, $0$, $5.605901241\cdot10^{-15}$.
+
+The script certifies, for $h_U=h_{w_U}$: $h_U>0$ on $[0,4]$, $h_U\ge1$ on $[0.63,0.76]$, and $\int h_U\,d\mu_\Lambda\le0.4911979$. For $k=h_{w_L}$: $k\ge-1$ on $[0.619873,\,0.770020]$, $k>0$ on the rest of $[0,4]$, and $\int k\,d\mu_\Lambda\le-0.4871783$. Both have tails beyond $u=4$ bounded as in Proposition 5, with $T_{10}+T_{11}\le4\cdot10^{-112}$, so $\int_{(4,\infty)}|h|\,d\mu\le10^{-108}$ by the estimate in the proof of Corollary 5.
+
+By Corollary 2, $\int h_U\,d\mu\le\int h_U\,d\mu_\Lambda$ and $\int k\,d\mu\le\int k\,d\mu_\Lambda$. For the first, $\int h_U\,d\mu\ge\mu([0.63,0.76])-10^{-108}$ because $h_U\ge1$ on the window and $h_U\ge0$ on the rest of $(0,4]$. For the second, $\int k\,d\mu\ge-\mu([0.619873,0.770020])-10^{-108}$ because $k\ge-1$ on that interval and $k\ge0$ on the rest of $(0,4]$. Finally $e^{0.63}=1.87761$, $e^{0.76}=2.13828$, $e^{0.619873}=1.85869$, $e^{0.770020}=2.16003$. $\qquad\blacksquare$
+
+The lower bound uses only Corollary 2: a kernel $h_{w}$ with $w\ge0$ that is negative only inside a window, where it is at least $-1$, gives $\mu(\text{window})\ge-\int h_w\,d\mu_\Lambda$. The kernels were designed by [xi_kernel_window_design.py](../../certificates/prime-birth/xi_kernel_window_design.py) and [xi_kernel_window_design_lower.py](../../certificates/prime-birth/xi_kernel_window_design_lower.py) and were added to the certificate script after its audit; they go through the audited code, plus a short block that reports cell bounds inside and outside a window.
+
+Together with Corollary 5, part 3: a system satisfying Weil positivity with Riemann's archimedean factor and conductor at most $1$ has prime mass between $0.48717$ and $0.49120$ near $2$, at most $9\cdot10^{-4}$ below $1.82$, and at most $0.0161$ between $2.23$ and $2.72$. This is proved without any hypothesis on the zeros of $\zeta$.
 
 **A warning from the same script.** It also examined a kernel of degree $12$ that I had obtained from a linear program with sign conditions on a grid of step $0.004$, and it certified that this kernel is negative, by about $10^{-9}$, on an interval of length $0.0015$ near $u=1.4712$ that the grid stepped over. The tables in sections 5.2 to 5.4 were first computed on that fixed grid. Section 5.2 is now recomputed with constraints added adaptively where the kernel dips (a cutting-plane method), and the two sets of values are shown side by side. Sections 5.3 and 5.4 still use the fixed grid.
 
