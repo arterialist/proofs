@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Interval-arithmetic certificate for an explicit kernel built from Riemann's Phi function.
 
-This script certifies numerical properties of two explicit real functions. It
-says nothing about the Riemann hypothesis.
+This script certifies numerical properties of explicit real functions (Psi and
+the kernels h listed below). It says nothing about the Riemann hypothesis.
 
 DEFINITIONS
 
@@ -33,6 +33,10 @@ Lambda is the von Mangoldt function (Lambda(p^k) = log p, otherwise 0).
 WHAT THE SCRIPT COMPUTES (all bounds rounded outward, including the printed
 decimals)
 
+  (C0) for each kernel, the exact decision whether the even polynomial
+       w(t) = sum_r alpha_r t^(2r) is positive on the real line (Sturm chain
+       in rational arithmetic; this is needed because Corollary 2 of the note
+       applies only when w >= 0);
   (C1) an enclosure of Psi(0), an enclosure of Psi(0.05), and an enclosure of
        eps_Psi = 2 sum_{n>=2} Lambda(n) n^(-1/2) Psi(log n), with the part
        n > 60 bounded in closed form;
@@ -57,10 +61,12 @@ METHOD AND WHY IT IS RIGOROUS
        |Phi^(r)(v)| <= D_r e^{(2r+4.5)|v|} exp(-pi e^{2|v|}),
        D_r = 2 |q_r|_1 pi^(r+2) sum_{n>=1} n^(2r+4) exp(-(n^2-1) pi).
   2. Point and cell enclosures. With h0 = 2^-12 and V = 2.625, the values
-     Phi^(r)(k h0), 0 <= k <= V/h0 + 1, r = 0..12, are enclosed with mpmath
-     interval arithmetic (40 digits). The sup of |Phi^(12)| on each cell
+     Phi^(r)(k h0), 0 <= k <= V/h0 + 1, r = 0..TOP, are enclosed with mpmath
+     interval arithmetic (40 digits). Here TOP = RM + 6 and RM is the largest
+     r in the kernel set (TOP = 14 for the default set, 18 for the degree-24
+     set). The sup of |Phi^(TOP)| on each cell
      [k h0, (k+1) h0] is bounded by evaluating the series on the interval
-     argument. For r < 12 the cell sup of |Phi^(r)| is bounded by the larger
+     argument. For r < TOP the cell sup of |Phi^(r)| is bounded by the larger
      endpoint value plus (h0/2) times the cell sup of |Phi^(r+1)| (mean value
      theorem from the nearer endpoint).
   3. Quadrature. For u_j = j h0 the integral M_r(u_j) is computed by composite
@@ -112,8 +118,19 @@ REPRODUCE
 
   python3 certificates/prime-birth/xi_kernel_conductor_certificate.py
 
-The run takes about 40 seconds. An optional argument m sets h0 = 2^-m; m = 10
-runs in about 6 seconds and gives the same decisions with wider enclosures.
+The run takes about 46 seconds. An optional first argument m sets h0 = 2^-m;
+m = 10 runs in about 6 seconds and gives the same decisions for R = 4 and
+R = 6 with wider enclosures, but the window facts for U2, L2, U3, L3, G23 and
+the positivity of G23 need m = 12. An optional second argument selects the
+kernel set: "deg16" (default, everything listed under OUTCOME up to G23) or
+"deg24" (the four degree-24 window kernels, with R = 4 rerun as a check):
+
+  python3 certificates/prime-birth/xi_kernel_conductor_certificate.py 12 deg24
+
+The exit code is 0 only if R = 4 is certified positive, every kernel of the
+set passes the Sturm check (C0), and every window fact holds. An optional
+third argument is a file name; the lattice tables are saved there for
+xi_kernel_window_design_mixed.py.
 
 OUTCOME (run on 10 November 2026, h0 = 2^-12)
 
@@ -193,6 +210,31 @@ OUTCOME (run on 10 November 2026, h0 = 2^-12)
   G23: h > 0 on [0, 4]; h >= 1.0009733 on every cell covering [0.8, 1.0];
        sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 0.014007355327 + 1.6e-113.
 
+  Kernel set "deg24" (arguments 12 deg24; about 65 seconds; h0 = 2^-12).
+  Four window kernels of degree 24, designed by
+  xi_kernel_window_design_mixed.py. Each has one negative coefficient (that
+  of t^22). For each, (C0) holds: the Sturm chain in exact rational
+  arithmetic finds no root s = t^2 in (0, inf) and alpha_0 > 0, so w > 0 on
+  the real line.
+  U2x: h > 0 on [0, 4]; h >= 1.0000868 on every cell covering [0.63, 0.76];
+       h >= 0.9880328 on every cell covering [0.62, 0.77];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 0.49023840129 + 1.9e-93.
+  L2x: h > 0 on [0, 2646/4096] and on [3154/4096, 4], that is outside
+       [0.645996, 0.770020]; h >= -0.9999273 on the cells covering
+       [0.62, 0.77]; sum_{n>=2} Lambda(n) n^(-1/2) h(log n)
+       <= -0.48999826902 + 5.6e-93.
+  U3x: h > 0 on [0, 4]; h >= 1.0006805 on every cell covering [1.04, 1.16];
+       h >= 0.97668709 on every cell covering [1.03, 1.17];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 0.63702184446 + 7.5e-92.
+  L3x: h > 0 on [0, 4325/4096] and on [4793/4096, 4], that is outside
+       [1.055908, 1.170166]; h >= -0.99913687 on the cells covering
+       [1.03, 1.17]; sum_{n>=2} Lambda(n) n^(-1/2) h(log n)
+       <= -0.63034155816 + 1.7e-91.
+  For all four: T_10 <= 4.2e-103, T_11 <= 1.5e-89, T_k decreasing from
+  k = 11, sup_{u>=6} |h(u)| <= 4.3e-1002. R = 4, rerun in this set with
+  derivative orders up to 18, gives the same (C2) and (C3) as above.
+  In both sets the script now also prints (C0) and asserts the window facts.
+
   An independent audit on 10 November 2026 rederived the bounds of steps 1
   to 5, traced the indices, and compared about 4000 internal enclosures with
   separately computed values; it found no error. Its two small repairs (the
@@ -235,7 +277,10 @@ U_REPORT = 3                   # the T_k table starts here
 U_POS_CAP = 4                  # positivity is tested up to here
 U_FAR = 6                      # closed-form bound beyond here
 
-KERNELS = {
+KERNEL_SET = sys.argv[2] if len(sys.argv) > 2 else "deg16"
+assert KERNEL_SET in ("deg16", "deg24")
+
+KERNELS_DEG16 = {
     "R=4": ["2.27942", "0.0506854", "0.000783157", "2.13792e-6", "7.48483e-8"],
     "R=6": ["2.258739", "0.05216107", "0.0007103534", "4.97466e-6",
             "4.918306e-8", "0", "1.584807e-12"],
@@ -252,9 +297,37 @@ KERNELS = {
     "G23": ["4474.921543", "104.0618952", "1.386609903", "0.0110032152", "7.664294594e-5",
             "2.627366923e-7", "1.872102231e-9", "0", "2.267788331e-14"],
 }
+# Degree-24 window kernels. One coefficient of each is negative, so w >= 0 is
+# not evident and is proved by the Sturm check (C0).
+KERNELS_DEG24 = {
+    "R=4": KERNELS_DEG16["R=4"],
+    "U2x": ["204.57895754", "4.26413027728", "0.0683936776686", "0.000653039783998",
+            "4.89537630148e-6", "2.09411013894e-8", "1.18025115794e-10", "2.58487316157e-13",
+            "1.05309213149e-15", "2.73507023697e-19", "1.17093709065e-20",
+            "-7.75527415925e-24", "3.04873336714e-26"],
+    "L2x": ["1263.54919295", "30.0085003093", "0.381851861113", "0.00304969806699",
+            "1.92590615526e-5", "7.77015057642e-8", "3.8840343903e-10", "8.46276892155e-13",
+            "3.24180042037e-15", "9.8705429779e-19", "3.46351534462e-20", "-2.27070007461e-23",
+            "8.97892027518e-26"],
+    "U3x": ["9611.53828759", "223.485952296", "3.01664122997", "0.0232200836301",
+            "0.000157474332324", "6.26449918534e-7", "3.96531655957e-9", "8.32220023916e-12",
+            "3.76232855456e-14", "4.31912142353e-18", "4.54933240215e-19", "-3.1309561514e-22",
+            "1.19984551647e-24"],
+    "L3x": ["36374.2262791", "850.129566435", "11.0851937774", "0.0927850335512",
+            "0.000599044303434", "2.46590417306e-6", "1.19489850771e-8", "2.63582530372e-11",
+            "9.74292856392e-14", "3.46377308518e-17", "1.00548959248e-18",
+            "-6.48721190745e-22", "2.59234619911e-24"],
+}
+KERNELS = KERNELS_DEG16 if KERNEL_SET == "deg16" else KERNELS_DEG24
 WINDOWS = {"U2": (Fraction(63, 100), Fraction(76, 100)), "L2": (Fraction(62, 100), Fraction(77, 100)),
            "U3": (Fraction(104, 100), Fraction(116, 100)), "L3": (Fraction(103, 100), Fraction(117, 100)),
-           "G23": (Fraction(80, 100), Fraction(100, 100))}
+           "G23": (Fraction(80, 100), Fraction(100, 100)),
+           "U2x": (Fraction(63, 100), Fraction(76, 100)), "L2x": (Fraction(62, 100), Fraction(77, 100)),
+           "U3x": (Fraction(104, 100), Fraction(116, 100)), "L3x": (Fraction(103, 100), Fraction(117, 100))}
+LOWER_KERNELS = ("L2", "L3", "L2x", "L3x")       # required: h >= -1 on the window cells, h > 0 elsewhere
+# For an upper kernel, also report its minimum over the (wider) window of the
+# matching lower kernel; this gives a two-sided bound on one and the same window.
+WIDE = {"U2": WINDOWS["L2"], "U2x": WINDOWS["L2x"], "U3": WINDOWS["L3"], "U3x": WINDOWS["L3x"]}
 RM = max(len(a) for a in KERNELS.values()) - 1   # largest r in any kernel
 TOP = RM + 6                                     # highest derivative order evaluated
 
@@ -425,6 +498,45 @@ def cf_prime_tail(absalpha):
     return tot
 
 
+def sturm_positive_roots(coefs):
+    """Number of distinct real roots in (0, inf) of p(s) = sum coefs[i] s^i,
+    for exact Fractions coefs with coefs[0] != 0, by Sturm's theorem: the
+    chain is p, p', and the negated remainders of the Euclidean algorithm; it
+    ends at a constant or at gcd(p, p'). The number of sign changes of the
+    chain at s = 0 minus the number at s = +inf (zeros dropped) is the number
+    of distinct roots in (0, inf), since p(0) != 0. All arithmetic is exact."""
+    def trim(p):
+        while p and p[-1] == 0:
+            p = p[:-1]
+        return p
+
+    def rem(a, b):
+        a = a[:]
+        while a and len(a) >= len(b):
+            f = a[-1] / b[-1]
+            sh = len(a) - len(b)
+            for i in range(len(b)):
+                a[i + sh] -= f * b[i]
+            assert a[-1] == 0
+            a = trim(a)
+        return a
+
+    p0 = trim(list(coefs))
+    assert p0 and p0[0] != 0
+    chain = [p0, trim([i * p0[i] for i in range(1, len(p0))])]
+    while len(chain[-1]) > 1:
+        r = rem(chain[-2], chain[-1])
+        if not r:
+            break
+        chain.append([-x for x in r])
+
+    def changes(vals):
+        sg = [1 if v > 0 else -1 for v in vals if v != 0]
+        return sum(1 for a, b in zip(sg[:-1], sg[1:]) if a != b)
+
+    return changes([p[0] for p in chain if p]) - changes([p[-1] for p in chain if p])
+
+
 def von_mangoldt_table(N):
     out = []
     for n in range(2, N + 1):
@@ -527,6 +639,9 @@ def main():
                 A[r, j] = h0f * s * (1 + 1e-9) + REM[r] + 1e-290
     print("lattice done %.1fs" % (time.time() - t0))
 
+    if len(sys.argv) > 3:          # tables for the design script (not used below)
+        np.savez(sys.argv[3], Mc=Mc, Mr=Mr, A=A)
+
     c8 = H0 * H0 / 8
     PM = iv.mpf([-1, 1])
 
@@ -606,13 +721,28 @@ def main():
               "R=6": ("0.999999995562", "8.3460966e-5"),
               "R=8": ("0.99999999952207", "1.5505961e-5"),
               "U2": ("85.69761078", "0.011463450"), "L2": ("541.4080838", "-0.0017997323"),
-              "U3": ("2076.636015", "0.00063722773"), "L3": ("9955.019816", "-0.00011570551"), "G23": ("1984.765586", "1.4054411e-5")}
+              "U3": ("2076.636015", "0.00063722773"), "L3": ("9955.019816", "-0.00011570551"), "G23": ("1984.765586", "1.4054411e-5"),
+              "U2x": ("91.0182416", "0.0107722"),
+              "L2x": ("560.552342", "-0.00174833"),
+              "U3x": ("4266.37188", "0.000298563"),
+              "L3x": ("16143.1309", "-7.81549e-5"),
+              }
     jtest = U_POS_CAP * NH
     assert jtest <= J
     summary = {}
+    failed = []                    # required facts that did not hold
     for name, astr in KERNELS.items():
         print()
         print("=== kernel %s, alpha = [%s] ===" % (name, ", ".join(astr)))
+        afr = [Fraction(s) for s in astr]
+        nroots = sturm_positive_roots(afr)
+        w_pos = afr[0] > 0 and nroots == 0
+        print("(C0) w(t) = sum_r alpha_r t^(2r): alpha_0 > 0 is %s; %d coefficients are "
+              "negative; the Sturm chain (exact rationals) counts %d roots s = t^2 in "
+              "(0, inf); hence w(t) > 0 for every real t: %s"
+              % (afr[0] > 0, sum(1 for a in afr if a < 0), nroots, w_pos))
+        if not w_pos:
+            failed.append(name + " (C0)")
         alpha = [frac_iv(Fraction(s)) for s in astr]
         absal = [abs(a) for a in alpha]
         R = len(alpha) - 1
@@ -677,6 +807,23 @@ def main():
             print("     WINDOW: cells outside [%d/%d, %d/%d] and inside [0, %d] without a positive lower bound: %d%s"
                   % (ja_out, NH, jb_out, NH, U_POS_CAP, len(badout),
                      "" if not badout else " (first at u = %.6f, last at u = %.6f)" % (badout[0] / NH, badout[-1] / NH)))
+            wmin = min(low[j] for j in range(ja_out, jb_out))
+            if name in LOWER_KERNELS:
+                w_ok = (not badout) and wmin >= -1
+                print("     WINDOW FACTS (h >= -1 on the covering cells, h > 0 on every other "
+                      "cell of [0, %d]): %s" % (U_POS_CAP, "HOLD" if w_ok else "FAIL"))
+            else:
+                w_ok = (not bad) and wmin >= 1
+                print("     WINDOW FACTS (h >= 1 on the covering cells, h > 0 on [0, %d]): %s"
+                      % (U_POS_CAP, "HOLD" if w_ok else "FAIL"))
+            if not w_ok:
+                failed.append(name + " window")
+            if name in WIDE:
+                xa, xb = WIDE[name]
+                ka, kb = math.floor(xa * NH), math.ceil(xb * NH)
+                print("     WIDE WINDOW: min of cell lower bounds over the cells covering "
+                      "[%s, %s], that is over [%d/%d, %d/%d]: %s"
+                      % (xa, xb, ka, NH, kb, NH, sd(min(low[j] for j in range(ka, kb)), 8)))
         j12 = math.ceil(Fraction(12, 10) * NH)
         jmin = min(range(j12), key=lambda jj: low[jj])
         print("     smallest cell lower bound of h on [0, 1.2]: %s on [%.6f, %.6f]; "
@@ -736,7 +883,10 @@ def main():
         print("SUMMARY %s: %s" % (name, summary[name]))
     print("independent values outside the enclosures: %s"
           % (", ".join(discrepancies) if discrepancies else "none"))
-    return 0 if summary["R=4"].endswith("certified") and "NOT" not in summary["R=4"] else 1
+    print("required facts (Sturm positivity of w, window facts) that failed: %s"
+          % (", ".join(failed) if failed else "none"))
+    ok4 = summary["R=4"].endswith("certified") and "NOT" not in summary["R=4"]
+    return 0 if ok4 and not failed else 1
 
 
 if __name__ == "__main__":
