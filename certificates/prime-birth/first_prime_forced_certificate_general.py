@@ -40,7 +40,13 @@ With known primes (ratio 1.0005 or 1.001, d = 0.0001); "W" is W0(h) minus the kn
   known primes to 19 (and 4, 8, 9, 16, 25), L = 3.25, c = (0.121, 0.238, 0.348, 0.447, 0.527, 0.563, 0.267, 1), ratio 1.0003:
      W in [-0.335221, -0.283644]; above log 19, h >= 0 outside (2.944336, 3.25) and h >= -1.206172;
      remaining mass >= 0.1175 between x = 19 and 25.7904.
-An independent review on the same day rederived the closed forms and reran the cases up to L = 2.05; the last five
+  known primes to 23 (and 4, 8, 9, 16, 25, 27, 32), L = 3.47, c = (0.205, 0.402, 0.586, 0.747, 0.876, 0.960, 1, 0.409),
+     ratio 1.0003:  W in [-0.298627, -0.185814]; above log 23, h >= 0 outside (3.135490, 3.47) and h >= -3.124455;
+     remaining mass >= 0.0297 between x = 23 and 32.1368 (this interval contains both 29 and 31).
+  known primes to 29 (and 4, 8, 9, 16, 25, 27, 32), L = 3.55, c = (0.164, 0.326, 0.482, 0.630, 0.766, 0.890, 1, 0.042),
+     ratio 1.0003:  W in [-0.384117, -0.300192]; above log 29, h >= 0 outside (3.367173, 3.55) and h >= -1.008724;
+     remaining mass >= 0.1487 between x = 29 and 34.8134.
+An independent review on the same day rederived the closed forms and reran the cases up to L = 2.05; the last seven
 rows were added after it.
 Unconditional statements about the pole and archimedean functional. They say nothing about RH."""
 import sys, math
