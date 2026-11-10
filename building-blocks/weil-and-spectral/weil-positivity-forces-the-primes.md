@@ -1,6 +1,6 @@
 # Weil positivity forces the primes one at a time: computations and a conditional rigidity lemma
 
-**Status.** Propositions 1 and 2 are proved below in full and are **conditional on the Riemann hypothesis**. They are elementary and probably known; no literature search was done for them. Sections 3 to 7 are numerical computations with the true primes on finite sets of test functions, in double precision or at 60 digits. They are not proofs. Nothing here proves positivity of Weil's functional for any support length, and nothing here proves or bounds anything about zeros of $\zeta$. Section 6 reproduces a phenomenon reported by Connes, Consani and Moscovici. No Lean formalization.
+**Status.** Proposition 3 is **unconditional**; its proof is a short argument plus an interval-arithmetic computation. Propositions 1 and 2 are proved below in full and are **conditional on the Riemann hypothesis**. They are elementary and probably known; no literature search was done for them. Sections 3 to 7 are numerical computations with the true primes on finite sets of test functions, in double precision or at 60 digits. They are not proofs. Nothing here proves positivity of Weil's functional for any support length, and nothing here proves or bounds anything about zeros of $\zeta$. Section 6 reproduces a phenomenon reported by Connes, Consani and Moscovici. No Lean formalization.
 
 ## 1. Setting
 
@@ -75,6 +75,22 @@ The two propositions are mirror images. In the first, the gap that does the work
 3. The proposition is a statement about all support lengths at once. Section 3 measures how soon the failure shows at finite $L$.
 
 ## 3. Computation: each prime power is forced shortly after it enters
+
+The first case can be made rigorous, with no hypothesis. Write $W_0(h)=\int h(u)\,2\cosh(u/2)\,du+\mathcal A(h)$ for the pole and archimedean part of the functional, with no primes.
+
+**Proposition 3 (unconditional; interval arithmetic).** Let $g(u)=\sin(2\pi u)$ for $0\le u\le1$ and $g=0$ elsewhere, so that $h_g(u)=\tfrac12(1-|u|)\cos(2\pi u)+\frac{\sin(2\pi|u|)}{4\pi}$ for $|u|\le1$. Then
+
+$$
+-0.1258\le W_0(h_g)\le-0.1075 .
+$$
+
+Consequently, if $\mu$ is a nonnegative Borel measure on $(0,\infty)$, finite on $(0,1]$, with $W_0(h_g)-2\int h_g\,d\mu\ge0$, then $\mu\bigl((0.2848,\,1)\bigr)\ge0.215$. In terms of $x=e^u$: the measure has mass at least $0.215$ between $1.329$ and $e$.
+
+*Proof.* For this $g$ the pole term is $2\hat g(\tfrac i2)\hat g(-\tfrac i2)=-4a^2(\cosh\tfrac12-1)/(a^2+\tfrac14)^2$ with $a=2\pi$, and $\mathcal A(h_g)=-\tfrac12(\gamma_E+\log\pi)+2\int_0^1F(u)\,du-\tfrac12\log(1-e^{-2})$ with $F(u)=\bigl(\tfrac12e^{-2u}-e^{-u/2}h_g(u)\bigr)/(1-e^{-2u})$. The script [first_prime_forced_certificate.py](../../certificates/prime-birth/first_prime_forced_certificate.py) encloses $\int_{0.001}^1F$ by interval arithmetic on 1386 subintervals and bounds $|F|\le(1.3+2\pi^2d)/(2(1-d))$ on $[0,d]$, $d=0.001$, from $|n'|\le1.3+2\pi^2d$ for the numerator $n$ and $1-e^{-2u}\ge2u(1-u)$. It returns $W_0(h_g)\in[-0.125771,-0.107579]$. It also certifies $h_g\ge0$ on $[0,0.2848]$ and $h_g\ge-0.250026$ on $[0,1]$. If $W_0(h_g)-2\int h_g\,d\mu\ge0$ then $\int h_g\,d\mu\le-0.0537$, and $\int h_g\,d\mu\ge-0.250026\,\mu((0.2848,1))$. $\qquad\blacksquare$
+
+The function $g$ is continuous and piecewise smooth, not in $C_c^\infty$. If the functional with $\mu$ is nonnegative on smooth test functions supported in $[0,1]$, the inequality for this $g$ follows by approximation; that step is routine and is not written out here. The only prime power between $1.329$ and $e$ is $2$, with weight $\log2/\sqrt2=0.490$, and for the true primes $W_0(h_g)-2h_g(\log2)\cdot0.490=+0.009$. In words: a system with Riemann's Gamma factor and a simple pole whose Weil functional is nonnegative must have a generalized prime below $e$, of weight at least $0.215$ if it has only one there. This says nothing about RH.
+
+The remaining statements in this section are computations, not proofs.
 
 Test functions: $g_k(u)=e^{2\pi iku/L}/\sqrt L$ on $[0,L]$, $|k|\le K$. The form $W_d$ on their span is a Hermitian matrix of size $2K+1$. Double precision, so an eigenvalue within about $10^{-11}$ of zero is a numerical zero. Script: [positivity_predicts_next_prime.py](../../certificates/prime-birth/positivity_predicts_next_prime.py).
 
