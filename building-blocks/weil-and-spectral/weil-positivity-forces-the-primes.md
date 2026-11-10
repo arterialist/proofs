@@ -1,6 +1,6 @@
 # Weil positivity forces the primes one at a time: computations and a conditional rigidity lemma
 
-**Status.** Proposition 1 is proved below in full and is **conditional on the Riemann hypothesis**. It is elementary and probably known; no literature search was done for it. Sections 3 to 6 are numerical computations with the true primes on finite sets of test functions, in double precision or at 60 digits. They are not proofs. Nothing here proves positivity of Weil's functional for any support length, and nothing here proves or bounds anything about zeros of $\zeta$. Section 5 reproduces a phenomenon reported by Connes, Consani and Moscovici. No Lean formalization.
+**Status.** Proposition 1 is proved below in full and is **conditional on the Riemann hypothesis**. It is elementary and probably known; no literature search was done for it. Sections 3 to 7 are numerical computations with the true primes on finite sets of test functions, in double precision or at 60 digits. They are not proofs. Nothing here proves positivity of Weil's functional for any support length, and nothing here proves or bounds anything about zeros of $\zeta$. Section 6 reproduces a phenomenon reported by Connes, Consani and Moscovici. No Lean formalization.
 
 ## 1. Setting
 
@@ -96,11 +96,41 @@ A second experiment drops the "one atom" assumption. [positivity_feasible_weight
 
 In the last row the total near $5$ lies in $[0.660,\,0.730]$ (true $0.71976$) and the total near $6$ is at most $0.012$. The ranges tighten as $L$ grows and are loose near $e^L$. The second and third rows had 13 and 58 stalled Newton iterations, so their ranges may be too narrow.
 
-## 4. How small the smallest eigenvalue is
+## 4. A linear program with no primes and no zeros in its input
+
+Write a candidate prime measure as $\mu=(e^{u/2}-\omega(u))\,du$ on $u>0$, where $\omega$ may be a distribution, and put $\omega_c(t)=\int_0^\infty\omega(u)\cos(tu)\,du$. The pole terms equal $\int_0^\infty(h(u)+h(-u))\,2\cosh(u/2)\,du$ and $\mathcal A(h_g)=\frac1{2\pi}\int|\hat g(t)|^2\bigl(\operatorname{Re}\psi(\tfrac14+\tfrac{it}2)-\log\pi\bigr)dt$, so
+
+$$
+W_\mu(h_g)=\frac1\pi\int|\hat g(t)|^2\bigl(\omega_c(t)-N(t)\bigr)\,dt,\qquad
+N(t)=-\tfrac12\operatorname{Re}\psi\bigl(\tfrac14+\tfrac{it}2\bigr)+\tfrac12\log\pi-\frac{1/2}{1/4+t^2}. \tag{2}
+$$
+
+Here $W_\mu$ is Weil's functional with $\mu$ in place of the prime measure. $N$ is an explicit function: $N(0)=0.686$, it is positive for $t<6.126$, and $N(t)\approx-\tfrac12\log(t/2\pi)$ for large $t$. So the pair of conditions "the functional is positive" and "the prime measure is nonnegative" reads
+
+$$
+\omega_c-N\ \ge0\ \text{ as a measure in }t,\qquad \omega(u)\le e^{u/2}\ \text{ as a measure in }u .
+$$
+
+For the true primes $\omega=e^{u/2}du-\sum_n\Lambda(n)n^{-1/2}\delta_{\log n}$, and under RH $\omega_c-N=\pi\sum_\gamma\delta_\gamma$. Both inequalities are then equalities except on a discrete set: the first fails to be an equality only at the zeros, the second only at the prime powers.
+
+The script [explicit_formula_double_positivity_lp.py](../../certificates/prime-birth/explicit_formula_double_positivity_lp.py) solves a truncated version. Unknown: $x(t)=\omega_c(t)$ on a grid in $[0,T]$ with $x\ge N$, and $x=0$ beyond $T$. Then $\omega(u)=\frac2\pi\int_0^Tx(t)\cos(tu)\,dt$. Constraints: $\omega(u)\le e^{u/2}+s$ for $0<u\le U$, and $\omega(u)\ge e^{u/2}-s$ for $u<\log x_0$, which says there is no prime mass below $x_0$. Minimise $s$. The input contains the function $N$, the function $e^{u/2}$ and the number $x_0$. It contains no primes and no zeros.
+
+| $T$, $U$, $x_0$ | $s$ | zero side: centre and mass of the first clusters | prime side: position and mass of the first peaks |
+|---|---|---|---|
+| $60$, $3$, none | $2.4\cdot10^{-3}$ | $14.01$, $20.14$, $22.95$, $24.55$ | diffuse |
+| $200$, $2.5$, $1.9$ | $2.8\cdot10^{-4}$ | $14.12{:}0.99$, $20.91{:}0.97$, $24.78{:}0.91$, $30.25{:}0.92$, $32.79{:}1.04$ | $2.003{:}0.477$, $3.008{:}0.631$, $4.047{:}0.344$, $5.035{:}0.692$ |
+| $400$, $3$, $1.9$ | $8\cdot10^{-5}$ | $14.13{:}1.00$, $20.99{:}0.98$, $30.40{:}0.95$, $32.98{:}0.90$, $43.25{:}0.97$, $49.63{:}1.00$ | $2.000{:}0.490$, $3.002{:}0.635$ |
+| $400$, $3$, $1.5$ | $8\cdot10^{-5}$ | $14.13{:}1.00$, $20.99{:}0.99$, $30.41{:}0.96$, $32.92{:}0.98$, $43.19{:}0.98$, $48.00{:}0.94$ | $2.000{:}0.485$, $3.002{:}0.628$ |
+
+The true values are zeros at $14.13$, $21.02$, $25.01$, $30.42$, $32.94$, $37.59$, $40.92$, $43.33$, $48.01$, $49.77$ and weights $0.490$, $0.634$, $0.347$, $0.720$ at $2,3,4,5$. With a condition $x_0$ between $1.2$ and $1.9$ the solution has masses close to $1$ near the first zeros and prime-side peaks at $2$, $3$, $4$, $5$ with roughly the right weights. The total mass on the zero side below $T$ agrees with the zero-counting formula ($79.19$ against $79.2$ for $T=200$, $201.64$ against $201.6$ for $T=400$). In the last row the mass within $0.016$ of $\log 6$, $\log 10$, $\log 12$, $\log 14$, $\log 15$ is $10^{-4}$, $1.6\cdot10^{-3}$, $1.6\cdot10^{-3}$, $10^{-4}$, $10^{-4}$. Without the condition (first row) the solution is a different atomic measure and a smooth competitor does almost as well, so the condition near $x=1$ is what selects the primes. This matches the role of the hypothesis "$d\ge0$ near $0$" in Proposition 1.
+
+Limits of this computation. The third zero comes out split ($24.8$ and $25.6$ or $25.8$) and the accuracy degrades with height, since $U=3$ only involves prime powers below $20$. $s$ is small and positive, not zero, because zeros above $T$ are replaced by a smooth density. Minimising $s$ is one choice of objective; no uniqueness theorem is proved for the continuous problem, and Proposition 1 covers only finite changes and assumes RH. One web search on 10 November 2026 found no paper doing this computation, which is not a claim of novelty.
+
+## 5. How small the smallest eigenvalue is
 
 With the true primes the smallest eigenvalue on $2K+1$ test functions is positive in every case computed, and very small ([weil_form_prime_weight_slack.py](../../certificates/prime-birth/weil_form_prime_weight_slack.py), 60 digits): $1.2\cdot10^{-6}$ at $L=1$, $K=10$; $1.0\cdot10^{-21}$ at $L=2$, $K=10$; $3.7\cdot10^{-25}$ at $L=2$, $K=14$. It still falls as $K$ grows. This is why a change of the weight of $2$ or $3$ by one part in $10^{12}$ already breaks positivity at $L=2$: there are several nearly null directions, and Proposition 1 is the statement that no finite change is compatible with all of them.
 
-## 5. Zeros of the lowest eigenvector
+## 6. Zeros of the lowest eigenvector
 
 Connes and van Suijlekom ([arXiv 2511.23257](https://arxiv.org/abs/2511.23257)) prove that when the lowest eigenvalue of such a form is simple with an even eigenfunction, the Fourier transform of that eigenfunction has only real zeros. Connes, Consani and Moscovici ([arXiv 2511.22755](https://arxiv.org/abs/2511.22755)) report that these zeros agree with the zeta zeros to high accuracy when only a few primes are used, and state that a proof of convergence would establish RH. The scripts [weil_lowest_eigenvector_zeros.py](../../certificates/prime-birth/weil_lowest_eigenvector_zeros.py) and [weil_lowest_eigenvector_zeros_double.py](../../certificates/prime-birth/weil_lowest_eigenvector_zeros_double.py) reproduce this in the plain Fourier basis above.
 
@@ -114,7 +144,7 @@ Connes and van Suijlekom ([arXiv 2511.23257](https://arxiv.org/abs/2511.23257)) 
 
 These numbers depend on $K$. They describe this finite basis and are not a statement about the limit over all test functions.
 
-## 6. What positivity at one support length tests
+## 7. What positivity at one support length tests
 
 Positivity for a short support is weaker than it looks. Two controls:
 
@@ -130,8 +160,8 @@ Positivity for a short support is weaker than it looks. Two controls:
 
 A pair close to the line becomes visible when $L$ reaches $\log(T_0/2\pi)$, that is when the primes below $T_0/2\pi$ are in. A pair far from the line is caught earlier. This matches a density count: Fourier transforms of functions supported in an interval of length $L$ can vanish on at most $L/2\pi$ points per unit length, and the zeros near $T_0$ have $\log(T_0/2\pi)/2\pi$ per unit length. It is an observation on a synthetic zero set, not a theorem.
 
-So the computations in sections 3 to 5, which stop between $L=2$ and $L=3$, test RH only against zeros of height below roughly $100$, where it is known.
+So the computations in sections 3 to 6, which stop between $L=2$ and $L=3$, test RH only against zeros of height below roughly $100$, where it is known.
 
-## 7. What this does not do
+## 8. What this does not do
 
 RH is equivalent to $W(h_g)\ge0$ for every support length. Proposition 1 assumes that. The computations confirm it on finite sets of test functions for $L\le3$ and say nothing about larger $L$. A proof along these lines would need a lower bound for the smallest eigenvalue that holds for every $L$ and every test function, and the computations show that this eigenvalue is smaller than $10^{-24}$ already at $L=2$. No such bound is proposed here.
