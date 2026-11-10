@@ -128,8 +128,11 @@ Here $w$ is an even polynomial of the stated degree, nonnegative on $\mathbb R$,
 | $20$ | $4.25\cdot10^{-8}$ | $2,\ 3,\ 4,\ 5,\ 7.06$ |
 | $24$ | $1.62\cdot10^{-9}$ | $2,\ 3,\ 4,\ 5,\ 7,\ 8.35$ |
 | $28$ | $1.28\cdot10^{-10}$ | $2,\ 3,\ 4,\ 5,\ 7,\ 8.09,\ 9.34$ |
+| $32$ | $1.00\cdot10^{-12}$ | |
 
-The bound barely changes when the lower end $1.05$ of the grid is replaced by $1.001$, $1.2$, $1.5$ or $1.9$. The optimal kernels place their zeros at the prime powers, in order. Degree $32$ exceeded what the double-precision solver could resolve.
+The bound barely changes when the lower end $1.05$ of the grid is replaced by $1.001$, $1.2$, $1.5$ or $1.9$. The optimal kernels place their zeros at the prime powers, in order. The degree-$32$ value comes from [xi_kernel_conductor_lp_refined.py](../../certificates/prime-birth/xi_kernel_conductor_lp_refined.py), which refines the linear program at 50 digits and reproduces the other rows; degrees $36$ and $40$ were not resolved.
+
+In every row $w\ge2.25$ on the real line and $h_w(0)=1$, so Corollary 3 also bounds the total mass of $\Xi^2m$: for conductor $1$, $\int\Xi^2\,dm\le B(w)/2.25$, which is below $5\cdot10^{-13}$ at degree $32$. By Corollary 4 this is also a bound for $\sup_a|R(a)|$: in this computation the prime measure of any admissible system of conductor $1$, smoothed by $\Psi$, agrees with the smoothed true prime measure to within $5\cdot10^{-13}$ at every position.
 
 ### 5.3 Computed, not certified: prime mass in windows
 
@@ -175,7 +178,7 @@ The first zeta zeros are at $14.1347$, $21.0220$, $25.0109$, $30.4249$. So in th
 
 **Conjecture B (extremal conductor).** There is no admissible system of conductor $q<1$.
 
-Evidence: the tables in section 5, where the allowed room shrinks by about a factor ten for every four degrees, and Theorem 2, which proves both conjectures for systems that differ from the true primes by a finite amount. By the argument that ends the proof of Theorem 2, Conjecture A implies
+Evidence: the tables in section 5, where the allowed room shrinks by a factor between ten and a hundred for every four degrees, and Theorem 2, which proves both conjectures for systems that differ from the true primes by a finite amount. By the argument that ends the proof of Theorem 2, Conjecture A implies
 
 $$
 \text{RH}\iff\text{there exists an admissible system of conductor }1 .
