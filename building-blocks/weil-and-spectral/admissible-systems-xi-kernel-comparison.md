@@ -160,25 +160,30 @@ Now sum over the cells $[3+0.1k,3.1+0.1k]$, $k\ge10$, whose centres are $a_k=3.0
 
 Part 3 says, rigorously and with no hypothesis on the zeros of $\zeta$, that a system satisfying Weil positivity with Riemann's archimedean factor and conductor at most $1$ has almost no generalized primes below $1.8$ or between $2.23$ and $2.72$. Part 1 says its conductor cannot be smaller than $1$ by more than $1.6\cdot10^{-5}$.
 
-**Corollary 6 (the prime 2 is forced with its weight; unconditional, certified).** For every admissible system $(m,\mu)$ of conductor $q\le1$, with $x=e^u$:
+**Corollary 6 (the primes 2 and 3 are forced with their weights; unconditional, certified).** For every admissible system $(m,\mu)$ of conductor $q\le1$, with $x=e^u$:
 
 1. the prime measure has mass at most $0.49120$ on $1.8777\le x\le2.1382$;
-2. the prime measure has mass at least $0.48717$ on $1.8586\le x\le2.1601$.
+2. the prime measure has mass at least $0.48717$ on $1.8586\le x\le2.1601$;
+3. the prime measure has mass at most $0.01401$ on $2.2256\le x\le2.7182$;
+4. the prime measure has mass at most $0.66171$ on $2.8293\le x\le3.1899$;
+5. the prime measure has mass at least $0.57562$ on $2.8004\le x\le3.2226$.
 
-The true prime measure has mass $\log2/\sqrt2=0.490129$ at $x=2$ and no other mass in either interval. No gap is assumed and nothing is assumed about other primes.
+The true prime measure has mass $\log2/\sqrt2=0.490129$ at $x=2$, mass $\log3/\sqrt3=0.634284$ at $x=3$, and no other mass in these intervals. No gap is assumed and nothing is assumed about other primes.
 
-*Proof.* Two more kernels with nonnegative coefficients, of degree $16$, with coefficients of $t^{2i}$, $i=0,\dots,8$:
+*Proof of parts 1 and 2.* Two more kernels with nonnegative coefficients, of degree $16$, with coefficients of $t^{2i}$, $i=0,\dots,8$:
 
 - $w_U$: $192.7779014$, $3.959614914$, $0.06592039741$, $5.995292912\cdot10^{-4}$, $4.954190381\cdot10^{-6}$, $1.738108178\cdot10^{-8}$, $1.390956481\cdot10^{-10}$, $0$, $1.762076328\cdot10^{-15}$;
 - $w_L$: $1220.800154$, $28.93268369$, $0.3723188798$, $2.872879735\cdot10^{-3}$, $1.940677066\cdot10^{-5}$, $6.551462272\cdot10^{-8}$, $4.621451718\cdot10^{-10}$, $0$, $5.605901241\cdot10^{-15}$.
 
 The script certifies, for $h_U=h_{w_U}$: $h_U>0$ on $[0,4]$, $h_U\ge1$ on $[0.63,0.76]$, and $\int h_U\,d\mu_\Lambda\le0.4911979$. For $k=h_{w_L}$: $k\ge-1$ on $[0.619873,\,0.770020]$, $k>0$ on the rest of $[0,4]$, and $\int k\,d\mu_\Lambda\le-0.4871783$. Both have tails beyond $u=4$ bounded as in Proposition 5, with $T_{10}+T_{11}\le4\cdot10^{-112}$, so $\int_{(4,\infty)}|h|\,d\mu\le10^{-108}$ by the estimate in the proof of Corollary 5.
 
-By Corollary 2, $\int h_U\,d\mu\le\int h_U\,d\mu_\Lambda$ and $\int k\,d\mu\le\int k\,d\mu_\Lambda$. For the first, $\int h_U\,d\mu\ge\mu([0.63,0.76])-10^{-108}$ because $h_U\ge1$ on the window and $h_U\ge0$ on the rest of $(0,4]$. For the second, $\int k\,d\mu\ge-\mu([0.619873,0.770020])-10^{-108}$ because $k\ge-1$ on that interval and $k\ge0$ on the rest of $(0,4]$. Finally $e^{0.63}=1.87761$, $e^{0.76}=2.13828$, $e^{0.619873}=1.85869$, $e^{0.770020}=2.16003$. $\qquad\blacksquare$
+By Corollary 2, $\int h_U\,d\mu\le\int h_U\,d\mu_\Lambda$ and $\int k\,d\mu\le\int k\,d\mu_\Lambda$. For the first, $\int h_U\,d\mu\ge\mu([0.63,0.76])-10^{-108}$ because $h_U\ge1$ on the window and $h_U\ge0$ on the rest of $(0,4]$. For the second, $\int k\,d\mu\ge-\mu([0.619873,0.770020])-10^{-108}$ because $k\ge-1$ on that interval and $k\ge0$ on the rest of $(0,4]$. Finally $e^{0.63}=1.87761$, $e^{0.76}=2.13828$, $e^{0.619873}=1.85869$, $e^{0.770020}=2.16003$.
+
+*Proof of parts 3 to 5.* The same argument with three more kernels of the same kind, whose coefficients are listed in the script under the names G23, U3, L3. Certified: $h_{G23}>0$ on $[0,4]$, $h_{G23}\ge1$ on $[0.8,1]$, $\int h_{G23}\,d\mu_\Lambda\le0.0140074$; $h_{U3}>0$ on $[0,4]$, $h_{U3}\ge1$ on $[1.04,1.16]$, $\int h_{U3}\,d\mu_\Lambda\le0.6617082$; $h_{L3}\ge-1$ on $[1.029785,\,1.170166]$, $h_{L3}>0$ on the rest of $[0,4]$, $\int h_{L3}\,d\mu_\Lambda\le-0.5756241$. The tails beyond $u=4$ contribute less than $10^{-100}$. And $e^{0.8}=2.22554$, $e^{1}=2.71828$, $e^{1.04}=2.82922$, $e^{1.16}=3.18993$, $e^{1.029785}=2.80047$, $e^{1.170166}=3.22253$. $\qquad\blacksquare$
 
 The lower bound uses only Corollary 2: a kernel $h_{w}$ with $w\ge0$ that is negative only inside a window, where it is at least $-1$, gives $\mu(\text{window})\ge-\int h_w\,d\mu_\Lambda$. The kernels were designed by [xi_kernel_window_design.py](../../certificates/prime-birth/xi_kernel_window_design.py) and [xi_kernel_window_design_lower.py](../../certificates/prime-birth/xi_kernel_window_design_lower.py) and were added to the certificate script after its audit; they go through the audited code, plus a short block that reports cell bounds inside and outside a window.
 
-Together with Corollary 5, part 3: a system satisfying Weil positivity with Riemann's archimedean factor and conductor at most $1$ has prime mass between $0.48717$ and $0.49120$ near $2$, at most $9\cdot10^{-4}$ below $1.82$, and at most $0.0161$ between $2.23$ and $2.72$. This is proved without any hypothesis on the zeros of $\zeta$.
+Together with Corollary 5, part 3: a system satisfying Weil positivity with Riemann's archimedean factor and conductor at most $1$ has prime mass at most $9\cdot10^{-4}$ below $1.82$, between $0.48717$ and $0.49120$ near $2$, at most $0.0141$ between $2.23$ and $2.72$, and between $0.57562$ and $0.66171$ near $3$. This is proved without any hypothesis on the zeros of $\zeta$. The bounds near $3$ are looser because all five kernels are restricted to degree $16$ with nonnegative coefficients and wide safety margins; the uncertified optimisation of section 5.3 suggests the true ranges are far narrower.
 
 **A warning from the same script.** It also examined a kernel of degree $12$ that I had obtained from a linear program with sign conditions on a grid of step $0.004$, and it certified that this kernel is negative, by about $10^{-9}$, on an interval of length $0.0015$ near $u=1.4712$ that the grid stepped over. The tables in sections 5.2 to 5.4 were first computed on that fixed grid. Section 5.2 is now recomputed with constraints added adaptively where the kernel dips (a cutting-plane method), and the two sets of values are shown side by side. Sections 5.3 and 5.4 still use the fixed grid.
 

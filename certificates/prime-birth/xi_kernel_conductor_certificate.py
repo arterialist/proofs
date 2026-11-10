@@ -182,6 +182,17 @@ OUTCOME (run on 10 November 2026, h0 = 2^-12)
       cell of [0, 4]; sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= -0.48717835675
       + 3.9e-114.
 
+  U3, L3 (window near u = log 3) and G23 (the gap between 2 and 3), designed
+  with the same two scripts and wider margins (arguments 1.04 1.16 3 0.02 3.0
+  10 1e-3 0.01 and 0.80 1.00 3 0.02 3.0 10 1e-3 0.01):
+  U3:  h > 0 on [0, 4]; h >= 1.0007871 on every cell covering [1.04, 1.16];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 0.66170812861 + 2.5e-113.
+  L3:  h >= -0.99908118 on [4218/4096, 4793/4096] = [1.029785, 1.170166];
+       h > 0 on every other cell of [0, 4];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= -0.57562411716 + 7.3e-113.
+  G23: h > 0 on [0, 4]; h >= 1.0009733 on every cell covering [0.8, 1.0];
+       sum_{n>=2} Lambda(n) n^(-1/2) h(log n) <= 0.014007355327 + 1.6e-113.
+
   An independent audit on 10 November 2026 rederived the bounds of steps 1
   to 5, traced the indices, and compared about 4000 internal enclosures with
   separately computed values; it found no error. Its two small repairs (the
@@ -234,8 +245,16 @@ KERNELS = {
            "1.738108178e-8", "1.390956481e-10", "0", "1.762076328e-15"],
     "L2": ["1220.800154", "28.93268369", "0.3723188798", "0.002872879735", "1.940677066e-5",
            "6.551462272e-8", "4.621451718e-10", "0", "5.605901241e-15"],
+    "U3": ["4681.017422", "107.6991329", "1.536999666", "0.01018574292", "8.051835769e-5",
+           "2.735600934e-7", "2.635593653e-9", "0", "3.554419576e-14"],
+    "L3": ["22431.67095", "523.7339458", "6.878384543", "0.05613023865", "0.000387100216",
+           "1.379400156e-6", "9.219381289e-9", "0", "1.065657205e-13"],
+    "G23": ["4474.921543", "104.0618952", "1.386609903", "0.0110032152", "7.664294594e-5",
+            "2.627366923e-7", "1.872102231e-9", "0", "2.267788331e-14"],
 }
-WINDOWS = {"U2": (Fraction(63, 100), Fraction(76, 100)), "L2": (Fraction(62, 100), Fraction(77, 100))}
+WINDOWS = {"U2": (Fraction(63, 100), Fraction(76, 100)), "L2": (Fraction(62, 100), Fraction(77, 100)),
+           "U3": (Fraction(104, 100), Fraction(116, 100)), "L3": (Fraction(103, 100), Fraction(117, 100)),
+           "G23": (Fraction(80, 100), Fraction(100, 100))}
 RM = max(len(a) for a in KERNELS.values()) - 1   # largest r in any kernel
 TOP = RM + 6                                     # highest derivative order evaluated
 
@@ -586,7 +605,8 @@ def main():
     refs_k = {"R=4": ("1.00000097083", "0.00066985551"),
               "R=6": ("0.999999995562", "8.3460966e-5"),
               "R=8": ("0.99999999952207", "1.5505961e-5"),
-              "U2": ("85.69761078", "0.011463450"), "L2": ("541.4080838", "-0.0017997323")}
+              "U2": ("85.69761078", "0.011463450"), "L2": ("541.4080838", "-0.0017997323"),
+              "U3": ("2076.636015", "0.00063722773"), "L3": ("9955.019816", "-0.00011570551"), "G23": ("1984.765586", "1.4054411e-5")}
     jtest = U_POS_CAP * NH
     assert jtest <= J
     summary = {}
